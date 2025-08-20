@@ -1,0 +1,186 @@
+@charset "UTF-8";
+.pf-v6-c-skeleton {
+  --pf-v6-c-skeleton--BackgroundColor: var(--pf-t--global--background--color--secondary--default);
+  --pf-v6-c-skeleton--Width: auto;
+  --pf-v6-c-skeleton--Height: auto;
+  --pf-v6-c-skeleton--BorderRadius: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-skeleton--before--PaddingBlockEnd: 0;
+  --pf-v6-c-skeleton--before--Height: auto;
+  --pf-v6-c-skeleton--before--Content: " ";
+  --pf-v6-c-skeleton--after--LinearGradientAngle: 90deg;
+  --pf-v6-c-skeleton--after--LinearGradientColorStop1: var(--pf-t--global--background--color--secondary--default);
+  --pf-v6-c-skeleton--after--LinearGradientColorStop2: var(--pf-t--global--background--color--secondary--hover);
+  --pf-v6-c-skeleton--after--LinearGradientColorStop3: var(--pf-t--global--background--color--secondary--default);
+  --pf-v6-c-skeleton--after--TranslateX: 0;
+  --pf-v6-c-skeleton--after--AnimationName: pf-v6-c-skeleton-loading-reduced-motion;
+  --pf-v6-c-skeleton--after--AnimationDuration: 3s;
+  --pf-v6-c-skeleton--after--AnimationIterationCount: infinite;
+  --pf-v6-c-skeleton--after--AnimationTimingFunction: linear;
+  --pf-v6-c-skeleton--after--AnimationDelay: .5s;
+  --pf-v6-c-skeleton--m-circle--BorderRadius: var(--pf-t--global--border--radius--pill);
+  --pf-v6-c-skeleton--m-circle--before--PaddingBlockEnd: 100%;
+  --pf-v6-c-skeleton--m-text-4xl--Height: calc(var(--pf-t--global--font--size--4xl) * var(--pf-t--global--font--line-height--heading));
+  --pf-v6-c-skeleton--m-text-3xl--Height: calc(var(--pf-t--global--font--size--3xl) * var(--pf-t--global--font--line-height--heading));
+  --pf-v6-c-skeleton--m-text-2xl--Height: calc(var(--pf-t--global--font--size--2xl) * var(--pf-t--global--font--line-height--heading));
+  --pf-v6-c-skeleton--m-text-xl--Height: calc(var(--pf-t--global--font--size--xl) * var(--pf-t--global--font--line-height--heading));
+  --pf-v6-c-skeleton--m-text-lg--Height: calc(var(--pf-t--global--font--size--lg) * var(--pf-t--global--font--line-height--body));
+  --pf-v6-c-skeleton--m-text-md--Height: calc(var(--pf-t--global--font--size--md) * var(--pf-t--global--font--line-height--body));
+  --pf-v6-c-skeleton--m-text-sm--Height: calc(var(--pf-t--global--font--size--sm) * var(--pf-t--global--font--line-height--body));
+  --pf-v6-c-skeleton--m-width-sm--Width: 6.25rem;
+  --pf-v6-c-skeleton--m-width-md--Width: 12.5rem;
+  --pf-v6-c-skeleton--m-width-lg--Width: 18.75rem;
+  --pf-v6-c-skeleton--m-width-25--Width: 25%;
+  --pf-v6-c-skeleton--m-width-33--Width: calc(100% / 3);
+  --pf-v6-c-skeleton--m-width-50--Width: 50%;
+  --pf-v6-c-skeleton--m-width-66--Width: calc(100% / 3 * 2);
+  --pf-v6-c-skeleton--m-width-75--Width: 75%;
+  --pf-v6-c-skeleton--m-height-sm--Height: 6.25rem;
+  --pf-v6-c-skeleton--m-height-md--Height: 12.5rem;
+  --pf-v6-c-skeleton--m-height-lg--Height: 18.75rem;
+  --pf-v6-c-skeleton--m-height-25--Height: 25%;
+  --pf-v6-c-skeleton--m-height-33--Height: calc(100% / 3);
+  --pf-v6-c-skeleton--m-height-50--Height: 50%;
+  --pf-v6-c-skeleton--m-height-66--Height: calc(100% / 3 * 2);
+  --pf-v6-c-skeleton--m-height-75--Height: 75%;
+  --pf-v6-c-skeleton--m-height-100--Height: 100%;
+}
+@media screen and (prefers-reduced-motion: no-preference) {
+  .pf-v6-c-skeleton {
+    --pf-v6-c-skeleton--after--LinearGradientColorStop1: var(--pf-t--global--background--color--secondary--default);
+    --pf-v6-c-skeleton--after--LinearGradientColorStop2: var(--pf-t--global--background--color--secondary--hover);
+    --pf-v6-c-skeleton--after--LinearGradientColorStop3: var(--pf-t--global--background--color--secondary--default);
+    --pf-v6-c-skeleton--after--TranslateX: -100%;
+    --pf-v6-c-skeleton--after--AnimationName: pf-v6-c-skeleton-loading;
+  }
+}
+
+.pf-v6-c-skeleton {
+  position: relative;
+  width: var(--pf-v6-c-skeleton--Width);
+  height: var(--pf-v6-c-skeleton--Height);
+  overflow: hidden;
+  background-color: var(--pf-v6-c-skeleton--BackgroundColor);
+  border-radius: var(--pf-v6-c-skeleton--BorderRadius);
+  transform: translate(0);
+}
+.pf-v6-c-skeleton::before {
+  display: block;
+  height: var(--pf-v6-c-skeleton--before--Height);
+  padding-block-end: var(--pf-v6-c-skeleton--before--PaddingBlockEnd);
+  content: var(--pf-v6-c-skeleton--before--Content);
+}
+.pf-v6-c-skeleton::after {
+  position: absolute;
+  inset: 0;
+  display: block;
+  content: "";
+  background: linear-gradient(var(--pf-v6-c-skeleton--after--LinearGradientAngle), var(--pf-v6-c-skeleton--after--LinearGradientColorStop1), var(--pf-v6-c-skeleton--after--LinearGradientColorStop2), var(--pf-v6-c-skeleton--after--LinearGradientColorStop3));
+  transform: translate3d(var(--pf-v6-c-skeleton--after--TranslateX), 0, 0);
+  animation: var(--pf-v6-c-skeleton--after--AnimationName) var(--pf-v6-c-skeleton--after--AnimationDuration) var(--pf-v6-c-skeleton--after--AnimationTimingFunction) var(--pf-v6-c-skeleton--after--AnimationDelay) var(--pf-v6-c-skeleton--after--AnimationIterationCount);
+}
+:where(.pf-v6-m-dir-rtl, [dir=rtl]) .pf-v6-c-skeleton::after {
+  scale: -1 1;
+}
+
+.pf-v6-c-skeleton.pf-m-circle {
+  --pf-v6-c-skeleton--BorderRadius: var(--pf-v6-c-skeleton--m-circle--BorderRadius);
+}
+.pf-v6-c-skeleton.pf-m-square, .pf-v6-c-skeleton.pf-m-circle {
+  --pf-v6-c-skeleton--before--Height: 0;
+  --pf-v6-c-skeleton--before--PaddingBlockEnd: var(--pf-v6-c-skeleton--m-circle--before--PaddingBlockEnd);
+}
+.pf-v6-c-skeleton.pf-m-width-sm {
+  --pf-v6-c-skeleton--Width: var(--pf-v6-c-skeleton--m-width-sm--Width);
+}
+.pf-v6-c-skeleton.pf-m-width-md {
+  --pf-v6-c-skeleton--Width: var(--pf-v6-c-skeleton--m-width-md--Width);
+}
+.pf-v6-c-skeleton.pf-m-width-lg {
+  --pf-v6-c-skeleton--Width: var(--pf-v6-c-skeleton--m-width-lg--Width);
+}
+.pf-v6-c-skeleton.pf-m-width-25 {
+  --pf-v6-c-skeleton--Width: var(--pf-v6-c-skeleton--m-width-25--Width);
+}
+.pf-v6-c-skeleton.pf-m-width-33 {
+  --pf-v6-c-skeleton--Width: var(--pf-v6-c-skeleton--m-width-33--Width);
+}
+.pf-v6-c-skeleton.pf-m-width-50 {
+  --pf-v6-c-skeleton--Width: var(--pf-v6-c-skeleton--m-width-50--Width);
+}
+.pf-v6-c-skeleton.pf-m-width-66 {
+  --pf-v6-c-skeleton--Width: var(--pf-v6-c-skeleton--m-width-66--Width);
+}
+.pf-v6-c-skeleton.pf-m-width-75 {
+  --pf-v6-c-skeleton--Width: var(--pf-v6-c-skeleton--m-width-75--Width);
+}
+.pf-v6-c-skeleton.pf-m-height-sm {
+  --pf-v6-c-skeleton--Height: var(--pf-v6-c-skeleton--m-height-sm--Height);
+}
+.pf-v6-c-skeleton.pf-m-height-md {
+  --pf-v6-c-skeleton--Height: var(--pf-v6-c-skeleton--m-height-md--Height);
+}
+.pf-v6-c-skeleton.pf-m-height-lg {
+  --pf-v6-c-skeleton--Height: var(--pf-v6-c-skeleton--m-height-lg--Height);
+}
+.pf-v6-c-skeleton.pf-m-height-25 {
+  --pf-v6-c-skeleton--Height: var(--pf-v6-c-skeleton--m-height-25--Height);
+}
+.pf-v6-c-skeleton.pf-m-height-33 {
+  --pf-v6-c-skeleton--Height: var(--pf-v6-c-skeleton--m-height-33--Height);
+}
+.pf-v6-c-skeleton.pf-m-height-50 {
+  --pf-v6-c-skeleton--Height: var(--pf-v6-c-skeleton--m-height-50--Height);
+}
+.pf-v6-c-skeleton.pf-m-height-66 {
+  --pf-v6-c-skeleton--Height: var(--pf-v6-c-skeleton--m-height-66--Height);
+}
+.pf-v6-c-skeleton.pf-m-height-75 {
+  --pf-v6-c-skeleton--Height: var(--pf-v6-c-skeleton--m-height-75--Height);
+}
+.pf-v6-c-skeleton.pf-m-height-100 {
+  --pf-v6-c-skeleton--Height: var(--pf-v6-c-skeleton--m-height-100--Height);
+}
+.pf-v6-c-skeleton.pf-m-text-4xl {
+  --pf-v6-c-skeleton--Height: var(--pf-v6-c-skeleton--m-text-4xl--Height);
+}
+.pf-v6-c-skeleton.pf-m-text-3xl {
+  --pf-v6-c-skeleton--Height: var(--pf-v6-c-skeleton--m-text-3xl--Height);
+}
+.pf-v6-c-skeleton.pf-m-text-2xl {
+  --pf-v6-c-skeleton--Height: var(--pf-v6-c-skeleton--m-text-2xl--Height);
+}
+.pf-v6-c-skeleton.pf-m-text-xl {
+  --pf-v6-c-skeleton--Height: var(--pf-v6-c-skeleton--m-text-xl--Height);
+}
+.pf-v6-c-skeleton.pf-m-text-lg {
+  --pf-v6-c-skeleton--Height: var(--pf-v6-c-skeleton--m-text-lg--Height);
+}
+.pf-v6-c-skeleton.pf-m-text-md {
+  --pf-v6-c-skeleton--Height: var(--pf-v6-c-skeleton--m-text-md--Height);
+}
+.pf-v6-c-skeleton.pf-m-text-sm {
+  --pf-v6-c-skeleton--Height: var(--pf-v6-c-skeleton--m-text-sm--Height);
+}
+
+@keyframes pf-v6-c-skeleton-loading {
+  0% {
+    transform: translateX(-100%);
+  }
+  60% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes pf-v6-c-skeleton-loading-reduced-motion {
+  0% {
+    opacity: 0.25;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}

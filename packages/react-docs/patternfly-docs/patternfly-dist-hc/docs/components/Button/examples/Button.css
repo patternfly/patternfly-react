@@ -1,0 +1,8 @@
+.ws-core-c-button .pf-v6-c-button {
+  margin-inline-end: 6px;
+  margin-block-end: 6px;
+}
+
+#ws-core-c-button-plain-with-no-padding .pf-v6-c-button {
+  margin: 0;
+}

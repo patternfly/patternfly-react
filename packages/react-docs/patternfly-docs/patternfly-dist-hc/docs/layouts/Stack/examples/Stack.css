@@ -1,0 +1,15 @@
+.ws-core-l-stack :is(.pf-v6-l-stack, .pf-v6-l-stack__item, .pf-v6-l-stack > *) {
+  padding: var(--pf-t--global--spacer--sm);
+  border: var(--pf-t--global--border--width--box--default) dashed var(--pf-t--global--border--color--default);
+}
+
+.ws-core-l-stack .ws-preview-html {
+  display: flex;
+  flex-direction: column;
+  min-height: 30rem;
+  width: 100%;
+}
+
+.ws-core-l-stack .pf-v6-l-stack {
+  flex-grow: 1;
+}

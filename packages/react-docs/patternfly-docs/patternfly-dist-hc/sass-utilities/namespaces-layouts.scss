@@ -1,0 +1,26 @@
+@use '../sass-utilities/init' as *;
+@use '../sass-utilities/scss-variables' as *;
+
+// Globally scoped component variables
+// Bullseye
+// stylelint-disable scss/dollar-variable-pattern
+$bullseye: #{$pf-prefix} + 'l-bullseye';
+
+// Flex
+$flex: #{$pf-prefix} + 'l-flex';
+
+// Gallery
+$gallery: #{$pf-prefix} + 'l-gallery';
+
+// Grid
+$grid: #{$pf-prefix} + 'l-grid';
+
+// Level
+$level: #{$pf-prefix} + 'l-level';
+
+// Split
+$split: #{$pf-prefix} + 'l-split';
+
+// Stack
+$stack: #{$pf-prefix} + 'l-stack';
+// stylelint-enable

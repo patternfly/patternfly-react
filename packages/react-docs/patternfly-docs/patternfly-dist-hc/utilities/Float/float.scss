@@ -1,0 +1,11 @@
+@use '../../sass-utilities' as *;
+
+// stylelint-disable
+$pf-v6-u-float-options: (
+  float-inline-start: (float inline-start),
+  float-inline-end: (float inline-end)
+);
+
+// Text utilities
+@include pf-v6-utility-builder($pf-v6-u-float-options, $pf-v6-global--breakpoint-list);
+// stylelint-enable

@@ -1,0 +1,4 @@
+.ws-core-u-display [class*="pf-v6-u-display-"] {
+  padding: var(--pf-t--global--spacer--sm);
+  border: var(--pf-t--global--border--width--box--default) dashed var(--pf-t--global--border--color--default);
+}

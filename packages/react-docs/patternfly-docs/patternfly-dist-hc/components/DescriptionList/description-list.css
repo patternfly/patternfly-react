@@ -1,0 +1,320 @@
+.pf-v6-c-description-list {
+  --pf-v6-c-description-list--RowGap: var(--pf-t--global--spacer--gap--group-to-group--vertical--default);
+  --pf-v6-c-description-list--ColumnGap: var(--pf-t--global--spacer--gap--group-to-group--horizontal--default);
+  --pf-v6-c-description-list--GridTemplateColumns--count: 1;
+  --pf-v6-c-description-list--GridTemplateColumns--width: 1fr;
+  --pf-v6-c-description-list--GridTemplateColumns--min: 0;
+  --pf-v6-c-description-list__group--RowGap: var(--pf-t--global--spacer--gap--group--vertical);
+  --pf-v6-c-description-list__group--ColumnGap: var(--pf-t--global--spacer--gap--group--horizontal);
+  --pf-v6-c-description-list__group--GridTemplateColumns: auto;
+  --pf-v6-c-description-list__group--GridTemplateRows: auto 1fr;
+  --pf-v6-c-description-list__group--GridColumn: auto;
+  --pf-v6-c-description-list--m-compact--RowGap: var(--pf-t--global--spacer--gap--group-to-group--vertical--compact);
+  --pf-v6-c-description-list--m-compact--ColumnGap: var(--pf-t--global--spacer--gap--group-to-group--horizontal--compact);
+  --pf-v6-c-description-list__term--Display: inline;
+  --pf-v6-c-description-list__term--sm--Display: flex;
+  --pf-v6-c-description-list__term--FontWeight: var(--pf-t--global--font--weight--body--bold);
+  --pf-v6-c-description-list__term--FontSize: var(--pf-t--global--font--size--body--default);
+  --pf-v6-c-description-list__term--LineHeight: var(--pf-t--global--font--line-height--body);
+  --pf-v6-c-description-list__term-icon--MinWidth: var(--pf-t--global--font--size--body--sm);
+  --pf-v6-c-description-list__term-icon--MarginInlineEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-description-list__term-icon--Color: var(--pf-t--global--icon--color--subtle);
+  --pf-v6-c-description-list--m-vertical__group--GridTemplateColumns: repeat(var(--pf-v6-c-description-list--GridTemplateColumns--count));
+  --pf-v6-c-description-list--m-vertical__group--GridTemplateRows: auto 1fr;
+  --pf-v6-c-description-list--m-horizontal__term--width: 12ch;
+  --pf-v6-c-description-list--m-horizontal__description--width: minmax(10ch, auto);
+  --pf-v6-c-description-list--m-horizontal__group--GridTemplateColumns: var(--pf-v6-c-description-list__term--width) var(--pf-v6-c-description-list--m-horizontal__description--width);
+  --pf-v6-c-description-list--m-horizontal__group--GridTemplateRows: auto;
+  --pf-v6-c-description-list--m-1-col--GridTemplateColumns--count: 1;
+  --pf-v6-c-description-list--m-2-col--GridTemplateColumns--count: 2;
+  --pf-v6-c-description-list--m-3-col--GridTemplateColumns--count: 3;
+  --pf-v6-c-description-list--m-auto-fit--GridTemplateColumns--min: 15.625rem;
+  --pf-v6-c-description-list--m-auto-fit--GridTemplateColumns--minmax--min: var(--pf-v6-c-description-list--m-auto-fit--GridTemplateColumns--min);
+  --pf-v6-c-description-list__text--m-help-text--TextDecorationLine: var(--pf-t--global--text-decoration--help-text--line--default);
+  --pf-v6-c-description-list__text--m-help-text--TextDecorationStyle: var(--pf-t--global--text-decoration--help-text--style--default);
+  --pf-v6-c-description-list__text--m-help-text--TextUnderlineOffset: 0.25rem;
+  --pf-v6-c-description-list__text--m-help-text--hover--TextDecorationLine: var(--pf-t--global--text-decoration--help-text--line--hover);
+  --pf-v6-c-description-list__text--m-help-text--hover--TextDecorationStyle: var(--pf-t--global--text-decoration--help-text--style--hover);
+  --pf-v6-c-description-list--m-display-lg__description--FontSize: var(--pf-t--global--font--size--body--lg);
+  --pf-v6-c-description-list--m-display-2xl__description--FontSize: var(--pf-t--global--font--size--heading--lg);
+  --pf-v6-c-description-list--m-horizontal__term--width-on-sm: inherit;
+  --pf-v6-c-description-list--m-horizontal__term--width-on-md: inherit;
+  --pf-v6-c-description-list--m-horizontal__term--width-on-lg: inherit;
+  --pf-v6-c-description-list--m-horizontal__term--width-on-xl: inherit;
+  --pf-v6-c-description-list--m-horizontal__term--width-on-2xl: inherit;
+  --pf-v6-c-description-list__term--width: var(--pf-v6-c-description-list--m-horizontal__term--width);
+}
+@media screen and (min-width: 36rem) {
+  .pf-v6-c-description-list {
+    --pf-v6-c-description-list__term--Display: var(--pf-v6-c-description-list__term--sm--Display);
+  }
+}
+@media (min-width: 36rem) {
+  .pf-v6-c-description-list {
+    --pf-v6-c-description-list__term--width: var(--pf-v6-c-description-list--m-horizontal__term--width-on-sm, var(--pf-v6-c-description-list--m-horizontal__term--width));
+  }
+}
+@media (min-width: 48rem) {
+  .pf-v6-c-description-list {
+    --pf-v6-c-description-list__term--width: var(--pf-v6-c-description-list--m-horizontal__term--width-on-md, var(--pf-v6-c-description-list--m-horizontal__term--width-on-sm, var(--pf-v6-c-description-list--m-horizontal__term--width)));
+  }
+}
+@media (min-width: 62rem) {
+  .pf-v6-c-description-list {
+    --pf-v6-c-description-list__term--width: var(--pf-v6-c-description-list--m-horizontal__term--width-on-lg, var(--pf-v6-c-description-list--m-horizontal__term--width-on-md, var(--pf-v6-c-description-list--m-horizontal__term--width-on-sm, var(--pf-v6-c-description-list--m-horizontal__term--width))));
+  }
+}
+@media (min-width: 75rem) {
+  .pf-v6-c-description-list {
+    --pf-v6-c-description-list__term--width: var(--pf-v6-c-description-list--m-horizontal__term--width-on-xl, var(--pf-v6-c-description-list--m-horizontal__term--width-on-lg, var(--pf-v6-c-description-list--m-horizontal__term--width-on-md, var(--pf-v6-c-description-list--m-horizontal__term--width-on-sm, var(--pf-v6-c-description-list--m-horizontal__term--width)))));
+  }
+}
+@media (min-width: 90.625rem) {
+  .pf-v6-c-description-list {
+    --pf-v6-c-description-list__term--width: var(--pf-v6-c-description-list--m-horizontal__term--width-on-2xl, var(--pf-v6-c-description-list--m-horizontal__term--width-on-xl, var(--pf-v6-c-description-list--m-horizontal__term--width-on-lg, var(--pf-v6-c-description-list--m-horizontal__term--width-on-md, var(--pf-v6-c-description-list--m-horizontal__term--width-on-sm, var(--pf-v6-c-description-list--m-horizontal__term--width))))));
+  }
+}
+
+.pf-v6-c-description-list {
+  display: grid;
+  grid-template-columns: repeat(var(--pf-v6-c-description-list--GridTemplateColumns--count), var(--pf-v6-c-description-list--GridTemplateColumns--width));
+  row-gap: var(--pf-v6-c-description-list--RowGap);
+  column-gap: var(--pf-v6-c-description-list--ColumnGap);
+  align-items: baseline;
+}
+.pf-v6-c-description-list.pf-m-inline-grid {
+  display: inline-grid;
+}
+.pf-v6-c-description-list.pf-m-auto-column-widths {
+  --pf-v6-c-description-list--GridTemplateColumns--width: minmax(8ch, max-content);
+}
+.pf-v6-c-description-list.pf-m-auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(var(--pf-v6-c-description-list--m-auto-fit--GridTemplateColumns--minmax--min), 1fr));
+  --pf-v6-c-description-list--GridTemplateColumns--minmax--min: var(--pf-v6-c-description-list--GridTemplateColumns--min);
+}
+@media (min-width: 36rem) {
+  .pf-v6-c-description-list.pf-m-auto-fit {
+    --pf-v6-c-description-list--GridTemplateColumns--minmax--min: var(--pf-v6-c-description-list--GridTemplateColumns--min-on-sm, var(--pf-v6-c-description-list--GridTemplateColumns--min));
+  }
+}
+@media (min-width: 48rem) {
+  .pf-v6-c-description-list.pf-m-auto-fit {
+    --pf-v6-c-description-list--GridTemplateColumns--minmax--min: var(--pf-v6-c-description-list--GridTemplateColumns--min-on-md, var(--pf-v6-c-description-list--GridTemplateColumns--min-on-sm, var(--pf-v6-c-description-list--GridTemplateColumns--min)));
+  }
+}
+@media (min-width: 62rem) {
+  .pf-v6-c-description-list.pf-m-auto-fit {
+    --pf-v6-c-description-list--GridTemplateColumns--minmax--min: var(--pf-v6-c-description-list--GridTemplateColumns--min-on-lg, var(--pf-v6-c-description-list--GridTemplateColumns--min-on-md, var(--pf-v6-c-description-list--GridTemplateColumns--min-on-sm, var(--pf-v6-c-description-list--GridTemplateColumns--min))));
+  }
+}
+@media (min-width: 75rem) {
+  .pf-v6-c-description-list.pf-m-auto-fit {
+    --pf-v6-c-description-list--GridTemplateColumns--minmax--min: var(--pf-v6-c-description-list--GridTemplateColumns--min-on-xl, var(--pf-v6-c-description-list--GridTemplateColumns--min-on-lg, var(--pf-v6-c-description-list--GridTemplateColumns--min-on-md, var(--pf-v6-c-description-list--GridTemplateColumns--min-on-sm, var(--pf-v6-c-description-list--GridTemplateColumns--min)))));
+  }
+}
+@media (min-width: 90.625rem) {
+  .pf-v6-c-description-list.pf-m-auto-fit {
+    --pf-v6-c-description-list--GridTemplateColumns--minmax--min: var(--pf-v6-c-description-list--GridTemplateColumns--min-on-2xl, var(--pf-v6-c-description-list--GridTemplateColumns--min-on-xl, var(--pf-v6-c-description-list--GridTemplateColumns--min-on-lg, var(--pf-v6-c-description-list--GridTemplateColumns--min-on-md, var(--pf-v6-c-description-list--GridTemplateColumns--min-on-sm, var(--pf-v6-c-description-list--GridTemplateColumns--min))))));
+  }
+}
+.pf-v6-c-description-list.pf-m-compact {
+  --pf-v6-c-description-list--RowGap: var(--pf-v6-c-description-list--m-compact--RowGap);
+  --pf-v6-c-description-list--ColumnGap: var(--pf-v6-c-description-list--m-compact--ColumnGap);
+}
+.pf-v6-c-description-list.pf-m-fluid {
+  --pf-v6-c-description-list--m-horizontal__term--width: fit-content(20ch);
+}
+.pf-v6-c-description-list.pf-m-fill-columns {
+  display: block;
+  column-count: var(--pf-v6-c-description-list--GridTemplateColumns--count);
+  margin-block-end: calc(var(--pf-v6-c-description-list--RowGap) * -1);
+}
+.pf-v6-c-description-list.pf-m-fill-columns .pf-v6-c-description-list__group,
+.pf-v6-c-description-list.pf-m-fill-columns > .pf-v6-c-card {
+  display: inline-grid;
+  width: 100%;
+  margin-block-end: var(--pf-v6-c-description-list--RowGap);
+  break-inside: avoid;
+  page-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+}
+.pf-v6-c-description-list.pf-m-display-lg {
+  --pf-v6-c-description-list__description--FontSize: var(--pf-v6-c-description-list--m-display-lg__description--FontSize);
+}
+.pf-v6-c-description-list.pf-m-display-2xl {
+  --pf-v6-c-description-list__description--FontSize: var(--pf-v6-c-description-list--m-display-2xl__description--FontSize);
+}
+.pf-v6-c-description-list > .pf-v6-c-card {
+  align-self: stretch;
+  padding-block-start: var(--pf-v6-c-card--first-child--PaddingBlockStart);
+  padding-block-end: var(--pf-v6-c-card--child--PaddingBlockEnd);
+  padding-inline-start: var(--pf-v6-c-card--child--PaddingInlineStart);
+  padding-inline-end: var(--pf-v6-c-card--child--PaddingInlineEnd);
+}
+
+.pf-v6-c-description-list__group,
+.pf-v6-c-description-list > .pf-v6-c-card {
+  display: grid;
+  grid-template-rows: var(--pf-v6-c-description-list__group--GridTemplateRows);
+  grid-template-columns: var(--pf-v6-c-description-list__group--GridTemplateColumns);
+  grid-column: var(--pf-v6-c-description-list__group--GridColumn);
+  row-gap: var(--pf-v6-c-description-list__group--RowGap);
+  column-gap: var(--pf-v6-c-description-list__group--ColumnGap);
+  align-items: baseline;
+}
+
+.pf-v6-c-description-list__term,
+.pf-v6-c-description-list__description {
+  min-width: 0;
+  text-align: start;
+  overflow-wrap: break-word;
+}
+
+.pf-v6-c-description-list__term {
+  display: var(--pf-v6-c-description-list__term--Display);
+  font-size: var(--pf-v6-c-description-list__term--FontSize);
+  font-weight: var(--pf-v6-c-description-list__term--FontWeight);
+  line-height: var(--pf-v6-c-description-list__term--LineHeight);
+}
+.pf-v6-c-description-list__term .pf-v6-c-description-list__text {
+  display: inline;
+}
+
+.pf-v6-c-description-list__term-icon {
+  flex-shrink: 0;
+  min-width: var(--pf-v6-c-description-list__term-icon--MinWidth);
+  margin-inline-end: var(--pf-v6-c-description-list__term-icon--MarginInlineEnd);
+  color: var(--pf-v6-c-description-list__term-icon--Color);
+}
+
+.pf-v6-c-description-list__description {
+  font-size: var(--pf-v6-c-description-list__description--FontSize, inherit);
+}
+
+.pf-v6-c-description-list__text {
+  min-width: 0;
+}
+.pf-v6-c-description-list__text.pf-m-help-text {
+  text-decoration-line: var(--pf-v6-c-description-list__text--m-help-text--TextDecorationLine);
+  text-decoration-style: var(--pf-v6-c-description-list__text--m-help-text--TextDecorationStyle);
+  text-underline-offset: var(--pf-v6-c-description-list__text--m-help-text--TextUnderlineOffset);
+  cursor: pointer;
+}
+.pf-v6-c-description-list__text.pf-m-help-text:is(:hover, :focus) {
+  --pf-v6-c-description-list__text--m-help-text--TextDecorationLine: var(--pf-v6-c-description-list__text--m-help-text--hover--TextDecorationLine);
+  --pf-v6-c-description-list__text--m-help-text--TextDecorationStyle: var(--pf-v6-c-description-list__text--m-help-text--hover--TextDecorationStyle);
+}
+
+.pf-v6-c-description-list.pf-m-1-col {
+  --pf-v6-c-description-list--GridTemplateColumns--count: var(--pf-v6-c-description-list--m-1-col--GridTemplateColumns--count);
+}
+.pf-v6-c-description-list.pf-m-2-col {
+  --pf-v6-c-description-list--GridTemplateColumns--count: var(--pf-v6-c-description-list--m-2-col--GridTemplateColumns--count);
+}
+.pf-v6-c-description-list.pf-m-3-col {
+  --pf-v6-c-description-list--GridTemplateColumns--count: var(--pf-v6-c-description-list--m-3-col--GridTemplateColumns--count);
+}
+.pf-v6-c-description-list.pf-m-horizontal {
+  --pf-v6-c-description-list__group--GridTemplateColumns: var(--pf-v6-c-description-list--m-horizontal__group--GridTemplateColumns);
+  --pf-v6-c-description-list__group--GridTemplateRows: var(--pf-v6-c-description-list--m-horizontal__group--GridTemplateRows);
+}
+.pf-v6-c-description-list.pf-m-vertical {
+  --pf-v6-c-description-list__group--GridTemplateColumns: var(--pf-v6-c-description-list--m-vertical__group--GridTemplateColumns);
+  --pf-v6-c-description-list__group--GridTemplateRows: var(--pf-v6-c-description-list--m-vertical__group--GridTemplateRows);
+}
+@media (min-width: 36rem) {
+  .pf-v6-c-description-list.pf-m-1-col-on-sm {
+    --pf-v6-c-description-list--GridTemplateColumns--count: var(--pf-v6-c-description-list--m-1-col--GridTemplateColumns--count);
+  }
+  .pf-v6-c-description-list.pf-m-2-col-on-sm {
+    --pf-v6-c-description-list--GridTemplateColumns--count: var(--pf-v6-c-description-list--m-2-col--GridTemplateColumns--count);
+  }
+  .pf-v6-c-description-list.pf-m-3-col-on-sm {
+    --pf-v6-c-description-list--GridTemplateColumns--count: var(--pf-v6-c-description-list--m-3-col--GridTemplateColumns--count);
+  }
+  .pf-v6-c-description-list.pf-m-horizontal-on-sm {
+    --pf-v6-c-description-list__group--GridTemplateColumns: var(--pf-v6-c-description-list--m-horizontal__group--GridTemplateColumns);
+    --pf-v6-c-description-list__group--GridTemplateRows: var(--pf-v6-c-description-list--m-horizontal__group--GridTemplateRows);
+  }
+  .pf-v6-c-description-list.pf-m-vertical-on-sm {
+    --pf-v6-c-description-list__group--GridTemplateColumns: var(--pf-v6-c-description-list--m-vertical__group--GridTemplateColumns);
+    --pf-v6-c-description-list__group--GridTemplateRows: var(--pf-v6-c-description-list--m-vertical__group--GridTemplateRows);
+  }
+}
+@media (min-width: 48rem) {
+  .pf-v6-c-description-list.pf-m-1-col-on-md {
+    --pf-v6-c-description-list--GridTemplateColumns--count: var(--pf-v6-c-description-list--m-1-col--GridTemplateColumns--count);
+  }
+  .pf-v6-c-description-list.pf-m-2-col-on-md {
+    --pf-v6-c-description-list--GridTemplateColumns--count: var(--pf-v6-c-description-list--m-2-col--GridTemplateColumns--count);
+  }
+  .pf-v6-c-description-list.pf-m-3-col-on-md {
+    --pf-v6-c-description-list--GridTemplateColumns--count: var(--pf-v6-c-description-list--m-3-col--GridTemplateColumns--count);
+  }
+  .pf-v6-c-description-list.pf-m-horizontal-on-md {
+    --pf-v6-c-description-list__group--GridTemplateColumns: var(--pf-v6-c-description-list--m-horizontal__group--GridTemplateColumns);
+    --pf-v6-c-description-list__group--GridTemplateRows: var(--pf-v6-c-description-list--m-horizontal__group--GridTemplateRows);
+  }
+  .pf-v6-c-description-list.pf-m-vertical-on-md {
+    --pf-v6-c-description-list__group--GridTemplateColumns: var(--pf-v6-c-description-list--m-vertical__group--GridTemplateColumns);
+    --pf-v6-c-description-list__group--GridTemplateRows: var(--pf-v6-c-description-list--m-vertical__group--GridTemplateRows);
+  }
+}
+@media (min-width: 62rem) {
+  .pf-v6-c-description-list.pf-m-1-col-on-lg {
+    --pf-v6-c-description-list--GridTemplateColumns--count: var(--pf-v6-c-description-list--m-1-col--GridTemplateColumns--count);
+  }
+  .pf-v6-c-description-list.pf-m-2-col-on-lg {
+    --pf-v6-c-description-list--GridTemplateColumns--count: var(--pf-v6-c-description-list--m-2-col--GridTemplateColumns--count);
+  }
+  .pf-v6-c-description-list.pf-m-3-col-on-lg {
+    --pf-v6-c-description-list--GridTemplateColumns--count: var(--pf-v6-c-description-list--m-3-col--GridTemplateColumns--count);
+  }
+  .pf-v6-c-description-list.pf-m-horizontal-on-lg {
+    --pf-v6-c-description-list__group--GridTemplateColumns: var(--pf-v6-c-description-list--m-horizontal__group--GridTemplateColumns);
+    --pf-v6-c-description-list__group--GridTemplateRows: var(--pf-v6-c-description-list--m-horizontal__group--GridTemplateRows);
+  }
+  .pf-v6-c-description-list.pf-m-vertical-on-lg {
+    --pf-v6-c-description-list__group--GridTemplateColumns: var(--pf-v6-c-description-list--m-vertical__group--GridTemplateColumns);
+    --pf-v6-c-description-list__group--GridTemplateRows: var(--pf-v6-c-description-list--m-vertical__group--GridTemplateRows);
+  }
+}
+@media (min-width: 75rem) {
+  .pf-v6-c-description-list.pf-m-1-col-on-xl {
+    --pf-v6-c-description-list--GridTemplateColumns--count: var(--pf-v6-c-description-list--m-1-col--GridTemplateColumns--count);
+  }
+  .pf-v6-c-description-list.pf-m-2-col-on-xl {
+    --pf-v6-c-description-list--GridTemplateColumns--count: var(--pf-v6-c-description-list--m-2-col--GridTemplateColumns--count);
+  }
+  .pf-v6-c-description-list.pf-m-3-col-on-xl {
+    --pf-v6-c-description-list--GridTemplateColumns--count: var(--pf-v6-c-description-list--m-3-col--GridTemplateColumns--count);
+  }
+  .pf-v6-c-description-list.pf-m-horizontal-on-xl {
+    --pf-v6-c-description-list__group--GridTemplateColumns: var(--pf-v6-c-description-list--m-horizontal__group--GridTemplateColumns);
+    --pf-v6-c-description-list__group--GridTemplateRows: var(--pf-v6-c-description-list--m-horizontal__group--GridTemplateRows);
+  }
+  .pf-v6-c-description-list.pf-m-vertical-on-xl {
+    --pf-v6-c-description-list__group--GridTemplateColumns: var(--pf-v6-c-description-list--m-vertical__group--GridTemplateColumns);
+    --pf-v6-c-description-list__group--GridTemplateRows: var(--pf-v6-c-description-list--m-vertical__group--GridTemplateRows);
+  }
+}
+@media (min-width: 90.625rem) {
+  .pf-v6-c-description-list.pf-m-1-col-on-2xl {
+    --pf-v6-c-description-list--GridTemplateColumns--count: var(--pf-v6-c-description-list--m-1-col--GridTemplateColumns--count);
+  }
+  .pf-v6-c-description-list.pf-m-2-col-on-2xl {
+    --pf-v6-c-description-list--GridTemplateColumns--count: var(--pf-v6-c-description-list--m-2-col--GridTemplateColumns--count);
+  }
+  .pf-v6-c-description-list.pf-m-3-col-on-2xl {
+    --pf-v6-c-description-list--GridTemplateColumns--count: var(--pf-v6-c-description-list--m-3-col--GridTemplateColumns--count);
+  }
+  .pf-v6-c-description-list.pf-m-horizontal-on-2xl {
+    --pf-v6-c-description-list__group--GridTemplateColumns: var(--pf-v6-c-description-list--m-horizontal__group--GridTemplateColumns);
+    --pf-v6-c-description-list__group--GridTemplateRows: var(--pf-v6-c-description-list--m-horizontal__group--GridTemplateRows);
+  }
+  .pf-v6-c-description-list.pf-m-vertical-on-2xl {
+    --pf-v6-c-description-list__group--GridTemplateColumns: var(--pf-v6-c-description-list--m-vertical__group--GridTemplateColumns);
+    --pf-v6-c-description-list__group--GridTemplateRows: var(--pf-v6-c-description-list--m-vertical__group--GridTemplateRows);
+  }
+}

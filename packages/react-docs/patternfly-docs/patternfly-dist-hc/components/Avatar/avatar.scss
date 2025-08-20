@@ -1,0 +1,43 @@
+@use '../../sass-utilities' as *;
+
+$pf-v6-c-avatar--breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg", "xl", "2xl");
+$pf-v6-c-avatar--sizes: "sm", "md", "lg", "xl";
+
+@include pf-root($avatar) {
+  --#{$avatar}--BorderColor: transparent;
+  --#{$avatar}--BorderWidth: 0;
+  --#{$avatar}--BorderRadius: var(--pf-t--global--border--radius--pill);
+  --#{$avatar}--Width: #{pf-size-prem(36px)};
+  --#{$avatar}--Height: #{pf-size-prem(36px)};
+  --#{$avatar}--m-sm--Width: #{pf-size-prem(24px)};
+  --#{$avatar}--m-sm--Height: #{pf-size-prem(24px)};
+  --#{$avatar}--m-md--Width: #{pf-size-prem(36px)};
+  --#{$avatar}--m-md--Height: #{pf-size-prem(36px)};
+  --#{$avatar}--m-lg--Width: #{pf-size-prem(72px)};
+  --#{$avatar}--m-lg--Height: #{pf-size-prem(72px)};
+  --#{$avatar}--m-xl--Width: #{pf-size-prem(128px)};
+  --#{$avatar}--m-xl--Height: #{pf-size-prem(128px)};
+
+  // Bordered
+  --#{$avatar}--m-bordered--BorderColor: var(--pf-t--global--border--color--default);
+  --#{$avatar}--m-bordered--BorderWidth: var(--pf-t--global--border--width--box--default);
+}
+
+.#{$avatar} {
+  width: var(--#{$avatar}--Width);
+  height: var(--#{$avatar}--Height);
+  border: var(--#{$avatar}--BorderWidth) solid var(--#{$avatar}--BorderColor);
+  border-radius: var(--#{$avatar}--BorderRadius);
+
+  &.pf-m-bordered {
+    --#{$avatar}--BorderColor: var(--#{$avatar}--m-bordered--BorderColor);
+    --#{$avatar}--BorderWidth: var(--#{$avatar}--m-bordered--BorderWidth);
+  }
+
+  @each $size in $pf-v6-c-avatar--sizes {
+    &.pf-m-#{$size} {
+      @include pf-v6-build-css-variable-stack("--#{$avatar}--Width", "--#{$avatar}--m-#{$size}--Width", $pf-v6-c-avatar--breakpoint-map);
+      @include pf-v6-build-css-variable-stack("--#{$avatar}--Height", "--#{$avatar}--m-#{$size}--Height", $pf-v6-c-avatar--breakpoint-map);
+    }
+  }
+}

@@ -1,0 +1,458 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($nav) {
+  // * Nav shared values
+  --#{$nav}__link--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --#{$nav}__link--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$nav}__link--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --#{$nav}__link--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --#{$nav}__list--RowGap: var(--pf-t--global--spacer--sm);
+  --#{$nav}__list--ColumnGap: var(--pf-t--global--spacer--xs);
+
+  // * Nav // default to row gap if no custom value is set
+  --#{$nav}--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --#{$nav}--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --#{$nav}--PaddingInlineStart: 0;
+  --#{$nav}--PaddingInlineEnd: 0;
+  --#{$nav}--RowGap: var(--pf-t--global--spacer--lg);
+  --#{$nav}--ColumnGap: 0;
+  --#{$nav}--AlignItems: baseline;
+  --#{$nav}--FontSize: var(--pf-t--global--font--size--body--default);
+  --#{$nav}--FontWeight: var(--pf-t--global--font--weight--body--default);
+  --#{$nav}--LineHeight: var(--pf-t--global--font--line-height--body);
+  --#{$nav}--OutlineOffset: calc(var(--pf-t--global--spacer--xs) * -1);
+  --#{$nav}--BackgroundColor: transparent;
+
+  // * Nav list
+  --#{$nav}__list--ScrollSnapTypeAxis: x;
+  --#{$nav}__list--ScrollSnapTypeStrictness: proximity;
+  --#{$nav}__list--ScrollSnapType: var(--#{$nav}__list--ScrollSnapTypeAxis) var(--#{$nav}__list--ScrollSnapTypeStrictness);
+  --#{$nav}__item--ScrollSnapAlign: end;
+
+  // * Nav section title
+  --#{$nav}__section-title--FontWeight: var(--pf-t--global--font--weight--body--bold);
+  --#{$nav}__section-title--Color: var(--pf-t--global--text--color--regular);
+  --#{$nav}__section-title--PaddingBlockStart: 0;
+  --#{$nav}__section-title--PaddingBlockEnd: 0;
+  --#{$nav}__section-title--PaddingInlineStart: var(--#{$nav}__link--PaddingInlineStart);
+  --#{$nav}__section-title--PaddingInlineEnd: var(--#{$nav}__link--PaddingInlineEnd);
+
+  // * Nav item
+  --#{$nav}__item--RowGap: var(--#{$nav}__list--RowGap);
+
+  // * Nav item toggle icon
+  --#{$nav}__item__toggle-icon--Rotate: 0;
+  --#{$nav}__item--m-expanded__toggle-icon--Rotate: 90deg;
+  --#{$nav}__item__toggle-icon--TransitionDuration--transform: var(--pf-t--global--motion--duration--icon--default);
+  --#{$nav}__item__toggle-icon--TransitionTimingFunction--transform: var(--pf-t--global--motion--timing-function--default);
+
+  // * Nav link
+  --#{$nav}__link--ColumnGap: var(--pf-t--global--spacer--sm);
+  --#{$nav}__link--AlignItems: baseline;
+  --#{$nav}__link--BorderRadius: var(--pf-t--global--border--radius--small);
+  --#{$nav}__link--BackgroundColor: var(--pf-t--global--background--color--action--plain--default);
+  --#{$nav}__link--WhiteSpace: normal;
+  --#{$nav}__link--Color: var(--pf-t--global--text--color--subtle);
+  --#{$nav}__link--hover--Color: var(--pf-t--global--text--color--regular);
+  --#{$nav}__link--hover--BackgroundColor: var(--pf-t--global--background--color--action--plain--alt--hover);
+  --#{$nav}__link--m-current--BackgroundColor: var(--pf-t--global--background--color--action--plain--alt--clicked);
+  --#{$nav}__link--m-current--Color: var(--pf-t--global--text--color--regular);
+  --#{$nav}__link--BorderColor: var(--pf-t--global--border--color--high-contrast);
+  --#{$nav}__link--BorderWidth: var(--pf-t--global--border--width--action--plain--default);
+  --#{$nav}__link--hover--BorderWidth: var(--pf-t--global--border--width--action--plain--hover);
+  --#{$nav}__link--m-current--BorderWidth: var(--pf-t--global--border--width--action--plain--clicked);
+
+  // background color transition on hover
+  --#{$nav}__link--TransitionDuration--background-color: var(--pf-t--global--motion--duration--fade--default);
+  --#{$nav}__link--TransitionTimingFunction--background-color: var(--pf-t--global--motion--timing-function--default);
+
+  // text color transition for current
+  --#{$nav}__link--m-current--TransitionDuration--color: var(--pf-t--global--motion--duration--fade--short);
+  --#{$nav}__link--m-current--TransitionTimingFunction--color: var(--pf-t--global--motion--timing-function--default);
+  
+  // * Nav link icon
+  --#{$nav}__link-icon--Color: var(--pf-t--global--icon--color--subtle);
+  --#{$nav}__link--m-current__link-icon--Color: var(--pf-t--global--icon--color--regular);
+
+  // * Nav subnav
+  --#{$nav}__subnav--RowGap: var(--pf-t--global--border--width--extra-strong);
+  --#{$nav}__subnav--PaddingBlockStart: var(--#{$nav}__item--RowGap); // needed to keep focus outline on first item from being cut off
+  --#{$nav}__subnav--PaddingBlockEnd: var(--#{$nav}__item--RowGap); // needed to keep focus outline on last item from being cut off
+  --#{$nav}__subnav--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --#{$nav}__subnav--TransitionDuration--expand: var(--pf-t--global--motion--duration--fade--default);
+  --#{$nav}__subnav--TransitionDuration--expand--slide: 0s;
+  --#{$nav}__subnav--TransitionDuration--collapse: var(--pf-t--global--motion--duration--fade--short);
+  --#{$nav}__subnav--TransitionDuration--collapse--slide: 0s;
+  --#{$nav}__subnav--TransitionTimingFunction--expand: var(--pf-t--global--motion--timing-function--default);
+  --#{$nav}__subnav--TranslateY: 0;
+  --#{$nav}__subnav--hidden--TranslateY: 0;
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    --#{$nav}__subnav--TransitionDuration--expand--slide: var(--pf-t--global--motion--duration--fade--default);
+    --#{$nav}__subnav--TransitionDuration--collapse--slide: var(--pf-t--global--motion--duration--fade--short);
+    --#{$nav}__subnav--hidden--TranslateY: -.5rem;
+  }
+
+  // * Nav scroll button
+  --#{$nav}__scroll-button--BorderColor: var(--pf-t--global--border--color--default);
+  --#{$nav}__scroll-button--BorderWidth: var(--pf-t--global--border--width--divider--default);
+  --#{$nav}__scroll-button--first-of-type--c-button--BorderStartStartRadius: var(--pf-t--global--border--radius--pill);
+  --#{$nav}__scroll-button--first-of-type--c-button--BorderEndStartRadius: var(--pf-t--global--border--radius--pill);
+  --#{$nav}__scroll-button--last-of-type--c-button--BorderStartEndRadius: var(--pf-t--global--border--radius--pill);
+  --#{$nav}__scroll-button--last-of-type--c-button--BorderEndEndRadius: var(--pf-t--global--border--radius--pill);
+
+  // * Nav toggle
+  --#{$nav}__toggle--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --#{$nav}__toggle--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --#{$nav}__toggle--TranslateY: calc((var(--#{$nav}--LineHeight) * var(--#{$nav}--FontSize) / 2) - 50%); // find height of single label, divide by two, offset by 50% of own height
+
+  // * Nav horizontal list
+  --#{$nav}--m-horizontal__list--PaddingBlockStart: 0;
+  --#{$nav}--m-horizontal__list--PaddingBlockEnd: 0;
+  --#{$nav}--m-horizontal__list--PaddingInlineStart: 0;
+  --#{$nav}--m-horizontal__list--PaddingInlineEnd: 0;
+  --#{$nav}--m-horizontal--m-scrollable__list--PaddingInlineStart: var(--#{$nav}__list--ColumnGap);
+  --#{$nav}--m-horizontal--m-scrollable__list--PaddingInlineEnd: var(--#{$nav}__list--ColumnGap);
+
+  // * Nav horizontal subnav
+  --#{$nav}--m-horizontal--m-subnav--BackgroundColor: var(--pf-t--global--background--color--secondary--default);
+  --#{$nav}--m-horizontal--m-subnav--BorderRadius: var(--pf-t--global--border--radius--pill);
+  --#{$nav}--m-horizontal--m-subnav--BorderWidth: var(--pf-t--global--border--width--high-contrast--regular);
+  --#{$nav}--m-horizontal--m-subnav--BorderColor: var(--pf-t--global--border--color--high-contrast);
+  --#{$nav}--m-horizontal--m-subnav__list--PaddingBlockStart: var(--pf-t--global--spacer--xs);
+  --#{$nav}--m-horizontal--m-subnav__list--PaddingBlockEnd: var(--pf-t--global--spacer--xs);
+  --#{$nav}--m-horizontal--m-subnav__list--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --#{$nav}--m-horizontal--m-subnav__list--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --#{$nav}--m-horizontal--m-subnav--m-scrollable__list--PaddingInlineStart: var(--#{$nav}__list--ColumnGap);
+  --#{$nav}--m-horizontal--m-subnav--m-scrollable__list--PaddingInlineEnd: var(--#{$nav}__list--ColumnGap);
+  --#{$nav}--m-horizontal--m-subnav__link--PaddingBlockStart: var(--pf-t--global--spacer--xs);
+  --#{$nav}--m-horizontal--m-subnav__link--PaddingBlockEnd: var(--pf-t--global--spacer--xs);
+  --#{$nav}--m-horizontal--m-subnav__link--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --#{$nav}--m-horizontal--m-subnav__link--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+}
+
+// - Nav display - default to grid
+.#{$nav},
+.#{$nav}__section,
+.#{$nav}__subnav,
+.#{$nav}__list,
+.#{$nav}__item {
+  display: grid;
+}
+
+// - Nav root
+.#{$nav} {
+  position: relative;
+  row-gap: var(--#{$nav}--RowGap);
+  column-gap: var(--#{$nav}--ColumnGap);
+  max-width: 100%;
+  padding-block-start: var(--#{$nav}--PaddingBlockStart);
+  padding-block-end: var(--#{$nav}--PaddingBlockEnd);
+  padding-inline-start: var(--#{$nav}--PaddingInlineStart);
+  padding-inline-end: var(--#{$nav}--PaddingInlineEnd);
+  font-size: var(--#{$nav}--FontSize);
+  font-weight: var(--#{$nav}--FontWeight);
+  line-height: var(--#{$nav}--LineHeight);
+  background-color: var(--#{$nav}--BackgroundColor);
+
+  &.pf-m-overflow-hidden {
+    overflow: hidden;
+  }
+
+  &.pf-m-inset {
+    --#{$nav}--PaddingInlineStart: var(--pf-t--global--spacer--md);
+    --#{$nav}--PaddingInlineEnd: var(--pf-t--global--spacer--md);  
+  }
+
+  &.pf-m-fill {
+    flex-grow: 1;
+  }
+
+  .#{$menu} {
+    --#{$menu}--MinWidth: 100%;
+
+    &.pf-m-drilldown,
+    &.pf-m-drilldown .#{$menu} {
+      --#{$menu}--PaddingBlockStart: 0;
+      --#{$menu}--PaddingBlockEnd: 0;
+      --#{$menu}--BackgroundColor: var(--#{$nav}--BackgroundColor);
+      --#{$menu}--BoxShadow: none;
+      --#{$menu}__list-item--hover--BackgroundColor: var(--#{$nav}__link--hover--BackgroundColor);
+
+      .#{$menu}__list {
+        row-gap: var(--#{$nav}__subnav--RowGap);
+      }
+
+      .#{$menu}__list-item::before {
+        border-radius: var(--#{$nav}__link--BorderRadius);
+      }
+    }
+  }
+}
+
+[class^="#{$nav}"][hidden] {
+  display: none;
+}
+
+// Magic value calcs
+.#{$nav}__nav,
+.#{$nav}__list,
+.#{$nav}__subnav {
+  // These variables need to remove local to list and subnav to be recalculated upon row gap setting updates
+  --#{$nav}__item--RowGap--row-offset: calc(var(--#{$nav}__list--RowGap) / 2 * -1); // row gap offset calcs 1/2 height of row gap
+  --#{$nav}__link--clickable-inset--Block: var(--#{$nav}__item--RowGap--row-offset); // set link's clickable area offset based on 1/2 row gap
+  --#{$nav}__button--RowGap--row-offset: calc(var(--#{$nav}__item--RowGap) * -1); // match extra bottom paddings applied to expanded nav_links
+}
+
+// - Nav list
+.#{$nav}__list {
+  row-gap: var(--#{$nav}__list--RowGap);
+  column-gap: var(--#{$nav}__list--ColumnGap);
+  min-height: 0;
+}
+
+// - Nav subnav
+.#{$nav}__subnav {
+  --#{$nav}__list--RowGap: var(--#{$nav}__subnav--RowGap); // this value is passed to --#{$nav}__item--RowGap--row-offset and updates clickable area based on value passed
+
+  max-height: 99999px;
+  padding-block-start: var(--#{$nav}__subnav--PaddingBlockStart);
+  padding-block-end: var(--#{$nav}__subnav--PaddingBlockEnd);
+  padding-inline-start: var(--#{$nav}__subnav--PaddingInlineStart); // indent nested lists
+  overflow-y: clip;
+  visibility: visible;
+  transition-delay: 0s, 0s, var(--#{$nav}__subnav--TransitionDelay--expand--focus, 0s), var(--#{$nav}__subnav--TransitionDelay--expand--focus, 0s), var(--#{$nav}__subnav--TransitionDelay--expand--focus, 0s), var(--#{$nav}__subnav--TransitionDelay--expand--focus, 0s);
+  transition-timing-function: var(--#{$nav}__subnav--TransitionTimingFunction--expand);
+  transition-duration: var(--#{$nav}__subnav--TransitionDuration--expand), var(--#{$nav}__subnav--TransitionDuration--expand--slide), 0s, 0s, 0s, 0s;
+  transition-property: opacity, translate, visibility, max-height, padding-block-start, padding-block-end;
+  translate: 0 var(--#{$nav}__subnav--TranslateY);
+
+  &[hidden] {
+    --#{$nav}__subnav--TransitionDelay--expand--focus: var(--#{$nav}__subnav--TransitionDuration--expand);
+    --#{$nav}__subnav--TransitionDuration--expand: var(--#{$nav}__subnav--TransitionDuration--collapse);
+    --#{$nav}__subnav--TransitionDuration--expand--slide: var(--#{$nav}__subnav--TransitionDuration--collapse--slide);
+    --#{$nav}__subnav--PaddingBlockStart: 0;
+    --#{$nav}__subnav--PaddingBlockEnd: 0;
+    --#{$nav}__subnav--TranslateY: var(--#{$nav}__subnav--hidden--TranslateY);
+
+    display: grid; // overrides `display: none` - element is hidden via `visibility: hidden`
+    max-height: 0;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+// - Nav item
+.#{$nav}__item {
+  scroll-snap-align: var(--#{$nav}__item--ScrollSnapAlign);
+
+  > .#{$nav}__link[button] {
+    margin-block-end: var(--#{$nav}__button--RowGap--row-offset);
+  }
+
+  &.pf-m-expanded:last-child {
+    > .#{$nav}__subnav {
+      margin-block-end: calc(var(--#{$nav}__subnav--PaddingBlockEnd) * -1); // offset bottom padding
+    }
+  }
+}
+
+// - Nav section
+.#{$nav}__section {
+  row-gap: var(--#{$nav}__section--RowGap, var(--#{$nav}__list--RowGap));
+}
+
+// - Nav section title
+.#{$nav}__section-title {
+  padding-block-start: var(--#{$nav}__section-title--PaddingBlockStart);
+  padding-block-end: var(--#{$nav}__section-title--PaddingBlockEnd);
+  padding-inline-start: var(--#{$nav}__section-title--PaddingInlineStart);
+  padding-inline-end: var(--#{$nav}__section-title--PaddingInlineEnd);
+  font-size: var(--#{$nav}__section-title--FontSize, inherit); // default to inherit if no custom value is set
+  font-weight: var(--#{$nav}__section-title--FontWeight);
+  color: var(--#{$nav}__section-title--Color);
+}
+
+// - Nav link
+.#{$nav}__link {
+  position: relative;
+  display: flex;
+  column-gap: var(--#{$nav}__link--ColumnGap);
+  align-items: var(--#{$nav}__link--AlignItems);
+  padding-block-start: var(--#{$nav}__link--PaddingBlockStart);
+  padding-block-end: var(--#{$nav}__link--PaddingBlockEnd);
+  padding-inline-start: var(--#{$nav}__link--PaddingInlineStart);
+  padding-inline-end: var(--#{$nav}__link--PaddingInlineEnd);
+  font-size: var(--#{$nav}__link--FontSize, inherit); // default to nav font size if no custom no custom value is set
+  font-weight: var(--#{$nav}__link--FontWeight, inherit); // default to nav font weight if no custom value is set
+  line-height: var(--#{$nav}__link--LineHeight, inherit); // default to nav line height if no custom value is set
+  color: var(--#{$nav}__link--Color);
+  text-align: start;
+  text-decoration-line: none;
+  background-color: var(--#{$nav}__link--BackgroundColor);
+  border: none;
+  border-radius: var(--#{$nav}__link--BorderRadius);
+  transition-timing-function: var(--#{$nav}__link--TransitionTimingFunction--background-color), var(--#{$nav}__link--m-current--TransitionTimingFunction--color);
+  transition-duration: var(--#{$nav}__link--TransitionDuration--background-color), var(--#{$nav}__link--m-current--TransitionDuration--color);
+  transition-property: background-color, color;
+
+  &::after {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    content: "";
+    border: var(--#{$nav}__link--BorderWidth) solid var(--#{$nav}__link--BorderColor);
+    border-radius: inherit;
+  }
+
+
+  // explicitly set background-color prop to avoid affecting child elements settings
+  &:hover,
+  &.pf-m-hover,
+  &:focus {
+    --#{$nav}__link--BorderWidth: var(--#{$nav}__link--hover--BorderWidth);
+
+    color: var(--#{$nav}__link--hover--Color);
+    background-color: var(--#{$nav}__link--hover--BackgroundColor);
+  }
+
+  &.pf-m-current,
+  &.pf-m-current:hover {
+    --#{$nav}__link-icon--Color: var(--#{$nav}__link--m-current__link-icon--Color);
+    --#{$nav}__link--BorderWidth: var(--#{$nav}__link--m-current--BorderWidth);
+
+    color: var(--#{$nav}__link--m-current--Color);
+    background-color: var(--#{$nav}__link--m-current--BackgroundColor);
+  }
+}
+
+// - Nav toggle caret
+.#{$nav}__link-icon {
+  color: var(--#{$nav}__link-icon--Color);
+}
+
+// - Nav toggle caret
+.#{$nav}__toggle {
+  flex: none;
+  align-self: start;
+  margin-inline-start: auto;
+
+  // find height of single text string, divide by two, offset by 50% of own height
+  transform: translateY(var(--#{$nav}__toggle--TranslateY));
+}
+
+// - Nav toggle icon
+.#{$nav}__toggle-icon {
+  display: inline-block;
+  transition-timing-function: var(--#{$nav}__item__toggle-icon--TransitionTimingFunction--transform);
+  transition-duration: var(--#{$nav}__item__toggle-icon--TransitionDuration--transform);
+  transition-property: transform;
+  transform: rotate(var(--#{$nav}__item__toggle-icon--Rotate));
+
+  @include pf-v6-mirror-inline-on-rtl;
+
+  .#{$nav}__item:where(.pf-m-flyout) & {
+    --#{$nav}__item--m-expanded__toggle-icon--Rotate: 0;
+  }
+
+  .#{$nav}__link:where([aria-expanded="true"]) & {
+    transform: rotate(var(--#{$nav}__item--m-expanded__toggle-icon--Rotate));
+  }
+}
+
+// - Nav scroll button
+.#{$nav}__scroll-button {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+  }
+
+  &:first-of-type {
+    .#{$button} {
+      --#{$button}--BorderStartStartRadius: var(--#{$nav}__scroll-button--first-of-type--c-button--BorderStartStartRadius);
+      --#{$button}--BorderEndStartRadius: var(--#{$nav}__scroll-button--first-of-type--c-button--BorderEndStartRadius);
+    }
+
+    &::before {
+      border-inline-end: var(--#{$nav}__scroll-button--BorderWidth) solid var(--#{$nav}__scroll-button--BorderColor);
+    }
+  }
+
+  &:last-of-type {
+    .#{$button} {
+      --#{$button}--BorderStartEndRadius: var(--#{$nav}__scroll-button--last-of-type--c-button--BorderStartEndRadius);
+      --#{$button}--BorderEndEndRadius: var(--#{$nav}__scroll-button--last-of-type--c-button--BorderEndEndRadius);
+    }
+
+    &::before {
+      border-inline-start: var(--#{$nav}__scroll-button--BorderWidth) solid var(--#{$nav}__scroll-button--BorderColor);
+    }
+  }
+
+  // TODO - update this selector to the $pf-button__icon once that is introduced
+  .#{$button} {
+    outline-offset: var(--#{$nav}--OutlineOffset);
+
+    > * {
+      @include pf-v6-mirror-inline-on-rtl;
+    }
+  }
+}
+
+// - Nav horizontal
+.#{$nav}:where(.pf-m-horizontal) {
+  padding: 0;
+  overflow: hidden;
+
+  // update to flex
+  &,
+  .#{$nav}__section,
+  .#{$nav}__subnav,
+  .#{$nav}__list,
+  .#{$nav}__item {
+    display: flex;
+  }
+
+  // - Nav horizontal list
+  .#{$nav}__list {
+    padding-block-start: var(--#{$nav}--m-horizontal__list--PaddingBlockStart);
+    padding-block-end: var(--#{$nav}--m-horizontal__list--PaddingBlockEnd);
+    padding-inline-start: var(--#{$nav}--m-horizontal__list--PaddingInlineStart);
+    padding-inline-end: var(--#{$nav}--m-horizontal__list--PaddingInlineEnd);
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-snap-type: var(--#{$nav}__list--ScrollSnapType);
+    scroll-padding-inline-end: var(--#{$nav}--m-horizontal__list--PaddingInlineEnd);
+    -webkit-overflow-scrolling: touch;
+
+    @include pf-v6-overflow-hide-scroll;
+  }
+
+  .#{$nav}__link {
+    outline-offset: var(--#{$nav}--OutlineOffset);
+  }
+
+  // - Nav subnav
+  &.pf-m-subnav {
+    --#{$nav}--BackgroundColor: var(--#{$nav}--m-horizontal--m-subnav--BackgroundColor);
+    --#{$nav}--m-horizontal__list--PaddingBlockStart: var(--#{$nav}--m-horizontal--m-subnav__list--PaddingBlockStart);
+    --#{$nav}--m-horizontal__list--PaddingBlockEnd: var(--#{$nav}--m-horizontal--m-subnav__list--PaddingBlockEnd);
+    --#{$nav}--m-horizontal__list--PaddingInlineStart: var(--#{$nav}--m-horizontal--m-subnav__list--PaddingInlineStart);
+    --#{$nav}--m-horizontal__list--PaddingInlineEnd: var(--#{$nav}--m-horizontal--m-subnav__list--PaddingInlineEnd);
+    --#{$nav}--m-horizontal--m-scrollable__list--PaddingInlineStart: var(--#{$nav}--m-horizontal--m-subnav--m-scrollable__list--PaddingInlineStart);
+    --#{$nav}--m-horizontal--m-scrollable__list--PaddingInlineEnd: var(--#{$nav}--m-horizontal--m-subnav--m-scrollable__list--PaddingInlineEnd);
+    --#{$nav}__link--PaddingBlockStart: var(--#{$nav}--m-horizontal--m-subnav__link--PaddingBlockStart);
+    --#{$nav}__link--PaddingBlockEnd: var(--#{$nav}--m-horizontal--m-subnav__link--PaddingBlockEnd);
+
+    border: var(--#{$nav}--m-horizontal--m-subnav--BorderWidth) solid var(--#{$nav}--m-horizontal--m-subnav--BorderColor);
+    border-radius: var(--#{$nav}--m-horizontal--m-subnav--BorderRadius);
+  }
+
+  &.pf-m-scrollable {
+    --#{$nav}--m-horizontal__list--PaddingInlineStart: var(--#{$nav}--m-horizontal--m-scrollable__list--PaddingInlineStart);
+    --#{$nav}--m-horizontal__list--PaddingInlineEnd: var(--#{$nav}--m-horizontal--m-scrollable__list--PaddingInlineEnd);
+  }
+}

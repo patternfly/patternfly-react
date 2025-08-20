@@ -1,0 +1,430 @@
+@use '../../sass-utilities' as *;
+
+$pf-v6-c-toolbar--spacer-map: build-spacer-map();
+$pf-v6-c-toolbar--inset-map: build-spacer-map();
+$pf-v6-c-toolbar--align-items--alignments: ('stretch', 'baseline', 'start', 'center', 'end');
+$pf-v6-c-toolbar--breakpoint-map: build-breakpoint-map('base');
+$pf-v6--include-toolbar-breakpoints: true !default;
+
+@if $pf-v6--include-toolbar-breakpoints {
+  $pf-v6-c-toolbar--breakpoint-map: build-breakpoint-map();
+}
+
+@include pf-root($toolbar) {
+  --#{$toolbar}--RowGap: var(--pf-t--global--spacer--md);
+  --#{$toolbar}--PaddingBlockStart: 0;
+  --#{$toolbar}--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --#{$toolbar}--PaddingInlineStart: 0;
+  --#{$toolbar}--PaddingInlineEnd: 0;
+  --#{$toolbar}--LineHeight: var(--pf-t--global--font--line-height--body);
+  --#{$toolbar}--FontSize: var(--pf-t--global--font--size--body--default);
+  --#{$toolbar}--BackgroundColor: transparent;
+
+  // * Toolbar background modifiers
+  --#{$toolbar}--m-primary--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --#{$toolbar}--m-secondary--BackgroundColor: var(--pf-t--global--background--color--secondary--default);
+  --#{$toolbar}--m-no-background--BackgroundColor: transparent;
+
+  // * Toolbar item
+  --#{$toolbar}__item--Width: auto;
+  --#{$toolbar}__item--MinWidth: auto;
+  --#{$toolbar}__item--RowGap: var(--pf-t--global--spacer--gap--group--vertical);
+  --#{$toolbar}__item--ColumnGap: var(--pf-t--global--spacer--gap--group--horizontal);
+  --#{$toolbar}__item--m-overflow-container--MinWidth: 0;
+
+  // * Toolbar group
+  --#{$toolbar}__group--RowGap: var(--pf-t--global--spacer--gap--group--vertical);
+  --#{$toolbar}__group--ColumnGap: var(--pf-t--global--spacer--gap--group--horizontal);
+
+  // * Toolbar group overflow container
+  --#{$toolbar}__group--m-overflow-container--MinWidth: 0;
+
+  // * Toolbar content
+  --#{$toolbar}__content--RowGap: var(--pf-t--global--spacer--md);
+  --#{$toolbar}__content--PaddingInlineStart: 0;
+  --#{$toolbar}__content--PaddingInlineEnd: 0;
+
+  // * Toolbar content section
+  --#{$toolbar}__content-section--RowGap: var(--pf-t--global--spacer--gap--group--vertical);
+  --#{$toolbar}__content-section--ColumnGap: var(--pf-t--global--spacer--gap--group--horizontal);
+
+  // * Toolbar expandable content
+  --#{$toolbar}__expandable-content--ZIndex: var(--pf-t--global--z-index--sm);
+  --#{$toolbar}__expandable-content--RowGap: var(--pf-t--global--spacer--gap--group--vertical);
+  --#{$toolbar}__expandable-content--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --#{$toolbar}__expandable-content--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --#{$toolbar}__expandable-content--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --#{$toolbar}__expandable-content--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --#{$toolbar}__expandable-content--BoxShadow: var(--pf-t--global--box-shadow--md--bottom);
+  --#{$toolbar}__expandable-content--BackgroundColor: var(--pf-t--global--background--color--floating--default);
+
+  // * Toolbar sticky
+  --#{$toolbar}--m-sticky--ZIndex: var(--pf-t--global--z-index--xs);
+  --#{$toolbar}--m-sticky--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --#{$toolbar}--m-sticky--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --#{$toolbar}--m-sticky--BoxShadow: var(--pf-t--global--box-shadow--md--bottom);
+  --#{$toolbar}--m-sticky--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+
+  // * Toolbar expand all
+  --#{$toolbar}__expand-all-icon--Rotate: 0;
+  --#{$toolbar}__expand-all-icon--TransitionDuration: var(--pf-t--global--motion--duration--icon--default);
+  --#{$toolbar}__expand-all-icon--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--default);
+  --#{$toolbar}__item--m-expand-all--m-expanded__expand-all-icon--Rotate: 90deg;
+
+  // * Toolbar filter group
+  --#{$toolbar}__group--m-filter-group--ColumnGap: var(--pf-t--global--spacer--gap--control-to-control--default);
+
+  // * Toolbar label
+  --#{$toolbar}__item--m-label--FontWeight: var(--pf-t--global--font--weight--body--bold);
+
+  // * Toolbar group label group
+  --#{$toolbar}__group--m-label-group--ColumnGap: var(--pf-t--global--spacer--gap--text-to-element--default);
+
+  // * Toolbar group action group
+  --#{$toolbar}__group--m-action-group--ColumnGap: var(--pf-t--global--spacer--gap--action-to-action--default);
+
+  // * Toolbar group action group plain
+  --#{$toolbar}__group--m-action-group-plain--ColumnGap: var(--pf-t--global--spacer--gap--action-to-action--plain);
+
+  // * Toolbar group action group inline
+  --#{$toolbar}__group--m-action-group-inline--ColumnGap: var(--pf-t--global--spacer--gap--action-to-action--default);
+}
+
+// - Toolbar content section - Toolbar group - Toolbar item
+.#{$toolbar}__content-section,
+.#{$toolbar}__group,
+.#{$toolbar}__item {
+  @include pf-v6-hidden-visible(flex);
+}
+
+// - Toolbar - Toolbar content
+.#{$toolbar},
+.#{$toolbar}__content {
+  position: relative;
+}
+
+// - Toolbar content - Toolbar content section - Toolbar expandable content
+.#{$toolbar}__content {
+  @include pf-v6-hidden-visible(grid);
+
+  row-gap: var(--#{$toolbar}__content--RowGap);
+  padding-inline-start: var(--#{$toolbar}__content--PaddingInlineStart);
+  padding-inline-end: var(--#{$toolbar}__content--PaddingInlineEnd);
+}
+
+// Toolbar content section
+.#{$toolbar}__content-section {
+  flex-wrap: wrap;
+  row-gap: var(--#{$toolbar}__content-section--RowGap);
+  column-gap: var(--#{$toolbar}__content-section--ColumnGap);
+  align-items: start;
+}
+
+// - Toolbar
+.#{$toolbar} {
+  display: grid;
+  row-gap: var(--#{$toolbar}--RowGap);
+  width: var(--#{$toolbar}--Width, auto);
+  padding-block-start: var(--#{$toolbar}--PaddingBlockStart);
+  padding-block-end: var(--#{$toolbar}--PaddingBlockEnd);
+  padding-inline-start: var(--#{$toolbar}--PaddingInlineStart);
+  padding-inline-end: var(--#{$toolbar}--PaddingInlineEnd);
+  font-size: var(--#{$toolbar}--FontSize);
+  line-height: var(--#{$toolbar}--LineHeight);
+  background-color: var(--#{$toolbar}--BackgroundColor);
+
+  // - Toolbar sticky
+  &.pf-m-sticky {
+    --#{$toolbar}--BackgroundColor: var(--#{$toolbar}--m-sticky--BackgroundColor);
+
+    position: sticky;
+    inset-block-start: 0;
+    z-index: var(--#{$toolbar}--m-sticky--ZIndex);
+    padding-block-start: var(--#{$toolbar}--m-sticky--PaddingBlockStart);
+    padding-block-end: var(--#{$toolbar}--m-sticky--PaddingBlockEnd);
+    box-shadow: var(--#{$toolbar}--m-sticky--BoxShadow);
+  }
+
+  //  - Toolbar static
+  &.pf-m-static {
+    &,
+    .#{$toolbar}__content {
+      position: static;
+    }
+
+    .#{$toolbar}__expandable-content {
+      position: absolute;
+    }
+  }
+
+  // - Toolbar full height
+  &.pf-m-full-height {
+    --#{$toolbar}--PaddingBlockStart: 0;
+    --#{$toolbar}--PaddingBlockEnd: 0;
+
+    .#{$toolbar}__group,
+    .#{$toolbar}__item {
+      align-items: stretch;
+      align-self: stretch;
+    }
+  }
+
+  &.pf-m-no-padding {
+    --#{$toolbar}--PaddingBlockEnd: 0;
+    --#{$toolbar}--m-sticky--PaddingBlockStart: 0;
+    --#{$toolbar}--m-sticky--PaddingBlockEnd: 0;
+  }
+
+  // - Toolbar background modifiers
+  &.pf-m-primary {
+    --#{$toolbar}--BackgroundColor: var(--#{$toolbar}--m-primary--BackgroundColor);
+  }
+
+  &.pf-m-secondary {
+    --#{$toolbar}--BackgroundColor: var(--#{$toolbar}--m-secondary--BackgroundColor);
+  }
+
+  &.pf-m-no-background {
+    --#{$toolbar}--BackgroundColor: var(--#{$toolbar}--m-no-background--BackgroundColor);
+  }
+
+  // @include resize-observer-placeholder('md') {
+  //   do resize observer things here
+  // }
+}
+
+// - Toolbar item
+.#{$toolbar}__item {
+  @include pf-v6-build-css-variable-stack("--#{$toolbar}__item--Width--base", "--#{$toolbar}__item--Width", $pf-v6-c-toolbar--breakpoint-map);
+  @include pf-v6-build-css-variable-stack("--#{$toolbar}__item--MinWidth--base", "--#{$toolbar}__item--MinWidth", $pf-v6-c-toolbar--breakpoint-map);
+
+  row-gap: var(--#{$toolbar}__item--RowGap);
+  column-gap: var(--#{$toolbar}__item--ColumnGap);
+  width: var(--#{$toolbar}__item--Width--base);
+  min-width: var(--#{$toolbar}__item--MinWidth--base);
+
+  // - Toolbar expand
+  &.pf-m-expand-all.pf-m-expanded {
+    --#{$toolbar}__expand-all-icon--Rotate: var(--#{$toolbar}__item--m-expand-all--m-expanded__expand-all-icon--Rotate);
+  }
+
+  // - Toolbar label
+  &.pf-m-label {
+    font-weight: var(--#{$toolbar}__item--m-label--FontWeight);
+  }
+
+  // - Toolbar pagination
+  &.pf-m-pagination {
+    margin-inline-start: auto;
+
+    &.#{$pagination} {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &.pf-m-overflow-container {
+    min-width: var(--#{$toolbar}__item--m-overflow-container--MinWidth);
+  }
+}
+
+// - Toolbar group
+.#{$toolbar}__group {
+  row-gap: var(--#{$toolbar}__group--RowGap);
+  column-gap: var(--#{$toolbar}__group--ColumnGap);
+
+  // - Toolbar filter group
+  &.pf-m-filter-group {
+    column-gap: var(--#{$toolbar}__group--m-filter-group--ColumnGap);
+  }
+
+  // - Toolbar label group
+  &.pf-m-label-group {
+    flex: 1;
+    flex-wrap: wrap;
+    column-gap: var(--#{$toolbar}__group--m-label-group--ColumnGap);
+  }
+
+  // - Toolbar action group
+  &.pf-m-action-group {
+    column-gap: var(--#{$toolbar}__group--m-action-group--ColumnGap);
+  }
+
+  // - Toolbar action group plain
+  &.pf-m-action-group-plain {
+    column-gap: var(--#{$toolbar}__group--m-action-group-plain--ColumnGap);
+  }
+
+  // - Toolbar action group inline
+  &.pf-m-action-group-inline {
+    flex-wrap: wrap;
+    column-gap: var(--#{$toolbar}__group--m-action-group-inline--ColumnGap);
+  }
+
+  // - Toolbar overflow container
+  &.pf-m-overflow-container {
+    min-width: var(--#{$toolbar}__group--m-overflow-container--MinWidth);
+  }
+}
+
+// - Toolbar expandable content
+.#{$toolbar}__expandable-content {
+  position: absolute;
+  inset-block-start: 100%;
+  inset-inline-start: 0;
+  z-index: var(--#{$toolbar}__expandable-content--ZIndex);
+  display: none;
+  row-gap: var(--#{$toolbar}__expandable-content--RowGap);
+  width: 100%;
+  padding-block-start: var(--#{$toolbar}__expandable-content--PaddingBlockStart);
+  padding-block-end: var(--#{$toolbar}__expandable-content--PaddingBlockEnd);
+  padding-inline-start: var(--#{$toolbar}__expandable-content--PaddingInlineStart);
+  padding-inline-end: var(--#{$toolbar}__expandable-content--PaddingInlineEnd);
+  background-color: var(--#{$toolbar}__expandable-content--BackgroundColor);
+  box-shadow: var(--#{$toolbar}__expandable-content--BoxShadow);
+
+  @media screen and (min-width: $pf-v6-global--breakpoint--lg) {
+    position: static;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  &.pf-m-expanded,
+  .#{$toolbar}__group {
+    display: grid;
+  }
+
+  .#{$toolbar}__item > * {
+    flex-basis: 100%;
+  }
+
+  .#{$toolbar}__group.pf-m-action-group-inline {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+// - Toolbar expand all
+.#{$toolbar}__expand-all-icon {
+  display: inline-flex;
+  transition-timing-function: var(--#{$toolbar}__expand-all-icon--TransitionTimingFunction);
+  transition-duration: var(--#{$toolbar}__expand-all-icon--TransitionDuration);
+  transition-property: transform;
+  transform: rotate(var(--#{$toolbar}__expand-all-icon--Rotate));
+
+  @include pf-v6-mirror-inline-on-rtl; // - TODO: mirror this icon in breaking change
+}
+
+// - Toolbar group - Toolbar item
+.#{$toolbar}__group,
+.#{$toolbar}__item {
+  align-items: baseline;
+
+  &.pf-m-overflow-container {
+    flex: 1;
+    overflow: auto;
+  }
+}
+
+@each $breakpoint, $breakpoint-value in $pf-v6-c-toolbar--breakpoint-map {
+  $breakpoint-name: if($breakpoint != "base", -on-#{$breakpoint}, "");
+
+  @include pf-v6-apply-breakpoint($breakpoint) {
+    .#{$toolbar}__group,
+    .#{$toolbar}__item {
+      &.pf-m-align-start#{$breakpoint-name} {
+        margin-inline-start: 0;
+      }
+
+      &.pf-m-align-center#{$breakpoint-name} {
+        margin-inline-start: auto;
+        margin-inline-end: auto;
+      }
+
+      &.pf-m-align-end#{$breakpoint-name} {
+        margin-inline-start: auto;
+      }
+
+      &.pf-m-flex-grow#{$breakpoint-name} {
+        flex-grow: 1;
+      }
+
+      @each $alignment in $pf-v6-c-toolbar--align-items--alignments {
+        &.pf-m-align-self-#{$alignment}#{$breakpoint-name} {
+          align-self: #{$alignment};
+        }
+      }
+    }
+
+    // - Toolbar inset
+    .#{$toolbar} {
+      @each $inset, $inset-value in $pf-v6-c-toolbar--inset-map {
+        &.pf-m-inset-#{$inset}#{$breakpoint-name} {
+          padding-inline: #{$inset-value};
+        }
+      }
+    }
+
+    // - Toolbar group - Toolbar item - Toolbar content - Toolbar content section
+    .#{$toolbar}__group,
+    .#{$toolbar}__item,
+    .#{$toolbar}__content-section {
+      &.pf-m-wrap#{$breakpoint-name} {
+        flex-wrap: wrap;
+      }
+
+      &.pf-m-nowrap#{$breakpoint-name} {
+        flex-wrap: nowrap;
+      }
+
+      @each $alignment in $pf-v6-c-toolbar--align-items--alignments {
+        &.pf-m-align-items-#{$alignment}#{$breakpoint-name} {
+          align-items: #{$alignment};
+        }
+      }
+
+      @each $gap, $gap-value in $pf-v6-c-toolbar--spacer-map {
+        &.pf-m-gap-#{$gap}#{$breakpoint-name} {
+          gap: #{$gap-value};
+        }
+      }
+
+      // Row and column gap modifiers
+      @each $spacer, $spacer-value in $pf-v6-c-toolbar--spacer-map {
+        &.pf-m-column-gap-#{$spacer}#{$breakpoint-name} {
+          column-gap: #{$spacer-value};
+        }
+
+        &.pf-m-row-gap-#{$spacer}#{$breakpoint-name} {
+          row-gap: #{$spacer-value};
+        }
+      }
+    }
+
+    // - Toolbar toggle group
+    .#{$toolbar}__group:where(.pf-m-toggle-group) {
+      &.pf-m-show#{$breakpoint-name} {
+        .#{$toolbar}__group,
+        .#{$toolbar}__item {
+          display: flex;
+          flex: 0 1 auto;
+        }
+
+        .#{$toolbar}__toggle {
+          display: none;
+        }
+      }
+
+      &, // default value
+      &.pf-m-hide#{$breakpoint-name} {
+        .#{$toolbar}__group,
+        .#{$toolbar}__item {
+          display: none;
+        }
+
+        .#{$toolbar}__toggle {
+          display: inline-flex;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,254 @@
+@use '../sass-utilities/init' as *;
+@use '../sass-utilities/scss-variables' as *;
+
+// Globally scoped component variables
+// About Modal Box
+// stylelint-disable scss/dollar-variable-pattern
+$about-modal-box: #{$pf-prefix} + 'c-about-modal-box';
+
+// Accordion
+$accordion: #{$pf-prefix} + 'c-accordion';
+
+// Action List
+$action-list: #{$pf-prefix} + 'c-action-list';
+
+// Alert
+$alert: #{$pf-prefix} + 'c-alert';
+
+// Alert Group
+$alert-group: #{$pf-prefix} + 'c-alert-group';
+
+// Avatar
+$avatar: #{$pf-prefix} + 'c-avatar';
+
+// Backdrop
+$backdrop: #{$pf-prefix} + 'c-backdrop';
+
+// Background Image
+$background-image: #{$pf-prefix} + 'c-background-image';
+
+// Back to Top
+$back-to-top: #{$pf-prefix} + 'c-back-to-top';
+
+// Badge
+$badge: #{$pf-prefix} + 'c-badge';
+
+// Banner
+$banner: #{$pf-prefix} + 'c-banner';
+
+// Brand
+$brand: #{$pf-prefix} + 'c-brand';
+
+// Breadcrumb
+$breadcrumb: #{$pf-prefix} + 'c-breadcrumb';
+
+// Button
+$button: #{$pf-prefix} + 'c-button';
+
+// Calendar-month
+$calendar-month: #{$pf-prefix} + 'c-calendar-month';
+
+// Card
+$card: #{$pf-prefix} + 'c-card';
+
+// Check
+$check: #{$pf-prefix} + 'c-check';
+
+// Clipboard Copy
+$clipboard-copy: #{$pf-prefix} + 'c-clipboard-copy';
+
+// Code Block
+$code-block: #{$pf-prefix} + 'c-code-block';
+
+// Code Editor
+$code-editor: #{$pf-prefix} + 'c-code-editor';
+
+// Content
+$content: #{$pf-prefix} + 'c-content';
+
+// Data List
+$data-list: #{$pf-prefix} + 'c-data-list';
+
+// Date Picker
+$date-picker: #{$pf-prefix} + 'c-date-picker';
+
+// Description List
+$description-list: #{$pf-prefix} + 'c-description-list';
+
+// Divider
+$divider: #{$pf-prefix} + 'c-divider';
+
+// Drag Drop
+$drag-drop: #{$pf-prefix} + 'c-drag-drop';
+$draggable: #{$pf-prefix} + 'c-draggable';
+$droppable: #{$pf-prefix} + 'c-droppable';
+
+// Drawer
+$drawer: #{$pf-prefix} + 'c-drawer';
+
+// Dual List Selector
+$dual-list-selector: #{$pf-prefix} + 'c-dual-list-selector';
+
+// Empty State
+$empty-state: #{$pf-prefix} + 'c-empty-state';
+
+// Expandable Section
+$expandable-section: #{$pf-prefix} + 'c-expandable-section';
+
+// File Upload
+$file-upload: #{$pf-prefix} + 'c-file-upload';
+
+// Form
+$form: #{$pf-prefix} + 'c-form';
+
+// Form Control
+$form-control: #{$pf-prefix} + 'c-form-control';
+
+// Helper Text
+$helper-text: #{$pf-prefix} + 'c-helper-text';
+
+// Hint
+$hint: #{$pf-prefix} + 'c-hint';
+
+// Icon
+$icon: #{$pf-prefix} + 'c-icon';
+
+// Inline Edit
+$inline-edit: #{$pf-prefix} + 'c-inline-edit';
+
+// Input Group
+$input-group: #{$pf-prefix} + 'c-input-group';
+
+// Jump Links
+$jump-links: #{$pf-prefix} + 'c-jump-links';
+
+// Label
+$label: #{$pf-prefix} + 'c-label';
+
+// Label Group
+$label-group: #{$pf-prefix} + 'c-label-group';
+
+// List
+$list: #{$pf-prefix} + 'c-list';
+
+// Login
+$login: #{$pf-prefix} + 'c-login';
+
+// Masthead
+$masthead: #{$pf-prefix} + 'c-masthead';
+
+// Menu
+$menu: #{$pf-prefix} + 'c-menu';
+
+// Menu Toggle
+$menu-toggle: #{$pf-prefix} + 'c-menu-toggle';
+
+// Modal Box
+$modal-box: #{$pf-prefix} + 'c-modal-box';
+
+// Multiple File Upload
+$multiple-file-upload: #{$pf-prefix} + 'c-multiple-file-upload';
+
+// Nav
+$nav: #{$pf-prefix} + 'c-nav';
+
+// Notification Drawer
+$notification-drawer: #{$pf-prefix} + 'c-notification-drawer';
+
+// Number Input
+$number-input: #{$pf-prefix} + 'c-number-input';
+
+// Overflow Menu
+$overflow-menu: #{$pf-prefix} + 'c-overflow-menu';
+
+// Page
+$page: #{$pf-prefix} + 'c-page';
+
+// Pagination
+$pagination: #{$pf-prefix} + 'c-pagination';
+
+// Panel
+$panel: #{$pf-prefix} + 'c-panel';
+
+// Popover
+$popover: #{$pf-prefix} + 'c-popover';
+
+// Progress
+$progress: #{$pf-prefix} + 'c-progress';
+
+// Progress Stepper
+$progress-stepper: #{$pf-prefix} + 'c-progress-stepper';
+
+// Radio
+$radio: #{$pf-prefix} + 'c-radio';
+
+// Sidebar
+$sidebar: #{$pf-prefix} + 'c-sidebar';
+
+// Simple List
+$simple-list: #{$pf-prefix} + 'c-simple-list';
+
+// Scroll Inner Wrapper
+$scroll-inner-wrapper: #{$pf-prefix} + 'c-scroll-inner-wrapper';
+
+// Scroll Outer Wrapper
+$scroll-outer-wrapper: #{$pf-prefix} + 'c-scroll-outer-wrapper';
+
+// Skeleton
+$skeleton: #{$pf-prefix} + 'c-skeleton';
+
+// Skip to Content
+$skip-to-content: #{$pf-prefix} + 'c-skip-to-content';
+
+// Slider
+$slider: #{$pf-prefix} + 'c-slider';
+
+// Spinner
+$spinner: #{$pf-prefix} + 'c-spinner';
+
+// Switch
+$switch: #{$pf-prefix} + 'c-switch';
+
+// Tab Content
+$tab-content: #{$pf-prefix} + 'c-tab-content';
+
+// Table
+$table: #{$pf-prefix} + 'c-table';
+
+// Tabs
+$tabs: #{$pf-prefix} + 'c-tabs';
+
+// Text Input Group
+$test-demo: #{$pf-prefix} + 'c-test-demo';
+
+// Text Input Group
+$text-input-group: #{$pf-prefix} + 'c-text-input-group';
+
+// Tile
+$tile: #{$pf-prefix} + 'c-tile';
+
+// Timestamp
+$timestamp: #{$pf-prefix} + 'c-timestamp';
+
+// Title
+$title: #{$pf-prefix} + 'c-title';
+
+// Toggle Group
+$toggle-group: #{$pf-prefix} + 'c-toggle-group';
+
+// Toolbar
+$toolbar: #{$pf-prefix} + 'c-toolbar';
+
+// Tooltip
+$tooltip: #{$pf-prefix} + 'c-tooltip';
+
+// Tree View
+$tree-view: #{$pf-prefix} + 'c-tree-view';
+
+// Truncate
+$truncate: #{$pf-prefix} + 'c-truncate';
+
+// Wizard
+$wizard: #{$pf-prefix} + 'c-wizard';
+
+// stylelint-enable

@@ -1,0 +1,21 @@
+@use '../../sass-utilities' as *;
+
+// stylelint-disable
+// Display options
+$pf-v6-u-display-options: (
+  display-none:           (display none),
+  display-inline-block:   (display inline-block),
+  display-block:          (display block),
+  display-inline:         (display inline),
+  display-table:          (display table),
+  display-table-cell:     (display table-cell),
+  display-table-row:      (display table-row),
+  display-flex:           (display flex),
+  display-inline-flex:    (display inline-flex),
+  display-grid:           (display grid),
+  display-inline-grid:    (display inline-grid)
+);
+
+@include pf-v6-utility-builder($pf-v6-u-display-options, $pf-v6-global--breakpoint-list);
+
+// stylelint-enable

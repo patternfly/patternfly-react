@@ -1,0 +1,5 @@
+.ws-core-u-float .pf-v6-u-float-inline-start,
+.ws-core-u-float .pf-v6-u-float-inline-end {
+  padding: var(--pf-t--global--spacer--sm);
+  border: var(--pf-t--global--border--width--box--default) dashed var(--pf-t--global--border--color--default);
+}

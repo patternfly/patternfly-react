@@ -1,0 +1,159 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($toggle-group) {
+  // button
+  --#{$toggle-group}__button--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --#{$toggle-group}__button--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --#{$toggle-group}__button--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$toggle-group}__button--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --#{$toggle-group}__button--FontSize: var(--pf-t--global--font--size--body--default);
+  --#{$toggle-group}__button--LineHeight: var(--pf-t--global--font--line-height--body);
+  --#{$toggle-group}__button--Color: var(--pf-t--global--text--color--regular);
+  --#{$toggle-group}__button--BackgroundColor: var(--pf-t--global--background--color--action--plain--default);
+  --#{$toggle-group}__button--ZIndex: auto;
+  --#{$toggle-group}__button--hover--BackgroundColor: var(--pf-t--global--background--color--primary--hover);
+  --#{$toggle-group}__button--hover--ZIndex: var(--pf-t--global--z-index--xs);
+  --#{$toggle-group}__button--hover--before--BorderColor: var(--pf-t--global--border--color--default);
+  --#{$toggle-group}__button--before--BorderWidth: var(--pf-t--global--border--width--control--default);
+  --#{$toggle-group}__button--before--BorderColor: var(--pf-t--global--border--color--default);
+
+  // item
+  --#{$toggle-group}__item--item--MarginInlineStart: calc(-1 * var(--pf-t--global--border--width--control--default));
+  --#{$toggle-group}__item--first-child__button--BorderStartStartRadius: var(--pf-t--global--border--radius--tiny);
+  --#{$toggle-group}__item--first-child__button--BorderEndStartRadius: var(--pf-t--global--border--radius--tiny);
+  --#{$toggle-group}__item--last-child__button--BorderStartEndRadius: var(--pf-t--global--border--radius--tiny);
+  --#{$toggle-group}__item--last-child__button--BorderEndEndRadius: var(--pf-t--global--border--radius--tiny);
+
+  // icon
+  --#{$toggle-group}__icon--text--MarginInlineStart: var(--pf-t--global--spacer--sm);
+
+  // Selected
+  --#{$toggle-group}__button--m-selected--BackgroundColor: var(--pf-t--global--color--brand--default);
+  --#{$toggle-group}__button--m-selected--Color: var(--pf-t--global--text--color--on-brand--default);
+  --#{$toggle-group}__button--m-selected--before--BorderColor: var(--pf-t--global--border--color--clicked);
+  --#{$toggle-group}__button--m-selected-selected--before--BorderInlineStartColor: var(--pf-t--global--border--color--default);
+  --#{$toggle-group}__button--m-selected--ZIndex: var(--pf-t--global--z-index--xs);
+
+  // disabled
+  --#{$toggle-group}__button--disabled--BackgroundColor: var(--pf-t--global--background--color--disabled--default);
+  --#{$toggle-group}__button--disabled--Color: var(--pf-t--global--text--color--on-disabled);
+  --#{$toggle-group}__button--disabled--before--BorderColor: var(--pf-t--global--border--color--disabled);
+  --#{$toggle-group}__button--disabled-disabled--before--BorderInlineStartColor: var(--pf-t--global--border--color--default);
+  --#{$toggle-group}__button--disabled--ZIndex: var(--pf-t--global--z-index--xs);
+
+  // Compact
+  --#{$toggle-group}--m-compact__button--PaddingBlockStart: 0;
+  --#{$toggle-group}--m-compact__button--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --#{$toggle-group}--m-compact__button--PaddingBlockEnd: 0;
+  --#{$toggle-group}--m-compact__button--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --#{$toggle-group}--m-compact__button--FontSize: var(--pf-t--global--font--size--body--default);
+}
+
+.#{$toggle-group} {
+  display: flex;
+
+  &.pf-m-compact {
+    --#{$toggle-group}__button--PaddingBlockStart: var(--#{$toggle-group}--m-compact__button--PaddingBlockStart);
+    --#{$toggle-group}__button--PaddingInlineEnd: var(--#{$toggle-group}--m-compact__button--PaddingInlineEnd);
+    --#{$toggle-group}__button--PaddingBlockEnd: var(--#{$toggle-group}--m-compact__button--PaddingBlockEnd);
+    --#{$toggle-group}__button--PaddingInlineStart: var(--#{$toggle-group}--m-compact__button--PaddingInlineStart);
+    --#{$toggle-group}__button--FontSize: var(--#{$toggle-group}--m-compact__button--FontSize);
+  }
+}
+
+.#{$toggle-group}__item {
+  & + & {
+    margin-inline-start: var(--#{$toggle-group}__item--item--MarginInlineStart);
+  }
+
+  &:first-child {
+    .#{$toggle-group}__button {
+      &,
+      &::before {
+        border-start-start-radius: var(--#{$toggle-group}__item--first-child__button--BorderStartStartRadius);
+        border-end-start-radius: var(--#{$toggle-group}__item--first-child__button--BorderEndStartRadius);
+      }
+    }
+  }
+
+  &:last-child {
+    .#{$toggle-group}__button {
+      &,
+      &::before {
+        border-start-end-radius: var(--#{$toggle-group}__item--last-child__button--BorderStartEndRadius);
+        border-end-end-radius: var(--#{$toggle-group}__item--last-child__button--BorderEndEndRadius);
+      }
+    }
+  }
+}
+
+.#{$toggle-group}__button {
+  position: relative;
+  z-index: var(--#{$toggle-group}__button--ZIndex);
+  display: inline-flex;
+  padding-block-start: var(--#{$toggle-group}__button--PaddingBlockStart);
+  padding-block-end: var(--#{$toggle-group}__button--PaddingBlockEnd);
+  padding-inline-start: var(--#{$toggle-group}__button--PaddingInlineStart);
+  padding-inline-end: var(--#{$toggle-group}__button--PaddingInlineEnd);
+  font-size: var(--#{$toggle-group}__button--FontSize);
+  line-height: var(--#{$toggle-group}__button--LineHeight);
+  color: var(--#{$toggle-group}__button--Color);
+  background-color: var(--#{$toggle-group}__button--BackgroundColor);
+  border: 0;
+
+  &::before {
+    position: absolute;
+    inset-block-start: 0;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    pointer-events: none;
+    content: "";
+    border-style: solid;
+    border-width: var(--#{$toggle-group}__button--before--BorderWidth);
+    border-block-start-color: var(--#{$toggle-group}__button--before--BorderBlockStartColor, var(--#{$toggle-group}__button--before--BorderColor));
+    border-block-end-color: var(--#{$toggle-group}__button--before--BorderBlockEndColor, var(--#{$toggle-group}__button--before--BorderColor));
+    border-inline-start-color: var(--#{$toggle-group}__button--before--BorderInlineStartColor, var(--#{$toggle-group}__button--before--BorderColor));
+    border-inline-end-color: var(--#{$toggle-group}__button--before--BorderInlineEndColor, var(--#{$toggle-group}__button--before--BorderColor));
+  }
+
+  &:is(:hover, :focus) {
+    --#{$toggle-group}__button--BackgroundColor: var(--#{$toggle-group}__button--hover--BackgroundColor);
+    --#{$toggle-group}__button--ZIndex: var(--#{$toggle-group}__button--hover--ZIndex);
+    --#{$toggle-group}__button--before--BorderColor: var(--#{$toggle-group}__button--hover--before--BorderColor);
+
+    text-decoration-line: none;
+  }
+
+  &.pf-m-selected {
+    --#{$toggle-group}__button--BackgroundColor: var(--#{$toggle-group}__button--m-selected--BackgroundColor);
+    --#{$toggle-group}__button--Color: var(--#{$toggle-group}__button--m-selected--Color, inherit);
+    --#{$toggle-group}__button--ZIndex: var(--#{$toggle-group}__button--m-selected--ZIndex);
+    --#{$toggle-group}__button--before--BorderColor: var(--#{$toggle-group}__button--m-selected--before--BorderColor);
+  }
+
+  &:is(:disabled, .pf-m-disabled) {
+    --#{$toggle-group}__button--BackgroundColor: var(--#{$toggle-group}__button--disabled--BackgroundColor);
+    --#{$toggle-group}__button--Color: var(--#{$toggle-group}__button--disabled--Color);
+    --#{$toggle-group}__button--ZIndex: var(--#{$toggle-group}__button--disabled--ZIndex);
+    --#{$toggle-group}__button--before--BorderColor: var(--#{$toggle-group}__button--disabled--before--BorderColor);
+
+    pointer-events: none;
+  }
+}
+
+// For consecutive selected items, turn the left border back to what it was
+.#{$toggle-group}__item:has(.pf-m-selected) + .#{$toggle-group}__item:has(.pf-m-selected) {
+  --#{$toggle-group}__button--before--BorderInlineStartColor: var(--#{$toggle-group}__button--m-selected-selected--before--BorderInlineStartColor);
+}
+
+// For consecutive disabled items, turn the left border back to what it was
+.#{$toggle-group}__item:has(:disabled, .pf-m-disabled) + .#{$toggle-group}__item:has(:disabled, .pf-m-disabled) {
+  --#{$toggle-group}__button--before--BorderInlineStartColor: var(--#{$toggle-group}__button--disabled-disabled--before--BorderInlineStartColor);
+}
+
+.#{$toggle-group}__icon + .#{$toggle-group}__text,
+.#{$toggle-group}__text + .#{$toggle-group}__icon {
+  margin-inline-start: var(--#{$toggle-group}__icon--text--MarginInlineStart);
+}
+

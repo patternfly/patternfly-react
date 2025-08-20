@@ -1,0 +1,176 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($expandable-section) {
+  --#{$expandable-section}--Gap: var(--pf-t--global--spacer--sm);
+
+  // Toggle icon
+  --#{$expandable-section}__toggle-icon--MinWidth: 1em;
+  --#{$expandable-section}__toggle-icon--Color: var(--pf-t--global--icon--color--regular);
+  --#{$expandable-section}__toggle-icon--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--default);
+  --#{$expandable-section}__toggle-icon--TransitionDuration: var(--pf-t--global--motion--duration--icon--default);
+  --#{$expandable-section}__toggle-icon--Transition: transform var(--#{$expandable-section}__toggle-icon--TransitionDuration) var(--#{$expandable-section}__toggle-icon--TransitionTimingFunction); // TODO remove in breaking change along with shorthand property
+  --#{$expandable-section}__toggle-icon--Rotate: 0;
+  --#{$expandable-section}__toggle-icon--m-expand-top--Rotate: 0;
+  --#{$expandable-section}--m-expanded__toggle-icon--Rotate: 90deg;
+  --#{$expandable-section}--m-expanded__toggle-icon--m-expand-top--Rotate: -90deg;
+  --#{$expandable-section}__content--TransitionDuration--collapse--slide: 0s;
+  --#{$expandable-section}__content--TransitionDuration--collapse--fade: var(--pf-t--global--motion--duration--fade--short);
+  --#{$expandable-section}__content--TransitionDuration--expand--slide: 0s;
+  --#{$expandable-section}__content--TransitionDuration--expand--fade: var(--pf-t--global--motion--duration--fade--default);
+  --#{$expandable-section}__content--TransitionDuration--slide: var(--#{$expandable-section}__content--TransitionDuration--collapse--slide);
+  --#{$expandable-section}__content--TransitionDuration--fade: var(--#{$expandable-section}__content--TransitionDuration--collapse--fade);
+  --#{$expandable-section}__content--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--default);
+  --#{$expandable-section}__content--TransitionDelay--hide: var(--#{$expandable-section}__content--TransitionDuration--fade);
+  --#{$expandable-section}__content--Opacity: 0;
+  --#{$expandable-section}__content--TranslateY: 0;
+  --#{$expandable-section}--m-expand-top__content--TranslateY: 0;
+  --#{$expandable-section}--m-expand-bottom__content--TranslateY: 0;
+  --#{$expandable-section}--m-expanded__content--Opacity: 1;
+  --#{$expandable-section}--m-expanded__content--TranslateY: 0;
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    --#{$expandable-section}__content--TransitionDuration--collapse--slide: var(--pf-t--global--motion--duration--fade--short);
+    --#{$expandable-section}__content--TransitionDuration--expand--slide: var(--pf-t--global--motion--duration--fade--default);
+    --#{$expandable-section}__content--TranslateY: -.5rem;
+    --#{$expandable-section}--m-expand-top__content--TranslateY: .5rem;
+    --#{$expandable-section}--m-expand-bottom__content--TranslateY: -.5rem;
+  }
+
+  // Content
+  --#{$expandable-section}__content--MaxWidth: auto;
+
+  // Limit Width
+  --#{$expandable-section}--m-limit-width__content--MaxWidth: #{pf-size-prem(750px)};
+
+  // Large / Disclosure
+  --#{$expandable-section}--m-display-lg--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --#{$expandable-section}--m-display-lg--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$expandable-section}--m-display-lg--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --#{$expandable-section}--m-display-lg--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --#{$expandable-section}--m-display-lg--m-expanded--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --#{$expandable-section}--m-display-lg--BackgroundColor: var(--pf-t--global--background--color--secondary--default);
+  --#{$expandable-section}--m-display-lg--BorderWidth: var(--pf-t--global--border--width--box--default);
+  --#{$expandable-section}--m-display-lg--BorderColor: var(--pf-t--global--border--color--default);
+  --#{$expandable-section}--m-display-lg--BorderRadius: var(--pf-t--global--border--radius--medium);
+  --#{$expandable-section}--m-display-lg--TransitionDelay: var(--#{$expandable-section}__content--TransitionDuration--collapse--fade);
+
+  // Indented
+  --#{$expandable-section}--m-indented__content--PaddingInlineStart: calc(var(--pf-t--global--spacer--action--horizontal--plain--default) + var(--pf-t--global--spacer--gap--text-to-element--default) + var(--#{$expandable-section}__toggle-icon--MinWidth));
+
+  // Truncate
+  --#{$expandable-section}--m-truncate__content--LineClamp: 3;
+  --#{$expandable-section}--m-truncate--Gap: var(--pf-t--global--spacer--xs);
+}
+
+.#{$expandable-section} {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition-delay: var(--#{$expandable-section}__content--TransitionDelay--hide);
+  transition-duration: 0s;
+  transition-property: gap, padding-block-end;
+
+  &.pf-m-expanded {
+    --#{$expandable-section}__toggle-icon--Rotate: var(--#{$expandable-section}--m-expanded__toggle-icon--Rotate);
+    --#{$expandable-section}__toggle-icon--m-expand-top--Rotate: var(--#{$expandable-section}--m-expanded__toggle-icon--m-expand-top--Rotate);
+    --#{$expandable-section}--m-display-lg--PaddingBlockEnd: var(--#{$expandable-section}--m-display-lg--m-expanded--PaddingBlockEnd);
+    --#{$expandable-section}__content--TransitionDuration--slide: var(--#{$expandable-section}__content--TransitionDuration--expand--slide);
+    --#{$expandable-section}__content--TransitionDuration--fade: var(--#{$expandable-section}__content--TransitionDuration--expand--fade);
+    --#{$expandable-section}__content--Opacity: var(--#{$expandable-section}--m-expanded__content--Opacity);
+    --#{$expandable-section}__content--TranslateY: var(--#{$expandable-section}--m-expanded__content--TranslateY);
+    --#{$expandable-section}__content--Visibility: auto;
+    --#{$expandable-section}__content--MaxHeight: 99999px;
+    --#{$expandable-section}__content--TransitionDelay--hide: 0s;
+
+    gap: var(--pf-v6-c-expandable-section--Gap);
+  }
+
+  &.pf-m-expand-top {
+    --#{$expandable-section}__toggle-icon--Rotate: var(--#{$expandable-section}__toggle-icon--m-expand-top--Rotate);
+  }
+
+  // The following selector is for ensuring we target only detached expandable section contents without introducing a breaking change
+  // (since typically both toggle and content would both be in the expandable section wrapper)
+  // In a breaking change we could update this to utilize the pf-m-detached class
+  &:has(.#{$expandable-section}__content:only-child) {
+    &:not(.pf-m-expand-top, .pf-m-expand-bottom) {
+      --#{$expandable-section}__content--TranslateY: 0;
+      --#{$expandable-section}__content--TransitionDuration--expand--fade: 0s;
+      --#{$expandable-section}__content--TransitionDuration--collapse--fade: 0s;
+    }
+
+    &.pf-m-expand-top:not(.pf-m-expanded) {
+      --#{$expandable-section}__content--TranslateY: var(--#{$expandable-section}--m-expand-top__content--TranslateY);
+    }
+
+    &.pf-m-expand-bottom:not(.pf-m-expanded) {
+      --#{$expandable-section}__content--TranslateY: var(--#{$expandable-section}--m-expand-bottom__content--TranslateY);
+    }
+  }
+
+  &.pf-m-limit-width {
+    --#{$expandable-section}__content--MaxWidth: var(--#{$expandable-section}--m-limit-width__content--MaxWidth);
+  }
+
+  &.pf-m-display-lg {
+    padding-block-start: var(--#{$expandable-section}--m-display-lg--PaddingBlockStart);
+    padding-block-end: var(--#{$expandable-section}--m-display-lg--PaddingBlockEnd);
+    padding-inline-start: var(--#{$expandable-section}--m-display-lg--PaddingInlineStart);
+    padding-inline-end: var(--#{$expandable-section}--m-display-lg--PaddingInlineEnd);
+    background-color: var(--#{$expandable-section}--m-display-lg--BackgroundColor);
+    border: var(--#{$expandable-section}--m-display-lg--BorderWidth) solid var(--#{$expandable-section}--m-display-lg--BorderColor);
+    border-radius: var(--#{$expandable-section}--m-display-lg--BorderRadius);
+  }
+
+  &.pf-m-indented {
+    --#{$expandable-section}__content--PaddingInlineStart: var(--#{$expandable-section}--m-indented__content--PaddingInlineStart);
+  }
+
+  &.pf-m-truncate {
+    --#{$expandable-section}--Gap: var(--#{$expandable-section}--m-truncate--Gap);
+
+    &:not(.pf-m-expanded) .#{$expandable-section}__content {
+      // stylelint-disable
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: var(--#{$expandable-section}--m-truncate__content--LineClamp);
+      // stylelint-enable
+      overflow: hidden;
+    }
+  }
+}
+
+.#{$expandable-section}__toggle-icon {
+  @include pf-v6-mirror-inline-on-rtl;
+
+  display: inline-block;
+  min-width: var(--#{$expandable-section}__toggle-icon--MinWidth);
+  color: var(--#{$expandable-section}__toggle-icon--Color);
+  transition: var(--#{$expandable-section}__toggle-icon--Transition); // TODO remove shorthand in breaking change
+  transform: rotate(var(--#{$expandable-section}__toggle-icon--Rotate));
+
+  &.pf-m-expand-top { // TODO: Remove this block in breaking change in favor of using modifier on outer expandable section wrapper
+    --#{$expandable-section}__toggle-icon--Rotate: var(--#{$expandable-section}__toggle-icon--m-expand-top--Rotate);
+  }
+}
+
+.#{$expandable-section}__content {
+  max-width: var(--#{$expandable-section}__content--MaxWidth);
+  padding-block-end: var(--#{$expandable-section}__content--PaddingBlockEnd, 0);
+  padding-inline-start: var(--#{$expandable-section}__content--PaddingInlineStart, 0);
+
+  &:where([hidden]) {
+    display: revert;
+  }
+
+  .#{$expandable-section}:where(:not(.pf-m-truncate)) & {
+    max-height: var(--#{$expandable-section}__content--MaxHeight, 0);
+    visibility: var(--#{$expandable-section}__content--Visibility, hidden);
+    opacity: var(--#{$expandable-section}__content--Opacity);
+    transition-delay: 0s, 0s, var(--#{$expandable-section}__content--TransitionDelay--hide, 0s), var(--#{$expandable-section}__content--TransitionDelay--hide, 0s);
+    transition-timing-function: var(--#{$expandable-section}__content--TransitionTimingFunction);
+    transition-duration: var(--#{$expandable-section}__content--TransitionDuration--fade), var(--#{$expandable-section}__content--TransitionDuration--slide), 0s, 0s;
+    transition-property: opacity, translate, visibility, max-height;
+    translate: 0 var(--#{$expandable-section}__content--TranslateY);
+  }
+}

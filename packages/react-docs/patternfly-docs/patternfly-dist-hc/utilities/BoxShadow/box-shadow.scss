@@ -1,0 +1,30 @@
+@use '../../sass-utilities' as *;
+
+// stylelint-disable
+$pf-v6-u-box-shadow-options: (
+  /* small */
+  box-shadow-sm:        (box-shadow var(--pf-t--global--box-shadow--sm)),
+  box-shadow-sm-top:    (box-shadow var(--pf-t--global--box-shadow--sm--top)),
+  box-shadow-sm-right:  (box-shadow var(--pf-t--global--box-shadow--sm--right)),
+  box-shadow-sm-bottom: (box-shadow var(--pf-t--global--box-shadow--sm--bottom)),
+  box-shadow-sm-left:   (box-shadow var(--pf-t--global--box-shadow--sm--left)),
+
+  /* medium */
+  box-shadow-md:        (box-shadow var(--pf-t--global--box-shadow--md)),
+  box-shadow-md-top:    (box-shadow var(--pf-t--global--box-shadow--md--top)),
+  box-shadow-md-right:  (box-shadow var(--pf-t--global--box-shadow--md--right)),
+  box-shadow-md-bottom: (box-shadow var(--pf-t--global--box-shadow--md--bottom)),
+  box-shadow-md-left:   (box-shadow var(--pf-t--global--box-shadow--md--left)),
+
+  /* large */
+  box-shadow-lg:        (box-shadow var(--pf-t--global--box-shadow--lg)),
+  box-shadow-lg-top:    (box-shadow var(--pf-t--global--box-shadow--lg--top)),
+  box-shadow-lg-right:  (box-shadow var(--pf-t--global--box-shadow--lg--right)),
+  box-shadow-lg-bottom: (box-shadow var(--pf-t--global--box-shadow--lg--bottom)),
+  box-shadow-lg-left:   (box-shadow var(--pf-t--global--box-shadow--lg--left)),
+);
+
+// Text utilities
+@include pf-v6-utility-builder($pf-v6-u-box-shadow-options);
+
+// stylelint-enable

@@ -1,0 +1,176 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($label-group) {
+  // Label group - spaces main with the close button
+  --#{$label-group}--RowGap: var(--pf-t--global--spacer--sm);
+  --#{$label-group}--ColumnGap: var(--pf-t--global--spacer--xs);
+  --#{$label-group}--MaxWidth: 100%;
+  --#{$label-group}--m-vertical--RowGap: var(--pf-t--global--spacer--sm);
+  --#{$label-group}--m-vertical--ColumnGap: var(--pf-t--global--spacer--sm);
+
+  // Main - spaces the category label with the list
+  --#{$label-group}__main--RowGap: var(--pf-t--global--spacer--xs);
+  --#{$label-group}__main--ColumnGap: var(--pf-t--global--spacer--sm);
+  --#{$label-group}__main--MaxWidth: 100%;
+  --#{$label-group}__main--MinWidth: 0;
+  --#{$label-group}--m-vertical__main--RowGap: var(--pf-t--global--spacer--sm);
+  --#{$label-group}--m-vertical__main--ColumnGap: var(--pf-t--global--spacer--xs);
+
+  // List - spaces the items
+  --#{$label-group}__list--RowGap: var(--pf-t--global--spacer--xs);
+  --#{$label-group}__list--ColumnGap: var(--pf-t--global--spacer--xs);
+  --#{$label-group}__list--MaxWidth: 100%;
+  --#{$label-group}__list--MinWidth: 0;
+  --#{$label-group}--m-vertical__list--RowGap: var(--pf-t--global--spacer--xs);
+  --#{$label-group}--m-vertical__list--ColumnGap: var(--pf-t--global--spacer--xs);
+
+  // List item
+  --#{$label-group}__list-item--MaxWidth: 100%;
+
+  // Category
+  --#{$label-group}--m-category--PaddingBlockStart: var(--pf-t--global--spacer--xs);
+  --#{$label-group}--m-category--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --#{$label-group}--m-category--PaddingBlockEnd: var(--pf-t--global--spacer--xs);
+  --#{$label-group}--m-category--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --#{$label-group}--m-category--BorderRadius: var(--pf-t--global--border--radius--small);
+  --#{$label-group}--m-category--BorderWidth: var(--pf-t--global--border--width--regular);
+  --#{$label-group}--m-category--BorderColor: var(--pf-t--global--border--color--default);
+  --#{$label-group}--m-vertical--m-category--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+
+  // Label
+  --#{$label-group}__label--MaxWidth: 18ch;
+
+  // Close
+  --#{$label-group}__close--c-button--FontSize: var(--pf-t--global--icon--size--font--body--sm);
+  --#{$label-group}__close--c-button--PaddingBlockStart: var(--pf-t--global--spacer--xs);
+  --#{$label-group}__close--c-button--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --#{$label-group}__close--c-button--PaddingBlockEnd: var(--pf-t--global--spacer--xs);
+  --#{$label-group}__close--c-button--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+
+  // Textarea
+  --#{$label-group}__textarea--MinWidth: #{pf-size-prem(200px)};
+  --#{$label-group}__textarea--PaddingBlockStart: #{pf-size-prem(2px)};
+  --#{$label-group}__textarea--PaddingInlineEnd: var(--pf-t--global--spacer--xs);
+  --#{$label-group}__textarea--PaddingBlockEnd: 0;
+  --#{$label-group}__textarea--PaddingInlineStart: var(--pf-t--global--spacer--xs);
+}
+
+.#{$label-group} {
+  display: inline-flex;
+  row-gap: var(--#{$label-group}--RowGap);
+  column-gap: var(--#{$label-group}--ColumnGap);
+  align-items: center;
+  max-width: var(--#{$label-group}--MaxWidth);
+
+  &.pf-m-category {
+    padding-block-start: var(--#{$label-group}--m-category--PaddingBlockStart);
+    padding-block-end: var(--#{$label-group}--m-category--PaddingBlockEnd);
+    padding-inline-start: var(--#{$label-group}--m-category--PaddingInlineStart);
+    padding-inline-end: var(--#{$label-group}--m-category--PaddingInlineEnd);
+    background-color: var(--#{$label-group}--m-category--BackgroundColor);
+    border: var(--#{$label-group}--m-category--BorderWidth) solid var(--#{$label-group}--m-category--BorderColor);
+    border-radius: var(--#{$label-group}--m-category--BorderRadius);
+  }
+
+  &.pf-m-vertical {
+    --#{$label-group}--RowGap: var(--#{$label-group}--m-vertical--RowGap);
+    --#{$label-group}--ColumnGap: var(--#{$label-group}--m-vertical--ColumnGap);
+    --#{$label-group}__main--RowGap: var(--#{$label-group}--m-vertical__main--RowGap);
+    --#{$label-group}__main--ColumnGap: var(--#{$label-group}--m-vertical__main--ColumnGap);
+    --#{$label-group}__list--RowGap: var(--#{$label-group}--m-vertical__list--RowGap);
+    --#{$label-group}__list--ColumnGap: var(--#{$label-group}--m-vertical__list--ColumnGap);
+    --#{$label-group}--m-category--PaddingInlineEnd: var(--#{$label-group}--m-vertical--m-category--PaddingInlineEnd);
+
+    &.#{$label-group} {
+      align-items: flex-start;
+    }
+
+    .#{$label-group}__list {
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: var(--#{$label-group}__list--MaxWidth);
+    }
+
+    .#{$label-group}__main {
+      flex-direction: column;
+      min-width: var(--#{$label-group}__main--MinWidth);
+    }
+  }
+
+  &.pf-m-editable {
+    &,
+    .#{$label-group}__main,
+    .#{$label-group}__list {
+      display: flex;
+    }
+
+    .#{$label-group}__main,
+    .#{$label-group}__list,
+    .#{$label-group}__list-item.pf-m-textarea,
+    .#{$label-group}__textarea {
+      flex: 1;
+    }
+  }
+}
+
+.#{$label-group}__main {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  row-gap: var(--#{$label-group}__main--RowGap);
+  column-gap: var(--#{$label-group}__main--ColumnGap);
+  align-items: baseline;
+  min-width: var(--#{$label-group}__main--MinWidth);
+}
+
+.#{$label-group}__list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  row-gap: var(--#{$label-group}__list--RowGap);
+  column-gap: var(--#{$label-group}__list--ColumnGap);
+  min-width: var(--#{$label-group}__list--MinWidth);
+}
+
+.#{$label-group}__list-item {
+  display: inline-flex;
+  max-width: var(--#{$label-group}__list-item--MaxWidth);
+}
+
+.#{$label-group}__label {
+  @include pf-v6-text-overflow;
+
+  max-width: var(--#{$label-group}__label--MaxWidth);
+}
+
+.#{$label-group}__close {
+  display: flex;
+  align-self: flex-start;
+
+  .#{$button} {
+    --#{$button}--FontSize: var(--#{$label-group}__close--c-button--FontSize);
+    --#{$button}--m-plain--m-no-padding--PaddingBlockStart: var(--#{$label-group}__close--c-button--PaddingBlockStart);
+    --#{$button}--m-plain--m-no-padding--PaddingInlineEnd: var(--#{$label-group}__close--c-button--PaddingInlineEnd);
+    --#{$button}--m-plain--m-no-padding--PaddingBlockEnd: var(--#{$label-group}__close--c-button--PaddingBlockEnd);
+    --#{$button}--m-plain--m-no-padding--PaddingInlineStart: var(--#{$label-group}__close--c-button--PaddingInlineStart);
+  }
+}
+
+.#{$label-group}__textarea {
+  min-width: var(--#{$label-group}__textarea--MinWidth);
+  padding-block-start: var(--#{$label-group}__textarea--PaddingBlockStart);
+  padding-block-end: var(--#{$label-group}__textarea--PaddingBlockEnd);
+  padding-inline-start: var(--#{$label-group}__textarea--PaddingInlineStart);
+  padding-inline-end: var(--#{$label-group}__textarea--PaddingInlineEnd);
+  white-space: nowrap;
+  resize: none;
+  border: 0;
+
+  // Hide scrollbar for IE, Edge and Firefox
+  -ms-overflow-style: none;  // IE and Edge
+  scrollbar-width: none;  // Firefox
+
+  // Hide scrollbar for Chrome, Safari and Opera
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

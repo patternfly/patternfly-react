@@ -1,0 +1,8 @@
+.pf-v6-c-truncate--example {
+  width: 320px;
+  resize: horizontal;
+  overflow: auto;
+  max-width: 100%;
+  padding: var(--pf-t--global--spacer--sm);
+  border: var(--pf-t--global--border--width--box--default) solid var(--pf-t--global--border--color--default);
+}

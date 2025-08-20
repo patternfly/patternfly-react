@@ -1,0 +1,117 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($inline-edit) {
+  // Group
+  --#{$inline-edit}__group--item--MarginInlineEnd: var(--pf-t--global--spacer--gap--action-to-action--default);
+
+  // Valid action
+  --#{$inline-edit}__action--c-button--m-valid--m-plain--Color: var(--pf-t--global--icon--color--brand--default);
+  --#{$inline-edit}__action--c-button--m-valid--m-plain--hover--Color: var(--pf-t--global--icon--color--brand--hover);
+
+  // Icon button
+  --#{$inline-edit}__action--m-icon-group--item--MarginInlineEnd: var(--pf-t--global--spacer--gap--action-to-action--plain);
+
+  // Footer group
+  --#{$inline-edit}__group--m-footer--MarginBlockStart: var(--pf-t--global--spacer--xl);
+
+  // Label
+  --#{$inline-edit}__label--m-bold--FontWeight: var(--pf-t--global--font--weight--body--bold);
+}
+
+// Group
+.#{$inline-edit}__group {
+  display: flex;
+  align-items: baseline;
+
+  > * {
+    margin-inline-end: var(--#{$inline-edit}__group--item--MarginInlineEnd);
+  }
+
+  &.pf-m-icon-group {
+    --#{$inline-edit}__group--item--MarginInlineEnd: var(--#{$inline-edit}__action--m-icon-group--item--MarginInlineEnd);
+  }
+
+  // Footer
+  &.pf-m-footer {
+    margin-block-start: var(--#{$inline-edit}__group--m-footer--MarginBlockStart);
+  }
+
+  // Column
+  &.pf-m-column {
+    --#{$inline-edit}__group--item--MarginInlineEnd: 0;
+
+    flex-direction: column;
+  }
+
+  > :last-child {
+    --#{$inline-edit}__group--item--MarginInlineEnd: 0;
+  }
+}
+
+// Input and input group
+.#{$inline-edit}__input {
+  flex: 1;
+}
+
+// Valid icon action button
+.#{$inline-edit}__action.pf-m-valid .#{$button}.pf-m-plain {
+  --#{$button}--m-plain--Color: var(--#{$inline-edit}__action--c-button--m-valid--m-plain--Color);
+
+  &:hover {
+    --#{$button}--m-plain--Color: var(--#{$inline-edit}__action--c-button--m-valid--m-plain--hover--Color);
+  }
+}
+
+// Input and input group
+.#{$inline-edit}__input,
+.#{$inline-edit}__action,
+.#{$inline-edit}__group.pf-m-action-group {
+  display: none;
+}
+
+// Enable groups
+.#{$inline-edit}__action.pf-m-enable-editable {
+  display: inline-block;
+}
+
+// Editable
+.#{$inline-edit}.pf-m-inline-editable,
+.#{$inline-edit} .pf-m-inline-editable {
+  // Expose inputs, input groups, actions and action groups
+  // Input
+  .#{$inline-edit}__input {
+    display: block;
+  }
+
+  // Action
+  .#{$inline-edit}__action {
+    display: inline-block;
+  }
+
+  // Action group
+  .#{$inline-edit}__group.pf-m-action-group {
+    display: inline-flex;
+  }
+
+  // Hide value, value group and enable actions
+  .#{$inline-edit}__value,
+  .#{$inline-edit}__action.pf-m-enable-editable {
+    display: none;
+  }
+}
+
+// offset button by top padding
+.#{$inline-edit}__label + .#{$inline-edit}__action.pf-m-enable > .#{$button} {
+  margin-block-start: calc(var(--#{$button}--PaddingBlockStart) * -1);
+  margin-block-end: calc(var(--#{$button}--PaddingBlockEnd) * -1);
+}
+
+.#{$inline-edit}__label.pf-m-bold {
+  font-weight: var(--#{$inline-edit}__label--m-bold--FontWeight);
+}
+
+.#{$inline-edit}__editable-text {
+  br {
+    display: none;
+  }
+}

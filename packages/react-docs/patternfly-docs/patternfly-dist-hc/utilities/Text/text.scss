@@ -1,0 +1,174 @@
+@use '../../sass-utilities' as *;
+
+// Font family options
+// stylelint-disable
+$pf-v6-u-font-family-options: (
+  font-family-text: (
+    font-family var(--pf-t--global--font--family--body)
+  ),
+  font-family-heading: (
+    font-family var(--pf-t--global--font--family--heading)
+  ),
+  font-family-monospace: (
+    font-family var(--pf-t--global--font--family--mono)
+  )
+);
+
+@include pf-v6-utility-builder($pf-v6-u-font-family-options);
+
+// Font size options
+$pf-v6-u-font-size-options: (
+  font-size-xs: (
+    font-size var(--pf-t--global--font--size--xs)
+  ),
+  font-size-sm: (
+    font-size var(--pf-t--global--font--size--sm)
+  ),
+  font-size-md: (
+    font-size var(--pf-t--global--font--size--md)
+  ),
+  font-size-lg: (
+    font-size var(--pf-t--global--font--size--lg)
+  ),
+  font-size-xl: (
+    font-size var(--pf-t--global--font--size--xl)
+  ),
+  font-size-2xl: (
+    font-size var(--pf-t--global--font--size--2xl)
+  ),
+  font-size-3xl: (
+    font-size var(--pf-t--global--font--size--3xl)
+  ),
+  font-size-4xl: (
+    font-size var(--pf-t--global--font--size--4xl)
+  )
+);
+
+@include pf-v6-utility-builder($pf-v6-u-font-size-options, $pf-v6-global--breakpoint-list);
+
+// Font weight options
+$pf-v6-u-font-weight-options: (
+  font-weight-normal: (
+    font-weight var(--pf-t--global--font--weight--body--default)
+  ),
+  font-weight-bold: (
+    font-weight var(--pf-t--global--font--weight--body--bold)
+  )
+);
+
+@include pf-v6-utility-builder($pf-v6-u-font-weight-options, $pf-v6-global--breakpoint-list);
+
+// Font color options
+$pf-v6-u-font-color-options: (
+  text-color-brand: (
+    color var(--pf-t--global--text--color--brand--default)
+  ),
+  text-color-disabled: (
+    color var(--pf-t--global--text--color--disabled)
+  ),
+  text-color-on-disabled: (
+    color var(--pf-t--global--text--color--on-disabled)
+  ),
+  text-color-link: (
+    color var(--pf-t--global--text--color--link--default)
+  ),
+  text-color-link-hover: (
+    color var(--pf-t--global--text--color--link--hover)
+  ),
+  text-color-link-visited: (
+    color var(--pf-t--global--text--color--link--visited)
+  ),
+  text-color-placeholder: (
+    color var(--pf-t--global--text--color--placeholder)
+  ),
+  text-color-regular: (
+    color var(--pf-t--global--text--color--regular)
+  ),
+  text-color-required: (
+    color var(--pf-t--global--text--color--required)
+  ),
+  text-color-subtle: (
+    color var(--pf-t--global--text--color--subtle)
+  ),
+  text-color-inverse: (
+    color var(--pf-t--global--text--color--inverse)
+  ),
+  text-color-status-success: (
+    color var(--pf-t--global--color--status--success--default)
+  ),
+  text-color-status-warning: (
+    color var(--pf-t--global--text--color--status--warning--default)
+  ),
+  text-color-status-danger: (
+    color var(--pf-t--global--text--color--status--danger--default)
+  ),
+  text-color-status-default: (
+    color var(--pf-t--global--text--color--status--info--default)
+  ),
+  text-color-status-custom: (
+    color var(--pf-t--global--text--color--status--custom--default)
+  ),
+  icon-color-regular: (
+    color var(--pf-t--global--icon--color--regular)
+  ),
+  icon-color-disabled: (
+    color var(--pf-t--global--icon--color--disabled)
+  ),
+  icon-color-on-disabled: (
+    color var(--pf-t--global--icon--color--on-disabled)
+  ),
+  icon-color-subtle: (
+    color var(--pf-t--global--icon--color--subtle)
+  ),
+  icon-color-inverse: (
+    color var(--pf-t--global--icon--color--inverse)
+  ),
+  icon-color-brand: (
+    color var(--pf-t--global--icon--color--brand--default)
+  ),
+  icon-color-favorite: (
+    color var(--pf-t--global--icon--color--favorite--default)
+  ),
+  icon-color-status-success: (
+    color var(--pf-t--global--icon--color--status--success--default)
+  ),
+  icon-color-status-warning: (
+    color var(--pf-t--global--icon--color--status--warning--default)
+  ),
+  icon-color-status-danger: (
+    color var(--pf-t--global--icon--color--status--danger--default)
+  ),
+  icon-color-status-info: (
+    color var(--pf-t--global--icon--color--status--info--default)
+  ),
+  icon-color-status-custom: (
+    color var(--pf-t--global--icon--color--status--custom--default)
+  ),
+);
+
+@include pf-v6-utility-builder($pf-v6-u-font-color-options, $pf-v6-global--breakpoint-list);
+
+// Font layout options
+$pf-v6-u-font-alignment-options: (
+  text-break-word: (
+    word-break break-word
+  ),
+  text-nowrap: (
+    white-space nowrap
+  ),
+  text-wrap: (
+    white-space normal
+  )
+);
+
+@include pf-v6-utility-builder($pf-v6-u-font-alignment-options, $pf-v6-global--breakpoint-list);
+
+.#{$pf-prefix}u-text-truncate {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+// stylelint-enable

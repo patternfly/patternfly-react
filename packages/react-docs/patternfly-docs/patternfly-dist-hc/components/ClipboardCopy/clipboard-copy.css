@@ -1,0 +1,99 @@
+.pf-v6-c-clipboard-copy {
+  --pf-v6-c-clipboard-copy__toggle-icon--TransitionDuration: var(--pf-t--global--motion--duration--icon--default);
+  --pf-v6-c-clipboard-copy__toggle-icon--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--default);
+  --pf-v6-c-clipboard-copy__toggle-icon--Transition: transform var(--pf-v6-c-clipboard-copy__toggle-icon--TransitionDuration) var(--pf-v6-c-clipboard-copy__toggle-icon--TransitionTimingFunction);
+  --pf-v6-c-clipboard-copy--m-expanded__toggle-icon--Rotate: 90deg;
+  --pf-v6-c-clipboard-copy__expandable-content--MarginBlockStart: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-clipboard-copy__expandable-content--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --pf-v6-c-clipboard-copy__expandable-content--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-clipboard-copy__expandable-content--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-clipboard-copy__expandable-content--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --pf-v6-c-clipboard-copy__expandable-content--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --pf-v6-c-clipboard-copy__expandable-content--BorderBlockStartWidth: var(--pf-t--global--border--width--control--default);
+  --pf-v6-c-clipboard-copy__expandable-content--BorderInlineEndWidth: var(--pf-t--global--border--width--control--default);
+  --pf-v6-c-clipboard-copy__expandable-content--BorderBlockEndWidth: var(--pf-t--global--border--width--control--default);
+  --pf-v6-c-clipboard-copy__expandable-content--BorderInlineStartWidth: var(--pf-t--global--border--width--control--default);
+  --pf-v6-c-clipboard-copy__expandable-content--BorderColor: var(--pf-t--global--border--color--default);
+  --pf-v6-c-clipboard-copy__expandable-content--BorderRadius: var(--pf-t--global--border--radius--small);
+  --pf-v6-c-clipboard-copy__expandable-content--OutlineOffset: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-clipboard-copy__group--Gap: var(--pf-t--global--spacer--gap--control-to-control--default);
+  --pf-v6-c-clipboard-copy--m-inline--PaddingInlineStart: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-clipboard-copy--m-inline--PaddingInlineEnd: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-clipboard-copy--m-inline--BackgroundColor: var(--pf-t--global--background--color--secondary--default);
+  --pf-v6-c-clipboard-copy__actions--Gap: var(--pf-t--global--spacer--gap--action-to-action--plain);
+  --pf-v6-c-clipboard-copy__actions--MarginInlineStart: var(--pf-t--global--spacer--gap--text-to-element--compact);
+  --pf-v6-c-clipboard-copy__actions-item--button--Color: var(--pf-t--global--icon--color--subtle);
+  --pf-v6-c-clipboard-copy__actions-item--button--hover--Color: var(--pf-t--global--icon--color--regular);
+  --pf-v6-c-clipboard-copy__text--m-code--FontFamily: var(--pf-t--global--font--family--mono);
+  --pf-v6-c-clipboard-copy__text--m-code--FontSize: var(--pf-t--global--font--size--body--default);
+}
+
+.pf-v6-c-clipboard-copy.pf-m-expanded .pf-v6-c-clipboard-copy__toggle-icon {
+  transform: rotate(var(--pf-v6-c-clipboard-copy--m-expanded__toggle-icon--Rotate));
+}
+.pf-v6-c-clipboard-copy.pf-m-inline {
+  display: inline;
+  padding-inline-start: var(--pf-v6-c-clipboard-copy--m-inline--PaddingInlineStart);
+  padding-inline-end: var(--pf-v6-c-clipboard-copy--m-inline--PaddingInlineEnd);
+  white-space: nowrap;
+  background-color: var(--pf-v6-c-clipboard-copy--m-inline--BackgroundColor);
+}
+.pf-v6-c-clipboard-copy.pf-m-inline.pf-m-block {
+  display: block;
+}
+.pf-v6-c-clipboard-copy.pf-m-inline.pf-m-truncate {
+  display: inline-flex;
+}
+
+.pf-v6-c-clipboard-copy__group {
+  display: flex;
+  gap: var(--pf-v6-c-clipboard-copy__group--Gap);
+}
+
+.pf-v6-c-clipboard-copy__toggle-icon {
+  transition: var(--pf-v6-c-clipboard-copy__toggle-icon--Transition);
+}
+:where(.pf-v6-m-dir-rtl, [dir=rtl]) .pf-v6-c-clipboard-copy__toggle-icon {
+  scale: -1 1;
+}
+
+.pf-v6-c-clipboard-copy__expandable-content {
+  padding-block-start: var(--pf-v6-c-clipboard-copy__expandable-content--PaddingBlockStart);
+  padding-block-end: var(--pf-v6-c-clipboard-copy__expandable-content--PaddingBlockEnd);
+  padding-inline-start: var(--pf-v6-c-clipboard-copy__expandable-content--PaddingInlineStart);
+  padding-inline-end: var(--pf-v6-c-clipboard-copy__expandable-content--PaddingInlineEnd);
+  margin-block-start: var(--pf-v6-c-clipboard-copy__expandable-content--MarginBlockStart);
+  word-wrap: break-word;
+  background-color: var(--pf-v6-c-clipboard-copy__expandable-content--BackgroundColor);
+  background-clip: padding-box;
+  border: solid var(--pf-v6-c-clipboard-copy__expandable-content--BorderColor);
+  border-block-start-width: var(--pf-v6-c-clipboard-copy__expandable-content--BorderBlockStartWidth);
+  border-block-end-width: var(--pf-v6-c-clipboard-copy__expandable-content--BorderBlockEndWidth);
+  border-inline-start-width: var(--pf-v6-c-clipboard-copy__expandable-content--BorderInlineStartWidth);
+  border-inline-end-width: var(--pf-v6-c-clipboard-copy__expandable-content--BorderInlineEndWidth);
+  border-radius: var(--pf-v6-c-clipboard-copy__expandable-content--BorderRadius);
+  box-shadow: var(--pf-v6-c-clipboard-copy__expandable-content--BoxShadow);
+}
+.pf-v6-c-clipboard-copy__expandable-content pre {
+  white-space: pre-wrap;
+}
+
+.pf-v6-c-clipboard-copy__text {
+  word-break: break-word;
+  white-space: normal;
+}
+.pf-v6-c-clipboard-copy__text.pf-m-code {
+  font-family: var(--pf-v6-c-clipboard-copy__text--m-code--FontFamily);
+  font-size: var(--pf-v6-c-clipboard-copy__text--m-code--FontSize);
+}
+
+.pf-v6-c-clipboard-copy__actions {
+  display: inline-flex;
+  gap: var(--pf-v6-c-clipboard-copy__actions--Gap);
+  margin-inline-start: var(--pf-v6-c-clipboard-copy__actions--MarginInlineStart);
+}
+
+.pf-v6-c-clipboard-copy__actions-item .pf-v6-c-button.pf-m-plain {
+  --pf-v6-c-button--m-plain__icon--Color: var(--pf-v6-c-clipboard-copy__actions-item--button--Color);
+  --pf-v6-c-button--m-plain--hover__icon--Color: var(--pf-v6-c-clipboard-copy__actions-item--button--hover--Color);
+}

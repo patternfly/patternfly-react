@@ -1,0 +1,14 @@
+@use '../../sass-utilities' as *;
+
+// stylelint-disable
+$pf-v6-u-alignment-options: (
+  text-align-start:    (text-align start),
+  text-align-center:  (text-align center),
+  text-align-end:   (text-align end),
+  text-align-justify: (text-align justify)
+);
+
+// Text utilities
+@include pf-v6-utility-builder($pf-v6-u-alignment-options, $pf-v6-global--breakpoint-list);
+
+// stylelint-enable

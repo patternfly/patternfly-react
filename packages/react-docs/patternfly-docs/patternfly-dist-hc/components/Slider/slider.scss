@@ -1,0 +1,269 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($slider) {
+  --#{$slider}--value: 0; // should always be set inline
+  --#{$slider}__step--InsetInlineStart: 0; // should always be set inline
+
+  // rail
+  --#{$slider}__rail--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --#{$slider}__rail--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --#{$slider}__rail-track--Height: #{pf-size-prem(4px)};
+  --#{$slider}__rail-track--before--base--BackgroundColor: var(--pf-t--global--color--nonstatus--gray--default);
+  --#{$slider}__rail-track--before--fill--BackgroundColor: var(--pf-t--global--border--color--hover);
+  --#{$slider}__rail-track--before--BorderRadius: var(--pf-t--global--border--radius--tiny);
+  --#{$slider}__rail-track--before--fill--BackgroundColor--gradient-stop: var(--#{$slider}--value);
+
+  // steps
+  --#{$slider}__steps--FontSize: var(--pf-t--global--font--size--sm);
+  --#{$slider}__steps--Height: var(--#{$slider}__steps--FontSize);
+
+  // step tick
+  --#{$slider}__step-tick--InsetBlockStart: var(--pf-t--global--spacer--md);
+  --#{$slider}__step-tick--Width: 0.15rem;
+  --#{$slider}__step-tick--Height: #{pf-size-prem(4px)};
+  --#{$slider}__step-tick--BackgroundColor: var(--pf-t--global--icon--color--nonstatus--on-gray--default);
+  --#{$slider}__step-tick--TranslateX: -50%;
+  --#{$slider}__step-tick--BorderRadius: var(--pf-t--global--border--radius--sharp);
+  --#{$slider}__step--m-active__slider-tick--BackgroundColor: var(--pf-t--global--icon--color--on-brand--default);
+  --#{$slider}__step--first-child__step-tick--TranslateX: 0;
+  --#{$slider}__step--last-child__step-tick--TranslateX: -100%;
+
+  // step label
+  --#{$slider}__step-label--TranslateX: -50%;
+  --#{$slider}__step-label--InsetBlockStart: calc(var(--pf-t--global--spacer--xl) + var(--#{$slider}__rail-track--Height));
+  --#{$slider}__step--first-child__step-label--TranslateX: 0;
+  --#{$slider}__step--last-child__step-label--TranslateX: -100%;
+
+  // thumb
+  --#{$slider}__thumb--InsetBlockStart: calc(var(--#{$slider}__rail-track--Height) / 2 + var(--pf-t--global--spacer--md));
+  --#{$slider}__thumb--Width: #{pf-size-prem(16px)};
+  --#{$slider}__thumb--Height: #{pf-size-prem(16px)};
+  --#{$slider}__thumb--InsetInlineStart: var(--#{$slider}--value);
+  --#{$slider}__thumb--BackgroundColor: var(--pf-t--global--color--brand--default);
+  --#{$slider}__thumb--TranslateX: -50%;
+  --#{$slider}__thumb--TranslateY: -50%;
+  --#{$slider}__thumb--BorderRadius: var(--pf-t--global--border--radius--large);
+  --#{$slider}__thumb--BoxShadow--base:
+    0 0 0 2px var(--pf-t--global--background--color--primary--default),
+    0 0 0 3px var(--pf-t--global--color--brand--default);
+  --#{$slider}__thumb--hover--BoxShadow: var(--#{$slider}__thumb--BoxShadow--base);
+  --#{$slider}__thumb--focus--BoxShadow: var(--#{$slider}__thumb--BoxShadow--base);
+  --#{$slider}__thumb--active--BoxShadow:
+    var(--#{$slider}__thumb--BoxShadow--base),
+    0 0 2px 5px var(--pf-t--global--color--nonstatus--blue--clicked);
+  --#{$slider}__thumb--before--Width: 44px;
+  --#{$slider}__thumb--before--Height: var(--#{$slider}__thumb--before--Width);
+  --#{$slider}__thumb--before--BorderRadius: var(--pf-t--global--border--radius--large);
+  --#{$slider}__thumb--before--TranslateX: -50%;
+  --#{$slider}__thumb--before--TranslateY: -50%;
+
+  // value
+  --#{$slider}__value--MarginInlineStart: var(--pf-t--global--spacer--md);
+  --#{$slider}__value--c-form-control--width-base: calc(var(--pf-t--global--spacer--control--horizontal--default) + var(--pf-t--global--spacer--control--horizontal--default) + #{pf-size-prem(20px)}); // form control base width + number input spinner width
+  --#{$slider}__value--c-form-control--width-chars: 3;
+  --#{$slider}__value--c-form-control--Width: calc(var(--#{$slider}__value--c-form-control--width-base) + var(--#{$slider}__value--c-form-control--width-chars) * 1ch);
+  --#{$slider}__value--m-floating--TranslateX: -50%;
+  --#{$slider}__value--m-floating--TranslateY: -100%;
+  --#{$slider}__value--m-floating--InsetInlineStart: var(--#{$slider}--value);
+  --#{$slider}__value--m-floating--ZIndex: var(--pf-t--global--z-index--sm);
+
+  // actions
+  --#{$slider}__actions--MarginInlineEnd: var(--pf-t--global--spacer--sm);
+  --#{$slider}__main--actions--MarginInlineStart: var(--pf-t--global--spacer--sm);
+
+  // disabled
+  --#{$slider}--m-disabled__rail-track--before--fill--BackgroundColor: var(--pf-t--global--background--color--disabled--default);
+  --#{$slider}--m-disabled__step--m-active__slider-tick--BackgroundColor: var(--pf-t--global--icon--color--disabled);
+  --#{$slider}--m-disabled__thumb--BackgroundColor: var(--pf-t--global--background--color--disabled--default);
+}
+
+.#{$slider} {
+  @include pf-v6-bidirectional-style(
+    $prop: --#{$slider}__rail-track--before--fill--direction,
+    $ltr-val: right,
+    $rtl-val: left
+  );
+
+  display: flex;
+
+  &.pf-m-disabled {
+    --#{$slider}__rail-track--before--fill--BackgroundColor: var(--#{$slider}--m-disabled__rail-track--before--fill--BackgroundColor);
+    --#{$slider}__step--m-active__slider-tick--BackgroundColor: var(--#{$slider}--m-disabled__step--m-active__slider-tick--BackgroundColor);
+    --#{$slider}__thumb--BackgroundColor: var(--#{$slider}--m-disabled__thumb--BackgroundColor);
+
+    .#{$slider}__rail,
+    .#{$slider}__thumb {
+      cursor: not-allowed;
+    }
+
+    .#{$slider}__thumb {
+      --#{$slider}__thumb--BoxShadow: none;
+    }
+  }
+}
+
+.#{$slider}__main {
+  position: relative;
+  flex-grow: 1;
+}
+
+.#{$slider}__rail {
+  padding-block-start: var(--#{$slider}__rail--PaddingBlockStart);
+  padding-block-end: var(--#{$slider}__rail--PaddingBlockEnd);
+}
+
+.#{$slider}__rail-track {
+  position: relative;
+  height: var(--#{$slider}__rail-track--Height);
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background:
+      linear-gradient(
+        to var(--#{$slider}__rail-track--before--fill--direction),
+        var(--#{$slider}__rail-track--before--fill--BackgroundColor),
+        var(--#{$slider}__rail-track--before--fill--BackgroundColor) var(--#{$slider}__rail-track--before--fill--BackgroundColor--gradient-stop),
+        var(--#{$slider}__rail-track--before--base--BackgroundColor) var(--#{$slider}__rail-track--before--fill--BackgroundColor--gradient-stop)
+      );
+    border-radius: var(--#{$slider}__rail-track--before--BorderRadius);
+  }
+}
+
+.#{$slider}__steps {
+  height: var(--#{$slider}__steps--Height);
+  font-size: var(--#{$slider}__steps--FontSize);
+  line-height: 1;
+}
+
+.#{$slider}__step {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: var(--#{$slider}__step--InsetInlineStart); // set programmatically as an inline style
+  content: "";
+
+  &.pf-m-active {
+    --#{$slider}__step-tick--BackgroundColor: var(--#{$slider}__step--m-active__slider-tick--BackgroundColor);
+  }
+
+  &:first-child {
+    --#{$slider}__step-tick--TranslateX: var(--#{$slider}__step--first-child__step-tick--TranslateX);
+    --#{$slider}__step-label--TranslateX: var(--#{$slider}__step--first-child__step-label--TranslateX);
+  }
+
+  &:last-child {
+    --#{$slider}__step-tick--TranslateX: var(--#{$slider}__step--last-child__step-tick--TranslateX);
+    --#{$slider}__step-label--TranslateX: var(--#{$slider}__step--last-child__step-label--TranslateX);
+  }
+}
+
+.#{$slider}__step-tick {
+  @include pf-v6-bidirectional-style(
+    $prop: transform,
+    $ltr-val: translateX(var(--#{$slider}__step-tick--TranslateX)),
+    $rtl-val: translateX(#{pf-v6-calc-inverse(var(--#{$slider}__step-tick--TranslateX))})
+  );
+
+  position: absolute;
+  inset-block-start: var(--#{$slider}__step-tick--InsetBlockStart);
+  inset-inline-start: 0;
+  width: var(--#{$slider}__step-tick--Width);
+  height: var(--#{$slider}__step-tick--Height);
+  background-color: var(--#{$slider}__step-tick--BackgroundColor);
+  border-radius: var(--#{$slider}__step-tick--BorderRadius);
+}
+
+.#{$slider}__step-label {
+  @include pf-v6-bidirectional-style(
+    $prop: transform,
+    $ltr-val: translateX(var(--#{$slider}__step-label--TranslateX)),
+    $rtl-val: translateX(#{pf-v6-calc-inverse(var(--#{$slider}__step-label--TranslateX))})
+  );
+
+  position: absolute;
+  inset-block-start: var(--#{$slider}__step-label--InsetBlockStart);
+  word-break: normal;
+}
+
+.#{$slider}__thumb {
+  @include pf-v6-bidirectional-style(
+    $prop: transform,
+    $ltr-val: translate(var(--#{$slider}__thumb--TranslateX), var(--#{$slider}__thumb--TranslateY)),
+    $rtl-val: translate(#{pf-v6-calc-inverse(var(--#{$slider}__thumb--TranslateX))}, var(--#{$slider}__thumb--TranslateY))
+  );
+
+  position: absolute;
+  inset-block-start: var(--#{$slider}__thumb--InsetBlockStart);
+  inset-inline-start: var(--#{$slider}__thumb--InsetInlineStart);
+  width: var(--#{$slider}__thumb--Width);
+  height: var(--#{$slider}__thumb--Height);
+  cursor: pointer;
+  background-color: var(--#{$slider}__thumb--BackgroundColor);
+  border-radius: var(--#{$slider}__thumb--BorderRadius);
+  box-shadow: var(--#{$slider}__thumb--BoxShadow);
+
+  &::before {
+    @include pf-v6-bidirectional-style(
+      $prop: transform,
+      $ltr-val: translate(var(--#{$slider}__thumb--before--TranslateX), var(--#{$slider}__thumb--before--TranslateY)),
+      $rtl-val: translate(#{pf-v6-calc-inverse(var(--#{$slider}__thumb--before--TranslateX))}, var(--#{$slider}__thumb--before--TranslateY))
+    );
+
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    width: var(--#{$slider}__thumb--before--Width);
+    height: var(--#{$slider}__thumb--before--Height);
+    content: "";
+    border-radius: var(--#{$slider}__thumb--before--BorderRadius);
+  }
+
+  &:hover {
+    --#{$slider}__thumb--BoxShadow: var(--#{$slider}__thumb--hover--BoxShadow);
+  }
+
+  &:focus {
+    --#{$slider}__thumb--BoxShadow: var(--#{$slider}__thumb--focus--BoxShadow);
+
+    outline: 0;
+  }
+
+  &:active {
+    --#{$slider}__thumb--BoxShadow: var(--#{$slider}__thumb--active--BoxShadow);
+  }
+}
+
+.#{$slider}__value {
+  margin-inline-start: var(--#{$slider}__value--MarginInlineStart);
+
+  &.pf-m-floating {
+    @include pf-v6-bidirectional-style(
+      $prop: transform,
+      $ltr-val: translate(var(--#{$slider}__value--m-floating--TranslateX), var(--#{$slider}__value--m-floating--TranslateY)),
+      $rtl-val: translate(#{pf-v6-calc-inverse(var(--#{$slider}__value--m-floating--TranslateX))}, var(--#{$slider}__value--m-floating--TranslateY)),
+    );
+
+    --#{$slider}__value--MarginInlineStart: 0;
+
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: var(--#{$slider}__value--m-floating--InsetInlineStart);
+    z-index: var(--#{$slider}__value--m-floating--ZIndex);
+  }
+
+  .#{$form-control} {
+    width: var(--#{$slider}__value--c-form-control--Width);
+  }
+}
+
+.#{$slider}__actions {
+  display: flex;
+  margin-inline-end: var(--#{$slider}__actions--MarginInlineEnd);
+
+  .#{$slider}__main ~ & {
+    --#{$slider}__actions--MarginInlineEnd: 0;
+
+    margin-inline-start: var(--#{$slider}__main--actions--MarginInlineStart);
+  }
+}

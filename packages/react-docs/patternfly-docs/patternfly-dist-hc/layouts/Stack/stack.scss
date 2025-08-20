@@ -1,0 +1,20 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($stack) {
+  --#{$stack}--m-gutter--Gap: var(--pf-t--global--spacer--gutter--default);
+}
+
+.#{$stack} {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  @at-root .#{$stack}__item.pf-m-fill,
+  & > .pf-m-fill {
+    flex-grow: 1;
+  }
+}
+
+.#{$stack}.pf-m-gutter {
+  gap: var(--#{$stack}--m-gutter--Gap);
+}

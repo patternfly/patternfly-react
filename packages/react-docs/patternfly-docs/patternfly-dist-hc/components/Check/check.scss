@@ -1,0 +1,93 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($check) {
+  --#{$check}--GridGap: var(--pf-t--global--spacer--gap--group--vertical) var(--pf-t--global--spacer--gap--text-to-element--default);
+  --#{$check}--AccentColor: var(--pf-t--global--color--brand--default);
+  --#{$check}--m-standalone--MinHeight: calc(var(--#{$check}__label--FontSize) * var(--#{$check}__label--LineHeight));
+
+  // TODO: update to `--#{$check}--FontSize` `--#{$check}--LineHeight`
+  --#{$check}__label--disabled--Color: var(--pf-t--global--text--color--disabled);
+  --#{$check}__label--Color: var(--pf-t--global--text--color--regular);
+  --#{$check}__label--FontWeight: var(--pf-t--global--font--weight--body--default);
+  --#{$check}__label--FontSize: var(--pf-t--global--font--size--body--default);
+  --#{$check}__label--LineHeight: var(--pf-t--global--font--line-height--body);
+  --#{$check}__description--FontSize: var(--pf-t--global--font--size--body--sm);
+  --#{$check}__description--Color: var(--pf-t--global--text--color--subtle);
+
+  // Required checkbox
+  --#{$check}__label-required--MarginInlineStart: var(--pf-t--global--spacer--xs);
+  --#{$check}__label-required--FontSize: var(--pf-t--global--font--size--body--sm);
+  --#{$check}__label-required--Color: var(--pf-t--global--color--status--danger--default);
+
+  // TODO: due to subpixel rendering and this value resolving to 21px, the checkbox vertical centering is off by 1px. Mozilla rounds subpixels up while chrome rounds down. This is a temporary fix until we can find a better solution.
+  --#{$check}__input--TranslateY: calc((var(--#{$check}__label--LineHeight) * var(--#{$check}__label--FontSize) / 2 ) - 50%); // find height of single label, divide by two, offset by 50% of own height
+}
+
+// - Check
+.#{$check} {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: var(--#{$check}--GridGap);
+  accent-color: var(--#{$check}--AccentColor);
+
+  &.pf-m-standalone {
+    display: inline-grid;
+    grid-template-columns: auto;
+    min-height: var(--#{$check}--m-standalone--MinHeight);
+
+    .#{$check}__input {
+      align-self: center;
+      transform: none;
+    }
+  }
+}
+
+// - Check input
+.#{$check}__input {
+  align-self: start;
+  font-size: var(--#{$check}__label--FontSize);
+  line-height: var(--#{$check}__label--LineHeight);
+
+  // find height of single label, divide by two, offset by 50% of own height
+  transform: translateY(var(--#{$check}__input--TranslateY));
+}
+
+.#{$check}__label {
+  font-size: var(--#{$check}__label--FontSize);
+  font-weight: var(--#{$check}__label--FontWeight);
+  line-height: var(--#{$check}__label--LineHeight);
+  color: var(--#{$check}__label--Color);
+}
+
+.#{$check}__description {
+  grid-column: 2;
+  font-size: var(--#{$check}__description--FontSize);
+  color: var(--#{$check}__description--Color);
+}
+
+.#{$check}__body {
+  grid-column: 2;
+}
+
+.#{$check}__label,
+.#{$check}__input {
+  justify-self: start;
+
+  @at-root label.#{$check},
+  & {
+    cursor: pointer;
+  }
+
+  &:disabled,
+  &.pf-m-disabled {
+    --#{$check}__label--Color: var(--#{$check}__label--disabled--Color);
+
+    cursor: not-allowed;
+  }
+}
+
+.#{$check}__label-required {
+  margin-inline-start: var(--#{$check}__label-required--MarginInlineStart);
+  font-size: var(--#{$check}__label-required--FontSize);
+  color: var(--#{$check}__label-required--Color);
+}

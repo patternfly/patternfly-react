@@ -1,0 +1,35 @@
+.pf-v6-c-timestamp {
+  --pf-v6-c-timestamp--FontSize: var(--pf-t--global--font--size--body--sm);
+  --pf-v6-c-timestamp--Color: var(--pf-t--global--text--color--regular);
+  --pf-v6-c-timestamp--OutlineOffset: 0.1875rem;
+  --pf-v6-c-timestamp--m-help-text--TextDecorationLine: var(--pf-t--global--text-decoration--help-text--line--default);
+  --pf-v6-c-timestamp--m-help-text--TextDecorationStyle: var(--pf-t--global--text-decoration--help-text--style--default);
+  --pf-v6-c-timestamp--m-help-text--TextUnderlineOffset: 0.25rem;
+  --pf-v6-c-timestamp--m-help-text--Color: var(--pf-t--global--text--color--subtle);
+  --pf-v6-c-timestamp--m-help-text--hover--Color: var(--pf-t--global--text--color--regular);
+  --pf-v6-c-timestamp--m-help-text--hover--TextDecorationLine: var(--pf-t--global--text-decoration--help-text--line--hover);
+  --pf-v6-c-timestamp--m-help-text--hover--TextDecorationStyle: var(--pf-t--global--text-decoration--help-text--style--hover);
+}
+
+.pf-v6-c-timestamp {
+  display: inline-block;
+  font-size: var(--pf-v6-c-timestamp--FontSize);
+  color: var(--pf-v6-c-timestamp--Color);
+  outline-offset: var(--pf-v6-c-timestamp--OutlineOffset);
+}
+.pf-v6-c-timestamp.pf-m-help-text {
+  --pf-v6-c-timestamp--Color: var(--pf-v6-c-timestamp--m-help-text--Color);
+  text-decoration-line: var(--pf-v6-c-timestamp--m-help-text--TextDecorationLine);
+  text-decoration-style: var(--pf-v6-c-timestamp--m-help-text--TextDecorationStyle);
+  text-underline-offset: var(--pf-v6-c-timestamp--m-help-text--TextUnderlineOffset);
+  cursor: pointer;
+}
+.pf-v6-c-timestamp.pf-m-help-text:is(:hover, :focus) {
+  --pf-v6-c-timestamp--Color: var(--pf-v6-c-timestamp--m-help-text--hover--Color);
+  --pf-v6-c-timestamp--m-help-text--TextDecorationLine: var(--pf-v6-c-timestamp--m-help-text--hover--TextDecorationLine);
+  --pf-v6-c-timestamp--m-help-text--TextDecorationStyle: var(--pf-v6-c-timestamp--m-help-text--hover--TextDecorationStyle);
+}
+
+.pf-v6-c-timestamp__text {
+  text-decoration: inherit;
+}

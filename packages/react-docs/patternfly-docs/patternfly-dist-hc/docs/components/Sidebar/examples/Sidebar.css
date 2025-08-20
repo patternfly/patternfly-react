@@ -1,0 +1,6 @@
+#ws-core-c-sidebar-sticky-panel,
+#ws-core-c-sidebar-static-panel,
+#ws-core-c-sidebar-responsive-panel-width {
+  overflow: auto;
+  max-height: 200px;
+}

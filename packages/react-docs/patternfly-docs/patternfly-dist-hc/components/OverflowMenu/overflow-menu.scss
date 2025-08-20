@@ -1,0 +1,53 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($overflow-menu) {
+  --#{$overflow-menu}--ColumnGap: var(--pf-t--global--spacer--md);
+
+  // * Overflow menu group
+  --#{$overflow-menu}__group--ColumnGap: var(--pf-t--global--spacer--md);
+
+  // * Overflow menu button group
+  --#{$overflow-menu}__group--m-button-group--ColumnGap: var(--pf-t--global--spacer--sm);
+
+  // * Overflow menu icon button group
+  --#{$overflow-menu}__group--m-icon-button-group--ColumnGap: var(--pf-t--global--spacer--xs);
+}
+
+// - Overflow menu
+.#{$overflow-menu} {
+  display: inline-flex;
+  column-gap: var(--#{$overflow-menu}--ColumnGap);
+}
+
+// - Overflow menu content - Overflow menu group
+.#{$overflow-menu}__content,
+.#{$overflow-menu}__group {
+  display: flex;
+  align-items: start;
+}
+
+// - Overflow menu group
+.#{$overflow-menu}__group {
+  column-gap: var(--#{$overflow-menu}__group--ColumnGap);
+
+  // - Overflow menu button group
+  &.pf-m-button-group {
+    column-gap: var(--#{$overflow-menu}__group--m-button-group--ColumnGap);
+  }
+
+  // - Overflow menu icon button group
+  &.pf-m-icon-button-group {
+    column-gap: var(--#{$overflow-menu}__group--m-icon-button-group--ColumnGap);
+  }
+}
+
+// - Oveflow menu item
+.#{$overflow-menu}__item {
+  column-gap: var(--#{$overflow-menu}__item--ColumnGap, var(--#{$overflow-menu}--ColumnGap));
+}
+
+// - Overflow menu content - Overflow menu control
+.#{$overflow-menu}__content,
+.#{$overflow-menu}__control  {
+  column-gap: var(--#{$overflow-menu}--ColumnGap);
+}

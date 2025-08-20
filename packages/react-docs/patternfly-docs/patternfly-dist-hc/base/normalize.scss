@@ -1,0 +1,132 @@
+@use '../sass-utilities' as *;
+
+// Normalize
+@if $pf-v6-global--enable-normalize {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    scrollbar-color: var(--pf-t--global--border--color--default) transparent;
+  }
+    
+  // styling scrollbar color in Safari requires setting max-width and max-height
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--pf-t--global--border--color--default);
+    border-radius: var(--pf-t--global--spacer--xs);
+  }
+
+  *::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  *::-webkit-scrollbar {
+    max-width: var(--pf-t--global--spacer--sm);
+    max-height: var(--pf-t--global--spacer--sm);
+  }
+
+  :where(
+    html,
+    body
+  ) {
+    height: 100%;
+  }
+
+  :where(body) {
+    font-family: var(--pf-t--global--font--family--body);
+    font-size: var(--pf-t--global--font--size--body--default);
+    font-weight: var(--pf-t--global--font--weight--body--default);
+    line-height: var(--pf-t--global--font--line-height--body);
+    color: var(--pf-t--global--text--color--regular);
+  }
+
+  :where(
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6
+  ) {
+    font-size: 100%;
+    font-weight: var(--pf-t--global--font--weight--body--default);
+  }
+
+  :where(ul) {
+    list-style: none;
+  }
+
+  :where(
+    button,
+    input,
+    optgroup,
+    select,
+    textarea
+  ) {
+    margin: 0;
+    font-family: inherit;
+    font-size: 100%;
+    line-height: var(--pf-t--global--font--line-height--body);
+    color: var(--pf-t--global--text--color--regular);
+  }
+
+  :where(
+    img,
+    embed,
+    iframe,
+    object,
+    audio,
+    video
+  ) {
+    max-width: 100%;
+    height: auto;
+  }
+
+  :where(iframe) {
+    border: 0;
+  }
+
+  :where(table) {
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+
+  :where(
+    td,
+    th
+  ) {
+    padding: 0;
+    text-align: start;
+  }
+
+  :where(
+    code,
+    pre
+  ) {
+    font-family: var(--pf-t--global--font--family--mono);
+  }
+
+  :where(a) {
+    color: var(--pf-t--global--text--color--link--default);
+    text-decoration-line: var(--pf-t--global--text-decoration--link--line--default);
+  }
+
+  :where(a:hover, a:focus) {
+    color: var(--pf-t--global--text--color--link--hover);
+    text-decoration-line: var(--pf-t--global--text-decoration--link--line--hover);
+  }
+
+  :where(
+    a,
+    button
+  ) {
+    cursor: pointer;
+  }
+
+  :where(:root) {
+    color-scheme: light;
+  }
+
+  :where(.pf-v6-theme-dark) {
+    color-scheme: dark;
+  }
+}

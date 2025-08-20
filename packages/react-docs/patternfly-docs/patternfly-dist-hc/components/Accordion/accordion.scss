@@ -1,0 +1,281 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($accordion) {
+  // accordion
+  --#{$accordion}--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --#{$accordion}--RowGap: var(--pf-t--global--spacer--xs); // No applicable spacer
+
+  // accordion item
+  --#{$accordion}__item--BorderRadius: var(--pf-t--global--border--radius--200);
+  --#{$accordion}__item--m-expanded--BackgroundColor: var(--pf-t--global--background--color--action--plain--clicked); // TODO - remove "m-expanded" in breaking change
+
+  // accordion toggle
+  --#{$accordion}__toggle--ColumnGap: var(--pf-t--global--spacer--gap--text-to-element--default);
+  --#{$accordion}__toggle--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --#{$accordion}__toggle--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --#{$accordion}__toggle--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$accordion}__toggle--m-expanded--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$accordion}__toggle--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --#{$accordion}__toggle--BackgroundColor: var(--pf-t--global--background--color--action--plain--default);
+  --#{$accordion}__toggle--hover--BackgroundColor: var(--pf-t--global--background--color--action--plain--hover);
+  --#{$accordion}__toggle--BorderRadius: var(--pf-t--global--border--radius--small);
+  --#{$accordion}__toggle--ZIndex: var(--pf-t--global--z-index--xs);
+  --#{$accordion}__toggle--BorderWidth: var(--pf-t--global--border--width--action--plain--default);
+  --#{$accordion}__toggle--BorderColor: var(--pf-t--global--border--color--high-contrast);
+  --#{$accordion}__toggle--hover--BorderWidth: var(--pf-t--global--border--width--action--plain--hover);
+
+  // Accordion toggle toggle-start modifier
+  // This decreases the gap between icon and text, alternative is calc it to * 2 the token or create a new token
+  --#{$accordion}--m-toggle-start__toggle--ColumnGap: var(--pf-t--global--spacer--gap--text-to-element--default);
+
+  // accordion toggle text
+  --#{$accordion}__toggle-text--Color: var(--pf-t--global--text--color--regular);
+  --#{$accordion}__toggle-text--FontWeight: var(--pf-t--global--font--weight--body--default);
+  --#{$accordion}__toggle--m-expanded__toggle-text--FontWeight: var(--pf-t--global--font--weight--body--bold);
+  --#{$accordion}--m-display-lg__toggle--m-expanded__toggle-text--FontWeight: var(--pf-t--global--font--weight--heading--default);
+
+  // accordion toggle icon
+  --#{$accordion}__toggle-icon--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--default);
+  --#{$accordion}__toggle-icon--TransitionDuration: var(--pf-t--global--motion--duration--icon--default);
+  --#{$accordion}__toggle-icon--Transition: transform var(--#{$accordion}__toggle-icon--TransitionDuration) var(--#{$accordion}__toggle-icon--TransitionTimingFunction); // TODO remove in breaking change along with shorthand property
+  --#{$accordion}__toggle--m-expanded__toggle-icon--Rotate: 90deg;
+
+  // accordion expandable content
+  --#{$accordion}__expandable-content--MarginInlineEnd: var(--pf-t--global--spacer--md);
+  --#{$accordion}__expandable-content--MarginBlockEnd: var(--pf-t--global--spacer--md);
+  --#{$accordion}__expandable-content--MarginInlineStart: var(--pf-t--global--spacer--md);
+  --#{$accordion}__expandable-content--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --#{$accordion}__expandable-content--BorderRadius: var(--pf-t--global--border--radius--small);
+  --#{$accordion}__expandable-content--Color: var(--pf-t--global--text--color--regular);
+  --#{$accordion}__expandable-content--FontSize: var(--pf-t--global--font--size--body--default);
+  --#{$accordion}__expandable-content--m-fixed--MaxHeight: #{pf-size-prem(150px)};
+
+  // expand animation
+  --#{$accordion}__item--before--TransitionDuration--expand--fade: var(--pf-t--global--motion--duration--fade--default);
+  --#{$accordion}__item--before--TransitionDuration--collapse--fade: var(--pf-t--global--motion--duration--fade--short);
+  --#{$accordion}__item--before--TransitionDuration--fade: var(--#{$accordion}__item--before--TransitionDuration--collapse--fade);
+  --#{$accordion}__item--before--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--default);
+  --#{$accordion}__item--before--Opacity: 0;
+  --#{$accordion}__item--m-expanded--before--Opacity: 1;
+  --#{$accordion}__item--m-expanded--before--TranslateY: 0;
+  --#{$accordion}__expandable-content--TransitionDuration--collapse--slide: 0s;
+  --#{$accordion}__expandable-content--TransitionDuration--collapse--fade: var(--pf-t--global--motion--duration--fade--short);
+  --#{$accordion}__expandable-content--TransitionDuration--expand--slide: 0s;
+  --#{$accordion}__expandable-content--TransitionDuration--expand--fade: var(--pf-t--global--motion--duration--fade--default);
+  --#{$accordion}__expandable-content--TransitionDuration--slide: var(--#{$accordion}__expandable-content--TransitionDuration--collapse--slide);
+  --#{$accordion}__expandable-content--TransitionDuration--fade: var(--#{$accordion}__expandable-content--TransitionDuration--collapse--fade);
+  --#{$accordion}__expandable-content--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--default);
+  --#{$accordion}__expandable-content--Opacity: 0;
+  --#{$accordion}__item--m-expanded__expandable-content--Opacity: 1;
+  --#{$accordion}__expandable-content--TranslateY: 0;
+  --#{$accordion}__item--m-expanded__expandable-content--TranslateY: 0;
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    --#{$accordion}__item--before--TransitionDuration--expand--slide: var(--pf-t--global--motion--duration--fade--default);
+    --#{$accordion}__item--before--TransitionDuration--collapse--slide: var(--pf-t--global--motion--duration--fade--short);
+    --#{$accordion}__item--before--TranslateY: -.5rem; // TODO - replace with token
+    --#{$accordion}__expandable-content--TransitionDuration--expand--slide: var(--pf-t--global--motion--duration--fade--default);
+    --#{$accordion}__expandable-content--TransitionDuration--collapse--slide: var(--pf-t--global--motion--duration--fade--short);
+    --#{$accordion}__expandable-content--TranslateY: -.5rem; // TODO - replace with token
+  }
+
+  // accordion expandable content body
+  --#{$accordion}__expandable-content-body--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --#{$accordion}__expandable-content-body--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --#{$accordion}__expandable-content-body--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$accordion}__expandable-content-body--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --#{$accordion}__expandable-content-body--expandable-content-body--PaddingBlockStart: 0;
+
+  // large
+  --#{$accordion}--m-display-lg__toggle--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --#{$accordion}--m-display-lg__toggle--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --#{$accordion}--m-display-lg__toggle--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --#{$accordion}--m-display-lg__toggle--m-expanded--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$accordion}--m-display-lg__toggle--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --#{$accordion}--m-display-lg__toggle--FontFamily: var(--pf-t--global--font--family--heading);
+  --#{$accordion}--m-display-lg__toggle--FontSize: var(--pf-t--global--font--size--heading--sm);
+  --#{$accordion}--m-display-lg__toggle-text--FontWeight: var(--pf-t--global--font--weight--heading--default);
+  --#{$accordion}--m-display-lg__expandable-content--FontSize: var(--pf-t--global--font--size--body--lg);
+  --#{$accordion}--m-display-lg__expandable-content--Color: var(--pf-t--global--text--color--regular);
+
+  // bordered
+  --#{$accordion}--m-bordered--RowGap: 0;
+  --#{$accordion}__item--m-bordered--BorderBlockEndWidth: var(--pf-t--global--border--width--divider--default);
+  --#{$accordion}__item--m-bordered--BorderBlockEndColor: var(--pf-t--global--border--color--default);
+  
+  // accordion item border for high contrast
+  --#{$accordion}__item--BorderWidth: 0;
+  --#{$accordion}__item--BorderColor: var(--pf-t--global--border--color--high-contrast);
+  --#{$accordion}__item--m-expanded--BorderWidth: var(--pf-t--global--high-contrast--border--width--regular);
+
+  // expandable content border for high contrast
+  --#{$accordion}__expandable-content--BorderWidth: var(--pf-t--global--high-contrast--border--width--regular);
+  --#{$accordion}__expandable-content--BorderColor: var(--pf-t--global--border--color--high-contrast);
+}
+
+.#{$accordion} {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--#{$accordion}--RowGap);
+  background-color: var(--#{$accordion}--BackgroundColor);
+
+  &.pf-m-toggle-start {
+    --#{$accordion}__toggle--ColumnGap: var(--#{$accordion}--m-toggle-start__toggle--ColumnGap);
+  }
+
+  &.pf-m-display-lg {
+    --#{$accordion}__toggle--PaddingBlockStart: var(--#{$accordion}--m-display-lg__toggle--PaddingBlockStart);
+    --#{$accordion}__toggle--PaddingInlineEnd: var(--#{$accordion}--m-display-lg__toggle--PaddingInlineEnd);
+    --#{$accordion}__toggle--PaddingBlockEnd: var(--#{$accordion}--m-display-lg__toggle--PaddingBlockEnd);
+    --#{$accordion}__toggle--m-expanded--PaddingBlockEnd: var(--#{$accordion}--m-display-lg__toggle--m-expanded--PaddingBlockEnd);
+    --#{$accordion}__toggle--PaddingInlineStart: var(--#{$accordion}--m-display-lg__toggle--PaddingInlineStart);
+    --#{$accordion}__toggle--FontFamily: var(--#{$accordion}--m-display-lg__toggle--FontFamily);
+    --#{$accordion}__toggle--FontSize: var(--#{$accordion}--m-display-lg__toggle--FontSize);
+    --#{$accordion}__toggle-text--FontWeight: var(--#{$accordion}--m-display-lg__toggle-text--FontWeight);
+    --#{$accordion}__toggle--m-expanded__toggle-text--FontWeight: var(--#{$accordion}--m-display-lg__toggle--m-expanded__toggle-text--FontWeight);
+    --#{$accordion}__expandable-content--FontSize: var(--#{$accordion}--m-display-lg__expandable-content--FontSize);
+    --#{$accordion}__expandable-content--Color: var(--#{$accordion}--m-display-lg__expandable-content--Color);
+  }
+
+  &.pf-m-bordered {
+    --#{$accordion}--RowGap: var(--#{$accordion}--m-bordered--RowGap);
+    --#{$accordion}__item--BorderRadius: 0;
+    --#{$accordion}__toggle--BorderRadius: 0;
+    --#{$accordion}__item--BorderWidth: 0;
+  
+    .#{$accordion}__item {
+      border-block-end: var(--#{$accordion}__item--m-bordered--BorderBlockEndWidth) solid var(--#{$accordion}__item--m-bordered--BorderBlockEndColor);
+    }
+  }
+}
+
+.#{$accordion}__item {
+  position: relative;
+
+  &::before { 
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    content: "";
+    background-color: var(--#{$accordion}__item--m-expanded--BackgroundColor);
+    border: var(--#{$accordion}__item--BorderWidth) solid var(--#{$accordion}__item--BorderColor);
+    border-radius: var(--#{$accordion}__item--BorderRadius);
+    opacity: var(--#{$accordion}__item--before--Opacity);
+    transition-timing-function: var(--#{$accordion}__item--before--TransitionTimingFunction);
+    transition-duration: var(--#{$accordion}__item--before--TransitionDuration--fade);
+    transition-property: opacity;
+  }
+
+  &.pf-m-expanded {
+    --#{$accordion}__toggle--PaddingBlockEnd: var(--#{$accordion}__toggle--m-expanded--PaddingBlockEnd);
+    --#{$accordion}__toggle-text--FontWeight: var(--#{$accordion}__toggle--m-expanded__toggle-text--FontWeight);
+    --#{$accordion}__item--before--TransitionDuration--slide: var(--#{$accordion}__item--before--TransitionDuration--expand--slide);
+    --#{$accordion}__item--before--TransitionDuration--fade: var(--#{$accordion}__item--before--TransitionDuration--expand--fade);
+    --#{$accordion}__item--before--Opacity: var(--#{$accordion}__item--m-expanded--before--Opacity);
+    --#{$accordion}__item--before--TranslateY: var(--#{$accordion}__item--m-expanded--before--TranslateY);
+    --#{$accordion}__item--BorderWidth: var(--#{$accordion}__item--m-expanded--BorderWidth);
+    --#{$accordion}__expandable-content--TransitionDuration--slide: var(--#{$accordion}__expandable-content--TransitionDuration--expand--slide);
+    --#{$accordion}__expandable-content--TransitionDuration--fade: var(--#{$accordion}__expandable-content--TransitionDuration--expand--fade);
+    --#{$accordion}__expandable-content--Opacity: var(--#{$accordion}__item--m-expanded__expandable-content--Opacity);
+    --#{$accordion}__expandable-content--TranslateY: var(--#{$accordion}__item--m-expanded__expandable-content--TranslateY);
+
+    .#{$accordion}__toggle-icon {
+      transform: rotate(var(--#{$accordion}__toggle--m-expanded__toggle-icon--Rotate));
+    }
+  }
+}
+
+.#{$accordion}__toggle {
+  position: relative;
+  z-index: var(--#{$accordion}__toggle--ZIndex);
+  display: flex;
+  column-gap: var(--#{$accordion}__toggle--ColumnGap);
+  align-items: center;
+  width: 100%;
+  padding-block-start: var(--#{$accordion}__toggle--PaddingBlockStart);
+  padding-block-end: var(--#{$accordion}__toggle--PaddingBlockEnd);
+  padding-inline-start: var(--#{$accordion}__toggle--PaddingInlineStart);
+  padding-inline-end: var(--#{$accordion}__toggle--PaddingInlineEnd);
+  font-family: var(--#{$accordion}__toggle--FontFamily, inherit);
+  font-size: var(--#{$accordion}__toggle--FontSize, inherit);
+  text-align: start;
+  background-color: var(--#{$accordion}__toggle--BackgroundColor);
+  border: 0;
+  border-radius: var(--#{$accordion}__toggle--BorderRadius);
+
+  &::after {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    content: "";
+    border: var(--#{$accordion}__toggle--BorderWidth) solid var(--#{$accordion}__toggle--BorderColor);
+    border-radius: inherit;
+  }
+
+  &:is(:hover, :focus) {
+    --#{$accordion}__toggle--BackgroundColor: var(--#{$accordion}__toggle--hover--BackgroundColor);
+    --#{$accordion}__toggle--BorderWidth: var(--#{$accordion}__toggle--hover--BorderWidth);
+  }
+}
+
+.#{$accordion}__toggle-text {
+  @include pf-v6-text-overflow;
+
+  flex-grow: 1;
+  font-weight: var(--#{$accordion}__toggle-text--FontWeight);
+  color: var(--#{$accordion}__toggle-text--Color);
+}
+
+.#{$accordion}__toggle-icon {
+  @include pf-v6-mirror-inline-on-rtl;
+
+  transition: var(--#{$accordion}__toggle-icon--Transition); // TODO remove shorthand property in breaking change
+}
+
+.#{$accordion}__expandable-content:where([hidden]) {
+  display: revert;
+}
+
+.#{$accordion}__expandable-content {
+  max-height: 0;
+  margin-inline-start: var(--#{$accordion}__expandable-content--MarginInlineStart);
+  margin-inline-end: var(--#{$accordion}__expandable-content--MarginInlineEnd);
+  font-size: var(--#{$accordion}__expandable-content--FontSize);
+  color: var(--#{$accordion}__expandable-content--Color);
+  visibility: hidden;
+  background-color: var(--#{$accordion}__expandable-content--BackgroundColor);
+  border-radius: var(--#{$accordion}__expandable-content--BorderRadius);
+  opacity: var(--#{$accordion}__expandable-content--Opacity);
+  transition-delay: 0s, 0s, var(--#{$accordion}__expandable-content--TransitionDuration--fade), var(--#{$accordion}__expandable-content--TransitionDuration--fade), var(--#{$accordion}__expandable-content--TransitionDuration--fade);
+  transition-timing-function: var(--#{$accordion}__expandable-content--TransitionTimingFunction);
+  transition-duration: var(--#{$accordion}__expandable-content--TransitionDuration--fade), var(--#{$accordion}__expandable-content--TransitionDuration--slide), 0s, 0s, 0s;
+  transition-property: opacity, translate, visibility, max-height, margin-block-end;
+  translate: 0 var(--#{$accordion}__expandable-content--TranslateY);
+
+  &.pf-m-fixed {
+    overflow-y: auto;
+  }
+
+  .#{$accordion}__item.pf-m-expanded & {
+    max-height: 99999px;
+    margin-block-end: var(--#{$accordion}__expandable-content--MarginBlockEnd);
+    visibility: revert;
+    border: var(--#{$accordion}__expandable-content--BorderWidth) solid var(--#{$accordion}__expandable-content--BorderColor);
+    transition-delay: 0s;
+
+    &.pf-m-fixed {
+      max-height: var(--#{$accordion}__expandable-content--m-fixed--MaxHeight);
+    }
+  }
+}
+
+.#{$accordion}__expandable-content-body {
+  padding-block-start: var(--#{$accordion}__expandable-content-body--PaddingBlockStart);
+  padding-block-end: var(--#{$accordion}__expandable-content-body--PaddingBlockEnd);
+  padding-inline-start: var(--#{$accordion}__expandable-content-body--PaddingInlineStart);
+  padding-inline-end: var(--#{$accordion}__expandable-content-body--PaddingInlineEnd);
+
+  & + & {
+    --#{$accordion}__expandable-content-body--PaddingBlockStart: var(--#{$accordion}__expandable-content-body--expandable-content-body--PaddingBlockStart);
+  }
+}

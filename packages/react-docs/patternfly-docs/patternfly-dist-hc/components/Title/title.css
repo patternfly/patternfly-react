@@ -1,0 +1,108 @@
+.pf-v6-c-title {
+  --pf-v6-c-title--FontFamily: var(--pf-t--global--font--family--heading);
+  --pf-v6-c-title--m-4xl--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --pf-v6-c-title--m-4xl--FontSize: var(--pf-t--global--font--size--heading--2xl);
+  --pf-v6-c-title--m-4xl--FontWeight: var(--pf-t--global--font--weight--heading--default);
+  --pf-v6-c-title--m-3xl--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --pf-v6-c-title--m-3xl--FontSize: var(--pf-t--global--font--size--heading--xl);
+  --pf-v6-c-title--m-3xl--FontWeight: var(--pf-t--global--font--weight--heading--default);
+  --pf-v6-c-title--m-2xl--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --pf-v6-c-title--m-2xl--FontSize: var(--pf-t--global--font--size--heading--lg);
+  --pf-v6-c-title--m-2xl--FontWeight: var(--pf-t--global--font--weight--heading--default);
+  --pf-v6-c-title--m-xl--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --pf-v6-c-title--m-xl--FontSize: var(--pf-t--global--font--size--heading--md);
+  --pf-v6-c-title--m-xl--FontWeight: var(--pf-t--global--font--weight--heading--default);
+  --pf-v6-c-title--m-lg--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --pf-v6-c-title--m-lg--FontSize: var(--pf-t--global--font--size--heading--sm);
+  --pf-v6-c-title--m-lg--FontWeight: var(--pf-t--global--font--weight--heading--default);
+  --pf-v6-c-title--m-md--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --pf-v6-c-title--m-md--FontSize: var(--pf-t--global--font--size--heading--xs);
+  --pf-v6-c-title--m-md--FontWeight: var(--pf-t--global--font--weight--heading--default);
+  --pf-v6-c-title--m-h1--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --pf-v6-c-title--m-h1--FontSize: var(--pf-t--global--font--size--heading--h1);
+  --pf-v6-c-title--m-h1--FontWeight: var(--pf-t--global--font--weight--heading--default);
+  --pf-v6-c-title--m-h2--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --pf-v6-c-title--m-h2--FontSize: var(--pf-t--global--font--size--heading--h2);
+  --pf-v6-c-title--m-h2--FontWeight: var(--pf-t--global--font--weight--heading--default);
+  --pf-v6-c-title--m-h3--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --pf-v6-c-title--m-h3--FontSize: var(--pf-t--global--font--size--heading--h3);
+  --pf-v6-c-title--m-h3--FontWeight: var(--pf-t--global--font--weight--heading--default);
+  --pf-v6-c-title--m-h4--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --pf-v6-c-title--m-h4--FontSize: var(--pf-t--global--font--size--heading--h4);
+  --pf-v6-c-title--m-h4--FontWeight: var(--pf-t--global--font--weight--heading--default);
+  --pf-v6-c-title--m-h5--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --pf-v6-c-title--m-h5--FontSize: var(--pf-t--global--font--size--heading--h5);
+  --pf-v6-c-title--m-h5--FontWeight: var(--pf-t--global--font--weight--heading--default);
+  --pf-v6-c-title--m-h6--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --pf-v6-c-title--m-h6--FontSize: var(--pf-t--global--font--size--heading--h6);
+  --pf-v6-c-title--m-h6--FontWeight: var(--pf-t--global--font--weight--heading--default);
+  --pf-v6-c-title--m-page-title--FontWeight: var(--pf-t--global--font--weight--heading--bold);
+}
+
+.pf-v6-c-title {
+  font-family: var(--pf-v6-c-title--FontFamily);
+  word-break: break-word;
+}
+.pf-v6-c-title.pf-m-4xl {
+  font-size: var(--pf-v6-c-title--m-4xl--FontSize);
+  font-weight: var(--pf-v6-c-title--m-4xl--FontWeight);
+  line-height: var(--pf-v6-c-title--m-4xl--LineHeight);
+}
+.pf-v6-c-title.pf-m-3xl {
+  font-size: var(--pf-v6-c-title--m-3xl--FontSize);
+  font-weight: var(--pf-v6-c-title--m-3xl--FontWeight);
+  line-height: var(--pf-v6-c-title--m-3xl--LineHeight);
+}
+.pf-v6-c-title.pf-m-2xl {
+  font-size: var(--pf-v6-c-title--m-2xl--FontSize);
+  font-weight: var(--pf-v6-c-title--m-2xl--FontWeight);
+  line-height: var(--pf-v6-c-title--m-2xl--LineHeight);
+}
+.pf-v6-c-title.pf-m-xl {
+  font-size: var(--pf-v6-c-title--m-xl--FontSize);
+  font-weight: var(--pf-v6-c-title--m-xl--FontWeight);
+  line-height: var(--pf-v6-c-title--m-xl--LineHeight);
+}
+.pf-v6-c-title.pf-m-lg {
+  font-size: var(--pf-v6-c-title--m-lg--FontSize);
+  font-weight: var(--pf-v6-c-title--m-lg--FontWeight);
+  line-height: var(--pf-v6-c-title--m-lg--LineHeight);
+}
+.pf-v6-c-title.pf-m-md {
+  font-size: var(--pf-v6-c-title--m-md--FontSize);
+  font-weight: var(--pf-v6-c-title--m-md--FontWeight);
+  line-height: var(--pf-v6-c-title--m-md--LineHeight);
+}
+.pf-v6-c-title.pf-m-h1 {
+  font-size: var(--pf-v6-c-title--m-h1--FontSize);
+  font-weight: var(--pf-v6-c-title--m-h1--FontWeight);
+  line-height: var(--pf-v6-c-title--m-h1--LineHeight);
+}
+.pf-v6-c-title.pf-m-h2 {
+  font-size: var(--pf-v6-c-title--m-h2--FontSize);
+  font-weight: var(--pf-v6-c-title--m-h2--FontWeight);
+  line-height: var(--pf-v6-c-title--m-h2--LineHeight);
+}
+.pf-v6-c-title.pf-m-h3 {
+  font-size: var(--pf-v6-c-title--m-h3--FontSize);
+  font-weight: var(--pf-v6-c-title--m-h3--FontWeight);
+  line-height: var(--pf-v6-c-title--m-h3--LineHeight);
+}
+.pf-v6-c-title.pf-m-h4 {
+  font-size: var(--pf-v6-c-title--m-h4--FontSize);
+  font-weight: var(--pf-v6-c-title--m-h4--FontWeight);
+  line-height: var(--pf-v6-c-title--m-h4--LineHeight);
+}
+.pf-v6-c-title.pf-m-h5 {
+  font-size: var(--pf-v6-c-title--m-h5--FontSize);
+  font-weight: var(--pf-v6-c-title--m-h5--FontWeight);
+  line-height: var(--pf-v6-c-title--m-h5--LineHeight);
+}
+.pf-v6-c-title.pf-m-h6 {
+  font-size: var(--pf-v6-c-title--m-h6--FontSize);
+  font-weight: var(--pf-v6-c-title--m-h6--FontWeight);
+  line-height: var(--pf-v6-c-title--m-h6--LineHeight);
+}
+.pf-v6-c-title.pf-m-page-title {
+  font-weight: var(--pf-v6-c-title--m-page-title--FontWeight);
+}

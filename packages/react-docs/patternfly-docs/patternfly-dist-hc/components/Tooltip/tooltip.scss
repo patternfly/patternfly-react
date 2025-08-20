@@ -1,0 +1,155 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($tooltip) {
+  // Component variables
+  --#{$tooltip}--MaxWidth: #{pf-size-prem(300px)};
+  --#{$tooltip}--BoxShadow: var(--pf-t--global--box-shadow--md);
+
+  // Content variables
+  --#{$tooltip}__content--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --#{$tooltip}__content--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --#{$tooltip}__content--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$tooltip}__content--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --#{$tooltip}__content--Color: var(--pf-t--global--text--color--inverse);
+  --#{$tooltip}__content--BackgroundColor: var(--pf-t--global--background--color--inverse--default);
+  --#{$tooltip}__content--FontSize: var(--pf-t--global--font--size--body--sm);
+  --#{$tooltip}__content--BorderRadius: var(--pf-t--global--border--radius--small);
+
+  // Arrow variables
+  --#{$tooltip}__arrow--Width: #{pf-size-prem(15px)};
+  --#{$tooltip}__arrow--Height: #{pf-size-prem(15px)};
+  --#{$tooltip}__arrow--BackgroundColor: var(--pf-t--global--background--color--inverse--default);
+  --#{$tooltip}__arrow--BoxShadow: var(--pf-t--global--box-shadow--md);
+  --#{$tooltip}__arrow--m-top--TranslateX: -50%;
+  --#{$tooltip}__arrow--m-top--TranslateY: 50%;
+  --#{$tooltip}__arrow--m-top--Rotate: 45deg;
+  --#{$tooltip}__arrow--m-right--TranslateX: -50%;
+  --#{$tooltip}__arrow--m-right--TranslateY: -50%;
+  --#{$tooltip}__arrow--m-right--Rotate: 45deg;
+  --#{$tooltip}__arrow--m-bottom--TranslateX: -50%;
+  --#{$tooltip}__arrow--m-bottom--TranslateY: -50%;
+  --#{$tooltip}__arrow--m-bottom--Rotate: 45deg;
+  --#{$tooltip}__arrow--m-left--TranslateX: 50%;
+  --#{$tooltip}__arrow--m-left--TranslateY: -50%;
+  --#{$tooltip}__arrow--m-left--Rotate: 45deg;
+}
+
+.#{$tooltip} {
+  position: relative;
+  max-width: var(--#{$tooltip}--MaxWidth);
+  box-shadow: var(--#{$tooltip}--BoxShadow);
+
+  &:is(
+    .pf-m-top,
+    .pf-m-top-left,
+    .pf-m-top-right
+  ) {
+    --#{$tooltip}__arrow--InsetBlockEnd: var(--#{$tooltip}--m-top--InsetBlockEnd, 0);
+    --#{$tooltip}__arrow--InsetInlineStart: var(--#{$tooltip}--m-top--InsetInlineStart, 50%);
+    --#{$tooltip}__arrow--TranslateX: var(--#{$tooltip}__arrow--m-top--TranslateX);
+    --#{$tooltip}__arrow--TranslateY: var(--#{$tooltip}__arrow--m-top--TranslateY);
+    --#{$tooltip}__arrow--Rotate: var(--#{$tooltip}__arrow--m-top--Rotate);
+  }
+
+  &:is(
+    .pf-m-bottom,
+    .pf-m-bottom-left,
+    .pf-m-bottom-right
+    ) {
+    --#{$tooltip}__arrow--InsetBlockStart: var(--#{$tooltip}--m-bottom--InsetBlockStart, 0);
+    --#{$tooltip}__arrow--InsetInlineStart: var(--#{$tooltip}--m-bottom--InsetInlineStart, 50%);
+    --#{$tooltip}__arrow--TranslateX: var(--#{$tooltip}__arrow--m-bottom--TranslateX);
+    --#{$tooltip}__arrow--TranslateY: var(--#{$tooltip}__arrow--m-bottom--TranslateY);
+    --#{$tooltip}__arrow--Rotate: var(--#{$tooltip}__arrow--m-bottom--Rotate);
+  }
+
+  &:is(
+    .pf-m-left,
+    .pf-m-left-top,
+    .pf-m-left-bottom
+  ) {
+    --#{$tooltip}__arrow--InsetBlockStart: var(--#{$tooltip}--m-left--InsetBlockStart, 50%);
+    --#{$tooltip}__arrow--InsetInlineEnd: var(--#{$tooltip}--m-left--InsetInlineEnd, 0);
+    --#{$tooltip}__arrow--TranslateX: var(--#{$tooltip}__arrow--m-left--TranslateX);
+    --#{$tooltip}__arrow--TranslateY: var(--#{$tooltip}__arrow--m-left--TranslateY);
+    --#{$tooltip}__arrow--Rotate: var(--#{$tooltip}__arrow--m-left--Rotate);
+  }
+
+  &:is(
+    .pf-m-right,
+    .pf-m-right-top,
+    .pf-m-right-bottom
+  ) {
+    --#{$tooltip}__arrow--InsetBlockStart: var(--#{$tooltip}--m-right--InsetBlockStart, 50%);
+    --#{$tooltip}__arrow--InsetInlineStart: var(--#{$tooltip}--m-right--InsetInlineStart, 0);
+    --#{$tooltip}__arrow--TranslateX: var(--#{$tooltip}__arrow--m-right--TranslateX);
+    --#{$tooltip}__arrow--TranslateY: var(--#{$tooltip}__arrow--m-right--TranslateY);
+    --#{$tooltip}__arrow--Rotate: var(--#{$tooltip}__arrow--m-right--Rotate);
+  }
+
+  &:is(
+    .pf-m-left-top,
+    .pf-m-right-top
+  ) {
+    --#{$tooltip}__arrow--InsetBlockStart: 0;
+    --#{$tooltip}__arrow--TranslateY: var(--#{$tooltip}__arrow--m-top--TranslateY);
+  }
+
+  &:is(
+    .pf-m-left-bottom,
+    .pf-m-right-bottom
+  ) {
+    --#{$tooltip}__arrow--InsetBlockStart: auto;
+    --#{$tooltip}__arrow--InsetBlockEnd: 0;
+  }
+
+  &:is(
+    .pf-m-top-left,
+    .pf-m-bottom-left
+  ) {
+    --#{$tooltip}__arrow--InsetInlineStart: 0;
+    --#{$tooltip}__arrow--TranslateX: var(--#{$tooltip}__arrow--m-left--TranslateX);
+  }
+
+  &:is(
+    .pf-m-top-right,
+    .pf-m-bottom-right
+  ) {
+    --#{$tooltip}__arrow--InsetInlineEnd: 0;
+    --#{$tooltip}__arrow--InsetInlineStart: auto;
+  }
+}
+
+.#{$tooltip}__content {
+  position: relative;
+  padding-block-start: var(--#{$tooltip}__content--PaddingBlockStart);
+  padding-block-end: var(--#{$tooltip}__content--PaddingBlockEnd);
+  padding-inline-start: var(--#{$tooltip}__content--PaddingInlineStart);
+  padding-inline-end: var(--#{$tooltip}__content--PaddingInlineEnd);
+  font-size: var(--#{$tooltip}__content--FontSize);
+  color: var(--#{$tooltip}__content--Color);
+  text-align: center;
+  word-break: break-word;
+  background-color: var(--#{$tooltip}__content--BackgroundColor);
+  border-radius: var(--#{$tooltip}__content--BorderRadius);
+
+  &.pf-m-text-align-left {
+    text-align: start;
+  }
+}
+
+.#{$tooltip}__arrow {
+  position: absolute;
+  // stylelint-disable liberty/use-logical-spec
+  top: var(--#{$tooltip}__arrow--InsetBlockStart, auto);
+  right: var(--#{$tooltip}__arrow--InsetInlineEnd, auto);
+  bottom: var(--#{$tooltip}__arrow--InsetBlockEnd, auto);
+  left: var(--#{$tooltip}__arrow--InsetInlineStart, auto);
+  // stylelint-enable
+  width: var(--#{$tooltip}__arrow--Width);
+  height: var(--#{$tooltip}__arrow--Height);
+  pointer-events: none;
+  background-color: var(--#{$tooltip}__arrow--BackgroundColor);
+  box-shadow: var(--#{$tooltip}__arrow--BoxShadow);
+  transform: translateX(var(--#{$tooltip}__arrow--TranslateX, 0)) translateY(var(--#{$tooltip}__arrow--TranslateY, 0)) rotate(var(--#{$tooltip}__arrow--Rotate, 0));
+}

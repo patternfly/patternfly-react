@@ -1,0 +1,17 @@
+.pf-v6-c-menu-toggle + .pf-v6-c-panel {
+  position: absolute;
+  top: calc(100% + 2px);
+  z-index: var(--pf-t--global--z-index--sm);
+}
+
+.ws-html-demos-c-toolbar .pf-v6-c-toolbar__item {
+  position: relative;
+}
+
+#ws-html-demos-c-toolbar-toolbar-attribute-value-single-select-filter-on-mobile {
+  min-height: 200px;
+}
+
+#ws-html-demos-c-toolbar-toolbar-attribute-value-search-filter-on-mobile {
+  min-height: 180px;
+}

@@ -1,0 +1,15 @@
+[id*="ws-core-c-divider-vertical"],
+[id*="ws-core-c-divider-horizontal"] .ws-preview-html {
+  align-items: center;
+}
+
+[id*="divider-vertical"],
+[id*="ws-core-c-divider-vertical"],
+#ws-core-c-divider-horizontal-on-lg {
+  height: 6rem;
+}
+
+[id*="ws-core-c-divider"] .ws-preview-html {
+  height: 100%;
+}
+

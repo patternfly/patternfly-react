@@ -1,0 +1,67 @@
+.pf-v6-u-background-color-disabled {
+  background-color: var(--pf-t--global--background--color--disabled--default) !important;
+}
+
+.pf-v6-u-background-color-inverse {
+  background-color: var(--pf-t--global--background--color--inverse--default) !important;
+}
+
+.pf-v6-u-background-color-highlight {
+  background-color: var(--pf-t--global--background--color--highlight--default) !important;
+}
+
+@media screen and (min-width: 36rem) {
+  .pf-v6-u-background-color-disabled-on-sm {
+    background-color: var(--pf-t--global--background--color--disabled--default) !important;
+  }
+  .pf-v6-u-background-color-inverse-on-sm {
+    background-color: var(--pf-t--global--background--color--inverse--default) !important;
+  }
+  .pf-v6-u-background-color-highlight-on-sm {
+    background-color: var(--pf-t--global--background--color--highlight--default) !important;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .pf-v6-u-background-color-disabled-on-md {
+    background-color: var(--pf-t--global--background--color--disabled--default) !important;
+  }
+  .pf-v6-u-background-color-inverse-on-md {
+    background-color: var(--pf-t--global--background--color--inverse--default) !important;
+  }
+  .pf-v6-u-background-color-highlight-on-md {
+    background-color: var(--pf-t--global--background--color--highlight--default) !important;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .pf-v6-u-background-color-disabled-on-lg {
+    background-color: var(--pf-t--global--background--color--disabled--default) !important;
+  }
+  .pf-v6-u-background-color-inverse-on-lg {
+    background-color: var(--pf-t--global--background--color--inverse--default) !important;
+  }
+  .pf-v6-u-background-color-highlight-on-lg {
+    background-color: var(--pf-t--global--background--color--highlight--default) !important;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .pf-v6-u-background-color-disabled-on-xl {
+    background-color: var(--pf-t--global--background--color--disabled--default) !important;
+  }
+  .pf-v6-u-background-color-inverse-on-xl {
+    background-color: var(--pf-t--global--background--color--inverse--default) !important;
+  }
+  .pf-v6-u-background-color-highlight-on-xl {
+    background-color: var(--pf-t--global--background--color--highlight--default) !important;
+  }
+}
+@media screen and (min-width: 90.625rem) {
+  .pf-v6-u-background-color-disabled-on-2xl {
+    background-color: var(--pf-t--global--background--color--disabled--default) !important;
+  }
+  .pf-v6-u-background-color-inverse-on-2xl {
+    background-color: var(--pf-t--global--background--color--inverse--default) !important;
+  }
+  .pf-v6-u-background-color-highlight-on-2xl {
+    background-color: var(--pf-t--global--background--color--highlight--default) !important;
+  }
+}

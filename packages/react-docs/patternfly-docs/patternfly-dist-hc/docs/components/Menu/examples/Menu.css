@@ -1,0 +1,22 @@
+[id^="ws-core-c-menu-with-flyout"],
+[id^="ws-core-c-menu-standard-menu-flyout-child"] {
+  display: flex;
+  height: 360px;
+}
+
+#ws-core-c-menu-with-flyout-menu-left,
+#ws-core-c-menu-with-flyout-menu-left-top {
+  justify-content: flex-end;
+}
+
+:is([id="ws-core-c-menu-drilldown-with-breadcrumbs---level-3"], [id="ws-core-c-menu-drilldown-with-breadcrumbs---level-4"]) {
+  position: relative;
+}
+
+:is([id="ws-core-c-menu-drilldown-with-breadcrumbs---level-3"], [id="ws-core-c-menu-drilldown-with-breadcrumbs---level-4"]) .pf-v6-c-breadcrumb__dropdown .pf-v6-c-menu {
+  position: absolute;
+}
+
+.pf-v6-c-menu__breadcrumb .pf-v6-c-menu {
+  z-index: 1;
+}

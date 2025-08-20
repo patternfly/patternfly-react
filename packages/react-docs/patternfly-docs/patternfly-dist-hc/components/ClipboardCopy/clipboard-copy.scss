@@ -1,0 +1,126 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($clipboard-copy) {
+  // Toggle icon
+  --#{$clipboard-copy}__toggle-icon--TransitionDuration: var(--pf-t--global--motion--duration--icon--default);
+  --#{$clipboard-copy}__toggle-icon--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--default);
+  --#{$clipboard-copy}__toggle-icon--Transition: transform var(--#{$clipboard-copy}__toggle-icon--TransitionDuration) var(--#{$clipboard-copy}__toggle-icon--TransitionTimingFunction); // TODO Remove in breaking change along with shorthand property
+  --#{$clipboard-copy}--m-expanded__toggle-icon--Rotate: 90deg;
+
+  // Clipboard copy expanded content
+  --#{$clipboard-copy}__expandable-content--MarginBlockStart: var(--pf-t--global--spacer--xs);
+  --#{$clipboard-copy}__expandable-content--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --#{$clipboard-copy}__expandable-content--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --#{$clipboard-copy}__expandable-content--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --#{$clipboard-copy}__expandable-content--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --#{$clipboard-copy}__expandable-content--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --#{$clipboard-copy}__expandable-content--BorderBlockStartWidth: var(--pf-t--global--border--width--control--default);
+  --#{$clipboard-copy}__expandable-content--BorderInlineEndWidth: var(--pf-t--global--border--width--control--default);
+  --#{$clipboard-copy}__expandable-content--BorderBlockEndWidth: var(--pf-t--global--border--width--control--default);
+  --#{$clipboard-copy}__expandable-content--BorderInlineStartWidth: var(--pf-t--global--border--width--control--default);
+  --#{$clipboard-copy}__expandable-content--BorderColor: var(--pf-t--global--border--color--default);
+  --#{$clipboard-copy}__expandable-content--BorderRadius: var(--pf-t--global--border--radius--small);
+  --#{$clipboard-copy}__expandable-content--OutlineOffset: var(--pf-t--global--spacer--xs);
+
+  // Group
+  --#{$clipboard-copy}__group--Gap: var(--pf-t--global--spacer--gap--control-to-control--default);
+
+  // Inline
+  --#{$clipboard-copy}--m-inline--PaddingInlineStart: var(--pf-t--global--spacer--xs);
+  --#{$clipboard-copy}--m-inline--PaddingInlineEnd: var(--pf-t--global--spacer--xs);
+  --#{$clipboard-copy}--m-inline--BackgroundColor: var(--pf-t--global--background--color--secondary--default);
+  --#{$clipboard-copy}__actions--Gap: var(--pf-t--global--spacer--gap--action-to-action--plain);
+  --#{$clipboard-copy}__actions--MarginInlineStart: var(--pf-t--global--spacer--gap--text-to-element--compact);
+  --#{$clipboard-copy}__actions-item--button--Color: var(--pf-t--global--icon--color--subtle);
+  --#{$clipboard-copy}__actions-item--button--hover--Color: var(--pf-t--global--icon--color--regular);
+
+  // Text
+  --#{$clipboard-copy}__text--m-code--FontFamily: var(--pf-t--global--font--family--mono);
+  --#{$clipboard-copy}__text--m-code--FontSize: var(--pf-t--global--font--size--body--default);
+}
+
+.#{$clipboard-copy} {
+  // Toggle button expanded
+  &.pf-m-expanded {
+    .#{$clipboard-copy}__toggle-icon {
+      transform: rotate(var(--#{$clipboard-copy}--m-expanded__toggle-icon--Rotate));
+    }
+  }
+
+  &.pf-m-inline {
+    display: inline;
+    padding-inline-start: var(--#{$clipboard-copy}--m-inline--PaddingInlineStart);
+    padding-inline-end: var(--#{$clipboard-copy}--m-inline--PaddingInlineEnd);
+    white-space: nowrap;
+    background-color: var(--#{$clipboard-copy}--m-inline--BackgroundColor);
+
+    &.pf-m-block {
+      display: block;
+    }
+
+    &.pf-m-truncate {
+      display: inline-flex;
+    }
+  }
+}
+
+
+.#{$clipboard-copy}__group {
+  display: flex;
+  gap: var(--#{$clipboard-copy}__group--Gap);
+}
+
+.#{$clipboard-copy}__toggle-icon {
+  @include pf-v6-mirror-inline-on-rtl;
+
+  transition: var(--#{$clipboard-copy}__toggle-icon--Transition); // TODO remove shorthand in breaking change
+}
+
+.#{$clipboard-copy}__expandable-content {
+  padding-block-start: var(--#{$clipboard-copy}__expandable-content--PaddingBlockStart);
+  padding-block-end: var(--#{$clipboard-copy}__expandable-content--PaddingBlockEnd);
+  padding-inline-start: var(--#{$clipboard-copy}__expandable-content--PaddingInlineStart);
+  padding-inline-end: var(--#{$clipboard-copy}__expandable-content--PaddingInlineEnd);
+  margin-block-start: var(--#{$clipboard-copy}__expandable-content--MarginBlockStart);
+  word-wrap: break-word;
+  background-color: var(--#{$clipboard-copy}__expandable-content--BackgroundColor);
+  background-clip: padding-box;
+  border: solid var(--#{$clipboard-copy}__expandable-content--BorderColor);
+  border-block-start-width: var(--#{$clipboard-copy}__expandable-content--BorderBlockStartWidth);
+  border-block-end-width: var(--#{$clipboard-copy}__expandable-content--BorderBlockEndWidth);
+  border-inline-start-width: var(--#{$clipboard-copy}__expandable-content--BorderInlineStartWidth);
+  border-inline-end-width: var(--#{$clipboard-copy}__expandable-content--BorderInlineEndWidth);
+  border-radius: var(--#{$clipboard-copy}__expandable-content--BorderRadius);
+  box-shadow: var(--#{$clipboard-copy}__expandable-content--BoxShadow);
+
+  pre {
+    white-space: pre-wrap;
+  }
+}
+
+.#{$clipboard-copy}__text {
+  word-break: break-word;
+  white-space: normal;
+
+  &.pf-m-code {
+    font-family: var(--#{$clipboard-copy}__text--m-code--FontFamily);
+    font-size: var(--#{$clipboard-copy}__text--m-code--FontSize);
+  }
+}
+
+.#{$clipboard-copy}__actions {
+  display: inline-flex;
+  gap: var(--#{$clipboard-copy}__actions--Gap);
+  margin-inline-start: var(--#{$clipboard-copy}__actions--MarginInlineStart);
+}
+
+.#{$clipboard-copy}__actions-item {
+
+  .#{$button}.pf-m-plain {
+    --#{$button}--m-plain__icon--Color: var(--#{$clipboard-copy}__actions-item--button--Color);
+    --#{$button}--m-plain--hover__icon--Color: var(--#{$clipboard-copy}__actions-item--button--hover--Color);
+  }
+}
+
+// stylelint-disable no-invalid-position-at-import-rule
+

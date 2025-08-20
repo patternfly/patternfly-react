@@ -1,0 +1,11 @@
+#ws-core-c-overflow-menu-simple .pf-v6-c-overflow-menu__item,
+#ws-core-c-overflow-menu-simple .pf-v6-c-overflow-menu__group,
+#ws-core-c-overflow-menu-group-types .pf-v6-c-overflow-menu__group:not([class*="pf-m-"]) {
+  padding: .5rem;
+  border: 2px dashed #393f44;
+}
+
+#ws-core-c-overflow-menu-simple .pf-v6-c-overflow-menu__group .pf-v6-c-overflow-menu__item {
+  padding: 0;
+  border: none;
+}

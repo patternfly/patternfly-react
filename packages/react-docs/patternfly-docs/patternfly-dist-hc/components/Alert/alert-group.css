@@ -1,0 +1,190 @@
+.pf-v6-c-alert-group {
+  --pf-v6-c-alert-group__item--MarginBlockStart: var(--pf-t--global--spacer--gap--group--vertical);
+  --pf-v6-c-alert-group--m-toast--InsetBlockStart: var(--pf-t--global--spacer--2xl);
+  --pf-v6-c-alert-group--m-toast--InsetInlineEnd: var(--pf-t--global--spacer--xl);
+  --pf-v6-c-alert-group--m-toast--MaxWidth: 37.5rem;
+  --pf-v6-c-alert-group--m-toast--ZIndex: var(--pf-t--global--z-index--2xl);
+  --pf-v6-c-alert-group--m-toast__item--TransitionDuration--opacity--default: var(--pf-t--global--motion--duration--fade--default);
+  --pf-v6-c-alert-group--m-toast__item--TransitionTimingFunction--opacity--default: var(--pf-t--global--motion--timing-function--decelerate);
+  --pf-v6-c-alert-group--m-toast__item--Transition--opacity--default: var(--pf-v6-c-alert-group--m-toast__item--TransitionDuration--opacity--default)
+    var(--pf-v6-c-alert-group--m-toast__item--TransitionTimingFunction--opacity--default)
+    0s;
+  --pf-v6-c-alert-group--m-toast__item--TransitionDuration--opacity: var(--pf-t--global--motion--duration--fade--default);
+  --pf-v6-c-alert-group--m-toast__item--TransitionTimingFunction--opacity: var(--pf-t--global--motion--timing-function--decelerate);
+  --pf-v6-c-alert-group--m-toast__item--TransitionDelay--opacity: var(--pf-t--global--motion--delay--none);
+  --pf-v6-c-alert-group--m-toast__item--TransitionDuration--transform: var(--pf-t--global--motion--duration--slide-in--default);
+  --pf-v6-c-alert-group--m-toast__item--TransitionTimingFunction--transform: var(--pf-t--global--motion--timing-function--decelerate);
+  --pf-v6-c-alert-group--m-toast__item--TransitionDelay--transform: var(--pf-t--global--motion--delay--none);
+  --pf-v6-c-alert-group--m-toast__item--TransitionDuration--grid-template-rows: var(--pf-t--global--motion--duration--slide-in--default);
+  --pf-v6-c-alert-group--m-toast__item--TransitionTimingFunction--grid-template-rows: var(--pf-t--global--motion--timing-function--decelerate);
+  --pf-v6-c-alert-group--m-toast__item--TransitionDuration--margin-block: var(--pf-t--global--motion--duration--slide-in--default);
+  --pf-v6-c-alert-group--m-toast__item--TransitionTimingFunction--margin-block: var(--pf-t--global--motion--timing-function--decelerate);
+  --pf-v6-c-alert-group--m-toast__item--c-alert--TransitionDuration: var(--pf-t--global--motion--duration--slide-in--default);
+  --pf-v6-c-alert-group--m-toast__item--c-alert--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--decelerate);
+  --pf-v6-c-alert-group--m-toast__item--c-alert--Transition: all
+    var(--pf-v6-c-alert-group--m-toast__item--c-alert--TransitionDuration)
+    var(--pf-v6-c-alert-group--m-toast__item--c-alert--TransitionTimingFunction)
+    0s;
+  --pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionDuration--opacity--default: var(--pf-t--global--motion--duration--fade--default);
+  --pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionTimingFunction--opacity--default: var(--pf-t--global--motion--timing-function--accelerate);
+  --pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionDelay--grid-template-rows--default: var(--pf-t--global--motion--duration--fade--default);
+  --pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionDelay--margin-block--default: var(--pf-t--global--motion--duration--fade--default);
+  --pf-v6-c-alert-group--m-toast__item--m-outgoing--c-alert--TransitionDelay--default: var(--pf-t--global--motion--duration--fade--default);
+  --pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionDuration--opacity--default: initial;
+  --pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionTimingFunction--opacity--default: initial;
+  --pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionDelay--grid-template-rows--default: initial;
+  --pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionDelay--margin-block--default: initial;
+  --pf-v6-c-alert-group--m-toast__item--m-offstage-right--c-alert--TransitionDelay--default: initial;
+  --pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionDuration--transform: var(--pf-t--global--motion--duration--slide-out--short);
+  --pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionTimingFunction--transform: var(--pf-t--global--motion--timing-function--accelerate);
+  --pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionDuration--opacity: var(--pf-t--global--motion--duration--slide-out--short);
+  --pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionTimingFunction--opacity: var(--pf-t--global--motion--timing-function--accelerate);
+  --pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionDuration--margin-block: var(--pf-t--global--motion--duration--fade--short);
+  --pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionTimingFunction--margin-block: var(--pf-t--global--motion--timing-function--accelerate);
+  --pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionDelay--margin-block: var(--pf-t--global--motion--duration--slide-out--short);
+  --pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionDuration--grid-template-rows: var(--pf-t--global--motion--duration--slide-in--short);
+  --pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionTimingFunction--grid-template-rows: var(--pf-t--global--motion--timing-function--accelerate);
+  --pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionDelay--grid-template-rows: var(--pf-t--global--motion--duration--slide-out--short);
+  --pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionDuration--transform: initial;
+  --pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionTimingFunction--transform: initial;
+  --pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionDuration--opacity: initial;
+  --pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionTimingFunction--opacity: initial;
+  --pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionDuration--margin-block: initial;
+  --pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionTimingFunction--margin-block: initial;
+  --pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionDelay--margin-block: initial;
+  --pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionDuration--grid-template-rows: initial;
+  --pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionTimingFunction--grid-template-rows: initial;
+  --pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionDelay--grid-template-rows: initial;
+  --pf-v6-c-alert-group--m-toast__item--m-outgoing--c-alert--TransitionDuration: var(--pf-t--global--motion--duration--slide-out--short);
+  --pf-v6-c-alert-group--m-toast__item--m-outgoing--c-alert--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--accelerate);
+  --pf-v6-c-alert-group--m-toast__item--m-outgoing--c-alert--Transition: all
+    var(--pf-v6-c-alert-group--m-toast__item--m-outgoing--c-alert--TransitionDuration)
+    var(--pf-v6-c-alert-group--m-toast__item--m-outgoing--c-alert--TransitionTimingFunction)
+    var(--pf-v6-c-alert-group--m-toast__item--m-outgoing--c-alert--TransitionDuration);
+  --pf-v6-c-alert-group--m-toast__item--m-offstage-right--c-alert--TransitionDuration: initial;
+  --pf-v6-c-alert-group--m-toast__item--m-offstage-right--c-alert--TransitionTimingFunction: initial;
+  --pf-v6-c-alert-group--m-toast__item--m-offstage-right--c-alert--Transition: initial;
+  --pf-v6-c-alert-group__overflow-button--BorderWidth: var(--pf-t--global--border--width--action--plain--default);
+  --pf-v6-c-alert-group__overflow-button--BorderColor: var(--pf-t--global--border--color--high-contrast);
+  --pf-v6-c-alert-group__overflow-button--BorderRadius: var(--pf-t--global--border--radius--medium);
+  --pf-v6-c-alert-group__overflow-button--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --pf-v6-c-alert-group__overflow-button--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-alert-group__overflow-button--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-alert-group__overflow-button--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --pf-v6-c-alert-group__overflow-button--Color: var(--pf-t--global--text--color--link--default);
+  --pf-v6-c-alert-group__overflow-button--BoxShadow: var(--pf-t--global--box-shadow--lg);
+  --pf-v6-c-alert-group__overflow-button--BackgroundColor: var(--pf-t--global--background--color--floating--default);
+  --pf-v6-c-alert-group__overflow-button--hover--BorderWidth: var(--pf-t--global--border--width--action--plain--hover);
+  --pf-v6-c-alert-group__overflow-button--hover--Color: var(--pf-t--global--text--color--link--hover);
+  --pf-v6-c-alert-group__overflow-button--hover--BackgroundColor: var(--pf-t--global--background--color--floating--hover);
+  --pf-v6-c-alert-group__overflow-button--hover--BoxShadow: var(--pf-t--global--box-shadow--lg), var(--pf-t--global--box-shadow--lg--bottom);
+  --pf-v6-c-alert-group__overflow-button--focus--Color: var(--pf-t--global--text--color--link--hover);
+  --pf-v6-c-alert-group__overflow-button--focus--BoxShadow: var(--pf-t--global--box-shadow--lg), var(--pf-t--global--box-shadow--lg--bottom);
+  --pf-v6-c-alert-group__overflow-button--active--Color: var(--pf-t--global--text--color--link--hover);
+  --pf-v6-c-alert-group__overflow-button--active--BoxShadow: var(--pf-t--global--box-shadow--lg), var(--pf-t--global--box-shadow--lg--bottom);
+}
+
+.pf-v6-c-alert-group > * + * {
+  margin-block-start: var(--pf-v6-c-alert-group__item--MarginBlockStart);
+}
+.pf-v6-c-alert-group.pf-m-toast {
+  position: fixed;
+  inset-block-start: var(--pf-v6-c-alert-group--m-toast--InsetBlockStart);
+  inset-inline-end: var(--pf-v6-c-alert-group--m-toast--InsetInlineEnd);
+  z-index: var(--pf-v6-c-alert-group--m-toast--ZIndex);
+  width: calc(100% - var(--pf-v6-c-alert-group--m-toast--InsetInlineEnd) * 2);
+  max-width: var(--pf-v6-c-alert-group--m-toast--MaxWidth);
+}
+
+.pf-v6-c-alert-group__overflow-button {
+  position: relative;
+  width: 100%;
+  padding-block-start: var(--pf-v6-c-alert-group__overflow-button--PaddingBlockStart);
+  padding-block-end: var(--pf-v6-c-alert-group__overflow-button--PaddingBlockEnd);
+  padding-inline-start: var(--pf-v6-c-alert-group__overflow-button--PaddingInlineStart);
+  padding-inline-end: var(--pf-v6-c-alert-group__overflow-button--PaddingInlineEnd);
+  color: var(--pf-v6-c-alert-group__overflow-button--Color);
+  background-color: var(--pf-v6-c-alert-group__overflow-button--BackgroundColor);
+  border: 0;
+  border-radius: var(--pf-v6-c-alert-group__overflow-button--BorderRadius);
+  box-shadow: var(--pf-v6-c-alert-group__overflow-button--BoxShadow);
+}
+.pf-v6-c-alert-group__overflow-button::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  border: var(--pf-v6-c-alert-group__overflow-button--BorderWidth) solid var(--pf-v6-c-alert-group__overflow-button--BorderColor);
+  border-radius: inherit;
+}
+.pf-v6-c-alert-group__overflow-button:hover, .pf-v6-c-alert-group__overflow-button:focus {
+  --pf-v6-c-alert-group__overflow-button--BorderWidth: var(--pf-v6-c-alert-group__overflow-button--hover--BorderWidth);
+}
+
+.pf-v6-c-alert-group__item {
+  display: grid;
+  grid-template-rows: 1fr;
+  opacity: 1;
+  transition: opacity var(--pf-v6-c-alert-group--m-toast__item--Transition--opacity--default);
+  transform: translateX(0) translateY(0);
+}
+@media screen and (prefers-reduced-motion: no-preference) {
+  .pf-v6-c-alert-group__item {
+    transition: opacity var(--pf-v6-c-alert-group--m-toast__item--TransitionDuration--opacity) var(--pf-v6-c-alert-group--m-toast__item--TransitionTimingFunction--opacity) var(--pf-v6-c-alert-group--m-toast__item--TransitionDelay--opacity), transform var(--pf-v6-c-alert-group--m-toast__item--TransitionDuration--transform) var(--pf-v6-c-alert-group--m-toast__item--TransitionTimingFunction--transform) var(--pf-v6-c-alert-group--m-toast__item--TransitionDelay--transform), grid-template-rows var(--pf-v6-c-alert-group--m-toast__item--TransitionDuration--grid-template-rows) var(--pf-v6-c-alert-group--m-toast__item--TransitionTimingFunction--grid-template-rows), margin-block var(--pf-v6-c-alert-group--m-toast__item--TransitionDuration--margin-block) var(--pf-v6-c-alert-group--m-toast__item--TransitionTimingFunction--margin-block);
+  }
+  .pf-v6-c-alert-group__item .pf-v6-c-alert {
+    transition: var(--pf-v6-c-alert-group--m-toast__item--c-alert--Transition);
+  }
+}
+.pf-v6-c-alert-group__item.pf-m-offstage-top:first-child, .pf-v6-c-alert-group__item.pf-m-incoming:first-child {
+  grid-template-rows: 0fr;
+  margin-block: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-100%);
+}
+.pf-v6-c-alert-group__item.pf-m-offstage-top:first-child .pf-v6-c-alert, .pf-v6-c-alert-group__item.pf-m-incoming:first-child .pf-v6-c-alert {
+  min-height: 0;
+  padding-block-start: 0;
+  padding-block-end: 0;
+  border-width: 0;
+}
+.pf-v6-c-alert-group__item.pf-m-offstage-right, .pf-v6-c-alert-group__item.pf-m-outgoing {
+  grid-template-rows: 0fr;
+  margin-block: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: grid-template-rows 0s var(--pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionDelay--grid-template-rows--default, var(--pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionDelay--grid-template-rows--default)), margin-block 0s var(--pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionDelay--margin-block--default, var(--pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionDelay--margin-block--default)), opacity var(--pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionDuration--opacity--default, var(--pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionDuration--opacity--default)) var(--pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionTimingFunction--opacity--default, var(--pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionTimingFunction--opacity--default));
+}
+.pf-v6-c-alert-group__item.pf-m-offstage-right .pf-v6-c-alert, .pf-v6-c-alert-group__item.pf-m-outgoing .pf-v6-c-alert {
+  min-height: 0;
+  padding-block-start: 0;
+  padding-block-end: 0;
+  border-width: 0;
+  transition: all 0s var(--pf-v6-c-alert-group--m-toast__item--m-offstage-right--c-alert--TransitionDelay--default, var(--pf-v6-c-alert-group--m-toast__item--m-outgoing--c-alert--TransitionDelay--default));
+}
+@media screen and (prefers-reduced-motion: no-preference) {
+  .pf-v6-c-alert-group__item.pf-m-offstage-right, .pf-v6-c-alert-group__item.pf-m-outgoing {
+    transition: transform var(--pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionDuration--transform, var(--pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionDuration--transform)) var(--pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionTimingFunction--transform, var(--pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionTimingFunction--transform)), opacity var(--pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionDuration--opacity, var(--pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionDuration--opacity)) var(--pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionTimingFunction--opacity, var(--pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionTimingFunction--opacity)), margin-block var(--pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionDuration--margin-block, var(--pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionDuration--margin-block)) var(--pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionTimingFunction--margin-block, var(--pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionTimingFunction--margin-block)) var(--pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionDelay--margin-block, var(--pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionDelay--margin-block)), grid-template-rows var(--pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionDuration--grid-template-rows, var(--pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionDuration--grid-template-rows)) var(--pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionTimingFunction--grid-template-rows, var(--pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionTimingFunction--grid-template-rows)) var(--pf-v6-c-alert-group--m-toast__item--m-offstage-right--TransitionDelay--grid-template-rows, var(--pf-v6-c-alert-group--m-toast__item--m-outgoing--TransitionDelay--grid-template-rows));
+    transform: translateX(100%);
+  }
+  :where(.pf-v6-m-dir-rtl, [dir=rtl]) .pf-v6-c-alert-group__item.pf-m-offstage-right, .pf-v6-c-alert-group__item.pf-m-outgoing {
+    transform: translateX(calc(100% * var(--pf-v6-global--inverse--multiplier)));
+  }
+  .pf-v6-c-alert-group__item.pf-m-offstage-right .pf-v6-c-alert, .pf-v6-c-alert-group__item.pf-m-outgoing .pf-v6-c-alert {
+    transition: var(--pf-v6-c-alert-group--m-toast__item--m-offstage-right--c-alert--Transition, var(--pf-v6-c-alert-group--m-toast__item--m-outgoing--c-alert--Transition));
+  }
+}
+.pf-v6-c-alert-group__item:hover {
+  --pf-v6-c-alert-group__overflow-button--Color: var(--pf-v6-c-alert-group__overflow-button--hover--Color);
+  --pf-v6-c-alert-group__overflow-button--BackgroundColor: var(--pf-v6-c-alert-group__overflow-button--hover--BackgroundColor);
+  --pf-v6-c-alert-group__overflow-button--BoxShadow: var(--pf-v6-c-alert-group__overflow-button--hover--BoxShadow);
+}
+.pf-v6-c-alert-group__item:focus {
+  --pf-v6-c-alert-group__overflow-button--Color: var(--pf-v6-c-alert-group__overflow-button--focus--Color);
+  --pf-v6-c-alert-group__overflow-button--BoxShadow: var(--pf-v6-c-alert-group__overflow-button--focus--BoxShadow);
+}
+.pf-v6-c-alert-group__item:active {
+  --pf-v6-c-alert-group__overflow-button--Color: var(--pf-v6-c-alert-group__overflow-button--active--Color);
+  --pf-v6-c-alert-group__overflow-button--BoxShadow: var(--pf-v6-c-alert-group__overflow-button--active--BoxShadow);
+}

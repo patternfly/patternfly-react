@@ -1,0 +1,5 @@
+.ws-core-u-spacing .ws-example-flex-item,
+.ws-core-u-spacing .pf-v6-u-display-flex {
+  padding: var(--pf-t--global--spacer--sm);
+  border: var(--pf-t--global--border--width--box--default) dashed var(--pf-t--global--border--color--default);
+}

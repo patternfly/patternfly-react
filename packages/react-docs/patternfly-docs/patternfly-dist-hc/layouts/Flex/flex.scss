@@ -1,0 +1,416 @@
+@use '../../sass-utilities' as *;
+
+// Always keep list of spacers and breakpoints up-to-date
+$pf-v6-l-flex--breakpoint-map: build-breakpoint-map();
+$pf-v6-l-flex--spacer-map: build-spacer-map();
+$pf-v6-l-flex--gap-map: build-spacer-map("base", "none", "xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl");
+$pf-v6-l-flex--variable-map: build-variable-map("#{$pf-prefix}l-flex--spacer", $pf-v6-l-flex--spacer-map);
+
+@include pf-root($flex) {
+  --#{$flex}--Display: flex;
+  --#{$flex}--FlexWrap: wrap;
+  --#{$flex}--AlignItems: baseline;
+  --#{$flex}--m-row--AlignItems: baseline;
+  --#{$flex}--m-row-reverse--AlignItems: baseline;
+  --#{$flex}--item--Order: 0;
+  --#{$flex}--spacer--column--base: var(--pf-t--global--spacer--gutter--default); // default spacer/gap for columns
+  --#{$flex}--spacer--row--base: var(--pf-t--global--spacer--sm); // default spacer/gap for rows
+  --#{$flex}--RowGap: var(--#{$flex}--spacer--row--base);
+  --#{$flex}--ColumnGap: 0;
+  --#{$flex}--m-gap--RowGap: var(--#{$flex}--spacer--row--base);
+  --#{$flex}--m-gap--ColumnGap: var(--#{$flex}--spacer--column--base);
+  --#{$flex}--m-row-gap--RowGap: var(--#{$flex}--spacer--row--base);
+  --#{$flex}--m-column-gap--ColumnGap: var(--#{$flex}--spacer--column--base);
+}
+
+.#{$flex} {
+  // Emit spacer css variables that map to requested spacer values
+  @include pf-v6-emit-properties($pf-v6-l-flex--variable-map);
+
+  display: var(--#{$flex}--Display);
+  flex-wrap: var(--#{$flex}--FlexWrap);
+  gap: var(--#{$flex}--RowGap) var(--#{$flex}--ColumnGap);
+  align-items: var(--#{$flex}--AlignItems);
+}
+
+// stylelint-disable no-duplicate-selectors, max-nesting-depth
+
+// Item
+.#{$flex} > * {
+  // set/reset layout spacers on children, since the parent flex layout can be a child of another flex layout and needs these values from its parent
+  --#{$flex}--spacer: initial;
+  --#{$flex}--spacer--column: var(--#{$flex}--spacer, var(--#{$flex}--spacer--column--base));
+  --#{$flex}--spacer--row: var(--#{$flex}--spacer, var(--#{$flex}--spacer--row--base));
+
+  order: var(--#{$flex}--item--Order);
+  max-width: 100%;
+  margin-inline-end: var(--#{$flex}--spacer--column);
+
+  // don't set base value for --#{$flex}--item--Order as it defaults to 0
+  @media screen and (min-width: $pf-v6-global--breakpoint--sm) {
+    order: var(--#{$flex}--item--Order-on-sm, var(--#{$flex}--item--Order));
+  }
+
+  @media screen and (min-width: $pf-v6-global--breakpoint--md) {
+    order: var(--#{$flex}--item--Order-on-md, var(--#{$flex}--item--Order-on-sm, var(--#{$flex}--item--Order)));
+  }
+
+  @media screen and (min-width: $pf-v6-global--breakpoint--lg) {
+    order: var(--#{$flex}--item--Order-on-lg, var(--#{$flex}--item--Order-on-md, var(--#{$flex}--item--Order-on-sm, var(--#{$flex}--item--Order))));
+  }
+
+  @media screen and (min-width: $pf-v6-global--breakpoint--xl) {
+    order: var(--#{$flex}--item--Order-on-xl, var(--#{$flex}--item--Order-on-lg, var(--#{$flex}--item--Order-on-md, var(--#{$flex}--item--Order-on-sm, var(--#{$flex}--item--Order)))));
+  }
+
+  @media screen and (min-width: $pf-v6-global--breakpoint--2xl) {
+    order: var(--#{$flex}--item--Order-on-2xl, var(--#{$flex}--item--Order-on-xl, var(--#{$flex}--item--Order-on-lg, var(--#{$flex}--item--Order-on-md, var(--#{$flex}--item--Order-on-sm, var(--#{$flex}--item--Order))))));
+  }
+
+  &:last-child {
+    --#{$flex}--spacer: 0;
+  }
+}
+
+.#{$flex} {
+  @each $breakpoint, $breakpoint-value in $pf-v6-l-flex--breakpoint-map {
+    $breakpoint-name: if($breakpoint != "base", -on-#{$breakpoint}, "");
+
+    @include pf-v6-apply-breakpoint($breakpoint) {
+      // display
+      &.pf-m-flex#{$breakpoint-name} {
+        display: var(--#{$flex}--Display);
+      }
+
+      // inline flex
+      &.pf-m-inline-flex#{$breakpoint-name} {
+        --#{$flex}--Display: inline-flex;
+      }
+
+      // flex-direction
+      &.pf-m-column#{$breakpoint-name} {
+        --#{$flex}--RowGap: 0;
+        --#{$flex}--ColumnGap: var(--#{$flex}--spacer--column--base);
+
+        flex-direction: column;
+        align-items: normal;
+
+        > * {
+          margin-block-start: 0;
+          margin-block-end: var(--#{$flex}--spacer--row);
+          margin-inline-start: 0;
+          margin-inline-end: 0;
+        }
+      }
+
+      // flex-direction column-reverse
+      &.pf-m-column-reverse#{$breakpoint-name} {
+        flex-direction: column-reverse;
+        align-items: normal;
+
+        > * {
+          margin-block-start: var(--#{$flex}--spacer--row);
+          margin-block-end: 0;
+          margin-inline-start: 0;
+          margin-inline-end: 0;
+        }
+      }
+
+      // flex-direction row
+      &.pf-m-row#{$breakpoint-name} {
+        flex-direction: row;
+        align-items: var(--#{$flex}--m-row--AlignItems);
+
+        // unset styling set for .pf-m-column
+        > * {
+          margin-block-start: 0;
+          margin-block-end: 0;
+          margin-inline-start: 0;
+          margin-inline-end: var(--#{$flex}--spacer--column);
+        }
+      }
+
+      // flex-direction row-reverse
+      &.pf-m-row-reverse#{$breakpoint-name} {
+        flex-direction: row-reverse;
+        align-items: var(--#{$flex}--m-row-reverse--AlignItems);
+
+        // unset styling set for .pf-m-column
+        > * {
+          margin-block-start: 0;
+          margin-block-end: 0;
+          margin-inline-start: var(--#{$flex}--spacer--column);
+          margin-inline-end: 0;
+        }
+      }
+
+      // flex-wrap
+      &.pf-m-wrap#{$breakpoint-name} {
+        flex-wrap: wrap;
+      }
+
+      // flex-wrap reverse
+      &.pf-m-wrap-reverse#{$breakpoint-name} {
+        flex-wrap: wrap-reverse;
+      }
+
+      &.pf-m-nowrap#{$breakpoint-name} {
+        flex-wrap: nowrap;
+      }
+
+      // justify-content
+      &.pf-m-justify-content-flex-start#{$breakpoint-name} {
+        justify-content: flex-start;
+      }
+
+      &.pf-m-justify-content-flex-end#{$breakpoint-name} {
+        justify-content: flex-end;
+      }
+
+      &.pf-m-justify-content-center#{$breakpoint-name} {
+        justify-content: center;
+      }
+
+      &.pf-m-justify-content-space-between#{$breakpoint-name} {
+        justify-content: space-between;
+      }
+
+      &.pf-m-justify-content-space-around#{$breakpoint-name} {
+        justify-content: space-around;
+      }
+
+      &.pf-m-justify-content-space-evenly#{$breakpoint-name} {
+        justify-content: space-evenly;
+      }
+
+      // align-items
+      &.pf-m-align-items-flex-start#{$breakpoint-name} {
+        align-items: flex-start;
+      }
+
+      &.pf-m-align-items-flex-end#{$breakpoint-name} {
+        align-items: flex-end;
+      }
+
+      &.pf-m-align-items-center#{$breakpoint-name} {
+        align-items: center;
+      }
+
+      &.pf-m-align-items-stretch#{$breakpoint-name} {
+        align-items: stretch;
+      }
+
+      &.pf-m-align-items-baseline#{$breakpoint-name} {
+        align-items: baseline;
+      }
+
+      // align-content
+      &.pf-m-align-content-flex-start#{$breakpoint-name} {
+        align-content: flex-start;
+      }
+
+      &.pf-m-align-content-flex-end#{$breakpoint-name} {
+        align-content: flex-end;
+      }
+
+      &.pf-m-align-content-center#{$breakpoint-name} {
+        align-content: center;
+      }
+
+      &.pf-m-align-content-stretch#{$breakpoint-name} {
+        align-content: stretch;
+      }
+
+      &.pf-m-align-content-space-between#{$breakpoint-name} {
+        align-content: space-between;
+      }
+
+      &.pf-m-align-content-space-around#{$breakpoint-name} {
+        align-content: space-around;
+      }
+
+      // alignment
+      > .pf-m-align-right#{$breakpoint-name} {
+        margin-inline-start: auto;
+      }
+
+      > .pf-m-align-left#{$breakpoint-name} {
+        margin-inline-start: 0;
+      }
+
+      // item properties
+      > .pf-m-grow#{$breakpoint-name} {
+        flex-grow: 1;
+      }
+
+      > .pf-m-shrink#{$breakpoint-name} {
+        flex-shrink: 1;
+      }
+
+      > .pf-m-full-width#{$breakpoint-name} {
+        width: 100%;
+        margin-inline-end: 0;
+      }
+
+      > .pf-m-flex-1#{$breakpoint-name} {
+        flex: 1 0 0;
+      }
+
+      > .pf-m-flex-2#{$breakpoint-name} {
+        flex: 2 0 0;
+      }
+
+      > .pf-m-flex-3#{$breakpoint-name} {
+        flex: 3 0 0;
+      }
+
+      > .pf-m-flex-4#{$breakpoint-name} {
+        flex: 4 0 0;
+      }
+
+      > .pf-m-flex-default#{$breakpoint-name} {
+        flex: 0 1 auto;
+      }
+
+      > .pf-m-flex-none#{$breakpoint-name} {
+        flex: none;
+      }
+
+      // align-self
+      > .pf-m-align-self-flex-start#{$breakpoint-name} {
+        align-self: flex-start;
+      }
+
+      > .pf-m-align-self-flex-end#{$breakpoint-name} {
+        align-self: flex-end;
+      }
+
+      > .pf-m-align-self-center#{$breakpoint-name} {
+        align-self: center;
+      }
+
+      > .pf-m-align-self-baseline#{$breakpoint-name} {
+        align-self: baseline;
+      }
+
+      > .pf-m-align-self-stretch#{$breakpoint-name} {
+        align-self: stretch;
+      }
+    }
+  }
+
+  // .pf-m-space-items-{size}{-on-[breakpoint]}
+  @each $breakpoint, $breakpoint-value in $pf-v6-l-flex--breakpoint-map {
+    $breakpoint-name: if($breakpoint != "base", -on-#{$breakpoint}, "");
+
+    @include pf-v6-apply-breakpoint($breakpoint) {
+      @each $spacer, $spacer-value in $pf-v6-l-flex--spacer-map {
+        &.pf-m-space-items-#{$spacer}#{$breakpoint-name} {
+          > * {
+            --#{$flex}--spacer: var(#{map-get($pf-v6-l-flex--variable-map, $spacer-value)});
+          }
+
+          > :last-child {
+            --#{$flex}--spacer: 0;
+          }
+        }
+      }
+    }
+  }
+
+  // .pf-m-spacer-{size}{-on-[breakpoint]}
+  @each $breakpoint, $breakpoint-value in $pf-v6-l-flex--breakpoint-map {
+    $breakpoint-name: if($breakpoint != "base", -on-#{$breakpoint}, "");
+
+    @include pf-v6-apply-breakpoint($breakpoint) {
+      @each $spacer, $spacer-value in $pf-v6-l-flex--spacer-map {
+        .pf-m-spacer-#{$spacer}#{$breakpoint-name} {
+          --#{$flex}--spacer: var(#{map-get($pf-v6-l-flex--variable-map, $spacer-value)});
+
+          &:last-child {
+            --#{$flex}--spacer: var(#{map-get($pf-v6-l-flex--variable-map, $spacer-value)});
+          }
+        }
+      }
+    }
+  }
+
+    // .pf-m-gap{-[size]}{-on-[breakpoint]}
+    @each $breakpoint, $breakpoint-value in $pf-v6-l-flex--breakpoint-map {
+      $pf-v6-l-flex--gap--selectors: ();
+
+      @include pf-v6-apply-breakpoint($breakpoint) {
+        @each $spacer, $value in $pf-v6-l-flex--gap-map {
+          $breakpoint-name: if($breakpoint == "base", "", -on-#{$breakpoint});
+          $spacer-name: if($spacer == "base", "", -#{$spacer});
+          $spacer-row: if($spacer == "base", var(--#{$flex}--m-gap--RowGap), $value);
+          $spacer-column: if($spacer == "base", var(--#{$flex}--m-gap--ColumnGap), $value);
+          $selector: ".pf-m-gap#{$spacer-name}#{$breakpoint-name}";
+          $pf-v6-l-flex--gap--selectors: append($pf-v6-l-flex--gap--selectors, $selector, $separator: comma);
+
+          &#{$selector} {
+            --#{$flex}--RowGap: #{$spacer-row};
+            --#{$flex}--ColumnGap: #{$spacer-column};
+          }
+        }
+
+        &:is(#{$pf-v6-l-flex--gap--selectors}) {
+          > * {
+            --#{$flex}--spacer--row: 0;
+            --#{$flex}--spacer--column: 0;
+          }
+        }
+      }
+    }
+
+  // .pf-m-row-gap{-[size]}{-on-[breakpoint]}
+  @each $breakpoint, $breakpoint-value in $pf-v6-l-flex--breakpoint-map {
+    @include pf-v6-apply-breakpoint($breakpoint) {
+      $pf-v6-l-flex--row-gap--selectors: ();
+
+      @each $spacer, $value in $pf-v6-l-flex--gap-map {
+        $breakpoint-name: if($breakpoint == "base", "", -on-#{$breakpoint});
+        $spacer-name: if($spacer == "base", "", -#{$spacer});
+        $spacer-value: if($spacer == "base", var(--#{$flex}--m-row-gap--RowGap), $value);
+        $selector: ".pf-m-row-gap#{$spacer-name}#{$breakpoint-name}";
+        $pf-v6-l-flex--row-gap--selectors: append($pf-v6-l-flex--row-gap--selectors, $selector, $separator: comma);
+
+       &#{$selector} {
+          --#{$flex}--RowGap: #{$spacer-value};
+        }
+      }
+
+      &:is(#{$pf-v6-l-flex--row-gap--selectors}) {
+        > * {
+          --#{$flex}--spacer--row: 0;
+        }
+      }
+    }
+  }
+
+  // .pf-m-column-gap{-[size]}{-on-[breakpoint]}
+  @each $breakpoint, $breakpoint-value in $pf-v6-l-flex--breakpoint-map {
+    $pf-v6-l-flex--column-gap--selectors: ();
+
+    @include pf-v6-apply-breakpoint($breakpoint) {
+      @each $spacer, $value in $pf-v6-l-flex--gap-map {
+        $breakpoint-name: if($breakpoint == "base", "", -on-#{$breakpoint});
+        $spacer-name: if($spacer == "base", "", -#{$spacer});
+        $spacer-value: if($spacer == "base", var(--#{$flex}--m-column-gap--ColumnGap), $value);
+        $selector: ".pf-m-column-gap#{$spacer-name}#{$breakpoint-name}";
+        $pf-v6-l-flex--column-gap--selectors: append($pf-v6-l-flex--column-gap--selectors, $selector, $separator: comma);
+
+        &#{$selector} {
+          --#{$flex}--ColumnGap: #{$spacer-value};
+        }
+      }
+
+      &:is(#{$pf-v6-l-flex--column-gap--selectors}) {
+        > * {
+          --#{$flex}--spacer--column: 0;
+        }
+      }
+    }
+  }
+}
+// stylelint-enable

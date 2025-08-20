@@ -1,0 +1,53 @@
+// Font Awesome 5 icons https://fontawesome.com
+@use '../sass-utilities' as *;
+@use '../assets/fontawesome/variables' as *;
+@use '../assets/fontawesome/icons' as icons;
+@use '../assets/fontawesome' as *;
+
+@if not($pf-v6-global--disable-fontawesome) {
+  @if $pf-v6-global--enable-fontawesome-cdn {
+    // stylelint-disable no-invalid-position-at-import-rule
+    @import "https://use.fontawesome.com/releases/v5.7.2/css/solid.css";
+    @import "https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css";
+    // stylelint-enable no-invalid-position-at-import-rule
+  } @else {
+    @font-face {
+      font-family: "Font Awesome 5 Free";
+      font-style: normal;
+      font-weight: 900;
+      src:
+        url("#{$fa-font-path}/fa-solid-900.woff2") format("woff2");
+    }
+
+    // stylelint-disable
+    .fa,
+    .fas {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+    }
+    // stylelint-enable
+
+    @include icons.pf-fa-icon-vars;
+  }
+}
+
+@mixin pf-fa-icon-base {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+@if not($pf-v6-global--disable-fontawesome) {
+  .#{$fa-css-prefix},
+  .fa,
+  .fas,
+  .far,
+  .fal,
+  .fab {
+    @include pf-fa-icon-base;
+  }
+}

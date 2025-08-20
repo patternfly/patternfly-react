@@ -1,0 +1,63 @@
+.pf-v6-c-table {
+  --pf-v6-c-table__sticky-cell--MinWidth--base: 8.75rem;
+  --pf-v6-c-table__sticky-cell--MinWidth: var(--pf-v6-c-table__sticky-cell--MinWidth--base);
+  --pf-v6-c-table__sticky-cell--ZIndex: var(--pf-t--global--z-index--xs);
+  --pf-v6-c-table__sticky-cell--InsetInlineEnd: auto;
+  --pf-v6-c-table__sticky-cell--InsetInlineStart: auto;
+  --pf-v6-c-table__sticky-cell--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --pf-v6-c-table__sticky-cell--m-border-right--before--BorderInlineEndWidth: var(--pf-t--global--border--width--divider--default);
+  --pf-v6-c-table__sticky-cell--m-border-right--before--BorderInlineEndColor: var(--pf-t--global--border--color--default);
+  --pf-v6-c-table__sticky-cell--m-border-left--before--BorderInlineStartWidth: var(--pf-t--global--border--width--divider--default);
+  --pf-v6-c-table__sticky-cell--m-border-left--before--BorderInlineStartColor: var(--pf-t--global--border--color--default);
+  --pf-v6-c-table__sticky-cell--m-right--InsetInlineEnd: 0;
+  --pf-v6-c-table__sticky-cell--m-left--InsetInlineStart: 0;
+  --pf-v6-c-table--m-sticky-header__sticky-cell--ZIndex: calc(var(--pf-v6-c-table__sticky-cell--ZIndex) + 1);
+}
+
+.pf-v6-c-table .pf-v6-c-table__sticky-cell {
+  position: sticky;
+  inset-inline-start: var(--pf-v6-c-table__sticky-cell--InsetInlineStart);
+  inset-inline-end: var(--pf-v6-c-table__sticky-cell--InsetInlineEnd);
+  z-index: var(--pf-v6-c-table__sticky-cell--ZIndex);
+  min-width: var(--pf-v6-c-table__sticky-cell--MinWidth);
+}
+
+.pf-v6-c-table__sticky-cell {
+  --pf-v6-c-table--cell--Overflow: visible;
+  --pf-v6-c-table--m-sticky-header--cell--ZIndex: var(--pf-v6-c-table--m-sticky-header__sticky-cell--ZIndex);
+  background-color: var(--pf-v6-c-table__sticky-cell--BackgroundColor);
+  background-clip: padding-box;
+}
+.pf-v6-c-table__sticky-cell.pf-m-border-right::before {
+  --pf-v6-c-table--cell--m-border-right--before--BorderInlineEndWidth: var(--pf-v6-c-table__sticky-cell--m-border-right--before--BorderInlineEndWidth);
+  --pf-v6-c-table--cell--m-border-right--before--BorderInlineEndColor: var(--pf-v6-c-table__sticky-cell--m-border-right--before--BorderInlineEndColor);
+}
+.pf-v6-c-table__sticky-cell.pf-m-border-left::before {
+  --pf-v6-c-table--cell--m-border-left--before--BorderInlineStartWidth: var(--pf-v6-c-table__sticky-cell--m-border-left--before--BorderInlineStartWidth);
+  --pf-v6-c-table--cell--m-border-left--before--BorderInlineStartColor: var(--pf-v6-c-table__sticky-cell--m-border-left--before--BorderInlineStartColor);
+}
+.pf-v6-c-table__sticky-cell.pf-m-right, .pf-v6-c-table__sticky-cell.pf-m-inline-end {
+  --pf-v6-c-table__sticky-cell--InsetInlineEnd: var(--pf-v6-c-table__sticky-cell--m-right--InsetInlineEnd);
+}
+.pf-v6-c-table__sticky-cell.pf-m-left, .pf-v6-c-table__sticky-cell.pf-m-inline-start {
+  --pf-v6-c-table__sticky-cell--InsetInlineStart: var(--pf-v6-c-table__sticky-cell--m-left--InsetInlineStart);
+}
+
+.pf-v6-c-scroll-outer-wrapper {
+  --pf-v6-c-scroll-outer-wrapper--MinHeight: 25rem;
+  --pf-v6-c-scroll-outer-wrapper--MaxHeight: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  min-height: var(--pf-v6-c-scroll-outer-wrapper--MinHeight);
+  max-height: var(--pf-v6-c-scroll-outer-wrapper--MaxHeight);
+  overflow: hidden;
+}
+
+.pf-v6-c-scroll-inner-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+}

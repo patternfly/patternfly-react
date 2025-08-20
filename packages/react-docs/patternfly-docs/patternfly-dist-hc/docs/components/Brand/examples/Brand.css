@@ -1,0 +1,12 @@
+.show-dark,
+:where(.pf-v6-theme-dark) .show-light {
+  display: none;
+}
+
+:where(.pf-v6-theme-dark) .show-dark {
+  display: revert;
+}
+
+:where(.pf-v6-theme-dark) .show-dark .pf-m-picture {
+  display: inline-flex;
+}

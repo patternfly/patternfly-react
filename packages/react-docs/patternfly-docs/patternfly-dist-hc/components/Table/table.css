@@ -1,0 +1,964 @@
+.pf-v6-c-table {
+  --pf-v6-c-table--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --pf-v6-c-table--BorderColor: var(--pf-t--global--border--color--default);
+  --pf-v6-c-table--border-width--base: var(--pf-t--global--border--width--divider--default);
+  --pf-v6-c-table__caption--FontSize: var(--pf-t--global--font--size--body--default);
+  --pf-v6-c-table__caption--Color: var(--pf-t--global--text--color--subtle);
+  --pf-v6-c-table__caption--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --pf-v6-c-table__caption--PaddingInlineEnd: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-table__caption--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-table__caption--PaddingInlineStart: var(--pf-t--global--spacer--inset--page-chrome);
+  --pf-v6-c-table__thead--cell--FontSize: var(--pf-t--global--font--size--body--sm);
+  --pf-v6-c-table__thead--cell--FontWeight: var(--pf-t--global--font--weight--body--bold);
+  --pf-v6-c-table__thead__toggle--PaddingBlockStart: var(--pf-v6-c-table--cell--Padding--base);
+  --pf-v6-c-table__thead__toggle--PaddingBlockEnd: var(--pf-v6-c-table--cell--Padding--base);
+  --pf-v6-c-table__tbody--cell--PaddingBlockStart: var(--pf-v6-c-table--cell--Padding--base);
+  --pf-v6-c-table__tbody--cell--PaddingBlockEnd: var(--pf-v6-c-table--cell--Padding--base);
+  --pf-v6-c-table__tbody--cell--FontSize: var(--pf-t--global--font--size--body--default);
+  --pf-v6-c-table__tr--BorderBlockEndWidth: var(--pf-t--global--border--width--divider--default);
+  --pf-v6-c-table__tr--BorderBlockEndColor: var(--pf-t--global--border--color--default);
+  --pf-v6-c-table--cell--Padding--base: var(--pf-t--global--spacer--md);
+  --pf-v6-c-table--cell--PaddingBlockStart: var(--pf-v6-c-table--cell--Padding--base);
+  --pf-v6-c-table--cell--PaddingInlineEnd: var(--pf-v6-c-table--cell--Padding--base);
+  --pf-v6-c-table--cell--PaddingBlockEnd: var(--pf-v6-c-table--cell--Padding--base);
+  --pf-v6-c-table--cell--PaddingInlineStart: var(--pf-v6-c-table--cell--Padding--base);
+  --pf-v6-c-table--cell--FontSize: var(--pf-t--global--font--size--body--default);
+  --pf-v6-c-table--cell--FontWeight: var(--pf-t--global--font--weight--body--default);
+  --pf-v6-c-table--cell--LineHeight: var(--pf-t--global--font--line-height--body);
+  --pf-v6-c-table--cell--Color: var(--pf-t--global--text--color--regular);
+  --pf-v6-c-table--cell--first-last-child--PaddingInline: var(--pf-t--global--spacer--inset--page-chrome);
+  --pf-v6-c-table__tr--m-first-cell-offset-reset--cell--PaddingInlineStart: var(--pf-v6-c-table--cell--Padding--base);
+  --pf-v6-c-table--cell--MinWidth: calc(var(--pf-v6-c-table--cell--PaddingInlineEnd) + var(--pf-v6-c-table--cell--PaddingInlineEnd));
+  --pf-v6-c-table--cell--MaxWidth: none;
+  --pf-v6-c-table--cell--Width: auto;
+  --pf-v6-c-table--cell--Overflow: visible;
+  --pf-v6-c-table--cell--TextOverflow: clip;
+  --pf-v6-c-table--cell--WhiteSpace: normal;
+  --pf-v6-c-table--cell--WordBreak: normal;
+  --pf-v6-c-table--cell--m-border-right--before--BorderInlineEndWidth: var(--pf-t--global--border--width--divider--default);
+  --pf-v6-c-table--cell--m-border-right--before--BorderInlineEndColor: var(--pf-t--global--border--color--default);
+  --pf-v6-c-table--cell--m-border-left--before--BorderInlineStartWidth: var(--pf-t--global--border--width--divider--default);
+  --pf-v6-c-table--cell--m-border-left--before--BorderInlineStartColor: var(--pf-t--global--border--color--default);
+  --pf-v6-c-table--cell--m-help--MinWidth: 11ch;
+  --pf-v6-c-table--m-truncate--cell--MaxWidth: 1px;
+  --pf-v6-c-table--m-truncate--cell--MinWidth: calc(5ch + var(--pf-v6-c-table--cell--PaddingInlineEnd) + var(--pf-v6-c-table--cell--PaddingInlineStart));
+  --pf-v6-c-table__text--MinWidth: 100%;
+  --pf-v6-c-table__text--m-truncate--MinWidth: 5ch;
+  --pf-v6-c-table--m-truncate__text--MinWidth: 5ch;
+  --pf-v6-c-table--cell--hidden-visible--Display: table-cell;
+  --pf-v6-c-table__toggle--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-table__toggle--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-table__toggle--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-table__toggle--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-table__toggle--c-button__toggle-icon--Rotate: 270deg;
+  --pf-v6-c-table__toggle--c-button__toggle-icon--TransitionDuration: var(--pf-t--global--motion--duration--icon--default);
+  --pf-v6-c-table__toggle--c-button__toggle-icon--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--default);
+  --pf-v6-c-table__toggle--c-button--m-expanded__toggle-icon--Rotate: 360deg;
+  --pf-v6-c-table__button--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-table__button--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-table__button--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --pf-v6-c-table__button--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-table__button--Color: var(--pf-t--global--text--color--regular);
+  --pf-v6-c-table__button--BackgroundColor: var(--pf-t--global--background--color--action--plain--default);
+  --pf-v6-c-table__button--OutlineOffset: calc(var(--pf-t--global--border--width--strong) * -1);
+  --pf-v6-c-table__button--BorderRadius: var(--pf-t--global--border--radius--small);
+  --pf-v6-c-table__button--hover--Color: var(--pf-t--global--text--color--regular);
+  --pf-v6-c-table__button--hover--BackgroundColor: var(--pf-t--global--background--color--action--plain--hover);
+  --pf-v6-c-table__check--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-table__check--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-table__favorite--c-button--FontSize: var(--pf-t--global--font--size--body--default);
+  --pf-v6-c-table--cell--m-favorite--Color: var(--pf-t--global--text--color--subtle);
+  --pf-v6-c-table__favorite--m-favorited--c-button--Color: var(--pf-t--global--color--favorite--clicked);
+  --pf-v6-c-table__tr--m-ghost-row--Opacity: .4;
+  --pf-v6-c-table__tr--m-ghost-row--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --pf-v6-c-table__action--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-table__action--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-table__action--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-table__action--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-table__expandable-row--TransitionDuration--expand--slide: 0s;
+  --pf-v6-c-table__expandable-row--TransitionDuration--expand--fade: var(--pf-t--global--motion--duration--fade--default);
+  --pf-v6-c-table__expandable-row--TransitionDuration--collapse--slide: 0s;
+  --pf-v6-c-table__expandable-row--TransitionDuration--collapse--fade: var(--pf-t--global--motion--duration--fade--short);
+  --pf-v6-c-table__expandable-row--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--default);
+  --pf-v6-c-table__expandable-row--Opacity: 0;
+  --pf-v6-c-table__tbody--m-expanded__expandable-row--Opacity: 1;
+  --pf-v6-c-table__expandable-row--TranslateY: 0;
+  --pf-v6-c-table__tbody--m-expanded__expandable-row--TranslateY: 0;
+  --pf-v6-c-table__expandable-row-content--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --pf-v6-c-table__expandable-row-content--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-table__expandable-row-content--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --pf-v6-c-table__expandable-row-content--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-table__expandable-row-content--BorderRadius: var(--pf-t--global--border--radius--small);
+  --pf-v6-c-table__expandable-row-content--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --pf-v6-c-table__control-row--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --pf-v6-c-table__control-row--BorderBlockEndWidth: var(--pf-t--global--border--width--divider--default);
+  --pf-v6-c-table__control-row__tbody--BorderBlockEndColor: var(--pf-t--global--border--color--default);
+  --pf-v6-c-table__icon-inline--MarginInlineEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-table__sort--MinWidth: calc(6ch + var(--pf-v6-c-table--cell--PaddingInlineEnd) + var(--pf-v6-c-table--cell--PaddingInlineStart) + var(--pf-v6-c-table__sort-indicator--MarginInlineStart));
+  --pf-v6-c-table__sort--m-selected__button--Color: var(--pf-t--global--color--brand--clicked);
+  --pf-v6-c-table__sort--m-help--MinWidth: 15ch;
+  --pf-v6-c-table__sort__button__text--Color: currentcolor;
+  --pf-v6-c-table__sort__button--hover__text--Color: currentcolor;
+  --pf-v6-c-table__sort-indicator--Color: var(--pf-t--global--icon--color--subtle);
+  --pf-v6-c-table__sort-indicator--MarginInlineStart: var(--pf-t--global--spacer--md);
+  --pf-v6-c-table__sort--m-selected__sort-indicator--Color: var(--pf-t--global--color--brand--clicked);
+  --pf-v6-c-table__sort__button--hover__sort-indicator--Color: var(--pf-t--global--text--color--regular);
+  --pf-v6-c-table__th--m-help--MinWidth: 11ch;
+  --pf-v6-c-table__column-help--MarginInlineStart: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-table__compound-expansion-toggle__button--Color: var(--pf-t--global--icon--color--brand--default);
+  --pf-v6-c-table__compound-expansion-toggle__button--BackgroundColor: var(--pf-t--global--background--color--action--plain--default);
+  --pf-v6-c-table__compound-expansion-toggle__button--hover--Color: var(--pf-t--global--icon--color--brand--hover);
+  --pf-v6-c-table__compound-expansion-toggle__button--hover--BackgroundColor: var(--pf-t--global--background--color--action--plain--hover);
+  --pf-v6-c-table__compound-expansion-toggle__button--expanded--BackgroundColor: var(--pf-t--global--background--color--action--plain--clicked);
+  --pf-v6-c-table__compound-expansion-toggle__button--after--BorderColor: var(--pf-t--global--border--color--clicked);
+  --pf-v6-c-table__compound-expansion-toggle__button--after--BorderBlockStartWidth: 0;
+  --pf-v6-c-table__compound-expansion-toggle__button--hover--after--BorderBlockStartWidth: var(--pf-t--global--border--width--strong);
+  --pf-v6-c-table__compound-expansion-toggle--m-expanded__button--after--BorderBlockStartWidth: var(--pf-t--global--border--width--strong);
+  --pf-v6-c-table--compound-expansion--m-expanded--BackgroundColor: var(--pf-t--global--background--color--primary--clicked);
+  --pf-v6-c-table--m-compact__th--PaddingBlockStart: calc(var(--pf-t--global--spacer--sm) + var(--pf-t--global--spacer--xs));
+  --pf-v6-c-table--m-compact__th--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-table--m-compact--cell--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-table--m-compact--cell--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-table__td--m-action--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-table__td--m-action--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-table--m-compact__td--m-action--PaddingBlockStart: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-table--m-compact__td--m-action--PaddingBlockEnd: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-table--m-compact__action--PaddingBlockStart: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-table--m-compact__action--PaddingBlockEnd: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-table__expandable-row--m-expanded--BorderBlockEndColor: var(--pf-t--global--border--color--default);
+  --pf-v6-c-table__tr--m-clickable--BackgroundColor: transparent;
+  --pf-v6-c-table__tr--m-clickable--OutlineOffset: calc(-1 * var(--pf-t--global--spacer--xs));
+  --pf-v6-c-table__tr--m-clickable--hover--BackgroundColor: var(--pf-t--global--background--color--primary--hover);
+  --pf-v6-c-table__tr--m-selected--BackgroundColor: var(--pf-t--global--background--color--primary--clicked);
+  --pf-v6-c-table__tr--m-selected--OutlineOffset: calc(-1 * var(--pf-t--global--spacer--xs));
+  --pf-v6-c-table__tbody--m-clickable--BackgroundColor: transparent;
+  --pf-v6-c-table__tbody--m-clickable--OutlineOffset: calc(-1 * var(--pf-t--global--spacer--xs));
+  --pf-v6-c-table__tbody--m-clickable--hover--BackgroundColor: var(--pf-t--global--background--color--primary--hover);
+  --pf-v6-c-table__tbody--m-clickable--m-expanded--BackgroundColor: var(--pf-t--global--background--color--primary--clicked);
+  --pf-v6-c-table__tbody--m-selected--BackgroundColor: var(--pf-t--global--background--color--primary--clicked);
+  --pf-v6-c-table__tbody--m-selected--OutlineOffset: calc(-1 * var(--pf-t--global--spacer--xs));
+  --pf-v6-c-table__thead--m-nested-column-header--button--OutlineOffset: -0.1875rem;
+  --pf-v6-c-table__thead--m-nested-column-header__tr--PaddingBlockStart: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-table__thead--m-nested-column-header__tr--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-table__subhead--Color: var(--pf-t--global--text--color--subtle);
+  --pf-v6-c-table__nested-column-header__button--PaddingInlineStart: calc(var(--pf-v6-c-table__button--PaddingInlineStart) - var(--pf-t--global--spacer--control--horizontal--plain));
+  --pf-v6-c-table__nested-column-header__button--PaddingInlineEnd: calc(var(--pf-v6-c-table__button--PaddingInlineEnd) - (var(--pf-t--global--spacer--control--horizontal--plain) / 2));
+  --pf-v6-c-table--m-striped__tr--BackgroundColor: var(--pf-t--global--background--color--secondary--default);
+  --pf-v6-c-table--m-sticky-header--cell--ZIndex: var(--pf-t--global--z-index--xs);
+  --pf-v6-c-table--m-sticky-header--ZIndex: calc(var(--pf-t--global--z-index--xs) + 1);
+  --pf-v6-c-table--m-sticky-header--border--ZIndex: calc(var(--pf-t--global--z-index--xs) + 2);
+}
+@media screen and (prefers-reduced-motion: no-preference) {
+  .pf-v6-c-table {
+    --pf-v6-c-table__expandable-row--TransitionDuration--expand--slide: var(--pf-t--global--motion--duration--fade--default);
+    --pf-v6-c-table__expandable-row--TransitionDuration--collapse--slide: var(--pf-t--global--motion--duration--fade--short);
+    --pf-v6-c-table__expandable-row--TranslateY: -.5rem;
+  }
+}
+
+.pf-v6-c-table {
+  width: 100%;
+  background-color: var(--pf-v6-c-table--BackgroundColor);
+}
+.pf-v6-c-table.pf-m-fixed {
+  table-layout: fixed;
+}
+.pf-v6-c-table.pf-m-sticky-header > .pf-v6-c-table__thead,
+.pf-v6-c-table .pf-v6-c-table__thead.pf-m-nested-column-header {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: var(--pf-v6-c-table--m-sticky-header--ZIndex);
+  background: var(--pf-v6-c-table--BackgroundColor);
+}
+.pf-v6-c-table.pf-m-sticky-header > .pf-v6-c-table__thead::before,
+.pf-v6-c-table .pf-v6-c-table__thead.pf-m-nested-column-header::before {
+  position: absolute;
+  inset-block-start: 0;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  z-index: var(--pf-v6-c-table--m-sticky-header--border--ZIndex);
+  pointer-events: none;
+  content: "";
+  border-block-end: var(--pf-v6-c-table--border-width--base) solid var(--pf-v6-c-table--BorderColor);
+}
+.pf-v6-c-table.pf-m-sticky-header {
+  position: relative;
+}
+.pf-v6-c-table.pf-m-sticky-header thead:where(.pf-v6-c-table__thead) tr:where(.pf-v6-c-table__tr) > :where(th, td) {
+  z-index: var(--pf-v6-c-table--m-sticky-header--cell--ZIndex);
+}
+.pf-v6-c-table.pf-m-sticky-header > .pf-m-nested-column-header {
+  position: sticky;
+  inset-block-start: 0;
+  background: var(--pf-v6-c-table--BackgroundColor);
+}
+.pf-v6-c-table:not(.pf-m-sticky-header) > .pf-m-nested-column-header tr:where(.pf-v6-c-table__tr):not(:last-child) {
+  border-block-end: 0;
+}
+.pf-v6-c-table:not(.pf-m-sticky-header) > .pf-m-nested-column-header tr:where(.pf-v6-c-table__tr):not(:last-child) th:where(.pf-v6-c-table__th):not([rowspan]),
+.pf-v6-c-table:not(.pf-m-sticky-header) > .pf-m-nested-column-header tr:where(.pf-v6-c-table__tr):not(:last-child) td:where(.pf-v6-c-table__td):not([rowspan]) {
+  --pf-v6-c-table--cell--PaddingBlockEnd: var(--pf-v6-c-table__thead--m-nested-column-header__tr--PaddingBlockEnd);
+}
+.pf-v6-c-table.pf-m-striped:not(.pf-m-expandable) > tbody:where(.pf-v6-c-table__tbody) > tr:where(.pf-v6-c-table__tr):nth-child(odd), .pf-v6-c-table.pf-m-striped.pf-m-expandable > tbody:where(.pf-v6-c-table__tbody):nth-of-type(odd) > tr:where(.pf-v6-c-table__tr),
+.pf-v6-c-table > .pf-m-striped > tr:nth-child(odd),
+.pf-v6-c-table > .pf-m-striped-even > tr:nth-child(even),
+.pf-v6-c-table tr:where(.pf-v6-c-table__tr).pf-m-striped {
+  --pf-v6-c-table__sticky-column--BackgroundColor: var(--pf-v6-c-table--m-striped__tr--BackgroundColor);
+  background: var(--pf-v6-c-table--m-striped__tr--BackgroundColor);
+}
+.pf-v6-c-table tr:where(.pf-v6-c-table__tr):not(.pf-v6-c-table__expandable-row).pf-m-ghost-row {
+  background-color: var(--pf-v6-c-table__tr--m-ghost-row--BackgroundColor);
+  opacity: var(--pf-v6-c-table__tr--m-ghost-row--Opacity);
+}
+.pf-v6-c-table tr:where(.pf-v6-c-table__tr) > :where(th, td) {
+  --pf-v6-hidden-visible--visible--Display: var(--pf-v6-c-table--cell--hidden-visible--Display);
+  --pf-v6-hidden-visible--hidden--Display: none;
+  --pf-v6-hidden-visible--Display: var(--pf-v6-hidden-visible--visible--Display);
+  display: var(--pf-v6-hidden-visible--Display);
+  position: relative;
+  width: var(--pf-v6-c-table--cell--Width);
+  min-width: var(--pf-v6-c-table--cell--MinWidth);
+  max-width: var(--pf-v6-c-table--cell--MaxWidth);
+  padding-block-start: var(--pf-v6-c-table--cell--PaddingBlockStart);
+  padding-block-end: var(--pf-v6-c-table--cell--PaddingBlockEnd);
+  padding-inline-start: var(--pf-v6-c-table--cell--PaddingInlineStart);
+  padding-inline-end: var(--pf-v6-c-table--cell--PaddingInlineEnd);
+  overflow: var(--pf-v6-c-table--cell--Overflow);
+  font-size: var(--pf-v6-c-table--cell--FontSize);
+  font-weight: var(--pf-v6-c-table--cell--FontWeight);
+  line-height: var(--pf-v6-c-table--cell--LineHeight);
+  color: var(--pf-v6-c-table--cell--Color);
+  text-overflow: var(--pf-v6-c-table--cell--TextOverflow);
+  word-break: var(--pf-v6-c-table--cell--WordBreak);
+  white-space: var(--pf-v6-c-table--cell--WhiteSpace);
+}
+.pf-v6-c-table tr:where(.pf-v6-c-table__tr) > :where(th, td).pf-m-hidden {
+  --pf-v6-hidden-visible--Display: var(--pf-v6-hidden-visible--hidden--Display);
+}
+@media screen and (min-width: 36rem) {
+  .pf-v6-c-table tr:where(.pf-v6-c-table__tr) > :where(th, td).pf-m-hidden-on-sm {
+    --pf-v6-hidden-visible--Display: var(--pf-v6-hidden-visible--hidden--Display);
+  }
+  .pf-v6-c-table tr:where(.pf-v6-c-table__tr) > :where(th, td).pf-m-visible-on-sm {
+    --pf-v6-hidden-visible--Display: var(--pf-v6-hidden-visible--visible--Display);
+  }
+}
+@media screen and (min-width: 48rem) {
+  .pf-v6-c-table tr:where(.pf-v6-c-table__tr) > :where(th, td).pf-m-hidden-on-md {
+    --pf-v6-hidden-visible--Display: var(--pf-v6-hidden-visible--hidden--Display);
+  }
+  .pf-v6-c-table tr:where(.pf-v6-c-table__tr) > :where(th, td).pf-m-visible-on-md {
+    --pf-v6-hidden-visible--Display: var(--pf-v6-hidden-visible--visible--Display);
+  }
+}
+@media screen and (min-width: 62rem) {
+  .pf-v6-c-table tr:where(.pf-v6-c-table__tr) > :where(th, td).pf-m-hidden-on-lg {
+    --pf-v6-hidden-visible--Display: var(--pf-v6-hidden-visible--hidden--Display);
+  }
+  .pf-v6-c-table tr:where(.pf-v6-c-table__tr) > :where(th, td).pf-m-visible-on-lg {
+    --pf-v6-hidden-visible--Display: var(--pf-v6-hidden-visible--visible--Display);
+  }
+}
+@media screen and (min-width: 75rem) {
+  .pf-v6-c-table tr:where(.pf-v6-c-table__tr) > :where(th, td).pf-m-hidden-on-xl {
+    --pf-v6-hidden-visible--Display: var(--pf-v6-hidden-visible--hidden--Display);
+  }
+  .pf-v6-c-table tr:where(.pf-v6-c-table__tr) > :where(th, td).pf-m-visible-on-xl {
+    --pf-v6-hidden-visible--Display: var(--pf-v6-hidden-visible--visible--Display);
+  }
+}
+@media screen and (min-width: 90.625rem) {
+  .pf-v6-c-table tr:where(.pf-v6-c-table__tr) > :where(th, td).pf-m-hidden-on-2xl {
+    --pf-v6-hidden-visible--Display: var(--pf-v6-hidden-visible--hidden--Display);
+  }
+  .pf-v6-c-table tr:where(.pf-v6-c-table__tr) > :where(th, td).pf-m-visible-on-2xl {
+    --pf-v6-hidden-visible--Display: var(--pf-v6-hidden-visible--visible--Display);
+  }
+}
+.pf-v6-c-table tr:where(.pf-v6-c-table__tr) > :where(th, td):first-child {
+  padding-inline-start: var(--pf-v6-c-table--cell--first-last-child--PaddingInline);
+}
+.pf-v6-c-table tr:where(.pf-v6-c-table__tr) > :where(th, td):last-child {
+  padding-inline-end: var(--pf-v6-c-table--cell--first-last-child--PaddingInline);
+}
+.pf-v6-c-table tr:where(.pf-v6-c-table__tr) > :where(th, td).pf-m-center {
+  text-align: center;
+}
+.pf-v6-c-table tr:where(.pf-v6-c-table__tr) > :where(th, td):is(:empty, .pf-v6-c-table__cell-empty) {
+  width: auto;
+  min-width: 0;
+  padding: 0;
+}
+.pf-v6-c-table tr:where(.pf-v6-c-table__tr) > :where(th, td).pf-m-help {
+  --pf-v6-c-table--cell--MinWidth: var(--pf-v6-c-table--cell--m-help--MinWidth);
+}
+.pf-v6-c-table tr:where(.pf-v6-c-table__tr) > :where(th, td).pf-m-favorite {
+  --pf-v6-c-table__button--Color: var(--pf-v6-c-table--cell--m-favorite--Color);
+  --pf-v6-c-table__sort--MinWidth: fit-content;
+  --pf-v6-c-table--cell--MaxWidth: fit-content;
+  --pf-v6-c-table--cell--Overflow: visible;
+}
+.pf-v6-c-table tr:where(.pf-v6-c-table__tr) > :where(th, td).pf-m-border-right::before, .pf-v6-c-table tr:where(.pf-v6-c-table__tr) > :where(th, td).pf-m-border-left::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+}
+.pf-v6-c-table tr:where(.pf-v6-c-table__tr) > :where(th, td).pf-m-border-right::before {
+  border-inline-end: var(--pf-v6-c-table--cell--m-border-right--before--BorderInlineEndWidth) solid var(--pf-v6-c-table--cell--m-border-right--before--BorderInlineEndColor);
+}
+.pf-v6-c-table tr:where(.pf-v6-c-table__tr) > :where(th, td).pf-m-border-left::before {
+  border-inline-start: var(--pf-v6-c-table--cell--m-border-left--before--BorderInlineStartWidth) solid var(--pf-v6-c-table--cell--m-border-left--before--BorderInlineStartColor);
+}
+.pf-v6-c-table caption:where(.pf-v6-c-table__caption) {
+  padding-block-start: var(--pf-v6-c-table__caption--PaddingBlockStart);
+  padding-block-end: var(--pf-v6-c-table__caption--PaddingBlockEnd);
+  padding-inline-start: var(--pf-v6-c-table__caption--PaddingInlineStart);
+  font-size: var(--pf-v6-c-table__caption--FontSize);
+  color: var(--pf-v6-c-table__caption--Color);
+  text-align: start;
+  background-color: var(--pf-v6-c-table--BackgroundColor);
+}
+.pf-v6-c-table thead:where(.pf-v6-c-table__thead) {
+  --pf-v6-c-table--cell--FontSize: var(--pf-v6-c-table__thead--cell--FontSize);
+  --pf-v6-c-table--cell--FontWeight: var(--pf-v6-c-table__thead--cell--FontWeight);
+  --pf-v6-c-table--cell--MinWidth: var(--pf-v6-c-table--m-truncate--cell--MinWidth);
+  --pf-v6-c-table--cell--MaxWidth: var(--pf-v6-c-table--m-truncate--cell--MaxWidth);
+  --pf-v6-c-table--cell--Overflow: hidden;
+  --pf-v6-c-table--cell--TextOverflow: ellipsis;
+  --pf-v6-c-table--cell--WhiteSpace: nowrap;
+}
+.pf-v6-c-table thead:where(.pf-v6-c-table__thead) .pf-v6-c-table__sort .pf-v6-c-table__button {
+  margin-block-end: calc(var(--pf-v6-c-table__button--PaddingBlockEnd) * -1);
+}
+.pf-v6-c-table thead:where(.pf-v6-c-table__thead).pf-m-nested-column-header button:where(.pf-v6-c-button) {
+  outline-offset: var(--pf-v6-c-table__thead--m-nested-column-header--button--OutlineOffset);
+}
+.pf-v6-c-table thead:where(.pf-v6-c-table__thead).pf-m-nested-column-header tr:where(.pf-v6-c-table__tr):not(:first-child) th:where(.pf-v6-c-table__th):not([rowspan]),
+.pf-v6-c-table thead:where(.pf-v6-c-table__thead).pf-m-nested-column-header tr:where(.pf-v6-c-table__tr):not(:first-child) td:where(.pf-v6-c-table__td):not([rowspan]) {
+  --pf-v6-c-table--cell--PaddingBlockStart: var(--pf-v6-c-table__thead--m-nested-column-header__tr--PaddingBlockStart);
+}
+.pf-v6-c-table thead:where(.pf-v6-c-table__thead) .pf-v6-c-table__subhead {
+  --pf-v6-c-table__sort__button__text--Color: var(--pf-v6-c-table__subhead--Color);
+  color: var(--pf-v6-c-table__subhead--Color);
+}
+.pf-v6-c-table tbody:where(.pf-v6-c-table__tbody) {
+  --pf-v6-c-table--cell--PaddingBlockStart: var(--pf-v6-c-table__tbody--cell--PaddingBlockStart);
+  --pf-v6-c-table--cell--PaddingBlockEnd: var(--pf-v6-c-table__tbody--cell--PaddingBlockEnd);
+  --pf-v6-c-table--cell--FontSize: var(--pf-v6-c-table__tbody--cell--FontSize);
+}
+.pf-v6-c-table tbody:where(.pf-v6-c-table__tbody) > tr:where(.pf-v6-c-table__tr) > :where(th, td) {
+  overflow-wrap: break-word;
+}
+.pf-v6-c-table .pf-v6-c-table__td.pf-m-action {
+  --pf-v6-c-table--cell--PaddingBlockStart: var(--pf-v6-c-table__td--m-action--PaddingBlockStart);
+  --pf-v6-c-table--cell--PaddingBlockEnd: var(--pf-v6-c-table__td--m-action--PaddingBlockEnd);
+}
+.pf-v6-c-table .pf-v6-c-table__sort {
+  min-width: var(--pf-v6-c-table__sort--MinWidth);
+}
+.pf-v6-c-table :where(.pf-v6-c-table__th, .pf-v6-c-table__td).pf-m-help {
+  min-width: var(--pf-v6-c-table__th--m-help--MinWidth);
+}
+.pf-v6-c-table.pf-m-no-border-rows > tbody:where(.pf-v6-c-table__tbody) {
+  --pf-v6-c-table__tr--BorderBlockEndWidth: 0;
+  --pf-v6-c-table__tbody--BorderBlockEndWidth: 0;
+  --pf-v6-c-table--m-expandable__tbody--BorderBlockEndWidth: 0;
+  --pf-v6-c-table__control-row--BorderBlockEndWidth: 0;
+}
+.pf-v6-c-table.pf-m-no-border-rows > tbody:where(.pf-v6-c-table__tbody) > tr:where(.pf-v6-c-table__tr) {
+  border-block-end: 0;
+}
+.pf-v6-c-table.pf-m-no-border-rows > tbody:where(.pf-v6-c-table__tbody):not(.pf-m-expanded) .pf-v6-c-table__compound-expansion-toggle .pf-v6-c-table__button::before {
+  display: none;
+}
+.pf-v6-c-table tr.pf-m-clickable:last-child {
+  border-block-end-color: transparent;
+}
+.pf-v6-c-table tr:where(.pf-v6-c-table__tr).pf-m-clickable {
+  cursor: pointer;
+  background-color: var(--pf-v6-c-table__tr--m-clickable--BackgroundColor);
+  outline-offset: var(--pf-v6-c-table__tr--m-clickable--OutlineOffset);
+}
+.pf-v6-c-table tr:where(.pf-v6-c-table__tr).pf-m-clickable:is(:hover, :focus) {
+  --pf-v6-c-table__tr--m-clickable--BackgroundColor: var(--pf-v6-c-table__tr--m-clickable--hover--BackgroundColor);
+}
+.pf-v6-c-table tr:where(.pf-v6-c-table__tr).pf-m-selected {
+  position: relative;
+  background-color: var(--pf-v6-c-table__tr--m-selected--BackgroundColor);
+  outline-offset: var(--pf-v6-c-table__tr--m-selected--OutlineOffset);
+}
+.pf-v6-c-table tr:where(.pf-v6-c-table__tr).pf-m-first-cell-offset-reset > :first-child {
+  padding-inline-start: var(--pf-v6-c-table__tr--m-first-cell-offset-reset--cell--PaddingInlineStart);
+}
+.pf-v6-c-table tbody:where(.pf-v6-c-table__tbody).pf-m-clickable {
+  cursor: pointer;
+  background-color: var(--pf-v6-c-table__tbody--m-clickable--BackgroundColor);
+  outline-offset: var(--pf-v6-c-table__tbody--m-clickable--OutlineOffset);
+}
+.pf-v6-c-table tbody:where(.pf-v6-c-table__tbody).pf-m-clickable:is(:hover, :focus) {
+  --pf-v6-c-table__tbody--m-clickable--BackgroundColor: var(--pf-v6-c-table__tbody--m-clickable--hover--BackgroundColor);
+}
+.pf-v6-c-table tbody:where(.pf-v6-c-table__tbody).pf-m-clickable.pf-m-expanded {
+  --pf-v6-c-table__tbody--m-clickable--BackgroundColor: var(--pf-v6-c-table__tbody--m-clickable--m-expanded--BackgroundColor);
+}
+.pf-v6-c-table tbody:where(.pf-v6-c-table__tbody).pf-m-selected {
+  background-color: var(--pf-v6-c-table__tbody--m-selected--BackgroundColor);
+  outline-offset: var(--pf-v6-c-table__tbody--m-selected--OutlineOffset);
+}
+.pf-v6-c-table tbody:where(.pf-v6-c-table__tbody).pf-m-selected .pf-v6-c-table__tr.pf-m-expanded:not(.pf-v6-c-table__expandable-row) {
+  border: none;
+}
+.pf-v6-c-table.pf-m-drag-over {
+  overflow-anchor: none;
+}
+.pf-v6-c-table .pf-v6-c-table {
+  background-color: transparent;
+}
+.pf-v6-c-table .pf-v6-c-table,
+.pf-v6-c-table .pf-v6-c-table :is(.pf-v6-c-table__tbody, .pf-v6-c-table__tr:last-child) {
+  border-block-end: 0;
+}
+.pf-v6-c-table .pf-v6-c-button .pf-v6-c-table__sort-indicator {
+  --pf-v6-c-table__sort-indicator--MarginInlineStart: 0;
+}
+.pf-v6-c-table.pf-m-animate-expand > .pf-v6-c-table__tbody.pf-m-expanded > .pf-v6-c-table__control-row {
+  border-block-end: 0;
+}
+.pf-v6-c-table.pf-m-animate-expand > .pf-v6-c-table__tbody > .pf-v6-c-table__expandable-row {
+  display: var(--pf-v6-c-table__expandable-row--Display, revert);
+  visibility: hidden;
+  opacity: var(--pf-v6-c-table__expandable-row--Opacity);
+  transition-delay: 0s, 0s, var(--pf-v6-c-table__expandable-row--TransitionDuration--collapse--fade), var(--pf-v6-c-table__expandable-row--TransitionDuration--collapse--fade);
+  transition-timing-function: var(--pf-v6-c-table__expandable-row--TransitionTimingFunction);
+  transition-duration: var(--pf-v6-c-table__expandable-row--TransitionDuration--collapse--fade), var(--pf-v6-c-table__expandable-row--TransitionDuration--collapse--slide), 0s, 0s;
+  transition-property: opacity, translate, visibility, background-color;
+  translate: 0 var(--pf-v6-c-table__expandable-row--TranslateY);
+}
+.pf-v6-c-table.pf-m-animate-expand > .pf-v6-c-table__tbody > .pf-v6-c-table__expandable-row[hidden] {
+  display: var(--pf-v6-c-table__expandable-row--Display, revert);
+}
+.pf-v6-c-table.pf-m-animate-expand > .pf-v6-c-table__tbody > .pf-v6-c-table__expandable-row.pf-m-expanded {
+  visibility: visible;
+  opacity: var(--pf-v6-c-table__tbody--m-expanded__expandable-row--Opacity);
+  transition-delay: 0s;
+  transition-duration: var(--pf-v6-c-table__expandable-row--TransitionDuration--expand--fade), var(--pf-v6-c-table__expandable-row--TransitionDuration--expand--slide), 0s, 0s;
+  translate: 0 var(--pf-v6-c-table__tbody--m-expanded__expandable-row--TranslateY);
+}
+.pf-v6-c-table.pf-m-animate-expand > .pf-v6-c-table__tbody > .pf-v6-c-table__expandable-row.pf-m-expanded > :is(.pf-v6-c-table__td, .pf-v6-c-table__th) > .pf-v6-c-table__expandable-row-content {
+  max-height: 99999px;
+}
+.pf-v6-c-table.pf-m-animate-expand > .pf-v6-c-table__tbody > .pf-v6-c-table__expandable-row:not(.pf-m-expanded) > :is(.pf-v6-c-table__td, .pf-v6-c-table__th),
+.pf-v6-c-table.pf-m-animate-expand > .pf-v6-c-table__tbody > .pf-v6-c-table__expandable-row:not(.pf-m-expanded) > :is(.pf-v6-c-table__td, .pf-v6-c-table__th) > .pf-v6-c-table__expandable-row-content {
+  padding: 0;
+  overflow: hidden;
+  transition-delay: var(--pf-v6-c-table__expandable-row--TransitionDuration--collapse--fade);
+  transition-property: padding, max-height, overflow;
+}
+.pf-v6-c-table.pf-m-animate-expand > .pf-v6-c-table__tbody > .pf-v6-c-table__expandable-row:not(.pf-m-expanded) > :is(.pf-v6-c-table__td, .pf-v6-c-table__th) > .pf-v6-c-table__expandable-row-content {
+  max-height: 0;
+}
+.pf-v6-c-table.pf-m-animate-expand > .pf-v6-c-table__tbody > .pf-v6-c-table__tr:has(~ .pf-v6-c-table__expandable-row) {
+  border-block-end: 0;
+}
+.pf-v6-c-table.pf-m-animate-expand > .pf-v6-c-table__tbody > .pf-v6-c-table__control-row.pf-m-no-animate-expand ~ .pf-v6-c-table__expandable-row {
+  --pf-v6-c-table__expandable-row--TransitionDuration--collapse--fade: 0s;
+  --pf-v6-c-table__expandable-row--TransitionDuration--collapse--slide: 0s;
+  --pf-v6-c-table__expandable-row--TransitionDuration--expand--fade: 0s;
+  --pf-v6-c-table__expandable-row--TransitionDuration--expand--slide: 0s;
+}
+
+[class*=pf-v6-c-table].pf-m-truncate {
+  --pf-v6-c-table--cell--MinWidth: var(--pf-v6-c-table--m-truncate--cell--MinWidth);
+  --pf-v6-c-table--cell--MaxWidth: var(--pf-v6-c-table--m-truncate--cell--MaxWidth);
+  --pf-v6-c-table--cell--Overflow: hidden;
+  --pf-v6-c-table--cell--TextOverflow: ellipsis;
+  --pf-v6-c-table--cell--WhiteSpace: nowrap;
+}
+[class*=pf-v6-c-table].pf-m-wrap {
+  --pf-v6-c-table--cell--MinWidth: 0;
+  --pf-v6-c-table--cell--MaxWidth: none;
+  --pf-v6-c-table--cell--Overflow: visible;
+  --pf-v6-c-table--cell--TextOverflow: clip;
+  --pf-v6-c-table--cell--WhiteSpace: normal;
+}
+[class*=pf-v6-c-table].pf-m-nowrap {
+  --pf-v6-c-table--cell--MinWidth: 0;
+  --pf-v6-c-table--cell--MaxWidth: none;
+  --pf-v6-c-table--cell--Overflow: visible;
+  --pf-v6-c-table--cell--TextOverflow: clip;
+  --pf-v6-c-table--cell--WhiteSpace: nowrap;
+}
+[class*=pf-v6-c-table] .pf-v6-c-table__icon, [class*=pf-v6-c-table].pf-m-fit-content {
+  --pf-v6-c-table--cell--MinWidth: fit-content;
+  --pf-v6-c-table--cell--MaxWidth: none;
+  --pf-v6-c-table--cell--Width: 1%;
+  --pf-v6-c-table--cell--Overflow: visible;
+  --pf-v6-c-table--cell--TextOverflow: clip;
+  --pf-v6-c-table--cell--WhiteSpace: nowrap;
+}
+[class*=pf-v6-c-table].pf-m-break-word {
+  --pf-v6-c-table--cell--WordBreak: break-word;
+  --pf-v6-c-table--cell--WhiteSpace: normal;
+}
+
+.pf-v6-c-table__text {
+  position: relative;
+  display: block;
+  width: var(--pf-v6-c-table--cell--Width);
+  min-width: var(--pf-v6-c-table__text--MinWidth);
+  max-width: var(--pf-v6-c-table--cell--MaxWidth);
+  overflow: var(--pf-v6-c-table--cell--Overflow);
+  line-height: var(--pf-v6-c-table--cell--LineHeight);
+  text-overflow: var(--pf-v6-c-table--cell--TextOverflow);
+  word-break: var(--pf-v6-c-table--cell--WordBreak);
+  white-space: var(--pf-v6-c-table--cell--WhiteSpace);
+}
+.pf-v6-c-table__text.pf-m-truncate {
+  --pf-v6-c-table--cell--MinWidth: 100%;
+  min-width: max(var(--pf-v6-c-table__text--m-truncate--MinWidth), var(--pf-v6-c-table__text--MinWidth));
+}
+.pf-v6-c-table__text.pf-m-truncate > :where(th, td) {
+  overflow: var(--pf-v6-c-table--cell--Overflow);
+  text-overflow: var(--pf-v6-c-table--cell--TextOverflow);
+  white-space: var(--pf-v6-c-table--cell--WhiteSpace);
+}
+
+.pf-v6-c-table__button {
+  width: auto;
+  padding-block-start: var(--pf-v6-c-table__button--PaddingBlockStart);
+  padding-block-end: var(--pf-v6-c-table__button--PaddingBlockEnd);
+  padding-inline-start: var(--pf-v6-c-table__button--PaddingInlineStart);
+  padding-inline-end: var(--pf-v6-c-table__button--PaddingInlineEnd);
+  margin-block-end: calc(var(--pf-v6-c-table__button--PaddingBlockEnd) * -1);
+  margin-inline-start: calc(var(--pf-v6-c-table__button--PaddingInlineStart) * -1);
+  font-size: inherit;
+  font-weight: inherit;
+  color: var(--pf-v6-c-table__button--Color);
+  text-align: start;
+  white-space: inherit;
+  user-select: text;
+  background-color: var(--pf-v6-c-table__button--BackgroundColor);
+  border: 0;
+  border-radius: var(--pf-v6-c-table__button--BorderRadius);
+  outline-offset: var(--pf-v6-c-table__button--OutlineOffset);
+}
+.pf-v6-c-table .pf-v6-c-table .pf-v6-c-table__button {
+  margin-block-end: 0;
+}
+.pf-v6-c-table__button:is(:hover, :focus) {
+  color: var(--pf-v6-c-table__button--hover--Color);
+}
+
+.pf-v6-c-table__sort .pf-v6-c-table__text,
+.pf-v6-c-table__compound-expansion-toggle .pf-v6-c-table__text {
+  display: block;
+  width: auto;
+  overflow: var(--pf-v6-c-table--cell--Overflow);
+  text-overflow: var(--pf-v6-c-table--cell--TextOverflow);
+  white-space: var(--pf-v6-c-table--cell--WhiteSpace);
+}
+
+.pf-v6-c-table__button-content,
+.pf-v6-c-table__column-help {
+  display: inline-grid;
+  grid-template-columns: auto max-content;
+  align-items: last baseline;
+  justify-content: start;
+}
+.pf-v6-c-table__button-content .pf-v6-c-table__text,
+.pf-v6-c-table__column-help .pf-v6-c-table__text {
+  min-width: auto;
+  max-width: 100%;
+}
+.pf-v6-c-table thead:where(.pf-v6-c-table__thead).pf-m-nowrap .pf-v6-c-table__button-content, .pf-v6-c-table tr:where(.pf-v6-c-table__tr).pf-m-nowrap .pf-v6-c-table__button-content, .pf-v6-c-table th:where(.pf-v6-c-table__th).pf-m-nowrap .pf-v6-c-table__button-content,
+.pf-v6-c-table thead:where(.pf-v6-c-table__thead).pf-m-nowrap .pf-v6-c-table__column-help,
+.pf-v6-c-table tr:where(.pf-v6-c-table__tr).pf-m-nowrap .pf-v6-c-table__column-help,
+.pf-v6-c-table th:where(.pf-v6-c-table__th).pf-m-nowrap .pf-v6-c-table__column-help {
+  grid-template-columns: min-content max-content;
+}
+.pf-v6-c-table thead:where(.pf-v6-c-table__thead).pf-m-fit-content .pf-v6-c-table__button-content, .pf-v6-c-table tr:where(.pf-v6-c-table__tr).pf-m-fit-content .pf-v6-c-table__button-content, .pf-v6-c-table th:where(.pf-v6-c-table__th).pf-m-fit-content .pf-v6-c-table__button-content,
+.pf-v6-c-table thead:where(.pf-v6-c-table__thead).pf-m-fit-content .pf-v6-c-table__column-help,
+.pf-v6-c-table tr:where(.pf-v6-c-table__tr).pf-m-fit-content .pf-v6-c-table__column-help,
+.pf-v6-c-table th:where(.pf-v6-c-table__th).pf-m-fit-content .pf-v6-c-table__column-help {
+  grid-template-columns: fit-content max-content;
+}
+.pf-v6-c-table thead:where(.pf-v6-c-table__thead).pf-m-wrap .pf-v6-c-table__button-content, .pf-v6-c-table tr:where(.pf-v6-c-table__tr).pf-m-wrap .pf-v6-c-table__button-content, .pf-v6-c-table th:where(.pf-v6-c-table__th).pf-m-wrap .pf-v6-c-table__button-content, .pf-v6-c-table thead:where(.pf-v6-c-table__thead).pf-m-truncate .pf-v6-c-table__button-content, .pf-v6-c-table tr:where(.pf-v6-c-table__tr).pf-m-truncate .pf-v6-c-table__button-content, .pf-v6-c-table th:where(.pf-v6-c-table__th).pf-m-truncate .pf-v6-c-table__button-content,
+.pf-v6-c-table thead:where(.pf-v6-c-table__thead).pf-m-wrap .pf-v6-c-table__column-help,
+.pf-v6-c-table tr:where(.pf-v6-c-table__tr).pf-m-wrap .pf-v6-c-table__column-help,
+.pf-v6-c-table th:where(.pf-v6-c-table__th).pf-m-wrap .pf-v6-c-table__column-help,
+.pf-v6-c-table thead:where(.pf-v6-c-table__thead).pf-m-truncate .pf-v6-c-table__column-help,
+.pf-v6-c-table tr:where(.pf-v6-c-table__tr).pf-m-truncate .pf-v6-c-table__column-help,
+.pf-v6-c-table th:where(.pf-v6-c-table__th).pf-m-truncate .pf-v6-c-table__column-help {
+  grid-template-columns: auto max-content;
+}
+
+.pf-v6-c-table .pf-v6-c-table__check,
+.pf-v6-c-table .pf-v6-c-table__toggle,
+.pf-v6-c-table .pf-v6-c-table__action,
+.pf-v6-c-table .pf-v6-c-table__inline-edit-action,
+.pf-v6-c-table .pf-v6-c-table__draggable {
+  --pf-v6-c-table--cell--MinWidth: 0;
+  --pf-v6-c-table--cell--Width: 1%;
+  max-width: none;
+}
+
+.pf-v6-c-table .pf-v6-c-table__favorite {
+  --pf-v6-c-table--cell--MaxWidth: auto;
+}
+
+.pf-v6-c-table__toggle {
+  --pf-v6-c-table--cell--PaddingBlockStart: var(--pf-v6-c-table__toggle--PaddingBlockStart);
+  --pf-v6-c-table--cell--PaddingBlockEnd: var(--pf-v6-c-table__toggle--PaddingBlockEnd);
+  --pf-v6-c-table--cell--PaddingInlineStart: var(--pf-v6-c-table__toggle--PaddingInlineStart);
+  --pf-v6-c-table--cell--PaddingInlineEnd: var(--pf-v6-c-table__toggle--PaddingInlineEnd);
+}
+.pf-v6-c-table__thead .pf-v6-c-table__toggle .pf-v6-c-button {
+  margin-block-start: calc(var(--pf-v6-c-button--PaddingBlockStart) * -1);
+  margin-block-end: calc(var(--pf-v6-c-button--PaddingBlockEnd) * -1);
+  line-height: 1lh;
+}
+
+.pf-v6-c-table__toggle .pf-v6-c-button.pf-m-expanded .pf-v6-c-table__toggle-icon {
+  transform: rotate(var(--pf-v6-c-table__toggle--c-button--m-expanded__toggle-icon--Rotate));
+}
+.pf-v6-c-table__toggle .pf-v6-c-table__toggle-icon {
+  transition-timing-function: var(--pf-v6-c-table__toggle--c-button__toggle-icon--TransitionTimingFunction);
+  transition-duration: var(--pf-v6-c-table__toggle--c-button__toggle-icon--TransitionDuration);
+  transition-property: transform;
+  transform: rotate(var(--pf-v6-c-table__toggle--c-button__toggle-icon--Rotate));
+}
+:where(.pf-v6-m-dir-rtl, [dir=rtl]) .pf-v6-c-table__toggle .pf-v6-c-table__toggle-icon {
+  scale: -1 1;
+}
+
+.pf-v6-c-table__toggle svg {
+  pointer-events: none;
+}
+
+.pf-v6-c-table__check {
+  --pf-v6-c-table--cell--PaddingInlineStart: var(--pf-v6-c-table__check--PaddingInlineStart);
+  --pf-v6-c-table--cell--PaddingInlineEnd: var(--pf-v6-c-table__check--PaddingInlineEnd);
+  vertical-align: top;
+}
+.pf-v6-c-table__check .pf-v6-c-check {
+  --pf-v6-c-check__label--FontSize: var(--pf-v6-c-table--cell--FontSize);
+  --pf-v6-c-check__label--LineHeight: var(--pf-v6-c-table--cell--LineHeight);
+}
+.pf-v6-c-table__check .pf-v6-c-radio {
+  --pf-v6-c-radio__label--FontSize: var(--pf-v6-c-table--cell--FontSize);
+  --pf-v6-c-radio__label--LineHeight: var(--pf-v6-c-table--cell--LineHeight);
+}
+thead .pf-v6-c-table__check {
+  vertical-align: bottom;
+}
+thead .pf-v6-c-table__check .pf-v6-c-check.pf-m-standalone,
+thead .pf-v6-c-table__check .pf-v6-c-radio.pf-m-standalone {
+  display: table-cell;
+  height: auto;
+  line-height: 1;
+  vertical-align: baseline;
+}
+
+.pf-v6-c-table__favorite .pf-v6-c-button:not(.pf-m-favorite) {
+  --pf-v6-c-button--FontSize: var(--pf-v6-c-table__favorite--c-button--FontSize);
+}
+.pf-v6-c-table__favorite.pf-m-favorited .pf-v6-c-button:not(.pf-m-favorited) {
+  --pf-v6-c-button--m-plain__icon--Color: var(--pf-v6-c-table__favorite--m-favorited--c-button--Color);
+}
+.pf-v6-c-table__favorite.pf-m-favorited .pf-v6-c-button:not(.pf-m-favorited):is(:hover, :focus) {
+  --pf-v6-c-button--hover__icon--Color: var(--pf-v6-c-table__favorite--m-favorited--c-button--Color);
+}
+
+.pf-v6-c-table__draggable .pf-v6-c-button {
+  cursor: grab;
+}
+.pf-v6-c-table__draggable .pf-v6-c-button:active {
+  cursor: grabbing;
+}
+
+.pf-v6-c-table__action,
+.pf-v6-c-table__favorite,
+.pf-v6-c-table__inline-edit-action,
+.pf-v6-c-table__draggable {
+  --pf-v6-c-table--cell--PaddingBlockStart: var(--pf-v6-c-table__action--PaddingBlockStart);
+  --pf-v6-c-table--cell--PaddingBlockEnd: var(--pf-v6-c-table__action--PaddingBlockEnd);
+  --pf-v6-c-table--cell--PaddingInlineStart: var(--pf-v6-c-table__action--PaddingInlineStart);
+  --pf-v6-c-table--cell--PaddingInlineEnd: var(--pf-v6-c-table__action--PaddingInlineEnd);
+}
+
+.pf-v6-c-table__action:last-child,
+.pf-v6-c-table__inline-edit-action:last-child {
+  text-align: end;
+}
+
+.pf-v6-c-table__compound-expansion-toggle {
+  --pf-v6-c-table__button--Color: var(--pf-v6-c-table__compound-expansion-toggle__button--Color);
+  --pf-v6-c-table__button--hover--Color: var(--pf-v6-c-table__compound-expansion-toggle__button--hover--Color);
+  position: relative;
+  padding: 0;
+  background-color: var(--pf-v6-c-table__compound-expansion-toggle__button--BackgroundColor);
+}
+.pf-v6-c-table__compound-expansion-toggle.pf-m-truncate {
+  overflow: visible;
+}
+.pf-v6-c-table__compound-expansion-toggle .pf-v6-c-table__button {
+  position: static;
+  min-width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+.pf-v6-c-table__compound-expansion-toggle .pf-v6-c-table__button:is(:hover, :focus) {
+  outline: 0;
+}
+.pf-v6-c-table__compound-expansion-toggle .pf-v6-c-table__button::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  border: 0;
+  border-block-start: var(--pf-v6-c-table__compound-expansion-toggle__button--after--BorderBlockStartWidth) solid var(--pf-v6-c-table__compound-expansion-toggle__button--after--BorderColor);
+}
+.pf-v6-c-table__compound-expansion-toggle:hover, .pf-v6-c-table__compound-expansion-toggle:focus-within {
+  --pf-v6-c-table__compound-expansion-toggle__button--BackgroundColor: var(--pf-v6-c-table__compound-expansion-toggle__button--hover--BackgroundColor);
+  --pf-v6-c-table__compound-expansion-toggle__button--after--BorderBlockStartWidth: var(--pf-v6-c-table__compound-expansion-toggle__button--hover--after--BorderBlockStartWidth);
+}
+.pf-v6-c-table__compound-expansion-toggle.pf-m-expanded {
+  --pf-v6-c-table__compound-expansion-toggle__button--BackgroundColor: var(--pf-v6-c-table__compound-expansion-toggle__button--expanded--BackgroundColor);
+  --pf-v6-c-table__compound-expansion-toggle__button--after--BorderBlockStartWidth: var(--pf-v6-c-table__compound-expansion-toggle--m-expanded__button--after--BorderBlockStartWidth);
+}
+.pf-v6-c-table__compound-expansion-toggle:focus-within {
+  outline-offset: var(--pf-v6-c-table__button--OutlineOffset);
+}
+@media (-webkit-min-device-pixel-ratio: 0) {
+  .pf-v6-c-table__compound-expansion-toggle:focus-within {
+    outline-style: auto;
+    outline-color: -webkit-focus-ring-color;
+  }
+}
+
+.pf-v6-c-table__column-help-action {
+  align-self: last baseline;
+  margin-inline-start: var(--pf-v6-c-table__column-help--MarginInlineStart);
+}
+.pf-v6-c-table__column-help-action .pf-v6-c-button {
+  line-height: 1lh;
+}
+
+.pf-v6-c-table__sort {
+  vertical-align: bottom;
+}
+.pf-v6-c-table__sort .pf-v6-c-table__button:is(:hover, :focus) {
+  --pf-v6-c-table__sort-indicator--Color: var(--pf-v6-c-table__sort__button--hover__sort-indicator--Color);
+  --pf-v6-c-table__sort__button__text--Color: var(--pf-v6-c-table__sort__button--hover__text--Color);
+  --pf-v6-c-table__button--BackgroundColor: var(--pf-v6-c-table__button--hover--BackgroundColor);
+}
+.pf-v6-c-table__sort .pf-v6-c-table__button .pf-v6-c-table__text {
+  color: var(--pf-v6-c-table__sort__button__text--Color);
+}
+.pf-v6-c-table__sort.pf-m-selected .pf-v6-c-table__button, .pf-v6-c-table__sort.pf-m-selected .pf-v6-c-button {
+  --pf-v6-c-table__sort-indicator--Color: var(--pf-v6-c-table__sort--m-selected__sort-indicator--Color);
+}
+.pf-v6-c-table__sort.pf-m-selected .pf-v6-c-table__button .pf-v6-c-table__text, .pf-v6-c-table__sort.pf-m-selected .pf-v6-c-button .pf-v6-c-table__text {
+  color: var(--pf-v6-c-table__sort--m-selected__button--Color);
+}
+.pf-v6-c-table__sort.pf-m-help {
+  --pf-v6-c-table__th--m-help--MinWidth: var(--pf-v6-c-table__sort--m-help--MinWidth);
+}
+.pf-v6-c-table__sort.pf-m-favorite .pf-v6-c-table__text {
+  font-size: var(--pf-v6-c-table__favorite--c-button--FontSize);
+}
+
+.pf-v6-c-table__sort-indicator {
+  grid-column: 2;
+  align-self: end;
+  margin-inline-start: var(--pf-v6-c-table__sort-indicator--MarginInlineStart);
+  color: var(--pf-v6-c-table__sort-indicator--Color);
+  pointer-events: none;
+}
+
+.pf-v6-c-table__expandable-row {
+  position: relative;
+  border-block-end: 0 solid transparent;
+}
+:not(.pf-v6-c-table__control-row) ~ .pf-v6-c-table__expandable-row > .pf-v6-c-table__th,
+:not(.pf-v6-c-table__control-row) ~ .pf-v6-c-table__expandable-row > .pf-v6-c-table__td {
+  padding-block-start: 0;
+}
+.pf-v6-c-table__control-row ~ .pf-v6-c-table__expandable-row.pf-m-expanded > :is(.pf-v6-c-table__th, .pf-v6-c-table__td):not(.pf-m-no-padding) {
+  padding-block-start: var(--pf-v6-c-table--cell--PaddingBlockStart);
+}
+.pf-v6-c-table__expandable-row td:where(.pf-v6-c-table__td).pf-m-no-padding,
+.pf-v6-c-table__expandable-row th:where(.pf-v6-c-table__th).pf-m-no-padding {
+  padding-block-start: 0;
+  padding-block-end: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+}
+.pf-v6-c-table__expandable-row td:where(.pf-v6-c-table__td).pf-m-no-padding .pf-v6-c-table__expandable-row-content,
+.pf-v6-c-table__expandable-row th:where(.pf-v6-c-table__th).pf-m-no-padding .pf-v6-c-table__expandable-row-content {
+  padding: 0;
+  border-radius: 0;
+}
+.pf-v6-c-table__expandable-row .pf-v6-c-table__expandable-row-content {
+  padding-block-start: var(--pf-v6-c-table__expandable-row-content--PaddingBlockStart);
+  padding-block-end: var(--pf-v6-c-table__expandable-row-content--PaddingBlockEnd);
+  padding-inline-start: var(--pf-v6-c-table__expandable-row-content--PaddingInlineStart);
+  padding-inline-end: var(--pf-v6-c-table__expandable-row-content--PaddingInlineEnd);
+  background-color: var(--pf-v6-c-table__expandable-row-content--BackgroundColor);
+  border-radius: var(--pf-v6-c-table__expandable-row-content--BorderRadius);
+}
+.pf-v6-c-table__expandable-row .pf-v6-c-table__expandable-row-content.pf-m-no-background {
+  background-color: transparent;
+}
+.pf-v6-c-table__expandable-row.pf-m-expanded {
+  border-block-end-color: var(--pf-v6-c-table__expandable-row--m-expanded--BorderBlockEndColor);
+  border-block-end-width: var(--pf-v6-c-table--border-width--base);
+}
+.pf-v6-c-table__expandable-row:not(.pf-m-expanded) {
+  display: none;
+}
+.pf-v6-c-table__expandable-row tr:last-child {
+  border-block-end: 0;
+}
+
+.pf-v6-c-table.pf-m-compact {
+  --pf-v6-c-table--cell--PaddingBlockStart: var(--pf-v6-c-table--m-compact--cell--PaddingBlockStart);
+  --pf-v6-c-table--cell--PaddingBlockEnd: var(--pf-v6-c-table--m-compact--cell--PaddingBlockEnd);
+}
+.pf-v6-c-table.pf-m-compact tr:where(.pf-v6-c-table__tr):not(.pf-v6-c-table__expandable-row) {
+  --pf-v6-c-table--cell--PaddingBlockStart: var(--pf-v6-c-table--m-compact--cell--PaddingBlockStart);
+  --pf-v6-c-table--cell--PaddingBlockEnd: var(--pf-v6-c-table--m-compact--cell--PaddingBlockEnd);
+}
+.pf-v6-c-table.pf-m-compact thead:where(.pf-v6-c-table__thead) th:where(.pf-v6-c-table__th),
+.pf-v6-c-table.pf-m-compact thead:where(.pf-v6-c-table__thead) .pf-v6-c-table__toggle {
+  --pf-v6-c-table--cell--PaddingBlockStart: var(--pf-v6-c-table--m-compact__th--PaddingBlockStart);
+  --pf-v6-c-table--cell--PaddingBlockEnd: var(--pf-v6-c-table--m-compact__th--PaddingBlockEnd);
+}
+.pf-v6-c-table.pf-m-compact .pf-v6-c-table__action,
+.pf-v6-c-table.pf-m-compact .pf-v6-c-table__favorite,
+.pf-v6-c-table.pf-m-compact .pf-v6-c-table__toggle,
+.pf-v6-c-table.pf-m-compact .pf-v6-c-table__draggable {
+  --pf-v6-c-table--cell--PaddingBlockStart: var(--pf-v6-c-table--m-compact__action--PaddingBlockStart);
+  --pf-v6-c-table--cell--PaddingBlockEnd: var(--pf-v6-c-table--m-compact__action--PaddingBlockEnd);
+}
+.pf-v6-c-table.pf-m-compact .pf-v6-c-table__td.pf-m-action {
+  --pf-v6-c-table--cell--PaddingBlockStart: var(--pf-v6-c-table--m-compact__td--m-action--PaddingBlockStart);
+  --pf-v6-c-table--cell--PaddingBlockEnd: var(--pf-v6-c-table--m-compact__td--m-action--PaddingBlockEnd);
+}
+.pf-v6-c-table.pf-m-compact .pf-v6-c-table__icon {
+  width: auto;
+  min-width: 0;
+  text-align: center;
+}
+
+.pf-v6-c-table__thead {
+  --pf-v6-c-table__tr--BorderBlockEndWidth: 0;
+  --pf-v6-c-table__toggle--PaddingBlockStart: var(--pf-v6-c-table__thead__toggle--PaddingBlockStart);
+  --pf-v6-c-table__toggle--PaddingBlockEnd: var(--pf-v6-c-table__thead__toggle--PaddingBlockEnd);
+  vertical-align: bottom;
+}
+.pf-v6-c-table__thead.pf-m-nested-column-header .pf-v6-c-table__button {
+  --pf-v6-c-table__button--PaddingInlineStart: var(--pf-v6-c-table__nested-column-header__button--PaddingInlineStart);
+  --pf-v6-c-table__button--PaddingInlineEnd: var(--pf-v6-c-table__nested-column-header__button--PaddingInlineEnd);
+  margin-inline-end: calc(var(--pf-v6-c-table__button--PaddingInlineStart) * -1);
+}
+
+.pf-v6-c-table__tbody {
+  vertical-align: top;
+}
+.pf-v6-c-table__tbody .pf-v6-c-table__control-row ~ .pf-v6-c-table__expandable-row.pf-m-expanded {
+  background-color: var(--pf-v6-c-table--compound-expansion--m-expanded--BackgroundColor);
+}
+
+.pf-v6-c-table.pf-m-expandable .pf-v6-c-table__tr.pf-m-expanded {
+  border-block-end: 0;
+}
+.pf-v6-c-table.pf-m-expandable .pf-v6-c-table__tbody {
+  border-block-end: var(--pf-v6-c-table__tr--BorderBlockEndWidth) solid var(--pf-v6-c-table__tr--BorderBlockEndColor);
+}
+.pf-v6-c-table.pf-m-expandable .pf-v6-c-table__tbody.pf-m-expanded {
+  border-block-end: var(--pf-v6-c-table__tr--BorderBlockEndWidth) solid var(--pf-v6-c-table__tr--BorderBlockEndColor);
+}
+.pf-v6-c-table.pf-m-expandable .pf-v6-c-table__tbody.pf-m-expanded .pf-v6-c-table__control-row {
+  background-color: var(--pf-v6-c-table__control-row--BackgroundColor);
+  border-block-end: var(--pf-v6-c-table__control-row--BorderBlockEndWidth) solid var(--pf-v6-c-table__control-row__tbody--BorderBlockEndColor);
+}
+.pf-v6-c-table.pf-m-expandable .pf-v6-c-table__tbody.pf-m-expanded .pf-v6-c-table__control-row.pf-m-expanded {
+  border-block-end: 0;
+}
+
+.pf-v6-c-table__tr {
+  border-block-end: var(--pf-v6-c-table__tr--BorderBlockEndWidth) solid var(--pf-v6-c-table__tr--BorderBlockEndColor);
+}
+.pf-v6-c-table__thead .pf-v6-c-table__tr {
+  border-block-end: 0;
+}
+.pf-v6-c-table__tr.pf-m-border-row {
+  border-block-end: var(--pf-v6-c-table--border-width--base) solid var(--pf-v6-c-table--BorderColor);
+}
+
+.pf-v6-c-table__icon-inline {
+  display: flex;
+  align-items: center;
+}
+.pf-v6-c-table__icon-inline > :not(:last-child) {
+  margin-inline-end: var(--pf-v6-c-table__icon-inline--MarginInlineEnd);
+}
+
+.pf-v6-c-table .pf-m-width-10 {
+  --pf-v6-c-table--cell--Width: 10%;
+}
+
+.pf-v6-c-table .pf-m-width-15 {
+  --pf-v6-c-table--cell--Width: 15%;
+}
+
+.pf-v6-c-table .pf-m-width-20 {
+  --pf-v6-c-table--cell--Width: 20%;
+}
+
+.pf-v6-c-table .pf-m-width-25 {
+  --pf-v6-c-table--cell--Width: 25%;
+}
+
+.pf-v6-c-table .pf-m-width-30 {
+  --pf-v6-c-table--cell--Width: 30%;
+}
+
+.pf-v6-c-table .pf-m-width-35 {
+  --pf-v6-c-table--cell--Width: 35%;
+}
+
+.pf-v6-c-table .pf-m-width-40 {
+  --pf-v6-c-table--cell--Width: 40%;
+}
+
+.pf-v6-c-table .pf-m-width-45 {
+  --pf-v6-c-table--cell--Width: 45%;
+}
+
+.pf-v6-c-table .pf-m-width-50 {
+  --pf-v6-c-table--cell--Width: 50%;
+}
+
+.pf-v6-c-table .pf-m-width-60 {
+  --pf-v6-c-table--cell--Width: 60%;
+}
+
+.pf-v6-c-table .pf-m-width-70 {
+  --pf-v6-c-table--cell--Width: 70%;
+}
+
+.pf-v6-c-table .pf-m-width-80 {
+  --pf-v6-c-table--cell--Width: 80%;
+}
+
+.pf-v6-c-table .pf-m-width-90 {
+  --pf-v6-c-table--cell--Width: 90%;
+}
+
+.pf-v6-c-table .pf-m-width-100 {
+  --pf-v6-c-table--cell--Width: 100%;
+}

@@ -1,0 +1,472 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($form-control) {
+  --#{$form-control}--ColumnGap: var(--pf-t--global--spacer--gap--text-to-element--default);
+  --#{$form-control}--Color: var(--pf-t--global--text--color--regular);
+  --#{$form-control}--FontSize: var(--pf-t--global--font--size--body--default);
+  --#{$form-control}--LineHeight: var(--pf-t--global--font--line-height--body);
+  --#{$form-control}--Resize: none;
+  --#{$form-control}--OutlineOffset: -6px;
+  --#{$form-control}--BorderRadius: var(--pf-t--global--border--radius--small);
+  --#{$form-control}--before--BorderWidth: var(--pf-t--global--border--width--control--default);
+  --#{$form-control}--before--BorderStyle: solid;
+  --#{$form-control}--before--BorderColor: var(--pf-t--global--border--color--default);
+  --#{$form-control}--before--BorderRadius: var(--#{$form-control}--BorderRadius);
+  --#{$form-control}--after--BorderWidth: var(--pf-t--global--border--width--control--default);
+  --#{$form-control}--after--BorderStyle: solid;
+  --#{$form-control}--after--BorderColor: transparent;
+  --#{$form-control}--after--BorderRadius: var(--#{$form-control}--BorderRadius);
+  --#{$form-control}--BackgroundColor: var(--pf-t--global--background--color--control--default);
+  --#{$form-control}--Width: 100%;
+
+  // padding
+  --#{$form-control}--inset--base: var(--pf-t--global--spacer--control--horizontal--default);
+  --#{$form-control}--PaddingBlockStart--base: var(--pf-t--global--spacer--control--vertical--default);
+  --#{$form-control}--PaddingBlockEnd--base: var(--pf-t--global--spacer--control--vertical--default);
+  --#{$form-control}--PaddingInlineEnd--base: var(--#{$form-control}--inset--base);
+  --#{$form-control}--PaddingInlineStart--base: var(--#{$form-control}--inset--base);
+  --#{$form-control}--PaddingBlockStart: var(--#{$form-control}--PaddingBlockStart--base);
+  --#{$form-control}--PaddingBlockEnd: var(--#{$form-control}--PaddingBlockEnd--base);
+  --#{$form-control}--PaddingInlineEnd: var(--#{$form-control}--PaddingInlineEnd--base);
+  --#{$form-control}--PaddingInlineStart: var(--#{$form-control}--PaddingInlineStart--base);
+
+  // utilities padding inline end
+  --#{$form-control}__utilities--input--PaddingInlineEnd: var(--#{$form-control}__input--PaddingInlineEnd);
+  --#{$form-control}__utilities--select--PaddingInlineEnd: var(--#{$form-control}__select--PaddingInlineEnd);
+  --#{$form-control}__utilities--textarea--PaddingInlineEnd: var(--#{$form-control}__textarea--PaddingInlineEnd);
+  
+  // input padding
+  --#{$form-control}__input--PaddingBlockStart: var(--#{$form-control}--PaddingBlockStart--base);
+  --#{$form-control}__input--PaddingBlockEnd: var(--#{$form-control}--PaddingBlockEnd--base);
+  --#{$form-control}__input--PaddingInlineEnd: var(--#{$form-control}--PaddingInlineEnd--base);
+  --#{$form-control}__input--PaddingInlineStart: var(--#{$form-control}--PaddingInlineStart--base);
+
+  // select padding
+  --#{$form-control}__select--PaddingBlockStart: var(--#{$form-control}--PaddingBlockStart--base);
+  --#{$form-control}__select--PaddingBlockEnd: var(--#{$form-control}--PaddingBlockEnd--base);
+  --#{$form-control}__select--PaddingInlineEnd: var(--#{$form-control}--PaddingInlineEnd--base);
+  --#{$form-control}__select--PaddingInlineStart: var(--#{$form-control}--PaddingInlineStart--base);
+  
+  // textarea padding
+  --#{$form-control}__textarea--PaddingBlockStart: var(--#{$form-control}--PaddingBlockStart--base);
+  --#{$form-control}__textarea--PaddingBlockEnd: var(--#{$form-control}--PaddingBlockEnd--base);
+  --#{$form-control}__textarea--PaddingInlineEnd: var(--#{$form-control}--PaddingInlineEnd--base);
+  --#{$form-control}__textarea--PaddingInlineStart: var(--#{$form-control}--PaddingInlineStart--base);
+
+  // hover
+  --#{$form-control}--hover--after--BorderWidth: var(--pf-t--global--border--width--control--hover);
+  --#{$form-control}--hover--after--BorderColor: var(--pf-t--global--border--color--hover);
+  --#{$form-control}--m-success--hover--after--BorderColor: var(--pf-t--global--border--color--status--success--hover);
+  --#{$form-control}--m-warning--hover--after--BorderColor: var(--pf-t--global--border--color--status--warning--hover);
+  --#{$form-control}--m-error--hover--after--BorderColor: var(--pf-t--global--border--color--status--danger--hover);
+
+  // expanded
+  --#{$form-control}--m-expanded--after--BorderWidth: var(--pf-t--global--border--width--control--clicked);
+  --#{$form-control}--m-expanded--after--BorderColor: var(--pf-t--global--border--color--clicked);
+
+  // placeholder
+  --#{$form-control}--m-placeholder--Color: var(--pf-t--global--text--color--placeholder);
+  --#{$form-control}--m-placeholder--child--Color: var(--pf-t--global--text--color--regular);
+
+  // disabled
+  --#{$form-control}--m-disabled--Color: var(--pf-t--global--text--color--on-disabled);
+  --#{$form-control}--m-disabled--BackgroundColor: var(--pf-t--global--background--color--disabled--default);
+  --#{$form-control}--m-disabled--after--BorderColor: transparent;
+
+  // readonly
+  --#{$form-control}--m-readonly--BackgroundColor: var(--pf-t--global--background--color--control--read-only);
+  --#{$form-control}--m-readonly--BorderColor: var(--pf-t--global--border--color--control--read-only);
+  --#{$form-control}--m-readonly--hover--after--BorderColor: revert;
+
+  // readonly plain
+  --#{$form-control}--m-readonly--m-plain--BackgroundColor: transparent;
+  --#{$form-control}--m-readonly--m-plain--BorderColor: transparent;
+  --#{$form-control}--m-readonly--m-plain--inset--base: 0;
+  --#{$form-control}--m-readonly--m-plain--OutlineOffset: 0;
+  --#{$form-control}--icon--width: var(--#{$form-control}--FontSize);
+
+  // success
+  --#{$form-control}--m-success--after--BorderWidth: var(--pf-t--global--border--width--control--default);
+  --#{$form-control}--m-success--after--BorderColor: var(--pf-t--global--border--color--status--success--default);
+  --#{$form-control}--m-success--PaddingInlineEnd: initial; // remove in breaking change
+  --#{$form-control}__select--m-success--m-status--PaddingInlineEnd: initial; // remove in breaking change
+  --#{$form-control}__input--m-success--PaddingInlineEnd: calc(var(--#{$form-control}--m-icon--icon--width) + var(--#{$form-control}--ColumnGap) + var(--#{$form-control}__utilities--input--PaddingInlineEnd));
+  --#{$form-control}__select--m-success--PaddingInlineEnd: calc(var(--#{$form-control}--m-icon--icon--width) + var(--#{$form-control}--m-icon--icon--spacer) + var(--#{$form-control}__utilities--Gap) + var(--#{$form-control}--ColumnGap) + var(--#{$form-control}__utilities--select--PaddingInlineEnd));
+  --#{$form-control}__textarea--m-success--PaddingInlineEnd: calc(var(--#{$form-control}--m-icon--icon--width) + var(--#{$form-control}--ColumnGap) + var(--#{$form-control}__utilities--textarea--PaddingInlineEnd));
+
+  // warning
+  --#{$form-control}--m-warning--after--BorderWidth: var(--pf-t--global--border--width--control--default);
+  --#{$form-control}--m-warning--after--BorderColor: var(--pf-t--global--border--color--status--warning--default);
+  --#{$form-control}--m-warning--PaddingInlineEnd: initial; // remove in breaking change
+  --#{$form-control}__select--m-warning--m-status--PaddingInlineEnd: initial; // remove in breaking change
+  --#{$form-control}__input--m-warning--PaddingInlineEnd: calc(var(--#{$form-control}--m-icon--icon--width) + var(--#{$form-control}--ColumnGap) + var(--#{$form-control}__utilities--input--PaddingInlineEnd));
+  --#{$form-control}__select--m-warning--PaddingInlineEnd: calc(var(--#{$form-control}--m-icon--icon--width) + var(--#{$form-control}--m-icon--icon--spacer) + var(--#{$form-control}__utilities--Gap) + var(--#{$form-control}--ColumnGap) + var(--#{$form-control}__utilities--select--PaddingInlineEnd));
+  --#{$form-control}__textarea--m-warning--PaddingInlineEnd: calc(var(--#{$form-control}--m-icon--icon--width) + var(--#{$form-control}--ColumnGap) + var(--#{$form-control}__utilities--textarea--PaddingInlineEnd));
+    
+  // error
+  --#{$form-control}--m-error--after--BorderWidth: var(--pf-t--global--border--width--control--default);
+  --#{$form-control}--m-error--after--BorderColor: var(--pf-t--global--border--color--status--danger--default);
+  --#{$form-control}--m-error--PaddingInlineEnd: initial; // remove in breaking change
+  --#{$form-control}__select--m-error--m-status--PaddingInlineEnd: initial; // remove in breaking change
+  --#{$form-control}--m-error--icon--width: var(--#{$form-control}--FontSize); // remove in breaking change
+  --#{$form-control}__input--m-error--PaddingInlineEnd: calc(var(--#{$form-control}--m-icon--icon--width) + var(--#{$form-control}--ColumnGap) + var(--#{$form-control}__utilities--input--PaddingInlineEnd));
+  --#{$form-control}__select--m-error--PaddingInlineEnd: calc(var(--#{$form-control}--m-icon--icon--width) + var(--#{$form-control}--m-icon--icon--spacer) + var(--#{$form-control}__utilities--Gap) + var(--#{$form-control}--ColumnGap) + var(--#{$form-control}__utilities--select--PaddingInlineEnd));
+  --#{$form-control}__textarea--m-error--PaddingInlineEnd: calc(var(--#{$form-control}--m-icon--icon--width) + var(--#{$form-control}--ColumnGap) + var(--#{$form-control}__utilities--textarea--PaddingInlineEnd));
+
+  // custom icon
+  --#{$form-control}--m-icon--PaddingInlineEnd: calc(var(--#{$form-control}--m-icon--icon--width) + var(--#{$form-control}--ColumnGap) + var(--#{$form-control}__utilities--input--PaddingInlineEnd));
+  --#{$form-control}--m-icon--icon--width: var(--#{$form-control}--FontSize);
+  --#{$form-control}--m-icon--icon--spacer: calc(var(--pf-t--global--spacer--control--horizontal--default) / 2);
+  --#{$form-control}--m-icon--icon--PaddingInlineEnd: calc(var(--#{$form-control}--icon--width) + var(--#{$form-control}__utilities--Gap) + var(--#{$form-control}--m-icon--icon--width) + var(--#{$form-control}--ColumnGap) + var(--#{$form-control}__utilities--input--PaddingInlineEnd));
+
+  // Textarea
+  --#{$form-control}--textarea--Width: var(--#{$form-control}--Width);
+  --#{$form-control}--textarea--Height: auto;
+  --#{$form-control}--textarea--PaddingBlockStart--offset: calc(-1 * var(--#{$form-control}--OutlineOffset));
+  --#{$form-control}--textarea--PaddingBlockEnd--offset: calc(-1 * var(--#{$form-control}--OutlineOffset));
+  --#{$form-control}--textarea--PaddingInlineEnd--offset: calc(-1 * var(--#{$form-control}--OutlineOffset));
+  --#{$form-control}--textarea--PaddingInlineStart--offset: calc(-1 * var(--#{$form-control}--OutlineOffset));
+
+  // Form control icon
+  --#{$form-control}__icon--Color: var(--pf-t--global--icon--color--regular);
+  --#{$form-control}__icon--FontSize: var(--pf-t--global--icon--size--font--body--default);
+  --#{$form-control}__icon--m-status--Color: var(--pf-t--global--icon--color--regular);
+  --#{$form-control}--m-success__icon--m-status--Color: var(--pf-t--global--icon--color--status--success--default);
+  --#{$form-control}--m-warning__icon--m-status--Color: var(--pf-t--global--icon--color--status--warning--default);
+  --#{$form-control}--m-error__icon--m-status--Color: var(--pf-t--global--icon--color--status--danger--default);
+
+  // Form control utilities
+  --#{$form-control}__utilities--Gap: var(--pf-t--global--spacer--gap--group--horizontal);
+  --#{$form-control}__utilities--PaddingBlockStart: var(--#{$form-control}--PaddingBlockStart);
+  --#{$form-control}__utilities--PaddingInlineEnd: var(--#{$form-control}--PaddingInlineEnd--base);
+  --#{$form-control}__utilities--textarea--PaddingBlockStart: calc(var(--#{$form-control}__textarea--PaddingBlockStart) - var(--pf-v6-c-form-control--textarea--PaddingBlockStart--offset));
+
+  // Form control select toggle icon
+  --#{$form-control}__toggle-icon--PaddingInlineStart: 0; // remove in breaking change
+  --#{$form-control}__toggle-icon--PaddingInlineEnd: 0; // remove in breaking change
+  --#{$form-control}__toggle-icon--Color: var(--pf-t--global--icon--color--regular);
+  --#{$form-control}__toggle-icon--FontSize: var(--pf-t--global--icon--size--font--body--default); 
+  --#{$form-control}--m-disabled__toggle-icon--Color: var(--pf-t--global--icon--color--disabled);
+}
+
+.#{$form-control} {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: var(--#{$form-control}--ColumnGap);
+  align-items: start;
+  width: var(--#{$form-control}--Width);
+  font-size: var(--#{$form-control}--FontSize);
+  line-height: var(--#{$form-control}--LineHeight);
+  resize: var(--#{$form-control}--Resize);
+  background-color: var(--#{$form-control}--BackgroundColor);
+  border-radius: var(--#{$form-control}--BorderRadius);
+
+  &::before,
+  &::after {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    content: "";
+  }
+
+  &::before {
+    border-color: var(--#{$form-control}--before--BorderColor);
+    border-style: var(--#{$form-control}--before--BorderStyle);
+    border-width: var(--#{$form-control}--before--BorderWidth);
+    border-radius: var(--#{$form-control}--before--BorderRadius);
+  }
+
+  &::after {
+    border: var(--#{$form-control}--after--BorderWidth) var(--#{$form-control}--after--BorderStyle) var(--#{$form-control}--after--BorderColor);
+    border-radius: var(--#{$form-control}--before--BorderRadius);
+  }
+
+  > :is(input, select, textarea) {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    padding-block-start: var(--#{$form-control}--PaddingBlockStart);
+    padding-block-end: var(--#{$form-control}--PaddingBlockEnd);
+    padding-inline-start: var(--#{$form-control}--PaddingInlineStart);
+    padding-inline-end: var(--#{$form-control}--PaddingInlineEnd);
+    color: var(--#{$form-control}--Color);
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    border-radius: var(--#{$form-control}--BorderRadius);
+    outline-offset: var(--#{$form-control}--OutlineOffset);
+  }
+
+  > ::placeholder {
+    color: var(--#{$form-control}--m-placeholder--Color); // TODO update to set --#{$form-control}--Color in breaking change - also look for any other place to do that in this component
+  }
+
+  > :is(input, select) {
+    text-overflow: ellipsis;
+  }
+
+  @at-root .#{$form-control} {
+    &:has(input) {
+      --#{$form-control}--PaddingBlockStart: var(--#{$form-control}__input--PaddingBlockStart);
+      --#{$form-control}--PaddingBlockEnd: var(--#{$form-control}__input--PaddingBlockEnd);
+      --#{$form-control}--PaddingInlineStart: var(--#{$form-control}__input--PaddingInlineStart);
+      --#{$form-control}--PaddingInlineEnd: var(--#{$form-control}__input--PaddingInlineEnd);
+      --#{$form-control}__utilities--PaddingInlineEnd: var(--#{$form-control}__utilities--input--PaddingInlineEnd);
+    }
+  }
+  
+  &.pf-m-textarea {
+    padding-block-start: var(--#{$form-control}--textarea--PaddingBlockStart--offset);
+    padding-block-end: var(--#{$form-control}--textarea--PaddingBlockEnd--offset);
+    padding-inline-start: var(--#{$form-control}--textarea--PaddingInlineStart--offset);
+    padding-inline-end: var(--#{$form-control}--textarea--PaddingInlineEnd--offset);
+
+    &.pf-m-success,
+    &.pf-m-warning,
+    &.pf-m-error {
+      --#{$form-control}--m-status--PaddingInlineEnd--offset: calc(var(--#{$form-control}__icon--FontSize) + var(--#{$form-control}--ColumnGap)); 
+    }
+
+    &:has(textarea) {
+      --#{$form-control}--PaddingBlockStart: calc(var(--#{$form-control}__textarea--PaddingBlockStart) - var(--#{$form-control}--textarea--PaddingBlockStart--offset));
+      --#{$form-control}--PaddingBlockEnd: calc(var(--#{$form-control}__textarea--PaddingBlockEnd) - var(--#{$form-control}--textarea--PaddingBlockEnd--offset));
+      --#{$form-control}--PaddingInlineStart: calc(var(--#{$form-control}__textarea--PaddingInlineStart) - var(--#{$form-control}--textarea--PaddingInlineStart--offset));
+      --#{$form-control}--PaddingInlineEnd: calc(var(--#{$form-control}__textarea--PaddingInlineEnd) - var(--#{$form-control}--textarea--PaddingInlineEnd--offset) + var(--#{$form-control}--m-status--PaddingInlineEnd--offset, 0px));
+      --#{$form-control}__utilities--PaddingInlineEnd: var(--#{$form-control}__utilities--textarea--PaddingInlineEnd);
+    }
+
+    > textarea {
+      outline-offset: 0;
+      scrollbar-gutter: stable;
+    }
+
+    .#{$form-control}__utilities {
+      padding-block-start: var(--#{$form-control}__utilities--textarea--PaddingBlockStart);
+    }
+  }
+
+  &.pf-m-readonly {
+    --#{$form-control}--BackgroundColor: var(--#{$form-control}--m-readonly--BackgroundColor);
+    --#{$form-control}--before--BorderColor: var(--#{$form-control}--m-readonly--BorderColor);
+
+    &:hover {
+      --#{$form-control}--hover--after--BorderColor: var(--#{$form-control}--m-readonly--hover--after--BorderColor);
+    }
+
+    // stylelint-disable selector-not-notation
+    &:not(.pf-m-success, .pf-m-warning, .pf-m-error) {
+      --#{$form-control}--hover--after--BorderColor: var(--#{$form-control}--m-readonly--hover--after--BorderColor);
+    }
+
+    &.pf-m-plain {
+      --#{$form-control}--m-readonly--BackgroundColor: var(--#{$form-control}--m-readonly--m-plain--BackgroundColor);
+      --#{$form-control}--m-readonly--BorderColor: var(--#{$form-control}--m-readonly--m-plain--BorderColor);
+      --#{$form-control}--inset--base: var(--#{$form-control}--m-readonly--m-plain--inset--base);
+      --#{$form-control}--before--BorderStyle: none;
+      --#{$form-control}--after--BorderStyle: none;
+      --#{$form-control}--OutlineOffset: var(--#{$form-control}--m-readonly--m-plain--OutlineOffset);
+    }
+  }
+
+  &.pf-m-expanded {
+    --#{$form-control}--after--BorderColor: var(--#{$form-control}--m-expanded--after--BorderColor);
+    --#{$form-control}--after--BorderWidth: var(--#{$form-control}--m-expanded--after--BorderWidth);
+  }
+
+  &.pf-m-disabled {
+    --#{$form-control}--BackgroundColor: var(--#{$form-control}--m-disabled--BackgroundColor);
+    --#{$form-control}--Color: var(--#{$form-control}--m-disabled--Color);
+    --#{$form-control}--m-placeholder--Color: var(--#{$form-control}--m-disabled--Color);
+    --#{$form-control}__toggle-icon--Color: var(--#{$form-control}--m-disabled__toggle-icon--Color);
+    --#{$form-control}--before--BorderStyle: none;
+    --#{$form-control}--after--BorderStyle: none;
+
+    cursor: not-allowed;
+  }
+
+  &.pf-m-error {
+    --#{$form-control}--after--BorderColor: var(--#{$form-control}--m-error--after--BorderColor);
+    --#{$form-control}--hover--after--BorderColor: var(--#{$form-control}--m-error--hover--after--BorderColor);
+    --#{$form-control}__icon--m-status--Color: var(--#{$form-control}--m-error__icon--m-status--Color);
+    --#{$form-control}--after--BorderWidth: var(--#{$form-control}--m-error--after--BorderWidth);
+
+    @media (prefers-reduced-motion: no-preference) {
+      @include pf-v6-animate-danger-jiggle;
+    }
+
+    .#{$form-control}__icon.pf-m-status {
+      @include pf-v6-fade-default(#{$form-control});
+    }
+
+    > textarea {
+      padding-inline-end: var(--#{$form-control}--m-error--PaddingInlineEnd, var(--#{$form-control}__textarea--m-error--PaddingInlineEnd));
+    }
+    
+    > input {
+      padding-inline-end: var(--#{$form-control}--m-error--PaddingInlineEnd, var(--#{$form-control}__input--m-error--PaddingInlineEnd));
+    }
+    
+    > select {
+      padding-inline-end: var(--#{$form-control}__select--m-error--m-status--PaddingInlineEnd, var(--#{$form-control}__select--m-error--PaddingInlineEnd));
+    }
+
+    &.pf-m-icon {
+      > :is(input) {
+        padding-inline-end: var(--#{$form-control}--m-icon--icon--PaddingInlineEnd);
+      }
+    }
+  }
+
+  &.pf-m-success {
+    --#{$form-control}--after--BorderColor: var(--#{$form-control}--m-success--after--BorderColor);
+    --#{$form-control}--hover--after--BorderColor: var(--#{$form-control}--m-success--hover--after--BorderColor);
+    --#{$form-control}__icon--m-status--Color: var(--#{$form-control}--m-success__icon--m-status--Color);
+    --#{$form-control}--after--BorderWidth: var(--#{$form-control}--m-success--after--BorderWidth);
+
+    > textarea {
+      padding-inline-end: var(--#{$form-control}--m-success--PaddingInlineEnd, var(--#{$form-control}__textarea--m-success--PaddingInlineEnd));
+    }
+    
+    > input {
+      padding-inline-end: var(--#{$form-control}--m-success--PaddingInlineEnd, var(--#{$form-control}__input--m-success--PaddingInlineEnd));
+    }
+    
+    > select {
+      padding-inline-end: var(--#{$form-control}__select--m-success--m-status--PaddingInlineEnd, var(--#{$form-control}__select--m-success--PaddingInlineEnd));
+    }
+
+    &.pf-m-icon {
+      > :is(input) {
+        padding-inline-end: var(--#{$form-control}--m-icon--icon--PaddingInlineEnd);
+      }
+    }
+  }
+
+  &.pf-m-warning {
+    --#{$form-control}--after--BorderColor: var(--#{$form-control}--m-warning--after--BorderColor);
+    --#{$form-control}--hover--after--BorderColor: var(--#{$form-control}--m-warning--hover--after--BorderColor);
+    --#{$form-control}__icon--m-status--Color: var(--#{$form-control}--m-warning__icon--m-status--Color);
+    --#{$form-control}--after--BorderWidth: var(--#{$form-control}--m-warning--after--BorderWidth);
+    
+    > textarea {
+      padding-inline-end: var(--#{$form-control}--m-warning--PaddingInlineEnd, var(--#{$form-control}__textarea--m-warning--PaddingInlineEnd));
+    }
+    
+    > input {
+      padding-inline-end: var(--#{$form-control}--m-warning--PaddingInlineEnd, var(--#{$form-control}__input--m-warning--PaddingInlineEnd));
+    }
+    
+    > select {
+      padding-inline-end: var(--#{$form-control}__select--m-warning--m-status--PaddingInlineEnd, var(--#{$form-control}__select--m-warning--PaddingInlineEnd));
+    }
+    
+    &.pf-m-icon {
+      > :is(input) {
+        padding-inline-end: var(--#{$form-control}--m-icon--icon--PaddingInlineEnd);
+      }
+    }
+  }
+  
+  &:hover {
+    --#{$form-control}--after--BorderColor: var(--#{$form-control}--hover--after--BorderColor);
+    --#{$form-control}--after--BorderWidth: var(--#{$form-control}--hover--after--BorderWidth);
+  }
+  
+  &.pf-m-icon {
+    --#{$form-control}--PaddingInlineEnd: var(--#{$form-control}--m-icon--PaddingInlineEnd);
+  }
+
+  &:has(select) {
+    --#{$form-control}--PaddingBlockStart: var(--#{$form-control}__select--PaddingBlockStart);
+    --#{$form-control}--PaddingBlockEnd: var(--#{$form-control}__select--PaddingBlockEnd);
+    --#{$form-control}--PaddingInlineStart: var(--#{$form-control}__select--PaddingInlineStart);
+    --#{$form-control}--PaddingInlineEnd: calc(var(--#{$form-control}__select--PaddingInlineEnd) + var(--#{$form-control}__icon--FontSize));
+    --#{$form-control}__utilities--PaddingInlineEnd: var(--#{$form-control}__utilities--select--PaddingInlineEnd);
+
+    & .#{$form-control}__utilities {
+      padding-inline-end: var(--#{$form-control}__utilities--select--PaddingInlineEnd);
+    }
+
+    // Firefox's select text has additional padding
+    // stylelint-disable-next-line
+    @-moz-document url-prefix() {
+      --#{$form-control}--PaddingInlineEnd: calc(var(--#{$form-control}__select--PaddingInlineEnd) - 1px);
+      --#{$form-control}--PaddingInlineStart: calc(var(--#{$form-control}__select--PaddingInlineStart) - 4px);
+    }
+
+    // We need this property for certain Linux distros/non-Mac OS where dark theme styles aren't applied properly.
+    background-color: var(--#{$form-control}--BackgroundColor);
+  }
+
+  &.pf-m-placeholder > select {
+    --#{$form-control}--Color: var(--#{$form-control}--m-placeholder--Color);
+
+    * {
+      // We need to use the color property instead of redefining a var
+      // for certain Linux distros/non-Mac OS
+      color: var(--#{$form-control}--m-placeholder--child--Color);
+
+      // stylelint-disable max-nesting-depth
+      &:disabled {
+        color: revert;
+      }
+      // stylelint-enable
+    }
+  }
+
+  > textarea {
+    width: 100%;
+    height: 100%;
+    vertical-align: bottom;
+    resize: none;
+  }
+
+  &.pf-m-resize-vertical {
+    --#{$form-control}--Resize: vertical;
+
+    overflow: auto;
+  }
+
+  &.pf-m-resize-horizontal {
+    --#{$form-control}--Resize: horizontal;
+
+    overflow: auto;
+  }
+
+  &.pf-m-resize-both {
+    --#{$form-control}--Resize: both;
+
+    overflow: auto;
+  }
+}
+
+.#{$form-control}__icon {
+  font-size: var(--#{$form-control}__icon--FontSize);
+  color: var(--#{$form-control}__icon--Color);
+
+  &.pf-m-status {
+    --#{$form-control}__icon--Color: var(--#{$form-control}__icon--m-status--Color);
+    
+  }
+}
+
+.#{$form-control}__toggle-icon {
+  grid-row: 1 / 2;
+  grid-column: 3;
+  padding-inline-start: var(--#{$form-control}__toggle-icon--PaddingInlineStart);
+  padding-inline-end: var(--#{$form-control}__toggle-icon--PaddingInlineEnd);
+  font-size: var(--#{$form-control}__toggle-icon--FontSize);
+  color: var(--#{$form-control}__toggle-icon--Color);
+  pointer-events: none;
+}
+
+.#{$form-control}__utilities {
+  display: flex;
+  flex-wrap: nowrap;
+  grid-row: 1 / 2;
+  grid-column: 2;
+  gap: var(--#{$form-control}__utilities--Gap);
+  padding-block-start: var(--#{$form-control}__utilities--PaddingBlockStart);
+  padding-inline-end: var(--#{$form-control}__utilities--PaddingInlineEnd);
+  pointer-events: none;
+}

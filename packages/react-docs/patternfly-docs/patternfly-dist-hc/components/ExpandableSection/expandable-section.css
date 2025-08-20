@@ -1,0 +1,144 @@
+.pf-v6-c-expandable-section {
+  --pf-v6-c-expandable-section--Gap: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-expandable-section__toggle-icon--MinWidth: 1em;
+  --pf-v6-c-expandable-section__toggle-icon--Color: var(--pf-t--global--icon--color--regular);
+  --pf-v6-c-expandable-section__toggle-icon--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--default);
+  --pf-v6-c-expandable-section__toggle-icon--TransitionDuration: var(--pf-t--global--motion--duration--icon--default);
+  --pf-v6-c-expandable-section__toggle-icon--Transition: transform var(--pf-v6-c-expandable-section__toggle-icon--TransitionDuration) var(--pf-v6-c-expandable-section__toggle-icon--TransitionTimingFunction);
+  --pf-v6-c-expandable-section__toggle-icon--Rotate: 0;
+  --pf-v6-c-expandable-section__toggle-icon--m-expand-top--Rotate: 0;
+  --pf-v6-c-expandable-section--m-expanded__toggle-icon--Rotate: 90deg;
+  --pf-v6-c-expandable-section--m-expanded__toggle-icon--m-expand-top--Rotate: -90deg;
+  --pf-v6-c-expandable-section__content--TransitionDuration--collapse--slide: 0s;
+  --pf-v6-c-expandable-section__content--TransitionDuration--collapse--fade: var(--pf-t--global--motion--duration--fade--short);
+  --pf-v6-c-expandable-section__content--TransitionDuration--expand--slide: 0s;
+  --pf-v6-c-expandable-section__content--TransitionDuration--expand--fade: var(--pf-t--global--motion--duration--fade--default);
+  --pf-v6-c-expandable-section__content--TransitionDuration--slide: var(--pf-v6-c-expandable-section__content--TransitionDuration--collapse--slide);
+  --pf-v6-c-expandable-section__content--TransitionDuration--fade: var(--pf-v6-c-expandable-section__content--TransitionDuration--collapse--fade);
+  --pf-v6-c-expandable-section__content--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--default);
+  --pf-v6-c-expandable-section__content--TransitionDelay--hide: var(--pf-v6-c-expandable-section__content--TransitionDuration--fade);
+  --pf-v6-c-expandable-section__content--Opacity: 0;
+  --pf-v6-c-expandable-section__content--TranslateY: 0;
+  --pf-v6-c-expandable-section--m-expand-top__content--TranslateY: 0;
+  --pf-v6-c-expandable-section--m-expand-bottom__content--TranslateY: 0;
+  --pf-v6-c-expandable-section--m-expanded__content--Opacity: 1;
+  --pf-v6-c-expandable-section--m-expanded__content--TranslateY: 0;
+  --pf-v6-c-expandable-section__content--MaxWidth: auto;
+  --pf-v6-c-expandable-section--m-limit-width__content--MaxWidth: 46.875rem;
+  --pf-v6-c-expandable-section--m-display-lg--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-expandable-section--m-display-lg--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-expandable-section--m-display-lg--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --pf-v6-c-expandable-section--m-display-lg--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-expandable-section--m-display-lg--m-expanded--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-expandable-section--m-display-lg--BackgroundColor: var(--pf-t--global--background--color--secondary--default);
+  --pf-v6-c-expandable-section--m-display-lg--BorderWidth: var(--pf-t--global--border--width--box--default);
+  --pf-v6-c-expandable-section--m-display-lg--BorderColor: var(--pf-t--global--border--color--default);
+  --pf-v6-c-expandable-section--m-display-lg--BorderRadius: var(--pf-t--global--border--radius--medium);
+  --pf-v6-c-expandable-section--m-display-lg--TransitionDelay: var(--pf-v6-c-expandable-section__content--TransitionDuration--collapse--fade);
+  --pf-v6-c-expandable-section--m-indented__content--PaddingInlineStart: calc(var(--pf-t--global--spacer--action--horizontal--plain--default) + var(--pf-t--global--spacer--gap--text-to-element--default) + var(--pf-v6-c-expandable-section__toggle-icon--MinWidth));
+  --pf-v6-c-expandable-section--m-truncate__content--LineClamp: 3;
+  --pf-v6-c-expandable-section--m-truncate--Gap: var(--pf-t--global--spacer--xs);
+}
+@media screen and (prefers-reduced-motion: no-preference) {
+  .pf-v6-c-expandable-section {
+    --pf-v6-c-expandable-section__content--TransitionDuration--collapse--slide: var(--pf-t--global--motion--duration--fade--short);
+    --pf-v6-c-expandable-section__content--TransitionDuration--expand--slide: var(--pf-t--global--motion--duration--fade--default);
+    --pf-v6-c-expandable-section__content--TranslateY: -.5rem;
+    --pf-v6-c-expandable-section--m-expand-top__content--TranslateY: .5rem;
+    --pf-v6-c-expandable-section--m-expand-bottom__content--TranslateY: -.5rem;
+  }
+}
+
+.pf-v6-c-expandable-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition-delay: var(--pf-v6-c-expandable-section__content--TransitionDelay--hide);
+  transition-duration: 0s;
+  transition-property: gap, padding-block-end;
+}
+.pf-v6-c-expandable-section.pf-m-expanded {
+  --pf-v6-c-expandable-section__toggle-icon--Rotate: var(--pf-v6-c-expandable-section--m-expanded__toggle-icon--Rotate);
+  --pf-v6-c-expandable-section__toggle-icon--m-expand-top--Rotate: var(--pf-v6-c-expandable-section--m-expanded__toggle-icon--m-expand-top--Rotate);
+  --pf-v6-c-expandable-section--m-display-lg--PaddingBlockEnd: var(--pf-v6-c-expandable-section--m-display-lg--m-expanded--PaddingBlockEnd);
+  --pf-v6-c-expandable-section__content--TransitionDuration--slide: var(--pf-v6-c-expandable-section__content--TransitionDuration--expand--slide);
+  --pf-v6-c-expandable-section__content--TransitionDuration--fade: var(--pf-v6-c-expandable-section__content--TransitionDuration--expand--fade);
+  --pf-v6-c-expandable-section__content--Opacity: var(--pf-v6-c-expandable-section--m-expanded__content--Opacity);
+  --pf-v6-c-expandable-section__content--TranslateY: var(--pf-v6-c-expandable-section--m-expanded__content--TranslateY);
+  --pf-v6-c-expandable-section__content--Visibility: auto;
+  --pf-v6-c-expandable-section__content--MaxHeight: 99999px;
+  --pf-v6-c-expandable-section__content--TransitionDelay--hide: 0s;
+  gap: var(--pf-v6-c-expandable-section--Gap);
+}
+.pf-v6-c-expandable-section.pf-m-expand-top {
+  --pf-v6-c-expandable-section__toggle-icon--Rotate: var(--pf-v6-c-expandable-section__toggle-icon--m-expand-top--Rotate);
+}
+.pf-v6-c-expandable-section:has(.pf-v6-c-expandable-section__content:only-child):not(.pf-m-expand-top, .pf-m-expand-bottom) {
+  --pf-v6-c-expandable-section__content--TranslateY: 0;
+  --pf-v6-c-expandable-section__content--TransitionDuration--expand--fade: 0s;
+  --pf-v6-c-expandable-section__content--TransitionDuration--collapse--fade: 0s;
+}
+.pf-v6-c-expandable-section:has(.pf-v6-c-expandable-section__content:only-child).pf-m-expand-top:not(.pf-m-expanded) {
+  --pf-v6-c-expandable-section__content--TranslateY: var(--pf-v6-c-expandable-section--m-expand-top__content--TranslateY);
+}
+.pf-v6-c-expandable-section:has(.pf-v6-c-expandable-section__content:only-child).pf-m-expand-bottom:not(.pf-m-expanded) {
+  --pf-v6-c-expandable-section__content--TranslateY: var(--pf-v6-c-expandable-section--m-expand-bottom__content--TranslateY);
+}
+.pf-v6-c-expandable-section.pf-m-limit-width {
+  --pf-v6-c-expandable-section__content--MaxWidth: var(--pf-v6-c-expandable-section--m-limit-width__content--MaxWidth);
+}
+.pf-v6-c-expandable-section.pf-m-display-lg {
+  padding-block-start: var(--pf-v6-c-expandable-section--m-display-lg--PaddingBlockStart);
+  padding-block-end: var(--pf-v6-c-expandable-section--m-display-lg--PaddingBlockEnd);
+  padding-inline-start: var(--pf-v6-c-expandable-section--m-display-lg--PaddingInlineStart);
+  padding-inline-end: var(--pf-v6-c-expandable-section--m-display-lg--PaddingInlineEnd);
+  background-color: var(--pf-v6-c-expandable-section--m-display-lg--BackgroundColor);
+  border: var(--pf-v6-c-expandable-section--m-display-lg--BorderWidth) solid var(--pf-v6-c-expandable-section--m-display-lg--BorderColor);
+  border-radius: var(--pf-v6-c-expandable-section--m-display-lg--BorderRadius);
+}
+.pf-v6-c-expandable-section.pf-m-indented {
+  --pf-v6-c-expandable-section__content--PaddingInlineStart: var(--pf-v6-c-expandable-section--m-indented__content--PaddingInlineStart);
+}
+.pf-v6-c-expandable-section.pf-m-truncate {
+  --pf-v6-c-expandable-section--Gap: var(--pf-v6-c-expandable-section--m-truncate--Gap);
+}
+.pf-v6-c-expandable-section.pf-m-truncate:not(.pf-m-expanded) .pf-v6-c-expandable-section__content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--pf-v6-c-expandable-section--m-truncate__content--LineClamp);
+  overflow: hidden;
+}
+
+.pf-v6-c-expandable-section__toggle-icon {
+  display: inline-block;
+  min-width: var(--pf-v6-c-expandable-section__toggle-icon--MinWidth);
+  color: var(--pf-v6-c-expandable-section__toggle-icon--Color);
+  transition: var(--pf-v6-c-expandable-section__toggle-icon--Transition);
+  transform: rotate(var(--pf-v6-c-expandable-section__toggle-icon--Rotate));
+}
+:where(.pf-v6-m-dir-rtl, [dir=rtl]) .pf-v6-c-expandable-section__toggle-icon {
+  scale: -1 1;
+}
+
+.pf-v6-c-expandable-section__toggle-icon.pf-m-expand-top {
+  --pf-v6-c-expandable-section__toggle-icon--Rotate: var(--pf-v6-c-expandable-section__toggle-icon--m-expand-top--Rotate);
+}
+
+.pf-v6-c-expandable-section__content {
+  max-width: var(--pf-v6-c-expandable-section__content--MaxWidth);
+  padding-block-end: var(--pf-v6-c-expandable-section__content--PaddingBlockEnd, 0);
+  padding-inline-start: var(--pf-v6-c-expandable-section__content--PaddingInlineStart, 0);
+}
+.pf-v6-c-expandable-section__content:where([hidden]) {
+  display: revert;
+}
+.pf-v6-c-expandable-section:where(:not(.pf-m-truncate)) .pf-v6-c-expandable-section__content {
+  max-height: var(--pf-v6-c-expandable-section__content--MaxHeight, 0);
+  visibility: var(--pf-v6-c-expandable-section__content--Visibility, hidden);
+  opacity: var(--pf-v6-c-expandable-section__content--Opacity);
+  transition-delay: 0s, 0s, var(--pf-v6-c-expandable-section__content--TransitionDelay--hide, 0s), var(--pf-v6-c-expandable-section__content--TransitionDelay--hide, 0s);
+  transition-timing-function: var(--pf-v6-c-expandable-section__content--TransitionTimingFunction);
+  transition-duration: var(--pf-v6-c-expandable-section__content--TransitionDuration--fade), var(--pf-v6-c-expandable-section__content--TransitionDuration--slide), 0s, 0s;
+  transition-property: opacity, translate, visibility, max-height;
+  translate: 0 var(--pf-v6-c-expandable-section__content--TranslateY);
+}

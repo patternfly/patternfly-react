@@ -1,0 +1,12 @@
+.pf-v6-l-bullseye {
+  --pf-v6-l-bullseye--Padding: 0;
+}
+
+.pf-v6-l-bullseye {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: var(--pf-v6-l-bullseye--Padding);
+  margin: 0;
+}

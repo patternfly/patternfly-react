@@ -1,0 +1,14 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="PF-IconLogo-Reverse">
+<g id="Group">
+<path id="Rectangle-Copy-15" opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M15.6369 0H39.9611V24.3241C26.5272 24.3241 15.6369 13.4338 15.6369 0Z" fill="white"/>
+<path id="Combined-Shape-Copy-4" fill-rule="evenodd" clip-rule="evenodd" d="M40 0.46779V34.9367C40 37.7331 37.7331 40 34.9367 40H16.8014L40 0.46779ZM39.5322 0L0 23.1986V5.06329C0 2.26691 2.26691 0 5.06329 0L39.5322 0Z" fill="url(#paint0_linear_6460_7778)"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_6460_7778" x1="4000" y1="-4.42245e-05" x2="1616.09" y2="2377.89" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0.498498"/>
+</linearGradient>
+</defs>
+</svg>

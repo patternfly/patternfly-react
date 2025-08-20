@@ -1,0 +1,5 @@
+/* Because the page component has height:100dvh, override it just for the embedded examples */
+#ws-page-main [id^=ws-core-c-page-] .pf-v6-c-page {
+  height: min-content;
+  min-height: 30em;
+}

@@ -1,0 +1,80 @@
+.pf-v6-c-radio {
+  --pf-v6-c-radio--GridGap: var(--pf-t--global--spacer--sm) var(--pf-t--global--spacer--sm);
+  --pf-v6-c-radio--AccentColor: var(--pf-t--global--icon--color--brand--default);
+  --pf-v6-c-radio--m-standalone--MinHeight: calc(var(--pf-v6-c-radio__label--FontSize) * var(--pf-v6-c-radio__label--LineHeight));
+  --pf-v6-c-radio__label--disabled--Color: var(--pf-t--global--text--color--disabled);
+  --pf-v6-c-radio__label--Color: var(--pf-t--global--text--color--regular);
+  --pf-v6-c-radio__label--FontWeight: var(--pf-t--global--font--weight--body--default);
+  --pf-v6-c-radio__label--FontSize: var(--pf-t--global--font--size--body--default);
+  --pf-v6-c-radio__label--LineHeight: var(--pf-t--global--font--line-height--body);
+  --pf-v6-c-radio__description--FontSize: var(--pf-t--global--font--size--body--sm);
+  --pf-v6-c-radio__description--Color: var(--pf-t--global--text--color--subtle);
+  --pf-v6-c-radio__input--first-child--MarginInlineStart: 0.0625rem;
+  --pf-v6-c-radio__input--last-child--MarginInlineEnd: 0.0625rem;
+  --pf-v6-c-radio__body--MarginBlockStart: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-radio__input--TranslateY: calc((var(--pf-v6-c-radio__label--LineHeight) * var(--pf-v6-c-radio__label--FontSize) / 2 ) - 50%);
+}
+
+.pf-v6-c-radio {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: var(--pf-v6-c-radio--GridGap);
+  align-items: baseline;
+  accent-color: var(--pf-v6-c-radio--AccentColor);
+}
+.pf-v6-c-radio.pf-m-standalone {
+  display: inline-grid;
+  grid-template-columns: auto;
+  min-height: var(--pf-v6-c-radio--m-standalone--MinHeight);
+}
+.pf-v6-c-radio.pf-m-standalone .pf-v6-c-radio__input {
+  align-self: center;
+  transform: none;
+}
+
+.pf-v6-c-radio__input {
+  align-self: start;
+  font-size: var(--pf-v6-c-radio__label--FontSize);
+  line-height: var(--pf-v6-c-radio__label--LineHeight);
+  transform: translateY(var(--pf-v6-c-radio__input--TranslateY));
+}
+.pf-v6-c-radio__input:first-child {
+  margin-inline-start: var(--pf-v6-c-radio__input--first-child--MarginInlineStart);
+}
+.pf-v6-c-radio__input:last-child {
+  margin-inline-end: var(--pf-v6-c-radio__input--last-child--MarginInlineEnd);
+}
+
+.pf-v6-c-radio__label {
+  font-size: var(--pf-v6-c-radio__label--FontSize);
+  font-weight: var(--pf-v6-c-radio__label--FontWeight);
+  line-height: var(--pf-v6-c-radio__label--LineHeight);
+  color: var(--pf-v6-c-radio__label--Color);
+}
+
+.pf-v6-c-radio__description {
+  grid-column: 2;
+  font-size: var(--pf-v6-c-radio__description--FontSize);
+  color: var(--pf-v6-c-radio__description--Color);
+}
+
+.pf-v6-c-radio__body {
+  grid-column: 2;
+  margin-block-start: var(--pf-v6-c-radio__body--MarginBlockStart);
+}
+
+.pf-v6-c-radio__label,
+.pf-v6-c-radio__input {
+  justify-self: start;
+}
+label.pf-v6-c-radio, .pf-v6-c-radio__label,
+.pf-v6-c-radio__input {
+  cursor: pointer;
+}
+
+.pf-v6-c-radio__label:disabled, .pf-v6-c-radio__label.pf-m-disabled,
+.pf-v6-c-radio__input:disabled,
+.pf-v6-c-radio__input.pf-m-disabled {
+  --pf-v6-c-radio__label--Color: var(--pf-v6-c-radio__label--disabled--Color);
+  cursor: not-allowed;
+}

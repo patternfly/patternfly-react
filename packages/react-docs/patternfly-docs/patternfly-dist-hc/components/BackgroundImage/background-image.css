@@ -1,0 +1,26 @@
+.pf-v6-c-background-image {
+  --pf-v6-c-background-image--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --pf-v6-c-background-image--BackgroundImage: none;
+  --pf-v6-c-background-image--BackgroundSize--min-width: 200px;
+  --pf-v6-c-background-image--BackgroundSize--width: 60%;
+  --pf-v6-c-background-image--BackgroundSize--max-width: 600px;
+  --pf-v6-c-background-image--BackgroundSize: clamp(var(--pf-v6-c-background-image--BackgroundSize--min-width), var(--pf-v6-c-background-image--BackgroundSize--width), var(--pf-v6-c-background-image--BackgroundSize--max-width));
+}
+
+.pf-v6-c-background-image {
+  --pf-v6-c-background-image--BackgroundPosition: bottom right;
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: var(--pf-v6-c-background-image--BackgroundColor);
+  background-image: var(--pf-v6-c-background-image--BackgroundImage);
+  background-repeat: no-repeat;
+  background-position: var(--pf-v6-c-background-image--BackgroundPosition);
+  background-size: var(--pf-v6-c-background-image--BackgroundSize);
+}
+:where(.pf-v6-m-dir-rtl, [dir=rtl]) .pf-v6-c-background-image {
+  --pf-v6-c-background-image--BackgroundPosition: bottom left;
+}

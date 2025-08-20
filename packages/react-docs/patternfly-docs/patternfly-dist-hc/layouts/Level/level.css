@@ -1,0 +1,13 @@
+.pf-v6-l-level {
+  --pf-v6-l-level--m-gutter--Gap: var(--pf-t--global--spacer--gutter--default);
+}
+
+.pf-v6-l-level {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.pf-v6-l-level.pf-m-gutter {
+  gap: var(--pf-v6-l-level--m-gutter--Gap);
+}

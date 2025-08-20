@@ -1,0 +1,16 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($level) {
+  --#{$level}--m-gutter--Gap: var(--pf-t--global--spacer--gutter--default);
+}
+
+.#{$level} {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  &.pf-m-gutter {
+    gap: var(--#{$level}--m-gutter--Gap);
+  }
+}

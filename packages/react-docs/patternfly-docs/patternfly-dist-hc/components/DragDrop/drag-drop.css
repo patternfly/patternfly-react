@@ -1,0 +1,76 @@
+.pf-v6-c-draggable {
+  --pf-v6-c-draggable--Cursor: auto;
+  --pf-v6-c-draggable--m-dragging--Cursor: grabbing;
+  --pf-v6-c-draggable--m-dragging--BoxShadow: var(--pf-t--global--box-shadow--md);
+  --pf-v6-c-draggable--m-dragging--BackgroundColor: transparent;
+  --pf-v6-c-draggable--m-dragging--after--BorderWidth: var(--pf-t--global--border--width--regular);
+  --pf-v6-c-draggable--m-dragging--after--BorderColor: var(--pf-t--global--border--color--brand--default);
+  --pf-v6-c-draggable--m-dragging--after--BorderRadius: var(--pf-t--global--border--radius--small);
+  --pf-v6-c-draggable--m-drag-outside--Cursor: not-allowed;
+  --pf-v6-c-draggable--m-drag-outside--after--BorderColor: var(--pf-t--global--border--color--status--danger--default);
+}
+
+.pf-v6-c-draggable {
+  cursor: var(--pf-v6-c-draggable--Cursor);
+}
+.pf-v6-c-draggable.pf-m-dragging {
+  --pf-v6-c-draggable--Cursor: var(--pf-v6-c-draggable--m-dragging--Cursor);
+  position: relative;
+  background-color: var(--pf-v6-c-draggable--m-dragging--BackgroundColor);
+  box-shadow: var(--pf-v6-c-draggable--m-dragging--BoxShadow);
+}
+.pf-v6-c-draggable.pf-m-dragging::after {
+  position: absolute;
+  inset-block-start: 0;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  content: "";
+  border: var(--pf-v6-c-draggable--m-dragging--after--BorderWidth) solid var(--pf-v6-c-draggable--m-dragging--after--BorderColor);
+  border-radius: var(--pf-v6-c-draggable--m-dragging--after--BorderRadius);
+}
+.pf-v6-c-draggable.pf-m-drag-outside {
+  --pf-v6-c-draggable--m-dragging--Cursor: var(--pf-v6-c-draggable--m-drag-outside--Cursor);
+  --pf-v6-c-draggable--m-dragging--after--BorderColor: var(--pf-v6-c-draggable--m-drag-outside--after--BorderColor);
+}
+
+.pf-v6-c-droppable {
+  --pf-v6-c-droppable--before--BackgroundColor: transparent;
+  --pf-v6-c-droppable--before--Opacity: 0;
+  --pf-v6-c-droppable--after--BorderWidth: 0;
+  --pf-v6-c-droppable--after--BorderColor: transparent;
+  --pf-v6-c-droppable--m-dragging--before--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --pf-v6-c-droppable--m-dragging--before--Opacity: .6;
+  --pf-v6-c-droppable--m-dragging--after--BorderWidth: var(--pf-t--global--border--width--regular);
+  --pf-v6-c-droppable--m-dragging--after--BorderColor: var(--pf-t--global--border--color--brand--default);
+  --pf-v6-c-droppable--m-dragging--after--BorderRadius: var(--pf-t--global--border--radius--small);
+  --pf-v6-c-droppable--m-drag-outside--after--BorderColor: var(--pf-t--global--border--color--status--danger--default);
+}
+
+.pf-v6-c-droppable::before, .pf-v6-c-droppable::after {
+  position: absolute;
+  inset-block-start: 0;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  pointer-events: none;
+  content: "";
+}
+.pf-v6-c-droppable::before {
+  background-color: var(--pf-v6-c-droppable--before--BackgroundColor);
+  opacity: var(--pf-v6-c-droppable--before--Opacity);
+}
+.pf-v6-c-droppable::after {
+  border: var(--pf-v6-c-droppable--after--BorderWidth, 0) solid var(--pf-v6-c-droppable--after--BorderColor, transparent);
+  border-radius: var(--pf-v6-c-droppable--m-dragging--after--BorderRadius);
+}
+.pf-v6-c-droppable.pf-m-dragging {
+  --pf-v6-c-droppable--before--BackgroundColor: var(--pf-v6-c-droppable--m-dragging--before--BackgroundColor);
+  --pf-v6-c-droppable--before--Opacity: var(--pf-v6-c-droppable--m-dragging--before--Opacity);
+  --pf-v6-c-droppable--after--BorderWidth: var(--pf-v6-c-droppable--m-dragging--after--BorderWidth);
+  --pf-v6-c-droppable--after--BorderColor: var(--pf-v6-c-droppable--m-dragging--after--BorderColor);
+  position: relative;
+}
+.pf-v6-c-droppable.pf-m-drag-outside {
+  --pf-v6-c-droppable--m-dragging--after--BorderColor: var(--pf-v6-c-droppable--m-drag-outside--after--BorderColor);
+}

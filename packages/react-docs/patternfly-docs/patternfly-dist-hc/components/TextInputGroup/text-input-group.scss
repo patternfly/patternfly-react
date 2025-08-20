@@ -1,0 +1,256 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($text-input-group) {
+  --#{$text-input-group}--BackgroundColor: var(--pf-t--global--background--color--control--default);
+  --#{$text-input-group}--BorderColor: var(--pf-t--global--border--color--default);
+  --#{$text-input-group}--m-success--BorderColor: var(--pf-t--global--border--color--status--success--default);
+  --#{$text-input-group}--m-warning--BorderColor: var(--pf-t--global--border--color--status--warning--default);
+  --#{$text-input-group}--m-error--BorderColor: var(--pf-t--global--border--color--status--danger--default);
+  --#{$text-input-group}--BorderWidth: var(--pf-t--global--border--width--control--default);
+  --#{$text-input-group}__LineHeight: var(--pf-t--global--font--line-height--body);
+  --#{$text-input-group}__FontSize: var(--pf-t--global--font--size--body--default);
+
+  // Border hover
+  --#{$text-input-group}--m-hover--BorderColor: var(--pf-t--global--border--color--hover);
+  --#{$text-input-group}--m-hover--m-success--BorderColor: var(--pf-t--global--border--color--status--success--hover);
+  --#{$text-input-group}--m-hover--m-warning--BorderColor: var(--pf-t--global--border--color--status--warning--hover);
+  --#{$text-input-group}--m-hover--m-error--BorderColor: var(--pf-t--global--border--color--status--danger--hover);
+  
+
+  // Main
+  --#{$text-input-group}__main--first-child--not--text-input--MarginInlineStart: calc(var(--pf-t--global--spacer--control--horizontal--plain) / 2);
+  --#{$text-input-group}__main--m-icon__text-input--PaddingInlineStart: calc(var(--pf-t--global--spacer--control--horizontal--default) + var(--#{$text-input-group}__icon--FontSize) + var(--pf-t--global--spacer--gap--text-to-element--default));
+  --#{$text-input-group}--status__text-input--PaddingInlineEnd: calc(var(--pf-t--global--spacer--control--horizontal--default) + var(--#{$text-input-group}__icon--FontSize) + var(--pf-t--global--spacer--gap--text-to-element--default));
+  --#{$text-input-group}--utilities--status__text-input--PaddingInlineEnd: calc(var(--pf-t--global--spacer--sm) + var(--#{$text-input-group}__icon--FontSize) + var(--pf-t--global--spacer--gap--text-to-element--default));
+  --#{$text-input-group}__main--RowGap: var(--pf-t--global--spacer--xs);
+  --#{$text-input-group}__main--ColumnGap: var(--pf-t--global--spacer--xs);
+
+  // Text wrapper
+  --#{$text-input-group}__text--BorderRadius--base: var(--pf-t--global--border--radius--small);
+  --#{$text-input-group}__text--BorderStartStartRadius: var(--#{$text-input-group}__text--BorderRadius--base);
+  --#{$text-input-group}__text--BorderStartEndRadius: var(--#{$text-input-group}__text--BorderRadius--base);
+  --#{$text-input-group}__text--BorderEndEndRadius: var(--#{$text-input-group}__text--BorderRadius--base);
+  --#{$text-input-group}__text--BorderEndStartRadius: var(--#{$text-input-group}__text--BorderRadius--base);
+
+  // Label group
+  --#{$text-input-group}--c-label-group__main--PaddingBlockStart: calc(var(--pf-t--global--spacer--control--vertical--default) / 2);
+  --#{$text-input-group}--c-label-group__main--PaddingInlineEnd: calc(var(--pf-t--global--spacer--control--horizontal--plain) / 2);
+  --#{$text-input-group}--c-label-group__main--PaddingBlockEnd: calc(var(--pf-t--global--spacer--control--vertical--default) / 2);
+
+  // Text input
+  --#{$text-input-group}__text-input--PaddingBlockStart: var(--pf-t--global--spacer--control--vertical--default);
+  --#{$text-input-group}__text-input--PaddingInlineEnd: var(--pf-t--global--spacer--control--horizontal--default);
+  --#{$text-input-group}__text-input--PaddingBlockEnd: var(--pf-t--global--spacer--control--vertical--default);
+  --#{$text-input-group}__text-input--PaddingInlineStart: var(--pf-t--global--spacer--control--horizontal--default);
+  --#{$text-input-group}__text-input--MinWidth: 12ch;
+  --#{$text-input-group}__text-input--m-hint--Color: var(--pf-t--global--text--color--placeholder);
+  --#{$text-input-group}__text-input--Color: var(--pf-t--global--text--color--regular);
+  --#{$text-input-group}__text-input--placeholder--Color: var(--pf-t--global--text--color--placeholder);
+  --#{$text-input-group}__text-input--BackgroundColor: transparent;
+  --#{$text-input-group}__text-input--OutlineOffset: -6px;
+
+  // Icon
+  --#{$text-input-group}__icon--FontSize: var(--pf-t--global--icon--size--font--body--default);
+  --#{$text-input-group}__icon--InsetInlineStart: var(--pf-t--global--spacer--control--horizontal--default);
+  --#{$text-input-group}__icon--m-status--InsetInlineEnd: var(--pf-t--global--spacer--control--horizontal--default);
+  --#{$text-input-group}--utilities--icon--m-status--InsetInlineEnd: var(--pf-t--global--spacer--sm);
+  --#{$text-input-group}__icon--Color: var(--pf-t--global--icon--color--regular);
+  --#{$text-input-group}--m-disabled__icon--Color: var(--pf-t--global--icon--color--on-disabled);
+  --#{$text-input-group}__icon--m-status--Color: var(--pf-t--global--icon--color--regular);
+  --#{$text-input-group}--m-disabled__icon--m-status--Color: var(--pf-t--global--icon--color--on-disabled);
+  --#{$text-input-group}__main--m-success__icon--m-status--Color: var(--pf-t--global--icon--color--status--success--default);
+  --#{$text-input-group}__main--m-warning__icon--m-status--Color: var(--pf-t--global--icon--color--status--warning--default);
+  --#{$text-input-group}__main--m-error__icon--m-status--Color: var(--pf-t--global--icon--color--status--danger--default);
+  --#{$text-input-group}__icon--TranslateY: -50%;
+
+  // Utilities
+  --#{$text-input-group}__utilities--child--MarginInlineStart: var(--pf-t--global--spacer--xs);
+  
+  // input disabled style
+  --#{$text-input-group}--m-disabled--Color: var(--pf-t--global--text--color--on-disabled);
+  --#{$text-input-group}--m-disabled--BackgroundColor: var(--pf-t--global--background--color--disabled--default);
+}
+
+.#{$text-input-group} {
+  position: relative;
+  display: flex;
+  width: 100%; // when child of flex layout, take up space
+  font-size: var(--#{$text-input-group}__FontSize);
+  line-height: var(--#{$text-input-group}__LineHeight);
+  color: var(--#{$text-input-group}--Color, inherit);
+  background-color: var(--#{$text-input-group}--BackgroundColor);
+  border-start-start-radius: var(--#{$text-input-group}__text--BorderStartStartRadius);
+  border-start-end-radius: var(--#{$text-input-group}__text--BorderStartEndRadius);
+  border-end-start-radius: var(--#{$text-input-group}__text--BorderEndStartRadius);
+  border-end-end-radius: var(--#{$text-input-group}__text--BorderEndEndRadius);
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    content: "";
+    border: var(--#{$text-input-group}--BorderWidth) solid var(--#{$text-input-group}--BorderColor);
+    border-start-start-radius: var(--#{$text-input-group}__text--BorderStartStartRadius);
+    border-start-end-radius: var(--#{$text-input-group}__text--BorderStartEndRadius);
+    border-end-start-radius: var(--#{$text-input-group}__text--BorderEndStartRadius);
+    border-end-end-radius: var(--#{$text-input-group}__text--BorderEndEndRadius);
+  }
+
+  &.pf-m-disabled {
+    --#{$text-input-group}--Color: var(--#{$text-input-group}--m-disabled--Color);
+    --#{$text-input-group}__text-input--Color: var(--#{$text-input-group}--m-disabled--Color);
+    --#{$text-input-group}__text-input--placeholder--Color: var(--#{$text-input-group}--m-disabled--Color);
+    --#{$text-input-group}__icon--Color: var(--#{$text-input-group}--m-disabled__icon--Color);
+    --#{$text-input-group}__icon--m-status--Color: var(--#{$text-input-group}--m-disabled__icon--m-status--Color);
+    --#{$text-input-group}--BackgroundColor: var(--#{$text-input-group}--m-disabled--BackgroundColor);
+
+    pointer-events: none;
+  }
+
+  &.pf-m-plain {
+    --#{$text-input-group}--BackgroundColor: transparent;
+
+    &::before {
+      border: 0;
+    }    
+  }
+
+  &.pf-m-success {
+    --#{$text-input-group}--BorderColor: var(--#{$text-input-group}--m-success--BorderColor);
+    --#{$text-input-group}--m-hover--BorderColor: var(--#{$text-input-group}--m-hover--m-success--BorderColor);
+    --#{$text-input-group}__icon--m-status--Color: var(--#{$text-input-group}__main--m-success__icon--m-status--Color);  
+  }
+
+  &.pf-m-warning {
+    --#{$text-input-group}--BorderColor: var(--#{$text-input-group}--m-warning--BorderColor);
+    --#{$text-input-group}--m-hover--BorderColor: var(--#{$text-input-group}--m-hover--m-warning--BorderColor);
+    --#{$text-input-group}__icon--m-status--Color: var(--#{$text-input-group}__main--m-warning__icon--m-status--Color);  
+  }
+
+  &.pf-m-error {
+    --#{$text-input-group}--BorderColor: var(--#{$text-input-group}--m-error--BorderColor);
+    --#{$text-input-group}--m-hover--BorderColor: var(--#{$text-input-group}--m-hover--m-error--BorderColor);
+    --#{$text-input-group}__icon--m-status--Color: var(--#{$text-input-group}__main--m-error__icon--m-status--Color);  
+    
+    @media (prefers-reduced-motion: no-preference) {
+      @include pf-v6-animate-danger-jiggle;
+    }
+    
+    .#{$text-input-group}__icon.pf-m-status {
+      @include pf-v6-fade-default(#{$text-input-group});
+    }
+  }
+  
+  &:hover {
+    --#{$text-input-group}--BorderColor: var(--#{$text-input-group}--m-hover--BorderColor);
+  }
+
+  &:where(.pf-m-success, .pf-m-warning, .pf-m-error) {
+    --#{$text-input-group}__text-input--PaddingInlineEnd: var(--#{$text-input-group}--status__text-input--PaddingInlineEnd);
+
+    & .pf-v6-c-text-input-group__text {
+      --#{$text-input-group}__text--Position: relative;
+    }
+  }
+
+  &:has(> .#{$text-input-group}__utilities) {
+    --#{$text-input-group}__icon--m-status--InsetInlineEnd: var(--#{$text-input-group}--utilities--icon--m-status--InsetInlineEnd);
+    --#{$text-input-group}--status__text-input--PaddingInlineEnd: var(--#{$text-input-group}--utilities--status__text-input--PaddingInlineEnd);
+  }
+}
+
+.#{$text-input-group}__main {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: var(--#{$text-input-group}__main--RowGap) var(--#{$text-input-group}__main--ColumnGap);
+  min-width: 0;
+  
+  &.pf-m-icon {
+    --#{$text-input-group}__text--Position: relative;
+    --#{$text-input-group}__text-input--PaddingInlineStart: var(--#{$text-input-group}__main--m-icon__text-input--PaddingInlineStart);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: calc(var(--#{$text-input-group}__LineHeight) * var(--#{$text-input-group}__FontSize));
+  }
+
+  > :first-child:not(.#{$text-input-group}__text) {
+    margin-inline-start: var(--#{$text-input-group}__main--first-child--not--text-input--MarginInlineStart);
+  }
+
+  .#{$label-group}__main {
+    padding-block-start: var(--#{$text-input-group}--c-label-group__main--PaddingBlockStart);
+    padding-block-end: var(--#{$text-input-group}--c-label-group__main--PaddingBlockEnd);
+    padding-inline-end: var(--#{$text-input-group}--c-label-group__main--PaddingInlineEnd);
+  }
+}
+
+.#{$text-input-group}__text {
+  position: var(--#{$text-input-group}__text--Position, revert);
+  display: inline-grid;
+  flex: 1;
+  grid-template-areas: "text-input";
+  grid-template-columns: 1fr;
+}
+
+.#{$text-input-group}__icon {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: var(--#{$text-input-group}__icon--InsetInlineStart);
+  font-size: var(--#{$text-input-group}__icon--FontSize);
+  color: var(--#{$text-input-group}__icon--Color);
+  transform: translateY(var(--#{$text-input-group}__icon--TranslateY));
+
+  &.pf-m-status {
+    inset-inline-start: auto;
+    inset-inline-end: var(--#{$text-input-group}__icon--m-status--InsetInlineEnd);
+    color: var(--#{$text-input-group}__icon--m-status--Color);
+  }
+}
+
+.#{$text-input-group}__text-input {
+  @include pf-v6-text-overflow;
+
+  position: relative;
+  width: 100%;
+  min-width: var(--#{$text-input-group}__text-input--MinWidth);
+  padding-block-start: var(--#{$text-input-group}__text-input--PaddingBlockStart);
+  padding-block-end: var(--#{$text-input-group}__text-input--PaddingBlockEnd);
+  padding-inline-start: var(--#{$text-input-group}__text-input--PaddingInlineStart);
+  padding-inline-end: var(--#{$text-input-group}__text-input--PaddingInlineEnd);
+  color: var(--#{$text-input-group}__text-input--Color);
+  background-color: var(--#{$text-input-group}__text-input--BackgroundColor);
+  border: 0;
+  outline-offset: var(--#{$text-input-group}__text-input--OutlineOffset);
+
+  &,
+  &.pf-m-hint {
+    grid-area: text-input;
+  }
+
+  &.pf-m-hint {
+    color: var(--#{$text-input-group}__text-input--m-hint--Color);
+  }
+
+  &::placeholder {
+    color: var(--#{$text-input-group}__text-input--placeholder--Color);
+  }
+}
+
+// TODO: update to use gap
+.#{$text-input-group}__utilities {
+  display: flex;
+  align-items: center;
+  margin-inline-start: var(--#{$text-input-group}__utilities--MarginInlineStart);
+  margin-inline-end: var(--#{$text-input-group}__utilities--MarginInlineEnd);
+
+  > * + * {
+    margin-inline-start: var(--#{$text-input-group}__utilities--child--MarginInlineStart);
+  }
+}
+
+.#{$text-input-group}__group {
+  display: flex;
+}

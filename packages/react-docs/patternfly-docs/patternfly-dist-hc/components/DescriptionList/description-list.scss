@@ -1,0 +1,225 @@
+@use '../../sass-utilities' as *;
+
+$pf-v6-c-description-list--breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg", "xl", "2xl");
+
+@include pf-root($description-list) {
+  --#{$description-list}--RowGap: var(--pf-t--global--spacer--gap--group-to-group--vertical--default);
+  --#{$description-list}--ColumnGap: var(--pf-t--global--spacer--gap--group-to-group--horizontal--default);
+  --#{$description-list}--GridTemplateColumns--count: 1;
+  --#{$description-list}--GridTemplateColumns--width: 1fr;
+  --#{$description-list}--GridTemplateColumns--min: 0;
+
+  // group
+  --#{$description-list}__group--RowGap: var(--pf-t--global--spacer--gap--group--vertical);
+  --#{$description-list}__group--ColumnGap: var(--pf-t--global--spacer--gap--group--horizontal); // Increases current Gap
+  --#{$description-list}__group--GridTemplateColumns: auto;
+  --#{$description-list}__group--GridTemplateRows: auto 1fr;
+  --#{$description-list}__group--GridColumn: auto;
+
+  // compact
+  --#{$description-list}--m-compact--RowGap: var(--pf-t--global--spacer--gap--group-to-group--vertical--compact);
+  --#{$description-list}--m-compact--ColumnGap: var(--pf-t--global--spacer--gap--group-to-group--horizontal--compact);
+
+  // term
+  --#{$description-list}__term--Display: inline;
+  --#{$description-list}__term--sm--Display: flex;
+  --#{$description-list}__term--FontWeight: var(--pf-t--global--font--weight--body--bold);
+  --#{$description-list}__term--FontSize: var(--pf-t--global--font--size--body--default);
+  --#{$description-list}__term--LineHeight: var(--pf-t--global--font--line-height--body);
+
+  @media screen and (min-width: $pf-v6-global--breakpoint--sm) {
+    --#{$description-list}__term--Display: var(--#{$description-list}__term--sm--Display);
+  }
+
+  // icon
+  --#{$description-list}__term-icon--MinWidth: var(--pf-t--global--font--size--body--sm);
+  --#{$description-list}__term-icon--MarginInlineEnd: var(--pf-t--global--spacer--sm);
+  --#{$description-list}__term-icon--Color: var(--pf-t--global--icon--color--subtle);
+
+  // vertical
+  --#{$description-list}--m-vertical__group--GridTemplateColumns: repeat(var(--#{$description-list}--GridTemplateColumns--count));
+  --#{$description-list}--m-vertical__group--GridTemplateRows: auto 1fr;
+
+  // horizontal
+  --#{$description-list}--m-horizontal__term--width: 12ch;
+  --#{$description-list}--m-horizontal__description--width: minmax(10ch, auto);
+  --#{$description-list}--m-horizontal__group--GridTemplateColumns: var(--#{$description-list}__term--width) var(--#{$description-list}--m-horizontal__description--width); // use --#{$description-list}__term--width here as it is re-defined on line 45
+  --#{$description-list}--m-horizontal__group--GridTemplateRows: auto;
+  --#{$description-list}--m-1-col--GridTemplateColumns--count: 1;
+  --#{$description-list}--m-2-col--GridTemplateColumns--count: 2;
+  --#{$description-list}--m-3-col--GridTemplateColumns--count: 3;
+
+  // auto-fit
+  --#{$description-list}--m-auto-fit--GridTemplateColumns--min: #{pf-size-prem(250px)};
+  --#{$description-list}--m-auto-fit--GridTemplateColumns--minmax--min: var(--#{$description-list}--m-auto-fit--GridTemplateColumns--min);
+
+  // help text
+  --#{$description-list}__text--m-help-text--TextDecorationLine: var(--pf-t--global--text-decoration--help-text--line--default);
+  --#{$description-list}__text--m-help-text--TextDecorationStyle: var(--pf-t--global--text-decoration--help-text--style--default);
+  --#{$description-list}__text--m-help-text--TextUnderlineOffset: #{pf-size-prem(4px)};
+  --#{$description-list}__text--m-help-text--hover--TextDecorationLine: var(--pf-t--global--text-decoration--help-text--line--hover);
+  --#{$description-list}__text--m-help-text--hover--TextDecorationStyle: var(--pf-t--global--text-decoration--help-text--style--hover);
+
+  // Display modifiers
+  --#{$description-list}--m-display-lg__description--FontSize: var(--pf-t--global--font--size--body--lg); // TODO replace with new font tokens when available
+  --#{$description-list}--m-display-2xl__description--FontSize: var(--pf-t--global--font--size--heading--lg); // TODO replace with new font tokens when available
+
+  @include pf-v6-output-root-variables("--#{$description-list}--m-horizontal__term--width", $pf-v6-c-description-list--breakpoint-map);
+  @include pf-v6-build-css-variable-stack("--#{$description-list}__term--width", "--#{$description-list}--m-horizontal__term--width", $pf-v6-c-description-list--breakpoint-map);
+}
+
+.#{$description-list} {
+  display: grid;
+  grid-template-columns: repeat(var(--#{$description-list}--GridTemplateColumns--count), var(--#{$description-list}--GridTemplateColumns--width));
+  row-gap: var(--#{$description-list}--RowGap);
+  column-gap: var(--#{$description-list}--ColumnGap);
+  align-items: baseline;
+
+  &.pf-m-inline-grid {
+    display: inline-grid;
+  }
+
+  &.pf-m-auto-column-widths {
+    --#{$description-list}--GridTemplateColumns--width: minmax(8ch, max-content);
+  }
+
+  &.pf-m-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(var(--#{$description-list}--m-auto-fit--GridTemplateColumns--minmax--min), 1fr));
+
+    @include pf-v6-build-css-variable-stack("--#{$description-list}--GridTemplateColumns--minmax--min", "--#{$description-list}--GridTemplateColumns--min", $pf-v6-c-description-list--breakpoint-map);
+  }
+
+  &.pf-m-compact {
+    --#{$description-list}--RowGap: var(--#{$description-list}--m-compact--RowGap);
+    --#{$description-list}--ColumnGap: var(--#{$description-list}--m-compact--ColumnGap);
+  }
+
+  &.pf-m-fluid {
+    --#{$description-list}--m-horizontal__term--width: fit-content(20ch);
+  }
+
+  &.pf-m-fill-columns {
+    display: block;
+    column-count: var(--#{$description-list}--GridTemplateColumns--count);
+    margin-block-end: calc(var(--#{$description-list}--RowGap) * -1);
+
+    .#{$description-list}__group,
+    > .#{$card} {
+      display: inline-grid;
+      width: 100%;
+      margin-block-end: var(--#{$description-list}--RowGap);
+      break-inside: avoid;
+      page-break-inside: avoid;
+
+      // stylelint-disable property-no-vendor-prefix
+      -webkit-column-break-inside: avoid;
+      -moz-column-break-inside: avoid;
+      // stylelint-enable
+    }
+  }
+
+  &.pf-m-display-lg {
+    --#{$description-list}__description--FontSize: var(--#{$description-list}--m-display-lg__description--FontSize);
+  }
+
+  &.pf-m-display-2xl {
+    --#{$description-list}__description--FontSize: var(--#{$description-list}--m-display-2xl__description--FontSize);
+  }
+
+  > .#{$card} {
+    align-self: stretch;
+    padding-block-start: var(--#{$card}--first-child--PaddingBlockStart);
+    padding-block-end: var(--#{$card}--child--PaddingBlockEnd);
+    padding-inline-start: var(--#{$card}--child--PaddingInlineStart);
+    padding-inline-end: var(--#{$card}--child--PaddingInlineEnd);
+  }
+}
+
+.#{$description-list}__group,
+.#{$description-list} > .#{$card} {
+  display: grid;
+  grid-template-rows: var(--#{$description-list}__group--GridTemplateRows);
+  grid-template-columns: var(--#{$description-list}__group--GridTemplateColumns);
+  grid-column: var(--#{$description-list}__group--GridColumn);
+  row-gap: var(--#{$description-list}__group--RowGap);
+  column-gap: var(--#{$description-list}__group--ColumnGap);
+  align-items: baseline;
+}
+
+.#{$description-list}__term,
+.#{$description-list}__description {
+  min-width: 0; // this allows overflow-wrap to work
+  text-align: start;
+  overflow-wrap: break-word;
+}
+
+.#{$description-list}__term {
+  display: var(--#{$description-list}__term--Display);
+  font-size: var(--#{$description-list}__term--FontSize);
+  font-weight: var(--#{$description-list}__term--FontWeight);
+  line-height: var(--#{$description-list}__term--LineHeight);
+
+  .#{$description-list}__text {
+    display: inline;
+  }
+}
+
+.#{$description-list}__term-icon {
+  flex-shrink: 0;
+  min-width: var(--#{$description-list}__term-icon--MinWidth);
+  margin-inline-end: var(--#{$description-list}__term-icon--MarginInlineEnd);
+  color: var(--#{$description-list}__term-icon--Color);
+}
+
+.#{$description-list}__description {
+  font-size: var(--#{$description-list}__description--FontSize, inherit);
+}
+
+.#{$description-list}__text {
+  min-width: 0; // this allows overflow-wrap to work
+
+  &.pf-m-help-text {
+    text-decoration-line: var(--#{$description-list}__text--m-help-text--TextDecorationLine);
+    text-decoration-style: var(--#{$description-list}__text--m-help-text--TextDecorationStyle);
+    text-underline-offset: var(--#{$description-list}__text--m-help-text--TextUnderlineOffset);
+    cursor: pointer;
+
+    &:is(:hover, :focus) {
+      --#{$description-list}__text--m-help-text--TextDecorationLine: var(--#{$description-list}__text--m-help-text--hover--TextDecorationLine);
+      --#{$description-list}__text--m-help-text--TextDecorationStyle: var(--#{$description-list}__text--m-help-text--hover--TextDecorationStyle);
+    }
+  }
+}
+
+// Responsive modifiers
+// stylelint-disable no-duplicate-selectors
+.#{$description-list} {
+  @each $breakpoint, $breakpoint-value in $pf-v6-c-description-list--breakpoint-map {
+    $breakpoint-name: if($breakpoint != "base", -on-#{$breakpoint}, "");
+
+    @include pf-v6-apply-breakpoint($breakpoint) {
+      &.pf-m-1-col#{$breakpoint-name} {
+        --#{$description-list}--GridTemplateColumns--count: var(--#{$description-list}--m-1-col--GridTemplateColumns--count);
+      }
+
+      &.pf-m-2-col#{$breakpoint-name} {
+        --#{$description-list}--GridTemplateColumns--count: var(--#{$description-list}--m-2-col--GridTemplateColumns--count);
+      }
+
+      &.pf-m-3-col#{$breakpoint-name} {
+        --#{$description-list}--GridTemplateColumns--count: var(--#{$description-list}--m-3-col--GridTemplateColumns--count);
+      }
+
+      &.pf-m-horizontal#{$breakpoint-name} {
+        --#{$description-list}__group--GridTemplateColumns: var(--#{$description-list}--m-horizontal__group--GridTemplateColumns);
+        --#{$description-list}__group--GridTemplateRows: var(--#{$description-list}--m-horizontal__group--GridTemplateRows);
+      }
+
+      &.pf-m-vertical#{$breakpoint-name} {
+        --#{$description-list}__group--GridTemplateColumns: var(--#{$description-list}--m-vertical__group--GridTemplateColumns);
+        --#{$description-list}__group--GridTemplateRows: var(--#{$description-list}--m-vertical__group--GridTemplateRows);
+      }
+    }
+  }
+}
+// stylelint-enable

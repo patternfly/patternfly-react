@@ -1,0 +1,92 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($list) {
+  // list
+  --#{$list}--PaddingInlineStart: var(--pf-t--global--spacer--lg);
+  --#{$list}--ul--ListStyle: var(--pf-t--global--list-style);
+  --#{$list}--Gap: var(--pf-t--global--spacer--sm);
+
+  // nested
+  --#{$list}--nested--PaddingBlockStart: var(--#{$list}--Gap);
+
+  // plain
+  --#{$list}--m-plain--PaddingInlineStart: 0;
+
+  // inline
+  --#{$list}--m-inline--PaddingInlineStart: 0;
+  --#{$list}--m-inline--ColumnGap: var(--pf-t--global--spacer--lg);
+  --#{$list}--m-inline--RowGap: var(--pf-t--global--spacer--xs);
+
+  // bordered
+  --#{$list}--m-bordered--li--PaddingBlockStart: var(--#{$list}--Gap);
+  --#{$list}--m-bordered--li--BorderBlockStartColor: var(--pf-t--global--border--color--default);
+  --#{$list}--m-bordered--li--BorderBlockStartWidth: var(--pf-t--global--border--width--divider--default);
+
+  // icon
+  --#{$list}__item-icon--MinWidth: var(--pf-t--global--icon--size--sm);
+  --#{$list}__item-icon--MarginBlockStart: var(--pf-t--global--spacer--xs);
+  --#{$list}__item-icon--MarginInlineEnd: var(--pf-t--global--spacer--sm);
+  --#{$list}__item-icon--Color: var(--pf-t--global--icon--color--regular);
+  --#{$list}__item-icon--FontSize: var(--pf-t--global--icon--size--sm);
+  --#{$list}--m-icon-lg__item-icon--MinWidth: var(--pf-t--global--icon--size--lg);
+  --#{$list}--m-icon-lg__item-icon--MarginInlineEnd: var(--pf-t--global--spacer--md);
+  --#{$list}--m-icon-lg__item-icon--FontSize: var(--pf-t--global--icon--size--lg);
+}
+
+.#{$list} {
+  display: flex;
+  flex-direction: column;
+  gap: var(--#{$list}--Gap);
+  padding-inline-start: var(--#{$list}--PaddingInlineStart);
+
+  & & {
+    padding-block-start: var(--#{$list}--nested--PaddingBlockStart);
+  }
+
+  @at-root ul#{&} {
+    list-style: var(--#{$list}--ul--ListStyle);
+  }
+
+  &.pf-m-icon-lg {
+    --#{$list}__item-icon--MinWidth: var(--#{$list}--m-icon-lg__item-icon--MinWidth);
+    --#{$list}__item-icon--MarginBlockStart: 0;
+    --#{$list}__item-icon--MarginInlineEnd: var(--#{$list}--m-icon-lg__item-icon--MarginInlineEnd);
+    --#{$list}__item-icon--FontSize: var(--#{$list}--m-icon-lg__item-icon--FontSize);
+  }
+
+  &.pf-m-plain {
+    --#{$list}--PaddingInlineStart: var(--#{$list}--m-plain--PaddingInlineStart);
+
+    list-style: none;
+  }
+
+  &.pf-m-inline {
+    --#{$list}--PaddingInlineStart: var(--#{$list}--m-inline--PaddingInlineStart);
+    --#{$list}--Gap: var(--#{$list}--m-inline--RowGap) var(--#{$list}--m-inline--ColumnGap);
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+
+  &.pf-m-bordered {
+    > * + * {
+      padding-block-start: var(--#{$list}--m-bordered--li--PaddingBlockStart);
+      border-block-start: var(--#{$list}--m-bordered--li--BorderBlockStartWidth) solid var(--#{$list}--m-bordered--li--BorderBlockStartColor);
+    }
+  }
+}
+
+.#{$list}__item {
+  display: flex;
+}
+
+.#{$list}__item-icon {
+  flex-shrink: 0;
+  min-width: var(--#{$list}__item-icon--MinWidth);
+  margin-block-start: var(--#{$list}__item-icon--MarginBlockStart);
+  margin-inline-end: var(--#{$list}__item-icon--MarginInlineEnd);
+  font-size: var(--#{$list}__item-icon--FontSize);
+  line-height: 1;
+  color: var(--#{$list}__item-icon--Color);
+}

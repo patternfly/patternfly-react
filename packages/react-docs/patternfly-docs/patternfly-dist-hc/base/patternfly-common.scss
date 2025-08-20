@@ -1,0 +1,114 @@
+@use '../sass-utilities' as *;
+@use '../assets/fontawesome/variables' as *;
+
+.#{$pf-prefix}screen-reader {
+  @include pf-v6-u-screen-reader; // for use with assistive technologies
+
+  &.pf-m-full-size {
+    width: 100%;
+    height: 100%;
+  }
+
+  &.pf-m-absolute {
+    position: absolute;
+  }
+}
+
+.#{$pf-prefix}m-tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+// Variable font opt-in
+.#{$pf-prefix}m-legacy-font {
+  --pf-t--global--font--family--body: var(--pf-t--global--font--family--body--legacy);
+  --pf-t--global--font--family--heading: var(--pf-t--global--font--family--heading--legacy);
+  --pf-t--global--font--family--mono: var(--pf-t--global--font--family--mono--legacy);
+  --pf-t--global--font--weight--body: var(--pf-t--global--font--weight--body--legacy);
+  --pf-t--global--font--weight--body--bold: var(--pf-t--global--font--weight--body--bold--legacy);
+  --pf-t--global--font--weight--heading: var(--pf-t--global--font--weight--heading--legacy);
+  --pf-t--global--font--weight--heading--bold: var(--pf-t--global--font--weight--heading--bold--legacy);
+}
+
+// RTL helpers
+
+// Sets a block to RTL
+.#{$pf-prefix}m-dir-rtl {
+  @include pf-v6-set-inverse;
+
+  direction: rtl;
+}
+
+// Sets a block to LTR
+.#{$pf-prefix}m-dir-ltr {
+  @include pf-v6-set-inverse(false);
+
+  direction: ltr;
+}
+
+// Mirrors/flips something horizontally/inline in RTL
+.#{$pf-prefix}m-mirror-inline-rtl {
+  @include pf-v6-mirror-inline-on-rtl;
+}
+
+// Turn off perceptible motion (for testing purposes) by setting all motion tokens to 1ms
+.#{$pf-prefix}m-no-motion {
+  // stylelint-disable declaration-no-important
+  --pf-t--global--delay--400: 1ms !important;
+  --pf-t--global--delay--300: 1ms !important;
+  --pf-t--global--delay--200: 1ms !important;
+  --pf-t--global--delay--100: 1ms !important;
+  --pf-t--global--duration--600: 1ms !important;
+  --pf-t--global--duration--500: 1ms !important;
+  --pf-t--global--duration--400: 1ms !important;
+  --pf-t--global--duration--300: 1ms !important;
+  --pf-t--global--duration--200: 1ms !important;
+  --pf-t--global--duration--100: 1ms !important;
+  --pf-t--global--duration--50: 1ms !important;
+
+  // stylelink-enable declaration-no-important
+}
+
+:root {
+  --#{$pf-global}--danger-jiggle--AnimationDuration--Transform: var(--pf-t--global--motion--duration--fade--default);
+  --#{$pf-global}--danger-jiggle--AnimationTimingFunction--Transform: var(--pf-t--global--motion--timing-function--default);
+}
+
+// Register the property type for the custom property to be animatable
+@property  --#{$pf-global}--danger-jiggle--TranslateX {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0;
+}
+
+// Animate danger jiggle
+@keyframes #{$pf-global}-danger-jiggle-motion {
+  33% {
+    --#{$pf-global}--danger-jiggle--TranslateX: -2px;
+  }
+  
+  66% {
+    --#{$pf-global}--danger-jiggle--TranslateX: 3px;
+  }
+}
+
+// Animate fade-in
+@keyframes #{$pf-global}-fade-in {
+  from {
+    opacity: 0;
+  }
+  
+  to {
+    opacity: 1;
+  }
+}
+
+// Animate fade-out
+@keyframes #{$pf-global}-fade-out {
+  from {
+    opacity: 1;
+  }
+  
+  to {
+    opacity: 0;
+  }
+}

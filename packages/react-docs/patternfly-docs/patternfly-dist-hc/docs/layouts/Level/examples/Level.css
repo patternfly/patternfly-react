@@ -1,0 +1,12 @@
+.ws-core-l-level .ws-preview-html {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 160px;
+}
+.ws-core-l-level :is(.pf-v6-l-level, .pf-v6-l-level__item, .pf-v6-l-level > *) {
+  padding: var(--pf-t--global--spacer--sm);
+  border: var(--pf-t--global--border--width--box--default) dashed var(--pf-t--global--border--color--default);
+}
+.ws-core-l-level .pf-v6-l-level {
+  width: 100%;
+}

@@ -1,0 +1,788 @@
+@use 'sass:math';
+@use '../../sass-utilities' as *;
+
+$pf-v6-c-drawer--breakpoint-map: build-breakpoint-map("base", "lg", "xl", "2xl");
+$pf-v6-c-drawer--breakpoint-map--width: build-breakpoint-map("base", "lg", "xl", "2xl");
+$pf-v6-c-drawer__panel--list--width: (25, 33, 50, 66, 75, 100);
+
+@include pf-root($drawer) {
+  // Section
+  --#{$drawer}__section--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --#{$drawer}__section--m-secondary--BackgroundColor: var(--pf-t--global--background--color--secondary--default);
+
+  // Content
+  --#{$drawer}__content--FlexBasis: 100%;
+  --#{$drawer}__content--BackgroundColor: transparent;
+  --#{$drawer}__content--m-primary--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --#{$drawer}__content--m-secondary--BackgroundColor: var(--pf-t--global--background--color--secondary--default);
+  --#{$drawer}__content--ZIndex: var(--pf-t--global--z-index--xs);
+
+  // Panel
+  --#{$drawer}__panel--MinWidth: 50%; // change to __panel--md--MinWidth at breaking change
+  --#{$drawer}__panel--MaxHeight: auto;
+  --#{$drawer}__panel--ZIndex: var(--pf-t--global--z-index--sm);
+  --#{$drawer}__panel--BorderColor: var(--#{$drawer}__panel--after--BackgroundColor); // TODO use token directly in breaking change
+  --#{$drawer}__panel--BorderBlockStartWidth: 0;
+  --#{$drawer}__panel--BorderBlockEndWidth: 0;
+  --#{$drawer}__panel--BorderInlineStartWidth: var(--#{$drawer}__panel--after--Width); // default is left side
+  --#{$drawer}__panel--BorderInlineEndWidth: 0;
+  --#{$drawer}__panel--BackgroundColor: var(--pf-t--global--background--color--floating--default);
+  --#{$drawer}__panel--m-inline--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --#{$drawer}__panel--m-secondary--BackgroundColor: var(--pf-t--global--background--color--secondary--default);
+  --#{$drawer}__panel--RowGap: var(--pf-t--global--spacer--sm);
+  --#{$drawer}__panel--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --#{$drawer}__panel--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$drawer}__panel--TransitionDelay: 0s, var(--#{$drawer}__panel--TransitionDelay--focus), var(--#{$drawer}__panel--TransitionDelay--focus);
+  --#{$drawer}__panel--TransitionDelay--focus: var(--#{$drawer}__panel--TransitionDuration--fade);
+  --#{$drawer}__panel--TransitionDelay--expand--focus: 0s; // on expand, transition visible immediately
+  --#{$drawer}__panel--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--decelerate);
+  --#{$drawer}__panel--TransitionDuration--fade: var(--pf-t--global--motion--duration--fade--default);
+  --#{$drawer}__panel--TransitionDuration: var(--#{$drawer}__panel--TransitionDuration--fade), 0s, 0s;
+  --#{$drawer}__panel--TransitionProperty: opacity, visibility, transform; // by default, fade the drawer
+  --#{$drawer}__panel--Opacity: 0;
+  --#{$drawer}--m-expanded__panel--Opacity: 1;
+  --#{$drawer}__panel--FlexBasis: 100%;
+  --#{$drawer}__panel--md--FlexBasis--min: #{pf-size-prem(24px)};
+  --#{$drawer}__panel--md--FlexBasis: 50%;
+  --#{$drawer}__panel--md--FlexBasis--max: 100%;
+  --#{$drawer}__panel--xl--MinWidth: #{pf-size-prem(450px)};
+  --#{$drawer}__panel--xl--FlexBasis: #{pf-size-prem(450px)};
+  --#{$drawer}--m-panel-bottom__panel--md--MinHeight: 50%;
+  --#{$drawer}--m-panel-bottom__panel--xl--MinHeight: #{pf-size-prem(300px)};
+  --#{$drawer}--m-panel-bottom__panel--xl--FlexBasis: #{pf-size-prem(300px)};
+  --#{$drawer}__panel--m-resizable--FlexDirection: row;
+  --#{$drawer}__panel--m-resizable--md--FlexBasis--min: var(--#{$drawer}__splitter--m-vertical--Width);
+  --#{$drawer}__panel--m-resizable--MinWidth: #{pf-size-prem(24px)};
+  --#{$drawer}--m-panel-bottom__panel--m-resizable--FlexDirection: column;
+  --#{$drawer}--m-panel-bottom__panel--m-resizable--md--FlexBasis--min: #{pf-size-prem(24px)};
+  --#{$drawer}--m-panel-bottom__panel--m-resizable--MinHeight: #{pf-size-prem(24px)};
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    --#{$drawer}__panel--TransitionDuration--slide: var(--pf-t--global--motion--duration--slide-in--short);
+    --#{$drawer}__panel--TransitionDelay--focus: var(--#{$drawer}__panel--TransitionDuration--slide);
+    --#{$drawer}__panel--TransitionDelay: 0s, 0s, 0s, 0s, var(--#{$drawer}__panel--TransitionDelay--focus);
+    --#{$drawer}__panel--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--decelerate);
+    --#{$drawer}__panel--TransitionDuration: 0s, var(--#{$drawer}__panel--TransitionDuration--slide), 0s, 0s, 0s;
+    --#{$drawer}__panel--TransitionProperty: margin, transform, box-shadow, flex-basis, visibility; // with no preference, slide the panel
+    --#{$drawer}__panel--Opacity: 1;
+  }
+
+  // Drawer panel head
+  --#{$drawer}__head--ColumnGap: var(--pf-t--global--spacer--gap--text-to-element--default);
+  --#{$drawer}__head--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --#{$drawer}__head--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$drawer}__head--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --#{$drawer}__head--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+
+  // Drawer panel description
+  --#{$drawer}__description--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --#{$drawer}__description--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+
+  // Drawer body padding
+  --#{$drawer}__body--PaddingBlockStart--base: var(--pf-t--global--spacer--md);
+  --#{$drawer}__body--PaddingInlineEnd--base: var(--pf-t--global--spacer--md);
+  --#{$drawer}__body--PaddingBlockEnd--base: var(--pf-t--global--spacer--md);
+  --#{$drawer}__body--PaddingInlineStart--base: var(--pf-t--global--spacer--md);
+
+  // Drawer content body
+  --#{$drawer}__content__body--PaddingBlockStart: 0;
+  --#{$drawer}__content__body--PaddingInlineEnd: 0;
+  --#{$drawer}__content__body--PaddingBlockEnd: 0;
+  --#{$drawer}__content__body--PaddingInlineStart: 0;
+
+  // Drawer panel body
+  --#{$drawer}__panel__body--PaddingBlockStart: var(--#{$drawer}__body--PaddingBlockStart--base);
+  --#{$drawer}__panel__body--PaddingInlineEnd: var(--#{$drawer}__body--PaddingInlineEnd--base);
+  --#{$drawer}__panel__body--PaddingBlockEnd: var(--#{$drawer}__body--PaddingBlockEnd--base);
+  --#{$drawer}__panel__body--PaddingInlineStart: var(--#{$drawer}__body--PaddingInlineStart--base);
+
+  // Modified body padding
+  --#{$drawer}__body--m-padding--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --#{$drawer}__body--m-padding--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --#{$drawer}__body--m-padding--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --#{$drawer}__body--m-padding--PaddingInlineStart: var(--pf-t--global--spacer--md);
+
+  // Splitter
+  --#{$drawer}__splitter--Height: #{pf-size-prem(9px)};
+  --#{$drawer}__splitter--Width: 100%;
+  --#{$drawer}__splitter--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --#{$drawer}__splitter--Cursor: row-resize;
+  --#{$drawer}__splitter--m-vertical--Height: 100%;
+  --#{$drawer}__splitter--m-vertical--Width: #{pf-size-prem(9px)};
+  --#{$drawer}__splitter--m-vertical--Cursor: col-resize;
+  --#{$drawer}--m-inline__splitter--focus--OutlineOffset: #{pf-size-prem(-1px)};
+
+  // Splitter border
+  --#{$drawer}__splitter--after--BorderColor: var(--pf-t--global--border--color--default);
+  --#{$drawer}__splitter--after--border-width--base: var(--pf-t--global--border--width--divider--default);
+  --#{$drawer}__splitter--after--BorderBlockStartWidth: 0;
+  --#{$drawer}__splitter--after--BorderInlineEndWidth: var(--#{$drawer}__splitter--after--border-width--base);
+  --#{$drawer}__splitter--after--BorderBlockEndWidth: 0;
+  --#{$drawer}__splitter--after--BorderInlineStartWidth: var(--#{$drawer}__splitter--after--border-width--base);
+  --#{$drawer}--m-panel-bottom__splitter--after--BorderBlockStartWidth: var(--#{$drawer}__splitter--after--border-width--base);
+  --#{$drawer}--m-panel-bottom__splitter--after--BorderBlockEndWidth: var(--#{$drawer}__splitter--after--border-width--base);
+  --#{$drawer}--m-inline__splitter--m-vertical--Width: #{pf-size-prem(10px)};
+  --#{$drawer}--m-inline__splitter-handle--InsetInlineStart: 50%;
+  --#{$drawer}--m-inline--m-panel-bottom__splitter--Height: #{pf-size-prem(10px)};
+  --#{$drawer}--m-inline--m-panel-bottom__splitter-handle--InsetBlockStart: 50%;
+  --#{$drawer}--m-inline--m-panel-bottom__splitter--after--BorderBlockStartWidth: var(--#{$drawer}__splitter--after--border-width--base);
+
+  // Splitter handle
+  --#{$drawer}__splitter-handle--InsetBlockStart: 50%;
+  --#{$drawer}__splitter-handle--InsetInlineStart: calc(50% - var(--#{$drawer}__splitter--after--border-width--base));
+  --#{$drawer}--m-panel-left__splitter-handle--InsetInlineStart: 50%;
+  --#{$drawer}--m-panel-bottom__splitter-handle--InsetBlockStart: calc(50% - var(--#{$drawer}__splitter--after--border-width--base));
+
+  // Splitter handle line
+  --#{$drawer}__splitter-handle--after--BorderColor: var(--pf-t--global--border--color--default);
+  --#{$drawer}__splitter-handle--after--BorderBlockStartWidth: var(--pf-t--global--border--width--divider--default);
+  --#{$drawer}__splitter-handle--after--BorderInlineEndWidth: 0;
+  --#{$drawer}__splitter-handle--after--BorderBlockEndWidth: var(--pf-t--global--border--width--divider--default);
+  --#{$drawer}__splitter-handle--after--BorderInlineStartWidth: 0;
+  --#{$drawer}__splitter--hover__splitter-handle--after--BorderColor: var(--pf-t--global--border--color--hover);
+  --#{$drawer}__splitter--m-vertical__splitter-handle--after--BorderBlockStartWidth: 0;
+  --#{$drawer}__splitter--m-vertical__splitter-handle--after--BorderInlineEndWidth: var(--pf-t--global--border--width--divider--default);
+  --#{$drawer}__splitter--m-vertical__splitter-handle--after--BorderBlockEndWidth: 0;
+  --#{$drawer}__splitter--m-vertical__splitter-handle--after--BorderInlineStartWidth: var(--pf-t--global--border--width--divider--default);
+  --#{$drawer}__splitter-handle--after--Width: #{pf-size-prem(12px)};
+  --#{$drawer}__splitter-handle--after--Height: #{pf-size-prem(4px)};
+  --#{$drawer}__splitter--m-vertical__splitter-handle--after--Width: #{pf-size-prem(4px)};
+  --#{$drawer}__splitter--m-vertical__splitter-handle--after--Height: #{pf-size-prem(12px)};
+
+  @media screen and (min-width: $pf-v6-global--breakpoint--xl) {
+    --#{$drawer}__panel--MinWidth: var(--#{$drawer}__panel--xl--MinWidth);
+
+    &.pf-m-panel-bottom {
+      --#{$drawer}__panel--MinWidth: auto;
+      --#{$drawer}__panel--MinHeight: var(--#{$drawer}--m-panel-bottom__panel--xl--MinHeight);
+    }
+  }
+
+  // Actions
+  --#{$drawer}__actions--MarginBlockStart: calc(var(--pf-t--global--spacer--control--vertical--compact) * -1.5);
+  --#{$drawer}__actions--MarginInlineEnd: calc(var(--pf-t--global--spacer--control--horizontal--compact) * -1.5);
+
+  // Box shadow
+  --#{$drawer}__panel--BoxShadow: none;
+  --#{$drawer}--m-expanded--m-panel-bottom__panel--BoxShadow: var(--pf-t--global--box-shadow--md--top);
+
+  // Divider 
+  // TODO remove these variables in a breaking change in favor of setting the border variables directly
+  --#{$drawer}__panel--after--Width: var(--pf-t--global--high-contrast--border--width--divider--default);
+  --#{$drawer}--m-inline__panel--after--Width: var(--pf-t--global--border--width--divider--default); // TODO this turns on border always for inline
+  --#{$drawer}--m-panel-bottom__panel--after--Height: var(--pf-t--global--high-contrast--border--width--divider--default);
+  --#{$drawer}__panel--after--BackgroundColor: var(--pf-t--global--border--color--high-contrast);
+  --#{$drawer}--m-inline--m-expanded__panel--after--BackgroundColor: var(--pf-t--global--border--color--default);
+  --#{$drawer}--m-inline__panel--PaddingInlineStart: 0; // no padding needed now
+  --#{$drawer}--m-panel-left--m-inline__panel--PaddingInlineEnd: 0;
+  --#{$drawer}--m-panel-bottom--m-inline__panel--PaddingBlockStart: 0;
+}
+
+.#{$drawer} {
+  @include pf-v6-bidirectional-style(
+    $prop: --#{$drawer}--m-expanded__panel--BoxShadow,
+    $ltr-val: var(--pf-t--global--box-shadow--md--left),
+    $rtl-val: var(--pf-t--global--box-shadow--md--right)
+  );
+  @include pf-v6-bidirectional-style(
+    $prop: --#{$drawer}--m-expanded--m-panel-left__panel--BoxShadow,
+    $ltr-val: var(--pf-t--global--box-shadow--md--right),
+    $rtl-val: var(--pf-t--global--box-shadow--md--left)
+  );
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-x: hidden;
+
+  &.pf-m-inline,
+  &.pf-m-static {
+    --#{$drawer}__panel--BackgroundColor: var(--#{$drawer}__panel--m-inline--BackgroundColor);
+    --#{$drawer}__panel--BorderInlineStartWidth: var(--#{$drawer}--m-inline__panel--after--Width);
+    
+
+    > .#{$drawer}__main > .#{$drawer}__panel:not(.pf-m-no-border, .pf-m-resizable) {
+      padding-inline-start: var(--#{$drawer}--m-inline__panel--PaddingInlineStart);
+    }
+  }
+
+  &.pf-m-panel-left > .#{$drawer}__main {
+    > .#{$drawer}__panel {
+      order: 0;
+      margin-inline-end: calc(var(--#{$drawer}__panel--FlexBasis) * -1);
+
+      @include pf-v6-bidirectional-style(
+        $prop: transform,
+        $ltr-val: translateX(-100%),
+        $rtl-val: translateX(#{pf-v6-calc-inverse(-100%)}),
+      );
+    }
+
+    > .#{$drawer}__content {
+      order: 1;
+    }
+  }
+
+  &.pf-m-panel-bottom > .#{$drawer}__main {
+    flex-direction: column;
+  }
+
+  // Expanded
+  // stylelint-disable selector-max-class
+  &.pf-m-expanded {
+    --#{$drawer}__panel--TransitionDelay--focus: var(--#{$drawer}__panel--TransitionDelay--expand--focus);
+
+    > .#{$drawer}__main > .#{$drawer}__panel {
+      @include pf-v6-bidirectional-style(
+        $prop: transform,
+        $ltr-val: translateX(-100%),
+        $rtl-val: translateX(#{pf-v6-calc-inverse(-100%)}),
+      );
+
+      --#{$drawer}__panel--Opacity: var(--#{$drawer}--m-expanded__panel--Opacity);
+
+      visibility: visible;
+    }
+
+    &.pf-m-panel-left > .#{$drawer}__main > .#{$drawer}__panel {
+      transform: translateX(0);
+    }
+
+    &.pf-m-panel-bottom > .#{$drawer}__main > .#{$drawer}__panel {
+      transform: translate(0, -100%);
+    }
+  }
+  // stylelint-enable
+
+  &.pf-m-resizing {
+    --#{$drawer}__panel--TransitionProperty: none;
+
+    pointer-events: none;
+
+    .#{$drawer}__splitter {
+      pointer-events: auto;
+    }
+  }
+}
+
+// Header area
+.#{$drawer}__section {
+  flex-grow: 0;
+  background-color: var(--#{$drawer}__section--BackgroundColor);
+
+  &.pf-m-secondary {
+    --#{$drawer}__section--BackgroundColor: var(--#{$drawer}__section--m-secondary--BackgroundColor);
+  }
+
+  &.pf-m-no-background {
+    --#{$drawer}__section--BackgroundColor: transparent;
+  }
+}
+
+// Main area
+.#{$drawer}__main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+// Content / panel
+.#{$drawer}__content,
+.#{$drawer}__panel,
+.#{$drawer}__panel-main {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow: auto;
+}
+
+// Content
+.#{$drawer}__content {
+  z-index: var(--#{$drawer}__content--ZIndex);
+  flex-basis: var(--#{$drawer}__content--FlexBasis);
+  order: 0;
+  background-color: var(--#{$drawer}__content--BackgroundColor);
+
+  &.pf-m-primary {
+    --#{$drawer}__content--BackgroundColor: var(--#{$drawer}__content--m-primary--BackgroundColor);
+  }
+
+  &.pf-m-secondary {
+    --#{$drawer}__content--BackgroundColor: var(--#{$drawer}__content--m-secondary--BackgroundColor);
+  }
+
+  > .#{$drawer}__body {
+    padding-block-start: var(--#{$drawer}__content__body--PaddingBlockStart);
+    padding-block-end: var(--#{$drawer}__content__body--PaddingBlockEnd);
+    padding-inline-start: var(--#{$drawer}__content__body--PaddingInlineStart);
+    padding-inline-end: var(--#{$drawer}__content__body--PaddingInlineEnd);
+  }
+}
+
+// Panel
+.#{$drawer}__panel {
+  position: relative;
+  z-index: var(--#{$drawer}__panel--ZIndex);
+  flex-basis: var(--#{$drawer}__panel--FlexBasis);
+  row-gap: var(--#{$drawer}__panel--RowGap);
+  order: 1;
+  max-height: var(--#{$drawer}__panel--MaxHeight);
+  overflow: auto;
+  visibility: hidden; // hidden by default
+  background-color: var(--#{$drawer}__panel--BackgroundColor);
+  border: solid var(--#{$drawer}__panel--BorderColor);
+  border-block-start-width: var(--#{$drawer}__panel--BorderBlockStartWidth);
+  border-block-end-width: var(--#{$drawer}__panel--BorderBlockEndWidth);
+  border-inline-start-width: var(--#{$drawer}__panel--BorderInlineStartWidth);
+  border-inline-end-width: var(--#{$drawer}__panel--BorderInlineEndWidth);
+  box-shadow: var(--#{$drawer}__panel--BoxShadow);
+  opacity: var(--#{$drawer}__panel--Opacity);
+  transition-delay: var(--#{$drawer}__panel--TransitionDelay);
+  transition-timing-function: var(--#{$drawer}__panel--TransitionTimingFunction);
+  transition-duration: var(--#{$drawer}__panel--TransitionDuration);
+  transition-property: var(--#{$drawer}__panel--TransitionProperty);
+  -webkit-overflow-scrolling: touch;
+
+  &:not(.pf-m-resizable) {
+    padding-block-start: var(--#{$drawer}__panel--PaddingBlockStart);
+    padding-block-end: var(--#{$drawer}__panel--PaddingBlockEnd);
+  }
+
+  &.pf-m-secondary {
+    --#{$drawer}__panel--BackgroundColor: var(--#{$drawer}__panel--m-secondary--BackgroundColor);
+  }
+
+  &.pf-m-no-background {
+    --#{$drawer}__panel--BackgroundColor: transparent;
+  }
+
+  @media screen and (min-width: $pf-v6-global--breakpoint--md) {
+    --#{$drawer}__panel--FlexBasis:
+      max(
+        var(--#{$drawer}__panel--md--FlexBasis--min),
+        min(var(--#{$drawer}__panel--md--FlexBasis), var(--#{$drawer}__panel--md--FlexBasis--max))
+      );
+  }
+
+  @media screen and (min-width: $pf-v6-global--breakpoint--xl) {
+    --#{$drawer}__panel--md--FlexBasis: var(--#{$drawer}__panel--xl--FlexBasis);
+
+    .#{$drawer}.pf-m-panel-bottom & {
+      --#{$drawer}__panel--md--FlexBasis: var(--#{$drawer}--m-panel-bottom__panel--xl--FlexBasis);
+    }
+  }
+}
+
+.#{$drawer}__panel,
+.#{$drawer}__panel-main {
+  > .#{$drawer}__body {
+    padding-block-start: var(--#{$drawer}__panel__body--PaddingBlockStart);
+    padding-block-end: var(--#{$drawer}__panel__body--PaddingBlockEnd);
+    padding-inline-start: var(--#{$drawer}__panel__body--PaddingInlineStart);
+    padding-inline-end: var(--#{$drawer}__panel__body--PaddingInlineEnd);
+  }
+}
+
+.#{$drawer}__panel-main {
+  flex-grow: 1;
+  padding-block-start: var(--#{$drawer}__panel--PaddingBlockStart);
+  padding-block-end: var(--#{$drawer}__panel--PaddingBlockEnd);
+}
+
+// Panel head
+.#{$drawer}__head {
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-columns: max-content;
+  column-gap: var(--#{$drawer}__head--ColumnGap);
+  padding-block-start: var(--#{$drawer}__head--PaddingBlockStart);
+  padding-block-end: var(--#{$drawer}__head--PaddingBlockEnd);
+  padding-inline-start: var(--#{$drawer}__head--PaddingInlineStart);
+  padding-inline-end: var(--#{$drawer}__head--PaddingInlineEnd);
+
+  > * {
+    grid-column: 1;
+  }
+}
+
+// Panel actions
+.#{$drawer}__actions {
+  display: flex;
+  grid-row: 1;
+  grid-column: 2;
+  align-self: baseline;
+  margin-block-start: var(--#{$drawer}__actions--MarginBlockStart);
+  margin-inline-end: var(--#{$drawer}__actions--MarginInlineEnd);
+}
+
+// Drawer panel description
+.#{$drawer}__description {
+  padding-inline-start: var(--#{$drawer}__description--PaddingInlineStart);
+  padding-inline-end: var(--#{$drawer}__description--PaddingInlineEnd);
+}
+
+// Modified content children
+.#{$drawer}__body {
+  // No padding
+  &.pf-m-no-padding {
+    padding: 0;
+  }
+
+  // Padding
+  &.pf-m-padding {
+    padding-block-start: var(--#{$drawer}__body--m-padding--PaddingBlockStart);
+    padding-block-end: var(--#{$drawer}__body--m-padding--PaddingBlockEnd);
+    padding-inline-start: var(--#{$drawer}__body--m-padding--PaddingInlineStart);
+    padding-inline-end: var(--#{$drawer}__body--m-padding--PaddingInlineEnd);
+  }
+
+  &:not(.pf-m-no-padding) + * {
+    padding-block-start: 0;
+  }
+
+  &:last-child {
+    flex: 1 1;
+  }
+}
+
+.#{$drawer}__splitter {
+  position: relative;
+  display: none;
+  width: var(--#{$drawer}__splitter--Width);
+  height: var(--#{$drawer}__splitter--Height);
+  cursor: var(--#{$drawer}__splitter--Cursor);
+  background-color: var(--#{$drawer}__splitter--BackgroundColor);
+
+  &.pf-m-vertical {
+    --#{$drawer}__splitter--Height: var(--#{$drawer}__splitter--m-vertical--Height);
+    --#{$drawer}__splitter--Width: var(--#{$drawer}__splitter--m-vertical--Width);
+    --#{$drawer}__splitter--Cursor: var(--#{$drawer}__splitter--m-vertical--Cursor);
+    --#{$drawer}__splitter-handle--after--Width: var(--#{$drawer}__splitter--m-vertical__splitter-handle--after--Width);
+    --#{$drawer}__splitter-handle--after--Height: var(--#{$drawer}__splitter--m-vertical__splitter-handle--after--Height);
+    --#{$drawer}__splitter-handle--after--BorderBlockStartWidth: var(--#{$drawer}__splitter--m-vertical__splitter-handle--after--BorderBlockStartWidth);
+    --#{$drawer}__splitter-handle--after--BorderInlineEndWidth: var(--#{$drawer}__splitter--m-vertical__splitter-handle--after--BorderInlineEndWidth);
+    --#{$drawer}__splitter-handle--after--BorderBlockEndWidth: var(--#{$drawer}__splitter--m-vertical__splitter-handle--after--BorderBlockEndWidth);
+    --#{$drawer}__splitter-handle--after--BorderInlineStartWidth: var(--#{$drawer}__splitter--m-vertical__splitter-handle--after--BorderInlineStartWidth);
+  }
+
+  &:hover,
+  &:focus {
+    --#{$drawer}__splitter-handle--after--BorderColor: var(--#{$drawer}__splitter--hover__splitter-handle--after--BorderColor);
+  }
+
+  &::after {
+    position: absolute;
+    inset-block-start: 0;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    content: "";
+    border: solid var(--#{$drawer}__splitter--after--BorderColor);
+    border-block-start-width: var(--#{$drawer}__splitter--after--BorderBlockStartWidth);
+    border-block-end-width: var(--#{$drawer}__splitter--after--BorderBlockEndWidth);
+    border-inline-start-width: var(--#{$drawer}__splitter--after--BorderInlineStartWidth);
+    border-inline-end-width: var(--#{$drawer}__splitter--after--BorderInlineEndWidth);
+  }
+}
+
+.#{$drawer}__splitter-handle {
+  position: absolute;
+  inset-block-start: var(--#{$drawer}__splitter-handle--InsetBlockStart);
+  inset-inline-start: var(--#{$drawer}__splitter-handle--InsetInlineStart);
+
+  @include pf-v6-bidirectional-style(
+    $prop: transform,
+    $ltr-val: translate(-50%, -50%),
+    $rtl-val: translate(#{pf-v6-calc-inverse(-50%)}, -50%),
+  );
+
+
+  &::after {
+    display: block;
+    width: var(--#{$drawer}__splitter-handle--after--Width);
+    height: var(--#{$drawer}__splitter-handle--after--Height);
+    content: "";
+    border-color: var(--#{$drawer}__splitter-handle--after--BorderColor);
+    border-style: solid;
+    border-block-start-width: var(--#{$drawer}__splitter-handle--after--BorderBlockStartWidth);
+    border-block-end-width: var(--#{$drawer}__splitter-handle--after--BorderBlockEndWidth);
+    border-inline-start-width: var(--#{$drawer}__splitter-handle--after--BorderInlineStartWidth);
+    border-inline-end-width: var(--#{$drawer}__splitter-handle--after--BorderInlineEndWidth);
+  }
+}
+
+// Layout modifications happen after md breakpoint
+@media screen and (min-width: $pf-v6-global--breakpoint--md) {
+  // Default
+  .#{$drawer} {
+    min-width: var(--#{$drawer}__panel--MinWidth);
+
+    > .#{$drawer}__main {
+      > .#{$drawer}__panel {
+        box-shadow: var(--#{$drawer}--m-expanded__panel--BoxShadow);
+      }
+    }
+
+    > .#{$drawer}__main > .#{$drawer}__panel.pf-m-resizable {
+      --#{$drawer}__panel--md--FlexBasis--min: var(--#{$drawer}__panel--m-resizable--md--FlexBasis--min);
+      --#{$drawer}__panel--BorderBlockStartWidth: 0;
+      --#{$drawer}__panel--BorderBlockEndWidth: 0;
+      --#{$drawer}__panel--BorderInlineStartWidth: 0;
+      --#{$drawer}__panel--BorderInlineEndWidth: 0;
+
+      flex-direction: var(--#{$drawer}__panel--m-resizable--FlexDirection);
+      min-width: var(--#{$drawer}__panel--m-resizable--MinWidth);
+
+      > .#{$drawer}__splitter {
+        flex-shrink: 0;
+      }
+
+      > .#{$drawer}__panel-main {
+        flex-shrink: 1;
+      }
+    }
+  }
+
+  // Panel left
+  .#{$drawer}.pf-m-panel-left {
+    --#{$drawer}--m-expanded__panel--BoxShadow: var(--#{$drawer}--m-expanded--m-panel-left__panel--BoxShadow);
+    --#{$drawer}__panel--BorderInlineEndWidth: var(--#{$drawer}__panel--after--Width);
+    --#{$drawer}__panel--BorderInlineStartWidth: 0; // turn off default left border
+
+    &.pf-m-inline,
+    &.pf-m-static {
+      > .#{$drawer}__main > .#{$drawer}__panel:not(.pf-m-no-border, .pf-m-resizable) {
+        --#{$drawer}__panel--BorderInlineEndWidth: var(--#{$drawer}--m-inline__panel--after--Width);
+
+        // TODO remove in breaking change
+        padding-inline-start: 0;
+        padding-inline-end: var(--#{$drawer}--m-panel-left--m-inline__panel--PaddingInlineEnd);
+
+      }
+    }
+
+    &.pf-m-expanded > .#{$drawer}__main > .#{$drawer}__panel {
+      transform: translateX(0);
+    }
+
+    > .#{$drawer}__main > .#{$drawer}__panel.pf-m-resizable {
+      > .#{$drawer}__splitter {
+        --#{$drawer}__splitter-handle--InsetInlineStart: var(--#{$drawer}--m-panel-left__splitter-handle--InsetInlineStart);
+
+        order: 1;
+      }
+    }
+  }
+
+  .#{$drawer}.pf-m-panel-bottom {
+    --#{$drawer}--m-expanded__panel--BoxShadow: var(--#{$drawer}--m-expanded--m-panel-bottom__panel--BoxShadow);
+    --#{$drawer}__panel--MaxHeight: 100%;
+    --#{$drawer}__panel--FlexBasis--min: var(--#{$drawer}--m-panel-bottom__panel--FlexBasis--min);
+    --#{$drawer}__panel--BorderInlineStartWidth: 0; // turn off default left border
+    --#{$drawer}__panel--BorderBlockStartWidth: var(--#{$drawer}--m-panel-bottom__panel--after--Height); // set the border width based on the old height variable
+
+    min-width: auto;
+    min-height: var(--#{$drawer}--m-panel-bottom__panel--md--MinHeight);
+
+    &.pf-m-inline,
+    &.pf-m-static {
+      > .#{$drawer}__main > .#{$drawer}__panel:not(.pf-m-no-border, .pf-m-resizable) {
+        --#{$drawer}__panel--BorderBlockStartWidth: var(--#{$drawer}--m-inline__panel--after--Width);
+
+        // TODO remove in breaking change
+        padding-block-start: var(--#{$drawer}--m-panel-bottom--m-inline__panel--PaddingBlockStart);
+        padding-inline-start: 0;
+      }
+    }
+
+    > .#{$drawer}__main > .#{$drawer}__panel.pf-m-resizable {
+      --#{$drawer}__panel--md--FlexBasis--min: var(--#{$drawer}--m-panel-bottom__panel--m-resizable--md--FlexBasis--min);
+      --#{$drawer}__panel--m-resizable--FlexDirection: var(--#{$drawer}--m-panel-bottom__panel--m-resizable--FlexDirection);
+      --#{$drawer}__panel--m-resizable--MinWidth: 0;
+
+      min-height: var(--#{$drawer}--m-panel-bottom__panel--m-resizable--MinHeight);
+
+      > .#{$drawer}__splitter {
+        --#{$drawer}__splitter-handle--InsetBlockStart: var(--#{$drawer}--m-panel-bottom__splitter-handle--InsetBlockStart);
+        --#{$drawer}__splitter--after--BorderBlockStartWidth: var(--#{$drawer}--m-panel-bottom__splitter--after--BorderBlockStartWidth);
+        --#{$drawer}__splitter--after--BorderInlineEndWidth: 0;
+        --#{$drawer}__splitter--after--BorderBlockEndWidth: var(--#{$drawer}--m-panel-bottom__splitter--after--BorderBlockEndWidth);
+        --#{$drawer}__splitter--after--BorderInlineStartWidth: 0;
+      }
+    }
+  }
+
+  .#{$drawer}.pf-m-inline {
+    > .#{$drawer}__main > .#{$drawer}__panel.pf-m-resizable {
+      > .#{$drawer}__splitter {
+        --#{$drawer}__splitter--m-vertical--Width: var(--#{$drawer}--m-inline__splitter--m-vertical--Width);
+        --#{$drawer}__splitter-handle--InsetInlineStart: var(--#{$drawer}--m-inline__splitter-handle--InsetInlineStart);
+
+        outline-offset: var(--#{$drawer}--m-inline__splitter--focus--OutlineOffset);
+      }
+    }
+
+    &.pf-m-panel-bottom {
+      > .#{$drawer}__main > .#{$drawer}__panel.pf-m-resizable {
+        > .#{$drawer}__splitter {
+          --#{$drawer}__splitter--Height: var(--#{$drawer}--m-inline--m-panel-bottom__splitter--Height);
+          --#{$drawer}__splitter-handle--InsetBlockStart: var(--#{$drawer}--m-inline--m-panel-bottom__splitter-handle--InsetBlockStart);
+          --#{$drawer}__splitter--after--BorderBlockStartWidth: var(--#{$drawer}--m-inline--m-panel-bottom__splitter--after--BorderBlockStartWidth);
+          --#{$drawer}__splitter--after--BorderInlineEndWidth: 0;
+          --#{$drawer}__splitter--after--BorderInlineStartWidth: 0;
+        }
+      }
+    }
+  }
+
+  // Border
+  .#{$drawer} > .#{$drawer}__main > .#{$drawer}__panel.pf-m-no-border,
+  .#{$drawer}.pf-m-panel-left > .#{$drawer}__main > .#{$drawer}__panel.pf-m-no-border {
+    --#{$drawer}--m-expanded__panel--BoxShadow: none;
+    --#{$drawer}__panel--BorderBlockStartWidth: 0;
+    --#{$drawer}__panel--BorderBlockEndWidth: 0;
+    --#{$drawer}__panel--BorderInlineStartWidth: 0;
+    --#{$drawer}__panel--BorderInlineEndWidth: 0;
+  }
+
+  .#{$drawer}__splitter {
+    display: block;
+  }
+}
+
+// Responsive width modifiers
+@each $breakpoint, $breakpoint-value in $pf-v6-c-drawer--breakpoint-map--width {
+  $breakpoint-name: if($breakpoint != "base", -on-#{$breakpoint}, "");
+
+  @if $breakpoint == "base" {
+    $breakpoint: "md";
+  }
+
+  @include pf-v6-apply-breakpoint($breakpoint) {
+    @each $width-value in $pf-v6-c-drawer__panel--list--width {
+      .#{$drawer}__panel.pf-m-width-#{$width-value}#{$breakpoint-name} {
+        --#{$drawer}__panel--md--FlexBasis: #{percentage(math.div($width-value, 100))};
+      }
+    }
+  }
+}
+
+// Responsive modifiers
+@each $breakpoint, $breakpoint-value in $pf-v6-c-drawer--breakpoint-map {
+  $breakpoint-name: if($breakpoint != "base", -on-#{$breakpoint}, "");
+
+  @if $breakpoint == "base" {
+    $breakpoint: "md";
+  }
+
+  @include pf-v6-apply-breakpoint($breakpoint) {
+    // Drawer and inline
+    .#{$drawer}.pf-m-inline#{$breakpoint-name},
+    .#{$drawer}.pf-m-static#{$breakpoint-name} {
+      > .#{$drawer}__main > .#{$drawer}__content {
+        flex-shrink: 1;
+      }
+
+      > .#{$drawer}__main > .#{$drawer}__panel {
+        --#{$drawer}--m-expanded__panel--BoxShadow: none;
+
+        &:not(.pf-m-no-border) {
+          --#{$drawer}__panel--BorderColor: var(--#{$drawer}--m-inline--m-expanded__panel--after--BackgroundColor); 
+        }
+      }
+    }
+
+    // Drawer inline
+    .#{$drawer}.pf-m-inline#{$breakpoint-name} {
+      > .#{$drawer}__main > .#{$drawer}__content {
+        overflow-x: auto;
+      }
+
+      > .#{$drawer}__main > .#{$drawer}__panel {
+        margin-inline-start: calc(var(--#{$drawer}__panel--FlexBasis) * -1);
+
+        @include pf-v6-bidirectional-style(
+          $prop: transform,
+          $ltr-val: translateX(100%),
+          $rtl-val: translateX(#{pf-v6-calc-inverse(100%)}),
+        );
+      }
+
+      // stylelint-disable selector-max-class, selector-max-combinators, selector-max-compound-selectors
+      // Inline, expanded
+      &.pf-m-expanded > .#{$drawer}__main > .#{$drawer}__panel {
+        margin-inline-start: 0;
+        transform: translateX(0);
+      }
+
+      > .#{$drawer}__main > .#{$drawer}__panel > .#{$drawer}__body > .#{$drawer}__head .#{$drawer}__close {
+        display: unset;
+      }
+
+      // Panel left
+      &.pf-m-panel-left {
+        > .#{$drawer}__main > .#{$drawer}__panel {
+          margin-inline-start: 0;
+          margin-inline-end: calc(var(--#{$drawer}__panel--FlexBasis) * -1);
+
+          @include pf-v6-bidirectional-style(
+            $prop: transform,
+            $ltr-val: translateX(-100%),
+            $rtl-val: translateX(#{pf-v6-calc-inverse(-100%)}),
+          );
+        }
+
+        // Inline, expanded, panel left
+        &.pf-m-expanded > .#{$drawer}__main > .#{$drawer}__panel {
+          margin-inline-end: 0;
+          transform: translateX(0);
+        }
+
+        > .#{$drawer}__main > .#{$drawer}__panel > .#{$drawer}__body > .#{$drawer}__head .#{$drawer}__close {
+          display: unset;
+        }
+      }
+
+      // Panel bottom
+      &.pf-m-panel-bottom {
+        > .#{$drawer}__main > .#{$drawer}__panel {
+          margin-block-end: calc(var(--#{$drawer}__panel--FlexBasis) * -1);
+          transform: translateY(100%);
+        }
+
+        // Inline, expanded, panel left
+        &.pf-m-expanded > .#{$drawer}__main > .#{$drawer}__panel {
+          margin-block-end: 0;
+          transform: translateY(0);
+        }
+      }
+      // stylelint-enable
+    }
+
+    // Static
+    .#{$drawer}.pf-m-static#{$breakpoint-name} {
+      > .#{$drawer}__main > .#{$drawer}__panel {
+        transform: translateX(0);
+      }
+
+      // stylelint-disable max-nesting-depth, selector-max-class, selector-max-combinators, selector-max-compound-selectors
+      &.pf-m-panel-left {
+        > .#{$drawer}__main > .#{$drawer}__panel {
+          margin-inline-end: 0;
+          transform: translateX(0);
+        }
+      }
+
+      &.pf-m-panel-bottom {
+        > .#{$drawer}__main > .#{$drawer}__panel {
+          transform: translateX(0);
+        }
+      }
+
+      > .#{$drawer}__main > .#{$drawer}__panel > .#{$drawer}__body > .#{$drawer}__head .#{$drawer}__close {
+        display: none;
+      }
+      // stylelint-enable
+    }
+  }
+}

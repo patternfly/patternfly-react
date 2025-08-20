@@ -1,0 +1,21 @@
+@use '../../sass-utilities' as *;
+
+$pf-v6-c-brand--breakpoint-map: build-breakpoint-map();
+
+@include pf-root($brand) {
+  --#{$brand}--Width: auto;
+  --#{$brand}--Height: auto;
+}
+
+.#{$brand} {
+  width: var(--#{$brand}--Width--base);
+  height: var(--#{$brand}--Height--base);
+
+  @include pf-v6-build-css-variable-stack("--#{$brand}--Width--base", "--#{$brand}--Width", $pf-v6-c-brand--breakpoint-map);
+  @include pf-v6-build-css-variable-stack("--#{$brand}--Height--base", "--#{$brand}--Height", $pf-v6-c-brand--breakpoint-map);
+
+  &.pf-m-picture {
+    display: inline-flex;
+    max-width: 100%; // move to _globals.scss at breaking change
+  }
+}

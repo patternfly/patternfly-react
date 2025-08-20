@@ -1,0 +1,207 @@
+.pf-v6-c-modal-box {
+  --pf-v6-c-modal-box--BackgroundColor: var(--pf-t--global--background--color--floating--default);
+  --pf-v6-c-modal-box--BorderColor: var(--pf-t--global--border--color--high-contrast);
+  --pf-v6-c-modal-box--BorderWidth: var(--pf-t--global--high-contrast--border--width--box--default);
+  --pf-v6-c-modal-box--BorderRadius: var(--pf-t--global--border--radius--large);
+  --pf-v6-c-modal-box--BoxShadow: var(--pf-t--global--box-shadow--lg);
+  --pf-v6-c-modal-box--ZIndex: var(--pf-t--global--z-index--xl);
+  --pf-v6-c-modal-box--Width: 100%;
+  --pf-v6-c-modal-box--MaxWidth: calc(100% - var(--pf-t--global--spacer--xl));
+  --pf-v6-c-modal-box--m-sm--sm--MaxWidth: 35rem;
+  --pf-v6-c-modal-box--m-md--Width: 52.5rem;
+  --pf-v6-c-modal-box--m-lg--lg--MaxWidth: 70rem;
+  --pf-v6-c-modal-box--MaxHeight: calc(100% - var(--pf-t--global--spacer--2xl));
+  --pf-v6-c-modal-box--m-align-top--spacer: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-modal-box--m-align-top--xl--spacer: var(--pf-t--global--spacer--xl);
+  --pf-v6-c-modal-box--m-align-top--InsetBlockStart: var(--pf-v6-c-modal-box--m-align-top--spacer);
+  --pf-v6-c-modal-box--m-align-top--MaxHeight: calc(100% - min(var(--pf-v6-c-modal-box--m-align-top--spacer), var(--pf-t--global--spacer--2xl)) - var(--pf-v6-c-modal-box--m-align-top--spacer));
+  --pf-v6-c-modal-box--m-align-top--MaxWidth: calc(100% - min(var(--pf-v6-c-modal-box--m-align-top--spacer) * 2, var(--pf-t--global--spacer--xl)));
+  --pf-v6-c-modal-box--m-danger__title-icon--Color: var(--pf-t--global--icon--color--status--danger--default);
+  --pf-v6-c-modal-box--m-warning__title-icon--Color: var(--pf-t--global--icon--color--status--warning--default);
+  --pf-v6-c-modal-box--m-success__title-icon--Color: var(--pf-t--global--icon--color--status--success--default);
+  --pf-v6-c-modal-box--m-info__title-icon--Color: var(--pf-t--global--icon--color--status--info--default);
+  --pf-v6-c-modal-box--m-custom__title-icon--Color: var(--pf-t--global--icon--color--status--custom--default);
+  --pf-v6-c-modal-box__header--PaddingBlockStart: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-modal-box__header--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-modal-box__header--PaddingInlineEnd: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-modal-box__header--PaddingInlineStart: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-modal-box__header--Gap: var(--pf-t--global--spacer--md);
+  --pf-v6-c-modal-box__header-main--Gap: var(--pf-t--global--spacer--md);
+  --pf-v6-c-modal-box__header-main--PaddingBlockStart: var(--pf-t--global--spacer--control--vertical--default);
+  --pf-v6-c-modal-box__title--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --pf-v6-c-modal-box__title--FontFamily: var(--pf-t--global--font--family--heading);
+  --pf-v6-c-modal-box__title--FontWeight: var(--pf-t--global--font--weight--heading--default);
+  --pf-v6-c-modal-box__title--FontSize: var(--pf-t--global--font--size--heading--md);
+  --pf-v6-c-modal-box__title-icon--MarginInlineEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-modal-box__title-icon--Color: var(--pf-t--global--icon--color--regular);
+  --pf-v6-c-modal-box__description--FontSize: var(--pf-t--global--font--size--body--sm);
+  --pf-v6-c-modal-box__description--Color: var(--pf-t--global--text--color--subtle);
+  --pf-v6-c-modal-box__body--MinHeight: calc(var(--pf-t--global--font--size--body--default) * var(--pf-t--global--font--line-height--body));
+  --pf-v6-c-modal-box__body--PaddingBlockStart: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-modal-box__body--PaddingInlineEnd: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-modal-box__body--PaddingInlineStart: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-modal-box__body--last-child--PaddingBlockEnd: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-modal-box__header--body--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-modal-box__close--InsetBlockStart: var(--pf-v6-c-modal-box__header--PaddingBlockStart);
+  --pf-v6-c-modal-box__close--InsetInlineEnd: var(--pf-v6-c-modal-box__header--PaddingInlineEnd);
+  --pf-v6-c-modal-box__close--sibling--MarginInlineEnd: calc(var(--pf-t--global--spacer--xl) + var(--pf-t--global--spacer--sm));
+  --pf-v6-c-modal-box__footer--PaddingBlockStart: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-modal-box__footer--PaddingInlineEnd: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-modal-box__footer--PaddingBlockEnd: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-modal-box__footer--PaddingInlineStart: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-modal-box__footer--c-button--MarginInlineEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-modal-box__footer--c-button--sm--MarginInlineEnd: calc(var(--pf-v6-c-modal-box__footer--c-button--MarginInlineEnd) / 2);
+}
+@media (min-width: 75rem) {
+  .pf-v6-c-modal-box {
+    --pf-v6-c-modal-box--m-align-top--spacer: var(--pf-v6-c-modal-box--m-align-top--xl--spacer);
+  }
+}
+
+.pf-v6-c-modal-box {
+  position: relative;
+  z-index: var(--pf-v6-c-modal-box--ZIndex);
+  display: flex;
+  flex-direction: column;
+  width: var(--pf-v6-c-modal-box--Width);
+  max-width: var(--pf-v6-c-modal-box--MaxWidth);
+  max-height: var(--pf-v6-c-modal-box--MaxHeight);
+  overflow: auto;
+  background-color: var(--pf-v6-c-modal-box--BackgroundColor);
+  border: var(--pf-v6-c-modal-box--BorderWidth) solid var(--pf-v6-c-modal-box--BorderColor);
+  border-radius: var(--pf-v6-c-modal-box--BorderRadius);
+  box-shadow: var(--pf-v6-c-modal-box--BoxShadow);
+}
+.pf-v6-c-modal-box.pf-m-sm {
+  --pf-v6-c-modal-box--Width: var(--pf-v6-c-modal-box--m-sm--sm--MaxWidth);
+}
+.pf-v6-c-modal-box.pf-m-md {
+  --pf-v6-c-modal-box--Width: var(--pf-v6-c-modal-box--m-md--Width);
+}
+.pf-v6-c-modal-box.pf-m-lg {
+  --pf-v6-c-modal-box--Width: var(--pf-v6-c-modal-box--m-lg--lg--MaxWidth);
+}
+.pf-v6-c-modal-box.pf-m-align-top {
+  inset-block-start: var(--pf-v6-c-modal-box--m-align-top--InsetBlockStart);
+  align-self: flex-start;
+  max-width: var(--pf-v6-c-modal-box--m-align-top--MaxWidth);
+  max-height: var(--pf-v6-c-modal-box--m-align-top--MaxHeight);
+}
+.pf-v6-c-modal-box__title.pf-m-danger, .pf-v6-c-modal-box.pf-m-danger {
+  --pf-v6-c-modal-box__title-icon--Color: var(--pf-v6-c-modal-box--m-danger__title-icon--Color);
+}
+
+.pf-v6-c-modal-box__title.pf-m-warning, .pf-v6-c-modal-box.pf-m-warning {
+  --pf-v6-c-modal-box__title-icon--Color: var(--pf-v6-c-modal-box--m-warning__title-icon--Color);
+}
+
+.pf-v6-c-modal-box__title.pf-m-success, .pf-v6-c-modal-box.pf-m-success {
+  --pf-v6-c-modal-box__title-icon--Color: var(--pf-v6-c-modal-box--m-success__title-icon--Color);
+}
+
+.pf-v6-c-modal-box__title.pf-m-custom, .pf-v6-c-modal-box.pf-m-custom {
+  --pf-v6-c-modal-box__title-icon--Color: var(--pf-v6-c-modal-box--m-custom__title-icon--Color);
+}
+
+.pf-v6-c-modal-box__title.pf-m-info, .pf-v6-c-modal-box.pf-m-info {
+  --pf-v6-c-modal-box__title-icon--Color: var(--pf-v6-c-modal-box--m-info__title-icon--Color);
+}
+
+.pf-v6-c-modal-box__close {
+  position: absolute;
+  inset-block-start: var(--pf-v6-c-modal-box__close--InsetBlockStart);
+  inset-inline-end: var(--pf-v6-c-modal-box__close--InsetInlineEnd);
+}
+.pf-v6-c-modal-box__close + * {
+  margin-inline-end: var(--pf-v6-c-modal-box__close--sibling--MarginInlineEnd);
+}
+
+.pf-v6-c-modal-box__header {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: var(--pf-v6-c-modal-box__header--Gap);
+  padding-block-start: var(--pf-v6-c-modal-box__header--PaddingBlockStart);
+  padding-block-end: var(--pf-v6-c-modal-box__header--PaddingBlockEnd);
+  padding-inline-start: var(--pf-v6-c-modal-box__header--PaddingInlineStart);
+  padding-inline-end: var(--pf-v6-c-modal-box__header--PaddingInlineEnd);
+}
+.pf-v6-c-modal-box__header.pf-m-help {
+  display: flex;
+  flex-direction: row;
+}
+.pf-v6-c-modal-box__header + .pf-v6-c-modal-box__body {
+  --pf-v6-c-modal-box__body--PaddingBlockStart: var(--pf-v6-c-modal-box__header--body--PaddingBlockStart);
+}
+
+.pf-v6-c-modal-box__header-main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: var(--pf-v6-c-modal-box__header-main--Gap);
+  min-width: 0;
+  padding-block-start: var(--pf-v6-c-modal-box__header-main--PaddingBlockStart);
+}
+
+.pf-v6-c-modal-box__title,
+.pf-v6-c-modal-box__title-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pf-v6-c-modal-box__title {
+  flex: 0 0 auto;
+  font-family: var(--pf-v6-c-modal-box__title--FontFamily);
+  font-size: var(--pf-v6-c-modal-box__title--FontSize);
+  font-weight: var(--pf-v6-c-modal-box__title--FontWeight);
+  line-height: var(--pf-v6-c-modal-box__title--LineHeight);
+}
+.pf-v6-c-modal-box__title.pf-m-icon {
+  display: flex;
+}
+
+.pf-v6-c-modal-box__title-icon {
+  margin-inline-end: var(--pf-v6-c-modal-box__title-icon--MarginInlineEnd);
+  color: var(--pf-v6-c-modal-box__title-icon--Color);
+}
+
+.pf-v6-c-modal-box__description {
+  padding-block-start: var(--pf-v6-c-modal-box__description--PaddingBlockStart);
+  font-size: var(--pf-v6-c-modal-box__description--FontSize);
+  color: var(--pf-v6-c-modal-box__description--Color);
+}
+
+.pf-v6-c-modal-box__body {
+  flex: 1 1 auto;
+  min-height: var(--pf-v6-c-modal-box__body--MinHeight);
+  padding-block-start: var(--pf-v6-c-modal-box__body--PaddingBlockStart);
+  padding-inline-start: var(--pf-v6-c-modal-box__body--PaddingInlineStart);
+  padding-inline-end: var(--pf-v6-c-modal-box__body--PaddingInlineEnd);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  word-break: break-word;
+  -webkit-overflow-scrolling: touch;
+}
+.pf-v6-c-modal-box__body:last-child {
+  padding-block-end: var(--pf-v6-c-modal-box__body--last-child--PaddingBlockEnd);
+}
+
+.pf-v6-c-modal-box__footer {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  padding-block-start: var(--pf-v6-c-modal-box__footer--PaddingBlockStart);
+  padding-block-end: var(--pf-v6-c-modal-box__footer--PaddingBlockEnd);
+  padding-inline-start: var(--pf-v6-c-modal-box__footer--PaddingInlineStart);
+  padding-inline-end: var(--pf-v6-c-modal-box__footer--PaddingInlineEnd);
+}
+.pf-v6-c-modal-box__footer > .pf-v6-c-button:not(:last-child) {
+  margin-inline-end: var(--pf-v6-c-modal-box__footer--c-button--MarginInlineEnd);
+}
+@media screen and (min-width: 36rem) {
+  .pf-v6-c-modal-box__footer > .pf-v6-c-button:not(:last-child) {
+    --pf-v6-c-modal-box__footer--c-button--MarginInlineEnd: var(--pf-v6-c-modal-box__footer--c-button--sm--MarginInlineEnd);
+  }
+}
