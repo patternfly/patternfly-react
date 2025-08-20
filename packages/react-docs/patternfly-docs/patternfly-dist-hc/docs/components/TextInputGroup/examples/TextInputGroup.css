@@ -1,0 +1,19 @@
+.ws-example-wrapper {
+  position: relative;
+}
+
+.ws-example-wrapper .pf-v6-c-menu,
+.ws-example-wrapper .pf-v6-c-panel {
+  position: absolute;
+  inset-block-start: 40px;
+  width: 100%;
+  z-index: var(--pf-t--global--z-index--2xl);
+}
+
+#ws-core-c-text-input-group-search-input-group-advanced-search-expanded-with-autocomplete {
+  height: 540px;
+}
+
+#ws-core-c-text-input-group-plain {
+  border: var(--pf-t--global--border--width--box--default) dashed var(--pf-t--global--border--color--default);
+}

@@ -1,0 +1,57 @@
+.pf-v6-c-date-picker {
+  --pf-v6-c-date-picker--m-top__calendar--InsetBlockStart: 0;
+  --pf-v6-c-date-picker--m-top__calendar--TranslateY: calc(-100% - var(--pf-t--global--spacer--xs));
+  --pf-v6-c-date-picker__helper-text--MarginBlockStart: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-date-picker__input--c-form-control--Width: calc(var(--pf-v6-c-date-picker__input--c-form-control--width-chars) * 1ch + var(--pf-v6-c-date-picker__input--c-form-control--width-base));
+  --pf-v6-c-date-picker__input--c-form-control--width-base: calc(var(--pf-t--global--spacer--xl) + var(--pf-t--global--spacer--sm));
+  --pf-v6-c-date-picker__input--c-form-control--width-chars: 11;
+  --pf-v6-c-date-picker__calendar--BackgroundColor: var(--pf-t--global--background--color--floating--default);
+  --pf-v6-c-date-picker__calendar--BoxShadow: var(--pf-t--global--box-shadow--md);
+  --pf-v6-c-date-picker__calendar--ZIndex: var(--pf-t--global--z-index--sm);
+  --pf-v6-c-date-picker__calendar--InsetBlockStart: calc(100% + var(--pf-t--global--spacer--xs));
+  --pf-v6-c-date-picker__calendar--InsetInlineEnd: auto;
+  --pf-v6-c-date-picker__calendar--InsetInlineStart: 0;
+  --pf-v6-c-date-picker__calendar--m-align-right--InsetInlineEnd: 0;
+  --pf-v6-c-date-picker__calendar--m-align-right--InsetInlineStart: auto;
+}
+
+.pf-v6-c-date-picker {
+  position: relative;
+  display: inline-block;
+}
+
+.pf-v6-c-date-picker__helper-text {
+  margin-block-start: var(--pf-v6-c-date-picker__helper-text--MarginBlockStart);
+}
+
+.pf-v6-c-date-picker__input .pf-v6-c-form-control {
+  width: var(--pf-v6-c-date-picker__input--c-form-control--Width);
+}
+
+.pf-v6-c-date-picker__calendar {
+  position: absolute;
+  inset-block-start: var(--pf-v6-c-date-picker__calendar--InsetBlockStart);
+  inset-inline-start: var(--pf-v6-c-date-picker__calendar--InsetInlineStart);
+  inset-inline-end: var(--pf-v6-c-date-picker__calendar--InsetInlineEnd);
+  z-index: var(--pf-v6-c-date-picker__calendar--ZIndex);
+  background-color: var(--pf-v6-c-date-picker__calendar--BackgroundColor);
+  box-shadow: var(--pf-v6-c-date-picker__calendar--BoxShadow);
+}
+.pf-v6-c-date-picker__calendar.pf-m-align-right {
+  --pf-v6-c-date-picker__calendar--InsetInlineEnd: var(--pf-v6-c-date-picker__calendar--m-align-right--InsetInlineEnd);
+  --pf-v6-c-date-picker__calendar--InsetInlineStart: var(--pf-v6-c-date-picker__calendar--m-align-right--InsetInlineStart);
+}
+.pf-v6-c-date-picker.pf-m-top .pf-v6-c-date-picker__calendar {
+  --pf-v6-c-date-picker__calendar--InsetBlockStart: var(--pf-v6-c-date-picker--m-top__calendar--InsetBlockStart);
+  transform: translateY(var(--pf-v6-c-date-picker--m-top__calendar--TranslateY));
+}
+.pf-v6-c-date-picker__calendar.pf-m-static {
+  --pf-v6-c-date-picker--m-top__calendar--TranslateY: 0;
+  position: static;
+  inset-block-start: auto;
+  inset-block-end: auto;
+  inset-inline-start: auto;
+  inset-inline-end: auto;
+  z-index: auto;
+  min-width: min-content;
+}

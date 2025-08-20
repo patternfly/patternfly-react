@@ -1,0 +1,483 @@
+@use '../sass-utilities/functions' as *;
+@use '../sass-utilities/init' as *;
+@use '../sass-utilities/scss-variables' as *;
+@use '../sass-utilities/namespaces-components' as *;
+
+// Media query used to create responsive classes
+@mixin pf-v6-media-query($point) {
+  @if $point == "" or not $point or $point == "base" {
+    @content;
+  } @else if $point == "sm" {
+    @media screen and (min-width: $pf-v6-global--breakpoint--sm) {
+      @content;
+    }
+  } @else if $point == "md" {
+    @media screen and (min-width: $pf-v6-global--breakpoint--md) {
+      @content;
+    }
+  } @else if $point == "lg" {
+    @media screen and (min-width: $pf-v6-global--breakpoint--lg) {
+      @content;
+    }
+  } @else if $point == "xl" {
+    @media screen and (min-width: $pf-v6-global--breakpoint--xl) {
+      @content;
+    }
+  } @else if $point == "2xl" {
+    @media screen and (min-width: $pf-v6-global--breakpoint--2xl) {
+      @content;
+    }
+  }
+}
+
+// Media query used to create responsive classes
+@mixin pf-v6-height-media-query($point) {
+  @if $point == "" or not $point or $point == "base" {
+    @content;
+  } @else if $point == "sm" {
+    @media screen and (min-height: $pf-v6-global--height-breakpoint--sm) {
+      @content;
+    }
+  } @else if $point == "md" {
+    @media screen and (min-height: $pf-v6-global--height-breakpoint--md) {
+      @content;
+    }
+  } @else if $point == "lg" {
+    @media screen and (min-height: $pf-v6-global--height-breakpoint--lg) {
+      @content;
+    }
+  } @else if $point == "xl" {
+    @media screen and (min-height: $pf-v6-global--height-breakpoint--xl) {
+      @content;
+    }
+  } @else if $point == "2xl" {
+    @media screen and (min-height: $pf-v6-global--height-breakpoint--2xl) {
+      @content;
+    }
+  }
+}
+
+// Create single prop / value classes, optionally add responsive suffix
+// @group mixins
+// @moduleType mixin
+// @parameter: [Suffix] xs, sm, md, lg, xl, base or null
+// @usage: @include pf-v6-utility-builder(class-name, base sm md lg xl);
+// ===============================================================================================
+
+// ## Example sass map:
+// this must be used when order matters or a cluster of similar utilties need to overwrite each other
+
+// Justify content options
+// $pf-v6-u-flex-options: (
+//   flex-none:  (flex none),
+//   flex-1:     (flex 1)
+// );
+
+// non-responsive, base only                @include pf-v6-utility-builder($sass-map)
+// responsive, including all breakpoints    @include pf-v6-utility-builder($sass-map, $pf-v6-global--breakpoint-list)
+// responsive height breakpoints            @include pf-v6-utility-builder($sass-map, $pf-v6-global--height-breakpoint-list, 'height')
+
+// ## Passing individual utilities values
+// ===============================================================================================
+// Example individual utility:
+// @include pf-v6-utility-builder(flex-fill flex "1 1 auto", $pf-v6-global--breakpoint-list);
+@mixin pf-v6-utility-builder($props, $breakpoints: null, $direction: 'width') {
+  // if $class-name is a map
+
+  // stylelint-disable
+  @if type-of($props) == map {
+    @each $class, $val in $props {
+      $property: nth($val, 1);
+      $value: #{nth($val, 2)} !important;
+
+      .#{$pf-prefix}u-#{$class} {
+        #{$property}: #{$value};
+      }
+    }
+
+    // if breakpoints are requested
+    @if $breakpoints != null {
+      @each $breakpoint in $breakpoints {
+        $suffix: -on-#{$breakpoint};
+
+        @if $direction == 'height' {
+          @include pf-v6-height-media-query($breakpoint) {
+            @each $class, $val in $props {
+              $property: nth($val, 1);
+              $value: #{nth($val, 2)} !important;
+
+              .#{$pf-prefix}u-#{$class}#{$suffix}-height {
+                #{$property}: #{$value};
+              }
+            }
+          }
+        }
+        @else if ($direction == 'width') {
+          @include pf-v6-media-query($breakpoint) {
+            @each $class, $val in $props {
+              $property: nth($val, 1);
+              $value: #{nth($val, 2)} !important;
+
+              .#{$pf-prefix}u-#{$class}#{$suffix} {
+                #{$property}: #{$value};
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @else if type-of($props) == list {
+    $class: nth($props, 1);
+    $property: nth($props, 2);
+    $value: nth($props, 3) !important;
+
+    .#{$pf-prefix}u-#{$class} {
+      #{$property}: #{$value};
+    }
+
+    @if $breakpoints != null {
+      @each $breakpoint in $breakpoints {
+        $suffix: -on-#{$breakpoint};
+
+        .#{$pf-prefix}u-#{$class}#{$suffix} {
+          @include pf-v6-media-query($breakpoint) {
+            #{$property}: #{$value};
+          }
+        }
+      }
+    }
+  }
+}
+
+// stylelint-enable
+
+@mixin pf-v6-u-screen-reader {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@mixin pf-v6-u-visible {
+  position: static;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  border: inherit;
+}
+
+@mixin pf-v6-text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin pf-v6-line-clamp($line-clamp-val: 1) {
+  // stylelint-disable
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: #{$line-clamp-val};
+  // stylelint-enable
+  overflow: hidden;
+}
+
+@mixin pf-v6-overflow-hide-scroll {
+  &::-webkit-scrollbar {
+    display: none;
+  } // hides scrollbars in Chrome
+
+  scrollbar-width: none; // hides scrollbars in Firefox 64 and up
+  -ms-overflow-style: -ms-autohiding-scrollbar; // auto hides scrollbars in Edge
+}
+
+@mixin pf-v6-hidden-visible($val: "block") {
+  // stylelint-disable-next-line
+  --#{$pf-prefix}hidden-visible--visible--Display: #{$val};
+
+  // base value for visible display property is set to 'block' by default and passed in to
+  // placeholder via `pf-v6-hidden-visible` mixin
+
+  // set hidden var values
+  // stylelint-disable custom-property-pattern
+  --#{$pf-prefix}hidden-visible--hidden--Display: none;
+
+  // set visibile var values
+  --#{$pf-prefix}hidden-visible--Display: var(--#{$pf-prefix}hidden-visible--visible--Display);
+
+  // set default state to visible
+  display: var(--#{$pf-prefix}hidden-visible--Display);
+
+  // toggle values based on state
+  &.pf-m-hidden {
+    --#{$pf-prefix}hidden-visible--Display: var(--#{$pf-prefix}hidden-visible--hidden--Display);
+  }
+
+  @each $size, $bp in $pf-v6-global--breakpoint-name-map {
+    @media screen and (min-width: $bp) {
+      &.pf-m-hidden-on-#{$size} {
+        --#{$pf-prefix}hidden-visible--Display: var(--#{$pf-prefix}hidden-visible--hidden--Display);
+      }
+
+      &.pf-m-visible-on-#{$size} {
+        --#{$pf-prefix}hidden-visible--Display: var(--#{$pf-prefix}hidden-visible--visible--Display);
+      }
+    }
+  }
+  // stylelint-enable
+}
+
+// Apply media query if value is passed
+@mixin pf-v6-apply-breakpoint($breakpoint) {
+  @if $breakpoint == "null" or $breakpoint == "base" or $breakpoint == "" {
+    @content;
+  } @else {
+    $breakpoint: pf-breakpoint-value($breakpoint);
+
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+// Apply height media query if value is passed
+@mixin pf-v6-apply-height-breakpoint($breakpoint) {
+  @if $breakpoint == "null" or $breakpoint == "base" or $breakpoint == "" {
+    @content;
+  } @else {
+    $breakpoint: pf-height-breakpoint-value($breakpoint);
+
+    @media (min-height: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+@mixin pf-v6-emit-properties($map) {
+  @each $prop, $value in $map {
+    #{$value}: #{$prop};
+  }
+}
+
+// Animate tab focus removal
+@mixin pf-v6-animate-remove-tab-focus($element, $delay: $pf-v6-global--TransitionDuration) {
+  @keyframes pf-remove-tab-focus {
+    to {
+      visibility: hidden;
+    }
+  }
+
+  #{$element}[hidden] {
+    animation-name: pf-remove-tab-focus;
+    animation-delay: #{$delay};
+    animation-fill-mode: forwards;
+  }
+}
+
+// Animate error state on form elements
+@mixin pf-v6-animate-danger-jiggle {
+  translate: var(--#{$pf-global}--danger-jiggle--TranslateX, 0);
+  animation-name: #{$pf-global}-danger-jiggle-motion;
+  animation-duration: var(--#{$pf-global}--danger-jiggle--AnimationDuration--Transform);
+  animation-timing-function: var(--#{$pf-global}--danger-jiggle--AnimationTimingFunction--Transform);
+  animation-fill-mode: both;
+}
+
+// Animate default fade in/out
+@mixin pf-v6-fade-default($element) {
+  --#{$element}--TransitionDuration--Opacity: var(--pf-t--global--motion--duration--fade--default);
+  --#{$element}--TransitionTimingFunction--Opacity: var(--pf-t--global--motion--timing-function--default);
+
+  animation-name: #{$pf-global}-fade-in;
+  animation-duration: var(--#{$element}--TransitionDuration--Opacity);
+  animation-timing-function: var(--#{$element}--TransitionTimingFunction--Opacity);
+}
+
+// Build variable stack
+@mixin pf-v6-build-css-variable-stack($prop, $css-var, $breakpoint-map: $pf-v6-global--breakpoint-map, $important: false) {
+  $list: ();
+
+  @each $breakpoint, $breakpoint-value in $breakpoint-map {
+    $variable-list: ();
+
+    // Build variable list
+    @if $breakpoint != "base" {
+      $list: append($list, $css-var + "-on-" + $breakpoint);
+    } @else {
+      $list: append($list, $css-var);
+    }
+
+    // Construct variable stack
+    @each $list-item in $list {
+      @if length($variable-list) == 0 {
+        $variable-list: var(#{$list-item});
+      } @else {
+        $variable-list: var(#{$list-item}, $variable-list);
+      }
+    }
+
+    // Assign variable stack to $prop
+    @include pf-v6-apply-breakpoint($breakpoint) {
+      @if $important == true {
+        // stylelint-disable declaration-no-important
+        #{$prop}: #{$variable-list} !important;
+        // stylelint-enable
+      } @else {
+        #{$prop}: #{$variable-list};
+      }
+    }
+  }
+}
+
+// Build variable stack
+@mixin pf-v6-output-root-variables($css-var, $breakpoint-map: $pf-v6-global--breakpoint-map) {
+  $list: ();
+
+  @each $breakpoint, $breakpoint-value in $breakpoint-map {
+    // Build variable list
+    // stylelint-disable scss/at-if-no-null
+    @if $breakpoint-value {
+      $list: append($list, $css-var + "-on-" + $breakpoint);
+    }
+    // stylelint-enable
+  }
+
+  @each $item in $list {
+    #{$item}: inherit;
+  }
+}
+
+// Dark theme style block
+@mixin pf-v6-theme-dark($theme-dark-class: $pf-v6--theme-dark--class, $theme-dark-target: $pf-v6--theme-dark--target) {
+  #{$theme-dark-target}:where(#{$theme-dark-class}) {
+    @content;
+  }
+}
+
+@mixin pf-v6-construct-global-vars($prefix: $pf-prefix--version, $maps...) {
+  @each $map in $maps {
+    @each $name, $val in $map {
+      #{$prefix}#{$name}: #{$val};
+    }
+  }
+}
+
+@mixin pf-v6-remove-num-arrows {
+  appearance: textfield;
+
+  // stylelint-disable
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+  // stylelint-enable
+    margin: 0;
+    appearance: none;
+  }
+}
+
+// RTL helpers
+
+// Used to create the RTL selector for RTL specific styles
+
+// @include pf-v6-rtl {
+//   background: red;
+// }
+
+// renders as
+
+// [dir="rtl"] {
+//   background: red;
+// }
+@mixin pf-v6-rtl($hasWhere: true) {
+  $sel: if($hasWhere,':where',':is');
+
+  @at-root #{$sel}(.#{$pf-prefix}m-dir-rtl, [dir="rtl"]) #{&} {
+    @content;
+  }
+}
+
+// Used to create the LTR selector for LTR specific styles
+@mixin pf-v6-ltr($hasWhere: true) {
+  $sel: if($hasWhere,':where',':is');
+
+  @at-root #{$sel}(.#{$pf-prefix}m-dir-ltr, [dir="ltr"]) #{&} {
+    @content;
+  }
+}
+
+// Creates a default/LTR declaration, and an RTL declaration.
+
+// @include pf-v6-bidirectional-style(background, blue, red)
+
+// renders as
+
+// background: blue;
+// [dir="rtl"] {
+//   background: red;
+// }
+@mixin pf-v6-bidirectional-style($prop, $ltr-val, $rtl-val) {
+  #{$prop}: #{$ltr-val};
+
+  @include pf-v6-rtl {
+    #{$prop}: #{$rtl-val};
+  }
+}
+
+// Mirrors/flips something horizontally/inline. Relies upon scale/scale() not already being used for the element. Can be extended to take arguments to use different methods other than scale().
+@mixin pf-v6-mirror-inline {
+  scale: -1 1;
+}
+
+
+@mixin pf-v6-mirror-inline-on-rtl {
+  @include pf-v6-rtl {
+    @include pf-v6-mirror-inline;
+  }
+}
+
+// Declares a global inverse multiplier var used for returning the inverse of a number. Defined within blocks that reference the global var in calc() functions to conditionally return the default or inverse value of a number.
+@mixin pf-v6-set-inverse($val: true) {
+  --#{$pf-global}--inverse--multiplier: #{if($val, -1, 1)};
+}
+
+@mixin pf-root($selector, $isClass: true) {
+  $selector: if($isClass, "." + $selector, $selector);
+  #{$selector} {
+    @content
+  }
+}
+
+// Sets hamburger styles. Defaults to expand styles (right arrow)
+// $collapse - if true, changes to left arrow
+// $reset - will reset the bars to the default (no arrow)
+@mixin pf-v6-hamburger($collapse: false, $reset: false) {
+  @if $reset {
+    --#{$button}--hamburger-icon--top--path: var(--#{$button}--hamburger-icon--top--path--base);
+    --#{$button}--hamburger-icon--arrow--path: var(--#{$button}--hamburger-icon--arrow--path--base);
+    --#{$button}--hamburger-icon--bottom--path: var(--#{$button}--hamburger-icon--bottom--path--base);
+    --#{$button}__icon--TransitionDelay: var(--#{$button}--hamburger-icon--TransitionDuration);
+    --#{$button}--hover__icon--TransitionDelay: var(--#{$button}--hamburger-icon--TransitionDuration);
+  } @else {
+    // set direction vars
+    --#{$button}--hamburger-icon--top--path: var(--#{$button}--hamburger-icon--top--collapse--path);
+    --#{$button}--hamburger-icon--arrow--path: var(--#{$button}--hamburger-icon--arrow--collapse--path);
+    --#{$button}--hamburger-icon--bottom--path: var(--#{$button}--hamburger-icon--bottom--collapse--path);
+
+    // collapse
+    @if $collapse {
+      --#{$button}__icon--TransitionDelay: 0s;
+      --#{$button}__icon--ScaleX: 1;
+      --#{$button}--hover__icon--TransitionDelay: 0s;
+      --#{$button}--hover__icon--ScaleX: 1;
+
+    // expand
+    } @else {
+      --#{$button}__icon--TransitionDelay: 0s;
+      --#{$button}__icon--ScaleX: var(--#{$button}--m-hamburger__icon--m-expand--ScaleX);
+      --#{$button}--hover__icon--TransitionDelay: 0s;
+      --#{$button}--hover__icon--ScaleX: var(--#{$button}--m-hamburger__icon--m-expand--ScaleX);
+    }
+  }
+}

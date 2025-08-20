@@ -1,0 +1,243 @@
+@use '../../sass-utilities' as *;
+
+$pf-v6-c-pagination--breakpoint-map: build-breakpoint-map();
+$pf-v6-c-pagination--variable-map: build-spacer-map("none", "sm", "md", "lg", "xl", "2xl");
+
+@include pf-root($pagination) {
+  --#{$pagination}--inset: 0;
+  --#{$pagination}--ColumnGap: var(--pf-t--global--spacer--lg);
+
+  // Page insets
+  --#{$pagination}--m-page-insets--inset: var(--pf-t--global--spacer--lg);
+
+  // nav
+  --#{$pagination}__nav--Display: none;
+  --#{$pagination}--m-display-summary__nav--Display: none;
+  --#{$pagination}--m-display-full__nav--Display: inline-flex;
+  --#{$pagination}__nav--ColumnGap: var(--pf-t--global--spacer--sm);
+
+  // nav page select
+  --#{$pagination}__nav-page-select--FontSize: var(--pf-t--global--font--size--body--default);
+  --#{$pagination}__nav-page-select--ColumnGap: var(--pf-t--global--spacer--sm);
+  --#{$pagination}__nav-page-select--c-form-control--width-base: calc(var(--pf-t--global--spacer--control--horizontal--default) + var(--pf-t--global--spacer--control--horizontal--default) + var(--pf-t--global--border--width--control--default) * 2);
+  --#{$pagination}__nav-page-select--c-form-control--width-chars: 2;
+  --#{$pagination}__nav-page-select--c-form-control--Width: calc(var(--#{$pagination}__nav-page-select--c-form-control--width-base) + (var(--#{$pagination}__nav-page-select--c-form-control--width-chars) * 1ch));
+
+  // total items
+  --#{$pagination}__total-items--Display: block;
+  --#{$pagination}--m-display-summary__total-items--Display: block;
+  --#{$pagination}--m-display-full__total-items--Display: none;
+
+  // top
+  --#{$pagination}--m-sticky--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --#{$pagination}--m-sticky--BoxShadow: var(--pf-t--global--box-shadow--sm--bottom);
+  --#{$pagination}--m-sticky--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --#{$pagination}--m-sticky--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --#{$pagination}--m-sticky--PaddingInlineStart: var(--pf-t--global--spacer--lg);
+  --#{$pagination}--m-sticky--PaddingInlineEnd: var(--pf-t--global--spacer--lg);
+  --#{$pagination}--m-sticky--ZIndex: var(--pf-t--global--z-index--xs);
+  --#{$pagination}--m-sticky--InsetBlockStart: 0;
+
+  // bottom
+  --#{$pagination}--m-bottom--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --#{$pagination}--m-bottom--BoxShadow: var(--pf-t--global--box-shadow--sm--top);
+  --#{$pagination}--m-bottom--m-sticky--BoxShadow: var(--pf-t--global--box-shadow--sm--top);
+  --#{$pagination}--m-bottom--InsetBlockEnd: 0;
+  --#{$pagination}--m-bottom--m-sticky--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --#{$pagination}--m-bottom--m-sticky--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$pagination}--m-bottom--m-sticky--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --#{$pagination}--m-bottom--m-sticky--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --#{$pagination}--m-bottom--m-static--PaddingBlockStart: var(--pf-t--global--spacer--gap--group--vertical);
+  --#{$pagination}--m-bottom--m-static--PaddingBlockEnd: 0;
+  --#{$pagination}--m-bottom--m-static--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --#{$pagination}--m-bottom--m-static--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+
+  // page menu
+  --#{$pagination}__page-menu--Display--base: block;
+  --#{$pagination}__page-menu--Display: none;
+  --#{$pagination}--m-display-summary__page-menu--Display: none;
+  --#{$pagination}--m-display-full__page-menu--Display: var(--#{$pagination}__page-menu--Display--base);
+  --#{$pagination}--m-bottom__page-menu--Display: var(--#{$pagination}__page-menu--Display--base);
+  --#{$pagination}__page-menu--md--Display: var(--#{$pagination}__page-menu--Display--base);
+
+  @media screen and (min-width: $pf-v6-global--breakpoint--md) {
+    --#{$pagination}--m-bottom--BoxShadow: none;
+    --#{$pagination}__page-menu--Display: var(--#{$pagination}__page-menu--md--Display);
+    --#{$pagination}__nav--Display: inline-flex;
+    --#{$pagination}__total-items--Display: none;
+  }
+
+  @media screen and (min-width: $pf-v6-global--breakpoint--xl) {
+    --#{$pagination}__scroll-button--Width: var(--#{$pagination}__scroll-button--xl--Width);
+  }
+}
+
+.#{$pagination} {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--#{$pagination}--ColumnGap);
+  align-items: center;
+  justify-content: flex-end;
+  padding-inline-start: var(--#{$pagination}--inset);
+  padding-inline-end: var(--#{$pagination}--inset);
+
+  .#{$pagination}__page-menu {
+    display: var(--#{$pagination}__page-menu--Display);
+  }
+
+  &.pf-m-bottom {
+    --#{$pagination}--m-sticky--BoxShadow: var(--#{$pagination}--m-bottom--m-sticky--BoxShadow);
+    --#{$pagination}--m-sticky--InsetBlockStart: auto;
+
+    position: sticky;
+    inset-block-end: var(--#{$pagination}--m-bottom--InsetBlockEnd);
+    justify-content: center;
+    padding-block-start: var(--#{$pagination}--m-bottom--m-sticky--PaddingBlockStart);
+    padding-block-end: var(--#{$pagination}--m-bottom--m-sticky--PaddingBlockEnd);
+    padding-inline-start: var(--#{$pagination}--m-bottom--m-sticky--PaddingInlineStart);
+    padding-inline-end: var(--#{$pagination}--m-bottom--m-sticky--PaddingInlineEnd);
+    background-color: var(--#{$pagination}--m-bottom--BackgroundColor);
+    box-shadow: var(--#{$pagination}--m-bottom--BoxShadow);
+
+    .#{$pagination}__nav-control.pf-m-first,
+    .#{$pagination}__nav-control.pf-m-last,
+    .#{$pagination}__nav-page-select {
+      display: none;
+    }
+
+    .#{$pagination}__page-menu {
+      position: absolute;
+      display: var(--#{$pagination}--m-bottom__page-menu--Display);
+    }
+
+    .#{$pagination}__nav {
+      display: flex;
+      flex-basis: 100%;
+      justify-content: space-between;
+    }
+
+    @media screen and (min-width: $pf-v6-global--breakpoint--md) {
+      --#{$pagination}--m-bottom--BorderBlockStartWidth: 0;
+      --#{$pagination}--m-bottom--MarginBlockStart: 0;
+      --#{$pagination}--m-bottom--InsetBlockEnd: auto;
+
+      position: relative;
+      justify-content: flex-end;
+      padding-block-start: var(--#{$pagination}--m-bottom--m-static--PaddingBlockStart);
+      padding-block-end: var(--#{$pagination}--m-bottom--m-static--PaddingBlockEnd);
+      padding-inline-start: var(--#{$pagination}--m-bottom--m-static--PaddingInlineStart);
+      padding-inline-end: var(--#{$pagination}--m-bottom--m-static--PaddingInlineEnd);
+  
+      .#{$pagination}__nav-control.pf-m-first,
+      .#{$pagination}__nav-control.pf-m-last,
+      .#{$pagination}__nav-page-select {
+        display: block;
+      }
+
+      .#{$pagination}__nav-page-select {
+        display: inline-flex;
+      }
+
+      .#{$pagination}__page-menu {
+        position: relative;
+      }
+
+      .#{$pagination}__nav {
+        display: inline-flex;
+        flex-basis: auto;
+      }
+    }
+  }
+
+  &.pf-m-static {
+    position: relative;
+    padding-block-start: var(--#{$pagination}--m-bottom--m-static--PaddingBlockStart);
+    padding-block-end: var(--#{$pagination}--m-bottom--m-static--PaddingBlockEnd);
+    padding-inline-start: var(--#{$pagination}--m-bottom--m-static--PaddingInlineStart);
+    padding-inline-end: var(--#{$pagination}--m-bottom--m-static--PaddingInlineEnd);
+    box-shadow: none;
+  }
+
+  &.pf-m-sticky {
+    --#{$pagination}--m-bottom--InsetBlockEnd: 0;
+
+    position: sticky;
+    inset-block-start: var(--#{$pagination}--m-sticky--InsetBlockStart);
+    z-index: var(--#{$pagination}--m-sticky--ZIndex);
+    padding-block-start: var(--#{$pagination}--m-bottom--m-sticky--PaddingBlockStart);
+    padding-block-end: var(--#{$pagination}--m-bottom--m-sticky--PaddingBlockEnd);
+    padding-inline-start: var(--#{$pagination}--m-bottom--m-sticky--PaddingInlineStart);
+    padding-inline-end: var(--#{$pagination}--m-bottom--m-sticky--PaddingInlineEnd);
+    background-color: var(--#{$pagination}--m-sticky--BackgroundColor);
+    box-shadow: var(--#{$pagination}--m-sticky--BoxShadow);
+  }
+
+  &.pf-m-page-insets {
+    --#{$pagination}--inset: var(--#{$pagination}--m-page-insets--inset);
+  }
+}
+
+// nav
+.#{$pagination}__nav {
+  display: var(--#{$pagination}__nav--Display);
+  column-gap: var(--#{$pagination}__nav--ColumnGap);
+  justify-content: flex-end;
+}
+
+// nav control
+.#{$pagination}__nav-control {
+  @include pf-v6-mirror-inline-on-rtl;
+}
+
+// nav page element
+.#{$pagination}__nav-page-select {
+  display: flex;
+  column-gap: var(--#{$pagination}__nav-page-select--ColumnGap);
+  align-items: center;
+
+  > * {
+    font-size: var(--#{$pagination}__nav-page-select--FontSize);
+    white-space: nowrap;
+  }
+
+  .#{$form-control} {
+    width: var(--#{$pagination}__nav-page-select--c-form-control--Width);
+
+    > :is(input) {
+      @include pf-v6-remove-num-arrows;
+    }
+  }
+}
+
+// display-summary element for total-items items
+.#{$pagination}__total-items {
+  display: var(--#{$pagination}__total-items--Display);
+}
+
+// stylelint-disable no-duplicate-selectors
+.#{$pagination} {
+  @each $breakpoint, $breakpoint-value in $pf-v6-c-pagination--breakpoint-map {
+    $breakpoint-name: if($breakpoint != "base", -on-#{$breakpoint}, "");
+
+    @include pf-v6-apply-breakpoint($breakpoint) {
+      &.pf-m-display-summary#{$breakpoint-name} {
+        --#{$pagination}__nav--Display: var(--#{$pagination}--m-display-summary__nav--Display);
+        --#{$pagination}__page-menu--Display: var(--#{$pagination}--m-display-summary__page-menu--Display);
+        --#{$pagination}__total-items--Display: var(--#{$pagination}--m-display-summary__total-items--Display);
+      }
+
+      &.pf-m-display-full#{$breakpoint-name} {
+        --#{$pagination}__nav--Display: var(--#{$pagination}--m-display-full__nav--Display);
+        --#{$pagination}__page-menu--Display: var(--#{$pagination}--m-display-full__page-menu--Display);
+        --#{$pagination}__total-items--Display: var(--#{$pagination}--m-display-full__total-items--Display);
+      }
+
+      @each $spacer, $spacer-value in $pf-v6-c-pagination--variable-map {
+        &.pf-m-inset-#{$spacer}#{$breakpoint-name} {
+          --#{$pagination}--inset: #{$spacer-value};
+        }
+      }
+    }
+  }
+}
+// stylelint-enable

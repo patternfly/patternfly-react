@@ -1,0 +1,89 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($hint) {
+  --#{$hint}--GridRowGap: var(--pf-t--global--spacer--sm);
+  --#{$hint}--PaddingBlockStart: var(--pf-t--global--spacer--lg);
+  --#{$hint}--PaddingInlineEnd: var(--pf-t--global--spacer--lg);
+  --#{$hint}--PaddingBlockEnd: var(--pf-t--global--spacer--lg);
+  --#{$hint}--PaddingInlineStart: var(--pf-t--global--spacer--lg);
+  --#{$hint}--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --#{$hint}--BorderColor: var(--pf-t--global--border--color--status--info--default);
+  --#{$hint}--BorderWidth: var(--pf-t--global--border--width--box--status--default);
+  --#{$hint}--BorderRadius: var(--pf-t--global--border--radius--medium);
+  --#{$hint}--Color: var(--pf-t--global--text--color--regular);
+
+  // Hint Title
+  --#{$hint}__title--FontWeight: var(--pf-t--global--font--weight--body--bold);
+
+  // Hint Body
+  --#{$hint}__body--FontSize: var(--pf-t--global--font--size--body--default);
+
+  // Hint Footer
+  --#{$hint}__footer--MarginBlockStart: var(--pf-t--global--spacer--sm);
+  --#{$hint}__footer--child--MarginInlineEnd: var(--pf-t--global--spacer--md);
+
+  // Hint Actions
+  --#{$hint}__actions--MarginInlineStart: var(--pf-t--global--spacer--2xl);
+  --#{$hint}__actions--c-menu-toggle--MarginBlockStart: calc(var(--pf-t--global--spacer--control--vertical--default) * -1);
+  --#{$hint}__actions--c-menu-toggle--MarginBlockEnd: calc(var(--pf-t--global--spacer--control--vertical--default) * -1);
+}
+
+.#{$hint} {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-row-gap: var(--#{$hint}--GridRowGap);
+  padding-block-start: var(--#{$hint}--PaddingBlockStart);
+  padding-block-end: var(--#{$hint}--PaddingBlockEnd);
+  padding-inline-start: var(--#{$hint}--PaddingInlineStart);
+  padding-inline-end: var(--#{$hint}--PaddingInlineEnd);
+  color: var(--#{$hint}--Color);
+  background-color: var(--#{$hint}--BackgroundColor);
+  border: var(--#{$hint}--BorderWidth) solid var(--#{$hint}--BorderColor);
+  border-radius: var(--#{$hint}--BorderRadius);
+
+  // Remove this when the inline link button is updated
+  .#{$button}.pf-m-link.pf-m-inline {
+    text-align: start;
+    white-space: normal;
+  }
+}
+
+.#{$hint}__actions {
+  display: inline-grid;
+  grid-row: 1;
+  grid-column: 2;
+  grid-auto-flow: column;
+  align-self: start;
+  margin-block-start: var(--#{$hint}__actions--c-menu-toggle--MarginBlockStart);
+  margin-block-end: var(--#{$hint}__actions--c-menu-toggle--MarginBlockEnd);
+  margin-inline-start: var(--#{$hint}__actions--MarginInlineStart);
+  text-align: end;
+
+  &.pf-m-no-offset {
+    --#{$hint}__actions--c-menu-toggle--MarginBlockStart: 0;
+    --#{$hint}__actions--c-menu-toggle--MarginBlockEnd: 0;
+  }
+
+  + .#{$hint}__body {
+    grid-column: 1;
+  }
+}
+
+.#{$hint}__title {
+  align-self: center;
+  font-weight: var(--#{$hint}__title--FontWeight);
+}
+
+.#{$hint}__body {
+  grid-column: 1 / -1;
+  font-size: var(--#{$hint}__body--FontSize);
+}
+
+.#{$hint}__footer {
+  grid-column: 1 / -1;
+  margin-block-start: var(--#{$hint}__footer--MarginBlockStart);
+
+  > :not(:last-child) {
+    margin-inline-end: var(--#{$hint}__footer--child--MarginInlineEnd);
+  }
+}

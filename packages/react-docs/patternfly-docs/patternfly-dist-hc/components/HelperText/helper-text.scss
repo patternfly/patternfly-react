@@ -1,0 +1,104 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($helper-text) {
+  --#{$helper-text}--Gap: var(--pf-t--global--spacer--xs);
+  --#{$helper-text}--FontSize: var(--pf-t--global--font--size--body--sm);
+
+  // item
+  --#{$helper-text}__item-icon--Color: var(--pf-t--global--icon--color--regular);
+  --#{$helper-text}__item-text--Color: var(--pf-t--global--text--color--regular);
+  --#{$helper-text}__item-text--FontWeight: var(--pf-t--global--font--weight--body--default);
+  --#{$helper-text}__item-icon--m-indeterminate--Color: var(--pf-t--global--icon--color--subtle);
+  --#{$helper-text}__item-text--m-indeterminate--Color: var(--pf-t--global--text--color--subtle);
+  --#{$helper-text}__item-icon--m-warning--Color: var(--pf-t--global--icon--color--status--warning--default);
+  --#{$helper-text}__item-text--m-warning--FontWeight: var(--pf-t--global--font--weight--body--bold);
+  --#{$helper-text}__item-icon--m-success--Color: var(--pf-t--global--icon--color--status--success--default);
+  --#{$helper-text}__item-text--m-success--FontWeight: var(--pf-t--global--font--weight--body--bold);
+  --#{$helper-text}__item-icon--m-error--Color: var(--pf-t--global--icon--color--status--danger--default);
+  --#{$helper-text}__item-text--m-error--FontWeight: var(--pf-t--global--font--weight--body--bold);
+  --#{$helper-text}__item--m-error--TransitionDuration--Opacity: var(--pf-t--global--motion--duration--fade--default);
+  --#{$helper-text}__item--m-error--TransitionTimingFunction--Opacity: var(--pf-t--global--motion--timing-function--default);
+
+  // dynamic
+  --#{$helper-text}--m-dynamic__item-icon--Color: var(--pf-t--global--icon--color--regular);
+  --#{$helper-text}--m-dynamic--m-indeterminate__item-icon--Color: var(--pf-t--global--icon--color--subtle);
+  --#{$helper-text}--m-dynamic--m-indeterminate__item-text--Color: var(--pf-t--global--text--color--subtle);
+  --#{$helper-text}--m-dynamic--m-warning__item-icon--Color: var(--pf-t--global--icon--color--status--warning--default);
+  --#{$helper-text}--m-dynamic--m-warning__item-text--FontWeight: var(--pf-t--global--font--weight--body--bold);
+  --#{$helper-text}--m-dynamic--m-success__item-icon--Color: var(--pf-t--global--icon--color--status--success--default);
+  --#{$helper-text}--m-dynamic--m-error__item-icon--Color: var(--pf-t--global--icon--color--status--danger--default);
+
+  // icon
+  --#{$helper-text}__item-icon--MarginInlineEnd: var(--pf-t--global--spacer--xs);
+}
+
+.#{$helper-text} {
+  // text
+
+  display: grid;
+  gap: var(--#{$helper-text}--Gap);
+  font-size: var(--#{$helper-text}--FontSize);
+
+  &.pf-m-hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.#{$helper-text}__item {
+  display: flex;
+  font-weight: var(--#{$helper-text}__item-text--FontWeight);
+
+
+  &.pf-m-indeterminate {
+    --#{$helper-text}__item-icon--Color: var(--#{$helper-text}__item-icon--m-indeterminate--Color);
+    --#{$helper-text}__item-text--Color: var(--#{$helper-text}__item-text--m-indeterminate--Color);
+    --#{$helper-text}--m-dynamic__item-icon--Color: var(--#{$helper-text}--m-dynamic--m-indeterminate__item-icon--Color);
+    --#{$helper-text}--m-dynamic__item-text--Color: var(--#{$helper-text}--m-dynamic--m-indeterminate__item-text--Color);
+  }
+
+  &.pf-m-warning {
+    --#{$helper-text}__item-text--FontWeight: var(--#{$helper-text}__item-text--m-warning--FontWeight);
+    --#{$helper-text}__item-icon--Color: var(--#{$helper-text}__item-icon--m-warning--Color);
+    --#{$helper-text}--m-dynamic__item-icon--Color: var(--#{$helper-text}--m-dynamic--m-warning__item-icon--Color);
+  }
+
+  &.pf-m-success {
+    --#{$helper-text}__item-text--FontWeight: var(--#{$helper-text}__item-text--m-success--FontWeight);
+    --#{$helper-text}__item-icon--Color: var(--#{$helper-text}__item-icon--m-success--Color);
+    --#{$helper-text}--m-dynamic__item-icon--Color: var(--#{$helper-text}--m-dynamic--m-success__item-icon--Color);
+  }
+
+  &.pf-m-error {
+    --#{$helper-text}__item-text--FontWeight: var(--#{$helper-text}__item-text--m-error--FontWeight);
+    --#{$helper-text}__item-icon--Color: var(--#{$helper-text}__item-icon--m-error--Color);
+    --#{$helper-text}--m-dynamic__item-icon--Color: var(--#{$helper-text}--m-dynamic--m-error__item-icon--Color);
+
+    animation-name: #{$helper-text}-item-fade-in;
+    animation-duration: var(--#{$helper-text}__item--m-error--TransitionDuration--Opacity);
+    animation-timing-function: var(--#{$helper-text}__item--m-error--TransitionTimingFunction--Opacity);
+
+    @keyframes #{$helper-text}-item-fade-in {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.pf-m-dynamic {
+    --#{$helper-text}__item-icon--Color: var(--#{$helper-text}--m-dynamic__item-icon--Color);
+  }
+}
+
+.#{$helper-text}__item-icon {
+  margin-inline-end: var(--#{$helper-text}__item-icon--MarginInlineEnd);
+  color: var(--#{$helper-text}__item-icon--Color);
+}
+
+.#{$helper-text}__item-text {
+  color: var(--#{$helper-text}__item-text--Color);
+}

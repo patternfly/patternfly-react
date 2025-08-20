@@ -1,0 +1,43 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($action-list) {
+  --#{$action-list}--RowGap: var(--pf-t--global--spacer--gap--group--vertical);
+  --#{$action-list}--ColumnGap: var(--pf-t--global--spacer--gap--group-to-group--horizontal--default);
+
+  // * Action list group
+  --#{$action-list}__group--ColumnGap: var(--pf-t--global--spacer--gap--action-to-action--default);
+
+  // * Action list icons
+  --#{$action-list}--m-icons--ColumnGap: var(--pf-t--global--spacer--gap--action-to-action--plain);
+}
+
+// - Action list - Action list group
+.#{$action-list},
+.#{$action-list}__group {
+  display: flex;
+  align-items: start;
+}
+
+// - Action list
+.#{$action-list} {
+  row-gap: var(--#{$action-list}--RowGap);
+  column-gap: var(--#{$action-list}--ColumnGap);
+
+  // - Action list icons
+  &.pf-m-icons {
+    --#{$action-list}__group--ColumnGap: var(--#{$action-list}--m-icons--ColumnGap);
+
+    column-gap: var(--#{$action-list}--m-icons--ColumnGap); // update prop: val to prevent potential inheritance conflicts
+  }
+}
+
+// - Action list group
+.#{$action-list}__group {
+  row-gap: var(--#{$action-list}__group--RowGap, var(--#{$action-list}--RowGap));
+  column-gap: var(--#{$action-list}__group--ColumnGap);
+
+  // - Action list group icons
+  &.pf-m-icons {
+    column-gap: var(--#{$action-list}--m-icons--ColumnGap); // update prop: val to prevent potential inheritance conflicts
+  }
+}

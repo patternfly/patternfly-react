@@ -1,0 +1,4 @@
+.ws-core-l-split :is(.pf-v6-l-split, .pf-v6-l-split__item, .pf-v6-l-split > *) {
+  padding: var(--pf-t--global--spacer--sm);
+  border: var(--pf-t--global--border--width--box--default) dashed var(--pf-t--global--border--color--default);
+}

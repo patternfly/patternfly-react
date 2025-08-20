@@ -1,0 +1,14 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($bullseye) {
+  --#{$bullseye}--Padding: 0;
+}
+
+.#{$bullseye} {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: var(--#{$bullseye}--Padding);
+  margin: 0;
+}

@@ -1,0 +1,508 @@
+.pf-v6-c-label {
+  --pf-v6-c-label--PaddingBlockStart: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-label--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-label--PaddingBlockEnd: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-label--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-label--MaxWidth: 100%;
+  --pf-v6-c-label--MinWidth: calc((var(--pf-v6-c-label--FontSize) * var(--pf-t--global--font--line-height--body) + var(--pf-v6-c-label--PaddingBlockStart) + var(--pf-v6-c-label--PaddingBlockEnd)));
+  --pf-v6-c-label--BorderWidth: var(--pf-t--global--border--width--regular);
+  --pf-v6-c-label--BorderColor: var(--pf-t--global--border--color--high-contrast);
+  --pf-v6-c-label--BorderRadius: var(--pf-t--global--border--radius--pill);
+  --pf-v6-c-label--FontSize: var(--pf-t--global--font--size--body--sm);
+  --pf-v6-c-label--Gap: var(--pf-t--global--spacer--gap--text-to-element--compact);
+  --pf-v6-c-label--BackgroundColor: var(--pf-t--global--color--nonstatus--gray--default);
+  --pf-v6-c-label--Color: var(--pf-t--global--text--color--nonstatus--on-gray--default);
+  --pf-v6-c-label__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-gray--default);
+  --pf-v6-c-label--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--nonstatus--gray--hover);
+  --pf-v6-c-label--m-clickable--hover--Color: var(--pf-t--global--text--color--nonstatus--on-gray--hover);
+  --pf-v6-c-label--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-gray--hover);
+  --pf-v6-c-label--m-outline--BorderColor: var(--pf-t--global--border--color--nonstatus--gray--default);
+  --pf-v6-c-label--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--nonstatus--gray--hover);
+  --pf-v6-c-label--m-blue--BackgroundColor: var(--pf-t--global--color--nonstatus--blue--default);
+  --pf-v6-c-label--m-blue--Color: var(--pf-t--global--text--color--nonstatus--on-blue--default);
+  --pf-v6-c-label--m-blue__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-blue--default);
+  --pf-v6-c-label--m-blue--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--nonstatus--blue--hover);
+  --pf-v6-c-label--m-blue--m-clickable--hover--Color: var(--pf-t--global--text--color--nonstatus--on-blue--hover);
+  --pf-v6-c-label--m-blue--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-blue--hover);
+  --pf-v6-c-label--m-blue--m-outline--BorderColor: var(--pf-t--global--border--color--nonstatus--blue--default);
+  --pf-v6-c-label--m-blue--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--nonstatus--blue--hover);
+  --pf-v6-c-label--m-red--BackgroundColor: var(--pf-t--global--color--nonstatus--red--default);
+  --pf-v6-c-label--m-red--Color: var(--pf-t--global--text--color--nonstatus--on-red--default);
+  --pf-v6-c-label--m-red__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-red--default);
+  --pf-v6-c-label--m-red--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--nonstatus--red--hover);
+  --pf-v6-c-label--m-red--m-clickable--hover--Color: var(--pf-t--global--text--color--nonstatus--on-red--hover);
+  --pf-v6-c-label--m-red--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-red--hover);
+  --pf-v6-c-label--m-red--m-outline--BorderColor: var(--pf-t--global--border--color--nonstatus--red--default);
+  --pf-v6-c-label--m-red--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--nonstatus--red--hover);
+  --pf-v6-c-label--m-orange--BackgroundColor: var(--pf-t--global--color--nonstatus--orange--default);
+  --pf-v6-c-label--m-orange--Color: var(--pf-t--global--text--color--nonstatus--on-orange--default);
+  --pf-v6-c-label--m-orange__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-orange--default);
+  --pf-v6-c-label--m-orange--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--nonstatus--orange--hover);
+  --pf-v6-c-label--m-orange--m-clickable--hover--Color: var(--pf-t--global--text--color--nonstatus--on-orange--hover);
+  --pf-v6-c-label--m-orange--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-orange--hover);
+  --pf-v6-c-label--m-orange--m-outline--BorderColor: var(--pf-t--global--border--color--nonstatus--orange--default);
+  --pf-v6-c-label--m-orange--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--nonstatus--orange--hover);
+  --pf-v6-c-label--m-orangered--BackgroundColor: var(--pf-t--global--color--nonstatus--orangered--default);
+  --pf-v6-c-label--m-orangered--Color: var(--pf-t--global--text--color--nonstatus--on-orangered--default);
+  --pf-v6-c-label--m-orangered__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-orangered--default);
+  --pf-v6-c-label--m-orangered--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--nonstatus--orangered--hover);
+  --pf-v6-c-label--m-orangered--m-clickable--hover--Color: var(--pf-t--global--text--color--nonstatus--on-orangered--hover);
+  --pf-v6-c-label--m-orangered--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-orangered--hover);
+  --pf-v6-c-label--m-orangered--m-outline--BorderColor: var(--pf-t--global--border--color--nonstatus--orangered--default);
+  --pf-v6-c-label--m-orangered--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--nonstatus--orangered--hover);
+  --pf-v6-c-label--m-yellow--BackgroundColor: var(--pf-t--global--color--nonstatus--yellow--default);
+  --pf-v6-c-label--m-yellow--Color: var(--pf-t--global--text--color--nonstatus--on-yellow--default);
+  --pf-v6-c-label--m-yellow__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-yellow--default);
+  --pf-v6-c-label--m-yellow--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--nonstatus--yellow--hover);
+  --pf-v6-c-label--m-yellow--m-clickable--hover--Color: var(--pf-t--global--text--color--nonstatus--on-yellow--hover);
+  --pf-v6-c-label--m-yellow--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-yellow--hover);
+  --pf-v6-c-label--m-yellow--m-outline--BorderColor: var(--pf-t--global--border--color--nonstatus--yellow--default);
+  --pf-v6-c-label--m-yellow--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--nonstatus--yellow--hover);
+  --pf-v6-c-label--m-green--BackgroundColor: var(--pf-t--global--color--nonstatus--green--default);
+  --pf-v6-c-label--m-green--Color: var(--pf-t--global--text--color--nonstatus--on-green--default);
+  --pf-v6-c-label--m-green__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-green--default);
+  --pf-v6-c-label--m-green--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--nonstatus--green--hover);
+  --pf-v6-c-label--m-green--m-clickable--hover--Color: var(--pf-t--global--text--color--nonstatus--on-green--hover);
+  --pf-v6-c-label--m-green--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-green--hover);
+  --pf-v6-c-label--m-green--m-outline--BorderColor: var(--pf-t--global--border--color--nonstatus--green--default);
+  --pf-v6-c-label--m-green--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--nonstatus--green--hover);
+  --pf-v6-c-label--m-teal--BackgroundColor: var(--pf-t--global--color--nonstatus--teal--default);
+  --pf-v6-c-label--m-teal--Color: var(--pf-t--global--text--color--nonstatus--on-teal--default);
+  --pf-v6-c-label--m-teal__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-teal--default);
+  --pf-v6-c-label--m-teal--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--nonstatus--teal--hover);
+  --pf-v6-c-label--m-teal--m-clickable--hover--Color: var(--pf-t--global--text--color--nonstatus--on-teal--hover);
+  --pf-v6-c-label--m-teal--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-teal--hover);
+  --pf-v6-c-label--m-teal--m-outline--BorderColor: var(--pf-t--global--border--color--nonstatus--teal--default);
+  --pf-v6-c-label--m-teal--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--nonstatus--teal--hover);
+  --pf-v6-c-label--m-purple--BackgroundColor: var(--pf-t--global--color--nonstatus--purple--default);
+  --pf-v6-c-label--m-purple--Color: var(--pf-t--global--text--color--nonstatus--on-purple--default);
+  --pf-v6-c-label--m-purple__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-purple--default);
+  --pf-v6-c-label--m-purple--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--nonstatus--purple--hover);
+  --pf-v6-c-label--m-purple--m-clickable--hover--Color: var(--pf-t--global--text--color--nonstatus--on-purple--hover);
+  --pf-v6-c-label--m-purple--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-purple--hover);
+  --pf-v6-c-label--m-purple--m-outline--BorderColor: var(--pf-t--global--border--color--nonstatus--purple--default);
+  --pf-v6-c-label--m-purple--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--nonstatus--purple--hover);
+  --pf-v6-c-label--m-success--BackgroundColor: var(--pf-t--global--color--status--success--default);
+  --pf-v6-c-label--m-success--Color: var(--pf-t--global--text--color--status--on-success--default);
+  --pf-v6-c-label--m-success__icon--Color: var(--pf-t--global--icon--color--status--on-success--default);
+  --pf-v6-c-label--m-success--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--status--success--hover);
+  --pf-v6-c-label--m-success--m-clickable--hover--Color: var(--pf-t--global--text--color--status--on-success--hover);
+  --pf-v6-c-label--m-success--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--status--on-success--hover);
+  --pf-v6-c-label--m-success--m-outline__icon--Color: var(--pf-t--global--icon--color--status--success--default);
+  --pf-v6-c-label--m-success--m-outline--BorderColor: var(--pf-t--global--border--color--status--success--default);
+  --pf-v6-c-label--m-success--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--status--success--hover);
+  --pf-v6-c-label--m-success--m-outline--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--status--success--hover);
+  --pf-v6-c-label--m-warning--BackgroundColor: var(--pf-t--global--color--status--warning--default);
+  --pf-v6-c-label--m-warning--Color: var(--pf-t--global--text--color--status--on-warning--default);
+  --pf-v6-c-label--m-warning__icon--Color: var(--pf-t--global--icon--color--status--on-warning--default);
+  --pf-v6-c-label--m-warning--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--status--warning--hover);
+  --pf-v6-c-label--m-warning--m-clickable--hover--Color: var(--pf-t--global--text--color--status--on-warning--hover);
+  --pf-v6-c-label--m-warning--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--status--on-warning--hover);
+  --pf-v6-c-label--m-warning--m-outline__icon--Color: var(--pf-t--global--icon--color--status--warning--default);
+  --pf-v6-c-label--m-warning--m-outline--BorderColor: var(--pf-t--global--border--color--status--warning--default);
+  --pf-v6-c-label--m-warning--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--status--warning--hover);
+  --pf-v6-c-label--m-warning--m-outline--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--status--warning--hover);
+  --pf-v6-c-label--m-danger--BackgroundColor: var(--pf-t--global--color--status--danger--default);
+  --pf-v6-c-label--m-danger--Color: var(--pf-t--global--text--color--status--on-danger--default);
+  --pf-v6-c-label--m-danger__icon--Color: var(--pf-t--global--icon--color--status--on-danger--default);
+  --pf-v6-c-label--m-danger--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--status--danger--hover);
+  --pf-v6-c-label--m-danger--m-clickable--hover--Color: var(--pf-t--global--text--color--status--on-danger--hover);
+  --pf-v6-c-label--m-danger--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--status--on-danger--hover);
+  --pf-v6-c-label--m-danger--m-outline__icon--Color: var(--pf-t--global--icon--color--status--danger--default);
+  --pf-v6-c-label--m-danger--m-outline--BorderColor: var(--pf-t--global--border--color--status--danger--default);
+  --pf-v6-c-label--m-danger--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--status--danger--hover);
+  --pf-v6-c-label--m-danger--m-outline--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--status--danger--hover);
+  --pf-v6-c-label--m-info--BackgroundColor: var(--pf-t--global--color--status--info--default);
+  --pf-v6-c-label--m-info--Color: var(--pf-t--global--text--color--status--on-info--default);
+  --pf-v6-c-label--m-info__icon--Color: var(--pf-t--global--icon--color--status--on-info--default);
+  --pf-v6-c-label--m-info--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--status--info--hover);
+  --pf-v6-c-label--m-info--m-clickable--hover--Color: var(--pf-t--global--text--color--status--on-info--hover);
+  --pf-v6-c-label--m-info--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--status--on-info--hover);
+  --pf-v6-c-label--m-info--m-outline__icon--Color: var(--pf-t--global--icon--color--status--info--default);
+  --pf-v6-c-label--m-info--m-outline--BorderColor: var(--pf-t--global--border--color--status--info--default);
+  --pf-v6-c-label--m-info--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--status--info--hover);
+  --pf-v6-c-label--m-info--m-outline--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--status--info--hover);
+  --pf-v6-c-label--m-custom--BackgroundColor: var(--pf-t--global--color--status--custom--default);
+  --pf-v6-c-label--m-custom--Color: var(--pf-t--global--text--color--status--on-custom--default);
+  --pf-v6-c-label--m-custom__icon--Color: var(--pf-t--global--icon--color--status--on-custom--default);
+  --pf-v6-c-label--m-custom--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--status--custom--hover);
+  --pf-v6-c-label--m-custom--m-clickable--hover--Color: var(--pf-t--global--text--color--status--on-custom--hover);
+  --pf-v6-c-label--m-custom--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--status--on-custom--hover);
+  --pf-v6-c-label--m-custom--m-outline__icon--Color: var(--pf-t--global--icon--color--status--custom--default);
+  --pf-v6-c-label--m-custom--m-outline--BorderColor: var(--pf-t--global--border--color--status--custom--default);
+  --pf-v6-c-label--m-custom--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--status--custom--hover);
+  --pf-v6-c-label--m-custom--m-outline--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--status--custom--hover);
+  --pf-v6-c-label--m-clickable--hover--BorderWidth: var(--pf-t--global--border--width--action--hover);
+  --pf-v6-c-label--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--high-contrast);
+  --pf-v6-c-label--m-clickable__content--Cursor: pointer;
+  --pf-v6-c-label--m-filled__actions--c-button__icon--Color: var(--pf-v6-c-label__icon--Color);
+  --pf-v6-c-label--m-outline--BorderWidth: var(--pf-t--global--border--width--action--default);
+  --pf-v6-c-label--m-outline--BackgroundColor: transparent;
+  --pf-v6-c-label--m-outline--Color: var(--pf-t--global--text--color--regular);
+  --pf-v6-c-label--m-outline__icon--Color: var(--pf-t--global--icon--color--regular);
+  --pf-v6-c-label--m-outline--m-clickable--hover--BackgroundColor: transparent;
+  --pf-v6-c-label--m-outline--m-clickable--hover--BorderWidth: var(--pf-t--global--border--width--action--hover);
+  --pf-v6-c-label--m-outline--m-clickable--hover--Color: var(--pf-t--global--text--color--regular);
+  --pf-v6-c-label--m-outline--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--regular);
+  --pf-v6-c-label--m-overflow--Color: var(--pf-t--global--text--color--brand--default);
+  --pf-v6-c-label--m-overflow--BackgroundColor: var(--pf-t--global--background--color--action--plain--default);
+  --pf-v6-c-label--m-overflow--BorderWidth: var(--pf-t--global--border--width--action--default);
+  --pf-v6-c-label--m-overflow--hover--Color: var(--pf-t--global--text--color--brand--hover);
+  --pf-v6-c-label--m-overflow--hover--BackgroundColor: var(--pf-t--global--background--color--action--plain--hover);
+  --pf-v6-c-label--m-overflow--hover--BorderWidth: var(--pf-t--global--border--width--action--hover);
+  --pf-v6-c-label--m-add--Color: var(--pf-t--global--text--color--brand--default);
+  --pf-v6-c-label--m-add--BackgroundColor: transparent;
+  --pf-v6-c-label--m-add--BorderColor: var(--pf-t--global--border--color--default);
+  --pf-v6-c-label--m-add--BorderWidth: var(--pf-t--global--border--width--action--default);
+  --pf-v6-c-label--m-add--hover--Color: var(--pf-t--global--text--color--brand--hover);
+  --pf-v6-c-label--m-add--hover--BackgroundColor: transparent;
+  --pf-v6-c-label--m-add--hover--BorderColor: var(--pf-t--global--border--color--hover);
+  --pf-v6-c-label--m-add--hover--BorderWidth: var(--pf-t--global--border--width--action--hover);
+  --pf-v6-c-label--m-compact--PaddingBlockStart: 0;
+  --pf-v6-c-label--m-compact--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-label--m-compact--PaddingBlockEnd: 0;
+  --pf-v6-c-label--m-compact--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-label--m-compact--FontSize: var(--pf-t--global--font--size--body--sm);
+  --pf-v6-c-label--m-compact--m-editable--TextUnderlineOffset: 0.0625rem;
+  --pf-v6-c-label--m-compact--MinWidth: calc((var(--pf-v6-c-label--m-compact--FontSize) * var(--pf-t--global--font--line-height--body)) + (var(--pf-v6-c-label--m-compact--PaddingBlockStart) + var(--pf-v6-c-label--m-compact--PaddingBlockEnd)));
+  --pf-v6-c-label__content--MaxWidth: 100%;
+  --pf-v6-c-label__content--Gap: var(--pf-t--global--spacer--gap--text-to-element--compact);
+  --pf-v6-c-label__content--Cursor: initial;
+  --pf-v6-c-label__icon--FontSize: var(--pf-t--global--icon--size--font--body--sm);
+  --pf-v6-c-label__text--MaxWidth: 100%;
+  --pf-v6-c-label__actions--MarginInlineEnd: 0;
+  --pf-v6-c-label__actions--c-button--FontSize: var(--pf-t--global--icon--size--font--body--sm);
+  --pf-v6-c-label__actions--c-button--OutlineOffset: -0.1875rem;
+  --pf-v6-c-label__actions--c-button--MarginBlockStart: 0;
+  --pf-v6-c-label__actions--c-button--MarginBlockEnd: 0;
+  --pf-v6-c-label__actions--c-button--PaddingBlockStart: 0;
+  --pf-v6-c-label__actions--c-button--PaddingInlineEnd: 0;
+  --pf-v6-c-label__actions--c-button--PaddingBlockEnd: 0;
+  --pf-v6-c-label__actions--c-button--PaddingInlineStart: 0;
+  --pf-v6-c-label--m-editable--TextDecorationLine: var(--pf-t--global--text-decoration--editable-text--line--default);
+  --pf-v6-c-label--m-editable--TextDecorationStyle: var(--pf-t--global--text-decoration--editable-text--style--default);
+  --pf-v6-c-label--m-editable--hover--TextDecorationLine: var(--pf-t--global--text-decoration--editable-text--line--hover);
+  --pf-v6-c-label--m-editable--hover--TextDecorationStyle: var(--pf-t--global--text-decoration--editable-text--style--hover);
+  --pf-v6-c-label--m-editable--TextUnderlineOffset: 0.25rem;
+  --pf-v6-c-label--m-editable__content--MaxWidth: 16ch;
+  --pf-v6-c-label--m-editable__content--Cursor: pointer;
+  --pf-v6-c-label--m-editable--m-editable-active--TextDecorationLine: none;
+  --pf-v6-c-label--m-editable--m-editable-active--BackgroundColor: transparent;
+  --pf-v6-c-label--m-editable--m-editable-active--Color: var(--pf-t--global--text--color--regular);
+  --pf-v6-c-label--m-editable--m-editable-active__content--Cursor: initial;
+  --pf-v6-c-label--m-disabled--BackgroundColor: var(--pf-t--global--background--color--disabled--default);
+  --pf-v6-c-label--m-disabled--Color: var(--pf-t--global--text--color--on-disabled);
+  --pf-v6-c-label--m-disabled__icon--Color: var(--pf-t--global--icon--color--on-disabled);
+  --pf-v6-c-label--m-disabled--c-button--disabled__icon--Color: var(--pf-t--global--icon--color--on-disabled);
+}
+
+.pf-v6-c-label {
+  position: relative;
+  gap: var(--pf-v6-c-label--Gap);
+  min-width: var(--pf-v6-c-label--MinWidth);
+  max-width: var(--pf-v6-c-label--MaxWidth);
+  padding-block-start: var(--pf-v6-c-label--PaddingBlockStart);
+  padding-block-end: var(--pf-v6-c-label--PaddingBlockEnd);
+  padding-inline-start: var(--pf-v6-c-label--PaddingInlineStart);
+  padding-inline-end: var(--pf-v6-c-label--PaddingInlineEnd);
+  font-size: var(--pf-v6-c-label--FontSize);
+  white-space: nowrap;
+  background: transparent;
+  isolation: isolate;
+  border: 0;
+  border-radius: var(--pf-v6-c-label--BorderRadius);
+}
+.pf-v6-c-label.pf-m-blue {
+  --pf-v6-c-label--BackgroundColor: var(--pf-v6-c-label--m-blue--BackgroundColor);
+  --pf-v6-c-label--Color: var(--pf-v6-c-label--m-blue--Color);
+  --pf-v6-c-label__icon--Color: var(--pf-v6-c-label--m-blue__icon--Color);
+  --pf-v6-c-label--m-clickable--hover--BackgroundColor: var(--pf-v6-c-label--m-blue--m-clickable--hover--BackgroundColor);
+  --pf-v6-c-label--m-clickable--hover--Color: var(--pf-v6-c-label--m-blue--m-clickable--hover--Color);
+  --pf-v6-c-label--m-clickable--hover__icon--Color: var(--pf-v6-c-label--m-blue--m-clickable--hover__icon--Color);
+  --pf-v6-c-label--m-outline--BorderColor: var(--pf-v6-c-label--m-blue--m-outline--BorderColor);
+  --pf-v6-c-label--m-outline--m-clickable--hover--BorderColor: var(--pf-v6-c-label--m-blue--m-outline--m-clickable--hover--BorderColor);
+}
+.pf-v6-c-label.pf-m-red {
+  --pf-v6-c-label--BackgroundColor: var(--pf-v6-c-label--m-red--BackgroundColor);
+  --pf-v6-c-label--Color: var(--pf-v6-c-label--m-red--Color);
+  --pf-v6-c-label__icon--Color: var(--pf-v6-c-label--m-red__icon--Color);
+  --pf-v6-c-label--m-clickable--hover--BackgroundColor: var(--pf-v6-c-label--m-red--m-clickable--hover--BackgroundColor);
+  --pf-v6-c-label--m-clickable--hover--Color: var(--pf-v6-c-label--m-red--m-clickable--hover--Color);
+  --pf-v6-c-label--m-clickable--hover__icon--Color: var(--pf-v6-c-label--m-red--m-clickable--hover__icon--Color);
+  --pf-v6-c-label--m-outline--BorderColor: var(--pf-v6-c-label--m-red--m-outline--BorderColor);
+  --pf-v6-c-label--m-outline--m-clickable--hover--BorderColor: var(--pf-v6-c-label--m-red--m-outline--m-clickable--hover--BorderColor);
+}
+.pf-v6-c-label.pf-m-orange {
+  --pf-v6-c-label--BackgroundColor: var(--pf-v6-c-label--m-orange--BackgroundColor);
+  --pf-v6-c-label--Color: var(--pf-v6-c-label--m-orange--Color);
+  --pf-v6-c-label__icon--Color: var(--pf-v6-c-label--m-orange__icon--Color);
+  --pf-v6-c-label--m-clickable--hover--BackgroundColor: var(--pf-v6-c-label--m-orange--m-clickable--hover--BackgroundColor);
+  --pf-v6-c-label--m-clickable--hover--Color: var(--pf-v6-c-label--m-orange--m-clickable--hover--Color);
+  --pf-v6-c-label--m-clickable--hover__icon--Color: var(--pf-v6-c-label--m-orange--m-clickable--hover__icon--Color);
+  --pf-v6-c-label--m-outline--BorderColor: var(--pf-v6-c-label--m-orange--m-outline--BorderColor);
+  --pf-v6-c-label--m-outline--m-clickable--hover--BorderColor: var(--pf-v6-c-label--m-orange--m-outline--m-clickable--hover--BorderColor);
+}
+.pf-v6-c-label.pf-m-orangered {
+  --pf-v6-c-label--BackgroundColor: var(--pf-v6-c-label--m-orangered--BackgroundColor);
+  --pf-v6-c-label--Color: var(--pf-v6-c-label--m-orangered--Color);
+  --pf-v6-c-label__icon--Color: var(--pf-v6-c-label--m-orangered__icon--Color);
+  --pf-v6-c-label--m-clickable--hover--BackgroundColor: var(--pf-v6-c-label--m-orangered--m-clickable--hover--BackgroundColor);
+  --pf-v6-c-label--m-clickable--hover--Color: var(--pf-v6-c-label--m-orangered--m-clickable--hover--Color);
+  --pf-v6-c-label--m-clickable--hover__icon--Color: var(--pf-v6-c-label--m-orangered--m-clickable--hover__icon--Color);
+  --pf-v6-c-label--m-outline--BorderColor: var(--pf-v6-c-label--m-orangered--m-outline--BorderColor);
+  --pf-v6-c-label--m-outline--m-clickable--hover--BorderColor: var(--pf-v6-c-label--m-orangered--m-outline--m-clickable--hover--BorderColor);
+}
+.pf-v6-c-label.pf-m-yellow {
+  --pf-v6-c-label--BackgroundColor: var(--pf-v6-c-label--m-yellow--BackgroundColor);
+  --pf-v6-c-label--Color: var(--pf-v6-c-label--m-yellow--Color);
+  --pf-v6-c-label__icon--Color: var(--pf-v6-c-label--m-yellow__icon--Color);
+  --pf-v6-c-label--m-clickable--hover--BackgroundColor: var(--pf-v6-c-label--m-yellow--m-clickable--hover--BackgroundColor);
+  --pf-v6-c-label--m-clickable--hover--Color: var(--pf-v6-c-label--m-yellow--m-clickable--hover--Color);
+  --pf-v6-c-label--m-clickable--hover__icon--Color: var(--pf-v6-c-label--m-yellow--m-clickable--hover__icon--Color);
+  --pf-v6-c-label--m-outline--BorderColor: var(--pf-v6-c-label--m-yellow--m-outline--BorderColor);
+  --pf-v6-c-label--m-outline--m-clickable--hover--BorderColor: var(--pf-v6-c-label--m-yellow--m-outline--m-clickable--hover--BorderColor);
+}
+.pf-v6-c-label.pf-m-green {
+  --pf-v6-c-label--BackgroundColor: var(--pf-v6-c-label--m-green--BackgroundColor);
+  --pf-v6-c-label--Color: var(--pf-v6-c-label--m-green--Color);
+  --pf-v6-c-label__icon--Color: var(--pf-v6-c-label--m-green__icon--Color);
+  --pf-v6-c-label--m-clickable--hover--BackgroundColor: var(--pf-v6-c-label--m-green--m-clickable--hover--BackgroundColor);
+  --pf-v6-c-label--m-clickable--hover--Color: var(--pf-v6-c-label--m-green--m-clickable--hover--Color);
+  --pf-v6-c-label--m-clickable--hover__icon--Color: var(--pf-v6-c-label--m-green--m-clickable--hover__icon--Color);
+  --pf-v6-c-label--m-outline--BorderColor: var(--pf-v6-c-label--m-green--m-outline--BorderColor);
+  --pf-v6-c-label--m-outline--m-clickable--hover--BorderColor: var(--pf-v6-c-label--m-green--m-outline--m-clickable--hover--BorderColor);
+}
+.pf-v6-c-label.pf-m-teal {
+  --pf-v6-c-label--BackgroundColor: var(--pf-v6-c-label--m-teal--BackgroundColor);
+  --pf-v6-c-label--Color: var(--pf-v6-c-label--m-teal--Color);
+  --pf-v6-c-label__icon--Color: var(--pf-v6-c-label--m-teal__icon--Color);
+  --pf-v6-c-label--m-clickable--hover--BackgroundColor: var(--pf-v6-c-label--m-teal--m-clickable--hover--BackgroundColor);
+  --pf-v6-c-label--m-clickable--hover--Color: var(--pf-v6-c-label--m-teal--m-clickable--hover--Color);
+  --pf-v6-c-label--m-clickable--hover__icon--Color: var(--pf-v6-c-label--m-teal--m-clickable--hover__icon--Color);
+  --pf-v6-c-label--m-outline--BorderColor: var(--pf-v6-c-label--m-teal--m-outline--BorderColor);
+  --pf-v6-c-label--m-outline--m-clickable--hover--BorderColor: var(--pf-v6-c-label--m-teal--m-outline--m-clickable--hover--BorderColor);
+}
+.pf-v6-c-label.pf-m-purple {
+  --pf-v6-c-label--BackgroundColor: var(--pf-v6-c-label--m-purple--BackgroundColor);
+  --pf-v6-c-label--Color: var(--pf-v6-c-label--m-purple--Color);
+  --pf-v6-c-label__icon--Color: var(--pf-v6-c-label--m-purple__icon--Color);
+  --pf-v6-c-label--m-clickable--hover--BackgroundColor: var(--pf-v6-c-label--m-purple--m-clickable--hover--BackgroundColor);
+  --pf-v6-c-label--m-clickable--hover--Color: var(--pf-v6-c-label--m-purple--m-clickable--hover--Color);
+  --pf-v6-c-label--m-clickable--hover__icon--Color: var(--pf-v6-c-label--m-purple--m-clickable--hover__icon--Color);
+  --pf-v6-c-label--m-outline--BorderColor: var(--pf-v6-c-label--m-purple--m-outline--BorderColor);
+  --pf-v6-c-label--m-outline--m-clickable--hover--BorderColor: var(--pf-v6-c-label--m-purple--m-outline--m-clickable--hover--BorderColor);
+}
+.pf-v6-c-label.pf-m-success {
+  --pf-v6-c-label--BackgroundColor: var(--pf-v6-c-label--m-success--BackgroundColor);
+  --pf-v6-c-label--Color: var(--pf-v6-c-label--m-success--Color);
+  --pf-v6-c-label__icon--Color: var(--pf-v6-c-label--m-success__icon--Color);
+  --pf-v6-c-label--m-clickable--hover--BackgroundColor: var(--pf-v6-c-label--m-success--m-clickable--hover--BackgroundColor);
+  --pf-v6-c-label--m-clickable--hover--Color: var(--pf-v6-c-label--m-success--m-clickable--hover--Color);
+  --pf-v6-c-label--m-clickable--hover__icon--Color: var(--pf-v6-c-label--m-success--m-clickable--hover__icon--Color);
+  --pf-v6-c-label--m-outline__icon--Color: var(--pf-v6-c-label--m-success--m-outline__icon--Color);
+  --pf-v6-c-label--m-outline--BorderColor: var(--pf-v6-c-label--m-success--m-outline--BorderColor);
+  --pf-v6-c-label--m-outline--m-clickable--hover--BorderColor: var(--pf-v6-c-label--m-success--m-outline--m-clickable--hover--BorderColor);
+  --pf-v6-c-label--m-outline--m-clickable--hover__icon--Color: var(--pf-v6-c-label--m-success--m-outline--m-clickable--hover__icon--Color);
+}
+.pf-v6-c-label.pf-m-warning {
+  --pf-v6-c-label--BackgroundColor: var(--pf-v6-c-label--m-warning--BackgroundColor);
+  --pf-v6-c-label--Color: var(--pf-v6-c-label--m-warning--Color);
+  --pf-v6-c-label__icon--Color: var(--pf-v6-c-label--m-warning__icon--Color);
+  --pf-v6-c-label--m-clickable--hover--BackgroundColor: var(--pf-v6-c-label--m-warning--m-clickable--hover--BackgroundColor);
+  --pf-v6-c-label--m-clickable--hover--Color: var(--pf-v6-c-label--m-warning--m-clickable--hover--Color);
+  --pf-v6-c-label--m-clickable--hover__icon--Color: var(--pf-v6-c-label--m-warning--m-clickable--hover__icon--Color);
+  --pf-v6-c-label--m-outline__icon--Color: var(--pf-v6-c-label--m-warning--m-outline__icon--Color);
+  --pf-v6-c-label--m-outline--BorderColor: var(--pf-v6-c-label--m-warning--m-outline--BorderColor);
+  --pf-v6-c-label--m-outline--m-clickable--hover--BorderColor: var(--pf-v6-c-label--m-warning--m-outline--m-clickable--hover--BorderColor);
+  --pf-v6-c-label--m-outline--m-clickable--hover__icon--Color: var(--pf-v6-c-label--m-warning--m-outline--m-clickable--hover__icon--Color);
+}
+.pf-v6-c-label.pf-m-danger {
+  --pf-v6-c-label--BackgroundColor: var(--pf-v6-c-label--m-danger--BackgroundColor);
+  --pf-v6-c-label--Color: var(--pf-v6-c-label--m-danger--Color);
+  --pf-v6-c-label__icon--Color: var(--pf-v6-c-label--m-danger__icon--Color);
+  --pf-v6-c-label--m-clickable--hover--BackgroundColor: var(--pf-v6-c-label--m-danger--m-clickable--hover--BackgroundColor);
+  --pf-v6-c-label--m-clickable--hover--Color: var(--pf-v6-c-label--m-danger--m-clickable--hover--Color);
+  --pf-v6-c-label--m-clickable--hover__icon--Color: var(--pf-v6-c-label--m-danger--m-clickable--hover__icon--Color);
+  --pf-v6-c-label--m-outline__icon--Color: var(--pf-v6-c-label--m-danger--m-outline__icon--Color);
+  --pf-v6-c-label--m-outline--BorderColor: var(--pf-v6-c-label--m-danger--m-outline--BorderColor);
+  --pf-v6-c-label--m-outline--m-clickable--hover--BorderColor: var(--pf-v6-c-label--m-danger--m-outline--m-clickable--hover--BorderColor);
+  --pf-v6-c-label--m-outline--m-clickable--hover__icon--Color: var(--pf-v6-c-label--m-danger--m-outline--m-clickable--hover__icon--Color);
+}
+.pf-v6-c-label.pf-m-info {
+  --pf-v6-c-label--BackgroundColor: var(--pf-v6-c-label--m-info--BackgroundColor);
+  --pf-v6-c-label--Color: var(--pf-v6-c-label--m-info--Color);
+  --pf-v6-c-label__icon--Color: var(--pf-v6-c-label--m-info__icon--Color);
+  --pf-v6-c-label--m-clickable--hover--BackgroundColor: var(--pf-v6-c-label--m-info--m-clickable--hover--BackgroundColor);
+  --pf-v6-c-label--m-clickable--hover--Color: var(--pf-v6-c-label--m-info--m-clickable--hover--Color);
+  --pf-v6-c-label--m-clickable--hover__icon--Color: var(--pf-v6-c-label--m-info--m-clickable--hover__icon--Color);
+  --pf-v6-c-label--m-outline__icon--Color: var(--pf-v6-c-label--m-info--m-outline__icon--Color);
+  --pf-v6-c-label--m-outline--BorderColor: var(--pf-v6-c-label--m-info--m-outline--BorderColor);
+  --pf-v6-c-label--m-outline--m-clickable--hover--BorderColor: var(--pf-v6-c-label--m-info--m-outline--m-clickable--hover--BorderColor);
+  --pf-v6-c-label--m-outline--m-clickable--hover__icon--Color: var(--pf-v6-c-label--m-info--m-outline--m-clickable--hover__icon--Color);
+}
+.pf-v6-c-label.pf-m-custom {
+  --pf-v6-c-label--BackgroundColor: var(--pf-v6-c-label--m-custom--BackgroundColor);
+  --pf-v6-c-label--Color: var(--pf-v6-c-label--m-custom--Color);
+  --pf-v6-c-label__icon--Color: var(--pf-v6-c-label--m-custom__icon--Color);
+  --pf-v6-c-label--m-clickable--hover--BackgroundColor: var(--pf-v6-c-label--m-custom--m-clickable--hover--BackgroundColor);
+  --pf-v6-c-label--m-clickable--hover--Color: var(--pf-v6-c-label--m-custom--m-clickable--hover--Color);
+  --pf-v6-c-label--m-clickable--hover__icon--Color: var(--pf-v6-c-label--m-custom--m-clickable--hover__icon--Color);
+  --pf-v6-c-label--m-outline__icon--Color: var(--pf-v6-c-label--m-custom--m-outline__icon--Color);
+  --pf-v6-c-label--m-outline--BorderColor: var(--pf-v6-c-label--m-custom--m-outline--BorderColor);
+  --pf-v6-c-label--m-outline--m-clickable--hover--BorderColor: var(--pf-v6-c-label--m-custom--m-outline--m-clickable--hover--BorderColor);
+  --pf-v6-c-label--m-outline--m-clickable--hover__icon--Color: var(--pf-v6-c-label--m-success--m-outline--m-clickable--hover__icon--Color);
+}
+.pf-v6-c-label.pf-m-compact {
+  --pf-v6-c-label--PaddingBlockStart: var(--pf-v6-c-label--m-compact--PaddingBlockStart);
+  --pf-v6-c-label--PaddingInlineEnd: var(--pf-v6-c-label--m-compact--PaddingInlineEnd);
+  --pf-v6-c-label--PaddingBlockEnd: var(--pf-v6-c-label--m-compact--PaddingBlockEnd);
+  --pf-v6-c-label--PaddingInlineStart: var(--pf-v6-c-label--m-compact--PaddingInlineStart);
+  --pf-v6-c-label--FontSize: var(--pf-v6-c-label--m-compact--FontSize);
+  --pf-v6-c-label--MinWidth: var(--pf-v6-c-label--m-compact--MinWidth);
+  --pf-v6-c-label--m-editable--TextUnderlineOffset: var(--pf-v6-c-label--m-compact--m-editable--TextUnderlineOffset);
+}
+.pf-v6-c-label.pf-m-filled .pf-v6-c-label__actions .pf-v6-c-button {
+  --pf-v6-c-button__icon--Color: var(--pf-v6-c-label--m-filled__actions--c-button__icon--Color);
+}
+.pf-v6-c-label.pf-m-outline {
+  --pf-v6-c-label--Color: var(--pf-v6-c-label--m-outline--Color);
+  --pf-v6-c-label--BorderWidth: var(--pf-v6-c-label--m-outline--BorderWidth);
+  --pf-v6-c-label--BorderColor: var(--pf-v6-c-label--m-outline--BorderColor);
+  --pf-v6-c-label--BackgroundColor: var(--pf-v6-c-label--m-outline--BackgroundColor);
+  --pf-v6-c-label__icon--Color: var(--pf-v6-c-label--m-outline__icon--Color);
+  --pf-v6-c-label--m-clickable--hover--BackgroundColor: var(--pf-v6-c-label--m-outline--m-clickable--hover--BackgroundColor);
+  --pf-v6-c-label--m-clickable--hover--BorderWidth: var(--pf-v6-c-label--m-outline--m-clickable--hover--BorderWidth);
+  --pf-v6-c-label--m-clickable--hover--BorderColor: var(--pf-v6-c-label--m-outline--m-clickable--hover--BorderColor);
+  --pf-v6-c-label--m-clickable--hover--Color: var(--pf-v6-c-label--m-outline--m-clickable--hover--Color);
+  --pf-v6-c-label--m-clickable--hover__icon--Color: var(--pf-v6-c-label--m-outline--m-clickable--hover__icon--Color);
+}
+.pf-v6-c-label.pf-m-editable {
+  --pf-v6-c-label__content--MaxWidth: var(--pf-v6-c-label--m-editable__content--MaxWidth);
+  --pf-v6-c-label__content--Cursor: var(--pf-v6-c-label--m-editable__content--Cursor);
+}
+.pf-v6-c-label.pf-m-editable .pf-v6-c-label__content:is(:hover, :focus) {
+  --pf-v6-c-label--m-editable--TextDecorationLine: var(--pf-v6-c-label--m-editable--hover--TextDecorationLine);
+  --pf-v6-c-label--m-editable--TextDecorationStyle: var(--pf-v6-c-label--m-editable--hover--TextDecorationStyle);
+}
+.pf-v6-c-label.pf-m-editable .pf-v6-c-label__text {
+  text-decoration-line: var(--pf-v6-c-label--m-editable--TextDecorationLine);
+  text-decoration-style: var(--pf-v6-c-label--m-editable--TextDecorationStyle);
+  text-underline-offset: var(--pf-v6-c-label--m-editable--TextUnderlineOffset);
+}
+.pf-v6-c-label.pf-m-editable-active {
+  --pf-v6-c-label--m-editable--TextDecorationLine: var(--pf-v6-c-label--m-editable--m-editable-active--TextDecorationLine);
+  --pf-v6-c-label--BackgroundColor: var(--pf-v6-c-label--m-editable--m-editable-active--BackgroundColor);
+  --pf-v6-c-label--Color: var(--pf-v6-c-label--m-editable--m-editable-active--Color);
+  --pf-v6-c-label__content--Cursor: var(--pf-v6-c-label--m-editable--m-editable-active__content--Cursor);
+}
+.pf-v6-c-label.pf-m-overflow {
+  --pf-v6-c-label--Color: var(--pf-v6-c-label--m-overflow--Color);
+  --pf-v6-c-label--BackgroundColor: var(--pf-v6-c-label--m-overflow--BackgroundColor);
+  --pf-v6-c-label--BorderWidth: var(--pf-v6-c-label--m-overflow--BorderWidth);
+}
+.pf-v6-c-label.pf-m-overflow:is(:hover, :focus) {
+  --pf-v6-c-label--m-overflow--Color: var(--pf-v6-c-label--m-overflow--hover--Color);
+  --pf-v6-c-label--m-overflow--BackgroundColor: var(--pf-v6-c-label--m-overflow--hover--BackgroundColor);
+  --pf-v6-c-label--m-overflow--BorderWidth: var(--pf-v6-c-label--m-overflow--hover--BorderWidth);
+}
+.pf-v6-c-label.pf-m-add {
+  --pf-v6-c-label--Color: var(--pf-v6-c-label--m-add--Color);
+  --pf-v6-c-label--BackgroundColor: var(--pf-v6-c-label--m-add--BackgroundColor);
+  --pf-v6-c-label--BorderColor: var(--pf-v6-c-label--m-add--BorderColor);
+  --pf-v6-c-label--BorderWidth: var(--pf-v6-c-label--m-add--BorderWidth);
+}
+.pf-v6-c-label.pf-m-add:is(:hover, :focus) {
+  --pf-v6-c-label--m-add--Color: var(--pf-v6-c-label--m-add--hover--Color);
+  --pf-v6-c-label--m-add--BackgroundColor: var(--pf-v6-c-label--m-add--hover--BackgroundColor);
+  --pf-v6-c-label--m-add--BorderColor: var(--pf-v6-c-label--m-add--hover--BorderColor);
+  --pf-v6-c-label--m-add--BorderWidth: var(--pf-v6-c-label--m-add--hover--BorderWidth);
+}
+.pf-v6-c-label.pf-m-clickable {
+  --pf-v6-c-label__content--Cursor: var(--pf-v6-c-label--m-clickable__content--Cursor);
+}
+.pf-v6-c-label.pf-m-clickable .pf-v6-c-label__content, .pf-v6-c-label.pf-m-clickable .pf-v6-c-label__content:is(:hover, :focus) {
+  text-decoration-line: none;
+}
+.pf-v6-c-label.pf-m-clickable .pf-v6-c-label__content:is(:hover, :focus) {
+  --pf-v6-c-label--Color: var(--pf-v6-c-label--m-clickable--hover--Color);
+  --pf-v6-c-label__icon--Color: var(--pf-v6-c-label--m-clickable--hover__icon--Color);
+  --pf-v6-c-label--BackgroundColor: var(--pf-v6-c-label--m-clickable--hover--BackgroundColor);
+  --pf-v6-c-label--BorderWidth: var(--pf-v6-c-label--m-clickable--hover--BorderWidth);
+  --pf-v6-c-label--BorderColor: var(--pf-v6-c-label--m-clickable--hover--BorderColor);
+  --pf-v6-c-label--m-outline--BorderWidth: var(--pf-v6-c-label--m-outline--m-clickable--hover--BorderWidth);
+  --pf-v6-c-label--m-outline--BorderColor: var(--pf-v6-c-label--m-outline--m-clickable--hover--BorderColor);
+}
+.pf-v6-c-label.pf-m-clickable .pf-v6-c-label__content:is(:hover, :focus) ~ .pf-v6-c-label__actions .pf-v6-c-button {
+  --pf-v6-c-label--m-filled__actions--c-button__icon--Color: var(--pf-v6-c-label--m-clickable--hover__icon--Color);
+}
+.pf-v6-c-label.pf-m-disabled {
+  --pf-v6-c-label--BackgroundColor: var(--pf-v6-c-label--m-disabled--BackgroundColor);
+  --pf-v6-c-label--Color: var(--pf-v6-c-label--m-disabled--Color);
+  --pf-v6-c-label__icon--Color: var(--pf-v6-c-label--m-disabled__icon--Color);
+  --pf-v6-c-label--BorderWidth: 0;
+  pointer-events: none;
+}
+.pf-v6-c-label.pf-m-disabled .pf-v6-c-button {
+  --pf-v6-c-button--m-plain--disabled__icon--Color: var(--pf-v6-c-label--m-disabled--c-button--disabled__icon--Color);
+}
+
+.pf-v6-c-label,
+.pf-v6-c-label__content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pf-v6-c-label__text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: var(--pf-v6-c-label__text--MaxWidth);
+}
+
+.pf-v6-c-label__content {
+  gap: var(--pf-v6-c-label__content--Gap);
+  max-width: var(--pf-v6-c-label__content--MaxWidth);
+  padding: 0;
+  overflow: hidden;
+  color: var(--pf-v6-c-label--Color);
+  cursor: var(--pf-v6-c-label__content--Cursor, revert);
+  background: transparent;
+  border-width: 0;
+}
+.pf-v6-c-label__content::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background-color: var(--pf-v6-c-label--BackgroundColor);
+  border: var(--pf-v6-c-label--BorderWidth) solid var(--pf-v6-c-label--BorderColor);
+  border-radius: var(--pf-v6-c-label--BorderRadius);
+}
+input.pf-v6-c-label__content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pf-v6-c-label__icon {
+  color: var(--pf-v6-c-label__icon--Color);
+}
+
+.pf-v6-c-label__actions {
+  margin-inline-end: var(--pf-v6-c-label__actions--MarginInlineEnd);
+}
+.pf-v6-c-label__actions .pf-v6-c-button {
+  --pf-v6-c-button--FontSize: var(--pf-v6-c-label__actions--c-button--FontSize);
+  --pf-v6-c-button--m-plain--m-no-padding--PaddingBlockStart: var(--pf-v6-c-label__actions--c-button--PaddingBlockStart);
+  --pf-v6-c-button--m-plain--m-no-padding--PaddingInlineEnd: var(--pf-v6-c-label__actions--c-button--PaddingInlineEnd);
+  --pf-v6-c-button--m-plain--m-no-padding--PaddingBlockEnd: var(--pf-v6-c-label__actions--c-button--PaddingBlockEnd);
+  --pf-v6-c-button--m-plain--m-no-padding--PaddingInlineStart: var(--pf-v6-c-label__actions--c-button--PaddingInlineStart);
+  margin-block-start: var(--pf-v6-c-label__actions--c-button--MarginBlockStart);
+  margin-block-end: var(--pf-v6-c-label__actions--c-button--MarginBlockEnd);
+  outline-offset: var(--pf-v6-c-label__actions--c-button--OutlineOffset);
+}
+.pf-v6-c-label.pf-m-compact .pf-v6-c-label__actions .pf-v6-c-button {
+  --pf-v6-c-button--m-plain--m-no-padding--after--Inset: 0 calc(-0.125rem);
+}

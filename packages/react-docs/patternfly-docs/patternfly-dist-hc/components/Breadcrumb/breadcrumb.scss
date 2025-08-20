@@ -1,0 +1,134 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($breadcrumb) {
+  // Breadcrumb item
+  --#{$breadcrumb}__item--FontSize: var(--pf-t--global--font--size--body--sm);
+  --#{$breadcrumb}__item--LineHeight: var(--pf-t--global--font--line-height--body);
+  --#{$breadcrumb}__item--MarginInlineEnd: var(--pf-t--global--spacer--sm);
+
+  // Breadcrumb divider
+  --#{$breadcrumb}__item-divider--Color: var(--pf-t--global--icon--color--regular);
+  --#{$breadcrumb}__item-divider--MarginInlineEnd: var(--pf-t--global--spacer--sm);
+  --#{$breadcrumb}__item-divider--FontSize: var( --pf-t--global--font--size--body--sm);
+
+  // Breadcrumb link
+  --#{$breadcrumb}__link--PaddingInlineStart: var(--pf-t--global--spacer--sm); // use a mutable value for alignment control
+  --#{$breadcrumb}__link--PaddingInlineEnd: var(--pf-t--global--spacer--sm); // use a mutable value for alignment control
+  --#{$breadcrumb}__link--Color: var(--pf-t--global--text--color--link--default);
+  --#{$breadcrumb}__link--TextDecorationLine: var(--pf-t--global--text-decoration--link--line--default);
+  --#{$breadcrumb}__link--TextDecorationStyle: var(--pf-t--global--text-decoration--link--style--default);
+  --#{$breadcrumb}__link--hover--Color: var(--pf-t--global--text--color--link--hover);
+  --#{$breadcrumb}__link--hover--TextDecorationLine: var(--pf-t--global--text-decoration--link--line--hover);
+  --#{$breadcrumb}__link--hover--TextDecorationStyle: var(--pf-t--global--text-decoration--link--style--hover);
+  --#{$breadcrumb}__link--m-current--Color: var(--pf-t--global--text--color--regular);
+  --#{$breadcrumb}__link--BackgroundColor: transparent;
+
+  // Heading
+  --#{$breadcrumb}__heading--FontSize: var( --pf-t--global--font--size--body--sm);
+
+  // breadcrumb dropdown
+  --#{$breadcrumb}__menu-toggle--MarginBlockStart: calc(var(--pf-t--global--spacer--control--vertical--default) * -1);
+  --#{$breadcrumb}__menu-toggle--MarginInlineEnd: var(--pf-t--global--spacer--xs);
+  --#{$breadcrumb}__menu-toggle--MarginBlockEnd: calc(var(--pf-t--global--spacer--control--vertical--default) * -1);
+  --#{$breadcrumb}__menu-toggle--MarginInlineStart: var(--pf-t--global--spacer--xs);
+}
+
+.#{$breadcrumb} {
+  display: inline-flex;
+}
+
+// Breadcrumb list
+.#{$breadcrumb}__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+// Breadcrumb list item
+.#{$breadcrumb}__item {
+  display: flex;
+  align-items: baseline;
+  font-size: var(--#{$breadcrumb}__item--FontSize);
+  font-weight: var(--#{$breadcrumb}__item--FontWeight);
+  line-height: var(--#{$breadcrumb}__item--LineHeight);
+  white-space: nowrap; // Keeps the item-divider and __link text on the same line
+  list-style: none;
+
+  &:first-child:has(.#{$breadcrumb}__link) {
+    --#{$breadcrumb}__link--PaddingInlineStart: 0; // remove padding from first child if link
+  }
+
+  &:not(:last-child) {
+    margin-inline-end: var(--#{$breadcrumb}__item--MarginInlineEnd);
+  }
+}
+
+// Breadcrumb divider
+.#{$breadcrumb}__item-divider {
+  @include pf-v6-mirror-inline-on-rtl;
+
+  margin-inline-end: var(--#{$breadcrumb}__item-divider--MarginInlineEnd);
+  font-size: var(--#{$breadcrumb}__item-divider--FontSize);
+  line-height: 1;
+  color: var(--#{$breadcrumb}__item-divider--Color);
+}
+
+// Breadcrumb link
+.#{$breadcrumb}__link {
+  padding-inline-start: var(--#{$breadcrumb}__link--PaddingInlineStart); // use a mutable value for alignment control
+  padding-inline-end: var(--#{$breadcrumb}__link--PaddingInlineEnd); // use a mutable value for alignment control
+  font-size: inherit;
+  font-weight: var(--#{$breadcrumb}__link--FontWeight);
+  line-height: inherit;
+  color: var(--#{$breadcrumb}__link--Color);
+  text-decoration-line: var(--#{$breadcrumb}__link--TextDecorationLine);
+  text-decoration-style: var(--#{$breadcrumb}__link--TextDecorationStyle);
+  word-break: break-word;
+  background-color: var(--#{$breadcrumb}__link--BackgroundColor);
+
+  &:is(:hover, :focus) {
+    --#{$breadcrumb}__link--Color: var(--#{$breadcrumb}__link--hover--Color);
+    --#{$breadcrumb}__link--TextDecorationLine: var(--#{$breadcrumb}__link--hover--TextDecorationLine);
+    --#{$breadcrumb}__link--TextDecorationStyle: var(--#{$breadcrumb}__link--hover--TextDecorationStyle);
+  }
+
+
+  // current item
+  &.pf-m-current {
+    cursor: default;
+
+    &,
+    &:is(:hover, :focus) {
+      color: var(--#{$breadcrumb}__link--m-current--Color);
+      text-decoration-line: none;
+    }
+  }
+
+  // update at breaking change
+  @at-root button#{&} {
+    border: none;
+  }
+}
+
+.#{$breadcrumb}__dropdown {
+  margin-block-start: var(--#{$breadcrumb}__menu-toggle--MarginBlockStart);
+  margin-block-end: var(--#{$breadcrumb}__menu-toggle--MarginBlockEnd);
+  margin-inline-start: var(--#{$breadcrumb}__menu-toggle--MarginInlineStart);
+  margin-inline-end: var(--#{$breadcrumb}__menu-toggle--MarginInlineEnd);
+}
+
+.#{$breadcrumb}__heading {
+  display: inline;
+  font-size: var(--#{$breadcrumb}__heading--FontSize);
+}
+
+.#{$breadcrumb}__link,
+.#{$breadcrumb}__heading {
+  white-space: normal;
+}
+
+// Hide divider of first child - required for react since dividers are included in each item
+// Consider revisiting this in a breaking change release
+.#{$breadcrumb}__list > :first-child .#{$breadcrumb}__item-divider {
+  display: none;
+}

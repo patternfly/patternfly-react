@@ -1,0 +1,42 @@
+@use '../sass-utilities' as *;
+@use "./tokens/tokens-palette" as palette;
+@use "./tokens/tokens-default" as default;
+@use "./tokens/tokens-dark" as dark;
+@use "./tokens/tokens-highcontrast" as highcontrast;
+@use "./tokens/tokens-highcontrast-dark" as highcontrast-dark;
+@use "./tokens/tokens-local" as local;
+
+:root {
+  @include pf-v6-set-inverse(false);
+  @include palette.pf-v6-tokens;
+  @include default.pf-v6-tokens;
+  @include local.pf-v6-tokens;
+}
+
+:root:where(.pf-v6-theme-dark) {
+  @include dark.pf-v6-tokens;
+}
+
+// :root:where(.pf-v6-theme-high-contrast) {
+//   @include highcontrast.pf-v6-tokens;
+// }
+
+@media (prefers-contrast: more) {
+  :root {
+    @include highcontrast.pf-v6-tokens;
+  }
+}
+
+// :root:where(.pf-v6-theme-high-contrast.pf-v6-theme-dark) {
+//   @include highcontrast-dark.pf-v6-tokens;
+// }
+
+@media (prefers-contrast: more) {
+  :root:where(.pf-v6-theme-dark) {
+    @include highcontrast-dark.pf-v6-tokens;
+  }
+}
+
+@include pf-v6-rtl(false) {
+  @include pf-v6-set-inverse;
+}

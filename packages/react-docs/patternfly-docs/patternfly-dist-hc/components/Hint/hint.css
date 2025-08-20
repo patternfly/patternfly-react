@@ -1,0 +1,74 @@
+.pf-v6-c-hint {
+  --pf-v6-c-hint--GridRowGap: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-hint--PaddingBlockStart: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-hint--PaddingInlineEnd: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-hint--PaddingBlockEnd: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-hint--PaddingInlineStart: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-hint--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --pf-v6-c-hint--BorderColor: var(--pf-t--global--border--color--status--info--default);
+  --pf-v6-c-hint--BorderWidth: var(--pf-t--global--border--width--box--status--default);
+  --pf-v6-c-hint--BorderRadius: var(--pf-t--global--border--radius--medium);
+  --pf-v6-c-hint--Color: var(--pf-t--global--text--color--regular);
+  --pf-v6-c-hint__title--FontWeight: var(--pf-t--global--font--weight--body--bold);
+  --pf-v6-c-hint__body--FontSize: var(--pf-t--global--font--size--body--default);
+  --pf-v6-c-hint__footer--MarginBlockStart: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-hint__footer--child--MarginInlineEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-hint__actions--MarginInlineStart: var(--pf-t--global--spacer--2xl);
+  --pf-v6-c-hint__actions--c-menu-toggle--MarginBlockStart: calc(var(--pf-t--global--spacer--control--vertical--default) * -1);
+  --pf-v6-c-hint__actions--c-menu-toggle--MarginBlockEnd: calc(var(--pf-t--global--spacer--control--vertical--default) * -1);
+}
+
+.pf-v6-c-hint {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-row-gap: var(--pf-v6-c-hint--GridRowGap);
+  padding-block-start: var(--pf-v6-c-hint--PaddingBlockStart);
+  padding-block-end: var(--pf-v6-c-hint--PaddingBlockEnd);
+  padding-inline-start: var(--pf-v6-c-hint--PaddingInlineStart);
+  padding-inline-end: var(--pf-v6-c-hint--PaddingInlineEnd);
+  color: var(--pf-v6-c-hint--Color);
+  background-color: var(--pf-v6-c-hint--BackgroundColor);
+  border: var(--pf-v6-c-hint--BorderWidth) solid var(--pf-v6-c-hint--BorderColor);
+  border-radius: var(--pf-v6-c-hint--BorderRadius);
+}
+.pf-v6-c-hint .pf-v6-c-button.pf-m-link.pf-m-inline {
+  text-align: start;
+  white-space: normal;
+}
+
+.pf-v6-c-hint__actions {
+  display: inline-grid;
+  grid-row: 1;
+  grid-column: 2;
+  grid-auto-flow: column;
+  align-self: start;
+  margin-block-start: var(--pf-v6-c-hint__actions--c-menu-toggle--MarginBlockStart);
+  margin-block-end: var(--pf-v6-c-hint__actions--c-menu-toggle--MarginBlockEnd);
+  margin-inline-start: var(--pf-v6-c-hint__actions--MarginInlineStart);
+  text-align: end;
+}
+.pf-v6-c-hint__actions.pf-m-no-offset {
+  --pf-v6-c-hint__actions--c-menu-toggle--MarginBlockStart: 0;
+  --pf-v6-c-hint__actions--c-menu-toggle--MarginBlockEnd: 0;
+}
+.pf-v6-c-hint__actions + .pf-v6-c-hint__body {
+  grid-column: 1;
+}
+
+.pf-v6-c-hint__title {
+  align-self: center;
+  font-weight: var(--pf-v6-c-hint__title--FontWeight);
+}
+
+.pf-v6-c-hint__body {
+  grid-column: 1/-1;
+  font-size: var(--pf-v6-c-hint__body--FontSize);
+}
+
+.pf-v6-c-hint__footer {
+  grid-column: 1/-1;
+  margin-block-start: var(--pf-v6-c-hint__footer--MarginBlockStart);
+}
+.pf-v6-c-hint__footer > :not(:last-child) {
+  margin-inline-end: var(--pf-v6-c-hint__footer--child--MarginInlineEnd);
+}

@@ -1,0 +1,18 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($skip-to-content) {
+  --#{$skip-to-content}--InsetBlockStart: var(--pf-t--global--spacer--md);
+  --#{$skip-to-content}--ZIndex: var(--pf-t--global--z-index--2xl);
+  --#{$skip-to-content}--focus--InsetInlineStart: var(--pf-t--global--spacer--md);
+}
+
+.#{$skip-to-content} {
+  position: absolute;
+  inset-block-start: var(--#{$skip-to-content}--InsetBlockStart);
+  inset-inline-start: -300%; // moves off screen
+  z-index: var(--#{$skip-to-content}--ZIndex);
+
+  &:focus-within {
+    inset-inline-start: var(--#{$skip-to-content}--focus--InsetInlineStart);
+  }
+}

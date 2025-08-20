@@ -1,0 +1,185 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($switch) {
+  // Switch - the vars for this file don't follow our normal order so that the IE11 script can convert the vars correctly
+  --#{$switch}--FontSize: var(--pf-t--global--font--size--sm);
+  --#{$switch}--ColumnGap: var(--pf-t--global--spacer--sm);
+
+  // Switch icon
+  --#{$switch}__toggle-icon--FontSize: calc(var(--#{$switch}--FontSize) * .625); // We don't use an icon font-size here because this value allows the icon to scale relative to the switch's font-size.
+  --#{$switch}__toggle-icon--Color: var(--pf-t--global--icon--color--on-brand--default);
+  --#{$switch}__toggle-icon--InsetInlineStart: calc(var(--#{$switch}--FontSize) * .4);
+  --#{$switch}__toggle-icon--Offset: #{pf-size-prem(2px)}; // this value is created to handle sizing of the toggle and therefore the width of the toggle and its transform value.
+  --#{$switch}__input--disabled__toggle-icon--Color: var(--pf-t--global--icon--color--disabled);
+
+  // Switch
+  --#{$switch}--LineHeight: var(--pf-t--global--font--line-height--body);
+  --#{$switch}--Height: auto;
+
+  // Switch input
+  --#{$switch}__input--checked__toggle--BackgroundColor: var(--pf-t--global--color--brand--default);
+  --#{$switch}__input--checked__toggle--before--TranslateX: calc(100% + var(--#{$switch}__toggle-icon--Offset));
+  --#{$switch}__input--checked__toggle--BorderWidth: 0;
+  --#{$switch}__input--checked__label--Color: var(--pf-t--global--text--color--regular);
+  --#{$switch}__input--not-checked__label--Color: var(--pf-t--global--text--color--subtle);
+  --#{$switch}__input--disabled__label--Color: var(--pf-t--global--text--color--disabled);
+  --#{$switch}__input--disabled__toggle--BackgroundColor: var(--pf-t--global--background--color--disabled--default);
+  --#{$switch}__input--checked__toggle--before--BackgroundColor: var(--pf-t--global--icon--color--inverse);
+  --#{$switch}__input--not-checked__toggle--before--BackgroundColor: var(--pf-t--global--icon--color--subtle);
+  --#{$switch}__input--disabled__toggle--before--BackgroundColor: var(--pf-t--global--icon--color--on-disabled);
+  --#{$switch}__input--focus__toggle--OutlineWidth: var(--pf-t--global--border--width--strong);
+  --#{$switch}__input--focus__toggle--OutlineOffset: var(--pf-t--global--spacer--xs);
+  --#{$switch}__input--focus__toggle--OutlineColor: var(--pf-t--global--color--brand--default);
+
+  // Switch toggle
+  --#{$switch}__toggle--Height: calc(var(--#{$switch}--FontSize) * var(--#{$switch}--LineHeight));
+  --#{$switch}__toggle--BackgroundColor: var(--pf-t--global--background--color--control--default);
+  --#{$switch}__toggle--BorderColor: var(--pf-t--global--border--color--default);
+  --#{$switch}__toggle--BorderWidth: var(--pf-t--global--border--width--control--default);
+  --#{$switch}__toggle--BorderRadius: var(--pf-t--global--border--radius--pill);
+  --#{$switch}__toggle--before--Width: calc(var(--#{$switch}--FontSize) - var(--#{$switch}__toggle-icon--Offset));
+  --#{$switch}__toggle--before--Height: var(--#{$switch}__toggle--before--Width);
+  --#{$switch}__toggle--before--InsetInlineStart: calc((var(--#{$switch}__toggle--Height) - var(--#{$switch}__toggle--before--Height)) / 2);
+  --#{$switch}__toggle--before--BorderRadius: var(--pf-t--global--border--radius--large);
+  --#{$switch}__toggle--before--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--default);
+  --#{$switch}__toggle--before--TransitionDuration: var(--pf-t--global--motion--duration--md);
+  --#{$switch}__toggle--before--Transition: transform var(--#{$switch}__toggle--before--TransitionTimingFunction) var(--#{$switch}__toggle--before--TransitionDuration), background-color var(--#{$switch}__toggle--before--TransitionTimingFunction) var(--#{$switch}__toggle--before--TransitionDuration); // TODO remove in breaking change along with shorthand property
+  --#{$switch}__toggle--Width: calc(var(--#{$switch}__toggle--Height) + var(--#{$switch}__toggle-icon--Offset) + var(--#{$switch}__toggle--before--Width));
+}
+
+.#{$switch} {
+  position: relative;
+  display: inline-grid;
+  grid-template-columns: auto;
+  grid-auto-columns: 1fr;
+  column-gap: var(--#{$switch}--ColumnGap);
+  height: var(--#{$switch}--Height);
+  font-size: var(--#{$switch}--FontSize);
+  line-height: var(--#{$switch}--LineHeight);
+  vertical-align: middle;
+  cursor: pointer;
+
+  &.pf-m-reverse {
+    .#{$switch}__label,
+    .#{$switch}__toggle {
+      grid-row: 1;
+    }
+
+    .#{$switch}__label {
+      grid-column: 1;
+    }
+  }
+}
+
+.#{$switch}__input {
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+
+  &:focus-visible ~ .#{$switch}__toggle {
+    outline: var(--#{$switch}__input--focus__toggle--OutlineWidth) solid var(--#{$switch}__input--focus__toggle--OutlineColor);
+    outline-offset: var(--#{$switch}__input--focus__toggle--OutlineOffset);
+  }
+
+  &:checked {
+    ~ .#{$switch}__label {
+      color: var(--#{$switch}__input--checked__label--Color);
+    }
+
+    ~ .#{$switch}__toggle {
+      --#{$switch}__toggle--BorderWidth: var(--#{$switch}__input--checked__toggle--BorderWidth);
+
+      background-color: var(--#{$switch}__input--checked__toggle--BackgroundColor);
+
+      &::before {
+        @include pf-v6-bidirectional-style(
+          $prop: transform,
+          $ltr-val: translate(var(--#{$switch}__input--checked__toggle--before--TranslateX), -50%),
+          $rtl-val: translate(#{pf-v6-calc-inverse(var(--#{$switch}__input--checked__toggle--before--TranslateX))}, -50%)
+        );
+
+        background-color: var(--#{$switch}__input--checked__toggle--before--BackgroundColor);
+      }
+    }
+  }
+
+  &:not(:checked) {
+    ~ .#{$switch}__label {
+      color: var(--#{$switch}__input--not-checked__label--Color);
+    }
+
+    ~ .#{$switch}__toggle {
+      .#{$switch}__toggle-icon {
+        display: none;
+      }
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+
+    ~ .#{$switch}__label {
+      color: var(--#{$switch}__input--disabled__label--Color);
+      cursor: not-allowed;
+    }
+
+    ~ .#{$switch}__toggle {
+      --#{$switch}__toggle-icon--Color: var(--#{$switch}__input--disabled__toggle-icon--Color);
+
+      cursor: not-allowed;
+      background-color: var(--#{$switch}__input--disabled__toggle--BackgroundColor);
+
+      &::before {
+        background-color: var(--#{$switch}__input--disabled__toggle--before--BackgroundColor);
+      }
+    }
+  }
+}
+
+.#{$switch}__toggle {
+  position: relative;
+  display: inline-block;
+  width: var(--#{$switch}__toggle--Width);
+  height: var(--#{$switch}__toggle--Height);
+  background-color: var(--#{$switch}__toggle--BackgroundColor);
+  border-radius: var(--#{$switch}__toggle--BorderRadius);
+
+  &::before {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: var(--#{$switch}__toggle--before--InsetInlineStart);
+    display: block;
+    width: var(--#{$switch}__toggle--before--Width);
+    height: var(--#{$switch}__toggle--before--Height);
+    content: "";
+    background-color: var(--#{$switch}__input--not-checked__toggle--before--BackgroundColor);
+    border-radius: var(--#{$switch}__toggle--before--BorderRadius);
+    transition: var(--#{$switch}__toggle--before--Transition); // TODO remove shorthand in breaking change
+    transform: translateY(-50%);
+  }
+
+  &::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    border: var(--#{$switch}__toggle--BorderWidth) solid var(--#{$switch}__toggle--BorderColor);
+    border-radius: var(--#{$switch}__toggle--BorderRadius);
+  }
+}
+
+.#{$switch}__toggle-icon {
+  position: absolute;
+  inset-block-start: 0;
+  inset-block-end: 0;
+  inset-inline-start: var(--#{$switch}__toggle-icon--InsetInlineStart);
+  display: flex;
+  align-items: center;
+  font-size: var(--#{$switch}__toggle-icon--FontSize);
+  color: var(--#{$switch}__toggle-icon--Color);
+}
+
+.#{$switch}__label {
+  display: inline-block;
+  grid-column: 2;
+  vertical-align: top;
+}

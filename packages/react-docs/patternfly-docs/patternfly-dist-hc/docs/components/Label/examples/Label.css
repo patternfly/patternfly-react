@@ -1,0 +1,25 @@
+#ws-core-c-label-filled .ws-preview-html,
+#ws-core-c-label-outline .ws-preview-html,
+#ws-core-c-label-compact .ws-preview-html,
+#ws-core-c-label-overflow .ws-preview-html {
+  margin: -4px;
+}
+
+#ws-core-c-label-filled .pf-v6-c-label,
+#ws-core-c-label-outline .pf-v6-c-label,
+#ws-core-c-label-compact .pf-v6-c-label,
+#ws-core-c-label-overflow .pf-v6-c-label {
+  margin: 4px;
+}
+
+#ws-core-c-label-labels-with-truncation .ws-preview-html { 
+  max-width: 320px;
+}
+
+.pf-v6-c-label-truncate--example {
+  max-width: 100%;
+  padding: var(--pf-t--global--spacer--sm);
+  overflow: auto;
+  resize: horizontal;
+  border: var(--pf-t--global--border--width--box--default) solid var(--pf-t--global--border--color--default);
+}
