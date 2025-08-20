@@ -65,7 +65,7 @@ const emailRegex = /^[^@]+@[^@]+\.[a-zA-Z]+$/i;
 export const TabsOpenDemo = () => {
   const [activeTabKey, setActiveTabKey] = useState(0);
   const [isNavOpen, setIsNavOpen] = useState(true);
-  const [isDrawerOpen, setIsDrawerOpen] = useState(true);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isOpenMap, setIsOpenMap] = useState(new Array(7).fill(false));
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -451,8 +451,8 @@ export const TabsOpenDemo = () => {
         <NavItem itemId={3} isActive={activeItem === 3} to="#library">
           Library
         </NavItem>
-        <NavItem itemId={4} isActive={activeItem === 4} to="#builder">
-          Builder
+        <NavItem itemId={4} isActive={activeItem === 4} to="#profile-editor">
+          Profile editor
         </NavItem>
         <NavItem itemId={5} isActive={activeItem === 5} to="#tracker">
           Tracker
@@ -635,7 +635,7 @@ export const TabsOpenDemo = () => {
     >
       <PageSection isWidthLimited>
         <Content>
-          <h1>High contrast mode demo</h1>
+          <h1>Profile editor</h1>
           <p>Description</p>
         </Content>
       </PageSection>
