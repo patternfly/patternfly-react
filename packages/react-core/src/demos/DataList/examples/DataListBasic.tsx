@@ -9,6 +9,7 @@ import {
   DataListItemCells,
   Flex,
   FlexItem,
+  Icon,
   MenuToggle,
   MenuToggleCheckbox,
   OverflowMenu,
@@ -28,7 +29,7 @@ import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
-import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 export const DataListBasic: React.FunctionComponent = () => {
   const renderPagination = () => <Pagination itemCount={5} page={1} variant="top" isCompact />;
@@ -98,13 +99,22 @@ export const DataListBasic: React.FunctionComponent = () => {
                         <FlexItem>
                           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                             <FlexItem>
-                              <CodeBranchIcon /> 10
+                              <Icon>
+                                <CodeBranchIcon />
+                              </Icon>
+                              10 <span className="pf-v6-screen-reader">Branches</span>
                             </FlexItem>
                             <FlexItem>
-                              <CodeIcon /> 4
+                              <Icon>
+                                <CodeIcon />
+                              </Icon>
+                              4 <span className="pf-v6-screen-reader">Code blocks</span>
                             </FlexItem>
                             <FlexItem>
-                              <CubeIcon /> 5
+                              <Icon>
+                                <CubeIcon />
+                              </Icon>
+                              5 <span className="pf-v6-screen-reader">Workspaces</span>
                             </FlexItem>
                             <FlexItem> Updated 2 days ago</FlexItem>
                           </Flex>
@@ -140,23 +150,41 @@ export const DataListBasic: React.FunctionComponent = () => {
                         <FlexItem>
                           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                             <FlexItem>
-                              <CodeBranchIcon /> 5
+                              <Icon>
+                                <CodeBranchIcon />
+                              </Icon>
+                              5 <span className="pf-v6-screen-reader">Branches</span>
                             </FlexItem>
                             <FlexItem>
-                              <CodeIcon /> 9
+                              <Icon>
+                                <CodeIcon />
+                              </Icon>
+                              9 <span className="pf-v6-screen-reader">Code blocks</span>
                             </FlexItem>
                             <FlexItem>
-                              <CubeIcon /> 2
+                              <Icon>
+                                <CubeIcon />
+                              </Icon>
+                              2 <span className="pf-v6-screen-reader">Workspaces</span>
                             </FlexItem>
                             <FlexItem>
-                              <CheckCircleIcon />
+                              <Icon status="success">
+                                <CheckCircleIcon />
+                              </Icon>
                               11
+                              <span className="pf-v6-screen-reader">Completed</span>
                             </FlexItem>
                             <FlexItem>
-                              <ExclamationTriangleIcon /> 4
+                              <Icon status="warning">
+                                <ExclamationTriangleIcon />
+                              </Icon>
+                              4<span className="pf-v6-screen-reader">Warnings</span>
                             </FlexItem>
                             <FlexItem>
-                              <TimesCircleIcon /> 1
+                              <Icon status="danger">
+                                <ExclamationCircleIcon />
+                              </Icon>
+                              1<span className="pf-v6-screen-reader">Errors</span>
                             </FlexItem>
                             <FlexItem> Updated 2 days ago</FlexItem>
                           </Flex>
@@ -220,14 +248,23 @@ export const DataListBasic: React.FunctionComponent = () => {
                         <FlexItem>
                           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                             <FlexItem>
-                              <CodeBranchIcon />
+                              <Icon>
+                                <CodeBranchIcon />
+                              </Icon>
                               10
+                              <span className="pf-v6-screen-reader">Branches</span>
                             </FlexItem>
                             <FlexItem>
-                              <CodeIcon /> 4
+                              <Icon>
+                                <CodeIcon />
+                              </Icon>
+                              4 <span className="pf-v6-screen-reader">Code blocks</span>
                             </FlexItem>
                             <FlexItem>
-                              <CubeIcon /> 5
+                              <Icon>
+                                <CubeIcon />
+                              </Icon>
+                              5 <span className="pf-v6-screen-reader">Workspaces</span>
                             </FlexItem>
                             <FlexItem> Updated 2 days ago</FlexItem>
                           </Flex>
@@ -263,22 +300,40 @@ export const DataListBasic: React.FunctionComponent = () => {
                         <FlexItem>
                           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                             <FlexItem>
-                              <CodeBranchIcon /> 5
+                              <Icon>
+                                <CodeBranchIcon />
+                              </Icon>
+                              5 <span className="pf-v6-screen-reader">Branches</span>
                             </FlexItem>
                             <FlexItem>
-                              <CodeIcon /> 9
+                              <Icon>
+                                <CodeIcon />
+                              </Icon>
+                              9 <span className="pf-v6-screen-reader">Code blocks</span>
                             </FlexItem>
                             <FlexItem>
-                              <CubeIcon /> 2
+                              <Icon>
+                                <CubeIcon />
+                              </Icon>
+                              2 <span className="pf-v6-screen-reader">Workspaces</span>
                             </FlexItem>
                             <FlexItem>
-                              <CheckCircleIcon /> 11
+                              <Icon status="success">
+                                <CheckCircleIcon />
+                              </Icon>
+                              11 <span className="pf-v6-screen-reader">Completed</span>
                             </FlexItem>
                             <FlexItem>
-                              <ExclamationTriangleIcon /> 4
+                              <Icon status="warning">
+                                <ExclamationTriangleIcon />
+                              </Icon>
+                              4 <span className="pf-v6-screen-reader">Warnings</span>
                             </FlexItem>
                             <FlexItem>
-                              <TimesCircleIcon /> 1
+                              <Icon status="danger">
+                                <ExclamationCircleIcon />
+                              </Icon>
+                              1 <span className="pf-v6-screen-reader">Errors</span>
                             </FlexItem>
                             <FlexItem> Updated 2 days ago</FlexItem>
                           </Flex>
