@@ -10,6 +10,7 @@ import {
   DataListItemCells,
   Flex,
   FlexItem,
+  Icon,
   MenuToggle,
   MenuToggleCheckbox,
   OverflowMenu,
@@ -151,17 +152,29 @@ export const DataListStaticBottomPagination: React.FunctionComponent = () => {
                           <Flex flexWrap={{ default: 'wrap' }}>
                             <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                               <FlexItem>
-                                <CodeBranchIcon /> {threads}
+                                <Icon>
+                                  <CodeBranchIcon />
+                                </Icon>{' '}
+                                {threads}
+                                <span className="pf-v6-screen-reader">Branches</span>
                               </FlexItem>
                             </Flex>
                             <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                               <FlexItem>
-                                <CodeIcon /> {applications}
+                                <Icon>
+                                  <CodeIcon />
+                                </Icon>{' '}
+                                {applications}
+                                <span className="pf-v6-screen-reader">Code blocks</span>
                               </FlexItem>
                             </Flex>
                             <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                               <FlexItem>
-                                <CubeIcon /> {workspaces}
+                                <Icon>
+                                  <CubeIcon />
+                                </Icon>{' '}
+                                {workspaces}
+                                <span className="pf-v6-screen-reader">Workspaces</span>
                               </FlexItem>
                             </Flex>
                             <FlexItem> Updated {lastModified}</FlexItem>
