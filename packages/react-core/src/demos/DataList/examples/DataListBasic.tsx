@@ -178,13 +178,13 @@ export const DataListBasic: React.FunctionComponent = () => {
                               <Icon status="warning">
                                 <ExclamationTriangleIcon />
                               </Icon>
-                              4<span className="pf-v6-screen-reader">Warnings</span>
+                              4 <span className="pf-v6-screen-reader">Warnings</span>
                             </FlexItem>
                             <FlexItem>
                               <Icon status="danger">
                                 <ExclamationCircleIcon />
                               </Icon>
-                              1<span className="pf-v6-screen-reader">Errors</span>
+                              1 <span className="pf-v6-screen-reader">Error</span>
                             </FlexItem>
                             <FlexItem> Updated 2 days ago</FlexItem>
                           </Flex>
@@ -333,7 +333,7 @@ export const DataListBasic: React.FunctionComponent = () => {
                               <Icon status="danger">
                                 <ExclamationCircleIcon />
                               </Icon>
-                              1 <span className="pf-v6-screen-reader">Errors</span>
+                              1 <span className="pf-v6-screen-reader">Error</span>
                             </FlexItem>
                             <FlexItem> Updated 2 days ago</FlexItem>
                           </Flex>
