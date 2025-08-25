@@ -51,8 +51,9 @@ figma.connect(
             isOpen={false}
             onSelect={() => {}}
             onOpenChange={() => {}}
-            toggle={() => (
+            toggle={(toggleRef) => (
               <MenuToggle
+                ref={toggleRef}
                 aria-label="With title example kebab toggle"
                 variant="plain"
                 onClick={() => {}}

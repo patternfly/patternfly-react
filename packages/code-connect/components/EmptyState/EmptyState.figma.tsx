@@ -1,5 +1,5 @@
 import figma from '@figma/code-connect';
-import { EmptyState, EmptyStateBody, EmptyStateFooter, EmptyStateActions, Button } from '@patternfly/react-core';
+import { EmptyState, EmptyStateBody, EmptyStateFooter, EmptyStateActions } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 // TODO: DESIGN: Add Empty state footer
@@ -32,7 +32,7 @@ figma.connect(
         Info: 'info'
       }),
       variant: figma.enum('Size', {
-        Basic: 'full',
+        Basic: undefined,
         'Extra small': 'xs',
         Small: 'sm',
         Large: 'lg',
@@ -52,17 +52,7 @@ figma.connect(
       >
         <EmptyStateBody>{props.body}</EmptyStateBody>
         <EmptyStateFooter>
-          <EmptyStateActions>
-            <Button variant="primary">Primary action</Button>
-          </EmptyStateActions>
-          <EmptyStateActions>
-            <Button variant="link">Multiple</Button>
-            <Button variant="link">Action Buttons</Button>
-            <Button variant="link">Can</Button>
-            <Button variant="link">Go here</Button>
-            <Button variant="link">In the secondary</Button>
-            <Button variant="link">Action area</Button>
-          </EmptyStateActions>
+          <EmptyStateActions>{props.actions}</EmptyStateActions>
         </EmptyStateFooter>
       </EmptyState>
     )

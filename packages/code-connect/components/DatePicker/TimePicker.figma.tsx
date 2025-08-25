@@ -19,6 +19,6 @@ figma.connect(
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=7958-136830',
   {
     variant: { State: 'Invalid' },
-    example: () => <TimePicker is24Hour minTime="9:30" maxTime="17:15" time="18:00" />
+    example: () => <TimePicker is24Hour minTime="9:30" maxTime="17:15" time="18:00" placeholder="14:00" />
   }
 );

@@ -2,11 +2,11 @@
   "codeConnect": {
     "parser": "react",
     "include": [
-      "components/DataList/*.tsx",
-      "components/DescriptionList/*.tsx",
-      "components/Divider/*.tsx",
-      "components/Drawer/*.tsx",
-      "components/DualListSelector/*.tsx"
+      "components/DatePicker/*.tsx",
+      "components/EmptyState/*.tsx",
+      "components/FileUpload/*.tsx",
+      "components/Hint/*.tsx",
+      "components/InlineEdit/*.tsx"
     ],
     "paths": {
       "src/components": "src/components"

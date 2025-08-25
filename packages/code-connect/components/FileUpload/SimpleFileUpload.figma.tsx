@@ -29,10 +29,6 @@ figma.connect(
 
       // enum
       allowEditingUploadedText: figma.enum('State', { 'Uploaded + Editable': true }),
-      isDragActive: figma.enum('State', {
-        'Drag state': true,
-        false: undefined
-      }),
       isLoading: figma.enum('State', { 'In progress upload': true }),
       isValidated: figma.enum('State', {
         'Invalid upload': 'error',
@@ -49,7 +45,6 @@ figma.connect(
         browseButtonText="Upload"
         isLoading={props.isLoading}
         validated={props.isValidated}
-        isDragActive={props.isDragActive}
         hideDefaultPreview={props.hideDefaultPreview}
         allowEditingUploadedText={props.allowEditingUploadedText}
         onFileInputChange={() => {}}
