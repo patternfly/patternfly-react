@@ -30,61 +30,38 @@ figma.connect(
           isOpen={false}
         >
           <DropdownList>
-            <BreadcrumbItem isDropdown>
-              <Dropdown
-                onSelect={() => {}}
-                onOpenChange={() => {}}
-                toggle={() => (
-                  <MenuToggle
-                    size="sm"
-                    badge={
-                      <Badge isRead screenReaderText="additional items">
-                        01
-                      </Badge>
-                    }
-                    onClick={() => {}}
-                    isExpanded={false}
-                    variant="plainText"
-                  />
-                )}
-                isOpen={false}
-              >
-                <DropdownList>
-                  <DropdownItem
-                    icon={
-                      <Icon shouldMirrorRTL>
-                        <AngleLeftIcon />
-                      </Icon>
-                    }
-                    key="edit"
-                  >
-                    Edit
-                  </DropdownItem>
-                  ,
-                  <DropdownItem
-                    icon={
-                      <Icon shouldMirrorRTL>
-                        <AngleLeftIcon />
-                      </Icon>
-                    }
-                    key="action"
-                  >
-                    Deployment
-                  </DropdownItem>
-                  ,
-                  <DropdownItem
-                    icon={
-                      <Icon shouldMirrorRTL>
-                        <AngleLeftIcon />
-                      </Icon>
-                    }
-                    key="apps"
-                  >
-                    Applications
-                  </DropdownItem>
-                </DropdownList>
-              </Dropdown>
-            </BreadcrumbItem>
+            <DropdownItem
+              icon={
+                <Icon shouldMirrorRTL>
+                  <AngleLeftIcon />
+                </Icon>
+              }
+              key="edit"
+            >
+              Edit
+            </DropdownItem>
+            ,
+            <DropdownItem
+              icon={
+                <Icon shouldMirrorRTL>
+                  <AngleLeftIcon />
+                </Icon>
+              }
+              key="action"
+            >
+              Deployment
+            </DropdownItem>
+            ,
+            <DropdownItem
+              icon={
+                <Icon shouldMirrorRTL>
+                  <AngleLeftIcon />
+                </Icon>
+              }
+              key="apps"
+            >
+              Applications
+            </DropdownItem>
           </DropdownList>
         </Dropdown>
       </BreadcrumbItem>
