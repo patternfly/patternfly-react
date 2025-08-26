@@ -8,7 +8,8 @@ figma.connect(
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=21279-116342',
   {
     props: {
-      options: 'see example for tree data'
+      options:
+        'refer to patternfly documentation example for tree data https://www.patternfly.org/components/dual-list-selector#with-tree'
     },
     example: (props) => (
       <DualListSelectorList>

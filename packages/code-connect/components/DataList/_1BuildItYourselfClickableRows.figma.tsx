@@ -11,7 +11,8 @@ figma.connect(
       children: figma.children('*')
     },
     example: (props) => (
-      <DataListItem aria-labelledby="child text id">
+      // aria-labelledby should point to an ID within the DataListItemRow/DataListItemCell
+      <DataListItem aria-labelledby="child-text-id">
         <DataListItemRow rowid="<row-id>">{props.children}</DataListItemRow>
       </DataListItem>
     )
