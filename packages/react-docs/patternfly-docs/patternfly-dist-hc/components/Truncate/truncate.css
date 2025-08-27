@@ -1,0 +1,52 @@
+.pf-v6-c-truncate {
+  --pf-v6-c-truncate--MinWidth: 6ch;
+  --pf-v6-c-truncate__start--MinWidth: 6ch;
+}
+
+.pf-v6-c-truncate {
+  display: inline-grid;
+  grid-auto-flow: column;
+  align-items: baseline;
+  min-width: var(--pf-v6-c-truncate--MinWidth);
+  text-decoration: inherit;
+}
+.pf-v6-c-truncate.pf-m-fixed {
+  display: inline;
+  align-items: revert;
+  min-width: revert;
+}
+
+.pf-v6-c-truncate__start,
+.pf-v6-c-truncate__end {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre;
+}
+
+.pf-v6-c-truncate__start {
+  min-width: var(--pf-v6-c-truncate__start--MinWidth);
+}
+
+.pf-v6-c-truncate__end {
+  direction: rtl;
+}
+:where(.pf-v6-m-dir-rtl, [dir=rtl]) .pf-v6-c-truncate__end {
+  direction: ltr;
+}
+
+.pf-v6-c-truncate__start + .pf-v6-c-truncate__end {
+  overflow: visible;
+  direction: ltr;
+}
+:where(.pf-v6-m-dir-rtl, [dir=rtl]) .pf-v6-c-truncate__start + .pf-v6-c-truncate__end {
+  direction: rtl;
+}
+
+@supports (-webkit-hyphens: none) {
+  .pf-v6-c-truncate__end {
+    direction: ltr;
+  }
+  :where(.pf-v6-m-dir-rtl, [dir=rtl]) .pf-v6-c-truncate__end {
+    direction: rtl;
+  }
+}

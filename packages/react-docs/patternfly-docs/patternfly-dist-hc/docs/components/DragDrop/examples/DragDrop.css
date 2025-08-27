@@ -1,0 +1,13 @@
+.pf-v6-c-draggable {
+  padding: .25em;
+}
+
+.pf-v6-c-draggable.pf-m-dragging {
+  --pf-v6-c-draggable--m-dragging--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+
+  position: absolute;
+  inset-block-start: 23%;
+  inset-inline-start: .5em;
+  z-index: 9999;
+  width: 100%;
+}

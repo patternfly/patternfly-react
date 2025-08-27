@@ -1,0 +1,19 @@
+.pf-v6-c-backdrop {
+  --pf-v6-c-backdrop--Position: fixed;
+  --pf-v6-c-backdrop--ZIndex: var(--pf-t--global--z-index--lg);
+  --pf-v6-c-backdrop--BackgroundColor: var(--pf-t--global--background--color--backdrop--default);
+}
+
+.pf-v6-c-backdrop {
+  position: var(--pf-v6-c-backdrop--Position);
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  z-index: var(--pf-v6-c-backdrop--ZIndex);
+  width: 100%;
+  height: 100%;
+  background-color: var(--pf-v6-c-backdrop--BackgroundColor);
+}
+
+.pf-v6-c-backdrop__open {
+  overflow: hidden;
+}

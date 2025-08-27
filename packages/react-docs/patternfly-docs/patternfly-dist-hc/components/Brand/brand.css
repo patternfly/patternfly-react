@@ -1,0 +1,65 @@
+.pf-v6-c-brand {
+  --pf-v6-c-brand--Width: auto;
+  --pf-v6-c-brand--Height: auto;
+}
+
+.pf-v6-c-brand {
+  width: var(--pf-v6-c-brand--Width--base);
+  height: var(--pf-v6-c-brand--Height--base);
+  --pf-v6-c-brand--Width--base: var(--pf-v6-c-brand--Width);
+  --pf-v6-c-brand--Height--base: var(--pf-v6-c-brand--Height);
+}
+@media (min-width: 36rem) {
+  .pf-v6-c-brand {
+    --pf-v6-c-brand--Width--base: var(--pf-v6-c-brand--Width-on-sm, var(--pf-v6-c-brand--Width));
+  }
+}
+@media (min-width: 48rem) {
+  .pf-v6-c-brand {
+    --pf-v6-c-brand--Width--base: var(--pf-v6-c-brand--Width-on-md, var(--pf-v6-c-brand--Width-on-sm, var(--pf-v6-c-brand--Width)));
+  }
+}
+@media (min-width: 62rem) {
+  .pf-v6-c-brand {
+    --pf-v6-c-brand--Width--base: var(--pf-v6-c-brand--Width-on-lg, var(--pf-v6-c-brand--Width-on-md, var(--pf-v6-c-brand--Width-on-sm, var(--pf-v6-c-brand--Width))));
+  }
+}
+@media (min-width: 75rem) {
+  .pf-v6-c-brand {
+    --pf-v6-c-brand--Width--base: var(--pf-v6-c-brand--Width-on-xl, var(--pf-v6-c-brand--Width-on-lg, var(--pf-v6-c-brand--Width-on-md, var(--pf-v6-c-brand--Width-on-sm, var(--pf-v6-c-brand--Width)))));
+  }
+}
+@media (min-width: 90.625rem) {
+  .pf-v6-c-brand {
+    --pf-v6-c-brand--Width--base: var(--pf-v6-c-brand--Width-on-2xl, var(--pf-v6-c-brand--Width-on-xl, var(--pf-v6-c-brand--Width-on-lg, var(--pf-v6-c-brand--Width-on-md, var(--pf-v6-c-brand--Width-on-sm, var(--pf-v6-c-brand--Width))))));
+  }
+}
+@media (min-width: 36rem) {
+  .pf-v6-c-brand {
+    --pf-v6-c-brand--Height--base: var(--pf-v6-c-brand--Height-on-sm, var(--pf-v6-c-brand--Height));
+  }
+}
+@media (min-width: 48rem) {
+  .pf-v6-c-brand {
+    --pf-v6-c-brand--Height--base: var(--pf-v6-c-brand--Height-on-md, var(--pf-v6-c-brand--Height-on-sm, var(--pf-v6-c-brand--Height)));
+  }
+}
+@media (min-width: 62rem) {
+  .pf-v6-c-brand {
+    --pf-v6-c-brand--Height--base: var(--pf-v6-c-brand--Height-on-lg, var(--pf-v6-c-brand--Height-on-md, var(--pf-v6-c-brand--Height-on-sm, var(--pf-v6-c-brand--Height))));
+  }
+}
+@media (min-width: 75rem) {
+  .pf-v6-c-brand {
+    --pf-v6-c-brand--Height--base: var(--pf-v6-c-brand--Height-on-xl, var(--pf-v6-c-brand--Height-on-lg, var(--pf-v6-c-brand--Height-on-md, var(--pf-v6-c-brand--Height-on-sm, var(--pf-v6-c-brand--Height)))));
+  }
+}
+@media (min-width: 90.625rem) {
+  .pf-v6-c-brand {
+    --pf-v6-c-brand--Height--base: var(--pf-v6-c-brand--Height-on-2xl, var(--pf-v6-c-brand--Height-on-xl, var(--pf-v6-c-brand--Height-on-lg, var(--pf-v6-c-brand--Height-on-md, var(--pf-v6-c-brand--Height-on-sm, var(--pf-v6-c-brand--Height))))));
+  }
+}
+.pf-v6-c-brand.pf-m-picture {
+  display: inline-flex;
+  max-width: 100%;
+}

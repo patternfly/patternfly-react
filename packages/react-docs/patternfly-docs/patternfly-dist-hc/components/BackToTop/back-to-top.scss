@@ -1,0 +1,37 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($back-to-top) {
+  --#{$back-to-top}--InsetInlineEnd: var(--pf-t--global--spacer--2xl);
+  --#{$back-to-top}--InsetBlockEnd: var(--pf-t--global--spacer--lg);
+  --#{$back-to-top}--md--InsetBlockEnd: var(--pf-t--global--spacer--2xl);
+  --#{$back-to-top}--c-button--FontSize: var(--pf-t--global--font--size--body--sm);
+  --#{$back-to-top}--c-button--PaddingBlockStart: var(--pf-t--global--spacer--xs);
+  --#{$back-to-top}--c-button--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --#{$back-to-top}--c-button--PaddingBlockEnd: var(--pf-t--global--spacer--xs);
+  --#{$back-to-top}--c-button--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --#{$back-to-top}--c-button--BoxShadow: var(--pf-t--global--box-shadow--sm);
+
+  @media (min-width: $pf-v6-global--breakpoint--md) {
+    --#{$back-to-top}--InsetBlockEnd: var(--#{$back-to-top}--md--InsetBlockEnd);
+  }
+}
+
+.#{$back-to-top} {
+  position: absolute;
+  inset-block-end: var(--#{$back-to-top}--InsetBlockEnd);
+  inset-inline-end: var(--#{$back-to-top}--InsetInlineEnd);
+
+  &.pf-m-hidden {
+    display: none;
+  }
+
+  .#{$button} {
+    --#{$button}--FontSize: var(--#{$back-to-top}--c-button--FontSize);
+    --#{$button}--PaddingBlockStart: var(--#{$back-to-top}--c-button--PaddingBlockStart);
+    --#{$button}--PaddingInlineEnd: var(--#{$back-to-top}--c-button--PaddingInlineEnd);
+    --#{$button}--PaddingBlockEnd: var(--#{$back-to-top}--c-button--PaddingBlockEnd);
+    --#{$button}--PaddingInlineStart: var(--#{$back-to-top}--c-button--PaddingInlineStart);
+
+    box-shadow: var(--#{$back-to-top}--c-button--BoxShadow);
+  }
+}

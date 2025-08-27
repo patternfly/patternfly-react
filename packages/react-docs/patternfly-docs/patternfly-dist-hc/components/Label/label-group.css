@@ -1,0 +1,146 @@
+.pf-v6-c-label-group {
+  --pf-v6-c-label-group--RowGap: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-label-group--ColumnGap: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-label-group--MaxWidth: 100%;
+  --pf-v6-c-label-group--m-vertical--RowGap: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-label-group--m-vertical--ColumnGap: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-label-group__main--RowGap: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-label-group__main--ColumnGap: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-label-group__main--MaxWidth: 100%;
+  --pf-v6-c-label-group__main--MinWidth: 0;
+  --pf-v6-c-label-group--m-vertical__main--RowGap: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-label-group--m-vertical__main--ColumnGap: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-label-group__list--RowGap: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-label-group__list--ColumnGap: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-label-group__list--MaxWidth: 100%;
+  --pf-v6-c-label-group__list--MinWidth: 0;
+  --pf-v6-c-label-group--m-vertical__list--RowGap: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-label-group--m-vertical__list--ColumnGap: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-label-group__list-item--MaxWidth: 100%;
+  --pf-v6-c-label-group--m-category--PaddingBlockStart: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-label-group--m-category--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-label-group--m-category--PaddingBlockEnd: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-label-group--m-category--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-label-group--m-category--BorderRadius: var(--pf-t--global--border--radius--small);
+  --pf-v6-c-label-group--m-category--BorderWidth: var(--pf-t--global--border--width--regular);
+  --pf-v6-c-label-group--m-category--BorderColor: var(--pf-t--global--border--color--default);
+  --pf-v6-c-label-group--m-vertical--m-category--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-label-group__label--MaxWidth: 18ch;
+  --pf-v6-c-label-group__close--c-button--FontSize: var(--pf-t--global--icon--size--font--body--sm);
+  --pf-v6-c-label-group__close--c-button--PaddingBlockStart: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-label-group__close--c-button--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-label-group__close--c-button--PaddingBlockEnd: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-label-group__close--c-button--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-label-group__textarea--MinWidth: 12.5rem;
+  --pf-v6-c-label-group__textarea--PaddingBlockStart: 0.125rem;
+  --pf-v6-c-label-group__textarea--PaddingInlineEnd: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-label-group__textarea--PaddingBlockEnd: 0;
+  --pf-v6-c-label-group__textarea--PaddingInlineStart: var(--pf-t--global--spacer--xs);
+}
+
+.pf-v6-c-label-group {
+  display: inline-flex;
+  row-gap: var(--pf-v6-c-label-group--RowGap);
+  column-gap: var(--pf-v6-c-label-group--ColumnGap);
+  align-items: center;
+  max-width: var(--pf-v6-c-label-group--MaxWidth);
+}
+.pf-v6-c-label-group.pf-m-category {
+  padding-block-start: var(--pf-v6-c-label-group--m-category--PaddingBlockStart);
+  padding-block-end: var(--pf-v6-c-label-group--m-category--PaddingBlockEnd);
+  padding-inline-start: var(--pf-v6-c-label-group--m-category--PaddingInlineStart);
+  padding-inline-end: var(--pf-v6-c-label-group--m-category--PaddingInlineEnd);
+  background-color: var(--pf-v6-c-label-group--m-category--BackgroundColor);
+  border: var(--pf-v6-c-label-group--m-category--BorderWidth) solid var(--pf-v6-c-label-group--m-category--BorderColor);
+  border-radius: var(--pf-v6-c-label-group--m-category--BorderRadius);
+}
+.pf-v6-c-label-group.pf-m-vertical {
+  --pf-v6-c-label-group--RowGap: var(--pf-v6-c-label-group--m-vertical--RowGap);
+  --pf-v6-c-label-group--ColumnGap: var(--pf-v6-c-label-group--m-vertical--ColumnGap);
+  --pf-v6-c-label-group__main--RowGap: var(--pf-v6-c-label-group--m-vertical__main--RowGap);
+  --pf-v6-c-label-group__main--ColumnGap: var(--pf-v6-c-label-group--m-vertical__main--ColumnGap);
+  --pf-v6-c-label-group__list--RowGap: var(--pf-v6-c-label-group--m-vertical__list--RowGap);
+  --pf-v6-c-label-group__list--ColumnGap: var(--pf-v6-c-label-group--m-vertical__list--ColumnGap);
+  --pf-v6-c-label-group--m-category--PaddingInlineEnd: var(--pf-v6-c-label-group--m-vertical--m-category--PaddingInlineEnd);
+}
+.pf-v6-c-label-group.pf-m-vertical.pf-v6-c-label-group {
+  align-items: flex-start;
+}
+.pf-v6-c-label-group.pf-m-vertical .pf-v6-c-label-group__list {
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: var(--pf-v6-c-label-group__list--MaxWidth);
+}
+.pf-v6-c-label-group.pf-m-vertical .pf-v6-c-label-group__main {
+  flex-direction: column;
+  min-width: var(--pf-v6-c-label-group__main--MinWidth);
+}
+.pf-v6-c-label-group.pf-m-editable,
+.pf-v6-c-label-group.pf-m-editable .pf-v6-c-label-group__main,
+.pf-v6-c-label-group.pf-m-editable .pf-v6-c-label-group__list {
+  display: flex;
+}
+.pf-v6-c-label-group.pf-m-editable .pf-v6-c-label-group__main,
+.pf-v6-c-label-group.pf-m-editable .pf-v6-c-label-group__list,
+.pf-v6-c-label-group.pf-m-editable .pf-v6-c-label-group__list-item.pf-m-textarea,
+.pf-v6-c-label-group.pf-m-editable .pf-v6-c-label-group__textarea {
+  flex: 1;
+}
+
+.pf-v6-c-label-group__main {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  row-gap: var(--pf-v6-c-label-group__main--RowGap);
+  column-gap: var(--pf-v6-c-label-group__main--ColumnGap);
+  align-items: baseline;
+  min-width: var(--pf-v6-c-label-group__main--MinWidth);
+}
+
+.pf-v6-c-label-group__list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  row-gap: var(--pf-v6-c-label-group__list--RowGap);
+  column-gap: var(--pf-v6-c-label-group__list--ColumnGap);
+  min-width: var(--pf-v6-c-label-group__list--MinWidth);
+}
+
+.pf-v6-c-label-group__list-item {
+  display: inline-flex;
+  max-width: var(--pf-v6-c-label-group__list-item--MaxWidth);
+}
+
+.pf-v6-c-label-group__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: var(--pf-v6-c-label-group__label--MaxWidth);
+}
+
+.pf-v6-c-label-group__close {
+  display: flex;
+  align-self: flex-start;
+}
+.pf-v6-c-label-group__close .pf-v6-c-button {
+  --pf-v6-c-button--FontSize: var(--pf-v6-c-label-group__close--c-button--FontSize);
+  --pf-v6-c-button--m-plain--m-no-padding--PaddingBlockStart: var(--pf-v6-c-label-group__close--c-button--PaddingBlockStart);
+  --pf-v6-c-button--m-plain--m-no-padding--PaddingInlineEnd: var(--pf-v6-c-label-group__close--c-button--PaddingInlineEnd);
+  --pf-v6-c-button--m-plain--m-no-padding--PaddingBlockEnd: var(--pf-v6-c-label-group__close--c-button--PaddingBlockEnd);
+  --pf-v6-c-button--m-plain--m-no-padding--PaddingInlineStart: var(--pf-v6-c-label-group__close--c-button--PaddingInlineStart);
+}
+
+.pf-v6-c-label-group__textarea {
+  min-width: var(--pf-v6-c-label-group__textarea--MinWidth);
+  padding-block-start: var(--pf-v6-c-label-group__textarea--PaddingBlockStart);
+  padding-block-end: var(--pf-v6-c-label-group__textarea--PaddingBlockEnd);
+  padding-inline-start: var(--pf-v6-c-label-group__textarea--PaddingInlineStart);
+  padding-inline-end: var(--pf-v6-c-label-group__textarea--PaddingInlineEnd);
+  white-space: nowrap;
+  resize: none;
+  border: 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.pf-v6-c-label-group__textarea::-webkit-scrollbar {
+  display: none;
+}

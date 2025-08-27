@@ -1,0 +1,9 @@
+.ws-core-u-box-shadow .ws-preview-html {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pf-t--global--spacer--xl);
+}
+
+.ws-core-u-box-shadow [class*="pf-v6-u-box-shadow"] {
+  padding: var(--pf-t--global--spacer--md);
+}

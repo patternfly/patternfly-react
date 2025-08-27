@@ -1,0 +1,81 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($badge) {
+  // Component
+  --#{$badge}--BorderColor: transparent;
+  --#{$badge}--BorderWidth: var(--pf-t--global--border--width--regular);
+  --#{$badge}--BorderRadius: var(--pf-t--global--border--radius--pill);
+  --#{$badge}--FontSize: var(--pf-t--global--font--size--body--sm);
+  --#{$badge}--FontWeight: var(--pf-t--global--font--weight--body--bold);
+  --#{$badge}--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --#{$badge}--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --#{$badge}--Color: var(--pf-t--global--text--color--nonstatus--on-gray--default);
+  --#{$badge}--MinWidth: var(--pf-t--global--spacer--xl);
+
+  // Toggle icon
+  --#{$badge}__toggle-icon--MarginInlineStart: var(--pf-t--global--spacer--xs);
+  --#{$badge}__toggle-icon--Color: var(--pf-t--global--icon--color--nonstatus--on-gray--default);
+
+  // Modifiers
+  --#{$badge}--m-read--BackgroundColor: var(--pf-t--global--color--nonstatus--gray--default);
+  --#{$badge}--m-read--Color: var(--pf-t--global--text--color--nonstatus--on-gray--default);
+  --#{$badge}--m-read--BorderColor: var(--pf-t--global--border--color--high-contrast);
+  --#{$badge}--m-read__toggle-icon--Color: var(--pf-t--global--icon--color--nonstatus--on-gray--default);
+  --#{$badge}--m-unread--BackgroundColor: var(--pf-t--global--color--brand--default);
+  --#{$badge}--m-unread--Color: var(--pf-t--global--text--color--on-brand--default);
+  --#{$badge}--m-unread__toggle-icon--Color: var(--pf-t--global--icon--color--on-brand--default);
+  --#{$badge}--m-disabled--Color: var(--pf-t--global--text--color--on-disabled);
+  --#{$badge}--m-disabled--BorderColor: var(--pf-t--global--border--color--disabled);
+  --#{$badge}--m-disabled--BackgroundColor: var(--pf-t--global--background--color--disabled--default);
+}
+
+.#{$badge} {
+  position: relative;
+  display: inline-block;
+  min-width: var(--#{$badge}--MinWidth);
+  padding-inline-start: var(--#{$badge}--PaddingInlineStart);
+  padding-inline-end: var(--#{$badge}--PaddingInlineEnd);
+  font-size: var(--#{$badge}--FontSize);
+  font-weight: var(--#{$badge}--FontWeight);
+  color: var(--#{$badge}--Color);
+  text-align: center;
+  white-space: nowrap;
+  background-color: var(--#{$badge}--BackgroundColor);
+  border-radius: var(--#{$badge}--BorderRadius);
+
+  &::after {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    content: "";
+    border: var(--#{$badge}--BorderWidth) solid var(--#{$badge}--BorderColor);
+    border-radius: inherit;
+  }
+
+  &.pf-m-read {
+    --#{$badge}--BorderColor: var(--#{$badge}--m-read--BorderColor);
+    --#{$badge}--Color: var(--#{$badge}--m-read--Color);
+    --#{$badge}--BackgroundColor: var(--#{$badge}--m-read--BackgroundColor);
+    --#{$badge}__toggle-icon--Color: var(--#{$badge}--m-read__toggle-icon--Color);
+  }
+
+  &.pf-m-unread {
+    --#{$badge}--Color: var(--#{$badge}--m-unread--Color);
+    --#{$badge}--BackgroundColor: var(--#{$badge}--m-unread--BackgroundColor);
+    --#{$badge}__toggle-icon--Color: var(--#{$badge}--m-unread__toggle-icon--Color);
+  }
+
+  &.pf-m-disabled {
+    --#{$badge}--Color: var(--#{$badge}--m-disabled--Color);
+    --#{$badge}--BackgroundColor: var(--#{$badge}--m-disabled--BackgroundColor);
+
+    &::after {
+      border-color: var(--#{$badge}--m-disabled--BorderColor);
+    }
+  }
+}
+
+.#{$badge}__toggle-icon {
+  margin-inline-start: var(--#{$badge}__toggle-icon--MarginInlineStart);
+  color: var(--#{$badge}__toggle-icon--Color);
+}

@@ -1,0 +1,139 @@
+.pf-v6-c-banner {
+  --pf-v6-c-banner--PaddingBlockStart: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-banner--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-banner--md--PaddingInlineEnd: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-banner--PaddingBlockEnd: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-banner--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --pf-v6-c-banner--md--PaddingInlineStart: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-banner--FontSize: var(--pf-t--global--font--size--body--default);
+  --pf-v6-c-banner--Color: var(--pf-t--global--text--color--nonstatus--on-gray--default);
+  --pf-v6-c-banner--BackgroundColor: var(--pf-t--global--color--nonstatus--gray--default);
+  --pf-v6-c-banner--link--Color: var(--pf-v6-c-banner--Color);
+  --pf-v6-c-banner--link--TextDecoration: underline;
+  --pf-v6-c-banner--link--hover--Color: var(--pf-v6-c-banner--Color);
+  --pf-v6-c-banner--link--disabled--Color: var(--pf-t--global--text--color--disabled);
+  --pf-v6-c-banner--m-sticky--ZIndex: var(--pf-t--global--z-index--md);
+  --pf-v6-c-banner--m-sticky--BoxShadow: var(--pf-t--global--box-shadow--md);
+  --pf-v6-c-banner--m-danger--BackgroundColor: var(--pf-t--global--color--status--danger--default);
+  --pf-v6-c-banner--m-danger--Color: var(--pf-t--global--text--color--status--on-danger--default);
+  --pf-v6-c-banner--m-success--BackgroundColor: var(--pf-t--global--color--status--success--default);
+  --pf-v6-c-banner--m-success--Color: var(--pf-t--global--text--color--status--on-success--default);
+  --pf-v6-c-banner--m-warning--BackgroundColor: var(--pf-t--global--color--status--warning--default);
+  --pf-v6-c-banner--m-warning--Color: var(--pf-t--global--text--color--status--on-warning--default);
+  --pf-v6-c-banner--m-info--BackgroundColor: var(--pf-t--global--color--status--info--default);
+  --pf-v6-c-banner--m-info--Color: var(--pf-t--global--text--color--status--on-info--default);
+  --pf-v6-c-banner--m-custom--BackgroundColor: var(--pf-t--global--color--status--custom--default);
+  --pf-v6-c-banner--m-custom--Color: var(--pf-t--global--text--color--status--on-custom--default);
+  --pf-v6-c-banner--m-red--BackgroundColor: var(--pf-t--global--color--nonstatus--red--default);
+  --pf-v6-c-banner--m-red--Color: var(--pf-t--global--text--color--nonstatus--on-red--default);
+  --pf-v6-c-banner--m-orangered--BackgroundColor: var(--pf-t--global--color--nonstatus--orangered--default);
+  --pf-v6-c-banner--m-orangered--Color: var(--pf-t--global--text--color--nonstatus--on-orangered--default);
+  --pf-v6-c-banner--m-orange--BackgroundColor: var(--pf-t--global--color--nonstatus--orange--default);
+  --pf-v6-c-banner--m-orange--Color: var(--pf-t--global--text--color--nonstatus--on-orange--default);
+  --pf-v6-c-banner--m-yellow--BackgroundColor: var(--pf-t--global--color--nonstatus--yellow--default);
+  --pf-v6-c-banner--m-yellow--Color: var(--pf-t--global--text--color--nonstatus--on-yellow--default);
+  --pf-v6-c-banner--m-green--BackgroundColor: var(--pf-t--global--color--nonstatus--green--default);
+  --pf-v6-c-banner--m-green--Color: var(--pf-t--global--text--color--nonstatus--on-green--default);
+  --pf-v6-c-banner--m-teal--BackgroundColor: var(--pf-t--global--color--nonstatus--teal--default);
+  --pf-v6-c-banner--m-teal--Color: var(--pf-t--global--text--color--nonstatus--on-teal--default);
+  --pf-v6-c-banner--m-blue--BackgroundColor: var(--pf-t--global--color--nonstatus--blue--default);
+  --pf-v6-c-banner--m-blue--Color: var(--pf-t--global--text--color--nonstatus--on-blue--default);
+  --pf-v6-c-banner--m-purple--BackgroundColor: var(--pf-t--global--color--nonstatus--purple--default);
+  --pf-v6-c-banner--m-purple--Color: var(--pf-t--global--text--color--nonstatus--on-purple--default);
+}
+@media (min-width: 48rem) {
+  .pf-v6-c-banner {
+    --pf-v6-c-banner--PaddingInlineEnd: var(--pf-v6-c-banner--md--PaddingInlineEnd);
+    --pf-v6-c-banner--PaddingInlineStart: var(--pf-v6-c-banner--md--PaddingInlineStart);
+  }
+}
+
+.pf-v6-c-banner {
+  flex-shrink: 0;
+  padding-block-start: var(--pf-v6-c-banner--PaddingBlockStart);
+  padding-block-end: var(--pf-v6-c-banner--PaddingBlockEnd);
+  padding-inline-start: var(--pf-v6-c-banner--PaddingInlineStart);
+  padding-inline-end: var(--pf-v6-c-banner--PaddingInlineEnd);
+  font-size: var(--pf-v6-c-banner--FontSize);
+  color: var(--pf-v6-c-banner--Color);
+  white-space: nowrap;
+  background-color: var(--pf-v6-c-banner--BackgroundColor);
+}
+.pf-v6-c-banner.pf-m-danger {
+  --pf-v6-c-banner--BackgroundColor: var(--pf-v6-c-banner--m-danger--BackgroundColor);
+  --pf-v6-c-banner--Color: var(--pf-v6-c-banner--m-danger--Color);
+}
+.pf-v6-c-banner.pf-m-success {
+  --pf-v6-c-banner--BackgroundColor: var(--pf-v6-c-banner--m-success--BackgroundColor);
+  --pf-v6-c-banner--Color: var(--pf-v6-c-banner--m-success--Color);
+}
+.pf-v6-c-banner.pf-m-warning {
+  --pf-v6-c-banner--BackgroundColor: var(--pf-v6-c-banner--m-warning--BackgroundColor);
+  --pf-v6-c-banner--Color: var(--pf-v6-c-banner--m-warning--Color);
+}
+.pf-v6-c-banner.pf-m-info {
+  --pf-v6-c-banner--BackgroundColor: var(--pf-v6-c-banner--m-info--BackgroundColor);
+  --pf-v6-c-banner--Color: var(--pf-v6-c-banner--m-info--Color);
+}
+.pf-v6-c-banner.pf-m-custom {
+  --pf-v6-c-banner--BackgroundColor: var(--pf-v6-c-banner--m-custom--BackgroundColor);
+  --pf-v6-c-banner--Color: var(--pf-v6-c-banner--m-custom--Color);
+}
+.pf-v6-c-banner.pf-m-red {
+  --pf-v6-c-banner--BackgroundColor: var(--pf-v6-c-banner--m-red--BackgroundColor);
+  --pf-v6-c-banner--Color: var(--pf-v6-c-banner--m-red--Color);
+}
+.pf-v6-c-banner.pf-m-orangered {
+  --pf-v6-c-banner--BackgroundColor: var(--pf-v6-c-banner--m-orangered--BackgroundColor);
+  --pf-v6-c-banner--Color: var(--pf-v6-c-banner--m-orangered--Color);
+}
+.pf-v6-c-banner.pf-m-orange {
+  --pf-v6-c-banner--BackgroundColor: var(--pf-v6-c-banner--m-orange--BackgroundColor);
+  --pf-v6-c-banner--Color: var(--pf-v6-c-banner--m-orange--Color);
+}
+.pf-v6-c-banner.pf-m-yellow {
+  --pf-v6-c-banner--BackgroundColor: var(--pf-v6-c-banner--m-yellow--BackgroundColor);
+  --pf-v6-c-banner--Color: var(--pf-v6-c-banner--m-yellow--Color);
+}
+.pf-v6-c-banner.pf-m-green {
+  --pf-v6-c-banner--BackgroundColor: var(--pf-v6-c-banner--m-green--BackgroundColor);
+  --pf-v6-c-banner--Color: var(--pf-v6-c-banner--m-green--Color);
+}
+.pf-v6-c-banner.pf-m-teal {
+  --pf-v6-c-banner--BackgroundColor: var(--pf-v6-c-banner--m-teal--BackgroundColor);
+  --pf-v6-c-banner--Color: var(--pf-v6-c-banner--m-teal--Color);
+}
+.pf-v6-c-banner.pf-m-blue {
+  --pf-v6-c-banner--BackgroundColor: var(--pf-v6-c-banner--m-blue--BackgroundColor);
+  --pf-v6-c-banner--Color: var(--pf-v6-c-banner--m-blue--Color);
+}
+.pf-v6-c-banner.pf-m-purple {
+  --pf-v6-c-banner--BackgroundColor: var(--pf-v6-c-banner--m-purple--BackgroundColor);
+  --pf-v6-c-banner--Color: var(--pf-v6-c-banner--m-purple--Color);
+}
+.pf-v6-c-banner.pf-m-sticky {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: var(--pf-v6-c-banner--m-sticky--ZIndex);
+  box-shadow: var(--pf-v6-c-banner--m-sticky--BoxShadow);
+}
+.pf-v6-c-banner a {
+  color: var(--pf-v6-c-banner--link--Color);
+  text-decoration-line: var(--pf-v6-c-banner--link--TextDecoration);
+}
+.pf-v6-c-banner a:hover:not(.pf-m-disabled) {
+  --pf-v6-c-banner--link--Color: var(--pf-v6-c-banner--link--hover--Color);
+}
+.pf-v6-c-banner a.pf-m-disabled {
+  --pf-v6-c-banner--link--Color: var(--pf-v6-c-banner--link--disabled--Color);
+  cursor: not-allowed;
+}
+.pf-v6-c-banner .pf-v6-c-button.pf-m-inline {
+  --pf-v6-c-button--m-link--m-inline--Color: var(--pf-v6-c-banner--link--Color);
+  --pf-v6-c-button--m-link--m-inline--hover--Color: var(--pf-v6-c-banner--link--hover--Color);
+  --pf-v6-c-button--disabled--Color: var(--pf-v6-c-banner--link--disabled--Color);
+  text-decoration-line: var(--pf-v6-c-banner--link--TextDecoration);
+}
+.pf-v6-c-banner .pf-v6-c-button.pf-m-inline:disabled, .pf-v6-c-banner .pf-v6-c-button.pf-m-inline.pf-m-disabled {
+  cursor: not-allowed;
+}

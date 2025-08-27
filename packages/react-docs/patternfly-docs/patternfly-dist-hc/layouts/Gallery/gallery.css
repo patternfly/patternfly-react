@@ -1,0 +1,70 @@
+.pf-v6-l-gallery {
+  --pf-v6-l-gallery--m-gutter--GridGap: var(--pf-t--global--spacer--gutter--default);
+  --pf-v6-l-gallery--GridTemplateColumns--min: 250px;
+  --pf-v6-l-gallery--GridTemplateColumns--minmax--min: var(--pf-v6-l-gallery--GridTemplateColumns--min);
+  --pf-v6-l-gallery--GridTemplateColumns--max: 1fr;
+  --pf-v6-l-gallery--GridTemplateColumns--minmax--max: var(--pf-v6-l-gallery--GridTemplateColumns--max);
+  --pf-v6-l-gallery--GridTemplateColumns: repeat(auto-fill, minmax(var(--pf-v6-l-gallery--GridTemplateColumns--minmax--min), var(--pf-v6-l-gallery--GridTemplateColumns--minmax--max)));
+  --pf-v6-l-gallery--GridTemplateRows: auto;
+}
+
+.pf-v6-l-gallery {
+  display: grid;
+  grid-template-rows: var(--pf-v6-l-gallery--GridTemplateRows);
+  grid-template-columns: var(--pf-v6-l-gallery--GridTemplateColumns);
+  --pf-v6-l-gallery--GridTemplateColumns--minmax--min: var(--pf-v6-l-gallery--GridTemplateColumns--min);
+  --pf-v6-l-gallery--GridTemplateColumns--minmax--max: var(--pf-v6-l-gallery--GridTemplateColumns--max);
+}
+.pf-v6-l-gallery.pf-m-gutter {
+  grid-gap: var(--pf-v6-l-gallery--m-gutter--GridGap);
+}
+@media (min-width: 36rem) {
+  .pf-v6-l-gallery {
+    --pf-v6-l-gallery--GridTemplateColumns--minmax--min: var(--pf-v6-l-gallery--GridTemplateColumns--min-on-sm, var(--pf-v6-l-gallery--GridTemplateColumns--min));
+  }
+}
+@media (min-width: 48rem) {
+  .pf-v6-l-gallery {
+    --pf-v6-l-gallery--GridTemplateColumns--minmax--min: var(--pf-v6-l-gallery--GridTemplateColumns--min-on-md, var(--pf-v6-l-gallery--GridTemplateColumns--min-on-sm, var(--pf-v6-l-gallery--GridTemplateColumns--min)));
+  }
+}
+@media (min-width: 62rem) {
+  .pf-v6-l-gallery {
+    --pf-v6-l-gallery--GridTemplateColumns--minmax--min: var(--pf-v6-l-gallery--GridTemplateColumns--min-on-lg, var(--pf-v6-l-gallery--GridTemplateColumns--min-on-md, var(--pf-v6-l-gallery--GridTemplateColumns--min-on-sm, var(--pf-v6-l-gallery--GridTemplateColumns--min))));
+  }
+}
+@media (min-width: 75rem) {
+  .pf-v6-l-gallery {
+    --pf-v6-l-gallery--GridTemplateColumns--minmax--min: var(--pf-v6-l-gallery--GridTemplateColumns--min-on-xl, var(--pf-v6-l-gallery--GridTemplateColumns--min-on-lg, var(--pf-v6-l-gallery--GridTemplateColumns--min-on-md, var(--pf-v6-l-gallery--GridTemplateColumns--min-on-sm, var(--pf-v6-l-gallery--GridTemplateColumns--min)))));
+  }
+}
+@media (min-width: 90.625rem) {
+  .pf-v6-l-gallery {
+    --pf-v6-l-gallery--GridTemplateColumns--minmax--min: var(--pf-v6-l-gallery--GridTemplateColumns--min-on-2xl, var(--pf-v6-l-gallery--GridTemplateColumns--min-on-xl, var(--pf-v6-l-gallery--GridTemplateColumns--min-on-lg, var(--pf-v6-l-gallery--GridTemplateColumns--min-on-md, var(--pf-v6-l-gallery--GridTemplateColumns--min-on-sm, var(--pf-v6-l-gallery--GridTemplateColumns--min))))));
+  }
+}
+@media (min-width: 36rem) {
+  .pf-v6-l-gallery {
+    --pf-v6-l-gallery--GridTemplateColumns--minmax--max: var(--pf-v6-l-gallery--GridTemplateColumns--max-on-sm, var(--pf-v6-l-gallery--GridTemplateColumns--max));
+  }
+}
+@media (min-width: 48rem) {
+  .pf-v6-l-gallery {
+    --pf-v6-l-gallery--GridTemplateColumns--minmax--max: var(--pf-v6-l-gallery--GridTemplateColumns--max-on-md, var(--pf-v6-l-gallery--GridTemplateColumns--max-on-sm, var(--pf-v6-l-gallery--GridTemplateColumns--max)));
+  }
+}
+@media (min-width: 62rem) {
+  .pf-v6-l-gallery {
+    --pf-v6-l-gallery--GridTemplateColumns--minmax--max: var(--pf-v6-l-gallery--GridTemplateColumns--max-on-lg, var(--pf-v6-l-gallery--GridTemplateColumns--max-on-md, var(--pf-v6-l-gallery--GridTemplateColumns--max-on-sm, var(--pf-v6-l-gallery--GridTemplateColumns--max))));
+  }
+}
+@media (min-width: 75rem) {
+  .pf-v6-l-gallery {
+    --pf-v6-l-gallery--GridTemplateColumns--minmax--max: var(--pf-v6-l-gallery--GridTemplateColumns--max-on-xl, var(--pf-v6-l-gallery--GridTemplateColumns--max-on-lg, var(--pf-v6-l-gallery--GridTemplateColumns--max-on-md, var(--pf-v6-l-gallery--GridTemplateColumns--max-on-sm, var(--pf-v6-l-gallery--GridTemplateColumns--max)))));
+  }
+}
+@media (min-width: 90.625rem) {
+  .pf-v6-l-gallery {
+    --pf-v6-l-gallery--GridTemplateColumns--minmax--max: var(--pf-v6-l-gallery--GridTemplateColumns--max-on-2xl, var(--pf-v6-l-gallery--GridTemplateColumns--max-on-xl, var(--pf-v6-l-gallery--GridTemplateColumns--max-on-lg, var(--pf-v6-l-gallery--GridTemplateColumns--max-on-md, var(--pf-v6-l-gallery--GridTemplateColumns--max-on-sm, var(--pf-v6-l-gallery--GridTemplateColumns--max))))));
+  }
+}

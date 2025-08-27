@@ -1,0 +1,101 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($spinner) {
+  --#{$spinner}--diameter: var(--pf-t--global--icon--size--2xl);
+  --#{$spinner}--Width: var(--#{$spinner}--diameter);
+  --#{$spinner}--Height: var(--#{$spinner}--diameter);
+  --#{$spinner}--Color: var(--pf-t--global--icon--color--brand--default);
+  --#{$spinner}--AnimationDuration: 1.4s;
+  --#{$spinner}--AnimationTimingFunction: linear;
+  --#{$spinner}--StrokeWidth: 10;
+
+  // path
+  --#{$spinner}__path--StrokeWidth: var(--#{$spinner}--StrokeWidth);
+  --#{$spinner}__path--AnimationTimingFunction: ease-in-out;
+
+  // sizes
+  --#{$spinner}--m-xs--diameter: var(--pf-t--global--icon--size--sm);
+  --#{$spinner}--m-sm--diameter: var(--pf-t--global--icon--size--md);
+  --#{$spinner}--m-md--diameter: var(--pf-t--global--icon--size--lg);
+  --#{$spinner}--m-lg--diameter: var(--pf-t--global--icon--size--xl);
+  --#{$spinner}--m-xl--diameter: var(--pf-t--global--icon--size--2xl);
+
+  // inline
+  --#{$spinner}--m-inline--diameter: 1em;
+}
+
+.#{$spinner} {
+  width: var(--#{$spinner}--Width);
+  height: var(--#{$spinner}--Height);
+  overflow: hidden;
+  animation: #{$spinner}-animation-rotate calc(var(--#{$spinner}--AnimationDuration) * 2) var(--#{$spinner}--AnimationTimingFunction) infinite;
+
+  // Modifiers change the variables for size variations
+  &.pf-m-inline {
+    --#{$spinner}--diameter: var(--#{$spinner}--m-inline--diameter);
+  }
+
+  &.pf-m-xs {
+    --#{$spinner}--diameter: var(--#{$spinner}--m-xs--diameter);
+    --#{$spinner}--StrokeWidth: 15;
+  }
+
+  &.pf-m-sm {
+    --#{$spinner}--diameter: var(--#{$spinner}--m-sm--diameter);
+  }
+
+  &.pf-m-md {
+    --#{$spinner}--diameter: var(--#{$spinner}--m-md--diameter);
+  }
+
+  &.pf-m-lg {
+    --#{$spinner}--diameter: var(--#{$spinner}--m-lg--diameter);
+  }
+
+  &.pf-m-xl {
+    --#{$spinner}--diameter: var(--#{$spinner}--m-xl--diameter);
+  }
+}
+
+.#{$spinner}__path {
+  width: 100%;
+  height: 100%;
+  stroke: var(--#{$spinner}--Color);
+  stroke-dasharray: 283;
+  stroke-dashoffset: 280;
+  stroke-linecap: round;
+  stroke-width: var(--#{$spinner}--StrokeWidth);
+  transform-origin: 50% 50%;
+  animation: #{$spinner}-animation-dash var(--#{$spinner}--AnimationDuration) var(--#{$spinner}__path--AnimationTimingFunction) infinite;
+}
+
+@keyframes #{$spinner}-animation-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes #{$spinner}-animation-dash {
+  0% {
+    stroke-dashoffset: 280;
+    transform: rotate(0);
+  }
+
+  15% {
+    stroke-width: calc(var(--#{$spinner}__path--StrokeWidth) - 4);
+  }
+
+  40% {
+    stroke-dasharray: 220;
+    stroke-dashoffset: 150;
+  }
+
+  100% {
+    stroke-dashoffset: 280;
+    transform: rotate(720deg);
+  }
+}

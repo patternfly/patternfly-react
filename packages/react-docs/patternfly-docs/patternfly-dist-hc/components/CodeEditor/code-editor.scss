@@ -1,0 +1,228 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($code-editor) {
+  // controls
+  --#{$code-editor}__controls--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --#{$code-editor}__controls--Gap: var(--pf-t--global--spacer--gap--action-to-action--plain);
+
+  // header
+  --#{$code-editor}__header--before--BorderBlockEndWidth: var(--pf-t--global--border--width--box--default); // TODO - remove in breaking change
+  --#{$code-editor}__header--before--BorderBlockEndColor: var(--pf-t--global--border--color--default); // TODO - remove in breaking change
+  --#{$code-editor}__header--BorderWidth: var(--pf-t--global--border--width--box--default);
+  --#{$code-editor}__header--BorderColor: var(--pf-t--global--border--color--default);
+  --#{$code-editor}__header--BorderStartStartRadius: var(--pf-t--global--border--radius--medium);
+  --#{$code-editor}__header--BorderStartEndRadius: var(--pf-t--global--border--radius--medium);
+
+  // header content
+  --#{$code-editor}__header-content--BackgroundColor: var(--pf-t--global--background--color--secondary--default);
+  --#{$code-editor}__header-content--m-plain--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --#{$code-editor}__header-content--PaddingBlockStart: var(--pf-t--global--spacer--xs);
+  --#{$code-editor}__header-content--PaddingBlockEnd: var(--pf-t--global--spacer--xs);
+  --#{$code-editor}__header-content--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --#{$code-editor}__header-content--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --#{$code-editor}__header-content--BorderStartStartRadius: var(--pf-t--global--border--radius--medium);
+  --#{$code-editor}__header-content--BorderStartEndRadius: var(--pf-t--global--border--radius--medium);
+
+  // upload
+  --#{$code-editor}__upload--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --#{$code-editor}__upload--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --#{$code-editor}__upload--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --#{$code-editor}__upload--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --#{$code-editor}__upload--BorderRadius: var(--pf-t--global--border--radius--medium);
+
+  // main
+  --#{$code-editor}__main--BorderColor: var(--pf-t--global--border--color--default);
+  --#{$code-editor}__main--BorderWidth: var(--pf-t--global--border--width--box--default);
+  --#{$code-editor}__main--BorderEndStartRadius: var(--pf-t--global--border--radius--medium);
+  --#{$code-editor}__main--BorderEndEndRadius: var(--pf-t--global--border--radius--medium);
+  --#{$code-editor}__main--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --#{$code-editor}--m-read-only__main--BackgroundColor: var(--pf-t--global--background--color--secondary--default);
+  --#{$code-editor}__upload--before--BorderWidth: 0;
+  --#{$code-editor}__upload--before--BorderColor: transparent;
+  --#{$code-editor}__main--m-drag-hover--before--BorderWidth: var(--pf-t--global--border--width--divider--hover);
+  --#{$code-editor}__main--m-drag-hover--before--BorderColor: var( --pf-t--global--border--color--clicked);
+  --#{$code-editor}__main--m-drag-hover--after--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --#{$code-editor}__main--m-drag-hover--after--Opacity: .1;
+
+  // code
+  --#{$code-editor}__code--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --#{$code-editor}__code--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --#{$code-editor}__code--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$code-editor}__code--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --#{$code-editor}__code-pre--FontSize: var(--pf-t--global--font--size--sm);
+  --#{$code-editor}__code-pre--FontFamily: var(--pf-t--global--font--family--mono);
+
+  // content
+  --#{$code-editor}__header-main--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --#{$code-editor}__header-main--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+
+  // tab
+  --#{$code-editor}__tab--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --#{$code-editor}__tab--Color: var(--pf-t--global--text--color--subtle);
+  --#{$code-editor}__tab--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --#{$code-editor}__tab--PaddingInlineEnd: var( --pf-t--global--spacer--sm);
+  --#{$code-editor}__tab--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$code-editor}__tab--PaddingInlineStart: var( --pf-t--global--spacer--sm);
+  --#{$code-editor}__tab--BorderBlockStartWidth: var(--pf-t--global--border--width--box--default);
+  --#{$code-editor}__tab--BorderInlineEndWidth: var(--pf-t--global--border--width--box--default);
+  --#{$code-editor}__tab--BorderBlockEndWidth: 0;
+  --#{$code-editor}__tab--BorderInlineStartWidth: var(--pf-t--global--border--width--box--default);
+  --#{$code-editor}__tab--BorderColor: var(--pf-t--global--border--color--default);
+  --#{$code-editor}__tab--BorderStartEndRadius: var(--pf-t--global--border--radius--medium);
+
+  // tab text
+  --#{$code-editor}__tab-icon--text--MarginInlineStart: var(--pf-t--global--spacer--sm);
+}
+
+.#{$code-editor} {
+  display: flex;
+  flex-direction: column;
+
+  &.pf-m-read-only {
+    --#{$code-editor}__main--BackgroundColor: var(--#{$code-editor}--m-read-only__main--BackgroundColor);
+  }
+
+  &.pf-m-full-height {
+    height: 100%;
+  }
+}
+
+.#{$code-editor}__container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.#{$code-editor}__header {
+  position: relative;
+  display: flex;
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    content: "";
+    border: var(--#{$code-editor}__header--BorderWidth) solid var(--#{$code-editor}__header--BorderColor);
+    border-block-end: var(--#{$code-editor}__header--before--BorderBlockEndWidth) solid var(--#{$code-editor}__header--before--BorderBlockEndColor); // TODO - remove in breaking change
+    border-start-start-radius: var(--#{$code-editor}__header--BorderStartStartRadius);
+    border-start-end-radius: var(--#{$code-editor}__header--BorderStartEndRadius);
+  }
+
+  &.pf-m-plain {
+    --#{$code-editor}__header-content--BackgroundColor: var(--#{$code-editor}__header-content--m-plain--BackgroundColor);
+  }
+}
+
+.#{$code-editor}__header-content {
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+  padding-block-start: var(--#{$code-editor}__header-content--PaddingBlockStart);
+  padding-block-end: var(--#{$code-editor}__header-content--PaddingBlockEnd);
+  padding-inline-start: var(--#{$code-editor}__header-content--PaddingInlineStart);
+  padding-inline-end: var(--#{$code-editor}__header-content--PaddingInlineEnd);
+  background-color: var(--#{$code-editor}__header-content--BackgroundColor);
+  border-start-start-radius: var(--#{$code-editor}__header-content--BorderStartStartRadius);
+
+  &:last-child {
+    border-start-end-radius: var(--#{$code-editor}__header-content--BorderStartEndRadius);
+  }
+}
+
+.#{$code-editor}__controls {
+  display: flex;
+  gap: var(--#{$code-editor}__controls--Gap);
+  align-items: flex-start;
+}
+
+.#{$code-editor}__header-main {
+  flex-grow: 1;
+  align-self: center;
+  padding-inline-start: var(--#{$code-editor}__header-main--PaddingInlineStart);
+  padding-inline-end: var(--#{$code-editor}__header-main--PaddingInlineEnd);
+}
+
+.#{$code-editor}__upload {
+  position: relative;
+  padding-block-start: var(--#{$code-editor}__upload--PaddingBlockStart);
+  padding-block-end: var(--#{$code-editor}__upload--PaddingBlockEnd);
+  padding-inline-start: var(--#{$code-editor}__upload--PaddingInlineStart);
+  padding-inline-end: var(--#{$code-editor}__upload--PaddingInlineEnd);
+
+  &::before {
+    position: absolute;
+    inset-block-start: var(--#{$code-editor}__upload--PaddingBlockStart);
+    inset-block-end: var(--#{$code-editor}__upload--PaddingBlockEnd);
+    inset-inline-start: var(--#{$code-editor}__upload--PaddingInlineStart);
+    inset-inline-end: var(--#{$code-editor}__upload--PaddingInlineEnd);
+    content: "";
+    border: var(--#{$code-editor}__upload--before--BorderWidth) dashed var(--#{$code-editor}__upload--before--BorderColor);
+    border-radius: var(--#{$code-editor}__upload--BorderRadius);
+  }
+}
+
+.#{$code-editor}__main {
+  position: relative;
+  flex-grow: 1;
+  color: var(--#{$code-editor}__main--Color, inherit);
+  background-color: var(--#{$code-editor}__main--BackgroundColor);
+  border: var(--#{$code-editor}__main--BorderWidth) solid;
+  border-color: var(--#{$code-editor}__main--BorderColor);
+  border-end-start-radius: var(--#{$code-editor}__main--BorderEndStartRadius);
+  border-end-end-radius: var(--#{$code-editor}__main--BorderEndEndRadius);
+
+  &.pf-m-drag-hover {
+    --#{$code-editor}__upload--before--BorderWidth: var(--#{$code-editor}__main--m-drag-hover--before--BorderWidth);
+    --#{$code-editor}__upload--before--BorderColor: var(--#{$code-editor}__main--m-drag-hover--before--BorderColor);
+  }
+
+  // stylelint-disable selector-class-pattern
+  .monaco-editor {
+    background-color: var(--#{$code-editor}__main--BackgroundColor);
+  }
+
+  a.label-name { text-decoration-line: none; } // revert normalize.scss
+  // stylelint-enable selector-class-pattern
+}
+
+.#{$code-editor}__header + .#{$code-editor}__main {
+  border-block-start-width: 0;
+}
+
+.#{$code-editor}__code {
+  position: relative;
+  height: 100%;
+  padding-block-start: var(--#{$code-editor}__code--PaddingBlockStart);
+  padding-block-end: var(--#{$code-editor}__code--PaddingBlockEnd);
+  padding-inline-start: var(--#{$code-editor}__code--PaddingInlineStart);
+  padding-inline-end: var(--#{$code-editor}__code--PaddingInlineEnd);
+
+  .#{$code-editor}__code-pre {
+    font-family: var(--#{$code-editor}__code-pre--FontFamily);
+    font-size: var(--#{$code-editor}__code-pre--FontSize);
+    white-space: pre-wrap;
+  }
+}
+
+.#{$code-editor}__tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-block-start: var(--#{$code-editor}__tab--PaddingBlockStart);
+  padding-block-end: var(--#{$code-editor}__tab--PaddingBlockEnd);
+  padding-inline-start: var(--#{$code-editor}__tab--PaddingInlineStart);
+  padding-inline-end: var(--#{$code-editor}__tab--PaddingInlineEnd);
+  color: var(--#{$code-editor}__tab--Color);
+  background-color: var(--#{$code-editor}__tab--BackgroundColor);
+  border-color: var(--#{$code-editor}__tab--BorderColor);
+  border-style: solid;
+  border-block-start-width: var(--#{$code-editor}__tab--BorderBlockStartWidth);
+  border-block-end-width: var(--#{$code-editor}__tab--BorderBlockEndWidth);
+  border-inline-start-width: var(--#{$code-editor}__tab--BorderInlineStartWidth);
+  border-inline-end-width: var(--#{$code-editor}__tab--BorderInlineEndWidth);
+  border-start-end-radius: var(--#{$code-editor}__tab--BorderStartEndRadius);
+}
+
+.#{$code-editor}__tab-icon + .#{$code-editor}__tab-text {
+  margin-inline-start: var(--#{$code-editor}__tab-icon--text--MarginInlineStart);
+}

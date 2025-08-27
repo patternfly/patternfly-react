@@ -1,0 +1,164 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($empty-state) {
+  --#{$empty-state}--PaddingBlockStart: var(--pf-t--global--spacer--xl);
+  --#{$empty-state}--PaddingInlineEnd: var(--pf-t--global--spacer--xl);
+  --#{$empty-state}--PaddingBlockEnd: var(--pf-t--global--spacer--xl);
+  --#{$empty-state}--PaddingInlineStart: var(--pf-t--global--spacer--xl);
+  --#{$empty-state}--m-xs--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --#{$empty-state}--m-xs--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --#{$empty-state}--m-xs--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --#{$empty-state}--m-xs--PaddingInlineStart: var(--pf-t--global--spacer--md);
+
+  // Content
+  --#{$empty-state}__content--MaxWidth: none;
+  --#{$empty-state}--m-xs__content--MaxWidth: #{pf-size-prem(350px)};
+  --#{$empty-state}--m-sm__content--MaxWidth: #{pf-size-prem(400px)};
+  --#{$empty-state}--m-lg__content--MaxWidth: #{pf-size-prem(600px)};
+
+  // Icon
+  --#{$empty-state}__icon--MarginBlockEnd: var(--pf-t--global--spacer--lg);
+  --#{$empty-state}__icon--FontSize: var(--pf-t--global--icon--size--2xl);
+  --#{$empty-state}__icon--Color: var(--pf-t--global--icon--color--subtle);
+  --#{$empty-state}--m-xs__icon--MarginBlockEnd: var(--pf-t--global--spacer--lg);
+  --#{$empty-state}--m-xl__icon--MarginBlockEnd: var(--pf-t--global--spacer--xl);
+  --#{$empty-state}--m-xl__icon--FontSize: var(--pf-t--global--icon--size--3xl);
+
+  // Status variant icon color
+  --#{$empty-state}--m-danger__icon--Color: var(--pf-t--global--icon--color--status--danger--default);
+  --#{$empty-state}--m-warning__icon--Color: var(--pf-t--global--icon--color--status--warning--default);
+  --#{$empty-state}--m-success__icon--Color: var(--pf-t--global--icon--color--status--success--default);
+  --#{$empty-state}--m-info__icon--Color: var(--pf-t--global--icon--color--status--info--default);
+  --#{$empty-state}--m-custom__icon--Color: var(--pf-t--global--icon--color--status--custom--default);
+
+  // Title text
+  --#{$empty-state}__title-text--FontFamily: var(--pf-t--global--font--family--heading);
+  --#{$empty-state}__title-text--FontSize: var(--pf-t--global--font--size--heading--md);
+  --#{$empty-state}__title-text--FontWeight: var(--pf-t--global--font--weight--heading--default);
+  --#{$empty-state}__title-text--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --#{$empty-state}--m-xs__title-text--FontSize: var(--pf-t--global--font--size--heading--xs);
+  --#{$empty-state}--m-xl__title-text--FontSize: var(--pf-t--global--font--size--heading--2xl);
+  --#{$empty-state}--m-xl__title-text--LineHeight: var(--pf-t--global--font--line-height--heading);
+
+  // Body
+  --#{$empty-state}__body--MarginBlockStart: var(--pf-t--global--spacer--md);
+  --#{$empty-state}__body--Color: var(--pf-t--global--text--color--subtle);
+  --#{$empty-state}--body--FontSize: var(--pf-t--global--font--size--body--lg);
+  --#{$empty-state}--m-xs__body--FontSize: var(--pf-t--global--font--size--body--lg);
+  --#{$empty-state}--m-xs__body--MarginBlockStart: var(--pf-t--global--spacer--md);
+  --#{$empty-state}--m-xl__body--FontSize: var(--pf-t--global--font--size--body--lg);
+  --#{$empty-state}--m-xl__body--MarginBlockStart: var(--pf-t--global--spacer--xl);
+
+  // Footer
+  --#{$empty-state}__footer--RowGap: var(--pf-t--global--spacer--gap--group-to-group--vertical--default);
+  --#{$empty-state}__footer--MarginBlockStart: var(--pf-t--global--spacer--xl);
+  --#{$empty-state}--m-xs__footer--MarginBlockStart: var(--pf-t--global--spacer--md);
+
+  // Actions
+  --#{$empty-state}__actions--RowGap: var(--pf-t--global--spacer--gap--group--vertical);
+  --#{$empty-state}__actions--ColumnGap: var(--pf-t--global--spacer--gap--action-to-action--default);
+}
+
+.#{$empty-state} {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block-start: var(--#{$empty-state}--PaddingBlockStart);
+  padding-block-end: var(--#{$empty-state}--PaddingBlockEnd);
+  padding-inline-start: var(--#{$empty-state}--PaddingInlineStart);
+  padding-inline-end: var(--#{$empty-state}--PaddingInlineEnd);
+  text-align: center;
+
+  &.pf-m-xs {
+    --#{$empty-state}--PaddingBlockStart: var(--#{$empty-state}--m-xs--PaddingBlockStart);
+    --#{$empty-state}--PaddingInlineEnd: var(--#{$empty-state}--m-xs--PaddingInlineEnd);
+    --#{$empty-state}--PaddingBlockEnd: var(--#{$empty-state}--m-xs--PaddingBlockEnd);
+    --#{$empty-state}--PaddingInlineStart: var(--#{$empty-state}--m-xs--PaddingInlineStart);
+    --#{$empty-state}__title-text--FontSize: var(--#{$empty-state}--m-xs__title-text--FontSize);
+    --#{$empty-state}__content--MaxWidth: var(--#{$empty-state}--m-xs__content--MaxWidth);
+    --#{$empty-state}__icon--MarginBlockEnd: var(--#{$empty-state}--m-xs__icon--MarginBlockEnd);
+    --#{$empty-state}__body--MarginBlockStart: var(--#{$empty-state}--m-xs__body--MarginBlockStart);
+    --#{$empty-state}--body--FontSize: var(--#{$empty-state}--m-xs__body--FontSize);
+    --#{$empty-state}__footer--MarginBlockStart: var(--#{$empty-state}--m-xs__footer--MarginBlockStart);
+  }
+
+  &.pf-m-sm {
+    --#{$empty-state}__content--MaxWidth: var(--#{$empty-state}--m-sm__content--MaxWidth);
+  }
+
+  &.pf-m-lg {
+    --#{$empty-state}__content--MaxWidth: var(--#{$empty-state}--m-lg__content--MaxWidth);
+  }
+
+  &.pf-m-xl {
+    --#{$empty-state}__body--MarginBlockStart: var(--#{$empty-state}--m-xl__body--MarginBlockStart);
+    --#{$empty-state}--body--FontSize: var(--#{$empty-state}--m-xl__body--FontSize);
+    --#{$empty-state}__icon--MarginBlockEnd: var(--#{$empty-state}--m-xl__icon--MarginBlockEnd);
+    --#{$empty-state}__icon--FontSize: var(--#{$empty-state}--m-xl__icon--FontSize);
+    --#{$empty-state}__title-text--FontSize: var(--#{$empty-state}--m-xl__title-text--FontSize);
+    --#{$empty-state}__title-text--LineHeight: var(--#{$empty-state}--m-xl__title-text--LineHeight);
+  }
+
+  &.pf-m-full-height {
+    height: 100%;
+  }
+
+  &.pf-m-danger {
+    --#{$empty-state}__icon--Color: var(--#{$empty-state}--m-danger__icon--Color);
+  }
+
+  &.pf-m-warning {
+    --#{$empty-state}__icon--Color: var(--#{$empty-state}--m-warning__icon--Color);
+  }
+
+  &.pf-m-success {
+    --#{$empty-state}__icon--Color: var(--#{$empty-state}--m-success__icon--Color);
+  }
+
+  &.pf-m-info {
+    --#{$empty-state}__icon--Color: var(--#{$empty-state}--m-info__icon--Color);
+  }
+
+  &.pf-m-custom {
+    --#{$empty-state}__icon--Color: var(--#{$empty-state}--m-custom__icon--Color);
+  }
+}
+
+.#{$empty-state}__content {
+  max-width: var(--#{$empty-state}__content--MaxWidth);
+}
+
+.#{$empty-state}__icon {
+  margin-block-end: var(--#{$empty-state}__icon--MarginBlockEnd);
+  font-size: var(--#{$empty-state}__icon--FontSize);
+  line-height: 1;
+  color: var(--#{$empty-state}__icon--Color);
+}
+
+.#{$empty-state}__title-text {
+  font-family: var(--#{$empty-state}__title-text--FontFamily);
+  font-size: var(--#{$empty-state}__title-text--FontSize);
+  font-weight: var(--#{$empty-state}__title-text--FontWeight);
+  line-height: var(--#{$empty-state}__title-text--LineHeight);
+}
+
+.#{$empty-state}__body {
+  margin-block-start: var(--#{$empty-state}__body--MarginBlockStart);
+  font-size: var(--#{$empty-state}--body--FontSize);
+  color: var(--#{$empty-state}__body--Color);
+}
+
+.#{$empty-state}__footer {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--#{$empty-state}__footer--RowGap);
+  align-items: center;
+  margin-block-start: var(--#{$empty-state}__footer--MarginBlockStart);
+}
+
+.#{$empty-state}__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--#{$empty-state}__actions--RowGap) var(--#{$empty-state}__actions--ColumnGap);
+  justify-content: center;
+}

@@ -1,0 +1,11 @@
+#ws-html-demos-c-page-context-selector-expanded-in-sidebar .pf-v6-c-page__sidebar-body.pf-m-context-selector { 
+  position: relative;
+}
+
+#ws-html-demos-c-page-context-selector-expanded-in-sidebar .pf-v6-c-page__sidebar-body.pf-m-context-selector .pf-v6-c-menu {
+  position: absolute;
+  top: 100%;
+  left: var(--pf-v6-c-page__sidebar-body--m-context-selector--PaddingInlineStart);
+  right: var(--pf-v6-c-page__sidebar-body--m-context-selector--PaddingInlineEnd);
+  z-index: var(--pf-t--global--z-index--sm);
+}

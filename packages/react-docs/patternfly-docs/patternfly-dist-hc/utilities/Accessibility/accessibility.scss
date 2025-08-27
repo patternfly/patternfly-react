@@ -1,0 +1,24 @@
+@use '../../sass-utilities' as *;
+
+// screen-reader - visually hide, but expose to screen readers
+@each $breakpoint, $breakpoint-value in $pf-v6-global--breakpoint-map {
+  .#{$pf-prefix}u-screen-reader#{$breakpoint-value} {
+    @include pf-v6-media-query($breakpoint) {
+      @include pf-v6-u-screen-reader;
+    }
+  }
+
+  .#{$pf-prefix}u-visible#{$breakpoint-value} {
+    @include pf-v6-media-query($breakpoint) {
+      @include pf-v6-u-visible;
+    }
+  }
+
+  .#{$pf-prefix}u-hidden#{$breakpoint-value} {
+    @include pf-v6-media-query($breakpoint) {
+      // stylelint-disable
+      display: none !important;
+      // stylelint-enable
+    }
+  }
+}
