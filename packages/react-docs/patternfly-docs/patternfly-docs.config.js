@@ -4,7 +4,7 @@ module.exports = {
   hasGdprBanner: false,
   hasFooter: false,
   hasVersionSwitcher: false,
-  hasDarkThemeSwitcher: true,
+  hasThemeSwitcher: true,
   hasRTLSwitcher: true,
   hasDesignGuidelines: false,
   sideNavItems: [
