@@ -65,6 +65,15 @@ class DataListItem extends Component<DataListItemProps> {
 
           const onKeyDown = (event: React.KeyboardEvent) => {
             if ([KeyTypes.Enter, KeyTypes.Space].includes(event.key)) {
+              const target: any = event.target;
+              if (
+                target.parentNode.classList.contains(styles.dataListItemAction) ||
+                target.parentNode.classList.contains(styles.dataListItemControl)
+              ) {
+                // check other event handlers are not present.
+                return;
+              }
+
               event.preventDefault();
               updateSelectedDataListItem(event, id);
             }
