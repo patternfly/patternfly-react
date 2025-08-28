@@ -27,6 +27,7 @@ export const TabsDefault: React.FunctionComponent = () => {
         isBox={isBox}
         aria-label="Tabs in the default example"
         role="region"
+        style={{ border: '1px solid red' }}
       >
         <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} aria-label="Default content - users">
           Users
