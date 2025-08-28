@@ -47,8 +47,6 @@ export interface TabsProps
   children: TabsChild | TabsChild[];
   /** Additional classes added to the tabs */
   className?: string;
-  /** Additional inline styles added to the tabs */
-  style?: React.CSSProperties;
   /** Tabs background color variant */
   variant?: 'default' | 'secondary';
   /** The index of the active tab */
@@ -470,7 +468,6 @@ class Tabs extends Component<TabsProps, TabsState> {
   render() {
     const {
       className,
-      style,
       children,
       activeKey,
       defaultActiveKey,
@@ -579,12 +576,12 @@ class Tabs extends Component<TabsProps, TabsState> {
           )}
           {...getOUIAProps(Tabs.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
           id={id && id}
+          {...props}
           style={{
             [linkAccentLength.name]: currentLinkAccentLength,
             [linkAccentStart.name]: currentLinkAccentStart,
-            ...style
+            ...props.style
           }}
-          {...props}
         >
           {expandable && isVertical && (
             <GenerateId>
