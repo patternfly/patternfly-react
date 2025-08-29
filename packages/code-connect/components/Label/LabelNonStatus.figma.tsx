@@ -12,19 +12,15 @@ figma.connect(
       labelText: figma.string('Text'),
 
       // boolean
-      isEditable: figma.boolean('Is Editable'),
-      onEditCancel: figma.boolean('Is Editable', {
-        true: `{() => {}}`,
-        false: undefined
-      }),
-      onEditComplete: figma.boolean('Is Editable', {
-        true: `{() => {}}`,
-        false: undefined
-      }),
-      editableProps: figma.boolean('Is Editable', {
+      isEditable: figma.boolean('Is Editable', {
         true: {
-          'aria-label': 'Editable label props',
-          id: 'editable-label'
+          isEditable: true,
+          onEditCancel: () => {}, // Callback when an editable label cancels an edit.
+          onEditComplete: () => {}, // Callback when an editable label completes an edit.
+          editableProps: {
+            'aria-label': `Editable label with text`,
+            id: 'editable-label'
+          }
         },
         false: undefined
       }),
@@ -47,45 +43,10 @@ figma.connect(
       children: figma.children('*')
     },
     example: (props) => (
-      <Label
-        isCompact={props.isCompact}
-        isEditable={props.isEditable}
-        onEditCancel={props.onEditCancel}
-        onEditComplete={props.onEditComplete}
-        editableProps={props.editableProps}
-        color={props.color}
-        variant={props.variant}
-      >
+      <Label isCompact={props.isCompact} isEditable={props.isEditable} color={props.color} variant={props.variant}>
         {props.children}
         {props.labelText}
       </Label>
     )
   }
 );
-
-// figma.connect(
-//   Label,
-//   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=2800-609',
-//   {
-//     props: {
-//       // string
-//       text: figma.string('Text'),
-
-//       // enum
-//       isCompact: figma.enum('Size', { Compact: true }),
-//       variant: figma.enum('Type', { Outlined: 'outline' }),
-//       status: figma.enum('Status', {
-//         Success: 'success',
-//         Warning: 'warning',
-//         Danger: 'danger',
-//         Info: 'info',
-//         Custom: 'custom'
-//       })
-//     },
-//     example: (props) => (
-//       <Label isCompact={props.isCompact} status={props.status} variant={props.variant}>
-//         {props.text}
-//       </Label>
-//     )
-//   }
-// );
