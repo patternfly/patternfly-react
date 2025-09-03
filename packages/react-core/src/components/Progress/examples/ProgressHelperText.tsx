@@ -25,7 +25,7 @@ export const ProgressHelperText: React.FunctionComponent = () => {
   const helperTextVariant = selectedVariant === 'danger' ? 'error' : selectedVariant;
 
   const helperText = (
-    <HelperText>
+    <HelperText id="progress-helper-text-example-help-text">
       <HelperTextItem variant={helperTextVariant}>
         {`${formatVariantName(selectedVariant)} variant is being displayed`}
       </HelperTextItem>
@@ -36,7 +36,13 @@ export const ProgressHelperText: React.FunctionComponent = () => {
     <>
       {variantOptions}
       <br />
-      <Progress value={33} title="Title" helperText={helperText} variant={selectedVariant} />
+      <Progress
+        aria-describedby="progress-helper-text-example-help-text"
+        value={33}
+        title="Title"
+        helperText={helperText}
+        variant={selectedVariant}
+      />
     </>
   );
 };

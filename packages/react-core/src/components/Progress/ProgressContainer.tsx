@@ -130,7 +130,7 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
           )}
         </div>
       )}
-      <ProgressBar role="progressbar" progressBarAriaProps={progressBarAriaProps} value={value}>
+      <ProgressBar progressBarAriaProps={progressBarAriaProps} value={value}>
         {measureLocation === ProgressMeasureLocation.inside && `${value}%`}
       </ProgressBar>
       {helperText && <ProgressHelperText>{helperText}</ProgressHelperText>}

@@ -96,11 +96,11 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
   };
 
   // add helper text to a status item showing any error encountered during the file reading process
-  const createHelperText = (file: File) => {
+  const createHelperText = (file: File, fileIndex: number) => {
     const fileResult = readFileData.find((readFile) => readFile.fileName === file.name);
     if (fileResult?.loadError) {
       return (
-        <HelperText isLiveRegion>
+        <HelperText id={`multiple-file-upload-basic-example-help-text-${fileIndex}`} isLiveRegion>
           <HelperTextItem variant="error">{fileResult.loadError.toString()}</HelperTextItem>
         </HelperText>
       );
@@ -135,14 +135,15 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
             statusToggleIcon={statusIcon}
             aria-label="Current uploads"
           >
-            {currentFiles.map((file) => (
+            {currentFiles.map((file, index) => (
               <MultipleFileUploadStatusItem
                 file={file}
                 key={file.name}
                 onClearClick={() => removeFiles([file.name])}
                 onReadSuccess={handleReadSuccess}
                 onReadFail={handleReadFail}
-                progressHelperText={createHelperText(file)}
+                progressHelperText={createHelperText(file, index)}
+                progressAriaDescribedBy={`multiple-file-upload-basic-example-help-text-${index}`}
               />
             ))}
           </MultipleFileUploadStatus>

@@ -50,6 +50,8 @@ export interface MultipleFileUploadStatusItemProps extends React.HTMLProps<HTMLL
   progressAriaLabel?: string;
   /** Associates the progress bar with it's label for accessibility purposes. Required when title not used */
   progressAriaLabelledBy?: string;
+  /** Adds an accessible description to the ProgressBar via space separated list of ids. Required when helperText is passed in. */
+  progressAriaDescribedBy?: string;
   /** Modifies the text announced by assistive technologies when the progress bar updates. */
   progressAriaLiveMessage?: string | ((loadPercentage: number) => string);
   /** Unique identifier for progress. Generated if not specified. */
@@ -74,6 +76,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
   progressVariant,
   progressAriaLabel,
   progressAriaLabelledBy,
+  progressAriaDescribedBy,
   progressId,
   progressAriaLiveMessage,
   buttonAriaLabel = 'Remove from list',
@@ -161,6 +164,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
           variant={variant}
           aria-label={progressAriaLabel}
           aria-labelledby={progressAriaLabelledBy}
+          aria-describedby={progressAriaDescribedBy}
           id={progressId}
           helperText={progressHelperText}
         />
