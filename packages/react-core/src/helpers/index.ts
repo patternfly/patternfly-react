@@ -1,3 +1,4 @@
+export * from './AnimationsProvider';
 export * from './constants';
 export * from './FocusTrap/FocusTrap';
 export * from './GenerateId/GenerateId';

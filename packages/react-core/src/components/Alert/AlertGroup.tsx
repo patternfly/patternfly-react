@@ -1,7 +1,8 @@
-import { Component } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import * as ReactDOM from 'react-dom';
 import { canUseDOM } from '../../helpers';
 import { AlertGroupInline } from './AlertGroupInline';
+import { useHasAnimations } from '../../helpers';
 
 export interface AlertGroupProps extends Omit<React.HTMLProps<HTMLUListElement>, 'className'> {
   /** Additional classes added to the AlertGroup */
@@ -26,78 +27,73 @@ export interface AlertGroupProps extends Omit<React.HTMLProps<HTMLUListElement>,
   'aria-label'?: string;
 }
 
-interface AlertGroupState {
-  container: HTMLElement;
-}
+export const AlertGroup: React.FunctionComponent<AlertGroupProps> = ({
+  className,
+  children,
+  hasAnimations: localHasAnimations,
+  isToast,
+  isLiveRegion,
+  onOverflowClick,
+  overflowMessage,
+  'aria-label': ariaLabel,
 
-class AlertGroup extends Component<AlertGroupProps, AlertGroupState> {
-  static displayName = 'AlertGroup';
-  state = {
-    container: undefined
-  } as AlertGroupState;
+  appendTo, // do not pass down to ul
+  ...props
+}: AlertGroupProps) => {
+  const containerRef = useRef<HTMLElement | null>(null);
+  const [isContainerReady, setIsContainerReady] = useState(false);
+  const hasAnimations = useHasAnimations(localHasAnimations);
 
-  componentDidMount() {
-    const container = document.createElement('div');
-    const target: HTMLElement = this.getTargetElement();
-    this.setState({ container });
-    target.appendChild(container);
-  }
-
-  componentWillUnmount() {
-    const target: HTMLElement = this.getTargetElement();
-    if (this.state.container) {
-      target.removeChild(this.state.container);
-    }
-  }
-
-  getTargetElement() {
-    const appendTo = this.props.appendTo;
+  const getTargetElement = () => {
     if (typeof appendTo === 'function') {
       return appendTo();
     }
     return appendTo || document.body;
+  };
+
+  useEffect(() => {
+    if (isToast && canUseDOM) {
+      const container = document.createElement('div');
+      const target = getTargetElement();
+      containerRef.current = container;
+      target.appendChild(container);
+      setIsContainerReady(true);
+
+      return () => {
+        if (containerRef.current) {
+          target.removeChild(containerRef.current);
+          containerRef.current = null;
+        }
+        setIsContainerReady(false);
+      };
+    }
+  }, [isToast, appendTo]);
+
+  const alertGroup = (
+    <AlertGroupInline
+      onOverflowClick={onOverflowClick}
+      className={className}
+      isToast={isToast}
+      isLiveRegion={isLiveRegion}
+      overflowMessage={overflowMessage}
+      aria-label={ariaLabel}
+      hasAnimations={hasAnimations}
+      {...props}
+    >
+      {children}
+    </AlertGroupInline>
+  );
+
+  if (!isToast) {
+    return alertGroup;
   }
 
-  render() {
-    const {
-      className,
-      children,
-      hasAnimations = false,
-      isToast,
-      isLiveRegion,
-      onOverflowClick,
-      overflowMessage,
-      'aria-label': ariaLabel,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      appendTo, // do not pass down to ul
-      ...props
-    } = this.props;
-    const alertGroup = (
-      <AlertGroupInline
-        onOverflowClick={onOverflowClick}
-        className={className}
-        isToast={isToast}
-        isLiveRegion={isLiveRegion}
-        overflowMessage={overflowMessage}
-        aria-label={ariaLabel}
-        hasAnimations={hasAnimations}
-        {...props}
-      >
-        {children}
-      </AlertGroupInline>
-    );
-    if (!this.props.isToast) {
-      return alertGroup;
-    }
+  const container = containerRef.current;
 
-    const container = this.state.container;
-
-    if (!canUseDOM || !container) {
-      return null;
-    }
-
-    return ReactDOM.createPortal(alertGroup, container);
+  if (!canUseDOM || !container || !isContainerReady) {
+    return null;
   }
-}
 
-export { AlertGroup };
+  return ReactDOM.createPortal(alertGroup, container);
+};
+AlertGroup.displayName = 'AlertGroup';

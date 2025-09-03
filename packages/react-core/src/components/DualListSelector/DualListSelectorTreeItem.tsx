@@ -6,6 +6,7 @@ import { Badge } from '../Badge';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { flattenTree } from './treeUtils';
 import { DualListSelectorListContext } from './DualListSelectorContext';
+import { useHasAnimations } from '../../helpers';
 
 export interface DualListSelectorTreeItemProps extends React.HTMLProps<HTMLLIElement> {
   /** Content rendered inside the dual list selector. */
@@ -58,7 +59,7 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
   badgeProps,
   itemData,
   isDisabled = false,
-  hasAnimations,
+  hasAnimations: localHasAnimations,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   useMemo,
   ...props
@@ -66,6 +67,7 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
   const ref = useRef(null);
   const [isExpanded, setIsExpanded] = useState(defaultExpanded || false);
   const { setFocusedOption } = useContext(DualListSelectorListContext);
+  const hasAnimations = useHasAnimations(localHasAnimations);
 
   useEffect(() => {
     setIsExpanded(defaultExpanded);

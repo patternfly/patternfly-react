@@ -56,14 +56,16 @@ test('Standard Alert Group is not a toast alert group', () => {
   expect(screen.getByText('alert title').parentElement).not.toHaveClass('pf-m-toast');
 });
 
-test('Toast Alert Group contains expected modifier class', () => {
+test('Toast Alert Group contains expected modifier class', async () => {
   render(
     <AlertGroup isToast aria-label="group label">
       <Alert variant="warning" title="alert title" />
     </AlertGroup>
   );
 
-  expect(screen.getByLabelText('group label')).toHaveClass('pf-m-toast');
+  // Wait for the portal to be created and rendered
+  const alertGroup = await screen.findByLabelText('group label');
+  expect(alertGroup).toHaveClass('pf-m-toast');
 });
 
 test('Calls the callback set by updateTransitionEnd when transition ends and animations are enabled', async () => {
@@ -90,7 +92,8 @@ test('Calls the callback set by updateTransitionEnd when transition ends and ani
     </AlertGroup>
   );
 
-  await user.click(screen.getByLabelText('Close'));
+  const closeButton = await screen.findByLabelText('Close');
+  await user.click(closeButton);
   expect(mockCallback).not.toHaveBeenCalled();
   fireEvent.transitionEnd(screen.getByText('Test Alert').closest('.pf-v6-c-alert-group__item') as HTMLElement);
   expect(mockCallback).toHaveBeenCalled();
@@ -120,7 +123,8 @@ test('Does not call the callback set by updateTransitionEnd when transition ends
     </AlertGroup>
   );
 
-  await user.click(screen.getByLabelText('Close'));
+  const closeButton = await screen.findByLabelText('Close');
+  await user.click(closeButton);
   expect(mockCallback).toHaveBeenCalledTimes(1);
   // The transitionend event firing should not cause the callback to be called again
   fireEvent.transitionEnd(screen.getByText('Test Alert').closest('.pf-v6-c-alert-group__item') as HTMLElement);

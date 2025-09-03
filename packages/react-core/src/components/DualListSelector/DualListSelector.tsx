@@ -1,8 +1,8 @@
-import { Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
-import { GenerateId, PickOptional } from '../../helpers';
+import { GenerateId } from '../../helpers';
 import { DualListSelectorContext } from './DualListSelectorContext';
+import { useHasAnimations } from '../../helpers';
 
 /** Acts as a container for all other DualListSelector sub-components when using a
  * composable dual list selector.
@@ -24,41 +24,34 @@ export interface DualListSelectorProps {
   hasAnimations?: boolean;
 }
 
-class DualListSelector extends Component<DualListSelectorProps> {
-  static displayName = 'DualListSelector';
-  static defaultProps: PickOptional<DualListSelectorProps> = {
-    children: '',
-    isTree: false,
-    hasAnimations: false
-  };
+export const DualListSelector: React.FunctionComponent<DualListSelectorProps> = ({
+  className,
+  children,
+  id,
+  isTree = false,
+  hasAnimations: localHasAnimations,
+  ...props
+}: DualListSelectorProps) => {
+  const hasAnimations = useHasAnimations(localHasAnimations);
 
-  constructor(props: DualListSelectorProps) {
-    super(props);
-  }
-
-  render() {
-    const { className, children, id, isTree, hasAnimations, ...props } = this.props;
-
-    return (
-      <DualListSelectorContext.Provider value={{ isTree, hasAnimations }}>
-        <GenerateId>
-          {(randomId) => (
-            <div
-              className={css(
-                styles.dualListSelector,
-                hasAnimations && isTree && styles.modifiers.animateExpand,
-                className
-              )}
-              id={id || randomId}
-              {...props}
-            >
-              {children}
-            </div>
-          )}
-        </GenerateId>
-      </DualListSelectorContext.Provider>
-    );
-  }
-}
-
-export { DualListSelector };
+  return (
+    <DualListSelectorContext.Provider value={{ isTree, hasAnimations }}>
+      <GenerateId>
+        {(randomId) => (
+          <div
+            className={css(
+              styles.dualListSelector,
+              hasAnimations && isTree && styles.modifiers.animateExpand,
+              className
+            )}
+            id={id || randomId}
+            {...props}
+          >
+            {children}
+          </div>
+        )}
+      </GenerateId>
+    </DualListSelectorContext.Provider>
+  );
+};
+DualListSelector.displayName = 'DualListSelector';
