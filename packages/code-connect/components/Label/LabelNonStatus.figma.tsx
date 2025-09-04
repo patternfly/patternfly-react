@@ -35,8 +35,8 @@ figma.connect(
         Blue: 'blue',
         Purple: 'purple',
         Grey: 'grey',
-        Teal: 'teal',
-        Yellow: 'yellow'
+        Cyan: 'teal', // TODO: DESIGN: Update to teal
+        Gold: 'yellow' // TODO: DESIGN: Update to yellow
       }),
       variant: figma.enum('Type', { Outlined: 'outline' }),
 

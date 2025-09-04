@@ -10,6 +10,6 @@ figma.connect(
     props: {
       children: figma.children('*')
     },
-    example: (props) => <MastheadToggle>{props.children}</MastheadToggle>
+    example: (props) => <MastheadToggle onClick={() => {}}>{props.children}</MastheadToggle>
   }
 );
