@@ -15,7 +15,7 @@ figma.connect(
       })
     },
     example: (props) => (
-      <Tabs onSelect={() => {}} isBox={props.isBox} aria-label="Tabs example" role="region">
+      <Tabs activeKey="activeTabKey" aria-label="Tabs example" isBox={props.isBox} onSelect={() => {}} role="region">
         {props.children}
       </Tabs>
     )
