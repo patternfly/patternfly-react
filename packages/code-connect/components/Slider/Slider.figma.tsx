@@ -38,6 +38,7 @@ figma.connect(
         isDisabled={props.isDisabled}
         showTicks={props.showTicks}
         max={200}
+        min={0}
         step={50}
         value={100}
       />

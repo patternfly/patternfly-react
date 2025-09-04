@@ -2,11 +2,12 @@
   "codeConnect": {
     "parser": "react",
     "include": [
-      "components/DatePicker/*.tsx",
-      "components/EmptyState/*.tsx",
-      "components/FileUpload/*.tsx",
-      "components/Hint/*.tsx",
-      "components/InlineEdit/*.tsx"
+      "components/Slider/*.tsx",
+      "components/Spinner/*.tsx",
+      "components/Tabs/*.tsx",
+      "components/TimeStamps/*.tsx",
+      "components/ToggleGroup/*.tsx",
+      "components/Tooltip/*.tsx"
     ],
     "paths": {
       "src/components": "src/components"
