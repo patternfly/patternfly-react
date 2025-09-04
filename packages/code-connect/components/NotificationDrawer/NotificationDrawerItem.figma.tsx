@@ -30,17 +30,28 @@ figma.connect(
         Danger: 'danger'
       }),
 
-      // boolean
-      listItemDropdown: {
-        dropdown: (
+      // TODO: DESIGN: Make alert description retrievable via unique layer name or adding a prop to Noficiation Drawer Item
+      alertDescription: 'Description',
+
+      // TODO: DESIGN: Make alert title retrievable via unique layer name or adding a prop to Noficiation Drawer Item
+      alertTitle: 'Notification title'
+    },
+    example: (props) => (
+      <NotificationDrawerListItem
+        isHoverable={props.isHoverable}
+        isRead={props.isRead}
+        onClose={() => {}}
+        variant={props.variant}
+      >
+        <NotificationDrawerListItemHeader title={props.alertTitle} variant={props.variant}>
           <Dropdown
             onSelect={() => {}}
             isOpen={false}
             onOpenChange={() => {}}
             popperProps={{ position: 'right' }}
-            toggle={() => (
+            toggle={(toggleRef) => (
               <MenuToggle
-                ref={() => {}}
+                ref={toggleRef}
                 isExpanded={false}
                 onClick={() => {}}
                 variant="plain"
@@ -55,29 +66,6 @@ figma.connect(
               <DropdownItem>Item 3</DropdownItem>
             </DropdownList>
           </Dropdown>
-        ),
-        onClose: () => {}
-      },
-
-      // TODO: DESIGN: Make alert description retrievable via unique layer name or adding a prop to Noficiation Drawer Item
-      alertDescription: 'Description',
-
-      // TODO: DESIGN: Make alert title retrievable via unique layer name or adding a prop to Noficiation Drawer Item
-      alertTitle: 'Notification title'
-    },
-    example: (props) => (
-      <NotificationDrawerListItem
-        isHoverable={props.isHoverable}
-        isRead={props.isRead}
-        onClose={() => {}}
-        variant={props.variant}
-      >
-        <NotificationDrawerListItemHeader
-          srTitle="Notification drawer item"
-          title={props.alertTitle}
-          variant={props.variant}
-        >
-          {props.listItemDropdown.dropdown}
         </NotificationDrawerListItemHeader>
         <NotificationDrawerListItemBody timestamp={props.timestamp}>
           {props.alertDescription}

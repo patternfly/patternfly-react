@@ -6,6 +6,7 @@ figma.connect(
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=7172-99015',
   {
     props: {
+      // children
       notificationDrawerHeader: figma.children('Notification drawer header'),
       notificationDrawerGroup: figma.children('Notification drawer group'),
       notificationDrawerNotifications: figma.children(['Notifications', 'Notification drawer item'])
