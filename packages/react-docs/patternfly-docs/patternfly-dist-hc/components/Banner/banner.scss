@@ -1,0 +1,172 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($banner) {
+  --#{$banner}--PaddingBlockStart: var(--pf-t--global--spacer--xs);
+  --#{$banner}--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --#{$banner}--md--PaddingInlineEnd: var(--pf-t--global--spacer--lg);
+  --#{$banner}--PaddingBlockEnd: var(--pf-t--global--spacer--xs);
+  --#{$banner}--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --#{$banner}--md--PaddingInlineStart: var(--pf-t--global--spacer--lg);
+  --#{$banner}--FontSize: var(--pf-t--global--font--size--body--default);
+  --#{$banner}--Color: var(--pf-t--global--text--color--nonstatus--on-gray--default);
+  --#{$banner}--BackgroundColor: var(--pf-t--global--color--nonstatus--gray--default);
+
+  @media (min-width: $pf-v6-global--breakpoint--md) {
+    --#{$banner}--PaddingInlineEnd: var(--#{$banner}--md--PaddingInlineEnd);
+    --#{$banner}--PaddingInlineStart: var(--#{$banner}--md--PaddingInlineStart);
+  }
+
+  // banner link variables
+  --#{$banner}--link--Color: var(--#{$banner}--Color);
+  --#{$banner}--link--TextDecoration: underline;
+  --#{$banner}--link--hover--Color: var(--#{$banner}--Color);
+  --#{$banner}--link--disabled--Color: var(--pf-t--global--text--color--disabled);
+
+  // modifier variables
+  --#{$banner}--m-sticky--ZIndex: var(--pf-t--global--z-index--md);
+  --#{$banner}--m-sticky--BoxShadow: var(--pf-t--global--box-shadow--md);
+
+  // status modifier variables
+  --#{$banner}--m-danger--BackgroundColor: var(--pf-t--global--color--status--danger--default);
+  --#{$banner}--m-danger--Color: var(--pf-t--global--text--color--status--on-danger--default);
+  --#{$banner}--m-success--BackgroundColor: var(--pf-t--global--color--status--success--default);
+  --#{$banner}--m-success--Color: var(--pf-t--global--text--color--status--on-success--default);
+  --#{$banner}--m-warning--BackgroundColor: var(--pf-t--global--color--status--warning--default);
+  --#{$banner}--m-warning--Color: var(--pf-t--global--text--color--status--on-warning--default);
+  --#{$banner}--m-info--BackgroundColor: var(--pf-t--global--color--status--info--default);
+  --#{$banner}--m-info--Color: var(--pf-t--global--text--color--status--on-info--default);
+  --#{$banner}--m-custom--BackgroundColor: var(--pf-t--global--color--status--custom--default);
+  --#{$banner}--m-custom--Color: var(--pf-t--global--text--color--status--on-custom--default);
+
+  // nonstatus modifier variables
+  --#{$banner}--m-red--BackgroundColor: var(--pf-t--global--color--nonstatus--red--default);
+  --#{$banner}--m-red--Color: var(--pf-t--global--text--color--nonstatus--on-red--default);
+  --#{$banner}--m-orangered--BackgroundColor: var(--pf-t--global--color--nonstatus--orangered--default);
+  --#{$banner}--m-orangered--Color: var(--pf-t--global--text--color--nonstatus--on-orangered--default);
+  --#{$banner}--m-orange--BackgroundColor: var(--pf-t--global--color--nonstatus--orange--default);
+  --#{$banner}--m-orange--Color: var(--pf-t--global--text--color--nonstatus--on-orange--default);
+  --#{$banner}--m-yellow--BackgroundColor: var(--pf-t--global--color--nonstatus--yellow--default);
+  --#{$banner}--m-yellow--Color: var(--pf-t--global--text--color--nonstatus--on-yellow--default);
+  --#{$banner}--m-green--BackgroundColor: var(--pf-t--global--color--nonstatus--green--default);
+  --#{$banner}--m-green--Color: var(--pf-t--global--text--color--nonstatus--on-green--default);
+  --#{$banner}--m-teal--BackgroundColor: var(--pf-t--global--color--nonstatus--teal--default);
+  --#{$banner}--m-teal--Color: var(--pf-t--global--text--color--nonstatus--on-teal--default);
+  --#{$banner}--m-blue--BackgroundColor: var(--pf-t--global--color--nonstatus--blue--default);
+  --#{$banner}--m-blue--Color: var(--pf-t--global--text--color--nonstatus--on-blue--default);
+  --#{$banner}--m-purple--BackgroundColor: var(--pf-t--global--color--nonstatus--purple--default);
+  --#{$banner}--m-purple--Color: var(--pf-t--global--text--color--nonstatus--on-purple--default);
+}
+
+.#{$banner} {
+  flex-shrink: 0;
+  padding-block-start: var(--#{$banner}--PaddingBlockStart);
+  padding-block-end: var(--#{$banner}--PaddingBlockEnd);
+  padding-inline-start: var(--#{$banner}--PaddingInlineStart);
+  padding-inline-end: var(--#{$banner}--PaddingInlineEnd);
+  font-size: var(--#{$banner}--FontSize);
+  color: var(--#{$banner}--Color);
+  white-space: nowrap;
+  background-color: var(--#{$banner}--BackgroundColor);
+
+  &.pf-m-danger {
+    --#{$banner}--BackgroundColor: var(--#{$banner}--m-danger--BackgroundColor);
+    --#{$banner}--Color: var(--#{$banner}--m-danger--Color);
+  }
+
+  &.pf-m-success {
+    --#{$banner}--BackgroundColor: var(--#{$banner}--m-success--BackgroundColor);
+    --#{$banner}--Color: var(--#{$banner}--m-success--Color);
+  }
+
+  &.pf-m-warning {
+    --#{$banner}--BackgroundColor: var(--#{$banner}--m-warning--BackgroundColor);
+    --#{$banner}--Color: var(--#{$banner}--m-warning--Color);
+  }
+
+  &.pf-m-info {
+    --#{$banner}--BackgroundColor: var(--#{$banner}--m-info--BackgroundColor);
+    --#{$banner}--Color: var(--#{$banner}--m-info--Color);
+  }
+
+  &.pf-m-custom {
+    --#{$banner}--BackgroundColor: var(--#{$banner}--m-custom--BackgroundColor);
+    --#{$banner}--Color: var(--#{$banner}--m-custom--Color);
+  }
+
+  &.pf-m-red {
+    --#{$banner}--BackgroundColor: var(--#{$banner}--m-red--BackgroundColor);
+    --#{$banner}--Color: var(--#{$banner}--m-red--Color);
+  }
+
+  &.pf-m-orangered {
+    --#{$banner}--BackgroundColor: var(--#{$banner}--m-orangered--BackgroundColor);
+    --#{$banner}--Color: var(--#{$banner}--m-orangered--Color);
+  }
+
+  &.pf-m-orange {
+    --#{$banner}--BackgroundColor: var(--#{$banner}--m-orange--BackgroundColor);
+    --#{$banner}--Color: var(--#{$banner}--m-orange--Color);
+  }
+
+  &.pf-m-yellow {
+    --#{$banner}--BackgroundColor: var(--#{$banner}--m-yellow--BackgroundColor);
+    --#{$banner}--Color: var(--#{$banner}--m-yellow--Color);
+  }
+
+  &.pf-m-green {
+    --#{$banner}--BackgroundColor: var(--#{$banner}--m-green--BackgroundColor);
+    --#{$banner}--Color: var(--#{$banner}--m-green--Color);
+  }
+
+  &.pf-m-teal {
+    --#{$banner}--BackgroundColor: var(--#{$banner}--m-teal--BackgroundColor);
+    --#{$banner}--Color: var(--#{$banner}--m-teal--Color);
+  }
+
+  &.pf-m-blue {
+    --#{$banner}--BackgroundColor: var(--#{$banner}--m-blue--BackgroundColor);
+    --#{$banner}--Color: var(--#{$banner}--m-blue--Color);
+  }
+
+  &.pf-m-purple {
+    --#{$banner}--BackgroundColor: var(--#{$banner}--m-purple--BackgroundColor);
+    --#{$banner}--Color: var(--#{$banner}--m-purple--Color);
+  }
+
+  &.pf-m-sticky {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: var(--#{$banner}--m-sticky--ZIndex);
+    box-shadow: var(--#{$banner}--m-sticky--BoxShadow);
+  }
+
+  a {
+    color: var(--#{$banner}--link--Color);
+    text-decoration-line: var(--#{$banner}--link--TextDecoration);
+
+    &:hover:not(.pf-m-disabled) {
+      --#{$banner}--link--Color: var(--#{$banner}--link--hover--Color);
+    }
+
+    // stylelint-disable selector-no-qualifying-type
+    &.pf-m-disabled {
+      --#{$banner}--link--Color: var(--#{$banner}--link--disabled--Color);
+
+      cursor: not-allowed;
+    }
+    // stylelint-enable selector-no-qualifying-type
+  }
+
+  .#{$button}.pf-m-inline {
+    --#{$button}--m-link--m-inline--Color: var(--#{$banner}--link--Color);
+    --#{$button}--m-link--m-inline--hover--Color: var(--#{$banner}--link--hover--Color);
+    --#{$button}--disabled--Color: var(--#{$banner}--link--disabled--Color);
+
+    text-decoration-line: var(--#{$banner}--link--TextDecoration);
+
+    &:disabled,
+    &.pf-m-disabled {
+      cursor: not-allowed;
+    }
+  }
+}

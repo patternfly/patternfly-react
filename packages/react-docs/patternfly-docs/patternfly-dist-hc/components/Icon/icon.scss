@@ -1,0 +1,316 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($icon) {
+  // Sizes
+  --#{$icon}--Width: var(--pf-t--global--icon--size--font--body--default);
+  --#{$icon}--Height: var(--pf-t--global--icon--size--font--body--default);
+
+  // Standalone icon sizes
+  --#{$icon}--m-sm--Width: var(--pf-t--global--icon--size--sm);
+  --#{$icon}--m-sm--Height: var(--pf-t--global--icon--size--sm);
+  --#{$icon}--m-md--Width: var(--pf-t--global--icon--size--md);
+  --#{$icon}--m-md--Height: var(--pf-t--global--icon--size--md);
+  --#{$icon}--m-lg--Width: var(--pf-t--global--icon--size--lg);
+  --#{$icon}--m-lg--Height: var(--pf-t--global--icon--size--lg);
+  --#{$icon}--m-xl--Width: var(--pf-t--global--icon--size--xl);
+  --#{$icon}--m-xl--Height: var(--pf-t--global--icon--size--xl);
+  --#{$icon}--m-2xl--Width: var(--pf-t--global--icon--size--2xl);
+  --#{$icon}--m-2xl--Height: var(--pf-t--global--icon--size--2xl);
+  --#{$icon}--m-3xl--Width: var(--pf-t--global--icon--size--3xl);
+  --#{$icon}--m-3xl--Height: var(--pf-t--global--icon--size--3xl);
+
+  // Body sizes
+  --#{$icon}--m-body-sm--Width: var(--pf-t--global--icon--size--font--body--sm);
+  --#{$icon}--m-body-sm--Height: var(--pf-t--global--icon--size--font--body--sm);
+  --#{$icon}--m-body-default--Width: var(--pf-t--global--icon--size--font--body--default);
+  --#{$icon}--m-body-default--Height: var(--pf-t--global--icon--size--font--body--default);
+  --#{$icon}--m-body-lg--Width: var(--pf-t--global--icon--size--font--body--lg);
+  --#{$icon}--m-body-lg--Height: var(--pf-t--global--icon--size--font--body--lg);
+
+  // Heading sizes
+  --#{$icon}--m-heading-sm--Width: var(--pf-t--global--icon--size--font--heading--h6);
+  --#{$icon}--m-heading-sm--Height: var(--pf-t--global--icon--size--font--heading--h6);
+  --#{$icon}--m-heading-md--Width: var(--pf-t--global--icon--size--font--heading--h5);
+  --#{$icon}--m-heading-md--Height: var(--pf-t--global--icon--size--font--heading--h5);
+  --#{$icon}--m-heading-lg--Width: var(--pf-t--global--icon--size--font--heading--h4);
+  --#{$icon}--m-heading-lg--Height: var(--pf-t--global--icon--size--font--heading--h4);
+  --#{$icon}--m-heading-xl--Width: var(--pf-t--global--icon--size--font--heading--h3);
+  --#{$icon}--m-heading-xl--Height: var(--pf-t--global--icon--size--font--heading--h3);
+  --#{$icon}--m-heading-2xl--Width: var(--pf-t--global--icon--size--font--heading--h2);
+  --#{$icon}--m-heading-2xl--Height: var(--pf-t--global--icon--size--font--heading--h2);
+  --#{$icon}--m-heading-3xl--Width: var(--pf-t--global--icon--size--font--heading--h1);
+  --#{$icon}--m-heading-3xl--Height: var(--pf-t--global--icon--size--font--heading--h1);
+
+  // Inline sizes
+  --#{$icon}--m-inline--Width: 1em;
+  --#{$icon}--m-inline--Height: 1em;
+
+  // Content
+  --#{$icon}__content--svg--VerticalAlign: -.125em;
+
+  // Content color
+  --#{$icon}__content--Color: var(--pf-t--global--icon--color--regular);
+  --#{$icon}__content--m-danger--Color: var(--pf-t--global--icon--color--status--danger--default);
+  --#{$icon}__content--m-warning--Color: var(--pf-t--global--icon--color--status--warning--default);
+  --#{$icon}__content--m-success--Color: var(--pf-t--global--icon--color--status--success--default);
+  --#{$icon}__content--m-info--Color: var(--pf-t--global--icon--color--status--info--default);
+  --#{$icon}__content--m-custom--Color: var(--pf-t--global--icon--color--status--custom--default);
+  --#{$icon}--m-inline__content--Color: initial;
+
+  // Content sizes
+  --#{$icon}__content--FontSize: var(--pf-t--global--icon--size--font--body--default);;
+
+  // Standalone content sizes
+  --#{$icon}--m-sm__content--FontSize: var(--pf-t--global--icon--size--sm);
+  --#{$icon}--m-md__content--FontSize: var(--pf-t--global--icon--size--md);
+  --#{$icon}--m-lg__content--FontSize: var(--pf-t--global--icon--size--lg);
+  --#{$icon}--m-xl__content--FontSize: var(--pf-t--global--icon--size--xl);
+  --#{$icon}--m-2xl__content--FontSize: var(--pf-t--global--icon--size--2xl);
+  --#{$icon}--m-3xl__content--FontSize: var(--pf-t--global--icon--size--3xl);
+
+  // Body content sizes
+  --#{$icon}--m-body-sm__content--FontSize: var(--pf-t--global--icon--size--font--body--sm);
+  --#{$icon}--m-body-default__content--FontSize: var(--pf-t--global--icon--size--font--body--default);
+  --#{$icon}--m-body-lg__content--FontSize: var(--pf-t--global--icon--size--font--body--lg);
+
+  // Heading content sizes
+  --#{$icon}--m-heading-sm__content--FontSize: var(--pf-t--global--icon--size--font--heading--h6);
+  --#{$icon}--m-heading-md__content--FontSize: var(--pf-t--global--icon--size--font--heading--h5);
+  --#{$icon}--m-heading-lg__content--FontSize: var(--pf-t--global--icon--size--font--heading--h4);
+  --#{$icon}--m-heading-xl__content--FontSize: var(--pf-t--global--icon--size--font--heading--h3);
+  --#{$icon}--m-heading-2xl__content--FontSize: var(--pf-t--global--icon--size--font--heading--h2);
+  --#{$icon}--m-heading-3xl__content--FontSize: var(--pf-t--global--icon--size--font--heading--h1);
+
+  // Inline sizes
+  --#{$icon}--m-inline__content--FontSize: 1em;
+}
+
+.#{$icon} {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--#{$icon}--Width);
+  height: var(--#{$icon}--Height);
+
+  // Inline modifier
+  &.pf-m-inline {
+    --#{$icon}--Width: var(--#{$icon}--m-inline--Width);
+    --#{$icon}--Height: var(--#{$icon}--m-inline--Height);
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-inline__content--FontSize);
+    --#{$icon}__content--Color: var(--#{$icon}--m-inline__content--Color);
+
+    line-height: 1;
+
+    .#{$spinner} {
+      --#{$spinner}--diameter: 1em;
+    }
+  }
+
+  // Standalone size modifiers
+  &.pf-m-sm {
+    --#{$icon}--Width: var(--#{$icon}--m-sm--Width);
+    --#{$icon}--Height: var(--#{$icon}--m-sm--Height);
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-sm__content--FontSize);
+  }
+
+  &.pf-m-md {
+    --#{$icon}--Width: var(--#{$icon}--m-md--Width);
+    --#{$icon}--Height: var(--#{$icon}--m-md--Height);
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-md__content--FontSize);
+  }
+
+  &.pf-m-lg {
+    --#{$icon}--Width: var(--#{$icon}--m-lg--Width);
+    --#{$icon}--Height: var(--#{$icon}--m-lg--Height);
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-lg__content--FontSize);
+  }
+
+  &.pf-m-xl {
+    --#{$icon}--Width: var(--#{$icon}--m-xl--Width);
+    --#{$icon}--Height: var(--#{$icon}--m-xl--Height);
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-xl__content--FontSize);
+  }
+
+  &.pf-m-2xl {
+    --#{$icon}--Width: var(--#{$icon}--m-2xl--Width);
+    --#{$icon}--Height: var(--#{$icon}--m-2xl--Height);
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-2xl__content--FontSize);
+  }
+
+  &.pf-m-3xl {
+    --#{$icon}--Width: var(--#{$icon}--m-3xl--Width);
+    --#{$icon}--Height: var(--#{$icon}--m-3xl--Height);
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-3xl__content--FontSize);
+  }
+
+  // Body size modifiers
+  &.pf-m-body-sm {
+    --#{$icon}--Width: var(--#{$icon}--m-body-sm--Width);
+    --#{$icon}--Height: var(--#{$icon}--m-body-sm--Height);
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-body-sm__content--FontSize);
+  }
+
+  &.pf-m-body-default {
+    --#{$icon}--Width: var(--#{$icon}--m-body-default--Width);
+    --#{$icon}--Height: var(--#{$icon}--m-body-default--Height);
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-body-default__content--FontSize);
+  }
+
+  &.pf-m-body-lg {
+    --#{$icon}--Width: var(--#{$icon}--m-body-lg--Width);
+    --#{$icon}--Height: var(--#{$icon}--m-body-lg--Height);
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-lg__content--FontSize);
+  }
+
+  // Heading size modifiers
+  &.pf-m-heading-sm {
+    --#{$icon}--Width: var(--#{$icon}--m-heading-sm--Width);
+    --#{$icon}--Height: var(--#{$icon}--m-heading-sm--Height);
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-heading-sm__content--FontSize);
+  }
+
+  &.pf-m-heading-md {
+    --#{$icon}--Width: var(--#{$icon}--m-heading-md--Width);
+    --#{$icon}--Height: var(--#{$icon}--m-heading-md--Height);
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-heading-md__content--FontSize);
+  }
+
+  &.pf-m-heading-lg {
+    --#{$icon}--Width: var(--#{$icon}--m-heading-lg--Width);
+    --#{$icon}--Height: var(--#{$icon}--m-heading-lg--Height);
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-heading-lg__content--FontSize);
+  }
+
+  &.pf-m-heading-xl {
+    --#{$icon}--Width: var(--#{$icon}--m-heading-xl--Width);
+    --#{$icon}--Height: var(--#{$icon}--m-heading-xl--Height);
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-heading-xl__content--FontSize);
+  }
+
+  &.pf-m-heading-2xl {
+    --#{$icon}--Width: var(--#{$icon}--m-heading-2xl--Width);
+    --#{$icon}--Height: var(--#{$icon}--m-heading-2xl--Height);
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-heading-2xl__content--FontSize);
+  }
+
+  &.pf-m-heading-3xl {
+    --#{$icon}--Width: var(--#{$icon}--m-heading-3xl--Width);
+    --#{$icon}--Height: var(--#{$icon}--m-heading-3xl--Height);
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-heading-3xl__content--FontSize);
+  }
+
+  // Progress modifier
+  &.pf-m-in-progress {
+    --#{$icon}__content--Opacity: 0;
+    --#{$icon}__progress--Opacity: 1;
+  }
+}
+
+// Content and progress both have size modifiers
+.#{$icon}__content,
+.#{$icon}__progress {
+  font-size: var(--#{$icon}__content--FontSize);
+
+  svg {
+    vertical-align: var(--#{$icon}__content--svg--VerticalAlign);
+  }
+
+  // Standalone font size modifiers
+  &.pf-m-sm {
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-sm__content--FontSize);
+  }
+
+  &.pf-m-md {
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-md__content--FontSize);
+  }
+
+  &.pf-m-lg {
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-lg__content--FontSize);
+  }
+
+  &.pf-m-xl {
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-xl__content--FontSize);
+  }
+
+  &.pf-m-2xl {
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-2xl__content--FontSize);
+  }
+
+  &.pf-m-3xl {
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-3xl__content--FontSize);
+  }
+
+  // Body font size modifiers
+  &.pf-m-body-sm {
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-body-sm__content--FontSize);
+  }
+
+  &.pf-m-body-default {
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-md__content--FontSize);
+  }
+
+  &.pf-m-body-lg {
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-lg__content--FontSize);
+  }
+
+  // Heading font size modifiers
+  &.pf-m-heading-sm {
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-heading-sm__content--FontSize);
+  }
+
+  &.pf-m-heading-md {
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-heading-md__content--FontSize);
+  }
+
+  &.pf-m-heading-lg {
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-heading-lg__content--FontSize);
+  }
+
+  &.pf-m-heading-xl {
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-heading-xl__content--FontSize);
+  }
+
+  &.pf-m-heading-2xl {
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-heading-2xl__content--FontSize);
+  }
+
+  &.pf-m-heading-3xl {
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-heading-3xl__content--FontSize);
+  }
+}
+
+// Content element
+.#{$icon}__content {
+  color: var(--#{$icon}__content--Color, inherit);
+  opacity: var(--#{$icon}__content--Opacity, 1);
+
+  // Status modifiers
+  &.pf-m-danger {
+    --#{$icon}__content--Color: var(--#{$icon}__content--m-danger--Color);
+  }
+
+  &.pf-m-warning {
+    --#{$icon}__content--Color: var(--#{$icon}__content--m-warning--Color);
+  }
+
+  &.pf-m-success {
+    --#{$icon}__content--Color: var(--#{$icon}__content--m-success--Color);
+  }
+
+  &.pf-m-info {
+    --#{$icon}__content--Color: var(--#{$icon}__content--m-info--Color);
+  }
+
+  &.pf-m-custom {
+    --#{$icon}__content--Color: var(--#{$icon}__content--m-custom--Color);
+  }
+}
+
+// Progress element
+.#{$icon}__progress {
+  position: absolute;
+  inset-block-start: calc(50% + calc(.5 * var(--#{$icon}__content--svg--VerticalAlign)));
+  opacity: var(--#{$icon}__progress--Opacity, 0);
+  transform: translateY(calc(-50% - calc(.5 * var(--#{$icon}__content--svg--VerticalAlign))));
+}

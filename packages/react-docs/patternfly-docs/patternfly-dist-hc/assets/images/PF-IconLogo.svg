@@ -1,0 +1,17 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Logo">
+<path id="Rectangle-Copy-17" fill-rule="evenodd" clip-rule="evenodd" d="M15.6522 0H40V24.3478H37.3913C25.3851 24.3478 15.6522 14.6149 15.6522 2.6087V0Z" fill="#0066CC"/>
+<path id="Path-2" fill-rule="evenodd" clip-rule="evenodd" d="M40 0.869568L16.5217 40H34.9367C37.7331 40 40 37.7331 40 34.9367V0.869568Z" fill="url(#paint0_linear_6460_7774)"/>
+<path id="Path-2_2" fill-rule="evenodd" clip-rule="evenodd" d="M39.1304 9.53674e-06L-3.8147e-06 23.4783V5.0633C-3.8147e-06 2.26692 2.26691 9.53674e-06 5.06329 9.53674e-06L39.1304 9.53674e-06Z" fill="url(#paint1_linear_6460_7774)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_6460_7774" x1="1613.04" y1="0.869504" x2="-337.034" y2="3251" gradientUnits="userSpaceOnUse">
+<stop stop-color="#2B9AF3"/>
+<stop offset="1" stop-color="#73BCF7" stop-opacity="0.502213"/>
+</linearGradient>
+<linearGradient id="paint1_linear_6460_7774" x1="39.1305" y1="-1573.04" x2="-3211" y2="377.033" gradientUnits="userSpaceOnUse">
+<stop stop-color="#2B9AF3"/>
+<stop offset="1" stop-color="#73BCF7" stop-opacity="0.502213"/>
+</linearGradient>
+</defs>
+</svg>

@@ -1,0 +1,15 @@
+.pf-v6-c-skip-to-content {
+  --pf-v6-c-skip-to-content--InsetBlockStart: var(--pf-t--global--spacer--md);
+  --pf-v6-c-skip-to-content--ZIndex: var(--pf-t--global--z-index--2xl);
+  --pf-v6-c-skip-to-content--focus--InsetInlineStart: var(--pf-t--global--spacer--md);
+}
+
+.pf-v6-c-skip-to-content {
+  position: absolute;
+  inset-block-start: var(--pf-v6-c-skip-to-content--InsetBlockStart);
+  inset-inline-start: -300%;
+  z-index: var(--pf-v6-c-skip-to-content--ZIndex);
+}
+.pf-v6-c-skip-to-content:focus-within {
+  inset-inline-start: var(--pf-v6-c-skip-to-content--focus--InsetInlineStart);
+}

@@ -1,0 +1,21 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($backdrop) {
+  --#{$backdrop}--Position: fixed;
+  --#{$backdrop}--ZIndex: var(--pf-t--global--z-index--lg);
+  --#{$backdrop}--BackgroundColor: var(--pf-t--global--background--color--backdrop--default);
+}
+
+.#{$backdrop} {
+  position: var(--#{$backdrop}--Position);
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  z-index: var(--#{$backdrop}--ZIndex);
+  width: 100%;
+  height: 100%;
+  background-color: var(--#{$backdrop}--BackgroundColor);
+}
+
+.#{$backdrop}__open {
+  overflow: hidden;
+}

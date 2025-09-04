@@ -1,0 +1,38 @@
+.pf-v6-c-number-input {
+  --pf-v6-c-number-input__unit--c-input-group--MarginInlineStart: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-number-input__icon--FontSize: var(--pf-t--global--font--size--xs);
+  --pf-v6-c-number-input--c-form-control--width-base: calc(var(--pf-t--global--spacer--md) * 2 + var(--pf-t--global--border--width--box--default) * 2);
+  --pf-v6-c-number-input--c-form-control--width-icon: var(--pf-t--global--spacer--xl);
+  --pf-v6-c-number-input--c-form-control--width-chars: 4;
+  --pf-v6-c-number-input--c-form-control--Width:
+    calc(
+      calc(
+        var(--pf-v6-c-number-input--c-form-control--width-base) + var(--pf-v6-c-number-input--c-form-control--width-chars) * 1ch
+      ) + var(--pf-v6-c-number-input--c-form-control--width-icon)
+    );
+}
+
+.pf-v6-c-number-input {
+  display: inline-flex;
+  align-items: center;
+}
+.pf-v6-c-number-input .pf-v6-c-form-control {
+  width: var(--pf-v6-c-number-input--c-form-control--Width);
+}
+.pf-v6-c-number-input .pf-v6-c-form-control > :is(input) {
+  text-align: end;
+  appearance: textfield;
+}
+.pf-v6-c-number-input .pf-v6-c-form-control > :is(input)::-webkit-inner-spin-button, .pf-v6-c-number-input .pf-v6-c-form-control > :is(input)::-webkit-outer-spin-button {
+  margin: 0;
+  appearance: none;
+}
+
+.pf-v6-c-input-group + .pf-v6-c-number-input__unit,
+.pf-v6-c-number-input__unit + .pf-v6-c-input-group {
+  margin-inline-start: var(--pf-v6-c-number-input__unit--c-input-group--MarginInlineStart);
+}
+
+.pf-v6-c-number-input__icon {
+  font-size: var(--pf-v6-c-number-input__icon--FontSize);
+}

@@ -1,0 +1,127 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($panel) {
+  --#{$panel}--Width: auto;
+  --#{$panel}--MinWidth: auto;
+  --#{$panel}--MaxWidth: none;
+  --#{$panel}--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --#{$panel}--BoxShadow: none;
+  --#{$panel}--BorderRadius: var(--pf-t--global--border--radius--small);
+
+  // border
+  --#{$panel}--before--BorderWidth: 0;
+  --#{$panel}--before--BorderColor: var(--pf-t--global--border--color--high-contrast);
+
+  // secondary modifier
+  --#{$panel}--m-secondary--BackgroundColor: var(--pf-t--global--background--color--secondary--default);
+  --#{$panel}--m-secondary--before--BorderWidth: var(--pf-t--global--border--width--box--default);
+
+  // bordered
+  --#{$panel}--m-bordered--before--BorderWidth: var(--pf-t--global--border--width--box--default);
+  --#{$panel}--m-bordered--before--BorderColor: var(--pf-t--global--border--color--default);
+
+  // raised
+  --#{$panel}--m-raised--BoxShadow: var(--pf-t--global--box-shadow--md);
+  --#{$panel}--m-raised--BackgroundColor: var(--pf-t--global--background--color--floating--default);
+  --#{$panel}--m-raised--before--BorderWidth: var(--pf-t--global--border--width--box--default);
+
+  // header
+  --#{$panel}__header--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --#{$panel}__header--PaddingInlineEnd: var(--pf-t--global--spacer--lg);
+  --#{$panel}__header--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --#{$panel}__header--PaddingInlineStart: var(--pf-t--global--spacer--lg);
+
+  // main
+  --#{$panel}__main--MaxHeight: none;
+  --#{$panel}__main--Overflow: visible;
+
+  // body
+  --#{$panel}__main-body--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --#{$panel}__main-body--PaddingInlineEnd: var(--pf-t--global--spacer--lg);
+  --#{$panel}__main-body--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --#{$panel}__main-body--PaddingInlineStart: var(--pf-t--global--spacer--lg);
+
+  // footer
+  --#{$panel}__footer--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --#{$panel}__footer--PaddingInlineEnd: var(--pf-t--global--spacer--lg);
+  --#{$panel}__footer--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$panel}__footer--PaddingInlineStart: var(--pf-t--global--spacer--lg);
+  --#{$panel}__footer--BoxShadow: none;
+
+  // scrollable
+  --#{$panel}--m-scrollable__main--MaxHeight: #{pf-size-prem(300px)};
+  --#{$panel}--m-scrollable__main--Overflow: auto;
+  --#{$panel}--m-scrollable__footer--BoxShadow: var(--pf-t--global--box-shadow--md--top);
+  --#{$panel}--m-scrollable__footer--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --#{$panel}--m-scrollable__footer--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+}
+
+.#{$panel} {
+  position: relative;
+  width: var(--#{$panel}--Width);
+  min-width: var(--#{$panel}--MinWidth);
+  max-width: var(--#{$panel}--MaxWidth);
+  background-color: var(--#{$panel}--BackgroundColor);
+  border-radius: var(--#{$panel}--BorderRadius);
+  box-shadow: var(--#{$panel}--BoxShadow);
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    content: "";
+    border: var(--#{$panel}--before--BorderWidth) solid var(--#{$panel}--before--BorderColor);
+    border-radius: var(--#{$panel}--BorderRadius);
+  }
+
+  &.pf-m-bordered {
+    --#{$panel}--before--BorderWidth: var(--#{$panel}--m-bordered--before--BorderWidth);
+    --#{$panel}--before--BorderColor: var(--#{$panel}--m-bordered--before--BorderColor);
+  }
+
+  &.pf-m-secondary {
+    --#{$panel}--BackgroundColor: var(--#{$panel}--m-secondary--BackgroundColor);
+    --#{$panel}--before--BorderWidth: var(--#{$panel}--m-secondary--before--BorderWidth);
+  }
+
+  &.pf-m-raised {
+    --#{$panel}--BackgroundColor: var(--#{$panel}--m-raised--BackgroundColor);
+    --#{$panel}--BoxShadow: var(--#{$panel}--m-raised--BoxShadow);
+    --#{$panel}--before--BorderWidth: var(--#{$panel}--m-raised--before--BorderWidth);
+  }
+
+  &.pf-m-scrollable {
+    --#{$panel}__main--MaxHeight: var(--#{$panel}--m-scrollable__main--MaxHeight);
+    --#{$panel}__main--Overflow: var(--#{$panel}--m-scrollable__main--Overflow);
+    --#{$panel}__footer--BoxShadow: var(--#{$panel}--m-scrollable__footer--BoxShadow);
+    --#{$panel}__footer--PaddingBlockStart: var(--#{$panel}--m-scrollable__footer--PaddingBlockStart);
+    --#{$panel}__footer--PaddingBlockEnd: var(--#{$panel}--m-scrollable__footer--PaddingBlockEnd);
+  }
+}
+
+.#{$panel}__header {
+  padding-block-start: var(--#{$panel}__header--PaddingBlockStart);
+  padding-block-end: var(--#{$panel}__header--PaddingBlockEnd);
+  padding-inline-start: var(--#{$panel}__header--PaddingInlineStart);
+  padding-inline-end: var(--#{$panel}__header--PaddingInlineEnd);
+}
+
+.#{$panel}__main {
+  max-height: var(--#{$panel}__main--MaxHeight);
+  overflow: var(--#{$panel}__main--Overflow);
+}
+
+.#{$panel}__main-body {
+  padding-block-start: var(--#{$panel}__main-body--PaddingBlockStart);
+  padding-block-end: var(--#{$panel}__main-body--PaddingBlockEnd);
+  padding-inline-start: var(--#{$panel}__main-body--PaddingInlineStart);
+  padding-inline-end: var(--#{$panel}__main-body--PaddingInlineEnd);
+}
+
+.#{$panel}__footer {
+  padding-block-start: var(--#{$panel}__footer--PaddingBlockStart);
+  padding-block-end: var(--#{$panel}__footer--PaddingBlockEnd);
+  padding-inline-start: var(--#{$panel}__footer--PaddingInlineStart);
+  padding-inline-end: var(--#{$panel}__footer--PaddingInlineEnd);
+  box-shadow: var(--#{$panel}__footer--BoxShadow);
+}

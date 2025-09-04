@@ -1,0 +1,45 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($timestamp) {
+  --#{$timestamp}--FontSize: var(--pf-t--global--font--size--body--sm);
+  --#{$timestamp}--Color: var(--pf-t--global--text--color--regular);
+  --#{$timestamp}--OutlineOffset: #{pf-size-prem(3px)};
+
+  // Help text variables for the timestamp
+  --#{$timestamp}--m-help-text--TextDecorationLine: var(--pf-t--global--text-decoration--help-text--line--default);
+  --#{$timestamp}--m-help-text--TextDecorationStyle: var(--pf-t--global--text-decoration--help-text--style--default);
+  --#{$timestamp}--m-help-text--TextUnderlineOffset: #{pf-size-prem(4px)};
+  --#{$timestamp}--m-help-text--Color: var(--pf-t--global--text--color--subtle);
+  --#{$timestamp}--m-help-text--hover--Color: var(--pf-t--global--text--color--regular);
+  --#{$timestamp}--m-help-text--hover--TextDecorationLine: var(--pf-t--global--text-decoration--help-text--line--hover);
+  --#{$timestamp}--m-help-text--hover--TextDecorationStyle: var(--pf-t--global--text-decoration--help-text--style--hover);
+}
+
+.#{$timestamp} {
+  display: inline-block;
+  font-size: var(--#{$timestamp}--FontSize);
+  color: var(--#{$timestamp}--Color);
+  outline-offset: var(--#{$timestamp}--OutlineOffset);
+
+  &.pf-m-help-text {
+    --#{$timestamp}--Color: var(--#{$timestamp}--m-help-text--Color);
+    
+    text-decoration-line: var(--#{$timestamp}--m-help-text--TextDecorationLine);
+    text-decoration-style: var(--#{$timestamp}--m-help-text--TextDecorationStyle);
+    text-underline-offset: var(--#{$timestamp}--m-help-text--TextUnderlineOffset);
+    cursor: pointer;
+
+    &:is(:hover, :focus) {
+      --#{$timestamp}--Color: var(--#{$timestamp}--m-help-text--hover--Color);
+      --#{$timestamp}--m-help-text--TextDecorationLine: var(--#{$timestamp}--m-help-text--hover--TextDecorationLine);
+      --#{$timestamp}--m-help-text--TextDecorationStyle: var(--#{$timestamp}--m-help-text--hover--TextDecorationStyle);
+    }
+  }
+}
+
+// enable timestamp with tooltip to have dashed underline when used with truncate
+.#{$timestamp}__text {
+  // stylelint-disable property-disallowed-list
+  text-decoration: inherit;
+  // stylelint-enable property-disallowed-list
+} 

@@ -1,0 +1,8 @@
+.pf-v6-u-min-width,
+.pf-v6-u-max-width,
+.pf-v6-u-min-height,
+.pf-v6-u-max-height,
+.ws-example-u-sizing-item {
+  padding: var(--pf-t--global--spacer--sm);
+  border: var(--pf-t--global--border--width--box--default) dashed var(--pf-t--global--border--color--default);
+}

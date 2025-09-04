@@ -1,0 +1,44 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($number-input) {
+  // unit
+  --#{$number-input}__unit--c-input-group--MarginInlineStart: var(--pf-t--global--spacer--sm);
+
+  // icon
+  --#{$number-input}__icon--FontSize: var(--pf-t--global--font--size--xs);
+
+  // form control
+  --#{$number-input}--c-form-control--width-base: calc(var(--pf-t--global--spacer--md) * 2 + var(--pf-t--global--border--width--box--default) * 2); // form controls's padding
+  --#{$number-input}--c-form-control--width-icon: var(--pf-t--global--spacer--xl); // extra width to accommodate a status icon
+  --#{$number-input}--c-form-control--width-chars: 4;
+  --#{$number-input}--c-form-control--Width:
+    calc(
+      calc(
+        var(--#{$number-input}--c-form-control--width-base) + var(--#{$number-input}--c-form-control--width-chars) * 1ch
+      ) + var(--#{$number-input}--c-form-control--width-icon)
+    );
+}
+
+.#{$number-input} {
+  display: inline-flex;
+  align-items: center;
+
+  .#{$form-control} {
+    width: var(--#{$number-input}--c-form-control--Width);
+
+    > :is(input) {
+      text-align: end;
+
+      @include pf-v6-remove-num-arrows;
+    }
+  }
+}
+
+.#{$input-group} + .#{$number-input}__unit,
+.#{$number-input}__unit + .#{$input-group} {
+  margin-inline-start: var(--#{$number-input}__unit--c-input-group--MarginInlineStart);
+}
+
+.#{$number-input}__icon {
+  font-size: var(--#{$number-input}__icon--FontSize);
+}

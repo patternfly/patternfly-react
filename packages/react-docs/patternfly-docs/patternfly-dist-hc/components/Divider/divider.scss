@@ -1,0 +1,102 @@
+@use '../../sass-utilities' as *;
+
+$pf-v6-c-divider--breakpoint-map: build-breakpoint-map("sm", "md", "lg", "xl", "2xl");
+$pf-v6-c-divider--spacer-map: build-spacer-map("none", "xs", "sm", "md", "lg", "xl", "2xl", "3xl");
+
+// * Divider horizontal
+@mixin pf-v6-c-divider--m-horizontal {
+  flex-direction: row;
+  width: 100%;
+  height: var(--#{$divider}--Size);  // apply size to height in horizontal orientation
+}
+
+// * Divider vertical
+@mixin pf-v6-c-divider--m-vertical {
+  flex-direction: column;
+  width: var(--#{$divider}--Size); // apply size to width in vertical orientation
+  height: inherit;
+}
+
+@include pf-root($divider) {
+  // * Divider
+  --#{$divider}--Display: flex;
+  --#{$divider}--Color: var(--pf-t--global--border--color--default);
+  --#{$divider}--Size: var(--pf-t--global--border--width--divider--default);
+
+  // * Divider before
+  --#{$divider}--before--FlexBasis: 100%;
+}
+
+// - Divider
+.#{$divider} {
+  @include pf-v6-c-divider--m-horizontal; // default, set to orientation to horizontal
+  @include pf-v6-hidden-visible(var(--#{$divider}--Display));
+
+  flex-shrink: 0;
+  align-items: stretch;
+  align-self: stretch;
+  justify-content: center;
+  border: 0; // removes the default border styling on an hr
+
+  // - Divider before
+  &::before {
+    flex-basis: var(--#{$divider}--before--FlexBasis);
+    content: "";
+    background-color: var(--#{$divider}--Color);
+  }
+
+  // - Divider horizontal
+  &.pf-m-horizontal {
+    @include pf-v6-c-divider--m-horizontal;
+  }
+
+  // - Divider vertical
+  &.pf-m-vertical {
+    @include pf-v6-c-divider--m-vertical;
+  }
+
+  // - Divider spacer insets
+  @each $spacer, $spacer-value in $pf-v6-c-divider--spacer-map {
+    @if $spacer == none {
+      $spacer-value: 0%;
+    }
+
+    &.pf-m-inset-#{$spacer} {
+      --#{$divider}--before--FlexBasis: calc(100% - #{$spacer-value} * 2);
+    }
+  }
+}
+
+// TODO: move this loop to separate file for resize observer implementation
+// TODO: make responsive values opt in/out
+// stylelint-disable
+.#{$divider} {
+  @each $breakpoint, $breakpoint-value in $pf-v6-c-divider--breakpoint-map {
+    $breakpoint-name: '-on-' + #{$breakpoint};
+
+    @include pf-v6-apply-breakpoint($breakpoint) {
+      &.pf-m-horizontal#{$breakpoint-name} {
+        @include pf-v6-c-divider--m-horizontal;
+      }
+    }
+
+    @include pf-v6-apply-breakpoint($breakpoint) {
+      &.pf-m-vertical#{$breakpoint-name} {
+        @include pf-v6-c-divider--m-vertical;
+      }
+    }
+
+    @include pf-v6-apply-breakpoint($breakpoint) {
+      @each $spacer, $spacer-value in $pf-v6-c-divider--spacer-map {
+        &.pf-m-inset-#{$spacer}#{$breakpoint-name} {
+          @if $spacer == none {
+            --#{$divider}--before--FlexBasis: 100%;
+          } @else {
+            --#{$divider}--before--FlexBasis: calc(100% - #{$spacer-value} * 2);
+          }
+        }
+      }
+    }
+  }
+}
+// stylelint-enable

@@ -1,0 +1,192 @@
+.pf-v6-c-progress {
+  --pf-v6-c-progress--GridGap: var(--pf-t--global--spacer--md);
+  --pf-v6-c-progress__bar--Height: var(--pf-t--global--spacer--md);
+  --pf-v6-c-progress__bar--BackgroundColor: var(--pf-t--global--color--nonstatus--gray--default);
+  --pf-v6-c-progress__bar--BorderRadius: var(--pf-t--global--border--radius--medium);
+  --pf-v6-c-progress__bar--BorderColor: var(--pf-t--global--border--color--high-contrast);
+  --pf-v6-c-progress__bar--BorderWidth: var(--pf-t--global--border--width--regular);
+  --pf-v6-c-progress__measure--m-static-width--MinWidth: 4.5ch;
+  --pf-v6-c-progress__status--Gap: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-progress__status-icon--Color: var(--pf-t--global--icon--color--regular);
+  --pf-v6-c-progress__indicator--Height: var(--pf-v6-c-progress__bar--Height);
+  --pf-v6-c-progress__indicator--BackgroundColor: var(--pf-t--global--color--brand--default);
+  --pf-v6-c-progress__helper-text--MarginBlockStart: calc(var(--pf-t--global--spacer--sm) - var(--pf-v6-c-progress--GridGap));
+  --pf-v6-c-progress--m-success__indicator--BackgroundColor: var(--pf-t--global--color--status--success--default);
+  --pf-v6-c-progress--m-warning__indicator--BackgroundColor: var(--pf-t--global--color--status--warning--default);
+  --pf-v6-c-progress--m-danger__indicator--BackgroundColor: var(--pf-t--global--color--status--danger--default);
+  --pf-v6-c-progress--m-success__status-icon--Color: var(--pf-t--global--icon--color--status--success--default);
+  --pf-v6-c-progress--m-warning__status-icon--Color: var(--pf-t--global--icon--color--status--warning--default);
+  --pf-v6-c-progress--m-danger__status-icon--Color: var(--pf-t--global--icon--color--status--danger--default);
+  --pf-v6-c-progress--m-inside__indicator--MinWidth: var(--pf-t--global--spacer--xl);
+  --pf-v6-c-progress--m-inside__measure--Color: var(--pf-t--global--text--color--on-brand--default);
+  --pf-v6-c-progress--m-success--m-inside__measure--Color: var(--pf-t--global--text--color--status--on-success--default);
+  --pf-v6-c-progress--m-warning--m-inside__measure--Color: var(--pf-t--global--text--color--status--on-warning--default);
+  --pf-v6-c-progress--m-danger--m-inside__measure--Color: var(--pf-t--global--text--color--status--on-danger--default);
+  --pf-v6-c-progress--m-inside__measure--FontSize: var(--pf-t--global--font--size--sm);
+  --pf-v6-c-progress--m-outside__measure--FontSize: var(--pf-t--global--font--size--sm);
+  --pf-v6-c-progress--m-sm__bar--Height: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-progress--m-sm__measure--FontSize: var(--pf-t--global--font--size--body--sm);
+  --pf-v6-c-progress--m-lg__bar--Height: var(--pf-t--global--spacer--lg);
+}
+
+.pf-v6-c-progress {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: auto auto;
+  grid-gap: var(--pf-v6-c-progress--GridGap);
+  align-items: end;
+}
+.pf-v6-c-progress.pf-m-sm {
+  --pf-v6-c-progress__bar--Height: var(--pf-v6-c-progress--m-sm__bar--Height);
+}
+.pf-v6-c-progress.pf-m-sm .pf-v6-c-progress__measure {
+  font-size: var(--pf-v6-c-progress--m-sm__measure--FontSize);
+}
+.pf-v6-c-progress.pf-m-lg {
+  --pf-v6-c-progress__bar--Height: var(--pf-v6-c-progress--m-lg__bar--Height);
+}
+.pf-v6-c-progress.pf-m-inside .pf-v6-c-progress__indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--pf-v6-c-progress--m-inside__indicator--MinWidth);
+}
+.pf-v6-c-progress.pf-m-inside .pf-v6-c-progress__measure {
+  font-size: var(--pf-v6-c-progress--m-inside__measure--FontSize);
+  color: var(--pf-v6-c-progress--m-inside__measure--Color);
+  text-align: center;
+}
+.pf-v6-c-progress.pf-m-outside .pf-v6-c-progress__description {
+  grid-column: 1/3;
+}
+.pf-v6-c-progress.pf-m-outside .pf-v6-c-progress__status {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  align-self: center;
+}
+.pf-v6-c-progress.pf-m-outside .pf-v6-c-progress__measure {
+  display: inline-block;
+  font-size: var(--pf-v6-c-progress--m-outside__measure--FontSize);
+}
+.pf-v6-c-progress.pf-m-outside .pf-v6-c-progress__measure.pf-m-static-width {
+  min-width: var(--pf-v6-c-progress__measure--m-static-width--MinWidth);
+  text-align: start;
+}
+.pf-v6-c-progress.pf-m-outside .pf-v6-c-progress__bar,
+.pf-v6-c-progress.pf-m-outside .pf-v6-c-progress__indicator {
+  grid-column: 1/2;
+}
+.pf-v6-c-progress.pf-m-singleline {
+  grid-template-rows: 1fr;
+}
+.pf-v6-c-progress.pf-m-singleline .pf-v6-c-progress__description {
+  display: none;
+}
+.pf-v6-c-progress.pf-m-singleline .pf-v6-c-progress__bar {
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+.pf-v6-c-progress.pf-m-singleline .pf-v6-c-progress__status {
+  grid-row: 1/2;
+  grid-column: 2/3;
+}
+.pf-v6-c-progress.pf-m-outside, .pf-v6-c-progress.pf-m-singleline {
+  grid-template-columns: 1fr fit-content(50%);
+}
+.pf-v6-c-progress.pf-m-success {
+  --pf-v6-c-progress__indicator--BackgroundColor: var(--pf-v6-c-progress--m-success__indicator--BackgroundColor);
+  --pf-v6-c-progress__status-icon--Color: var(--pf-v6-c-progress--m-success__status-icon--Color);
+  --pf-v6-c-progress--m-inside__measure--Color: var(--pf-v6-c-progress--m-success--m-inside__measure--Color);
+}
+.pf-v6-c-progress.pf-m-warning {
+  --pf-v6-c-progress__indicator--BackgroundColor: var(--pf-v6-c-progress--m-warning__indicator--BackgroundColor);
+  --pf-v6-c-progress__status-icon--Color: var(--pf-v6-c-progress--m-warning__status-icon--Color);
+  --pf-v6-c-progress--m-inside__measure--Color: var(--pf-v6-c-progress--m-warning--m-inside__measure--Color);
+}
+.pf-v6-c-progress.pf-m-danger {
+  --pf-v6-c-progress__indicator--BackgroundColor: var(--pf-v6-c-progress--m-danger__indicator--BackgroundColor);
+  --pf-v6-c-progress__status-icon--Color: var(--pf-v6-c-progress--m-danger__status-icon--Color);
+  --pf-v6-c-progress--m-inside__measure--Color: var(--pf-v6-c-progress--m-danger--m-inside__measure--Color);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pf-v6-c-progress.pf-m-danger .pf-v6-c-progress__bar {
+    translate: var(--pf-v6-global--danger-jiggle--TranslateX, 0);
+    animation-name: pf-v6-global-danger-jiggle-motion;
+    animation-duration: var(--pf-v6-global--danger-jiggle--AnimationDuration--Transform);
+    animation-timing-function: var(--pf-v6-global--danger-jiggle--AnimationTimingFunction--Transform);
+    animation-fill-mode: both;
+  }
+}
+.pf-v6-c-progress.pf-m-danger .pf-v6-c-progress__status-icon {
+  --pf-v6-c-progress--TransitionDuration--Opacity: var(--pf-t--global--motion--duration--fade--default);
+  --pf-v6-c-progress--TransitionTimingFunction--Opacity: var(--pf-t--global--motion--timing-function--default);
+  animation-name: pf-v6-global-fade-in;
+  animation-duration: var(--pf-v6-c-progress--TransitionDuration--Opacity);
+  animation-timing-function: var(--pf-v6-c-progress--TransitionTimingFunction--Opacity);
+}
+
+.pf-v6-c-progress__description {
+  grid-column: 1/2;
+  word-break: break-word;
+}
+.pf-v6-c-progress__description.pf-m-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pf-v6-c-progress__status {
+  display: flex;
+  grid-row: 1/2;
+  grid-column: 2/3;
+  gap: var(--pf-v6-c-progress__status--Gap);
+  align-items: flex-start;
+  justify-content: flex-end;
+  text-align: end;
+  word-break: break-word;
+}
+
+.pf-v6-c-progress__status-icon {
+  color: var(--pf-v6-c-progress__status-icon--Color);
+}
+
+.pf-v6-c-progress__bar::before,
+.pf-v6-c-progress__indicator {
+  inset-block-start: 0;
+  inset-inline-start: 0;
+}
+
+.pf-v6-c-progress__bar {
+  position: relative;
+  grid-row: 2/3;
+  grid-column: 1/3;
+  align-self: center;
+  height: var(--pf-v6-c-progress__bar--Height);
+  overflow: hidden;
+  background-color: var(--pf-v6-c-progress__bar--BackgroundColor);
+  border-radius: var(--pf-v6-c-progress__bar--BorderRadius);
+}
+.pf-v6-c-progress__bar::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  border: var(--pf-v6-c-progress__bar--BorderWidth) solid var(--pf-v6-c-progress__bar--BorderColor);
+  border-radius: inherit;
+}
+
+.pf-v6-c-progress__indicator {
+  position: absolute;
+  height: var(--pf-v6-c-progress__indicator--Height);
+  background-color: var(--pf-v6-c-progress__indicator--BackgroundColor);
+}
+
+.pf-v6-c-progress__helper-text {
+  grid-row: 3/4;
+  grid-column: 1/3;
+  margin-block-start: var(--pf-v6-c-progress__helper-text--MarginBlockStart);
+}
+
+.pf-v6-c-progress__measure {
+  font-variant-numeric: tabular-nums;
+}

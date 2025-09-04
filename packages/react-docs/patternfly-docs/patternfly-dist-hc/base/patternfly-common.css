@@ -1,0 +1,93 @@
+.pf-v6-screen-reader {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.pf-v6-screen-reader.pf-m-full-size {
+  width: 100%;
+  height: 100%;
+}
+.pf-v6-screen-reader.pf-m-absolute {
+  position: absolute;
+}
+
+.pf-v6-m-tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.pf-v6-m-legacy-font {
+  --pf-t--global--font--family--body: var(--pf-t--global--font--family--body--legacy);
+  --pf-t--global--font--family--heading: var(--pf-t--global--font--family--heading--legacy);
+  --pf-t--global--font--family--mono: var(--pf-t--global--font--family--mono--legacy);
+  --pf-t--global--font--weight--body: var(--pf-t--global--font--weight--body--legacy);
+  --pf-t--global--font--weight--body--bold: var(--pf-t--global--font--weight--body--bold--legacy);
+  --pf-t--global--font--weight--heading: var(--pf-t--global--font--weight--heading--legacy);
+  --pf-t--global--font--weight--heading--bold: var(--pf-t--global--font--weight--heading--bold--legacy);
+}
+
+.pf-v6-m-dir-rtl {
+  --pf-v6-global--inverse--multiplier: -1;
+  direction: rtl;
+}
+
+.pf-v6-m-dir-ltr {
+  --pf-v6-global--inverse--multiplier: 1;
+  direction: ltr;
+}
+
+:where(.pf-v6-m-dir-rtl, [dir=rtl]) .pf-v6-m-mirror-inline-rtl {
+  scale: -1 1;
+}
+
+.pf-v6-m-no-motion {
+  --pf-t--global--delay--400: 1ms !important;
+  --pf-t--global--delay--300: 1ms !important;
+  --pf-t--global--delay--200: 1ms !important;
+  --pf-t--global--delay--100: 1ms !important;
+  --pf-t--global--duration--600: 1ms !important;
+  --pf-t--global--duration--500: 1ms !important;
+  --pf-t--global--duration--400: 1ms !important;
+  --pf-t--global--duration--300: 1ms !important;
+  --pf-t--global--duration--200: 1ms !important;
+  --pf-t--global--duration--100: 1ms !important;
+  --pf-t--global--duration--50: 1ms !important;
+}
+
+:root {
+  --pf-v6-global--danger-jiggle--AnimationDuration--Transform: var(--pf-t--global--motion--duration--fade--default);
+  --pf-v6-global--danger-jiggle--AnimationTimingFunction--Transform: var(--pf-t--global--motion--timing-function--default);
+}
+
+@property --pf-v6-global--danger-jiggle--TranslateX {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0;
+}
+@keyframes pf-v6-global-danger-jiggle-motion {
+  33% {
+    --pf-v6-global--danger-jiggle--TranslateX: -2px;
+  }
+  66% {
+    --pf-v6-global--danger-jiggle--TranslateX: 3px;
+  }
+}
+@keyframes pf-v6-global-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes pf-v6-global-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

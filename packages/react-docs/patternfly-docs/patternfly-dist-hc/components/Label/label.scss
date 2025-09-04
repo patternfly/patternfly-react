@@ -1,0 +1,605 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($label) {
+  --#{$label}--PaddingBlockStart: var(--pf-t--global--spacer--xs);
+  --#{$label}--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --#{$label}--PaddingBlockEnd: var(--pf-t--global--spacer--xs);
+  --#{$label}--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --#{$label}--MaxWidth: 100%;
+  --#{$label}--MinWidth: calc((var(--#{$label}--FontSize) * var(--pf-t--global--font--line-height--body) + var(--#{$label}--PaddingBlockStart) + var(--#{$label}--PaddingBlockEnd)));
+  --#{$label}--BorderWidth: var(--pf-t--global--border--width--regular);
+  --#{$label}--BorderColor: var(--pf-t--global--border--color--high-contrast);
+  --#{$label}--BorderRadius: var(--pf-t--global--border--radius--pill);
+  --#{$label}--FontSize: var(--pf-t--global--font--size--body--sm);
+  --#{$label}--Gap: var(--pf-t--global--spacer--gap--text-to-element--compact);
+
+  // Gray (default)
+  --#{$label}--BackgroundColor: var(--pf-t--global--color--nonstatus--gray--default);
+  --#{$label}--Color: var(--pf-t--global--text--color--nonstatus--on-gray--default);
+  --#{$label}__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-gray--default);
+  --#{$label}--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--nonstatus--gray--hover);
+  --#{$label}--m-clickable--hover--Color: var(--pf-t--global--text--color--nonstatus--on-gray--hover);
+  --#{$label}--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-gray--hover);
+  --#{$label}--m-outline--BorderColor: var(--pf-t--global--border--color--nonstatus--gray--default);
+  --#{$label}--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--nonstatus--gray--hover);
+
+  // Blue
+  --#{$label}--m-blue--BackgroundColor: var(--pf-t--global--color--nonstatus--blue--default);
+  --#{$label}--m-blue--Color: var(--pf-t--global--text--color--nonstatus--on-blue--default);
+  --#{$label}--m-blue__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-blue--default);
+  --#{$label}--m-blue--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--nonstatus--blue--hover);
+  --#{$label}--m-blue--m-clickable--hover--Color: var(--pf-t--global--text--color--nonstatus--on-blue--hover);
+  --#{$label}--m-blue--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-blue--hover);
+  --#{$label}--m-blue--m-outline--BorderColor: var(--pf-t--global--border--color--nonstatus--blue--default);
+  --#{$label}--m-blue--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--nonstatus--blue--hover);
+
+  // Red
+  --#{$label}--m-red--BackgroundColor: var(--pf-t--global--color--nonstatus--red--default);
+  --#{$label}--m-red--Color: var(--pf-t--global--text--color--nonstatus--on-red--default);
+  --#{$label}--m-red__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-red--default);
+  --#{$label}--m-red--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--nonstatus--red--hover);
+  --#{$label}--m-red--m-clickable--hover--Color: var(--pf-t--global--text--color--nonstatus--on-red--hover);
+  --#{$label}--m-red--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-red--hover);
+  --#{$label}--m-red--m-outline--BorderColor: var(--pf-t--global--border--color--nonstatus--red--default);
+  --#{$label}--m-red--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--nonstatus--red--hover);
+
+  // Orange
+  --#{$label}--m-orange--BackgroundColor: var(--pf-t--global--color--nonstatus--orange--default);
+  --#{$label}--m-orange--Color: var(--pf-t--global--text--color--nonstatus--on-orange--default);
+  --#{$label}--m-orange__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-orange--default);
+  --#{$label}--m-orange--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--nonstatus--orange--hover);
+  --#{$label}--m-orange--m-clickable--hover--Color: var(--pf-t--global--text--color--nonstatus--on-orange--hover);
+  --#{$label}--m-orange--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-orange--hover);
+  --#{$label}--m-orange--m-outline--BorderColor: var(--pf-t--global--border--color--nonstatus--orange--default);
+  --#{$label}--m-orange--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--nonstatus--orange--hover);
+
+  // Orangered
+  --#{$label}--m-orangered--BackgroundColor: var(--pf-t--global--color--nonstatus--orangered--default);
+  --#{$label}--m-orangered--Color: var(--pf-t--global--text--color--nonstatus--on-orangered--default);
+  --#{$label}--m-orangered__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-orangered--default);
+  --#{$label}--m-orangered--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--nonstatus--orangered--hover);
+  --#{$label}--m-orangered--m-clickable--hover--Color: var(--pf-t--global--text--color--nonstatus--on-orangered--hover);
+  --#{$label}--m-orangered--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-orangered--hover);
+  --#{$label}--m-orangered--m-outline--BorderColor: var(--pf-t--global--border--color--nonstatus--orangered--default);
+  --#{$label}--m-orangered--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--nonstatus--orangered--hover);
+
+  // Yellow
+  --#{$label}--m-yellow--BackgroundColor: var(--pf-t--global--color--nonstatus--yellow--default);
+  --#{$label}--m-yellow--Color: var(--pf-t--global--text--color--nonstatus--on-yellow--default);
+  --#{$label}--m-yellow__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-yellow--default);
+  --#{$label}--m-yellow--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--nonstatus--yellow--hover);
+  --#{$label}--m-yellow--m-clickable--hover--Color: var(--pf-t--global--text--color--nonstatus--on-yellow--hover);
+  --#{$label}--m-yellow--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-yellow--hover);
+  --#{$label}--m-yellow--m-outline--BorderColor: var(--pf-t--global--border--color--nonstatus--yellow--default);
+  --#{$label}--m-yellow--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--nonstatus--yellow--hover);
+
+  // Green
+  --#{$label}--m-green--BackgroundColor: var(--pf-t--global--color--nonstatus--green--default);
+  --#{$label}--m-green--Color: var(--pf-t--global--text--color--nonstatus--on-green--default);
+  --#{$label}--m-green__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-green--default);
+  --#{$label}--m-green--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--nonstatus--green--hover);
+  --#{$label}--m-green--m-clickable--hover--Color: var(--pf-t--global--text--color--nonstatus--on-green--hover);
+  --#{$label}--m-green--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-green--hover);
+  --#{$label}--m-green--m-outline--BorderColor: var(--pf-t--global--border--color--nonstatus--green--default);
+  --#{$label}--m-green--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--nonstatus--green--hover);
+
+  // Teal
+  --#{$label}--m-teal--BackgroundColor: var(--pf-t--global--color--nonstatus--teal--default);
+  --#{$label}--m-teal--Color: var(--pf-t--global--text--color--nonstatus--on-teal--default);
+  --#{$label}--m-teal__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-teal--default);
+  --#{$label}--m-teal--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--nonstatus--teal--hover);
+  --#{$label}--m-teal--m-clickable--hover--Color: var(--pf-t--global--text--color--nonstatus--on-teal--hover);
+  --#{$label}--m-teal--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-teal--hover);
+  --#{$label}--m-teal--m-outline--BorderColor: var(--pf-t--global--border--color--nonstatus--teal--default);
+  --#{$label}--m-teal--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--nonstatus--teal--hover);
+
+  // Purple
+  --#{$label}--m-purple--BackgroundColor: var(--pf-t--global--color--nonstatus--purple--default);
+  --#{$label}--m-purple--Color: var(--pf-t--global--text--color--nonstatus--on-purple--default);
+  --#{$label}--m-purple__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-purple--default);
+  --#{$label}--m-purple--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--nonstatus--purple--hover);
+  --#{$label}--m-purple--m-clickable--hover--Color: var(--pf-t--global--text--color--nonstatus--on-purple--hover);
+  --#{$label}--m-purple--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--nonstatus--on-purple--hover);
+  --#{$label}--m-purple--m-outline--BorderColor: var(--pf-t--global--border--color--nonstatus--purple--default);
+  --#{$label}--m-purple--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--nonstatus--purple--hover);
+
+  // Success
+  --#{$label}--m-success--BackgroundColor: var(--pf-t--global--color--status--success--default);
+  --#{$label}--m-success--Color: var(--pf-t--global--text--color--status--on-success--default);
+  --#{$label}--m-success__icon--Color: var(--pf-t--global--icon--color--status--on-success--default);
+  --#{$label}--m-success--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--status--success--hover);
+  --#{$label}--m-success--m-clickable--hover--Color: var(--pf-t--global--text--color--status--on-success--hover);
+  --#{$label}--m-success--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--status--on-success--hover);
+  --#{$label}--m-success--m-outline__icon--Color: var(--pf-t--global--icon--color--status--success--default);
+  --#{$label}--m-success--m-outline--BorderColor: var(--pf-t--global--border--color--status--success--default);
+  --#{$label}--m-success--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--status--success--hover);
+  --#{$label}--m-success--m-outline--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--status--success--hover);
+
+  // Warning
+  --#{$label}--m-warning--BackgroundColor: var(--pf-t--global--color--status--warning--default);
+  --#{$label}--m-warning--Color: var(--pf-t--global--text--color--status--on-warning--default);
+  --#{$label}--m-warning__icon--Color: var(--pf-t--global--icon--color--status--on-warning--default);
+  --#{$label}--m-warning--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--status--warning--hover);
+  --#{$label}--m-warning--m-clickable--hover--Color: var(--pf-t--global--text--color--status--on-warning--hover);
+  --#{$label}--m-warning--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--status--on-warning--hover);
+  --#{$label}--m-warning--m-outline__icon--Color: var(--pf-t--global--icon--color--status--warning--default);
+  --#{$label}--m-warning--m-outline--BorderColor: var(--pf-t--global--border--color--status--warning--default);
+  --#{$label}--m-warning--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--status--warning--hover);
+  --#{$label}--m-warning--m-outline--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--status--warning--hover);
+
+  // Danger
+  --#{$label}--m-danger--BackgroundColor: var(--pf-t--global--color--status--danger--default);
+  --#{$label}--m-danger--Color: var(--pf-t--global--text--color--status--on-danger--default);
+  --#{$label}--m-danger__icon--Color: var(--pf-t--global--icon--color--status--on-danger--default);
+  --#{$label}--m-danger--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--status--danger--hover);
+  --#{$label}--m-danger--m-clickable--hover--Color: var(--pf-t--global--text--color--status--on-danger--hover);
+  --#{$label}--m-danger--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--status--on-danger--hover);
+  --#{$label}--m-danger--m-outline__icon--Color: var(--pf-t--global--icon--color--status--danger--default);
+  --#{$label}--m-danger--m-outline--BorderColor: var(--pf-t--global--border--color--status--danger--default);
+  --#{$label}--m-danger--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--status--danger--hover);
+  --#{$label}--m-danger--m-outline--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--status--danger--hover);
+
+  // Info
+  --#{$label}--m-info--BackgroundColor: var(--pf-t--global--color--status--info--default);
+  --#{$label}--m-info--Color: var(--pf-t--global--text--color--status--on-info--default);
+  --#{$label}--m-info__icon--Color: var(--pf-t--global--icon--color--status--on-info--default);
+  --#{$label}--m-info--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--status--info--hover);
+  --#{$label}--m-info--m-clickable--hover--Color: var(--pf-t--global--text--color--status--on-info--hover);
+  --#{$label}--m-info--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--status--on-info--hover);
+  --#{$label}--m-info--m-outline__icon--Color: var(--pf-t--global--icon--color--status--info--default);
+  --#{$label}--m-info--m-outline--BorderColor: var(--pf-t--global--border--color--status--info--default);
+  --#{$label}--m-info--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--status--info--hover);
+  --#{$label}--m-info--m-outline--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--status--info--hover);
+
+  // Custom
+  --#{$label}--m-custom--BackgroundColor: var(--pf-t--global--color--status--custom--default);
+  --#{$label}--m-custom--Color: var(--pf-t--global--text--color--status--on-custom--default);
+  --#{$label}--m-custom__icon--Color: var(--pf-t--global--icon--color--status--on-custom--default);
+  --#{$label}--m-custom--m-clickable--hover--BackgroundColor: var(--pf-t--global--color--status--custom--hover);
+  --#{$label}--m-custom--m-clickable--hover--Color: var(--pf-t--global--text--color--status--on-custom--hover);
+  --#{$label}--m-custom--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--status--on-custom--hover);
+  --#{$label}--m-custom--m-outline__icon--Color: var(--pf-t--global--icon--color--status--custom--default);
+  --#{$label}--m-custom--m-outline--BorderColor: var(--pf-t--global--border--color--status--custom--default);
+  --#{$label}--m-custom--m-outline--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--status--custom--hover);
+  --#{$label}--m-custom--m-outline--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--status--custom--hover);
+
+  // Clickable
+  --#{$label}--m-clickable--hover--BorderWidth: var(--pf-t--global--border--width--action--hover);
+  --#{$label}--m-clickable--hover--BorderColor: var(--pf-t--global--border--color--high-contrast);
+  --#{$label}--m-clickable__content--Cursor: pointer;
+
+  // Filled
+  --#{$label}--m-filled__actions--c-button__icon--Color: var(--#{$label}__icon--Color);
+
+  // Outline
+  --#{$label}--m-outline--BorderWidth: var(--pf-t--global--border--width--action--default);
+  --#{$label}--m-outline--BackgroundColor: transparent;
+  --#{$label}--m-outline--Color: var(--pf-t--global--text--color--regular);
+  --#{$label}--m-outline__icon--Color: var(--pf-t--global--icon--color--regular);
+  --#{$label}--m-outline--m-clickable--hover--BackgroundColor: transparent;
+  --#{$label}--m-outline--m-clickable--hover--BorderWidth: var(--pf-t--global--border--width--action--hover);
+  --#{$label}--m-outline--m-clickable--hover--Color: var(--pf-t--global--text--color--regular);
+  --#{$label}--m-outline--m-clickable--hover__icon--Color: var(--pf-t--global--icon--color--regular);
+
+  // Overflow
+  --#{$label}--m-overflow--Color: var(--pf-t--global--text--color--brand--default);
+  --#{$label}--m-overflow--BackgroundColor: var(--pf-t--global--background--color--action--plain--default);
+  --#{$label}--m-overflow--BorderWidth: var(--pf-t--global--border--width--action--default);
+  --#{$label}--m-overflow--hover--Color: var(--pf-t--global--text--color--brand--hover);
+  --#{$label}--m-overflow--hover--BackgroundColor: var(--pf-t--global--background--color--action--plain--hover);
+  --#{$label}--m-overflow--hover--BorderWidth: var(--pf-t--global--border--width--action--hover);
+
+  // Add
+  --#{$label}--m-add--Color: var(--pf-t--global--text--color--brand--default);
+  --#{$label}--m-add--BackgroundColor: transparent;
+  --#{$label}--m-add--BorderColor: var(--pf-t--global--border--color--default);
+  --#{$label}--m-add--BorderWidth: var(--pf-t--global--border--width--action--default);
+  --#{$label}--m-add--hover--Color: var(--pf-t--global--text--color--brand--hover);
+  --#{$label}--m-add--hover--BackgroundColor: transparent;
+  --#{$label}--m-add--hover--BorderColor: var(--pf-t--global--border--color--hover);
+  --#{$label}--m-add--hover--BorderWidth: var(--pf-t--global--border--width--action--hover);
+
+  // Compact
+  --#{$label}--m-compact--PaddingBlockStart: 0;
+  --#{$label}--m-compact--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --#{$label}--m-compact--PaddingBlockEnd: 0;
+  --#{$label}--m-compact--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --#{$label}--m-compact--FontSize: var(--pf-t--global--font--size--body--sm);
+  --#{$label}--m-compact--m-editable--TextUnderlineOffset: #{pf-size-prem(1px)};
+  --#{$label}--m-compact--MinWidth: calc((var(--#{$label}--m-compact--FontSize) * var(--pf-t--global--font--line-height--body)) + (var(--#{$label}--m-compact--PaddingBlockStart) + var(--#{$label}--m-compact--PaddingBlockEnd)));
+
+  // Content
+  --#{$label}__content--MaxWidth: 100%;
+  --#{$label}__content--Gap: var(--pf-t--global--spacer--gap--text-to-element--compact);
+  --#{$label}__content--Cursor: initial;
+
+  // Icon
+  --#{$label}__icon--FontSize: var(--pf-t--global--icon--size--font--body--sm);
+
+  // Text
+  --#{$label}__text--MaxWidth: 100%;
+
+  // Actions
+  --#{$label}__actions--MarginInlineEnd: 0; // TODO - remove in breaking change
+
+  // Actions button (close)
+  --#{$label}__actions--c-button--FontSize: var(--pf-t--global--icon--size--font--body--sm);
+  --#{$label}__actions--c-button--OutlineOffset: #{pf-size-prem(-3px)};
+  --#{$label}__actions--c-button--MarginBlockStart: 0; // TODO - remove in breaking change
+  --#{$label}__actions--c-button--MarginBlockEnd: 0; // TODO - remove in breaking change
+  --#{$label}__actions--c-button--PaddingBlockStart: 0; // TODO - remove in breaking change
+  --#{$label}__actions--c-button--PaddingInlineEnd: 0; // TODO - remove in breaking change
+  --#{$label}__actions--c-button--PaddingBlockEnd: 0; // TODO - remove in breaking change
+  --#{$label}__actions--c-button--PaddingInlineStart: 0; // TODO - remove in breaking change
+
+  // Editable
+  --#{$label}--m-editable--TextDecorationLine: var(--pf-t--global--text-decoration--editable-text--line--default);
+  --#{$label}--m-editable--TextDecorationStyle: var(--pf-t--global--text-decoration--editable-text--style--default);
+  --#{$label}--m-editable--hover--TextDecorationLine: var(--pf-t--global--text-decoration--editable-text--line--hover);
+  --#{$label}--m-editable--hover--TextDecorationStyle: var(--pf-t--global--text-decoration--editable-text--style--hover);
+  --#{$label}--m-editable--TextUnderlineOffset: #{pf-size-prem(4px)};
+  --#{$label}--m-editable__content--MaxWidth: 16ch;
+  --#{$label}--m-editable__content--Cursor: pointer;
+
+  // Editable active
+  --#{$label}--m-editable--m-editable-active--TextDecorationLine: none;
+  --#{$label}--m-editable--m-editable-active--BackgroundColor: transparent;
+  --#{$label}--m-editable--m-editable-active--Color: var(--pf-t--global--text--color--regular);
+  --#{$label}--m-editable--m-editable-active__content--Cursor: initial;
+
+  // Disabled
+  --#{$label}--m-disabled--BackgroundColor: var(--pf-t--global--background--color--disabled--default);
+  --#{$label}--m-disabled--Color: var(--pf-t--global--text--color--on-disabled);
+  --#{$label}--m-disabled__icon--Color: var(--pf-t--global--icon--color--on-disabled);
+  --#{$label}--m-disabled--c-button--disabled__icon--Color: var(--pf-t--global--icon--color--on-disabled);
+}
+
+.#{$label} {
+  position: relative;
+  gap: var(--#{$label}--Gap);
+  min-width: var(--#{$label}--MinWidth);
+  max-width: var(--#{$label}--MaxWidth);
+  padding-block-start: var(--#{$label}--PaddingBlockStart);
+  padding-block-end: var(--#{$label}--PaddingBlockEnd);
+  padding-inline-start: var(--#{$label}--PaddingInlineStart);
+  padding-inline-end: var(--#{$label}--PaddingInlineEnd);
+  font-size: var(--#{$label}--FontSize);
+  white-space: nowrap;
+  background: transparent;
+  isolation: isolate;
+  border: 0;
+  border-radius: var(--#{$label}--BorderRadius);
+
+  &.pf-m-blue {
+    --#{$label}--BackgroundColor: var(--#{$label}--m-blue--BackgroundColor);
+    --#{$label}--Color: var(--#{$label}--m-blue--Color);
+    --#{$label}__icon--Color: var(--#{$label}--m-blue__icon--Color);
+    --#{$label}--m-clickable--hover--BackgroundColor: var(--#{$label}--m-blue--m-clickable--hover--BackgroundColor);
+    --#{$label}--m-clickable--hover--Color: var(--#{$label}--m-blue--m-clickable--hover--Color);
+    --#{$label}--m-clickable--hover__icon--Color: var(--#{$label}--m-blue--m-clickable--hover__icon--Color);
+    --#{$label}--m-outline--BorderColor: var(--#{$label}--m-blue--m-outline--BorderColor);
+    --#{$label}--m-outline--m-clickable--hover--BorderColor: var(--#{$label}--m-blue--m-outline--m-clickable--hover--BorderColor);
+  }
+
+  &.pf-m-red {
+    --#{$label}--BackgroundColor: var(--#{$label}--m-red--BackgroundColor);
+    --#{$label}--Color: var(--#{$label}--m-red--Color);
+    --#{$label}__icon--Color: var(--#{$label}--m-red__icon--Color);
+    --#{$label}--m-clickable--hover--BackgroundColor: var(--#{$label}--m-red--m-clickable--hover--BackgroundColor);
+    --#{$label}--m-clickable--hover--Color: var(--#{$label}--m-red--m-clickable--hover--Color);
+    --#{$label}--m-clickable--hover__icon--Color: var(--#{$label}--m-red--m-clickable--hover__icon--Color);
+    --#{$label}--m-outline--BorderColor: var(--#{$label}--m-red--m-outline--BorderColor);
+    --#{$label}--m-outline--m-clickable--hover--BorderColor: var(--#{$label}--m-red--m-outline--m-clickable--hover--BorderColor);
+  }
+
+  &.pf-m-orange {
+    --#{$label}--BackgroundColor: var(--#{$label}--m-orange--BackgroundColor);
+    --#{$label}--Color: var(--#{$label}--m-orange--Color);
+    --#{$label}__icon--Color: var(--#{$label}--m-orange__icon--Color);
+    --#{$label}--m-clickable--hover--BackgroundColor: var(--#{$label}--m-orange--m-clickable--hover--BackgroundColor);
+    --#{$label}--m-clickable--hover--Color: var(--#{$label}--m-orange--m-clickable--hover--Color);
+    --#{$label}--m-clickable--hover__icon--Color: var(--#{$label}--m-orange--m-clickable--hover__icon--Color);
+    --#{$label}--m-outline--BorderColor: var(--#{$label}--m-orange--m-outline--BorderColor);
+    --#{$label}--m-outline--m-clickable--hover--BorderColor: var(--#{$label}--m-orange--m-outline--m-clickable--hover--BorderColor);
+  }
+
+  &.pf-m-orangered {
+    --#{$label}--BackgroundColor: var(--#{$label}--m-orangered--BackgroundColor);
+    --#{$label}--Color: var(--#{$label}--m-orangered--Color);
+    --#{$label}__icon--Color: var(--#{$label}--m-orangered__icon--Color);
+    --#{$label}--m-clickable--hover--BackgroundColor: var(--#{$label}--m-orangered--m-clickable--hover--BackgroundColor);
+    --#{$label}--m-clickable--hover--Color: var(--#{$label}--m-orangered--m-clickable--hover--Color);
+    --#{$label}--m-clickable--hover__icon--Color: var(--#{$label}--m-orangered--m-clickable--hover__icon--Color);
+    --#{$label}--m-outline--BorderColor: var(--#{$label}--m-orangered--m-outline--BorderColor);
+    --#{$label}--m-outline--m-clickable--hover--BorderColor: var(--#{$label}--m-orangered--m-outline--m-clickable--hover--BorderColor);
+  }
+
+  &.pf-m-yellow {
+    --#{$label}--BackgroundColor: var(--#{$label}--m-yellow--BackgroundColor);
+    --#{$label}--Color: var(--#{$label}--m-yellow--Color);
+    --#{$label}__icon--Color: var(--#{$label}--m-yellow__icon--Color);
+    --#{$label}--m-clickable--hover--BackgroundColor: var(--#{$label}--m-yellow--m-clickable--hover--BackgroundColor);
+    --#{$label}--m-clickable--hover--Color: var(--#{$label}--m-yellow--m-clickable--hover--Color);
+    --#{$label}--m-clickable--hover__icon--Color: var(--#{$label}--m-yellow--m-clickable--hover__icon--Color);
+    --#{$label}--m-outline--BorderColor: var(--#{$label}--m-yellow--m-outline--BorderColor);
+    --#{$label}--m-outline--m-clickable--hover--BorderColor: var(--#{$label}--m-yellow--m-outline--m-clickable--hover--BorderColor);
+  }
+
+  &.pf-m-green {
+    --#{$label}--BackgroundColor: var(--#{$label}--m-green--BackgroundColor);
+    --#{$label}--Color: var(--#{$label}--m-green--Color);
+    --#{$label}__icon--Color: var(--#{$label}--m-green__icon--Color);
+    --#{$label}--m-clickable--hover--BackgroundColor: var(--#{$label}--m-green--m-clickable--hover--BackgroundColor);
+    --#{$label}--m-clickable--hover--Color: var(--#{$label}--m-green--m-clickable--hover--Color);
+    --#{$label}--m-clickable--hover__icon--Color: var(--#{$label}--m-green--m-clickable--hover__icon--Color);
+    --#{$label}--m-outline--BorderColor: var(--#{$label}--m-green--m-outline--BorderColor);
+    --#{$label}--m-outline--m-clickable--hover--BorderColor: var(--#{$label}--m-green--m-outline--m-clickable--hover--BorderColor);
+  }
+
+  &.pf-m-teal {
+    --#{$label}--BackgroundColor: var(--#{$label}--m-teal--BackgroundColor);
+    --#{$label}--Color: var(--#{$label}--m-teal--Color);
+    --#{$label}__icon--Color: var(--#{$label}--m-teal__icon--Color);
+    --#{$label}--m-clickable--hover--BackgroundColor: var(--#{$label}--m-teal--m-clickable--hover--BackgroundColor);
+    --#{$label}--m-clickable--hover--Color: var(--#{$label}--m-teal--m-clickable--hover--Color);
+    --#{$label}--m-clickable--hover__icon--Color: var(--#{$label}--m-teal--m-clickable--hover__icon--Color);
+    --#{$label}--m-outline--BorderColor: var(--#{$label}--m-teal--m-outline--BorderColor);
+    --#{$label}--m-outline--m-clickable--hover--BorderColor: var(--#{$label}--m-teal--m-outline--m-clickable--hover--BorderColor);
+  }
+
+  &.pf-m-purple {
+    --#{$label}--BackgroundColor: var(--#{$label}--m-purple--BackgroundColor);
+    --#{$label}--Color: var(--#{$label}--m-purple--Color);
+    --#{$label}__icon--Color: var(--#{$label}--m-purple__icon--Color);
+    --#{$label}--m-clickable--hover--BackgroundColor: var(--#{$label}--m-purple--m-clickable--hover--BackgroundColor);
+    --#{$label}--m-clickable--hover--Color: var(--#{$label}--m-purple--m-clickable--hover--Color);
+    --#{$label}--m-clickable--hover__icon--Color: var(--#{$label}--m-purple--m-clickable--hover__icon--Color);
+    --#{$label}--m-outline--BorderColor: var(--#{$label}--m-purple--m-outline--BorderColor);
+    --#{$label}--m-outline--m-clickable--hover--BorderColor: var(--#{$label}--m-purple--m-outline--m-clickable--hover--BorderColor);
+  }
+
+  &.pf-m-success {
+    --#{$label}--BackgroundColor: var(--#{$label}--m-success--BackgroundColor);
+    --#{$label}--Color: var(--#{$label}--m-success--Color);
+    --#{$label}__icon--Color: var(--#{$label}--m-success__icon--Color);
+    --#{$label}--m-clickable--hover--BackgroundColor: var(--#{$label}--m-success--m-clickable--hover--BackgroundColor);
+    --#{$label}--m-clickable--hover--Color: var(--#{$label}--m-success--m-clickable--hover--Color);
+    --#{$label}--m-clickable--hover__icon--Color: var(--#{$label}--m-success--m-clickable--hover__icon--Color);
+    --#{$label}--m-outline__icon--Color: var(--#{$label}--m-success--m-outline__icon--Color);
+    --#{$label}--m-outline--BorderColor: var(--#{$label}--m-success--m-outline--BorderColor);
+    --#{$label}--m-outline--m-clickable--hover--BorderColor: var(--#{$label}--m-success--m-outline--m-clickable--hover--BorderColor);
+    --#{$label}--m-outline--m-clickable--hover__icon--Color: var(--#{$label}--m-success--m-outline--m-clickable--hover__icon--Color);
+  }
+
+  &.pf-m-warning {
+    --#{$label}--BackgroundColor: var(--#{$label}--m-warning--BackgroundColor);
+    --#{$label}--Color: var(--#{$label}--m-warning--Color);
+    --#{$label}__icon--Color: var(--#{$label}--m-warning__icon--Color);
+    --#{$label}--m-clickable--hover--BackgroundColor: var(--#{$label}--m-warning--m-clickable--hover--BackgroundColor);
+    --#{$label}--m-clickable--hover--Color: var(--#{$label}--m-warning--m-clickable--hover--Color);
+    --#{$label}--m-clickable--hover__icon--Color: var(--#{$label}--m-warning--m-clickable--hover__icon--Color);
+    --#{$label}--m-outline__icon--Color: var(--#{$label}--m-warning--m-outline__icon--Color);
+    --#{$label}--m-outline--BorderColor: var(--#{$label}--m-warning--m-outline--BorderColor);
+    --#{$label}--m-outline--m-clickable--hover--BorderColor: var(--#{$label}--m-warning--m-outline--m-clickable--hover--BorderColor);
+    --#{$label}--m-outline--m-clickable--hover__icon--Color: var(--#{$label}--m-warning--m-outline--m-clickable--hover__icon--Color);
+  }
+
+  &.pf-m-danger {
+    --#{$label}--BackgroundColor: var(--#{$label}--m-danger--BackgroundColor);
+    --#{$label}--Color: var(--#{$label}--m-danger--Color);
+    --#{$label}__icon--Color: var(--#{$label}--m-danger__icon--Color);
+    --#{$label}--m-clickable--hover--BackgroundColor: var(--#{$label}--m-danger--m-clickable--hover--BackgroundColor);
+    --#{$label}--m-clickable--hover--Color: var(--#{$label}--m-danger--m-clickable--hover--Color);
+    --#{$label}--m-clickable--hover__icon--Color: var(--#{$label}--m-danger--m-clickable--hover__icon--Color);
+    --#{$label}--m-outline__icon--Color: var(--#{$label}--m-danger--m-outline__icon--Color);
+    --#{$label}--m-outline--BorderColor: var(--#{$label}--m-danger--m-outline--BorderColor);
+    --#{$label}--m-outline--m-clickable--hover--BorderColor: var(--#{$label}--m-danger--m-outline--m-clickable--hover--BorderColor);
+    --#{$label}--m-outline--m-clickable--hover__icon--Color: var(--#{$label}--m-danger--m-outline--m-clickable--hover__icon--Color);
+  }
+
+  &.pf-m-info {
+    --#{$label}--BackgroundColor: var(--#{$label}--m-info--BackgroundColor);
+    --#{$label}--Color: var(--#{$label}--m-info--Color);
+    --#{$label}__icon--Color: var(--#{$label}--m-info__icon--Color);
+    --#{$label}--m-clickable--hover--BackgroundColor: var(--#{$label}--m-info--m-clickable--hover--BackgroundColor);
+    --#{$label}--m-clickable--hover--Color: var(--#{$label}--m-info--m-clickable--hover--Color);
+    --#{$label}--m-clickable--hover__icon--Color: var(--#{$label}--m-info--m-clickable--hover__icon--Color);
+    --#{$label}--m-outline__icon--Color: var(--#{$label}--m-info--m-outline__icon--Color);
+    --#{$label}--m-outline--BorderColor: var(--#{$label}--m-info--m-outline--BorderColor);
+    --#{$label}--m-outline--m-clickable--hover--BorderColor: var(--#{$label}--m-info--m-outline--m-clickable--hover--BorderColor);
+    --#{$label}--m-outline--m-clickable--hover__icon--Color: var(--#{$label}--m-info--m-outline--m-clickable--hover__icon--Color);
+  }
+
+  &.pf-m-custom {
+    --#{$label}--BackgroundColor: var(--#{$label}--m-custom--BackgroundColor);
+    --#{$label}--Color: var(--#{$label}--m-custom--Color);
+    --#{$label}__icon--Color: var(--#{$label}--m-custom__icon--Color);
+    --#{$label}--m-clickable--hover--BackgroundColor: var(--#{$label}--m-custom--m-clickable--hover--BackgroundColor);
+    --#{$label}--m-clickable--hover--Color: var(--#{$label}--m-custom--m-clickable--hover--Color);
+    --#{$label}--m-clickable--hover__icon--Color: var(--#{$label}--m-custom--m-clickable--hover__icon--Color);
+    --#{$label}--m-outline__icon--Color: var(--#{$label}--m-custom--m-outline__icon--Color);
+    --#{$label}--m-outline--BorderColor: var(--#{$label}--m-custom--m-outline--BorderColor);
+    --#{$label}--m-outline--m-clickable--hover--BorderColor: var(--#{$label}--m-custom--m-outline--m-clickable--hover--BorderColor);
+    --#{$label}--m-outline--m-clickable--hover__icon--Color: var(--#{$label}--m-success--m-outline--m-clickable--hover__icon--Color);
+  }
+
+  &.pf-m-compact {
+    --#{$label}--PaddingBlockStart: var(--#{$label}--m-compact--PaddingBlockStart);
+    --#{$label}--PaddingInlineEnd: var(--#{$label}--m-compact--PaddingInlineEnd);
+    --#{$label}--PaddingBlockEnd: var(--#{$label}--m-compact--PaddingBlockEnd);
+    --#{$label}--PaddingInlineStart: var(--#{$label}--m-compact--PaddingInlineStart);
+    --#{$label}--FontSize: var(--#{$label}--m-compact--FontSize);
+    --#{$label}--MinWidth: var(--#{$label}--m-compact--MinWidth);
+    --#{$label}--m-editable--TextUnderlineOffset: var(--#{$label}--m-compact--m-editable--TextUnderlineOffset);
+  }
+
+  &.pf-m-filled {
+    .#{$label}__actions .#{$button} {
+      --#{$button}__icon--Color: var(--#{$label}--m-filled__actions--c-button__icon--Color);
+    }
+  }
+
+  &.pf-m-outline {
+    --#{$label}--Color: var(--#{$label}--m-outline--Color);
+    --#{$label}--BorderWidth: var(--#{$label}--m-outline--BorderWidth);
+    --#{$label}--BorderColor: var(--#{$label}--m-outline--BorderColor);
+    --#{$label}--BackgroundColor: var(--#{$label}--m-outline--BackgroundColor);
+    --#{$label}__icon--Color: var(--#{$label}--m-outline__icon--Color);
+    --#{$label}--m-clickable--hover--BackgroundColor: var(--#{$label}--m-outline--m-clickable--hover--BackgroundColor);
+    --#{$label}--m-clickable--hover--BorderWidth: var(--#{$label}--m-outline--m-clickable--hover--BorderWidth);
+    --#{$label}--m-clickable--hover--BorderColor: var(--#{$label}--m-outline--m-clickable--hover--BorderColor);
+    --#{$label}--m-clickable--hover--Color: var(--#{$label}--m-outline--m-clickable--hover--Color);
+    --#{$label}--m-clickable--hover__icon--Color: var(--#{$label}--m-outline--m-clickable--hover__icon--Color);
+  }
+
+  &.pf-m-editable {
+    --#{$label}__content--MaxWidth: var(--#{$label}--m-editable__content--MaxWidth);
+    --#{$label}__content--Cursor: var(--#{$label}--m-editable__content--Cursor);
+
+    .#{$label}__content:is(:hover, :focus) {
+      --#{$label}--m-editable--TextDecorationLine: var(--#{$label}--m-editable--hover--TextDecorationLine);
+      --#{$label}--m-editable--TextDecorationStyle: var(--#{$label}--m-editable--hover--TextDecorationStyle);
+    }
+
+    .#{$label}__text {
+      text-decoration-line: var(--#{$label}--m-editable--TextDecorationLine);
+      text-decoration-style: var(--#{$label}--m-editable--TextDecorationStyle);
+      text-underline-offset: var(--#{$label}--m-editable--TextUnderlineOffset);
+    }
+  }
+
+  &.pf-m-editable-active {
+    --#{$label}--m-editable--TextDecorationLine: var(--#{$label}--m-editable--m-editable-active--TextDecorationLine);
+    --#{$label}--BackgroundColor: var(--#{$label}--m-editable--m-editable-active--BackgroundColor);
+    --#{$label}--Color: var(--#{$label}--m-editable--m-editable-active--Color);
+    --#{$label}__content--Cursor: var(--#{$label}--m-editable--m-editable-active__content--Cursor);
+  }
+
+  &.pf-m-overflow {
+    --#{$label}--Color: var(--#{$label}--m-overflow--Color);
+    --#{$label}--BackgroundColor: var(--#{$label}--m-overflow--BackgroundColor);
+    --#{$label}--BorderWidth: var(--#{$label}--m-overflow--BorderWidth);
+
+    &:is(:hover, :focus) {
+      --#{$label}--m-overflow--Color: var(--#{$label}--m-overflow--hover--Color);
+      --#{$label}--m-overflow--BackgroundColor: var(--#{$label}--m-overflow--hover--BackgroundColor);
+      --#{$label}--m-overflow--BorderWidth: var(--#{$label}--m-overflow--hover--BorderWidth);
+    }
+  }
+
+  &.pf-m-add {
+    --#{$label}--Color: var(--#{$label}--m-add--Color);
+    --#{$label}--BackgroundColor: var(--#{$label}--m-add--BackgroundColor);
+    --#{$label}--BorderColor: var(--#{$label}--m-add--BorderColor);
+    --#{$label}--BorderWidth: var(--#{$label}--m-add--BorderWidth);
+
+    &:is(:hover, :focus) {
+      --#{$label}--m-add--Color: var(--#{$label}--m-add--hover--Color);
+      --#{$label}--m-add--BackgroundColor: var(--#{$label}--m-add--hover--BackgroundColor);
+      --#{$label}--m-add--BorderColor: var(--#{$label}--m-add--hover--BorderColor);
+      --#{$label}--m-add--BorderWidth: var(--#{$label}--m-add--hover--BorderWidth);
+    }
+  }
+
+  &.pf-m-clickable {
+    --#{$label}__content--Cursor: var(--#{$label}--m-clickable__content--Cursor);
+
+    .#{$label}__content {
+      &,
+      &:is(:hover, :focus) {
+        text-decoration-line: none;
+      }
+
+      &:is(:hover, :focus) {
+        --#{$label}--Color: var(--#{$label}--m-clickable--hover--Color);
+        --#{$label}__icon--Color: var(--#{$label}--m-clickable--hover__icon--Color);
+        --#{$label}--BackgroundColor: var(--#{$label}--m-clickable--hover--BackgroundColor);
+        --#{$label}--BorderWidth: var(--#{$label}--m-clickable--hover--BorderWidth);
+        --#{$label}--BorderColor: var(--#{$label}--m-clickable--hover--BorderColor);
+        --#{$label}--m-outline--BorderWidth: var(--#{$label}--m-outline--m-clickable--hover--BorderWidth);
+        --#{$label}--m-outline--BorderColor: var(--#{$label}--m-outline--m-clickable--hover--BorderColor);
+
+        ~ .#{$label}__actions .#{$button} {
+          --#{$label}--m-filled__actions--c-button__icon--Color: var(--#{$label}--m-clickable--hover__icon--Color);
+        }
+      }
+    }
+  }
+
+  &.pf-m-disabled {
+    --#{$label}--BackgroundColor: var(--#{$label}--m-disabled--BackgroundColor);
+    --#{$label}--Color: var(--#{$label}--m-disabled--Color);
+    --#{$label}__icon--Color: var(--#{$label}--m-disabled__icon--Color);
+    --#{$label}--BorderWidth: 0;
+
+    pointer-events: none;
+
+    .#{$button} {
+      --#{$button}--m-plain--disabled__icon--Color: var(--#{$label}--m-disabled--c-button--disabled__icon--Color);
+    }
+  }
+}
+
+.#{$label},
+.#{$label}__content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.#{$label}__text {
+  @include pf-v6-text-overflow;
+
+  max-width: var(--#{$label}__text--MaxWidth);
+}
+
+.#{$label}__content {
+  gap: var(--#{$label}__content--Gap);
+  max-width: var(--#{$label}__content--MaxWidth);
+  padding: 0;
+  overflow: hidden;
+  color: var(--#{$label}--Color);
+  cursor: var(--#{$label}__content--Cursor, revert);
+  background: transparent;
+  border-width: 0;
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    content: "";
+    background-color: var(--#{$label}--BackgroundColor);
+    border: var(--#{$label}--BorderWidth) solid var(--#{$label}--BorderColor);
+    border-radius: var(--#{$label}--BorderRadius);
+  }
+
+  // truncate input fields
+  @at-root input#{&} {
+    @include pf-v6-text-overflow;
+  }
+}
+
+.#{$label}__icon {
+  color: var(--#{$label}__icon--Color);
+}
+
+.#{$label}__actions {
+  margin-inline-end: var(--#{$label}__actions--MarginInlineEnd);
+
+  .#{$button} {
+    @at-root .#{$label}.pf-m-compact & {
+      --#{$button}--m-plain--m-no-padding--after--Inset: 0 calc(#{pf-size-prem(2px) * -1});
+    }
+
+    --#{$button}--FontSize: var(--#{$label}__actions--c-button--FontSize);
+    --#{$button}--m-plain--m-no-padding--PaddingBlockStart: var(--#{$label}__actions--c-button--PaddingBlockStart);
+    --#{$button}--m-plain--m-no-padding--PaddingInlineEnd: var(--#{$label}__actions--c-button--PaddingInlineEnd);
+    --#{$button}--m-plain--m-no-padding--PaddingBlockEnd: var(--#{$label}__actions--c-button--PaddingBlockEnd);
+    --#{$button}--m-plain--m-no-padding--PaddingInlineStart: var(--#{$label}__actions--c-button--PaddingInlineStart);
+
+    margin-block-start: var(--#{$label}__actions--c-button--MarginBlockStart);
+    margin-block-end: var(--#{$label}__actions--c-button--MarginBlockEnd);
+    outline-offset: var(--#{$label}__actions--c-button--OutlineOffset);
+  }
+}

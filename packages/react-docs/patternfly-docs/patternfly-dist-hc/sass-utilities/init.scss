@@ -1,0 +1,33 @@
+// stylelint-disable scss/dollar-variable-pattern
+$version-root: 6 !default;
+
+// Patternfly options
+$pf-global--namespace: 'pf-' !default;
+$pf-global--version: 'v#{$version-root}-' !default;
+
+// Namespace prefix and version
+$pf-prefix: #{$pf-global--namespace} + #{$pf-global--version} !default;
+
+// Global variable, namespace prefix and version
+$pf-global: #{$pf-prefix} + 'global' !default;
+// stylelint-enable
+
+// Thematic variables
+// stylelint-disable scss/dollar-variable-pattern
+$pf-global--theme--namespace: $pf-global--namespace !default;
+$pf-global--theme--version: $pf-global--version !default;
+$pf-global--theme-dark--class: 'theme-dark' !default;
+$pf-global--theme-dark--placeholder--class: 't-dark' !default;
+$pf-global--theme-light--class: 'theme-light' !default;
+$pf-global--theme-light--placeholder--class: 't-light' !default;
+// stylelint-enable
+
+// Dark theme versioned variables
+$pf-v6--theme-dark--class: '.' + #{$pf-global--theme--namespace} + #{$pf-global--theme--version} + #{$pf-global--theme-dark--class} !default; // include the operator here
+$pf-v6--theme-dark--target: '' !default; // include the operator here
+$pf-v6--theme-dark--placeholder--class: '.' + #{$pf-global--theme--namespace} + #{$pf-global--theme--version} + #{$pf-global--theme-dark--placeholder--class} !default; // include the operator here
+
+// Light theme versioned variables
+$pf-v6--theme-light--class: '.' + #{$pf-global--theme--namespace} + #{$pf-global--theme--version} + #{$pf-global--theme-light--class} !default; // include the operator here
+$pf-v6--theme-light--target: '' !default; // include the operator here
+$pf-v6--theme-light--placeholder--class: '.' + #{$pf-global--theme--namespace} + #{$pf-global--theme--version} + #{$pf-global--theme-light--placeholder--class} !default; // include the operator here

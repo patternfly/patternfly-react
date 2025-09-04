@@ -1,0 +1,23 @@
+#ws-core-c-table-th-truncation {
+  position: relative;
+  width: 800px;
+}
+
+#ws-core-c-table-th-truncation .pf-v6-c-tooltip {
+  position: absolute;
+  inset-inline-start: 440px;
+  inset-block-start: -18px;
+}
+
+#ws-core-c-table-sticky-columns-and-header .ws-preview-html,
+#ws-core-c-table-nested-column-headers-sticky-header .ws-preview-html,
+#ws-core-c-table-sticky-header .ws-preview-html {
+  height: 400px;
+}
+
+.pf-v6-c-overflow-menu .pf-v6-c-menu {
+  position: absolute;
+  inset-inline-end: 0;
+  z-index: 999;
+  min-width: max-content;
+}

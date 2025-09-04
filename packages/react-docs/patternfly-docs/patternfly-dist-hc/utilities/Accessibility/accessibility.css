@@ -1,0 +1,161 @@
+.pf-v6-u-screen-reader {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.pf-v6-u-visible {
+  position: static;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  border: inherit;
+}
+
+.pf-v6-u-hidden {
+  display: none !important;
+}
+
+@media screen and (min-width: 36rem) {
+  .pf-v6-u-screen-reader-on-sm {
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+@media screen and (min-width: 36rem) {
+  .pf-v6-u-visible-on-sm {
+    position: static;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    border: inherit;
+  }
+}
+
+@media screen and (min-width: 36rem) {
+  .pf-v6-u-hidden-on-sm {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .pf-v6-u-screen-reader-on-md {
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .pf-v6-u-visible-on-md {
+    position: static;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    border: inherit;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .pf-v6-u-hidden-on-md {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 62rem) {
+  .pf-v6-u-screen-reader-on-lg {
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+@media screen and (min-width: 62rem) {
+  .pf-v6-u-visible-on-lg {
+    position: static;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    border: inherit;
+  }
+}
+
+@media screen and (min-width: 62rem) {
+  .pf-v6-u-hidden-on-lg {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  .pf-v6-u-screen-reader-on-xl {
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  .pf-v6-u-visible-on-xl {
+    position: static;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    border: inherit;
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  .pf-v6-u-hidden-on-xl {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 90.625rem) {
+  .pf-v6-u-screen-reader-on-2xl {
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+@media screen and (min-width: 90.625rem) {
+  .pf-v6-u-visible-on-2xl {
+    position: static;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    border: inherit;
+  }
+}
+
+@media screen and (min-width: 90.625rem) {
+  .pf-v6-u-hidden-on-2xl {
+    display: none !important;
+  }
+}

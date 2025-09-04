@@ -1,0 +1,262 @@
+@use 'sass:math';
+@use '../../sass-utilities' as *;
+
+$pf-v6-c-sidebar--breakpoint-map--width: build-breakpoint-map("base", "sm", "md", "lg", "xl", "2xl");
+$pf-v6-c-sidebar__panel--list--width: ("default", 25, 33, 50, 66, 75, 100);
+
+@include pf-root($sidebar) {
+  --#{$sidebar}--inset: var(--pf-t--global--spacer--md);
+  --#{$sidebar}--xl--inset: var(--pf-t--global--spacer--lg);
+  --#{$sidebar}--BorderWidth--base: var(--pf-t--global--border--width--regular);
+  --#{$sidebar}--BorderColor--base: var(--pf-t--global--border--color--default);
+
+  // Panel
+  --#{$sidebar}__panel--PaddingBlockStart: 0;
+  --#{$sidebar}__panel--PaddingInlineEnd: 0;
+  --#{$sidebar}__panel--PaddingBlockEnd: 0;
+  --#{$sidebar}__panel--PaddingInlineStart: 0;
+  --#{$sidebar}__panel--Order: -1;
+
+  // Panel padding
+  --#{$sidebar}__panel--m-padding--PaddingBlockStart: var(--#{$sidebar}--inset);
+  --#{$sidebar}__panel--m-padding--PaddingInlineEnd: var(--#{$sidebar}--inset);
+  --#{$sidebar}__panel--m-padding--PaddingBlockEnd: var(--#{$sidebar}--inset);
+  --#{$sidebar}__panel--m-padding--PaddingInlineStart: var(--#{$sidebar}--inset);
+
+  // Content
+  --#{$sidebar}__content--PaddingBlockStart: 0;
+  --#{$sidebar}__content--PaddingInlineEnd: 0;
+  --#{$sidebar}__content--PaddingBlockEnd: 0;
+  --#{$sidebar}__content--PaddingInlineStart: 0;
+  --#{$sidebar}__content--Order: 1;
+
+  // Content padding
+  --#{$sidebar}__content--m-padding--PaddingBlockStart: var(--#{$sidebar}--inset);
+  --#{$sidebar}__content--m-padding--PaddingInlineEnd: var(--#{$sidebar}--inset);
+  --#{$sidebar}__content--m-padding--PaddingBlockEnd: var(--#{$sidebar}--inset);
+  --#{$sidebar}__content--m-padding--PaddingInlineStart: var(--#{$sidebar}--inset);
+
+  // Main
+  --#{$sidebar}__main--FlexDirection: column;
+  --#{$sidebar}__main--md--FlexDirection: row;
+  --#{$sidebar}__main--AlignItems: stretch;
+  --#{$sidebar}__main--md--AlignItems: flex-start;
+  --#{$sidebar}__main--child--MarginBlockStart: 0;
+
+  // Gutter
+  --#{$sidebar}--m-gutter__main--Gap: var(--#{$sidebar}--inset);
+
+  // Border
+  --#{$sidebar}__main--m-border--before--Display: none;
+  --#{$sidebar}__main--m-border--before--md--Display: block;
+  --#{$sidebar}__main--m-border--before--BorderWidth: var(--#{$sidebar}--BorderWidth--base);
+  --#{$sidebar}__main--m-border--before--BorderColor: var(--#{$sidebar}--BorderColor--base);
+
+  // Panel right
+  --#{$sidebar}--m-panel-right__panel--Order: -1;
+  --#{$sidebar}--m-panel-right__panel--md--Order: 1;
+  --#{$sidebar}--m-panel-right__content--md--Order: -1;
+
+  // Stack
+  --#{$sidebar}--m-stack__main--FlexDirection: column;
+  --#{$sidebar}--m-stack__main--AlignItems: stretch;
+  --#{$sidebar}--m-stack__panel--Position: sticky;
+  --#{$sidebar}--m-stack__panel--InsetBlockStart: 0;
+  --#{$sidebar}--m-stack__panel--BoxShadow: var(--#{$sidebar}__panel--BoxShadow--base);
+  --#{$sidebar}--m-stack--m-panel-right__panel--Order: -1;
+
+  // Split
+  --#{$sidebar}--m-split__main--AlignItems: flex-start;
+  --#{$sidebar}--m-split__main--FlexDirection: row;
+  --#{$sidebar}--m-split__panel--Position: static;
+  --#{$sidebar}--m-split__panel--InsetBlockStart: auto;
+  --#{$sidebar}--m-split--m-panel-right__panel--Order: 1;
+  --#{$sidebar}--m-split__main--m-border--before--Display: block;
+
+  // Panel
+  --#{$sidebar}__panel--FlexBasis--base: auto;
+  --#{$sidebar}__panel--BoxShadow--base: var(--pf-t--global--box-shadow--md--bottom);
+  --#{$sidebar}__panel--BoxShadow: var(--#{$sidebar}__panel--BoxShadow--base);
+  --#{$sidebar}__panel--InsetBlockStart: 0;
+  --#{$sidebar}__panel--md--InsetBlockStart: auto;
+  --#{$sidebar}__panel--Position: sticky;
+  --#{$sidebar}__panel--md--Position: static;
+  --#{$sidebar}__panel--FlexBasis-base: auto;
+  --#{$sidebar}__panel--FlexBasis: var(--#{$sidebar}__panel--FlexBasis-base);
+  --#{$sidebar}__panel--md--FlexBasis: #{pf-size-prem(250px)};
+  --#{$sidebar}__panel--m-split--FlexBasis: #{pf-size-prem(250px)};
+  --#{$sidebar}__panel--m-stack--FlexBasis: auto;
+  --#{$sidebar}__panel--ZIndex: var(--pf-t--global--z-index--xs);
+  --#{$sidebar}__panel--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --#{$sidebar}__panel--m-secondary--BackgroundColor: var(--pf-t--global--background--color--secondary--default);
+
+  // Content
+  --#{$sidebar}__content--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --#{$sidebar}__content--m-secondary--BackgroundColor: var(--pf-t--global--background--color--secondary--default);
+
+  // Sticky
+  --#{$sidebar}__panel--m-sticky--InsetBlockStart: 0;
+  --#{$sidebar}__panel--m-sticky--Position: sticky;
+}
+
+.#{$sidebar} {
+  height: 100%;
+
+  @media (min-width: $pf-v6-global--breakpoint--md) {
+    --#{$sidebar}__main--FlexDirection: var(--#{$sidebar}__main--md--FlexDirection);
+    --#{$sidebar}__main--AlignItems: var(--#{$sidebar}__main--md--AlignItems);
+    --#{$sidebar}__main--m-border--before--Display: var(--#{$sidebar}__main--m-border--before--md--Display); // show border starting at md breakpoint
+    --#{$sidebar}__panel--BoxShadow: none;
+    --#{$sidebar}__panel--FlexBasis: var(--#{$sidebar}__panel--md--FlexBasis);
+    --#{$sidebar}__panel--InsetBlockStart: var(--#{$sidebar}__panel--md--InsetBlockStart);
+    --#{$sidebar}__panel--Position: var(--#{$sidebar}__panel--md--Position);
+  }
+
+  @media (min-width: $pf-v6-global--breakpoint--xl) {
+    --#{$sidebar}--inset: var(--#{$sidebar}--xl--inset);
+  }
+
+  &.pf-m-gutter > .#{$sidebar}__main {
+    gap: var(--#{$sidebar}--m-gutter__main--Gap);
+  }
+
+  &.pf-m-panel-right {
+    --#{$sidebar}__panel--Order: var(--#{$sidebar}--m-panel-right__panel--Order);
+    --#{$sidebar}__content--Order: var(--#{$sidebar}--m-panel-right__content--Order);
+
+    @media (min-width: $pf-v6-global--breakpoint--md) {
+      --#{$sidebar}--m-panel-right__panel--Order: var(--#{$sidebar}--m-panel-right__panel--md--Order);
+      --#{$sidebar}--m-panel-right__content--Order: var(--#{$sidebar}--m-panel-right__content--md--Order);
+    }
+  }
+
+  &.pf-m-stack {
+    --#{$sidebar}__main--FlexDirection: var(--#{$sidebar}--m-stack__main--FlexDirection);
+    --#{$sidebar}__main--AlignItems: var(--#{$sidebar}--m-stack__main--AlignItems);
+    --#{$sidebar}__panel--Position: var(--#{$sidebar}--m-stack__panel--Position);
+    --#{$sidebar}__panel--InsetBlockStart: var(--#{$sidebar}--m-stack__panel--InsetBlockStart);
+    --#{$sidebar}__panel--BoxShadow: var(--#{$sidebar}--m-stack__panel--BoxShadow);
+    --#{$sidebar}__panel--FlexBasis: var(--#{$sidebar}__panel--m-stack--FlexBasis);
+    --#{$sidebar}__main--m-border--before--Display: none;
+    --#{$sidebar}--m-panel-right__panel--Order: var(--#{$sidebar}--m-stack--m-panel-right__panel--Order);
+  }
+
+  &.pf-m-split {
+    --#{$sidebar}__main--FlexDirection: var(--#{$sidebar}--m-split__main--FlexDirection);
+    --#{$sidebar}__main--AlignItems: var(--#{$sidebar}--m-split__main--AlignItems);
+    --#{$sidebar}__panel--Position: var(--#{$sidebar}--m-split__panel--Position);
+    --#{$sidebar}__panel--InsetBlockStart: var(--#{$sidebar}--m-split__panel--InsetBlockStart);
+    --#{$sidebar}__panel--BoxShadow: none;
+    --#{$sidebar}__panel--FlexBasis: var(--#{$sidebar}__panel--m-split--FlexBasis);
+    --#{$sidebar}__main--m-border--before--Display: var(--#{$sidebar}--m-split__main--m-border--before--Display);
+    --#{$sidebar}--m-panel-right__panel--Order: var(--#{$sidebar}--m-split--m-panel-right__panel--Order);
+  }
+}
+
+.#{$sidebar}__main {
+  display: flex;
+  flex-direction: var(--#{$sidebar}__main--FlexDirection);
+  align-items: var(--#{$sidebar}__main--AlignItems);
+
+  &.pf-m-border::before {
+    display: var(--#{$sidebar}__main--m-border--before--Display);
+    flex: 0 0 var(--#{$sidebar}__main--m-border--before--BorderWidth);
+    align-self: stretch;
+    content: "";
+    background-color: var(--#{$sidebar}__main--m-border--before--BorderColor);
+  }
+}
+
+.#{$sidebar}__panel {
+  position: var(--#{$sidebar}__panel--Position);
+  inset-block-start: var(--#{$sidebar}__panel--InsetBlockStart);
+  z-index: var(--#{$sidebar}__panel--ZIndex);
+  flex-basis: var(--#{$sidebar}__panel--FlexBasis);
+  flex-shrink: 0;
+  order: var(--#{$sidebar}__panel--Order);
+  padding-block-start: var(--#{$sidebar}__panel--PaddingBlockStart);
+  padding-block-end: var(--#{$sidebar}__panel--PaddingBlockEnd);
+  padding-inline-start: var(--#{$sidebar}__panel--PaddingInlineStart);
+  padding-inline-end: var(--#{$sidebar}__panel--PaddingInlineEnd);
+  background-color: var(--#{$sidebar}__panel--BackgroundColor);
+  box-shadow: var(--#{$sidebar}__panel--BoxShadow);
+
+  &.pf-m-padding {
+    --#{$sidebar}__panel--PaddingBlockStart: var(--#{$sidebar}__panel--m-padding--PaddingBlockStart);
+    --#{$sidebar}__panel--PaddingInlineEnd: var(--#{$sidebar}__panel--m-padding--PaddingInlineEnd);
+    --#{$sidebar}__panel--PaddingBlockEnd: var(--#{$sidebar}__panel--m-padding--PaddingBlockEnd);
+    --#{$sidebar}__panel--PaddingInlineStart: var(--#{$sidebar}__panel--m-padding--PaddingInlineStart);
+  }
+
+  &.pf-m-sticky {
+    --#{$sidebar}__panel--Position: var(--#{$sidebar}__panel--m-sticky--Position);
+    --#{$sidebar}__panel--InsetBlockStart: var(--#{$sidebar}__panel--m-sticky--InsetBlockStart);
+  }
+
+  &.pf-m-static {
+    --#{$sidebar}__panel--Position: static;
+    --#{$sidebar}__panel--InsetBlockStart: auto;
+  }
+
+  &.pf-m-secondary {
+    --#{$sidebar}__panel--BackgroundColor: var(--#{$sidebar}__panel--m-secondary--BackgroundColor);
+  }
+}
+
+.#{$sidebar}__content {
+  flex-grow: 1;
+  order: var(--#{$sidebar}__content--Order);
+  padding-block-start: var(--#{$sidebar}__content--PaddingBlockStart);
+  padding-block-end: var(--#{$sidebar}__content--PaddingBlockEnd);
+  padding-inline-start: var(--#{$sidebar}__content--PaddingInlineStart);
+  padding-inline-end: var(--#{$sidebar}__content--PaddingInlineEnd);
+  background-color: var(--#{$sidebar}__content--BackgroundColor);
+
+  &.pf-m-padding {
+    --#{$sidebar}__content--PaddingBlockStart: var(--#{$sidebar}__content--m-padding--PaddingBlockStart);
+    --#{$sidebar}__content--PaddingInlineEnd: var(--#{$sidebar}__content--m-padding--PaddingInlineEnd);
+    --#{$sidebar}__content--PaddingBlockEnd: var(--#{$sidebar}__content--m-padding--PaddingBlockEnd);
+    --#{$sidebar}__content--PaddingInlineStart: var(--#{$sidebar}__content--m-padding--PaddingBlockStart);
+  }
+
+  &.pf-m-no-background {
+    --#{$sidebar}__content--BackgroundColor: transparent;
+  }
+
+  &.pf-m-secondary {
+    --#{$sidebar}__content--BackgroundColor: var(--#{$sidebar}__content--m-secondary--BackgroundColor);
+  }
+
+  & + .#{$sidebar}__panel {
+    --#{$sidebar}__panel--Order: 1;
+  }
+
+  :where(&:first-child) {
+    --#{$sidebar}__content--Order: -1;
+  }
+}
+
+.#{$sidebar},
+.#{$sidebar}__panel,
+.#{$sidebar}__content {
+  &.pf-m-no-background {
+    background-color: transparent;
+  }
+}
+
+// Responsive width modifiers
+@each $breakpoint, $breakpoint-value in $pf-v6-c-sidebar--breakpoint-map--width {
+  $breakpoint-name: if($breakpoint != "base", -on-#{$breakpoint}, "");
+
+  @include pf-v6-apply-breakpoint($breakpoint) {
+    @each $width-value in $pf-v6-c-sidebar__panel--list--width {
+      .pf-v6-c-sidebar__panel.pf-m-width-#{$width-value}#{$breakpoint-name} {
+        @if $width-value == "default" {
+          --#{$sidebar}__panel--FlexBasis: var(--#{$sidebar}__panel--FlexBasis--base);
+        } @else {
+          --#{$sidebar}__panel--FlexBasis: #{percentage(math.div($width-value, 100))};
+        }
+      }
+    }
+  }
+}

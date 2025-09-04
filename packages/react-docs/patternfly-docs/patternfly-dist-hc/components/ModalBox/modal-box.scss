@@ -1,0 +1,255 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($modal-box) {
+  --#{$modal-box}--BackgroundColor: var(--pf-t--global--background--color--floating--default);
+  --#{$modal-box}--BorderColor: var(--pf-t--global--border--color--high-contrast);
+  --#{$modal-box}--BorderWidth: var(--pf-t--global--high-contrast--border--width--box--default);
+  --#{$modal-box}--BorderRadius: var(--pf-t--global--border--radius--large);
+  --#{$modal-box}--BoxShadow: var(--pf-t--global--box-shadow--lg);
+  --#{$modal-box}--ZIndex: var(--pf-t--global--z-index--xl); // TODO use a z-index token
+  --#{$modal-box}--Width: 100%;
+  --#{$modal-box}--MaxWidth: calc(100% - var(--pf-t--global--spacer--xl)); // Ensure modal has gutters at full width
+  --#{$modal-box}--m-sm--sm--MaxWidth: #{pf-size-prem(560px)}; // MaxWidth is based on optimal line length for reading
+  --#{$modal-box}--m-md--Width: #{pf-size-prem(840px)};
+  --#{$modal-box}--m-lg--lg--MaxWidth: #{pf-size-prem(1120px)};
+  --#{$modal-box}--MaxHeight: calc(100% - var(--pf-t--global--spacer--2xl)); // MaxHeight ensures that the modal will not go off the screen and instead the body will scroll
+  --#{$modal-box}--m-align-top--spacer: var(--pf-t--global--spacer--sm);
+  --#{$modal-box}--m-align-top--xl--spacer: var(--pf-t--global--spacer--xl);
+  --#{$modal-box}--m-align-top--InsetBlockStart: var(--#{$modal-box}--m-align-top--spacer);
+  --#{$modal-box}--m-align-top--MaxHeight: calc(100% - min(var(--#{$modal-box}--m-align-top--spacer), var(--pf-t--global--spacer--2xl)) - var(--#{$modal-box}--m-align-top--spacer));
+  --#{$modal-box}--m-align-top--MaxWidth: calc(100% - min(var(--#{$modal-box}--m-align-top--spacer) * 2, var(--pf-t--global--spacer--xl)));
+
+  // States
+  --#{$modal-box}--m-danger__title-icon--Color: var(--pf-t--global--icon--color--status--danger--default);
+  --#{$modal-box}--m-warning__title-icon--Color: var(--pf-t--global--icon--color--status--warning--default);
+  --#{$modal-box}--m-success__title-icon--Color: var(--pf-t--global--icon--color--status--success--default);
+  --#{$modal-box}--m-info__title-icon--Color: var(--pf-t--global--icon--color--status--info--default);
+  --#{$modal-box}--m-custom__title-icon--Color: var(--pf-t--global--icon--color--status--custom--default);
+
+  @media (min-width: $pf-v6-global--breakpoint--xl) {
+    --#{$modal-box}--m-align-top--spacer: var(--#{$modal-box}--m-align-top--xl--spacer);
+  }
+
+  // Header
+  --#{$modal-box}__header--PaddingBlockStart: var(--pf-t--global--spacer--lg);
+  --#{$modal-box}__header--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$modal-box}__header--PaddingInlineEnd: var(--pf-t--global--spacer--lg);
+  --#{$modal-box}__header--PaddingInlineStart: var(--pf-t--global--spacer--lg);
+  --#{$modal-box}__header--Gap: var(--pf-t--global--spacer--md);
+
+  // Header main
+  --#{$modal-box}__header-main--Gap: var(--pf-t--global--spacer--md);
+  --#{$modal-box}__header-main--PaddingBlockStart: var(--pf-t--global--spacer--control--vertical--default);
+
+  // Title
+  --#{$modal-box}__title--LineHeight: var(--pf-t--global--font--line-height--heading);
+  --#{$modal-box}__title--FontFamily: var(--pf-t--global--font--family--heading);
+  --#{$modal-box}__title--FontWeight: var(--pf-t--global--font--weight--heading--default);
+  --#{$modal-box}__title--FontSize: var(--pf-t--global--font--size--heading--md);
+
+  // Title icon
+  --#{$modal-box}__title-icon--MarginInlineEnd: var(--pf-t--global--spacer--sm);
+  --#{$modal-box}__title-icon--Color: var(--pf-t--global--icon--color--regular);
+
+  // Description
+  --#{$modal-box}__description--FontSize: var(--pf-t--global--font--size--body--sm);
+  --#{$modal-box}__description--Color: var(--pf-t--global--text--color--subtle);
+
+  // Body
+  --#{$modal-box}__body--MinHeight: calc(var(--pf-t--global--font--size--body--default) * var(--pf-t--global--font--line-height--body)); // Allow for at least 1 line of content in the body
+  --#{$modal-box}__body--PaddingBlockStart: var(--pf-t--global--spacer--lg);
+  --#{$modal-box}__body--PaddingInlineEnd: var(--pf-t--global--spacer--lg);
+  --#{$modal-box}__body--PaddingInlineStart: var(--pf-t--global--spacer--lg);
+  --#{$modal-box}__body--last-child--PaddingBlockEnd: var(--pf-t--global--spacer--lg);
+  --#{$modal-box}__header--body--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+
+  // Close
+  --#{$modal-box}__close--InsetBlockStart: var(--#{$modal-box}__header--PaddingBlockStart);
+  --#{$modal-box}__close--InsetInlineEnd: var(--#{$modal-box}__header--PaddingInlineEnd);
+  --#{$modal-box}__close--sibling--MarginInlineEnd: calc(var(--pf-t--global--spacer--xl) + var(--pf-t--global--spacer--sm));
+
+  // Footer
+  --#{$modal-box}__footer--PaddingBlockStart: var(--pf-t--global--spacer--lg);
+  --#{$modal-box}__footer--PaddingInlineEnd: var(--pf-t--global--spacer--lg);
+  --#{$modal-box}__footer--PaddingBlockEnd: var(--pf-t--global--spacer--lg);
+  --#{$modal-box}__footer--PaddingInlineStart: var(--pf-t--global--spacer--lg);
+
+  // Footer buttons
+  --#{$modal-box}__footer--c-button--MarginInlineEnd: var(--pf-t--global--spacer--md); // Button spacer is used to manipulate margin-inline-start and/or margin-right values at various breakpoints, with a single value.
+  --#{$modal-box}__footer--c-button--sm--MarginInlineEnd: calc(var(--#{$modal-box}__footer--c-button--MarginInlineEnd) / 2);
+}
+
+.#{$modal-box} {
+  position: relative;
+  z-index: var(--#{$modal-box}--ZIndex);
+  display: flex;
+  flex-direction: column;
+  width: var(--#{$modal-box}--Width);
+  max-width: var(--#{$modal-box}--MaxWidth);
+  max-height: var(--#{$modal-box}--MaxHeight);
+  overflow: auto;
+  background-color: var(--#{$modal-box}--BackgroundColor);
+  border: var(--#{$modal-box}--BorderWidth) solid var(--#{$modal-box}--BorderColor);
+  border-radius: var(--#{$modal-box}--BorderRadius);
+  box-shadow: var(--#{$modal-box}--BoxShadow);
+
+  &.pf-m-sm {
+    --#{$modal-box}--Width: var(--#{$modal-box}--m-sm--sm--MaxWidth);
+  }
+
+  &.pf-m-md {
+    --#{$modal-box}--Width: var(--#{$modal-box}--m-md--Width);
+  }
+
+  &.pf-m-lg {
+    --#{$modal-box}--Width: var(--#{$modal-box}--m-lg--lg--MaxWidth);
+  }
+
+  &.pf-m-align-top {
+    inset-block-start: var(--#{$modal-box}--m-align-top--InsetBlockStart);
+    align-self: flex-start;
+    max-width: var(--#{$modal-box}--m-align-top--MaxWidth);
+    max-height: var(--#{$modal-box}--m-align-top--MaxHeight);
+  }
+
+  @at-root .#{$modal-box}__title,
+  & {
+    &.pf-m-danger {
+      --#{$modal-box}__title-icon--Color: var(--#{$modal-box}--m-danger__title-icon--Color);
+    }
+  }
+
+  @at-root .#{$modal-box}__title,
+  & {
+    &.pf-m-warning {
+      --#{$modal-box}__title-icon--Color: var(--#{$modal-box}--m-warning__title-icon--Color);
+    }
+  }
+
+  @at-root .#{$modal-box}__title,
+  & {
+    &.pf-m-success {
+      --#{$modal-box}__title-icon--Color: var(--#{$modal-box}--m-success__title-icon--Color);
+    }
+  }
+
+  @at-root .#{$modal-box}__title,
+  & {
+    &.pf-m-custom {
+      --#{$modal-box}__title-icon--Color: var(--#{$modal-box}--m-custom__title-icon--Color);
+    }
+  }
+
+  @at-root .#{$modal-box}__title,
+  & {
+    &.pf-m-info {
+      --#{$modal-box}__title-icon--Color: var(--#{$modal-box}--m-info__title-icon--Color);
+    }
+  }
+}
+
+// Close button
+.#{$modal-box}__close {
+  position: absolute;
+ inset-block-start: var(--#{$modal-box}__close--InsetBlockStart);
+ inset-inline-end: var(--#{$modal-box}__close--InsetInlineEnd);
+
+  + * {
+    margin-inline-end: var(--#{$modal-box}__close--sibling--MarginInlineEnd); // Create room for the close button
+  }
+}
+
+.#{$modal-box}__header {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: var(--#{$modal-box}__header--Gap);
+  padding-block-start: var(--#{$modal-box}__header--PaddingBlockStart);
+  padding-block-end: var(--#{$modal-box}__header--PaddingBlockEnd);
+  padding-inline-start: var(--#{$modal-box}__header--PaddingInlineStart);
+  padding-inline-end: var(--#{$modal-box}__header--PaddingInlineEnd);
+
+  &.pf-m-help {
+    display: flex;
+    flex-direction: row;
+  }
+
+  + .#{$modal-box}__body {
+    --#{$modal-box}__body--PaddingBlockStart: var(--#{$modal-box}__header--body--PaddingBlockStart);
+  }
+}
+
+.#{$modal-box}__header-main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: var(--#{$modal-box}__header-main--Gap);
+  min-width: 0;
+  padding-block-start: var(--#{$modal-box}__header-main--PaddingBlockStart);
+}
+
+.#{$modal-box}__title,
+.#{$modal-box}__title-text {
+  @include pf-v6-text-overflow;
+}
+
+.#{$modal-box}__title {
+  flex: 0 0 auto;
+  font-family: var(--#{$modal-box}__title--FontFamily);
+  font-size: var(--#{$modal-box}__title--FontSize);
+  font-weight: var(--#{$modal-box}__title--FontWeight);
+  line-height: var(--#{$modal-box}__title--LineHeight);
+
+  &.pf-m-icon {
+    display: flex;
+  }
+}
+
+.#{$modal-box}__title-icon {
+  margin-inline-end: var(--#{$modal-box}__title-icon--MarginInlineEnd);
+  color: var(--#{$modal-box}__title-icon--Color);
+}
+
+.#{$modal-box}__description {
+  padding-block-start: var(--#{$modal-box}__description--PaddingBlockStart);
+  font-size: var(--#{$modal-box}__description--FontSize);
+  color: var(--#{$modal-box}__description--Color);
+}
+
+// Body
+.#{$modal-box}__body {
+  flex: 1 1 auto;
+  min-height: var(--#{$modal-box}__body--MinHeight);
+  padding-block-start: var(--#{$modal-box}__body--PaddingBlockStart);
+  padding-inline-start: var(--#{$modal-box}__body--PaddingInlineStart);
+  padding-inline-end: var(--#{$modal-box}__body--PaddingInlineEnd);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  word-break: break-word;
+  -webkit-overflow-scrolling: touch;
+
+  &:last-child {
+    padding-block-end: var(--#{$modal-box}__body--last-child--PaddingBlockEnd);
+  }
+}
+
+// Footer
+.#{$modal-box}__footer {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  padding-block-start: var(--#{$modal-box}__footer--PaddingBlockStart);
+  padding-block-end: var(--#{$modal-box}__footer--PaddingBlockEnd);
+  padding-inline-start: var(--#{$modal-box}__footer--PaddingInlineStart);
+  padding-inline-end: var(--#{$modal-box}__footer--PaddingInlineEnd);
+
+  // Base margin left and right equal for buttons when wrapped
+  > .#{$button}:not(:last-child) {
+    margin-inline-end: var(--#{$modal-box}__footer--c-button--MarginInlineEnd);
+
+    @media screen and (min-width: $pf-v6-global--breakpoint--sm) {
+      --#{$modal-box}__footer--c-button--MarginInlineEnd: var(--#{$modal-box}__footer--c-button--sm--MarginInlineEnd);
+    }
+  }
+}

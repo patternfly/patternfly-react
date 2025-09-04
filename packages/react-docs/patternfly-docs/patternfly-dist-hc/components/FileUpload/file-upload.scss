@@ -1,0 +1,71 @@
+@use '../../sass-utilities' as *;
+
+@include pf-root($file-upload) {
+  --#{$file-upload}--RowGap: var(--pf-t--global--spacer--gap--group--vertical);
+  --#{$file-upload}--PaddingBlockStart: var(--pf-t--global--spacer--sm);
+  --#{$file-upload}--PaddingBlockEnd: var(--pf-t--global--spacer--sm);
+  --#{$file-upload}--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --#{$file-upload}--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --#{$file-upload}--BorderRadius: var(--pf-t--global--border--radius--small);
+  --#{$file-upload}--BorderWidth: var(--pf-t--global--border--width--regular);
+  --#{$file-upload}--BorderColor: var(--pf-t--global--border--color--default);
+  --#{$file-upload}--BorderStyle: dashed;
+
+  // pf-m-drag-hover
+  --#{$file-upload}--m-drag-hover--BorderColor: var(--pf-t--global--border--color--clicked);
+  --#{$file-upload}--m-drag-hover--BorderStyle: dashed;
+
+  // File select > Button
+  --#{$file-upload}__file-select__c-button--m-control--OutlineOffset: calc(-1 * var(--pf-t--global--spacer--xs));
+
+  // File details > Text area
+  --#{$file-upload}__file-details__c-form-control--MinHeight: calc(var(--pf-t--global--spacer--3xl) * 2);
+}
+
+.#{$file-upload} {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--#{$file-upload}--RowGap);
+  padding-block-start: var(--#{$file-upload}--PaddingBlockStart);
+  padding-block-end: var(--#{$file-upload}--PaddingBlockEnd);
+  padding-inline-start: var(--#{$file-upload}--PaddingInlineStart);
+  padding-inline-end: var(--#{$file-upload}--PaddingInlineEnd);
+  border: var(--#{$file-upload}--BorderWidth) var(--#{$file-upload}--BorderStyle) var(--#{$file-upload}--BorderColor);
+  border-radius: var(--#{$file-upload}--BorderRadius);
+
+  &.pf-m-drag-hover {
+    --#{$file-upload}--BorderColor: var(--#{$file-upload}--m-drag-hover--BorderColor);
+    --#{$file-upload}--BorderStyle: var(--#{$file-upload}--m-drag-hover--BorderStyle);
+  }
+
+  &.pf-m-loading {
+    .#{$file-upload}__file-details {
+      position: relative;
+    }
+  }
+}
+
+.#{$file-upload}__file-select {
+  .#{$button}.pf-m-control {
+    outline-offset: var(--#{$file-upload}__file-select__c-button--m-control--OutlineOffset);
+  }
+}
+
+.#{$file-upload}__file-details {
+  position: relative;
+  display: flex;
+
+  .#{$form-control} {
+    flex: 1 1 auto;
+    min-height: var(--#{$file-upload}__file-details__c-form-control--MinHeight);
+    border-block-start: 0;
+  }
+}
+
+.#{$file-upload}__file-details-spinner {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,28 @@
+@use '../../sass-utilities' as *;
+
+$pf-v6-c-description-list-order--breakpoint-map: build-breakpoint-map();
+$pf-v6-c-description-list-order--limit: 12;
+
+// stylelint-disable max-nesting-depth
+.#{$description-list}__group {
+  @each $breakpoint, $breakpoint-value in $pf-v6-c-description-list-order--breakpoint-map {
+    $breakpoint-name: if($breakpoint != "base", -on-#{$breakpoint}, "");
+
+    @include pf-v6-apply-breakpoint($breakpoint) {
+      @for $i from 0 through $pf-v6-c-description-list-order--limit {
+        .pf-m-order-#{$i}#{$breakpoint-name} {
+          order: #{$i};
+        }
+      }
+
+      .pf-m-order-first#{$breakpoint-name} {
+        order: -1;
+      }
+
+      .pf-m-order-last#{$breakpoint-name} {
+        order: #{$pf-v6-c-description-list-order--limit + 1};
+      }
+    }
+  }
+}
+// stylelint-enable
