@@ -8,7 +8,7 @@ figma.connect(
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=4410-20691',
   {
     props: {
-      children: figma.children(['Simple list group', 'Simple list item'])
+      children: figma.children('*')
     },
     example: (props) => <SimpleList aria-label="Simple list example">{props.children}</SimpleList>
   }

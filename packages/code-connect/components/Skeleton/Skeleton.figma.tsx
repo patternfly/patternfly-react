@@ -8,6 +8,11 @@ figma.connect(
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=790-288',
   {
     props: {
+      // enum
+      type: figma.enum('Type', {
+        Square: 'square',
+        Circle: 'circle'
+      }),
       size: figma.enum('Size', {
         S: 'sm',
         M: 'md',
@@ -16,12 +21,8 @@ figma.connect(
         '2XL': '2xl',
         '3XL': '3xl',
         '4XL': '4xl'
-      }),
-      type: figma.enum('Type', {
-        Rectangle: 'square',
-        Circle: 'circle'
       })
     },
-    example: (props) => <Skeleton fontSize={props.size} shape={props.type} screenreaderText="Loading default content" />
+    example: (props) => <Skeleton fontSize={props.size} type={props.type} screenreaderText="Loading default content" />
   }
 );

@@ -14,10 +14,9 @@ figma.connect(
   Popover,
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=5857-2066',
   {
+    // enum
     props: {
-      // hasFooter: figma.boolean('Has footer', {}),
-      bodyContent: figma.string('Popover description'),
-      headerContent: figma.string('Popover Heading'),
+      // boolean
       footerContent: figma.boolean('Has footer', {
         true: 'Popover footer',
         false: undefined
@@ -25,6 +24,20 @@ figma.connect(
       headerIcon: figma.boolean('Show header icon', {
         true: <BullhornIcon />,
         false: undefined
+      }),
+
+      // string
+      bodyContent: figma.string('Popover description'),
+      headerContent: figma.string('Popover Heading'),
+
+      // enum
+      position: figma.enum('Position', {
+        'Top-left': 'top-start',
+        'Top-middle': 'top',
+        'Top-right': 'top-end',
+        'Bottom-left': 'bottom-start',
+        'Bottom-middle': 'bottom',
+        'Bottom-right': 'bottom-end'
       }),
       status: figma.enum('Status', {
         Default: {
@@ -47,14 +60,6 @@ figma.connect(
           state: 'danger',
           icon: <ExclamationCircleIcon />
         }
-      }),
-      position: figma.enum('Position', {
-        'Top-left': 'top-start',
-        'Top-middle': 'top',
-        'Top-right': 'top-end',
-        'Bottom-left': 'bottom-start',
-        'Bottom-middle': 'bottom',
-        'Bottom-right': 'bottom-end'
       }),
 
       children: figma.children('*')

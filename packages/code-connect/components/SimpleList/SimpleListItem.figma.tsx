@@ -32,7 +32,7 @@ figma.connect(
         component={props.isLink.component}
         href={props.isLink.href}
         isActive={props.isActive}
-        key="simple-list-key"
+        key="simple-list-item-key"
       >
         {props.text}
       </SimpleListItem>

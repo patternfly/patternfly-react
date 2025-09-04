@@ -8,8 +8,12 @@ figma.connect(
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=4410-20708',
   {
     props: {
-      children: figma.children('*')
+      simpleListItems: figma.children('Simple list item')
     },
-    example: (props) => <SimpleListGroup>{props.children}</SimpleListGroup>
+    example: (props) => (
+      <SimpleListGroup title="List group" id="<simple-list-group-id>">
+        {props.simpleListItems}
+      </SimpleListGroup>
+    )
   }
 );

@@ -8,19 +8,25 @@ figma.connect(
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=3172-18190&m=dev',
   {
     props: {
-      showUnreadCount: figma.boolean('Has count', {
-        true: 3,
-        false: NaN
-      }),
-      headingText: figma.string('Group title'),
-      isExpanded: figma.enum('Type', {
-        Collapsed: false,
-        Expanded: true
-      }),
+      // boolean
       hasCount: figma.boolean('Has count', {
         true: figma.children('Badge'),
         false: undefined
       }),
+      showUnreadCount: figma.boolean('Has count', {
+        true: 3,
+        false: NaN
+      }),
+
+      // enum
+      headingText: figma.string('Group title'),
+
+      // string
+      isExpanded: figma.enum('Type', {
+        Collapsed: false,
+        Expanded: true
+      }),
+
       children: figma.children('*')
     },
     example: (props) => (
