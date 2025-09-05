@@ -7,7 +7,12 @@ export const ClipboardCopyInlineCompactInSentence: React.FunctionComponent = () 
     <br />
     Lorem ipsum{' '}
     {
-      <ClipboardCopy hoverTip="Copy" clickTip="Copied" variant="inline-compact">
+      <ClipboardCopy
+        copyAriaLabel="Copy inline compact basic example"
+        hoverTip="Copy"
+        clickTip="Copied"
+        variant="inline-compact"
+      >
         2.3.4-2-redhat
       </ClipboardCopy>
     }
@@ -17,7 +22,12 @@ export const ClipboardCopyInlineCompactInSentence: React.FunctionComponent = () 
     <br />
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.{' '}
     {
-      <ClipboardCopy hoverTip="Copy" clickTip="Copied" variant="inline-compact">
+      <ClipboardCopy
+        copyAriaLabel="Copy inline compact long copy string example"
+        hoverTip="Copy"
+        clickTip="Copied"
+        variant="inline-compact"
+      >
         https://app.openshift.io/path/sub-path/sub-sub-path/?runtime=quarkus/12345678901234567890/abcdefghijklmnopqrstuvwxyz1234567890
       </ClipboardCopy>
     }{' '}
@@ -27,7 +37,13 @@ export const ClipboardCopyInlineCompactInSentence: React.FunctionComponent = () 
     <br />
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.{' '}
     {
-      <ClipboardCopy hoverTip="Copy" clickTip="Copied" variant="inline-compact" isBlock>
+      <ClipboardCopy
+        copyAriaLabel="Copy inline compact long copy string in block example"
+        hoverTip="Copy"
+        clickTip="Copied"
+        variant="inline-compact"
+        isBlock
+      >
         https://app.openshift.io/path/sub-path/sub-sub-path/?runtime=quarkus/12345678901234567890/abcdefghijklmnopqrstuvwxyz1234567890
       </ClipboardCopy>
     }{' '}

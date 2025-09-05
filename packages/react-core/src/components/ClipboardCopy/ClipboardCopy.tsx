@@ -49,6 +49,8 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   hoverTip?: string;
   /** Tooltip message to display when clicking the copy button */
   clickTip?: string;
+  /** Aria-label to use on the copy button */
+  copyAriaLabel?: string;
   /** Aria-label to use on the TextInput. */
   textAriaLabel?: string;
   /** Aria-label to use on the ClipboardCopyToggle. */
@@ -194,6 +196,7 @@ class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
       truncation,
       ouiaId,
       ouiaSafe,
+      copyAriaLabel,
       ...divProps
     } = this.props;
     const textIdPrefix = 'text-input-';
@@ -250,8 +253,7 @@ class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
                       maxWidth={maxWidth}
                       position={position}
                       id={`copy-button-${id}`}
-                      textId={`text-input-${id}`}
-                      aria-label={hoverTip}
+                      aria-label={copyAriaLabel ?? hoverTip}
                       onClick={(event: any) => {
                         onCopy(event, copyableText);
                         this.setState({ copied: true });
@@ -285,7 +287,6 @@ class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
                         }
                       }}
                       id={`${toggleIdPrefix}${id}`}
-                      textId={`${textIdPrefix}${id}`}
                       contentId={`${contentIdPrefix}${id}`}
                       aria-label={toggleAriaLabel}
                     />
@@ -304,8 +305,7 @@ class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
                     maxWidth={maxWidth}
                     position={position}
                     id={`copy-button-${id}`}
-                    textId={`text-input-${id}`}
-                    aria-label={hoverTip}
+                    aria-label={copyAriaLabel ?? hoverTip}
                     onClick={(event: any) => {
                       onCopy(event, this.state.expanded ? this.state.textWhenExpanded : copyableText);
                       this.setState({ copied: true });
