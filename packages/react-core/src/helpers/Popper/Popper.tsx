@@ -107,6 +107,8 @@ export interface PopperProps {
   };
   /** Distance of the popper to the trigger */
   distance?: number;
+  /** Override for the popper's offset */
+  offset?: [number, number];
   /** Callback function when mouse enters trigger */
   onMouseEnter?: (event?: MouseEvent) => void;
   /** Callback function when mouse leaves trigger */
@@ -190,6 +192,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   isVisible = true,
   positionModifiers,
   distance = 0,
+  offset,
   onMouseEnter,
   onMouseLeave,
   onFocus,
@@ -420,7 +423,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       {
         name: 'offset',
         options: {
-          offset: [0, distance]
+          offset: offset || [0, distance]
         }
       },
       {
