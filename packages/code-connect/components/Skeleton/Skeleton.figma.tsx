@@ -10,6 +10,8 @@ figma.connect(
     props: {
       // enum
       type: figma.enum('Type', {
+        Default: undefined,
+        Rectangle: undefined,
         Square: 'square',
         Circle: 'circle'
       }),
