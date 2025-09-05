@@ -99,7 +99,7 @@ export const TableFavoritable: React.FunctionComponent = () => {
     <Table aria-label="Favoritable table" variant="compact">
       <Thead>
         <Tr>
-          <Th sort={getSortParams(0)} />
+          <Th sort={getSortParams(0)} screenReaderText="Favorite all button" />
           <Th>{columnNames.name}</Th>
           <Th>{columnNames.branches}</Th>
           <Th>{columnNames.prs}</Th>
