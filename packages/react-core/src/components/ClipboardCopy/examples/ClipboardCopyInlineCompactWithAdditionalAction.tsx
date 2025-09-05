@@ -8,6 +8,7 @@ export const ClipboardCopyInlineCompactWithAdditionalAction: React.FunctionCompo
   const doneRunText: string = 'Running in web terminal';
   return (
     <ClipboardCopy
+      copyAriaLabel="Copy inline compact with additional action example"
       hoverTip="Copy"
       clickTip="Copied"
       variant="inline-compact"

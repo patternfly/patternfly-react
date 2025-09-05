@@ -1,7 +1,14 @@
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 
 export const ClipboardCopyJSONObject: React.FunctionComponent = () => (
-  <ClipboardCopy isCode hoverTip="Copy" clickTip="Copied" variant={ClipboardCopyVariant.expansion}>
+  <ClipboardCopy
+    copyAriaLabel="Copy JSON object example"
+    toggleAriaLabel="Show content for JSON object example"
+    isCode
+    hoverTip="Copy"
+    clickTip="Copied"
+    variant={ClipboardCopyVariant.expansion}
+  >
     {`{ "menu": {
     "id": "file",
     "value": "File",

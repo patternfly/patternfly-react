@@ -7,7 +7,6 @@ export interface ClipboardCopyToggleProps
   extends Omit<React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, 'ref'> {
   onClick: (event: React.MouseEvent) => void;
   id: string;
-  textId: string;
   contentId: string;
   isExpanded?: boolean;
   className?: string;
@@ -16,7 +15,6 @@ export interface ClipboardCopyToggleProps
 export const ClipboardCopyToggle: React.FunctionComponent<ClipboardCopyToggleProps> = ({
   onClick,
   id,
-  textId,
   contentId,
   isExpanded = false,
   ...props
@@ -26,7 +24,6 @@ export const ClipboardCopyToggle: React.FunctionComponent<ClipboardCopyTogglePro
     variant="control"
     onClick={onClick}
     id={id}
-    aria-labelledby={`${id} ${textId}`}
     aria-controls={isExpanded ? contentId : undefined}
     aria-expanded={isExpanded}
     {...props}

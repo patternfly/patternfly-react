@@ -5,7 +5,6 @@ import userEvent from '@testing-library/user-event';
 const onClickMock = jest.fn();
 const requiredProps = {
   id: 'main-id',
-  textId: 'text-id',
   contentId: 'content-id',
   onClick: onClickMock
 };
@@ -33,15 +32,15 @@ test('Renders with id prop', () => {
   expect(screen.getByRole('button')).toHaveAttribute('id', requiredProps.id);
 });
 
-test('Renders with aria-labelledby concatenated from id and textId props', () => {
+test('Renders with aria-label', () => {
   render(
     <>
       <ClipboardCopyToggle aria-label="Toggle content" {...requiredProps} />
-      <span id={requiredProps.textId}>Test content</span>
+      <span>Test content</span>
     </>
   );
 
-  expect(screen.getByRole('button')).toHaveAccessibleName('Toggle content Test content');
+  expect(screen.getByRole('button')).toHaveAccessibleName('Toggle content');
 });
 
 test('Does not render with aria-controls when isExpanded is false', () => {
