@@ -41,7 +41,6 @@ figma.connect(
         addLabelControl={props.addLabelControl}
         categoryName="Group label"
         isClosable
-        isEditable
         numLabels={props.numLabels}
         onClick={() => {}}
       >
