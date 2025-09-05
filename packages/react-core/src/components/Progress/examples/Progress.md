@@ -8,75 +8,119 @@ propComponents: ['Progress']
 import { useState } from 'react';
 
 ## Examples
+
 ### Basic
+
 ```ts file="./ProgressBasic.tsx"
+
 ```
 
 ### Small
+
 ```ts file="./ProgressSmall.tsx"
+
 ```
 
 ### Large
+
 ```ts file="./ProgressLarge.tsx"
+
 ```
 
 ### Outside
+
 ```ts file="./ProgressOutside.tsx"
+
 ```
 
 ### Inside
+
 ```ts file="./ProgressInside.tsx"
-```
 
-### Success
-```ts file="./ProgressSuccess.tsx"
-```
-
-### Failure
-```ts file="./ProgressFailure.tsx"
-```
-
-### Warning
-```ts file="./ProgressWarning.tsx"
-```
-
-### Inside success
-```ts file="./ProgressInsideSuccess.tsx"
-```
-
-### Outside failure
-```ts file="./ProgressOutsideFailure.tsx"
 ```
 
 ### Single line
+
 ```ts file="./ProgressSingleLine.tsx"
+
 ```
 
 ### Without measure
+
 ```ts file="./ProgressWithoutMeasure.tsx"
-```
 
-### Failure without measure
-```ts file="./ProgressFailureWithoutMeasure.tsx"
 ```
-
 
 ### Finite step
+
 ```ts file="./ProgressFiniteStep.tsx"
+
 ```
 
 ### Progress with step instructions
+
 ```ts file="./ProgressStepInstruction.tsx"
+
 ```
 
 ### Truncate title
+
 ```ts file="./ProgressTruncateTitle.tsx"
+
 ```
 
 ### Title outside of progress bar
+
 ```ts file="./ProgressTitleOutsideOfProgressBar.tsx"
+
 ```
 
 ### Helper text
+
 ```ts file="./ProgressHelperText.tsx"
+
+```
+
+## Status examples
+
+When conveying status, you should ensure:
+
+- there is visible helper text that explains the status,
+- the helper text includes the status icon, as seen in our [basic helper text example](/components/helper-text#basic), and
+- the helper text is linked to the `<Progress>` component via the `aria-describedby` property, as seen in the [progress helper text example](#helper-text).
+
+### Success
+
+```ts file="./ProgressSuccess.tsx"
+
+```
+
+### Failure
+
+```ts file="./ProgressFailure.tsx"
+
+```
+
+### Warning
+
+```ts file="./ProgressWarning.tsx"
+
+```
+
+### Inside success
+
+```ts file="./ProgressInsideSuccess.tsx"
+
+```
+
+### Outside failure
+
+```ts file="./ProgressOutsideFailure.tsx"
+
+```
+
+### Failure without measure
+
+```ts file="./ProgressFailureWithoutMeasure.tsx"
+
 ```

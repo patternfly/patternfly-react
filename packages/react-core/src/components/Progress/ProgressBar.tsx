@@ -4,6 +4,7 @@ import { css } from '@patternfly/react-styles';
 export interface AriaProps {
   'aria-labelledby'?: string;
   'aria-label'?: string;
+  'aria-describedby'?: string;
   'aria-valuemin'?: number;
   'aria-valuenow'?: number;
   'aria-valuemax'?: number;
@@ -28,7 +29,7 @@ export const ProgressBar: React.FunctionComponent<ProgressBarProps> = ({
   value,
   ...props
 }: ProgressBarProps) => (
-  <div {...props} className={css(styles.progressBar, className)} {...progressBarAriaProps}>
+  <div role="progressbar" {...props} className={css(styles.progressBar, className)} {...progressBarAriaProps}>
     <div className={css(styles.progressIndicator)} style={{ width: `${value}%` }}>
       <span className={css(styles.progressMeasure)}>{children}</span>
     </div>
