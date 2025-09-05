@@ -37,12 +37,7 @@ figma.connect(
       alertTitle: 'Notification title'
     },
     example: (props) => (
-      <NotificationDrawerListItem
-        isHoverable={props.isHoverable}
-        isRead={props.isRead}
-        onClose={() => {}}
-        variant={props.variant}
-      >
+      <NotificationDrawerListItem isHoverable={props.isHoverable} isRead={props.isRead} variant={props.variant}>
         <NotificationDrawerListItemHeader title={props.alertTitle} variant={props.variant}>
           <Dropdown
             onSelect={() => {}}
