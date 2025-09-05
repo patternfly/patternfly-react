@@ -55,8 +55,6 @@ The following contributors (excluding PatternFly team members and bots) have mad
 
 ### Notable Contributors
 
-Thank you to all community contributors who have helped improve PatternFly React! Every contribution makes a difference.
-
 Thank you to all our community contributors for helping make PatternFly React better! Every contribution, whether it's code, documentation, bug reports, or feature requests, helps improve the library for everyone.
 
 *This list is updated periodically and reflects contributions over the past 12 months. If you'd like to join this list, check out our [contribution guidelines](#contribution-process) below!*
@@ -205,7 +203,7 @@ Please ensure that all React UI components contributed meet the following guidel
 
 Adhering to the following process is the best way to get your work included in the project:
 
-1. **Fork and set up the repository** (assumes basic git knowledge)
+1. **Fork and set up the repository** ([More information about forks from GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo))
 
 2. **Set up your development environment**
 
@@ -245,7 +243,7 @@ Ensure no lint errors are introduced in `yarn-error.log` after running this comm
 
 ***Note to Windows users:*** you may need to change the path for the lint script in package.json to be `node_modules/eslint/bin/eslint`
 
-4. **Follow commit conventions** - This project uses [`lerna`](https://lernajs.io/) to do automatic releases and generate a changelog based on the commit history. So we follow [a convention][3] for commit messages. Please follow this convention for your commit messages.
+4. **Follow commit conventions** - This project uses [`lerna`](https://lernajs.io/) to do automatic releases and generate a changelog based on the commit history. So we follow [conventional commit formatting](https://www.conventionalcommits.org/en/v1.0.0/) for all commit messages. Please follow this convention for your commit messages.
 
 5. **Create a pull request**
 
@@ -288,8 +286,7 @@ Please help in ensuring all relevant issues are closed and that any subsequent i
 - Format code with Prettier: `yarn prettier`
 
 **Development Server Issues:**
-- Clear cache and restart: `rm -rf node_modules/.cache && yarn start`
-- Check if port is already in use and kill the process if needed
+- Clear cache and restart: `rm -rf node_modules/.cache && rm -rf packages/react-docs/.cache && yarn start`
 
 **Integration Issues:**
 - Ensure your branch is up to date with the latest changes before submitting PR
