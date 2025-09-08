@@ -6,27 +6,24 @@ import { AccordionItem, AccordionToggle, AccordionContent } from '@patternfly/re
 
 figma.connect(
   AccordionToggle,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=1423-687',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=1423-687',
   {
     props: {
       // string
-      expandText: figma.string('Expand Text'),
+      expandedContentText: figma.string('Expanded content text'),
+      expandedToggleText: figma.string('Expanded toggle text'),
+      toggleText: figma.string('Toggle text'),
 
       // enum
-      open: figma.enum('State', { Expanded: true }),
-      toggleTextExpanded: figma.enum('State', {
-        Default: figma.string('Toggle Text'),
-        Hover: figma.string('Toggle Text'),
-        Expanded: figma.string('Toggle Text Expanded')
-      })
+      isExpanded: figma.enum('State', { Expanded: true })
     },
     example: (props) => (
-      <AccordionItem isExpanded={props.open}>
+      <AccordionItem isExpanded={props.isExpanded}>
         <AccordionToggle onClick={() => {}} id="<your-id>">
-          {props.toggleTextExpanded}
+          {props.expandedToggleText}
         </AccordionToggle>
         <AccordionContent id="accordion-content-example">
-          <p>{props.expandText}</p>
+          <p>{props.expandedContentText}</p>
         </AccordionContent>
       </AccordionItem>
     )
