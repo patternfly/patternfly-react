@@ -562,3 +562,15 @@ test('should render an enabled add button', () => {
   const addButton = screen.getByLabelText('add-label');
   expect(addButton).not.toBeDisabled();
 });
+
+test(`should render with custom inline style and accent position inline style`, () => {
+  render(
+    <Tabs role="region" style="background-color: #12345;">
+      <Tab title="Test title" eventKey={0}>
+        Tab Content
+      </Tab>
+    </Tabs>
+  );
+
+  expect(screen.getByRole('region')).toHaveStyle(`background-color: #12345;--pf-v6-c-tabs--link-accent--start: 0px;`);
+});
