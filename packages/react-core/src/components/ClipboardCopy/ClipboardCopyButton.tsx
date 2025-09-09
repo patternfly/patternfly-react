@@ -11,8 +11,8 @@ export interface ClipboardCopyButtonProps
   children: React.ReactNode;
   /** ID of the copy button */
   id: string;
-  /** ID of the content that is being copied */
-  textId: string;
+  /** @deprecated ID of the content that is being copied */
+  textId?: string;
   /** Additional classes added to the copy button */
   className?: string;
   /** Exit delay on the copy button tooltip */
@@ -55,7 +55,6 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
   position = 'top',
   'aria-label': ariaLabel = 'Copyable input',
   id,
-  textId,
   children,
   variant = 'control',
   onTooltipHidden = () => {},
@@ -86,7 +85,6 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
         aria-label={ariaLabel}
         className={className}
         id={id}
-        aria-labelledby={`${id} ${textId}`}
         icon={<CopyIcon />}
         {...props}
         ref={triggerRef}

@@ -265,6 +265,22 @@ test('Passes position to ClipboardCopyButton when variant is inline-compact', ()
   expect(screen.getByText('position: bottom')).toBeVisible();
 });
 
+test('Passes copyAriaLabel to ClipboardCopyButton', () => {
+  render(<ClipboardCopy copyAriaLabel="Copy text">{children}</ClipboardCopy>);
+
+  expect(screen.getByText('button-ariaLabel: Copy text')).toBeVisible();
+});
+
+test('Passes copyAriaLabel over hoverTip to ClipboardCopyButton when both are provided', () => {
+  render(
+    <ClipboardCopy copyAriaLabel="Copy text" hoverTip="Hover tip">
+      {children}
+    </ClipboardCopy>
+  );
+
+  expect(screen.getByText('button-ariaLabel: Copy text')).toBeVisible();
+});
+
 test('Passes toggleAriaLabel to ClipboardCopyToggle when variant is expansion', () => {
   render(
     <ClipboardCopy variant="expansion" toggleAriaLabel="toggle label">

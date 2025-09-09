@@ -21,8 +21,7 @@ jest.mock('../../Tooltip', () => ({
 const requiredProps = {
   onClick: jest.fn(),
   children: 'Button content',
-  id: 'button-id',
-  textId: 'text-id'
+  id: 'button-id'
 };
 
 // Must be kept as first test to avoid Button's ouiaId updating in snapshots
@@ -37,37 +36,15 @@ test('Renders with passed id prop', () => {
   expect(screen.getByRole('button')).toHaveAttribute('id', 'button-id');
 });
 
-test('Renders with aria-labelledby with passed id and textId prop values', () => {
+test('Renders with aria-label', () => {
   render(
     <>
-      <div id="text-id">Copyable text</div>
-      <ClipboardCopyButton {...requiredProps} />
+      <div>Copyable text</div>
+      <ClipboardCopyButton aria-label="Copy" {...requiredProps} />
     </>
   );
 
-  expect(screen.getByRole('button')).toHaveAccessibleName('Copyable input Copyable text');
-});
-
-test('Renders with concatenated aria-label by default', () => {
-  render(
-    <>
-      <div id="text-id">Copyable text</div>
-      <ClipboardCopyButton {...requiredProps} />
-    </>
-  );
-
-  expect(screen.getByRole('button')).toHaveAccessibleName('Copyable input Copyable text');
-});
-
-test('Renders with concatenated aria-label when custom aria-label is passed', () => {
-  render(
-    <>
-      <div id="text-id">Copyable text</div>
-      <ClipboardCopyButton aria-label="Custom label" {...requiredProps} />
-    </>
-  );
-
-  expect(screen.getByRole('button')).toHaveAccessibleName('Custom label Copyable text');
+  expect(screen.getByRole('button')).toHaveAccessibleName('Copy');
 });
 
 test('Passes className to Button', () => {

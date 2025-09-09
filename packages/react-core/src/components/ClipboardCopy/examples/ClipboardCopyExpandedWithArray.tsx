@@ -7,7 +7,13 @@ const text = [
 ];
 
 export const ClipboardCopyExpandedWithArray: React.FunctionComponent = () => (
-  <ClipboardCopy hoverTip="Copy" clickTip="Copied" variant={ClipboardCopyVariant.expansion}>
+  <ClipboardCopy
+    copyAriaLabel="Copy expanded example with array"
+    toggleAriaLabel="Show content for expanded example with array"
+    hoverTip="Copy"
+    clickTip="Copied"
+    variant={ClipboardCopyVariant.expansion}
+  >
     {text.join(' ')}
   </ClipboardCopy>
 );
