@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { TreeView } from '../TreeView';
+import { AnimationsProvider } from '../../../helpers/AnimationsProvider';
 
 jest.mock('../TreeViewList', () => ({
   TreeViewList: ({
@@ -292,6 +293,33 @@ test('Passes hasAnimations to TreeViewListItem', () => {
   render(<TreeView data={[basicData]} hasAnimations={true} />);
 
   expect(screen.getByText('TreeViewListItem hasAnimations: true')).toBeVisible();
+});
+
+// Animation context tests
+test('respects AnimationsProvider context when no local hasAnimations prop', () => {
+  render(
+    <AnimationsProvider config={{ hasAnimations: true }}>
+      <TreeView data={[basicData]} />
+    </AnimationsProvider>
+  );
+
+  expect(screen.getByText('TreeViewListItem hasAnimations: true')).toBeVisible();
+});
+
+test('local hasAnimations prop takes precedence over context', () => {
+  render(
+    <AnimationsProvider config={{ hasAnimations: true }}>
+      <TreeView data={[basicData]} hasAnimations={false} />
+    </AnimationsProvider>
+  );
+
+  expect(screen.getByText('TreeViewListItem hasAnimations: false')).toBeVisible();
+});
+
+test('works without AnimationsProvider (backward compatibility)', () => {
+  render(<TreeView data={[basicData]} />);
+
+  expect(screen.getByText('TreeViewListItem hasAnimations: false')).toBeVisible();
 });
 test('Passes data.children to TreeViewListItem', () => {
   render(<TreeView data={[{ ...basicData, children: [{ name: 'Child 1' }] }]} />);

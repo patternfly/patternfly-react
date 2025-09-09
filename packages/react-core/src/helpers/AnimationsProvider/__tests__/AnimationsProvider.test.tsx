@@ -131,4 +131,29 @@ describe('AnimationsProvider', () => {
     expect(hasAnimationsComponents[0]).toHaveTextContent('animations-enabled'); // Main uses provider
     expect(hasAnimationsComponents[1]).toHaveTextContent('animations-disabled'); // Component override
   });
+
+  test('handles dynamic context changes', () => {
+    const TestComponent = ({ hasAnimations }: { hasAnimations: boolean }) => (
+      <AnimationsProvider config={{ hasAnimations }}>
+        <TestConfigComponent />
+        <TestHasAnimationsComponent />
+      </AnimationsProvider>
+    );
+
+    const { rerender } = render(<TestComponent hasAnimations={true} />);
+
+    // Initially animations enabled
+    expect(screen.getByTestId('config')).toHaveTextContent('animations-enabled');
+    expect(screen.getByTestId('has-animations')).toHaveTextContent('animations-enabled');
+
+    // Change to disabled
+    rerender(<TestComponent hasAnimations={false} />);
+    expect(screen.getByTestId('config')).toHaveTextContent('animations-disabled');
+    expect(screen.getByTestId('has-animations')).toHaveTextContent('animations-disabled');
+
+    // Change back to enabled
+    rerender(<TestComponent hasAnimations={true} />);
+    expect(screen.getByTestId('config')).toHaveTextContent('animations-enabled');
+    expect(screen.getByTestId('has-animations')).toHaveTextContent('animations-enabled');
+  });
 });

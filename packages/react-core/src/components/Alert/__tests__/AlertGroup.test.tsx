@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { Alert } from '../../Alert';
 import { AlertGroup } from '../../Alert';
 import { AlertActionCloseButton } from '../../../components/Alert/AlertActionCloseButton';
+import { AnimationsProvider } from '../../../helpers/AnimationsProvider';
 
 test('Alert Group renders without children', () => {
   render(
@@ -127,6 +128,99 @@ test('Does not call the callback set by updateTransitionEnd when transition ends
   await user.click(closeButton);
   expect(mockCallback).toHaveBeenCalledTimes(1);
   // The transitionend event firing should not cause the callback to be called again
+  fireEvent.transitionEnd(screen.getByText('Test Alert').closest('.pf-v6-c-alert-group__item') as HTMLElement);
+  expect(mockCallback).toHaveBeenCalledTimes(1);
+});
+
+// Animation context tests
+test('respects AnimationsProvider context when no local hasAnimations prop', () => {
+  const mockCallback = jest.fn();
+
+  render(
+    <AnimationsProvider config={{ hasAnimations: true }}>
+      <AlertGroup isToast appendTo={document.body}>
+        <Alert
+          isLiveRegion
+          title={'Test Alert'}
+          actionClose={<AlertActionCloseButton aria-label="Close" onClose={mockCallback} />}
+        />
+      </AlertGroup>
+    </AnimationsProvider>
+  );
+
+  const closeButton = screen.getByLabelText('Close');
+  fireEvent.click(closeButton);
+  expect(mockCallback).not.toHaveBeenCalled();
+
+  // Should call callback on transition end when animations are enabled via context
+  fireEvent.transitionEnd(screen.getByText('Test Alert').closest('.pf-v6-c-alert-group__item') as HTMLElement);
+  expect(mockCallback).toHaveBeenCalled();
+});
+
+test('local hasAnimations prop takes precedence over context', () => {
+  window.matchMedia = (query) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: () => {}, // deprecated
+    removeListener: () => {}, // deprecated
+    addEventListener: () => {},
+    removeEventListener: () => {},
+    dispatchEvent: () => true
+  });
+
+  const mockCallback = jest.fn();
+
+  render(
+    <AnimationsProvider config={{ hasAnimations: true }}>
+      <AlertGroup hasAnimations={false} isToast appendTo={document.body}>
+        <Alert
+          isLiveRegion
+          title={'Test Alert'}
+          actionClose={<AlertActionCloseButton aria-label="Close" onClose={mockCallback} />}
+        />
+      </AlertGroup>
+    </AnimationsProvider>
+  );
+
+  const closeButton = screen.getByLabelText('Close');
+  fireEvent.click(closeButton);
+  expect(mockCallback).toHaveBeenCalledTimes(1);
+
+  // Should not call callback again on transition end when local hasAnimations=false overrides context
+  fireEvent.transitionEnd(screen.getByText('Test Alert').closest('.pf-v6-c-alert-group__item') as HTMLElement);
+  expect(mockCallback).toHaveBeenCalledTimes(1);
+});
+
+test('works without AnimationsProvider (backward compatibility)', () => {
+  window.matchMedia = (query) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: () => {}, // deprecated
+    removeListener: () => {}, // deprecated
+    addEventListener: () => {},
+    removeEventListener: () => {},
+    dispatchEvent: () => true
+  });
+
+  const mockCallback = jest.fn();
+
+  render(
+    <AlertGroup isToast appendTo={document.body}>
+      <Alert
+        isLiveRegion
+        title={'Test Alert'}
+        actionClose={<AlertActionCloseButton aria-label="Close" onClose={mockCallback} />}
+      />
+    </AlertGroup>
+  );
+
+  const closeButton = screen.getByLabelText('Close');
+  fireEvent.click(closeButton);
+  expect(mockCallback).toHaveBeenCalledTimes(1);
+
+  // Should not call callback again on transition end when no context and no local hasAnimations
   fireEvent.transitionEnd(screen.getByText('Test Alert').closest('.pf-v6-c-alert-group__item') as HTMLElement);
   expect(mockCallback).toHaveBeenCalledTimes(1);
 });
