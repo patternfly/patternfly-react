@@ -18,7 +18,7 @@ exports[`Matches snapshot 1`] = `
         <input
           aria-invalid="false"
           aria-label="Copyable input"
-          data-ouia-component-id="OUIA-Generated-TextInputBase-34"
+          data-ouia-component-id="OUIA-Generated-TextInputBase-36"
           data-ouia-component-type="PF6/TextInput"
           data-ouia-safe="true"
           id="text-input-generated-id"

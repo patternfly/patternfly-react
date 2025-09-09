@@ -11,6 +11,8 @@ export interface ClipboardCopyButtonProps
   children: React.ReactNode;
   /** ID of the copy button */
   id: string;
+  /** @deprecated ID of the content that is being copied */
+  textId?: string;
   /** Additional classes added to the copy button */
   className?: string;
   /** Exit delay on the copy button tooltip */
