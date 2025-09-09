@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.3.1-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.8...@patternfly/react-core@6.3.1-prerelease.9) (2025-09-09)
+
+### Bug Fixes
+
+- **ClipboardCopy:** Adjust aria-labels on buttons ([#11996](https://github.com/patternfly/patternfly-react/issues/11996)) ([2ac9dcb](https://github.com/patternfly/patternfly-react/commit/2ac9dcb728cf6f360f96d53476c78747a36042b3))
+
 ## [6.3.1-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.7...@patternfly/react-core@6.3.1-prerelease.8) (2025-09-05)
 
 **Note:** Version bump only for package @patternfly/react-core

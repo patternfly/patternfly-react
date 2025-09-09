@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-drag-drop",
-  "version": "6.3.1-prerelease.8",
+  "version": "6.3.1-prerelease.9",
   "description": "PatternFly drag and drop solution",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
