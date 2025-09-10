@@ -1,6 +1,7 @@
 import { cloneElement, isValidElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import * as ReactDOM from 'react-dom';
 import { usePopper } from './thirdparty/react-popper/usePopper';
+import { Options as OffsetOptions } from './thirdparty/popper-core/modifiers/offset';
 import { Placement, Modifier } from './thirdparty/popper-core';
 import { clearTimeouts } from '../util';
 import { css } from '@patternfly/react-styles';
@@ -107,6 +108,8 @@ export interface PopperProps {
   };
   /** Distance of the popper to the trigger */
   distance?: number;
+  /** Override for the popper's offset */
+  offset?: OffsetOptions['offset'];
   /** Callback function when mouse enters trigger */
   onMouseEnter?: (event?: MouseEvent) => void;
   /** Callback function when mouse leaves trigger */
@@ -190,6 +193,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   isVisible = true,
   positionModifiers,
   distance = 0,
+  offset,
   onMouseEnter,
   onMouseLeave,
   onFocus,
@@ -420,7 +424,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       {
         name: 'offset',
         options: {
-          offset: [0, distance]
+          offset: offset || [0, distance]
         }
       },
       {
