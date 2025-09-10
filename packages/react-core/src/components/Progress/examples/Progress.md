@@ -86,7 +86,7 @@ import { useState } from 'react';
 When conveying status, you should ensure:
 
 - There is visible helper text that explains the status.
-- the helper text includes the status icon, as seen in our [basic helper text example](/components/helper-text#basic), and
+- The helper text includes the status icon, as seen in our [basic helper text example](/components/helper-text#basic).
 - the helper text is linked to the `<Progress>` component via the `aria-describedby` property, as seen in the [progress helper text example](#helper-text).
 
 ### Success
