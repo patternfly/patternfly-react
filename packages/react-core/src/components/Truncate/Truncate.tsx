@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef, useState, forwardRef } from 'react';
+import { Fragment, useEffect, useRef, useState, forwardRef, useImperativeHandle } from 'react';
 import styles from '@patternfly/react-styles/css/components/Truncate/truncate';
 import { css } from '@patternfly/react-styles';
 import { Tooltip, TooltipPosition, TooltipProps } from '../Tooltip';
@@ -75,6 +75,7 @@ const TruncateBase: React.FunctionComponent<TruncateProps> = ({
   maxCharsDisplayed,
   omissionContent = '\u2026',
   content,
+  innerRef,
   ...props
 }: TruncateProps) => {
   const [isTruncated, setIsTruncated] = useState(true);
@@ -83,6 +84,7 @@ const TruncateBase: React.FunctionComponent<TruncateProps> = ({
   const [shouldRenderByMaxChars, setShouldRenderByMaxChars] = useState(maxCharsDisplayed > 0);
 
   const textRef = useRef<HTMLElement>(null);
+  useImperativeHandle(innerRef, () => textRef.current!);
   const defaultSubParentRef = useRef<any>(null);
   const subParentRef = tooltipProps?.triggerRef || defaultSubParentRef;
   const observer = useRef(null);
