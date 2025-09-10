@@ -45,6 +45,7 @@ export const SelectCheckbox: React.FunctionComponent = () => {
       onSelect={onSelect}
       onOpenChange={(nextOpen: boolean) => setIsOpen(nextOpen)}
       toggle={toggle}
+      useFloatingUI
     >
       <SelectList>
         <SelectOption hasCheckbox value={0} isSelected={selectedItems.includes(0)}>

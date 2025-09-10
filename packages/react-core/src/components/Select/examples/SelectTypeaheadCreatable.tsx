@@ -247,6 +247,7 @@ export const SelectTypeaheadCreatable: React.FunctionComponent = () => {
       }}
       toggle={toggle}
       variant="typeahead"
+      useFloatingUI
     >
       <SelectList id="select-create-typeahead-listbox">
         {selectOptions.map((option, index) => (

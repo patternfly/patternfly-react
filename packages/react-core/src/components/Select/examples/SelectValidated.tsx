@@ -54,6 +54,7 @@ export const SelectValidated: React.FunctionComponent = () => {
         onOpenChange={(isOpen) => setIsOpen(isOpen)}
         toggle={toggle}
         shouldFocusToggleOnSelect
+        useFloatingUI
       >
         <SelectList>
           <SelectOption value="Success">Success</SelectOption>

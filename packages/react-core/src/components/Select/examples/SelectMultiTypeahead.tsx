@@ -243,6 +243,7 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
       }}
       toggle={toggle}
       variant="typeahead"
+      useFloatingUI
     >
       <SelectList isAriaMultiselectable id="select-multi-typeahead-listbox">
         {selectOptions.map((option, index) => (

@@ -240,6 +240,7 @@ export const SelectTypeahead: React.FunctionComponent = () => {
       }}
       toggle={toggle}
       variant="typeahead"
+      useFloatingUI
     >
       <SelectList id="select-typeahead-listbox">
         {selectOptions.map((option, index) => (
