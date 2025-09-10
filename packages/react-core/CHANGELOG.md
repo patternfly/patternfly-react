@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.3.1-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.10...@patternfly/react-core@6.3.1-prerelease.11) (2025-09-10)
+
+### Bug Fixes
+
+- **DataList:** allow keyboard to trigger DataListActions ([#11974](https://github.com/patternfly/patternfly-react/issues/11974)) ([cd59c2f](https://github.com/patternfly/patternfly-react/commit/cd59c2fd153f6f898841b37a9694c9dcf7cb60e4))
+
 ## [6.3.1-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.9...@patternfly/react-core@6.3.1-prerelease.10) (2025-09-10)
 
 **Note:** Version bump only for package @patternfly/react-core
