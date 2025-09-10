@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.3.1-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.11...@patternfly/react-core@6.3.1-prerelease.12) (2025-09-10)
+
+### Bug Fixes
+
+- **Truncate:** pass forwardRef properly ([#11992](https://github.com/patternfly/patternfly-react/issues/11992)) ([2af86aa](https://github.com/patternfly/patternfly-react/commit/2af86aaf7a0f8e10a5977975c3a3aa0fa22582b8))
+
+### Features
+
+- **Popper:** add passthrough for offset ([#11994](https://github.com/patternfly/patternfly-react/issues/11994)) ([087949d](https://github.com/patternfly/patternfly-react/commit/087949d601a7196de285d78e737fda9392b7adcf))
+
 ## [6.3.1-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.10...@patternfly/react-core@6.3.1-prerelease.11) (2025-09-10)
 
 ### Bug Fixes
