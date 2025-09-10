@@ -1,6 +1,7 @@
 import { Children, Component, cloneElement, isValidElement } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
+import menuStyles from '@patternfly/react-styles/css/components/Menu/menu';
 import { DataListContext } from './DataList';
 import { KeyTypes } from '../../helpers/constants';
 
@@ -65,6 +66,17 @@ class DataListItem extends Component<DataListItemProps> {
 
           const onKeyDown = (event: React.KeyboardEvent) => {
             if ([KeyTypes.Enter, KeyTypes.Space].includes(event.key)) {
+              const target: any = event.target as HTMLElement;
+
+              if (
+                target.closest(`.${menuStyles.menuItem}`) ||
+                target.parentNode.classList.contains(styles.dataListItemAction) ||
+                target.parentNode.classList.contains(styles.dataListItemControl)
+              ) {
+                // check other event handlers are not present.
+                return;
+              }
+
               event.preventDefault();
               updateSelectedDataListItem(event, id);
             }
