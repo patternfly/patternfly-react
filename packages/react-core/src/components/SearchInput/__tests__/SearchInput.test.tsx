@@ -5,6 +5,7 @@ import userEvent from '@testing-library/user-event';
 import { SearchInput } from '../SearchInput';
 import { FormGroup } from '../../Form';
 import { Button } from '../../Button';
+import { AnimationsProvider } from '../../../helpers/AnimationsProvider';
 import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-square-alt-icon';
 import badgeStyles from '@patternfly/react-styles/css/components/Badge/badge';
 import textInputGroupStyles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
@@ -362,4 +363,55 @@ test('Utilities are rendered when areUtilitiesDisplayed is set', () => {
 test('Additional props are spread when inputProps prop is passed', () => {
   render(<SearchInput aria-label="Test input" inputProps={{ autofocus: 'true' }} />);
   expect(screen.getByLabelText('Test input')).toHaveAttribute('autofocus', 'true');
+});
+
+// Animation context tests
+test('respects AnimationsProvider context when no local hasAnimations prop for expandable input', () => {
+  render(
+    <AnimationsProvider config={{ hasAnimations: true }}>
+      <SearchInput
+        data-testid="test-id"
+        expandableInput={{
+          isExpanded: false,
+          onToggleExpand: () => {},
+          toggleAriaLabel: 'Test label'
+        }}
+      />
+    </AnimationsProvider>
+  );
+
+  expect(screen.getByTestId('test-id')).toHaveClass(`${inputGroupStyles.modifiers.searchExpandable}`);
+});
+
+test('local hasAnimations prop takes precedence over context for expandable input', () => {
+  render(
+    <AnimationsProvider config={{ hasAnimations: true }}>
+      <SearchInput
+        data-testid="test-id"
+        expandableInput={{
+          hasAnimations: false,
+          isExpanded: false,
+          onToggleExpand: () => {},
+          toggleAriaLabel: 'Test label'
+        }}
+      />
+    </AnimationsProvider>
+  );
+
+  expect(screen.getByTestId('test-id')).not.toHaveClass(`${inputGroupStyles.modifiers.searchExpandable}`);
+});
+
+test('works without AnimationsProvider for expandable input (backward compatibility)', () => {
+  render(
+    <SearchInput
+      data-testid="test-id"
+      expandableInput={{
+        isExpanded: false,
+        onToggleExpand: () => {},
+        toggleAriaLabel: 'Test label'
+      }}
+    />
+  );
+
+  expect(screen.getByTestId('test-id')).not.toHaveClass(`${inputGroupStyles.modifiers.searchExpandable}`);
 });

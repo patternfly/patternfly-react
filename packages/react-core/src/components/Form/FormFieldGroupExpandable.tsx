@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { InternalFormFieldGroup } from './InternalFormFieldGroup';
+import { useHasAnimations } from '../../helpers';
 
 export interface FormFieldGroupExpandableProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onToggle'> {
   /** Anything that can be rendered as form field group content. */
@@ -25,10 +26,11 @@ export const FormFieldGroupExpandable: React.FunctionComponent<FormFieldGroupExp
   header,
   isExpanded = false,
   toggleAriaLabel,
-  hasAnimations,
+  hasAnimations: localHasAnimations,
   ...props
 }: FormFieldGroupExpandableProps) => {
   const [localIsExpanded, setIsExpanded] = useState(isExpanded);
+  const hasAnimations = useHasAnimations(localHasAnimations);
 
   return (
     <InternalFormFieldGroup
