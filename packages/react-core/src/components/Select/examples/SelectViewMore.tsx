@@ -122,6 +122,7 @@ export const SelectViewMore: React.FunctionComponent = () => {
       onSelect={onSelect}
       onOpenChange={(isOpen) => setIsOpen(isOpen)}
       toggle={{ toggleNode: toggle, toggleRef }}
+      useFloatingUI // FloatingUI is recommended for better positioning. Will become the default in future breaking change.
     >
       <SelectList>
         {visibleOptions.map((option) => {

@@ -46,6 +46,7 @@
     "subpaths": "node ../../scripts/exportSubpaths.mjs --config subpaths.config.json"
   },
   "dependencies": {
+    "@floating-ui/react": "^0.26.0",
     "@patternfly/react-icons": "workspace:^",
     "@patternfly/react-styles": "workspace:^",
     "@patternfly/react-tokens": "workspace:^",
