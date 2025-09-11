@@ -210,10 +210,10 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     if (flyoutTarget) {
       if (flyoutVisible) {
         const flyoutMenu = (flyoutTarget as HTMLElement).nextElementSibling;
-        const flyoutItems = Array.from(flyoutMenu.getElementsByTagName('UL')[0].children).filter(
+        const flyoutItems = Array.from(flyoutMenu?.getElementsByTagName('UL')[0]?.children || []).filter(
           (el) => !(el.classList.contains('pf-m-disabled') || el.classList.contains(styles.divider))
         );
-        (flyoutItems[0].firstChild as HTMLElement).focus();
+        (flyoutItems[0]?.firstChild as HTMLElement)?.focus();
       } else {
         flyoutTarget.focus();
       }

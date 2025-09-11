@@ -183,7 +183,6 @@ class MenuBase extends Component<MenuProps, MenuState> {
       !(event.target as HTMLElement).classList.contains(breadcrumbStyles.breadcrumbLink)
     ) {
       this.activeMenu = (event.target as HTMLElement).closest(`.${styles.menu}`);
-      this.setState({ disableHover: true });
     }
 
     if ((event.target as HTMLElement).tagName === 'INPUT') {
