@@ -1,7 +1,6 @@
 import { forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
-import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
 import { MenuContext, MenuItemContext } from './MenuContext';
 import { Button } from '../Button';
 export interface MenuItemActionProps extends React.HTMLProps<HTMLDivElement> {
@@ -45,24 +44,18 @@ const MenuItemActionBase: React.FunctionComponent<MenuItemActionProps> = ({
             onActionClick && onActionClick(event, itemId, actionId);
           };
           return (
-            <div
-              className={css(
-                styles.menuItemAction,
-                isFavorited !== null && 'pf-m-favorite',
-                isFavorited && styles.modifiers.favorited,
-                className
-              )}
-              {...props}
-            >
+            <div className={css(styles.menuItemAction, className)} {...props}>
               <Button
                 aria-label={ariaLabel}
                 onClick={onClickButton}
                 ref={innerRef}
                 role="menuitem"
                 variant="plain"
+                isFavorite={isFavorited !== null}
+                isFavorited={isFavorited ?? false}
                 tabIndex={-1}
                 isDisabled={isDisabled || isDisabledContext}
-                icon={icon === 'favorites' || isFavorited !== null ? <StarIcon /> : icon}
+                icon={isFavorited === null ? icon : undefined}
               />
             </div>
           );
