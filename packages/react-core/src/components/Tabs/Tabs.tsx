@@ -576,8 +576,12 @@ class Tabs extends Component<TabsProps, TabsState> {
           )}
           {...getOUIAProps(Tabs.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
           id={id && id}
-          style={{ [linkAccentLength.name]: currentLinkAccentLength, [linkAccentStart.name]: currentLinkAccentStart }}
           {...props}
+          style={{
+            [linkAccentLength.name]: currentLinkAccentLength,
+            [linkAccentStart.name]: currentLinkAccentStart,
+            ...props.style
+          }}
         >
           {expandable && isVertical && (
             <GenerateId>
