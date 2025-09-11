@@ -87,7 +87,7 @@ export interface SelectProps extends MenuProps, OUIAProps {
   shouldPreventScrollOnItemFocus?: boolean;
   /** Time in ms to wait before firing the toggles' focus event. Defaults to 0 */
   focusTimeoutDelay?: number;
-  /** @beta Flag to use Floating UI instead of Popper for positioning. Defaults to false. */
+  /** @beta Flag to use Floating UI instead of Popper for positioning. Defaults to false. If you're seeing positioning issues with the default Select component, try setting this flag to true. */
   useFloatingUI?: boolean;
 }
 

@@ -49,7 +49,7 @@ export const SelectGrouped: React.FunctionComponent = () => {
       onOpenChange={(isOpen) => setIsOpen(isOpen)}
       toggle={toggle}
       shouldFocusToggleOnSelect
-      useFloatingUI
+      useFloatingUI // FloatingUI is recommended for better positioning. Will become the default in future breaking change.
     >
       <SelectGroup label="Group 1">
         <SelectList>

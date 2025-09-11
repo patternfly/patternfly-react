@@ -247,7 +247,7 @@ export const SelectTypeaheadCreatable: React.FunctionComponent = () => {
       }}
       toggle={toggle}
       variant="typeahead"
-      useFloatingUI
+      useFloatingUI // FloatingUI is recommended for better positioning. Will become the default in future breaking change.
     >
       <SelectList id="select-create-typeahead-listbox">
         {selectOptions.map((option, index) => (

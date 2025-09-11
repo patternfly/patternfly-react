@@ -45,7 +45,7 @@ export const SelectCheckbox: React.FunctionComponent = () => {
       onSelect={onSelect}
       onOpenChange={(nextOpen: boolean) => setIsOpen(nextOpen)}
       toggle={toggle}
-      useFloatingUI
+      useFloatingUI // FloatingUI is recommended for better positioning. Will become the default in future breaking change.
     >
       <SelectList>
         <SelectOption hasCheckbox value={0} isSelected={selectedItems.includes(0)}>
