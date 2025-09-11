@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.3.1-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.13...@patternfly/react-core@6.3.1-prerelease.14) (2025-09-11)
+
+### Bug Fixes
+
+- **tabs:** spread style prop ([#11981](https://github.com/patternfly/patternfly-react/issues/11981)) ([fff4426](https://github.com/patternfly/patternfly-react/commit/fff44264869d6dbaf2f8cfc5c957f71fdb5b3257))
+
 ## [6.3.1-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.12...@patternfly/react-core@6.3.1-prerelease.13) (2025-09-11)
 
 ### Bug Fixes
