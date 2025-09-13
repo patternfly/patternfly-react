@@ -4,7 +4,7 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons//ellipsis-v-ic
 
 figma.connect(
   NotificationDrawerHeader,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=3170-17841&m=dev',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=3170-17841',
   {
     props: {
       // boolean

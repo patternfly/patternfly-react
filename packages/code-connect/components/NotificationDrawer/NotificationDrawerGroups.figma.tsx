@@ -5,17 +5,13 @@ import { NotificationDrawerGroup, NotificationDrawerList } from '@patternfly/rea
 
 figma.connect(
   NotificationDrawerGroup,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=3172-18190&m=dev',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=3172-18190',
   {
     props: {
       // boolean
       hasCount: figma.boolean('Has count', {
-        true: figma.children('Badge'),
-        false: undefined
-      }),
-      showUnreadCount: figma.boolean('Has count', {
-        true: 3,
-        false: NaN
+        true: figma.string('Text'),
+        false: 0
       }),
 
       // enum
@@ -30,7 +26,7 @@ figma.connect(
       children: figma.children('*')
     },
     example: (props) => (
-      <NotificationDrawerGroup isExpanded={props.isExpanded} count={props.showUnreadCount} title={props.headingText}>
+      <NotificationDrawerGroup isExpanded={props.isExpanded} count={props.hasCount} title={props.headingText}>
         <NotificationDrawerList>{props.children}</NotificationDrawerList>
       </NotificationDrawerGroup>
     )

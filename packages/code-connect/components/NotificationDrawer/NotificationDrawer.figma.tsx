@@ -8,7 +8,7 @@ import {
 
 figma.connect(
   NotificationDrawer,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=7172-99015',
+  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components?node-id=7172-99015',
   {
     variant: { Type: 'Grouped' },
     props: {
@@ -30,7 +30,7 @@ figma.connect(
 
 figma.connect(
   NotificationDrawer,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=7172-99015',
+  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components?node-id=7172-99015',
   {
     props: {
       // children
