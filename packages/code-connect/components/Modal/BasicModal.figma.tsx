@@ -46,7 +46,7 @@ figma.connect(
     },
     example: (props) => {
       /* eslint-disable */
-      const [isOpen, setIsOpen] = React.useState(false);
+      const [isModalOpen, setIsOpen] = React.useState(false);
       /* eslint-enable */
 
       return (
@@ -54,7 +54,7 @@ figma.connect(
           <Button
             variant="primary"
             onClick={() => {
-              setIsOpen(!isOpen);
+              setIsModalOpen(!isModalOpen);
             }}
           >
             Show about modal
@@ -62,7 +62,7 @@ figma.connect(
           <Modal
             aria-labelledby="<modal-id>"
             aria-describedby="<modal-body>"
-            isOpen={true}
+            isOpen={isModalOpen}
             onClose={() => {}} // handles the close button
             variant={props.variant}
           >

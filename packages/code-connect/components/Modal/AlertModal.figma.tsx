@@ -69,7 +69,7 @@ figma.connect(
             aria-labelledby="<modal-id>"
             aria-describedby="<modal-body>"
             isOpen={true}
-            onClick={() => {
+            onClose={() => {
               setIsOpen(!isOpen);
             }}
             variant={props.variant}

@@ -8,9 +8,6 @@ figma.connect(
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=2800-1075',
   {
     props: {
-      // string
-      labelGroupName: figma.string('Label group name'),
-
       // boolean
       numLabels: figma.boolean('Has collapsed labels', {
         true: 4,

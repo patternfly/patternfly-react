@@ -17,7 +17,7 @@ figma.connect(
       children: figma.children('*')
     },
     example: (props) => (
-      <JumpLinks isVertical label={props.label}>
+      <JumpLinks aria-label={props.label} isVertical label={props.label}>
         {props.children}
       </JumpLinks>
     )
