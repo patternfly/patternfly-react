@@ -5,7 +5,7 @@
       "components/Slider/*.tsx",
       "components/Spinner/*.tsx",
       "components/Tabs/*.tsx",
-      "components/TimeStamps/*.tsx",
+      "components/Timestamp/*.tsx",
       "components/ToggleGroup/*.tsx",
       "components/Tooltip/*.tsx"
     ],
