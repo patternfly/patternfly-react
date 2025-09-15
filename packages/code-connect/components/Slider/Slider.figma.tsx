@@ -8,7 +8,7 @@ import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 
 figma.connect(
   Slider,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=3155-97956&t=IzSunfrnw18ti37Y-11',
+  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components?node-id=3155-97956',
   {
     props: {
       // boolean

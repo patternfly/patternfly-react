@@ -6,43 +6,29 @@ import { Timestamp, TimestampTooltipVariant } from '@patternfly/react-core';
 
 figma.connect(
   Timestamp,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=7472-6718',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=7472-6718',
   {
     props: {
+      // date: figma.string('Date'),
       // string
       defaultTimestampContent: figma.string('✏️ Default timestamp content'),
 
       // boolean
-      hasTooltip: figma.boolean('With tooltip underline', {
-        true: {
-          tooltip: { variant: TimestampTooltipVariant.default, suffix: 'Coordinated Universal Time (UTC)' }
-        },
+      tooltip: figma.boolean('With tooltip underline', {
+        true: { variant: TimestampTooltipVariant.default },
         false: undefined
       }),
 
       // enum
-      dateFormat: figma.enum('Format', {
-        Default: 'full',
-        'Without time': 'medium',
-        'Without day': undefined,
-        Abbreviated: 'short',
-        Numeric: 'numeric'
-      }),
-      timeFormat: figma.enum('Format', {
-        'Without time': undefined,
-        Abbreviated: 'short',
-        Numeric: 'numeric'
-      }),
-      children: figma.children('*')
+      date: figma.enum('Format', {
+        Default: figma.string('✏️ Default timestamp content'),
+        'Without time': figma.string('✏️ Without time'),
+        'Without day': figma.string('✏️ Without day'),
+        Abbreviated: figma.string('✏️ Without time'),
+        Numberic: figma.string('✏️ Without time'),
+        'Custom content': figma.string('✏️ Without time')
+      })
     },
-    example: (props) => (
-      <Timestamp
-        date={props.defaultTimestampContent}
-        timeFormat={props.timeFormat}
-        dateFormat={props.dateFormat}
-        dateContent={props.dateFormat}
-        tooltip={props.hasTooltip}
-      />
-    )
+    example: (props) => <Timestamp tooltip={props.tooltip} date={props.date} />
   }
 );
