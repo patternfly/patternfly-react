@@ -2,12 +2,14 @@ import figma from '@figma/code-connect';
 import { Label } from '@patternfly/react-core';
 
 // Documentation for Label can be found at https://www.patternfly.org/components/label
+// TODO: DESIGN: Update status to be a prop
 
 figma.connect(
   Label,
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=2800-609',
   {
     props: {
+      status: 'info', // TODO: DESIGN: Update status to be a prop
       // string
       labelText: figma.string('Text'),
 
@@ -38,13 +40,16 @@ figma.connect(
         Cyan: 'teal', // TODO: DESIGN: Update to teal
         Gold: 'yellow' // TODO: DESIGN: Update to yellow
       }),
-      variant: figma.enum('Type', { Outlined: 'outline' }),
-
-      children: figma.children('*')
+      variant: figma.enum('Type', { Outlined: 'outline' })
     },
     example: (props) => (
-      <Label isCompact={props.isCompact} isEditable={props.isEditable} color={props.color} variant={props.variant}>
-        {props.children}
+      <Label
+        isCompact={props.isCompact}
+        status={props.status}
+        isEditable={props.isEditable}
+        color={props.color}
+        variant={props.variant}
+      >
         {props.labelText}
       </Label>
     )
