@@ -54,7 +54,7 @@ figma.connect(
           <Button
             variant="primary"
             onClick={() => {
-              setIsModalOpen(!isModalOpen);
+              setIsOpen(!isModalOpen);
             }}
           >
             Show about modal
@@ -63,7 +63,7 @@ figma.connect(
             aria-labelledby="<modal-id>"
             aria-describedby="<modal-body>"
             isOpen={isModalOpen}
-            onClose={() => {}} // handles the close button
+            onClose={() => setIsOpen(!isModalOpen)} // handles the close button
             variant={props.variant}
           >
             <ModalHeader
