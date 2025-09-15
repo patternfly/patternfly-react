@@ -1,9 +1,11 @@
 # Contributing to PatternFly React
 
-> ### Looking for a quick guide to PatternFly React Contribution? [Go Here](./packages/react-core/CONTRIBUTING.md)
+> **Looking for a quick guide to PatternFly React Contribution?** [Go Here](./packages/react-core/CONTRIBUTING.md)
 
 ## Outline
 
+- [Quick Start for New Contributors](#quick-start-for-new-contributors)
+- [Community Contributors Hall of Fame](#community-contributors-hall-of-fame)
 - [Code of Conduct](#code-of-conduct)
 - [Issues and Project Board](#issues-and-project-board)
   - [Issue Labels](#issue-labels)
@@ -14,20 +16,57 @@
   - [Creating Issues for New Components](#creating-issues-for-new-components)
   - [Contributing Components](#contributing-components)
   - [Adding Styling for your Components](#adding-styling-for-your-components)
-  - [Using Generators](#using-generators)
+
 - [Guidelines and Requirements](#guidelines-and-requirements)
   - [React Component Requirements](#react-component-requirements)
   - [Code Consistency](#code-consistency)
   - [Code Contribution Guidelines](#code-contribution-guidelines)
+- [Troubleshooting](#troubleshooting)
 - [Becoming a Maintainer](#becoming-a-maintainer)
   - [How do I become a maintainer?](#how-do-i-become-a-maintainer)
   - [How do I lose maintainers status?](#how-do-i-lose-maintainers-status)
   - [Quick Tips for New Maintainers](#quick-tips-for-new-maintainers)
 
+## Quick Start for New Contributors
+
+New to contributing to PatternFly React? Here's how to get started quickly:
+
+1. **🍴 Fork and Clone**: Fork the repository and clone it locally
+2. **📦 Install Dependencies**: Run `yarn install` to install dependencies  
+3. **🏗️ Build**: Run `yarn build` to build the project
+4. **🔍 Find an Issue**: Look for issues labeled [`good first issue`](https://github.com/patternfly/patternfly-react/labels/good%20first%20issue)
+5. **🌿 Create a Branch**: Create a new branch for your changes
+6. **✅ Test**: Run `yarn test` to ensure tests pass
+7. **📝 Submit PR**: Create a pull request with a clear description
+
+**Need help?** Join us on [PatternFly Slack](https://patternfly.slack.com/) in the `#patternfly-react` channel!
+
+## Community Contributors Hall of Fame
+
+We want to recognize and celebrate our amazing community contributors who have made significant contributions to PatternFly React in the past year! 🎉
+
+### Top Community Contributors (Last 12 Months as on July 1, 2025)
+
+The following contributors (excluding PatternFly team members and bots) have made outstanding contributions to the project:
+
+1. **@Mash707** - 49 contributions
+2. **@adamviktora** - 10 contributions
+3. **@logonoff** - 5 contributions
+
+### Notable Contributors
+
+Thank you to all our community contributors for helping make PatternFly React better! Every contribution, whether it's code, documentation, bug reports, or feature requests, helps improve the library for everyone.
+
+*This list is updated periodically and reflects contributions over the past 12 months. If you'd like to join this list, check out our [contribution guidelines](#contribution-process) below!*
+
 ## Code of conduct
 
 This project is governed by the [Contributor Covenant version 2.1][1]. All contributors and participants
 agree to abide by its terms. To report violations, send an email to [patternfly@redhat.com][2].
+
+## AI-assisted development guidelines
+
+Please reference [PatternFly's AI-assisted development guidelines](https://github.com/patternfly/.github/blob/main/CONTRIBUTING.md) if you'd like to contribute code generated using AI.
 
 ## Issues and project board
 
@@ -124,22 +163,7 @@ Inside the package directory:
 - Add a Sass file to the `sass/patternfly-react/` directory and use the file name `_<component>.scss`
 - Import the Sass file into `sass/patternfly-react/_patternfly-react.scss` using `@import "<component>";`
 
-### Using generators
 
-To make contributing components and packages easier a generator utility has been provided.
-
-To start the generator run:
-
-```sh
-yarn generate
-```
-
-Follow the prompts to generate the desired component or package.
-
-Currently the following generators are provided
-
-- PatternFly component
-- Package
 
 ## Guidelines and requirements
 
@@ -179,51 +203,36 @@ Please ensure that all React UI components contributed meet the following guidel
 
 Adhering to the following process is the best way to get your work included in the project:
 
-1. [Fork](https://help.github.com/fork-a-repo/) the project, clone your fork, and configure the remotes:
+1. **Fork and set up the repository** ([More information about forks from GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo))
 
+2. **Set up your development environment**
+
+**Prerequisites:**
+- [Node.js](https://nodejs.org/en/download/package-manager) version 22 or higher
+- [Enable Corepack](https://nodejs.org/api/corepack.html) for package manager management
+- Git configured with your GitHub account
+
+**Setup commands:**
 ```sh
-# Clone your fork of the repo into the current directory
-git clone https://github.com/<your-username>/patternfly-react.git
-# Navigate to the newly cloned directory
-cd patternfly-react
-# Assign the original repo to a remote called "upstream"
-git remote add upstream https://github.com/patternfly/patternfly-react.git
-# Fetch the code and branches from remote repo "upstream"
-git fetch upstream
-```
-
-2. Set up tooling
-
-[Install Node.js](https://nodejs.org/en/download/package-manager) version 22 (or higher), and make sure to [enable Corepack](https://nodejs.org/api/corepack.html). Then install the project dependencies and build it by running:
-
-```sh
+# Install dependencies
 yarn install
+
+# Build the project
 yarn build
+
+# Run tests to verify setup
+yarn test
+
+# Start development server (optional)
+yarn start
 ```
 
-3.  Create a branch:
+**Verify your setup:**
+- All tests should pass
+- Build should complete without errors
+- Development server should start (if running yarn start)
 
-```sh
-git checkout -b my-branch upstream/main
-```
-
-4. Generate your component
-
-```sh
-# Run the tool to Generate the component scaffolding
- yarn generate
-```
-
-- When you select the option to generate a PatternFly component, a structure resembling the following is generated
-  ```text
-  packages/react-core/src/[type]/[ComponentName]/
-    index.js - Barrel File exporting public exports
-    ComponentName.js - Component Implementation
-    ComponentName.test.js - Component Tests
-    ComponentName.md - Component Docs
-  ```
-
-5.  Develop your component. After development is complete, run build and ensure tests and lint standards pass.
+3. **Develop your component** - After development is complete, run build and ensure tests and lint standards pass.
 
 ```sh
 yarn build
@@ -234,26 +243,9 @@ Ensure no lint errors are introduced in `yarn-error.log` after running this comm
 
 ***Note to Windows users:*** you may need to change the path for the lint script in package.json to be `node_modules/eslint/bin/eslint`
 
-6.  Add a commit using `git commit`:
+4. **Follow commit conventions** - This project uses [`lerna`](https://lernajs.io/) to do automatic releases and generate a changelog based on the commit history. So we follow [conventional commit formatting](https://www.conventionalcommits.org/en/v1.0.0/) for all commit messages. Please follow this convention for your commit messages.
 
-This project uses [`lerna`](https://lernajs.io/) to do automatic releases and generate a changelog based on the commit history. So we follow [a convention][3] for commit messages. Please follow this convention for your commit messages.
-
-7.  Rebase
-
-Use `git rebase` (not `git merge`) to sync your work from time to time. Ensure all commits related to a single issue have been [squashed](https://github.com/ginatrapani/todo.txt-android/wiki/Squash-All-Commits-Related-to-a-Single-Issue-into-a-Single-Commit).
-
-```sh
-git fetch upstream
-git rebase upstream/main
-```
-
-8.  Push
-
-```sh
-git push origin my-branch
-```
-
-9.  Create a pull request
+5. **Create a pull request**
 
 [Open a pull request](https://help.github.com/articles/using-pull-requests/) with a clear title and description against the `main` branch. Please be sure to include all of the following in your PR:
 
@@ -275,6 +267,35 @@ Please help in ensuring all relevant issues are closed and that any subsequent i
 - Larger PF-React components can be broken into sub-issues and those issues should link back to the larger issue.
 - If an issue in Core will affect a component in PF-React, this issue should link to the main PF-React issue.
 - The CSS Developers and UX Designers should be tagged to review their respective PF-React issue.
+
+## Troubleshooting
+
+### Common Issues and Solutions
+
+**Build Failures:**
+- Ensure you're using Node.js version 22 or higher: `node --version`
+- Clear node_modules and reinstall: `rm -rf node_modules && yarn install`
+- Clear yarn cache: `yarn cache clean`
+
+**Test Failures:**
+- Run tests in watch mode for debugging: `yarn test --watch`
+- Update snapshots if components have intentionally changed: `yarn test -u`
+
+**Linting Errors:**
+- Auto-fix linting issues: `yarn lint --fix`
+- Format code with Prettier: `yarn prettier`
+
+**Development Server Issues:**
+- Clear cache and restart: `rm -rf node_modules/.cache && rm -rf packages/react-docs/.cache && yarn start`
+
+**Integration Issues:**
+- Ensure your branch is up to date with the latest changes before submitting PR
+- Squash commits related to a single issue before submitting
+
+**Still having issues?** 
+- Check existing [GitHub issues](https://github.com/patternfly/patternfly-react/issues)
+- Ask for help in [PatternFly Slack](https://patternfly.slack.com/) `#patternfly-react` channel
+- Create a new issue with detailed error information
 
 ## Becoming a maintainer
 
