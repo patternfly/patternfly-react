@@ -23,7 +23,7 @@
     "test:a11y": "patternfly-a11y --config patternfly-a11y.config"
   },
   "dependencies": {
-    "@patternfly/patternfly": "6.3.0-prerelease.55",
+    "@patternfly/patternfly": "6.3.0-prerelease.72",
     "@patternfly/react-charts": "workspace:^",
     "@patternfly/react-code-editor": "workspace:^",
     "@patternfly/react-core": "workspace:^",
@@ -37,7 +37,7 @@
     "victory": "^37.3.6"
   },
   "devDependencies": {
-    "@patternfly/documentation-framework": "^6.19.0",
+    "@patternfly/documentation-framework": "^6.22.8",
     "@patternfly/patternfly-a11y": "5.1.0"
   },
   "keywords": [
