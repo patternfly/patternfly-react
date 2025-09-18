@@ -29,10 +29,10 @@ export const DualListSelector: React.FunctionComponent<DualListSelectorProps> = 
   children,
   id,
   isTree = false,
-  hasAnimations: localHasAnimations,
+  hasAnimations: hasAnimationsProp,
   ...props
 }: DualListSelectorProps) => {
-  const hasAnimations = useHasAnimations(localHasAnimations);
+  const hasAnimations = useHasAnimations(hasAnimationsProp);
 
   return (
     <DualListSelectorContext.Provider value={{ isTree, hasAnimations }}>

@@ -9,151 +9,149 @@ const TestConfigComponent = () => {
 };
 
 // Test component that uses the useHasAnimations hook with a local prop
-const TestHasAnimationsComponent = ({ hasAnimations: localHasAnimations }: { hasAnimations?: boolean }) => {
-  const hasAnimations = useHasAnimations(localHasAnimations);
+const TestHasAnimationsComponent = ({ hasAnimations: hasAnimationsProp }: { hasAnimations?: boolean }) => {
+  const hasAnimations = useHasAnimations(hasAnimationsProp);
   return <div data-testid="has-animations">{hasAnimations ? 'animations-enabled' : 'animations-disabled'}</div>;
 };
 
-describe('AnimationsProvider', () => {
-  test('renders children correctly', () => {
-    render(
-      <AnimationsProvider config={{ hasAnimations: true }}>
-        <div data-testid="child">Test Child</div>
-      </AnimationsProvider>
-    );
+test('renders children correctly', () => {
+  render(
+    <AnimationsProvider config={{ hasAnimations: true }}>
+      <div data-testid="child">Test Child</div>
+    </AnimationsProvider>
+  );
 
-    expect(screen.getByTestId('child')).toBeInTheDocument();
-    expect(screen.getByTestId('child')).toHaveTextContent('Test Child');
-  });
+  expect(screen.getByTestId('child')).toBeInTheDocument();
+  expect(screen.getByTestId('child')).toHaveTextContent('Test Child');
+});
 
-  test('provides default config when no config is passed', () => {
-    render(
-      <AnimationsProvider>
+test('provides explicit config', () => {
+  render(
+    <AnimationsProvider config={{ hasAnimations: false }}>
+      <TestConfigComponent />
+    </AnimationsProvider>
+  );
+
+  expect(screen.getByTestId('config')).toHaveTextContent('animations-disabled');
+});
+
+test('provides animations enabled config', () => {
+  render(
+    <AnimationsProvider config={{ hasAnimations: true }}>
+      <TestConfigComponent />
+    </AnimationsProvider>
+  );
+
+  expect(screen.getByTestId('config')).toHaveTextContent('animations-enabled');
+});
+
+test('provides animations disabled config', () => {
+  render(
+    <AnimationsProvider config={{ hasAnimations: false }}>
+      <TestConfigComponent />
+    </AnimationsProvider>
+  );
+
+  expect(screen.getByTestId('config')).toHaveTextContent('animations-disabled');
+});
+
+test('useAnimationsConfig returns default config when no provider', () => {
+  render(<TestConfigComponent />);
+
+  expect(screen.getByTestId('config')).toHaveTextContent('animations-disabled');
+});
+
+test('useHasAnimations uses context when no local prop provided', () => {
+  render(
+    <AnimationsProvider config={{ hasAnimations: true }}>
+      <TestHasAnimationsComponent />
+    </AnimationsProvider>
+  );
+
+  expect(screen.getByTestId('has-animations')).toHaveTextContent('animations-enabled');
+});
+
+test('useHasAnimations uses local prop when provided (true)', () => {
+  render(
+    <AnimationsProvider config={{ hasAnimations: false }}>
+      <TestHasAnimationsComponent hasAnimations={true} />
+    </AnimationsProvider>
+  );
+
+  expect(screen.getByTestId('has-animations')).toHaveTextContent('animations-enabled');
+});
+
+test('useHasAnimations uses local prop when provided (false)', () => {
+  render(
+    <AnimationsProvider config={{ hasAnimations: true }}>
+      <TestHasAnimationsComponent hasAnimations={false} />
+    </AnimationsProvider>
+  );
+
+  expect(screen.getByTestId('has-animations')).toHaveTextContent('animations-disabled');
+});
+
+test('useHasAnimations works without provider', () => {
+  render(<TestHasAnimationsComponent />);
+
+  expect(screen.getByTestId('has-animations')).toHaveTextContent('animations-disabled');
+});
+
+test('useHasAnimations with local prop and no provider', () => {
+  render(<TestHasAnimationsComponent hasAnimations={true} />);
+
+  expect(screen.getByTestId('has-animations')).toHaveTextContent('animations-enabled');
+});
+
+test('works in app-level scenario with multiple components', () => {
+  // Simulate realistic app-level usage
+  const MockApp = () => (
+    <div>
+      <header>
         <TestConfigComponent />
-      </AnimationsProvider>
-    );
-
-    expect(screen.getByTestId('config')).toHaveTextContent('animations-disabled');
-  });
-
-  test('provides animations enabled config', () => {
-    render(
-      <AnimationsProvider config={{ hasAnimations: true }}>
-        <TestConfigComponent />
-      </AnimationsProvider>
-    );
-
-    expect(screen.getByTestId('config')).toHaveTextContent('animations-enabled');
-  });
-
-  test('provides animations disabled config', () => {
-    render(
-      <AnimationsProvider config={{ hasAnimations: false }}>
-        <TestConfigComponent />
-      </AnimationsProvider>
-    );
-
-    expect(screen.getByTestId('config')).toHaveTextContent('animations-disabled');
-  });
-
-  test('useAnimationsConfig returns default config when no provider', () => {
-    render(<TestConfigComponent />);
-
-    expect(screen.getByTestId('config')).toHaveTextContent('animations-disabled');
-  });
-
-  test('useHasAnimations uses context when no local prop provided', () => {
-    render(
-      <AnimationsProvider config={{ hasAnimations: true }}>
+      </header>
+      <main>
         <TestHasAnimationsComponent />
-      </AnimationsProvider>
-    );
+        <TestHasAnimationsComponent hasAnimations={false} /> {/* Component override */}
+      </main>
+    </div>
+  );
 
-    expect(screen.getByTestId('has-animations')).toHaveTextContent('animations-enabled');
-  });
+  render(
+    <AnimationsProvider config={{ hasAnimations: true }}>
+      <MockApp />
+    </AnimationsProvider>
+  );
 
-  test('useHasAnimations uses local prop when provided (true)', () => {
-    render(
-      <AnimationsProvider config={{ hasAnimations: false }}>
-        <TestHasAnimationsComponent hasAnimations={true} />
-      </AnimationsProvider>
-    );
+  const configs = screen.getAllByTestId('config');
+  const hasAnimationsComponents = screen.getAllByTestId('has-animations');
 
-    expect(screen.getByTestId('has-animations')).toHaveTextContent('animations-enabled');
-  });
+  expect(configs[0]).toHaveTextContent('animations-enabled'); // Header uses provider
+  expect(hasAnimationsComponents[0]).toHaveTextContent('animations-enabled'); // Main uses provider
+  expect(hasAnimationsComponents[1]).toHaveTextContent('animations-disabled'); // Component override
+});
 
-  test('useHasAnimations uses local prop when provided (false)', () => {
-    render(
-      <AnimationsProvider config={{ hasAnimations: true }}>
-        <TestHasAnimationsComponent hasAnimations={false} />
-      </AnimationsProvider>
-    );
+test('handles dynamic context changes', () => {
+  const TestComponent = ({ hasAnimations }: { hasAnimations: boolean }) => (
+    <AnimationsProvider config={{ hasAnimations }}>
+      <TestConfigComponent />
+      <TestHasAnimationsComponent />
+    </AnimationsProvider>
+  );
 
-    expect(screen.getByTestId('has-animations')).toHaveTextContent('animations-disabled');
-  });
+  const { rerender } = render(<TestComponent hasAnimations={true} />);
 
-  test('useHasAnimations works without provider', () => {
-    render(<TestHasAnimationsComponent />);
+  // Initially animations enabled
+  expect(screen.getByTestId('config')).toHaveTextContent('animations-enabled');
+  expect(screen.getByTestId('has-animations')).toHaveTextContent('animations-enabled');
 
-    expect(screen.getByTestId('has-animations')).toHaveTextContent('animations-disabled');
-  });
+  // Change to disabled
+  rerender(<TestComponent hasAnimations={false} />);
+  expect(screen.getByTestId('config')).toHaveTextContent('animations-disabled');
+  expect(screen.getByTestId('has-animations')).toHaveTextContent('animations-disabled');
 
-  test('useHasAnimations with local prop and no provider', () => {
-    render(<TestHasAnimationsComponent hasAnimations={true} />);
-
-    expect(screen.getByTestId('has-animations')).toHaveTextContent('animations-enabled');
-  });
-
-  test('works in app-level scenario with multiple components', () => {
-    // Simulate realistic app-level usage
-    const MockApp = () => (
-      <div>
-        <header>
-          <TestConfigComponent />
-        </header>
-        <main>
-          <TestHasAnimationsComponent />
-          <TestHasAnimationsComponent hasAnimations={false} /> {/* Component override */}
-        </main>
-      </div>
-    );
-
-    render(
-      <AnimationsProvider config={{ hasAnimations: true }}>
-        <MockApp />
-      </AnimationsProvider>
-    );
-
-    const configs = screen.getAllByTestId('config');
-    const hasAnimationsComponents = screen.getAllByTestId('has-animations');
-
-    expect(configs[0]).toHaveTextContent('animations-enabled'); // Header uses provider
-    expect(hasAnimationsComponents[0]).toHaveTextContent('animations-enabled'); // Main uses provider
-    expect(hasAnimationsComponents[1]).toHaveTextContent('animations-disabled'); // Component override
-  });
-
-  test('handles dynamic context changes', () => {
-    const TestComponent = ({ hasAnimations }: { hasAnimations: boolean }) => (
-      <AnimationsProvider config={{ hasAnimations }}>
-        <TestConfigComponent />
-        <TestHasAnimationsComponent />
-      </AnimationsProvider>
-    );
-
-    const { rerender } = render(<TestComponent hasAnimations={true} />);
-
-    // Initially animations enabled
-    expect(screen.getByTestId('config')).toHaveTextContent('animations-enabled');
-    expect(screen.getByTestId('has-animations')).toHaveTextContent('animations-enabled');
-
-    // Change to disabled
-    rerender(<TestComponent hasAnimations={false} />);
-    expect(screen.getByTestId('config')).toHaveTextContent('animations-disabled');
-    expect(screen.getByTestId('has-animations')).toHaveTextContent('animations-disabled');
-
-    // Change back to enabled
-    rerender(<TestComponent hasAnimations={true} />);
-    expect(screen.getByTestId('config')).toHaveTextContent('animations-enabled');
-    expect(screen.getByTestId('has-animations')).toHaveTextContent('animations-enabled');
-  });
+  // Change back to enabled
+  rerender(<TestComponent hasAnimations={true} />);
+  expect(screen.getByTestId('config')).toHaveTextContent('animations-enabled');
+  expect(screen.getByTestId('has-animations')).toHaveTextContent('animations-enabled');
 });

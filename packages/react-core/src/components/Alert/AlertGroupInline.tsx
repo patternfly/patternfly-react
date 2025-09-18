@@ -9,14 +9,14 @@ import { useHasAnimations } from '../../helpers';
 export const AlertGroupInline: React.FunctionComponent<AlertGroupProps> = ({
   className,
   children,
-  hasAnimations: localHasAnimations,
+  hasAnimations: hasAnimationsProp,
   isToast,
   isLiveRegion,
   onOverflowClick,
   overflowMessage,
   ...props
 }: AlertGroupProps) => {
-  const hasAnimations = useHasAnimations(localHasAnimations);
+  const hasAnimations = useHasAnimations(hasAnimationsProp);
   const [handleTransitionEnd, setHandleTransitionEnd] = useState<() => void>(() => () => {});
 
   const updateTransitionEnd = (onTransitionEnd: () => void) => {

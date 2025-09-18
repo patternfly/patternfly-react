@@ -9,7 +9,7 @@ export interface AnimationsConfig {
 /** Props for the AnimationsProvider component */
 export interface AnimationsProviderProps {
   /** Animation configuration settings */
-  config?: AnimationsConfig;
+  config: AnimationsConfig;
   /** Child components that will have access to the animations context */
   children: ReactNode;
 }
@@ -44,10 +44,9 @@ const AnimationsContext = createContext<AnimationsConfig>({
  * );
  * ```
  */
-export const AnimationsProvider: FunctionComponent<AnimationsProviderProps> = ({
-  config = { hasAnimations: false },
-  children
-}) => <AnimationsContext.Provider value={config}>{children}</AnimationsContext.Provider>;
+export const AnimationsProvider: FunctionComponent<AnimationsProviderProps> = ({ config, children }) => (
+  <AnimationsContext.Provider value={config}>{children}</AnimationsContext.Provider>
+);
 
 /**
  * Hook to access the animations configuration from the nearest AnimationsProvider.
@@ -59,9 +58,9 @@ export const AnimationsProvider: FunctionComponent<AnimationsProviderProps> = ({
  *
  * @example
  * ```tsx
- * const MyComponent = ({ hasAnimations: localHasAnimations, ...props }) => {
+ * const MyComponent = ({ hasAnimations: hasAnimationsProp, ...props }) => {
  *   const { hasAnimations: contextHasAnimations } = useAnimationsConfig();
- *   const hasAnimations = localHasAnimations ?? contextHasAnimations;
+ *   const hasAnimations = hasAnimationsProp ?? contextHasAnimations;
  *
  *   return <div className={hasAnimations ? 'with-animations' : ''} {...props} />;
  * };
@@ -82,24 +81,24 @@ export const useAnimationsConfig = (): AnimationsConfig => {
  * Utility hook that combines local hasAnimations prop with context configuration.
  * The local prop takes precedence when explicitly set, otherwise falls back to context.
  *
- * @param localHasAnimations - The hasAnimations prop passed directly to the component
+ * @param hasAnimationsProp - The hasAnimations prop passed directly to the component
  * @returns The resolved hasAnimations value
  *
  * @example
  * ```tsx
- * const MyComponent = ({ hasAnimations: localHasAnimations, ...props }) => {
- *   const hasAnimations = useHasAnimations(localHasAnimations);
+ * const MyComponent = ({ hasAnimations: hasAnimationsProp, ...props }) => {
+ *   const hasAnimations = useHasAnimations(hasAnimationsProp);
  *
  *   return <div className={hasAnimations ? 'animated' : 'static'} {...props} />;
  * };
  * ```
  */
-export const useHasAnimations = (localHasAnimations?: boolean): boolean => {
+export const useHasAnimations = (hasAnimationsProp?: boolean): boolean => {
   const { hasAnimations: contextHasAnimations } = useAnimationsConfig();
 
   // Local prop takes precedence when explicitly set (including false)
   // If local prop is undefined, fall back to context
-  return localHasAnimations !== undefined ? localHasAnimations : (contextHasAnimations ?? false);
+  return hasAnimationsProp ?? contextHasAnimations ?? false;
 };
 
 AnimationsProvider.displayName = 'AnimationsProvider';

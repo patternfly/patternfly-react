@@ -59,7 +59,7 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
   badgeProps,
   itemData,
   isDisabled = false,
-  hasAnimations: localHasAnimations,
+  hasAnimations: hasAnimationsProp,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   useMemo,
   ...props
@@ -67,7 +67,7 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
   const ref = useRef(null);
   const [isExpanded, setIsExpanded] = useState(defaultExpanded || false);
   const { setFocusedOption } = useContext(DualListSelectorListContext);
-  const hasAnimations = useHasAnimations(localHasAnimations);
+  const hasAnimations = useHasAnimations(hasAnimationsProp);
 
   useEffect(() => {
     setIsExpanded(defaultExpanded);

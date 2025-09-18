@@ -26,11 +26,11 @@ export const FormFieldGroupExpandable: React.FunctionComponent<FormFieldGroupExp
   header,
   isExpanded = false,
   toggleAriaLabel,
-  hasAnimations: localHasAnimations,
+  hasAnimations: hasAnimationsProp,
   ...props
 }: FormFieldGroupExpandableProps) => {
   const [localIsExpanded, setIsExpanded] = useState(isExpanded);
-  const hasAnimations = useHasAnimations(localHasAnimations);
+  const hasAnimations = useHasAnimations(hasAnimationsProp);
 
   return (
     <InternalFormFieldGroup

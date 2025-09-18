@@ -30,7 +30,7 @@ export interface AlertGroupProps extends Omit<React.HTMLProps<HTMLUListElement>,
 export const AlertGroup: React.FunctionComponent<AlertGroupProps> = ({
   className,
   children,
-  hasAnimations: localHasAnimations,
+  hasAnimations: hasAnimationsProp,
   isToast,
   isLiveRegion,
   onOverflowClick,
@@ -42,7 +42,7 @@ export const AlertGroup: React.FunctionComponent<AlertGroupProps> = ({
 }: AlertGroupProps) => {
   const containerRef = useRef<HTMLElement | null>(null);
   const [isContainerReady, setIsContainerReady] = useState(false);
-  const hasAnimations = useHasAnimations(localHasAnimations);
+  const hasAnimations = useHasAnimations(hasAnimationsProp);
 
   const getTargetElement = () => {
     if (typeof appendTo === 'function') {

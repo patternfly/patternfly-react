@@ -104,14 +104,14 @@ const TableBase: React.FunctionComponent<TableProps> = ({
   isNested = false,
   isStriped = false,
   isExpandable = false,
-  hasAnimations: localHasAnimations,
+  hasAnimations: hasAnimationsProp,
   hasNoInset = false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   nestedHeaderColumnSpans,
   selectableRowCaptionText,
   ...props
 }: TableProps) => {
-  const hasAnimations = useHasAnimations(localHasAnimations);
+  const hasAnimations = useHasAnimations(hasAnimationsProp);
   const ref = useRef(null);
   const tableRef = innerRef || ref;
 

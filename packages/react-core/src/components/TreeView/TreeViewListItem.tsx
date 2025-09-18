@@ -103,11 +103,11 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
   expandedIcon,
   action,
   compareItems,
-  hasAnimations: localHasAnimations,
+  hasAnimations: hasAnimationsProp,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   useMemo
 }: TreeViewListItemProps) => {
-  const hasAnimations = useHasAnimations(localHasAnimations);
+  const hasAnimations = useHasAnimations(hasAnimationsProp);
   const [internalIsExpanded, setIsExpanded] = useState(defaultExpanded);
   useEffect(() => {
     if (isExpanded !== undefined && isExpanded !== null) {

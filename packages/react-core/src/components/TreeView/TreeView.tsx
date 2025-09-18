@@ -136,10 +136,10 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
   useMemo,
   'aria-label': ariaLabel,
   'aria-labelledby': ariaLabelledby,
-  hasAnimations: localHasAnimations,
+  hasAnimations: hasAnimationsProp,
   ...props
 }: TreeViewProps) => {
-  const hasAnimations = useHasAnimations(localHasAnimations);
+  const hasAnimations = useHasAnimations(hasAnimationsProp);
   const treeViewList = (
     <TreeViewList
       isNested={isNested}

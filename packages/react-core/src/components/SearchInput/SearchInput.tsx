@@ -181,8 +181,8 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   const popperRef = useRef(null);
   const [focusAfterExpandChange, setFocusAfterExpandChange] = useState(false);
 
-  const { isExpanded, onToggleExpand, toggleAriaLabel, hasAnimations: localHasAnimations } = expandableInput || {};
-  const hasAnimations = useHasAnimations(localHasAnimations);
+  const { isExpanded, onToggleExpand, toggleAriaLabel, hasAnimations: hasAnimationsProp } = expandableInput || {};
+  const hasAnimations = useHasAnimations(hasAnimationsProp);
 
   useEffect(() => {
     // this effect and the focusAfterExpandChange variable are needed to focus the input/toggle as needed when the
