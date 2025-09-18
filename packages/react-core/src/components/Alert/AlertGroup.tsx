@@ -37,7 +37,7 @@ export const AlertGroup: React.FunctionComponent<AlertGroupProps> = ({
   overflowMessage,
   'aria-label': ariaLabel,
 
-  appendTo, // do not pass down to ul
+  appendTo,
   ...props
 }: AlertGroupProps) => {
   const containerRef = useRef<HTMLElement | null>(null);
