@@ -51,7 +51,7 @@ export const getOpacityTransition = (animationDuration: number) =>
 export interface PopperOptions {
   /** popper direction */
   direction?: 'up' | 'down';
-  /** popper position */
+  /** Horizontal position of the popper. Use the additional prop preventOverflow if seeing clipping. */
   position?: 'right' | 'left' | 'center' | 'start' | 'end';
   /** Instead of direction and position can set the placement of the popper */
   placement?: Placement;
