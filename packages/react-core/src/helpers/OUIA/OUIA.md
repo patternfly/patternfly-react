@@ -1,6 +1,6 @@
 ---
 id: Open UI Automation
-section: developer-resources
+section: developer-guides
 ---
 import { Fragment } from 'react';
 
