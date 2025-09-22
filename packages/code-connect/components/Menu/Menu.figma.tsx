@@ -4,291 +4,231 @@ import {
   DrilldownMenu,
   Menu,
   MenuContent,
+  MenuSearch,
   MenuGroup,
   MenuItem,
-  MenuItemAction,
-  MenuList
+  MenuList,
+  MenuSearchInput,
+  SearchInput,
+  MenuItemAction
 } from '@patternfly/react-core';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 
+// TODO: DESIGN: Create menu group
+// TODO: DESIGN: Create menu list
 // Documentation for Menu can be found at https://www.patternfly.org/components/menu
 
-// const drilldownMenuModel = {
-//   id: 'drilldown-drilldownMenuStart',
-//   children: (
-//     <DrilldownMenu id="drilldown-drilldownMenuStart">
-//       <MenuItem itemId="group:start_rollout_breadcrumb" direction="up">
-//         Start rollout
-//       </MenuItem>
-//       <Divider component="li" />
-//       <MenuItem
-//         itemId="group:app_grouping"
-//         description="Groups A-C"
-//         direction="down"
-//         drilldownMenu={
-//           <DrilldownMenu id="drilldown-drilldownMenuStartGrouping">
-//             <MenuItem itemId="group:app_grouping_breadcrumb" direction="up">
-//               Application grouping
-//             </MenuItem>
-//             <Divider component="li" />
-//             <MenuItem itemId="group_a">Group A</MenuItem>
-//             <MenuItem itemId="group_b">Group B</MenuItem>
-//             <MenuItem itemId="group_c">Group C</MenuItem>
-//           </DrilldownMenu>
-//         }
-//       >
-//         Application grouping
-//       </MenuItem>
-//       <MenuItem itemId="count">Count</MenuItem>
-//       <MenuItem
-//         itemId="group:labels"
-//         direction="down"
-//         drilldownMenu={
-//           <DrilldownMenu id="drilldown-drilldownMenuStartLabels">
-//             <MenuItem itemId="group:labels_breadcrumb" direction="up">
-//               Labels
-//             </MenuItem>
-//             <Divider component="li" />
-//             <MenuItem itemId="label_1">Label 1</MenuItem>
-//             <MenuItem itemId="label_2">Label 2</MenuItem>
-//             <MenuItem itemId="label_3">Label 3</MenuItem>
-//           </DrilldownMenu>
-//         }
-//       >
-//         Labels
-//       </MenuItem>
-//       <MenuItem itemId="annotations">Annotations</MenuItem>
-//     </DrilldownMenu>
-//   )
-// };
+figma.connect(
+  Menu,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/Em2QWrHDxDS4LUxo58Hust/PatternFly-6--Components?node-id=2590-18585',
+  {
+    props: {
+      hasSearchDivider: figma.boolean('Show search input', {
+        true: <Divider />,
+        false: undefined
+      }),
+      searchInput: figma.boolean('Show search input', {
+        true: (
+          <MenuSearch>
+            <MenuSearchInput>
+              <SearchInput value="Search input" aria-label="Filter menu items" onChange={() => {}} />
+            </MenuSearchInput>
+          </MenuSearch>
+        ),
+        false: undefined
+      }),
+      isPlain: figma.enum('Menu', { 'Plain Menu': true }),
+      menuItems: figma.children('.MenuItem')
+    },
+    example: (props) => (
+      <Menu activeItemId="<active-item-id>" onSelect={() => {}} isPlain={props.isPlain}>
+        {props.searchInput}
+        {props.hasSearchDivider}
+        <MenuContent>
+          <MenuList>{props.menuItems}</MenuList>
+        </MenuContent>
+      </Menu>
+    )
+  }
+);
+
+// static example, grouping components don't exist in Figma design
+figma.connect(
+  Menu,
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/Em2QWrHDxDS4LUxo58Hust/PatternFly-6--Components?node-id=2590-18585',
+  {
+    variant: { Menu: 'Titled Groups' },
+    props: {
+      // ...sharedProps,
+      isPlain: figma.enum('Menu', { 'Plain Menu': true })
+    },
+    example: (props) => (
+      <Menu activeItemId="<active-item-id>" onSelect={() => {}} isPlain={props.isPlain}>
+        <MenuContent>
+          <MenuGroup>
+            <MenuList>
+              <MenuItem to="#" itemId="<item-id>">
+                Link not in group
+              </MenuItem>
+            </MenuList>
+          </MenuGroup>
+          <Divider />
+          <MenuGroup label="Group 1" labelHeadingLevel="h3">
+            <MenuList>
+              <MenuItem to="#" itemId={1}>
+                Link 1
+              </MenuItem>
+              <MenuItem itemId={2}>Link 2</MenuItem>
+            </MenuList>
+          </MenuGroup>
+          <Divider />
+          <MenuGroup label="Group 2" labelHeadingLevel="h3">
+            <MenuList>
+              <MenuItem to="#" itemId={3}>
+                Link 1
+              </MenuItem>
+              <MenuItem to="#" itemId={4}>
+                Link 2
+              </MenuItem>
+            </MenuList>
+          </MenuGroup>
+        </MenuContent>
+      </Menu>
+    )
+  }
+);
+
+// static example, grouping components don't exist in Figma design
+const drilldownMenuModel = {
+  id: 'drilldown-drilldownMenuStart',
+  children: (
+    <DrilldownMenu id="drilldown-drilldownMenuStart">
+      <MenuItem itemId="group:start_rollout_breadcrumb" direction="up">
+        Start rollout
+      </MenuItem>
+      <Divider component="li" />
+      <MenuItem
+        itemId="group:app_grouping"
+        description="Groups A-C"
+        direction="down"
+        drilldownMenu={
+          <DrilldownMenu id="drilldown-drilldownMenuStartGrouping">
+            <MenuItem itemId="group:app_grouping_breadcrumb" direction="up">
+              Application grouping
+            </MenuItem>
+            <Divider component="li" />
+            <MenuItem itemId="group_a">Group A</MenuItem>
+            <MenuItem itemId="group_b">Group B</MenuItem>
+            <MenuItem itemId="group_c">Group C</MenuItem>
+          </DrilldownMenu>
+        }
+      >
+        Application grouping
+      </MenuItem>
+      <MenuItem itemId="count">Count</MenuItem>
+      <MenuItem
+        itemId="group:labels"
+        direction="down"
+        drilldownMenu={
+          <DrilldownMenu id="drilldown-drilldownMenuStartLabels">
+            <MenuItem itemId="group:labels_breadcrumb" direction="up">
+              Labels
+            </MenuItem>
+            <Divider component="li" />
+            <MenuItem itemId="label_1">Label 1</MenuItem>
+            <MenuItem itemId="label_2">Label 2</MenuItem>
+            <MenuItem itemId="label_3">Label 3</MenuItem>
+          </DrilldownMenu>
+        }
+      >
+        Labels
+      </MenuItem>
+      <MenuItem itemId="annotations">Annotations</MenuItem>
+    </DrilldownMenu>
+  )
+};
 
 figma.connect(
   Menu,
   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=2590-18585',
   {
+    variant: { Menu: 'Drill Down Start' },
     props: {
+      ...drilldownMenuModel,
+
+      // boolean
+      showSearchInput: figma.boolean('Show search input', {
+        true: true,
+        false: undefined
+      }),
+
+      // enum
       isPlain: figma.enum('Menu', { 'Plain Menu': true }),
-      menuItems: figma.children('Menu Item')
+      actions: figma.enum('Menu', {
+        'With Actions': (
+          <MenuItemAction icon={<CodeBranchIcon />} actionId="code" onClick={() => {}} aria-label="Code" />
+        )
+      }),
+      onSelect: figma.enum('Menu', { 'Option Select': () => {} }),
+      drilldown: figma.enum('Menu', {
+        'Drill Down Breadcrumbs': {
+          containsDrilldown: true,
+          drilldownItemPath: 'drilldownPath',
+          drilledInMenus: 'menuDrilledIn',
+          activeMenu: 'activeMenu',
+          onDrillIn: () => {},
+          onDrillOut: () => {},
+          drilldownMenu: drilldownMenuModel,
+          onGetMenuHeight: () => {},
+          onSelect: () => {}
+        },
+        'Drill Down Start': {
+          containsDrilldown: true,
+          drilldownItemPath: 'drilldownPath',
+          drilledInMenus: 'menuDrilledIn',
+          activeMenu: 'activeMenu',
+          onDrillIn: () => {},
+          onDrillOut: () => {},
+          drilldownMenu: drilldownMenuModel,
+          onGetMenuHeight: () => {},
+          onSelect: () => {}
+        },
+        'Drill Down Return': {
+          containsDrilldown: true,
+          drilldownItemPath: 'drilldownPath',
+          drilledInMenus: 'menuDrilledIn',
+          activeMenu: 'activeMenu',
+          onDrillIn: () => {},
+          onDrillOut: () => {},
+          drilldownMenu: drilldownMenuModel,
+          onGetMenuHeight: () => {},
+          onSelect: () => {}
+        }
+      }),
+
+      children: figma.children('*')
     },
+
     example: (props) => (
-      <Menu activeItemId={0} onSelect={() => {}} isPlain={props.isPlain}>
+      <Menu
+        activeItemId="<activeItemId>"
+        // activeMenu={props.drilldown.activeMenu}
+        onSelect={props.onSelect}
+        isPlain={props.isPlain}
+        actions={props.actions}
+        showSearchInput={props.showSearchInput}
+        role="listbox"
+        containsDrilldown={props.drilldown.containsDrilldown}
+        drilldownItemPath={props.drilldown.drilldownItemPath}
+        drilledInMenus={props.drilldown.drilledInMenus}
+        onDrillIn={props.drilldown.onDrillIn}
+        onDrillOut={props.drilldown.onDrillOut}
+        onGetMenuHeight={props.drilldown.onGetMenuHeight}
+      >
         <MenuContent>
-          <MenuList>{props.menuItems}</MenuList>
+          <MenuList>{props.children}</MenuList>
         </MenuContent>
-        {/* <MenuGroup label="Menu group label" labelHeadingLevel="h3">
-          {props.children}
-            <MenuList>{props.children}</MenuList>
-          </MenuGroup>
-          <Divider />
-          <MenuGroup label="Menu group label" labelHeadingLevel="h3">
-            <MenuList>{props.children}</MenuList>
-          </MenuGroup>
-        </MenuContent> */}
       </Menu>
     )
   }
 );
-// figma.connect(
-//   Menu,
-//   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=2590-18585',
-//   {
-//     variant: { Menu: 'Titled Groups' },
-//     props: {
-//       children: figma.children('xx')
-//     },
-//     example: (props) => (
-//       <Menu>
-//         <MenuContent>
-//           {props.children}
-
-//           <MenuGroup label="Menu group label" labelHeadingLevel="h3">
-//             <MenuList>{props.children}</MenuList>
-//           </MenuGroup>
-//           <Divider />
-//           <MenuGroup label="Menu group label" labelHeadingLevel="h3">
-//             <MenuList>{props.children}</MenuList>
-//           </MenuGroup>
-//         </MenuContent>
-//       </Menu>
-//     )
-//   }
-// );
-
-// figma.connect(
-//   Menu,
-//   'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=2590-18585',
-//   {
-//     variant: { Menu: 'Drilldown Start' },
-//     props: {
-//       ...drilldownMenuModel,
-
-//       // boolean
-//       showSearchInput: figma.boolean('Show search input', {
-//         true: true,
-//         false: undefined
-//       }),
-
-//       // enum
-//       isPlain: figma.enum('Menu', { 'Plain Menu': true }),
-//       actions: figma.enum('Menu', {
-//         'With Actions': (
-//           <MenuItemAction icon={<CodeBranchIcon />} actionId="code" onClick={() => {}} aria-label="Code" />
-//         )
-//       }),
-//       onSelect: figma.enum('Menu', { 'Option Select': () => {} }),
-//       drilldown: figma.enum('Menu', {
-//         Basic: {
-//           containsDrilldown: false,
-//           drilldownItemPath: undefined,
-//           drilledInMenus: undefined,
-//           activeMenu: undefined,
-//           onDrillIn: undefined,
-//           onDrillOut: undefined,
-//           drilldownMenu: undefined,
-//           onGetMenuHeight: undefined
-//         },
-//         'Plain Menu': {
-//           containsDrilldown: false,
-//           drilldownItemPath: undefined,
-//           drilledInMenus: undefined,
-//           activeMenu: undefined,
-//           onDrillIn: undefined,
-//           onDrillOut: undefined,
-//           drilldownMenu: undefined,
-//           onGetMenuHeight: undefined
-//         },
-//         'With Actions': {
-//           containsDrilldown: false,
-//           drilldownItemPath: undefined,
-//           drilledInMenus: undefined,
-//           activeMenu: undefined,
-//           onDrillIn: undefined,
-//           onDrillOut: undefined,
-//           drilldownMenu: undefined,
-//           onGetMenuHeight: undefined
-//         },
-//         'With Separator': {
-//           containsDrilldown: false,
-//           drilldownItemPath: undefined,
-//           drilledInMenus: undefined,
-//           activeMenu: undefined,
-//           onDrillIn: undefined,
-//           onDrillOut: undefined,
-//           onGetMenuHeight: undefined
-//         },
-//         'With Links': {
-//           containsDrilldown: false,
-//           drilldownItemPath: undefined,
-//           drilledInMenus: undefined,
-//           activeMenu: undefined,
-//           onDrillIn: undefined,
-//           onDrillOut: undefined,
-//           drilldownMenu: undefined,
-//           onGetMenuHeight: undefined,
-//           onSelect: undefined
-//         },
-//         'Option Select': {
-//           containsDrilldown: false,
-//           drilldownItemPath: undefined,
-//           drilledInMenus: undefined,
-//           activeMenu: undefined,
-//           onDrillIn: undefined,
-//           onDrillOut: undefined,
-//           drilldownMenu: undefined,
-//           onGetMenuHeight: undefined,
-//           onSelect: undefined
-//         },
-//         'Item Checkbox': {
-//           containsDrilldown: false,
-//           drilldownItemPath: undefined,
-//           drilledInMenus: undefined,
-//           activeMenu: undefined,
-//           onDrillIn: undefined,
-//           onDrillOut: undefined,
-//           drilldownMenu: undefined,
-//           onGetMenuHeight: undefined,
-//           onSelect: undefined
-//         },
-//         'With favorites': {
-//           containsDrilldown: false,
-//           drilldownItemPath: undefined,
-//           drilledInMenus: undefined,
-//           activeMenu: undefined,
-//           onDrillIn: undefined,
-//           onDrillOut: undefined,
-//           drilldownMenu: undefined,
-//           onGetMenuHeight: undefined,
-//           onSelect: undefined
-//         },
-//         Danger: {
-//           containsDrilldown: false,
-//           drilldownItemPath: undefined,
-//           drilledInMenus: undefined,
-//           activeMenu: undefined,
-//           onDrillIn: undefined,
-//           onDrillOut: undefined,
-//           drilldownMenu: undefined,
-//           onGetMenuHeight: undefined,
-//           onSelect: undefined
-//         },
-//         'Drill Down Breadcrumbs': {
-//           containsDrilldown: true,
-//           drilldownItemPath: 'drilldownPath',
-//           drilledInMenus: 'menuDrilledIn',
-//           activeMenu: 'activeMenu',
-//           onDrillIn: () => {},
-//           onDrillOut: () => {},
-//           drilldownMenu: drilldownMenuModel,
-//           onGetMenuHeight: () => {},
-//           onSelect: () => {}
-//         },
-//         'Drill Down Start': {
-//           containsDrilldown: true,
-//           drilldownItemPath: 'drilldownPath',
-//           drilledInMenus: 'menuDrilledIn',
-//           activeMenu: 'activeMenu',
-//           onDrillIn: () => {},
-//           onDrillOut: () => {},
-//           drilldownMenu: drilldownMenuModel,
-//           onGetMenuHeight: () => {},
-//           onSelect: () => {}
-//         },
-//         'Drill Down Return': {
-//           containsDrilldown: true,
-//           drilldownItemPath: 'drilldownPath',
-//           drilledInMenus: 'menuDrilledIn',
-//           activeMenu: 'activeMenu',
-//           onDrillIn: () => {},
-//           onDrillOut: () => {},
-//           drilldownMenu: drilldownMenuModel,
-//           onGetMenuHeight: () => {},
-//           onSelect: () => {}
-//         }
-//       }),
-
-//       children: figma.children('*')
-//     },
-
-//     example: (props) => (
-//       <Menu
-//         activeItemId="<activeItemId>"
-//         // activeMenu={props.drilldown.activeMenu}
-//         onSelect={props.onSelect}
-//         isPlain={props.isPlain}
-//         actions={props.actions}
-//         showSearchInput={props.showSearchInput}
-//         role="listbox"
-//         containsDrilldown={props.drilldown.containsDrilldown}
-//         drilldownItemPath={props.drilldown.drilldownItemPath}
-//         drilledInMenus={props.drilldown.drilledInMenus}
-//         onDrillIn={props.drilldown.onDrillIn}
-//         onDrillOut={props.drilldown.onDrillOut}
-//         onGetMenuHeight={props.drilldown.onGetMenuHeight}
-//       >
-//         <MenuContent>
-//           <MenuList>{props.children}</MenuList>
-//         </MenuContent>
-//       </Menu>
-//     )
-//   }
-// );

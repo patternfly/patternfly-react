@@ -7,7 +7,7 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 
 figma.connect(
   MenuToggle,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=7829-30614',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=7829-30614',
   {
     props: {
       // boolean
