@@ -9,7 +9,7 @@ import { ExpandableSection } from '@patternfly/react-core';
 
 figma.connect(
   ExpandableSection,
-  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/Em2QWrHDxDS4LUxo58Hust/PatternFly-6--Components?node-id=2769-146',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=2769-146',
   {
     props: {
       truncateText: figma.string('Default truncate text')
@@ -34,8 +34,9 @@ figma.connect(
 
 figma.connect(
   ExpandableSection,
-  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/Em2QWrHDxDS4LUxo58Hust/PatternFly-6--Components?node-id=2769-146',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=2769-146',
   {
+    variant: { State: 'Expanded' },
     props: {
       truncateText: figma.string('Expanded truncate text')
     },

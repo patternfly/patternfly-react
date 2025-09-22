@@ -16,7 +16,7 @@ const sharedProps = {
 
 figma.connect(
   ExpandableSection,
-  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/Em2QWrHDxDS4LUxo58Hust/PatternFly-6--Components?node-id=2810-80',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=2810-80',
   {
     props: {
       toggleText: 'Button'
@@ -42,7 +42,7 @@ figma.connect(
 
 figma.connect(
   ExpandableSection,
-  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/Em2QWrHDxDS4LUxo58Hust/PatternFly-6--Components?node-id=2810-80',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=2810-80',
   {
     variant: { State: 'Expanded indent' },
     props: {
@@ -73,7 +73,7 @@ figma.connect(
 
 figma.connect(
   ExpandableSection,
-  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/Em2QWrHDxDS4LUxo58Hust/PatternFly-6--Components?node-id=2810-80',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=2810-80',
   {
     variant: { State: 'Default custom content' },
     props: {
@@ -102,7 +102,7 @@ figma.connect(
 
 figma.connect(
   ExpandableSection,
-  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/Em2QWrHDxDS4LUxo58Hust/PatternFly-6--Components?node-id=2810-80',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=2810-80',
   {
     variant: { State: 'Expanded indent' },
     props: {
@@ -132,7 +132,7 @@ figma.connect(
 
 figma.connect(
   ExpandableSection,
-  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/Em2QWrHDxDS4LUxo58Hust/PatternFly-6--Components?node-id=2810-80',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=2810-80',
   {
     variant: { State: 'Expanded indent' },
     props: {

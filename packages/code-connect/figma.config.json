@@ -5,6 +5,9 @@
     "paths": {
       "src/components": "src/components"
     },
+    "documentUrlSubstitutions": {
+      "https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components": "https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/Em2QWrHDxDS4LUxo58Hust/PatternFly-6--Components"
+    },
     "aliases": {
       "@patternfly/react-core": "."
     },
