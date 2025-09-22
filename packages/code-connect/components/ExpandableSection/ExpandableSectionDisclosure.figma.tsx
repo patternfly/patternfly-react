@@ -1,133 +1,161 @@
 import figma from '@figma/code-connect';
-import { ExpandableSection } from '@patternfly/react-core';
+import { Badge, ExpandableSection } from '@patternfly/react-core';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 
-const customToggleContent = `
+const sharedProps = {
+  customToggleContent: (
     <div>
-    <span>You can also use icons </span>
-    <CheckCircleIcon />
-    <span> or badges </span>
-    <Badge isRead={true}>4</Badge>
-    <span> !</span>
-  </div>
-`;
+      <span>You can also use icons </span>
+      <CheckCircleIcon />
+      <span> or badges </span>
+      <Badge isRead={true}>4</Badge>
+      <span> !</span>
+    </div>
+  )
+};
 
 figma.connect(
   ExpandableSection,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=2810-80',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/Em2QWrHDxDS4LUxo58Hust/PatternFly-6--Components?node-id=2810-80',
   {
     props: {
-      toggleText: figma.string('Toggle Text More'),
-      isExpanded: false
+      toggleText: 'Button'
     },
-    example: (props) => (
-      <ExpandableSection
-        isExpanded={props.isExpanded}
-        onToggle={() => {}}
-        toggleText={props.isExpanded ? 'Show less basic example content' : `${props.toggleText}`}
-      >
-        This content is visible only when the component is expanded.
-      </ExpandableSection>
-    )
+    example: (props) => {
+      /* eslint-disable */
+      const [isExpanded, setIsExpanded] = useState(false);
+      /* eslint-enable */
+
+      return (
+        <ExpandableSection
+          displaySize="lg"
+          isExpanded={isExpanded}
+          onToggle={setIsExpanded(isExpanded)}
+          toggleText={isExpanded ? 'Show less basic example content' : `${props.toggleText}`}
+        >
+          This content is visible only when the component is expanded.
+        </ExpandableSection>
+      );
+    }
   }
 );
 
 figma.connect(
   ExpandableSection,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=2810-80',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/Em2QWrHDxDS4LUxo58Hust/PatternFly-6--Components?node-id=2810-80',
   {
-    variant: { State: 'Expanded' },
+    variant: { State: 'Expanded indent' },
     props: {
-      toggleText: figma.string('Toggle Text Less'),
-      expandedContentSectionText: figma.string('Expanded Text'),
-      isExpanded: true
+      // enum
+      expandedContentSectionText:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      toggleText: 'Button'
     },
-    example: (props) => (
-      <ExpandableSection
-        isExpanded={props.isExpanded}
-        onToggle={() => {}}
-        toggleText={props.isExpanded ? `${props.toggleText}` : 'Show more basic example content'}
-      >
-        {props.expandedContentSectionText}
-      </ExpandableSection>
-    )
+    example: (props) => {
+      /* eslint-disable */
+      const [isExpanded, setIsExpanded] = useState(false);
+      /* eslint-enable */
+
+      return (
+        <ExpandableSection
+          displaySize="lg"
+          isExpanded={isExpanded}
+          isIndented
+          onToggle={setIsExpanded(isExpanded)}
+          toggleText={isExpanded ? `${props.toggleText}` : 'Show less indented example content'}
+        >
+          {props.expandedContentSectionText}
+        </ExpandableSection>
+      );
+    }
   }
 );
 
 figma.connect(
   ExpandableSection,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=2810-80',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/Em2QWrHDxDS4LUxo58Hust/PatternFly-6--Components?node-id=2810-80',
   {
-    variant: { State: 'Expand Uncontrolled' },
+    variant: { State: 'Default custom content' },
     props: {
-      toggleText: figma.string('Toggle Text More'),
-      expandedContentSectionText: figma.string('Expanded Text'),
-      isExpanded: true
+      ...sharedProps,
+      toggleText: 'Button'
     },
-    example: (props) => (
-      <ExpandableSection
-        isExpanded={props.isExpanded}
-        onToggle={() => {}}
-        toggleText={props.isExpanded ? `${props.toggleText}` : 'Show less basic example content'}
-      >
-        {props.expandedContentSectionText}
-      </ExpandableSection>
-    )
+    example: (props) => {
+      /* eslint-disable */
+      const [isExpanded, setIsExpanded] = useState(false);
+      /* eslint-enable */
+
+      return (
+        <ExpandableSection
+          displaySize="lg"
+          isExpanded={isExpanded}
+          isIndented
+          onToggle={setIsExpanded(isExpanded)}
+          toggleText={isExpanded ? `${props.toggleText}` : 'Show less indented example content'}
+        >
+          {props.customToggleContent}
+        </ExpandableSection>
+      );
+    }
   }
 );
 
 figma.connect(
   ExpandableSection,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=2810-80',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/Em2QWrHDxDS4LUxo58Hust/PatternFly-6--Components?node-id=2810-80',
   {
-    variant: { State: 'Expanded Indent' },
+    variant: { State: 'Expanded indent' },
     props: {
-      expandedContentSectionText: figma.string('Expanded Text'),
-      toggleText: figma.string('Toggle Text More'),
-      isExpanded: true
+      expandedContentSectionText:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      toggleText: 'Button'
     },
-    example: (props) => (
-      <ExpandableSection
-        isExpanded={props.isExpanded}
-        onToggle={() => {}}
-        toggleText={props.isExpanded ? `${props.toggleText}` : 'Show less basic example content'}
-      >
-        {props.expandedContentSectionText}
-      </ExpandableSection>
-    )
+    example: (props) => {
+      /* eslint-disable */
+      const [isExpanded, setIsExpanded] = useState(true);
+      /* eslint-enable */
+
+      return (
+        <ExpandableSection
+          displaySize="lg"
+          isExpanded={isExpanded}
+          isIndented
+          onToggle={setIsExpanded(isExpanded)}
+          toggleText={isExpanded ? `${props.toggleText}` : 'Show less indented example content'}
+        >
+          {props.expandedContentSectionText}
+        </ExpandableSection>
+      );
+    }
   }
 );
 
 figma.connect(
   ExpandableSection,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=2810-80',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/Em2QWrHDxDS4LUxo58Hust/PatternFly-6--Components?node-id=2810-80',
   {
-    variant: { State: 'Default Custom Content' },
-    example: () => (
-      <ExpandableSection toggleContent={customToggleContent} isExpanded={false} onToggle={() => {}}>
-        This content is visible only when the component is expanded.
-      </ExpandableSection>
-    )
-  }
-);
-
-figma.connect(
-  ExpandableSection,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=2810-80',
-  {
-    variant: { State: 'Expanded Custom Content' },
+    variant: { State: 'Expanded indent' },
     props: {
-      toggleText: figma.string('Toggle Text More'),
-      expandedContentSectionText: figma.string('Expanded Text'),
-      isExpanded: true
+      expandedContentSectionText:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      toggleText: 'Button'
     },
-    example: (props) => (
-      <ExpandableSection
-        isExpanded={props.isExpanded}
-        onToggle={() => {}}
-        toggleText={props.isExpanded ? `${props.toggleText}` : 'Show less basic example content'}
-      >
-        {props.expandedContentSectionText}
-      </ExpandableSection>
-    )
+    example: (props) => {
+      /* eslint-disable */
+      const [isExpanded, setIsExpanded] = useState(true);
+      /* eslint-enable */
+
+      return (
+        <ExpandableSection
+          displaySize="lg"
+          isExpanded={isExpanded}
+          isIndented
+          onToggle={setIsExpanded(isExpanded)}
+          toggleText={isExpanded ? `${props.toggleText}` : 'Show less indented example content'}
+        >
+          {props.expandedContentSectionText}
+        </ExpandableSection>
+      );
+    }
   }
 );

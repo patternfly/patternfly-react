@@ -9,43 +9,50 @@ import { ExpandableSection } from '@patternfly/react-core';
 
 figma.connect(
   ExpandableSection,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=2769-146',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/Em2QWrHDxDS4LUxo58Hust/PatternFly-6--Components?node-id=2769-146',
   {
     props: {
-      toggleText: figma.string('Toggle Text More'),
-      isExpanded: false
+      truncateText: figma.string('Default truncate text')
     },
-    example: (props) => (
-      <ExpandableSection
-        isExpanded={props.isExpanded}
-        onToggle={() => {}}
-        toggleText={props.isExpanded ? 'Show less basic example content' : `${props.toggleText}`}
-      >
-        This content is visible only when the component is expanded.
-      </ExpandableSection>
-    )
+    example: (props) => {
+      /* eslint-disable */
+      const [isExpanded, setIsExpanded] = useState(false);
+      /* eslint-enable */
+
+      return (
+        <ExpandableSection
+          isExpanded={isExpanded}
+          onToggle={setIsExpanded(isExpanded)}
+          toggleText={isExpanded ? 'Show less' : 'Show more'}
+        >
+          {props.truncateText}
+        </ExpandableSection>
+      );
+    }
   }
 );
 
 figma.connect(
   ExpandableSection,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=2769-146',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/Em2QWrHDxDS4LUxo58Hust/PatternFly-6--Components?node-id=2769-146',
   {
-    variant: { State: 'Expanded' },
     props: {
-      toggleText: figma.string('Toggle Text Less'),
-      defaultContentSectionText: figma.string('Default Truncate Text'),
-      isExpanded: true
+      truncateText: figma.string('Expanded truncate text')
     },
-    example: (props) => (
-      <ExpandableSection
-        isExpanded={props.isExpanded}
-        onToggle={() => {}}
-        toggleText={props.isExpanded ? 'Show less basic example content' : `${props.toggleText}`}
-        variant="truncate"
-      >
-        {props.defaultContentSectionText}
-      </ExpandableSection>
-    )
+    example: (props) => {
+      /* eslint-disable */
+      const [isExpanded, setIsExpanded] = useState(false);
+      /* eslint-enable */
+
+      return (
+        <ExpandableSection
+          isExpanded={isExpanded}
+          onToggle={setIsExpanded(isExpanded)}
+          toggleText={isExpanded ? 'Show less' : 'Show more'}
+        >
+          {props.truncateText}
+        </ExpandableSection>
+      );
+    }
   }
 );
