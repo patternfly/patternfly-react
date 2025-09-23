@@ -5,6 +5,7 @@ import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-i
 import { TreeViewDataItem } from './TreeView';
 import { Badge } from '../Badge';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
+import { useHasAnimations } from '../../helpers';
 
 export interface TreeViewCheckProps extends Omit<Partial<React.InputHTMLAttributes<HTMLInputElement>>, 'checked'> {
   checked?: boolean | null;
@@ -102,10 +103,11 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
   expandedIcon,
   action,
   compareItems,
-  hasAnimations,
+  hasAnimations: hasAnimationsProp,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   useMemo
 }: TreeViewListItemProps) => {
+  const hasAnimations = useHasAnimations(hasAnimationsProp);
   const [internalIsExpanded, setIsExpanded] = useState(defaultExpanded);
   useEffect(() => {
     if (isExpanded !== undefined && isExpanded !== null) {

@@ -2,6 +2,7 @@ import styles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
 import { FormFieldGroupToggle } from './FormFieldGroupToggle';
 import { GenerateId } from '../../helpers';
+import { useHasAnimations } from '../../helpers';
 
 export interface InternalFormFieldGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label' | 'onToggle'> {
   /** Anything that can be rendered as form field group content. */
@@ -33,9 +34,10 @@ export const InternalFormFieldGroup: React.FunctionComponent<InternalFormFieldGr
   isExpanded,
   onToggle,
   toggleAriaLabel,
-  hasAnimations,
+  hasAnimations: hasAnimationsProp,
   ...props
 }: InternalFormFieldGroupProps) => {
+  const hasAnimations = useHasAnimations(hasAnimationsProp);
   const headerTitleText = header ? header.props.titleText : null;
   if (isExpandable && !toggleAriaLabel && !headerTitleText) {
     // eslint-disable-next-line no-console

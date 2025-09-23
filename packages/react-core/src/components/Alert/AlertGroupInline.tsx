@@ -4,17 +4,19 @@ import styles from '@patternfly/react-styles/css/components/Alert/alert-group';
 import { AlertGroupProps } from './AlertGroup';
 import { AlertProps } from '../Alert';
 import { AlertGroupContext } from './AlertGroupContext';
+import { useHasAnimations } from '../../helpers';
 
 export const AlertGroupInline: React.FunctionComponent<AlertGroupProps> = ({
   className,
   children,
-  hasAnimations,
+  hasAnimations: hasAnimationsProp,
   isToast,
   isLiveRegion,
   onOverflowClick,
   overflowMessage,
   ...props
 }: AlertGroupProps) => {
+  const hasAnimations = useHasAnimations(hasAnimationsProp);
   const [handleTransitionEnd, setHandleTransitionEnd] = useState<() => void>(() => () => {});
 
   const updateTransitionEnd = (onTransitionEnd: () => void) => {

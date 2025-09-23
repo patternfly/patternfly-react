@@ -8,6 +8,7 @@ import { IVisibility } from './utils/decorators/classNames';
 import { handleArrows, setTabIndex } from '@patternfly/react-core/dist/esm/helpers/KeyboardHandler';
 import { KeyTypes } from '@patternfly/react-core/dist/esm/helpers/constants';
 import { useOUIAProps, OUIAProps } from '@patternfly/react-core/dist/esm/helpers/OUIA/ouia';
+import { useHasAnimations } from '@patternfly/react-core/dist/esm/helpers';
 import { TableGridBreakpoint, TableVariant } from './TableTypes';
 
 export interface BaseCellProps {
@@ -103,13 +104,14 @@ const TableBase: React.FunctionComponent<TableProps> = ({
   isNested = false,
   isStriped = false,
   isExpandable = false,
-  hasAnimations = false,
+  hasAnimations: hasAnimationsProp,
   hasNoInset = false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   nestedHeaderColumnSpans,
   selectableRowCaptionText,
   ...props
 }: TableProps) => {
+  const hasAnimations = useHasAnimations(hasAnimationsProp);
   const ref = useRef(null);
   const tableRef = innerRef || ref;
 
