@@ -51,6 +51,7 @@ export const SelectBasic: React.FunctionComponent = () => {
         onOpenChange={(isOpen) => setIsOpen(isOpen)}
         toggle={toggle}
         shouldFocusToggleOnSelect
+        useFloatingUI // FloatingUI is recommended for better positioning. Will become the default in future breaking change.
       >
         <SelectList>
           <SelectOption value="Option 1">Option 1</SelectOption>

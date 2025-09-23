@@ -2,6 +2,7 @@ import { forwardRef, useEffect, useRef } from 'react';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuProps } from '../Menu';
 import { Popper } from '../../helpers/Popper/Popper';
+import { FloatingUIPopper } from '../../helpers/FloatingUI/FloatingUIPopper';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId, onToggleArrowKeydownDefault } from '../../helpers';
 
 export interface SelectPopperProps {
@@ -86,6 +87,8 @@ export interface SelectProps extends MenuProps, OUIAProps {
   shouldPreventScrollOnItemFocus?: boolean;
   /** Time in ms to wait before firing the toggles' focus event. Defaults to 0 */
   focusTimeoutDelay?: number;
+  /** @beta Flag to use Floating UI instead of Popper for positioning. Defaults to false. If you're seeing positioning issues with the default Select component, try setting this flag to true. */
+  useFloatingUI?: boolean;
 }
 
 const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
@@ -111,6 +114,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   isScrollable,
   shouldPreventScrollOnItemFocus = true,
   focusTimeoutDelay = 0,
+  useFloatingUI = false,
   ...props
 }: SelectProps & OUIAProps) => {
   const localMenuRef = useRef<HTMLDivElement>(undefined);
@@ -212,8 +216,10 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
       </MenuContent>
     </Menu>
   );
+  const PopperComponent = useFloatingUI ? FloatingUIPopper : Popper;
+
   return (
-    <Popper
+    <PopperComponent
       trigger={typeof toggle === 'function' ? toggle(toggleRef) : toggle.toggleNode}
       triggerRef={toggleRef}
       popper={menu}

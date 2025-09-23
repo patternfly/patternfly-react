@@ -41,6 +41,7 @@ export const SelectFooter: React.FunctionComponent = () => {
       id="menu-with-footer"
       onSelect={onSelect}
       selected={selected}
+      useFloatingUI // FloatingUI is recommended for better positioning. Will become the default in future breaking change.
     >
       <SelectList>
         <SelectOption value="Option 1">Option 1</SelectOption>

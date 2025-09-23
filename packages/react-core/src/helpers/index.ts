@@ -7,6 +7,7 @@ export * from './typeUtils';
 export * from './OUIA/ouia';
 export * from './util';
 export * from './Popper/Popper';
+export * from './FloatingUI/FloatingUIPopper';
 export * from './useIsomorphicLayout';
 export * from './KeyboardHandler';
 export * from './resizeObserver';
