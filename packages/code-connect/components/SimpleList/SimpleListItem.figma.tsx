@@ -28,12 +28,7 @@ figma.connect(
       })
     },
     example: (props) => (
-      <SimpleListItem
-        component={props.isLink.component}
-        href={props.isLink.href}
-        isActive={props.isActive}
-        key="simple-list-item-key"
-      >
+      <SimpleListItem component={props.isLink.component} href={props.isLink.href} isActive={props.isActive}>
         {props.text}
       </SimpleListItem>
     )

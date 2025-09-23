@@ -15,8 +15,7 @@ figma.connect(
 
       // nested
       pageQuantity: figma.nestedProps('Page quantity selector', {
-        itemCount: figma.string('Total quantity'),
-        state: figma.enum('State', { Disabled: true })
+        itemCount: figma.string('Total quantity')
       })
     },
     example: (props) => (

@@ -16,9 +16,9 @@ figma.connect(
               isOpen={false}
               onOpenChange={() => {}}
               popperProps={{ position: 'right' }}
-              toggle={() => (
+              toggle={(refToggle) => (
                 <MenuToggle
-                  ref={() => {}}
+                  ref={refToggle}
                   isExpanded={false}
                   onClick={() => {}}
                   variant="plain"

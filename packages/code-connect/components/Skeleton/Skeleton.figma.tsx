@@ -9,7 +9,7 @@ figma.connect(
   {
     props: {
       // enum
-      type: figma.enum('Type', {
+      shape: figma.enum('Type', {
         Default: undefined,
         Rectangle: undefined,
         Square: 'square',
@@ -25,6 +25,8 @@ figma.connect(
         '4XL': '4xl'
       })
     },
-    example: (props) => <Skeleton fontSize={props.size} type={props.type} screenreaderText="Loading default content" />
+    example: (props) => (
+      <Skeleton fontSize={props.size} shape={props.shape} screenreaderText="Loading default content" />
+    )
   }
 );
