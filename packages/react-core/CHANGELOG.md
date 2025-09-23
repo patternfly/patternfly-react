@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.3.1-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.14...@patternfly/react-core@6.3.1-prerelease.15) (2025-09-23)
+
+### Features
+
+- **AnimationsProvider:** Add Support for AnimationsProvider ([#11990](https://github.com/patternfly/patternfly-react/issues/11990)) ([fdd6433](https://github.com/patternfly/patternfly-react/commit/fdd6433709c7f59536930119e2fb7ad0260fea15))
+
 ## [6.3.1-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.13...@patternfly/react-core@6.3.1-prerelease.14) (2025-09-11)
 
 ### Bug Fixes
