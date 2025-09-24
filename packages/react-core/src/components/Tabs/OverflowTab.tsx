@@ -2,36 +2,14 @@ import { Fragment, useContext, useEffect, useRef, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
 import { css } from '@patternfly/react-styles';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import { Popper } from '../../helpers';
+import { Popper, PopperOptions } from '../../helpers';
 import { Menu, MenuContent, MenuList, MenuItem } from '../Menu';
 import { TabsContext } from './TabsContext';
 import { TabProps } from './Tab';
 import { TabTitleText } from './TabTitleText';
 
-export interface HorizontalOverflowPopperProps {
-  /** Vertical direction of the popper. If enableFlip is set to true, this will set the initial direction before the popper flips. */
-  direction?: 'up' | 'down';
-  /** Horizontal position of the popper */
-  position?: 'right' | 'left' | 'center' | 'start' | 'end';
-  /** Custom width of the popper. If the value is "trigger", it will set the width to the select toggle's width */
-  width?: string | 'trigger';
-  /** Minimum width of the popper. If the value is "trigger", it will set the min width to the select toggle's width */
-  minWidth?: string | 'trigger';
-  /** Maximum width of the popper. If the value is "trigger", it will set the max width to the select toggle's width */
-  maxWidth?: string | 'trigger';
-  /** Enable to flip the popper when it reaches the boundary */
-  enableFlip?: boolean;
-  /** The container to append the select to. Defaults to document.body.
-   * If your select is being cut off you can append it to an element higher up the DOM tree.
-   * Some examples:
-   * appendTo="inline"
-   * appendTo={() => document.body}
-   * appendTo={document.getElementById('target')}
-   */
-  appendTo?: HTMLElement | (() => HTMLElement) | 'inline';
-  /** Flag to prevent the popper from overflowing its container and becoming partially obscured. */
-  preventOverflow?: boolean;
-}
+/** @deprecated Use PopperOptions instead */
+export type HorizontalOverflowPopperProps = PopperOptions;
 
 export interface OverflowTabProps extends React.HTMLProps<HTMLLIElement> {
   /** Additional classes added to the overflow tab */
@@ -51,7 +29,7 @@ export interface OverflowTabProps extends React.HTMLProps<HTMLLIElement> {
   /** Time in ms to wait before firing the toggles' focus event. Defaults to 0 */
   focusTimeoutDelay?: number;
   /** Additional props to spread to the popper menu. */
-  popperProps?: HorizontalOverflowPopperProps;
+  popperProps?: PopperOptions;
 }
 
 export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
