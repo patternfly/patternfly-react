@@ -21,7 +21,7 @@ export interface SimpleSelectProps extends Omit<SelectProps, 'toggle' | 'onToggl
   /** Initial options of the select. */
   initialOptions?: SimpleSelectOption[];
   /** Callback triggered on selection. */
-  onSelect?: (_event: React.MouseEvent<Element, MouseEvent>, selection: string | number) => void;
+  onSelect?: (_event: React.MouseEvent<Element, MouseEvent>, selection: SimpleSelectOption['value']) => void;
   /** Callback triggered when the select opens or closes. */
   onToggle?: (nextIsOpen: boolean) => void;
   /** Flag indicating the select should be disabled. */

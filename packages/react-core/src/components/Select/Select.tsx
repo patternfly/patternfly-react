@@ -3,6 +3,7 @@ import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuProps } from '../Menu';
 import { Popper, PopperOptions } from '../../helpers/Popper/Popper';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId, onToggleArrowKeydownDefault } from '../../helpers';
+import type { SelectOptionProps } from './SelectOption';
 
 /** @deprecated Use PopperOptions instead */
 export type SelectPopperProps = PopperOptions;
@@ -34,7 +35,7 @@ export interface SelectProps extends MenuProps, OUIAProps {
   /** @beta Flag indicating the first menu item should be focused after opening the menu. */
   shouldFocusFirstItemOnOpen?: boolean;
   /** Function callback when user selects an option. */
-  onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, value?: string | number) => void;
+  onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, value?: SelectOptionProps['value']) => void;
   /** Callback to allow the select component to change the open state of the menu.
    * Triggered by clicking outside of the menu, or by pressing any keys specified in onOpenChangeKeys. */
   onOpenChange?: (isOpen: boolean) => void;

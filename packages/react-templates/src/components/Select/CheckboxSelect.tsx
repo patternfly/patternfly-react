@@ -22,7 +22,7 @@ export interface CheckboxSelectProps extends Omit<SelectProps, 'toggle' | 'onTog
   /** Initial options of the select. */
   initialOptions?: CheckboxSelectOption[];
   /** Callback triggered on selection. */
-  onSelect?: (_event: React.MouseEvent<Element, MouseEvent>, value?: string | number) => void;
+  onSelect?: (_event: React.MouseEvent<Element, MouseEvent>, value?: CheckboxSelectOption['value']) => void;
   /** Callback triggered when the select opens or closes. */
   onToggle?: (nextIsOpen: boolean) => void;
   /** Flag indicating the select should be disabled. */
