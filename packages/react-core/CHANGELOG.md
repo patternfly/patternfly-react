@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.3.1-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.15...@patternfly/react-core@6.3.1-prerelease.16) (2025-09-24)
+
+### Features
+
+- extend `PopperProps` in derivative component types ([#11934](https://github.com/patternfly/patternfly-react/issues/11934)) ([b79c4d6](https://github.com/patternfly/patternfly-react/commit/b79c4d63dcc787b49a311103e3a168d511b6d07a))
+
 ## [6.3.1-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.14...@patternfly/react-core@6.3.1-prerelease.15) (2025-09-23)
 
 ### Features
