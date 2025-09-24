@@ -44,7 +44,15 @@ const MenuItemActionBase: React.FunctionComponent<MenuItemActionProps> = ({
             onActionClick && onActionClick(event, itemId, actionId);
           };
           return (
-            <div className={css(styles.menuItemAction, className)} {...props}>
+            <div
+              className={css(
+                styles.menuItemAction,
+                isFavorited !== null && 'pf-m-favorite',
+                isFavorited && styles.modifiers.favorited,
+                className
+              )}
+              {...props}
+            >
               <Button
                 aria-label={ariaLabel}
                 onClick={onClickButton}
