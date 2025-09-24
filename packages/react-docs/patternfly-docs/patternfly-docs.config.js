@@ -5,6 +5,7 @@ module.exports = {
   hasFooter: false,
   hasVersionSwitcher: false,
   hasThemeSwitcher: true,
+  hasHighContrastSwitcher: true,
   hasRTLSwitcher: true,
   hasDesignGuidelines: false,
   sideNavItems: [
