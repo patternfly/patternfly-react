@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.3.1-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.3.1-prerelease.18...@patternfly/react-templates@6.3.1-prerelease.19) (2025-09-24)
+
+### Bug Fixes
+
+- **Select:** improve type consistency in `onSelect` ([#11935](https://github.com/patternfly/patternfly-react/issues/11935)) ([d50ba6d](https://github.com/patternfly/patternfly-react/commit/d50ba6db350ae355b63d3d2ffd0f9095866da074))
+
 ## [6.3.1-prerelease.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.3.1-prerelease.17...@patternfly/react-templates@6.3.1-prerelease.18) (2025-09-24)
 
 **Note:** Version bump only for package @patternfly/react-templates
