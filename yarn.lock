@@ -8297,6 +8297,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"codeConnect@workspace:packages/code-connect":
+  version: 0.0.0-use.local
+  resolution: "codeConnect@workspace:packages/code-connect"
+  dependencies:
+    fs-extra: "npm:^11.3.0"
+    fse: "npm:^4.0.1"
+  peerDependencies:
+    react: ^17 || ^18 || ^19
+    react-dom: ^17 || ^18 || ^19
+  languageName: unknown
+  linkType: soft
+
 "codesandbox-import-util-types@npm:^2.2.0, codesandbox-import-util-types@npm:^2.3.0":
   version: 2.3.0
   resolution: "codesandbox-import-util-types@npm:2.3.0"
@@ -11843,6 +11855,13 @@ __metadata:
   version: 1.0.0
   resolution: "fs.realpath@npm:1.0.0"
   checksum: 10c0/444cf1291d997165dfd4c0d58b69f0e4782bfd9149fd72faa4fe299e68e0e93d6db941660b37dd29153bf7186672ececa3b50b7e7249477b03fdf850f287c948
+  languageName: node
+  linkType: hard
+
+"fse@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "fse@npm:4.0.1"
+  checksum: 10c0/c415fbe2395b5eab0fdbbf5cc0ee1f47b9a447a8edb1f16799c3ea5d5d444a687a33b2b432029a4ad608057571412116ee68602c6903c28e4246aa719ebb9ae0
   languageName: node
   linkType: hard
 
