@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.3.1-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.20...@patternfly/react-core@6.3.1-prerelease.21) (2025-09-25)
+
+### Bug Fixes
+
+- **MenuGroup:** fix title generation when the string is empty ([#11999](https://github.com/patternfly/patternfly-react/issues/11999)) ([b74d8b8](https://github.com/patternfly/patternfly-react/commit/b74d8b8e02f18570e0125af47464612fff59bbc0))
+
 ## [6.3.1-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.19...@patternfly/react-core@6.3.1-prerelease.20) (2025-09-25)
 
 ### Bug Fixes

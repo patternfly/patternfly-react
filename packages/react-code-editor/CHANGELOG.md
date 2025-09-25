@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.3.1-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.3.1-prerelease.20...@patternfly/react-code-editor@6.3.1-prerelease.21) (2025-09-25)
+
+### Features
+
+- **CodeEditor:** use custom PatternFly monaco theme ([#11785](https://github.com/patternfly/patternfly-react/issues/11785)) ([eed7e65](https://github.com/patternfly/patternfly-react/commit/eed7e6528babba9c7c9bb6e8cb75186e984eac71))
+
 ## [6.3.1-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.3.1-prerelease.19...@patternfly/react-code-editor@6.3.1-prerelease.20) (2025-09-25)
 
 **Note:** Version bump only for package @patternfly/react-code-editor
