@@ -25,7 +25,7 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
             aria-hidden="true"
             class="pf-v6-c-form__label-required"
           >
-             *
+             *
           </span>
         </label>
           
@@ -69,7 +69,7 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
             aria-hidden="true"
             class="pf-v6-c-form__label-required"
           >
-             *
+             *
           </span>
         </label>
           
@@ -175,7 +175,7 @@ exports[`LoginForm LoginForm with show password 1`] = `
             aria-hidden="true"
             class="pf-v6-c-form__label-required"
           >
-             *
+             *
           </span>
         </label>
           
@@ -219,7 +219,7 @@ exports[`LoginForm LoginForm with show password 1`] = `
             aria-hidden="true"
             class="pf-v6-c-form__label-required"
           >
-             *
+             *
           </span>
         </label>
           
@@ -336,7 +336,7 @@ exports[`LoginForm should render Login form 1`] = `
             aria-hidden="true"
             class="pf-v6-c-form__label-required"
           >
-             *
+             *
           </span>
         </label>
           
@@ -380,7 +380,7 @@ exports[`LoginForm should render Login form 1`] = `
             aria-hidden="true"
             class="pf-v6-c-form__label-required"
           >
-             *
+             *
           </span>
         </label>
           
