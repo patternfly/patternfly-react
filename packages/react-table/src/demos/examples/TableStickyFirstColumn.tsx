@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, InnerScrollContainer } from '@patternfly/react-table';
-import { Card, PageSection } from '@patternfly/react-core';
+import { PageSection } from '@patternfly/react-core';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 
 type Direction = 'asc' | 'desc' | undefined;
@@ -140,96 +140,88 @@ export const TableStickyFirstColumn = () => {
         padding={{ default: 'noPadding', xl: 'padding' }}
         aria-label="Sticky column table data"
       >
-        <Card component="div">
-          <InnerScrollContainer>
-            <Table aria-label="Sticky column table" gridBreakPoint="">
-              <Thead>
-                <Tr>
-                  <Th
-                    isStickyColumn
-                    stickyMinWidth="100px"
-                    hasRightBorder
-                    modifier="fitContent"
-                    sort={getSortParams(0)}
-                  >
-                    {columnNames.name}
+        <InnerScrollContainer>
+          <Table aria-label="Sticky column table" gridBreakPoint="">
+            <Thead>
+              <Tr>
+                <Th isStickyColumn stickyMinWidth="100px" hasRightBorder modifier="fitContent" sort={getSortParams(0)}>
+                  {columnNames.name}
+                </Th>
+                <Th modifier="fitContent" sort={getSortParams(1)}>
+                  {columnNames.state}
+                </Th>
+                <Th>{columnNames.header3}</Th>
+                <Th>{columnNames.header4}</Th>
+                <Th>{columnNames.header5}</Th>
+                <Th>{columnNames.header6}</Th>
+                <Th>{columnNames.header7}</Th>
+                <Th>{columnNames.header8}</Th>
+                <Th>{columnNames.header9}</Th>
+                <Th>{columnNames.header10}</Th>
+                <Th>{columnNames.header11}</Th>
+                <Th>{columnNames.header12}</Th>
+                <Th>{columnNames.header13}</Th>
+                <Th>{columnNames.header14}</Th>
+                <Th>{columnNames.header15}</Th>
+                <Th>{columnNames.header16}</Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {sortedFacts.map((fact) => (
+                <Tr key={fact.name}>
+                  <Th isStickyColumn stickyMinWidth="100px" hasRightBorder modifier="truncate">
+                    {fact.name}
                   </Th>
-                  <Th modifier="fitContent" sort={getSortParams(1)}>
-                    {columnNames.state}
-                  </Th>
-                  <Th>{columnNames.header3}</Th>
-                  <Th>{columnNames.header4}</Th>
-                  <Th>{columnNames.header5}</Th>
-                  <Th>{columnNames.header6}</Th>
-                  <Th>{columnNames.header7}</Th>
-                  <Th>{columnNames.header8}</Th>
-                  <Th>{columnNames.header9}</Th>
-                  <Th>{columnNames.header10}</Th>
-                  <Th>{columnNames.header11}</Th>
-                  <Th>{columnNames.header12}</Th>
-                  <Th>{columnNames.header13}</Th>
-                  <Th>{columnNames.header14}</Th>
-                  <Th>{columnNames.header15}</Th>
-                  <Th>{columnNames.header16}</Th>
+                  <Td modifier="nowrap" dataLabel={columnNames.state}>
+                    {fact.state}
+                  </Td>
+                  <Td modifier="nowrap" dataLabel={columnNames.header3}>
+                    {fact.detail1}
+                  </Td>
+                  <Td modifier="nowrap" dataLabel={columnNames.header4}>
+                    {fact.detail2}
+                  </Td>
+                  <Td modifier="nowrap" dataLabel={columnNames.header5}>
+                    {fact.detail3}
+                  </Td>
+                  <Td modifier="nowrap" dataLabel={columnNames.header6}>
+                    {fact.detail4}
+                  </Td>
+                  <Td modifier="nowrap" dataLabel={columnNames.header7}>
+                    {fact.detail5}
+                  </Td>
+                  <Td modifier="nowrap" dataLabel={columnNames.header8}>
+                    {fact.detail6}
+                  </Td>
+                  <Td modifier="nowrap" dataLabel={columnNames.header9}>
+                    {fact.detail7}
+                  </Td>
+                  <Td modifier="nowrap" dataLabel={columnNames.header10}>
+                    {fact.detail8}
+                  </Td>
+                  <Td modifier="nowrap" dataLabel={columnNames.header11}>
+                    {fact.detail9}
+                  </Td>
+                  <Td modifier="nowrap" dataLabel={columnNames.header12}>
+                    {fact.detail10}
+                  </Td>
+                  <Td modifier="nowrap" dataLabel={columnNames.header13}>
+                    {fact.detail11}
+                  </Td>
+                  <Td modifier="nowrap" dataLabel={columnNames.header14}>
+                    {fact.detail12}
+                  </Td>
+                  <Td modifier="nowrap" dataLabel={columnNames.header15}>
+                    {fact.detail13}
+                  </Td>
+                  <Td modifier="nowrap" dataLabel={columnNames.header16}>
+                    {fact.detail14}
+                  </Td>
                 </Tr>
-              </Thead>
-              <Tbody>
-                {sortedFacts.map((fact) => (
-                  <Tr key={fact.name}>
-                    <Th isStickyColumn stickyMinWidth="100px" hasRightBorder modifier="truncate">
-                      {fact.name}
-                    </Th>
-                    <Td modifier="nowrap" dataLabel={columnNames.state}>
-                      {fact.state}
-                    </Td>
-                    <Td modifier="nowrap" dataLabel={columnNames.header3}>
-                      {fact.detail1}
-                    </Td>
-                    <Td modifier="nowrap" dataLabel={columnNames.header4}>
-                      {fact.detail2}
-                    </Td>
-                    <Td modifier="nowrap" dataLabel={columnNames.header5}>
-                      {fact.detail3}
-                    </Td>
-                    <Td modifier="nowrap" dataLabel={columnNames.header6}>
-                      {fact.detail4}
-                    </Td>
-                    <Td modifier="nowrap" dataLabel={columnNames.header7}>
-                      {fact.detail5}
-                    </Td>
-                    <Td modifier="nowrap" dataLabel={columnNames.header8}>
-                      {fact.detail6}
-                    </Td>
-                    <Td modifier="nowrap" dataLabel={columnNames.header9}>
-                      {fact.detail7}
-                    </Td>
-                    <Td modifier="nowrap" dataLabel={columnNames.header10}>
-                      {fact.detail8}
-                    </Td>
-                    <Td modifier="nowrap" dataLabel={columnNames.header11}>
-                      {fact.detail9}
-                    </Td>
-                    <Td modifier="nowrap" dataLabel={columnNames.header12}>
-                      {fact.detail10}
-                    </Td>
-                    <Td modifier="nowrap" dataLabel={columnNames.header13}>
-                      {fact.detail11}
-                    </Td>
-                    <Td modifier="nowrap" dataLabel={columnNames.header14}>
-                      {fact.detail12}
-                    </Td>
-                    <Td modifier="nowrap" dataLabel={columnNames.header15}>
-                      {fact.detail13}
-                    </Td>
-                    <Td modifier="nowrap" dataLabel={columnNames.header16}>
-                      {fact.detail14}
-                    </Td>
-                  </Tr>
-                ))}
-              </Tbody>
-            </Table>
-          </InnerScrollContainer>
-        </Card>
+              ))}
+            </Tbody>
+          </Table>
+        </InnerScrollContainer>
       </PageSection>
     </DashboardWrapper>
   );
