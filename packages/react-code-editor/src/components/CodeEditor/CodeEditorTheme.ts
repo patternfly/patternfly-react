@@ -1,70 +1,70 @@
-import { colours } from './themeTokenMapping';
+import { colors } from './themeTokenMapping';
 import type { editor as monacoEditor } from 'monaco-editor/esm/vs/editor/editor.api';
 
 const createTheme = (mode: 'light' | 'dark'): monacoEditor.IStandaloneThemeData => ({
   base: mode === 'light' ? 'vs' : 'vs-dark',
   inherit: true,
   colors: {
-    'editor.background': colours.background[mode],
-    'editor.foreground': colours.foreground[mode],
-    'editorLineNumber.activeForeground': colours.foreground[mode],
-    'editorLineNumber.foreground': colours.secondaryForeground[mode]
+    'editor.background': colors.background[mode],
+    'editor.foreground': colors.foreground[mode],
+    'editorLineNumber.activeForeground': colors.foreground[mode],
+    'editorLineNumber.foreground': colors.secondaryForeground[mode]
   },
   rules: [
-    { token: '', foreground: colours.foreground[mode], background: colours.background[mode] },
-    { token: 'invalid', foreground: colours.red[mode] },
+    { token: '', foreground: colors.foreground[mode], background: colors.background[mode] },
+    { token: 'invalid', foreground: colors.red[mode] },
     { token: 'emphasis', fontStyle: 'italic' },
     { token: 'strong', fontStyle: 'bold' },
 
-    { token: 'variable', foreground: colours.blue[mode] },
-    { token: 'variable.predefined', foreground: colours.teal[mode] },
-    { token: 'constant', foreground: colours.orange[mode] },
-    { token: 'comment', foreground: colours.gray[mode] },
-    { token: 'number', foreground: colours.orange[mode] },
-    { token: 'number.hex', foreground: colours.blue[mode] },
-    { token: 'regexp', foreground: colours.red[mode] },
-    { token: 'annotation', foreground: colours.purple[mode] },
-    { token: 'type', foreground: colours.yellow[mode] },
+    { token: 'variable', foreground: colors.blue[mode] },
+    { token: 'variable.predefined', foreground: colors.teal[mode] },
+    { token: 'constant', foreground: colors.orange[mode] },
+    { token: 'comment', foreground: colors.gray[mode] },
+    { token: 'number', foreground: colors.orange[mode] },
+    { token: 'number.hex', foreground: colors.blue[mode] },
+    { token: 'regexp', foreground: colors.red[mode] },
+    { token: 'annotation', foreground: colors.purple[mode] },
+    { token: 'type', foreground: colors.yellow[mode] },
 
-    { token: 'delimiter', foreground: colours.foreground[mode] },
-    { token: 'delimiter.html', foreground: colours.gray[mode] },
-    { token: 'delimiter.xml', foreground: colours.blue[mode] },
+    { token: 'delimiter', foreground: colors.foreground[mode] },
+    { token: 'delimiter.html', foreground: colors.gray[mode] },
+    { token: 'delimiter.xml', foreground: colors.blue[mode] },
 
-    { token: 'tag', foreground: colours.red[mode] },
-    { token: 'tag.id.jade', foreground: colours.teal[mode] },
-    { token: 'tag.class.jade', foreground: colours.teal[mode] },
-    { token: 'meta.scss', foreground: colours.red[mode] },
-    { token: 'metatag', foreground: colours.orange[mode] },
-    { token: 'metatag.content.html', foreground: colours.red[mode] },
-    { token: 'metatag.html', foreground: colours.gray[mode] },
-    { token: 'metatag.xml', foreground: colours.gray[mode] },
+    { token: 'tag', foreground: colors.red[mode] },
+    { token: 'tag.id.jade', foreground: colors.teal[mode] },
+    { token: 'tag.class.jade', foreground: colors.teal[mode] },
+    { token: 'meta.scss', foreground: colors.red[mode] },
+    { token: 'metatag', foreground: colors.orange[mode] },
+    { token: 'metatag.content.html', foreground: colors.red[mode] },
+    { token: 'metatag.html', foreground: colors.gray[mode] },
+    { token: 'metatag.xml', foreground: colors.gray[mode] },
     { token: 'metatag.php', fontStyle: 'bold' },
 
-    { token: 'key', foreground: colours.orange[mode] },
-    { token: 'string.key.json', foreground: colours.red[mode] },
-    { token: 'string.value.json', foreground: colours.blue[mode] },
+    { token: 'key', foreground: colors.orange[mode] },
+    { token: 'string.key.json', foreground: colors.red[mode] },
+    { token: 'string.value.json', foreground: colors.blue[mode] },
 
-    { token: 'attribute.name', foreground: colours.red[mode] },
-    { token: 'attribute.value', foreground: colours.blue[mode] },
-    { token: 'attribute.value.number', foreground: colours.orange[mode] },
-    { token: 'attribute.value.unit', foreground: colours.orange[mode] },
-    { token: 'attribute.value.html', foreground: colours.blue[mode] },
-    { token: 'attribute.value.xml', foreground: colours.blue[mode] },
+    { token: 'attribute.name', foreground: colors.red[mode] },
+    { token: 'attribute.value', foreground: colors.blue[mode] },
+    { token: 'attribute.value.number', foreground: colors.orange[mode] },
+    { token: 'attribute.value.unit', foreground: colors.orange[mode] },
+    { token: 'attribute.value.html', foreground: colors.blue[mode] },
+    { token: 'attribute.value.xml', foreground: colors.blue[mode] },
 
-    { token: 'string', foreground: colours.green[mode] },
-    { token: 'string.html', foreground: colours.green[mode] },
-    { token: 'string.sql', foreground: colours.green[mode] },
-    { token: 'string.yaml', foreground: colours.green[mode] },
+    { token: 'string', foreground: colors.green[mode] },
+    { token: 'string.html', foreground: colors.green[mode] },
+    { token: 'string.sql', foreground: colors.green[mode] },
+    { token: 'string.yaml', foreground: colors.green[mode] },
 
-    { token: 'keyword', foreground: colours.purple[mode] },
-    { token: 'keyword.json', foreground: colours.purple[mode] },
-    { token: 'keyword.flow', foreground: colours.purple[mode] },
-    { token: 'keyword.flow.scss', foreground: colours.purple[mode] },
+    { token: 'keyword', foreground: colors.purple[mode] },
+    { token: 'keyword.json', foreground: colors.purple[mode] },
+    { token: 'keyword.flow', foreground: colors.purple[mode] },
+    { token: 'keyword.flow.scss', foreground: colors.purple[mode] },
 
-    { token: 'operator.scss', foreground: colours.foreground[mode] },
-    { token: 'operator.sql', foreground: colours.foreground[mode] },
-    { token: 'operator.swift', foreground: colours.foreground[mode] },
-    { token: 'predefined.sql', foreground: colours.purple[mode] }
+    { token: 'operator.scss', foreground: colors.foreground[mode] },
+    { token: 'operator.sql', foreground: colors.foreground[mode] },
+    { token: 'operator.swift', foreground: colors.foreground[mode] },
+    { token: 'predefined.sql', foreground: colors.purple[mode] }
   ]
 });
 

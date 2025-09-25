@@ -31,7 +31,7 @@ import grayLight from '@patternfly/react-tokens/dist/esm/t_color_gray_50';
  *
  * @see https://github.com/microsoft/monaco-editor/issues/2427
  */
-export const colours = {
+export const colors = {
   background: {
     dark: backgroundDark.value,
     light: backgroundLight.value
