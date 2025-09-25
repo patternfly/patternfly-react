@@ -20,22 +20,28 @@ export interface MenuGroupProps extends Omit<React.HTMLProps<HTMLElement>, 'labe
 const MenuGroupBase: React.FunctionComponent<MenuGroupProps> = ({
   children,
   className = '',
-  label = '',
+  label,
   titleId,
   innerRef,
   labelHeadingLevel: HeadingLevel = 'h1',
   ...props
 }: MenuGroupProps) => {
   const Wrapper = typeof label === 'function' ? label : HeadingLevel;
+  const hasLabel = label !== undefined && label !== null && label !== '';
+
   return (
     <section {...props} className={css(styles.menuGroup, className)} ref={innerRef}>
       <>
-        {['function', 'string'].includes(typeof label) ? (
-          <Wrapper className={css(styles.menuGroupTitle)} id={titleId}>
-            {label}
-          </Wrapper>
-        ) : (
-          label
+        {hasLabel && (
+          <>
+            {['function', 'string'].includes(typeof label) ? (
+              <Wrapper className={css(styles.menuGroupTitle)} id={titleId}>
+                {label}
+              </Wrapper>
+            ) : (
+              label
+            )}
+          </>
         )}
         {children}
       </>
