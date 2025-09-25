@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.3.1-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.19...@patternfly/react-core@6.3.1-prerelease.20) (2025-09-25)
+
+### Bug Fixes
+
+- **Truncate:** Update truncate examples to use PF6 tokens to match core ([#11943](https://github.com/patternfly/patternfly-react/issues/11943)) ([d3c0109](https://github.com/patternfly/patternfly-react/commit/d3c010945f069bf6b6c21aa4506c9a6391841d53))
+
 ## [6.3.1-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.18...@patternfly/react-core@6.3.1-prerelease.19) (2025-09-24)
 
 ### Bug Fixes
