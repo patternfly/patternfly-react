@@ -6,7 +6,7 @@ import { SimpleListItem } from '@patternfly/react-core';
 
 figma.connect(
   SimpleListItem,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=4410-20664',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=4410-20664',
   {
     props: {
       text: figma.string('Text'),

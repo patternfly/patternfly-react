@@ -8,25 +8,33 @@ figma.connect(
   'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=3172-18190',
   {
     props: {
+      // string
+      headingText: figma.string('Group title'),
+      count: 3,
+
       // boolean
-      hasCount: figma.boolean('Has count', {
-        true: figma.string('Text'),
-        false: 0
+      badgeProps: figma.boolean('Has count', {
+        true: figma.nestedProps('Badge', {
+          count: figma.string('Text')
+        }),
+        false: { count: undefined }
       }),
 
       // enum
-      headingText: figma.string('Group title'),
-
-      // string
       isExpanded: figma.enum('Type', {
         Collapsed: false,
         Expanded: true
       }),
 
-      children: figma.children('*')
+      children: figma.children('Notification drawer item')
     },
     example: (props) => (
-      <NotificationDrawerGroup isExpanded={props.isExpanded} count={props.hasCount} title={props.headingText}>
+      <NotificationDrawerGroup
+        title={props.headingText}
+        isExpanded={props.isExpanded}
+        count={props.badgeProps.count}
+        onExpand={() => {}}
+      >
         <NotificationDrawerList>{props.children}</NotificationDrawerList>
       </NotificationDrawerGroup>
     )

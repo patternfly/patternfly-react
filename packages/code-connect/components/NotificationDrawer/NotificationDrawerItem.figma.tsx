@@ -6,8 +6,7 @@ import {
   MenuToggle,
   NotificationDrawerListItem,
   NotificationDrawerListItemBody,
-  NotificationDrawerListItemHeader,
-  Timestamp
+  NotificationDrawerListItemHeader
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
@@ -15,11 +14,9 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 
 figma.connect(
   NotificationDrawerListItem,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components?node-id=3164-16861',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=3164-16861',
   {
     props: {
-      timestamp: <Timestamp date={new Date()} />,
-
       // enum
       isRead: figma.enum('Type', { Read: true }),
       isHoverable: figma.enum('State', { Hover: true }),
@@ -62,7 +59,7 @@ figma.connect(
             </DropdownList>
           </Dropdown>
         </NotificationDrawerListItemHeader>
-        <NotificationDrawerListItemBody timestamp={props.timestamp}>
+        <NotificationDrawerListItemBody timestamp="5 minutes ago">
           {props.alertDescription}
         </NotificationDrawerListItemBody>
       </NotificationDrawerListItem>

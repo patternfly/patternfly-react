@@ -18,7 +18,7 @@ figma.connect(
     props: {
       // boolean
       footerContent: figma.boolean('Has footer', {
-        true: 'Popover footer',
+        true: figma.string('Popover footer'),
         false: undefined
       }),
       headerIcon: figma.boolean('Show header icon', {

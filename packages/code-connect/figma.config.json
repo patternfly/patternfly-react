@@ -8,14 +8,16 @@
       "components/SimpleList/*.tsx",
       "components/Skeleton/*.tsx"
     ],
-    "paths": {
-      "src/components": "src/components"
-    },
     "documentUrlSubstitutions": {
-      "https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components": "https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/Em2QWrHDxDS4LUxo58Hust/PatternFly-6--Components"
+      "https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components": "https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/e1OeQDrgPKW13FswRqSP3I/PatternFly-6--Components"
+    },
+    "paths": {
+      "@patternfly/react-core": "/Users/mnolting/Web/patternfly-react/packages/react-core/src",
+      "@patternfly/react-table": "/Users/mnolting/Web/patternfly-react/packages/react-table/src"
     },
     "aliases": {
-      "@patternfly/react-core": "."
+      "@patternfly/react-core": "/Users/mnolting/Web/patternfly-react/packages/react-core/src",
+      "@patternfly/react-table": "/Users/mnolting/Web/patternfly-react/packages/react-table/src"
     },
     "importPaths": {
       "src/components": "src/components"
@@ -31,6 +33,7 @@
       "production": {
         "enabled": false
       }
-    }
+    },
+    "exclude": ["node_modules/**", "scripts/**"]
   }
 }
