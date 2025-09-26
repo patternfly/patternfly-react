@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.3.1-prerelease.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.3.1-prerelease.25...@patternfly/react-docs@7.3.1-prerelease.26) (2025-09-26)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
 ## [7.3.1-prerelease.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.3.1-prerelease.24...@patternfly/react-docs@7.3.1-prerelease.25) (2025-09-25)
 
 **Note:** Version bump only for package @patternfly/react-docs
