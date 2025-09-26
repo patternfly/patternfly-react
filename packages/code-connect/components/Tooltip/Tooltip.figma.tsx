@@ -1,15 +1,15 @@
 import figma from '@figma/code-connect';
-import { Tooltip } from '@patternfly/react-core';
+import { Button, Tooltip } from '@patternfly/react-core';
 
 // Documentation for Tooltip can be found at https://www.patternfly.org/components/tooltip
 
 figma.connect(
   Tooltip,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components?node-id=6598-70985',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=6598-70985',
   {
     props: {
       // string
-      text: figma.string('Text'),
+      content: figma.string('Text'),
 
       // enum
       position: figma.enum('Type', {
@@ -31,7 +31,7 @@ figma.connect(
     },
     example: (props) => (
       <Tooltip content={props.content} position={props.position}>
-        <div>{props.text}</div>
+        <Button>I have a tooltip!</Button>
       </Tooltip>
     )
   }

@@ -8,12 +8,11 @@ import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 
 figma.connect(
   Slider,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components?node-id=3155-97956',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=3155-97956',
   {
     props: {
       // boolean
       isInputVisible: figma.boolean('Value input'),
-      showBoundaries: figma.boolean('Min/max values'),
       startActions: figma.boolean('Left action', {
         true: <Button variant="plain" aria-label="Minus" onClick={() => {}} icon={<MinusIcon />} />,
         false: undefined
@@ -31,7 +30,7 @@ figma.connect(
     example: (props) => (
       <Slider
         isInputVisible={props.isInputVisible}
-        showBoundaries={props.showBoundaries}
+        showBoundaries={true}
         startActions={props.startActions}
         endActions={props.endActions}
         areCustomStepsContinuous={props.areCustomStepsContinuous}
