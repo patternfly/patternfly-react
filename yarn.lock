@@ -4327,6 +4327,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@patternfly/patternfly@npm:6.4.0-prerelease.1":
+  version: 6.4.0-prerelease.1
+  resolution: "@patternfly/patternfly@npm:6.4.0-prerelease.1"
+  checksum: 10c0/d6fba54ff1ff2430ffacd7469e475fa5bc3fe394f524d4e53eca7fe93a4dc13fb3b4f56966d8f8901b3c85e1f9284b36f89774d505759fa5618f2deb32bd5672
+  languageName: node
+  linkType: hard
+
 "@patternfly/react-charts@workspace:^, @patternfly/react-charts@workspace:packages/react-charts":
   version: 0.0.0-use.local
   resolution: "@patternfly/react-charts@workspace:packages/react-charts"
@@ -4421,7 +4428,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@patternfly/react-core@workspace:packages/react-core"
   dependencies:
-    "@patternfly/patternfly": "npm:6.3.0-prerelease.79"
+    "@patternfly/patternfly": "npm:6.4.0-prerelease.1"
     "@patternfly/react-icons": "workspace:^"
     "@patternfly/react-styles": "workspace:^"
     "@patternfly/react-tokens": "workspace:^"
@@ -4482,7 +4489,7 @@ __metadata:
     "@fortawesome/free-brands-svg-icons": "npm:^5.15.4"
     "@fortawesome/free-regular-svg-icons": "npm:^5.15.4"
     "@fortawesome/free-solid-svg-icons": "npm:^5.15.4"
-    "@patternfly/patternfly": "npm:6.3.0-prerelease.79"
+    "@patternfly/patternfly": "npm:6.4.0-prerelease.1"
     fs-extra: "npm:^11.3.0"
     tslib: "npm:^2.8.1"
   peerDependencies:
@@ -4567,7 +4574,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@patternfly/react-styles@workspace:packages/react-styles"
   dependencies:
-    "@patternfly/patternfly": "npm:6.3.0-prerelease.79"
+    "@patternfly/patternfly": "npm:6.4.0-prerelease.1"
     change-case: "npm:^5.4.4"
     fs-extra: "npm:^11.3.0"
   languageName: unknown
@@ -4609,7 +4616,7 @@ __metadata:
   resolution: "@patternfly/react-tokens@workspace:packages/react-tokens"
   dependencies:
     "@adobe/css-tools": "npm:^4.4.2"
-    "@patternfly/patternfly": "npm:6.3.0-prerelease.79"
+    "@patternfly/patternfly": "npm:6.4.0-prerelease.1"
     fs-extra: "npm:^11.3.0"
   languageName: unknown
   linkType: soft
