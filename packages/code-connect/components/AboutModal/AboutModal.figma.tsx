@@ -8,7 +8,7 @@ import { AboutModal, Button, Content } from '@patternfly/react-core';
 
 figma.connect(
   AboutModal,
-  'https://www.figma.com/design/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6--Components-Test?node-id=2879-13973&t=15CEJpGgVui7qP5Q-11',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=2879-13973',
   {
     props: {
       productName: figma.string('Product name')
