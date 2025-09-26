@@ -65,6 +65,8 @@ export interface ThProps
    * content, such as a "select all" checkbox or "expand all" toggle.
    */
   'aria-label'?: string;
+  /** Additional content to render in the column header, appended to the end of the header content. */
+  additionalContent?: React.ReactNode;
 }
 
 const ThBase: React.FunctionComponent<ThProps> = ({
@@ -94,6 +96,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
   isSubheader = false,
   screenReaderText,
   'aria-label': ariaLabel,
+  additionalContent,
   ...props
 }: ThProps) => {
   const { variant } = useContext(TableContext);
@@ -241,6 +244,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
     >
       {transformedChildren ||
         (screenReaderText && <span className={accessibilityStyles.screenReader}>{screenReaderText}</span>)}
+      {additionalContent && additionalContent}
     </MergedComponent>
   );
 
