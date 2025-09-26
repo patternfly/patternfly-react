@@ -9,27 +9,17 @@ figma.connect(
   {
     props: {
       // enum
-      size: figma.enum('Size', {
+      isCompact: figma.enum('Size', {
         Default: undefined,
         Compact: 'compact'
       }),
 
-      // nested props
-      leftItem: figma.nestedProps('Base components/Toggle groups parts', {
-        text: figma.string('Text')
-      }),
-      middleItem1: figma.nestedProps('Base components/Toggle groups parts', {
-        text: figma.string('Text')
-      }),
-      middleItem2: figma.nestedProps('Base components/Toggle groups parts', {
-        text: figma.string('Text')
-      }),
-      rightItem: figma.nestedProps('Base components/Toggle groups parts', {
-        text: figma.string('Text')
-      }),
-
       children: figma.children('*')
     },
-    example: (props) => <ToggleGroup aria-label="Toggle group example">{props.children}</ToggleGroup>
+    example: (props) => (
+      <ToggleGroup aria-label="Toggle group example" isCompact={props.isCompact}>
+        {props.children}
+      </ToggleGroup>
+    )
   }
 );
