@@ -4210,7 +4210,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@patternfly/documentation-framework@npm:^6.19.0":
+"@patternfly/documentation-framework@npm:^6.22.8":
   version: 6.22.8
   resolution: "@patternfly/documentation-framework@npm:6.22.8"
   dependencies:
@@ -4320,10 +4320,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@patternfly/patternfly@npm:6.3.0-prerelease.78":
-  version: 6.3.0-prerelease.78
-  resolution: "@patternfly/patternfly@npm:6.3.0-prerelease.78"
-  checksum: 10c0/9393994331c0c062d56d55f1a4b924e65f689cce0e22cfac90cf9ce5e17dc83479dc6d532a49773269a5779ed2857ad065af012f437b571caa163fb90272f4c5
+"@patternfly/patternfly@npm:6.3.0-prerelease.79":
+  version: 6.3.0-prerelease.79
+  resolution: "@patternfly/patternfly@npm:6.3.0-prerelease.79"
+  checksum: 10c0/7436af69a0c3164d7d0cd4a6232f0de2da1b7865a3ae03c354d5d019b6a40671d8e666d02604dd82cd0de780f41394e2c5074903d0e2e80e49a71c5f357010ed
   languageName: node
   linkType: hard
 
@@ -4421,7 +4421,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@patternfly/react-core@workspace:packages/react-core"
   dependencies:
-    "@patternfly/patternfly": "npm:6.3.0-prerelease.78"
+    "@patternfly/patternfly": "npm:6.3.0-prerelease.79"
     "@patternfly/react-icons": "workspace:^"
     "@patternfly/react-styles": "workspace:^"
     "@patternfly/react-tokens": "workspace:^"
@@ -4441,8 +4441,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@patternfly/react-docs@workspace:packages/react-docs"
   dependencies:
-    "@patternfly/documentation-framework": "npm:^6.19.0"
-    "@patternfly/patternfly": "npm:6.3.0-prerelease.78"
+    "@patternfly/documentation-framework": "npm:^6.22.8"
+    "@patternfly/patternfly": "npm:6.3.0-prerelease.79"
     "@patternfly/patternfly-a11y": "npm:5.1.0"
     "@patternfly/react-charts": "workspace:^"
     "@patternfly/react-code-editor": "workspace:^"
@@ -4482,7 +4482,7 @@ __metadata:
     "@fortawesome/free-brands-svg-icons": "npm:^5.15.4"
     "@fortawesome/free-regular-svg-icons": "npm:^5.15.4"
     "@fortawesome/free-solid-svg-icons": "npm:^5.15.4"
-    "@patternfly/patternfly": "npm:6.3.0-prerelease.78"
+    "@patternfly/patternfly": "npm:6.3.0-prerelease.79"
     fs-extra: "npm:^11.3.0"
     tslib: "npm:^2.8.1"
   peerDependencies:
@@ -4567,7 +4567,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@patternfly/react-styles@workspace:packages/react-styles"
   dependencies:
-    "@patternfly/patternfly": "npm:6.3.0-prerelease.78"
+    "@patternfly/patternfly": "npm:6.3.0-prerelease.79"
     change-case: "npm:^5.4.4"
     fs-extra: "npm:^11.3.0"
   languageName: unknown
@@ -4609,7 +4609,7 @@ __metadata:
   resolution: "@patternfly/react-tokens@workspace:packages/react-tokens"
   dependencies:
     "@adobe/css-tools": "npm:^4.4.2"
-    "@patternfly/patternfly": "npm:6.3.0-prerelease.78"
+    "@patternfly/patternfly": "npm:6.3.0-prerelease.79"
     fs-extra: "npm:^11.3.0"
   languageName: unknown
   linkType: soft
