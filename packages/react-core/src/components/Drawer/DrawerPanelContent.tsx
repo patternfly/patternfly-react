@@ -86,6 +86,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   const hidden = isStatic ? false : !isExpanded;
   const [isExpandedInternal, setIsExpandedInternal] = useState(!hidden);
   const [isFocusTrapActive, setIsFocusTrapActive] = useState(false);
+  const [shouldCollapseSpace, setShouldCollapseSpace] = useState(hidden);
   const previouslyFocusedElement = useRef(null);
   let currWidth: number = 0;
   let panelRect: DOMRect;
@@ -104,6 +105,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   useEffect(() => {
     if (!isStatic && isExpanded) {
       setIsExpandedInternal(isExpanded);
+      setShouldCollapseSpace(false);
     }
   }, [isStatic, isExpanded]);
 
@@ -375,14 +377,21 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
                   onExpand(ev);
                 }
                 setIsExpandedInternal(!hidden);
+                // We also need to collapse the space when the panel is hidden to prevent automation from scrolling to it
+                if (hidden && ev.nativeEvent.propertyName === 'transform') {
+                  setShouldCollapseSpace(true);
+                }
                 if (isValidFocusTrap && ev.nativeEvent.propertyName === 'transform') {
                   setIsFocusTrapActive((prevIsFocusTrapActive) => !prevIsFocusTrapActive);
                 }
               }
             }}
             hidden={hidden}
-            {...((defaultSize || minSize || maxSize) && {
-              style: boundaryCssVars as React.CSSProperties
+            {...((defaultSize || minSize || maxSize || shouldCollapseSpace) && {
+              style: {
+                ...boundaryCssVars,
+                ...(shouldCollapseSpace && { flexBasis: 0 })
+              } as React.CSSProperties
             })}
             {...props}
             ref={panel}
