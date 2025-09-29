@@ -28,3 +28,29 @@ test('Renders with screen reader text when screenReaderText is passed in', () =>
 
   expect(screen.getByRole('columnheader')).toHaveTextContent('Test');
 });
+
+test('Does not render with additional content by default', () => {
+  render(<Th />);
+
+  expect(screen.getByRole('columnheader')).toBeEmptyDOMElement();
+});
+
+test('Render with additional content when additionalContent is passed in', () => {
+  render(<Th additionalContent={<div>Extra</div>}>Test</Th>);
+
+  expect(screen.getByRole('columnheader')).toHaveTextContent('Extra');
+});
+
+test('Additional content renders after children when additionalContent is passed in', () => {
+  render(
+    <Th additionalContent={<div>Extra</div>}>
+      <div>Test</div>
+    </Th>
+  );
+
+  const th = screen.getByRole('columnheader');
+  const thChildren = th.children;
+
+  expect(thChildren.item(0)?.textContent).toEqual('Test');
+  expect(thChildren.item(1)?.textContent).toEqual('Extra');
+});
