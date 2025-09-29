@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.4.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.4.0-prerelease.1...@patternfly/react-table@6.4.0-prerelease.2) (2025-09-29)
+
+### Features
+
+- **Table:** allow extra content to be appended to th ([#12017](https://github.com/patternfly/patternfly-react/issues/12017)) ([5b9f68e](https://github.com/patternfly/patternfly-react/commit/5b9f68e2cd967b7f7eb6af2c58ee9e0292209757))
+
 # [6.4.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.3.1-prerelease.24...@patternfly/react-table@6.4.0-prerelease.1) (2025-09-26)
 
 ### Bug Fixes
