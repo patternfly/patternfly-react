@@ -65,7 +65,7 @@ export interface ThProps
    * content, such as a "select all" checkbox or "expand all" toggle.
    */
   'aria-label'?: string;
-  /** @hide Internal use only. Additional content to render in the column header, appended to the end of the header content. */
+  /** @hide Beta prop, internal use only. Additional content to render in the column header, appended to the end of the header content. */
   additionalContent?: React.ReactNode;
 }
 
