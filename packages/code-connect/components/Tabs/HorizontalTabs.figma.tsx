@@ -5,11 +5,7 @@ import { Tabs } from '@patternfly/react-core';
 
 figma.connect(Tabs, 'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=14327-6503', {
   props: {
-    children: figma.children('Tab items - Horizontal'),
-    isBox: figma.enum('Type', {
-      Boxed: true,
-      'Boxed Light': true
-    }),
+    // boolean
     inset: figma.boolean('Inset', {
       true: {
         default: 'insetMd'
@@ -17,7 +13,15 @@ figma.connect(Tabs, 'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/Pattern
       false: {
         default: 'insetNone'
       }
-    })
+    }),
+
+    // enum
+    isBox: figma.enum('Type', {
+      Boxed: true,
+      'Boxed Light': true
+    }),
+
+    children: figma.children('Tab items - Horizontal')
   },
   example: (props) => (
     <Tabs

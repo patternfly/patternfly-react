@@ -13,12 +13,12 @@ figma.connect(
     props: {
       // boolean
       isInputVisible: figma.boolean('Value input'),
-      startActions: figma.boolean('Left action', {
-        true: <Button variant="plain" aria-label="Minus" onClick={() => {}} icon={<MinusIcon />} />,
-        false: undefined
-      }),
       endActions: figma.boolean('Right action', {
         true: <Button variant="plain" aria-label="Plus" onClick={() => {}} icon={<PlusIcon />} />,
+        false: undefined
+      }),
+      startActions: figma.boolean('Left action', {
+        true: <Button variant="plain" aria-label="Minus" onClick={() => {}} icon={<MinusIcon />} />,
         false: undefined
       }),
 

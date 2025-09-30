@@ -9,6 +9,7 @@ figma.connect(
   'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=2089-5606&m=dev',
   {
     props: {
+      // boolean
       icon: figma.boolean('Has icon', {
         true: <BellIcon />,
         false: undefined

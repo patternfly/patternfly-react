@@ -9,7 +9,6 @@ figma.connect(
   'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=7472-6718',
   {
     props: {
-      // date: figma.string('Date'),
       // string
       defaultTimestampContent: figma.string('✏️ Default timestamp content'),
 

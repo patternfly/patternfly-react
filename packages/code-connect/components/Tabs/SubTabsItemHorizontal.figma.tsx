@@ -8,11 +8,13 @@ figma.connect(
   'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=14327-6284&m=dev',
   {
     props: {
-      children: figma.children('*'),
+      // enum
       isBox: figma.enum('Type', {
         Boxed: true,
         'Boxed Light': true
-      })
+      }),
+
+      children: figma.children('*')
     },
     example: (props) => (
       <Tabs
