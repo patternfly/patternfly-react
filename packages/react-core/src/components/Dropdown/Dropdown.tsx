@@ -63,6 +63,12 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
+  /** When applied, wraps dropdown in a container with a data-ouia-component-id.*/
+  containerOuiaId?: number | string;
+  /** Set the value of data-ouia-safe for the container when containerOuiaId is applied. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  containerOuiaSafe?: boolean;
+  /** Sets the base component to render for the container. Defaults to <span> */
+  containerComponent?: React.ReactNode;
   /** z-index of the dropdown menu */
   zIndex?: number;
   /** Additional properties to pass to the Popper */
@@ -101,11 +107,16 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
   shouldFocusFirstItemOnOpen = false,
   shouldPreventScrollOnItemFocus = true,
   focusTimeoutDelay = 0,
+  containerOuiaId,
+  containerOuiaSafe = true,
+  containerComponent = 'span',
   ...props
 }: DropdownProps) => {
   const localMenuRef = useRef<HTMLDivElement>(undefined);
   const localToggleRef = useRef<HTMLButtonElement>(undefined);
   const ouiaProps = useOUIAProps(Dropdown.displayName, ouiaId, ouiaSafe);
+  const ContainerComponent = containerComponent as any;
+  const containerOuiaProps = useOUIAProps('Dropdown container', containerOuiaId, containerOuiaSafe);
 
   const menuRef = (innerRef as React.RefObject<HTMLDivElement | null>) || localMenuRef;
   const toggleRef =
@@ -200,7 +211,8 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
       </MenuContent>
     </Menu>
   );
-  return (
+
+  const popper = (
     <Popper
       trigger={typeof toggle === 'function' ? toggle(toggleRef) : toggle.toggleNode}
       triggerRef={toggleRef}
@@ -211,6 +223,8 @@ const DropdownBase: React.FunctionComponent<DropdownProps> = ({
       {...popperProps}
     />
   );
+
+  return containerOuiaId ? <ContainerComponent {...containerOuiaProps}>{popper}</ContainerComponent> : popper;
 };
 
 export const Dropdown = forwardRef((props: DropdownProps, ref: React.Ref<any>) => (
