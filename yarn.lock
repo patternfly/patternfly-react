@@ -4320,17 +4320,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@patternfly/patternfly@npm:6.3.0-prerelease.79":
-  version: 6.3.0-prerelease.79
-  resolution: "@patternfly/patternfly@npm:6.3.0-prerelease.79"
-  checksum: 10c0/7436af69a0c3164d7d0cd4a6232f0de2da1b7865a3ae03c354d5d019b6a40671d8e666d02604dd82cd0de780f41394e2c5074903d0e2e80e49a71c5f357010ed
-  languageName: node
-  linkType: hard
-
-"@patternfly/patternfly@npm:6.4.0-prerelease.1":
-  version: 6.4.0-prerelease.1
-  resolution: "@patternfly/patternfly@npm:6.4.0-prerelease.1"
-  checksum: 10c0/d6fba54ff1ff2430ffacd7469e475fa5bc3fe394f524d4e53eca7fe93a4dc13fb3b4f56966d8f8901b3c85e1f9284b36f89774d505759fa5618f2deb32bd5672
+"@patternfly/patternfly@npm:6.4.0-prerelease.2":
+  version: 6.4.0-prerelease.2
+  resolution: "@patternfly/patternfly@npm:6.4.0-prerelease.2"
+  checksum: 10c0/37563646d1b7c12db4e99d78fbca3d967036d53949f11e9c162b18cedaa3d73da7f7917cb781503044c23de3403a5e18bbcf240db86d59ac82b1699cb6d744a2
   languageName: node
   linkType: hard
 
@@ -4347,7 +4340,7 @@ __metadata:
     lodash: "npm:^4.17.21"
     tslib: "npm:^2.8.1"
   peerDependencies:
-    echarts: ^5.6.0
+    echarts: ^5.6.0 || ^6.0.0
     react: ^17 || ^18 || ^19
     react-dom: ^17 || ^18 || ^19
     victory-area: ^37.3.6
@@ -4428,7 +4421,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@patternfly/react-core@workspace:packages/react-core"
   dependencies:
-    "@patternfly/patternfly": "npm:6.4.0-prerelease.1"
+    "@patternfly/patternfly": "npm:6.4.0-prerelease.2"
     "@patternfly/react-icons": "workspace:^"
     "@patternfly/react-styles": "workspace:^"
     "@patternfly/react-tokens": "workspace:^"
@@ -4449,7 +4442,7 @@ __metadata:
   resolution: "@patternfly/react-docs@workspace:packages/react-docs"
   dependencies:
     "@patternfly/documentation-framework": "npm:^6.22.8"
-    "@patternfly/patternfly": "npm:6.3.0-prerelease.79"
+    "@patternfly/patternfly": "npm:6.4.0-prerelease.2"
     "@patternfly/patternfly-a11y": "npm:5.1.0"
     "@patternfly/react-charts": "workspace:^"
     "@patternfly/react-code-editor": "workspace:^"
@@ -4460,7 +4453,7 @@ __metadata:
     "@patternfly/react-table": "workspace:^"
     "@patternfly/react-templates": "workspace:^"
     "@patternfly/react-tokens": "workspace:^"
-    echarts: "npm:^5.6.0"
+    echarts: "npm:^5.6.0 || ^6.0.0"
     victory: "npm:^37.3.6"
   languageName: unknown
   linkType: soft
@@ -4489,7 +4482,7 @@ __metadata:
     "@fortawesome/free-brands-svg-icons": "npm:^5.15.4"
     "@fortawesome/free-regular-svg-icons": "npm:^5.15.4"
     "@fortawesome/free-solid-svg-icons": "npm:^5.15.4"
-    "@patternfly/patternfly": "npm:6.4.0-prerelease.1"
+    "@patternfly/patternfly": "npm:6.4.0-prerelease.2"
     fs-extra: "npm:^11.3.0"
     tslib: "npm:^2.8.1"
   peerDependencies:
@@ -4574,7 +4567,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@patternfly/react-styles@workspace:packages/react-styles"
   dependencies:
-    "@patternfly/patternfly": "npm:6.4.0-prerelease.1"
+    "@patternfly/patternfly": "npm:6.4.0-prerelease.2"
     change-case: "npm:^5.4.4"
     fs-extra: "npm:^11.3.0"
   languageName: unknown
@@ -4616,7 +4609,7 @@ __metadata:
   resolution: "@patternfly/react-tokens@workspace:packages/react-tokens"
   dependencies:
     "@adobe/css-tools": "npm:^4.4.2"
-    "@patternfly/patternfly": "npm:6.4.0-prerelease.1"
+    "@patternfly/patternfly": "npm:6.4.0-prerelease.2"
     fs-extra: "npm:^11.3.0"
   languageName: unknown
   linkType: soft
@@ -10275,13 +10268,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"echarts@npm:^5.6.0":
-  version: 5.6.0
-  resolution: "echarts@npm:5.6.0"
+"echarts@npm:^5.6.0 || ^6.0.0":
+  version: 6.0.0
+  resolution: "echarts@npm:6.0.0"
   dependencies:
     tslib: "npm:2.3.0"
-    zrender: "npm:5.6.1"
-  checksum: 10c0/6d6a2ee88534d1ff0433e935c542237b9896de1c94959f47ebc7e0e9da26f59bf11c91ed6fc135b62ad2786c779ee12bc536fa481e60532dad5b6a2f5167e9ea
+    zrender: "npm:6.0.0"
+  checksum: 10c0/60bbb4f00ac679d2f81d7a0aa684597c8ccc46041c5ae536def4c4bbb85d5557c1653a536ac6e11f42757718ab66e2bbc35d53d795173c50e8541154c8d59bbd
   languageName: node
   linkType: hard
 
@@ -24768,11 +24761,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zrender@npm:5.6.1":
-  version: 5.6.1
-  resolution: "zrender@npm:5.6.1"
+"zrender@npm:6.0.0":
+  version: 6.0.0
+  resolution: "zrender@npm:6.0.0"
   dependencies:
     tslib: "npm:2.3.0"
-  checksum: 10c0/dc1cc570054640cbd8fbb7b92e6252f225319522bfe3e8dc8bf02cc02d414e00a4c8d0a6f89bfc9d96e5e9511fdca94dd3d06bf53690df2b2f12b0fc560ac307
+  checksum: 10c0/c794e05ee969c750de6d17cfff60d9d4e6342d1591cf6ba3e488fb084ac7a0415355fe4aec55f83a400fd4cda63792db0533362455058ac06f6e1343be28d0ce
   languageName: node
   linkType: hard
