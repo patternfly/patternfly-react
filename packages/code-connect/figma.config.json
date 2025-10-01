@@ -1,13 +1,9 @@
 {
   "codeConnect": {
-    "parser": "react",
-    "include": [
-      "components/DatePicker/*.tsx",
-      "components/EmptyState/*.tsx",
-      "components/FileUpload/*.tsx",
-      "components/Hint/*.tsx",
-      "components/InlineEdit/*.tsx"
-    ],
+    "include": ["components/Menu/*.tsx"],
+    "documentUrlSubstitutions": {
+      "https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components": "https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/Em2QWrHDxDS4LUxo58Hust/PatternFly-6--Components"
+    },
     "paths": {
       "src/components": "src/components"
     },
