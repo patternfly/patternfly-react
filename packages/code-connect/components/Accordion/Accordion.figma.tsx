@@ -5,21 +5,21 @@ import { Accordion } from '@patternfly/react-core';
 
 figma.connect(
   Accordion,
-  'https://www.figma.com/file/aEBBvq0J3EPXxHvv6WgDx9/PatternFly-6%3A-Components-Test?node-id=2621-623',
+  'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=2621-623',
   {
     props: {
       // enum
-      displaySize: figma.enum('Type', { 'Large Bordered': 'lg' }),
+      displaySize: figma.enum('Type', { 'Large bordered': 'lg' }),
       isBordered: figma.enum('Type', {
         Bordered: true,
-        'Large Bordered': true
+        'Large bordered': true
       }),
-      togglePosition: figma.enum('Caret position', { Left: 'start' }),
+      togglePosition: figma.enum('Caret position', { 'At start': 'start' }),
 
       children: figma.children('Accordion toggle')
     },
     example: (props) => (
-      <Accordion togglePosition={props.togglePosition} isBordered={props.isBordered} displaySize={props.displaySize}>
+      <Accordion isBordered={props.isBordered} displaySize={props.displaySize} togglePosition={props.togglePosition}>
         {props.children}
       </Accordion>
     )
