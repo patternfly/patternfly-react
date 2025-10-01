@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.4.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.4.0-prerelease.2...@patternfly/react-docs@7.4.0-prerelease.3) (2025-10-01)
+
+### Bug Fixes
+
+- Bumped echarts and core. ([#12023](https://github.com/patternfly/patternfly-react/issues/12023)) ([1d4d075](https://github.com/patternfly/patternfly-react/commit/1d4d075730c3645394c774bfc5233ea786e29e43))
+
 # [7.4.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.4.0-prerelease.1...@patternfly/react-docs@7.4.0-prerelease.2) (2025-09-29)
 
 **Note:** Version bump only for package @patternfly/react-docs
