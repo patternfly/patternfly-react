@@ -37,13 +37,13 @@ jobs:
       - name: Build documentation
         run: yarn build:docs
 
-      # - name: Upload documentation
-      #  if: always()
-      #  run: node .github/upload-preview.mjs packages/react-docs/public
+      - name: Upload documentation
+        if: always()
+        run: node .github/upload-preview.mjs packages/react-docs/public
 
       - name: Run accessibility tests
         run: yarn serve:docs & yarn test:a11y
 
-      #- name: Upload accessibility results
-      #  if: always()
-      #  run: node .github/upload-preview.mjs packages/react-docs/coverage
+      - name: Upload accessibility results
+        if: always()
+        run: node .github/upload-preview.mjs packages/react-docs/coverage
