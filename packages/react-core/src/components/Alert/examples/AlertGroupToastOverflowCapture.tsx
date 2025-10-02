@@ -5,8 +5,8 @@ import {
   AlertGroup,
   AlertActionCloseButton,
   AlertVariant,
-  InputGroup,
-  InputGroupItem
+  Flex,
+  FlexItem
 } from '@patternfly/react-core';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 
@@ -58,23 +58,23 @@ export const AlertGroupToastOverflowCapture: React.FunctionComponent = () => {
 
   return (
     <Fragment>
-      <InputGroup style={{ marginBottom: '16px' }}>
-        <InputGroupItem>
+      <Flex gap={{ default: 'gapXs' }} style={{ marginBottom: '16px' }}>
+        <FlexItem>
           <button onClick={addSuccessAlert} type="button" className={btnClasses}>
             Add toast success alert
           </button>
-        </InputGroupItem>
-        <InputGroupItem>
+        </FlexItem>
+        <FlexItem>
           <button onClick={addDangerAlert} type="button" className={btnClasses}>
             Add toast danger alert
           </button>
-        </InputGroupItem>
-        <InputGroupItem>
+        </FlexItem>
+        <FlexItem>
           <button onClick={addInfoAlert} type="button" className={btnClasses}>
             Add toast info alert
           </button>
-        </InputGroupItem>
-      </InputGroup>
+        </FlexItem>
+      </Flex>
       <AlertGroup
         hasAnimations
         isToast

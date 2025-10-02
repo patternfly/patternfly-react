@@ -5,8 +5,8 @@ import {
   AlertGroup,
   AlertActionCloseButton,
   AlertVariant,
-  InputGroup,
-  InputGroupItem
+  Flex,
+  FlexItem
 } from '@patternfly/react-core';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 
@@ -35,13 +35,13 @@ export const AlertGroupMultipleDynamic: React.FunctionComponent = () => {
 
   return (
     <Fragment>
-      <InputGroup style={{ marginBottom: '16px' }}>
-        <InputGroupItem>
+      <Flex gap={{ default: 'gapXs' }}>
+        <FlexItem>
           <button onClick={addAlertCollection} type="button" className={btnClasses}>
             Add alert collection
           </button>
-        </InputGroupItem>
-      </InputGroup>
+        </FlexItem>
+      </Flex>
       <AlertGroup hasAnimations isToast isLiveRegion>
         {alerts.map(({ title, variant, key }) => (
           <Alert
