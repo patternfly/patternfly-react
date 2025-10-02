@@ -48,6 +48,7 @@ export const TabsSeparateContent: React.FunctionComponent = () => {
           id="refTab1Section"
           ref={contentRef1}
           aria-label="This is content for the first separate content tab"
+          hidden={activeTabKey !== 0}
         >
           Tab 1 section
         </TabContent>
@@ -56,7 +57,7 @@ export const TabsSeparateContent: React.FunctionComponent = () => {
           id="refTab2Section"
           ref={contentRef2}
           aria-label="This is content for the second separate content tab"
-          hidden
+          hidden={activeTabKey !== 1}
         >
           Tab 2 section
         </TabContent>
@@ -65,7 +66,7 @@ export const TabsSeparateContent: React.FunctionComponent = () => {
           id="refTab3Section"
           ref={contentRef3}
           aria-label="This is content for the third separate content tab"
-          hidden
+          hidden={activeTabKey !== 2}
         >
           Tab 3 section
         </TabContent>
