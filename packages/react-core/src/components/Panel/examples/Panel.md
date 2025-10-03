@@ -9,199 +9,50 @@ propComponents: [Panel, PanelMain, PanelMainBody, PanelHeader, PanelFooter]
 
 ### Basic
 
-```js
-import { Panel, PanelMain, PanelMainBody } from '@patternfly/react-core';
-
-const BasicPanel = () => (
-  <Panel>
-    <PanelMain>
-      <PanelMainBody>Main content</PanelMainBody>
-    </PanelMain>
-  </Panel>
-);
+```ts file="PanelBasic.tsx"
 ```
 
 ### Header
 
-```js
-import { Panel, PanelMain, PanelMainBody, PanelHeader, Divider } from '@patternfly/react-core';
-
-const HeaderPanel = () => (
-  <Panel>
-    <PanelHeader>Header content</PanelHeader>
-    <Divider />
-    <PanelMain>
-      <PanelMainBody>Main content</PanelMainBody>
-    </PanelMain>
-  </Panel>
-);
+```ts file="PanelHeaderExample.tsx"
 ```
 
 ### Footer
 
-```js
-import { Panel, PanelMain, PanelMainBody, PanelFooter } from '@patternfly/react-core';
-
-const FooterPanel = () => (
-  <Panel>
-    <PanelMain>
-      <PanelMainBody>Main content</PanelMainBody>
-    </PanelMain>
-    <PanelFooter>Footer content</PanelFooter>
-  </Panel>
-);
+```ts file="PanelFooterExample.tsx"
 ```
 
 ### Header and footer
 
-```js
-import { Panel, PanelMain, PanelMainBody, PanelHeader, Divider, PanelFooter } from '@patternfly/react-core';
-
-const HeaderFooterPanel = () => (
-  <Panel>
-    <PanelHeader>Header content</PanelHeader>
-    <Divider />
-    <PanelMain>
-      <PanelMainBody>Main content</PanelMainBody>
-    </PanelMain>
-    <PanelFooter>Footer content</PanelFooter>
-  </Panel>
-);
+```ts file="PanelHeaderFooter.tsx"
 ```
 
 ### No body
 
-```js
-import { Panel, PanelMain } from '@patternfly/react-core';
-
-const NoBodyPanel = () => (
-  <Panel>
-    <PanelMain>Main content</PanelMain>
-  </Panel>
-);
+```ts file="PanelNoBody.tsx"
 ```
 
 ### Raised
 
-```js
-import { Panel, PanelMain, PanelMainBody } from '@patternfly/react-core';
-
-const RaisedPanel = () => (
-  <Panel variant="raised">
-    <PanelMain>
-      <PanelMainBody>Main content</PanelMainBody>
-    </PanelMain>
-  </Panel>
-);
+```ts file="PanelRaised.tsx"
 ```
 
 ### Bordered
 
-```js
-import { Panel, PanelMain, PanelMainBody } from '@patternfly/react-core';
-
-const BorderedPanel = () => (
-  <Panel variant="bordered">
-    <PanelMain>
-      <PanelMainBody>Main content</PanelMainBody>
-    </PanelMain>
-  </Panel>
-);
+```ts file="PanelBordered.tsx"
 ```
 
 ### Secondary variant
 
-```js
-import { Panel, PanelMain, PanelMainBody } from '@patternfly/react-core';
-
-const PanelSecondaryVariant = () => (
-  <Panel variant="secondary">
-    <PanelMain>
-      <PanelMainBody>Main content</PanelMainBody>
-    </PanelMain>
-  </Panel>
-);
+```ts file="PanelSecondaryVariant.tsx"
 ```
 
 ### Scrollable
 
-```js
-import { Panel, PanelMain, PanelMainBody } from '@patternfly/react-core';
-
-const ScrollablePanel = () => (
-  <Panel isScrollable>
-    <PanelMain tabIndex={0}>
-      <PanelMainBody>
-        Main content
-        <br />
-        <br />
-        Main content
-        <br />
-        <br />
-        Main content
-        <br />
-        <br />
-        Main content
-        <br />
-        <br />
-        Main content
-        <br />
-        <br />
-        Main content
-        <br />
-        <br />
-        Main content
-        <br />
-        <br />
-        Main content
-        <br />
-        <br />
-        Main content
-      </PanelMainBody>
-    </PanelMain>
-  </Panel>
-);
+```ts file="PanelScrollable.tsx"
 ```
 
 ### Scrollable with header and footer
 
-```js
-import { Panel, PanelMain, PanelMainBody, PanelHeader, Divider, PanelFooter } from '@patternfly/react-core';
-
-const ScrollableHeaderFooterPanel = () => (
-  <Panel isScrollable>
-    <PanelHeader>Header content</PanelHeader>
-    <Divider />
-    <PanelMain tabIndex={0}>
-      <PanelMainBody>
-        Main content
-        <br />
-        <br />
-        Main content
-        <br />
-        <br />
-        Main content
-        <br />
-        <br />
-        Main content
-        <br />
-        <br />
-        Main content
-        <br />
-        <br />
-        Main content
-        <br />
-        <br />
-        Main content
-        <br />
-        <br />
-        Main content
-        <br />
-        <br />
-        Main content
-      </PanelMainBody>
-    </PanelMain>
-    <PanelFooter>Footer content</PanelFooter>
-  </Panel>
-);
+```ts file="PanelScrollableHeaderFooter.tsx"
 ```
