@@ -19,29 +19,21 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 A toggle is collapsed until it is selected by a user.
 
-```ts
-import { MenuToggle } from '@patternfly/react-core';
-
-<MenuToggle>Collapsed</MenuToggle>
-
+```ts file="MenuToggleCollapsed.tsx"
 ```
 
 ### Expanded toggle
 
 When a user selects a toggle, it becomes expanded and is styled with a blue underline. To flag expanded toggles, and apply expanded styling, use the `isExpanded` property .
 
-```ts
-import { MenuToggle } from '@patternfly/react-core';
-
-<MenuToggle isExpanded>Expanded</MenuToggle>;
-
+```ts file ="MenuToggleExpanded.tsx"
 ```
 
 ### Small toggle
 
 You can pass `size="sm"` to a MenuToggle to style it as a small toggle, such as within a [breadcrumb](/components/breadcrumb).
 
-```ts file="./MenuToggleSmall.tsx"
+```ts file="MenuToggleSmall.tsx"
 
 ```
 
@@ -49,32 +41,21 @@ You can pass `size="sm"` to a MenuToggle to style it as a small toggle, such as 
 
 To disable the selection and expansion of a toggle, use the `isDisabled` property.
 
-```ts
-import { MenuToggle } from '@patternfly/react-core';
-
-<MenuToggle isDisabled>Disabled</MenuToggle>
-
+```ts file="MenuToggleDisabled.tsx"
 ```
 
 ### With a badge
 
 To display a count of selected items in a toggle, use the `badge` property. You can also pass in `variant="plainText"` for a badge only toggle.
 
-```ts
-import { Fragment } from 'react';
-import { MenuToggle, Badge } from '@patternfly/react-core';
-
-<Fragment>
-  <MenuToggle badge={<Badge>4 selected</Badge>}>Count</MenuToggle>
-  <MenuToggle variant="plainText" badge={<Badge screenReaderText="additional items">4</Badge>} />
-</Fragment>
+```ts file="MenuToggleBadge.tsx"
 ```
 
 ### Settings toggle
 
 To create a "settings" menu toggle that will animate on hover and focus, you can pass the `isSettings` property in. Doing so will override the `icon` property, as a specific icon is used internally for the animations.
 
-```ts file="./MenuToggleSettings.tsx"
+```ts file="MenuToggleSettings.tsx"
 
 ```
 
@@ -84,7 +65,7 @@ To add a recognizable icon to a menu toggle, use the `icon` property. The follow
 
 For most basic icons, it is recommended to wrap it inside our [icon component](/components/icon).
 
-```ts file="./MenuToggleCustomIcon.tsx"
+```ts file="MenuToggleCustomIcon.tsx"
 
 ```
 
@@ -94,37 +75,14 @@ You can also pass images into the `icon` property. The following example passes 
 
 This can be used alongside a text label that provides more context for the image.
 
-```ts
-import { Fragment } from 'react';
-import { MenuToggle, Avatar } from '@patternfly/react-core';
-import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
-
-<Fragment>
-  <MenuToggle icon={<Avatar src={imgAvatar} alt="avatar" />}>Ned Username</MenuToggle>{' '}
-  <MenuToggle icon={<Avatar src={imgAvatar} alt="avatar" />} isExpanded>Ned Username</MenuToggle>{' '}
-  <MenuToggle icon={<Avatar src={imgAvatar} alt="avatar" />} isDisabled>Ned Username</MenuToggle>
-</Fragment>
+```ts file="MenuToggleAvatarText.tsx"
 ```
 
 ### Variant styles
 
 Variant styling can be applied to menu toggles. In the following example, the toggle uses primary styling by passing `variant="primary"` into the `<MenuToggle>` component. Additional variant options include “default”, “plain”, “plainText”, “secondary”, and “typeahead”.
 
-```ts
-import { Fragment } from 'react';
-import { MenuToggle } from '@patternfly/react-core';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
-
-<Fragment>
-  <MenuToggle variant="primary">Collapsed</MenuToggle>{' '}
-  <MenuToggle variant="primary" isExpanded>
-    Expanded
-  </MenuToggle>{' '}
-  <MenuToggle variant="primary" isDisabled>
-    Disabled
-  </MenuToggle>
-</Fragment>
-
+```ts file="MenuToggleVariantStyles.tsx"
 ```
 
 ### Plain toggle with icon
@@ -133,39 +91,14 @@ To apply plain styling to a menu toggle with an icon, pass in `variant="plain"`.
 
 If the toggle does not have any visible text content, use the `aria-label` property to provide an accessible name.
 
-```ts
-import { Fragment } from 'react';
-import { MenuToggle } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-
-<Fragment>
-  <MenuToggle icon={<EllipsisVIcon />} variant="plain" aria-label="plain kebab"/>
-  {' '}
-  <MenuToggle icon={<EllipsisVIcon />} variant="plain" isExpanded aria-label="plain expanded kebab"/>
-  {' '}
-  <MenuToggle icon={<EllipsisVIcon />} variant="plain" isDisabled aria-label="disabled plain kebab"/>
-</Fragment>
+```ts file="MenuTogglePlainIcon.tsx"
 ```
 
 ### Plain toggle with text label
 
 To apply plain styling to a menu toggle with a text label, pass in `variant="plainText"`. Unlike the “plain” variant, “plainText” adds a caret pointing down in the toggle.
 
-```ts
-import { Fragment } from 'react';
-import { MenuToggle } from '@patternfly/react-core';
-
-<Fragment>
-  <MenuToggle variant="plainText" isDisabled aria-label="Disabled plain menu toggle">
-    Disabled
-  </MenuToggle>{' '}
-  <MenuToggle variant="plainText" aria-label="Plain menu toggle">
-    Custom text
-  </MenuToggle>{' '}
-  <MenuToggle variant="plainText" isExpanded aria-label="Expanded plain menu toggle">
-    Custom text (expanded)
-  </MenuToggle>
-</Fragment>
+```ts file="MenuTogglePlainTextLabel.tsx"
 ```
 
 ### Split toggle with checkbox
@@ -216,14 +149,7 @@ A full height toggle fills the height of its parent. To flag a full height toggl
 
 In the following example, the toggle fills the size of the "80px" `<div>` element that it is within.
 
-```ts
-import { MenuToggle } from '@patternfly/react-core';
-
-<div style={{ height: "80px" }}>
-  <MenuToggle isFullHeight aria-label="Full height menu toggle">
-    Full height
-  </MenuToggle>
-</div>
+```ts file="MenuToggleFullHeight.tsx"
 ```
 
 ### Full width toggle
@@ -232,16 +158,7 @@ A full width toggle fills the width of its parent. To flag a full width toggle, 
 
 In the following example, the toggle fills the width of its parent as the window size changes.
 
-```ts
-import { MenuToggle } from '@patternfly/react-core';
-
-const fullWidth: React.FunctionComponent = () => {
-  return (
-    <MenuToggle isFullWidth aria-label="Full width menu toggle" >
-      Full width
-    </MenuToggle>
-  );
-}
+```ts file="MenuToggleFullWidth.tsx"
 ```
 
 ### Typeahead toggle
