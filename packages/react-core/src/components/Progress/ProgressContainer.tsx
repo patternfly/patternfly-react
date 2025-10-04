@@ -58,6 +58,7 @@ export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElem
    * We recommend the helper text component as it was designed for this purpose.
    */
   helperText?: React.ReactNode;
+  hideStatusIcon?: boolean;
 }
 
 const variantToIcon = {
@@ -76,9 +77,10 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
   measureLocation = ProgressMeasureLocation.top,
   isTitleTruncated = false,
   tooltipPosition,
-  helperText
+  helperText,
+  hideStatusIcon = false
 }: ProgressContainerProps) => {
-  const StatusIcon = variantToIcon.hasOwnProperty(variant) && variantToIcon[variant];
+  const StatusIcon = !hideStatusIcon && variantToIcon.hasOwnProperty(variant) && variantToIcon[variant];
   const [tooltip, setTooltip] = useState('');
   const titleRef = useRef(null);
   const updateTooltip = (event: any) => {
@@ -124,7 +126,7 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
             <span className={css(progressStyle.progressMeasure)}>{label || `${value}%`}</span>
           )}
           {StatusIcon && (
-            <span className={css(progressStyle.progressStatusIcon)}>
+            <span className={css(progressStyle.progressStatusIcon)} data-testid="progress-status-icon">
               <StatusIcon />
             </span>
           )}
