@@ -3,6 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Check/check';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import { getDefaultOUIAId, getOUIAProps, OUIAProps } from '../../helpers';
+import { getUniqueId } from '../../helpers/util';
 import { ASTERISK } from '../../helpers/htmlConstants';
 
 export interface CheckboxProps
@@ -39,6 +40,8 @@ export interface CheckboxProps
   description?: React.ReactNode;
   /** Body text of the checkbox */
   body?: React.ReactNode;
+  /** Custom aria-describedby value for the checkbox input. If not provided and description is set, a unique ID will be generated automatically. */
+  'aria-describedby'?: string;
   /** Sets the checkbox wrapper component to render. Defaults to "div". If set to "label", behaves the same as if isLabelWrapped prop was specified. */
   component?: React.ElementType;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
@@ -52,6 +55,7 @@ const defaultOnChange = () => {};
 
 interface CheckboxState {
   ouiaStateId: string;
+  descriptionId: string;
 }
 
 class Checkbox extends Component<CheckboxProps, CheckboxState> {
@@ -70,7 +74,8 @@ class Checkbox extends Component<CheckboxProps, CheckboxState> {
   constructor(props: any) {
     super(props);
     this.state = {
-      ouiaStateId: getDefaultOUIAId(Checkbox.displayName)
+      ouiaStateId: getDefaultOUIAId(Checkbox.displayName),
+      descriptionId: getUniqueId('pf-checkbox-description')
     };
   }
 
@@ -81,6 +86,7 @@ class Checkbox extends Component<CheckboxProps, CheckboxState> {
   render() {
     const {
       'aria-label': ariaLabel,
+      'aria-describedby': ariaDescribedBy,
       className,
       inputClassName,
       onChange,
@@ -115,6 +121,14 @@ class Checkbox extends Component<CheckboxProps, CheckboxState> {
       checkedProps.defaultChecked = defaultChecked;
     }
 
+    // Handle aria-describedby logic
+    let ariaDescribedByValue: string | undefined;
+    if (ariaDescribedBy !== undefined) {
+      ariaDescribedByValue = ariaDescribedBy === '' ? undefined : ariaDescribedBy;
+    } else if (description) {
+      ariaDescribedByValue = this.state.descriptionId;
+    }
+
     const inputRendered = (
       <input
         {...props}
@@ -123,6 +137,7 @@ class Checkbox extends Component<CheckboxProps, CheckboxState> {
         onChange={this.handleChange}
         aria-invalid={!isValid}
         aria-label={ariaLabel}
+        aria-describedby={ariaDescribedByValue}
         disabled={isDisabled}
         required={isRequired}
         ref={(elem) => {
@@ -169,7 +184,11 @@ class Checkbox extends Component<CheckboxProps, CheckboxState> {
             {labelRendered}
           </>
         )}
-        {description && <span className={css(styles.checkDescription)}>{description}</span>}
+        {description && (
+          <span id={this.state.descriptionId} className={css(styles.checkDescription)}>
+            {description}
+          </span>
+        )}
         {body && <span className={css(styles.checkBody)}>{body}</span>}
       </Component>
     );

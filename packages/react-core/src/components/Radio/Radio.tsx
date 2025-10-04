@@ -3,6 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Radio/radio';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
+import { getUniqueId } from '../../helpers/util';
 
 export interface RadioProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'disabled' | 'label' | 'onChange' | 'type'>,
@@ -39,6 +40,8 @@ export interface RadioProps
   description?: React.ReactNode;
   /** Body of the radio. */
   body?: React.ReactNode;
+  /** Custom aria-describedby value for the radio input. If not provided and description is set, a unique ID will be generated automatically. */
+  'aria-describedby'?: string;
   /** Sets the radio wrapper component to render. Defaults to "div". If set to "label", behaves the same as if isLabelWrapped prop was specified. */
   component?: React.ElementType;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
@@ -47,7 +50,7 @@ export interface RadioProps
   ouiaSafe?: boolean;
 }
 
-class Radio extends Component<RadioProps, { ouiaStateId: string }> {
+class Radio extends Component<RadioProps, { ouiaStateId: string; descriptionId: string }> {
   static displayName = 'Radio';
   static defaultProps: PickOptional<RadioProps> = {
     className: '',
@@ -63,7 +66,8 @@ class Radio extends Component<RadioProps, { ouiaStateId: string }> {
       console.error('Radio:', 'Radio requires an aria-label to be specified');
     }
     this.state = {
-      ouiaStateId: getDefaultOUIAId(Radio.displayName)
+      ouiaStateId: getDefaultOUIAId(Radio.displayName),
+      descriptionId: getUniqueId('pf-radio-description')
     };
   }
 
@@ -74,6 +78,7 @@ class Radio extends Component<RadioProps, { ouiaStateId: string }> {
   render() {
     const {
       'aria-label': ariaLabel,
+      'aria-describedby': ariaDescribedBy,
       checked,
       className,
       inputClassName,
@@ -98,6 +103,14 @@ class Radio extends Component<RadioProps, { ouiaStateId: string }> {
       console.error('Radio:', 'id is required to make input accessible');
     }
 
+    // Handle aria-describedby logic
+    let ariaDescribedByValue: string | undefined;
+    if (ariaDescribedBy !== undefined) {
+      ariaDescribedByValue = ariaDescribedBy === '' ? undefined : ariaDescribedBy;
+    } else if (description) {
+      ariaDescribedByValue = this.state.descriptionId;
+    }
+
     const inputRendered = (
       <input
         {...props}
@@ -105,6 +118,7 @@ class Radio extends Component<RadioProps, { ouiaStateId: string }> {
         type="radio"
         onChange={this.handleChange}
         aria-invalid={!isValid}
+        aria-describedby={ariaDescribedByValue}
         disabled={isDisabled}
         checked={checked || isChecked}
         {...(checked === undefined && { defaultChecked })}
@@ -143,7 +157,11 @@ class Radio extends Component<RadioProps, { ouiaStateId: string }> {
             {labelRendered}
           </>
         )}
-        {description && <span className={css(styles.radioDescription)}>{description}</span>}
+        {description && (
+          <span id={this.state.descriptionId} className={css(styles.radioDescription)}>
+            {description}
+          </span>
+        )}
         {body && <span className={css(styles.radioBody)}>{body}</span>}
       </Component>
     );
