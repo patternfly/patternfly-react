@@ -20,6 +20,7 @@ exports[`ProgressContainer should match snapshot (auto-generated) 1`] = `
     </span>
     <span
       class="pf-v6-c-progress__status-icon"
+      data-testid="progress-status-icon"
     >
       <svg
         aria-hidden="true"

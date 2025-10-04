@@ -537,6 +537,7 @@ exports[`MultipleFileUploadStatusItem renders custom progress value/variant when
           </span>
           <span
             class="pf-v6-c-progress__status-icon"
+            data-testid="progress-status-icon"
           >
             <svg
               aria-hidden="true"
