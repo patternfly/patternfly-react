@@ -145,16 +145,24 @@ describe('Radio', () => {
 
     const radio = screen.getByRole('radio');
     const descriptionElement = screen.getByText('test description');
-    
+
     expect(radio).toHaveAttribute('aria-describedby', descriptionElement.id);
     expect(descriptionElement).toHaveAttribute('id');
   });
 
   test('Sets custom aria-describedby when provided', () => {
-    render(<Radio id="test-id" name="check" aria-label="test radio" description="test description" aria-describedby="custom-id" />);
+    render(
+      <Radio
+        id="test-id"
+        name="check"
+        aria-label="test radio"
+        description="test description"
+        aria-describedby="custom-id"
+      />
+    );
 
     const radio = screen.getByRole('radio');
-    
+
     expect(radio).toHaveAttribute('aria-describedby', 'custom-id');
   });
 
@@ -162,15 +170,17 @@ describe('Radio', () => {
     render(<Radio id="test-id" name="check" aria-label="test radio" />);
 
     const radio = screen.getByRole('radio');
-    
+
     expect(radio).not.toHaveAttribute('aria-describedby');
   });
 
   test('Does not set aria-describedby when description is provided but aria-describedby is empty string', () => {
-    render(<Radio id="test-id" name="check" aria-label="test radio" description="test description" aria-describedby="" />);
+    render(
+      <Radio id="test-id" name="check" aria-label="test radio" description="test description" aria-describedby="" />
+    );
 
     const radio = screen.getByRole('radio');
-    
+
     expect(radio).not.toHaveAttribute('aria-describedby');
   });
 });
