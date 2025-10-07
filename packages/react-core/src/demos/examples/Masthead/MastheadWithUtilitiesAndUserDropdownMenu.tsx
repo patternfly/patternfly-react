@@ -74,6 +74,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
   const [refFullOptions, setRefFullOptions] = useState<Element[]>();
   const [favorites, setFavorites] = useState<string[]>([]);
   const [filteredIds, setFilteredIds] = useState<string[]>(['*']);
+  const [searchValue, setSearchValue] = useState('');
   const menuRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
 
@@ -297,6 +298,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
   };
 
   const onTextChange = (textValue: string) => {
+    setSearchValue(textValue);
     if (textValue === '') {
       setFilteredIds(['*']);
       return;
@@ -331,7 +333,12 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
     // eslint-disable-next-line no-console
     <Menu ref={menuRef} onActionClick={onFavorite} onSelect={(_ev, itemId) => console.log('selected', itemId)}>
       <MenuSearchInput>
-        <SearchInput aria-label="Filter menu items" onChange={(_event, value) => onTextChange(value)} />
+        <SearchInput
+          aria-label="Filter menu items"
+          value={searchValue}
+          onChange={(_event, value) => onTextChange(value)}
+          onClear={() => onTextChange('')}
+        />
       </MenuSearchInput>
       <Divider />
       <MenuContent>
