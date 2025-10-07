@@ -10,7 +10,7 @@ figma.connect(Button, 'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/Patte
     buttonText: figma.string('Text'),
 
     // boolean
-    icon: figma.boolean('Icon at end', {
+    icon: figma.boolean('Icon at start', {
       true: <ArrowRightIcon />,
       false: undefined
     }),
@@ -27,23 +27,38 @@ figma.connect(Button, 'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/Patte
     }),
 
     // enum
-    isAriaDisabled: figma.enum('State', { Disabled: true }),
     isClicked: figma.enum('State', { Clicked: true }),
+    id: figma.enum('Type', {
+      Progress: 'loading-button',
+      'Secondary progress': 'loading-button'
+    }),
     isDanger: figma.enum('Type', {
       Danger: true,
       'Secondary danger': true
     }),
     isDisabled: figma.enum('State', { Disabled: true }),
     isExpanded: figma.enum('State', { Expanded: true }),
-    isLoading: figma.enum('State', { Progress: true }),
-    isWarning: figma.enum('State', { Warning: true }),
-    size: figma.enum('Size', { Small: 'sm' }),
-    state: figma.enum('State', {
-      Read: 'read',
-      Unread: 'unread',
-      Attention: 'attention'
+    isLoading: figma.enum('State', {
+      Progress: {
+        loadingProps: {
+          spinnerAriaValueText: 'Spinner aria value text',
+          spinnerAriaLabelledBy: 'Spinner aria labelled by',
+          spinnerAriaLabel: 'Spinner aria label',
+          isLoading: true
+        },
+        onClick: () => {}
+      },
+      'Secondary progress': {
+        loadingProps: {
+          spinnerAriaValueText: 'Spinner aria value text',
+          spinnerAriaLabelledBy: 'Spinner aria labelled by',
+          spinnerAriaLabel: 'Spinner aria label',
+          isLoading: true
+        },
+        onClick: () => {}
+      }
     }),
-    tabIndex: 0,
+    size: figma.enum('Size', { Small: 'sm' }),
     variant: figma.enum('Type', {
       Primary: 'primary',
       Secondary: 'secondary',
@@ -57,11 +72,12 @@ figma.connect(Button, 'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/Patte
     <Button
       countOptions={props.countOptions}
       icon={props.icon}
-      iconPosition={props.iconPosition}
+      iconPosition={props.icon}
+      id={props.id}
       isClicked={props.isClicked}
       isDisabled={props.isDisabled}
-      isLoading={props.isLoading}
       isDanger={props.isDanger}
+      isLoading={props.isLoading}
       size={props.size}
       variant={props.variant}
     >
