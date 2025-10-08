@@ -4216,13 +4216,20 @@ exports[`Table Selectable table 1`] = `
           scope=""
           tabindex="-1"
         >
-          <label>
+          <div
+            class="pf-v6-c-check pf-m-standalone"
+          >
             <input
+              aria-invalid="false"
               aria-label="Select all rows"
-              name="check-all"
+              class="pf-v6-c-check__input"
+              data-ouia-component-id="OUIA-Generated-Checkbox-1"
+              data-ouia-component-type="PF6/Checkbox"
+              data-ouia-safe="true"
+              id="select-all"
               type="checkbox"
             />
-          </label>
+          </div>
         </th>
         <th
           class="pf-v6-c-table__th pf-v6-c-table__sort"
@@ -4316,13 +4323,20 @@ exports[`Table Selectable table 1`] = `
           data-key="0"
           tabindex="-1"
         >
-          <label>
+          <div
+            class="pf-v6-c-check pf-m-standalone"
+          >
             <input
+              aria-invalid="false"
               aria-label="Select row 0"
-              name="checkrow0"
+              class="pf-v6-c-check__input"
+              data-ouia-component-id="OUIA-Generated-Checkbox-2"
+              data-ouia-component-type="PF6/Checkbox"
+              data-ouia-safe="true"
+              id="select-0"
               type="checkbox"
             />
-          </label>
+          </div>
         </td>
         <th
           class="pf-v6-c-table__td"
@@ -4499,13 +4513,20 @@ exports[`Table Selectable table 1`] = `
           data-key="0"
           tabindex="-1"
         >
-          <label>
+          <div
+            class="pf-v6-c-check pf-m-standalone"
+          >
             <input
+              aria-invalid="false"
               aria-label="Select row 3"
-              name="checkrow3"
+              class="pf-v6-c-check__input"
+              data-ouia-component-id="OUIA-Generated-Checkbox-3"
+              data-ouia-component-type="PF6/Checkbox"
+              data-ouia-safe="true"
+              id="select-3"
               type="checkbox"
             />
-          </label>
+          </div>
         </td>
         <th
           class="pf-v6-c-table__td"
@@ -4625,13 +4646,20 @@ exports[`Table Selectable table 1`] = `
           data-key="0"
           tabindex="-1"
         >
-          <label>
+          <div
+            class="pf-v6-c-check pf-m-standalone"
+          >
             <input
+              aria-invalid="false"
               aria-label="Select row 5"
-              name="checkrow5"
+              class="pf-v6-c-check__input"
+              data-ouia-component-id="OUIA-Generated-Checkbox-4"
+              data-ouia-component-type="PF6/Checkbox"
+              data-ouia-safe="true"
+              id="select-5"
               type="checkbox"
             />
-          </label>
+          </div>
         </td>
         <th
           class="pf-v6-c-table__td"
@@ -4694,13 +4722,20 @@ exports[`Table Selectable table 1`] = `
           data-key="0"
           tabindex="-1"
         >
-          <label>
+          <div
+            class="pf-v6-c-check pf-m-standalone"
+          >
             <input
+              aria-invalid="false"
               aria-label="Select row 6"
-              name="checkrow6"
+              class="pf-v6-c-check__input"
+              data-ouia-component-id="OUIA-Generated-Checkbox-5"
+              data-ouia-component-type="PF6/Checkbox"
+              data-ouia-safe="true"
+              id="select-6"
               type="checkbox"
             />
-          </label>
+          </div>
         </td>
         <th
           class="pf-v6-c-table__td"
@@ -4763,13 +4798,20 @@ exports[`Table Selectable table 1`] = `
           data-key="0"
           tabindex="-1"
         >
-          <label>
+          <div
+            class="pf-v6-c-check pf-m-standalone"
+          >
             <input
+              aria-invalid="false"
               aria-label="Select row 7"
-              name="checkrow7"
+              class="pf-v6-c-check__input"
+              data-ouia-component-id="OUIA-Generated-Checkbox-6"
+              data-ouia-component-type="PF6/Checkbox"
+              data-ouia-safe="true"
+              id="select-7"
               type="checkbox"
             />
-          </label>
+          </div>
         </td>
         <th
           class="pf-v6-c-table__td"
@@ -4832,13 +4874,20 @@ exports[`Table Selectable table 1`] = `
           data-key="0"
           tabindex="-1"
         >
-          <label>
+          <div
+            class="pf-v6-c-check pf-m-standalone"
+          >
             <input
+              aria-invalid="false"
               aria-label="Select row 8"
-              name="checkrow8"
+              class="pf-v6-c-check__input"
+              data-ouia-component-id="OUIA-Generated-Checkbox-7"
+              data-ouia-component-type="PF6/Checkbox"
+              data-ouia-safe="true"
+              id="select-8"
               type="checkbox"
             />
-          </label>
+          </div>
         </td>
         <th
           class="pf-v6-c-table__td"
@@ -5008,13 +5057,21 @@ exports[`Table Selectable table with Radio 1`] = `
           data-key="0"
           tabindex="-1"
         >
-          <label>
+          <div
+            class="pf-v6-c-radio pf-m-standalone"
+          >
             <input
+              aria-invalid="false"
               aria-label="Select row 0"
+              class="pf-v6-c-radio__input"
+              data-ouia-component-id="OUIA-Generated-Radio-1"
+              data-ouia-component-type="PF6/Radio"
+              data-ouia-safe="true"
+              id="select-0"
               name="radioGroup"
               type="radio"
             />
-          </label>
+          </div>
         </td>
         <th
           class="pf-v6-c-table__td"
@@ -5191,13 +5248,21 @@ exports[`Table Selectable table with Radio 1`] = `
           data-key="0"
           tabindex="-1"
         >
-          <label>
+          <div
+            class="pf-v6-c-radio pf-m-standalone"
+          >
             <input
+              aria-invalid="false"
               aria-label="Select row 3"
+              class="pf-v6-c-radio__input"
+              data-ouia-component-id="OUIA-Generated-Radio-2"
+              data-ouia-component-type="PF6/Radio"
+              data-ouia-safe="true"
+              id="select-3"
               name="radioGroup"
               type="radio"
             />
-          </label>
+          </div>
         </td>
         <th
           class="pf-v6-c-table__td"
@@ -5317,13 +5382,21 @@ exports[`Table Selectable table with Radio 1`] = `
           data-key="0"
           tabindex="-1"
         >
-          <label>
+          <div
+            class="pf-v6-c-radio pf-m-standalone"
+          >
             <input
+              aria-invalid="false"
               aria-label="Select row 5"
+              class="pf-v6-c-radio__input"
+              data-ouia-component-id="OUIA-Generated-Radio-3"
+              data-ouia-component-type="PF6/Radio"
+              data-ouia-safe="true"
+              id="select-5"
               name="radioGroup"
               type="radio"
             />
-          </label>
+          </div>
         </td>
         <th
           class="pf-v6-c-table__td"
@@ -5386,13 +5459,21 @@ exports[`Table Selectable table with Radio 1`] = `
           data-key="0"
           tabindex="-1"
         >
-          <label>
+          <div
+            class="pf-v6-c-radio pf-m-standalone"
+          >
             <input
+              aria-invalid="false"
               aria-label="Select row 6"
+              class="pf-v6-c-radio__input"
+              data-ouia-component-id="OUIA-Generated-Radio-4"
+              data-ouia-component-type="PF6/Radio"
+              data-ouia-safe="true"
+              id="select-6"
               name="radioGroup"
               type="radio"
             />
-          </label>
+          </div>
         </td>
         <th
           class="pf-v6-c-table__td"
@@ -5455,13 +5536,21 @@ exports[`Table Selectable table with Radio 1`] = `
           data-key="0"
           tabindex="-1"
         >
-          <label>
+          <div
+            class="pf-v6-c-radio pf-m-standalone"
+          >
             <input
+              aria-invalid="false"
               aria-label="Select row 7"
+              class="pf-v6-c-radio__input"
+              data-ouia-component-id="OUIA-Generated-Radio-5"
+              data-ouia-component-type="PF6/Radio"
+              data-ouia-safe="true"
+              id="select-7"
               name="radioGroup"
               type="radio"
             />
-          </label>
+          </div>
         </td>
         <th
           class="pf-v6-c-table__td"
@@ -5524,13 +5613,21 @@ exports[`Table Selectable table with Radio 1`] = `
           data-key="0"
           tabindex="-1"
         >
-          <label>
+          <div
+            class="pf-v6-c-radio pf-m-standalone"
+          >
             <input
+              aria-invalid="false"
               aria-label="Select row 8"
+              class="pf-v6-c-radio__input"
+              data-ouia-component-id="OUIA-Generated-Radio-6"
+              data-ouia-component-type="PF6/Radio"
+              data-ouia-safe="true"
+              id="select-8"
               name="radioGroup"
               type="radio"
             />
-          </label>
+          </div>
         </td>
         <th
           class="pf-v6-c-table__td"
@@ -5608,14 +5705,21 @@ exports[`Table Selectable table with selected expandable row 1`] = `
           scope=""
           tabindex="-1"
         >
-          <label>
+          <div
+            class="pf-v6-c-check pf-m-standalone"
+          >
             <input
+              aria-invalid="false"
               aria-label="Select all rows"
               checked=""
-              name="check-all"
+              class="pf-v6-c-check__input"
+              data-ouia-component-id="OUIA-Generated-Checkbox-8"
+              data-ouia-component-type="PF6/Checkbox"
+              data-ouia-safe="true"
+              id="select-all"
               type="checkbox"
             />
-          </label>
+          </div>
         </th>
         <th
           class="pf-v6-c-table__th"
@@ -5643,14 +5747,21 @@ exports[`Table Selectable table with selected expandable row 1`] = `
           data-key="0"
           tabindex="-1"
         >
-          <label>
+          <div
+            class="pf-v6-c-check pf-m-standalone"
+          >
             <input
+              aria-invalid="false"
               aria-label="Select row 0"
               checked=""
-              name="checkrow0"
+              class="pf-v6-c-check__input"
+              data-ouia-component-id="OUIA-Generated-Checkbox-9"
+              data-ouia-component-type="PF6/Checkbox"
+              data-ouia-safe="true"
+              id="select-0"
               type="checkbox"
             />
-          </label>
+          </div>
         </td>
         <td
           class="pf-v6-c-table__td"

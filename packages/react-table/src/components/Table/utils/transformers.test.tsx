@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import {
@@ -83,7 +83,7 @@ const testCellActions = async ({
 
 describe('Transformer functions', () => {
   describe('selectable', () => {
-    test('main select', async () => {
+    test('main select (header) - should toggle from unchecked to checked', async () => {
       const onSelect = jest.fn((_event, selected, rowId) => ({ selected, rowId }));
       const column = {
         extraParams: { onSelect }
@@ -92,37 +92,80 @@ describe('Transformer functions', () => {
       expect(returnedData).toMatchObject({ className: tableStyles.tableCheck });
 
       const user = userEvent.setup();
-
       render(returnedData.children as React.ReactElement<any>);
 
-      await user.type(screen.getByRole('textbox'), 'a');
+      // Click the header radio button (should be unchecked initially)
+      await user.click(screen.getByRole('radio'));
+
       expect(onSelect).toHaveBeenCalledTimes(1);
-      expect(onSelect.mock.results[0].value).toMatchObject({ rowId: -1, selected: false });
+      expect(onSelect.mock.results[0].value).toMatchObject({ rowId: -1, selected: true });
     });
 
-    test('selected', async () => {
+    test('row select (checkbox) - should toggle from selected to unselected', async () => {
       const onSelect = jest.fn((_event, selected, rowId) => ({ selected, rowId }));
       const column = {
-        extraParams: { onSelect }
+        extraParams: { onSelect, selectVariant: 'checkbox' }
       };
       const returnedData = selectable('', { column, rowIndex: 0, rowData: { selected: true } } as IExtra);
       expect(returnedData).toMatchObject({ className: tableStyles.tableCheck });
-      const user = userEvent.setup();
 
+      const user = userEvent.setup();
       render(returnedData.children as React.ReactElement<any>);
 
-      await user.type(screen.getByRole('textbox'), 'a');
+      // Click the row checkbox (should be checked initially, clicking should uncheck)
+      await user.click(screen.getByRole('checkbox'));
       expect(onSelect).toHaveBeenCalledTimes(1);
       expect(onSelect.mock.results[0].value).toMatchObject({ rowId: 0, selected: false });
     });
 
-    test('unselected', () => {
+    test('row select (checkbox) - should toggle from unselected to selected', async () => {
       const onSelect = jest.fn((_event, selected, rowId) => ({ selected, rowId }));
       const column = {
-        extraParams: { onSelect }
+        extraParams: { onSelect, selectVariant: 'checkbox' }
       };
       const returnedData = selectable('', { column, rowIndex: 0, rowData: { selected: false } } as IExtra);
-      expect(returnedData).toMatchSnapshot();
+      expect(returnedData).toMatchObject({ className: tableStyles.tableCheck });
+
+      const user = userEvent.setup();
+      render(returnedData.children as React.ReactElement<any>);
+
+      // Click the row checkbox (should be unchecked initially, clicking should check)
+      await user.click(screen.getByRole('checkbox'));
+      expect(onSelect).toHaveBeenCalledTimes(1);
+      expect(onSelect.mock.results[0].value).toMatchObject({ rowId: 0, selected: true });
+    });
+
+    test('row select (radio) - clicking already selected radio should not trigger onSelect', async () => {
+      const onSelect = jest.fn((_event, selected, rowId) => ({ selected, rowId }));
+      const column = {
+        extraParams: { onSelect, selectVariant: 'radio' }
+      };
+      const returnedData = selectable('', { column, rowIndex: 0, rowData: { selected: true } } as IExtra);
+      expect(returnedData).toMatchObject({ className: tableStyles.tableCheck });
+
+      const user = userEvent.setup();
+      render(returnedData.children as React.ReactElement<any>);
+
+      // Click the row radio button (should be checked initially, clicking should not trigger change)
+      await user.click(screen.getByRole('radio'));
+      expect(onSelect).toHaveBeenCalledTimes(0);
+    });
+
+    test('row select (radio) - should toggle from unselected to selected', async () => {
+      const onSelect = jest.fn((_event, selected, rowId) => ({ selected, rowId }));
+      const column = {
+        extraParams: { onSelect, selectVariant: 'radio' }
+      };
+      const returnedData = selectable('', { column, rowIndex: 0, rowData: { selected: false } } as IExtra);
+      expect(returnedData).toMatchObject({ className: tableStyles.tableCheck });
+
+      const user = userEvent.setup();
+      render(returnedData.children as React.ReactElement<any>);
+
+      // Click the row radio button (should be unchecked initially, clicking should check)
+      await user.click(screen.getByRole('radio'));
+      expect(onSelect).toHaveBeenCalledTimes(1);
+      expect(onSelect.mock.results[0].value).toMatchObject({ rowId: 0, selected: true });
     });
   });
 

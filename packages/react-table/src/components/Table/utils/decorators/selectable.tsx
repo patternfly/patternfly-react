@@ -30,26 +30,27 @@ export const selectable: ITransform = (
    * @param {React.FormEvent} event - React form event
    */
   function selectClick(event: React.FormEvent<HTMLInputElement>) {
-    const selected = rowIndex === undefined ? event.currentTarget.checked : rowData && !rowData.selected;
+    const selected = rowIndex === undefined ? event.currentTarget.checked : !(rowData && rowData.selected);
     // tslint:disable-next-line:no-unused-expression
     onSelect && onSelect(event, selected, rowId, rowData, extraData);
   }
   const customProps = {
+    id: rowId !== -1 ? `select-${rowIndex}` : 'select-all',
     ...(rowId !== -1
       ? {
-          checked: rowData && !!rowData.selected,
+          isChecked: rowData && !!rowData.selected,
           'aria-label': `Select row ${rowIndex}`
         }
       : {
-          checked: allRowsSelected,
+          isChecked: allRowsSelected,
           'aria-label': 'Select all rows'
         }),
     ...(rowData &&
       (rowData.disableCheckbox || rowData.disableSelection) && {
-        disabled: true,
+        isDisabled: true,
         className: checkStyles.checkInput
       }),
-    ...(!rowData && isHeaderSelectDisabled && { disabled: true })
+    ...(!rowData && isHeaderSelectDisabled && { isDisabled: true })
   };
   let selectName = 'check-all';
   if (rowId !== -1 && selectVariant === RowSelectVariant.checkbox) {
