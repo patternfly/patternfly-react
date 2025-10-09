@@ -195,8 +195,7 @@ test('Renders with class pf-m-detached when isDetached is true and direction is 
 test('Renders with default div wrapper when toggleWrapper is not specified', () => {
   render(<ExpandableSection data-testid="test-id">Test content</ExpandableSection>);
 
-  const wrapper = screen.getByTestId('test-id');
-  const toggle = wrapper.querySelector('.pf-v6-c-expandable-section__toggle');
+  const toggle = screen.getByRole('button').parentElement;
   expect(toggle?.tagName).toBe('DIV');
 });
 
@@ -207,9 +206,7 @@ test('Renders with h2 wrapper when toggleWrapper="h2"', () => {
     </ExpandableSection>
   );
 
-  const wrapper = screen.getByTestId('test-id');
-  const toggle = wrapper.querySelector('.pf-v6-c-expandable-section__toggle');
-  expect(toggle?.tagName).toBe('H2');
+  expect(screen.getByRole('heading', { level: 2 })).toBeInTheDocument();
 });
 
 test('Renders with div wrapper when toggleWrapper="div"', () => {
@@ -219,7 +216,6 @@ test('Renders with div wrapper when toggleWrapper="div"', () => {
     </ExpandableSection>
   );
 
-  const wrapper = screen.getByTestId('test-id');
-  const toggle = wrapper.querySelector('.pf-v6-c-expandable-section__toggle');
+  const toggle = screen.getByRole('button').parentElement;
   expect(toggle?.tagName).toBe('DIV');
 });
