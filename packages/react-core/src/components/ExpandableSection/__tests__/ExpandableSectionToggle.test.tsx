@@ -51,8 +51,7 @@ test('Renders with aria-labelledby when toggleAriaLabelledBy is passed', () => {
 test('Renders with default div wrapper when toggleWrapper is not specified', () => {
   render(<ExpandableSectionToggle data-testid="test-id">Toggle test</ExpandableSectionToggle>);
 
-  const wrapper = screen.getByTestId('test-id');
-  const toggle = wrapper.querySelector('.pf-v6-c-expandable-section__toggle');
+  const toggle = screen.getByRole('button').parentElement;
   expect(toggle?.tagName).toBe('DIV');
 });
 
@@ -63,9 +62,7 @@ test('Renders with h2 wrapper when toggleWrapper="h2"', () => {
     </ExpandableSectionToggle>
   );
 
-  const wrapper = screen.getByTestId('test-id');
-  const toggle = wrapper.querySelector('.pf-v6-c-expandable-section__toggle');
-  expect(toggle?.tagName).toBe('H2');
+  expect(screen.getByRole('heading', { level: 2 })).toBeInTheDocument();
 });
 
 test('Renders with div wrapper when toggleWrapper="div"', () => {
@@ -75,7 +72,6 @@ test('Renders with div wrapper when toggleWrapper="div"', () => {
     </ExpandableSectionToggle>
   );
 
-  const wrapper = screen.getByTestId('test-id');
-  const toggle = wrapper.querySelector('.pf-v6-c-expandable-section__toggle');
+  const toggle = screen.getByRole('button').parentElement;
   expect(toggle?.tagName).toBe('DIV');
 });
