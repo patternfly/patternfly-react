@@ -337,7 +337,10 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
           aria-label="Filter menu items"
           value={searchValue}
           onChange={(_event, value) => onTextChange(value)}
-          onClear={() => onTextChange('')}
+          onClear={(event) => {
+            event.stopPropagation();
+            onTextChange('');
+          }}
         />
       </MenuSearchInput>
       <Divider />
