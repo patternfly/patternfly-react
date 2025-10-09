@@ -1,4 +1,4 @@
-import { Fragment, useMemo, useState } from 'react';
+import { Fragment, useMemo, useState, FunctionComponent } from 'react';
 import { Checkbox } from '@patternfly/react-core';
 import { SimpleSelect, SimpleSelectOption } from '@patternfly/react-templates';
 
@@ -8,7 +8,7 @@ const Options: SimpleSelectOption[] = [
   { content: 'Option 3', value: 'Option3' }
 ];
 
-export const SelectSimpleDemo: React.FunctionComponent = () => {
+export const SelectSimpleDemo: FunctionComponent = () => {
   const [isDisabled, setIsDisabled] = useState<boolean>(false);
   const [selected, setSelected] = useState<string | undefined>('Option1');
 

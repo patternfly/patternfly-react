@@ -4599,8 +4599,8 @@ __metadata:
     "@patternfly/react-tokens": "workspace:^"
     tslib: "npm:^2.8.1"
   peerDependencies:
-    react: ^17 || ^18
-    react-dom: ^17 || ^18
+    react: ^17 || ^18 || ^19
+    react-dom: ^17 || ^18 || ^19
   languageName: unknown
   linkType: soft
 
