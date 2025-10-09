@@ -287,7 +287,6 @@ exports[`Progress variant danger 1`] = `
       </span>
       <span
         class="pf-v6-c-progress__status-icon"
-        data-testid="progress-status-icon"
       >
         <svg
           aria-hidden="true"
@@ -341,7 +340,6 @@ exports[`Progress variant success 1`] = `
       </span>
       <span
         class="pf-v6-c-progress__status-icon"
-        data-testid="progress-status-icon"
       >
         <svg
           aria-hidden="true"
@@ -395,7 +393,6 @@ exports[`Progress variant warning 1`] = `
       </span>
       <span
         class="pf-v6-c-progress__status-icon"
-        data-testid="progress-status-icon"
       >
         <svg
           aria-hidden="true"

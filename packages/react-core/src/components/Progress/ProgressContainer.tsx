@@ -126,7 +126,7 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
             <span className={css(progressStyle.progressMeasure)}>{label || `${value}%`}</span>
           )}
           {StatusIcon && (
-            <span className={css(progressStyle.progressStatusIcon)} data-testid="progress-status-icon">
+            <span className={css(progressStyle.progressStatusIcon)}>
               <StatusIcon />
             </span>
           )}

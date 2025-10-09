@@ -113,31 +113,30 @@ describe('hideStatusIcon prop behavior', () => {
   test('shows status icon by default when hideStatusIcon is not set', () => {
     render(<Progress id="default-status-icon-test" value={100} variant="success" />);
 
-    // Should have status icon by default
-    expect(screen.getByTestId('progress-status-icon')).toBeInTheDocument();
+    expect(screen.getByRole('img', { hidden: true })).toBeInTheDocument();
   });
 
   test('hides status icon when hideStatusIcon flag is set with success variant', () => {
     render(<Progress id="hide-icon-success" value={100} variant="success" hideStatusIcon />);
 
-    expect(screen.queryByTestId('progress-status-icon')).not.toBeInTheDocument();
+    expect(screen.queryByRole('img', { hidden: true })).not.toBeInTheDocument();
   });
 
   test('hides status icon when hideStatusIcon flag is set with danger variant', () => {
     render(<Progress id="hide-icon-danger" value={50} variant="danger" hideStatusIcon />);
 
-    expect(screen.queryByTestId('progress-status-icon')).not.toBeInTheDocument();
+    expect(screen.queryByRole('img', { hidden: true })).not.toBeInTheDocument();
   });
 
   test('hides status icon when hideStatusIcon flag is set with warning variant', () => {
     render(<Progress id="hide-icon-warning" value={75} variant="warning" hideStatusIcon />);
 
-    expect(screen.queryByTestId('progress-status-icon')).not.toBeInTheDocument();
+    expect(screen.queryByRole('img', { hidden: true })).not.toBeInTheDocument();
   });
 
   test('shows status icon when hideStatusIcon is explicitly false', () => {
     render(<Progress id="show-icon-success" value={100} variant="success" hideStatusIcon={false} />);
 
-    expect(screen.getByTestId('progress-status-icon')).toBeInTheDocument();
+    expect(screen.getByRole('img', { hidden: true })).toBeInTheDocument();
   });
 });
