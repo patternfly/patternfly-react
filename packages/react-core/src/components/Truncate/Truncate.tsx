@@ -2,8 +2,6 @@ import { Fragment, useEffect, useRef, useState, forwardRef, useImperativeHandle 
 import styles from '@patternfly/react-styles/css/components/Truncate/truncate';
 import { css } from '@patternfly/react-styles';
 import { Tooltip, TooltipPosition, TooltipProps } from '../Tooltip';
-import { getReferenceElement } from '../../helpers';
-import { getResizeObserver } from '../../helpers/resizeObserver';
 
 export enum TruncatePosition {
   start = 'start',
@@ -79,69 +77,17 @@ const TruncateBase: React.FunctionComponent<TruncateProps> = ({
   ...props
 }: TruncateProps) => {
   const [isTruncated, setIsTruncated] = useState(true);
-  const [parentElement, setParentElement] = useState<HTMLElement>(null);
-  const [textElement, setTextElement] = useState<HTMLElement>(null);
   const [shouldRenderByMaxChars, setShouldRenderByMaxChars] = useState(maxCharsDisplayed > 0);
 
   const textRef = useRef<HTMLElement>(null);
   useImperativeHandle(innerRef, () => textRef.current!);
   const defaultSubParentRef = useRef<any>(null);
   const subParentRef = tooltipProps?.triggerRef || defaultSubParentRef;
-  const observer = useRef(null);
 
   if (maxCharsDisplayed <= 0) {
     // eslint-disable-next-line no-console
     console.warn('Truncate: the maxCharsDisplayed must be greater than 0, otherwise no content will be visible.');
   }
-
-  const getActualWidth = (element: Element) => {
-    const computedStyle = getComputedStyle(element);
-
-    return (
-      parseFloat(computedStyle.width) -
-      parseFloat(computedStyle.paddingLeft) -
-      parseFloat(computedStyle.paddingRight) -
-      parseFloat(computedStyle.borderRight) -
-      parseFloat(computedStyle.borderLeft)
-    );
-  };
-
-  const calculateTotalTextWidth = (element: Element, trailingNumChars: number, content: string) => {
-    const firstTextWidth = element.scrollWidth;
-    const firstTextLength = content.length;
-    return (firstTextWidth / firstTextLength) * trailingNumChars + firstTextWidth;
-  };
-
-  useEffect(() => {
-    if (textRef && textRef.current && !textElement) {
-      setTextElement(textRef.current);
-    }
-  }, [textRef, textElement]);
-
-  useEffect(() => {
-    const refElement = getReferenceElement(subParentRef);
-    if (refElement?.parentElement && !parentElement) {
-      setParentElement(refElement.parentElement);
-    }
-  }, [subParentRef, parentElement]);
-
-  useEffect(() => {
-    if (textElement && parentElement && !observer.current && !shouldRenderByMaxChars) {
-      const totalTextWidth = calculateTotalTextWidth(textElement, trailingNumChars, content);
-      const textWidth = position === 'middle' ? totalTextWidth : textElement.scrollWidth;
-
-      const handleResize = () => {
-        const parentWidth = getActualWidth(parentElement);
-        setIsTruncated(textWidth >= parentWidth);
-      };
-
-      const observer = getResizeObserver(parentElement, handleResize);
-
-      return () => {
-        observer();
-      };
-    }
-  }, [textElement, parentElement, trailingNumChars, content, position, shouldRenderByMaxChars]);
 
   useEffect(() => {
     if (shouldRenderByMaxChars) {
