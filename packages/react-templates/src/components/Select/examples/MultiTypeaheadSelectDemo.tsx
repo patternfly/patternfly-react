@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, FunctionComponent } from 'react';
 import { MultiTypeaheadSelect, MultiTypeaheadSelectOption } from '@patternfly/react-templates';
 
 const Options = [
@@ -16,7 +16,7 @@ const Options = [
 
 type SelectionsType = (string | number)[];
 
-export const MultiSelectTypeaheadDemo: React.FunctionComponent = () => {
+export const MultiSelectTypeaheadDemo: FunctionComponent = () => {
   const [selected, setSelected] = useState<SelectionsType>(['option5']);
 
   const initialOptions = useMemo<MultiTypeaheadSelectOption[]>(

@@ -1,4 +1,12 @@
-import { forwardRef, useEffect, useState } from 'react';
+import {
+  forwardRef,
+  useEffect,
+  useState,
+  FunctionComponent,
+  Ref,
+  MouseEvent as ReactMouseEvent,
+  CSSProperties
+} from 'react';
 import { Badge } from '@patternfly/react-core/dist/esm/components/Badge';
 import { MenuToggle, MenuToggleElement, MenuToggleProps } from '@patternfly/react-core/dist/esm/components/MenuToggle';
 import {
@@ -35,7 +43,7 @@ export interface CheckboxSelectProps extends Omit<SelectProps, 'toggle' | 'onTog
   toggleProps?: MenuToggleProps;
 }
 
-const CheckboxSelectBase: React.FunctionComponent<CheckboxSelectProps> = ({
+const CheckboxSelectBase: FunctionComponent<CheckboxSelectProps> = ({
   innerRef,
   initialOptions,
   isDisabled,
@@ -69,7 +77,7 @@ const CheckboxSelectBase: React.FunctionComponent<CheckboxSelectProps> = ({
     setIsOpen(!isOpen);
   };
 
-  const onSelect = (event: React.MouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
+  const onSelect = (event: ReactMouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
     const valueString = `${value}`;
     if (selected.includes(valueString)) {
       setSelected((prevSelected) => prevSelected.filter((item) => item !== valueString));
@@ -86,7 +94,7 @@ const CheckboxSelectBase: React.FunctionComponent<CheckboxSelectProps> = ({
     </>
   );
 
-  const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
+  const toggle = (toggleRef: Ref<MenuToggleElement>) => (
     <MenuToggle
       ref={toggleRef}
       onClick={onToggleClick}
@@ -95,7 +103,7 @@ const CheckboxSelectBase: React.FunctionComponent<CheckboxSelectProps> = ({
       style={
         {
           width: toggleWidth
-        } as React.CSSProperties
+        } as CSSProperties
       }
       {...toggleProps}
     >
@@ -122,6 +130,6 @@ const CheckboxSelectBase: React.FunctionComponent<CheckboxSelectProps> = ({
   );
 };
 
-export const CheckboxSelect = forwardRef((props: CheckboxSelectProps, ref: React.Ref<any>) => (
+export const CheckboxSelect = forwardRef((props: CheckboxSelectProps, ref: Ref<any>) => (
   <CheckboxSelectBase {...props} innerRef={ref} />
 ));

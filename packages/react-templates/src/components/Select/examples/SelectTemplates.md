@@ -11,7 +11,7 @@ Note: Templates live in their own package at [@patternfly/react-templates](https
 
 For custom use cases, please see the select component suite from [@patternfly/react-core](https://www.npmjs.com/package/@patternfly/react-core).
 
-import { Fragment, useEffect, useMemo, useState } from 'react';
+import { Fragment, useEffect, useMemo, useState, FunctionComponent } from 'react';
 import { Checkbox } from '@patternfly/react-core';
 import { SimpleSelect, CheckboxSelect, TypeaheadSelect, MultiTypeaheadSelect } from '@patternfly/react-templates';
 
