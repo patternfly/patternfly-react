@@ -1,9 +1,10 @@
 import { Fragment, useState } from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent, SearchInput, Checkbox } from '@patternfly/react-core';
 
-export const ToolbarSticky: React.FunctionComponent = () => {
+export const ToolbarSticky = () => {
   const [isSticky, setIsSticky] = useState(true);
   const [showEvenOnly, setShowEvenOnly] = useState(true);
+  const [searchValue, setSearchValue] = useState('');
   const array = Array.from(Array(30), (_, x) => x); // create array of numbers from 1-30 for demo purposes
   const numbers = showEvenOnly ? array.filter((number) => number % 2 === 0) : array;
 
@@ -13,7 +14,12 @@ export const ToolbarSticky: React.FunctionComponent = () => {
         <Toolbar id="toolbar-sticky" inset={{ default: 'insetNone' }} isSticky={isSticky}>
           <ToolbarContent>
             <ToolbarItem>
-              <SearchInput aria-label="Sticky example search input" />
+              <SearchInput
+                aria-label="Sticky example search input"
+                value={searchValue}
+                onChange={(_event, value) => setSearchValue(value)}
+                onClear={() => setSearchValue('')}
+              />
             </ToolbarItem>
             <ToolbarItem alignSelf="center">
               <Checkbox

@@ -38,6 +38,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
   const [isOpen2, setIsOpen2] = useState(false);
   const [isOpen3, setIsOpen3] = useState(false);
   const [allExpanded, setAllExpanded] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
 
   const onToggleAll = () => {
     setAllExpanded((prevAllExpanded) => !prevAllExpanded);
@@ -103,7 +104,12 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
               </Tooltip>
             </ToolbarItem>
             <ToolbarItem>
-              <SearchInput aria-label="search input example" />
+              <SearchInput
+                aria-label="search input example"
+                value={searchValue}
+                onChange={(_event, value) => setSearchValue(value)}
+                onClear={() => setSearchValue('')}
+              />
             </ToolbarItem>
             <ToolbarItem>
               <Button variant="secondary">Action</Button>
