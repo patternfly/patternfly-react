@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.4.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.0-prerelease.3...@patternfly/react-core@6.4.0-prerelease.4) (2025-10-13)
+
+### Bug Fixes
+
+- **examples:** make sure examples with SearchInput have onClear ([#12044](https://github.com/patternfly/patternfly-react/issues/12044)) ([9c785af](https://github.com/patternfly/patternfly-react/commit/9c785af077869005514bc719212e21f9193f9206))
+
 # [6.4.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.0-prerelease.2...@patternfly/react-core@6.4.0-prerelease.3) (2025-10-10)
 
 **Note:** Version bump only for package @patternfly/react-core

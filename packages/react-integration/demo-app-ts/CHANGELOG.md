@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.164](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.163...demo-app-ts@6.0.0-prerelease.164) (2025-10-13)
+
+### Bug Fixes
+
+- **examples:** make sure examples with SearchInput have onClear ([#12044](https://github.com/patternfly/patternfly-react/issues/12044)) ([9c785af](https://github.com/patternfly/patternfly-react/commit/9c785af077869005514bc719212e21f9193f9206))
+
 # [6.0.0-prerelease.163](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.162...demo-app-ts@6.0.0-prerelease.163) (2025-10-10)
 
 **Note:** Version bump only for package demo-app-ts
