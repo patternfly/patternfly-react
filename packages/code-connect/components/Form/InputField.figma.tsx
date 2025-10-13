@@ -1,5 +1,6 @@
 import figma from '@figma/code-connect';
-import { FormGroup, Popover } from '@patternfly/react-core';
+import { Button, FormGroup, FormGroupLabelHelp, Popover } from '@patternfly/react-core';
+import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
 
 // Documentation for InputField can be found at https://www.patternfly.org/components/form
 
@@ -8,10 +9,13 @@ figma.connect(
   'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=157-788&m=dev',
   {
     props: {
-      inputField: figma.instance('Input field'),
-      minusIcon: figma.boolean('Minus icon'),
+      // boolean
       label: figma.boolean('Label', {
         true: 'Input field',
+        false: undefined
+      }),
+      minusIcon: figma.boolean('Minus icon', {
+        true: <Button icon={<MinusIcon />} variant="plain" hasNoPadding aria-label="Delete field" />,
         false: undefined
       }),
       textInput: figma.children('Text inputs'),
@@ -49,13 +53,14 @@ figma.connect(
               </div>
             }
           >
-            {/* <FormGroupLabelHelp ref={labelHelpRef} aria-label="More info for name field" /> */}
+            <FormGroupLabelHelp ref={labelHelpRef} aria-label="More info for name field" />
           </Popover>
         }
         isRequired
         fieldId="simple-form-name-01"
       >
         {props.textInput}
+        {props.minusIcon}
         {props.helperText}
       </FormGroup>
     )

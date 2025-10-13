@@ -26,6 +26,7 @@ lerna-debug.log
 .history
 .vscode
 .yo-rc.json
+.env
 
 # IDE - VSCode
 .vscode

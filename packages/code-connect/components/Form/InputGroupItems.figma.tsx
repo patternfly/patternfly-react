@@ -3,24 +3,11 @@ import { InputGroupItem, InputGroupText, TextInput } from '@patternfly/react-cor
 import OutlinedClockIcon from '@patternfly/react-icons/dist/esm/icons/outlined-clock-icon';
 // Documentation for InputGroupItem can be found at https://www.patternfly.org/components/input-group
 
-const sharedProps = {
-  validated: figma.enum('State', {
-    Disabled: 'disabled',
-    ReadOnly: 'readOnly',
-    Success: 'success',
-    Warning: 'warning',
-    Error: 'error',
-    Selected: 'selected'
-  })
-};
-
 figma.connect(
   InputGroupItem,
   'https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components?node-id=176-2806',
   {
     props: {
-      ...sharedProps,
-
       type: figma.enum('Type', {
         Icon: (
           <InputGroupText id="username">
