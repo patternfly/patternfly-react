@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.4.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.4.0-prerelease.4...@patternfly/react-templates@6.4.0-prerelease.5) (2025-10-13)
+
+### Features
+
+- **templates:** allow react 19 ([#12046](https://github.com/patternfly/patternfly-react/issues/12046)) ([38727b6](https://github.com/patternfly/patternfly-react/commit/38727b625e70363c36b749541736ea46bf5970dc))
+
 # [6.4.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.4.0-prerelease.3...@patternfly/react-templates@6.4.0-prerelease.4) (2025-10-13)
 
 **Note:** Version bump only for package @patternfly/react-templates
