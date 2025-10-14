@@ -54,7 +54,6 @@ exports[`renders default truncation 1`] = `
   </div>
   <span
     class="pf-v6-c-truncate"
-    tabindex="0"
   >
     <span
       class="pf-v6-c-truncate__start"
@@ -81,7 +80,6 @@ exports[`renders start truncation with &lrm; at start and end 1`] = `
   </div>
   <span
     class="pf-v6-c-truncate"
-    tabindex="0"
   >
     <span
       class="pf-v6-c-truncate__end"

@@ -104,6 +104,13 @@ const TruncateBase: React.FunctionComponent<TruncateProps> = ({
     setShouldRenderByMaxChars(maxCharsDisplayed > 0);
   }, [maxCharsDisplayed]);
 
+  // Check truncation on mount for without maxChars
+  useEffect(() => {
+    if (!shouldRenderByMaxChars && textRef.current) {
+      setIsTruncated(textRef.current.scrollWidth > textRef.current.clientWidth);
+    }
+  }, [shouldRenderByMaxChars]);
+
   // Check if content is truncated (called on hover/focus)
   const checkTruncation = (): boolean => {
     if (shouldRenderByMaxChars) {
