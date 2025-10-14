@@ -325,89 +325,34 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 
 ### Switching between direction column and row
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexSwitchingColumnRow.tsx"
 
-<Flex direction={{ default: 'column', lg: 'row' }}>
-  <Flex>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex direction={{ default: 'column' }}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>;
 ```
 
 ### Controlling width of text
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexControlTextWidth.tsx"
 
-<Flex direction={{ default: 'column', lg: 'row' }}>
-  <Flex flex={{ default: 'flex_1' }}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Est animi modi temporibus, alias qui obcaecati ullam
-      dolor nam, nulla magni iste rem praesentium numquam provident amet ut nesciunt harum accusamus.
-    </FlexItem>
-  </Flex>
-  <Flex direction={{ default: 'column' }}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>;
 ```
 
 ## Flex alignment
 
 ### Aligning right
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexAligningRight.tsx"
 
-<Flex className="example-border">
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem align={{ default: 'alignRight' }}>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>;
 ```
 
 ### Align right on single item
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexAlignRightSingleItem.tsx"
 
-<Flex className="example-border">
-  <FlexItem align={{ default: 'alignRight' }}>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>;
 ```
 
 ### Align right on multiple groups
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexAlignRightMultipleGroups.tsx"
 
-<Flex>
-  <Flex>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex align={{ default: 'alignRight' }}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex align={{ default: 'alignRight' }}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>;
 ```
 
 ### Align adjacent content
