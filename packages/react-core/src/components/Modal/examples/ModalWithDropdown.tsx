@@ -32,8 +32,10 @@ export const ModalWithDropdown: React.FunctionComponent = () => {
   };
 
   const onFocus = () => {
-    const element = document.getElementById('modal-dropdown-toggle');
-    (element as HTMLElement).focus();
+    if (typeof document !== 'undefined') {
+      const element = document.getElementById('modal-dropdown-toggle');
+      (element as HTMLElement)?.focus();
+    }
   };
 
   const onEscapePress = (event: KeyboardEvent) => {
@@ -42,6 +44,16 @@ export const ModalWithDropdown: React.FunctionComponent = () => {
       onFocus();
     } else {
       handleModalToggle(event);
+    }
+  };
+
+  const getAppendLocation = () => {
+    // document doesn't exist when PatternFly website docs framework gets pre-rendered
+    // this is just to avoid that issue - works fine at runtime without it
+    if (typeof document !== 'undefined' && document.getElementById) {
+      return document.getElementById('modal-box-body-with-dropdown');
+    } else {
+      return 'inline';
     }
   };
 
@@ -61,10 +73,13 @@ export const ModalWithDropdown: React.FunctionComponent = () => {
         <ModalHeader title="Dropdown modal" labelId="modal-with-dropdown" />
         <ModalBody id="modal-box-body-with-dropdown">
           <div>
-            Set the dropdown <strong>menuAppendTo</strong> prop to <em>parent</em> in order to allow the dropdown menu
-            break out of the modal container. You'll also want to handle closing of the modal yourself, by listening to
-            the <strong>onEscapePress</strong> callback on the Modal component, so you can close the Dropdown first if
-            it's open without closing the entire modal.
+            Set the Dropdown's popperProps appendTo prop to <em>inline</em> if you want the dropdown to scroll within
+            the modal. Set the popperProps appendTo prop to the id of the <em>parent modal or modal body</em> in order
+            to allow the dropdown menu to break out of the modal container. Using the default dropdown location will
+            break keyboard control over the dropdown due to the modal's built-in focus trap. You'll also want to handle
+            closing of the modal yourself, by listening to the
+            <strong>onEscapePress</strong> callback on the Modal component, so you can close the Dropdown first if it's
+            open without closing the entire modal.
           </div>
           <br />
           <div>
@@ -73,10 +88,18 @@ export const ModalWithDropdown: React.FunctionComponent = () => {
               onSelect={onSelect}
               onOpenChange={(isOpen: boolean) => setIsDropdownOpen(isOpen)}
               toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-                <MenuToggle ref={toggleRef} onClick={handleDropdownToggle} isExpanded={isDropdownOpen}>
+                <MenuToggle
+                  id="modal-dropdown-toggle"
+                  ref={toggleRef}
+                  onClick={handleDropdownToggle}
+                  isExpanded={isDropdownOpen}
+                >
                   Dropdown
                 </MenuToggle>
               )}
+              popperProps={{
+                appendTo: getAppendLocation()
+              }}
             >
               <DropdownList>
                 <DropdownItem value={0} key="action">
