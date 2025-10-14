@@ -113,53 +113,20 @@ The flex layout provides two ways of spacing its direct children.
 
 ### Column layout
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexColumnLayout.tsx"
 
-<Flex direction={{ default: 'column' }}>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>;
 ```
 
 ### Stacking elements
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexStackingElements.tsx"
 
-<Flex direction={{ default: 'column' }}>
-  <Flex>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>;
 ```
 
 ### Nesting elements in columns
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexNestingInColumns.tsx"
 
-<Flex>
-  <Flex direction={{ default: 'column' }}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex direction={{ default: 'column' }}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>;
 ```
 
 ## Responsive layout modifiers
