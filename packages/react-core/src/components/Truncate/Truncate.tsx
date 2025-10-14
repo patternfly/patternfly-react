@@ -74,10 +74,15 @@ const TruncateBase: React.FunctionComponent<TruncateProps> = ({
   omissionContent = '\u2026',
   content,
   innerRef,
+  onMouseEnter,
+  onMouseLeave,
+  onFocus,
+  onBlur,
   ...props
 }: TruncateProps) => {
   const [isTruncated, setIsTruncated] = useState(true);
   const [shouldRenderByMaxChars, setShouldRenderByMaxChars] = useState(maxCharsDisplayed > 0);
+  const [showTooltip, setShowTooltip] = useState(false);
 
   const textRef = useRef<HTMLElement>(null);
   useImperativeHandle(innerRef, () => textRef.current!);
@@ -93,11 +98,48 @@ const TruncateBase: React.FunctionComponent<TruncateProps> = ({
     if (shouldRenderByMaxChars) {
       setIsTruncated(content.length > maxCharsDisplayed);
     }
-  }, [shouldRenderByMaxChars]);
+  }, [shouldRenderByMaxChars, content.length, maxCharsDisplayed]);
 
   useEffect(() => {
     setShouldRenderByMaxChars(maxCharsDisplayed > 0);
   }, [maxCharsDisplayed]);
+
+  // Check if content is truncated (called on hover/focus)
+  const checkTruncation = (): boolean => {
+    if (shouldRenderByMaxChars) {
+      return isTruncated;
+    }
+
+    if (!textRef.current) {
+      return false;
+    }
+
+    return textRef.current.scrollWidth > textRef.current.clientWidth;
+  };
+
+  const handleMouseEnter = (e: React.MouseEvent<HTMLElement>) => {
+    if (checkTruncation()) {
+      setShowTooltip(true);
+    }
+    onMouseEnter?.(e);
+  };
+
+  const handleMouseLeave = (e: React.MouseEvent<HTMLElement>) => {
+    setShowTooltip(false);
+    onMouseLeave?.(e);
+  };
+
+  const handleFocus = (e: React.FocusEvent<HTMLElement>) => {
+    if (checkTruncation()) {
+      setShowTooltip(true);
+    }
+    onFocus?.(e);
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLElement>) => {
+    setShowTooltip(false);
+    onBlur?.(e);
+  };
 
   const lrmEntity = <Fragment>&lrm;</Fragment>;
   const isStartPosition = position === TruncatePosition.start;
@@ -186,6 +228,10 @@ const TruncateBase: React.FunctionComponent<TruncateProps> = ({
       href={href}
       className={css(styles.truncate, shouldRenderByMaxChars && styles.modifiers.fixed, className)}
       {...(isTruncated && !href && !tooltipProps?.triggerRef && { tabIndex: 0 })}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
       {...props}
     >
       {!shouldRenderByMaxChars ? renderResizeObserverContent() : renderMaxDisplayContent()}
@@ -194,15 +240,14 @@ const TruncateBase: React.FunctionComponent<TruncateProps> = ({
 
   return (
     <>
-      {isTruncated && (
-        <Tooltip
-          hidden={!isTruncated}
-          position={tooltipPosition}
-          content={content}
-          triggerRef={subParentRef}
-          {...tooltipProps}
-        />
-      )}
+      <Tooltip
+        position={tooltipPosition}
+        content={content}
+        triggerRef={subParentRef}
+        trigger="manual"
+        isVisible={showTooltip}
+        {...tooltipProps}
+      />
       {truncateBody}
     </>
   );
