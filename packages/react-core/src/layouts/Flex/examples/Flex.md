@@ -389,142 +389,50 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 
 ### Justify content flex end
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexJustifyContentEnd.tsx"
 
-<Flex className="example-border" justifyContent={{ default: 'justifyContentFlexEnd' }}>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>;
 ```
 
 ### Justify content space between
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexJustifyContentSpaceBetween.tsx"
 
-<Flex className="example-border" justifyContent={{ default: 'justifyContentSpaceBetween' }}>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>;
 ```
 
 ### Justify content flex start
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexJustifyContentFlexStart.tsx"
 
-<Flex className="example-border" justifyContent={{ default: 'justifyContentFlexStart' }}>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>;
 ```
 
 ## Flex item order
 
 ### First last ordering
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexFirstLastOrder.tsx"
 
-<Flex className="example-border">
-  <FlexItem spacer={{ default: 'spacerNone' }} order={{ default: '2' }}>
-    Item A
-  </FlexItem>
-  <FlexItem>Item B</FlexItem>
-  <FlexItem spacer={{ default: 'spacerMd' }} order={{ default: '-1' }}>
-    Item C
-  </FlexItem>
-</Flex>;
 ```
 
 ### Responsive first last ordering
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexResponsiveFirstLastOrder.tsx"
 
-<Flex className="example-border">
-  <FlexItem spacer={{ lg: 'spacerNone' }} order={{ lg: '2' }}>
-    Item A
-  </FlexItem>
-  <FlexItem spacer={{ md: 'spacerNone', lg: 'spacerMd' }} order={{ default: '-1', md: '1' }}>
-    Item B
-  </FlexItem>
-  <FlexItem spacer={{ default: 'spacerMd' }} order={{ md: '-1' }}>
-    Item C
-  </FlexItem>
-</Flex>;
 ```
 
 ### Ordering
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexOrdering.tsx"
 
-<Flex className="example-border">
-  <Flex spacer={{ default: 'spacerNone' }} order={{ lg: '1' }} className="example-border">
-    <FlexItem order={{ md: '2' }}>Set 1, Item A</FlexItem>
-    <FlexItem order={{ md: '-1' }}>Set 1, Item B</FlexItem>
-    <FlexItem order={{ xl: '1' }}>Set 1, Item C</FlexItem>
-    <FlexItem spacer={{ xl: 'spacerNone' }} order={{ xl: '1' }}>
-      Set 1, Item D
-    </FlexItem>
-  </Flex>
-  <Flex spacer={{ lg: 'spacerMd' }} className="example-border">
-    <FlexItem spacer={{ default: 'spacerNone' }} order={{ default: '3' }}>
-      Set 2, Item A
-    </FlexItem>
-    <FlexItem order={{ default: '1' }}>Set 2, Item B</FlexItem>
-    <FlexItem>Set 2, Item C</FlexItem>
-    <FlexItem spacer={{ default: 'spacerMd' }} order={{ default: '2' }}>
-      Set 2, Item D
-    </FlexItem>
-  </Flex>
-</Flex>;
 ```
 
 ### Responsive ordering
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexResponsiveOrdering.tsx"
 
-<Flex className="example-border">
-  <Flex spacer={{ default: 'spacerNone' }} order={{ default: '1' }} className="example-border">
-    <FlexItem spacer={{ default: 'spacerNone' }} order={{ default: '3' }}>
-      Set 1, Item A
-    </FlexItem>
-    <FlexItem order={{ default: '1' }}>Set 1, Item B</FlexItem>
-    <FlexItem>Set 1, Item C</FlexItem>
-    <FlexItem spacer={{ default: 'spacerMd' }}>Set 1, Item D</FlexItem>
-  </Flex>
-
-  <Flex spacer={{ default: 'spacerMd' }} className="example-border">
-    <FlexItem spacer={{ default: 'spacerNone' }} order={{ default: '3' }}>
-      Set 2, Item A
-    </FlexItem>
-    <FlexItem order={{ lg: '1' }}>Set 2, Item B</FlexItem>
-    <FlexItem>Set 2, Item C</FlexItem>
-    <FlexItem spacer={{ default: 'spacerMd' }} order={{ default: '2' }}>
-      Set 2, Item D
-    </FlexItem>
-  </Flex>
-</Flex>;
 ```
 
 ### Alternative components
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexAlternative.tsx"
 
-<Flex component="ul">
-  <FlexItem component="li">Flex item</FlexItem>
-  <FlexItem component="li">Flex item</FlexItem>
-  <FlexItem component="li">Flex item</FlexItem>
-  <FlexItem component="li">Flex item</FlexItem>
-  <FlexItem component="li">Flex item</FlexItem>
-</Flex>;
 ```
