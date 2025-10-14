@@ -357,93 +357,32 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 
 ### Align adjacent content
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexAlignAdjacentContent.tsx"
 
-<Flex>
-  <Flex flex={{ default: 'flex_1' }}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>;
 ```
 
 ### Align self flex end
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexAlignSelfFlexEnd.tsx"
 
-<Flex>
-  <Flex direction={{ default: 'column' }}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex direction={{ default: 'column' }} alignSelf={{ default: 'alignSelfFlexEnd' }}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>;
 ```
 
 ### Align self center
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexAlignSelfCenter.tsx"
 
-<Flex>
-  <Flex direction={{ default: 'column' }}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex direction={{ default: 'column' }} alignSelf={{ default: 'alignSelfCenter' }}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>;
 ```
 
 ### Align self baseline
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexAlignSelfBaseline.tsx"
 
-<Flex>
-  <Flex direction={{ default: 'column' }}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex direction={{ default: 'column' }} alignSelf={{ default: 'alignSelfBaseline' }}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>;
 ```
 
 ### Align self stretch
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexAlignSelfStretch.tsx"
 
-<Flex>
-  <Flex direction={{ default: 'column' }}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex direction={{ default: 'column' }} alignSelf={{ default: 'alignSelfStretch' }}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>;
 ```
 
 ## Flex justification
