@@ -23,24 +23,24 @@ import { rows } from '@patternfly/react-core/dist/esm/demos/sampleData';
 
 ### Basic
 
-```js file="./DataList/examples/DataListBasic.tsx" isFullscreen
+```ts file="DataList/examples/DataListBasic.tsx" isFullscreen
 
 ```
 
 ### Expandable control in toolbar
 
-```js file="./DataList/examples/DataListExpandableControlInToolbar.tsx" isFullscreen
+```ts file="DataList/examples/DataListExpandableControlInToolbar.tsx" isFullscreen
 
 ```
 
 ### Actionable
 
-```js file="./DataList/examples/DataListActionable.tsx" isFullscreen
+```ts file="DataList/examples/DataListActionable.tsx" isFullscreen
 
 ```
 
 ### Static bottom pagination
 
-```js file="./DataList/examples/DataListStaticBottomPagination.tsx" isFullscreen
+```ts file="DataList/examples/DataListStaticBottomPagination.tsx" isFullscreen
 
 ```

@@ -15,6 +15,6 @@ This demonstrates how you can assemble a full page view including the use of ale
 
 ### Alert group toast with notification drawer
 
-```js file='./examples/AlertGroup/AlertGroupToastWithNotificationDrawer.tsx' isFullscreen
+```ts file="examples/AlertGroup/AlertGroupToastWithNotificationDrawer.tsx" isFullscreen
 
 ```
