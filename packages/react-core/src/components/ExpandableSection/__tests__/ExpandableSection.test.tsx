@@ -208,3 +208,37 @@ test('Renders with aria-labelledby when toggleAriaLabelledBy is passed', () => {
 
   expect(screen.getByRole('button')).toHaveAccessibleName('Test label');
 });
+test('Renders toggleContent as a function in uncontrolled mode (collapsed)', () => {
+  render(
+    <ExpandableSection toggleContent={(isExpanded) => (isExpanded ? 'Hide details' : 'Show details')}>
+      Test content
+    </ExpandableSection>
+  );
+
+  expect(screen.getByRole('button', { name: 'Show details' })).toBeInTheDocument();
+});
+
+test('Renders toggleContent as a function in uncontrolled mode (expanded after click)', async () => {
+  const user = userEvent.setup();
+
+  render(
+    <ExpandableSection toggleContent={(isExpanded) => (isExpanded ? 'Hide details' : 'Show details')}>
+      Test content
+    </ExpandableSection>
+  );
+
+  const button = screen.getByRole('button', { name: 'Show details' });
+  await user.click(button);
+
+  expect(screen.getByRole('button', { name: 'Hide details' })).toBeInTheDocument();
+});
+
+test('Renders toggleContent as a function in controlled mode', () => {
+  render(
+    <ExpandableSection isExpanded={true} toggleContent={(isExpanded) => (isExpanded ? 'Collapse' : 'Expand')}>
+      Test content
+    </ExpandableSection>
+  );
+
+  expect(screen.getByRole('button', { name: 'Collapse' })).toBeInTheDocument();
+});
