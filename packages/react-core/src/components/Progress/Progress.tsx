@@ -48,7 +48,7 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
    * We recommend the helper text component as it was designed for this purpose.
    */
   helperText?: React.ReactNode;
-  /** Hide the status icon, helpful when space is limited (such as within table cells) */
+  /** Flag indicating whether the status icon should be hidden, helpful when space is limited (such as within table cells). When set to true, you must ensure the context of the status is provided in another way, such as via the progress measure. */
   hideStatusIcon?: boolean;
 }
 
