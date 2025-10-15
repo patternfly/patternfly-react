@@ -27,8 +27,8 @@ export const ExpandableSectionWithHeading = () => {
 
         {/* Using toggleWrapper prop for proper heading semantics */}
         <ExpandableSection
-          toggleWrapper="h2"
-          toggleText="Important Information"
+          toggleWrapper="h5"
+          toggleText="Toggle as a heading"
           onToggle={onToggle1}
           isExpanded={isExpanded1}
         >
