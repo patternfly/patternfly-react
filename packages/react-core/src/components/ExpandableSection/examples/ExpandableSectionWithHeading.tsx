@@ -22,7 +22,7 @@ export const ExpandableSectionWithHeading = () => {
   return (
     <Stack hasGutter>
       <StackItem>
-        <h1>Document with Expandable Sections</h1>
+        <h4>Document with Expandable Sections</h4>
         <p>This demonstrates how to use expandable sections with proper heading semantics.</p>
 
         {/* Using toggleWrapper prop for proper heading semantics */}
