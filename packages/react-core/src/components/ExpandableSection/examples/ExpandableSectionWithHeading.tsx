@@ -44,7 +44,7 @@ export const ExpandableSectionWithHeading = () => {
       </StackItem>
 
       <StackItem>
-        <h2>Detached Variant with Heading</h2>
+        <h4>Detached Variant with Heading</h4>
         <p>You can also use the detached variant with heading semantics:</p>
 
         <ExpandableSectionToggle
