@@ -48,7 +48,7 @@ export const ExpandableSectionWithHeading = () => {
         <p>You can also use the detached variant with heading semantics:</p>
 
         <ExpandableSectionToggle
-          toggleWrapper="h3"
+          toggleWrapper="h5"
           toggleId="detached-heading-toggle"
           contentId="detached-heading-content"
           isExpanded={isExpandedDetached}
