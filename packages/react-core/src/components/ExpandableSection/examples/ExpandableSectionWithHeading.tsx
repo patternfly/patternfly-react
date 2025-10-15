@@ -68,7 +68,7 @@ export const ExpandableSectionWithHeading = () => {
       </StackItem>
 
       <StackItem>
-        <h2>Custom Content with Heading</h2>
+        <h4>Custom Content with Heading</h4>
         <p>You can also use custom content within heading wrappers:</p>
 
         <ExpandableSection
