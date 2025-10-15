@@ -72,10 +72,10 @@ export const ExpandableSectionWithHeading = () => {
         <p>You can also use custom content within heading wrappers:</p>
 
         <ExpandableSection
-          toggleWrapper="h3"
+          toggleWrapper="h5"
           toggleContent={
             <span>
-              <CheckCircleIcon /> Custom Content with Icon
+              <CheckCircleIcon /> Custom Heading Content with Icon
             </span>
           }
           onToggle={onToggle2}
