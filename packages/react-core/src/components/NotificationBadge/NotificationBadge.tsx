@@ -29,7 +29,7 @@ export interface NotificationBadgeProps extends Omit<ButtonProps, 'variant'> {
    */
   isExpanded?: boolean;
   /** Determines the variant of the notification badge. */
-  variant?: NotificationBadgeVariant | 'read' | 'unread' | 'attention';
+  variant?: NotificationBadgeVariant | ButtonProps['variant'] | 'read' | 'unread' | 'attention';
   /** Flag indicating whether the notification badge animation should be triggered. Each
    * time this prop is true, the animation will be triggered a single time.
    */
