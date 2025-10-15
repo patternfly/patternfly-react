@@ -80,7 +80,7 @@ const TruncateBase: React.FunctionComponent<TruncateProps> = ({
   onBlur,
   ...props
 }: TruncateProps) => {
-  const [isTruncated, setIsTruncated] = useState(true);
+  const [isTruncated, setIsTruncated] = useState(false);
   const [shouldRenderByMaxChars, setShouldRenderByMaxChars] = useState(maxCharsDisplayed > 0);
   const [showTooltip, setShowTooltip] = useState(false);
 
@@ -109,7 +109,7 @@ const TruncateBase: React.FunctionComponent<TruncateProps> = ({
     if (!shouldRenderByMaxChars && textRef.current) {
       setIsTruncated(textRef.current.scrollWidth > textRef.current.clientWidth);
     }
-  }, [shouldRenderByMaxChars]);
+  }, [shouldRenderByMaxChars, content]);
 
   // Check if content is truncated (called on hover/focus)
   const checkTruncation = (): boolean => {
