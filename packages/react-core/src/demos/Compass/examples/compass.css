@@ -1,0 +1,180 @@
+/* style API 
+  --compass--padding: padding around edges of viewport
+  --compass--max-width: overall layout max-width
+  --compass--row-gap: row gap for the compass layout between top, content, footer
+  --compass--column-gap: column gap between left toolbar, content, right toolbar
+  --compass--nav--gap: gap between primary and secondary nav
+  --compass--main--gap: gap between page sections in main area
+  --compass--glass--blur: amount of "blur" for glass effect
+  --compass--glass--border: border-color for the glass style boxes
+  --compass--glass--color: base background color for glass boxes
+  --compass--glass--opacity: opacity level for background color
+  --compass--message-bar--min-width: message bar min-width
+  --compass--message-bar--max-width: message bar max-width
+*/
+
+.compass {
+  padding: var(--compass--padding, var(--pf-t--global--spacer--xl));
+  display: grid;
+  max-width: var(--compass--max-width, 1710px);
+  margin-inline: auto;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header header"
+    "panel-start main panel-end"
+    "footer footer footer";
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+  gap:
+    var(--compass--row-gap, var(--pf-t--global--spacer--xl))
+    var(--compass--column-gap, var(--pf-t--global--spacer--xl));
+}
+
+.compass__header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: start;
+}
+
+.compass__user {
+  justify-self: end;
+}
+
+.compass__nav {
+  justify-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--compass--nav--gap, var(--pf-t--global--spacer--md));
+}
+
+.compass__panel--start {
+  grid-area: panel-start;
+  padding: var(--pf-t--global--spacer--sm);
+  border-radius: var(--pf-t--global--border--radius--pill);
+}
+
+.compass__main {
+  grid-area: main;
+  align-self: stretch;
+  min-height: 0;
+}
+
+.compass__panel--end {
+  grid-area: panel-end;
+  padding: var(--pf-t--global--spacer--sm);
+  border-radius: var(--pf-t--global--border--radius--pill);
+}
+
+.compass__footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+}
+
+.pf-v6-c-tabs {
+  border-radius: var(--pf-t--global--border--radius--pill);
+}
+
+.pf-v6-c-action-list.pf-m-vertical {
+  flex-direction: column;
+}
+
+.pf-v6-c-page.pf-m-plain {
+  --pf-v6-c-page__main-container--MarginInlineStart: 0px;
+  --pf-v6-c-page__main-container--MarginInlineEnd: 0px;
+  --pf-v6-c-page__main-container--BorderBlockStartWidth: 0px;
+  --pf-v6-c-page__main-container--BorderInlineEndWidth: 0px;
+  --pf-v6-c-page__main-container--BorderBlockEndWidth: 0px;
+  --pf-v6-c-page__main-container--BorderInlineStartWidth: 0px;
+  --pf-v6-c-page--BackgroundColor: transparent;
+  --pf-v6-c-page__main-container--BackgroundColor: transparent;
+  --pf-v6-c-page__main-container--BorderRadius: 0px;
+  --pf-v6-c-page__main-container--MaxHeight: 100%;
+  --pf-v6-c-page__main-section--PaddingBlockStart: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-page__main-section--PaddingBlockEnd: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-page__main-section--PaddingInlineStart: var(--pf-t--global--spacer--lg);
+  --pf-v6-c-page__main-section--PaddingInlineEnd: var(--pf-t--global--spacer--lg);
+  
+  height: 100%;
+  
+  .pf-v6-c-page__main-section {
+    border-radius: var(--pf-t--global--border--radius--large);
+
+    &:last-child {
+      flex-grow: 1;
+    }
+  }
+  
+  .pf-v6-c-page__main {
+    row-gap: var(--compass--main--gap, var(--pf-t--global--spacer--md));
+  }
+}
+
+.glass,
+.pf-v6-c-page__main-section,
+.pf-v6-c-card,
+.compass__panel--start,
+.compass__panel--end,
+.pf-v6-c-tabs {
+  background: color-mix(in srgb, var(--compass--glass--color, #000) var(--compass--glass--opacity, 50%), transparent);
+  backdrop-filter: blur(var(--compass--glass--blur, 40px));
+  border: 1px solid var(--compass--glass--border, var(--pf-t--color--gray--70));
+}
+
+.pf-v6-c-tabs {
+  --pf-v6-c-tabs--link-accent--color: var(--pf-t--color--red--50);
+  --pf-v6-c-tabs__link--disabled--BackgroundColor: transparent;
+  --pf-v6-c-tabs__link--disabled--Color: var(--pf-t--global--text--color--disabled);
+  --pf-v6-c-tabs__item--PaddingBlockStart: 0px;
+  --pf-v6-c-tabs__item--PaddingBlockEnd: 0px;
+  --pf-v6-c-tabs__item--PaddingInlineStart: 0px;
+  --pf-v6-c-tabs__item--PaddingInlineEnd: 0px;
+  --pf-v6-c-tabs__link--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --pf-v6-c-tabs__link--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-tabs__link--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --pf-v6-c-tabs__link--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-tabs__link--hover--BackgroundColor: transparent;
+  
+  &::before {
+    border: 0;
+  }
+}
+
+.pf-v6-c-tabs__link,
+.pf-v6-c-tabs {
+  &::before {
+    border: 0;
+  }
+}
+
+.pf-v6-c-tabs__link {
+  outline-offset: -4px;
+}
+
+.pf-v6-c-button {
+  --pf-v6-c-button--m-plain--BorderRadius: 50%;
+}
+
+.pf-v6-c-table {
+  --pf-v6-c-table--BackgroundColor: transparent;
+}
+
+.pf-chatbot__message-bar {
+  width: 100%;
+  min-width: var(--compass--message-bar--min-width, 300px);
+  max-width: var(--compass--message-bar--max-width, 600px);
+}
+
+body {
+  background-image: url(https://i.imgur.com/km6oyPo.jpeg);
+  background-size: cover;
+}
+
+:root {
+  /* changes default border color */
+  --pf-t--global--border--color--default: var(--pf-t--color--gray--70);
+}
