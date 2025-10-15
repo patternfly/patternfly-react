@@ -1,14 +1,20 @@
-body {
-  background-image: url(https://i.imgur.com/km6oyPo.jpeg);
-  background-size: cover;
-}
-
-:root {
-  --pf-t--global--border--color--default: var(--pf-t--color--gray--70);
-}
+/* style API 
+  --compass--padding: padding around edges of viewport
+  --compass--max-width: overall layout max-width
+  --compass--row-gap: row gap for the compass layout between top, content, footer
+  --compass--column-gap: column gap between left toolbar, content, right toolbar
+  --compass--nav--gap: gap between primary and secondary nav
+  --compass--main--gap: gap between page sections in main area
+  --compass--glass--blur: amount of "blur" for glass effect
+  --compass--glass--border: border-color for the glass style boxes
+  --compass--glass--color: base background color for glass boxes
+  --compass--glass--opacity: opacity level for background color
+  --compass--message-bar--min-width: message bar min-width
+  --compass--message-bar--max-width: message bar max-width
+*/
 
 .compass {
-  padding: var(--pf-t--global--spacer--inset--page-chrome);
+  padding: var(--compass--padding, var(--pf-t--global--spacer--xl));
   display: grid;
   max-width: var(--compass--max-width, 1710px);
   margin-inline: auto;
@@ -22,8 +28,8 @@ body {
   justify-content: center;
   height: 100dvh;
   gap:
-    var(--compass--row-gap, var(--compass--row-gap, 16px))
-    var(--compass--row-gap, var(--compass--row-gap, 32px));
+    var(--compass--row-gap, var(--pf-t--global--spacer--xl))
+    var(--compass--column-gap, var(--pf-t--global--spacer--xl));
 }
 
 .compass__header {
@@ -42,7 +48,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--pf-t--global--spacer--md);
+  gap: var(--compass--nav--gap, var(--pf-t--global--spacer--md));
 }
 
 .compass__panel--start {
@@ -54,6 +60,7 @@ body {
 .compass__main {
   grid-area: main;
   align-self: stretch;
+  min-height: 0;
 }
 
 .compass__panel--end {
@@ -68,7 +75,7 @@ body {
   justify-content: center;
 }
 
-.pf-v6-c-card.pf-m-pill {
+.pf-v6-c-tabs {
   border-radius: var(--pf-t--global--border--radius--pill);
 }
 
@@ -103,7 +110,7 @@ body {
   }
   
   .pf-v6-c-page__main {
-    row-gap: var(--pf-v6-c-page__main--row-gap, 32px);
+    row-gap: var(--compass--main--gap, var(--pf-t--global--spacer--md));
   }
 }
 
@@ -111,16 +118,26 @@ body {
 .pf-v6-c-page__main-section,
 .pf-v6-c-card,
 .compass__panel--start,
-.compass__panel--end {
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(var(--glass--blur, 40px));
-  border: 1px solid var(--pf-t--color--gray--70);
+.compass__panel--end,
+.pf-v6-c-tabs {
+  background: color-mix(in srgb, var(--compass--glass--color, #000) var(--compass--glass--opacity, 50%), transparent);
+  backdrop-filter: blur(var(--compass--glass--blur, 40px));
+  border: 1px solid var(--compass--glass--border, var(--pf-t--color--gray--70));
 }
 
 .pf-v6-c-tabs {
   --pf-v6-c-tabs--link-accent--color: var(--pf-t--color--red--50);
   --pf-v6-c-tabs__link--disabled--BackgroundColor: transparent;
   --pf-v6-c-tabs__link--disabled--Color: var(--pf-t--global--text--color--disabled);
+  --pf-v6-c-tabs__item--PaddingBlockStart: 0px;
+  --pf-v6-c-tabs__item--PaddingBlockEnd: 0px;
+  --pf-v6-c-tabs__item--PaddingInlineStart: 0px;
+  --pf-v6-c-tabs__item--PaddingInlineEnd: 0px;
+  --pf-v6-c-tabs__link--PaddingBlockStart: var(--pf-t--global--spacer--md);
+  --pf-v6-c-tabs__link--PaddingBlockEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-tabs__link--PaddingInlineStart: var(--pf-t--global--spacer--md);
+  --pf-v6-c-tabs__link--PaddingInlineEnd: var(--pf-t--global--spacer--md);
+  --pf-v6-c-tabs__link--hover--BackgroundColor: transparent;
   
   &::before {
     border: 0;
@@ -134,10 +151,30 @@ body {
   }
 }
 
-.pf-v6-c-button.pf-m-plain {
+.pf-v6-c-tabs__link {
+  outline-offset: -4px;
+}
+
+.pf-v6-c-button {
   --pf-v6-c-button--m-plain--BorderRadius: 50%;
 }
 
 .pf-v6-c-table {
   --pf-v6-c-table--BackgroundColor: transparent;
+}
+
+.pf-chatbot__message-bar {
+  width: 100%;
+  min-width: var(--compass--message-bar--min-width, 300px);
+  max-width: var(--compass--message-bar--max-width, 600px);
+}
+
+body {
+  background-image: url(https://i.imgur.com/km6oyPo.jpeg);
+  background-size: cover;
+}
+
+:root {
+  /* changes default border color */
+  --pf-t--global--border--color--default: var(--pf-t--color--gray--70);
 }
