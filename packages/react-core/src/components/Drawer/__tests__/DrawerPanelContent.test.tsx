@@ -121,3 +121,40 @@ test('Renders with role="dialog" when focusTrap.enabled is true', () => {
 
   expect(screen.getByRole('dialog')).toBeInTheDocument();
 });
+
+test('Applies style prop as expected', () => {
+  render(
+    <Drawer isExpanded>
+      <DrawerPanelContent style={{ backgroundColor: 'red', padding: '20px' }}>Drawer panel content</DrawerPanelContent>
+    </Drawer>
+  );
+
+  const panelContent = screen.getByText('Drawer panel content');
+  expect(panelContent).toHaveStyle({ backgroundColor: 'red', padding: '20px' });
+});
+
+test('Style prop overrides boundaryCssVars', () => {
+  render(
+    <Drawer isExpanded>
+      <DrawerPanelContent
+        defaultSize="200px"
+        minSize="100px"
+        maxSize="400px"
+        style={{
+          '--pf-v6-c-drawer__panel--md--FlexBasis': '300px',
+          '--pf-v6-c-drawer__panel--md--FlexBasis--min': '150px',
+          '--pf-v6-c-drawer__panel--md--FlexBasis--max': '500px'
+        }}
+      >
+        Drawer panel content
+      </DrawerPanelContent>
+    </Drawer>
+  );
+
+  const panelContent = screen.getByText('Drawer panel content');
+  expect(panelContent).toHaveStyle({
+    '--pf-v6-c-drawer__panel--md--FlexBasis': '300px',
+    '--pf-v6-c-drawer__panel--md--FlexBasis--min': '150px',
+    '--pf-v6-c-drawer__panel--md--FlexBasis--max': '500px'
+  });
+});
