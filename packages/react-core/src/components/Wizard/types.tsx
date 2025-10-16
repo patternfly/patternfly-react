@@ -23,13 +23,14 @@ export interface WizardBasicStep {
   /** Replaces the step's footer. The step's footer takes precedence over the wizard's footer. */
   footer?: React.ReactElement<any> | Partial<WizardFooterProps>;
   /** Used to determine icon next to the step's navItem */
-  status?: 'default' | 'error' | 'success';
+  status?: 'default' | 'error' | 'success' | 'warning';
 }
 
 export enum WizardNavItemStatus {
   Default = 'default',
   Error = 'error',
-  Success = 'success'
+  Success = 'success',
+  Warning = 'warning'
 }
 
 /** Type for customizing a button (next, back or cancel) in a Wizard footer. It omits some props which either have a default value or are passed directly via WizardFooterProps. */

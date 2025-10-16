@@ -6,8 +6,10 @@ interface SomeContextProps {
   setErrorMessage(error: string | undefined): void;
   successMessage: string | undefined;
   setSuccessMessage(error: string | undefined): void;
+  warningMessage: string | undefined;
+  setWarningMessage(error: string | undefined): void;
 }
-type SomeContextRenderProps = Pick<SomeContextProps, 'successMessage', 'errorMessage'>;
+type SomeContextRenderProps = Pick<SomeContextProps, 'successMessage', 'errorMessage', 'warningMessage'>;
 interface SomeContextProviderProps {
   children: (context: SomeContextRenderProps) => React.ReactElement<any>;
 }
@@ -17,16 +19,20 @@ const SomeContext: React.Context<SomeContextProps> = createContext({} as SomeCon
 const SomeContextProvider = ({ children }: SomeContextProviderProps) => {
   const [errorMessage, setErrorMessage] = useState<string>();
   const [successMessage, setSuccessMessage] = useState<string>();
+  const [warningMessage, setWarningMessage] = useState<string>();
 
   return (
-    <SomeContext.Provider value={{ errorMessage, setErrorMessage, successMessage, setSuccessMessage }}>
-      {children({ errorMessage, successMessage })}
+    <SomeContext.Provider
+      value={{ errorMessage, setErrorMessage, successMessage, setSuccessMessage, warningMessage, setWarningMessage }}
+    >
+      {children({ errorMessage, successMessage, warningMessage })}
     </SomeContext.Provider>
   );
 };
 
 const StepContentWithAction = () => {
-  const { errorMessage, setErrorMessage, successMessage, setSuccessMessage } = useContext(SomeContext);
+  const { errorMessage, setErrorMessage, successMessage, setSuccessMessage, warningMessage, setWarningMessage } =
+    useContext(SomeContext);
 
   return (
     <>
@@ -35,7 +41,8 @@ const StepContentWithAction = () => {
         isChecked={!!errorMessage}
         onChange={(_event, checked) => {
           setErrorMessage(checked ? 'Some error message' : undefined);
-          setSuccessMessage(!checked ? 'Some error message' : undefined);
+          setSuccessMessage(checked ? undefined : successMessage);
+          setWarningMessage(checked ? undefined : warningMessage);
         }}
         id="toggle-error-checkbox"
         name="Toggle Status"
@@ -45,9 +52,21 @@ const StepContentWithAction = () => {
         isChecked={!!successMessage}
         onChange={(_event, checked) => {
           setSuccessMessage(checked ? 'Some success message' : undefined);
-          setErrorMessage(!checked ? 'Some success message' : undefined);
+          setErrorMessage(checked ? undefined : errorMessage);
+          setWarningMessage(checked ? undefined : warningMessage);
         }}
         id="toggle-success-checkbox"
+        name="Toggle Status"
+      />
+      <Radio
+        label="Give step 1 a warning status"
+        isChecked={!!warningMessage}
+        onChange={(_event, checked) => {
+          setWarningMessage(checked ? 'Some warning message' : undefined);
+          setErrorMessage(checked ? undefined : errorMessage);
+          setSuccessMessage(checked ? undefined : successMessage);
+        }}
+        id="toggle-warning-checkbox"
         name="Toggle Status"
       />
     </>
@@ -56,12 +75,14 @@ const StepContentWithAction = () => {
 
 export const WizardStepStatus: React.FunctionComponent = () => (
   <SomeContextProvider>
-    {({ errorMessage, successMessage }) => {
+    {({ errorMessage, successMessage, warningMessage }) => {
       let status = 'default';
       if (errorMessage) {
         status = 'error';
       } else if (successMessage) {
         status = 'success';
+      } else if (warningMessage) {
+        status = 'warning';
       }
       return (
         <Wizard height={400} title="Step status wizard">

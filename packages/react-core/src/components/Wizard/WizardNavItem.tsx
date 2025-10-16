@@ -4,6 +4,7 @@ import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 
 import { OUIAProps, useOUIAProps } from '../../helpers';
 import { WizardNavItemStatus } from './types';
@@ -38,7 +39,7 @@ export interface WizardNavItemProps
   /** The id for the navigation item */
   id?: string | number;
   /** Used to determine the icon displayed next to content. Default has no icon. */
-  status?: 'default' | 'error' | 'success';
+  status?: 'default' | 'error' | 'success' | 'warning';
 }
 
 export const WizardNavItem = ({
@@ -97,7 +98,8 @@ export const WizardNavItem = ({
           isCurrent && styles.modifiers.current,
           isDisabled && styles.modifiers.disabled,
           status === WizardNavItemStatus.Error && styles.modifiers.danger,
-          status === WizardNavItemStatus.Success && styles.modifiers.success
+          status === WizardNavItemStatus.Success && styles.modifiers.success,
+          status === WizardNavItemStatus.Warning && styles.modifiers.warning
         )}
         aria-disabled={isDisabled ? true : null}
         aria-current={isCurrent && !children ? 'step' : false}
@@ -110,6 +112,7 @@ export const WizardNavItem = ({
             <span className={css(styles.wizardNavLinkStatusIcon)}>
               {status === WizardNavItemStatus.Error && <ExclamationCircleIcon />}
               {status === WizardNavItemStatus.Success && <CheckCircleIcon />}
+              {status === WizardNavItemStatus.Warning && <ExclamationTriangleIcon />}
             </span>
           </>
         )}
