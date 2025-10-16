@@ -35,7 +35,7 @@ export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
   ...props
 }: PageSidebarProps) => (
   <PageContextConsumer>
-    {({ isManagedSidebar, isSidebarOpen: managedIsNavOpen }: PageSidebarProps) => {
+    {({ isManagedSidebar, isSidebarOpen: managedIsNavOpen, isMobile }) => {
       const sidebarOpen = isManagedSidebar ? managedIsNavOpen : isSidebarOpen;
 
       return (
@@ -43,7 +43,7 @@ export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
           id={id}
           className={css(
             styles.pageSidebar,
-            sidebarOpen && styles.modifiers.expanded,
+            sidebarOpen && isMobile && styles.modifiers.expanded,
             !sidebarOpen && styles.modifiers.collapsed,
             className
           )}
