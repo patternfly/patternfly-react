@@ -1,10 +1,10 @@
-import { render, screen, within } from '@testing-library/react';
-import { Truncate, TruncatePosition } from '../Truncate';
+import { render, screen } from '@testing-library/react';
+import { Truncate } from '../Truncate';
 import styles from '@patternfly/react-styles/css/components/Truncate/truncate';
 import '@testing-library/jest-dom';
 
 jest.mock('../../Tooltip', () => ({
-  Tooltip: ({ content, position, children, triggerRef, ...props }) => (
+  Tooltip: ({ content, position, children, triggerRef, trigger, isVisible, ...props }) => (
     <div data-testid="Tooltip-mock" {...props}>
       <div data-testid="Tooltip-mock-content-container">Test {content}</div>
       <p>{`position: ${position}`}</p>
