@@ -8,6 +8,8 @@ export interface FocusTrapProps extends ComponentPropsWithRef<'div'> {
   focusTrapOptions?: FocusTrapOptions;
   /** Prevent from scrolling to the previously focused element on deactivation */
   preventScrollOnDeactivate?: boolean;
+  /** Unique id that can optionally be applied to focus trap */
+  id?: string;
 }
 
 export const FocusTrap = forwardRef<HTMLDivElement, FocusTrapProps>(function FocusTrap(

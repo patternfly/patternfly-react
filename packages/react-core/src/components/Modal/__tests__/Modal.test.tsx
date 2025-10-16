@@ -172,4 +172,13 @@ describe('Modal', () => {
     expect(asideSibling).not.toHaveAttribute('aria-hidden');
     expect(articleSibling).not.toHaveAttribute('aria-hidden');
   });
+
+  test('Modal can add id to focus trap correctly for use with dropdowns', () => {
+    render(<Modal focusTrapId="focus-trap" isOpen onClose={jest.fn()} children="modal content" />);
+    expect(screen.getByRole('dialog', { name: /modal content/i }).parentElement).toHaveAttribute('id', 'focus-trap');
+    expect(screen.getByRole('dialog', { name: /modal content/i }).parentElement).toHaveAttribute(
+      'class',
+      'pf-v6-l-bullseye'
+    );
+  });
 });
