@@ -77,6 +77,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   widths,
   colorVariant = DrawerColorVariant.default,
   focusTrap,
+  style,
   ...props
 }: DrawerPanelContentProps) => {
   const panel = useRef<HTMLDivElement>(undefined);
@@ -381,9 +382,10 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
               }
             }}
             hidden={hidden}
-            {...((defaultSize || minSize || maxSize) && {
-              style: boundaryCssVars as React.CSSProperties
-            })}
+            style={{
+              ...((defaultSize || minSize || maxSize) && boundaryCssVars),
+              ...style
+            }}
             {...props}
             ref={panel}
           >
