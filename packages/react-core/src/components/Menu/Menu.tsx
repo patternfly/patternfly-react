@@ -70,7 +70,6 @@ export interface MenuState {
   ouiaStateId: string;
   transitionMoveTarget: HTMLElement;
   flyoutRef: React.Ref<HTMLLIElement> | null;
-  disableHover: boolean;
   currentDrilldownMenuId: string;
 }
 
@@ -99,7 +98,6 @@ class MenuBase extends Component<MenuProps, MenuState> {
     ouiaStateId: getDefaultOUIAId(Menu.displayName),
     transitionMoveTarget: null,
     flyoutRef: null,
-    disableHover: false,
     currentDrilldownMenuId: this.props.id
   };
 
@@ -117,9 +115,6 @@ class MenuBase extends Component<MenuProps, MenuState> {
   }
 
   componentDidMount() {
-    if (this.context) {
-      this.setState({ disableHover: this.context.disableHover });
-    }
     if (canUseDOM && this.props.containsDrilldown && this.props.isRootMenu) {
       window.addEventListener('transitionend', this.handleDrilldownTransition);
     }
@@ -284,7 +279,7 @@ class MenuBase extends Component<MenuProps, MenuState> {
           onGetMenuHeight,
           flyoutRef: this.state.flyoutRef,
           setFlyoutRef: (flyoutRef) => this.setState({ flyoutRef }),
-          disableHover: this.state.disableHover,
+          disableHover: this.context?.disableHover ?? false,
           role
         }}
       >
