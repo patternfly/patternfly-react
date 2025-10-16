@@ -15,6 +15,7 @@ it('ProgressContainer should match snapshot (auto-generated)', () => {
       variant={'danger'}
       measureLocation={'outside'}
       value={42}
+      hideStatusIcon={false}
     />
   );
   expect(asFragment()).toMatchSnapshot();
