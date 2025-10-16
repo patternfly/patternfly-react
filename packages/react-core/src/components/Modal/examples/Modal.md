@@ -115,7 +115,16 @@ To guide users through a series of steps in a modal, you can add a [wizard](/com
 
 To present a menu of actions or links to a user, you can add a [dropdown](/components/menus/dropdown) to a modal.
 
-To allow the dropdown to visually break out of the modal container, set the `popperProps appendTo` property to one of the parent content items in the modal. Otherwise you can use `inline` to allow it to scroll within the modal itself. Using the Dropdown's default append location will interfere with keyboard accessibility due to the modal's built-in focus trap. Handle the modal’s closing behavior by listening to the `onEscapePress` callback on the `<Modal>` component. This allows the "escape" key to collapse the dropdown without closing the entire modal.
+Using the Dropdown's default append location will interfere with keyboard accessibility due to the modal's
+built-in focus trap. To allow the dropdown to visually break out of the modal container, set the Dropdown's
+`popperProps appendTo` property to id of the focus trap for the modal. This can be done by adding prop
+`focusTrapId` to the modal, and then setting the append location to that as per this example. Otherwise you
+can use `inline` to allow it to scroll within the modal itself. Appending to the focus trap should allow the
+menu to expand visually outside the Modal (no scrollbar created in the Modal itself), and still allow
+focusing the content within that menu via keyboard. You should also handle the modal's closing behavior by
+listening to the
+`onEscapePress` callback on the `<Modal>` component. This allows the "escape" key to collapse the
+dropdown without closing the entire modal.
 
 ```ts file="./ModalWithDropdown.tsx"
 
