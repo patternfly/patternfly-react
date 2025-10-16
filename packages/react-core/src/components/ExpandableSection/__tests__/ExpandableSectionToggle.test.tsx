@@ -30,3 +30,30 @@ test('Renders with class pf-m-detached when isDetached is true', () => {
 
   expect(screen.getByTestId('test-id')).toHaveClass('pf-m-detached');
 });
+
+test('Renders with default div wrapper when toggleWrapper is not specified', () => {
+  render(<ExpandableSectionToggle data-testid="test-id">Toggle test</ExpandableSectionToggle>);
+
+  const toggle = screen.getByRole('button').parentElement;
+  expect(toggle?.tagName).toBe('DIV');
+});
+
+test('Renders with h2 wrapper when toggleWrapper="h2"', () => {
+  render(
+    <ExpandableSectionToggle data-testid="test-id" toggleWrapper="h2">
+      Toggle test
+    </ExpandableSectionToggle>
+  );
+
+  expect(screen.getByRole('heading', { level: 2 })).toBeInTheDocument();
+});
+test('Renders with div wrapper when toggleWrapper="div"', () => {
+  render(
+    <ExpandableSectionToggle data-testid="test-id" toggleWrapper="div">
+      Toggle test
+    </ExpandableSectionToggle>
+  );
+
+  const toggle = screen.getByRole('button').parentElement;
+  expect(toggle?.tagName).toBe('DIV');
+});
