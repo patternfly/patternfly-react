@@ -13,7 +13,7 @@ export interface CodeEditorControlProps extends Omit<ButtonProps, 'onClick'> {
   /** Additional classes added to the code editor control. */
   className?: string;
   /** Icon rendered inside the code editor control. */
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   /** Event handler for the click of the button */
   onClick: (code: string, event?: any) => void;
   /** Flag indicating that the button is visible above the code editor. */
