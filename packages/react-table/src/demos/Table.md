@@ -77,49 +77,49 @@ import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 ### Bulk select
 
-```js isFullscreen file="./examples/TableBulkSelect.tsx"
+```ts isFullscreen file="examples/TableBulkSelect.tsx"
 
 ```
 
 ### Expand/collapse all
 
-```js isFullscreen file="./examples/TableExpandCollapseAll.tsx"
+```ts isFullscreen file="examples/TableExpandCollapseAll.tsx"
 
 ```
 
 ### Compact
 
-```js isFullscreen file="./examples/TableCompact.tsx"
+```ts isFullscreen file="examples/TableCompact.tsx"
 
 ```
 
 ### Compound expansion
 
-```js isFullscreen file="./examples/TableCompoundExpansion.tsx"
+```ts isFullscreen file="examples/TableCompoundExpansion.tsx"
 
 ```
 
 ### Column management
 
-```js isFullscreen file="./examples/TableColumnManagement.tsx"
+```ts isFullscreen file="examples/TableColumnManagement.tsx"
 
 ```
 
 ### Column management with draggable
 
-```js isFullscreen file="./examples/TableColumnManagementWithDraggable.tsx"
+```ts isFullscreen file="examples/TableColumnManagementWithDraggable.tsx"
 
 ```
 
 ### Filterable
 
-```js isFullscreen file="./examples/TableFilterable.tsx"
+```ts isFullscreen file="examples/TableFilterable.tsx"
 
 ```
 
 ### Sortable - responsive
 
-```js isFullscreen file="./examples/TableSortableResponsive.tsx"
+```ts isFullscreen file="examples/TableSortableResponsive.tsx"
 
 ```
 
