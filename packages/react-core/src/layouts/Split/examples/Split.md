@@ -11,47 +11,17 @@ import './split.css';
 
 ### Basic
 
-```js
-import { Split, SplitItem } from '@patternfly/react-core';
-
-<Split>
-  <SplitItem>content</SplitItem>
-  <SplitItem isFilled>pf-m-fill</SplitItem>
-  <SplitItem>content</SplitItem>
-</Split>;
+```ts file="SplitBasic.tsx"
 ```
 
 ### With gutter
 
-```js
-import { Split, SplitItem } from '@patternfly/react-core';
+```ts file="SplitWithGutter.tsx"
 
-<Split hasGutter>
-  <SplitItem>content</SplitItem>
-  <SplitItem isFilled>pf-m-fill</SplitItem>
-  <SplitItem>content</SplitItem>
-</Split>;
 ```
 
 ### Wrappable
 
-```js
-import { Split, SplitItem } from '@patternfly/react-core';
+```ts file="SplitWrappable.tsx"
 
-<Split hasGutter isWrappable>
-  <SplitItem>content</SplitItem>
-  <SplitItem>content</SplitItem>
-  <SplitItem>content</SplitItem>
-  <SplitItem>content</SplitItem>
-  <SplitItem>content</SplitItem>
-  <SplitItem>content</SplitItem>
-  <SplitItem>content</SplitItem>
-  <SplitItem>content</SplitItem>
-  <SplitItem>content</SplitItem>
-  <SplitItem>content</SplitItem>
-  <SplitItem>content</SplitItem>
-  <SplitItem>content</SplitItem>
-  <SplitItem>content</SplitItem>
-  <SplitItem>content</SplitItem>
-</Split>;
 ```
