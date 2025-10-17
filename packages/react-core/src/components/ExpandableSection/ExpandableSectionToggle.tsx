@@ -30,6 +30,10 @@ export interface ExpandableSectionToggleProps extends Omit<React.HTMLProps<HTMLD
   onToggle?: (isExpanded: boolean) => void;
   /** Flag indicating that the expandable section and expandable toggle are detached from one another. */
   isDetached?: boolean;
+  /** Accessible name via human readable string for the expandable section toggle. */
+  toggleAriaLabel?: string;
+  /** Accessible name via space delimtted list of IDs for the expandable section toggle. */
+  toggleAriaLabelledBy?: string;
 }
 
 export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionToggleProps> = ({
@@ -42,6 +46,8 @@ export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionT
   direction = 'down',
   hasTruncatedContent = false,
   isDetached,
+  toggleAriaLabel,
+  toggleAriaLabelledBy,
   ...props
 }: ExpandableSectionToggleProps) => (
   <div
@@ -74,6 +80,8 @@ export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionT
             </span>
           )
         })}
+        aria-label={toggleAriaLabel}
+        aria-labelledby={toggleAriaLabelledBy}
       >
         {children}
       </Button>

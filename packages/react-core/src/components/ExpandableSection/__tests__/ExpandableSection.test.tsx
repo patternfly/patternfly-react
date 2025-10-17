@@ -191,3 +191,20 @@ test('Renders with class pf-m-detached when isDetached is true and direction is 
 
   expect(screen.getByText('Test content').parentElement).toHaveClass('pf-m-detached');
 });
+
+test('Renders with aria-label when toggleAriaLabel is passed', () => {
+  render(<ExpandableSection toggleAriaLabel="Test label"></ExpandableSection>);
+
+  expect(screen.getByRole('button')).toHaveAccessibleName('Test label');
+});
+
+test('Renders with aria-labelledby when toggleAriaLabelledBy is passed', () => {
+  render(
+    <>
+      <div id="test-id">Test label</div>
+      <ExpandableSection toggleAriaLabelledBy="test-id"></ExpandableSection>
+    </>
+  );
+
+  expect(screen.getByRole('button')).toHaveAccessibleName('Test label');
+});
