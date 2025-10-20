@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import * as React from 'react';
 import {
   Button,
   ButtonVariant,
@@ -45,7 +45,7 @@ interface ToolbarState {
   kebabIsOpen: boolean;
 }
 
-class ToolbarDemo extends Component<ToolbarProps, ToolbarState> {
+class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
   static displayName = 'ToolbarDemo';
   state = {
     isOpen: false,
@@ -252,6 +252,14 @@ class ToolbarDemo extends Component<ToolbarProps, ToolbarState> {
         <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl" id="demo-toggle-group">
           {toggleGroupItems}
         </ToolbarToggleGroup>
+        {/* Example of new width and flexGrow props */}
+        <ToolbarItem widths={{ default: 'md', lg: 'lg', xl: 'xl' }} flexGrow={{ default: 'flexGrow', lg: 'flexGrow' }}>
+          <TextInput
+            type="text"
+            aria-label="width and flex-grow example"
+            placeholder="This item has width and flex-grow"
+          />
+        </ToolbarItem>
         <ToolbarGroup variant="action-group-plain">
           <ToolbarItem>
             <Button variant="plain" icon={<EditIcon />} />

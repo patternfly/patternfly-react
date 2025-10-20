@@ -17,11 +17,13 @@ exports[`Toolbar should render inset 1`] = `
       >
         <div
           class="pf-v6-c-toolbar__item"
+          data-testid="toolbaritem"
         >
           Test
         </div>
         <div
           class="pf-v6-c-toolbar__item"
+          data-testid="toolbaritem"
         >
           Test 2
         </div>
@@ -30,6 +32,7 @@ exports[`Toolbar should render inset 1`] = `
         />
         <div
           class="pf-v6-c-toolbar__item"
+          data-testid="toolbaritem"
         >
           Test 3 
         </div>
@@ -87,6 +90,7 @@ exports[`Toolbar should render with custom label content 1`] = `
           >
             <div
               class="pf-v6-c-toolbar__item"
+              data-testid="toolbaritem"
             >
               test content
             </div>
@@ -104,6 +108,7 @@ exports[`Toolbar should render with custom label content 1`] = `
       >
         <div
           class="pf-v6-c-toolbar__item pf-m-label-group pf-m-label-group"
+          data-testid="toolbaritem"
         >
           <div
             class="pf-v6-c-label-group pf-m-category"
@@ -259,11 +264,13 @@ exports[`Toolbar should render with custom label content 1`] = `
       >
         <div
           class="pf-v6-c-toolbar__item"
+          data-testid="toolbaritem"
         >
           2 filters applied
         </div>
         <div
           class="pf-v6-c-toolbar__item"
+          data-testid="toolbaritem"
         >
           <button
             class="pf-v6-c-button pf-m-link pf-m-inline"
@@ -281,6 +288,7 @@ exports[`Toolbar should render with custom label content 1`] = `
         </div>
         <div
           class="pf-v6-c-toolbar__item"
+          data-testid="toolbaritem"
         >
           <button
             class="pf-v6-c-button pf-m-link pf-m-inline"

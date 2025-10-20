@@ -37,4 +37,37 @@ describe('ToolbarItem', () => {
       });
     });
   });
+
+  describe('ToolbarItem widths', () => {
+    const bps = ['default', 'sm', 'md', 'lg', 'xl', '2xl'];
+    const sizes = ['sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'];
+
+    describe.each(bps)('widths at various breakpoints', (bp) => {
+      it.each(sizes)(`should render with pf-m-w-%s when widths is set to %s at ${bp}`, (size) => {
+        render(
+          <ToolbarItem data-testid="toolbaritem" widths={{ [bp]: size }}>
+            Test
+          </ToolbarItem>
+        );
+        const bpWidthClass = bp === 'default' ? `pf-m-w-${size}` : `pf-m-w-${size}-on-${bp}`;
+        expect(screen.getByTestId('toolbaritem')).toHaveClass(bpWidthClass);
+      });
+    });
+  });
+
+  describe('ToolbarItem flexGrow', () => {
+    const bps = ['default', 'sm', 'md', 'lg', 'xl', '2xl'];
+
+    describe.each(bps)('flexGrow at various breakpoints', (bp) => {
+      it(`should render with pf-m-flex-grow when flexGrow is set at ${bp}`, () => {
+        render(
+          <ToolbarItem data-testid="toolbaritem" flexGrow={{ [bp]: 'flexGrow' }}>
+            Test
+          </ToolbarItem>
+        );
+        const bpFlexGrowClass = bp === 'default' ? 'pf-m-flex-grow' : `pf-m-flex-grow-on-${bp}`;
+        expect(screen.getByTestId('toolbaritem')).toHaveClass(bpFlexGrowClass);
+      });
+    });
+  });
 });
