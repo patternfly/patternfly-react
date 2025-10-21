@@ -68,6 +68,11 @@ export interface ExpandableSectionProps extends Omit<React.HTMLProps<HTMLDivElem
    * animation will not occur.
    */
   direction?: 'up' | 'down';
+  /** The HTML element to use for the toggle wrapper. Can be 'div' (default) or any heading level.
+   * When using heading elements, the button will be rendered inside the heading for proper semantics.
+   * This is useful when the toggle text should function as a heading in the document structure.
+   */
+  toggleWrapper?: 'div' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
 interface ExpandableSectionState {
@@ -208,6 +213,7 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       truncateMaxLines,
       direction,
+      toggleWrapper = 'div',
       ...props
     } = this.props;
 
@@ -238,8 +244,10 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
       propOrStateIsExpanded
     );
 
+    const ToggleWrapper = toggleWrapper as any;
+
     const expandableToggle = !isDetached && (
-      <div className={`${styles.expandableSection}__toggle`}>
+      <ToggleWrapper className={`${styles.expandableSection}__toggle`}>
         <Button
           variant="link"
           {...(variant === ExpandableSectionVariant.truncate && { isInline: true })}
@@ -257,7 +265,7 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
         >
           {toggleContent || computedToggleText}
         </Button>
-      </div>
+      </ToggleWrapper>
     );
 
     return (

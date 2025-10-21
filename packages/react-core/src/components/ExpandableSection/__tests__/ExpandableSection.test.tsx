@@ -191,3 +191,31 @@ test('Renders with class pf-m-detached when isDetached is true and direction is 
 
   expect(screen.getByText('Test content').parentElement).toHaveClass('pf-m-detached');
 });
+
+test('Renders with default div wrapper when toggleWrapper is not specified', () => {
+  render(<ExpandableSection data-testid="test-id">Test content</ExpandableSection>);
+
+  const toggle = screen.getByRole('button').parentElement;
+  expect(toggle?.tagName).toBe('DIV');
+});
+
+test('Renders with h2 wrapper when toggleWrapper="h2"', () => {
+  render(
+    <ExpandableSection data-testid="test-id" toggleWrapper="h2">
+      Test content
+    </ExpandableSection>
+  );
+
+  expect(screen.getByRole('heading', { level: 2 })).toBeInTheDocument();
+});
+
+test('Renders with div wrapper when toggleWrapper="div"', () => {
+  render(
+    <ExpandableSection data-testid="test-id" toggleWrapper="div">
+      Test content
+    </ExpandableSection>
+  );
+
+  const toggle = screen.getByRole('button').parentElement;
+  expect(toggle?.tagName).toBe('DIV');
+});
