@@ -11,52 +11,20 @@ import './flex.css';
 
 ### Basic
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexBasic.tsx"
 
-<Flex>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>;
 ```
 
 ### Nesting
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexNesting.tsx"
 
-<Flex>
-  <Flex>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>;
 ```
 
 ### Nested with items
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexNestedItems.tsx"
 
-<Flex>
-  <Flex>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <Flex>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>;
 ```
 
 ### Spacing
@@ -73,252 +41,92 @@ The flex layout provides two ways of spacing its direct children.
 
 ### Individually spaced
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexIndividuallySpaced.tsx"
 
-<Flex>
-  <FlexItem spacer={{ default: 'spacerNone' }}>Item - none</FlexItem>
-  <FlexItem spacer={{ default: 'spacerXs' }}>Item - xs</FlexItem>
-  <FlexItem spacer={{ default: 'spacerSm' }}>Item -sm</FlexItem>
-  <FlexItem spacer={{ default: 'spacerMd' }}>Item - md</FlexItem>
-  <FlexItem spacer={{ default: 'spacerLg' }}>Item - lg</FlexItem>
-  <FlexItem spacer={{ default: 'spacerXl' }}>Item - xl</FlexItem>
-  <FlexItem spacer={{ default: 'spacer2xl' }}>Item - 2xl</FlexItem>
-  <FlexItem spacer={{ default: 'spacer3xl' }}>Item - 3xl</FlexItem>
-</Flex>;
 ```
 
 ### Spacing xl
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexSpacingXl.tsx"
 
-<Flex spaceItems={{ default: 'spaceItemsXl' }}>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>;
 ```
 
 ### Spacing none
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexSpacingNone.tsx"
 
-<Flex spaceItems={{ default: 'spaceItemsNone' }}>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>;
 ```
 
 ### Flex gap spacing
 
 ### Row gap
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexRowGap.tsx"
 
-<Flex rowGap={{ default: 'rowGap2xl' }}>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>;
 ```
 
 ### Column gap
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexColumnGap.tsx"
 
-<Flex columnGap={{ default: 'columnGap2xl' }}>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>;
 ```
 
 ### Gap
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexGap.tsx"
 
-<Flex gap={{ default: 'gap2xl' }}>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>;
 ```
 
 ### Flex layout modifiers
 
 ### Default layout
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexDefaultLayout.tsx"
 
-<Flex className="example-border">
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>;
 ```
 
 ### Inline
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexInline.tsx"
 
-<Flex className="example-border" display={{ default: 'inlineFlex' }}>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>;
 ```
 
 ### Using canGrow
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexCanGrow.tsx"
 
-<Flex>
-  <Flex grow={{ default: 'grow' }}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>;
 ```
 
 ### Adjusting width
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexAdjustingWidth.tsx"
 
-<Flex>
-  <Flex flex={{ default: 'flex_1' }}>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex flex={{ default: 'flex_1' }}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex flex={{ default: 'flex_1' }}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>;
 ```
 
 ### Specifying column widths
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexColumnWidths.tsx"
 
-<Flex>
-  <Flex flex={{ default: 'flex_1' }}>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex flex={{ default: 'flex_2' }}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex flex={{ default: 'flex_3' }}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>;
 ```
 
 ## Column layout modifiers
 
 ### Column layout
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexColumnLayout.tsx"
 
-<Flex direction={{ default: 'column' }}>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>;
 ```
 
 ### Stacking elements
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexStackingElements.tsx"
 
-<Flex direction={{ default: 'column' }}>
-  <Flex>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>;
 ```
 
 ### Nesting elements in columns
 
-```js
-import { Flex, FlexItem } from '@patternfly/react-core';
+```ts file="FlexNestingInColumns.tsx"
 
-<Flex>
-  <Flex direction={{ default: 'column' }}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex direction={{ default: 'column' }}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>;
 ```
 
 ## Responsive layout modifiers
