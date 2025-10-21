@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.4.1-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.0...@patternfly/react-core@6.4.1-prerelease.0) (2025-10-21)
+
+### Bug Fixes
+
+- **DrawerPanelContent:** fix issue with styles overriding ([#12039](https://github.com/patternfly/patternfly-react/issues/12039)) ([fb91a1d](https://github.com/patternfly/patternfly-react/commit/fb91a1d4245d858c12b1c061f4f3c52c2be55033))
+- **Progress:** Fixed to use the correct icon for danger variant ([#12073](https://github.com/patternfly/patternfly-react/issues/12073)) ([46edc2b](https://github.com/patternfly/patternfly-react/commit/46edc2b1bb04dc61e36b07a63b6bfe2ffc8cdc60))
+
+### Features
+
+- **Radio/Checkbox:** support for aria-describedBy ([#12042](https://github.com/patternfly/patternfly-react/issues/12042)) ([286de49](https://github.com/patternfly/patternfly-react/commit/286de49c017ba4b3ba06b434de9600a7d6adce1a))
+- **Wizard:** warning step status ([#12041](https://github.com/patternfly/patternfly-react/issues/12041)) ([3d202a8](https://github.com/patternfly/patternfly-react/commit/3d202a8b57174ff1670157110ca54e4b7aba4a90))
+
 # [6.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.0-prerelease.5...@patternfly/react-core@6.4.0) (2025-10-16)
 
 **Note:** Version bump only for package @patternfly/react-core
