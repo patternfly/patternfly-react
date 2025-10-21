@@ -17,7 +17,7 @@ import formStyles from '@patternfly/react-styles/css/components/Form/form';
 
 ### Basic modals
 
-Basic modals give users the option to either confirm or cancel an action. 
+Basic modals give users the option to either confirm or cancel an action.
 
 To flag an open modal, use the `isOpen` property. To execute a callback when a modal is closed, use the `onClose` property.
 
@@ -71,7 +71,7 @@ To choose a specific width for a modal, use the `width` property. The following 
 
 ### Custom header
 
-To add a custom header to a modal, your custom content must be passed as a child of the `<ModalHeader>` component. Do not pass the `title` property to `<ModalHeader>` when using a custom header. 
+To add a custom header to a modal, your custom content must be passed as a child of the `<ModalHeader>` component. Do not pass the `title` property to `<ModalHeader>` when using a custom header.
 
 ```ts file="./ModalCustomHeader.tsx"
 
@@ -113,9 +113,18 @@ To guide users through a series of steps in a modal, you can add a [wizard](/com
 
 ### With dropdown
 
-To present a menu of actions or links to a user, you can add a [dropdown](/components/menus/dropdown) to a modal. 
+To present a menu of actions or links to a user, you can add a [dropdown](/components/menus/dropdown) to a modal.
 
-To allow the dropdown to visually break out of the modal container, set the `menuAppendTo` property to “parent”. Handle the modal’s closing behavior by listening to the `onEscapePress` callback on the `<Modal>` component. This allows the "escape" key to collapse the dropdown without closing the entire modal.
+Using the Dropdown's default append location will interfere with keyboard accessibility due to the modal's
+built-in focus trap. To allow the dropdown to visually break out of the modal container, set the Dropdown's
+`popperProps appendTo` property to id of the focus trap for the modal. This can be done by adding prop
+`focusTrapId` to the modal, and then setting the append location to that as per this example. Otherwise you
+can use `inline` to allow it to scroll within the modal itself. Appending to the focus trap should allow the
+menu to expand visually outside the Modal (no scrollbar created in the Modal itself), and still allow
+focusing the content within that menu via keyboard. You should also handle the modal's closing behavior by
+listening to the
+`onEscapePress` callback on the `<Modal>` component. This allows the "escape" key to collapse the
+dropdown without closing the entire modal.
 
 ```ts file="./ModalWithDropdown.tsx"
 
@@ -141,7 +150,7 @@ To enable form submission from a button in the modal's footer (outside of the `<
 
 ### Custom focus
 
-To customize which element inside the modal receives focus when initially opened, use the `elementToFocus` property`. 
+To customize which element inside the modal receives focus when initially opened, use the `elementToFocus` property`.
 
 ```ts file="./ModalCustomFocus.tsx"
 

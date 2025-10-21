@@ -27,6 +27,8 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
    * focusable element will receive focus.
    */
   elementToFocus?: HTMLElement | SVGElement | string;
+  /** Id of the focus trap in the ModalContent component */
+  focusTrapId?: string;
   /** An id to use for the modal box container. */
   id?: string;
   /** Flag to show the modal. */
