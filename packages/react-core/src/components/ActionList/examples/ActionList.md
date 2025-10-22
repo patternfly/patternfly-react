@@ -35,3 +35,9 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 ```ts file="./ActionListWithCancelButton.tsx"
 
 ```
+
+### Vertical action list
+
+```ts file="./ActionListVertical.tsx" isBeta
+
+```

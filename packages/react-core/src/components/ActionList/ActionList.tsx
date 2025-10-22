@@ -8,15 +8,26 @@ export interface ActionListProps extends React.HTMLProps<HTMLDivElement> {
   isIconList?: boolean;
   /** Additional classes added to the action list */
   className?: string;
+  /** Whether the layout of children is vertical or horizontal. */
+  isVertical?: boolean;
 }
 
 export const ActionList: React.FunctionComponent<ActionListProps> = ({
   children,
   isIconList,
   className,
+  isVertical = false,
   ...props
 }: ActionListProps) => (
-  <div className={css(styles.actionList, isIconList && styles.modifiers.icons, className)} {...props}>
+  <div
+    className={css(
+      styles.actionList,
+      isIconList && styles.modifiers.icons,
+      isVertical && styles.modifiers.vertical,
+      className
+    )}
+    {...props}
+  >
     {children}
   </div>
 );
