@@ -2,6 +2,8 @@ import { Fragment, useEffect, useRef, useState, forwardRef, useImperativeHandle 
 import styles from '@patternfly/react-styles/css/components/Truncate/truncate';
 import { css } from '@patternfly/react-styles';
 import { Tooltip, TooltipPosition, TooltipProps } from '../Tooltip';
+import { getResizeObserver } from '../../helpers/resizeObserver';
+import { debounce } from '../../helpers/util';
 
 export enum TruncatePosition {
   start = 'start',
@@ -110,6 +112,21 @@ const TruncateBase: React.FunctionComponent<TruncateProps> = ({
       setIsTruncated(textRef.current.scrollWidth > textRef.current.clientWidth);
     }
   }, [shouldRenderByMaxChars, content]);
+
+  const debouncedHandleResize = debounce(() => {
+    if (!shouldRenderByMaxChars && textRef.current) {
+      const isCurrentlyTruncated = textRef.current.scrollWidth > textRef.current.clientWidth;
+      setIsTruncated(isCurrentlyTruncated);
+    }
+  }, 500);
+
+  // Set up ResizeObserver for non-maxChars truncation
+  useEffect(() => {
+    if (!shouldRenderByMaxChars && textRef.current) {
+      const observer = getResizeObserver(textRef.current, debouncedHandleResize, false);
+      return observer;
+    }
+  }, [shouldRenderByMaxChars, debouncedHandleResize]);
 
   // Check if content is truncated (called on hover/focus)
   const checkTruncation = (): boolean => {
