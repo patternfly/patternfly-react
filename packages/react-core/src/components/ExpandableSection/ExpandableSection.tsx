@@ -56,6 +56,10 @@ export interface ExpandableSectionProps extends Omit<React.HTMLProps<HTMLDivElem
    * both are specified; used for uncontrolled expandable with dynamic toggle text).
    */
   toggleTextExpanded?: string;
+  /** Accessible name via human readable string for the expandable section toggle. */
+  toggleAriaLabel?: string;
+  /** Accessible name via space delimtted list of IDs for the expandable section toggle. */
+  toggleAriaLabelledBy?: string;
   /** Truncates the expandable content to the specified number of lines when using the
    * "truncate" variant.
    */
@@ -109,6 +113,8 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
     toggleText: '',
     toggleTextExpanded: '',
     toggleTextCollapsed: '',
+    toggleAriaLabel: undefined,
+    toggleAriaLabelledBy: undefined,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     onToggle: (event, isExpanded): void => undefined,
     isDetached: false,
@@ -196,6 +202,8 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
       toggleTextExpanded,
       toggleTextCollapsed,
       toggleContent,
+      toggleAriaLabel,
+      toggleAriaLabelledBy,
       children,
       isExpanded,
       isDetached,
@@ -254,6 +262,8 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
               </span>
             )
           })}
+          aria-label={toggleAriaLabel}
+          aria-labelledby={toggleAriaLabelledBy}
         >
           {toggleContent || computedToggleText}
         </Button>
