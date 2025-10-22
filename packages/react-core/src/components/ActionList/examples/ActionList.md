@@ -9,6 +9,10 @@ import { Fragment, useState } from 'react';
 import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
+import OutlinedPlusSquare from '@patternfly/react-icons/dist/esm/icons/outlined-plus-square-icon';
+import OutlinedCopy from '@patternfly/react-icons/dist/esm/icons/outlined-copy-icon';
+import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/outlined-question-circle-icon';
 
 ## Examples
 
@@ -33,5 +37,11 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 ### Action list with cancel button
 
 ```ts file="./ActionListWithCancelButton.tsx"
+
+```
+
+### Action list with vertical modifier
+
+```ts file="./ActionListVertical.tsx"
 
 ```

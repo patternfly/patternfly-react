@@ -37,6 +37,18 @@ test(`Renders with class ${styles.modifiers.icons} when isIconList is true`, () 
   expect(screen.getByText('Test')).toHaveClass(styles.modifiers.icons);
 });
 
+test(`Does not render with class ${styles.modifiers.vertical} by default`, () => {
+  render(<ActionList>Test</ActionList>);
+
+  expect(screen.getByText('Test')).not.toHaveClass(styles.modifiers.vertical);
+});
+
+test(`Renders with class ${styles.modifiers.vertical} when isVertical is true`, () => {
+  render(<ActionList isVertical={true}>Test</ActionList>);
+
+  expect(screen.getByText('Test')).toHaveClass(styles.modifiers.vertical);
+});
+
 test('Renders with inherited element props spread to the component', () => {
   render(<ActionList aria-label="Test label">Test</ActionList>);
 
