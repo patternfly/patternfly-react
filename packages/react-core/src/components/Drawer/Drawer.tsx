@@ -17,6 +17,8 @@ export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
   isExpanded?: boolean;
   /** Indicates if the content element and panel element are displayed side by side. */
   isInline?: boolean;
+  /** Indicates if the drawer will have pill styles */
+  isPill?: boolean;
   /** Indicates if the drawer will always show both content and panel. */
   isStatic?: boolean;
   /** Position of the drawer panel. left and right are deprecated, use start and end instead. */
@@ -50,6 +52,7 @@ export const Drawer: React.FunctionComponent<DrawerProps> = ({
   children,
   isExpanded = false,
   isInline = false,
+  isPill = false,
   isStatic = false,
   position = 'end',
   onExpand = () => {},
@@ -65,6 +68,8 @@ export const Drawer: React.FunctionComponent<DrawerProps> = ({
           styles.drawer,
           isExpanded && styles.modifiers.expanded,
           isInline && styles.modifiers.inline,
+          // @ts-expect-error: Pill modifier does not yet exist
+          isPill && styles.modifiers.pill,
           isStatic && styles.modifiers.static,
           (position === 'left' || position === 'start') && styles.modifiers.panelLeft,
           position === 'bottom' && styles.modifiers.panelBottom,
