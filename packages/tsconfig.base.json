@@ -21,7 +21,11 @@
     "plugins": [
       { "transform": "transformer-cjs-imports" },
       { "transform": "transformer-react-styles-esm-imports/index.ts", "type": "raw" }
-    ]
+    ],
+    "typeRoots": [
+      "../types",
+      "../node_modules/@types"
+    ],
   },
   "exclude": [
     "**/**.test.tsx",

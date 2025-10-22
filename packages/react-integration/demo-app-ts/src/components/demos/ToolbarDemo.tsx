@@ -1,5 +1,4 @@
-import * as React from 'react';
-const { useState } = React;
+import { useState } from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent, Button, SearchInput, ToolbarGroup } from '@patternfly/react-core';
 
 export const ToolbarDemo: React.FC = () => {

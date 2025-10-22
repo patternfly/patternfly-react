@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component, FormEvent, MouseEvent, ChangeEvent, Ref } from 'react';
 import {
   Button,
   ButtonVariant,
@@ -45,7 +45,7 @@ interface ToolbarState {
   kebabIsOpen: boolean;
 }
 
-class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
+class ToolbarDemo extends Component<ToolbarProps, ToolbarState> {
   static displayName = 'ToolbarDemo';
   state = {
     isOpen: false,
@@ -72,11 +72,11 @@ class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
     }));
   };
 
-  onInputChange = (_event: React.FormEvent<HTMLInputElement>, newValue: string) => {
+  onInputChange = (_event: FormEvent<HTMLInputElement>, newValue: string) => {
     this.setState({ inputValue: newValue });
   };
 
-  onSelect = (type: keyof Filter, event: React.MouseEvent | React.ChangeEvent, selection: string) => {
+  onSelect = (type: keyof Filter, event: MouseEvent | ChangeEvent, selection: string) => {
     const selectedTarget = event.target as HTMLInputElement;
     const checked = selectedTarget.checked;
     this.setState((prevState) => {
@@ -275,7 +275,7 @@ class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
           <Dropdown
             isOpen={kebabIsOpen}
             onOpenChange={(_event: any) => this.setState({ kebabIsOpen: this.state.kebabIsOpen })}
-            toggle={(toggleRef: React.Ref<any>) => (
+            toggle={(toggleRef: Ref<any>) => (
               <MenuToggle
                 variant="plain"
                 ref={toggleRef}

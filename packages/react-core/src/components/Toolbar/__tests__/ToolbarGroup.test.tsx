@@ -11,6 +11,22 @@ describe('ToolbarGroup', () => {
     expect(screen.getByTestId('toolbargroup')).toHaveClass('pf-m-overflow-container');
   });
 
+  describe('ToolbarGroup flexGrow', () => {
+    const bps = ['default', 'sm', 'md', 'lg', 'xl', '2xl'];
+
+    describe.each(bps)('flexGrow at various breakpoints', (bp) => {
+      it(`should render with pf-m-flex-grow when flexGrow is set at ${bp}`, () => {
+        render(
+          <ToolbarGroup data-testid="toolbargroup" flexGrow={{ [bp]: 'flexGrow' }}>
+            Test
+          </ToolbarGroup>
+        );
+        const bpFlexGrowClass = bp === 'default' ? 'pf-m-flex-grow' : `pf-m-flex-grow-on-${bp}`;
+        expect(screen.getByTestId('toolbargroup')).toHaveClass(bpFlexGrowClass);
+      });
+    });
+  });
+
   describe('ToobarGroup rowWrap', () => {
     const bps = ['default', 'sm', 'md', 'lg', 'xl', '2xl'];
 

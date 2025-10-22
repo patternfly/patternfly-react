@@ -4530,6 +4530,7 @@ __metadata:
     eslint: "npm:^9.32.0"
     eslint-config-prettier: "npm:^10.1.5"
     eslint-plugin-markdown: "npm:^5.1.0"
+    eslint-plugin-patternfly-react: "workspace:^"
     eslint-plugin-prettier: "npm:^5.2.6"
     eslint-plugin-react: "npm:^7.37.4"
     eslint-plugin-react-compiler: "npm:19.0.0-beta-ebf51a3-20250411"
@@ -10911,7 +10912,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-patternfly-react@workspace:packages/eslint-plugin-patternfly-react":
+"eslint-plugin-patternfly-react@workspace:^, eslint-plugin-patternfly-react@workspace:packages/eslint-plugin-patternfly-react":
   version: 0.0.0-use.local
   resolution: "eslint-plugin-patternfly-react@workspace:packages/eslint-plugin-patternfly-react"
   peerDependencies:
