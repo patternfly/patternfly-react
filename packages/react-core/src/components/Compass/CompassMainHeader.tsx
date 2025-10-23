@@ -22,7 +22,7 @@ export const CompassMainHeader: React.FunctionComponent<CompassMainHeaderProps> 
 }) => {
   const _content =
     title !== undefined || toolbar !== undefined ? (
-      <CompassSection isGlass>
+      <CompassSection>
         <Flex alignItems={{ default: 'alignItemsCenter' }}>
           <FlexItem grow={{ default: 'grow' }}>{title}</FlexItem>
           <FlexItem>{toolbar}</FlexItem>
