@@ -107,7 +107,7 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   isHamburger?: boolean;
   /** Adjusts and animates the hamburger icon to indicate what will happen upon clicking the button. */
   hamburgerVariant?: 'expand' | 'collapse';
-  /** Flag indicating the button is a circle button. Intended for buttons that only contain an icon.. */
+  /** @beta Flag indicating the button is a circle button. Intended for buttons that only contain an icon.. */
   isCircle?: boolean;
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
