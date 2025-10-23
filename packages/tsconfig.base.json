@@ -25,7 +25,7 @@
     "typeRoots": [
       "../types",
       "../node_modules/@types"
-    ],
+    ]
   },
   "exclude": [
     "**/**.test.tsx",
