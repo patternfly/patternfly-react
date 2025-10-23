@@ -23,46 +23,52 @@ import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/o
 
 export const CompassBasic: React.FunctionComponent = () => {
   const subTabs = (
-    <Tabs activeKey={0} isSubtab onSelect={() => {}}>
-      <Tab eventKey={0} title={<TabTitleText>Subtab 1</TabTitleText>} />
-      <Tab eventKey={1} title={<TabTitleText>Subtab 2</TabTitleText>} />
-      <Tab eventKey={2} title={<TabTitleText>Disabled Subtab 3</TabTitleText>} isDisabled />
-    </Tabs>
+    <CompassSection isGlass>
+      <Tabs activeKey={0} isSubtab onSelect={() => {}}>
+        <Tab eventKey={0} title={<TabTitleText>Subtab 1</TabTitleText>} />
+        <Tab eventKey={1} title={<TabTitleText>Subtab 2</TabTitleText>} />
+        <Tab eventKey={2} title={<TabTitleText>Disabled Subtab 3</TabTitleText>} isDisabled />
+      </Tabs>
+    </CompassSection>
   );
 
   const navContent = (
-    <Tabs activeKey={0} onSelect={() => {}} component={TabsComponent.nav} aria-label="Compass navigation tabs">
-      <Tab eventKey={0} title={<TabTitleText>Tab 1</TabTitleText>}>
-        {subTabs}
-      </Tab>
-      <Tab eventKey={1} title={<TabTitleText>Tab 2</TabTitleText>} />
-      <Tab eventKey={2} title={<TabTitleText>Tab 3</TabTitleText>} />
-      <Tab eventKey={3} title={<TabTitleText>Disabled Tab 4</TabTitleText>} isDisabled />
-    </Tabs>
+    <CompassSection isGlass>
+      <Tabs activeKey={0} onSelect={() => {}} component={TabsComponent.nav} aria-label="Compass navigation tabs">
+        <Tab eventKey={0} title={<TabTitleText>Tab 1</TabTitleText>}>
+          {subTabs}
+        </Tab>
+        <Tab eventKey={1} title={<TabTitleText>Tab 2</TabTitleText>} />
+        <Tab eventKey={2} title={<TabTitleText>Tab 3</TabTitleText>} />
+        <Tab eventKey={3} title={<TabTitleText>Disabled Tab 4</TabTitleText>} isDisabled />
+      </Tabs>
+    </CompassSection>
   );
 
   const panelContent = (
-    <ActionList>
-      <ActionListGroup>
+    <CompassSection isPill isGlass>
+      <ActionList>
+        <ActionListGroup>
+          <ActionListItem>
+            <Button variant="plain" icon={<PlayIcon />} aria-label="Play" />
+          </ActionListItem>
+          <ActionListItem>
+            <Button variant="plain" icon={<OutlinedPlusSquare />} aria-label="Add" />
+          </ActionListItem>
+        </ActionListGroup>
         <ActionListItem>
-          <Button variant="plain" icon={<PlayIcon />} />
+          <Button variant="plain" icon={<OutlinedCopy />} aria-label="Copy" />
         </ActionListItem>
-        <ActionListItem>
-          <Button variant="plain" icon={<OutlinedPlusSquare />} />
-        </ActionListItem>
-      </ActionListGroup>
-      <ActionListItem>
-        <Button variant="plain" icon={<OutlinedCopy />} />
-      </ActionListItem>
-      <ActionListGroup>
-        <ActionListItem>
-          <Button variant="plain" icon={<OutlinedQuestionCircleIcon />} />
-        </ActionListItem>
-        <ActionListItem>
-          <Button variant="plain" icon={<OutlinedCopy />} />
-        </ActionListItem>
-      </ActionListGroup>
-    </ActionList>
+        <ActionListGroup>
+          <ActionListItem>
+            <Button variant="plain" icon={<OutlinedQuestionCircleIcon />} aria-label="Help" />
+          </ActionListItem>
+          <ActionListItem>
+            <Button variant="plain" icon={<OutlinedCopy />} aria-label="Copy" />
+          </ActionListItem>
+        </ActionListGroup>
+      </ActionList>
+    </CompassSection>
   );
 
   const headerContent = <CompassHeader logo={<div>Logo</div>} nav={navContent} profile={<div>Profile</div>} />;
@@ -74,12 +80,16 @@ export const CompassBasic: React.FunctionComponent = () => {
       </CompassHero>
       <CompassContent>
         <CompassMainHeader title={<Title headingLevel="h1">Content title</Title>} />
-        <CompassSection>Content</CompassSection>
+        <CompassSection isGlass>Content</CompassSection>
       </CompassContent>
     </>
   );
   const panelEndContent = panelContent;
-  const footerContent = <SearchInput aria-label="Search input" placeholder="Search" />;
+  const footerContent = (
+    <CompassSection isGlass>
+      <SearchInput aria-label="Search input" placeholder="Search" />
+    </CompassSection>
+  );
 
   return (
     <Compass
