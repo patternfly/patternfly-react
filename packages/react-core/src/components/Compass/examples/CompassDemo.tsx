@@ -1,0 +1,93 @@
+import {
+  Compass,
+  CompassHeader,
+  CompassHero,
+  CompassContent,
+  CompassMainHeader,
+  CompassSection,
+  Tabs,
+  TabsComponent,
+  Tab,
+  TabTitleText,
+  ActionList,
+  ActionListGroup,
+  ActionListItem,
+  Button,
+  Title,
+  SearchInput
+} from '@patternfly/react-core';
+import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
+import OutlinedPlusSquare from '@patternfly/react-icons/dist/esm/icons/outlined-plus-square-icon';
+import OutlinedCopy from '@patternfly/react-icons/dist/esm/icons/outlined-copy-icon';
+import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/outlined-question-circle-icon';
+
+export const CompassBasic: React.FunctionComponent = () => {
+  const subTabs = (
+    <Tabs activeKey={0} isSubtab onSelect={() => {}}>
+      <Tab eventKey={0} title={<TabTitleText>Subtab 1</TabTitleText>} />
+      <Tab eventKey={1} title={<TabTitleText>Subtab 2</TabTitleText>} />
+      <Tab eventKey={2} title={<TabTitleText>Disabled Subtab 3</TabTitleText>} isDisabled />
+    </Tabs>
+  );
+
+  const navContent = (
+    <Tabs activeKey={0} onSelect={() => {}} component={TabsComponent.nav} aria-label="Compass navigation tabs">
+      <Tab eventKey={0} title={<TabTitleText>Tab 1</TabTitleText>}>
+        {subTabs}
+      </Tab>
+      <Tab eventKey={1} title={<TabTitleText>Tab 2</TabTitleText>} />
+      <Tab eventKey={2} title={<TabTitleText>Tab 3</TabTitleText>} />
+      <Tab eventKey={3} title={<TabTitleText>Disabled Tab 4</TabTitleText>} isDisabled />
+    </Tabs>
+  );
+
+  const panelContent = (
+    <ActionList>
+      <ActionListGroup>
+        <ActionListItem>
+          <Button variant="plain" icon={<PlayIcon />} />
+        </ActionListItem>
+        <ActionListItem>
+          <Button variant="plain" icon={<OutlinedPlusSquare />} />
+        </ActionListItem>
+      </ActionListGroup>
+      <ActionListItem>
+        <Button variant="plain" icon={<OutlinedCopy />} />
+      </ActionListItem>
+      <ActionListGroup>
+        <ActionListItem>
+          <Button variant="plain" icon={<OutlinedQuestionCircleIcon />} />
+        </ActionListItem>
+        <ActionListItem>
+          <Button variant="plain" icon={<OutlinedCopy />} />
+        </ActionListItem>
+      </ActionListGroup>
+    </ActionList>
+  );
+
+  const headerContent = <CompassHeader logo={<div>Logo</div>} nav={navContent} profile={<div>Profile</div>} />;
+  const panelStartContent = panelContent;
+  const mainContent = (
+    <>
+      <CompassHero>
+        <div>Hero</div>
+      </CompassHero>
+      <CompassContent>
+        <CompassMainHeader title={<Title headingLevel="h1">Content title</Title>} />
+        <CompassSection>Content</CompassSection>
+      </CompassContent>
+    </>
+  );
+  const panelEndContent = panelContent;
+  const footerContent = <SearchInput aria-label="Search input" placeholder="Search" />;
+
+  return (
+    <Compass
+      header={headerContent}
+      panelStart={panelStartContent}
+      main={mainContent}
+      panelEnd={panelEndContent}
+      footer={footerContent}
+    />
+  );
+};
