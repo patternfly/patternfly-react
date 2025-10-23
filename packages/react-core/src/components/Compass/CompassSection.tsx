@@ -15,6 +15,8 @@ interface CompassSectionProps extends React.HTMLProps<HTMLDivElement> {
   isGradientBorder?: boolean;
   /** Applies a thinking style to the section. */
   isThinking?: boolean;
+  /** Indicates the section should expand to fill the available height. */
+  isFullHeight?: boolean;
 }
 
 export const CompassSection: React.FunctionComponent<CompassSectionProps> = ({
@@ -25,6 +27,7 @@ export const CompassSection: React.FunctionComponent<CompassSectionProps> = ({
   isBorderless,
   isGradientBorder,
   isThinking,
+  isFullHeight,
   ...props
 }) => (
   <div
@@ -35,6 +38,7 @@ export const CompassSection: React.FunctionComponent<CompassSectionProps> = ({
       isBorderless && 'pf-m-no-border',
       isGradientBorder && 'pf-m-gradient-border',
       isThinking && 'pf-m-thinking',
+      isFullHeight && 'pf-m-full-height',
       className
     )}
     {...props}
