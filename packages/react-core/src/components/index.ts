@@ -17,6 +17,7 @@ export * from './Card';
 export * from './Checkbox';
 export * from './ClipboardCopy';
 export * from './CodeBlock';
+export * from './Compass';
 export * from './Content';
 export * from './DataList';
 export * from './DatePicker';
