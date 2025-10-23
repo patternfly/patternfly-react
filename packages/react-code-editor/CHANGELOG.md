@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.4.1-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.4.1-prerelease.3...@patternfly/react-code-editor@6.4.1-prerelease.4) (2025-10-23)
+
+### Bug Fixes
+
+- **CodeEditorControl:** make icon prop optional ([#12068](https://github.com/patternfly/patternfly-react/issues/12068)) ([bbb502a](https://github.com/patternfly/patternfly-react/commit/bbb502a04e5e7d5dda798ff0afec75db0d8fc689)), closes [#12065](https://github.com/patternfly/patternfly-react/issues/12065)
+
 ## [6.4.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.4.1-prerelease.2...@patternfly/react-code-editor@6.4.1-prerelease.3) (2025-10-23)
 
 **Note:** Version bump only for package @patternfly/react-code-editor

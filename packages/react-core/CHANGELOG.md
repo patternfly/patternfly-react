@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.4.1-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.1-prerelease.3...@patternfly/react-core@6.4.1-prerelease.4) (2025-10-23)
+
+### Bug Fixes
+
+- **Nav:** updated resizeObserver for horizontal overflow ([#12070](https://github.com/patternfly/patternfly-react/issues/12070)) ([c0d8839](https://github.com/patternfly/patternfly-react/commit/c0d8839d29b0a9ffffaded4c15a395ff025929ae))
+
 ## [6.4.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.1-prerelease.2...@patternfly/react-core@6.4.1-prerelease.3) (2025-10-23)
 
 **Note:** Version bump only for package @patternfly/react-core
