@@ -11,5 +11,5 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 
 Note that `tabIndex={0}` is added to the scrolling `PageSection` of the page to allow keyboard users the ability to focus and scroll.
 
-```js isFullscreen file="./examples/BackToTop/BackToTopNameDemo.tsx"
+```ts file="examples/BackToTop/BackToTopNameDemo.tsx" isFullscreen
 ```

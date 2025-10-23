@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { BackToTop, Card, CardBody, Content, Gallery, GalleryItem, PageSection, Switch } from '@patternfly/react-core';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
-export const Name = () => {
+export const BacktoTopNameDemo: React.FunctionComponent = () => {
   const [isAlwaysVisible, setIsAlwaysVisible] = useState(false);
 
   const handleChange = (_event, isChecked) => {

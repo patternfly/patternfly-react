@@ -20,5 +20,5 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 
 This is an example of toolbar usage in log viewer.
 
-```js file="./examples/Toolbar/ConsoleLogViewerToolbar.tsx" isFullscreen
+```ts file="examples/Toolbar/ConsoleLogViewerToolbar.tsx" isFullscreen
 ```
