@@ -8,8 +8,10 @@ import {
 } from '@patternfly/react-core';
 
 export const CompassBasic: React.FunctionComponent = () => {
-  const headerContent = <CompassHeader logo={<div>Logo</div>} nav={<div>Nav</div>} profile={<div>Profile</div>} />;
-  const panelStartContent = <div>Panel start</div>;
+  const headerContent = (
+    <CompassHeader logo={<div>Logo</div>} nav={<CompassSection>Nav</CompassSection>} profile={<div>Profile</div>} />
+  );
+  const panelStartContent = <CompassSection>Panel start</CompassSection>;
   const mainContent = (
     <>
       <CompassHero>
@@ -21,8 +23,8 @@ export const CompassBasic: React.FunctionComponent = () => {
       </CompassContent>
     </>
   );
-  const panelEndContent = <div>Panel end</div>;
-  const footerContent = <div>Footer</div>;
+  const panelEndContent = <CompassSection>Panel end</CompassSection>;
+  const footerContent = <CompassSection>Footer</CompassSection>;
 
   return (
     <Compass
