@@ -1,7 +1,6 @@
-import { Panel, PanelProps } from '../Panel';
 import { css } from '@patternfly/react-styles';
 
-interface CompassSectionProps extends PanelProps {
+interface CompassSectionProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the section. */
   className?: string;
   /** Content of the section. */
@@ -28,7 +27,7 @@ export const CompassSection: React.FunctionComponent<CompassSectionProps> = ({
   isThinking,
   ...props
 }) => (
-  <Panel
+  <div
     className={css(
       'pf-v6-c-compass__section',
       isGlass && 'pf-m-glass',
@@ -41,7 +40,7 @@ export const CompassSection: React.FunctionComponent<CompassSectionProps> = ({
     {...props}
   >
     {children}
-  </Panel>
+  </div>
 );
 
 CompassSection.displayName = 'CompassSection';
