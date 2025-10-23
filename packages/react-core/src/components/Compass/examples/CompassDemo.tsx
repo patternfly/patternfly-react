@@ -23,7 +23,7 @@ import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/o
 
 export const CompassBasic: React.FunctionComponent = () => {
   const subTabs = (
-    <CompassSection isGlass>
+    <CompassSection>
       <Tabs activeKey={0} isSubtab onSelect={() => {}} aria-label="Compass navigation subtabs">
         <Tab eventKey={0} title={<TabTitleText>Subtab 1</TabTitleText>} />
         <Tab eventKey={1} title={<TabTitleText>Subtab 2</TabTitleText>} />
@@ -33,7 +33,7 @@ export const CompassBasic: React.FunctionComponent = () => {
   );
 
   const navContent = (
-    <CompassSection isGlass>
+    <CompassSection>
       <Tabs activeKey={0} onSelect={() => {}} component={TabsComponent.nav} aria-label="Compass navigation tabs">
         <Tab eventKey={0} title={<TabTitleText>Tab 1</TabTitleText>} aria-label="Compass tab with subtabs">
           {subTabs}
@@ -46,7 +46,7 @@ export const CompassBasic: React.FunctionComponent = () => {
   );
 
   const panelContent = (
-    <CompassSection isPill isGlass>
+    <CompassSection isPill>
       <ActionList>
         <ActionListGroup>
           <ActionListItem>
@@ -80,7 +80,7 @@ export const CompassBasic: React.FunctionComponent = () => {
       </CompassHero>
       <CompassContent>
         <CompassMainHeader title={<Title headingLevel="h1">Content title</Title>} />
-        <CompassSection isGlass>Content</CompassSection>
+        <CompassSection>Content</CompassSection>
       </CompassContent>
     </>
   );

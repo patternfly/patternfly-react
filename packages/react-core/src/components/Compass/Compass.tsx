@@ -26,6 +26,10 @@ export interface CompassProps extends React.HTMLProps<HTMLDivElement> {
   drawerContent?: React.ReactNode;
   /** Props for the drawer */
   drawerProps?: DrawerProps;
+  /** Light background image path for the compass */
+  lightBackgroundSrc?: string;
+  /** Dark background image path for the compass */
+  darkBackgroundSrc?: string;
 }
 
 export const Compass: React.FunctionComponent<CompassProps> = ({
@@ -41,12 +45,23 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
   isFooterExpanded = true,
   drawerContent,
   drawerProps,
+  lightBackgroundSrc,
+  darkBackgroundSrc,
   ...props
 }) => {
   const hasDrawer = drawerContent !== undefined;
 
   const compassContent = (
-    <div className={css('pf-v6-c-compass', className)} {...props}>
+    <div
+      className={css('pf-v6-c-compass', className)}
+      style={
+        {
+          '[cssLightName.name]': `url(${lightBackgroundSrc})`,
+          '[cssDarkName.name]': `url(${darkBackgroundSrc})`
+        } as React.CSSProperties
+      }
+      {...props}
+    >
       <div
         className={css('pf-v6-c-compass__header', isHeaderExpanded && 'pf-m-expanded')}
         {...(!isHeaderExpanded && { inert: true })}

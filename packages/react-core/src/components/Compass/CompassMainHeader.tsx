@@ -20,22 +20,21 @@ export const CompassMainHeader: React.FunctionComponent<CompassMainHeaderProps> 
   children,
   ...props
 }) => {
-  if (title !== undefined || toolbar !== undefined) {
-    return (
-      <div className={css('pf-v6-c-compass__main-header', className)} {...props}>
-        <CompassSection isGlass>
-          <Flex alignItems={{ default: 'alignItemsCenter' }}>
-            <FlexItem grow={{ default: 'grow' }}>{title}</FlexItem>
-            <FlexItem>{toolbar}</FlexItem>
-          </Flex>
-        </CompassSection>
-      </div>
+  const _content =
+    title !== undefined || toolbar !== undefined ? (
+      <CompassSection isGlass>
+        <Flex alignItems={{ default: 'alignItemsCenter' }}>
+          <FlexItem grow={{ default: 'grow' }}>{title}</FlexItem>
+          <FlexItem>{toolbar}</FlexItem>
+        </Flex>
+      </CompassSection>
+    ) : (
+      children
     );
-  }
 
   return (
     <div className={css('pf-v6-c-compass__main-header', className)} {...props}>
-      {children}
+      {_content}
     </div>
   );
 };

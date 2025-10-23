@@ -8,24 +8,41 @@ interface CompassHeroProps extends Omit<React.HTMLProps<HTMLDivElement>, 'conten
   content?: React.ReactNode;
   /** Custom hero content. To opt into a default set of styling, use the content prop instead. */
   children?: React.ReactNode;
+  /** Light background image path for the hero */
+  lightBackgroundSrc?: string;
+  /** Dark background image path for the hero */
+  darkBackgroundSrc?: string;
 }
 
-export const CompassHero: React.FunctionComponent<CompassHeroProps> = ({ className, children, content, ...props }) => {
-  if (content !== undefined) {
-    return (
-      <div className={css('pf-v6-c-compass__hero', className)} {...props}>
-        <div className={css('pf-v6-c-compass__hero-body')}>
-          <Flex>
-            <FlexItem grow={{ default: 'grow' }}>{content}</FlexItem>
-          </Flex>
-        </div>
-      </div>
+export const CompassHero: React.FunctionComponent<CompassHeroProps> = ({
+  className,
+  children,
+  content,
+  lightBackgroundSrc,
+  darkBackgroundSrc,
+  ...props
+}) => {
+  const _content =
+    content !== undefined ? (
+      <Flex>
+        <FlexItem grow={{ default: 'grow' }}>{content}</FlexItem>
+      </Flex>
+    ) : (
+      children
     );
-  }
 
   return (
-    <div className={css('pf-v6-c-compass__hero', className)} {...props}>
-      <div className={css('pf-v6-c-compass__hero-body')}>{children}</div>
+    <div
+      className={css('pf-v6-c-compass__hero', className)}
+      style={
+        {
+          '[cssLightName.name]': `url(${lightBackgroundSrc})`,
+          '[cssDarkName.name]': `url(${darkBackgroundSrc})`
+        } as React.CSSProperties
+      }
+      {...props}
+    >
+      <div className={css('pf-v6-c-compass__hero-body')}>{_content}</div>
     </div>
   );
 };
