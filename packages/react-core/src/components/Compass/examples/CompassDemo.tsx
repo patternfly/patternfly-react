@@ -86,7 +86,7 @@ export const CompassBasic: React.FunctionComponent = () => {
   );
   const panelEndContent = panelContent;
   const footerContent = (
-    <CompassSection isGlass>
+    <CompassSection>
       <SearchInput aria-label="Search input" placeholder="Search" />
     </CompassSection>
   );
