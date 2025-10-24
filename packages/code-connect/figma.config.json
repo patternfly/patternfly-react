@@ -2,18 +2,18 @@
   "codeConnect": {
     "parser": "react",
     "include": [
-      "components/JumpLinks/*.figma.tsx",
-      "components/Label/*.figma.tsx",
-      "components/LoginPage/*.figma.tsx",
-      "components/Masthead/*.figma.tsx",
-      "components/Model/*.figma.tsx"
+      "components/NotificationDrawer/*.tsx",
+      "components/Pagination/*.tsx",
+      "components/Popover/*.tsx",
+      "components/SimpleList/*.tsx",
+      "components/Skeleton/*.tsx"
     ],
+    "documentUrlSubstitutions": {
+      "https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components": "https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/e1OeQDrgPKW13FswRqSP3I/PatternFly-6--Components"
+    },
     "paths": {
       "@patternfly/react-core": "/Users/mnolting/Web/patternfly-react/packages/react-core/src",
       "@patternfly/react-table": "/Users/mnolting/Web/patternfly-react/packages/react-table/src"
-    },
-    "documentUrlSubstitutions": {
-      "https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/PatternFly-6--Components": "https://www.figma.com/design/VMEX8Xg2nzhBX8rfBx53jp/branch/Em2QWrHDxDS4LUxo58Hust/PatternFly-6--Components"
     },
     "aliases": {
       "@patternfly/react-core": "/Users/mnolting/Web/patternfly-react/packages/react-core/src",
