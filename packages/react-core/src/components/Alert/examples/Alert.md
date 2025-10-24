@@ -33,17 +33,8 @@ PatternFly supports several alert variants for different scenarios. Each variant
 | Warning | Use to indicate that a non-critical error has occurred                                                                                                   |
 | Danger  | Use to indicate that a critical or blocking error has occurred                                                                                           |
 
-```ts
-import { Fragment } from 'react';
-import { Alert } from '@patternfly/react-core';
+```ts file = "AlertVariants.tsx"
 
-<Fragment>
-  <Alert title="Custom alert title" ouiaId="CustomAlert" />
-  <Alert variant="info" title="Info alert title" ouiaId="InfoAlert" />
-  <Alert variant="success" title="Success alert title" ouiaId="SuccessAlert" />
-  <Alert variant="warning" title="Warning alert title" ouiaId="WarningAlert" />
-  <Alert variant="danger" title="Danger alert title" ouiaId="DangerAlert" />
-</Fragment>;
 ```
 
 ### Alert variations
@@ -60,99 +51,16 @@ PatternFly supports several properties and variations that can be used to add ex
   - If there is not a description passed via `children` prop, then the `component` prop should be set to a non-heading element such as a `span` or `div`.
   - If there is a description passed via `children` prop, then the `component` prop should be a heading element. Headings should be ordered by their level and heading levels should not be skipped. For example, a heading of an `h2` level should not be followed directly by an `h4`.
 
-```ts
-import { Fragment } from 'react';
-import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/react-core';
+```ts file = "AlertVariations.tsx"
 
-<Fragment>
-  <Alert
-    variant="success"
-    title="Success alert title"
-    actionLinks={
-      <Fragment>
-        <AlertActionLink component="a" href="#">
-          View details
-        </AlertActionLink>
-        <AlertActionLink // eslint-disable-next-line no-console
-          onClick={() => console.log('Clicked on Ignore')}
-        >
-          Ignore
-        </AlertActionLink>
-      </Fragment>
-    }
-  >
-    <p>Success alert description. This should tell the user more information about the alert.</p>
-  </Alert>
-  <Alert variant="success" title="Success alert title">
-    <p>
-      Success alert description. This should tell the user more information about the alert.{' '}
-      <a href="#">This is a link.</a>
-    </p>
-  </Alert>
-  <Alert
-    variant="success"
-    title="Success alert title"
-    // eslint-disable-next-line no-console
-    actionClose={<AlertActionCloseButton onClose={() => console.log('Clicked the close button')} />}
-  >
-    <p>Short alert description.</p>
-  </Alert>
-  <Alert variant="success" title="div success alert title" component="div" />
-  <Alert variant="success" title="h6 Success alert title" component="h6">
-    <p>Short alert description.</p>
-  </Alert>
-</Fragment>;
 ```
 
 ### Alert timeout
 
 Use the `timeout` property to automatically dismiss an alert after a period of time. If set to `true`, the `timeout` will be 8000 milliseconds. Provide a specific value to dismiss the alert after a different number of milliseconds.
 
-```ts
-import { Fragment, useState } from 'react';
-import { Alert, AlertActionLink, AlertGroup, Button } from '@patternfly/react-core';
+```ts file = "AlertTimeout.tsx"
 
-const AlertTimeout: React.FunctionComponent = () => {
-  const [alerts, setAlerts] = useState<React.ReactNode[]>([]);
-  const [newAlertKey, setNewAlertKey] = useState<number>(0);
-
-  const onClick = () => {
-    const timeout = 8000;
-    setNewAlertKey((key) => key + 1);
-    setAlerts((prevAlerts) => {
-      return [
-        <Alert
-          title="Default timeout Alert"
-          timeout={timeout}
-          actionLinks={
-            <Fragment>
-              <AlertActionLink component="a" href="#">
-                View details
-              </AlertActionLink>
-              <AlertActionLink // eslint-disable-next-line no-console
-                onClick={() => console.log('Clicked on Ignore')}
-              >
-                Ignore
-              </AlertActionLink>
-            </Fragment>
-          }
-          key={newAlertKey}
-        >
-          This alert will dismiss after {`${timeout / 1000} seconds`}
-        </Alert>, ...prevAlerts
-      ];
-    });
-  };
-
-  return (
-    <Fragment>
-      <Button variant="secondary" onClick={onClick}>
-        Add alert
-      </Button>
-      <AlertGroup hasAnimations isLiveRegion>{alerts}</AlertGroup>
-    </Fragment>
-  );
-};
 ```
 
 ### Expandable alerts
@@ -163,188 +71,56 @@ It is not recommended to use an expandable alert with a `timeout` in a [toast al
 
 See the [toast alert considerations](/components/alert/accessibility#toast-alerts) section of the alert accessibility documentation to understand the accessibility risks associated with using toast alerts.
 
-```ts
-import { Fragment } from 'react';
-import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/react-core';
+```ts file = "AlertExpandable.tsx"
 
-<Fragment>
-  <Alert
-    isExpandable
-    variant="success"
-    title="Success alert title"
-    // eslint-disable-next-line no-console
-    actionClose={<AlertActionCloseButton onClose={() => console.log('Clicked the close button')} />}
-  >
-    <p>Success alert description. This should tell the user more information about the alert.</p>
-  </Alert>
-  <Alert
-    isExpandable
-    isInline
-    variant="success"
-    title="Success alert title"
-    actionLinks={
-      <Fragment>
-        <AlertActionLink component="a" href="#">
-          View details
-        </AlertActionLink>
-        <AlertActionLink // eslint-disable-next-line no-console
-          onClick={() => console.log('Clicked on Ignore')}
-        >
-          Ignore
-        </AlertActionLink>
-      </Fragment>
-    }
-  >
-    <p>Success alert description. This should tell the user more information about the alert.</p>
-  </Alert>
-</Fragment>;
 ```
 
 ### Truncated alerts
 
 Use the `truncateTitle` property to shorten a long `title`. Set `truncateTitle` equal to a number (passed in as `{n}`) to reduce the number of lines of text in the alert's `title`. Users may hover over or tab to a truncated `title` to see the full message in a tooltip.
 
-```ts
-import { Fragment } from 'react';
-import { Alert } from '@patternfly/react-core';
+```ts file = "AlertTruncated.tsx"
 
-<Fragment>
-  <Alert
-    variant="info"
-    truncateTitle={1}
-    title={`
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque cursus enim fringilla tincidunt. Proin lobortis aliquam dictum. Nam vel ullamcorper nulla, nec blandit dolor. Vivamus pellentesque neque justo, nec accumsan nulla rhoncus id. Suspendisse mollis, tortor quis faucibus volutpat, sem leo fringilla turpis, ac lacinia augue metus in nulla. Cras vestibulum lacinia orci. Pellentesque sodales consequat interdum. Sed porttitor tincidunt metus nec iaculis. Pellentesque non commodo justo. Morbi feugiat rhoncus neque, vitae facilisis diam aliquam nec. Sed dapibus vitae quam at tristique. Nunc vel commodo mi. Mauris et rhoncus leo.
-  `}
-  />
-  <Alert
-    variant="warning"
-    truncateTitle={2}
-    title={`
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque cursus enim fringilla tincidunt. Proin lobortis aliquam dictum. Nam vel ullamcorper nulla, nec blandit dolor. Vivamus pellentesque neque justo, nec accumsan nulla rhoncus id. Suspendisse mollis, tortor quis faucibus volutpat, sem leo fringilla turpis, ac lacinia augue metus in nulla. Cras vestibulum lacinia orci. Pellentesque sodales consequat interdum. Sed porttitor tincidunt metus nec iaculis. Pellentesque non commodo justo. Morbi feugiat rhoncus neque, vitae facilisis diam aliquam nec. Sed dapibus vitae quam at tristique. Nunc vel commodo mi. Mauris et rhoncus leo.
-  `}
-  />
-  <Alert
-    variant="danger"
-    truncateTitle={3}
-    title={`
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque cursus enim fringilla tincidunt. Proin lobortis aliquam dictum. Nam vel ullamcorper nulla, nec blandit dolor. Vivamus pellentesque neque justo, nec accumsan nulla rhoncus id. Suspendisse mollis, tortor quis faucibus volutpat, sem leo fringilla turpis, ac lacinia augue metus in nulla. Cras vestibulum lacinia orci. Pellentesque sodales consequat interdum. Sed porttitor tincidunt metus nec iaculis. Pellentesque non commodo justo. Morbi feugiat rhoncus neque, vitae facilisis diam aliquam nec. Sed dapibus vitae quam at tristique. Nunc vel commodo mi. Mauris et rhoncus leo.
-  `}
-  />
-</Fragment>;
 ```
 
 ### Custom icons
 
 Use the `customIcon` property to replace a default alert icon with a custom icon.
 
-```ts
-import { Fragment } from 'react';
-import { Alert } from '@patternfly/react-core';
-import UsersIcon from '@patternfly/react-icons/dist/esm/icons/users-icon';
-import BoxIcon from '@patternfly/react-icons/dist/esm/icons/box-icon';
-import DatabaseIcon from '@patternfly/react-icons/dist/esm/icons/database-icon';
-import ServerIcon from '@patternfly/react-icons/dist/esm/icons/server-icon';
-import LaptopIcon from '@patternfly/react-icons/dist/esm/icons/laptop-icon';
+```ts file = "AlertCustomIcons.tsx"
 
-<Fragment>
-  <Alert customIcon={<UsersIcon />} title="Default alert title" />
-  <Alert customIcon={<BoxIcon />} variant="info" title="Info alert title" />
-  <Alert customIcon={<DatabaseIcon />} variant="success" title="Success alert title" />
-  <Alert customIcon={<ServerIcon />} variant="warning" title="Warning alert title" />
-  <Alert customIcon={<LaptopIcon />} variant="danger" title="Danger alert title" />
-</Fragment>;
 ```
 
 ### Inline alerts variants
 
 Use inline alerts to display an alert inline with content. All alert variants may use the `isInline` property to position alerts in content-heavy areas, such as within forms, wizards, or drawers.
 
-```ts
-import { Fragment } from 'react';
-import { Alert } from '@patternfly/react-core';
-<Fragment>
-  <Alert variant="custom" isInline title="Custom inline alert title" />
-  <Alert variant="info" isInline title="Info inline alert title" />
-  <Alert variant="success" isInline title="Success inline alert title" />
-  <Alert variant="warning" isInline title="Warning inline alert title" />
-  <Alert variant="danger" isInline title="Danger inline alert title" />
-</Fragment>;
+```ts file = "AlertInlineVariants.tsx"
+
 ```
 
 ### Inline alert variations
 
 All general alert variations can use the `isInline` property to apply inline styling.
 
-```ts
-import { Fragment } from 'react';
-import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/react-core';
-<Fragment>
-  <Alert
-    isInline
-    variant="success"
-    title="Success alert title"
-    actionLinks={
-      <Fragment>
-        <AlertActionLink component="a" href="#">
-          View details
-        </AlertActionLink>
-        <AlertActionLink // eslint-disable-next-line no-console
-          onClick={() => console.log('Clicked on Ignore')}
-        >
-          Ignore
-        </AlertActionLink>
-      </Fragment>
-    }
-  >
-    <p>Success alert description. This should tell the user more information about the alert.</p>
-  </Alert>
-  <Alert isInline variant="success" title="Success alert title">
-    <p>
-      Success alert description. This should tell the user more information about the alert.{' '}
-      <a href="#">This is a link.</a>
-    </p>
-  </Alert>
-  <Alert
-    isInline
-    variant="success"
-    title="Success alert title"
-    // eslint-disable-next-line no-console
-    actionClose={<AlertActionCloseButton onClose={() => console.log('Clicked the close button')} />}
-  >
-    <p>Short alert description.</p>
-  </Alert>
-  <Alert isInline variant="success" title="div success alert title" component="div" />
-  <Alert isInline variant="success" title="h6 Success alert title" component="h6">
-    <p>Short alert description.</p>
-  </Alert>
-</Fragment>;
+```ts file = "AlertInlineVariations.tsx"
+
 ```
 
 ### Plain inline alert variants
 
 Use the `isPlain` property to make any inline alert plain. Plain styling removes the colored background but keeps colored text and icons.
 
-```ts
-import { Fragment } from 'react';
-import { Alert } from '@patternfly/react-core';
-<Fragment>
-  <Alert variant="custom" isInline isPlain title="Custom inline alert title" />
-  <Alert variant="info" isInline isPlain title="Info inline alert title" />
-  <Alert variant="success" isInline isPlain title="Success inline alert title" />
-  <Alert variant="warning" isInline isPlain title="Warning inline alert title" />
-  <Alert variant="danger" isInline isPlain title="Danger inline alert title" />
-</Fragment>;
+```ts file = "AlertPlainInlineVariants.tsx"
+
 ```
 
 ### Plain inline alert variations
 
 It is not recommended to use a plain inline alert with `actionClose` nor `actionLinks` because these alerts are non-dismissible and should persist until the error or action related to the alert is resolved.
 
-```ts
-import { Alert } from '@patternfly/react-core';
-<Alert isInline isPlain variant="success" title="Success alert title">
-  <p>Success alert description. This should tell the user more information about the alert.</p>
-</Alert>;
+```ts file = "AlertPlainInlineVariations.tsx"
+
 ```
 
 ### Static live region alerts
@@ -353,33 +129,8 @@ Live region alerts allow you to expose dynamic content changes in a way that can
 
 By default, `isLiveRegion`alerts are static.
 
-```ts
-import { Fragment } from 'react';
-import { Alert, AlertActionCloseButton } from '@patternfly/react-core';
+```ts file = "AlertStaticLiveRegion.tsx"
 
-<Fragment>
-  <Alert
-    isLiveRegion
-    variant="info"
-    title="Default live region configuration"
-    // eslint-disable-next-line no-console
-    actionClose={<AlertActionCloseButton onClose={() => console.log('Clicked the close button')} />}
-  >
-    This alert uses the recommended <code>isLiveRegion</code> prop to automatically set ARIA attributes and CSS classes.
-  </Alert>
-  <Alert
-    aria-live="assertive"
-    aria-relevant="additions text"
-    aria-atomic="true"
-    variant="info"
-    title="Customized live region"
-    // eslint-disable-next-line no-console
-    actionClose={<AlertActionCloseButton onClose={() => console.log('Clicked the close button')} />}
-  >
-    You can alternatively omit the <code>isLiveRegion</code> prop to specify ARIA attributes and CSS manually on the
-    containing element.
-  </Alert>
-</Fragment>;
 ```
 
 ### Dynamic live region alerts
@@ -418,7 +169,7 @@ Dynamic alerts that are generated after the page initially loads must be appende
 
 All alert group variants may combine multiple [alert variants](/components/alert) For example, the following static inline alert group includes one "success" alert and one "info" alert.
 
-```ts file="./AlertGroupStatic.tsx"
+```ts file="AlertGroupStatic.tsx"
 
 ```
 
@@ -428,7 +179,7 @@ Toast alert groups are created by passing in the `isToast` and `isLiveRegion` pr
 
 Click the buttons in the example below to add alerts to a toast group.
 
-```ts file="./AlertGroupToast.tsx"
+```ts file="AlertGroupToast.tsx"
 
 ```
 
@@ -452,7 +203,7 @@ The following example shows how alerts can be triggered by an asynchronous event
 
 See the [alert accessibility tab](/components/alert/accessibility) for more information on customizing this behavior.
 
-```ts file="./AlertGroupAsync.tsx"
+```ts file="AlertGroupAsync.tsx"
 
 ```
 
@@ -460,7 +211,7 @@ See the [alert accessibility tab](/components/alert/accessibility) for more info
 
 Click the buttons in the example below to add dynamic alerts to a group.
 
-```ts file="./AlertGroupSingularDynamic.tsx"
+```ts file="AlertGroupSingularDynamic.tsx"
 
 ```
 
@@ -476,6 +227,6 @@ In the following example, there can be a maximum of 4 alerts shown at once.
 
 You may add multiple alerts to an alert group at once. Click the "add alert collection" button in the example below to add a batch of 3 toast alerts to a group.
 
-```ts file="./AlertGroupMultipleDynamic.tsx"
+```ts file="AlertGroupMultipleDynamic.tsx"
 
 ```
