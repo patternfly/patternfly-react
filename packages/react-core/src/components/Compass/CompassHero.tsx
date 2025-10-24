@@ -42,7 +42,7 @@ export const CompassHero: React.FunctionComponent<CompassHeroProps> = ({
       }
       {...props}
     >
-      <div className={css('pf-v6-c-compass__hero-body')}>{_content}</div>
+      {_content}
     </div>
   );
 };
