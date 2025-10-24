@@ -20,6 +20,7 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 A toggle is collapsed until it is selected by a user.
 
 ```ts file="MenuToggleCollapsed.tsx"
+
 ```
 
 ### Expanded toggle
@@ -27,6 +28,7 @@ A toggle is collapsed until it is selected by a user.
 When a user selects a toggle, it becomes expanded and is styled with a blue underline. To flag expanded toggles, and apply expanded styling, use the `isExpanded` property .
 
 ```ts file ="MenuToggleExpanded.tsx"
+
 ```
 
 ### Small toggle
@@ -42,6 +44,7 @@ You can pass `size="sm"` to a MenuToggle to style it as a small toggle, such as 
 To disable the selection and expansion of a toggle, use the `isDisabled` property.
 
 ```ts file="MenuToggleDisabled.tsx"
+
 ```
 
 ### With a badge
@@ -49,6 +52,7 @@ To disable the selection and expansion of a toggle, use the `isDisabled` propert
 To display a count of selected items in a toggle, use the `badge` property. You can also pass in `variant="plainText"` for a badge only toggle.
 
 ```ts file="MenuToggleBadge.tsx"
+
 ```
 
 ### Settings toggle
@@ -76,6 +80,7 @@ You can also pass images into the `icon` property. The following example passes 
 This can be used alongside a text label that provides more context for the image.
 
 ```ts file="MenuToggleAvatarText.tsx"
+
 ```
 
 ### Variant styles
@@ -83,6 +88,7 @@ This can be used alongside a text label that provides more context for the image
 Variant styling can be applied to menu toggles. In the following example, the toggle uses primary styling by passing `variant="primary"` into the `<MenuToggle>` component. Additional variant options include “default”, “plain”, “plainText”, “secondary”, and “typeahead”.
 
 ```ts file="MenuToggleVariantStyles.tsx"
+
 ```
 
 ### Plain toggle with icon
@@ -92,6 +98,15 @@ To apply plain styling to a menu toggle with an icon, pass in `variant="plain"`.
 If the toggle does not have any visible text content, use the `aria-label` property to provide an accessible name.
 
 ```ts file="MenuTogglePlainIcon.tsx"
+
+```
+
+### Plain circle toggle
+
+You can also pass the `isCircle` property to a plain, icon-only toggle to adjust the styling to a complete circular shape, rather than a rounded square.
+
+```ts file="MenuTogglePlainCircle.tsx"
+
 ```
 
 ### Plain toggle with text label
@@ -99,6 +114,7 @@ If the toggle does not have any visible text content, use the `aria-label` prope
 To apply plain styling to a menu toggle with a text label, pass in `variant="plainText"`. Unlike the “plain” variant, “plainText” adds a caret pointing down in the toggle.
 
 ```ts file="MenuTogglePlainTextLabel.tsx"
+
 ```
 
 ### Split toggle with checkbox
@@ -150,6 +166,7 @@ A full height toggle fills the height of its parent. To flag a full height toggl
 In the following example, the toggle fills the size of the "80px" `<div>` element that it is within.
 
 ```ts file="MenuToggleFullHeight.tsx"
+
 ```
 
 ### Full width toggle
@@ -159,6 +176,7 @@ A full width toggle fills the width of its parent. To flag a full width toggle, 
 In the following example, the toggle fills the width of its parent as the window size changes.
 
 ```ts file="MenuToggleFullWidth.tsx"
+
 ```
 
 ### Typeahead toggle
