@@ -3,7 +3,7 @@ import progressStyle from '@patternfly/react-styles/css/components/Progress/prog
 import { css } from '@patternfly/react-styles';
 import { Tooltip, TooltipPosition } from '../Tooltip';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
-import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import { AriaProps, ProgressBar } from './ProgressBar';
 import { ProgressHelperText } from './ProgressHelperText';
@@ -61,7 +61,7 @@ export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElem
 }
 
 const variantToIcon = {
-  danger: TimesCircleIcon,
+  danger: ExclamationCircleIcon,
   success: CheckCircleIcon,
   warning: ExclamationTriangleIcon
 };

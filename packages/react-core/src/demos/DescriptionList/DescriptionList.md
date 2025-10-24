@@ -12,10 +12,10 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 
 ### Basic
 
-```js file='./examples/DescriptionListBasic.tsx' isFullscreen
+```ts file="examples/DescriptionListBasic.tsx" isFullscreen
 ```
 
 ### In drawer
 
-```js file='./examples/DescriptionListInDrawer.tsx' isFullscreen
+```ts file="examples/DescriptionListInDrawer.tsx" isFullscreen
 ```

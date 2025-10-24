@@ -27,5 +27,5 @@ This demonstrates how you can assemble a full page view that contains a grid of 
 
 ### Card view
 
-```js file="./examples/CardView.tsx" isFullscreen
+```ts file="examples/CardView.tsx" isFullscreen
 ```

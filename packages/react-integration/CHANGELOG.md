@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.40...@patternfly/react-integration@6.0.0-prerelease.41) (2025-10-24)
+
+### Features
+
+- **Table:** use pf check/radio for selects ([#12045](https://github.com/patternfly/patternfly-react/issues/12045)) ([a434558](https://github.com/patternfly/patternfly-react/commit/a4345580fadd9d59b918315fff29d71c35f88fe8))
+
+# [6.0.0-prerelease.40](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.39...@patternfly/react-integration@6.0.0-prerelease.40) (2025-10-13)
+
+### Bug Fixes
+
+- **examples:** make sure examples with SearchInput have onClear ([#12044](https://github.com/patternfly/patternfly-react/issues/12044)) ([9c785af](https://github.com/patternfly/patternfly-react/commit/9c785af077869005514bc719212e21f9193f9206))
+
 # [6.0.0-prerelease.39](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.38...@patternfly/react-integration@6.0.0-prerelease.39) (2025-06-13)
 
 ### Features

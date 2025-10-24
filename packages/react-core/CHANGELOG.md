@@ -3,6 +3,92 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.4.1-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.1-prerelease.8...@patternfly/react-core@6.4.1-prerelease.9) (2025-10-24)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [6.4.1-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.1-prerelease.7...@patternfly/react-core@6.4.1-prerelease.8) (2025-10-23)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [6.4.1-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.1-prerelease.6...@patternfly/react-core@6.4.1-prerelease.7) (2025-10-23)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [6.4.1-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.1-prerelease.5...@patternfly/react-core@6.4.1-prerelease.6) (2025-10-23)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [6.4.1-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.1-prerelease.4...@patternfly/react-core@6.4.1-prerelease.5) (2025-10-23)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [6.4.1-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.1-prerelease.3...@patternfly/react-core@6.4.1-prerelease.4) (2025-10-23)
+
+### Bug Fixes
+
+- **Nav:** updated resizeObserver for horizontal overflow ([#12070](https://github.com/patternfly/patternfly-react/issues/12070)) ([c0d8839](https://github.com/patternfly/patternfly-react/commit/c0d8839d29b0a9ffffaded4c15a395ff025929ae))
+
+## [6.4.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.1-prerelease.2...@patternfly/react-core@6.4.1-prerelease.3) (2025-10-23)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [6.4.1-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.1-prerelease.1...@patternfly/react-core@6.4.1-prerelease.2) (2025-10-22)
+
+### Features
+
+- **ExpandableSection:** added aria labeling ([#12071](https://github.com/patternfly/patternfly-react/issues/12071)) ([88ed152](https://github.com/patternfly/patternfly-react/commit/88ed15202972151c5b827437767347c3890eb83d))
+
+## [6.4.1-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.1-prerelease.0...@patternfly/react-core@6.4.1-prerelease.1) (2025-10-21)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [6.4.1-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.0...@patternfly/react-core@6.4.1-prerelease.0) (2025-10-21)
+
+### Bug Fixes
+
+- **DrawerPanelContent:** fix issue with styles overriding ([#12039](https://github.com/patternfly/patternfly-react/issues/12039)) ([fb91a1d](https://github.com/patternfly/patternfly-react/commit/fb91a1d4245d858c12b1c061f4f3c52c2be55033))
+- **Progress:** Fixed to use the correct icon for danger variant ([#12073](https://github.com/patternfly/patternfly-react/issues/12073)) ([46edc2b](https://github.com/patternfly/patternfly-react/commit/46edc2b1bb04dc61e36b07a63b6bfe2ffc8cdc60))
+
+### Features
+
+- **Radio/Checkbox:** support for aria-describedBy ([#12042](https://github.com/patternfly/patternfly-react/issues/12042)) ([286de49](https://github.com/patternfly/patternfly-react/commit/286de49c017ba4b3ba06b434de9600a7d6adce1a))
+- **Wizard:** warning step status ([#12041](https://github.com/patternfly/patternfly-react/issues/12041)) ([3d202a8](https://github.com/patternfly/patternfly-react/commit/3d202a8b57174ff1670157110ca54e4b7aba4a90))
+
+# [6.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.0-prerelease.5...@patternfly/react-core@6.4.0) (2025-10-16)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [6.4.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.0-prerelease.4...@patternfly/react-core@6.4.0-prerelease.5) (2025-10-16)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [6.4.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.0-prerelease.3...@patternfly/react-core@6.4.0-prerelease.4) (2025-10-13)
+
+### Bug Fixes
+
+- **examples:** make sure examples with SearchInput have onClear ([#12044](https://github.com/patternfly/patternfly-react/issues/12044)) ([9c785af](https://github.com/patternfly/patternfly-react/commit/9c785af077869005514bc719212e21f9193f9206))
+
+# [6.4.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.0-prerelease.2...@patternfly/react-core@6.4.0-prerelease.3) (2025-10-10)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [6.4.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.0-prerelease.1...@patternfly/react-core@6.4.0-prerelease.2) (2025-10-01)
+
+### Bug Fixes
+
+- Bumped echarts and core. ([#12023](https://github.com/patternfly/patternfly-react/issues/12023)) ([1d4d075](https://github.com/patternfly/patternfly-react/commit/1d4d075730c3645394c774bfc5233ea786e29e43))
+
+# [6.4.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.22...@patternfly/react-core@6.4.0-prerelease.1) (2025-09-26)
+
+### Bug Fixes
+
+- updated to 6.4.0-prerelease ([df46ac6](https://github.com/patternfly/patternfly-react/commit/df46ac6bed381eb3e01e5573f77d79301b02b7fa))
+
+## [6.3.1-prerelease.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.21...@patternfly/react-core@6.3.1-prerelease.22) (2025-09-26)
+
+**Note:** Version bump only for package @patternfly/react-core
+
 ## [6.3.1-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.3.1-prerelease.20...@patternfly/react-core@6.3.1-prerelease.21) (2025-09-25)
 
 ### Bug Fixes

@@ -1,9 +1,9 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useState, FunctionComponent } from 'react';
 import { Checkbox, Flex, FlexItem } from '@patternfly/react-core';
 import { SimpleDropdown, SimpleDropdownItem } from '@patternfly/react-templates';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
-export const SimpleDropdownExample: React.FunctionComponent = () => {
+export const SimpleDropdownExample: FunctionComponent = () => {
   const [isDisabled, setIsDisabled] = useState(false);
 
   const items: SimpleDropdownItem[] = [

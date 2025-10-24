@@ -1,5 +1,7 @@
 import { createRef, Fragment } from 'react';
 import { Tooltip, TooltipProps } from '@patternfly/react-core/dist/esm/components/Tooltip';
+import { Checkbox } from '@patternfly/react-core/dist/esm/components/Checkbox';
+import { Radio } from '@patternfly/react-core/dist/esm/components/Radio';
 
 export enum RowSelectVariant {
   radio = 'radio',
@@ -7,7 +9,6 @@ export enum RowSelectVariant {
 }
 
 export interface SelectColumnProps {
-  name?: string;
   children?: React.ReactNode;
   className?: string;
   onSelect?: (event: React.FormEvent<HTMLInputElement>) => void;
@@ -16,6 +17,10 @@ export interface SelectColumnProps {
   tooltip?: React.ReactNode;
   /** other props to pass to the tooltip */
   tooltipProps?: Omit<TooltipProps, 'content'>;
+  /** id for the input element - required by Checkbox and Radio components */
+  id?: string;
+  /** name for the input element - required by Radio component */
+  name?: string;
 }
 
 export const SelectColumn: React.FunctionComponent<SelectColumnProps> = ({
@@ -26,15 +31,30 @@ export const SelectColumn: React.FunctionComponent<SelectColumnProps> = ({
   selectVariant,
   tooltip,
   tooltipProps,
+  id,
+  name,
   ...props
 }: SelectColumnProps) => {
-  const inputRef = createRef<HTMLInputElement>();
+  const inputRef = createRef<any>();
+
+  const handleChange = (event: React.FormEvent<HTMLInputElement>, _checked: boolean) => {
+    onSelect && onSelect(event);
+  };
+
+  const commonProps = {
+    ...props,
+    id,
+    ref: inputRef,
+    onChange: handleChange
+  };
 
   const content = (
     <Fragment>
-      <label>
-        <input {...props} ref={inputRef} type={selectVariant} onChange={onSelect} />
-      </label>
+      {selectVariant === RowSelectVariant.checkbox ? (
+        <Checkbox {...commonProps} />
+      ) : (
+        <Radio {...commonProps} name={name} />
+      )}
       {children}
     </Fragment>
   );

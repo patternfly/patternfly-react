@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-core",
-  "version": "6.3.1-prerelease.21",
+  "version": "6.4.1-prerelease.9",
   "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -54,7 +54,7 @@
     "tslib": "^2.8.1"
   },
   "devDependencies": {
-    "@patternfly/patternfly": "6.3.0-prerelease.78",
+    "@patternfly/patternfly": "6.4.0",
     "case-anything": "^3.1.2",
     "css": "^3.0.0",
     "fs-extra": "^11.3.0"

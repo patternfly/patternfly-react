@@ -1,9 +1,9 @@
-/**
- * This test was generated
- */
 import { render } from '@testing-library/react';
 import { FocusTrap } from '../../FocusTrap';
 
+/**
+ * This test was generated
+ */
 it('FocusTrap should match snapshot (auto-generated)', () => {
   const { asFragment } = render(
     <FocusTrap

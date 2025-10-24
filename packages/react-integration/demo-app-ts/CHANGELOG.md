@@ -3,6 +3,72 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-prerelease.175](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.174...demo-app-ts@6.0.0-prerelease.175) (2025-10-24)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [6.0.0-prerelease.174](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.173...demo-app-ts@6.0.0-prerelease.174) (2025-10-23)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [6.0.0-prerelease.173](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.172...demo-app-ts@6.0.0-prerelease.173) (2025-10-23)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [6.0.0-prerelease.172](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.171...demo-app-ts@6.0.0-prerelease.172) (2025-10-23)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [6.0.0-prerelease.171](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.170...demo-app-ts@6.0.0-prerelease.171) (2025-10-23)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [6.0.0-prerelease.170](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.169...demo-app-ts@6.0.0-prerelease.170) (2025-10-23)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [6.0.0-prerelease.169](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.168...demo-app-ts@6.0.0-prerelease.169) (2025-10-23)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [6.0.0-prerelease.168](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.167...demo-app-ts@6.0.0-prerelease.168) (2025-10-22)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [6.0.0-prerelease.167](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.166...demo-app-ts@6.0.0-prerelease.167) (2025-10-21)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [6.0.0-prerelease.166](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.165...demo-app-ts@6.0.0-prerelease.166) (2025-10-21)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [6.0.0-prerelease.165](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.164...demo-app-ts@6.0.0-prerelease.165) (2025-10-16)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [6.0.0-prerelease.164](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.163...demo-app-ts@6.0.0-prerelease.164) (2025-10-13)
+
+### Bug Fixes
+
+- **examples:** make sure examples with SearchInput have onClear ([#12044](https://github.com/patternfly/patternfly-react/issues/12044)) ([9c785af](https://github.com/patternfly/patternfly-react/commit/9c785af077869005514bc719212e21f9193f9206))
+
+# [6.0.0-prerelease.163](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.162...demo-app-ts@6.0.0-prerelease.163) (2025-10-10)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [6.0.0-prerelease.162](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.161...demo-app-ts@6.0.0-prerelease.162) (2025-10-01)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [6.0.0-prerelease.161](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.160...demo-app-ts@6.0.0-prerelease.161) (2025-09-26)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [6.0.0-prerelease.160](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.159...demo-app-ts@6.0.0-prerelease.160) (2025-09-26)
+
+**Note:** Version bump only for package demo-app-ts
+
 # [6.0.0-prerelease.159](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.0.0-prerelease.158...demo-app-ts@6.0.0-prerelease.159) (2025-09-25)
 
 **Note:** Version bump only for package demo-app-ts

@@ -78,6 +78,10 @@ export const InlineSearchFilterMenuDemo: React.FunctionComponent = () => {
             value={input}
             aria-label="Filter menu items"
             onChange={(_event, value) => handleTextInputChange(value)}
+            onClear={(event) => {
+              event.stopPropagation();
+              handleTextInputChange('');
+            }}
           />
         </MenuSearchInput>
       </MenuSearch>
