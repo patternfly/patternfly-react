@@ -17,6 +17,24 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** A type modifier which modifies spacing specifically depending on the type of item */
   variant?: ToolbarItemVariant | 'pagination' | 'label' | 'label-group' | 'separator' | 'expand-all';
+  /** Width modifier at various breakpoints */
+  widths?: {
+    default?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
+    sm?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
+    md?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
+    lg?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
+    xl?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
+    '2xl'?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
+  };
+  /** Flex grow modifier at various breakpoints */
+  flexGrow?: {
+    default?: 'flexGrow';
+    sm?: 'flexGrow';
+    md?: 'flexGrow';
+    lg?: 'flexGrow';
+    xl?: 'flexGrow';
+    '2xl'?: 'flexGrow';
+  };
   /** Visibility at various breakpoints. */
   visibility?: {
     default?: 'hidden' | 'visible';
@@ -185,6 +203,8 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   children,
   isAllExpanded,
   isOverflowContainer,
+  widths,
+  flexGrow,
   role,
   ...props
 }: ToolbarItemProps) => {
@@ -210,23 +230,40 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
             variant === ToolbarItemVariant['label-group'] && styles.modifiers.labelGroup,
             isAllExpanded && styles.modifiers.expanded,
             isOverflowContainer && styles.modifiers.overflowContainer,
-            formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
-            formatBreakpointMods(align, styles, '', getBreakpoint(width)),
-            formatBreakpointMods(gap, styles, '', getBreakpoint(width)),
-            formatBreakpointMods(columnGap, styles, '', getBreakpoint(width)),
-            formatBreakpointMods(rowGap, styles, '', getBreakpoint(width)),
-            formatBreakpointMods(rowWrap, styles, '', getBreakpoint(width)),
             alignItems === 'start' && styles.modifiers.alignItemsStart,
             alignItems === 'center' && styles.modifiers.alignItemsCenter,
             alignItems === 'baseline' && styles.modifiers.alignItemsBaseline,
             alignSelf === 'start' && styles.modifiers.alignSelfStart,
             alignSelf === 'center' && styles.modifiers.alignSelfCenter,
             alignSelf === 'baseline' && styles.modifiers.alignSelfBaseline,
-            className
+            formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
+            formatBreakpointMods(align, styles, '', getBreakpoint(width)),
+            formatBreakpointMods(gap, styles, '', getBreakpoint(width)),
+            formatBreakpointMods(columnGap, styles, '', getBreakpoint(width)),
+            formatBreakpointMods(rowGap, styles, '', getBreakpoint(width)),
+            formatBreakpointMods(rowWrap, styles, '', getBreakpoint(width)),
+            className,
+            widths &&
+              Object.entries(widths).reduce(
+                (acc, [bp, size]) => ({
+                  ...acc,
+                  [`pf-m-w-${size}${bp !== 'default' ? `-on-${bp}` : ''}`]: true
+                }),
+                {}
+              ),
+            flexGrow &&
+              Object.entries(flexGrow).reduce(
+                (acc, [bp]) => ({
+                  ...acc,
+                  [`pf-m-flex-grow${bp !== 'default' ? `-on-${bp}` : ''}`]: true
+                }),
+                {}
+              )
           )}
           {...(variant === 'label' && { 'aria-hidden': true })}
           id={id}
           role={role}
+          data-testid="toolbaritem"
           {...props}
         >
           {children}
