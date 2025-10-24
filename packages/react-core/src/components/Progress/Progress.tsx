@@ -48,6 +48,8 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
    * We recommend the helper text component as it was designed for this purpose.
    */
   helperText?: React.ReactNode;
+  /** Flag indicating whether the status icon should be hidden, helpful when space is limited (such as within table cells). When set to true, you must ensure the context of the status is provided in another way, such as via the progress measure. */
+  hideStatusIcon?: boolean;
 }
 
 class Progress extends Component<ProgressProps> {
@@ -94,6 +96,7 @@ class Progress extends Component<ProgressProps> {
       'aria-labelledby': ariaLabelledBy,
       'aria-describedby': ariaDescribedBy,
       helperText,
+      hideStatusIcon,
       ...props
     } = this.props;
 
@@ -151,6 +154,7 @@ class Progress extends Component<ProgressProps> {
           isTitleTruncated={isTitleTruncated}
           tooltipPosition={tooltipPosition}
           helperText={helperText}
+          hideStatusIcon={hideStatusIcon}
         />
       </div>
     );
