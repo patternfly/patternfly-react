@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.4.1-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.4.1-prerelease.8...@patternfly/react-table@6.4.1-prerelease.9) (2025-10-24)
+
+### Features
+
+- **Table:** use pf check/radio for selects ([#12045](https://github.com/patternfly/patternfly-react/issues/12045)) ([a434558](https://github.com/patternfly/patternfly-react/commit/a4345580fadd9d59b918315fff29d71c35f88fe8))
+
 ## [6.4.1-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.4.1-prerelease.7...@patternfly/react-table@6.4.1-prerelease.8) (2025-10-23)
 
 **Note:** Version bump only for package @patternfly/react-table
