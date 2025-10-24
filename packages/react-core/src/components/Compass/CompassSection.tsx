@@ -15,6 +15,8 @@ interface CompassSectionProps extends React.HTMLProps<HTMLDivElement> {
   isFullHeight?: boolean;
   /** Removes the border of the section. */
   hasNoBorder?: boolean;
+  /** Removes the padding of the section. */
+  hasNoPadding?: boolean;
 }
 
 export const CompassSection: React.FunctionComponent<CompassSectionProps> = ({
@@ -22,6 +24,7 @@ export const CompassSection: React.FunctionComponent<CompassSectionProps> = ({
   className,
   isPill,
   hasNoBorder,
+  hasNoPadding,
   isGradientBorder,
   isThinking,
   isFullHeight,
@@ -32,6 +35,7 @@ export const CompassSection: React.FunctionComponent<CompassSectionProps> = ({
       'pf-v6-c-compass__section',
       isPill && 'pf-m-pill',
       hasNoBorder && 'pf-m-no-border',
+      hasNoPadding && 'pf-m-no-padding',
       isGradientBorder && 'pf-m-gradient-border',
       isThinking && 'pf-m-thinking',
       isFullHeight && 'pf-m-full-height',

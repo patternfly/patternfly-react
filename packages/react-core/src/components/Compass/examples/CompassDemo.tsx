@@ -23,30 +23,26 @@ import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/o
 
 export const CompassBasic: React.FunctionComponent = () => {
   const subTabs = (
-    <CompassSection>
-      <Tabs activeKey={0} isSubtab onSelect={() => {}} aria-label="Compass navigation subtabs">
-        <Tab eventKey={0} title={<TabTitleText>Subtab 1</TabTitleText>} />
-        <Tab eventKey={1} title={<TabTitleText>Subtab 2</TabTitleText>} />
-        <Tab eventKey={2} title={<TabTitleText>Disabled Subtab 3</TabTitleText>} isDisabled />
-      </Tabs>
-    </CompassSection>
+    <Tabs activeKey={0} isSubtab onSelect={() => {}} aria-label="Compass navigation subtabs">
+      <Tab eventKey={0} title={<TabTitleText>Subtab 1</TabTitleText>} />
+      <Tab eventKey={1} title={<TabTitleText>Subtab 2</TabTitleText>} />
+      <Tab eventKey={2} title={<TabTitleText>Disabled Subtab 3</TabTitleText>} isDisabled />
+    </Tabs>
   );
 
   const navContent = (
-    <CompassSection>
-      <Tabs activeKey={0} onSelect={() => {}} component={TabsComponent.nav} aria-label="Compass navigation tabs">
-        <Tab eventKey={0} title={<TabTitleText>Tab 1</TabTitleText>} aria-label="Compass tab with subtabs">
-          {subTabs}
-        </Tab>
-        <Tab eventKey={1} title={<TabTitleText>Tab 2</TabTitleText>} />
-        <Tab eventKey={2} title={<TabTitleText>Tab 3</TabTitleText>} />
-        <Tab eventKey={3} title={<TabTitleText>Disabled Tab 4</TabTitleText>} isDisabled />
-      </Tabs>
-    </CompassSection>
+    <Tabs activeKey={0} onSelect={() => {}} component={TabsComponent.nav} aria-label="Compass navigation tabs">
+      <Tab eventKey={0} title={<TabTitleText>Tab 1</TabTitleText>} aria-label="Compass tab with subtabs">
+        {subTabs}
+      </Tab>
+      <Tab eventKey={1} title={<TabTitleText>Tab 2</TabTitleText>} />
+      <Tab eventKey={2} title={<TabTitleText>Tab 3</TabTitleText>} />
+      <Tab eventKey={3} title={<TabTitleText>Disabled Tab 4</TabTitleText>} isDisabled />
+    </Tabs>
   );
 
   const panelContent = (
-    <CompassSection isPill>
+    <CompassSection isPill hasNoPadding>
       <ActionList>
         <ActionListGroup>
           <ActionListItem>
@@ -71,15 +67,15 @@ export const CompassBasic: React.FunctionComponent = () => {
     </CompassSection>
   );
 
-  const headerContent = <CompassHeader logo={<div>Logo</div>} nav={navContent} profile={<div>Profile</div>} />;
+  const headerContent = <CompassHeader logo={<div>logo</div>} nav={navContent} profile={<div>Profile</div>} />;
   const panelStartContent = panelContent;
   const mainContent = (
     <>
       <CompassHero>
         <div>Hero</div>
       </CompassHero>
+      <CompassMainHeader title={<Title headingLevel="h1">Content title</Title>} />
       <CompassContent>
-        <CompassMainHeader title={<Title headingLevel="h1">Content title</Title>} />
         <CompassSection>Content</CompassSection>
       </CompassContent>
     </>
