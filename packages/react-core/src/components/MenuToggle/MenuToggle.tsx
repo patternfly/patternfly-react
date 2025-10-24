@@ -45,6 +45,8 @@ export interface MenuToggleProps
   isFullWidth?: boolean;
   /** Flag indicating the toggle contains placeholder text */
   isPlaceholder?: boolean;
+  /** @beta Flag indicating the toggle has circular styling. Can only be applied to plain toggles. */
+  isCircle?: boolean;
   /** Flag indicating whether the toggle is a settings toggle. This will override the icon property */
   isSettings?: boolean;
   /** Elements to display before the toggle button. When included, renders the menu toggle as a split button. */
@@ -84,6 +86,7 @@ class MenuToggleBase extends Component<MenuToggleProps, MenuToggleState> {
     isFullWidth: false,
     isFullHeight: false,
     isPlaceholder: false,
+    isCircle: false,
     size: 'default',
     ouiaSafe: true
   };
@@ -103,6 +106,7 @@ class MenuToggleBase extends Component<MenuToggleProps, MenuToggleState> {
       isFullHeight,
       isFullWidth,
       isPlaceholder,
+      isCircle,
       isSettings,
       splitButtonItems,
       variant,
@@ -225,7 +229,7 @@ class MenuToggleBase extends Component<MenuToggleProps, MenuToggleState> {
 
     return (
       <button
-        className={css(commonStyles)}
+        className={css(commonStyles, isCircle && isPlain && 'pf-m-circle')}
         type="button"
         aria-label={ariaLabel}
         aria-expanded={isExpanded}
