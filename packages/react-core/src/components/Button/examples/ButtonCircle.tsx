@@ -52,6 +52,7 @@ export const ButtonCircle: React.FunctionComponent = () => {
       />
       <Button
         variant="plain"
+        isCircle
         {...(!isUploading && { 'aria-label': 'Upload circle variant example' })}
         onClick={() => setIsUploading(!isUploading)}
         icon={<UploadIcon />}
