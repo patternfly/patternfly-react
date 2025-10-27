@@ -24,20 +24,29 @@ import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/o
 export const CompassBasic: React.FunctionComponent = () => {
   const subTabs = (
     <Tabs activeKey={0} isSubtab onSelect={() => {}} aria-label="Compass navigation subtabs">
-      <Tab eventKey={0} title={<TabTitleText>Subtab 1</TabTitleText>} />
-      <Tab eventKey={1} title={<TabTitleText>Subtab 2</TabTitleText>} />
-      <Tab eventKey={2} title={<TabTitleText>Disabled Subtab 3</TabTitleText>} isDisabled />
+      <Tab
+        tabContentId="subtab-1"
+        eventKey={0}
+        href="#"
+        title={
+          <TabTitleText>
+            <div id="subtab-1">Subtab 1</div>
+          </TabTitleText>
+        }
+      />
+      <Tab eventKey={1} href="#" title={<TabTitleText>Subtab 2</TabTitleText>} />
+      <Tab eventKey={2} href="#" title={<TabTitleText>Disabled Subtab 3</TabTitleText>} isDisabled />
     </Tabs>
   );
 
   const navContent = (
     <Tabs activeKey={0} onSelect={() => {}} component={TabsComponent.nav} aria-label="Compass navigation tabs">
-      <Tab eventKey={0} title={<TabTitleText>Tab 1</TabTitleText>} aria-label="Compass tab with subtabs">
+      <Tab eventKey={0} href="#" title={<TabTitleText>Tab 1</TabTitleText>} aria-label="Compass tab with subtabs">
         {subTabs}
       </Tab>
-      <Tab eventKey={1} title={<TabTitleText>Tab 2</TabTitleText>} />
-      <Tab eventKey={2} title={<TabTitleText>Tab 3</TabTitleText>} />
-      <Tab eventKey={3} title={<TabTitleText>Disabled Tab 4</TabTitleText>} isDisabled />
+      <Tab eventKey={1} href="#" title={<TabTitleText>Tab 2</TabTitleText>} />
+      <Tab eventKey={2} href="#" title={<TabTitleText>Tab 3</TabTitleText>} />
+      <Tab eventKey={3} href="#" title={<TabTitleText>Disabled Tab 4</TabTitleText>} isDisabled />
     </Tabs>
   );
 
