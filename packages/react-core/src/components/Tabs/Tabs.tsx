@@ -565,7 +565,7 @@ class Tabs extends Component<TabsProps, TabsState> {
             styles.modifiers.animateCurrent,
             isFilled && styles.modifiers.fill,
             isSubtab && styles.modifiers.subtab,
-            isNav && styles.modifiers.nav,
+            isNav && 'pf-m-nav',
             isVertical && styles.modifiers.vertical,
             isVertical && expandable && formatBreakpointMods(expandable, styles),
             isVertical && expandable && isExpandedLocal && styles.modifiers.expanded,
