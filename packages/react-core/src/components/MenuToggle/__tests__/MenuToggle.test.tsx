@@ -112,21 +112,21 @@ test(`Renders with class ${styles.modifiers.settings} when isSettings is passed`
   expect(screen.getByRole('button')).toHaveClass(styles.modifiers.settings);
 });
 
-test(`Renders with class pf-m-circle when variant="plain" and isCircle is true`, () => {
+test(`Renders with class ${styles.modifiers.circle} when variant="plain" and isCircle is true`, () => {
   render(<MenuToggle isCircle variant="plain" aria-label="Toggle"></MenuToggle>);
-  expect(screen.getByRole('button')).toHaveClass('pf-m-circle');
+  expect(screen.getByRole('button')).toHaveClass(styles.modifiers.circle);
 });
 
 toggleVariants
   .filter((variant) => variant !== 'plain')
   .forEach((variant) => {
-    test(`Does not with class pf-m-circle when variant="${variant}" and isCircle is true`, () => {
+    test(`Does not with class ${styles.modifiers.circle} when variant="${variant}" and isCircle is true`, () => {
       render(
         <MenuToggle isCircle variant={variant as 'default' | 'primary' | 'plainText' | 'secondary' | 'typeahead'}>
           Toggle
         </MenuToggle>
       );
-      expect(screen.getByRole('button')).not.toHaveClass('pf-m-circle');
+      expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.circle);
     });
   });
 

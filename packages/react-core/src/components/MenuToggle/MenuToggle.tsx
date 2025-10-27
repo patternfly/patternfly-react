@@ -229,7 +229,7 @@ class MenuToggleBase extends Component<MenuToggleProps, MenuToggleState> {
 
     return (
       <button
-        className={css(commonStyles, isCircle && isPlain && 'pf-m-circle')}
+        className={css(commonStyles, isCircle && isPlain && styles.modifiers.circle)}
         type="button"
         aria-label={ariaLabel}
         aria-expanded={isExpanded}

@@ -264,7 +264,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
         variant === ButtonVariant.stateful && styles.modifiers[state],
         size === ButtonSize.sm && styles.modifiers.small,
         size === ButtonSize.lg && styles.modifiers.displayLg,
-        isCircle && 'pf-m-circle',
+        isCircle && styles.modifiers.circle,
         className
       )}
       disabled={isButtonElement ? isDisabled : null}

@@ -214,9 +214,9 @@ test(`Renders without class ${styles.modifiers.progress} when isLoading = false 
   expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.progress);
 });
 
-test(`Renders with class pf-m-circle when isCircle is true`, () => {
+test(`Renders with class ${styles.modifiers.circle} when isCircle is true`, () => {
   render(<Button isCircle>Circle Button</Button>);
-  expect(screen.getByRole('button')).toHaveClass('pf-m-circle');
+  expect(screen.getByRole('button')).toHaveClass(styles.modifiers.circle);
 });
 
 test(`Renders custom icon with class ${styles.modifiers.inProgress} when isLoading = true and icon is present`, () => {
