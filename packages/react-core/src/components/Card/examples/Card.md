@@ -9,6 +9,7 @@ propComponents:
     'CardHeaderActionsObject',
     'CardHeaderSelectableActionsObject',
     'CardTitle',
+    'CardDescription',
     'CardBody',
     'CardFooter',
     'CardExpandableContent'
@@ -26,7 +27,7 @@ import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 
 ### Basic cards
 
-Basic cards typically have a `<CardTitle>`, `<CardBody>` and `<CardFooter>`. You may omit these components as needed, but it is recommended to at least include a `<CardBody>` to provide details about the card item.
+Basic cards typically have a `<CardTitle>`, `<CardDescription>`, `<CardBody>` and `<CardFooter>`. You may omit these components as needed, but it is recommended to at least include a `<CardBody>` to provide details about the card item.
 
 ```ts file='./CardBasic.tsx'
 
