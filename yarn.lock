@@ -4394,7 +4394,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@patternfly/ast-helpers@npm:^1.4.0-alpha.278":
+"@patternfly/ast-helpers@npm:^1.4.0-alpha.303":
   version: 1.26.2
   resolution: "@patternfly/ast-helpers@npm:1.26.2"
   dependencies:
@@ -4407,15 +4407,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@patternfly/documentation-framework@npm:^6.22.8":
-  version: 6.22.8
-  resolution: "@patternfly/documentation-framework@npm:6.22.8"
+"@patternfly/documentation-framework@npm:^6.28.9":
+  version: 6.28.9
+  resolution: "@patternfly/documentation-framework@npm:6.28.9"
   dependencies:
     "@babel/core": "npm:^7.28.3"
     "@babel/preset-env": "npm:7.27.1"
     "@babel/preset-react": "npm:^7.24.1"
     "@mdx-js/util": "npm:1.6.16"
-    "@patternfly/ast-helpers": "npm:^1.4.0-alpha.278"
+    "@patternfly/ast-helpers": "npm:^1.4.0-alpha.303"
     "@reach/router": "npm:@gatsbyjs/reach-router@1.3.9"
     autoprefixer: "npm:10.4.19"
     babel-loader: "npm:^9.1.3"
@@ -4457,7 +4457,6 @@ __metadata:
     remark-mdxjs: "npm:2.0.0-next.8"
     remark-parse: "npm:8.0.3"
     remark-squeeze-paragraphs: "npm:4.0.0"
-    responsive-loader: "npm:3.1.2"
     sharp: "npm:0.33.0"
     style-to-object: "npm:0.3.0"
     to-vfile: "npm:6.1.0"
@@ -4474,15 +4473,15 @@ __metadata:
     webpack-dev-server: "npm:5.2.2"
     webpack-merge: "npm:5.8.0"
   peerDependencies:
-    "@patternfly/patternfly": ^6.3.0
-    "@patternfly/react-code-editor": ^6.3.0
-    "@patternfly/react-core": ^6.3.0
-    "@patternfly/react-table": ^6.3.0
+    "@patternfly/patternfly": ^6.4.0
+    "@patternfly/react-code-editor": ^6.4.0
+    "@patternfly/react-core": ^6.4.0
+    "@patternfly/react-table": ^6.4.0
     react: ^17.0.0 || ^18.0.0
     react-dom: ^17.0.0 || ^18.0.0
   bin:
     pf-docs-framework: scripts/cli/cli.js
-  checksum: 10c0/af56a534e0d4cf2599eb741167efad4a84762ae2e20d0e72c9c1765c22037a1c12201f1b2f02a7c326940bad0e62c5fdbf6c630c3a236a40d25b664722773095
+  checksum: 10c0/ef78c9b08b4d00d762122b7ca13ca1d711bb50fd4b3cc3e64112cae7c6a8a869fc8d69cda9401d3f34bf16c733bd1f3a9a8d587cc297787065fbd625a4694ba4
   languageName: node
   linkType: hard
 
@@ -4638,7 +4637,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@patternfly/react-docs@workspace:packages/react-docs"
   dependencies:
-    "@patternfly/documentation-framework": "npm:^6.22.8"
+    "@patternfly/documentation-framework": "npm:^6.28.9"
     "@patternfly/patternfly": "npm:6.5.0-prerelease.9"
     "@patternfly/patternfly-a11y": "npm:5.1.0"
     "@patternfly/react-charts": "workspace:^"
@@ -5990,15 +5989,6 @@ __metadata:
   dependencies:
     undici-types: "npm:~5.26.4"
   checksum: 10c0/2d86e5f2227aaa42212e82ea0affe72799111b888ff900916376450b02b09b963ca888b20d9c332d8d2b833ed4781987867a38eaa2e4863fa8439071468b0a6f
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^18.11.9":
-  version: 18.19.34
-  resolution: "@types/node@npm:18.19.34"
-  dependencies:
-    undici-types: "npm:~5.26.4"
-  checksum: 10c0/e985f50684def801801069e236165ee511f9195fc04ad4a2af7642d86aeaeaf7bfe34c147f894a48618a5c71c15b388ca91341a244792149543a712e38351988
   languageName: node
   linkType: hard
 
@@ -11930,17 +11920,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"find-cache-dir@npm:^3.3.2":
-  version: 3.3.2
-  resolution: "find-cache-dir@npm:3.3.2"
-  dependencies:
-    commondir: "npm:^1.0.1"
-    make-dir: "npm:^3.0.2"
-    pkg-dir: "npm:^4.1.0"
-  checksum: 10c0/92747cda42bff47a0266b06014610981cfbb71f55d60f2c8216bc3108c83d9745507fb0b14ecf6ab71112bed29cd6fb1a137ee7436179ea36e11287e3159e587
-  languageName: node
-  linkType: hard
-
 "find-cache-dir@npm:^4.0.0":
   version: 4.0.0
   resolution: "find-cache-dir@npm:4.0.0"
@@ -15737,7 +15716,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json5@npm:^2.1.2, json5@npm:^2.2.1, json5@npm:^2.2.2, json5@npm:^2.2.3":
+"json5@npm:^2.1.2, json5@npm:^2.2.2, json5@npm:^2.2.3":
   version: 2.2.3
   resolution: "json5@npm:2.2.3"
   bin:
@@ -16195,13 +16174,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"loader-utils@npm:^3.2.1":
-  version: 3.3.1
-  resolution: "loader-utils@npm:3.3.1"
-  checksum: 10c0/f2af4eb185ac5bf7e56e1337b666f90744e9f443861ac521b48f093fb9e8347f191c8960b4388a3365147d218913bc23421234e7788db69f385bacfefa0b4758
-  languageName: node
-  linkType: hard
-
 "locate-path@npm:^2.0.0":
   version: 2.0.0
   resolution: "locate-path@npm:2.0.0"
@@ -16468,15 +16440,6 @@ __metadata:
     pify: "npm:^4.0.1"
     semver: "npm:^5.6.0"
   checksum: 10c0/ada869944d866229819735bee5548944caef560d7a8536ecbc6536edca28c72add47cc4f6fc39c54fb25d06b58da1f8994cf7d9df7dadea047064749efc085d8
-  languageName: node
-  linkType: hard
-
-"make-dir@npm:^3.0.2, make-dir@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "make-dir@npm:3.1.0"
-  dependencies:
-    semver: "npm:^6.0.0"
-  checksum: 10c0/56aaafefc49c2dfef02c5c95f9b196c4eb6988040cf2c712185c7fe5c99b4091591a7fc4d4eafaaefa70ff763a26f6ab8c3ff60b9e75ea19876f49b18667ecaa
   languageName: node
   linkType: hard
 
@@ -18819,7 +18782,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pkg-dir@npm:^4.1.0, pkg-dir@npm:^4.2.0":
+"pkg-dir@npm:^4.2.0":
   version: 4.2.0
   resolution: "pkg-dir@npm:4.2.0"
   dependencies:
@@ -20249,27 +20212,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"responsive-loader@npm:3.1.2":
-  version: 3.1.2
-  resolution: "responsive-loader@npm:3.1.2"
-  dependencies:
-    "@types/node": "npm:^18.11.9"
-    find-cache-dir: "npm:^3.3.2"
-    json5: "npm:^2.2.1"
-    loader-utils: "npm:^3.2.1"
-    make-dir: "npm:^3.1.0"
-    schema-utils: "npm:^4.0.0"
-  peerDependencies:
-    webpack: ^5.73.0
-  peerDependenciesMeta:
-    jimp:
-      optional: true
-    sharp:
-      optional: true
-  checksum: 10c0/c93b200bb51fe2968ee8092b4817db55dd55f2306d1d75fa66aa6cd2dbddf9c7f394528f9182acbc3a37489fed9b5d743b51a5275c88d31fb665195cf0f5adaf
-  languageName: node
-  linkType: hard
-
 "restore-cursor@npm:^2.0.0":
   version: 2.0.0
   resolution: "restore-cursor@npm:2.0.0"
@@ -20857,7 +20799,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^6.0.0, semver@npm:^6.3.0, semver@npm:^6.3.1":
+"semver@npm:^6.3.0, semver@npm:^6.3.1":
   version: 6.3.1
   resolution: "semver@npm:6.3.1"
   bin:

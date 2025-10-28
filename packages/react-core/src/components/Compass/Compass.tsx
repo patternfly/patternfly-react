@@ -1,4 +1,6 @@
 import { Drawer, DrawerContent, DrawerProps } from '../Drawer';
+import compassBackgroundImageLight from '@patternfly/react-tokens/dist/esm/c_compass_BackgroundImage_light';
+import compassBackgroundImageDark from '@patternfly/react-tokens/dist/esm/c_compass_BackgroundImage_dark';
 import { css } from '@patternfly/react-styles';
 
 export interface CompassProps extends React.HTMLProps<HTMLDivElement> {
@@ -9,15 +11,15 @@ export interface CompassProps extends React.HTMLProps<HTMLDivElement> {
   /** Flag indicating if the header is expanded */
   isHeaderExpanded?: boolean;
   /** Content placed at the start of the layout */
-  panelStart?: React.ReactNode;
+  sidebarStart?: React.ReactNode;
   /** Flag indicating if the start panel is expanded */
-  isPanelStartExpanded?: boolean;
+  isSidebarStartExpanded?: boolean;
   /** Content placed at the center of the layout */
   main?: React.ReactNode;
   /** Content placed at the end of the layout */
-  panelEnd?: React.ReactNode;
+  sidebarEnd?: React.ReactNode;
   /** Flag indicating if the end panel is expanded */
-  isPanelEndExpanded?: boolean;
+  isSidebarEndExpanded?: boolean;
   /** Content placed at the bottom of the layout */
   footer?: React.ReactNode;
   /** Flag indicating if the footer is expanded */
@@ -26,42 +28,41 @@ export interface CompassProps extends React.HTMLProps<HTMLDivElement> {
   drawerContent?: React.ReactNode;
   /** Props for the drawer */
   drawerProps?: DrawerProps;
-  /** Light background image path for the compass */
-  lightBackgroundSrc?: string;
-  /** Dark background image path for the compass */
-  darkBackgroundSrc?: string;
+  /** Light theme background image path for the compass */
+  backgroundSrcLight?: string;
+  /** Dark theme background image path for the compass */
+  backgroundSrcDark?: string;
 }
 
 export const Compass: React.FunctionComponent<CompassProps> = ({
   className,
   header,
   isHeaderExpanded = true,
-  panelStart,
-  isPanelStartExpanded = true,
+  sidebarStart,
+  isSidebarStartExpanded = true,
   main,
-  panelEnd,
-  isPanelEndExpanded = true,
+  sidebarEnd,
+  isSidebarEndExpanded = true,
   footer,
   isFooterExpanded = true,
   drawerContent,
   drawerProps,
-  lightBackgroundSrc,
-  darkBackgroundSrc,
+  backgroundSrcLight,
+  backgroundSrcDark,
   ...props
 }) => {
   const hasDrawer = drawerContent !== undefined;
 
+  const backgroundImageStyles: { [key: string]: string } = {};
+  if (backgroundSrcLight) {
+    backgroundImageStyles[compassBackgroundImageLight.name] = `url(${backgroundSrcLight})`;
+  }
+  if (backgroundSrcDark) {
+    backgroundImageStyles[compassBackgroundImageDark.name] = `url(${backgroundSrcDark})`;
+  }
+
   const compassContent = (
-    <div
-      className={css('pf-v6-c-compass', className)}
-      style={
-        {
-          '[cssLightName.name]': `url(${lightBackgroundSrc})`,
-          '[cssDarkName.name]': `url(${darkBackgroundSrc})`
-        } as React.CSSProperties
-      }
-      {...props}
-    >
+    <div className={css('pf-v6-c-compass', className)} style={{ ...props.style, ...backgroundImageStyles }} {...props}>
       <div
         className={css('pf-v6-c-compass__header', isHeaderExpanded && 'pf-m-expanded')}
         {...(!isHeaderExpanded && { inert: true })}
@@ -69,17 +70,17 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
         {header}
       </div>
       <div
-        className={css('pf-v6-c-compass__panel pf-m-start', isPanelStartExpanded && 'pf-m-expanded')}
-        {...(!isPanelStartExpanded && { inert: true })}
+        className={css('pf-v6-c-compass__sidebar pf-m-start', isSidebarStartExpanded && 'pf-m-expanded')}
+        {...(!isSidebarStartExpanded && { inert: true })}
       >
-        {panelStart}
+        {sidebarStart}
       </div>
       <div className={css('pf-v6-c-compass__main')}>{main}</div>
       <div
-        className={css('pf-v6-c-compass__panel pf-m-end', isPanelEndExpanded && 'pf-m-expanded')}
-        {...(!isPanelEndExpanded && { inert: true })}
+        className={css('pf-v6-c-compass__sidebar pf-m-end', isSidebarEndExpanded && 'pf-m-expanded')}
+        {...(!isSidebarEndExpanded && { inert: true })}
       >
-        {panelEnd}
+        {sidebarEnd}
       </div>
       <div
         className={css('pf-v6-c-compass__footer', isFooterExpanded && 'pf-m-expanded')}
