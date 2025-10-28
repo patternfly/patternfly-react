@@ -2,6 +2,7 @@ import { Fragment, useEffect, useRef, useState, forwardRef, useImperativeHandle 
 import styles from '@patternfly/react-styles/css/components/Truncate/truncate';
 import { css } from '@patternfly/react-styles';
 import { Tooltip, TooltipPosition, TooltipProps } from '../Tooltip';
+import { getReferenceElement } from '../../helpers';
 import { getResizeObserver } from '../../helpers/resizeObserver';
 import { debounce } from '../../helpers/util';
 
@@ -76,25 +77,72 @@ const TruncateBase: React.FunctionComponent<TruncateProps> = ({
   omissionContent = '\u2026',
   content,
   innerRef,
-  onMouseEnter,
-  onMouseLeave,
-  onFocus,
-  onBlur,
   ...props
 }: TruncateProps) => {
-  const [isTruncated, setIsTruncated] = useState(false);
+  const [isTruncated, setIsTruncated] = useState(true);
+  const [parentElement, setParentElement] = useState<HTMLElement>(null);
+  const [textElement, setTextElement] = useState<HTMLElement>(null);
   const [shouldRenderByMaxChars, setShouldRenderByMaxChars] = useState(maxCharsDisplayed > 0);
-  const [showTooltip, setShowTooltip] = useState(false);
 
   const textRef = useRef<HTMLElement>(null);
   useImperativeHandle(innerRef, () => textRef.current!);
   const defaultSubParentRef = useRef<any>(null);
   const subParentRef = tooltipProps?.triggerRef || defaultSubParentRef;
+  const observer = useRef(null);
 
   if (maxCharsDisplayed <= 0) {
     // eslint-disable-next-line no-console
     console.warn('Truncate: the maxCharsDisplayed must be greater than 0, otherwise no content will be visible.');
   }
+
+  const getActualWidth = (element: Element) => {
+    const computedStyle = getComputedStyle(element);
+
+    return (
+      parseFloat(computedStyle.width) -
+      parseFloat(computedStyle.paddingLeft) -
+      parseFloat(computedStyle.paddingRight) -
+      parseFloat(computedStyle.borderRight) -
+      parseFloat(computedStyle.borderLeft)
+    );
+  };
+
+  const calculateTotalTextWidth = (element: Element, trailingNumChars: number, content: string) => {
+    const firstTextWidth = element.scrollWidth;
+    const firstTextLength = content.length;
+    return (firstTextWidth / firstTextLength) * trailingNumChars + firstTextWidth;
+  };
+
+  useEffect(() => {
+    if (textRef && textRef.current && !textElement) {
+      setTextElement(textRef.current);
+    }
+  }, [textRef, textElement]);
+
+  useEffect(() => {
+    const refElement = getReferenceElement(subParentRef);
+    if (refElement?.parentElement && !parentElement) {
+      setParentElement(refElement.parentElement);
+    }
+  }, [subParentRef, parentElement]);
+
+  useEffect(() => {
+    if (textElement && parentElement && !observer.current && !shouldRenderByMaxChars) {
+      const totalTextWidth = calculateTotalTextWidth(textElement, trailingNumChars, content);
+      const textWidth = position === 'middle' ? totalTextWidth : textElement.scrollWidth;
+
+      const debouncedHandleResize = debounce(() => {
+        const parentWidth = getActualWidth(parentElement);
+        setIsTruncated(textWidth >= parentWidth);
+      }, 500);
+
+      const observer = getResizeObserver(parentElement, debouncedHandleResize);
+
+      return () => {
+        observer();
+      };
+    }
+  }, [textElement, parentElement, trailingNumChars, content, position, shouldRenderByMaxChars]);
 
   useEffect(() => {
     if (shouldRenderByMaxChars) {
@@ -105,65 +153,6 @@ const TruncateBase: React.FunctionComponent<TruncateProps> = ({
   useEffect(() => {
     setShouldRenderByMaxChars(maxCharsDisplayed > 0);
   }, [maxCharsDisplayed]);
-
-  // Check truncation on mount for without maxChars
-  useEffect(() => {
-    if (!shouldRenderByMaxChars && textRef.current) {
-      setIsTruncated(textRef.current.scrollWidth > textRef.current.clientWidth);
-    }
-  }, [shouldRenderByMaxChars, content]);
-
-  const debouncedHandleResize = debounce(() => {
-    if (!shouldRenderByMaxChars && textRef.current) {
-      const isCurrentlyTruncated = textRef.current.scrollWidth > textRef.current.clientWidth;
-      setIsTruncated(isCurrentlyTruncated);
-    }
-  }, 500);
-
-  // Set up ResizeObserver for non-maxChars truncation
-  useEffect(() => {
-    if (!shouldRenderByMaxChars && textRef.current) {
-      const observer = getResizeObserver(textRef.current, debouncedHandleResize, false);
-      return observer;
-    }
-  }, [shouldRenderByMaxChars, debouncedHandleResize]);
-
-  // Check if content is truncated (called on hover/focus)
-  const checkTruncation = (): boolean => {
-    if (shouldRenderByMaxChars) {
-      return isTruncated;
-    }
-
-    if (!textRef.current) {
-      return false;
-    }
-
-    return textRef.current.scrollWidth > textRef.current.clientWidth;
-  };
-
-  const handleMouseEnter = (e: React.MouseEvent<HTMLElement>) => {
-    if (checkTruncation()) {
-      setShowTooltip(true);
-    }
-    onMouseEnter?.(e);
-  };
-
-  const handleMouseLeave = (e: React.MouseEvent<HTMLElement>) => {
-    setShowTooltip(false);
-    onMouseLeave?.(e);
-  };
-
-  const handleFocus = (e: React.FocusEvent<HTMLElement>) => {
-    if (checkTruncation()) {
-      setShowTooltip(true);
-    }
-    onFocus?.(e);
-  };
-
-  const handleBlur = (e: React.FocusEvent<HTMLElement>) => {
-    setShowTooltip(false);
-    onBlur?.(e);
-  };
 
   const lrmEntity = <Fragment>&lrm;</Fragment>;
   const isStartPosition = position === TruncatePosition.start;
@@ -252,10 +241,6 @@ const TruncateBase: React.FunctionComponent<TruncateProps> = ({
       href={href}
       className={css(styles.truncate, shouldRenderByMaxChars && styles.modifiers.fixed, className)}
       {...(isTruncated && !href && !tooltipProps?.triggerRef && { tabIndex: 0 })}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
       {...props}
     >
       {!shouldRenderByMaxChars ? renderResizeObserverContent() : renderMaxDisplayContent()}
@@ -264,14 +249,15 @@ const TruncateBase: React.FunctionComponent<TruncateProps> = ({
 
   return (
     <>
-      <Tooltip
-        position={tooltipPosition}
-        content={content}
-        triggerRef={subParentRef}
-        trigger="manual"
-        isVisible={showTooltip}
-        {...tooltipProps}
-      />
+      {isTruncated && (
+        <Tooltip
+          hidden={!isTruncated}
+          position={tooltipPosition}
+          content={content}
+          triggerRef={subParentRef}
+          {...tooltipProps}
+        />
+      )}
       {truncateBody}
     </>
   );
