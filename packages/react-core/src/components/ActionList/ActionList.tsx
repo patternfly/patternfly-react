@@ -8,7 +8,7 @@ export interface ActionListProps extends React.HTMLProps<HTMLDivElement> {
   isIconList?: boolean;
   /** Additional classes added to the action list */
   className?: string;
-  /** Whether the layout of children is vertical or horizontal. */
+  /** @beta Whether the layout of children is vertical or horizontal. */
   isVertical?: boolean;
 }
 
