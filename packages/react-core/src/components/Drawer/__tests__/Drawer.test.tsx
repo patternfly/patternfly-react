@@ -177,12 +177,12 @@ test(`Renders with pill class when specified`, () => {
   );
 
   render(
-    <Drawer isExpanded={true} position="left" isPill>
+    <Drawer data-testid="drawer" isExpanded={true} position="left" isPill>
       <DrawerContent panelContent={panelContent}>
         <DrawerContentBody>Drawer content text</DrawerContentBody>
       </DrawerContent>
     </Drawer>
   );
 
-  expect(screen.getByText('Drawer content text').parentElement?.parentElement?.parentElement).toHaveClass('pf-m-pill');
+  expect(screen.getByTestId('drawer')).toHaveClass('pf-m-pill');
 });
