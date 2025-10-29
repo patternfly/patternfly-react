@@ -67,26 +67,26 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
     <div className={css(styles.compass, className)} {...props} style={{ ...props.style, ...backgroundImageStyles }}>
       <div
         className={css(styles.compassHeader, isHeaderExpanded && 'pf-m-expanded')}
-        {...(!isHeaderExpanded && { inert: true })}
+        {...(!isHeaderExpanded && { inert: 'true' })}
       >
         {header}
       </div>
       <div
         className={css(styles.compassSidebar, styles.modifiers.start, isSidebarStartExpanded && 'pf-m-expanded')}
-        {...(!isSidebarStartExpanded && { inert: true })}
+        {...(!isSidebarStartExpanded && { inert: 'true' })}
       >
         {sidebarStart}
       </div>
       <div className={css(styles.compassMain)}>{main}</div>
       <div
         className={css(styles.compassSidebar, styles.modifiers.end, isSidebarEndExpanded && 'pf-m-expanded')}
-        {...(!isSidebarEndExpanded && { inert: true })}
+        {...(!isSidebarEndExpanded && { inert: 'true' })}
       >
         {sidebarEnd}
       </div>
       <div
         className={css(styles.compassFooter, isFooterExpanded && 'pf-m-expanded')}
-        {...(!isFooterExpanded && { inert: true })}
+        {...(!isFooterExpanded && { inert: 'true' })}
       >
         {footer}
       </div>

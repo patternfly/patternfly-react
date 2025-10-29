@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches the snapshot with drawer 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-drawer pf-m-expanded"
+  >
+    <div
+      class="pf-v6-c-drawer__main"
+    >
+      <div
+        class="pf-v6-c-drawer__content"
+      >
+        <div
+          class="pf-v6-c-compass__content"
+        >
+          <div>
+            Test content
+          </div>
+        </div>
+      </div>
+      <div>
+        Drawer content
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Matches the snapshot without drawer 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-compass__content"
+  >
+    <div>
+      Test content
+    </div>
+  </div>
+</DocumentFragment>
+`;
