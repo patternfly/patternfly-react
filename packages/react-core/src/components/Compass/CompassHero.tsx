@@ -11,21 +11,21 @@ import compassHeroGradientStop2Dark from '@patternfly/react-tokens/dist/esm/c_co
 import compassHeroGradientStop3Dark from '@patternfly/react-tokens/dist/esm/c_compass__hero_gradient_stop_3_dark';
 
 interface CompassHeroProps extends Omit<React.HTMLProps<HTMLDivElement>, 'content'> {
-  /** Additional classes added to the hero. */
-  className?: string;
-  /** Content of the hero. */
+  /** Content of the hero */
   children?: React.ReactNode;
-  /** Light theme background image path for the hero */
+  /** Additional classes added to the hero */
+  className?: string;
+  /** Light theme background image path of the hero */
   backgroundSrcLight?: string;
-  /** Dark theme background image path for the hero */
+  /** Dark theme background image path of the hero */
   backgroundSrcDark?: string;
-  /** Light theme gradient for the hero */
+  /** Light theme gradient of the hero */
   gradientLight?: {
     stop1?: string;
     stop2?: string;
     stop3?: string;
   };
-  /** Dark theme gradient for the hero */
+  /** Dark theme gradient of the hero */
   gradientDark?: {
     stop1?: string;
     stop2?: string;

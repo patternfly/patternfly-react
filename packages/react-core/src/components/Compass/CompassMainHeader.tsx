@@ -3,13 +3,13 @@ import { CompassPanel } from './CompassPanel';
 import { css } from '@patternfly/react-styles';
 
 interface CompassMainHeaderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'title'> {
-  /** Additional classes added to the main header. */
+  /** Additional classes added to the main header */
   className?: string;
   /** Styled title. If title or toolbar is provided, the children will be ignored. */
   title?: React.ReactNode;
   /** Styled toolbar. If title or toolbar is provided, the children will be ignored. */
   toolbar?: React.ReactNode;
-  /** Custom main header content. To opt into a default set of styling, use the title and toolbar props instead. */
+  /** Custom main header content. To opt into a default styling, use the title and toolbar props instead. */
   children?: React.ReactNode;
 }
 

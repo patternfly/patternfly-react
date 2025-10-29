@@ -2,24 +2,24 @@ import styles from '@patternfly/react-styles/css/components/Compass/compass';
 import { css } from '@patternfly/react-styles';
 
 interface CompassPanelProps extends React.HTMLProps<HTMLDivElement> {
-  /** Additional classes added to the panel. */
-  className?: string;
   /** Content of the panel. */
   children: React.ReactNode;
-  /** Applies a pill border radius to the panel. */
+  /** Additional classes added to the panel. */
+  className?: string;
+  /** Indicates the panel should have a pill border radius */
   isPill?: boolean;
-  /** Applies a gradient border to the panel. */
-  hasGradientBorder?: boolean;
-  /** Applies a thinking style to the panel. */
-  isThinking?: boolean;
-  /** Indicates the panel should expand to fill the available height. */
+  /** Indicates the panel should expand to fill the available height */
   isFullHeight?: boolean;
-  /** Indicates the panel should scroll its overflow. */
+  /** Indicates the panel should scroll its overflow */
   isScrollable?: boolean;
-  /** Removes the border of the panel. */
+  /** Indicates the panel should have no border */
   hasNoBorder?: boolean;
-  /** Removes the padding of the panel. */
+  /** Indicates the panel should have no padding */
   hasNoPadding?: boolean;
+  /** Indicates the panel should have a gradient border */
+  hasGradientBorder?: boolean;
+  /** Indicates the panel should have a thinking style */
+  isThinking?: boolean;
 }
 
 export const CompassPanel: React.FunctionComponent<CompassPanelProps> = ({

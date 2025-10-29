@@ -14,25 +14,25 @@ export interface CompassProps extends React.HTMLProps<HTMLDivElement> {
   isHeaderExpanded?: boolean;
   /** Content placed at the start of the layout */
   sidebarStart?: React.ReactNode;
-  /** Flag indicating if the start panel is expanded */
+  /** Flag indicating if the start sidebar is expanded */
   isSidebarStartExpanded?: boolean;
   /** Content placed at the center of the layout */
   main?: React.ReactNode;
   /** Content placed at the end of the layout */
   sidebarEnd?: React.ReactNode;
-  /** Flag indicating if the end panel is expanded */
+  /** Flag indicating if the end sidebar is expanded */
   isSidebarEndExpanded?: boolean;
   /** Content placed at the bottom of the layout */
   footer?: React.ReactNode;
   /** Flag indicating if the footer is expanded */
   isFooterExpanded?: boolean;
-  /** Content rendered in the drawer panel */
+  /** Content rendered in an optional drawer wrapping the layout */
   drawerContent?: React.ReactNode;
-  /** Props for the drawer */
+  /** Additional props passed to the drawer */
   drawerProps?: DrawerProps;
-  /** Light theme background image path for the compass */
+  /** Light theme background image path of the compass */
   backgroundSrcLight?: string;
-  /** Dark theme background image path for the compass */
+  /** Dark theme background image path of the compass */
   backgroundSrcDark?: string;
 }
 
@@ -64,7 +64,7 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
   }
 
   const compassContent = (
-    <div className={css(styles.compass, className)} style={{ ...props.style, ...backgroundImageStyles }} {...props}>
+    <div className={css(styles.compass, className)} {...props} style={{ ...props.style, ...backgroundImageStyles }}>
       <div
         className={css(styles.compassHeader, isHeaderExpanded && 'pf-m-expanded')}
         {...(!isHeaderExpanded && { inert: true })}
