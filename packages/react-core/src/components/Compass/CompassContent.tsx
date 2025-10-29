@@ -1,4 +1,5 @@
 import { Drawer, DrawerContent, DrawerProps } from '../Drawer';
+import styles from '@patternfly/react-styles/css/components/Compass/compass';
 import { css } from '@patternfly/react-styles';
 
 interface CompassContentProps extends React.HTMLProps<HTMLDivElement> {
@@ -22,7 +23,7 @@ export const CompassContent: React.FunctionComponent<CompassContentProps> = ({
   const hasDrawer = drawerContent !== undefined;
 
   const compassContent = (
-    <div className={css('pf-v6-c-compass__content', className)} {...props}>
+    <div className={css(styles.compassContent, className)} {...props}>
       {children}
     </div>
   );

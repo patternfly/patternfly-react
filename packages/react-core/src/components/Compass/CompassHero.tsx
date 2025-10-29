@@ -1,3 +1,6 @@
+import styles from '@patternfly/react-styles/css/components/Compass/compass';
+import { css } from '@patternfly/react-styles';
+
 import compassHeroBackgroundImageLight from '@patternfly/react-tokens/dist/esm/c_compass__hero_BackgroundImage_light';
 import compassHeroBackgroundImageDark from '@patternfly/react-tokens/dist/esm/c_compass__hero_BackgroundImage_dark';
 import compassHeroGradientStop1Light from '@patternfly/react-tokens/dist/esm/c_compass__hero_gradient_stop_1_light';
@@ -6,7 +9,6 @@ import compassHeroGradientStop3Light from '@patternfly/react-tokens/dist/esm/c_c
 import compassHeroGradientStop1Dark from '@patternfly/react-tokens/dist/esm/c_compass__hero_gradient_stop_1_dark';
 import compassHeroGradientStop2Dark from '@patternfly/react-tokens/dist/esm/c_compass__hero_gradient_stop_2_dark';
 import compassHeroGradientStop3Dark from '@patternfly/react-tokens/dist/esm/c_compass__hero_gradient_stop_3_dark';
-import { css } from '@patternfly/react-styles';
 
 interface CompassHeroProps extends Omit<React.HTMLProps<HTMLDivElement>, 'content'> {
   /** Additional classes added to the hero. */
@@ -73,11 +75,11 @@ export const CompassHero: React.FunctionComponent<CompassHeroProps> = ({
 
   return (
     <div
-      className={css('pf-v6-c-compass__panel pf-v6-c-compass__hero', className)}
+      className={css(styles.compassPanel, styles.compassHero, className)}
       style={{ ...props.style, ...backgroundImageStyles }}
       {...props}
     >
-      <div className={css('pf-v6-c-compass__hero-body')}>{children}</div>
+      <div className={css(styles.compassHeroBody)}>{children}</div>
     </div>
   );
 };

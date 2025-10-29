@@ -1,3 +1,4 @@
+import styles from '@patternfly/react-styles/css/components/Compass/compass';
 import { css } from '@patternfly/react-styles';
 
 interface CompassHeaderProps {
@@ -12,8 +13,8 @@ interface CompassHeaderProps {
 export const CompassHeader: React.FunctionComponent<CompassHeaderProps> = ({ logo, nav, profile }) => (
   <>
     <div className={css('pf-v6-c-compass__logo')}>{logo}</div>
-    <div className={css('pf-v6-c-compass__nav')}>{nav}</div>
-    <div className={css('pf-v6-c-compass__profile')}>{profile}</div>
+    <div className={css(styles.compassNav)}>{nav}</div>
+    <div className={css(styles.compassProfile)}>{profile}</div>
   </>
 );
 

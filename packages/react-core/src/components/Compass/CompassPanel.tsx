@@ -1,3 +1,4 @@
+import styles from '@patternfly/react-styles/css/components/Compass/compass';
 import { css } from '@patternfly/react-styles';
 
 interface CompassPanelProps extends React.HTMLProps<HTMLDivElement> {
@@ -35,14 +36,14 @@ export const CompassPanel: React.FunctionComponent<CompassPanelProps> = ({
 }) => (
   <div
     className={css(
-      'pf-v6-c-compass__panel',
+      styles.compassPanel,
       isPill && 'pf-m-pill',
-      hasNoBorder && 'pf-m-no-border',
-      hasNoPadding && 'pf-m-no-padding',
+      hasNoBorder && styles.modifiers.noBorder,
+      hasNoPadding && styles.modifiers.noPadding,
       hasGradientBorder && 'pf-m-gradient-border',
       isThinking && 'pf-m-thinking',
-      isFullHeight && 'pf-m-full-height',
-      isScrollable && 'pf-m-scrollable',
+      isFullHeight && styles.modifiers.fullHeight,
+      isScrollable && styles.modifiers.scrollable,
       className
     )}
     {...props}

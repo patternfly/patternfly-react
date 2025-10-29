@@ -1,3 +1,4 @@
+import styles from '@patternfly/react-styles/css/components/Compass/compass';
 import { css } from '@patternfly/react-styles';
 
 interface CompassMessageBarProps {
@@ -6,7 +7,7 @@ interface CompassMessageBarProps {
 }
 
 export const CompassMessageBar: React.FunctionComponent<CompassMessageBarProps> = ({ children }) => (
-  <div className={css('pf-v6-c-compass__message-bar')}>{children}</div>
+  <div className={css(styles.compassMessageBar)}>{children}</div>
 );
 
 CompassMessageBar.displayName = 'CompassMessageBar';

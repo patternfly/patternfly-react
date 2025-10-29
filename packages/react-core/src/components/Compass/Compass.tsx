@@ -1,7 +1,9 @@
 import { Drawer, DrawerContent, DrawerProps } from '../Drawer';
+import styles from '@patternfly/react-styles/css/components/Compass/compass';
+import { css } from '@patternfly/react-styles';
+
 import compassBackgroundImageLight from '@patternfly/react-tokens/dist/esm/c_compass_BackgroundImage_light';
 import compassBackgroundImageDark from '@patternfly/react-tokens/dist/esm/c_compass_BackgroundImage_dark';
-import { css } from '@patternfly/react-styles';
 
 export interface CompassProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the compass. */
@@ -62,28 +64,28 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
   }
 
   const compassContent = (
-    <div className={css('pf-v6-c-compass', className)} style={{ ...props.style, ...backgroundImageStyles }} {...props}>
+    <div className={css(styles.compass, className)} style={{ ...props.style, ...backgroundImageStyles }} {...props}>
       <div
-        className={css('pf-v6-c-compass__header', isHeaderExpanded && 'pf-m-expanded')}
+        className={css(styles.compassHeader, isHeaderExpanded && 'pf-m-expanded')}
         {...(!isHeaderExpanded && { inert: true })}
       >
         {header}
       </div>
       <div
-        className={css('pf-v6-c-compass__sidebar pf-m-start', isSidebarStartExpanded && 'pf-m-expanded')}
+        className={css(styles.compassSidebar, styles.modifiers.start, isSidebarStartExpanded && 'pf-m-expanded')}
         {...(!isSidebarStartExpanded && { inert: true })}
       >
         {sidebarStart}
       </div>
-      <div className={css('pf-v6-c-compass__main')}>{main}</div>
+      <div className={css(styles.compassMain)}>{main}</div>
       <div
-        className={css('pf-v6-c-compass__sidebar pf-m-end', isSidebarEndExpanded && 'pf-m-expanded')}
+        className={css(styles.compassSidebar, styles.modifiers.end, isSidebarEndExpanded && 'pf-m-expanded')}
         {...(!isSidebarEndExpanded && { inert: true })}
       >
         {sidebarEnd}
       </div>
       <div
-        className={css('pf-v6-c-compass__footer', isFooterExpanded && 'pf-m-expanded')}
+        className={css(styles.compassFooter, isFooterExpanded && 'pf-m-expanded')}
         {...(!isFooterExpanded && { inert: true })}
       >
         {footer}
