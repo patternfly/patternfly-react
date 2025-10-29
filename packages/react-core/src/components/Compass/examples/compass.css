@@ -1,1 +1,11 @@
-/* TODO: add custom CSS for basic compass example - padding & borders around compass layout areas */
+#ws-react-c-compass-basic [class*="pf-v6-c-compass"] {
+  position: relative;
+}
+
+#ws-react-c-compass-basic [class*="pf-v6-c-compass"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: var(--pf-t--global--border--width--regular) dashed var(--pf-t--global--border--color--default);
+  pointer-events: none;
+}

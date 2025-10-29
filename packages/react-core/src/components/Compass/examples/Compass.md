@@ -25,6 +25,8 @@ In a basic compass layout, content can be passed to the following props to popul
 - `sidebarEnd`: content rendered in the right side or end side of the page
 - `footer`: content rendered in the bottom of the page
 
+The background image of the `Compass` and `CompassHero` may be customized by using their respective `backgroundSrcLight` and `backgroundSrcDark` props. The `CompassHero` also allows customization of a color gradient across its container by using the `gradientLight` and `gradientDark` props.
+
 ```ts file="CompassBasic.tsx"
 
 ```
