@@ -17,6 +17,14 @@ import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/o
 
 ### Basic
 
+In a basic compass layout, content can be passed to the following props to populate areas of the page:
+
+- `header`: content rendered in the top of the page. This will typically be a `CompassHeader` component to break the header into 3 areas consisting of a logo or brand, middle navigation, and profile.
+- `sidebarStart`: content rendered in the left side or start side of the page
+- `main`: content rendered in the center of the page. This will typically consist of a `CompassMainHeader` or `CompassHero`, along with a `CompassContent` filled with one or more `CompassPanel` components.
+- `sidebarEnd`: content rendered in the right side or end side of the page
+- `footer`: content rendered in the bottom of the page
+
 ```ts file="CompassBasic.tsx"
 
 ```
