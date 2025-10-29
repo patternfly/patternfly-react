@@ -69,7 +69,7 @@ export interface TabsProps
   isFilled?: boolean;
   /** Enables subtab tab styling */
   isSubtab?: boolean;
-  /** Enables horizontal nav tab styling */
+  /** @beta Enables horizontal nav tab styling */
   isNav?: boolean;
   /** Enables box styling to the tab component */
   isBox?: boolean;
@@ -565,7 +565,7 @@ class Tabs extends Component<TabsProps, TabsState> {
             styles.modifiers.animateCurrent,
             isFilled && styles.modifiers.fill,
             isSubtab && styles.modifiers.subtab,
-            isNav && 'pf-m-nav',
+            isNav && styles.modifiers.nav,
             isVertical && styles.modifiers.vertical,
             isVertical && expandable && formatBreakpointMods(expandable, styles),
             isVertical && expandable && isExpandedLocal && styles.modifiers.expanded,

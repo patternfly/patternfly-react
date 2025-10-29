@@ -16,7 +16,8 @@ import {
   ActionListGroup,
   ActionListItem,
   Button,
-  Title
+  Title,
+  Tooltip
 } from '@patternfly/react-core';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import OutlinedPlusSquare from '@patternfly/react-icons/dist/esm/icons/outlined-plus-square-icon';
@@ -83,21 +84,31 @@ export const CompassBasic: React.FunctionComponent = () => {
       <ActionList isIconList className="pf-m-vertical" /* isVertical */>
         <ActionListGroup>
           <ActionListItem>
-            <Button variant="plain" icon={<PlayIcon />} aria-label="Play" />
+            <Tooltip content="Play">
+              <Button variant="plain" icon={<PlayIcon />} aria-label="Play" />
+            </Tooltip>
           </ActionListItem>
           <ActionListItem>
-            <Button variant="plain" icon={<OutlinedPlusSquare />} aria-label="Add" />
+            <Tooltip content="Add">
+              <Button variant="plain" icon={<OutlinedPlusSquare />} aria-label="Add" />
+            </Tooltip>
           </ActionListItem>
         </ActionListGroup>
         <ActionListItem>
-          <Button variant="plain" icon={<OutlinedCopy />} aria-label="Copy" />
+          <Tooltip content="Copy">
+            <Button variant="plain" icon={<OutlinedCopy />} aria-label="Copy" />
+          </Tooltip>
         </ActionListItem>
         <ActionListGroup>
           <ActionListItem>
-            <Button variant="plain" icon={<OutlinedQuestionCircleIcon />} aria-label="Help" />
+            <Tooltip content="Help">
+              <Button variant="plain" icon={<OutlinedQuestionCircleIcon />} aria-label="Help" />
+            </Tooltip>
           </ActionListItem>
           <ActionListItem>
-            <Button variant="plain" icon={<OutlinedCopy />} aria-label="Copy" />
+            <Tooltip content="Second copy">
+              <Button variant="plain" icon={<OutlinedCopy />} aria-label="Copy2" />
+            </Tooltip>
           </ActionListItem>
         </ActionListGroup>
       </ActionList>
@@ -133,7 +144,8 @@ export const CompassBasic: React.FunctionComponent = () => {
       main={mainContent}
       sidebarEnd={sidebarEndContent}
       footer={footerContent}
-      backgroundSrcDark="https://i.imgur.com/km6oyPo.jpeg"
+      backgroundSrcDark="/assets/images/pf-background.svg"
+      backgroundSrcLight="/assets/images/pf-background.svg"
     />
   );
 };

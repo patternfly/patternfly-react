@@ -1,5 +1,6 @@
 import { Flex, FlexItem } from '../../layouts/Flex';
 import { CompassPanel } from './CompassPanel';
+import styles from '@patternfly/react-styles/css/components/Compass/compass';
 import { css } from '@patternfly/react-styles';
 
 interface CompassMainHeaderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'title'> {
@@ -25,7 +26,7 @@ export const CompassMainHeader: React.FunctionComponent<CompassMainHeaderProps> 
       <CompassPanel>
         <Flex alignItems={{ default: 'alignItemsCenter' }}>
           <FlexItem grow={{ default: 'grow' }}>{title}</FlexItem>
-          <FlexItem>{toolbar}</FlexItem>
+          {toolbar && <FlexItem>{toolbar}</FlexItem>}
         </Flex>
       </CompassPanel>
     ) : (
@@ -33,7 +34,7 @@ export const CompassMainHeader: React.FunctionComponent<CompassMainHeaderProps> 
     );
 
   return (
-    <div className={css('pf-v6-c-compass__main-header', className)} {...props}>
+    <div className={css(`${styles.compass}__main-header`, className)} {...props}>
       {_content}
     </div>
   );

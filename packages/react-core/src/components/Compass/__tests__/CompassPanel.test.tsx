@@ -32,14 +32,9 @@ test(`Renders with ${styles.modifiers.noPadding} when hasNoPadding is true`, () 
   expect(screen.getByText('Test')).toHaveClass(styles.modifiers.noPadding);
 });
 
-test('Renders with pf-m-gradient-border when hasGradientBorder is true', () => {
-  render(<CompassPanel hasGradientBorder>Test</CompassPanel>);
-  expect(screen.getByText('Test')).toHaveClass('pf-m-gradient-border');
-});
-
-test('Renders with pf-m-thinking when isThinking is true', () => {
+test('Renders with pf-v6-m-thinking when isThinking is true', () => {
   render(<CompassPanel isThinking>Test</CompassPanel>);
-  expect(screen.getByText('Test')).toHaveClass('pf-m-thinking');
+  expect(screen.getByText('Test')).toHaveClass('pf-v6-m-thinking');
 });
 
 test(`Renders with ${styles.modifiers.fullHeight} when isFullHeight is true`, () => {
@@ -54,7 +49,7 @@ test(`Renders with ${styles.modifiers.scrollable} when isScrollable is true`, ()
 
 test('Renders with multiple modifier classes when multiple props are true', () => {
   render(
-    <CompassPanel isPill hasNoBorder hasNoPadding hasGradientBorder isThinking isFullHeight isScrollable>
+    <CompassPanel isPill hasNoBorder hasNoPadding isThinking isFullHeight isScrollable>
       Test
     </CompassPanel>
   );
@@ -62,8 +57,7 @@ test('Renders with multiple modifier classes when multiple props are true', () =
   expect(panelElement).toHaveClass(styles.modifiers.pill);
   expect(panelElement).toHaveClass(styles.modifiers.noBorder);
   expect(panelElement).toHaveClass(styles.modifiers.noPadding);
-  expect(panelElement).toHaveClass('pf-m-gradient-border');
-  expect(panelElement).toHaveClass('pf-m-thinking');
+  expect(panelElement).toHaveClass('pf-v6-m-thinking');
   expect(panelElement).toHaveClass(styles.modifiers.fullHeight);
   expect(panelElement).toHaveClass(styles.modifiers.scrollable);
 });
@@ -75,7 +69,7 @@ test('Renders with additional props spread to the component', () => {
 
 test('Matches the snapshot with all modifiers', () => {
   const { asFragment } = render(
-    <CompassPanel isPill hasNoBorder hasNoPadding hasGradientBorder isThinking isFullHeight isScrollable>
+    <CompassPanel isPill hasNoBorder hasNoPadding isThinking isFullHeight isScrollable>
       <div>Panel with all modifiers</div>
     </CompassPanel>
   );

@@ -7,7 +7,7 @@ export const CompassBasic: React.FunctionComponent = () => {
   // TODO: simplify mainContent to only a div string
   const mainContent = (
     <>
-      <CompassHero gradientDark={{ stop1: '#000', stop2: '#1b0d33', stop3: '#3d2785' }}>
+      <CompassHero>
         <div>Hero</div>
       </CompassHero>
       <CompassContent>
@@ -28,7 +28,6 @@ export const CompassBasic: React.FunctionComponent = () => {
       main={mainContent}
       sidebarEnd={sidebarEndContent}
       footer={footerContent}
-      backgroundSrcDark="https://i.imgur.com/km6oyPo.jpeg"
     />
   );
 };

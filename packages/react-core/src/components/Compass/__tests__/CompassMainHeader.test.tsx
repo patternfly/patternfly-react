@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { CompassMainHeader } from '../CompassMainHeader';
+import styles from '@patternfly/react-styles/css/components/Compass/compass';
 
 test('Renders without children', () => {
   render(
@@ -20,9 +21,9 @@ test('Renders with custom class name when className prop is provided', () => {
   expect(screen.getByText('Test')).toHaveClass('custom-class');
 });
 
-test('Renders with default pf-v6-c-compass__main-header class', () => {
+test(`Renders with default ${styles.compass}__main-header class`, () => {
   render(<CompassMainHeader>Test</CompassMainHeader>);
-  expect(screen.getByText('Test')).toHaveClass('pf-v6-c-compass__main-header');
+  expect(screen.getByText('Test')).toHaveClass(`${styles.compass}__main-header`);
 });
 
 test('Renders title when provided', () => {

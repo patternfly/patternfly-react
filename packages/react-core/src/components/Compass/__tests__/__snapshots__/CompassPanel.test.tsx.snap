@@ -3,7 +3,7 @@
 exports[`Matches the snapshot with all modifiers 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v6-c-compass__panel pf-m-pill pf-m-no-border pf-m-no-padding pf-m-gradient-border pf-m-thinking pf-m-full-height pf-m-scrollable"
+    class="pf-v6-c-compass__panel pf-m-pill pf-m-no-border pf-m-no-padding pf-v6-m-thinking pf-m-full-height pf-m-scrollable"
   >
     <div>
       Panel with all modifiers

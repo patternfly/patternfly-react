@@ -16,9 +16,7 @@ interface CompassPanelProps extends React.HTMLProps<HTMLDivElement> {
   hasNoBorder?: boolean;
   /** Indicates the panel should have no padding */
   hasNoPadding?: boolean;
-  /** Indicates the panel should have a gradient border */
-  hasGradientBorder?: boolean;
-  /** Indicates the panel should have a thinking style */
+  /** Indicates the panel should have a "thinking" animation */
   isThinking?: boolean;
 }
 
@@ -28,7 +26,6 @@ export const CompassPanel: React.FunctionComponent<CompassPanelProps> = ({
   isPill,
   hasNoBorder,
   hasNoPadding,
-  hasGradientBorder,
   isThinking,
   isFullHeight,
   isScrollable,
@@ -37,11 +34,10 @@ export const CompassPanel: React.FunctionComponent<CompassPanelProps> = ({
   <div
     className={css(
       styles.compassPanel,
-      isPill && 'pf-m-pill',
+      isPill && styles.modifiers.pill,
       hasNoBorder && styles.modifiers.noBorder,
       hasNoPadding && styles.modifiers.noPadding,
-      hasGradientBorder && 'pf-m-gradient-border',
-      isThinking && 'pf-m-thinking',
+      isThinking && 'pf-v6-m-thinking',
       isFullHeight && styles.modifiers.fullHeight,
       isScrollable && styles.modifiers.scrollable,
       className

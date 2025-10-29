@@ -2,7 +2,7 @@
 id: Compass
 cssPrefix: pf-v6-c-compass
 section: components
-isBeta: true
+beta: true
 propComponents: ['Compass', 'CompassHeader', 'CompassContent', 'CompassHero', 'CompassMainHeader', 'CompassPanel']
 ---
 

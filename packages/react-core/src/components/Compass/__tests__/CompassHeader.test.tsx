@@ -33,9 +33,9 @@ test('Renders all content when all props are provided', () => {
   expect(screen.getByText('Profile')).toBeVisible();
 });
 
-test('Renders logo with pf-v6-c-compass__logo class', () => {
+test(`Renders logo with ${styles.compass}__logo class`, () => {
   render(<CompassHeader logo={<div>Logo</div>} />);
-  expect(screen.getByText('Logo').parentElement).toHaveClass('pf-v6-c-compass__logo');
+  expect(screen.getByText('Logo').parentElement).toHaveClass(`${styles.compass}__logo`);
 });
 
 test(`Renders nav with ${styles.compassNav} class`, () => {

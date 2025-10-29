@@ -12,13 +12,13 @@ export interface CompassProps extends React.HTMLProps<HTMLDivElement> {
   header?: React.ReactNode;
   /** Flag indicating if the header is expanded */
   isHeaderExpanded?: boolean;
-  /** Content placed at the start of the layout */
+  /** Content placed at the horizontal start of the layout, before the main content */
   sidebarStart?: React.ReactNode;
   /** Flag indicating if the start sidebar is expanded */
   isSidebarStartExpanded?: boolean;
   /** Content placed at the center of the layout */
   main?: React.ReactNode;
-  /** Content placed at the end of the layout */
+  /** Content placed at the horizontal end of the layout, after the main content */
   sidebarEnd?: React.ReactNode;
   /** Flag indicating if the end sidebar is expanded */
   isSidebarEndExpanded?: boolean;

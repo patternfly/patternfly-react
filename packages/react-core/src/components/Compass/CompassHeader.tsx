@@ -12,7 +12,7 @@ interface CompassHeaderProps {
 
 export const CompassHeader: React.FunctionComponent<CompassHeaderProps> = ({ logo, nav, profile }) => (
   <>
-    <div className={css('pf-v6-c-compass__logo')}>{logo}</div>
+    <div className={css(`${styles.compass}__logo`)}>{logo}</div>
     <div className={css(styles.compassNav)}>{nav}</div>
     <div className={css(styles.compassProfile)}>{profile}</div>
   </>
