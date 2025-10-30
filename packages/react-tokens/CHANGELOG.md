@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.4.0...@patternfly/react-tokens@6.5.0-prerelease.1) (2025-10-30)
+
+### Features
+
+- **ActionList:** Add isVertical variant ([#12090](https://github.com/patternfly/patternfly-react/issues/12090)) ([4365bf8](https://github.com/patternfly/patternfly-react/commit/4365bf8130bde19705adac509161525d7fb47f92))
+- **Button:** added circle variant ([#12092](https://github.com/patternfly/patternfly-react/issues/12092)) ([63f79eb](https://github.com/patternfly/patternfly-react/commit/63f79eb43f9ef0a2a665cf02d09e24bddc544329))
+- **Compass:** add Compass components ([#12093](https://github.com/patternfly/patternfly-react/issues/12093)) ([ff397d8](https://github.com/patternfly/patternfly-react/commit/ff397d800b4bfbf9fc8706bc407ed00dd314623a))
+
 # [6.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.4.0-prerelease.3...@patternfly/react-tokens@6.4.0) (2025-10-16)
 
 **Note:** Version bump only for package @patternfly/react-tokens

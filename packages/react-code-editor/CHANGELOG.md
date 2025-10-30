@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.4.1-prerelease.9...@patternfly/react-code-editor@6.5.0-prerelease.1) (2025-10-30)
+
+### Bug Fixes
+
+- **deps:** update dependency @monaco-editor/react to ^4.7.0 ([#11527](https://github.com/patternfly/patternfly-react/issues/11527)) ([c1581d5](https://github.com/patternfly/patternfly-react/commit/c1581d59e4f8a969726dae6383582a5e0aa48152))
+
 ## [6.4.1-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.4.1-prerelease.8...@patternfly/react-code-editor@6.4.1-prerelease.9) (2025-10-24)
 
 **Note:** Version bump only for package @patternfly/react-code-editor
