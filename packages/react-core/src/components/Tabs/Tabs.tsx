@@ -69,6 +69,8 @@ export interface TabsProps
   isFilled?: boolean;
   /** Enables subtab tab styling */
   isSubtab?: boolean;
+  /** @beta Enables horizontal nav tab styling */
+  isNav?: boolean;
   /** Enables box styling to the tab component */
   isBox?: boolean;
   /** Enables vertical tab styling */
@@ -196,6 +198,7 @@ class Tabs extends Component<TabsProps, TabsState> {
     onSelect: () => undefined as any,
     isFilled: false,
     isSubtab: false,
+    isNav: false,
     isVertical: false,
     isBox: false,
     hasNoBorderBottom: false,
@@ -475,6 +478,7 @@ class Tabs extends Component<TabsProps, TabsState> {
       isAddButtonDisabled,
       isFilled,
       isSubtab,
+      isNav,
       isVertical,
       isBox,
       hasNoBorderBottom,
@@ -561,6 +565,7 @@ class Tabs extends Component<TabsProps, TabsState> {
             styles.modifiers.animateCurrent,
             isFilled && styles.modifiers.fill,
             isSubtab && styles.modifiers.subtab,
+            isNav && styles.modifiers.nav,
             isVertical && styles.modifiers.vertical,
             isVertical && expandable && formatBreakpointMods(expandable, styles),
             isVertical && expandable && isExpandedLocal && styles.modifiers.expanded,
