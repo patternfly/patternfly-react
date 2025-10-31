@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.5.0-prerelease.1...@patternfly/react-styles@6.5.0-prerelease.2) (2025-10-31)
+
+### Features
+
+- **Drawer:** Add pill version ([#12091](https://github.com/patternfly/patternfly-react/issues/12091)) ([b0a9dd8](https://github.com/patternfly/patternfly-react/commit/b0a9dd8fce6266e838ebca33ae16d1f2e0c33cbd))
+
 # [6.5.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.4.0...@patternfly/react-styles@6.5.0-prerelease.1) (2025-10-30)
 
 ### Features
