@@ -13,6 +13,7 @@ import {
 import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { KeyTypes } from '../../../helpers';
+import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 
 jest.mock('../../../helpers/GenerateId/GenerateId');
 
@@ -163,7 +164,7 @@ test('Resizeable DrawerPanelContent can be wrapped in a context without causing 
   expect(consoleError).not.toHaveBeenCalled();
 });
 
-test(`Renders with pill class when specified`, () => {
+test(`Renders with ${styles.modifiers.pill} class when specified`, () => {
   const panelContent = (
     <DrawerPanelContent>
       <DrawerHead>
@@ -184,5 +185,5 @@ test(`Renders with pill class when specified`, () => {
     </Drawer>
   );
 
-  expect(screen.getByTestId('drawer')).toHaveClass('pf-m-pill');
+  expect(screen.getByTestId('drawer')).toHaveClass(styles.modifiers.pill);
 });

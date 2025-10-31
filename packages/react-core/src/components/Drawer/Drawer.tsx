@@ -68,7 +68,6 @@ export const Drawer: React.FunctionComponent<DrawerProps> = ({
           styles.drawer,
           isExpanded && styles.modifiers.expanded,
           isInline && styles.modifiers.inline,
-          // @ts-expect-error: Pill modifier does not yet exist
           isPill && styles.modifiers.pill,
           isStatic && styles.modifiers.static,
           (position === 'left' || position === 'start') && styles.modifiers.panelLeft,

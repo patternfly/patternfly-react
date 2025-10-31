@@ -145,8 +145,14 @@ To customize which element receives focus when the drawer panel expands, use the
 
 ```
 
-### Pill-shaped
+### Pill
 
 ```ts file="./DrawerBasicPill.tsx"
+
+```
+
+### Pill inline
+
+```ts file="./DrawerPillInline.tsx"
 
 ```
