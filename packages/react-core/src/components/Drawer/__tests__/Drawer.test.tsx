@@ -10,9 +10,10 @@ import {
   DrawerPanelContent,
   DrawerColorVariant
 } from '../';
-import { render } from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { KeyTypes } from '../../../helpers';
+import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 
 jest.mock('../../../helpers/GenerateId/GenerateId');
 
@@ -161,4 +162,28 @@ test('Resizeable DrawerPanelContent can be wrapped in a context without causing 
   await user.keyboard(`{${KeyTypes.ArrowLeft}}`);
 
   expect(consoleError).not.toHaveBeenCalled();
+});
+
+test(`Renders with ${styles.modifiers.pill} class when specified`, () => {
+  const panelContent = (
+    <DrawerPanelContent>
+      <DrawerHead>
+        <span>drawer-panel</span>
+        <DrawerActions>
+          <DrawerCloseButton />
+        </DrawerActions>
+      </DrawerHead>
+      <DrawerPanelBody>drawer-panel</DrawerPanelBody>
+    </DrawerPanelContent>
+  );
+
+  render(
+    <Drawer data-testid="drawer" isExpanded={true} position="left" isPill>
+      <DrawerContent panelContent={panelContent}>
+        <DrawerContentBody>Drawer content text</DrawerContentBody>
+      </DrawerContent>
+    </Drawer>
+  );
+
+  expect(screen.getByTestId('drawer')).toHaveClass(styles.modifiers.pill);
 });
