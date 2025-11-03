@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.3...@patternfly/react-core@6.5.0-prerelease.4) (2025-11-03)
+
+### Bug Fixes
+
+- **ExpandableSection:** allow toggles proper dom structured headings ([#12037](https://github.com/patternfly/patternfly-react/issues/12037)) ([41f2563](https://github.com/patternfly/patternfly-react/commit/41f25637276752b2f2bc536ecf4eafac04952cbe))
+
 # [6.5.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.2...@patternfly/react-core@6.5.0-prerelease.3) (2025-11-03)
 
 ### Bug Fixes
