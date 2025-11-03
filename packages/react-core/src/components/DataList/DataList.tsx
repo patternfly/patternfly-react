@@ -31,6 +31,8 @@ export interface DataListProps extends React.HTMLProps<HTMLUListElement> {
   selectedDataListItemId?: string;
   /** Flag indicating if DataList should have compact styling */
   isCompact?: boolean;
+  /** Flag indicating if DataList should have plain styling */
+  isPlain?: boolean;
   /** Specifies the grid breakpoints  */
   gridBreakpoint?: 'none' | 'always' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   /** Determines which wrapping modifier to apply to the DataList */
@@ -59,6 +61,7 @@ export const DataListBase: React.FunctionComponent<DataListProps> = ({
   onSelectDataListItem,
   selectedDataListItemId = '',
   isCompact = false,
+  isPlain = false,
   gridBreakpoint = 'md',
   wrapModifier = null,
   onSelectableRowChange,
@@ -84,6 +87,7 @@ export const DataListBase: React.FunctionComponent<DataListProps> = ({
         className={css(
           styles.dataList,
           isCompact && styles.modifiers.compact,
+          isPlain && styles.modifiers.plain,
           gridBreakpointClasses[gridBreakpoint],
           wrapModifier && styles.modifiers[wrapModifier],
           className
