@@ -44,8 +44,10 @@ export interface ExpandableSectionProps extends Omit<React.HTMLProps<HTMLDivElem
    * use the onToggle property of the expandable section toggle sub-component.
    */
   onToggle?: (event: React.MouseEvent, isExpanded: boolean) => void;
-  /** React node that appears in the attached toggle in place of the toggleText property. */
-  toggleContent?: React.ReactNode;
+  /** React node that appears in the attached toggle in place of the toggleText property.
+   * Can also be a function that receives the expanded state and returns a React node.
+   */
+  toggleContent?: React.ReactNode | ((isExpanded: boolean) => React.ReactNode);
   /** Text that appears in the attached toggle. */
   toggleText?: string;
   /** Text that appears in the attached toggle when collapsed (will override toggleText if
@@ -246,6 +248,9 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
       propOrStateIsExpanded
     );
 
+    const computedToggleContent =
+      typeof toggleContent === 'function' ? toggleContent(propOrStateIsExpanded) : toggleContent;
+
     const expandableToggle = !isDetached && (
       <div className={`${styles.expandableSection}__toggle`}>
         <Button
@@ -265,7 +270,7 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
           aria-label={toggleAriaLabel}
           aria-labelledby={toggleAriaLabelledBy}
         >
-          {toggleContent || computedToggleText}
+          {computedToggleContent || computedToggleText}
         </Button>
       </div>
     );
