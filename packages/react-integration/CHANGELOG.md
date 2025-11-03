@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.1...@patternfly/react-integration@6.5.0-prerelease.2) (2025-11-03)
+
+### Bug Fixes
+
+- **PageSidebar:** sidebar flash on non-mobile ([#12040](https://github.com/patternfly/patternfly-react/issues/12040)) ([f986c4f](https://github.com/patternfly/patternfly-react/commit/f986c4f30581074f2ed4d25c52333eb665be9d28))
+
 # [6.5.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.41...@patternfly/react-integration@6.5.0-prerelease.1) (2025-10-30)
 
 ### Bug Fixes

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.2...@patternfly/react-core@6.5.0-prerelease.3) (2025-11-03)
+
+### Bug Fixes
+
+- **PageSidebar:** sidebar flash on non-mobile ([#12040](https://github.com/patternfly/patternfly-react/issues/12040)) ([f986c4f](https://github.com/patternfly/patternfly-react/commit/f986c4f30581074f2ed4d25c52333eb665be9d28))
+
+### Features
+
+- **ExpandableSection:** functional toggleContent ([#12063](https://github.com/patternfly/patternfly-react/issues/12063)) ([3ac6454](https://github.com/patternfly/patternfly-react/commit/3ac645456f184864237dfc0c14a0b30afd60cc96))
+- **Progress:** add hideStatusIcon flag ([#12038](https://github.com/patternfly/patternfly-react/issues/12038)) ([7019b4a](https://github.com/patternfly/patternfly-react/commit/7019b4a592f283c337ae9afe227f2af193e5984f))
+
 # [6.5.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.1...@patternfly/react-core@6.5.0-prerelease.2) (2025-10-31)
 
 ### Features
