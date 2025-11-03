@@ -189,6 +189,14 @@ Subtabs can also link to nav elements.
 
 ```
 
+### Tabs used for site navigation
+
+Site navigation tabs
+
+```ts file="./TabsSiteNav.tsx"
+
+```
+
 ### With separate content
 
 If a `<TabContent>` component is defined outside of a `<Tabs>` component, use the `tabContentRef` and `tabContentId` properties. The `hidden` property is used on `TabContent` to set the initial visible content.
