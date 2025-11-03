@@ -6,6 +6,7 @@ export interface PageContextProps {
   isManagedSidebar: boolean;
   onSidebarToggle: () => void;
   isSidebarOpen: boolean;
+  isMobile: boolean;
   width: number;
   height: number;
   getBreakpoint: (width: number | null) => 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
@@ -16,6 +17,7 @@ export const pageContextDefaults: PageContextProps = {
   isManagedSidebar: false,
   isSidebarOpen: false,
   onSidebarToggle: () => null,
+  isMobile: false,
   width: null,
   height: null,
   getBreakpoint,
