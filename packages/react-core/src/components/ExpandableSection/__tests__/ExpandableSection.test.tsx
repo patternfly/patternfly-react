@@ -208,6 +208,7 @@ test('Renders with aria-labelledby when toggleAriaLabelledBy is passed', () => {
 
   expect(screen.getByRole('button')).toHaveAccessibleName('Test label');
 });
+
 test('Renders toggleContent as a function in uncontrolled mode (collapsed)', () => {
   render(
     <ExpandableSection toggleContent={(isExpanded) => (isExpanded ? 'Hide details' : 'Show details')}>
@@ -241,4 +242,32 @@ test('Renders toggleContent as a function in controlled mode', () => {
   );
 
   expect(screen.getByRole('button', { name: 'Collapse' })).toBeInTheDocument();
+});
+
+test('Renders with default div wrapper when toggleWrapper is not specified', () => {
+  render(<ExpandableSection data-testid="test-id">Test content</ExpandableSection>);
+
+  const toggle = screen.getByRole('button').parentElement;
+  expect(toggle?.tagName).toBe('DIV');
+});
+
+test('Renders with h2 wrapper when toggleWrapper="h2"', () => {
+  render(
+    <ExpandableSection data-testid="test-id" toggleWrapper="h2">
+      Test content
+    </ExpandableSection>
+  );
+
+  expect(screen.getByRole('heading', { level: 2 })).toBeInTheDocument();
+});
+
+test('Renders with div wrapper when toggleWrapper="div"', () => {
+  render(
+    <ExpandableSection data-testid="test-id" toggleWrapper="div">
+      Test content
+    </ExpandableSection>
+  );
+
+  const toggle = screen.getByRole('button').parentElement;
+  expect(toggle?.tagName).toBe('DIV');
 });

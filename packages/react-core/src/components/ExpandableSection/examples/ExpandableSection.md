@@ -70,6 +70,14 @@ By using the `toggleContent` prop, you can pass in content other than a simple s
 
 ```
 
+### With heading semantics
+
+When the toggle text should function as a heading in the document structure, use the `toggleWrapper` prop to specify a heading element (h1-h6). This ensures proper semantic structure for screen readers and other assistive technologies. The component automatically uses a native button element when heading wrappers are used, allowing the heading styles to display properly.
+
+```ts file="ExpandableSectionWithHeading.tsx"
+
+```
+
 ### Truncate expansion
 
 By passing in `variant="truncate"`, the expandable content will be visible up to a maximum number of lines before being truncated, with the toggle revealing or hiding the truncated content. By default the expandable content will truncate after 3 lines, and this can be customized by also passing in the `truncateMaxLines` prop.
