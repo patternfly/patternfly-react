@@ -31,7 +31,7 @@ export interface DataListProps extends React.HTMLProps<HTMLUListElement> {
   selectedDataListItemId?: string;
   /** Flag indicating if DataList should have compact styling */
   isCompact?: boolean;
-  /** Flag indicating if DataList should have plain styling */
+  /** @beta Flag indicating if DataList should have plain styling with a transparent background */
   isPlain?: boolean;
   /** Specifies the grid breakpoints  */
   gridBreakpoint?: 'none' | 'always' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
