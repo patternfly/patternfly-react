@@ -1,7 +1,7 @@
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Card/card';
 
-export interface CardDescriptionProps {
+export interface CardSubtitleProps {
   /** Content rendered inside the description. */
   children?: React.ReactNode;
   /** Additional classes added to the description. */
@@ -10,14 +10,14 @@ export interface CardDescriptionProps {
   id?: string;
 }
 
-export const CardDescription: React.FunctionComponent<CardDescriptionProps> = ({
+export const CardSubtitle: React.FunctionComponent<CardSubtitleProps> = ({
   children = null,
   className = '',
   id = '',
   ...props
-}: ModalBoxDescriptionProps) => (
-  <div {...props} id={id} className={css(styles.cardDescription, className)}>
+}: CardSubtitleProps) => (
+  <div {...props} id={id} className={css(styles.cardSubtitle, className)}>
     {children}
   </div>
 );
-CardDescription.displayName = 'CardDescription';
+CardSubtitle.displayName = 'CardSubtitle';

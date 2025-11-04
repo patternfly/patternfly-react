@@ -1,9 +1,9 @@
-import { Card, CardTitle, CardDescription, CardBody, CardFooter } from '@patternfly/react-core';
+import { Card, CardTitle, CardSubtitle, CardBody, CardFooter } from '@patternfly/react-core';
 
 export const CardBasic: React.FunctionComponent = () => (
   <Card ouiaId="BasicCard">
     <CardTitle>Title</CardTitle>
-    <CardDescription>Description</CardDescription>
+    <CardSubtitle>Subtitle</CardSubtitle>
     <CardBody>Body</CardBody>
     <CardFooter>Footer</CardFooter>
   </Card>
