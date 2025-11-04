@@ -2,8 +2,10 @@ import { Card, CardTitle, CardSubtitle, CardBody, CardFooter } from '@patternfly
 
 export const CardBasic: React.FunctionComponent = () => (
   <Card ouiaId="BasicCard">
-    <CardTitle>Title</CardTitle>
-    <CardSubtitle>Subtitle</CardSubtitle>
+    <CardTitle>
+      Title
+      <CardSubtitle>Subtitle</CardSubtitle>
+    </CardTitle>
     <CardBody>Body</CardBody>
     <CardFooter>Footer</CardFooter>
   </Card>
