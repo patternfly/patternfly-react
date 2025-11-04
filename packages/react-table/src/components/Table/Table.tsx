@@ -48,7 +48,7 @@ export interface TableProps extends React.HTMLProps<HTMLTableElement>, OUIAProps
   gridBreakPoint?: '' | 'grid' | 'grid-md' | 'grid-lg' | 'grid-xl' | 'grid-2xl';
   /** A valid WAI-ARIA role to be applied to the table element */
   role?: string;
-  /** Flag indicating if the table should have plain styling */
+  /** @beta Flag indicating if the table should have plain styling with a transparent background */
   isPlain?: boolean;
   /** If set to true, the table header sticks to the top of its container */
   isStickyHeader?: boolean;
