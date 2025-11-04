@@ -206,7 +206,6 @@ class Tabs extends Component<TabsProps, TabsState> {
     backScrollAriaLabel: 'Scroll back',
     rightScrollAriaLabel: 'Scroll right',
     forwardScrollAriaLabel: 'Scroll forward',
-    component: TabsComponent.div,
     mountOnEnter: false,
     unmountOnExit: false,
     ouiaSafe: true,
@@ -529,7 +528,8 @@ class Tabs extends Component<TabsProps, TabsState> {
     const overflowingTabProps = filteredChildrenOverflowing.map((child: React.ReactElement<TabProps>) => child.props);
 
     const uniqueId = id || getUniqueId();
-    const Component: any = component === TabsComponent.nav || isNav ? 'nav' : 'div';
+    const defaultComponent = isNav && !component ? 'nav' : 'div';
+    const Component: any = component === TabsComponent.nav || (isNav && component !== 'div') ? 'nav' : defaultComponent;
     const localActiveKey = defaultActiveKey !== undefined ? uncontrolledActiveKey : activeKey;
 
     const isExpandedLocal = defaultIsExpanded !== undefined ? uncontrolledIsExpandedLocal : isExpanded;

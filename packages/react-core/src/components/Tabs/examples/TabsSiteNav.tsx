@@ -11,7 +11,12 @@ export const TabsSiteNav: React.FunctionComponent = () => {
     setActiveTabKey(tabIndex);
   };
   return (
-    <Tabs activeKey={activeTabKey} onSelect={handleTabClick} isNav={true} aria-label="Site navigation with nav styling example">
+    <Tabs
+      activeKey={activeTabKey}
+      onSelect={handleTabClick}
+      isNav={true}
+      aria-label="Site navigation with nav styling example"
+    >
       <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} href="#users" aria-label="Nav element content users">
         Users
       </Tab>
