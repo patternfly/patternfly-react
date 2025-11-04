@@ -96,6 +96,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
   variant,
   borders = true,
   isStickyHeader = false,
+  isPlain = false,
   gridBreakPoint = TableGridBreakpoint.gridMd,
   'aria-label': ariaLabel,
   role = 'grid',

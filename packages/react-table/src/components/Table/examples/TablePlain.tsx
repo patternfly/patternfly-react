@@ -25,7 +25,7 @@ export const TablePlain: React.FunctionComponent = () => {
   };
 
   return (
-    <Table aria-label="Plain table" isPlain>
+    <Table aria-label="Plain table" isPlain={true}>
       <Caption>Simple table with plain styling using composable components</Caption>
       <Thead>
         <Tr>
