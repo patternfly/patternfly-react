@@ -3,4 +3,5 @@ export * from './CardBody';
 export * from './CardExpandableContent';
 export * from './CardFooter';
 export * from './CardTitle';
+export * from './CardSubtitle';
 export * from './CardHeader';
