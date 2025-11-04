@@ -81,33 +81,33 @@ export const CompassBasic: React.FunctionComponent = () => {
 
   const sidebarContent = (
     <CompassPanel isPill>
-      <ActionList isIconList className="pf-m-vertical" /* isVertical */>
+      <ActionList isIconList isVertical>
         <ActionListGroup>
           <ActionListItem>
             <Tooltip content="Play">
-              <Button variant="plain" icon={<PlayIcon />} aria-label="Play" />
+              <Button isCircle variant="plain" icon={<PlayIcon />} aria-label="Play" />
             </Tooltip>
           </ActionListItem>
           <ActionListItem>
             <Tooltip content="Add">
-              <Button variant="plain" icon={<OutlinedPlusSquare />} aria-label="Add" />
+              <Button isCircle variant="plain" icon={<OutlinedPlusSquare />} aria-label="Add" />
             </Tooltip>
           </ActionListItem>
         </ActionListGroup>
         <ActionListItem>
           <Tooltip content="Copy">
-            <Button variant="plain" icon={<OutlinedCopy />} aria-label="Copy" />
+            <Button isCircle variant="plain" icon={<OutlinedCopy />} aria-label="Copy" />
           </Tooltip>
         </ActionListItem>
         <ActionListGroup>
           <ActionListItem>
             <Tooltip content="Help">
-              <Button variant="plain" icon={<OutlinedQuestionCircleIcon />} aria-label="Help" />
+              <Button isCircle variant="plain" icon={<OutlinedQuestionCircleIcon />} aria-label="Help" />
             </Tooltip>
           </ActionListItem>
           <ActionListItem>
             <Tooltip content="Second copy">
-              <Button variant="plain" icon={<OutlinedCopy />} aria-label="Copy2" />
+              <Button isCircle variant="plain" icon={<OutlinedCopy />} aria-label="Copy2" />
             </Tooltip>
           </ActionListItem>
         </ActionListGroup>
