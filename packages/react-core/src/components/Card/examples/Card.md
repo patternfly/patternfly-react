@@ -38,6 +38,12 @@ A basic card that also has a subtitle
 ```ts file='./CardSubtitle.tsx'
 
 ```
+### Card with subtitle and Actions
+This card demonstrates having an image, action, and subtitle in a single card.
+
+```ts file='./CardSubtitleActions.tsx'
+
+```
 
 ### Secondary cards
 
@@ -77,6 +83,8 @@ Select the "actions hasNoOffset" checkbox in the example below to illustrate thi
 ```ts file='./CardWithImageAndActions.tsx'
 
 ```
+
+
 
 ### Title inline with images and actions
 
