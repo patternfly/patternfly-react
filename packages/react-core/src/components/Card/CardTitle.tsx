@@ -25,13 +25,14 @@ export const CardTitle: React.FunctionComponent<CardTitleProps> = ({
   const { cardId } = useContext(CardContext);
   const Component = component as any;
   const titleId = cardId ? `${cardId}-title` : '';
+  const subtitleId = cardId ? `${cardId}-subtitle` : '';
 
   return (
     <div className={css(styles.cardTitle)}>
       <Component className={css(styles.cardTitleText, className)} id={titleId || undefined} {...props}>
         {children}
       </Component>
-      {subtitle && <CardSubtitle>{subtitle}</CardSubtitle>}
+      {subtitle && <CardSubtitle id={subtitleId}>{subtitle}</CardSubtitle>}
     </div>
   );
 };
