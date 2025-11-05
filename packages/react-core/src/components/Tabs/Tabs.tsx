@@ -529,7 +529,7 @@ class Tabs extends Component<TabsProps, TabsState> {
 
     const uniqueId = id || getUniqueId();
     const defaultComponent = isNav && !component ? 'nav' : 'div';
-    const Component: any = component === TabsComponent.nav || (isNav && component !== 'div') ? 'nav' : defaultComponent;
+    const Component: any = component !== undefined ? component : defaultComponent;
     const localActiveKey = defaultActiveKey !== undefined ? uncontrolledActiveKey : activeKey;
 
     const isExpandedLocal = defaultIsExpanded !== undefined ? uncontrolledIsExpandedLocal : isExpanded;
