@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.5...@patternfly/react-core@6.5.0-prerelease.6) (2025-11-05)
+
+### Features
+
+- Added Tab updates for site Navigation ([#12111](https://github.com/patternfly/patternfly-react/issues/12111)) ([190e749](https://github.com/patternfly/patternfly-react/commit/190e7495486e83192297ea67697510f58592597b))
+
 # [6.5.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.4...@patternfly/react-core@6.5.0-prerelease.5) (2025-11-05)
 
 ### Bug Fixes
