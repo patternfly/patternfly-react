@@ -150,3 +150,9 @@ test('Renders expandable toggle button in Th with pf-m-small class when variant 
     expect(button).toHaveClass('pf-m-small');
   });
 });
+
+test(`Renders with class ${styles.modifiers.plain} when isPlain is true`, () => {
+  render(<Table isPlain aria-label="Test table" />);
+
+  expect(screen.getByRole('grid', { name: 'Test table' })).toHaveClass(styles.modifiers.plain);
+});
