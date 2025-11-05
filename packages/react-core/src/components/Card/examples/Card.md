@@ -28,20 +28,20 @@ import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 
 Basic cards typically have a `<CardTitle>`, `<CardBody>` and `<CardFooter>`. You may omit these components as needed, but it is recommended to at least include a `<CardBody>` to provide details about the card item.
 
-```ts file='./CardBasic.tsx'
+```ts file='./CardBasic.tsx' 
 
 ```
 ### Card with subtitle
 
 A basic card that also has a subtitle
 
-```ts file='./CardSubtitle.tsx'
+```ts file='./CardSubtitle.tsx' isBeta
 
 ```
 ### Card with subtitle and Actions
 This card demonstrates having an image, action, and subtitle in a single card.
 
-```ts file='./CardSubtitleActions.tsx'
+```ts file='./CardSubtitleActions.tsx' isBeta
 
 ```
 
