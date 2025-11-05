@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.4...@patternfly/react-table@6.5.0-prerelease.5) (2025-11-05)
+
+### Features
+
+- Add plain variants for table and data list. ([#12112](https://github.com/patternfly/patternfly-react/issues/12112)) ([b0d838d](https://github.com/patternfly/patternfly-react/commit/b0d838d08e13d9060993c3ab4eb6ea7ac7b888e3))
+
 # [6.5.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.3...@patternfly/react-table@6.5.0-prerelease.4) (2025-11-03)
 
 **Note:** Version bump only for package @patternfly/react-table
