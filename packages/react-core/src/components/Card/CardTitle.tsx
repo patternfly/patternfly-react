@@ -12,7 +12,7 @@ export interface CardTitleProps extends React.HTMLProps<HTMLDivElement> {
   /** Sets the base component to render. defaults to div */
   component?: keyof React.JSX.IntrinsicElements;
   /** @beta Subtitle of the card title */
-  subtitle?: string;
+  subtitle?: React.ReactNode;
 }
 
 export const CardTitle: React.FunctionComponent<CardTitleProps> = ({
