@@ -166,6 +166,66 @@ test(`Does not render with class ${styles.modifiers.initializingAccent} when unc
   expect(screen.getByRole('region')).not.toHaveClass(styles.modifiers.initializingAccent);
 });
 
+test(`Renders with class ${styles.modifiers.nav} when isNav is true`, () => {
+  render(
+    <Tabs isNav role="region">
+      <Tab title="Test title" eventKey={0}>
+        Tab Content
+      </Tab>
+    </Tabs>
+  );
+
+  expect(screen.getByRole('region')).toHaveClass(styles.modifiers.nav);
+});
+
+test(`Renders with div wrapper by default`, () => {
+  render(
+    <Tabs>
+      <Tab title="Test title" eventKey={0}>
+        Tab Content
+      </Tab>
+    </Tabs>
+  );
+
+  expect(screen.queryByRole('navigation')).not.toBeInTheDocument();
+});
+
+test(`Renders with nav wrapper when component="nav"`, () => {
+  render(
+    <Tabs component="nav">
+      <Tab title="Test title" eventKey={0}>
+        Tab Content
+      </Tab>
+    </Tabs>
+  );
+
+  expect(screen.getByRole('navigation')).toBeInTheDocument();
+});
+
+test(`Renders with nav wrapper when isNav is true`, () => {
+  render(
+    <Tabs isNav>
+      <Tab title="Test title" eventKey={0}>
+        Tab Content
+      </Tab>
+    </Tabs>
+  );
+
+  expect(screen.getByRole('navigation')).toBeInTheDocument();
+});
+
+test(`Overrides isNav nav wrapper when component="div" is passed`, () => {
+  render(
+    <Tabs component="div" isNav>
+      <Tab title="Test title" eventKey={0}>
+        Tab Content
+      </Tab>
+    </Tabs>
+  );
+
+  expect(screen.queryByRole('navigation')).not.toBeInTheDocument();
+});
+
 test('should render simple tabs', () => {
   const { asFragment } = render(
     <Tabs id="simpleTabs">
