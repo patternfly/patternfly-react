@@ -32,6 +32,13 @@ Basic cards typically have a `<CardTitle>`, `<CardSubtitle>`, `<CardBody>` and `
 ```ts file='./CardBasic.tsx'
 
 ```
+### Card with subtitle
+
+A basic card that also has a subtitle
+
+```ts file='./CardSubtitle.tsx'
+
+```
 
 ### Secondary cards
 
