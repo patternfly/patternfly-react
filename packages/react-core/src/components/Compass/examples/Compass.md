@@ -33,6 +33,17 @@ The background image of the `Compass` and `CompassHero` may be customized by usi
 
 ### Demo
 
+When building a compass layout, there several useful variants and props exposed on other Patternfly components:
+
+- `isPlain` on both [DataList](/components/data-list#plain) and [Table](/components/table#table-plain)
+- `isVertical` on [ActionList](/components/action-list#vertical-action-list)
+- `isNav` on [Tabs](/components/tabs#tabs-used-for-site-navigation)
+- `isCircle` on [Button](/components/button#circle-buttons) and [MenuToggle](/components/menus/menu-toggle#plain-circle-toggle)
+- `isPill` on [Drawer](/components/drawer#pill)
+- `subtitle` on [CardTitle](/components/card#card-with-subtitle)
+- `isThinking` or `pf-v6-m-thinking` on CompassPanel and [MessageBar](/patternfly-ai/chatbot/ui/#message-bar-with-ai-indicator-styles)
+- `hasAiIndicator` or `pf-v6-m-ai-indicator` on [MessageBar](/patternfly-ai/chatbot/ui/#message-bar-with-ai-indicator-styles)
+
 ```ts isFullscreen file="CompassDemo.tsx"
 
 ```
