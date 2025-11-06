@@ -37,7 +37,12 @@ test('extra props are spread to the root element', () => {
   expect(screen.getByTestId(testId)).toBeInTheDocument();
 });
 
-test('Matches snapshot', () => {
-  const { asFragment } = render(<CardSubtitle>text</CardSubtitle>);
+test('Matches snapshot without children', () => {
+  const { asFragment } = render(<CardSubtitle />);
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test('Matches snapshot with children', () => {
+  const { asFragment } = render(<CardSubtitle>Subtitle content</CardSubtitle>);
   expect(asFragment()).toMatchSnapshot();
 });

@@ -1,12 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Matches snapshot 1`] = `
+exports[`Matches snapshot with children 1`] = `
 <DocumentFragment>
   <div
     class=""
     id=""
   >
-    text
+    Subtitle content
   </div>
+</DocumentFragment>
+`;
+
+exports[`Matches snapshot without children 1`] = `
+<DocumentFragment>
+  <div
+    class=""
+    id=""
+  />
 </DocumentFragment>
 `;
