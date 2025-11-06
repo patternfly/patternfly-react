@@ -78,10 +78,13 @@ Some general notes:
 ```ts file="TableBasic.tsx"
 
 ```
-### Table Plain
-``` file="TablePlain.tsx"
+
+### Plain
+
+```ts file="TablePlain.tsx"
 
 ```
+
 ### Custom row wrapper, header tooltips & popovers
 
 - If you add the `noWrap` prop to `Thead`, it won't wrap it if there is no space
