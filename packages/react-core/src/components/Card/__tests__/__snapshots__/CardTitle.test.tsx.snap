@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CardTitle renders with PatternFly Core styles 1`] = `
+exports[`Matches snapshot 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-card__title"
