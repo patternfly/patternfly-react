@@ -35,7 +35,7 @@ export interface DrawerPanelContentProps extends Omit<React.HTMLProps<HTMLDivEle
   hasNoBorder?: boolean;
   /** Flag indicating that the drawer panel should be resizable. */
   isResizable?: boolean;
-  /** Flag indicating that the drawer panel should disable glass styles. This prop is intended to work with isPill drawers. */
+  /** @beta Flag indicating that the drawer panel should disable glass styles. This prop is intended to work with isPill drawers. */
   hasNoGlass?: boolean;
   /** Callback for resize end. */
   onResize?: (event: MouseEvent | TouchEvent | React.KeyboardEvent, width: number, id: string) => void;
