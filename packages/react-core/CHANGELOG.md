@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.7...@patternfly/react-core@6.5.0-prerelease.8) (2025-11-06)
+
+### Bug Fixes
+
+- **Compass:** fix sidebars in demo ([#12117](https://github.com/patternfly/patternfly-react/issues/12117)) ([d67214f](https://github.com/patternfly/patternfly-react/commit/d67214ff47c8e1426bdf8f7894cd883d188cded3))
+
 # [6.5.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.6...@patternfly/react-core@6.5.0-prerelease.7) (2025-11-05)
 
 **Note:** Version bump only for package @patternfly/react-core
