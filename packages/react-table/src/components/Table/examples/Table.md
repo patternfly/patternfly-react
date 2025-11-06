@@ -81,7 +81,7 @@ Some general notes:
 
 ### Plain
 
-```ts file="TablePlain.tsx" isBeta
+```ts file="TablePlain.tsx"
 
 ```
 

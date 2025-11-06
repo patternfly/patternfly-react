@@ -42,7 +42,7 @@ import { DragDropSort, DragDropContainer, Droppable as NewDroppable } from '@pat
 
 ### Plain
 
-```ts file="./DataListPlain.tsx" isBeta
+```ts file="./DataListPlain.tsx"
 
 ```
 
