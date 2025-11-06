@@ -1,16 +1,48 @@
 import { render, screen } from '@testing-library/react';
 import { CardSubtitle } from '../CardSubtitle';
+import styles from '@patternfly/react-styles/css/components/Card/card';
 
-describe('CardSubtitle', () => {
-  test('renders with PatternFly Core styles', () => {
-    const { asFragment } = render(<CardSubtitle>text</CardSubtitle>);
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders without children', () => {
+  render(
+    <div data-testid="container">
+      <CardSubtitle />
+    </div>
+  );
 
-  test('extra props are spread to the root element', () => {
-    const testId = 'card-subtitle';
+  expect(screen.getByTestId('container').firstChild).toBeVisible();
+});
 
-    render(<CardSubtitle data-testid={testId} />);
-    expect(screen.getByTestId(testId)).toBeInTheDocument();
-  });
+test('Renders with children', () => {
+  render(<CardSubtitle>Subtitle content</CardSubtitle>);
+
+  expect(screen.getByText('Subtitle content')).toBeInTheDocument();
+});
+
+test(`Renders with class ${styles.cardSubtitle} by default`, () => {
+  render(<CardSubtitle>Subtitle content</CardSubtitle>);
+
+  expect(screen.getByText('Subtitle content')).toHaveClass(styles.cardSubtitle, { exact: true });
+});
+
+test('Renders with id when passed', () => {
+  render(<CardSubtitle id="subtitle-id">Subtitle content</CardSubtitle>);
+
+  expect(screen.getByText('Subtitle content')).toHaveAttribute('id', 'subtitle-id');
+});
+
+test('extra props are spread to the root element', () => {
+  const testId = 'card-subtitle';
+
+  render(<CardSubtitle data-testid={testId} />);
+  expect(screen.getByTestId(testId)).toBeInTheDocument();
+});
+
+test('Matches snapshot without children', () => {
+  const { asFragment } = render(<CardSubtitle />);
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test('Matches snapshot with children', () => {
+  const { asFragment } = render(<CardSubtitle>Subtitle content</CardSubtitle>);
+  expect(asFragment()).toMatchSnapshot();
 });
