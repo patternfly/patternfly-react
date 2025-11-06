@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.8...@patternfly/react-core@6.5.0-prerelease.9) (2025-11-06)
+
+### Bug Fixes
+
+- **Compass:** fix table plain example showing ([#12124](https://github.com/patternfly/patternfly-react/issues/12124)) ([8b975ca](https://github.com/patternfly/patternfly-react/commit/8b975ca685c7bb0133aeadf7ace0c91702a70f1b))
+
+### Features
+
+- **drawer:** add no-glass panel variant, test ([#12125](https://github.com/patternfly/patternfly-react/issues/12125)) ([a10ca34](https://github.com/patternfly/patternfly-react/commit/a10ca34069d25caa2954ef464d5b82a9057e0316))
+
 # [6.5.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.7...@patternfly/react-core@6.5.0-prerelease.8) (2025-11-06)
 
 ### Bug Fixes

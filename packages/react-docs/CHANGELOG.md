@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.5.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.8...@patternfly/react-docs@7.5.0-prerelease.9) (2025-11-06)
+
+### Features
+
+- **drawer:** add no-glass panel variant, test ([#12125](https://github.com/patternfly/patternfly-react/issues/12125)) ([a10ca34](https://github.com/patternfly/patternfly-react/commit/a10ca34069d25caa2954ef464d5b82a9057e0316))
+
 # [7.5.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.7...@patternfly/react-docs@7.5.0-prerelease.8) (2025-11-06)
 
 **Note:** Version bump only for package @patternfly/react-docs
