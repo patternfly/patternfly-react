@@ -1,4 +1,4 @@
-import { Drawer, DrawerContent, DrawerProps } from '../Drawer';
+import { Drawer, DrawerContent, DrawerContentBody, DrawerProps } from '../Drawer';
 import styles from '@patternfly/react-styles/css/components/Compass/compass';
 import { css } from '@patternfly/react-styles';
 
@@ -96,7 +96,9 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
   if (hasDrawer) {
     return (
       <Drawer {...drawerProps}>
-        <DrawerContent panelContent={drawerContent}>{compassContent}</DrawerContent>
+        <DrawerContent panelContent={drawerContent}>
+          <DrawerContentBody>{compassContent}</DrawerContentBody>
+        </DrawerContent>
       </Drawer>
     );
   }

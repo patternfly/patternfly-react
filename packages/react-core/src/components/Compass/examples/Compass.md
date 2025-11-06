@@ -3,7 +3,16 @@ id: Compass
 cssPrefix: pf-v6-c-compass
 section: components
 beta: true
-propComponents: ['Compass', 'CompassHeader', 'CompassContent', 'CompassHero', 'CompassMainHeader', 'CompassPanel']
+propComponents:
+  [
+    'Compass',
+    'CompassHeader',
+    'CompassContent',
+    'CompassHero',
+    'CompassMainHeader',
+    'CompassPanel',
+    'CompassMessageBar'
+  ]
 ---
 
 import './compass.css';
