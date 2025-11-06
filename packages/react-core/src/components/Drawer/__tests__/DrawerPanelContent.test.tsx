@@ -162,7 +162,7 @@ test('Style prop overrides boundaryCssVars', () => {
 test(`Renders with class ${styles.modifiers.noGlass} when isPill is true`, () => {
   render(
     <Drawer isExpanded isPill>
-      <DrawerPanelContent>Drawer panel content</DrawerPanelContent>
+      <DrawerPanelContent hasNoGlass>Drawer panel content</DrawerPanelContent>
     </Drawer>
   );
 
