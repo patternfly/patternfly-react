@@ -158,3 +158,13 @@ test('Style prop overrides boundaryCssVars', () => {
     '--pf-v6-c-drawer__panel--md--FlexBasis--max': '500px'
   });
 });
+
+test(`Renders with class ${styles.modifiers.noGlass} when isPill is true`, () => {
+  render(
+    <Drawer isExpanded isPill>
+      <DrawerPanelContent hasNoGlass>Drawer panel content</DrawerPanelContent>
+    </Drawer>
+  );
+
+  expect(screen.getByText('Drawer panel content')).toHaveClass(styles.modifiers.noGlass);
+});
