@@ -3,7 +3,7 @@
 exports[`Matches snapshot with children 1`] = `
 <DocumentFragment>
   <div
-    class=""
+    class="pf-v6-c-card__subtitle"
     id=""
   >
     Subtitle content
@@ -14,7 +14,7 @@ exports[`Matches snapshot with children 1`] = `
 exports[`Matches snapshot without children 1`] = `
 <DocumentFragment>
   <div
-    class=""
+    class="pf-v6-c-card__subtitle"
     id=""
   />
 </DocumentFragment>
