@@ -33,7 +33,7 @@ The background image of the `Compass` and `CompassHero` may be customized by usi
 
 ### Demo
 
-When building a compass layout, there several useful variants and props exposed on other Patternfly components:
+To facilitate building a compass layout, there several useful variants and props exposed on other Patternfly components that may be useful:
 
 - `isPlain` on both [DataList](/components/data-list#plain) and [Table](/components/table#table-plain). This flag will set a transparent background for these components, allow the glass effect in a wrapping `CompassPanel` to appear as the background.
 - `isVertical` on [ActionList](/components/action-list#vertical-action-list). This flag sets the orientation on `ActionList` to support vertical icon lists for the sidebars.
