@@ -55,6 +55,8 @@ describe('Old Snapshot tests - remove when refactoring', () => {
   });
 });
 
+const toggleVariants = ['default', 'plain', 'primary', 'plainText', 'secondary', 'typeahead'];
+
 test(`Renders with class ${styles.modifiers.small} when size="sm" is passed`, () => {
   render(<MenuToggle size="sm">Toggle</MenuToggle>);
   expect(screen.getByRole('button')).toHaveClass(styles.modifiers.small);
@@ -109,6 +111,24 @@ test(`Renders with class ${styles.modifiers.settings} when isSettings is passed`
 
   expect(screen.getByRole('button')).toHaveClass(styles.modifiers.settings);
 });
+
+test(`Renders with class ${styles.modifiers.circle} when variant="plain" and isCircle is true`, () => {
+  render(<MenuToggle isCircle variant="plain" aria-label="Toggle"></MenuToggle>);
+  expect(screen.getByRole('button')).toHaveClass(styles.modifiers.circle);
+});
+
+toggleVariants
+  .filter((variant) => variant !== 'plain')
+  .forEach((variant) => {
+    test(`Does not with class ${styles.modifiers.circle} when variant="${variant}" and isCircle is true`, () => {
+      render(
+        <MenuToggle isCircle variant={variant as 'default' | 'primary' | 'plainText' | 'secondary' | 'typeahead'}>
+          Toggle
+        </MenuToggle>
+      );
+      expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.circle);
+    });
+  });
 
 test('Does not render custom icon when icon prop and isSettings are passed', () => {
   render(

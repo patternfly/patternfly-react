@@ -40,16 +40,8 @@ component.
 
 ### Example
 
-```js
-import { Fragment } from 'react';
-import { Button } from '@patternfly/react-core';
+```ts file="examples/OuiaExample.tsx"
 
-<Fragment>
-  <Button>Button</Button>
-  <br />
-  <br />
-  <Button ouiaId="static_id">Button with ouiaId</Button>
-</Fragment>
 ```
 
 ## OUIA-compliant PatternFly 5 components

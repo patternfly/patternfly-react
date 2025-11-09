@@ -40,6 +40,12 @@ import { DragDropSort, DragDropContainer, Droppable as NewDroppable } from '@pat
 
 ```
 
+### Plain
+
+```ts file="./DataListPlain.tsx"
+
+```
+
 ### Checkboxes, actions and additional cells
 
 ```ts file="./DataListCheckboxes.tsx"

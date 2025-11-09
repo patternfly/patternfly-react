@@ -1,21 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Transformer functions selectable unselected 1`] = `
-{
-  "children": <SelectColumn
-    aria-label="Select row 0"
-    checked={false}
-    name="radioGroup"
-    onSelect={[Function]}
-  >
-    
-  </SelectColumn>,
-  "className": "pf-v6-c-table__check",
-  "component": "td",
-  "isVisible": true,
-}
-`;
-
 exports[`Transformer functions sortable asc 1`] = `
 {
   "aria-sort": "ascending",

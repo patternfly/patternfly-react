@@ -107,20 +107,8 @@ When conveying status, you should ensure:
 
 ```
 
-### Inside success
+### Interactive status icon and measure location
 
-```ts file="./ProgressInsideSuccess.tsx"
-
-```
-
-### Outside failure
-
-```ts file="./ProgressOutsideFailure.tsx"
-
-```
-
-### Failure without measure
-
-```ts file="./ProgressFailureWithoutMeasure.tsx"
+```ts file="./ProgressInteractiveFailure.tsx"
 
 ```

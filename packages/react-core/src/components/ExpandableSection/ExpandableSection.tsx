@@ -44,8 +44,10 @@ export interface ExpandableSectionProps extends Omit<React.HTMLProps<HTMLDivElem
    * use the onToggle property of the expandable section toggle sub-component.
    */
   onToggle?: (event: React.MouseEvent, isExpanded: boolean) => void;
-  /** React node that appears in the attached toggle in place of the toggleText property. */
-  toggleContent?: React.ReactNode;
+  /** React node that appears in the attached toggle in place of the toggleText property.
+   * Can also be a function that receives the expanded state and returns a React node.
+   */
+  toggleContent?: React.ReactNode | ((isExpanded: boolean) => React.ReactNode);
   /** Text that appears in the attached toggle. */
   toggleText?: string;
   /** Text that appears in the attached toggle when collapsed (will override toggleText if
@@ -56,6 +58,10 @@ export interface ExpandableSectionProps extends Omit<React.HTMLProps<HTMLDivElem
    * both are specified; used for uncontrolled expandable with dynamic toggle text).
    */
   toggleTextExpanded?: string;
+  /** Accessible name via human readable string for the expandable section toggle. */
+  toggleAriaLabel?: string;
+  /** Accessible name via space delimtted list of IDs for the expandable section toggle. */
+  toggleAriaLabelledBy?: string;
   /** Truncates the expandable content to the specified number of lines when using the
    * "truncate" variant.
    */
@@ -68,6 +74,11 @@ export interface ExpandableSectionProps extends Omit<React.HTMLProps<HTMLDivElem
    * animation will not occur.
    */
   direction?: 'up' | 'down';
+  /** The HTML element to use for the toggle wrapper. Can be 'div' (default) or any heading level.
+   * When using heading elements, the button will be rendered inside the heading for proper semantics.
+   * This is useful when the toggle text should function as a heading in the document structure.
+   */
+  toggleWrapper?: 'div' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
 interface ExpandableSectionState {
@@ -109,6 +120,8 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
     toggleText: '',
     toggleTextExpanded: '',
     toggleTextCollapsed: '',
+    toggleAriaLabel: undefined,
+    toggleAriaLabelledBy: undefined,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     onToggle: (event, isExpanded): void => undefined,
     isDetached: false,
@@ -196,6 +209,8 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
       toggleTextExpanded,
       toggleTextCollapsed,
       toggleContent,
+      toggleAriaLabel,
+      toggleAriaLabelledBy,
       children,
       isExpanded,
       isDetached,
@@ -208,6 +223,7 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       truncateMaxLines,
       direction,
+      toggleWrapper = 'div',
       ...props
     } = this.props;
 
@@ -238,8 +254,12 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
       propOrStateIsExpanded
     );
 
+    const computedToggleContent =
+      typeof toggleContent === 'function' ? toggleContent(propOrStateIsExpanded) : toggleContent;
+    const ToggleWrapper = toggleWrapper as any;
+
     const expandableToggle = !isDetached && (
-      <div className={`${styles.expandableSection}__toggle`}>
+      <ToggleWrapper className={`${styles.expandableSection}__toggle`}>
         <Button
           variant="link"
           {...(variant === ExpandableSectionVariant.truncate && { isInline: true })}
@@ -254,10 +274,12 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
               </span>
             )
           })}
+          aria-label={toggleAriaLabel}
+          aria-labelledby={toggleAriaLabelledBy}
         >
-          {toggleContent || computedToggleText}
+          {computedToggleContent || computedToggleText}
         </Button>
-      </div>
+      </ToggleWrapper>
     );
 
     return (

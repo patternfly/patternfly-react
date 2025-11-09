@@ -31,32 +31,32 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 
 ### Primary-detail full page
 
-```js file="./examples/PrimaryDetail/PrimaryDetailFullPage.tsx" isFullscreen
+```ts file="examples/PrimaryDetail/PrimaryDetailFullPage.tsx" isFullscreen
 ```
 
 ### Primary-detail content padding
 
-```js file="./examples/PrimaryDetail/PrimaryDetailContentPadding.tsx" isFullscreen
+```ts file="examples/PrimaryDetail/PrimaryDetailContentPadding.tsx" isFullscreen
 
 ```
 
 ### Primary-detail card view
 
-```js file="./examples/PrimaryDetail/PrimaryDetailCardView.tsx" isFullscreen
+```ts file="examples/PrimaryDetail/PrimaryDetailCardView.tsx" isFullscreen
 ```
 
 ### Primary-detail simple list in card
 
-```js file="./examples/PrimaryDetail/PrimaryDetailSimpleListInCard.tsx" isFullscreen
+```ts file="examples/PrimaryDetail/PrimaryDetailSimpleListInCard.tsx" isFullscreen
 ```
 
 ### Primary-detail data list in card
 
-```js file="./examples/PrimaryDetail/PrimaryDetailDataListInCard.tsx" isFullscreen
+```ts file="examples/PrimaryDetail/PrimaryDetailDataListInCard.tsx" isFullscreen
 ```
 
 ### Primary-detail inline modifier
 
-```js file="./examples/PrimaryDetail/PrimaryDetailInlineModifier.tsx" isFullscreen
+```ts file="examples/PrimaryDetail/PrimaryDetailInlineModifier.tsx" isFullscreen
 
 ```

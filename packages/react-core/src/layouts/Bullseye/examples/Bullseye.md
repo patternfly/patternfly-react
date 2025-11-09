@@ -11,10 +11,6 @@ import './bullseye.css';
 
 ### Basic
 
-```js
-import { Bullseye } from '@patternfly/react-core';
+```ts file="BullseyeBasic.tsx"
 
-<Bullseye>
-  <div>Bullseye ◎ layout</div>
-</Bullseye>;
 ```

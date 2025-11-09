@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-icons",
-  "version": "6.4.0",
+  "version": "6.5.0-prerelease.4",
   "description": "PatternFly 4 Icons as React Components",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -33,7 +33,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "@patternfly/patternfly": "6.4.0",
+    "@patternfly/patternfly": "6.5.0-prerelease.19",
     "fs-extra": "^11.3.0",
     "tslib": "^2.8.1"
   },

@@ -3,6 +3,125 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.8...@patternfly/react-core@6.5.0-prerelease.9) (2025-11-06)
+
+### Bug Fixes
+
+- **Compass:** fix table plain example showing ([#12124](https://github.com/patternfly/patternfly-react/issues/12124)) ([8b975ca](https://github.com/patternfly/patternfly-react/commit/8b975ca685c7bb0133aeadf7ace0c91702a70f1b))
+
+### Features
+
+- **drawer:** add no-glass panel variant, test ([#12125](https://github.com/patternfly/patternfly-react/issues/12125)) ([a10ca34](https://github.com/patternfly/patternfly-react/commit/a10ca34069d25caa2954ef464d5b82a9057e0316))
+
+# [6.5.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.7...@patternfly/react-core@6.5.0-prerelease.8) (2025-11-06)
+
+### Bug Fixes
+
+- **Compass:** fix sidebars in demo ([#12117](https://github.com/patternfly/patternfly-react/issues/12117)) ([d67214f](https://github.com/patternfly/patternfly-react/commit/d67214ff47c8e1426bdf8f7894cd883d188cded3))
+
+# [6.5.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.6...@patternfly/react-core@6.5.0-prerelease.7) (2025-11-05)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [6.5.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.5...@patternfly/react-core@6.5.0-prerelease.6) (2025-11-05)
+
+### Features
+
+- Added Tab updates for site Navigation ([#12111](https://github.com/patternfly/patternfly-react/issues/12111)) ([190e749](https://github.com/patternfly/patternfly-react/commit/190e7495486e83192297ea67697510f58592597b))
+
+# [6.5.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.4...@patternfly/react-core@6.5.0-prerelease.5) (2025-11-05)
+
+### Bug Fixes
+
+- **Truncate:** remove resize observer ([#12055](https://github.com/patternfly/patternfly-react/issues/12055)) ([20fb229](https://github.com/patternfly/patternfly-react/commit/20fb229338870213bdf786343c880556f539ba16))
+
+### Features
+
+- Add plain variants for table and data list. ([#12112](https://github.com/patternfly/patternfly-react/issues/12112)) ([b0d838d](https://github.com/patternfly/patternfly-react/commit/b0d838d08e13d9060993c3ab4eb6ea7ac7b888e3))
+
+# [6.5.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.3...@patternfly/react-core@6.5.0-prerelease.4) (2025-11-03)
+
+### Bug Fixes
+
+- **ExpandableSection:** allow toggles proper dom structured headings ([#12037](https://github.com/patternfly/patternfly-react/issues/12037)) ([41f2563](https://github.com/patternfly/patternfly-react/commit/41f25637276752b2f2bc536ecf4eafac04952cbe))
+
+# [6.5.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.2...@patternfly/react-core@6.5.0-prerelease.3) (2025-11-03)
+
+### Bug Fixes
+
+- **PageSidebar:** sidebar flash on non-mobile ([#12040](https://github.com/patternfly/patternfly-react/issues/12040)) ([f986c4f](https://github.com/patternfly/patternfly-react/commit/f986c4f30581074f2ed4d25c52333eb665be9d28))
+
+### Features
+
+- **ExpandableSection:** functional toggleContent ([#12063](https://github.com/patternfly/patternfly-react/issues/12063)) ([3ac6454](https://github.com/patternfly/patternfly-react/commit/3ac645456f184864237dfc0c14a0b30afd60cc96))
+- **Progress:** add hideStatusIcon flag ([#12038](https://github.com/patternfly/patternfly-react/issues/12038)) ([7019b4a](https://github.com/patternfly/patternfly-react/commit/7019b4a592f283c337ae9afe227f2af193e5984f))
+
+# [6.5.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.1...@patternfly/react-core@6.5.0-prerelease.2) (2025-10-31)
+
+### Features
+
+- **Drawer:** Add pill version ([#12091](https://github.com/patternfly/patternfly-react/issues/12091)) ([b0a9dd8](https://github.com/patternfly/patternfly-react/commit/b0a9dd8fce6266e838ebca33ae16d1f2e0c33cbd))
+
+# [6.5.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.1-prerelease.9...@patternfly/react-core@6.5.0-prerelease.1) (2025-10-30)
+
+### Features
+
+- **ActionList:** Add isVertical variant ([#12090](https://github.com/patternfly/patternfly-react/issues/12090)) ([4365bf8](https://github.com/patternfly/patternfly-react/commit/4365bf8130bde19705adac509161525d7fb47f92))
+- **Button:** added circle variant ([#12092](https://github.com/patternfly/patternfly-react/issues/12092)) ([63f79eb](https://github.com/patternfly/patternfly-react/commit/63f79eb43f9ef0a2a665cf02d09e24bddc544329))
+- **Compass:** add Compass components ([#12093](https://github.com/patternfly/patternfly-react/issues/12093)) ([ff397d8](https://github.com/patternfly/patternfly-react/commit/ff397d800b4bfbf9fc8706bc407ed00dd314623a))
+
+## [6.4.1-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.1-prerelease.8...@patternfly/react-core@6.4.1-prerelease.9) (2025-10-24)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [6.4.1-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.1-prerelease.7...@patternfly/react-core@6.4.1-prerelease.8) (2025-10-23)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [6.4.1-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.1-prerelease.6...@patternfly/react-core@6.4.1-prerelease.7) (2025-10-23)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [6.4.1-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.1-prerelease.5...@patternfly/react-core@6.4.1-prerelease.6) (2025-10-23)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [6.4.1-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.1-prerelease.4...@patternfly/react-core@6.4.1-prerelease.5) (2025-10-23)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [6.4.1-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.1-prerelease.3...@patternfly/react-core@6.4.1-prerelease.4) (2025-10-23)
+
+### Bug Fixes
+
+- **Nav:** updated resizeObserver for horizontal overflow ([#12070](https://github.com/patternfly/patternfly-react/issues/12070)) ([c0d8839](https://github.com/patternfly/patternfly-react/commit/c0d8839d29b0a9ffffaded4c15a395ff025929ae))
+
+## [6.4.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.1-prerelease.2...@patternfly/react-core@6.4.1-prerelease.3) (2025-10-23)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [6.4.1-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.1-prerelease.1...@patternfly/react-core@6.4.1-prerelease.2) (2025-10-22)
+
+### Features
+
+- **ExpandableSection:** added aria labeling ([#12071](https://github.com/patternfly/patternfly-react/issues/12071)) ([88ed152](https://github.com/patternfly/patternfly-react/commit/88ed15202972151c5b827437767347c3890eb83d))
+
+## [6.4.1-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.1-prerelease.0...@patternfly/react-core@6.4.1-prerelease.1) (2025-10-21)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [6.4.1-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.0...@patternfly/react-core@6.4.1-prerelease.0) (2025-10-21)
+
+### Bug Fixes
+
+- **DrawerPanelContent:** fix issue with styles overriding ([#12039](https://github.com/patternfly/patternfly-react/issues/12039)) ([fb91a1d](https://github.com/patternfly/patternfly-react/commit/fb91a1d4245d858c12b1c061f4f3c52c2be55033))
+- **Progress:** Fixed to use the correct icon for danger variant ([#12073](https://github.com/patternfly/patternfly-react/issues/12073)) ([46edc2b](https://github.com/patternfly/patternfly-react/commit/46edc2b1bb04dc61e36b07a63b6bfe2ffc8cdc60))
+
+### Features
+
+- **Radio/Checkbox:** support for aria-describedBy ([#12042](https://github.com/patternfly/patternfly-react/issues/12042)) ([286de49](https://github.com/patternfly/patternfly-react/commit/286de49c017ba4b3ba06b434de9600a7d6adce1a))
+- **Wizard:** warning step status ([#12041](https://github.com/patternfly/patternfly-react/issues/12041)) ([3d202a8](https://github.com/patternfly/patternfly-react/commit/3d202a8b57174ff1670157110ca54e4b7aba4a90))
+
 # [6.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.0-prerelease.5...@patternfly/react-core@6.4.0) (2025-10-16)
 
 **Note:** Version bump only for package @patternfly/react-core

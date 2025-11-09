@@ -4,6 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { Tooltip, TooltipPosition, TooltipProps } from '../Tooltip';
 import { getReferenceElement } from '../../helpers';
 import { getResizeObserver } from '../../helpers/resizeObserver';
+import { debounce } from '../../helpers/util';
 
 export enum TruncatePosition {
   start = 'start',
@@ -130,12 +131,12 @@ const TruncateBase: React.FunctionComponent<TruncateProps> = ({
       const totalTextWidth = calculateTotalTextWidth(textElement, trailingNumChars, content);
       const textWidth = position === 'middle' ? totalTextWidth : textElement.scrollWidth;
 
-      const handleResize = () => {
+      const debouncedHandleResize = debounce(() => {
         const parentWidth = getActualWidth(parentElement);
         setIsTruncated(textWidth >= parentWidth);
-      };
+      }, 500);
 
-      const observer = getResizeObserver(parentElement, handleResize);
+      const observer = getResizeObserver(parentElement, debouncedHandleResize);
 
       return () => {
         observer();
@@ -147,7 +148,7 @@ const TruncateBase: React.FunctionComponent<TruncateProps> = ({
     if (shouldRenderByMaxChars) {
       setIsTruncated(content.length > maxCharsDisplayed);
     }
-  }, [shouldRenderByMaxChars]);
+  }, [shouldRenderByMaxChars, content.length, maxCharsDisplayed]);
 
   useEffect(() => {
     setShouldRenderByMaxChars(maxCharsDisplayed > 0);

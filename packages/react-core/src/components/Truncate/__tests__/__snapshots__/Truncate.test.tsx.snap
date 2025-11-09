@@ -5,9 +5,7 @@ exports[`Truncation with maxCharsDisplayed Matches snapshot with default positio
   <div
     data-testid="Tooltip-mock"
   >
-    <div
-      data-testid="Tooltip-mock-content-container"
-    >
+    <div>
       Test Test truncation content
     </div>
     <p>
@@ -43,9 +41,7 @@ exports[`renders default truncation 1`] = `
   <div
     data-testid="Tooltip-mock"
   >
-    <div
-      data-testid="Tooltip-mock-content-container"
-    >
+    <div>
       Test Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.
     </div>
     <p>
@@ -70,9 +66,7 @@ exports[`renders start truncation with &lrm; at start and end 1`] = `
   <div
     data-testid="Tooltip-mock"
   >
-    <div
-      data-testid="Tooltip-mock-content-container"
-    >
+    <div>
       Test Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.
     </div>
     <p>

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-compass__panel pf-v6-c-compass__hero"
+    style="--pf-v6-c-compass__hero--BackgroundImage--light: url(light.jpg); --pf-v6-c-compass__hero--BackgroundImage--dark: url(dark.jpg); --pf-v6-c-compass__hero--gradient--stop-1--light: #ff0000; --pf-v6-c-compass__hero--gradient--stop-2--light: #00ff00; --pf-v6-c-compass__hero--gradient--stop-3--light: #0000ff; --pf-v6-c-compass__hero--gradient--stop-1--dark: #000000; --pf-v6-c-compass__hero--gradient--stop-2--dark: #ffffff; --pf-v6-c-compass__hero--gradient--stop-3--dark: #808080;"
+  >
+    <div
+      class="pf-v6-c-compass__hero-body"
+    >
+      <div>
+        Hero content
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -3,7 +3,7 @@ import progressStyle from '@patternfly/react-styles/css/components/Progress/prog
 import { css } from '@patternfly/react-styles';
 import { Tooltip, TooltipPosition } from '../Tooltip';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
-import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import { AriaProps, ProgressBar } from './ProgressBar';
 import { ProgressHelperText } from './ProgressHelperText';
@@ -58,10 +58,12 @@ export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElem
    * We recommend the helper text component as it was designed for this purpose.
    */
   helperText?: React.ReactNode;
+  /** Hide the status icon, helpful when space is limited (such as within table cells) */
+  hideStatusIcon?: boolean;
 }
 
 const variantToIcon = {
-  danger: TimesCircleIcon,
+  danger: ExclamationCircleIcon,
   success: CheckCircleIcon,
   warning: ExclamationTriangleIcon
 };
@@ -76,9 +78,10 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
   measureLocation = ProgressMeasureLocation.top,
   isTitleTruncated = false,
   tooltipPosition,
-  helperText
+  helperText,
+  hideStatusIcon = false
 }: ProgressContainerProps) => {
-  const StatusIcon = variantToIcon.hasOwnProperty(variant) && variantToIcon[variant];
+  const StatusIcon = !hideStatusIcon && variantToIcon.hasOwnProperty(variant) && variantToIcon[variant];
   const [tooltip, setTooltip] = useState('');
   const titleRef = useRef(null);
   const updateTooltip = (event: any) => {

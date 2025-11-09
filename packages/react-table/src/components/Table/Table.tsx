@@ -48,6 +48,8 @@ export interface TableProps extends React.HTMLProps<HTMLTableElement>, OUIAProps
   gridBreakPoint?: '' | 'grid' | 'grid-md' | 'grid-lg' | 'grid-xl' | 'grid-2xl';
   /** A valid WAI-ARIA role to be applied to the table element */
   role?: string;
+  /** @beta Flag indicating if the table should have plain styling with a transparent background */
+  isPlain?: boolean;
   /** If set to true, the table header sticks to the top of its container */
   isStickyHeader?: boolean;
   /** @hide Forwarded ref */
@@ -94,6 +96,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
   variant,
   borders = true,
   isStickyHeader = false,
+  isPlain = false,
   gridBreakPoint = TableGridBreakpoint.gridMd,
   'aria-label': ariaLabel,
   role = 'grid',
@@ -222,6 +225,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
           isTreeTable && stylesTreeView.modifiers.treeView,
           isStriped && styles.modifiers.striped,
           isExpandable && styles.modifiers.expandable,
+          isPlain && styles.modifiers.plain,
           hasNoInset && stylesTreeView.modifiers.noInset,
           isNested && 'pf-m-nested',
           hasAnimations && styles.modifiers.animateExpand

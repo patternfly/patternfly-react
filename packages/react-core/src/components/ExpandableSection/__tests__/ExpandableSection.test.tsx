@@ -191,3 +191,83 @@ test('Renders with class pf-m-detached when isDetached is true and direction is 
 
   expect(screen.getByText('Test content').parentElement).toHaveClass('pf-m-detached');
 });
+
+test('Renders with aria-label when toggleAriaLabel is passed', () => {
+  render(<ExpandableSection toggleAriaLabel="Test label"></ExpandableSection>);
+
+  expect(screen.getByRole('button')).toHaveAccessibleName('Test label');
+});
+
+test('Renders with aria-labelledby when toggleAriaLabelledBy is passed', () => {
+  render(
+    <>
+      <div id="test-id">Test label</div>
+      <ExpandableSection toggleAriaLabelledBy="test-id"></ExpandableSection>
+    </>
+  );
+
+  expect(screen.getByRole('button')).toHaveAccessibleName('Test label');
+});
+
+test('Renders toggleContent as a function in uncontrolled mode (collapsed)', () => {
+  render(
+    <ExpandableSection toggleContent={(isExpanded) => (isExpanded ? 'Hide details' : 'Show details')}>
+      Test content
+    </ExpandableSection>
+  );
+
+  expect(screen.getByRole('button', { name: 'Show details' })).toBeInTheDocument();
+});
+
+test('Renders toggleContent as a function in uncontrolled mode (expanded after click)', async () => {
+  const user = userEvent.setup();
+
+  render(
+    <ExpandableSection toggleContent={(isExpanded) => (isExpanded ? 'Hide details' : 'Show details')}>
+      Test content
+    </ExpandableSection>
+  );
+
+  const button = screen.getByRole('button', { name: 'Show details' });
+  await user.click(button);
+
+  expect(screen.getByRole('button', { name: 'Hide details' })).toBeInTheDocument();
+});
+
+test('Renders toggleContent as a function in controlled mode', () => {
+  render(
+    <ExpandableSection isExpanded={true} toggleContent={(isExpanded) => (isExpanded ? 'Collapse' : 'Expand')}>
+      Test content
+    </ExpandableSection>
+  );
+
+  expect(screen.getByRole('button', { name: 'Collapse' })).toBeInTheDocument();
+});
+
+test('Renders with default div wrapper when toggleWrapper is not specified', () => {
+  render(<ExpandableSection data-testid="test-id">Test content</ExpandableSection>);
+
+  const toggle = screen.getByRole('button').parentElement;
+  expect(toggle?.tagName).toBe('DIV');
+});
+
+test('Renders with h2 wrapper when toggleWrapper="h2"', () => {
+  render(
+    <ExpandableSection data-testid="test-id" toggleWrapper="h2">
+      Test content
+    </ExpandableSection>
+  );
+
+  expect(screen.getByRole('heading', { level: 2 })).toBeInTheDocument();
+});
+
+test('Renders with div wrapper when toggleWrapper="div"', () => {
+  render(
+    <ExpandableSection data-testid="test-id" toggleWrapper="div">
+      Test content
+    </ExpandableSection>
+  );
+
+  const toggle = screen.getByRole('button').parentElement;
+  expect(toggle?.tagName).toBe('DIV');
+});

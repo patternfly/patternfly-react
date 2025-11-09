@@ -11,24 +11,12 @@ import './level.css';
 
 ### Basic
 
-```js
-import { Level, LevelItem } from '@patternfly/react-core';
+```ts file="LevelBasic.tsx"
 
-<Level>
-  <LevelItem>Level Item</LevelItem>
-  <LevelItem>Level Item</LevelItem>
-  <LevelItem>Level Item</LevelItem>
-</Level>;
 ```
 
 ### With gutters
 
-```js
-import { Level, LevelItem } from '@patternfly/react-core';
+```ts file="LevelWithGutters.tsx"
 
-<Level hasGutter>
-  <LevelItem>Level Item</LevelItem>
-  <LevelItem>Level Item</LevelItem>
-  <LevelItem>Level Item</LevelItem>
-</Level>;
 ```

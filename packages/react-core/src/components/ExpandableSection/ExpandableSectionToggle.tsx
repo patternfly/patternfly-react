@@ -30,6 +30,15 @@ export interface ExpandableSectionToggleProps extends Omit<React.HTMLProps<HTMLD
   onToggle?: (isExpanded: boolean) => void;
   /** Flag indicating that the expandable section and expandable toggle are detached from one another. */
   isDetached?: boolean;
+  /** Accessible name via human readable string for the expandable section toggle. */
+  toggleAriaLabel?: string;
+  /** Accessible name via space delimtted list of IDs for the expandable section toggle. */
+  toggleAriaLabelledBy?: string;
+  /** The HTML element to use for the toggle wrapper. Can be 'div' (default) or any heading level.
+   * When using heading elements, the button will be rendered inside the heading for proper semantics.
+   * This is useful when the toggle text should function as a heading in the document structure.
+   */
+  toggleWrapper?: 'div' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
 export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionToggleProps> = ({
@@ -42,43 +51,52 @@ export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionT
   direction = 'down',
   hasTruncatedContent = false,
   isDetached,
+  toggleAriaLabel,
+  toggleAriaLabelledBy,
+  toggleWrapper = 'div',
   ...props
-}: ExpandableSectionToggleProps) => (
-  <div
-    className={css(
-      styles.expandableSection,
-      isExpanded && styles.modifiers.expanded,
-      hasTruncatedContent && styles.modifiers.truncate,
-      isDetached && 'pf-m-detached',
-      className
-    )}
-    {...props}
-  >
-    <div className={`${styles.expandableSection}__toggle`}>
-      <Button
-        variant="link"
-        {...(hasTruncatedContent && { isInline: true })}
-        aria-expanded={isExpanded}
-        aria-controls={contentId}
-        onClick={() => onToggle(!isExpanded)}
-        id={toggleId}
-        {...(!hasTruncatedContent && {
-          icon: (
-            <span
-              className={css(
-                styles.expandableSectionToggleIcon,
-                isExpanded && direction === 'up' && styles.modifiers.expandTop // TODO: next breaking change move this class to the outer styles.expandableSection wrapper
-              )}
-            >
-              <AngleRightIcon />
-            </span>
-          )
-        })}
-      >
-        {children}
-      </Button>
+}: ExpandableSectionToggleProps) => {
+  const ToggleWrapper = toggleWrapper as any;
+
+  return (
+    <div
+      className={css(
+        styles.expandableSection,
+        isExpanded && styles.modifiers.expanded,
+        hasTruncatedContent && styles.modifiers.truncate,
+        isDetached && 'pf-m-detached',
+        className
+      )}
+      {...props}
+    >
+      <ToggleWrapper className={`${styles.expandableSection}__toggle`}>
+        <Button
+          variant="link"
+          {...(hasTruncatedContent && { isInline: true })}
+          aria-expanded={isExpanded}
+          aria-controls={contentId}
+          onClick={() => onToggle(!isExpanded)}
+          id={toggleId}
+          {...(!hasTruncatedContent && {
+            icon: (
+              <span
+                className={css(
+                  styles.expandableSectionToggleIcon,
+                  isExpanded && direction === 'up' && styles.modifiers.expandTop // TODO: next breaking change move this class to the outer styles.expandableSection wrapper
+                )}
+              >
+                <AngleRightIcon />
+              </span>
+            )
+          })}
+          aria-label={toggleAriaLabel}
+          aria-labelledby={toggleAriaLabelledBy}
+        >
+          {children}
+        </Button>
+      </ToggleWrapper>
     </div>
-  </div>
-);
+  );
+};
 
 ExpandableSectionToggle.displayName = 'ExpandableSectionToggle';

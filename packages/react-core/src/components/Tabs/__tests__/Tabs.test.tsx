@@ -1,14 +1,82 @@
 import { render, screen, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Tabs } from '../Tabs';
+import { Tabs, TabsProps } from '../Tabs';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
 import { Tab } from '../Tab';
 import { TabTitleText } from '../TabTitleText';
 import { TabTitleIcon } from '../TabTitleIcon';
 import { TabContent } from '../TabContent';
 import { TabContentBody } from '../TabContentBody';
+import { createRef } from 'react';
 
 jest.mock('../../../helpers/GenerateId/GenerateId');
+
+const renderSeparateTabs = (props?: Pick<TabsProps, 'activeKey' | 'defaultActiveKey'>) => {
+  const contentRef1 = createRef<HTMLElement>();
+  const contentRef2 = createRef<HTMLElement>();
+  const contentRef3 = createRef<HTMLElement>();
+
+  let calculatedActiveKey;
+  if (props?.defaultActiveKey) {
+    calculatedActiveKey = props?.defaultActiveKey;
+  } else {
+    calculatedActiveKey = props?.activeKey;
+  }
+
+  return (
+    <>
+      <Tabs id="separateTabs" {...props}>
+        <Tab
+          eventKey={0}
+          title={<TabTitleText>Tab item 1</TabTitleText>}
+          tabContentId="refTab1Section"
+          tabContentRef={contentRef1}
+        />
+        <Tab
+          eventKey={1}
+          title={<TabTitleText>Tab item 2</TabTitleText>}
+          tabContentId="refTab2Section"
+          tabContentRef={contentRef2}
+        />
+        <Tab
+          eventKey={2}
+          title={<TabTitleText>Tab item 3</TabTitleText>}
+          tabContentId="refTab3Section"
+          tabContentRef={contentRef3}
+        />
+      </Tabs>
+      <div>
+        <TabContent
+          eventKey={0}
+          id="refTab1Section"
+          ref={contentRef1}
+          aria-label="Tab item 1"
+          hidden={calculatedActiveKey !== 0}
+        >
+          Tab 1 section
+        </TabContent>
+        <TabContent
+          eventKey={1}
+          id="refTab2Section"
+          ref={contentRef2}
+          aria-label="Tab item 2"
+          hidden={calculatedActiveKey !== 1}
+        >
+          <TabContentBody>Tab 2 section</TabContentBody>
+        </TabContent>
+        <TabContent
+          eventKey={2}
+          id="refTab3Section"
+          ref={contentRef3}
+          aria-label="Tab item 3"
+          hidden={calculatedActiveKey !== 2}
+        >
+          <TabContentBody hasPadding>Tab 3 section with padding </TabContentBody>
+        </TabContent>
+      </div>
+    </>
+  );
+};
 
 test(`Renders with classes ${styles.tabs} and ${styles.modifiers.animateCurrent} by default`, () => {
   render(
@@ -96,6 +164,66 @@ test(`Does not render with class ${styles.modifiers.initializingAccent} when unc
 
   await user.click(screen.getByRole('button', { name: 'Jump to section' }));
   expect(screen.getByRole('region')).not.toHaveClass(styles.modifiers.initializingAccent);
+});
+
+test(`Renders with class ${styles.modifiers.nav} when isNav is true`, () => {
+  render(
+    <Tabs isNav role="region">
+      <Tab title="Test title" eventKey={0}>
+        Tab Content
+      </Tab>
+    </Tabs>
+  );
+
+  expect(screen.getByRole('region')).toHaveClass(styles.modifiers.nav);
+});
+
+test(`Renders with div wrapper by default`, () => {
+  render(
+    <Tabs>
+      <Tab title="Test title" eventKey={0}>
+        Tab Content
+      </Tab>
+    </Tabs>
+  );
+
+  expect(screen.queryByRole('navigation')).not.toBeInTheDocument();
+});
+
+test(`Renders with nav wrapper when component="nav"`, () => {
+  render(
+    <Tabs component="nav">
+      <Tab title="Test title" eventKey={0}>
+        Tab Content
+      </Tab>
+    </Tabs>
+  );
+
+  expect(screen.getByRole('navigation')).toBeInTheDocument();
+});
+
+test(`Renders with nav wrapper when isNav is true`, () => {
+  render(
+    <Tabs isNav>
+      <Tab title="Test title" eventKey={0}>
+        Tab Content
+      </Tab>
+    </Tabs>
+  );
+
+  expect(screen.getByRole('navigation')).toBeInTheDocument();
+});
+
+test(`Overrides isNav nav wrapper when component="div" is passed`, () => {
+  render(
+    <Tabs component="div" isNav>
+      <Tab title="Test title" eventKey={0}>
+        Tab Content
+      </Tab>
+    </Tabs>
+  );
+
+  expect(screen.queryByRole('navigation')).not.toBeInTheDocument();
 });
 
 test('should render simple tabs', () => {
@@ -427,6 +555,46 @@ test('should render tabs with separate content', () => {
     </>
   );
   expect(asFragment()).toMatchSnapshot();
+});
+
+test('should render correct tab content for uncontrolled tabs with separate content', () => {
+  render(renderSeparateTabs({ defaultActiveKey: 1 }));
+
+  expect(screen.getByText(/Tab 1 section/i)).not.toBeVisible();
+  expect(screen.getByText(/Tab 2 section/i)).toBeVisible();
+  expect(screen.getByText(/Tab 3 section with padding/i)).not.toBeVisible();
+});
+
+test('should correctly advance tab content for uncontrolled tabs with separate content', async () => {
+  render(renderSeparateTabs({ defaultActiveKey: 1 }));
+
+  userEvent.setup();
+  expect(screen.getByText(/Tab 1 section/i)).not.toBeVisible();
+  expect(screen.getByText(/Tab 2 section/i)).toBeVisible();
+  expect(screen.getByText(/Tab 3 section with padding/i)).not.toBeVisible();
+  await userEvent.click(screen.getByRole('tab', { name: /Tab item 1/i }));
+  expect(screen.getByText(/Tab 1 section/i)).toBeVisible();
+  expect(screen.getByText(/Tab 2 section/i)).not.toBeVisible();
+});
+
+test('should render correct tab content for controlled tabs with separate content', () => {
+  render(renderSeparateTabs({ activeKey: 1 }));
+
+  expect(screen.getByText(/Tab 1 section/i)).not.toBeVisible();
+  expect(screen.getByText(/Tab 2 section/i)).toBeVisible();
+  expect(screen.getByText(/Tab 3 section with padding/i)).not.toBeVisible();
+});
+
+test('should correctly advance tab content for controlled tabs with separate content', async () => {
+  render(renderSeparateTabs({ activeKey: 1 }));
+
+  userEvent.setup();
+  expect(screen.getByText(/Tab 1 section/i)).not.toBeVisible();
+  expect(screen.getByText(/Tab 2 section/i)).toBeVisible();
+  expect(screen.getByText(/Tab 3 section with padding/i)).not.toBeVisible();
+  await userEvent.click(screen.getByRole('tab', { name: /Tab item 1/i }));
+  expect(screen.getByText(/Tab 1 section/i)).toBeVisible();
+  expect(screen.getByText(/Tab 2 section/i)).not.toBeVisible();
 });
 
 test('should render box tabs of secondary variant', () => {

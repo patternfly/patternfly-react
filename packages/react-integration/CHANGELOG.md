@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.1...@patternfly/react-integration@6.5.0-prerelease.2) (2025-11-03)
+
+### Bug Fixes
+
+- **PageSidebar:** sidebar flash on non-mobile ([#12040](https://github.com/patternfly/patternfly-react/issues/12040)) ([f986c4f](https://github.com/patternfly/patternfly-react/commit/f986c4f30581074f2ed4d25c52333eb665be9d28))
+
+# [6.5.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.41...@patternfly/react-integration@6.5.0-prerelease.1) (2025-10-30)
+
+### Bug Fixes
+
+- **deps:** update react-router monorepo to ^7.9.4 ([#11692](https://github.com/patternfly/patternfly-react/issues/11692)) ([0f80fa4](https://github.com/patternfly/patternfly-react/commit/0f80fa419631c1c7d8127f5ab45a4aaad2e79988))
+
+# [6.0.0-prerelease.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.40...@patternfly/react-integration@6.0.0-prerelease.41) (2025-10-24)
+
+### Features
+
+- **Table:** use pf check/radio for selects ([#12045](https://github.com/patternfly/patternfly-react/issues/12045)) ([a434558](https://github.com/patternfly/patternfly-react/commit/a4345580fadd9d59b918315fff29d71c35f88fe8))
+
 # [6.0.0-prerelease.40](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.0.0-prerelease.39...@patternfly/react-integration@6.0.0-prerelease.40) (2025-10-13)
 
 ### Bug Fixes

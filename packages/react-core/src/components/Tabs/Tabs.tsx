@@ -69,6 +69,8 @@ export interface TabsProps
   isFilled?: boolean;
   /** Enables subtab tab styling */
   isSubtab?: boolean;
+  /** @beta Enables horizontal nav tab styling */
+  isNav?: boolean;
   /** Enables box styling to the tab component */
   isBox?: boolean;
   /** Enables vertical tab styling */
@@ -196,6 +198,7 @@ class Tabs extends Component<TabsProps, TabsState> {
     onSelect: () => undefined as any,
     isFilled: false,
     isSubtab: false,
+    isNav: false,
     isVertical: false,
     isBox: false,
     hasNoBorderBottom: false,
@@ -203,7 +206,6 @@ class Tabs extends Component<TabsProps, TabsState> {
     backScrollAriaLabel: 'Scroll back',
     rightScrollAriaLabel: 'Scroll right',
     forwardScrollAriaLabel: 'Scroll forward',
-    component: TabsComponent.div,
     mountOnEnter: false,
     unmountOnExit: false,
     ouiaSafe: true,
@@ -475,6 +477,7 @@ class Tabs extends Component<TabsProps, TabsState> {
       isAddButtonDisabled,
       isFilled,
       isSubtab,
+      isNav,
       isVertical,
       isBox,
       hasNoBorderBottom,
@@ -525,7 +528,8 @@ class Tabs extends Component<TabsProps, TabsState> {
     const overflowingTabProps = filteredChildrenOverflowing.map((child: React.ReactElement<TabProps>) => child.props);
 
     const uniqueId = id || getUniqueId();
-    const Component: any = component === TabsComponent.nav ? 'nav' : 'div';
+    const defaultComponent = isNav && !component ? 'nav' : 'div';
+    const Component: any = component !== undefined ? component : defaultComponent;
     const localActiveKey = defaultActiveKey !== undefined ? uncontrolledActiveKey : activeKey;
 
     const isExpandedLocal = defaultIsExpanded !== undefined ? uncontrolledIsExpandedLocal : isExpanded;
@@ -561,6 +565,7 @@ class Tabs extends Component<TabsProps, TabsState> {
             styles.modifiers.animateCurrent,
             isFilled && styles.modifiers.fill,
             isSubtab && styles.modifiers.subtab,
+            isNav && styles.modifiers.nav,
             isVertical && styles.modifiers.vertical,
             isVertical && expandable && formatBreakpointMods(expandable, styles),
             isVertical && expandable && isExpandedLocal && styles.modifiers.expanded,

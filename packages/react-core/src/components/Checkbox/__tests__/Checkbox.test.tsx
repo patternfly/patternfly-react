@@ -287,3 +287,37 @@ test('Matches snapshot', () => {
 
   expect(asFragment()).toMatchSnapshot();
 });
+
+test('Sets aria-describedby when description is provided', () => {
+  render(<Checkbox id="test-id" description="test description" />);
+
+  const checkbox = screen.getByRole('checkbox');
+  const descriptionElement = screen.getByText('test description');
+
+  expect(checkbox).toHaveAttribute('aria-describedby', descriptionElement.id);
+  expect(descriptionElement).toHaveAttribute('id');
+});
+
+test('Sets custom aria-describedby when provided', () => {
+  render(<Checkbox id="test-id" description="test description" aria-describedby="custom-id" />);
+
+  const checkbox = screen.getByRole('checkbox');
+
+  expect(checkbox).toHaveAttribute('aria-describedby', 'custom-id');
+});
+
+test('Does not set aria-describedby when no description is provided', () => {
+  render(<Checkbox id="test-id" />);
+
+  const checkbox = screen.getByRole('checkbox');
+
+  expect(checkbox).not.toHaveAttribute('aria-describedby');
+});
+
+test('Does not set aria-describedby when description is provided but aria-describedby is empty string', () => {
+  render(<Checkbox id="test-id" description="test description" aria-describedby="" />);
+
+  const checkbox = screen.getByRole('checkbox');
+
+  expect(checkbox).not.toHaveAttribute('aria-describedby');
+});

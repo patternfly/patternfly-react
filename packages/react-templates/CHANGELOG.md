@@ -3,6 +3,82 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.5.0-prerelease.8...@patternfly/react-templates@6.5.0-prerelease.9) (2025-11-06)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+# [6.5.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.5.0-prerelease.7...@patternfly/react-templates@6.5.0-prerelease.8) (2025-11-06)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+# [6.5.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.5.0-prerelease.6...@patternfly/react-templates@6.5.0-prerelease.7) (2025-11-05)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+# [6.5.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.5.0-prerelease.5...@patternfly/react-templates@6.5.0-prerelease.6) (2025-11-05)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+# [6.5.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.5.0-prerelease.4...@patternfly/react-templates@6.5.0-prerelease.5) (2025-11-05)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+# [6.5.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.5.0-prerelease.3...@patternfly/react-templates@6.5.0-prerelease.4) (2025-11-03)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+# [6.5.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.5.0-prerelease.2...@patternfly/react-templates@6.5.0-prerelease.3) (2025-11-03)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+# [6.5.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.5.0-prerelease.1...@patternfly/react-templates@6.5.0-prerelease.2) (2025-10-31)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+# [6.5.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.4.1-prerelease.9...@patternfly/react-templates@6.5.0-prerelease.1) (2025-10-30)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+## [6.4.1-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.4.1-prerelease.8...@patternfly/react-templates@6.4.1-prerelease.9) (2025-10-24)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+## [6.4.1-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.4.1-prerelease.7...@patternfly/react-templates@6.4.1-prerelease.8) (2025-10-23)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+## [6.4.1-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.4.1-prerelease.6...@patternfly/react-templates@6.4.1-prerelease.7) (2025-10-23)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+## [6.4.1-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.4.1-prerelease.5...@patternfly/react-templates@6.4.1-prerelease.6) (2025-10-23)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+## [6.4.1-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.4.1-prerelease.4...@patternfly/react-templates@6.4.1-prerelease.5) (2025-10-23)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+## [6.4.1-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.4.1-prerelease.3...@patternfly/react-templates@6.4.1-prerelease.4) (2025-10-23)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+## [6.4.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.4.1-prerelease.2...@patternfly/react-templates@6.4.1-prerelease.3) (2025-10-23)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+## [6.4.1-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.4.1-prerelease.1...@patternfly/react-templates@6.4.1-prerelease.2) (2025-10-22)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+## [6.4.1-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.4.1-prerelease.0...@patternfly/react-templates@6.4.1-prerelease.1) (2025-10-21)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+## [6.4.1-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.4.0...@patternfly/react-templates@6.4.1-prerelease.0) (2025-10-21)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
 # [6.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.4.0-prerelease.6...@patternfly/react-templates@6.4.0) (2025-10-16)
 
 **Note:** Version bump only for package @patternfly/react-templates

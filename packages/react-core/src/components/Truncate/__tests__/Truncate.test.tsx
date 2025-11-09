@@ -1,12 +1,12 @@
-import { render, screen, within } from '@testing-library/react';
-import { Truncate, TruncatePosition } from '../Truncate';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { Truncate } from '../Truncate';
 import styles from '@patternfly/react-styles/css/components/Truncate/truncate';
 import '@testing-library/jest-dom';
 
 jest.mock('../../Tooltip', () => ({
   Tooltip: ({ content, position, children, triggerRef, ...props }) => (
     <div data-testid="Tooltip-mock" {...props}>
-      <div data-testid="Tooltip-mock-content-container">Test {content}</div>
+      <div>Test {content}</div>
       <p>{`position: ${position}`}</p>
       {children}
     </div>
@@ -241,4 +241,22 @@ describe('Truncation with maxCharsDisplayed', () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
+});
+
+test('Tooltip appears on keyboard focus when external triggerRef is provided (ClipboardCopy regression test)', () => {
+  const mockTriggerRef = { current: document.createElement('div') };
+
+  render(
+    <Truncate
+      content="This is a very long piece of content that should be truncated when the container is too small"
+      tooltipProps={{ triggerRef: mockTriggerRef }}
+    />
+  );
+
+  // Simulate keyboard focus on the external trigger element
+  fireEvent.focus(mockTriggerRef.current);
+
+  // The tooltip should be present and visible
+  const tooltip = screen.getByTestId('Tooltip-mock');
+  expect(tooltip).toBeInTheDocument();
 });

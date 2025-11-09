@@ -28,6 +28,14 @@ import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle
 
 ```
 
+### Uncontrolled with dynamic toggle content (function)
+
+Use `toggleContent` as a function to dynamically render different content based on the expanded state without managing state yourself.
+
+```ts file="ExpandableSectionUncontrolledDynamicToggleFunction.tsx"
+
+```
+
 ### Detached
 
 When passing the `isDetached` property into `<ExpandableSection>`, you must also manually pass in the same `toggleId` and `contentId` properties to both `<ExpandableSection>` and `<ExpandableSectionToggle>`. This will link the content to the toggle via ARIA attributes.
@@ -59,6 +67,14 @@ You can indent the expandable content by passing in the `isIndented` property. T
 By using the `toggleContent` prop, you can pass in content other than a simple string such as an icon or a badge. When passing in custom content in this way, you should not pass in any interactive element such as a button.
 
 ```ts file="ExpandableSectionCustomToggle.tsx"
+
+```
+
+### With heading semantics
+
+When the toggle text should function as a heading in the document structure, use the `toggleWrapper` prop to specify a heading element (h1-h6). This ensures proper semantic structure for screen readers and other assistive technologies. The component automatically uses a native button element when heading wrappers are used, allowing the heading styles to display properly.
+
+```ts file="ExpandableSectionWithHeading.tsx"
 
 ```
 

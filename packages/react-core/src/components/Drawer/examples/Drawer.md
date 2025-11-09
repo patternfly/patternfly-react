@@ -17,6 +17,7 @@ propComponents:
   ]
 section: components
 ---
+
 import { Fragment, useRef, useState } from 'react';
 import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 
@@ -141,5 +142,17 @@ To enable and customize a focus trap on a drawer panel, apply the `focusTrap` pr
 To customize which element receives focus when the drawer panel expands, use the `focusTrap.elementToFocusOnExpand` property.
 
 ```ts file="./DrawerFocusTrap.tsx"
+
+```
+
+### Pill
+
+```ts file="./DrawerBasicPill.tsx"
+
+```
+
+### Pill inline
+
+```ts file="./DrawerPillInline.tsx"
 
 ```
