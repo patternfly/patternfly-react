@@ -2,13 +2,6 @@ import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import { formatBreakpointMods, setBreakpointCssVars, toCamel } from '../../helpers/util';
 import c_toolbar__item_Width from '@patternfly/react-tokens/dist/esm/c_toolbar__item_Width';
-import c_toolbar__item_m_w_sm_Width from '@patternfly/react-tokens/dist/esm/c_toolbar__item_m_w_sm_Width';
-import c_toolbar__item_m_w_md_Width from '@patternfly/react-tokens/dist/esm/c_toolbar__item_m_w_md_Width';
-import c_toolbar__item_m_w_lg_Width from '@patternfly/react-tokens/dist/esm/c_toolbar__item_m_w_lg_Width';
-import c_toolbar__item_m_w_xl_Width from '@patternfly/react-tokens/dist/esm/c_toolbar__item_m_w_xl_Width';
-import c_toolbar__item_m_w_2xl_Width from '@patternfly/react-tokens/dist/esm/c_toolbar__item_m_w_2xl_Width';
-import c_toolbar__item_m_w_3xl_Width from '@patternfly/react-tokens/dist/esm/c_toolbar__item_m_w_3xl_Width';
-import c_toolbar__item_m_w_4xl_Width from '@patternfly/react-tokens/dist/esm/c_toolbar__item_m_w_4xl_Width';
 import { Divider } from '../Divider';
 import { PageContext } from '../Page/PageContext';
 
@@ -34,7 +27,7 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
     '2xl'?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
   };
-  /** Flex grow modifier at various breakpoints */
+  /** Indicates whether a flex grow modifier of 1 is applied at various breakpoints */
   flexGrow?: {
     default?: 'flexGrow';
     sm?: 'flexGrow';
@@ -263,17 +256,17 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
                       if (!size) {
                         return acc;
                       }
-                      const valueMap: Record<string, string> = {
-                        sm: (c_toolbar__item_m_w_sm_Width as any)?.value,
-                        md: (c_toolbar__item_m_w_md_Width as any)?.value,
-                        lg: (c_toolbar__item_m_w_lg_Width as any)?.value,
-                        xl: (c_toolbar__item_m_w_xl_Width as any)?.value,
-                        '2xl': (c_toolbar__item_m_w_2xl_Width as any)?.value,
-                        '3xl': (c_toolbar__item_m_w_3xl_Width as any)?.value,
-                        '4xl': (c_toolbar__item_m_w_4xl_Width as any)?.value
+                      const cssVarValueMap: Record<string, string> = {
+                        sm: 'var(--pf-c-toolbar__item--m-w-sm--Width)',
+                        md: 'var(--pf-c-toolbar__item--m-w-md--Width)',
+                        lg: 'var(--pf-c-toolbar__item--m-w-lg--Width)',
+                        xl: 'var(--pf-c-toolbar__item--m-w-xl--Width)',
+                        '2xl': 'var(--pf-c-toolbar__item--m-w-2xl--Width)',
+                        '3xl': 'var(--pf-c-toolbar__item--m-w-3xl--Width)',
+                        '4xl': 'var(--pf-c-toolbar__item--m-w-4xl--Width)'
                       };
-                      const tokenValue = valueMap[size as keyof typeof valueMap];
-                      return tokenValue ? { ...acc, [bp]: tokenValue } : acc;
+                      const value = cssVarValueMap[size as keyof typeof cssVarValueMap];
+                      return value ? { ...acc, [bp]: value } : acc;
                     },
                     {} as Record<string, string>
                   ),

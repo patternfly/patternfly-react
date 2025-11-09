@@ -166,7 +166,7 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
     xl?: 'wrap' | 'nowrap';
     '2xl'?: 'wrap' | 'nowrap';
   };
-  /** Flex grow modifier at various breakpoints */
+  /** Indicates whether a flex grow modifier of 1 is applied at various breakpoints */
   flexGrow?: {
     default?: 'flexGrow';
     sm?: 'flexGrow';
@@ -231,14 +231,7 @@ class ToolbarGroupWithRef extends Component<ToolbarGroupProps> {
               alignSelf === 'center' && styles.modifiers.alignSelfCenter,
               alignSelf === 'baseline' && styles.modifiers.alignSelfBaseline,
               isOverflowContainer && styles.modifiers.overflowContainer,
-              flexGrow &&
-                Object.entries(flexGrow).reduce(
-                  (acc, [bp]) => ({
-                    ...acc,
-                    [`pf-m-flex-grow${bp !== 'default' ? `-on-${bp}` : ''}`]: true
-                  }),
-                  {}
-                ),
+              formatBreakpointMods(flexGrow, styles, '', getBreakpoint(width)),
               className
             )}
             {...props}
