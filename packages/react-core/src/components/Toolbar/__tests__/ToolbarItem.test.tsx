@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { ToolbarItem } from '../ToolbarItem';
+import c_toolbar__item_Width from '@patternfly/react-tokens/dist/esm/c_toolbar__item_Width';
 
 describe('ToolbarItem', () => {
   it('should render with pf-m-overflow-container when isOverflowContainer is set', () => {
@@ -43,14 +44,15 @@ describe('ToolbarItem', () => {
     const sizes = ['sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'];
 
     describe.each(bps)('widths at various breakpoints', (bp) => {
-      it.each(sizes)(`should render with pf-m-w-%s when widths is set to %s at ${bp}`, (size) => {
+      it.each(sizes)(`applies width CSS var when widths is set to %s at ${bp}`, (size) => {
         render(
           <ToolbarItem data-testid="toolbaritem" widths={{ [bp]: size }}>
             Test
           </ToolbarItem>
         );
-        const bpWidthClass = bp === 'default' ? `pf-m-w-${size}` : `pf-m-w-${size}-on-${bp}`;
-        expect(screen.getByTestId('toolbaritem')).toHaveClass(bpWidthClass);
+        const styleAttr = screen.getByTestId('toolbaritem').getAttribute('style') || '';
+        const cssVarName = `${(c_toolbar__item_Width as any).name}${bp === 'default' ? '' : `-on-${bp}`}`;
+        expect(styleAttr).toContain(cssVarName);
       });
     });
   });

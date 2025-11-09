@@ -1,6 +1,14 @@
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
-import { formatBreakpointMods, toCamel } from '../../helpers/util';
+import { formatBreakpointMods, setBreakpointCssVars, toCamel } from '../../helpers/util';
+import c_toolbar__item_Width from '@patternfly/react-tokens/dist/esm/c_toolbar__item_Width';
+import c_toolbar__item_m_w_sm_Width from '@patternfly/react-tokens/dist/esm/c_toolbar__item_m_w_sm_Width';
+import c_toolbar__item_m_w_md_Width from '@patternfly/react-tokens/dist/esm/c_toolbar__item_m_w_md_Width';
+import c_toolbar__item_m_w_lg_Width from '@patternfly/react-tokens/dist/esm/c_toolbar__item_m_w_lg_Width';
+import c_toolbar__item_m_w_xl_Width from '@patternfly/react-tokens/dist/esm/c_toolbar__item_m_w_xl_Width';
+import c_toolbar__item_m_w_2xl_Width from '@patternfly/react-tokens/dist/esm/c_toolbar__item_m_w_2xl_Width';
+import c_toolbar__item_m_w_3xl_Width from '@patternfly/react-tokens/dist/esm/c_toolbar__item_m_w_3xl_Width';
+import c_toolbar__item_m_w_4xl_Width from '@patternfly/react-tokens/dist/esm/c_toolbar__item_m_w_4xl_Width';
 import { Divider } from '../Divider';
 import { PageContext } from '../Page/PageContext';
 
@@ -206,6 +214,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   widths,
   flexGrow,
   role,
+  style,
   ...props
 }: ToolbarItemProps) => {
   if (variant === ToolbarItemVariant.separator) {
@@ -243,27 +252,38 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
             formatBreakpointMods(rowGap, styles, '', getBreakpoint(width)),
             formatBreakpointMods(rowWrap, styles, '', getBreakpoint(width)),
             className,
-            widths &&
-              Object.entries(widths).reduce(
-                (acc, [bp, size]) => ({
-                  ...acc,
-                  [`pf-m-w-${size}${bp !== 'default' ? `-on-${bp}` : ''}`]: true
-                }),
-                {}
-              ),
-            flexGrow &&
-              Object.entries(flexGrow).reduce(
-                (acc, [bp]) => ({
-                  ...acc,
-                  [`pf-m-flex-grow${bp !== 'default' ? `-on-${bp}` : ''}`]: true
-                }),
-                {}
-              )
+            formatBreakpointMods(flexGrow, styles, '', getBreakpoint(width))
           )}
+          style={{
+            ...style,
+            ...(widths
+              ? setBreakpointCssVars(
+                  Object.entries(widths).reduce(
+                    (acc, [bp, size]) => {
+                      if (!size) {
+                        return acc;
+                      }
+                      const valueMap: Record<string, string> = {
+                        sm: (c_toolbar__item_m_w_sm_Width as any)?.value,
+                        md: (c_toolbar__item_m_w_md_Width as any)?.value,
+                        lg: (c_toolbar__item_m_w_lg_Width as any)?.value,
+                        xl: (c_toolbar__item_m_w_xl_Width as any)?.value,
+                        '2xl': (c_toolbar__item_m_w_2xl_Width as any)?.value,
+                        '3xl': (c_toolbar__item_m_w_3xl_Width as any)?.value,
+                        '4xl': (c_toolbar__item_m_w_4xl_Width as any)?.value
+                      };
+                      const tokenValue = valueMap[size as keyof typeof valueMap];
+                      return tokenValue ? { ...acc, [bp]: tokenValue } : acc;
+                    },
+                    {} as Record<string, string>
+                  ),
+                  (c_toolbar__item_Width as any).name
+                )
+              : undefined)
+          }}
           {...(variant === 'label' && { 'aria-hidden': true })}
           id={id}
           role={role}
-          data-testid="toolbaritem"
           {...props}
         >
           {children}
