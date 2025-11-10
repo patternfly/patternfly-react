@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Matches the snapshot 1`] = `
+exports[`Matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v6-c-compass__hero"
+    class="pf-v6-c-hero__body"
   >
-    Hero content
+    Hero body content
   </div>
 </DocumentFragment>
 `;

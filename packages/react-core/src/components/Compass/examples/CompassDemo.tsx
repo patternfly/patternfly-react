@@ -7,6 +7,8 @@ import {
   CompassMainHeader,
   CompassPanel,
   CompassMessageBar,
+  Hero,
+  HeroBody,
   Tabs,
   TabsComponent,
   Tab,
@@ -119,8 +121,10 @@ export const CompassBasic: React.FunctionComponent = () => {
   const sidebarStartContent = sidebarContent;
   const mainContent = (
     <>
-      <CompassHero gradientDark={{ stop1: '#000', stop2: '#1b0d33', stop3: '#3d2785' }}>
-        <div>Hero</div>
+      <CompassHero>
+        <Hero gradientDark={{ stop1: '#000', stop2: '#1b0d33', stop3: '#3d2785' }}>
+          <HeroBody>Hero</HeroBody>
+        </Hero>
       </CompassHero>
       <CompassMainHeader title={<Title headingLevel="h1">Content title</Title>} />
       <CompassContent>
