@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.9...@patternfly/react-core@6.5.0-prerelease.10) (2025-11-10)
+
+### Bug Fixes
+
+- **Compass:** wrap in DrawerContentBody when drawer is passed ([#12127](https://github.com/patternfly/patternfly-react/issues/12127)) ([11e1444](https://github.com/patternfly/patternfly-react/commit/11e144430869d2f4d804c9bb6d9cc2d65a9107d0))
+
 # [6.5.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.8...@patternfly/react-core@6.5.0-prerelease.9) (2025-11-06)
 
 ### Bug Fixes
