@@ -14,7 +14,8 @@ module.exports = {
     { section: 'charts' },
     { section: 'components' },
     { section: 'patterns' },
-    { section: 'layouts' }
+    { section: 'layouts' },
+    { section: 'PatternFly-AI' }
   ],
   topNavItems: [{ text: 'Icons', path: '/icons' }],
   port: 8002
