@@ -9,12 +9,6 @@ import heroGradientStop1Dark from '@patternfly/react-tokens/dist/esm/c_hero_grad
 import heroGradientStop2Dark from '@patternfly/react-tokens/dist/esm/c_hero_gradient_stop_2_dark';
 import heroGradientStop3Dark from '@patternfly/react-tokens/dist/esm/c_hero_gradient_stop_3_dark';
 
-export interface GradientStops {
-  stop1?: string;
-  stop2?: string;
-  stop3?: string;
-}
-
 /** The main Hero component that allowws adjusting of its background images and gradients in different color modes (such as light and dark). */
 
 export interface HeroProps extends Omit<React.HTMLProps<HTMLDivElement>, 'content'> {
