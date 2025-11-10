@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Matches the snapshot with backgroundSrc and gradiant props 1`] = `
+exports[`Matches the snapshot with backgroundSrc and gradient props 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-hero"
@@ -11,7 +11,7 @@ exports[`Matches the snapshot with backgroundSrc and gradiant props 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Matches the snapshot without backgroundSrc and gradiant props 1`] = `
+exports[`Matches the snapshot without backgroundSrc and gradient props 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-hero"
