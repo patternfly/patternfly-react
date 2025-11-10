@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import { getLanguageDirection, isElementInView } from '../../helpers/util';
+import { debounce, getLanguageDirection, isElementInView } from '../../helpers/util';
 import { NavContext } from './Nav';
 import { PageSidebarContext } from '../Page/PageSidebar';
 import { getResizeObserver } from '../../helpers/resizeObserver';
@@ -38,6 +38,7 @@ class NavList extends Component<NavListProps> {
 
   navList = createRef<HTMLUListElement>();
   observer: any = () => {};
+  handleWindowResize: any;
 
   handleScrollButtons = () => {
     const container = this.navList.current;
@@ -108,11 +109,18 @@ class NavList extends Component<NavListProps> {
   componentDidMount() {
     this.observer = getResizeObserver(this.navList.current, this.handleScrollButtons, true);
     this.direction = getLanguageDirection(this.navList.current);
+    // Add window resize listener to handle cases where the window resizes but the container doesn't
+    // This ensures scroll buttons appear/disappear when the window size changes
+    this.handleWindowResize = debounce(this.handleScrollButtons, 250);
+    window.addEventListener('resize', this.handleWindowResize);
     this.handleScrollButtons();
   }
 
   componentWillUnmount() {
     this.observer();
+    if (this.handleWindowResize) {
+      window.removeEventListener('resize', this.handleWindowResize);
+    }
   }
 
   componentDidUpdate() {
