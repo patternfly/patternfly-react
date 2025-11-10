@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.10...@patternfly/react-core@6.5.0-prerelease.11) (2025-11-10)
+
+### Bug Fixes
+
+- Moved compass component to generative ui. ([#12133](https://github.com/patternfly/patternfly-react/issues/12133)) ([bb46849](https://github.com/patternfly/patternfly-react/commit/bb4684986bbd3fdb879aa0ff60e2747150bd3722))
+
 # [6.5.0-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.9...@patternfly/react-core@6.5.0-prerelease.10) (2025-11-10)
 
 ### Bug Fixes
