@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.5.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.11...@patternfly/react-docs@7.5.0-prerelease.12) (2025-11-10)
+
+### Bug Fixes
+
+- Added missing docs config side nav. ([#12134](https://github.com/patternfly/patternfly-react/issues/12134)) ([f301d54](https://github.com/patternfly/patternfly-react/commit/f301d5424a368b736d4b92157185200840da869e))
+
 # [7.5.0-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.10...@patternfly/react-docs@7.5.0-prerelease.11) (2025-11-10)
 
 **Note:** Version bump only for package @patternfly/react-docs
