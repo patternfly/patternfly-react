@@ -1,6 +1,7 @@
 ---
 id: Bar chart
-section: charts
+section: components
+subsection: charts
 propComponents: ['Chart', 'ChartAxis', 'ChartBar', 'ChartGroup', 'ChartLabel', 'ChartVoronoiContainer']
 hideDarkMode: true
 ---

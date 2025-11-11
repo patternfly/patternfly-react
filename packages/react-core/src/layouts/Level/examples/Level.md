@@ -1,7 +1,8 @@
 ---
 id: Level
 cssPrefix: pf-v6-l-level
-section: layouts
+section: foundations-and-styles
+subsection: layouts
 propComponents: ['Level', 'LevelItem']
 ---
 

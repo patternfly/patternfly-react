@@ -10,12 +10,11 @@ module.exports = {
   hasDesignGuidelines: false,
   sideNavItems: [
     { section: 'get-started' },
-    { section: 'developer-resources' },
-    { section: 'charts' },
+    { section: 'developer-guides' },
+    { section: 'foundations-and-styles' },
     { section: 'components' },
     { section: 'patterns' },
-    { section: 'layouts' },
-    { section: 'PatternFly-AI' }
+    { section: 'AI' }
   ],
   topNavItems: [{ text: 'Icons', path: '/icons' }],
   port: 8002

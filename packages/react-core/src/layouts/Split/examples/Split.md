@@ -1,7 +1,8 @@
 ---
 id: Split
 cssPrefix: pf-v6-l-split
-section: layouts
+section: foundations-and-styles
+subsection: layouts
 propComponents: ['Split', 'SplitItem']
 ---
 
