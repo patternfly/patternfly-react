@@ -1,6 +1,7 @@
 ---
 id: Skeletons
-section: charts
+section: components
+subsection: charts
 propComponents: [
   'Chart',
   'ChartArea',

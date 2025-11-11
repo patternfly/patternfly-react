@@ -1,7 +1,8 @@
 ---
 id: Bullseye
 cssPrefix: pf-v6-l-bullseye
-section: layouts
+section: foundations-and-styles
+subsection: layouts
 propComponents: ['Bullseye']
 ---
 

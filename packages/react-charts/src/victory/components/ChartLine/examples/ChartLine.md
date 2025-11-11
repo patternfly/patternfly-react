@@ -1,6 +1,7 @@
 ---
 id: Line chart
-section: charts
+section: components
+subsection: charts
 propComponents: [
   'Chart',
   'ChartAxis',

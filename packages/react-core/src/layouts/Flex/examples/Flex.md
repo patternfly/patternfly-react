@@ -1,7 +1,8 @@
 ---
 id: Flex
 cssPrefix: pf-v6-l-flex
-section: layouts
+section: foundations-and-styles
+subsection: layouts
 propComponents: ['Flex', 'FlexItem']
 ---
 

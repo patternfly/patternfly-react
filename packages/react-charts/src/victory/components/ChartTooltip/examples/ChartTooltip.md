@@ -1,6 +1,7 @@
 ---
 id: Tooltips
-section: charts
+section: components
+subsection: charts
 propComponents: ['ChartTooltip']
 hideDarkMode: true
 ---
