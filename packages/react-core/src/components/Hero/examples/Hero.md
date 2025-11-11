@@ -10,9 +10,9 @@ propComponents: ['Hero', 'HeroBody']
 
 ### Basic
 
-When using a `<Hero>` with a background image, you can use the `<HeroBody>` to prevent text content from overlapping the background image, which helps ensure the text is more easily readable. Keep in mind that you should still check the color contrast when using the `gradientLight` or `gradientDark` properties.
+To ensure readability and prevent text from overlapping with the background image, use the `<HeroBody>` component. The `<HeroBody>` is optional and can be omitted if there's no background image or if you'd like finer control over text placement.
 
-You can omit the `<HeroBody>` for finer control over the text placement, or if no background image is applied to the `<Hero>`.
+When using `gradientLight` or `gradientDark`, regardless of the presence of a `<HeroBody>`, check the color contrast to ensure proper accessibility.
 
 ```ts file="HeroBasic.tsx"
 

@@ -9,7 +9,7 @@ import heroGradientStop1Dark from '@patternfly/react-tokens/dist/esm/c_hero_grad
 import heroGradientStop2Dark from '@patternfly/react-tokens/dist/esm/c_hero_gradient_stop_2_dark';
 import heroGradientStop3Dark from '@patternfly/react-tokens/dist/esm/c_hero_gradient_stop_3_dark';
 
-/** The main Hero component that allowws adjusting of its background images and gradients in different color modes (such as light and dark). */
+/** The main Hero component that allows adjusting of its background images and gradients in different color modes (such as light and dark). */
 
 export interface HeroProps extends Omit<React.HTMLProps<HTMLDivElement>, 'content'> {
   /** Content of the hero */
@@ -54,27 +54,23 @@ export const Hero: React.FunctionComponent<HeroProps> = ({
     backgroundImageStyles[heroBackgroundImageDark.name] = `url(${backgroundSrcDark})`;
   }
 
-  if (gradientLight) {
-    if (gradientLight.stop1) {
-      backgroundImageStyles[heroGradientStop1Light.name] = gradientLight.stop1;
-    }
-    if (gradientLight.stop2) {
-      backgroundImageStyles[heroGradientStop2Light.name] = gradientLight.stop2;
-    }
-    if (gradientLight.stop3) {
-      backgroundImageStyles[heroGradientStop3Light.name] = gradientLight.stop3;
-    }
+  if (gradientLight?.stop1) {
+    backgroundImageStyles[heroGradientStop1Light.name] = gradientLight.stop1;
   }
-  if (gradientDark) {
-    if (gradientDark.stop1) {
-      backgroundImageStyles[heroGradientStop1Dark.name] = gradientDark.stop1;
-    }
-    if (gradientDark.stop2) {
-      backgroundImageStyles[heroGradientStop2Dark.name] = gradientDark.stop2;
-    }
-    if (gradientDark.stop3) {
-      backgroundImageStyles[heroGradientStop3Dark.name] = gradientDark.stop3;
-    }
+  if (gradientLight?.stop2) {
+    backgroundImageStyles[heroGradientStop2Light.name] = gradientLight.stop2;
+  }
+  if (gradientLight?.stop3) {
+    backgroundImageStyles[heroGradientStop3Light.name] = gradientLight.stop3;
+  }
+  if (gradientDark?.stop1) {
+    backgroundImageStyles[heroGradientStop1Dark.name] = gradientDark.stop1;
+  }
+  if (gradientDark?.stop2) {
+    backgroundImageStyles[heroGradientStop2Dark.name] = gradientDark.stop2;
+  }
+  if (gradientDark?.stop3) {
+    backgroundImageStyles[heroGradientStop3Dark.name] = gradientDark.stop3;
   }
 
   return (
