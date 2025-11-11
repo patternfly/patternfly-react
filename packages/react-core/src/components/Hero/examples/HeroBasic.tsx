@@ -1,7 +1,3 @@
-import { Hero, HeroBody } from '@patternfly/react-core';
+import { Hero } from '@patternfly/react-core';
 
-export const HeroBasic: React.FunctionComponent = () => (
-  <Hero>
-    <HeroBody>Basic hero content</HeroBody>
-  </Hero>
-);
+export const HeroBasic: React.FunctionComponent = () => <Hero>Basic hero content</Hero>;

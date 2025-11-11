@@ -16,32 +16,42 @@ test('Renders with children', () => {
   expect(screen.getByText('Test content')).toBeVisible();
 });
 
-test(`Renders with ${styles.hero} class by defaulty`, () => {
+test(`Renders with ${styles.hero} class on wrapper by defaulty`, () => {
   render(<Hero>Test</Hero>);
 
-  expect(screen.getByText('Test')).toHaveClass(`${styles.hero}`, { exact: true });
+  expect(screen.getByText('Test').parentElement).toHaveClass(`${styles.hero}`, { exact: true });
 });
 
-test('Renders with custom class name when className prop is provided', () => {
+test('Renders with custom class name on wrapper when className prop is provided', () => {
   render(<Hero className="custom-class">Test</Hero>);
-  expect(screen.getByText('Test')).toHaveClass('custom-class');
+  expect(screen.getByText('Test').parentElement).toHaveClass('custom-class');
 });
 
-test('Renders with additional props spread to the component', () => {
+test(`Renders with class ${styles.heroBody} on content element`, () => {
+  render(<Hero>Test</Hero>);
+
+  expect(screen.getByText('Test')).toHaveClass(`${styles.heroBody}`, { exact: true });
+});
+
+test('Renders with additional props spread to the wrapper component', () => {
   render(<Hero id="custom-id">Test</Hero>);
-  expect(screen.getByText('Test')).toHaveAttribute('id', 'custom-id');
+  expect(screen.getByText('Test').parentElement).toHaveAttribute('id', 'custom-id');
 });
 
 test('Renders with light background image style when backgroundSrcLight is provided', () => {
   const backgroundSrc = 'light-bg.jpg';
   render(<Hero backgroundSrcLight={backgroundSrc}>Test</Hero>);
-  expect(screen.getByText('Test')).toHaveStyle(`--pf-v6-c-hero--BackgroundImage--light: url(${backgroundSrc})`);
+  expect(screen.getByText('Test').parentElement).toHaveStyle(
+    `--pf-v6-c-hero--BackgroundImage--light: url(${backgroundSrc})`
+  );
 });
 
 test('Renders with dark background image style when backgroundSrcDark is provided', () => {
   const backgroundSrc = 'dark-bg.jpg';
   render(<Hero backgroundSrcDark={backgroundSrc}>Test</Hero>);
-  expect(screen.getByText('Test')).toHaveStyle(`--pf-v6-c-hero--BackgroundImage--dark: url(${backgroundSrc})`);
+  expect(screen.getByText('Test').parentElement).toHaveStyle(
+    `--pf-v6-c-hero--BackgroundImage--dark: url(${backgroundSrc})`
+  );
 });
 
 test('Renders with both light and dark background image styles when both are provided', () => {
@@ -52,7 +62,7 @@ test('Renders with both light and dark background image styles when both are pro
       Test
     </Hero>
   );
-  const heroElement = screen.getByText('Test');
+  const heroElement = screen.getByText('Test').parentElement;
   expect(heroElement).toHaveStyle(`--pf-v6-c-hero--BackgroundImage--light: url(${lightSrc})`);
   expect(heroElement).toHaveStyle(`--pf-v6-c-hero--BackgroundImage--dark: url(${darkSrc})`);
 });
@@ -64,7 +74,7 @@ test('Renders with light gradient styles when gradientLight is provided', () => 
     stop3: '#0000ff'
   };
   render(<Hero gradientLight={gradient}>Test</Hero>);
-  const heroElement = screen.getByText('Test');
+  const heroElement = screen.getByText('Test').parentElement;
   expect(heroElement).toHaveStyle(`--pf-v6-c-hero--gradient--stop-1--light: ${gradient.stop1}`);
   expect(heroElement).toHaveStyle(`--pf-v6-c-hero--gradient--stop-2--light: ${gradient.stop2}`);
   expect(heroElement).toHaveStyle(`--pf-v6-c-hero--gradient--stop-3--light: ${gradient.stop3}`);
@@ -77,7 +87,7 @@ test('Renders with dark gradient styles when gradientDark is provided', () => {
     stop3: '#0000ff'
   };
   render(<Hero gradientDark={gradient}>Test</Hero>);
-  const heroElement = screen.getByText('Test');
+  const heroElement = screen.getByText('Test').parentElement;
   expect(heroElement).toHaveStyle(`--pf-v6-c-hero--gradient--stop-1--dark: ${gradient.stop1}`);
   expect(heroElement).toHaveStyle(`--pf-v6-c-hero--gradient--stop-2--dark: ${gradient.stop2}`);
   expect(heroElement).toHaveStyle(`--pf-v6-c-hero--gradient--stop-3--dark: ${gradient.stop3}`);
@@ -99,7 +109,7 @@ test('Renders with both light and dark gradient styles when both are provided', 
       Test
     </Hero>
   );
-  const heroElement = screen.getByText('Test');
+  const heroElement = screen.getByText('Test').parentElement;
   expect(heroElement).toHaveStyle(`--pf-v6-c-hero--gradient--stop-1--light: ${lightGradient.stop1}`);
   expect(heroElement).toHaveStyle(`--pf-v6-c-hero--gradient--stop-1--dark: ${darkGradient.stop1}`);
 });
@@ -120,11 +130,27 @@ test('Renders with both background images and gradient styles when both are prov
       Test
     </Hero>
   );
-  const heroElement = screen.getByText('Test');
+  const heroElement = screen.getByText('Test').parentElement;
   expect(heroElement).toHaveStyle(`--pf-v6-c-hero--BackgroundImage--light: url(${lightSrc})`);
   expect(heroElement).toHaveStyle(`--pf-v6-c-hero--BackgroundImage--dark: url(${darkSrc})`);
   expect(heroElement).toHaveStyle(`--pf-v6-c-hero--gradient--stop-1--light: ${lightGradient.stop1}`);
   expect(heroElement).toHaveStyle(`--pf-v6-c-hero--gradient--stop-1--dark: ${darkGradient.stop1}`);
+});
+
+test('Renders with inline width style when bodyWidth is passed', () => {
+  const bodyWidth = '100px';
+
+  render(<Hero bodyWidth={bodyWidth}>Test</Hero>);
+  const heroElement = screen.getByText('Test').parentElement;
+  expect(heroElement).toHaveStyle(`--pf-v6-c-hero__body--Width: ${bodyWidth}`);
+});
+
+test('Renders with inline max-width style when bodyMaxWidth is passed', () => {
+  const bodyMaxWidth = '100px';
+
+  render(<Hero bodyMaxWidth={bodyMaxWidth}>Test</Hero>);
+  const heroElement = screen.getByText('Test').parentElement;
+  expect(heroElement).toHaveStyle(`--pf-v6-c-hero__body--MaxWidth: ${bodyMaxWidth}`);
 });
 
 test('Matches the snapshot without backgroundSrc and gradient props', () => {
