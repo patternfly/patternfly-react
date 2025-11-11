@@ -1,4 +1,7 @@
 import { CompassPanel, CompassPanelProps } from './CompassPanel';
+import { CompassMainHeaderContent } from './CompassMainHeaderContent';
+import { CompassMainHeaderTitle } from './CompassMainHeaderTitle';
+import { CompassMainHeaderToolbar } from './CompassMainHeaderToolbar';
 import styles from '@patternfly/react-styles/css/components/Compass/compass';
 import { css } from '@patternfly/react-styles';
 
@@ -32,10 +35,10 @@ export const CompassMainHeader: React.FunctionComponent<CompassMainHeaderProps> 
   const _content =
     title !== undefined || toolbar !== undefined ? (
       <CompassPanel {...compassPanelProps}>
-        <div className={css(`${styles.compass}__main-header-content`)}>
-          {title && <div className={css(`${styles.compass}__main-header-title`)}>{title}</div>}
-          {toolbar && <div className={css(`${styles.compass}__main-header-toolbar`)}>{toolbar}</div>}
-        </div>
+        <CompassMainHeaderContent>
+          {title && <CompassMainHeaderTitle>{title}</CompassMainHeaderTitle>}
+          {toolbar && <CompassMainHeaderToolbar>{toolbar}</CompassMainHeaderToolbar>}
+        </CompassMainHeaderContent>
       </CompassPanel>
     ) : (
       children
