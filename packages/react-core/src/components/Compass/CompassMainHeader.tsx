@@ -1,17 +1,24 @@
-import { Flex, FlexItem } from '../../layouts/Flex';
-import { CompassPanel } from './CompassPanel';
+import { CompassPanel, CompassPanelProps } from './CompassPanel';
 import styles from '@patternfly/react-styles/css/components/Compass/compass';
 import { css } from '@patternfly/react-styles';
 
+/** The wrapper component for header content in the main compass area. When building out a custom implementation,
+ * you should ensure any content within the main header is rendered inside a compass panel and main header content wrappers.
+ */
+
 export interface CompassMainHeaderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'title'> {
+  /** Custom main header content. To opt into a default styling, use the title and toolbar props instead. */
+  children?: React.ReactNode;
   /** Additional classes added to the main header */
   className?: string;
   /** Styled title. If title or toolbar is provided, the children will be ignored. */
   title?: React.ReactNode;
   /** Styled toolbar. If title or toolbar is provided, the children will be ignored. */
   toolbar?: React.ReactNode;
-  /** Custom main header content. To opt into a default styling, use the title and toolbar props instead. */
-  children?: React.ReactNode;
+  /** Additional props passed to the compass panel that wraps the main header content when using the title or toolbar props. When using the
+   * children prop, you should pass your own compass panel.
+   */
+  compassPanelProps?: Omit<CompassPanelProps, 'children'>;
 }
 
 export const CompassMainHeader: React.FunctionComponent<CompassMainHeaderProps> = ({
@@ -19,15 +26,16 @@ export const CompassMainHeader: React.FunctionComponent<CompassMainHeaderProps> 
   title,
   toolbar,
   children,
+  compassPanelProps,
   ...props
 }) => {
   const _content =
     title !== undefined || toolbar !== undefined ? (
-      <CompassPanel>
-        <Flex alignItems={{ default: 'alignItemsCenter' }}>
-          <FlexItem grow={{ default: 'grow' }}>{title}</FlexItem>
-          {toolbar && <FlexItem>{toolbar}</FlexItem>}
-        </Flex>
+      <CompassPanel {...compassPanelProps}>
+        <div className={css(`${styles.compass}__main-header-content`)}>
+          {title && <div className={css(`${styles.compass}__main-header-title`)}>{title}</div>}
+          {toolbar && <div className={css(`${styles.compass}__main-header-toolbar`)}>{toolbar}</div>}
+        </div>
       </CompassPanel>
     ) : (
       children

@@ -75,8 +75,8 @@ test('Renders children when neither title nor toolbar are provided', () => {
 });
 
 test('Renders with additional props spread to the component', () => {
-  render(<CompassMainHeader aria-label="Test label">Test</CompassMainHeader>);
-  expect(screen.getByText('Test')).toHaveAccessibleName('Test label');
+  render(<CompassMainHeader id="custom-id">Test</CompassMainHeader>);
+  expect(screen.getByText('Test')).toHaveAttribute('id', 'custom-id');
 });
 
 test('Matches the snapshot with both title and toolbar', () => {
