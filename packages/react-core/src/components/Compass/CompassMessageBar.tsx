@@ -1,7 +1,7 @@
 import styles from '@patternfly/react-styles/css/components/Compass/compass';
 import { css } from '@patternfly/react-styles';
 
-interface CompassMessageBarProps extends React.HTMLProps<HTMLDivElement> {
+export interface CompassMessageBarProps extends React.HTMLProps<HTMLDivElement> {
   /** Content of the message bar. Typically a @patternfly/chatbot MessageBar component. */
   children?: React.ReactNode;
   /** Additional classes added to the message bar */
