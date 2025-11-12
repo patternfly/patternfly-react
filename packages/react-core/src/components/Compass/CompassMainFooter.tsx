@@ -6,14 +6,17 @@ interface CompassMainFooterProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   className?: string;
   /** Main footer content */
   children?: React.ReactNode;
+  /** Indicates if the main footer is expanded */
+  isExpanded?: boolean;
 }
 
 export const CompassMainFooter: React.FunctionComponent<CompassMainFooterProps> = ({
   className,
   children,
+  isExpanded = true,
   ...props
 }) => (
-  <div className={css(`${styles.compass}__main-footer`, className)} {...props}>
+  <div className={css(styles.compassMainFooter, isExpanded && 'pf-m-expanded', className)} {...props}>
     {children}
   </div>
 );
