@@ -3,7 +3,7 @@ import { CompassPanel } from './CompassPanel';
 import styles from '@patternfly/react-styles/css/components/Compass/compass';
 import { css } from '@patternfly/react-styles';
 
-interface CompassMainHeaderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'title'> {
+export interface CompassMainHeaderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'title'> {
   /** Additional classes added to the main header */
   className?: string;
   /** Styled title. If title or toolbar is provided, the children will be ignored. */

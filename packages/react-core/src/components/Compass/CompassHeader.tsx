@@ -1,7 +1,7 @@
 import styles from '@patternfly/react-styles/css/components/Compass/compass';
 import { css } from '@patternfly/react-styles';
 
-interface CompassHeaderProps {
+export interface CompassHeaderProps {
   /** Content of the logo area */
   logo?: React.ReactNode;
   /** Content of the navigation area */

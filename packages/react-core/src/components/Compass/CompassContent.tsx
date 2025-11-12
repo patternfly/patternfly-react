@@ -2,7 +2,7 @@ import { Drawer, DrawerContent, DrawerProps } from '../Drawer';
 import styles from '@patternfly/react-styles/css/components/Compass/compass';
 import { css } from '@patternfly/react-styles';
 
-interface CompassContentProps extends React.HTMLProps<HTMLDivElement> {
+export interface CompassContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Content of the main compass area. Typically one or more CompassPanel components. */
   children: React.ReactNode;
   /** Additional classes added to the CompassContent */
