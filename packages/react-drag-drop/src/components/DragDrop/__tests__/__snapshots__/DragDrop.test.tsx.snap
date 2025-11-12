@@ -6,9 +6,7 @@ exports[`renders some divs 1`] = `
     class="pf-c-droppable pf-m-dragging"
   >
     <div>
-      <div
-        class=""
-      >
+      <div>
         <button
           aria-describedby="DndDescribedBy-0"
           aria-disabled="false"
@@ -46,9 +44,7 @@ exports[`renders some divs 1`] = `
         </button>
         one
       </div>
-      <div
-        class=""
-      >
+      <div>
         <button
           aria-describedby="DndDescribedBy-0"
           aria-disabled="false"
@@ -86,9 +82,7 @@ exports[`renders some divs 1`] = `
         </button>
         two
       </div>
-      <div
-        class=""
-      >
+      <div>
         <button
           aria-describedby="DndDescribedBy-0"
           aria-disabled="false"
