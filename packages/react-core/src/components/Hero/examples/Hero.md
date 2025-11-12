@@ -10,9 +10,9 @@ propComponents: ['Hero']
 
 ### Basic
 
-The `bodyWidth` and `bodyMaxWidth` properties can be used for finer control over the placement of text content within the `<Hero>`, such as if you omit a background image. Be mindful of adjusting these properties when a background image is still present, as you may need to ensure the contrast of text is sufficient should it overlap the image.
+If you need finer control over the placement of text content within the `<Hero>`, such as when you omit a background image, adjust the `bodyWidth` and `bodyMaxWidth` properties. Be mindful of using these properties when a background image is still present and ensure there is sufficient contrast between text and any part of the image that it overlaps.
 
-When using `gradientLight` or `gradientDark`, check the color contrast to ensure proper accessibility.
+When using `gradientLight` or `gradientDark` to apply gradient backgrounds, check the color contrast to ensure proper accessibility.
 
 ```ts file="HeroBasic.tsx"
 
