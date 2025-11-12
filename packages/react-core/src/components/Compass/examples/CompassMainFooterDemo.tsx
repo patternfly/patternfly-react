@@ -37,6 +37,7 @@ export const CompassMainFooterDemo: React.FunctionComponent = () => {
       main={mainContent}
       sidebarEnd={sidebarEndContent}
       isFooterExpanded={false}
+      style={{ height: '600px' }}
     />
   );
 };

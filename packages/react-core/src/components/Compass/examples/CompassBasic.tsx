@@ -40,6 +40,7 @@ export const CompassBasic: React.FunctionComponent = () => {
       main={mainContent}
       sidebarEnd={sidebarEndContent}
       footer={footerContent}
+      style={{ height: '600px' }}
     />
   );
 };
