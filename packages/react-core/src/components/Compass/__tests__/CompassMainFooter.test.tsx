@@ -26,6 +26,21 @@ test(`Renders with default ${styles.compassMainFooter} class`, () => {
   expect(screen.getByText('Test')).toHaveClass(styles.compassMainFooter);
 });
 
+test(`Renders with pf-m-expanded class by default`, () => {
+  render(<CompassMainFooter>Test</CompassMainFooter>);
+  expect(screen.getByText('Test')).toHaveClass('pf-m-expanded');
+});
+
+test(`Renders with pf-m-expanded class when isExpanded is true`, () => {
+  render(<CompassMainFooter isExpanded>Test</CompassMainFooter>);
+  expect(screen.getByText('Test')).toHaveClass('pf-m-expanded');
+});
+
+test(`Renders without pf-m-expanded class when isExpanded is false`, () => {
+  render(<CompassMainFooter isExpanded={false}>Test</CompassMainFooter>);
+  expect(screen.getByText('Test')).not.toHaveClass('pf-m-expanded');
+});
+
 test('Renders with additional props spread to the component', () => {
   render(<CompassMainFooter aria-label="Test label">Test</CompassMainFooter>);
   expect(screen.getByText('Test')).toHaveAccessibleName('Test label');
