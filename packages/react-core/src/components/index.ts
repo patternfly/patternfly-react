@@ -32,6 +32,7 @@ export * from './FileUpload';
 export * from './Form';
 export * from './FormSelect';
 export * from './HelperText';
+export * from './Hero';
 export * from './Hint';
 export * from './Icon';
 export * from './InputGroup';

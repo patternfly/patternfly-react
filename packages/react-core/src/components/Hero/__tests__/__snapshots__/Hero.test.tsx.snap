@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches the snapshot with backgroundSrc and gradient props 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-hero"
+    style="--pf-v6-c-hero--BackgroundImage--light: url(light.jpg); --pf-v6-c-hero--BackgroundImage--dark: url(dark.jpg); --pf-v6-c-hero--gradient--stop-1--light: #ff0000; --pf-v6-c-hero--gradient--stop-2--light: #00ff00; --pf-v6-c-hero--gradient--stop-3--light: #0000ff; --pf-v6-c-hero--gradient--stop-1--dark: #000000; --pf-v6-c-hero--gradient--stop-2--dark: #ffffff; --pf-v6-c-hero--gradient--stop-3--dark: #808080;"
+  >
+    <div
+      class="pf-v6-c-hero__body"
+    >
+      Hero content
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Matches the snapshot without backgroundSrc and gradient props 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-hero"
+  >
+    <div
+      class="pf-v6-c-hero__body"
+    >
+      Hero content
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -9,17 +9,17 @@ exports[`Matches the snapshot with both title and toolbar 1`] = `
       class="pf-v6-c-compass__panel"
     >
       <div
-        class="pf-v6-l-flex pf-m-align-items-center"
+        class="pf-v6-c-compass__main-header-content"
       >
         <div
-          class="pf-m-grow"
+          class="pf-v6-c-compass__main-header-title"
         >
           <div>
             Title
           </div>
         </div>
         <div
-          class=""
+          class="pf-v6-c-compass__main-header-toolbar"
         >
           <div>
             Toolbar

@@ -3,9 +3,9 @@
 exports[`Matches the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v6-c-compass__hero"
+    class="pf-v6-c-compass__main-header-toolbar"
   >
-    Hero content
+    Content
   </div>
 </DocumentFragment>
 `;
