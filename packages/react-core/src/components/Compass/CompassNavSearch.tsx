@@ -1,16 +1,27 @@
 import styles from '@patternfly/react-styles/css/components/Compass/compass';
 import { css } from '@patternfly/react-styles';
+import { Button } from '../Button';
+import { Tooltip } from '../Tooltip';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
-interface CompassNavSearchProps extends React.HTMLProps<HTMLDivElement> {
-  /** Content of the nav search section (typically a search button/icon). */
-  children: React.ReactNode;
-  /** Additional classes added to the nav search section. */
-  className?: string;
+export interface CompassNavSearchProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onClick'> {
+  /** Content to display in the tooltip. Defaults to "Search". */
+  tooltipContent?: React.ReactNode;
+  /** Click handler for the search button. */
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-export const CompassNavSearch: React.FunctionComponent<CompassNavSearchProps> = ({ children, className, ...props }) => (
-  <div className={css(styles.compassNavSearch, className)} {...props}>
-    {children}
+export const CompassNavSearch: React.FunctionComponent<CompassNavSearchProps> = ({
+  'aria-label': ariaLabel = 'Search',
+  tooltipContent = 'Search',
+  className,
+  onClick,
+  ...props
+}) => (
+  <div className={css(styles.compassNav + '-search', className)} {...props}>
+    <Tooltip content={tooltipContent}>
+      <Button isCircle variant="plain" icon={<SearchIcon />} aria-label={ariaLabel} onClick={onClick} />
+    </Tooltip>
   </div>
 );
 

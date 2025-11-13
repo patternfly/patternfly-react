@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 import { useRef, useState } from 'react';
 import {
   Compass,
@@ -28,8 +30,6 @@ import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import OutlinedPlusSquare from '@patternfly/react-icons/dist/esm/icons/outlined-plus-square-icon';
 import OutlinedCopy from '@patternfly/react-icons/dist/esm/icons/outlined-copy-icon';
 import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/outlined-question-circle-icon';
-import HomeIcon from '@patternfly/react-icons/dist/esm/icons/home-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 export const CompassBasic: React.FunctionComponent = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
@@ -40,11 +40,7 @@ export const CompassBasic: React.FunctionComponent = () => {
     <>
       <CompassPanel isPill hasNoPadding>
         <CompassNavContent>
-          <CompassNavHome>
-            <Tooltip content="Home">
-              <Button isCircle variant="plain" icon={<HomeIcon />} aria-label="Home" />
-            </Tooltip>
-          </CompassNavHome>
+          <CompassNavHome onClick={() => console.log('Home')} />
           <CompassNavMain>
             <Tabs
               activeKey={activeTab}
@@ -65,11 +61,7 @@ export const CompassBasic: React.FunctionComponent = () => {
               <Tab eventKey={3} title={<TabTitleText>Disabled Tab 4</TabTitleText>} isDisabled />
             </Tabs>
           </CompassNavMain>
-          <CompassNavSearch>
-            <Tooltip content="Search">
-              <Button isCircle variant="plain" icon={<SearchIcon />} aria-label="Search" />
-            </Tooltip>
-          </CompassNavSearch>
+          <CompassNavSearch onClick={() => console.log('Search')} />
         </CompassNavContent>
       </CompassPanel>
       <CompassPanel isPill hasNoPadding>

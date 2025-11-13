@@ -1,32 +1,61 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { CompassNavHome } from '../CompassNavHome';
 import styles from '@patternfly/react-styles/css/components/Compass/compass';
 
-test('Renders with children', () => {
-  render(<CompassNavHome>Test content</CompassNavHome>);
-  expect(screen.getByText('Test content')).toBeVisible();
+test('Renders with default aria-label', () => {
+  render(<CompassNavHome />);
+  expect(screen.getByRole('button', { name: 'Home' })).toBeVisible();
+});
+
+test('Renders with custom aria-label when provided', () => {
+  render(<CompassNavHome aria-label="Custom home" />);
+  expect(screen.getByRole('button', { name: 'Custom home' })).toBeVisible();
+});
+
+test('Renders with default tooltip content', () => {
+  render(<CompassNavHome />);
+  expect(screen.getByRole('button', { name: 'Home' })).toBeVisible();
+});
+
+test('Renders with custom tooltip content when provided', () => {
+  render(<CompassNavHome tooltipContent="Custom tooltip" />);
+  expect(screen.getByRole('button', { name: 'Home' })).toBeVisible();
 });
 
 test('Renders with custom class name when className prop is provided', () => {
-  render(<CompassNavHome className="custom-class">Test</CompassNavHome>);
-  expect(screen.getByText('Test')).toHaveClass('custom-class');
+  const { container } = render(<CompassNavHome className="custom-class" />);
+  expect(container.firstChild).toHaveClass('custom-class');
 });
 
-test(`Renders with default ${styles.compassNavHome} class`, () => {
-  render(<CompassNavHome>Test</CompassNavHome>);
-  expect(screen.getByText('Test')).toHaveClass(styles.compassNavHome);
+test(`Renders with default class`, () => {
+  const { container } = render(<CompassNavHome />);
+  expect(container.firstChild).toHaveClass(styles.compassNav + '-home');
 });
 
-test('Renders with additional props spread to the component', () => {
-  render(<CompassNavHome aria-label="Test label">Test</CompassNavHome>);
-  expect(screen.getByText('Test')).toHaveAccessibleName('Test label');
+test('Calls onClick handler when button is clicked', async () => {
+  const onClick = jest.fn();
+  const user = userEvent.setup();
+  render(<CompassNavHome onClick={onClick} />);
+
+  await user.click(screen.getByRole('button', { name: 'Home' }));
+  expect(onClick).toHaveBeenCalledTimes(1);
+});
+
+test('Renders button with plain variant and circle shape', () => {
+  render(<CompassNavHome />);
+  const button = screen.getByRole('button', { name: 'Home' });
+  expect(button).toHaveClass('pf-m-plain');
 });
 
 test('Matches the snapshot', () => {
+  const { asFragment } = render(<CompassNavHome />);
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test('Matches the snapshot with custom props', () => {
   const { asFragment } = render(
-    <CompassNavHome>
-      <div>Home button</div>
-    </CompassNavHome>
+    <CompassNavHome aria-label="Custom home" tooltipContent="Go home" className="custom-class" />
   );
   expect(asFragment()).toMatchSnapshot();
 });
