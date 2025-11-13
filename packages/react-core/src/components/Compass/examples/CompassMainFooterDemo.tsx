@@ -4,12 +4,11 @@ import {
   CompassHero,
   CompassContent,
   CompassMainHeader,
-  CompassPanel,
-  CompassMainHeaderContent
+  CompassMainFooter
 } from '@patternfly/react-core';
 import './compass.css';
 
-export const CompassBasic: React.FunctionComponent = () => {
+export const CompassMainFooterDemo: React.FunctionComponent = () => {
   const headerContent = <CompassHeader logo={<div>Logo</div>} nav={<div>Nav</div>} profile={<div>Profile</div>} />;
   const sidebarStartContent = <div>Sidebar start</div>;
   // TODO: simplify mainContent to only a div string
@@ -20,18 +19,16 @@ export const CompassBasic: React.FunctionComponent = () => {
       </CompassHero>
       <CompassContent>
         <CompassMainHeader>
-          <CompassPanel>
-            <CompassMainHeaderContent>
-              <div>Content title</div>
-            </CompassMainHeaderContent>
-          </CompassPanel>
+          <div>Content title</div>
         </CompassMainHeader>
         <div>Content</div>
       </CompassContent>
+      <CompassMainFooter>
+        <div>Footer</div>
+      </CompassMainFooter>
     </>
   );
   const sidebarEndContent = <div>Sidebar end</div>;
-  const footerContent = <div>Footer</div>;
 
   return (
     <Compass
@@ -39,7 +36,7 @@ export const CompassBasic: React.FunctionComponent = () => {
       sidebarStart={sidebarStartContent}
       main={mainContent}
       sidebarEnd={sidebarEndContent}
-      footer={footerContent}
+      isFooterExpanded={false}
       style={{ height: '600px' }}
     />
   );

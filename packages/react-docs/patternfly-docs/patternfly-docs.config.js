@@ -10,6 +10,7 @@ module.exports = {
   hasDesignGuidelines: false,
   sideNavItems: [
     { section: 'get-started' },
+    { section: 'PatternFly-AI' },
     { section: 'developer-resources' },
     { section: 'charts' },
     { section: 'components' },

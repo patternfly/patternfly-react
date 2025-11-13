@@ -16,12 +16,13 @@ propComponents:
   ]
 ---
 
-import './compass.css';
 import { useRef, useState } from 'react';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import OutlinedPlusSquare from '@patternfly/react-icons/dist/esm/icons/outlined-plus-square-icon';
 import OutlinedCopy from '@patternfly/react-icons/dist/esm/icons/outlined-copy-icon';
 import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/outlined-question-circle-icon';
+
+import './compass.css';
 
 ## Examples
 
@@ -38,6 +39,14 @@ In a basic compass layout, content can be passed to the following props to popul
 The background image of the `Compass` and `CompassHero` may be customized by using their respective `backgroundSrcLight` and `backgroundSrcDark` props. The `CompassHero` also allows customization of a color gradient across its container by using the `gradientLight` and `gradientDark` props.
 
 ```ts file="CompassBasic.tsx"
+
+```
+
+### With alternate footer
+
+When `footer` is used, its content will take up the width of the screen. However, if content inside of the footer grows, then the two sidebars' heights and placement will adjust to allow for the change. If this is not the desired behavior, then using a `CompassMainFooter` inside of the of the `main` section provides an alterate way to render footer content without interfering with the sidebars, by rendering content at the bottom of the page between the two sidebars opposed to the whole bottom of the page.
+
+```ts file="CompassMainFooterDemo.tsx"
 
 ```
 
