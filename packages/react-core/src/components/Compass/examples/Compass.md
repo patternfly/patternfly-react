@@ -46,3 +46,21 @@ The background image of the `Compass` and `CompassHero` may be customized by usi
 ```ts isFullscreen file="CompassDemo.tsx"
 
 ```
+
+## Composable structure
+
+When building a more custom implementation using Compass components, there are some intended or expected structures that must be present.
+
+### CompassMainHeader structure
+
+When using the `children` property in the `<CompassMainHeader>` component, you should ensure that the expected sub-components are used. The following code block shows a general structure to follow.
+
+```noLive
+<CompassMainHeader>
+  <CompassPanel>
+    <CompassMainHeaderContent>
+      {Your custom content goes here, which can include the CompassMainHeaderTitle and/or CompassMainHeaderToolbar sub-components}
+    </CompassMainHeaderContent>
+  </CompassPanel>
+</CompassMainHeader>
+```
