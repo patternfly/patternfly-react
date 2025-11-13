@@ -7,4 +7,8 @@ export * from './CompassMainHeaderContent';
 export * from './CompassMainHeaderTitle';
 export * from './CompassMainHeaderToolbar';
 export * from './CompassMessageBar';
+export * from './CompassNavContent';
+export * from './CompassNavHome';
+export * from './CompassNavMain';
+export * from './CompassNavSearch';
 export * from './CompassPanel';
