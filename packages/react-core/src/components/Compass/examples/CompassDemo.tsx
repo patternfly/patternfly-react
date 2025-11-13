@@ -38,7 +38,7 @@ export const CompassBasic: React.FunctionComponent = () => {
 
   const navContent = (
     <>
-      <CompassPanel isPill hasNoPadding>
+      <CompassPanel isPill>
         <CompassNavContent>
           <CompassNavHome onClick={() => console.log('Home')} />
           <CompassNavMain>
