@@ -74,6 +74,49 @@ test('Renders children when neither title nor toolbar are provided', () => {
   expect(screen.getByText('Custom children content')).toBeVisible();
 });
 
+test('Renders CompassPanel when title is passed', () => {
+  render(<CompassMainHeader data-testid="test-id" title="Title text" />);
+
+  const panel = screen.getByTestId('test-id').firstChild;
+  expect(panel).toHaveClass(styles.compassPanel);
+});
+
+test('Renders CompassPanel when toolbar is passed', () => {
+  render(<CompassMainHeader data-testid="test-id" toolbar="Toolbar text" />);
+
+  const panel = screen.getByTestId('test-id').firstChild;
+  expect(panel).toHaveClass(styles.compassPanel);
+});
+
+test('Does not render CompassPanel when children are passed', () => {
+  render(
+    <CompassMainHeader data-testid="test-id">
+      <div>Children content</div>
+    </CompassMainHeader>
+  );
+
+  const content = screen.getByTestId('test-id').firstChild;
+  expect(content).not.toHaveClass(styles.compassPanel);
+});
+
+test('Passes props to CompassPanel when title and compassPanelProps is passed', () => {
+  render(
+    <CompassMainHeader data-testid="test-id" compassPanelProps={{ className: 'panel-class' }} title="Title text" />
+  );
+
+  const panel = screen.getByTestId('test-id').firstChild;
+  expect(panel).toHaveClass('panel-class');
+});
+
+test('Passes props to CompassPanel when toolbar and compassPanelProps is passed', () => {
+  render(
+    <CompassMainHeader data-testid="test-id" compassPanelProps={{ className: 'panel-class' }} toolbar="Toolbar text" />
+  );
+
+  const panel = screen.getByTestId('test-id').firstChild;
+  expect(panel).toHaveClass('panel-class');
+});
+
 test('Renders with additional props spread to the component', () => {
   render(<CompassMainHeader id="custom-id">Test</CompassMainHeader>);
   expect(screen.getByText('Test')).toHaveAttribute('id', 'custom-id');
