@@ -3,5 +3,8 @@ export * from './CompassContent';
 export * from './CompassHeader';
 export * from './CompassHero';
 export * from './CompassMainHeader';
+export * from './CompassMainHeaderContent';
+export * from './CompassMainHeaderTitle';
+export * from './CompassMainHeaderToolbar';
 export * from './CompassMessageBar';
 export * from './CompassPanel';
