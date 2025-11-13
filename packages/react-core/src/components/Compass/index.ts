@@ -4,4 +4,8 @@ export * from './CompassHeader';
 export * from './CompassHero';
 export * from './CompassMainHeader';
 export * from './CompassMessageBar';
+export * from './CompassNavContent';
+export * from './CompassNavHome';
+export * from './CompassNavMain';
+export * from './CompassNavSearch';
 export * from './CompassPanel';

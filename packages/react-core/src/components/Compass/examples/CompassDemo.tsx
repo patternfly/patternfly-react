@@ -7,6 +7,10 @@ import {
   CompassMainHeader,
   CompassPanel,
   CompassMessageBar,
+  CompassNavContent,
+  CompassNavHome,
+  CompassNavMain,
+  CompassNavSearch,
   Tabs,
   TabsComponent,
   Tab,
@@ -23,6 +27,8 @@ import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import OutlinedPlusSquare from '@patternfly/react-icons/dist/esm/icons/outlined-plus-square-icon';
 import OutlinedCopy from '@patternfly/react-icons/dist/esm/icons/outlined-copy-icon';
 import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/outlined-question-circle-icon';
+import HomeIcon from '@patternfly/react-icons/dist/esm/icons/home-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 export const CompassBasic: React.FunctionComponent = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
@@ -32,48 +38,64 @@ export const CompassBasic: React.FunctionComponent = () => {
   const navContent = (
     <>
       <CompassPanel isPill hasNoPadding>
-        <Tabs
-          activeKey={activeTab}
-          isNav
-          onSelect={(_event, tabIndex) => setActiveTab(tabIndex as number)}
-          component={TabsComponent.nav}
-          aria-label="Compass navigation tabs"
-          inset={{ default: 'insetXl' }}
-        >
-          <Tab
-            tabContentId="subtabs"
-            tabContentRef={subTabsRef}
-            eventKey={0}
-            title={<TabTitleText>Tab 1</TabTitleText>}
-            aria-label="Compass tab with subtabs"
-          />
-          <Tab eventKey={1} title={<TabTitleText>Tab 2</TabTitleText>} />
-          <Tab eventKey={2} title={<TabTitleText>Tab 3</TabTitleText>} />
-          <Tab eventKey={3} title={<TabTitleText>Disabled Tab 4</TabTitleText>} isDisabled />
-        </Tabs>
+        <CompassNavContent>
+          <CompassNavHome>
+            <Tooltip content="Home">
+              <Button isCircle variant="plain" icon={<HomeIcon />} aria-label="Home" />
+            </Tooltip>
+          </CompassNavHome>
+          <CompassNavMain>
+            <Tabs
+              activeKey={activeTab}
+              isNav
+              onSelect={(_event, tabIndex) => setActiveTab(tabIndex as number)}
+              component={TabsComponent.nav}
+              aria-label="Compass navigation tabs"
+            >
+              <Tab
+                tabContentId="subtabs"
+                tabContentRef={subTabsRef}
+                eventKey={0}
+                title={<TabTitleText>Tab 1</TabTitleText>}
+                aria-label="Compass tab with subtabs"
+              />
+              <Tab eventKey={1} title={<TabTitleText>Tab 2</TabTitleText>} />
+              <Tab eventKey={2} title={<TabTitleText>Tab 3</TabTitleText>} />
+              <Tab eventKey={3} title={<TabTitleText>Disabled Tab 4</TabTitleText>} isDisabled />
+            </Tabs>
+          </CompassNavMain>
+          <CompassNavSearch>
+            <Tooltip content="Search">
+              <Button isCircle variant="plain" icon={<SearchIcon />} aria-label="Search" />
+            </Tooltip>
+          </CompassNavSearch>
+        </CompassNavContent>
       </CompassPanel>
       <CompassPanel isPill hasNoPadding>
         <TabContent id="subtabs" ref={subTabsRef}>
-          <Tabs
-            activeKey={activeSubtab}
-            isSubtab
-            isNav
-            onSelect={(_event, tabIndex) => setActiveSubtab(tabIndex as number)}
-            aria-label="Compass navigation subtabs"
-            inset={{ default: 'insetXl' }}
-          >
-            <Tab
-              tabContentId="subtab-1"
-              eventKey={0}
-              title={
-                <TabTitleText>
-                  <div id="subtab-1">Subtab 1</div>
-                </TabTitleText>
-              }
-            />
-            <Tab eventKey={1} title={<TabTitleText>Subtab 2</TabTitleText>} />
-            <Tab eventKey={2} title={<TabTitleText>Disabled Subtab 3</TabTitleText>} isDisabled />
-          </Tabs>
+          <CompassNavContent>
+            <CompassNavMain>
+              <Tabs
+                activeKey={activeSubtab}
+                isSubtab
+                isNav
+                onSelect={(_event, tabIndex) => setActiveSubtab(tabIndex as number)}
+                aria-label="Compass navigation subtabs"
+              >
+                <Tab
+                  tabContentId="subtab-1"
+                  eventKey={0}
+                  title={
+                    <TabTitleText>
+                      <div id="subtab-1">Subtab 1</div>
+                    </TabTitleText>
+                  }
+                />
+                <Tab eventKey={1} title={<TabTitleText>Subtab 2</TabTitleText>} />
+                <Tab eventKey={2} title={<TabTitleText>Disabled Subtab 3</TabTitleText>} isDisabled />
+              </Tabs>
+            </CompassNavMain>
+          </CompassNavContent>
         </TabContent>
       </CompassPanel>
     </>
