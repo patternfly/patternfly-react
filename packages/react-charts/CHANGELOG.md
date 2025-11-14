@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.5.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.5.0-prerelease.5...@patternfly/react-charts@8.5.0-prerelease.6) (2025-11-14)
+
+### Bug Fixes
+
+- Moves items to new nav. ([#12013](https://github.com/patternfly/patternfly-react/issues/12013)) ([ddd0696](https://github.com/patternfly/patternfly-react/commit/ddd0696796134c7d0f9583ce56e26b0df47156cb))
+
 # [8.5.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.5.0-prerelease.4...@patternfly/react-charts@8.5.0-prerelease.5) (2025-11-12)
 
 **Note:** Version bump only for package @patternfly/react-charts

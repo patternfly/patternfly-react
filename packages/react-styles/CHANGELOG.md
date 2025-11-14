@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.5.0-prerelease.5...@patternfly/react-styles@6.5.0-prerelease.6) (2025-11-14)
+
+### Bug Fixes
+
+- Moves items to new nav. ([#12013](https://github.com/patternfly/patternfly-react/issues/12013)) ([ddd0696](https://github.com/patternfly/patternfly-react/commit/ddd0696796134c7d0f9583ce56e26b0df47156cb))
+
+### Features
+
+- **Compass:** updated mainheader structure to be composable ([#12135](https://github.com/patternfly/patternfly-react/issues/12135)) ([6bcdcaf](https://github.com/patternfly/patternfly-react/commit/6bcdcaf116645aad4c9c0d98ca61045976a84946))
+
 # [6.5.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.5.0-prerelease.4...@patternfly/react-styles@6.5.0-prerelease.5) (2025-11-12)
 
 ### Features
