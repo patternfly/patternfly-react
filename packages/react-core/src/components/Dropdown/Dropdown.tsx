@@ -1,27 +1,12 @@
 import { forwardRef, useEffect, useRef } from 'react';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuProps } from '../Menu';
-import { Popper } from '../../helpers/Popper/Popper';
+import { Popper, PopperOptions } from '../../helpers/Popper/Popper';
+import type { DropdownItemProps } from './DropdownItem';
 import { useOUIAProps, OUIAProps, onToggleArrowKeydownDefault } from '../../helpers';
 
-export interface DropdownPopperProps {
-  /** Vertical direction of the popper. If enableFlip is set to true, this will set the initial direction before the popper flips. */
-  direction?: 'up' | 'down';
-  /** Horizontal position of the popper */
-  position?: 'right' | 'left' | 'center' | 'start' | 'end';
-  /** Custom width of the popper. If the value is "trigger", it will set the width to the dropdown toggle's width */
-  width?: string | 'trigger';
-  /** Minimum width of the popper. If the value is "trigger", it will set the min width to the dropdown toggle's width */
-  minWidth?: string | 'trigger';
-  /** Maximum width of the popper. If the value is "trigger", it will set the max width to the dropdown toggle's width */
-  maxWidth?: string | 'trigger';
-  /** Enable to flip the popper when it reaches the boundary */
-  enableFlip?: boolean;
-  /** The container to append the popper to. Defaults to document.body. */
-  appendTo?: HTMLElement | (() => HTMLElement) | 'inline';
-  /** Flag to prevent the popper from overflowing its container and becoming partially obscured. */
-  preventOverflow?: boolean;
-}
+/** @deprecated Use PopperOptions instead */
+export type DropdownPopperProps = PopperOptions;
 
 export interface DropdownToggleProps {
   /**  Dropdown toggle node. */
@@ -45,7 +30,7 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   /** Flag indicating the toggle should be focused after a selection. If this use case is too restrictive, the optional toggleRef property with a node toggle may be used to control focus. */
   shouldFocusToggleOnSelect?: boolean;
   /** Function callback called when user selects item. */
-  onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, value?: string | number) => void;
+  onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, value?: DropdownItemProps['value']) => void;
   /** Callback to allow the dropdown component to change the open state of the menu.
    * Triggered by clicking outside of the menu, or by pressing any keys specified in onOpenChangeKeys. */
   onOpenChange?: (isOpen: boolean) => void;
@@ -66,7 +51,7 @@ export interface DropdownProps extends MenuProps, OUIAProps {
   /** z-index of the dropdown menu */
   zIndex?: number;
   /** Additional properties to pass to the Popper */
-  popperProps?: DropdownPopperProps;
+  popperProps?: PopperOptions;
   /** Height of the dropdown menu */
   menuHeight?: string;
   /** Maximum height of dropdown menu */

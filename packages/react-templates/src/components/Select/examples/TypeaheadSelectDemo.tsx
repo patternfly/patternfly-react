@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, FunctionComponent } from 'react';
 import { TypeaheadSelect, TypeaheadSelectOption } from '@patternfly/react-templates';
 import { Checkbox } from '@patternfly/react-core';
 
@@ -12,7 +12,7 @@ const Options = [
 ];
 
 /* eslint-disable no-console */
-export const SelectTypeaheadDemo: React.FunctionComponent = () => {
+export const SelectTypeaheadDemo: FunctionComponent = () => {
   const [selected, setSelected] = useState<string | undefined>();
   const [options, setOptions] = useState(Options);
   const [isCreatable, setIsCreatable] = useState<boolean>(false);

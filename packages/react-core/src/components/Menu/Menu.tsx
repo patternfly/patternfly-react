@@ -4,6 +4,7 @@ import breadcrumbStyles from '@patternfly/react-styles/css/components/Breadcrumb
 import { css } from '@patternfly/react-styles';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 import { MenuContext } from './MenuContext';
+import type { MenuItemProps } from './MenuItem';
 import { canUseDOM } from '../../helpers/util';
 import { KeyboardHandler } from '../../helpers';
 export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'ref' | 'onSelect'>, OUIAProps {
@@ -14,7 +15,7 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   /** ID of the menu */
   id?: string;
   /** Callback for updating when item selection changes. You can also specify onClick on the MenuItem. */
-  onSelect?: (event?: React.MouseEvent, itemId?: string | number) => void;
+  onSelect?: (event?: React.MouseEvent, itemId?: MenuItemProps['itemId']) => void;
   /** Single itemId for single select menus, or array of itemIds for multi select. You can also specify isSelected on the MenuItem. */
   selected?: any | any[];
   /** Callback called when an MenuItems's action button is clicked. You can also specify it within a MenuItemAction. */
@@ -69,7 +70,6 @@ export interface MenuState {
   ouiaStateId: string;
   transitionMoveTarget: HTMLElement;
   flyoutRef: React.Ref<HTMLLIElement> | null;
-  disableHover: boolean;
   currentDrilldownMenuId: string;
 }
 
@@ -98,7 +98,6 @@ class MenuBase extends Component<MenuProps, MenuState> {
     ouiaStateId: getDefaultOUIAId(Menu.displayName),
     transitionMoveTarget: null,
     flyoutRef: null,
-    disableHover: false,
     currentDrilldownMenuId: this.props.id
   };
 
@@ -116,9 +115,6 @@ class MenuBase extends Component<MenuProps, MenuState> {
   }
 
   componentDidMount() {
-    if (this.context) {
-      this.setState({ disableHover: this.context.disableHover });
-    }
     if (canUseDOM && this.props.containsDrilldown && this.props.isRootMenu) {
       window.addEventListener('transitionend', this.handleDrilldownTransition);
     }
@@ -283,7 +279,7 @@ class MenuBase extends Component<MenuProps, MenuState> {
           onGetMenuHeight,
           flyoutRef: this.state.flyoutRef,
           setFlyoutRef: (flyoutRef) => this.setState({ flyoutRef }),
-          disableHover: this.state.disableHover,
+          disableHover: this.context?.disableHover ?? false,
           role
         }}
       >

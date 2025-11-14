@@ -47,27 +47,11 @@ const getOppositePlacement = (placement: Placement): any =>
 export const getOpacityTransition = (animationDuration: number) =>
   `opacity ${animationDuration}ms cubic-bezier(.54, 1.5, .38, 1.11)`;
 
-export interface PopperProps {
-  /**
-   * Trigger reference element to which the popper is relatively placed to.
-   */
-  trigger?: React.ReactNode;
-  /**
-   * A reference to the trigger reference element that can be passed instead of or along
-   * with the trigger prop. When passed along with the trigger prop, the div element that
-   * wraps the trigger will be removed.
-   */
-  triggerRef?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
-  /** The popper (menu/tooltip/popover) element */
-  popper: React.ReactElement<any>;
-  /**
-   * Reference to the popper (menu/tooltip/popover) element.
-   * Passing this prop will remove the wrapper div element from the popper.
-   */
-  popperRef?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
+/** Properties of Popper that can be used to customize its behavior. */
+export interface PopperOptions {
   /** popper direction */
   direction?: 'up' | 'down';
-  /** popper position */
+  /** Horizontal position of the popper. Use the additional prop preventOverflow if seeing clipping. */
   position?: 'right' | 'left' | 'center' | 'start' | 'end';
   /** Instead of direction and position can set the placement of the popper */
   placement?: Placement;
@@ -81,8 +65,6 @@ export interface PopperProps {
   appendTo?: HTMLElement | (() => HTMLElement) | 'inline';
   /** z-index of the popper element */
   zIndex?: number;
-  /** True to make the popper visible */
-  isVisible?: boolean;
   /**
    * Map class names to positions, for example:
    * {
@@ -177,6 +159,29 @@ export interface PopperProps {
   onShown?: () => void;
   /** Flag to prevent the popper from overflowing its container and becoming partially obscured. */
   preventOverflow?: boolean;
+}
+
+/** Extends PopperOptions */
+export interface PopperProps extends PopperOptions {
+  /**
+   * Trigger reference element to which the popper is relatively placed to.
+   */
+  trigger?: React.ReactNode;
+  /**
+   * A reference to the trigger reference element that can be passed instead of or along
+   * with the trigger prop. When passed along with the trigger prop, the div element that
+   * wraps the trigger will be removed.
+   */
+  triggerRef?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
+  /** The popper (menu/tooltip/popover) element */
+  popper: React.ReactElement<any>;
+  /**
+   * Reference to the popper (menu/tooltip/popover) element.
+   * Passing this prop will remove the wrapper div element from the popper.
+   */
+  popperRef?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
+  /** True to make the popper visible */
+  isVisible?: boolean;
 }
 
 export const Popper: React.FunctionComponent<PopperProps> = ({

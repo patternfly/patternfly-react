@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches the snapshot with both title and toolbar 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-compass__main-header"
+  >
+    <div
+      class="pf-v6-c-compass__panel"
+    >
+      <div
+        class="pf-v6-c-compass__main-header-content"
+      >
+        <div
+          class="pf-v6-c-compass__main-header-title"
+        >
+          <div>
+            Title
+          </div>
+        </div>
+        <div
+          class="pf-v6-c-compass__main-header-toolbar"
+        >
+          <div>
+            Toolbar
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Matches the snapshot with children 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-compass__main-header"
+  >
+    Custom children content
+  </div>
+</DocumentFragment>
+`;

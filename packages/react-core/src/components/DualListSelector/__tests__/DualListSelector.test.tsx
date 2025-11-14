@@ -3,6 +3,7 @@ import styles from '@patternfly/react-styles/css/components/DualListSelector/dua
 import { DualListSelector } from '../DualListSelector';
 import { DualListSelectorPane } from '../DualListSelectorPane';
 import { SearchInput } from '../../SearchInput';
+import { AnimationsProvider } from '../../../helpers/AnimationsProvider';
 
 // The following tests can be removed as part of https://github.com/patternfly/patternfly-react/issues/11838
 describe('Opt-in animations', () => {
@@ -28,6 +29,33 @@ describe('Opt-in animations', () => {
     render(<DualListSelector isTree hasAnimations data-testid="test-id" />);
 
     expect(screen.getByTestId('test-id')).toHaveClass(styles.modifiers.animateExpand);
+  });
+
+  // Animation context tests
+  test('respects AnimationsProvider context when no local hasAnimations prop', () => {
+    render(
+      <AnimationsProvider config={{ hasAnimations: true }}>
+        <DualListSelector isTree data-testid="test-id" />
+      </AnimationsProvider>
+    );
+
+    expect(screen.getByTestId('test-id')).toHaveClass(styles.modifiers.animateExpand);
+  });
+
+  test('local hasAnimations prop takes precedence over context', () => {
+    render(
+      <AnimationsProvider config={{ hasAnimations: true }}>
+        <DualListSelector isTree hasAnimations={false} data-testid="test-id" />
+      </AnimationsProvider>
+    );
+
+    expect(screen.getByTestId('test-id')).not.toHaveClass(styles.modifiers.animateExpand);
+  });
+
+  test('works without AnimationsProvider (backward compatibility)', () => {
+    render(<DualListSelector isTree data-testid="test-id" />);
+
+    expect(screen.getByTestId('test-id')).not.toHaveClass(styles.modifiers.animateExpand);
   });
 });
 

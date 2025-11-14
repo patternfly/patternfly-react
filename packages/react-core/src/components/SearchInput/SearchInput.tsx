@@ -13,6 +13,7 @@ import { AdvancedSearchMenu } from './AdvancedSearchMenu';
 import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities } from '../TextInputGroup';
 import { InputGroup, InputGroupItem } from '../InputGroup';
 import { Popper } from '../../helpers';
+import { useHasAnimations } from '../../helpers';
 import textInputGroupStyles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
 import inputGroupStyles from '@patternfly/react-styles/css/components/InputGroup/input-group';
 
@@ -180,7 +181,8 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   const popperRef = useRef(null);
   const [focusAfterExpandChange, setFocusAfterExpandChange] = useState(false);
 
-  const { isExpanded, onToggleExpand, toggleAriaLabel, hasAnimations } = expandableInput || {};
+  const { isExpanded, onToggleExpand, toggleAriaLabel, hasAnimations: hasAnimationsProp } = expandableInput || {};
+  const hasAnimations = useHasAnimations(hasAnimationsProp);
 
   useEffect(() => {
     // this effect and the focusAfterExpandChange variable are needed to focus the input/toggle as needed when the

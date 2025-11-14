@@ -1,18 +1,3 @@
----
-id: Password generator
-section: patterns
----
-
-import { useEffect, useRef, useState } from 'react';
-import RedoIcon from '@patternfly/react-icons/dist/esm/icons/redo-icon';
-import EyeIcon from '@patternfly/react-icons/dist/esm/icons/eye-icon';
-import EyeSlashIcon from '@patternfly/react-icons/dist/esm/icons/eye-slash-icon';
-
-## Demos
-
-### Provide a generated password
-
-```ts
 import { useEffect, useRef, useState } from 'react';
 import {
   InputGroup,
@@ -30,12 +15,12 @@ import RedoIcon from '@patternfly/react-icons/dist/esm/icons/redo-icon';
 import EyeIcon from '@patternfly/react-icons/dist/esm/icons/eye-icon';
 import EyeSlashIcon from '@patternfly/react-icons/dist/esm/icons/eye-slash-icon';
 
-const PasswordGenerator: React.FunctionComponent = () => {
+export const PasswordGenerator: React.FunctionComponent = () => {
   const generatePassword = () => {
     const length = 12;
     const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@%()_-=+';
     let retVal = '';
-    for (var i = 0, n = charset.length; i < length; ++i) {
+    for (let i = 0, n = charset.length; i < length; ++i) {
       retVal += charset.charAt(Math.floor(Math.random() * n));
     }
     return retVal;
@@ -153,7 +138,7 @@ const PasswordGenerator: React.FunctionComponent = () => {
             actions={
               <MenuItemAction
                 icon={<RedoIcon />}
-                onClick={(e) => {
+                onClick={(_e) => {
                   setGeneratedPassword(generatePassword());
                 }}
                 actionId="redo"
@@ -181,4 +166,3 @@ const PasswordGenerator: React.FunctionComponent = () => {
     />
   );
 };
-```

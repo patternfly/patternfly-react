@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "7.3.1-prerelease.18",
+  "version": "7.5.0-prerelease.13",
   "publishConfig": {
     "access": "public",
     "tag": "prerelease"
@@ -33,11 +33,11 @@
     "@patternfly/react-table": "workspace:^",
     "@patternfly/react-templates": "workspace:^",
     "@patternfly/react-tokens": "workspace:^",
-    "echarts": "^5.6.0",
+    "echarts": "^5.6.0 || ^6.0.0",
     "victory": "^37.3.6"
   },
   "devDependencies": {
-    "@patternfly/documentation-framework": "^6.19.0",
+    "@patternfly/documentation-framework": "^6.28.9",
     "@patternfly/patternfly-a11y": "5.1.0"
   },
   "keywords": [

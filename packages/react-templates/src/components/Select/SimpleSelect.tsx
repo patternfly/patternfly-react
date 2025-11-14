@@ -1,4 +1,12 @@
-import { forwardRef, useEffect, useState } from 'react';
+import {
+  forwardRef,
+  useEffect,
+  useState,
+  FunctionComponent,
+  Ref,
+  MouseEvent as ReactMouseEvent,
+  CSSProperties
+} from 'react';
 import {
   Select,
   SelectList,
@@ -21,7 +29,7 @@ export interface SimpleSelectProps extends Omit<SelectProps, 'toggle' | 'onToggl
   /** Initial options of the select. */
   initialOptions?: SimpleSelectOption[];
   /** Callback triggered on selection. */
-  onSelect?: (_event: React.MouseEvent<Element, MouseEvent>, selection: string | number) => void;
+  onSelect?: (_event: React.MouseEvent<Element, MouseEvent>, selection: SimpleSelectOption['value']) => void;
   /** Callback triggered when the select opens or closes. */
   onToggle?: (nextIsOpen: boolean) => void;
   /** Flag indicating the select should be disabled. */
@@ -36,7 +44,7 @@ export interface SimpleSelectProps extends Omit<SelectProps, 'toggle' | 'onToggl
   toggleProps?: MenuToggleProps;
 }
 
-const SimpleSelectBase: React.FunctionComponent<SimpleSelectProps> = ({
+const SimpleSelectBase: FunctionComponent<SimpleSelectProps> = ({
   innerRef,
   initialOptions,
   isDisabled,
@@ -71,14 +79,14 @@ const SimpleSelectBase: React.FunctionComponent<SimpleSelectProps> = ({
     setIsOpen(!isOpen);
   };
 
-  const _onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
+  const _onSelect = (_event: ReactMouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
     onSelect && onSelect(_event, value);
     setSelected(initialOptions.find((o) => o.value === value));
     onToggle && onToggle(true);
     setIsOpen(false);
   };
 
-  const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
+  const toggle = (toggleRef: Ref<MenuToggleElement>) => (
     <MenuToggle
       ref={toggleRef}
       onClick={onToggleClick}
@@ -87,7 +95,7 @@ const SimpleSelectBase: React.FunctionComponent<SimpleSelectProps> = ({
       style={
         {
           width: toggleWidth
-        } as React.CSSProperties
+        } as CSSProperties
       }
       {...toggleProps}
     >
@@ -114,7 +122,7 @@ const SimpleSelectBase: React.FunctionComponent<SimpleSelectProps> = ({
   );
 };
 
-export const SimpleSelect = forwardRef((props: SimpleSelectProps, ref: React.Ref<any>) => (
+export const SimpleSelect = forwardRef((props: SimpleSelectProps, ref: Ref<any>) => (
   <SimpleSelectBase {...props} innerRef={ref} />
 ));
 

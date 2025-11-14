@@ -1,5 +1,5 @@
 import { Fragment, ReactNode, useEffect, useState } from 'react';
-import { Card, Content, Label, PageSection } from '@patternfly/react-core';
+import { Content, Label, PageSection } from '@patternfly/react-core';
 import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 
@@ -155,56 +155,54 @@ export const TableExpandCollapseAll: React.FunctionComponent = () => {
           }}
           aria-label="Collapsible table data"
         >
-          <Card component="div">
-            <Table isExpandable hasAnimations aria-label="Collapsible table">
-              <Thead>
-                <Tr>
-                  <Th
-                    expand={{
-                      areAllExpanded: !areAllExpanded,
-                      collapseAllAriaLabel,
-                      onToggle: onCollapseAll
-                    }}
-                    aria-label="Row expansion"
-                  />
-                  {expandableColumns.map((column) => (
-                    <Th key={column}>{column}</Th>
-                  ))}
-                </Tr>
-              </Thead>
+          <Table isExpandable hasAnimations aria-label="Collapsible table">
+            <Thead>
+              <Tr>
+                <Th
+                  expand={{
+                    areAllExpanded: !areAllExpanded,
+                    collapseAllAriaLabel,
+                    onToggle: onCollapseAll
+                  }}
+                  aria-label="Row expansion"
+                />
+                {expandableColumns.map((column) => (
+                  <Th key={column}>{column}</Th>
+                ))}
+              </Tr>
+            </Thead>
 
-              {serverData.map((server, serverIndex) => (
-                <Tbody key={server.name} isExpanded={isServerExpanded(server)}>
-                  <Tr isContentExpanded={isServerExpanded(server)}>
-                    <Td
-                      expand={
-                        server.details
-                          ? {
-                              rowIndex: serverIndex,
-                              isExpanded: isServerExpanded(server),
-                              onToggle: () => setServerExpanded(server, !isServerExpanded(server))
-                            }
-                          : undefined
-                      }
-                    >
-                      <ExpandableRowContent>{server.details}</ExpandableRowContent>
-                    </Td>
-                    <Td>{server?.name}</Td>
-                    <Td>{server?.threads}</Td>
-                    <Td>{server?.applications}</Td>
-                    <Td>{server?.workspaces}</Td>
-                    <Td>{server?.status?.title}</Td>
-                  </Tr>
-                  <Tr isExpanded={isServerExpanded(server)}>
-                    <Td></Td>
-                    <Td colSpan={expandableColumns.length}>
-                      <ExpandableRowContent>{server?.details}</ExpandableRowContent>
-                    </Td>
-                  </Tr>
-                </Tbody>
-              ))}
-            </Table>
-          </Card>
+            {serverData.map((server, serverIndex) => (
+              <Tbody key={server.name} isExpanded={isServerExpanded(server)}>
+                <Tr isContentExpanded={isServerExpanded(server)}>
+                  <Td
+                    expand={
+                      server.details
+                        ? {
+                            rowIndex: serverIndex,
+                            isExpanded: isServerExpanded(server),
+                            onToggle: () => setServerExpanded(server, !isServerExpanded(server))
+                          }
+                        : undefined
+                    }
+                  >
+                    <ExpandableRowContent>{server.details}</ExpandableRowContent>
+                  </Td>
+                  <Td>{server?.name}</Td>
+                  <Td>{server?.threads}</Td>
+                  <Td>{server?.applications}</Td>
+                  <Td>{server?.workspaces}</Td>
+                  <Td>{server?.status?.title}</Td>
+                </Tr>
+                <Tr isExpanded={isServerExpanded(server)}>
+                  <Td></Td>
+                  <Td colSpan={expandableColumns.length}>
+                    <ExpandableRowContent>{server?.details}</ExpandableRowContent>
+                  </Td>
+                </Tr>
+              </Tbody>
+            ))}
+          </Table>
         </PageSection>
       </DashboardWrapper>
     </Fragment>

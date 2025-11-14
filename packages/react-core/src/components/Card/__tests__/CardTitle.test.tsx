@@ -1,21 +1,31 @@
 import { render, screen } from '@testing-library/react';
 import { CardTitle } from '../CardTitle';
 
-describe('CardTitle', () => {
-  test('renders with PatternFly Core styles', () => {
-    const { asFragment } = render(<CardTitle>text</CardTitle>);
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders with custom class when passed', () => {
+  render(<CardTitle className="extra-class">text</CardTitle>);
+  expect(screen.getByText('text')).toHaveClass('extra-class');
+});
 
-  test('className is added to the root element', () => {
-    render(<CardTitle className="extra-class">text</CardTitle>);
-    expect(screen.getByText('text')).toHaveClass('extra-class');
-  });
+test('Does not render with card subtitle by default', () => {
+  render(<CardTitle>text</CardTitle>);
 
-  test('extra props are spread to the root element', () => {
-    const testId = 'card-header';
+  expect(screen.queryByText('text')?.nextElementSibling).not.toBeInTheDocument();
+});
 
-    render(<CardTitle data-testid={testId} />);
-    expect(screen.getByTestId(testId)).toBeInTheDocument();
-  });
+test('Renders with card subtitle when subtitle is passed', () => {
+  render(<CardTitle subtitle="subtitle content">text</CardTitle>);
+
+  expect(screen.getByText('subtitle content')).toBeInTheDocument();
+});
+
+test('extra props are spread to the root element', () => {
+  const testId = 'card-header';
+
+  render(<CardTitle data-testid={testId} />);
+  expect(screen.getByTestId(testId)).toBeInTheDocument();
+});
+
+test('Matches snapshot', () => {
+  const { asFragment } = render(<CardTitle>text</CardTitle>);
+  expect(asFragment()).toMatchSnapshot();
 });

@@ -138,6 +138,14 @@ Stateful buttons are ideal for displaying the state of notifications. Use `varia
 
 ```
 
+### Circle buttons
+
+Pass `isCircle` to a button to modify its styling from simply rounded corners to complete circles. Circle buttons are intended for buttons that only contain an icon and adequate accessible naming.
+
+```ts file="./ButtonCircle.tsx"
+
+```
+
 ## Animated examples
 
 The following `<Button>` implementations have animations built into them. When using one of the following implementations, the `icon` property will be overridden due to the animations needing specific icons internally.

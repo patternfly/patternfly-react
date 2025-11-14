@@ -110,6 +110,7 @@ export const MenuWithDrilldown: React.FunctionComponent = () => {
                       value={startInput}
                       aria-label="Filter menu items"
                       onChange={(_event, value) => handleStartTextInputChange(value)}
+                      onClear={() => handleStartTextInputChange('')}
                     />
                   </MenuSearchInput>
                 </MenuSearch>

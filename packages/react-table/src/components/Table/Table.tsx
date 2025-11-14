@@ -8,6 +8,7 @@ import { IVisibility } from './utils/decorators/classNames';
 import { handleArrows, setTabIndex } from '@patternfly/react-core/dist/esm/helpers/KeyboardHandler';
 import { KeyTypes } from '@patternfly/react-core/dist/esm/helpers/constants';
 import { useOUIAProps, OUIAProps } from '@patternfly/react-core/dist/esm/helpers/OUIA/ouia';
+import { useHasAnimations } from '@patternfly/react-core/dist/esm/helpers';
 import { TableGridBreakpoint, TableVariant } from './TableTypes';
 
 export interface BaseCellProps {
@@ -47,6 +48,8 @@ export interface TableProps extends React.HTMLProps<HTMLTableElement>, OUIAProps
   gridBreakPoint?: '' | 'grid' | 'grid-md' | 'grid-lg' | 'grid-xl' | 'grid-2xl';
   /** A valid WAI-ARIA role to be applied to the table element */
   role?: string;
+  /** @beta Flag indicating if the table should have plain styling with a transparent background */
+  isPlain?: boolean;
   /** If set to true, the table header sticks to the top of its container */
   isStickyHeader?: boolean;
   /** @hide Forwarded ref */
@@ -93,6 +96,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
   variant,
   borders = true,
   isStickyHeader = false,
+  isPlain = false,
   gridBreakPoint = TableGridBreakpoint.gridMd,
   'aria-label': ariaLabel,
   role = 'grid',
@@ -103,13 +107,14 @@ const TableBase: React.FunctionComponent<TableProps> = ({
   isNested = false,
   isStriped = false,
   isExpandable = false,
-  hasAnimations = false,
+  hasAnimations: hasAnimationsProp,
   hasNoInset = false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   nestedHeaderColumnSpans,
   selectableRowCaptionText,
   ...props
 }: TableProps) => {
+  const hasAnimations = useHasAnimations(hasAnimationsProp);
   const ref = useRef(null);
   const tableRef = innerRef || ref;
 
@@ -220,6 +225,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
           isTreeTable && stylesTreeView.modifiers.treeView,
           isStriped && styles.modifiers.striped,
           isExpandable && styles.modifiers.expandable,
+          isPlain && styles.modifiers.plain,
           hasNoInset && stylesTreeView.modifiers.noInset,
           isNested && 'pf-m-nested',
           hasAnimations && styles.modifiers.animateExpand

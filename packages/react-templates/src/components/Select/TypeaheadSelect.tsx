@@ -1,4 +1,15 @@
-import { forwardRef, useEffect, useRef, useState } from 'react';
+import {
+  forwardRef,
+  useEffect,
+  useState,
+  useRef,
+  FunctionComponent,
+  Ref,
+  MouseEvent as ReactMouseEvent,
+  KeyboardEvent as ReactKeyboardEvent,
+  FormEvent as ReactFormEvent,
+  CSSProperties
+} from 'react';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 import { MenuToggle, MenuToggleElement, MenuToggleProps } from '@patternfly/react-core/dist/esm/components/MenuToggle';
 import {
@@ -30,7 +41,7 @@ export interface TypeaheadSelectProps extends Omit<SelectProps, 'toggle' | 'onSe
   /** Callback triggered on selection. */
   onSelect?: (
     _event: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<HTMLInputElement> | undefined,
-    selection: string | number
+    selection: TypeaheadSelectOption['value']
   ) => void;
   /** Callback triggered when the select opens or closes. */
   onToggle?: (nextIsOpen: boolean) => void;
@@ -65,7 +76,7 @@ export interface TypeaheadSelectProps extends Omit<SelectProps, 'toggle' | 'onSe
 const defaultNoOptionsFoundMessage = (filter: string) => `No results found for "${filter}"`;
 const defaultCreateOptionMessage = (newValue: string) => `Create "${newValue}"`;
 
-export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> = ({
+export const TypeaheadSelectBase: FunctionComponent<TypeaheadSelectProps> = ({
   innerRef,
   initialOptions,
   onSelect,
@@ -203,7 +214,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
   };
 
   const selectOption = (
-    _event: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<HTMLInputElement> | undefined,
+    _event: ReactMouseEvent<Element, MouseEvent> | ReactKeyboardEvent<HTMLInputElement> | undefined,
     option: TypeaheadSelectOption
   ) => {
     onSelect && onSelect(_event, option.value);
@@ -215,14 +226,14 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
     closeMenu();
   };
 
-  const _onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
+  const _onSelect = (_event: ReactMouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
     if (value && value !== NO_RESULTS) {
       const optionToSelect = selectOptions.find((option) => option.value === value);
       selectOption(_event, optionToSelect);
     }
   };
 
-  const onTextInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
+  const onTextInputChange = (_event: ReactFormEvent<HTMLInputElement>, value: string) => {
     setInputValue(value);
     onInputChange && onInputChange(value);
     setFilterValue(value);
@@ -276,7 +287,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
     setActiveAndFocusedItem(indexToFocus);
   };
 
-  const defaultOnInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  const defaultOnInputKeyDown = (event: ReactKeyboardEvent<HTMLInputElement>) => {
     const focusedItem = focusedItemIndex !== null ? selectOptions[focusedItemIndex] : null;
 
     switch (event.key) {
@@ -297,7 +308,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
     }
   };
 
-  const onInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  const onInputKeyDown = (event: ReactKeyboardEvent<HTMLInputElement>) => {
     if (onInputKeyDownProp) {
       onInputKeyDownProp(event);
     } else {
@@ -321,7 +332,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
     onClearSelection && onClearSelection();
   };
 
-  const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
+  const toggle = (toggleRef: Ref<MenuToggleElement>) => (
     <MenuToggle
       ref={toggleRef}
       variant="typeahead"
@@ -333,7 +344,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
       style={
         {
           width: toggleWidth
-        } as React.CSSProperties
+        } as CSSProperties
       }
       {...toggleProps}
     >
@@ -388,7 +399,7 @@ export const TypeaheadSelectBase: React.FunctionComponent<TypeaheadSelectProps> 
 };
 TypeaheadSelectBase.displayName = 'TypeaheadSelectBase';
 
-export const TypeaheadSelect = forwardRef((props: TypeaheadSelectProps, ref: React.Ref<any>) => (
+export const TypeaheadSelect = forwardRef((props: TypeaheadSelectProps, ref: Ref<any>) => (
   <TypeaheadSelectBase {...props} innerRef={ref} />
 ));
 

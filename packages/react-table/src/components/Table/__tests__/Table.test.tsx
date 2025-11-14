@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { Table } from '../Table';
 import { Td } from '../Td';
 import { Th } from '../Th';
+import { AnimationsProvider, useAnimationsConfig, useHasAnimations } from '@patternfly/react-core/dist/esm/helpers';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
 test('Renders without children', () => {
@@ -55,6 +56,33 @@ test(`Renders with class ${styles.modifiers.animateExpand} hasAnimations is true
   render(<Table hasAnimations aria-label="Test table" />);
 
   expect(screen.getByRole('grid', { name: 'Test table' })).toHaveClass(styles.modifiers.animateExpand);
+});
+
+// Animation context tests for expandable tables
+test('respects AnimationsProvider context when no local hasAnimations prop for expandable table', () => {
+  render(
+    <AnimationsProvider config={{ hasAnimations: true }}>
+      <Table isExpandable aria-label="Test table" />
+    </AnimationsProvider>
+  );
+
+  expect(screen.getByRole('grid', { name: 'Test table' })).toHaveClass(styles.modifiers.animateExpand);
+});
+
+test('local hasAnimations prop takes precedence over context for expandable table', () => {
+  render(
+    <AnimationsProvider config={{ hasAnimations: true }}>
+      <Table isExpandable hasAnimations={false} aria-label="Test table" />
+    </AnimationsProvider>
+  );
+
+  expect(screen.getByRole('grid', { name: 'Test table' })).not.toHaveClass(styles.modifiers.animateExpand);
+});
+
+test('works without AnimationsProvider (backward compatibility) for expandable table', () => {
+  render(<Table isExpandable aria-label="Test table" />);
+
+  expect(screen.getByRole('grid', { name: 'Test table' })).not.toHaveClass(styles.modifiers.animateExpand);
 });
 
 test('Matches snapshot without children', () => {
@@ -121,4 +149,10 @@ test('Renders expandable toggle button in Th with pf-m-small class when variant 
   toggleButtons.forEach((button) => {
     expect(button).toHaveClass('pf-m-small');
   });
+});
+
+test(`Renders with class ${styles.modifiers.plain} when isPlain is true`, () => {
+  render(<Table isPlain aria-label="Test table" />);
+
+  expect(screen.getByRole('grid', { name: 'Test table' })).toHaveClass(styles.modifiers.plain);
 });

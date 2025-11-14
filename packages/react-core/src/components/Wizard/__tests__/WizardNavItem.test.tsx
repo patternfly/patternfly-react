@@ -63,3 +63,9 @@ test(`Renders screen reader text and success icon when status is success`, () =>
   expect(screen.getByRole('button')).toHaveClass(styles.modifiers.success);
   expect(screen.getByText(', success')).toBeInTheDocument();
 });
+
+test(`Renders screen reader text and warning icon when status is warning`, () => {
+  render(<WizardNavItem status="warning" />);
+  expect(screen.getByRole('button')).toHaveClass(styles.modifiers.warning);
+  expect(screen.getByText(', warning')).toBeInTheDocument();
+});

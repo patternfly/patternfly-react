@@ -1,4 +1,4 @@
-import { forwardRef, useState } from 'react';
+import { forwardRef, useState, FunctionComponent, Ref, MouseEvent as ReactMouseEvent, CSSProperties } from 'react';
 import {
   Dropdown,
   DropdownItem,
@@ -35,7 +35,7 @@ export interface SimpleDropdownProps extends Omit<DropdownProps, 'toggle' | 'onT
   /** Flag indicated whether the dropdown toggle should take up the full width of its parent. */
   isToggleFullWidth?: boolean;
   /** Callback triggered when any dropdown item is clicked. */
-  onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, value?: string | number) => void;
+  onSelect?: (event?: React.MouseEvent<Element, MouseEvent>, value?: SimpleDropdownItem['value']) => void;
   /** Callback triggered when the dropdown toggle opens or closes. */
   onToggle?: (nextIsOpen: boolean) => void;
   /** Flag indicating the dropdown toggle should be focused after a dropdown item is clicked. */
@@ -54,7 +54,7 @@ export interface SimpleDropdownProps extends Omit<DropdownProps, 'toggle' | 'onT
   toggleProps?: MenuToggleProps;
 }
 
-const SimpleDropdownBase: React.FunctionComponent<SimpleDropdownProps> = ({
+const SimpleDropdownBase: FunctionComponent<SimpleDropdownProps> = ({
   innerRef,
   initialItems,
   onSelect: onSelectProp,
@@ -71,7 +71,7 @@ const SimpleDropdownBase: React.FunctionComponent<SimpleDropdownProps> = ({
 }: SimpleDropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const onSelect = (event: React.MouseEvent<Element, MouseEvent>, value: string | number) => {
+  const onSelect = (event: ReactMouseEvent<Element, MouseEvent>, value: string | number) => {
     onSelectProp && onSelectProp(event, value);
     onToggleProp && onToggleProp(false);
     setIsOpen(false);
@@ -82,7 +82,7 @@ const SimpleDropdownBase: React.FunctionComponent<SimpleDropdownProps> = ({
     setIsOpen(!isOpen);
   };
 
-  const dropdownToggle = (toggleRef: React.Ref<MenuToggleElement>) => (
+  const dropdownToggle = (toggleRef: Ref<MenuToggleElement>) => (
     <MenuToggle
       ref={toggleRef}
       onClick={onToggle}
@@ -94,7 +94,7 @@ const SimpleDropdownBase: React.FunctionComponent<SimpleDropdownProps> = ({
       style={
         {
           width: toggleWidth
-        } as React.CSSProperties
+        } as CSSProperties
       }
       {...toggleProps}
     >
@@ -132,7 +132,7 @@ const SimpleDropdownBase: React.FunctionComponent<SimpleDropdownProps> = ({
   );
 };
 
-export const SimpleDropdown = forwardRef((props: SimpleDropdownProps, ref: React.Ref<any>) => (
+export const SimpleDropdown = forwardRef((props: SimpleDropdownProps, ref: Ref<any>) => (
   <SimpleDropdownBase {...props} innerRef={ref} />
 ));
 

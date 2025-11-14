@@ -2,7 +2,7 @@
   
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-green.svg?style=for-the-badge)](https://lernajs.io/)
 [![PatternFly npm badge](https://img.shields.io/npm/v/@patternfly/react-core.svg?label=PF%20Core&style=for-the-badge)](https://www.npmjs.com/package/@patternfly/react-core)
-
+  
 This project provides a set of React components for the [PatternFly project](https://patternfly.org).  
 
 **Community:** [PatternFly website](https://www.patternfly.org) | [Slack](https://slack.patternfly.org) | [Medium](https://medium.com/patternfly) | [Mailing list](https://www.redhat.com/mailman/listinfo/patternfly)

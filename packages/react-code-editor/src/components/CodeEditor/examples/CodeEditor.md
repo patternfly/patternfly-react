@@ -9,6 +9,10 @@ Note: Code editor lives in its own package at [@patternfly/react-code-editor](ht
 
 import { Fragment, useState } from 'react';
 import { CodeEditor, CodeEditorControl, Language } from '@patternfly/react-code-editor';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import HashtagIcon from '@patternfly/react-icons/dist/esm/icons/hashtag-icon';
+import MapIcon from '@patternfly/react-icons/dist/esm/icons/map-icon';
+import MoonIcon from '@patternfly/react-icons/dist/esm/icons/moon-icon';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
 ## Examples
@@ -48,5 +52,11 @@ These examples below are the shortcuts that we recommend describing in the popov
 ### With custom control
 
 ```ts file="CodeEditorCustomControl.tsx"
+
+```
+
+### With configuration modal
+
+```ts file="CodeEditorConfigurationModal.tsx"
 
 ```

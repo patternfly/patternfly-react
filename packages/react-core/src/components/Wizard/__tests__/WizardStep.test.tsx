@@ -70,4 +70,6 @@ test('updates "status" in context when the value changes', () => {
   expect(setStep).toHaveBeenCalledWith({ ...testStepProps, status: 'error', isVisited: true });
   render(<WizardStep {...testStep} status="success" />);
   expect(setStep).toHaveBeenCalledWith({ ...testStepProps, status: 'success', isVisited: true });
+  render(<WizardStep {...testStep} status="warning" />);
+  expect(setStep).toHaveBeenCalledWith({ ...testStepProps, status: 'warning', isVisited: true });
 });

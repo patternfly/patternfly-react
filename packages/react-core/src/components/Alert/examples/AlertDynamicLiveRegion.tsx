@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { Alert, AlertGroup, AlertVariant, InputGroup } from '@patternfly/react-core';
+import { Alert, AlertGroup, AlertVariant, Flex, FlexItem } from '@patternfly/react-core';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 
 interface AlertInfo {
@@ -41,17 +41,23 @@ export const DynamicLiveRegionAlert: React.FunctionComponent = () => {
 
   return (
     <Fragment>
-      <InputGroup style={{ marginBottom: '16px' }}>
-        <button onClick={addSuccessAlert} type="button" className={btnClasses}>
-          Add single success alert
-        </button>
-        <button onClick={addInfoAlert} type="button" className={btnClasses}>
-          Add single info alert
-        </button>
-        <button onClick={addDangerAlert} type="button" className={btnClasses}>
-          Add single danger alert
-        </button>
-      </InputGroup>
+      <Flex gap={{ default: 'gapXs' }} style={{ marginBottom: '16px' }}>
+        <FlexItem>
+          <button onClick={addSuccessAlert} type="button" className={btnClasses}>
+            Add single success alert
+          </button>
+        </FlexItem>
+        <FlexItem>
+          <button onClick={addInfoAlert} type="button" className={btnClasses}>
+            Add single info alert
+          </button>
+        </FlexItem>
+        <FlexItem>
+          <button onClick={addDangerAlert} type="button" className={btnClasses}>
+            Add single danger alert
+          </button>
+        </FlexItem>
+      </Flex>
       <AlertGroup hasAnimations isLiveRegion aria-live="polite" aria-relevant="additions text" aria-atomic="false">
         {alerts.map(({ title, variant, key }) => (
           <Alert variant={variant} title={title} key={key} />

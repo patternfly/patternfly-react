@@ -35,6 +35,8 @@ export interface DrawerPanelContentProps extends Omit<React.HTMLProps<HTMLDivEle
   hasNoBorder?: boolean;
   /** Flag indicating that the drawer panel should be resizable. */
   isResizable?: boolean;
+  /** @beta Flag indicating that the drawer panel should disable glass styles. This prop is intended to work with isPill drawers. */
+  hasNoGlass?: boolean;
   /** Callback for resize end. */
   onResize?: (event: MouseEvent | TouchEvent | React.KeyboardEvent, width: number, id: string) => void;
   /** The minimum size of a drawer. */
@@ -68,6 +70,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   children,
   hasNoBorder = false,
   isResizable = false,
+  hasNoGlass = false,
   onResize,
   minSize,
   defaultSize,
@@ -77,6 +80,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   widths,
   colorVariant = DrawerColorVariant.default,
   focusTrap,
+  style,
   ...props
 }: DrawerPanelContentProps) => {
   const panel = useRef<HTMLDivElement>(undefined);
@@ -363,6 +367,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
             className={css(
               styles.drawerPanel,
               isResizable && styles.modifiers.resizable,
+              hasNoGlass && styles.modifiers.noGlass,
               hasNoBorder && styles.modifiers.noBorder,
               formatBreakpointMods(widths, styles),
               colorVariant === DrawerColorVariant.noBackground && styles.modifiers.noBackground,
@@ -381,9 +386,10 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
               }
             }}
             hidden={hidden}
-            {...((defaultSize || minSize || maxSize) && {
-              style: boundaryCssVars as React.CSSProperties
-            })}
+            style={{
+              ...((defaultSize || minSize || maxSize) && boundaryCssVars),
+              ...style
+            }}
             {...props}
             ref={panel}
           >

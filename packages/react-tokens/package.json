@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-tokens",
-  "version": "6.3.1-prerelease.0",
+  "version": "6.5.0-prerelease.5",
   "description": "This library provides access to the design tokens of PatternFly 4 from JavaScript",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -29,7 +29,7 @@
     "clean": "rimraf dist"
   },
   "devDependencies": {
-    "@adobe/css-tools": "^4.4.2",
+    "@adobe/css-tools": "^4.4.4",
     "@patternfly/patternfly": "6.5.0-prerelease.27",
     "fs-extra": "^11.3.0"
   }

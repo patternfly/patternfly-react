@@ -29,6 +29,8 @@ export interface ModalContentProps extends OUIAProps {
    * focusable element will receive focus.
    */
   elementToFocus?: HTMLElement | SVGElement | string;
+  /** Id of the focus trap */
+  focusTrapId?: string;
   /** Flag to show the modal. */
   isOpen?: boolean;
   /** A callback for when the close button is clicked. */
@@ -69,6 +71,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   ouiaId,
   ouiaSafe = true,
   elementToFocus,
+  focusTrapId,
   ...props
 }: ModalContentProps) => {
   if (!isOpen) {
@@ -122,6 +125,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
           initialFocus: elementToFocus || undefined
         }}
         className={css(bullsEyeStyles.bullseye)}
+        id={focusTrapId}
       >
         {modalBox}
       </FocusTrap>

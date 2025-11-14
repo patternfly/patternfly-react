@@ -1,7 +1,7 @@
 {
   "name": "demo-app-ts",
   "private": true,
-  "version": "6.0.0-prerelease.152",
+  "version": "6.5.0-prerelease.12",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -11,8 +11,8 @@
     "@patternfly/react-core": "workspace:^",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router": "^7.3.0",
-    "react-router-dom": "^7.3.0"
+    "react-router": "^7.9.4",
+    "react-router-dom": "^7.9.4"
   },
   "devDependencies": {
     "@vitejs/plugin-react-swc": "^3.9.0",

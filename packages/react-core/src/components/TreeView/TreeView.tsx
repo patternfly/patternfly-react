@@ -1,6 +1,7 @@
 import { TreeViewList } from './TreeViewList';
 import { TreeViewCheckProps, TreeViewListItem } from './TreeViewListItem';
 import { TreeViewRoot } from './TreeViewRoot';
+import { useHasAnimations } from '../../helpers';
 
 /** Properties that make up a tree view data item. These properties should be passed in as an
  * object to one of the various tree view component properties which accept TreeViewDataItem as
@@ -135,9 +136,10 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
   useMemo,
   'aria-label': ariaLabel,
   'aria-labelledby': ariaLabelledby,
-  hasAnimations,
+  hasAnimations: hasAnimationsProp,
   ...props
 }: TreeViewProps) => {
+  const hasAnimations = useHasAnimations(hasAnimationsProp);
   const treeViewList = (
     <TreeViewList
       isNested={isNested}

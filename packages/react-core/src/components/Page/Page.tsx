@@ -266,6 +266,7 @@ class Page extends Component<PageProps, PageState> {
       isManagedSidebar,
       onSidebarToggle: mobileView ? this.onSidebarToggleMobile : this.onSidebarToggleDesktop,
       isSidebarOpen: mobileView ? mobileIsSidebarOpen : desktopIsSidebarOpen,
+      isMobile: mobileView,
       width,
       height,
       getBreakpoint,
