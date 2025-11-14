@@ -9,7 +9,6 @@ module.exports = {
   hasRTLSwitcher: true,
   hasDesignGuidelines: false,
   sideNavItems: [
-    { section: 'get-started' },
     { section: 'developer-guides' },
     { section: 'foundations-and-styles' },
     { section: 'components' },
