@@ -40,16 +40,8 @@ component.
 
 ### Example
 
-```js
-import { Fragment } from 'react';
-import { Button } from '@patternfly/react-core';
+```ts file="examples/OuiaExample.tsx"
 
-<Fragment>
-  <Button>Button</Button>
-  <br />
-  <br />
-  <Button ouiaId="static_id">Button with ouiaId</Button>
-</Fragment>
 ```
 
 ## OUIA-compliant PatternFly 5 components
@@ -62,6 +54,7 @@ import { Button } from '@patternfly/react-core';
 * [Card](/components/card)
 * [Checkbox](/components/forms/checkbox)
 * [Chip](/components/chip)
+* [Content](/components/content)
 * [Dropdown](/components/menus/dropdown)
 * [DropdownItem](/components/menus/dropdown)
 * [FormSelect](/components/forms/form-select)
@@ -76,7 +69,6 @@ import { Button } from '@patternfly/react-core';
 * [Switch](/components/switch)
 * [TabContent](/components/tabs)
 * [Tabs](/components/tabs)
-* [Text](/components/text)
 * [TextInput](/components/forms/text-input)
 * [Title](/components/title)
 * [Toolbar](/components/toolbar)

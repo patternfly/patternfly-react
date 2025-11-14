@@ -127,7 +127,7 @@ To guide users through a series of steps in a modal, you can add a [wizard](/com
 
 ### With dropdown
 
-To present a menu of actions or links to a user, you can add a [dropdown](/components/dropdown) to a modal. To allow the dropdown to visually break out of the modal container, set the `menuAppendTo` property to “parent”. Handle the modal’s closing behavior by listening to the `onEscapePress` callback on the `<Modal>` component. This allows the "escape" key to collapse the dropdown without closing the entire modal.
+To present a menu of actions or links to a user, you can add a [dropdown](/components/menus/dropdown) to a modal. To allow the dropdown to visually break out of the modal container, set the `menuAppendTo` property to “parent”. Handle the modal’s closing behavior by listening to the `onEscapePress` callback on the `<Modal>` component. This allows the "escape" key to collapse the dropdown without closing the entire modal.
 
 ```ts file="./ModalWithDropdown.tsx"
 
@@ -143,7 +143,7 @@ To help simplify and explain complex models, add a help [popover](/components/po
 
 ### With form
 
-To collect user input within a modal, you can add a [form](/components/form).
+To collect user input within a modal, you can add a [form](/components/forms/form).
 
 To submit the form from a button in the modal's footer (outside of the `<Form>`), set the button's `form` property equal to the form's id.
 
