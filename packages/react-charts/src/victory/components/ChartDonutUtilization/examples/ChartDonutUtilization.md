@@ -1,6 +1,7 @@
 ---
 id: Donut utilization chart
-section: charts
+section: components
+subsection: charts
 propComponents: [
   'ChartDonutThreshold',
   'ChartDonutUtilization'

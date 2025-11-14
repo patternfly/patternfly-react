@@ -1,6 +1,7 @@
 ---
 id: Sparkline chart
-section: charts
+section: components
+subsection: charts
 propComponents: [
   'ChartArea',
   'ChartContainer',

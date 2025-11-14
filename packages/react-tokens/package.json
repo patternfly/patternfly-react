@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@adobe/css-tools": "^4.4.4",
-    "@patternfly/patternfly": "6.5.0-prerelease.22",
+    "@patternfly/patternfly": "6.5.0-prerelease.27",
     "fs-extra": "^11.3.0"
   }
 }

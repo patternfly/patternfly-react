@@ -1,6 +1,7 @@
 ---
 id: Bullet chart
-section: charts
+section: components
+subsection: charts
 propComponents: [
   'ChartAxis',
   'ChartBullet',
