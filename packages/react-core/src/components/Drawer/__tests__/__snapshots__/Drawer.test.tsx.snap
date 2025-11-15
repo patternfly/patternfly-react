@@ -281,6 +281,7 @@ exports[`Drawer isExpanded = false and isInline = false and isStatic = false 1`]
         class="pf-v6-c-drawer__panel"
         hidden=""
         id="generated-id"
+        inert=""
       />
     </div>
   </div>
@@ -308,6 +309,7 @@ exports[`Drawer isExpanded = false and isInline = true and isStatic = false 1`] 
         class="pf-v6-c-drawer__panel"
         hidden=""
         id="generated-id"
+        inert=""
       />
     </div>
   </div>
