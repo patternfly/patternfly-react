@@ -10,7 +10,11 @@ export interface CompassHeaderProps {
   profile?: React.ReactNode;
 }
 
-export const CompassHeader: React.FunctionComponent<CompassHeaderProps> = ({ logo, nav, profile }) => (
+export const CompassHeader: React.FunctionComponent<CompassHeaderProps> = ({
+  logo,
+  nav,
+  profile
+}: CompassHeaderProps) => (
   <>
     <div className={css(`${styles.compass}__logo`)}>{logo}</div>
     <div className={css(styles.compassNav)}>{nav}</div>
