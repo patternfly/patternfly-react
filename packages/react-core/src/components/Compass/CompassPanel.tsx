@@ -30,7 +30,7 @@ export const CompassPanel: React.FunctionComponent<CompassPanelProps> = ({
   isFullHeight,
   isScrollable,
   ...props
-}) => (
+}: CompassPanelProps) => (
   <div
     className={css(
       styles.compassPanel,

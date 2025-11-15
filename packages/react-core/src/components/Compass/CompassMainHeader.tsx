@@ -31,7 +31,7 @@ export const CompassMainHeader: React.FunctionComponent<CompassMainHeaderProps> 
   children,
   compassPanelProps,
   ...props
-}) => {
+}: CompassMainHeaderProps) => {
   const _content =
     title !== undefined || toolbar !== undefined ? (
       <CompassPanel {...compassPanelProps}>
