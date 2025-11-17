@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.13...@patternfly/react-core@6.5.0-prerelease.14) (2025-11-17)
+
+### Bug Fixes
+
+- **Compass:** get props tables rendering correctly ([#12142](https://github.com/patternfly/patternfly-react/issues/12142)) ([399cbc4](https://github.com/patternfly/patternfly-react/commit/399cbc45844152083d0160d63f953aa7f29479d3))
+
 # [6.5.0-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.12...@patternfly/react-core@6.5.0-prerelease.13) (2025-11-14)
 
 ### Bug Fixes
