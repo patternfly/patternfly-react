@@ -9,13 +9,11 @@ module.exports = {
   hasRTLSwitcher: true,
   hasDesignGuidelines: false,
   sideNavItems: [
-    { section: 'get-started' },
-    { section: 'developer-resources' },
-    { section: 'charts' },
     { section: 'components' },
     { section: 'patterns' },
-    { section: 'layouts' },
-    { section: 'PatternFly-AI' }
+    { section: 'foundations-and-styles' },
+    { section: 'AI' },
+    { section: 'developer-guides' }
   ],
   topNavItems: [{ text: 'Icons', path: '/icons' }],
   port: 8002

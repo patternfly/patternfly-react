@@ -1,7 +1,8 @@
 ---
 id: Stack
 cssPrefix: pf-v6-l-stack
-section: layouts
+section: foundations-and-styles
+subsection: layouts
 propComponents: ['Stack', 'StackItem']
 ---
 

@@ -1,6 +1,7 @@
 ---
 id: Scatter chart
-section: charts
+section: components
+subsection: charts
 propComponents: [
 'Chart',
 'ChartArea',

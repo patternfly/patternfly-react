@@ -1,6 +1,6 @@
 ---
 id: Open UI Automation
-section: developer-resources
+section: developer-guides
 ---
 import { Fragment } from 'react';
 
@@ -54,6 +54,7 @@ component.
 * [Card](/components/card)
 * [Checkbox](/components/forms/checkbox)
 * [Chip](/components/chip)
+* [Content](/components/content)
 * [Dropdown](/components/menus/dropdown)
 * [DropdownItem](/components/menus/dropdown)
 * [FormSelect](/components/forms/form-select)
@@ -68,7 +69,6 @@ component.
 * [Switch](/components/switch)
 * [TabContent](/components/tabs)
 * [Tabs](/components/tabs)
-* [Text](/components/text)
 * [TextInput](/components/forms/text-input)
 * [Title](/components/title)
 * [Toolbar](/components/toolbar)
