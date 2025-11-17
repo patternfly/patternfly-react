@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Compass/compass';
 import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
@@ -43,12 +44,23 @@ export const CompassNavSearch: React.FunctionComponent<CompassNavSearchProps> = 
   className,
   onClick,
   ...props
-}: CompassNavSearchProps) => (
-  <div className={css(styles.compassNav + '-search', className)} {...props}>
-    <Tooltip content={tooltipContent}>
-      <Button isCircle variant="plain" icon={<CompassSearchIcon />} aria-label={ariaLabel} onClick={onClick} />
-    </Tooltip>
-  </div>
-);
+}: CompassNavSearchProps) => {
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  return (
+    <div className={css(styles.compassNav + '-search', className)} {...props}>
+      <Tooltip content={tooltipContent} triggerRef={buttonRef}>
+        <Button
+          isCircle
+          variant="plain"
+          icon={<CompassSearchIcon />}
+          aria-label={ariaLabel}
+          onClick={onClick}
+          ref={buttonRef}
+        />
+      </Tooltip>
+    </div>
+  );
+};
 
 CompassNavSearch.displayName = 'CompassNavSearch';

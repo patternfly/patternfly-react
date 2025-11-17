@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Compass/compass';
 import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
@@ -50,12 +51,23 @@ export const CompassNavHome: React.FunctionComponent<CompassNavHomeProps> = ({
   className,
   onClick,
   ...props
-}: CompassNavHomeProps) => (
-  <div className={css(styles.compassNav + '-home', className)} {...props}>
-    <Tooltip content={tooltipContent}>
-      <Button isCircle variant="plain" icon={<CompassHomeIcon />} aria-label={ariaLabel} onClick={onClick} />
-    </Tooltip>
-  </div>
-);
+}: CompassNavHomeProps) => {
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  return (
+    <div className={css(styles.compassNav + '-home', className)} {...props}>
+      <Tooltip content={tooltipContent} triggerRef={buttonRef}>
+        <Button
+          isCircle
+          variant="plain"
+          icon={<CompassHomeIcon />}
+          aria-label={ariaLabel}
+          onClick={onClick}
+          ref={buttonRef}
+        />
+      </Tooltip>
+    </div>
+  );
+};
 
 CompassNavHome.displayName = 'CompassNavHome';
