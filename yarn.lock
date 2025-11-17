@@ -4523,7 +4523,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@patternfly/react-charts@workspace:^, @patternfly/react-charts@workspace:packages/react-charts":
+"@patternfly/react-charts@workspace:packages/react-charts":
   version: 0.0.0-use.local
   resolution: "@patternfly/react-charts@workspace:packages/react-charts"
   dependencies:
@@ -4596,7 +4596,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@patternfly/react-code-editor@workspace:^, @patternfly/react-code-editor@workspace:packages/react-code-editor":
+"@patternfly/react-code-editor@workspace:packages/react-code-editor":
   version: 0.0.0-use.local
   resolution: "@patternfly/react-code-editor@workspace:packages/react-code-editor"
   dependencies:
@@ -4638,12 +4638,8 @@ __metadata:
   resolution: "@patternfly/react-docs@workspace:packages/react-docs"
   dependencies:
     "@patternfly/documentation-framework": "npm:^6.28.9"
-    "@patternfly/patternfly": "npm:6.5.0-prerelease.27"
     "@patternfly/patternfly-a11y": "npm:5.1.0"
-    "@patternfly/react-charts": "workspace:^"
-    "@patternfly/react-code-editor": "workspace:^"
     "@patternfly/react-core": "workspace:^"
-    "@patternfly/react-drag-drop": "workspace:^"
     "@patternfly/react-icons": "workspace:^"
     "@patternfly/react-styles": "workspace:^"
     "@patternfly/react-table": "workspace:^"
@@ -4654,7 +4650,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@patternfly/react-drag-drop@workspace:^, @patternfly/react-drag-drop@workspace:packages/react-drag-drop":
+"@patternfly/react-drag-drop@workspace:packages/react-drag-drop":
   version: 0.0.0-use.local
   resolution: "@patternfly/react-drag-drop@workspace:packages/react-drag-drop"
   dependencies:
