@@ -9,7 +9,7 @@ export const CompassNavContent: React.FunctionComponent<CompassNavContentProps> 
   children,
   className,
   ...props
-}: CompassNavContentProps ) => (
+}: CompassNavContentProps) => (
   <div className={css(styles.compassNavContent, className)} {...props}>
     {children}
   </div>
