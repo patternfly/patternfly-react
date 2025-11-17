@@ -43,7 +43,7 @@ export const CompassNavSearch: React.FunctionComponent<CompassNavSearchProps> = 
   className,
   onClick,
   ...props
-}) => (
+}: CompassNavSearchProps ) => (
   <div className={css(styles.compassNav + '-search', className)} {...props}>
     <Tooltip content={tooltipContent}>
       <Button isCircle variant="plain" icon={<CompassSearchIcon />} aria-label={ariaLabel} onClick={onClick} />
