@@ -50,7 +50,7 @@ export const CompassNavHome: React.FunctionComponent<CompassNavHomeProps> = ({
   className,
   onClick,
   ...props
-}) => (
+}: CompassNavHomeProps ) => (
   <div className={css(styles.compassNav + '-home', className)} {...props}>
     <Tooltip content={tooltipContent}>
       <Button isCircle variant="plain" icon={<CompassHomeIcon />} aria-label={ariaLabel} onClick={onClick} />
