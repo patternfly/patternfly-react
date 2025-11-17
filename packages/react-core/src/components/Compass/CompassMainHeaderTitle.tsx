@@ -16,7 +16,7 @@ export const CompassMainHeaderTitle: React.FunctionComponent<CompassMainHeaderTi
   children,
   className,
   ...props
-}) => (
+}: CompassMainHeaderTitleProps) => (
   <div className={css(`${styles.compass}__main-header-title`, className)} {...props}>
     {children}
   </div>

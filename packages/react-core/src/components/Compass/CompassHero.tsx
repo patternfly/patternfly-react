@@ -9,7 +9,11 @@ export interface CompassHeroProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   className?: string;
 }
 
-export const CompassHero: React.FunctionComponent<CompassHeroProps> = ({ className, children, ...props }) => (
+export const CompassHero: React.FunctionComponent<CompassHeroProps> = ({
+  className,
+  children,
+  ...props
+}: CompassHeroProps) => (
   <div className={css(`${styles.compass}__hero`, className)} {...props}>
     {children}
   </div>

@@ -19,7 +19,7 @@ export const CompassContent: React.FunctionComponent<CompassContentProps> = ({
   drawerProps,
   drawerContent,
   ...props
-}) => {
+}: CompassContentProps) => {
   const hasDrawer = drawerContent !== undefined;
 
   const compassContent = (

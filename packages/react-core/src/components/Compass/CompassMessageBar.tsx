@@ -12,7 +12,7 @@ export const CompassMessageBar: React.FunctionComponent<CompassMessageBarProps> 
   children,
   className,
   ...props
-}) => (
+}: CompassMessageBarProps) => (
   <div className={css(styles.compassMessageBar, className)} {...props}>
     {children}
   </div>

@@ -52,7 +52,7 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
   backgroundSrcLight,
   backgroundSrcDark,
   ...props
-}) => {
+}: CompassProps) => {
   const hasDrawer = drawerContent !== undefined;
 
   const backgroundImageStyles: { [key: string]: string } = {};
