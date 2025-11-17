@@ -6,7 +6,7 @@ export interface CompassNavMainProps extends React.HTMLProps<HTMLDivElement> {
   children: React.ReactNode;
 }
 
-export const CompassNavMain: React.FunctionComponent<CompassNavMainProps> = ({ children, className, ...props }) => (
+export const CompassNavMain: React.FunctionComponent<CompassNavMainProps> = ({ children, className, ...props }: CompassNavMainProps ) => (
   <div className={css(styles.compassNavMain, className)} {...props}>
     {children}
   </div>
