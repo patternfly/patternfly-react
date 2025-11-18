@@ -36,6 +36,10 @@ export interface CompassNavSearchProps extends Omit<React.HTMLProps<HTMLDivEleme
   tooltipContent?: React.ReactNode;
   /** Click handler for the search button. */
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  /** Additional classes added to the nav search wrapper. */
+  className?: string;
+  /** Accessible label for the nav search. */
+  'aria-label'?: string;
 }
 
 export const CompassNavSearch: React.FunctionComponent<CompassNavSearchProps> = ({
@@ -49,7 +53,7 @@ export const CompassNavSearch: React.FunctionComponent<CompassNavSearchProps> = 
 
   return (
     <div className={css(styles.compassNav + '-search', className)} {...props}>
-      <Tooltip content={tooltipContent} triggerRef={buttonRef}>
+      <Tooltip content={tooltipContent} aria="none" aria-live="off" triggerRef={buttonRef}>
         <Button
           isCircle
           variant="plain"

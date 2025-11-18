@@ -3,6 +3,10 @@ import { css } from '@patternfly/react-styles';
 export interface CompassNavContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Content of the nav content wrapper. */
   children: React.ReactNode;
+  /** Additional classes added to the nav content. */
+  className?: string;
+  /** Accessible label for the nav content. */
+  'aria-label'?: string;
 }
 
 export const CompassNavContent: React.FunctionComponent<CompassNavContentProps> = ({

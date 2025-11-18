@@ -4,6 +4,8 @@ import { css } from '@patternfly/react-styles';
 export interface CompassNavMainProps extends React.HTMLProps<HTMLDivElement> {
   /** Content of the nav main section (typically tabs). */
   children: React.ReactNode;
+  /** Additional classes added to the nav main section. */
+  className?: string;
 }
 
 export const CompassNavMain: React.FunctionComponent<CompassNavMainProps> = ({

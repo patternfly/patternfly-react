@@ -43,6 +43,10 @@ export interface CompassNavHomeProps extends Omit<React.HTMLProps<HTMLDivElement
   tooltipContent?: React.ReactNode;
   /** Click handler for the home button. */
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  /** Additional classes added to the nav home wrapper. */
+  className?: string;
+  /** Accessible label for the nav home. */
+  'aria-label'?: string;
 }
 
 export const CompassNavHome: React.FunctionComponent<CompassNavHomeProps> = ({
@@ -56,7 +60,7 @@ export const CompassNavHome: React.FunctionComponent<CompassNavHomeProps> = ({
 
   return (
     <div className={css(styles.compassNav + '-home', className)} {...props}>
-      <Tooltip content={tooltipContent} triggerRef={buttonRef}>
+      <Tooltip content={tooltipContent} position="left" aria="none" aria-live="off" triggerRef={buttonRef}>
         <Button
           isCircle
           variant="plain"
