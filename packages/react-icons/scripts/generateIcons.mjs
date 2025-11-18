@@ -1,10 +1,10 @@
 import faIcons from './icons/fontawesomeIcons.mjs';
 import patternflyIcons from './icons/patternflyIcons.mjs';
 import customIcons from './icons/customIcons.mjs';
-import rhdsIconsMicrons from './icons/rhdsIconsMicrons.mjs';
-import rhdsIconsStandard from './icons/rhdsIconsStandard.mjs';
-import rhdsIconsSocial from './icons/rhdsIconsSocial.mjs';
-import rhdsIconsUI from './icons/rhdsIconsUI.mjs';
+import rhIconsMicrons from './icons/rhIconsMicrons.mjs';
+import rhIconsStandard from './icons/rhIconsStandard.mjs';
+import rhIconsSocial from './icons/rhIconsSocial.mjs';
+import rhIconsUI from './icons/rhIconsUI.mjs';
 
 /**
  * Generates icons from FontAwesome, PatternFly CSS, and custom icons in this repo.
@@ -14,9 +14,9 @@ export function generateIcons() {
     ...faIcons,
     ...patternflyIcons,
     ...customIcons,
-    ...rhdsIconsMicrons,
-    ...rhdsIconsStandard,
-    ...rhdsIconsSocial,
-    ...rhdsIconsUI
+    ...rhIconsMicrons,
+    ...rhIconsStandard,
+    ...rhIconsSocial,
+    ...rhIconsUI
   };
 }

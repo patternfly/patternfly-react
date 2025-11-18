@@ -6,6 +6,9 @@ import { createRequire } from 'module';
 import { icons } from '@rhds/icons/metadata.js';
 
 // --- Configuration ---
+// Prefix for icon keys and output filenames (e.g., "rh" produces "rh-ui-arrow-down" and "rhIconsUI.mjs")
+const ICON_PREFIX = 'rh';
+
 // Icon types to process. Comment out any types you don't want to parse.
 const ICON_TYPES = [
   'ui',
@@ -32,9 +35,10 @@ const VIEWBOX_REGEX =
   /<svg[^>]+viewBox="(\s*(-?\d+(\.\d+)?)\s+(-?\d+(\.\d+)?)\s+(-?\d+(\.\d+)?)\s+(-?\d+(\.\d+)?)\s*)"/i;
 
 /**
- * Regex to extract the 'd' attribute content from the first <path> element.
+ * Regex to extract all 'd' attribute content from <path> elements.
+ * Uses global flag to match all paths.
  */
-const PATH_DATA_REGEX = /<path\s+[^>]*d="([^"]+)"/i;
+const PATH_DATA_REGEX = /<path\s+[^>]*d="([^"]+)"/gi;
 
 /**
  * Processes a single SVG file to extract viewbox data and path data.
@@ -67,13 +71,22 @@ async function processSvgFile(iconName, iconType) {
 
     const [xOffset, yOffset, width, height] = viewboxValues;
 
-    // 3. Extract path data
-    const pathDataMatch = content.match(PATH_DATA_REGEX);
-    if (!pathDataMatch || pathDataMatch.length < 2) {
-      console.error(`Skipping ${iconName}: Could not find 'd' attribute in a <path> element.`);
+    // 3. Extract all path data elements
+    const pathDataMatches = [...content.matchAll(PATH_DATA_REGEX)];
+    if (!pathDataMatches || pathDataMatches.length === 0) {
+      console.error(`Skipping ${iconName}: Could not find 'd' attribute in any <path> element.`);
       return null;
     }
-    const svgPathData = pathDataMatch[1];
+
+    // Extract all path data values
+    const pathDataValues = pathDataMatches.map((match) => match[1]);
+
+    // If there's only one path, store as string; if multiple, store as array of objects with 'path' property
+    // (createIcon expects arrays to be SVGPathObject[] with { path: string, className?: string } structure)
+    const svgPathData =
+      pathDataValues.length === 1
+        ? pathDataValues[0]
+        : pathDataValues.map((pathData) => ({ path: pathData }));
 
     // 4. Construct the final object
     return {
@@ -111,16 +124,35 @@ function formatModule(obj, indent = 0) {
     const comma = isLast ? '' : ',';
 
     if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
-      // Escape single quotes in key and svgPathData
+      // Escape single quotes in key
       const escapedKey = key.replace(/'/g, "\\'");
-      const escapedPathData = value.svgPathData.replace(/'/g, "\\'");
       lines.push(`${spaces}  '${escapedKey}': {`);
       lines.push(`${spaces}    xOffset: ${value.xOffset},`);
       lines.push(`${spaces}    yOffset: ${value.yOffset},`);
       lines.push(`${spaces}    width: ${value.width},`);
       lines.push(`${spaces}    height: ${value.height},`);
-      lines.push(`${spaces}    svgPathData:`);
-      lines.push(`${spaces}      '${escapedPathData}'`);
+      
+      // Handle svgPathData: string or array of objects
+      if (Array.isArray(value.svgPathData)) {
+        // Array of path objects with { path: string } structure
+        lines.push(`${spaces}    svgPathData: [`);
+        value.svgPathData.forEach((pathObject, idx) => {
+          const isLast = idx === value.svgPathData.length - 1;
+          const escapedPath = pathObject.path.replace(/'/g, "\\'");
+          if (pathObject.className) {
+            const escapedClassName = pathObject.className.replace(/'/g, "\\'");
+            lines.push(`${spaces}      { path: '${escapedPath}', className: '${escapedClassName}' }${isLast ? '' : ','}`);
+          } else {
+            lines.push(`${spaces}      { path: '${escapedPath}' }${isLast ? '' : ','}`);
+          }
+        });
+        lines.push(`${spaces}    ]`);
+      } else {
+        // Single string path data
+        const escapedPathData = value.svgPathData.replace(/'/g, "\\'");
+        lines.push(`${spaces}    svgPathData:`);
+        lines.push(`${spaces}      '${escapedPathData}'`);
+      }
       lines.push(`${spaces}  }${comma}`);
     }
   });
@@ -157,7 +189,7 @@ async function processIconType(iconType) {
     // Convert array to object with prefixed icon names as keys
     const iconsObject = {};
     successfulResults.forEach(({ iconName, data }) => {
-      const prefixedKey = `rhds-${iconType}-${iconName}`;
+      const prefixedKey = `${ICON_PREFIX}-${iconType}-${iconName}`;
       iconsObject[prefixedKey] = data;
     });
 
@@ -190,7 +222,7 @@ async function processSVGs() {
       // Write individual file for this type
       // Capitalize first letter, and handle special case for 'ui' -> 'UI'
       const capitalizedType = iconType === 'ui' ? 'UI' : iconType.charAt(0).toUpperCase() + iconType.slice(1);
-      const outputFile = path.join(OUTPUT_DIR, `rhdsIcons${capitalizedType}.mjs`);
+      const outputFile = path.join(OUTPUT_DIR, `${ICON_PREFIX}Icons${capitalizedType}.mjs`);
       const moduleOutput = `export default ${formatModule(iconsObject)};\n`;
       await fs.writeFile(outputFile, moduleOutput, 'utf-8');
       console.log(`Output written to: ${outputFile}`);
