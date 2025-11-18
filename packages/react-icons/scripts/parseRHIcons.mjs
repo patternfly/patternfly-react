@@ -84,9 +84,7 @@ async function processSvgFile(iconName, iconType) {
     // If there's only one path, store as string; if multiple, store as array of objects with 'path' property
     // (createIcon expects arrays to be SVGPathObject[] with { path: string, className?: string } structure)
     const svgPathData =
-      pathDataValues.length === 1
-        ? pathDataValues[0]
-        : pathDataValues.map((pathData) => ({ path: pathData }));
+      pathDataValues.length === 1 ? pathDataValues[0] : pathDataValues.map((pathData) => ({ path: pathData }));
 
     // 4. Construct the final object
     return {
@@ -131,7 +129,7 @@ function formatModule(obj, indent = 0) {
       lines.push(`${spaces}    yOffset: ${value.yOffset},`);
       lines.push(`${spaces}    width: ${value.width},`);
       lines.push(`${spaces}    height: ${value.height},`);
-      
+
       // Handle svgPathData: string or array of objects
       if (Array.isArray(value.svgPathData)) {
         // Array of path objects with { path: string } structure
@@ -141,7 +139,9 @@ function formatModule(obj, indent = 0) {
           const escapedPath = pathObject.path.replace(/'/g, "\\'");
           if (pathObject.className) {
             const escapedClassName = pathObject.className.replace(/'/g, "\\'");
-            lines.push(`${spaces}      { path: '${escapedPath}', className: '${escapedClassName}' }${isLast ? '' : ','}`);
+            lines.push(
+              `${spaces}      { path: '${escapedPath}', className: '${escapedClassName}' }${isLast ? '' : ','}`
+            );
           } else {
             lines.push(`${spaces}      { path: '${escapedPath}' }${isLast ? '' : ','}`);
           }
