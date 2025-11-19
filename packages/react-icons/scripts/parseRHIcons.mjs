@@ -222,7 +222,7 @@ async function processSVGs() {
       // Write individual file for this type
       // Capitalize first letter, and handle special case for 'ui' -> 'UI'
       const capitalizedType = iconType === 'ui' ? 'UI' : iconType.charAt(0).toUpperCase() + iconType.slice(1);
-      const outputFile = path.join(OUTPUT_DIR, `${ICON_PREFIX}Icons${capitalizedType}.mjs`);
+      const outputFile = path.join(OUTPUT_DIR, `rhIcons${capitalizedType}.mjs`);
       const moduleOutput = `export default ${formatModule(iconsObject)};\n`;
       await fs.writeFile(outputFile, moduleOutput, 'utf-8');
       console.log(`Output written to: ${outputFile}`);
