@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 import { useRef, useState } from 'react';
 import {
   Compass,
@@ -7,6 +9,10 @@ import {
   CompassMainHeader,
   CompassPanel,
   CompassMessageBar,
+  CompassNavContent,
+  CompassNavHome,
+  CompassNavMain,
+  CompassNavSearch,
   Hero,
   Tabs,
   TabsComponent,
@@ -32,49 +38,57 @@ export const CompassBasic: React.FunctionComponent = () => {
 
   const navContent = (
     <>
-      <CompassPanel isPill hasNoPadding>
-        <Tabs
-          activeKey={activeTab}
-          isNav
-          onSelect={(_event, tabIndex) => setActiveTab(tabIndex as number)}
-          component={TabsComponent.nav}
-          aria-label="Compass navigation tabs"
-          inset={{ default: 'insetXl' }}
-        >
-          <Tab
-            tabContentId="subtabs"
-            tabContentRef={subTabsRef}
-            eventKey={0}
-            title={<TabTitleText>Tab 1</TabTitleText>}
-            aria-label="Compass tab with subtabs"
-          />
-          <Tab eventKey={1} title={<TabTitleText>Tab 2</TabTitleText>} />
-          <Tab eventKey={2} title={<TabTitleText>Tab 3</TabTitleText>} />
-          <Tab eventKey={3} title={<TabTitleText>Disabled Tab 4</TabTitleText>} isDisabled />
-        </Tabs>
+      <CompassPanel isPill>
+        <CompassNavContent>
+          <CompassNavHome onClick={() => console.log('Home')} />
+          <CompassNavMain>
+            <Tabs
+              activeKey={activeTab}
+              isNav
+              onSelect={(_event, tabIndex) => setActiveTab(tabIndex as number)}
+              component={TabsComponent.nav}
+              aria-label="Compass navigation tabs"
+            >
+              <Tab
+                tabContentId="subtabs"
+                tabContentRef={subTabsRef}
+                eventKey={0}
+                title={<TabTitleText>Tab 1</TabTitleText>}
+                aria-label="Compass tab with subtabs"
+              />
+              <Tab eventKey={1} title={<TabTitleText>Tab 2</TabTitleText>} />
+              <Tab eventKey={2} title={<TabTitleText>Tab 3</TabTitleText>} />
+              <Tab eventKey={3} title={<TabTitleText>Disabled Tab 4</TabTitleText>} isDisabled />
+            </Tabs>
+          </CompassNavMain>
+          <CompassNavSearch onClick={() => console.log('Search')} />
+        </CompassNavContent>
       </CompassPanel>
       <CompassPanel isPill hasNoPadding>
         <TabContent id="subtabs" ref={subTabsRef}>
-          <Tabs
-            activeKey={activeSubtab}
-            isSubtab
-            isNav
-            onSelect={(_event, tabIndex) => setActiveSubtab(tabIndex as number)}
-            aria-label="Compass navigation subtabs"
-            inset={{ default: 'insetXl' }}
-          >
-            <Tab
-              tabContentId="subtab-1"
-              eventKey={0}
-              title={
-                <TabTitleText>
-                  <div id="subtab-1">Subtab 1</div>
-                </TabTitleText>
-              }
-            />
-            <Tab eventKey={1} title={<TabTitleText>Subtab 2</TabTitleText>} />
-            <Tab eventKey={2} title={<TabTitleText>Disabled Subtab 3</TabTitleText>} isDisabled />
-          </Tabs>
+          <CompassNavContent>
+            <CompassNavMain>
+              <Tabs
+                activeKey={activeSubtab}
+                isSubtab
+                isNav
+                onSelect={(_event, tabIndex) => setActiveSubtab(tabIndex as number)}
+                aria-label="Compass navigation subtabs"
+              >
+                <Tab
+                  tabContentId="subtab-1"
+                  eventKey={0}
+                  title={
+                    <TabTitleText>
+                      <div id="subtab-1">Subtab 1</div>
+                    </TabTitleText>
+                  }
+                />
+                <Tab eventKey={1} title={<TabTitleText>Subtab 2</TabTitleText>} />
+                <Tab eventKey={2} title={<TabTitleText>Disabled Subtab 3</TabTitleText>} isDisabled />
+              </Tabs>
+            </CompassNavMain>
+          </CompassNavContent>
         </TabContent>
       </CompassPanel>
     </>
