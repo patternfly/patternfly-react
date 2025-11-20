@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.15...@patternfly/react-core@6.5.0-prerelease.16) (2025-11-20)
+
+### Features
+
+- **Compass:** add CompassMainFooter ([#12137](https://github.com/patternfly/patternfly-react/issues/12137)) ([1da6fc2](https://github.com/patternfly/patternfly-react/commit/1da6fc2fb7d1f09ca31cc95069dab87c587639f5))
+
 # [6.5.0-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.14...@patternfly/react-core@6.5.0-prerelease.15) (2025-11-19)
 
 ### Features
