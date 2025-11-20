@@ -1,10 +1,12 @@
 // eslint-disable-next-line
 import React from 'react';
 import { Content } from '@patternfly/react-core/dist/esm/components/Content';
+import { Icon } from '@patternfly/react-core/dist/esm/components/Icon';
 import { Grid, GridItem } from '@patternfly/react-core/dist/esm/layouts/Grid';
 import { PageSection } from '@patternfly/react-core/dist/esm/components/Page/PageSection';
 import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip';
 import spacerMd from '@patternfly/react-tokens/dist/esm/t_global_spacer_md';
+import spacerSm from '@patternfly/react-tokens/dist/esm/t_global_spacer_sm';
 import labelFontSize from '@patternfly/react-tokens/dist/esm/t_global_font_size_sm';
 import * as IconsModule from '@patternfly/react-icons/dist/esm';
 
@@ -17,7 +19,8 @@ const iconsPage = () => {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: spacerMd.var
+    padding: spacerMd.var,
+    gap: spacerSm.var
   };
 
   const labelStyle = {
@@ -53,10 +56,12 @@ const iconsPage = () => {
           // BREAKING CHANGE - remove line below when AnsibeTowerIcon is removed
           // hide AnsibeTowerIcon in favor of corrected AnsibleTowerIcon
           .filter(([id]) => id !== 'AnsibeTowerIcon')
-          .map(([id, Icon]) => (
+          .map(([id, ReactIcon]) => (
             <GridItem key={id} style={cellStyle} sm={6} md={4} lg={2}>
               <Tooltip content={<div>{id}</div>}>
-                <Icon size="xl" title={id} />
+                <Icon size="xl">
+                  <ReactIcon title={id} />
+                </Icon>
               </Tooltip>
               <div style={labelStyle}>{getLabel(id)}</div>
             </GridItem>
