@@ -118,7 +118,7 @@ interface ConfigModalControlProps {
 const ConfigModalControl: React.FunctionComponent<ConfigModalControlProps> = ({
   children,
   title = 'Editor settings',
-  description = 'Settings will be applied immediately',
+  description = 'Changes apply immediately',
   ouiaId = 'CodeEditorConfigurationModal'
 }: ConfigModalControlProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
