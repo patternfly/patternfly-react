@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.5.0-prerelease.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.17...@patternfly/react-docs@7.5.0-prerelease.18) (2025-11-20)
+
+### Features
+
+- **react-icons:** add rhds icons ([#12143](https://github.com/patternfly/patternfly-react/issues/12143)) ([606f717](https://github.com/patternfly/patternfly-react/commit/606f71751312d5652b0b515dd521ef92be4b887d))
+
 # [7.5.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.16...@patternfly/react-docs@7.5.0-prerelease.17) (2025-11-20)
 
 **Note:** Version bump only for package @patternfly/react-docs
