@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.17.20",
-    "fs-extra": "^11.3.0",
+    "fs-extra": "^11.3.2",
     "jest-canvas-mock": "^2.5.2"
   },
   "peerDependencies": {
