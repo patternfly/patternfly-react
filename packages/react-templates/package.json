@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-templates",
-  "version": "6.5.0-prerelease.17",
+  "version": "6.5.0-prerelease.18",
   "description": "This package provides wrapped component demos for ease of use\n",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
