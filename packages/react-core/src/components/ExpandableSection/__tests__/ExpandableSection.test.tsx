@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { ExpandableSection, ExpandableSectionVariant } from '../ExpandableSection';
 import styles from '@patternfly/react-styles/css/components/ExpandableSection/expandable-section';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 const props = { contentId: 'content-id', toggleId: 'toggle-id' };
 
@@ -270,4 +271,34 @@ test('Renders with div wrapper when toggleWrapper="div"', () => {
 
   const toggle = screen.getByRole('button').parentElement;
   expect(toggle?.tagName).toBe('DIV');
+});
+
+test('Can render custom toggle icon', () => {
+  render(<ExpandableSection toggleIcon={<BellIcon data-testid="bell-icon" />}>Test content</ExpandableSection>);
+
+  expect(screen.getByTestId('bell-icon')).toBeInTheDocument();
+});
+
+test('Does not render toggle icon when hasToggleIcon is false', () => {
+  render(<ExpandableSection hasToggleIcon={false}>Test content</ExpandableSection>);
+
+  const button = screen.getByRole('button');
+  expect(button.querySelector('.pf-v6-c-expandable-section__toggle-icon')).not.toBeInTheDocument();
+});
+
+test('Does not render custom toggle icon when hasToggleIcon is false', () => {
+  render(
+    <ExpandableSection toggleIcon={<BellIcon data-testid="bell-icon" />} hasToggleIcon={false}>
+      Test content
+    </ExpandableSection>
+  );
+
+  expect(screen.queryByTestId('bell-icon')).not.toBeInTheDocument();
+});
+
+test('Renders toggle icon by default when hasToggleIcon is true', () => {
+  render(<ExpandableSection>Test content</ExpandableSection>);
+
+  const button = screen.getByRole('button');
+  expect(button.querySelector('.pf-v6-c-expandable-section__toggle-icon')).toBeInTheDocument();
 });
