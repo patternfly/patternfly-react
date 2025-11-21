@@ -1,5 +1,5 @@
-.ws-react-l-grid > .pf-v6-l-grid,
-.ws-react-l-grid > .pf-v6-l-grid > .pf-v6-l-grid__item {
+.ws-react-f-grid > .pf-v6-l-grid,
+.ws-react-f-grid > .pf-v6-l-grid > .pf-v6-l-grid__item {
   min-height: 75px;
   padding: var(--pf-t--global--spacer--md);
   border: var(--pf-t--global--border--width--box--default) dashed var(--pf-t--global--border--color--default);

@@ -1,8 +1,8 @@
-.ws-react-l-gallery .pf-v6-l-gallery {
+.ws-react-f-gallery .pf-v6-l-gallery {
   padding: var(--pf-t--global--spacer--md);
 }
 
-.ws-react-l-gallery .pf-v6-l-gallery > div {
+.ws-react-f-gallery .pf-v6-l-gallery > div {
   padding: var(--pf-t--global--spacer--md);
   border: var(--pf-t--global--border--width--box--default) dashed var(--pf-t--global--border--color--default);
 }

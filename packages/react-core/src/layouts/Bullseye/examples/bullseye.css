@@ -1,5 +1,5 @@
-.ws-react-l-bullseye .pf-v6-l-bullseye,
-.ws-react-l-bullseye .pf-v6-l-bullseye > div {
+.ws-react-f-bullseye .pf-v6-l-bullseye,
+.ws-react-f-bullseye .pf-v6-l-bullseye > div {
   padding: var(--pf-t--global--spacer--md);
   border: var(--pf-t--global--border--width--box--default) dashed var(--pf-t--global--border--color--default);
 }
