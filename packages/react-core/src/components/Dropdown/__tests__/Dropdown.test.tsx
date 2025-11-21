@@ -201,6 +201,32 @@ test('onOpenChange is called when passed and user presses esc key', async () => 
   expect(onOpenChange).toBeCalledTimes(1);
 });
 
+test('applies containerOuiaId to parent element', () => {
+  render(
+    <Dropdown containerOuiaId="test-dropdown" toggle={(toggleRef) => toggle(toggleRef)}>
+      {dropdownChildren}
+    </Dropdown>
+  );
+
+  const dropdownToggle = screen.getByRole('button', { name: 'Dropdown' });
+  const dropdownParent = dropdownToggle?.parentNode?.parentNode;
+  expect(dropdownParent).toHaveAttribute('data-ouia-component-id', 'test-dropdown');
+  expect(dropdownParent).toHaveAttribute('data-ouia-component-type', 'PF6/Dropdown container');
+  expect(dropdownParent?.tagName).toBe('SPAN');
+});
+
+test('applies containerOuiaId to parent element', () => {
+  render(
+    <Dropdown containerOuiaId="test-dropdown" containerComponent="div" toggle={(toggleRef) => toggle(toggleRef)}>
+      {dropdownChildren}
+    </Dropdown>
+  );
+
+  const dropdownToggle = screen.getByRole('button', { name: 'Dropdown' });
+  const dropdownParent = dropdownToggle?.parentNode?.parentNode;
+  expect(dropdownParent?.tagName).toBe('DIV');
+});
+
 test('match snapshot', () => {
   const { asFragment } = render(
     <Dropdown
