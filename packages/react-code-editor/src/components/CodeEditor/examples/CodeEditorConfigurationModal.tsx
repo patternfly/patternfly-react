@@ -19,7 +19,7 @@ import { useState } from 'react';
 
 interface ConfigModalItemProps {
   /** Icon rendered inside the configuration modal. */
-  icon?: ReactNode;
+  icon?: React.ReactNode;
   /** Description of the configuration option. */
   description: string;
   /** Title of the configuration option. We assume that titles are unique. */
@@ -34,7 +34,7 @@ interface ConfigModalItemProps {
    * Slot to render inside the configuration modal. Remember to add `aria-labelledby` and `aria-describedby` props
    * to the control inside the slot, pointing to the title and description ids respectively.
    */
-  slot?: ReactNode;
+  slot?: React.ReactNode;
 }
 
 const ConfigModalItem: React.FunctionComponent<ConfigModalItemProps> = ({
@@ -111,7 +111,7 @@ interface ConfigModalControlProps {
   title?: string;
   /** Description of the configuration modal. */
   description?: string;
-  /** OptionalID of the configuration modal. Also used as a prefix for the ids of inner elements and the OUIA id. */
+  /** Optional ID of the configuration modal. Also used as a prefix for the ids of inner elements and the OUIA id. */
   ouiaId?: string;
 }
 
