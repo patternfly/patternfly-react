@@ -56,8 +56,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
         <span className={css(styles.formLabelText)}>{label}</span>
         {isRequired && (
           <span className={css(styles.formLabelRequired)} aria-hidden="true">
-            {' '}
-            {ASTERISK}
+            &nbsp;{ASTERISK}
           </span>
         )}
       </LabelComponent>
