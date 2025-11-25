@@ -1,12 +1,15 @@
 import { join } from 'path';
 import { outputFileSync, ensureDirSync } from 'fs-extra/esm';
 import { generateIcons } from './generateIcons.mjs';
-import { createIcon } from '../dist/esm/createIcon.js';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 
 import * as url from 'url';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+
+// Import createIcon from compiled dist (build:esm must run first)
+const createIconModule = await import('../dist/esm/createIcon.js');
+const createIcon = createIconModule.createIcon;
 
 const outDir = join(__dirname, '../dist');
 const staticDir = join(outDir, 'static');
