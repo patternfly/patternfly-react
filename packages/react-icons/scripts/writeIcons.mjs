@@ -1,7 +1,7 @@
 import { join } from 'path';
 import { outputFileSync, ensureDirSync } from 'fs-extra/esm';
 import { generateIcons } from './generateIcons.mjs';
-import React from 'react';
+import { createElement } from 'react';
 import { renderToString } from 'react-dom/server';
 
 import * as url from 'url';
@@ -87,7 +87,7 @@ export default ${jsName};
  */
 function generateStaticSVG(iconName, icon) {
   const jsName = `${toCamel(iconName)}Icon`;
-  
+
   // Create icon component using createIcon
   const IconComponent = createIcon({
     name: jsName,
@@ -100,7 +100,7 @@ function generateStaticSVG(iconName, icon) {
   });
 
   // Render the component to string
-  const svgString = renderToString(React.createElement(IconComponent));
+  const svgString = renderToString(createElement(IconComponent));
 
   // Convert React's className to class for static SVG
   return svgString.replace(/className=/g, 'class=');

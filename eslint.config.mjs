@@ -12,11 +12,12 @@ import tseslint from 'typescript-eslint';
 export default [
   {
     ignores: [
+      '**/node_modules',
       '**/dist',
       '**/css',
+      '**/coverage',
       'packages/react-core/src/helpers/Popper/thirdparty',
       'packages/react-docs/patternfly-docs/generated',
-      'packages/react-docs/coverage',
       '.history/*',
       'packages/react-docs/static',
       'packages/react-docs/public',
