@@ -44,19 +44,21 @@ const components = {
 
 async function createPackage(component) {
   const cmds = [];
-  let destFile = component.replace(/[^/]+\.js$/g, 'package.json').replace('/dist/esm/', '/dist/dynamic/');
+  // normalize Windows backslashes to forward slashes for string operations
+  const comp = component.replace(/\\/g, '/');
 
-  if (component.match(/index\.js$/)) {
-    destFile = component.replace(/[^/]+\.js$/g, 'package.json').replace('/dist/esm/', '/dist/dynamic/');
+  let destFile;
+  if (comp.match(/index\.js$/)) {
+    destFile = comp.replace(/[^/]+\.js$/g, 'package.json').replace('/dist/esm/', '/dist/dynamic/');
   } else {
-    destFile = component.replace(/\.js$/g, '/package.json').replace('/dist/esm/', '/dist/dynamic/');
+    destFile = comp.replace(/\.js$/g, '/package.json').replace('/dist/esm/', '/dist/dynamic/');
   }
 
-  const pathAsArray = component.split('/');
-  const destDir = destFile.replace(/package\.json$/, '');
-  const esmRelative = path.relative(destDir, component);
-  const cjsRelative = path.relative(destDir, component.replace('/dist/esm/', '/dist/js/'));
-  const typesRelative = path.relative(destDir, component.replace(/\.js$/, '.d.ts'));
+  const pathAsArray = comp.split('/');
+  const destDir = path.normalize(destFile.replace(/package\.json$/, ''));
+  const esmRelative = path.relative(destDir, path.normalize(component));
+  const cjsRelative = path.relative(destDir, path.normalize(comp.replace('/dist/esm/', '/dist/js/')));
+  const typesRelative = path.relative(destDir, path.normalize(comp.replace(/\.js$/, '.d.ts')));
 
   const packageName = configJson.packageName;
 
@@ -65,7 +67,13 @@ async function createPackage(component) {
     process.exit(1);
   }
 
-  let componentName = pathAsArray[pathAsArray.length - (component.match(/index\.js$/) ? 2 : 1)];
+  // Safely derive component name from the normalized path array
+  let componentName = pathAsArray[pathAsArray.length - (comp.match(/index\.js$/) ? 2 : 1)];
+
+  if (!componentName) {
+    console.log(`Unable to derive component name from: ${component}`);
+    return Promise.resolve();
+  }
 
   if (pathAsArray.includes('next')) {
     componentName = `${componentName.toLowerCase()}-next-dynamic`;
