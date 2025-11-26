@@ -12,7 +12,7 @@ import {
 
 export const DrawerPanelEnd: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const drawerRef = useRef<HTMLDivElement>(undefined);
+  const drawerRef = useRef<HTMLSpanElement>(null);
 
   const onExpand = () => {
     drawerRef.current && drawerRef.current.focus();
