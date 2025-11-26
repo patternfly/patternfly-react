@@ -1,11 +1,18 @@
 import { join } from 'path';
-import { outputFileSync } from 'fs-extra/esm';
+import { outputFileSync, ensureDirSync } from 'fs-extra/esm';
 import { generateIcons } from './generateIcons.mjs';
+import { createElement } from 'react';
+import { renderToString } from 'react-dom/server';
 
 import * as url from 'url';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
+// Import createIcon from compiled dist (build:esm must run first)
+const createIconModule = await import('../dist/esm/createIcon.js');
+const createIcon = createIconModule.createIcon;
+
 const outDir = join(__dirname, '../dist');
+const staticDir = join(outDir, 'static');
 
 const removeSnake = (s) => s.toUpperCase().replace('-', '').replace('_', '');
 const toCamel = (s) => `${s[0].toUpperCase()}${s.substr(1).replace(/([-_][\w])/gi, removeSnake)}`;
@@ -73,6 +80,50 @@ export default ${jsName};
 };
 
 /**
+ * Generates a static SVG string from icon data using createIcon
+ * @param {string} iconName The name of the icon
+ * @param {object} icon The icon data object
+ * @returns {string} Static SVG markup
+ */
+function generateStaticSVG(iconName, icon) {
+  const jsName = `${toCamel(iconName)}Icon`;
+
+  // Create icon component using createIcon
+  const IconComponent = createIcon({
+    name: jsName,
+    width: icon.width,
+    height: icon.height,
+    svgPath: icon.svgPathData,
+    xOffset: icon.xOffset || 0,
+    yOffset: icon.yOffset || 0,
+    svgClassName: icon.svgClassName
+  });
+
+  // Render the component to string
+  const svgString = renderToString(createElement(IconComponent));
+
+  // Convert React's className to class for static SVG
+  return svgString.replace(/className=/g, 'class=');
+}
+
+/**
+ * Writes static SVG files to dist/static directory
+ * @param {object} icons icons from generateIcons
+ */
+function writeStaticSVGs(icons) {
+  ensureDirSync(staticDir);
+
+  Object.entries(icons).forEach(([iconName, icon]) => {
+    const svgContent = generateStaticSVG(iconName, icon);
+    const svgFileName = `${iconName}.svg`;
+    outputFileSync(join(staticDir, svgFileName), svgContent, 'utf-8');
+  });
+
+  // eslint-disable-next-line no-console
+  console.log(`Wrote ${Object.keys(icons).length} static SVG files to ${staticDir}`);
+}
+
+/**
  * Writes CJS and ESM icons to `dist` directory
  *
  * @param {any} icons icons from generateIcons
@@ -114,4 +165,6 @@ ${index
   console.log('Wrote', index.length * 3 + 3, 'icon files.');
 }
 
-writeIcons(generateIcons());
+const icons = generateIcons();
+writeIcons(icons);
+writeStaticSVGs(icons);
