@@ -30,7 +30,7 @@ export const CompassContent: React.FunctionComponent<CompassContentProps> = ({
 
   if (hasDrawer) {
     return (
-      <Drawer {...drawerProps}>
+      <Drawer isPill {...drawerProps}>
         <DrawerContent panelContent={drawerContent}>{compassContent}</DrawerContent>
       </Drawer>
     );
