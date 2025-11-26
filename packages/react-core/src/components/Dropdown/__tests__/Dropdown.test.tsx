@@ -215,7 +215,7 @@ test('applies containerOuiaId to parent element', () => {
   expect(dropdownParent?.tagName).toBe('SPAN');
 });
 
-test('applies containerOuiaId to parent element', () => {
+test('Renders with custom container element when containerComponent is passed', () => {
   render(
     <Dropdown containerOuiaId="test-dropdown" containerComponent="div" toggle={(toggleRef) => toggle(toggleRef)}>
       {dropdownChildren}
