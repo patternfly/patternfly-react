@@ -46,6 +46,10 @@ export interface TreeViewListItemProps {
    * children.
    */
   isSelectable?: boolean;
+  /** Flag indicating if the tree view item is disabled. */
+  isDisabled?: boolean;
+  /** Flag indicating if the tree view item toggle is disabled. */
+  isToggleDisabled?: boolean;
   /** Data structure of tree view item. */
   itemData?: TreeViewDataItem;
   /** Internal content of a tree view item. */
@@ -81,6 +85,8 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
   title,
   id,
   isExpanded,
+  isDisabled = false,
+  isToggleDisabled = false,
   defaultExpanded = false,
   children = null,
   onSelect,
@@ -128,9 +134,9 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
 
   const renderToggle = (randomId: string) => (
     <ToggleComponent
-      className={css(styles.treeViewNodeToggle)}
+      className={css(styles.treeViewNodeToggle, ToggleComponent === 'button' && isToggleDisabled && 'pf-m-disabled')}
       onClick={(evt: React.MouseEvent) => {
-        if (isSelectable || hasCheckbox) {
+        if (!isToggleDisabled && (isSelectable || hasCheckbox)) {
           if (internalIsExpanded) {
             onCollapse && onCollapse(evt, itemData, parentItem);
           } else {
@@ -138,12 +144,12 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
           }
           setIsExpanded(!internalIsExpanded);
         }
-        if (isSelectable) {
+        if (!isToggleDisabled && isSelectable) {
           evt.stopPropagation();
         }
       }}
       {...((hasCheckbox || isSelectable) && { 'aria-labelledby': `label-${randomId}` })}
-      {...(ToggleComponent === 'button' && { type: 'button' })}
+      {...(ToggleComponent === 'button' && { disabled: isToggleDisabled, type: 'button' })}
       tabIndex={-1}
     >
       <span className={css(styles.treeViewNodeToggleIcon)}>
@@ -180,7 +186,12 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
       <>
         {isCompact && title && <span className={css(styles.treeViewNodeTitle)}>{title}</span>}
         {isSelectable ? (
-          <button tabIndex={-1} className={css(styles.treeViewNodeText)} type="button">
+          <button
+            tabIndex={-1}
+            className={css(styles.treeViewNodeText, isDisabled && 'pf-m-disabled')}
+            type="button"
+            disabled={isDisabled}
+          >
             {name}
           </button>
         ) : (
@@ -234,11 +245,15 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
         <GenerateId prefix={isSelectable ? 'selectable-id' : 'checkbox-id'}>
           {(randomId) => (
             <Component
-              className={css(styles.treeViewNode, isSelected && styles.modifiers.current)}
+              className={css(
+                styles.treeViewNode,
+                isSelected && styles.modifiers.current,
+                Component === 'button' && isDisabled && 'pf-m-disabled'
+              )}
               onClick={(evt: React.MouseEvent) => {
                 if (!hasCheckbox) {
-                  onSelect && onSelect(evt, itemData, parentItem);
-                  if (!isSelectable && children && evt.isDefaultPrevented() !== true) {
+                  !isDisabled && onSelect && onSelect(evt, itemData, parentItem);
+                  if (!isDisabled && !isSelectable && children && evt.isDefaultPrevented() !== true) {
                     if (internalIsExpanded) {
                       onCollapse && onCollapse(evt, itemData, parentItem);
                     } else {
@@ -250,7 +265,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
               }}
               {...(hasCheckbox && { htmlFor: randomId })}
               {...((hasCheckbox || (isSelectable && children)) && { id: `label-${randomId}` })}
-              {...(Component === 'button' && { type: 'button' })}
+              {...(Component === 'button' && { type: 'button', disabled: isDisabled })}
             >
               <span className={css(styles.treeViewNodeContainer)}>
                 {children && renderToggle(randomId)}
