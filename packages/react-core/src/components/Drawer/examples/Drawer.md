@@ -135,7 +135,7 @@ import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/
 
 ### With focus trap
 
-When a [focus trap](/accessibility/product-development-guide#trapping-focus) is enabled on an element, a user will only be able to interact with the contents of that element until the focus trap is closed or deactivated.
+When a [focus trap](/accessibility/develop#trapping-focus) is enabled on an element, a user will only be able to interact with the contents of that element until the focus trap is closed or deactivated.
 
 To enable and customize a focus trap on a drawer panel, apply the `focusTrap` property to the `<DrawerPanelContent>` component. Enabling a focus trap with `focusTrap.enabled` will also automatically place focus on the first focusable element when the drawer panel expands, and return focus to the previously focused element when it collapses.
 
