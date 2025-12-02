@@ -28,7 +28,7 @@ import './compass.css';
 
 ### Basic
 
-In a basic compass layout, content can be passed to the following props to populate different areas of the page:
+In a basic Compass layout, content can be passed to the following props to populate different areas of the page:
 
 - `header`: Content rendered at the top of the page, typically including a `<CompassHeader>` component that divides the header into 3 areas, with a logo or brand, middle navigation, and profile.
 - `sidebarStart`: Content rendered at the horizontal start of the page (by default, the left side).
@@ -52,7 +52,7 @@ When `footer` is used, its content will fill the width of the screen. By default
 
 ## Composable structure
 
-When building a more custom implementation with compass components, there are some intended or expected structures that must remain present.
+When building a more custom implementation with Compass components, there are some intended or expected structures that must remain present.
 
 ### CompassMainHeader structure
 
