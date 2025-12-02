@@ -5,8 +5,8 @@ import { CompassMainHeaderToolbar } from './CompassMainHeaderToolbar';
 import styles from '@patternfly/react-styles/css/components/Compass/compass';
 import { css } from '@patternfly/react-styles';
 
-/** The wrapper component for header content in the main compass area. When building out a custom implementation,
- * you should ensure any content within the main header is rendered inside a compass panel and main header content wrappers.
+/** The wrapper component for header content in the main Compass area. When building out a custom implementation,
+ * you should ensure any content within the main header is rendered inside a Compass panel and main header content wrappers.
  */
 
 export interface CompassMainHeaderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'title'> {
@@ -18,8 +18,8 @@ export interface CompassMainHeaderProps extends Omit<React.HTMLProps<HTMLDivElem
   title?: React.ReactNode;
   /** Styled toolbar. If title or toolbar is provided, the children will be ignored. */
   toolbar?: React.ReactNode;
-  /** Additional props passed to the compass panel that wraps the main header content when using the title or toolbar props. When using the
-   * children prop, you should pass your own compass panel.
+  /** Additional props passed to the Compass panel that wraps the main header content when using the title or toolbar props. When using the
+   * children prop, you should pass your own Compass panel.
    */
   compassPanelProps?: Omit<CompassPanelProps, 'children'>;
 }
