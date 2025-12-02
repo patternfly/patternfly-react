@@ -71,13 +71,11 @@ module.exports = {
 
 ## Static SVGs
 
-All icons are also available as static SVG files in `@patternfly/react-icons/dist/static`. The static SVGs include all the same attributes as the React components (viewBox, class names, etc.) and are generated using the same `createIcon` function to ensure visual consistency.
+All icons are also available as static SVG files in `@patternfly/react-icons/dist/static`. The static SVGs include all the same attributes as the React components (viewBox, class names, etc.) to ensure visual consistency.
 
 Static SVGs are useful when you need to:
-- Use icons in non-React contexts (HTML emails, static sites, etc.)
-- Embed icons directly in HTML without JavaScript
+- Use icons in non-React contexts, such as static HTML
 - Reference icons via URL or file path
-- Use icons in build tools that process static assets
 
 ### Usage
 
@@ -85,11 +83,11 @@ You can import or reference static SVG files directly:
 
 ```jsx
 // In HTML
-<img src="@patternfly/react-icons/dist/static/times-icon.svg" alt="Close" />
+<img src="/icons/static/times-icon.svg" alt="Close" />
 
 // In CSS
 .close-icon {
-  background-image: url('@patternfly/react-icons/dist/static/times-icon.svg');
+  background-image: url('/icons/static/times-icon.svg');
 }
 
 // Direct file path
