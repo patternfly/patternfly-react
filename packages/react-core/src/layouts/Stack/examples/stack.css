@@ -1,15 +1,15 @@
-.ws-react-l-stack {
+.ws-react-f-stack {
   min-height: 30em;
   display: flex;
   flex-direction: column;
 }
 
-.ws-react-l-stack > .pf-v6-l-stack {
+.ws-react-f-stack > .pf-v6-l-stack {
   flex-grow: 1;
 }
 
-.ws-react-l-stack .pf-v6-l-stack,
-.ws-react-l-stack .pf-v6-l-stack > .pf-v6-l-stack__item {
+.ws-react-f-stack .pf-v6-l-stack,
+.ws-react-f-stack .pf-v6-l-stack > .pf-v6-l-stack__item {
   padding: var(--pf-t--global--spacer--md);
   border: var(--pf-t--global--border--width--box--default) dashed var(--pf-t--global--border--color--default);
 }

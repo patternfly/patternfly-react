@@ -1,9 +1,9 @@
-.ws-react-l-flex .pf-v6-l-flex {
+.ws-react-f-flex .pf-v6-l-flex {
   padding: var(--pf-t--global--spacer--md);
 }
 
-.ws-react-l-flex .pf-v6-l-flex > div,
-.ws-react-l-flex .example-border {
+.ws-react-f-flex .pf-v6-l-flex > div,
+.ws-react-f-flex .example-border {
   padding: var(--pf-t--global--spacer--md);
   border: var(--pf-t--global--border--width--box--default) dashed var(--pf-t--global--border--color--default);
 }
