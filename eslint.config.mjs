@@ -1,13 +1,44 @@
 import { fixupPluginRules } from '@eslint/compat';
 import js from '@eslint/js';
-import patternflyReact from 'eslint-plugin-patternfly-react';
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
+// Try to import the workspace plugin by package name first; if Node's ESM resolver
+// can't find it in this environment (Yarn v4 workspace on Windows) fall back to
+// the local package build. Using top-level await is valid in an ESM config.
+let patternflyReact;
+try {
+  const mod = await import('eslint-plugin-patternfly-react');
+  patternflyReact = mod && mod.default ? mod.default : mod;
+} catch (e) {
+  // Fallback to the local lib build path. This keeps CI behavior unchanged while
+  // allowing local linting during development.
+  const local = await import('./packages/eslint-plugin-patternfly-react/lib/index.js');
+  patternflyReact = local && local.default ? local.default : local;
+}
+import prettier from 'eslint-plugin-prettier';
 import reactCompiler from 'eslint-plugin-react-compiler';
 import reactHooks from 'eslint-plugin-react-hooks';
 import react from 'eslint-plugin-react';
 import testingLibrary from 'eslint-plugin-testing-library';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
+
+// The `recommended` export from some plugins (notably eslint-plugin-prettier)
+// may include a legacy `extends` key which is invalid in flat config. To
+// remain compatible we extract only the parts we can safely include here.
+const prettierRecommended = (() => {
+  try {
+    const cfg = prettier && prettier.configs && prettier.configs.recommended;
+    if (cfg && typeof cfg === 'object') {
+      return {
+        rules: cfg.rules || {},
+        settings: cfg.settings || {},
+        languageOptions: cfg.languageOptions || {}
+      };
+    }
+  } catch (e) {
+    // swallow — we'll just not include it
+  }
+  return null;
+})();
 
 export default [
   {
@@ -27,10 +58,20 @@ export default [
   ...tseslint.configs.recommended,
   react.configs.flat.recommended,
   react.configs.flat['jsx-runtime'],
-  eslintPluginPrettierRecommended,
+  // include only the safe parts of Prettier's recommended config (avoid legacy 'extends')
+  ...(prettierRecommended
+    ? [
+        {
+          languageOptions: prettierRecommended.languageOptions,
+          settings: prettierRecommended.settings,
+          rules: prettierRecommended.rules
+        }
+      ]
+    : []),
   {
     plugins: {
       'patternfly-react': fixupPluginRules(patternflyReact),
+      prettier: fixupPluginRules(prettier),
       'react-hooks': fixupPluginRules(reactHooks),
       'react-compiler': reactCompiler
     },
@@ -68,6 +109,7 @@ export default [
       '@typescript-eslint/no-inferrable-types': 'off',
       '@typescript-eslint/no-misused-new': 'error',
       '@typescript-eslint/no-namespace': 'error',
+      'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': [
         'error',
         {
