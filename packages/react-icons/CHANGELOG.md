@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.5.0-prerelease.7...@patternfly/react-icons@6.5.0-prerelease.8) (2025-12-03)
+
+### Features
+
+- **react-icons:** update to create static SVGs ([#12154](https://github.com/patternfly/patternfly-react/issues/12154)) ([3d2fd6f](https://github.com/patternfly/patternfly-react/commit/3d2fd6f1d408961e89b37da15aaffa705205afa9))
+
 # [6.5.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.5.0-prerelease.6...@patternfly/react-icons@6.5.0-prerelease.7) (2025-11-20)
 
 ### Features
