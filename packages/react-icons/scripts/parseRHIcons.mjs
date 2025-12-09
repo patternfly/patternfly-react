@@ -13,7 +13,7 @@ const ICON_PREFIX = 'rh';
 const ICON_TYPES = [
   'ui',
   'standard',
-  'social',
+  // 'social',
   'microns'
   // Add new types here as they become available in @rhds/icons
 ];
