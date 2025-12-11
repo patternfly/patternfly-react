@@ -12,7 +12,8 @@ propComponents:
     'CompassHero',
     'CompassMainHeader',
     'CompassPanel',
-    'CompassMessageBar'
+    'CompassMessageBar',
+    'CompassMainFooter'
   ]
 ---
 
