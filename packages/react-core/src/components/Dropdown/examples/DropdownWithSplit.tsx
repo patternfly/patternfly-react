@@ -14,12 +14,12 @@ export const DropdownSplitButtonText: React.FunctionComponent = () => {
   const toggleRef = React.useRef<MenuToggleElement>(null);
 
   const onFocus = () => {
-    if (toggleRef.current) {
-      const toggleButton = toggleRef.current.querySelector('button[aria-expanded]');
-      if (toggleButton) {
-        (toggleButton as HTMLElement).focus();
-      }
+    if (!toggleRef.current) {
+      return;
     }
+
+    const toggleButton = toggleRef.current.querySelector('button[aria-expanded]');
+    toggleButton?.focus();
   };
 
   const onSelect = () => {
