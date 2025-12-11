@@ -63,3 +63,11 @@ To provide users with more context about a `<DropdownItem>`, pass a short messag
 ```ts file="./DropdownWithDescriptions.tsx"
 
 ```
+
+### Split toggle with checkbox
+
+To combine a checkbox or other control with a dropdown menu, use a split button.
+
+```ts file="./DropdownWithSplit.tsx"
+
+```
