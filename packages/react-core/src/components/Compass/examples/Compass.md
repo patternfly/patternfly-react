@@ -39,7 +39,7 @@ In a basic Compass layout, content can be passed to the following props to popul
 
 To customize the background image of the `<Compass>` and `<CompassHero>` components, you can use their respective `backgroundSrcLight` and `backgroundSrcDark` props. You can also add and customize a color gradient background for the `<CompassHero>` component by using the `gradientLight` and `gradientDark` props.
 
-```ts file="CompassBasic.tsx"
+```ts isBeta file="CompassBasic.tsx"
 
 ```
 
