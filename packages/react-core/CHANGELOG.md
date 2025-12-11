@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.21...@patternfly/react-core@6.5.0-prerelease.22) (2025-12-11)
+
+### Bug Fixes
+
+- fixes broken docs link. ([#12157](https://github.com/patternfly/patternfly-react/issues/12157)) ([80b72de](https://github.com/patternfly/patternfly-react/commit/80b72de8ba9a326375cd0919ff5b81ff5b1ebf7c))
+- **layouts:** update example css & classnames ([#12145](https://github.com/patternfly/patternfly-react/issues/12145)) ([11fe19a](https://github.com/patternfly/patternfly-react/commit/11fe19a02297d85f50e11375820430b2980bc47b))
+
+### Features
+
+- **Compass:** add isPill to Drawer by default ([#12151](https://github.com/patternfly/patternfly-react/issues/12151)) ([b2cdf1c](https://github.com/patternfly/patternfly-react/commit/b2cdf1cd5d95be91932e6ac11f39e2c0318e6f72))
+
 # [6.5.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.20...@patternfly/react-core@6.5.0-prerelease.21) (2025-12-03)
 
 **Note:** Version bump only for package @patternfly/react-core
