@@ -3572,9 +3572,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lerna/create@npm:8.2.1":
-  version: 8.2.1
-  resolution: "@lerna/create@npm:8.2.1"
+"@lerna/create@npm:8.2.4":
+  version: 8.2.4
+  resolution: "@lerna/create@npm:8.2.4"
   dependencies:
     "@npmcli/arborist": "npm:7.5.4"
     "@npmcli/package-json": "npm:5.2.0"
@@ -3599,7 +3599,6 @@ __metadata:
     get-stream: "npm:6.0.0"
     git-url-parse: "npm:14.0.0"
     glob-parent: "npm:6.0.2"
-    globby: "npm:11.1.0"
     graceful-fs: "npm:4.2.11"
     has-unicode: "npm:2.0.1"
     ini: "npm:^1.3.8"
@@ -3610,7 +3609,6 @@ __metadata:
     js-yaml: "npm:4.1.0"
     libnpmpublish: "npm:9.0.9"
     load-json-file: "npm:6.2.0"
-    lodash: "npm:^4.17.21"
     make-dir: "npm:4.0.0"
     minimatch: "npm:3.0.5"
     multimatch: "npm:5.0.0"
@@ -3634,9 +3632,10 @@ __metadata:
     slash: "npm:^3.0.0"
     ssri: "npm:^10.0.6"
     string-width: "npm:^4.2.3"
-    strong-log-transformer: "npm:2.1.0"
     tar: "npm:6.2.1"
     temp-dir: "npm:1.0.0"
+    through: "npm:2.3.8"
+    tinyglobby: "npm:0.2.12"
     upath: "npm:2.0.1"
     uuid: "npm:^10.0.0"
     validate-npm-package-license: "npm:^3.0.4"
@@ -3646,7 +3645,7 @@ __metadata:
     write-pkg: "npm:4.0.0"
     yargs: "npm:17.7.2"
     yargs-parser: "npm:21.1.1"
-  checksum: 10c0/9cc9d800e5ed8d1f714d2f721f93487c2b837845416e0a0edc9674b9b2589f9f4d13c8248bcc11bbe5e56c7f78f80b7217c8858091a40aa97692a236d1de3640
+  checksum: 10c0/9a3aee341523f95cd3bf0c2742baedd7ba35a97c0245ee581d0670df9b14317b2ef7c1e6820812b16974449fee9a3156e5e9259add76f760618ee6686494680f
   languageName: node
   linkType: hard
 
@@ -4746,7 +4745,7 @@ __metadata:
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
     jest-transform-stub: "npm:^2.0.0"
-    lerna: "npm:^8.2.1"
+    lerna: "npm:^8.2.4"
     lint-staged: "npm:^15.5.0"
     mutation-observer: "npm:^1.0.3"
     plop: "npm:^4.0.4"
@@ -10214,15 +10213,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dir-glob@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "dir-glob@npm:3.0.1"
-  dependencies:
-    path-type: "npm:^4.0.0"
-  checksum: 10c0/dcac00920a4d503e38bb64001acb19df4efc14536ada475725e12f52c16777afdee4db827f55f13a908ee7efc0cb282e2e3dbaeeb98c0993dd93d1802d3bf00c
-  languageName: node
-  linkType: hard
-
 "dlv@npm:^1.1.3":
   version: 1.1.3
   resolution: "dlv@npm:1.1.3"
@@ -10389,7 +10379,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"duplexer@npm:^0.1.1, duplexer@npm:^0.1.2":
+"duplexer@npm:^0.1.2":
   version: 0.1.2
   resolution: "duplexer@npm:0.1.2"
   checksum: 10c0/c57bcd4bdf7e623abab2df43a7b5b23d18152154529d166c1e0da6bee341d84c432d157d7e97b32fecb1bf3a8b8857dd85ed81a915789f550637ed25b8e64fc2
@@ -11650,19 +11640,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.2.9":
-  version: 3.3.2
-  resolution: "fast-glob@npm:3.3.2"
-  dependencies:
-    "@nodelib/fs.stat": "npm:^2.0.2"
-    "@nodelib/fs.walk": "npm:^1.2.3"
-    glob-parent: "npm:^5.1.2"
-    merge2: "npm:^1.3.0"
-    micromatch: "npm:^4.0.4"
-  checksum: 10c0/42baad7b9cd40b63e42039132bde27ca2cb3a4950d0a0f9abe4639ea1aa9d3e3b40f98b1fe31cbc0cc17b664c9ea7447d911a152fa34ec5b72977b125a6fc845
-  languageName: node
-  linkType: hard
-
 "fast-glob@npm:^3.3.2":
   version: 3.3.3
   resolution: "fast-glob@npm:3.3.3"
@@ -11742,7 +11719,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fdir@npm:^6.4.4, fdir@npm:^6.5.0":
+"fdir@npm:^6.4.3, fdir@npm:^6.4.4, fdir@npm:^6.5.0":
   version: 6.5.0
   resolution: "fdir@npm:6.5.0"
   peerDependencies:
@@ -12872,20 +12849,6 @@ __metadata:
     define-properties: "npm:^1.2.1"
     gopd: "npm:^1.0.1"
   checksum: 10c0/9d156f313af79d80b1566b93e19285f481c591ad6d0d319b4be5e03750d004dde40a39a0f26f7e635f9007a3600802f53ecd85a759b86f109e80a5f705e01846
-  languageName: node
-  linkType: hard
-
-"globby@npm:11.1.0":
-  version: 11.1.0
-  resolution: "globby@npm:11.1.0"
-  dependencies:
-    array-union: "npm:^2.1.0"
-    dir-glob: "npm:^3.0.1"
-    fast-glob: "npm:^3.2.9"
-    ignore: "npm:^5.2.0"
-    merge2: "npm:^1.4.1"
-    slash: "npm:^3.0.0"
-  checksum: 10c0/b39511b4afe4bd8a7aead3a27c4ade2b9968649abab0a6c28b1a90141b96ca68ca5db1302f7c7bd29eab66bf51e13916b8e0a3d0ac08f75e1e84a39b35691189
   languageName: node
   linkType: hard
 
@@ -15784,11 +15747,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lerna@npm:^8.2.1":
-  version: 8.2.1
-  resolution: "lerna@npm:8.2.1"
+"lerna@npm:^8.2.4":
+  version: 8.2.4
+  resolution: "lerna@npm:8.2.4"
   dependencies:
-    "@lerna/create": "npm:8.2.1"
+    "@lerna/create": "npm:8.2.4"
     "@npmcli/arborist": "npm:7.5.4"
     "@npmcli/package-json": "npm:5.2.0"
     "@npmcli/run-script": "npm:8.1.0"
@@ -15815,7 +15778,6 @@ __metadata:
     get-stream: "npm:6.0.0"
     git-url-parse: "npm:14.0.0"
     glob-parent: "npm:6.0.2"
-    globby: "npm:11.1.0"
     graceful-fs: "npm:4.2.11"
     has-unicode: "npm:2.0.1"
     import-local: "npm:3.1.0"
@@ -15829,7 +15791,6 @@ __metadata:
     libnpmaccess: "npm:8.0.6"
     libnpmpublish: "npm:9.0.9"
     load-json-file: "npm:6.2.0"
-    lodash: "npm:^4.17.21"
     make-dir: "npm:4.0.0"
     minimatch: "npm:3.0.5"
     multimatch: "npm:5.0.0"
@@ -15855,9 +15816,10 @@ __metadata:
     slash: "npm:3.0.0"
     ssri: "npm:^10.0.6"
     string-width: "npm:^4.2.3"
-    strong-log-transformer: "npm:2.1.0"
     tar: "npm:6.2.1"
     temp-dir: "npm:1.0.0"
+    through: "npm:2.3.8"
+    tinyglobby: "npm:0.2.12"
     typescript: "npm:>=3 < 6"
     upath: "npm:2.0.1"
     uuid: "npm:^10.0.0"
@@ -15870,7 +15832,7 @@ __metadata:
     yargs-parser: "npm:21.1.1"
   bin:
     lerna: dist/cli.js
-  checksum: 10c0/e44f94a3548f115870e894adf0d4587f643770f7df59e865721c5c0bf86e680e815926bd06103826c59747cfc4f93fb18bcc572ddbf749ee7f727e5171ea6730
+  checksum: 10c0/6fba1b6a437d76978cf0aa67efb88b14643502839c7121b8ab8c6368fa1c1a4806600bf0f7a57ca1cfc52007ff1b45a03269205f9df93fc6fc4fb3179760b8c7
   languageName: node
   linkType: hard
 
@@ -16532,7 +16494,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"merge2@npm:^1.3.0, merge2@npm:^1.4.1":
+"merge2@npm:^1.3.0":
   version: 1.4.1
   resolution: "merge2@npm:1.4.1"
   checksum: 10c0/254a8a4605b58f450308fc474c82ac9a094848081bf4c06778200207820e5193726dc563a0d2c16468810516a5c97d9d3ea0ca6585d23c58ccfff2403e8dbbeb
@@ -21706,19 +21668,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strong-log-transformer@npm:2.1.0":
-  version: 2.1.0
-  resolution: "strong-log-transformer@npm:2.1.0"
-  dependencies:
-    duplexer: "npm:^0.1.1"
-    minimist: "npm:^1.2.0"
-    through: "npm:^2.3.4"
-  bin:
-    sl-log-transformer: bin/sl-log-transformer.js
-  checksum: 10c0/3c3b8aa8f34d661910563ff996412e2f527fc814e699a376854b554d4a4294ab7e285b4e2c08a080a7b19c5600a9b93a98798d3ac600fe3de545ca6605c07829
-  languageName: node
-  linkType: hard
-
 "style-to-object@npm:0.3.0, style-to-object@npm:^0.3.0":
   version: 0.3.0
   resolution: "style-to-object@npm:0.3.0"
@@ -22123,7 +22072,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"through@npm:2, through@npm:>=2.2.7 <3, through@npm:^2.3.4, through@npm:^2.3.6, through@npm:^2.3.8":
+"through@npm:2, through@npm:2.3.8, through@npm:>=2.2.7 <3, through@npm:^2.3.6, through@npm:^2.3.8":
   version: 2.3.8
   resolution: "through@npm:2.3.8"
   checksum: 10c0/4b09f3774099de0d4df26d95c5821a62faee32c7e96fb1f4ebd54a2d7c11c57fe88b0a0d49cf375de5fee5ae6bf4eb56dbbf29d07366864e2ee805349970d3cc
@@ -22141,6 +22090,16 @@ __metadata:
   version: 4.0.1
   resolution: "timed-out@npm:4.0.1"
   checksum: 10c0/86f03ffce5b80c5a066e02e59e411d3fbbfcf242b19290ba76817b4180abd1b85558489586b6022b798fb1cf26fc644c0ce0efb9c271d67ec83fada4b9542a56
+  languageName: node
+  linkType: hard
+
+"tinyglobby@npm:0.2.12":
+  version: 0.2.12
+  resolution: "tinyglobby@npm:0.2.12"
+  dependencies:
+    fdir: "npm:^6.4.3"
+    picomatch: "npm:^4.0.2"
+  checksum: 10c0/7c9be4fd3625630e262dcb19015302aad3b4ba7fc620f269313e688f2161ea8724d6cb4444baab5ef2826eb6bed72647b169a33ec8eea37501832a2526ff540f
   languageName: node
   linkType: hard
 
