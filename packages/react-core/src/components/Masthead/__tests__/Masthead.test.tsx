@@ -1,5 +1,6 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Masthead, MastheadMain, MastheadLogo, MastheadContent, MastheadBrand, MastheadToggle } from '../index';
+import styles from '@patternfly/react-styles/css/components/Masthead/masthead';
 
 describe('Masthead', () => {
   test('verify basic', () => {
@@ -70,6 +71,29 @@ describe('Masthead', () => {
       );
       expect(asFragment()).toMatchSnapshot();
     });
+  });
+
+  test(`Renders with ${styles.modifiers.docked} class when variant is docked`, () => {
+    render(
+      <Masthead variant="docked" data-testid="masthead">
+        test
+      </Masthead>
+    );
+    expect(screen.getByTestId('masthead')).toHaveClass(styles.modifiers.docked);
+  });
+
+  test(`Does not render with ${styles.modifiers.docked} class when variant is default`, () => {
+    render(
+      <Masthead variant="default" data-testid="masthead">
+        test
+      </Masthead>
+    );
+    expect(screen.getByTestId('masthead')).not.toHaveClass(styles.modifiers.docked);
+  });
+
+  test(`Does not render with ${styles.modifiers.docked} class when variant is not passed`, () => {
+    render(<Masthead data-testid="masthead">test</Masthead>);
+    expect(screen.getByTestId('masthead')).not.toHaveClass(styles.modifiers.docked);
   });
 });
 

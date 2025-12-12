@@ -47,7 +47,7 @@ describe('Drawer Demo Test', () => {
     $drawerPanel.should('have.css', 'flex-basis', 'max(24px, min(300px, 100%))');
     // Medium viewport
     cy.viewport(800, 660);
-    cy.get('#basic-drawer .pf-v6-c-drawer__panel').should('have.css', 'flex-basis', 'max(24px, min(100%, 100%))');
+    cy.get('#basic-drawer .pf-v6-c-drawer__panel').should('have.css', 'flex-basis', 'max(24px, min(100% + 0px, 100%))');
     // Xl viewport
     cy.viewport(1200, 660);
     cy.get('#basic-drawer .pf-v6-c-drawer__panel').should('have.css', 'flex-basis', 'max(24px, min(300px, 100%))');

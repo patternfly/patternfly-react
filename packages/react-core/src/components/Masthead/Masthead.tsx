@@ -27,6 +27,8 @@ export interface MastheadProps extends React.DetailedHTMLProps<React.HTMLProps<H
     xl?: 'insetNone' | 'insetXs' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl' | 'inset3xl';
     '2xl'?: 'insetNone' | 'insetXs' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl' | 'inset3xl';
   };
+  /** @beta Indicates the variant of the masthead */
+  variant?: 'default' | 'docked';
 }
 
 export const Masthead: React.FunctionComponent<MastheadProps> = ({
@@ -36,6 +38,7 @@ export const Masthead: React.FunctionComponent<MastheadProps> = ({
     md: 'inline'
   },
   inset,
+  variant = 'default',
   ...props
 }: MastheadProps) => {
   const { width, getBreakpoint } = useContext(PageContext);
@@ -43,6 +46,7 @@ export const Masthead: React.FunctionComponent<MastheadProps> = ({
     <header
       className={css(
         styles.masthead,
+        variant === 'docked' && styles.modifiers.docked,
         formatBreakpointMods(display, styles, 'display-', getBreakpoint(width)),
         formatBreakpointMods(inset, styles, '', getBreakpoint(width)),
         className

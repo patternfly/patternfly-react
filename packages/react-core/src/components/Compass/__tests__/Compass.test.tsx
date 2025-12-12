@@ -170,3 +170,13 @@ test('Matches the snapshot with drawer', () => {
   );
   expect(asFragment()).toMatchSnapshot();
 });
+
+test(`Renders with ${styles.modifiers.dock} class when dock is passed`, () => {
+  render(<Compass dock={<div>Dock content</div>} data-testid="compass" />);
+  expect(screen.getByTestId('compass')).toHaveClass(styles.modifiers.dock);
+});
+
+test(`Does not render with ${styles.modifiers.dock} class when dock is not passed`, () => {
+  render(<Compass data-testid="compass" />);
+  expect(screen.getByTestId('compass')).not.toHaveClass(styles.modifiers.dock);
+});
