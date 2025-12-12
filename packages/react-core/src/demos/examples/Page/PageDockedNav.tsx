@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import {
   Avatar,
   Brand,
@@ -52,10 +52,6 @@ export const PageDockedNav: React.FunctionComponent = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [activeItem, setActiveItem] = useState(1);
 
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const menuRef = useRef<HTMLDivElement>(null);
-  const toggleRef = useRef<HTMLButtonElement>(null);
-
   const onNavSelect = (_event: React.FormEvent<HTMLInputElement>, selectedItem: NavOnSelectProps) => {
     typeof selectedItem.itemId === 'number' && setActiveItem(selectedItem.itemId);
   };
@@ -67,34 +63,6 @@ export const PageDockedNav: React.FunctionComponent = () => {
   const onDropdownSelect = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
-
-  const handleMenuKeys = (event: KeyboardEvent) => {
-    if (!isOpen) {
-      return;
-    }
-    if (menuRef.current?.contains(event.target as Node) || toggleRef.current?.contains(event.target as Node)) {
-      if (event.key === 'Escape') {
-        setIsOpen(!isOpen);
-        toggleRef.current?.focus();
-      }
-    }
-  };
-
-  const handleClickOutside = (event: MouseEvent) => {
-    if (isOpen && !menuRef.current?.contains(event.target as Node)) {
-      setIsOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('keydown', handleMenuKeys);
-    window.addEventListener('click', handleClickOutside);
-
-    return () => {
-      window.removeEventListener('keydown', handleMenuKeys);
-      window.removeEventListener('click', handleClickOutside);
-    };
-  }, [isOpen, menuRef]);
 
   const dashboardBreadcrumb = (
     <Breadcrumb>
@@ -156,8 +124,8 @@ export const PageDockedNav: React.FunctionComponent = () => {
                   />
                   <NavItem
                     preventDefault
-                    id="nav-icon-link1"
-                    to="#nav-icon-link1"
+                    id="nav-icon-link3"
+                    to="#nav-icon-link3"
                     itemId={0}
                     isActive={activeItem === 2}
                     icon={<CloudIcon />}
@@ -165,8 +133,8 @@ export const PageDockedNav: React.FunctionComponent = () => {
                   />
                   <NavItem
                     preventDefault
-                    id="nav-icon-link1"
-                    to="#nav-icon-link1"
+                    id="nav-icon-link4"
+                    to="#nav-icon-link4"
                     itemId={0}
                     isActive={activeItem === 3}
                     icon={<CodeIcon />}
@@ -205,6 +173,7 @@ export const PageDockedNav: React.FunctionComponent = () => {
                     isExpanded={isDropdownOpen}
                     icon={<Avatar src={imgAvatar} alt="" size="sm" />}
                     variant="plain"
+                    aria-label="User menu"
                   ></MenuToggle>
                 )}
               >
@@ -219,7 +188,7 @@ export const PageDockedNav: React.FunctionComponent = () => {
 
   const mainContainerId = 'main-content-page-layout-tertiary-nav';
 
-  const handleClick = (event) => {
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
 
     const mainContentElement = document.getElementById(mainContainerId);

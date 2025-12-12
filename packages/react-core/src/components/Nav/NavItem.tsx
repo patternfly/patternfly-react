@@ -282,7 +282,7 @@ const NavItemBase: React.FunctionComponent<NavItemProps> = ({
   return navItem;
 };
 
-export const NavItem = forwardRef((props: NavItemProps, ref: React.Ref<any>) => (
+export const NavItem = forwardRef<HTMLLIElement, NavItemProps>((props, ref) => (
   <NavItemBase {...props} innerRef={ref} />
 ));
 

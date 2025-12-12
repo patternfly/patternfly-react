@@ -164,6 +164,7 @@ export const CompassDockDemo: React.FunctionComponent = () => {
                     isExpanded={isDropdownOpen}
                     icon={<Avatar src={imgAvatar} alt="" size="sm" />}
                     variant="plain"
+                    aria-label="User menu"
                   ></MenuToggle>
                 )}
               >
