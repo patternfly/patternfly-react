@@ -39,8 +39,9 @@ import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
 import CloudIcon from '@patternfly/react-icons/dist/esm/icons/cloud-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
-import imgAvatar from '../../../components/assets/avatarImg.svg';
-import pfIconLogo from '../../assets/PF-IconLogo-color.svg';
+import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
+import pfIconLogo from '@patternfly/react-core/src/demos/assets/PF-IconLogo-color.svg';
+
 interface NavOnSelectProps {
   groupId: number | string;
   itemId: number | string;
@@ -143,7 +144,6 @@ export const PageDockedNav: React.FunctionComponent = () => {
                     isActive={activeItem === 0}
                     icon={<CubeIcon />}
                     ref={navItem1Ref}
-                    aria-label="Link 1"
                   />
                   <NavItem
                     preventDefault
@@ -153,27 +153,24 @@ export const PageDockedNav: React.FunctionComponent = () => {
                     isActive={activeItem === 1}
                     icon={<FolderIcon />}
                     ref={navItem2Ref}
-                    aria-label="Link 2"
                   />
                   <NavItem
                     preventDefault
-                    id="nav-icon-link3"
-                    to="#nav-icon-link3"
-                    itemId={2}
+                    id="nav-icon-link1"
+                    to="#nav-icon-link1"
+                    itemId={0}
                     isActive={activeItem === 2}
                     icon={<CloudIcon />}
                     ref={navItem3Ref}
-                    aria-label="Link 3"
                   />
                   <NavItem
                     preventDefault
-                    id="nav-icon-link4"
-                    to="#nav-icon-link4"
-                    itemId={3}
+                    id="nav-icon-link1"
+                    to="#nav-icon-link1"
+                    itemId={0}
                     isActive={activeItem === 3}
                     icon={<CodeIcon />}
                     ref={navItem4Ref}
-                    aria-label="Link 4"
                   />
                 </NavList>
               </Nav>
