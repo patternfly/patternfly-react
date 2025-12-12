@@ -7,7 +7,7 @@ import {
   useRef,
   useState,
   forwardRef,
-  MutableRefObject
+  useCallback
 } from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import menuStyles from '@patternfly/react-styles/css/components/Menu/menu';
@@ -53,7 +53,7 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
   /** @hide Forwarded ref */
-  innerRef?: React.Ref<any>;
+  innerRef?: React.Ref<HTMLLIElement>;
 }
 
 const NavItemBase: React.FunctionComponent<NavItemProps> = ({
@@ -76,13 +76,25 @@ const NavItemBase: React.FunctionComponent<NavItemProps> = ({
   innerRef,
   ...props
 }: NavItemProps) => {
-  const { flyoutRef, setFlyoutRef, navRef } = useContext(NavContext);
+  const { flyoutRef: contextFlyoutRef, setFlyoutRef, navRef } = useContext(NavContext);
   const { isSidebarOpen } = useContext(PageSidebarContext);
   const [flyoutTarget, setFlyoutTarget] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
-  const _ref = useRef<HTMLLIElement>(undefined);
-  const ref = (innerRef as MutableRefObject<HTMLLIElement>) || _ref;
-  const flyoutVisible = ref === flyoutRef;
+  const flyoutRef = useRef<HTMLLIElement | null>(null);
+  const ref = useCallback(
+    (node: HTMLLIElement | null) => {
+      flyoutRef.current = node;
+      if (typeof innerRef === 'function') {
+        innerRef(node);
+      } else if (innerRef) {
+        (innerRef as React.MutableRefObject<HTMLLIElement | null>).current = node;
+      }
+    },
+    [innerRef]
+  );
+  const contextFlyoutRefCurrent =
+    typeof contextFlyoutRef === 'object' && contextFlyoutRef ? contextFlyoutRef.current : null;
+  const flyoutVisible = flyoutRef?.current === contextFlyoutRefCurrent;
   const popperRef = useRef<HTMLDivElement>(undefined);
   const hasFlyout = flyout !== undefined;
   const Component = hasFlyout ? 'button' : (component as any);
@@ -93,42 +105,48 @@ const NavItemBase: React.FunctionComponent<NavItemProps> = ({
     console.error('NavItem cannot have both "to" and "flyout" props.');
   }
 
-  const showFlyout = (show: boolean, override?: boolean) => {
-    if ((!flyoutVisible || override) && show) {
-      setFlyoutRef(ref);
-    } else if ((flyoutVisible || override) && !show) {
-      setFlyoutRef(null);
-    }
+  const showFlyout = useCallback(
+    (show: boolean, override?: boolean) => {
+      if ((!flyoutVisible || override) && show) {
+        setFlyoutRef(flyoutRef);
+      } else if ((flyoutVisible || override) && !show) {
+        setFlyoutRef(null);
+      }
 
-    onShowFlyout && show && onShowFlyout();
-  };
+      onShowFlyout && show && onShowFlyout();
+    },
+    [flyoutVisible, setFlyoutRef, flyoutRef, onShowFlyout]
+  );
 
   const onMouseOver = (event: React.MouseEvent) => {
     const evtContainedInFlyout = (event.target as HTMLElement).closest(`.${styles.navItem}.pf-m-flyout`);
     if (hasFlyout && !flyoutVisible) {
       showFlyout(true);
-    } else if (flyoutRef !== null && !evtContainedInFlyout) {
+    } else if (contextFlyoutRef !== null && !evtContainedInFlyout) {
       setFlyoutRef(null);
     }
   };
 
-  const onFlyoutClick = (event: MouseEvent) => {
-    const target = event.target;
-    const closestItem = (target as HTMLElement).closest('.pf-m-flyout');
-    if (!closestItem) {
-      if (hasFlyout) {
-        showFlyout(false, true);
-      } else if (flyoutRef !== null) {
-        setFlyoutRef(null);
+  const onFlyoutClick = useCallback(
+    (event: MouseEvent) => {
+      const target = event.target;
+      const closestItem = (target as HTMLElement).closest('.pf-m-flyout');
+      if (!closestItem) {
+        if (hasFlyout) {
+          showFlyout(false, true);
+        } else if (contextFlyoutRef !== null) {
+          setFlyoutRef(null);
+        }
       }
-    }
-  };
+    },
+    [hasFlyout, showFlyout, contextFlyoutRef, setFlyoutRef]
+  );
 
   const handleFlyout = (event: KeyboardEvent) => {
     const key = event.key;
     const target = event.target as HTMLElement;
 
-    if ((key === ' ' || key === 'Enter' || key === 'ArrowRight') && hasFlyout && ref?.current?.contains(target)) {
+    if ((key === ' ' || key === 'Enter' || key === 'ArrowRight') && hasFlyout && flyoutRef?.current?.contains(target)) {
       event.stopPropagation();
       event.preventDefault();
       if (!flyoutVisible) {
@@ -160,7 +178,7 @@ const NavItemBase: React.FunctionComponent<NavItemProps> = ({
         window.removeEventListener('click', onFlyoutClick);
       }
     };
-  }, []);
+  }, [hasFlyout, onFlyoutClick]);
 
   useEffect(() => {
     if (flyoutTarget) {
@@ -244,7 +262,7 @@ const NavItemBase: React.FunctionComponent<NavItemProps> = ({
 
   const flyoutPopper = (
     <Popper
-      triggerRef={ref}
+      triggerRef={flyoutRef}
       popper={
         <div ref={popperRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           {flyout}
@@ -282,8 +300,8 @@ const NavItemBase: React.FunctionComponent<NavItemProps> = ({
   return navItem;
 };
 
-export const NavItem = forwardRef((props: NavItemProps, ref: React.Ref<any>) => (
-  <NavItemBase innerRef={ref} {...props} />
+export const NavItem = forwardRef<HTMLLIElement, NavItemProps>((props, ref) => (
+  <NavItemBase {...props} innerRef={ref} />
 ));
 
 NavItem.displayName = 'NavItem';

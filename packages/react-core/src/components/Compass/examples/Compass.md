@@ -60,8 +60,6 @@ When `footer` is used, its content will fill the width of the screen. By default
 
 ### With docked nav
 
-As an alternative navigation, a `CompassDock` component may be passed to `Compass` via the `dock` prop. This component will allocate a thin sidebar intended for icons to the start of the screen. The `CompassDock` component has three sub-areas, from top to bottom: logo, main, and tools. Typically a `Brand` or other logo should be passed to the `logo` prop. The `main` and `tools` are flexible and can be passed `Nav`, `ActionList`, or `Toolbar` vertical variants depending on the use case. Account or profile avatars and links would typically be passed as part of the `tools` section at the bottom of the page.
-
 ```ts file="CompassDockLayout.tsx"
 
 ```

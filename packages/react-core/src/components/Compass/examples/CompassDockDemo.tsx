@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import {
   Compass,
   CompassContent,
@@ -46,9 +46,6 @@ interface NavOnSelectProps {
 export const CompassDockDemo: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState<number>(0);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const menuRef = useRef<HTMLDivElement>(null);
-  const toggleRef = useRef<HTMLButtonElement>(null);
 
   const onNavSelect = (_event: React.FormEvent<HTMLInputElement>, selectedItem: NavOnSelectProps) => {
     typeof selectedItem.itemId === 'number' && setActiveItem(selectedItem.itemId);
@@ -61,34 +58,6 @@ export const CompassDockDemo: React.FunctionComponent = () => {
   const onDropdownSelect = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
-
-  const handleMenuKeys = (event: KeyboardEvent) => {
-    if (!isOpen) {
-      return;
-    }
-    if (menuRef.current?.contains(event.target as Node) || toggleRef.current?.contains(event.target as Node)) {
-      if (event.key === 'Escape') {
-        setIsOpen(!isOpen);
-        toggleRef.current?.focus();
-      }
-    }
-  };
-
-  const handleClickOutside = (event: MouseEvent) => {
-    if (isOpen && !menuRef.current?.contains(event.target as Node)) {
-      setIsOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('keydown', handleMenuKeys);
-    window.addEventListener('click', handleClickOutside);
-
-    return () => {
-      window.removeEventListener('keydown', handleMenuKeys);
-      window.removeEventListener('click', handleClickOutside);
-    };
-  }, [isOpen, menuRef]);
 
   const userDropdownItems = [
     <>
@@ -127,6 +96,7 @@ export const CompassDockDemo: React.FunctionComponent = () => {
                     isActive={activeItem === 0}
                     icon={<CubeIcon />}
                     ref={navItem1Ref}
+                    aria-label="Link 1"
                   />
                   <NavItem
                     key="nav-icon-link2"
@@ -137,26 +107,29 @@ export const CompassDockDemo: React.FunctionComponent = () => {
                     isActive={activeItem === 1}
                     icon={<FolderIcon />}
                     ref={navItem2Ref}
+                    aria-label="Link 2"
                   />
                   <NavItem
                     key="nav-icon-link3"
                     preventDefault
                     id="nav-icon-link3"
                     to="#nav-icon-link3"
-                    itemId={0}
+                    itemId={2}
                     isActive={activeItem === 2}
                     icon={<CloudIcon />}
                     ref={navItem3Ref}
+                    aria-label="Link 3"
                   />
                   <NavItem
                     key="nav-icon-link4"
                     preventDefault
                     id="nav-icon-link4"
                     to="#nav-icon-link4"
-                    itemId={0}
+                    itemId={3}
                     isActive={activeItem === 3}
                     icon={<CodeIcon />}
                     ref={navItem4Ref}
+                    aria-label="Link 4"
                   />
                 </NavList>
               </Nav>
