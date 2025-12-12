@@ -15,6 +15,7 @@ export interface ToolbarContextProps {
   showClearFiltersButton?: boolean;
   toolbarId?: string;
   customLabelGroupContent?: React.ReactNode;
+  useContainerQuery?: boolean;
 }
 
 export const ToolbarContext = createContext<ToolbarContextProps>({
@@ -23,7 +24,8 @@ export const ToolbarContext = createContext<ToolbarContextProps>({
   labelGroupContentRef: null,
   updateNumberFilters: () => {},
   numberOfFilters: 0,
-  clearAllFilters: () => {}
+  clearAllFilters: () => {},
+  useContainerQuery: false
 });
 
 interface ToolbarContentContextProps {
@@ -48,4 +50,13 @@ export const globalBreakpoints = {
   lg: parseInt(globalBreakpointLg.value) * 16,
   xl: parseInt(globalBreakpointXl.value) * 16,
   '2xl': parseInt(globalBreakpoint2xl.value) * 16
+};
+
+// Container query breakpoints match CSS container query values
+export const containerBreakpoints = {
+  sm: 286,
+  md: 478,
+  lg: 702,
+  xl: 992, // You may need to verify this value
+  '2xl': 1200 // You may need to verify this value
 };

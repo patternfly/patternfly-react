@@ -191,7 +191,7 @@ class ToolbarToggleGroup extends Component<ToolbarToggleGroupProps> {
       <PageContext.Consumer>
         {({ width, getBreakpoint }) => (
           <ToolbarContext.Consumer>
-            {({ toggleIsExpanded: managedOnToggle }) => {
+            {({ toggleIsExpanded: managedOnToggle, useContainerQuery }) => {
               const _onToggle = onToggle !== undefined ? onToggle : managedOnToggle;
 
               return (
@@ -260,7 +260,12 @@ class ToolbarToggleGroup extends Component<ToolbarToggleGroupProps> {
                                 | 'actionGroupPlain'
                                 | 'labelGroup'
                             ],
-                          formatBreakpointMods(breakpointMod, styles, '', getBreakpoint(width)),
+                          formatBreakpointMods(
+                            breakpointMod,
+                            styles,
+                            '',
+                            useContainerQuery ? undefined : getBreakpoint(width)
+                          ),
                           formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
                           formatBreakpointMods(gap, styles, '', getBreakpoint(width)),
                           formatBreakpointMods(columnGap, styles, '', getBreakpoint(width)),

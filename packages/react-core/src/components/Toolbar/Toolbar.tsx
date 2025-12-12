@@ -2,11 +2,12 @@ import { Component, createRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { css } from '@patternfly/react-styles';
-import { ToolbarContext } from './ToolbarUtils';
+import { ToolbarContext, globalBreakpoints, containerBreakpoints } from './ToolbarUtils';
 import { ToolbarLabelGroupContent } from './ToolbarLabelGroupContent';
 import { formatBreakpointMods, canUseDOM } from '../../helpers/util';
 import { getDefaultOUIAId, getOUIAProps, OUIAProps } from '../../helpers';
 import { PageContext } from '../Page/PageContext';
+import { getResizeObserver } from '../../helpers/resizeObserver';
 
 export enum ToolbarColorVariant {
   default = 'default',
@@ -59,6 +60,10 @@ export interface ToolbarProps extends React.HTMLProps<HTMLDivElement>, OUIAProps
   colorVariant?: ToolbarColorVariant | 'default' | 'no-background' | 'primary' | 'secondary';
   /** Flag indicating the toolbar padding is removed */
   hasNoPadding?: boolean;
+  /** Use container queries instead of viewport media queries for responsive behavior */
+  useContainerQuery?: boolean;
+  /** Breakpoint for container queries. Only applies when useContainerQuery is true. */
+  containerQueryBreakpoint?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 }
 
 export interface ToolbarState {
@@ -69,6 +74,8 @@ export interface ToolbarState {
   filterInfo: FilterInfo;
   /** Used to keep track of window width so we can collapse expanded content when window is resizing */
   windowWidth: number;
+  /** Used to keep track of container width so we can collapse expanded content when container is resizing */
+  containerWidth: number;
   ouiaStateId: string;
 }
 
@@ -79,12 +86,15 @@ interface FilterInfo {
 class Toolbar extends Component<ToolbarProps, ToolbarState> {
   static displayName = 'Toolbar';
   labelGroupContentRef = createRef<HTMLDivElement>();
+  toolbarRef = createRef<HTMLDivElement>();
+  observer: any = () => {};
   staticFilterInfo = {};
   hasNoPadding = false;
   state = {
     isManagedToggleExpanded: false,
     filterInfo: {},
     windowWidth: canUseDOM ? window.innerWidth : 1200,
+    containerWidth: 0,
     ouiaStateId: getDefaultOUIAId(Toolbar.displayName)
   };
 
@@ -105,15 +115,58 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
     }
   };
 
+  closeExpandableContentOnContainerResize = () => {
+    if (this.toolbarRef.current && this.toolbarRef.current.clientWidth) {
+      const newWidth = this.toolbarRef.current.clientWidth;
+
+      if (newWidth !== this.state.containerWidth) {
+        // If expanded and container is wide enough for inline display at the specific breakpoint, close it
+        const specificBreakpoint = this.props.containerQueryBreakpoint || 'lg';
+
+        // Use container breakpoints when using container queries, otherwise use global breakpoints
+        let isWideEnoughForInline: boolean;
+        if (this.props.useContainerQuery) {
+          // Handle 'sm' case for container breakpoints
+          const breakpointKey = specificBreakpoint === 'sm' ? 'sm' : specificBreakpoint;
+          isWideEnoughForInline = newWidth >= containerBreakpoints[breakpointKey];
+        } else {
+          // Handle 'sm' case - map to 'md' since globalBreakpoints doesn't have 'sm'
+          const breakpointKey = specificBreakpoint === 'sm' ? 'md' : specificBreakpoint;
+          isWideEnoughForInline = newWidth >= globalBreakpoints[breakpointKey];
+        }
+
+        if (this.state.isManagedToggleExpanded && isWideEnoughForInline) {
+          this.setState(() => ({
+            isManagedToggleExpanded: false,
+            containerWidth: newWidth
+          }));
+        } else {
+          // Just update width without closing
+          this.setState(() => ({
+            containerWidth: newWidth
+          }));
+        }
+      }
+    }
+  };
+
   componentDidMount() {
     if (this.isToggleManaged() && canUseDOM) {
-      window.addEventListener('resize', this.closeExpandableContent);
+      if (this.props.useContainerQuery && this.toolbarRef.current) {
+        this.observer = getResizeObserver(this.toolbarRef.current, this.closeExpandableContentOnContainerResize, true);
+      } else {
+        window.addEventListener('resize', this.closeExpandableContent);
+      }
     }
   }
 
   componentWillUnmount() {
     if (this.isToggleManaged() && canUseDOM) {
-      window.removeEventListener('resize', this.closeExpandableContent);
+      if (this.props.useContainerQuery) {
+        this.observer();
+      } else {
+        window.removeEventListener('resize', this.closeExpandableContent);
+      }
     }
   }
 
@@ -147,6 +200,8 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
       numberOfFiltersText,
       customLabelGroupContent,
       colorVariant = ToolbarColorVariant.default,
+      useContainerQuery,
+      containerQueryBreakpoint,
       ...props
     } = this.props;
 
@@ -167,6 +222,19 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
               isFullHeight && styles.modifiers.fullHeight,
               isStatic && styles.modifiers.static,
               isSticky && styles.modifiers.sticky,
+              useContainerQuery && !containerQueryBreakpoint && styles.modifiers.container,
+              useContainerQuery &&
+                containerQueryBreakpoint &&
+                ((): string => {
+                  const breakpointClassMap: Record<string, string> = {
+                    '2xl': styles.modifiers.container_2xl,
+                    sm: styles.modifiers.containerSm,
+                    md: styles.modifiers.containerMd,
+                    lg: styles.modifiers.containerLg,
+                    xl: styles.modifiers.containerXl
+                  };
+                  return breakpointClassMap[containerQueryBreakpoint] || '';
+                })(),
               formatBreakpointMods(inset, styles, '', getBreakpoint(width)),
               colorVariant === 'primary' && styles.modifiers.primary,
               colorVariant === 'secondary' && styles.modifiers.secondary,
@@ -174,6 +242,7 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
               className
             )}
             id={randomId}
+            ref={this.toolbarRef}
             {...getOUIAProps(Toolbar.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
             {...props}
           >
@@ -188,7 +257,8 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
                 clearFiltersButtonText,
                 showClearFiltersButton,
                 toolbarId: randomId,
-                customLabelGroupContent
+                customLabelGroupContent,
+                useContainerQuery
               }}
             >
               {children}
