@@ -19,7 +19,6 @@ import CloudIcon from '@patternfly/react-icons/dist/esm/icons/cloud-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
 import pfIconLogo from '@patternfly/react-core/src/demos/assets/PF-IconLogo-color.svg';
-import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 
 - All examples set the `isManagedSidebar` prop on the Page component to have the sidebar automatically close for smaller screen widths. You can also manually control this behavior by not adding the `isManagedSidebar` prop and instead:
 
