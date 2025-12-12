@@ -112,6 +112,7 @@ export const PageDockedNav: React.FunctionComponent = () => {
                     isActive={activeItem === 0}
                     icon={<CubeIcon />}
                     ref={navItem1Ref}
+                    aria-label="Link 1"
                   />
                   <NavItem
                     preventDefault
@@ -121,6 +122,7 @@ export const PageDockedNav: React.FunctionComponent = () => {
                     isActive={activeItem === 1}
                     icon={<FolderIcon />}
                     ref={navItem2Ref}
+                    aria-label="Link 2"
                   />
                   <NavItem
                     preventDefault
@@ -130,6 +132,7 @@ export const PageDockedNav: React.FunctionComponent = () => {
                     isActive={activeItem === 2}
                     icon={<CloudIcon />}
                     ref={navItem3Ref}
+                    aria-label="Link 3"
                   />
                   <NavItem
                     preventDefault
@@ -139,6 +142,7 @@ export const PageDockedNav: React.FunctionComponent = () => {
                     isActive={activeItem === 3}
                     icon={<CodeIcon />}
                     ref={navItem4Ref}
+                    aria-label="Link 4"
                   />
                 </NavList>
               </Nav>
