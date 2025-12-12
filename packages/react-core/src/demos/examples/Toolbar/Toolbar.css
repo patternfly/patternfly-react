@@ -1,0 +1,10 @@
+.ws-react-c-toolbar-resize-container {
+  resize: horizontal;
+  overflow: auto;
+  border: var(--pf-t--global--border--width--extra-strong) dashed var(--pf-t--global--border--color--default);
+  /* padding: var(--pf-t--global--spacer--md); */
+  width: 800px;
+  min-width: 300px;
+  max-width: 100%;
+  height: 15em;
+}
