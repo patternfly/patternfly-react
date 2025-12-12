@@ -8,6 +8,8 @@ import compassBackgroundImageDark from '@patternfly/react-tokens/dist/esm/c_comp
 export interface CompassProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Compass. */
   className?: string;
+  /** Content of the docked navigation area of the layout */
+  dock?: React.ReactNode;
   /** Content placed at the top of the layout */
   header?: React.ReactNode;
   /** Flag indicating if the header is expanded */
@@ -38,6 +40,7 @@ export interface CompassProps extends React.HTMLProps<HTMLDivElement> {
 
 export const Compass: React.FunctionComponent<CompassProps> = ({
   className,
+  dock,
   header,
   isHeaderExpanded = true,
   sidebarStart,
@@ -64,32 +67,45 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
   }
 
   const compassContent = (
-    <div className={css(styles.compass, className)} {...props} style={{ ...props.style, ...backgroundImageStyles }}>
-      <div
-        className={css(styles.compassHeader, isHeaderExpanded && 'pf-m-expanded')}
-        {...(!isHeaderExpanded && { inert: 'true' })}
-      >
-        {header}
-      </div>
-      <div
-        className={css(styles.compassSidebar, styles.modifiers.start, isSidebarStartExpanded && 'pf-m-expanded')}
-        {...(!isSidebarStartExpanded && { inert: 'true' })}
-      >
-        {sidebarStart}
-      </div>
-      <div className={css(styles.compassMain)}>{main}</div>
-      <div
-        className={css(styles.compassSidebar, styles.modifiers.end, isSidebarEndExpanded && 'pf-m-expanded')}
-        {...(!isSidebarEndExpanded && { inert: 'true' })}
-      >
-        {sidebarEnd}
-      </div>
-      <div
-        className={css(styles.compassFooter, isFooterExpanded && 'pf-m-expanded')}
-        {...(!isFooterExpanded && { inert: 'true' })}
-      >
-        {footer}
-      </div>
+    <div
+      className={css(styles.compass, dock !== undefined && styles.modifiers.dock, className)}
+      {...props}
+      style={{ ...props.style, ...backgroundImageStyles }}
+    >
+      {dock && <div className={css(`${styles.compass}__dock`)}>{dock}</div>}
+      {header && (
+        <div
+          className={css(styles.compassHeader, isHeaderExpanded && 'pf-m-expanded')}
+          {...(!isHeaderExpanded && { inert: 'true' })}
+        >
+          {header}
+        </div>
+      )}
+      {sidebarStart && (
+        <div
+          className={css(styles.compassSidebar, styles.modifiers.start, isSidebarStartExpanded && 'pf-m-expanded')}
+          {...(!isSidebarStartExpanded && { inert: 'true' })}
+        >
+          {sidebarStart}
+        </div>
+      )}
+      {main && <div className={css(styles.compassMain)}>{main}</div>}
+      {sidebarEnd && (
+        <div
+          className={css(styles.compassSidebar, styles.modifiers.end, isSidebarEndExpanded && 'pf-m-expanded')}
+          {...(!isSidebarEndExpanded && { inert: 'true' })}
+        >
+          {sidebarEnd}
+        </div>
+      )}
+      {footer && (
+        <div
+          className={css(styles.compassFooter, isFooterExpanded && 'pf-m-expanded')}
+          {...(!isFooterExpanded && { inert: 'true' })}
+        >
+          {footer}
+        </div>
+      )}
     </div>
   );
 

@@ -17,11 +17,18 @@ propComponents:
   ]
 ---
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import OutlinedPlusSquare from '@patternfly/react-icons/dist/esm/icons/outlined-plus-square-icon';
 import OutlinedCopy from '@patternfly/react-icons/dist/esm/icons/outlined-copy-icon';
 import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/outlined-question-circle-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+import CloudIcon from '@patternfly/react-icons/dist/esm/icons/cloud-icon';
+import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import imgAvatar from '../../assets/avatarImg.svg';
+import pfLogo from '../../assets/PF-IconLogo-color.svg';
 
 import './compass.css';
 
@@ -48,6 +55,20 @@ To customize the background image of the `<Compass>` and `<CompassHero>` compone
 When `footer` is used, its content will fill the width of the screen. By default, when content inside the footer grows, the height and placement of the start and end sidebars will adjust to allow for the change. To modify this behavior and render footer content without interfering with the sidebars, instead place a `<CompassMainFooter>` inside the `main` section. This will render content at the bottom of the page between the 2 sidebars, rather than across the entire bottom of the page.
 
 ```ts file="CompassMainFooterDemo.tsx"
+
+```
+
+### With docked nav
+
+As an alternative navigation, a `CompassDock` component may be passed to `Compass` via the `dock` prop. This component will allocate a thin sidebar intended for icons to the start of the screen. The `CompassDock` component has three sub-areas, from top to bottom: logo, main, and tools. Typically a `Brand` or other logo should be passed to the `logo` prop. The `main` and `tools` are flexible and can be passed `Nav`, `ActionList`, or `Toolbar` vertical variants depending on the use case. Account or profile avatars and links would typically be passed as part of the `tools` section at the bottom of the page.
+
+```ts file="CompassDockLayout.tsx"
+
+```
+
+### Docked nav demo
+
+```ts isFullscreen file="CompassDockDemo.tsx"
 
 ```
 

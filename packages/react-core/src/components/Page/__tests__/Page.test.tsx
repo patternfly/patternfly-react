@@ -389,4 +389,21 @@ describe('Page', () => {
 
     expect(screen.getByRole('main').parentElement).not.toHaveClass(styles.modifiers.noFill);
   });
+
+  test(`Renders with ${styles.modifiers.dock} class when variant is docked`, () => {
+    render(<Page {...props} variant="docked" data-testid="page"></Page>);
+
+    expect(screen.getByTestId('page')).toHaveClass(styles.modifiers.dock);
+  });
+
+  test(`Does not render with ${styles.modifiers.dock} class when variant is default`, () => {
+    render(<Page {...props} variant="default" data-testid="page"></Page>);
+
+    expect(screen.getByTestId('page')).not.toHaveClass(styles.modifiers.dock);
+  });
+
+  test(`Does not render with ${styles.modifiers.dock} class when variant is not passed`, () => {
+    render(<Page data-testid="page"></Page>);
+    expect(screen.getByTestId('page')).not.toHaveClass(styles.modifiers.dock);
+  });
 });

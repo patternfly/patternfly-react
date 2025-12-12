@@ -1,4 +1,14 @@
-import { cloneElement, Fragment, isValidElement, useContext, useEffect, useRef, useState } from 'react';
+import {
+  cloneElement,
+  Fragment,
+  isValidElement,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+  forwardRef,
+  MutableRefObject
+} from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import menuStyles from '@patternfly/react-styles/css/components/Menu/menu';
 import dividerStyles from '@patternfly/react-styles/css/components/Divider/divider';
@@ -42,9 +52,11 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
+  /** @hide Forwarded ref */
+  innerRef?: React.Ref<any>;
 }
 
-export const NavItem: React.FunctionComponent<NavItemProps> = ({
+const NavItemBase: React.FunctionComponent<NavItemProps> = ({
   children,
   styleChildren = true,
   className,
@@ -61,13 +73,15 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   ouiaSafe,
   zIndex = 9999,
   icon,
+  innerRef,
   ...props
 }: NavItemProps) => {
   const { flyoutRef, setFlyoutRef, navRef } = useContext(NavContext);
   const { isSidebarOpen } = useContext(PageSidebarContext);
   const [flyoutTarget, setFlyoutTarget] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
-  const ref = useRef<HTMLLIElement>(undefined);
+  const _ref = useRef<HTMLLIElement>(undefined);
+  const ref = (innerRef as MutableRefObject<HTMLLIElement>) || _ref;
   const flyoutVisible = ref === flyoutRef;
   const popperRef = useRef<HTMLDivElement>(undefined);
   const hasFlyout = flyout !== undefined;
@@ -267,4 +281,9 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
 
   return navItem;
 };
+
+export const NavItem = forwardRef((props: NavItemProps, ref: React.Ref<any>) => (
+  <NavItemBase innerRef={ref} {...props} />
+));
+
 NavItem.displayName = 'NavItem';
