@@ -62,6 +62,10 @@ export interface ExpandableSectionProps extends Omit<React.HTMLProps<HTMLDivElem
   toggleAriaLabel?: string;
   /** Accessible name via space delimtted list of IDs for the expandable section toggle. */
   toggleAriaLabelledBy?: string;
+  /** Icon shown in toggle when variant is not truncated. */
+  toggleIcon?: React.ReactNode;
+  /** Whether to show a toggle icon when variant is not truncated. If omitted, it is important to ensure the current state of the ExpandableSection is conveyed, most likely by having dynamic toggle text. */
+  hasToggleIcon?: boolean;
   /** Truncates the expandable content to the specified number of lines when using the
    * "truncate" variant.
    */
@@ -211,6 +215,8 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
       toggleContent,
       toggleAriaLabel,
       toggleAriaLabelledBy,
+      toggleIcon = <AngleRightIcon />,
+      hasToggleIcon = true,
       children,
       isExpanded,
       isDetached,
@@ -267,13 +273,10 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
           aria-controls={uniqueContentId}
           id={uniqueToggleId}
           onClick={(event) => onToggle(event, !propOrStateIsExpanded)}
-          {...(variant !== ExpandableSectionVariant.truncate && {
-            icon: (
-              <span className={css(styles.expandableSectionToggleIcon)}>
-                <AngleRightIcon />
-              </span>
-            )
-          })}
+          {...(variant !== ExpandableSectionVariant.truncate &&
+            hasToggleIcon && {
+              icon: <span className={css(styles.expandableSectionToggleIcon)}>{toggleIcon}</span>
+            })}
           aria-label={toggleAriaLabel}
           aria-labelledby={toggleAriaLabelledBy}
         >

@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.20...@patternfly/react-core@6.5.0-prerelease.21) (2025-12-03)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [6.5.0-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.19...@patternfly/react-core@6.5.0-prerelease.20) (2025-12-03)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [6.5.0-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.18...@patternfly/react-core@6.5.0-prerelease.19) (2025-12-01)
+
+### Features
+
+- **Dropdown:** Add optional container with ouiaId ([#12022](https://github.com/patternfly/patternfly-react/issues/12022)) ([0811452](https://github.com/patternfly/patternfly-react/commit/0811452f2720872e19d08a3781d4399368745dc8))
+- **ExpandableSection:** Allow more control over toggle icon ([#12051](https://github.com/patternfly/patternfly-react/issues/12051)) ([07c2bbf](https://github.com/patternfly/patternfly-react/commit/07c2bbfb32491c8f69dfa4261c9e1edb9136d487))
+
 # [6.5.0-prerelease.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.17...@patternfly/react-core@6.5.0-prerelease.18) (2025-11-21)
 
 **Note:** Version bump only for package @patternfly/react-core

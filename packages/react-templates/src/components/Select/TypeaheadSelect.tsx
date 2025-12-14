@@ -195,13 +195,20 @@ export const TypeaheadSelectBase: FunctionComponent<TypeaheadSelectProps> = ({
     }
   };
 
-  const closeMenu = () => {
+  const closeMenu = (shouldRestoreInput = true) => {
     onToggle && onToggle(false);
     setIsOpen(false);
     resetActiveAndFocusedItem();
-    const option = initialOptions.find((o) => o.value === selected);
-    if (option) {
-      setInputValue(String(option.content));
+
+    // Only restore input value when user cancels (doesn't select)
+    // Don't restore when explicitly selecting an option (handled by selectOption)
+    if (shouldRestoreInput) {
+      const option = initialOptions.find((o) => o.value === selected);
+      if (option) {
+        setInputValue(String(option.content));
+      }
+      // Clear filter when closing without selecting to show all options on next open
+      setFilterValue('');
     }
   };
 
@@ -223,7 +230,7 @@ export const TypeaheadSelectBase: FunctionComponent<TypeaheadSelectProps> = ({
     setFilterValue('');
     setSelected(String(option.value));
 
-    closeMenu();
+    closeMenu(false); // Don't restore - we just set the correct value above
   };
 
   const _onSelect = (_event: ReactMouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {

@@ -6,7 +6,7 @@ import compassBackgroundImageLight from '@patternfly/react-tokens/dist/esm/c_com
 import compassBackgroundImageDark from '@patternfly/react-tokens/dist/esm/c_compass_BackgroundImage_dark';
 
 export interface CompassProps extends React.HTMLProps<HTMLDivElement> {
-  /** Additional classes added to the compass. */
+  /** Additional classes added to the Compass. */
   className?: string;
   /** Content placed at the top of the layout */
   header?: React.ReactNode;
@@ -30,9 +30,9 @@ export interface CompassProps extends React.HTMLProps<HTMLDivElement> {
   drawerContent?: React.ReactNode;
   /** Additional props passed to the drawer */
   drawerProps?: DrawerProps;
-  /** Light theme background image path of the compass */
+  /** Light theme background image path of the Compass  */
   backgroundSrcLight?: string;
-  /** Dark theme background image path of the compass */
+  /** Dark theme background image path of the Compass  */
   backgroundSrcDark?: string;
 }
 
@@ -95,7 +95,7 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
 
   if (hasDrawer) {
     return (
-      <Drawer {...drawerProps}>
+      <Drawer isPill {...drawerProps}>
         <DrawerContent panelContent={drawerContent}>
           <DrawerContentBody>{compassContent}</DrawerContentBody>
         </DrawerContent>

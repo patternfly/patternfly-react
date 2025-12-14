@@ -12,7 +12,8 @@ propComponents:
     'CompassHero',
     'CompassMainHeader',
     'CompassPanel',
-    'CompassMessageBar'
+    'CompassMessageBar',
+    'CompassMainFooter'
   ]
 ---
 
@@ -28,47 +29,41 @@ import './compass.css';
 
 ### Basic
 
-In a basic compass layout, content can be passed to the following props to populate areas of the page:
+In a basic Compass layout, content can be passed to the following props to populate different areas of the page:
 
-- `header`: content rendered in the top of the page. This will typically be a `CompassHeader` component to break the header into 3 areas consisting of a logo or brand, middle navigation, and profile.
-- `sidebarStart`: content rendered in the left side or start side of the page
-- `main`: content rendered in the center of the page. This will typically consist of a `CompassMainHeader` or `CompassHero`, along with a `CompassContent` filled with one or more `CompassPanel` components.
-- `sidebarEnd`: content rendered in the right side or end side of the page
-- `footer`: content rendered in the bottom of the page
+- `header`: Content rendered at the top of the page, typically including a `<CompassHeader>` component that divides the header into 3 areas, with a logo or brand, middle navigation, and profile.
+- `sidebarStart`: Content rendered at the horizontal start of the page (by default, the left side).
+- `main`: Content rendered in the center of the page, typically including a `<CompassMainHeader>` or `<CompassHero>`, along with a `<CompassContent>` filled with 1 or more `<CompassPanel>` components.
+- `sidebarEnd`: Content rendered at the horizontal end of the page (by default, the right side).
+- `footer`: Content rendered at the bottom of the page.
 
-The background image of the `Compass` and `CompassHero` may be customized by using their respective `backgroundSrcLight` and `backgroundSrcDark` props. The `CompassHero` also allows customization of a color gradient across its container by using the `gradientLight` and `gradientDark` props.
+To customize the background image of the `<Compass>` and `<CompassHero>` components, you can use their respective `backgroundSrcLight` and `backgroundSrcDark` props. You can also add and customize a color gradient background for the `<CompassHero>` component by using the `gradientLight` and `gradientDark` props.
 
-```ts file="CompassBasic.tsx"
+```ts isBeta file="CompassBasic.tsx"
 
 ```
 
 ### With alternate footer
 
-When `footer` is used, its content will take up the width of the screen. However, if content inside of the footer grows, then the two sidebars' heights and placement will adjust to allow for the change. If this is not the desired behavior, then using a `CompassMainFooter` inside of the of the `main` section provides an alterate way to render footer content without interfering with the sidebars, by rendering content at the bottom of the page between the two sidebars opposed to the whole bottom of the page.
+When `footer` is used, its content will fill the width of the screen. By default, when content inside the footer grows, the height and placement of the start and end sidebars will adjust to allow for the change. To modify this behavior and render footer content without interfering with the sidebars, instead place a `<CompassMainFooter>` inside the `main` section. This will render content at the bottom of the page between the 2 sidebars, rather than across the entire bottom of the page.
 
 ```ts file="CompassMainFooterDemo.tsx"
 
 ```
 
-### Demo
-
-```ts isFullscreen file="CompassDemo.tsx"
-
-```
-
 ## Composable structure
 
-When building a more custom implementation using Compass components, there are some intended or expected structures that must be present.
+When building a more custom implementation with Compass components, there are some intended or expected structures that must remain present.
 
 ### CompassMainHeader structure
 
-When using the `children` property in the `<CompassMainHeader>` component, you should ensure that the expected sub-components are used. The following code block shows a general structure to follow.
+When using the `children` property in the `<CompassMainHeader>` component, there are specific structural patterns that you should follow, as shown this general code structure.
 
 ```noLive
 <CompassMainHeader>
   <CompassPanel>
     <CompassMainHeaderContent>
-      {Your custom content goes here, which can include the CompassMainHeaderTitle and/or CompassMainHeaderToolbar sub-components}
+      {Your custom content goes here, which can include the <CompassMainHeaderTitle> and/or <CompassMainHeaderToolbar> sub-components}
     </CompassMainHeaderContent>
   </CompassPanel>
 </CompassMainHeader>

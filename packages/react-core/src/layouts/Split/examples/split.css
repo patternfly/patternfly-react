@@ -1,5 +1,5 @@
-.ws-react-l-split .pf-v6-l-split,
-.ws-react-l-split .pf-v6-l-split > .pf-v6-l-split__item {
+.ws-react-f-split .pf-v6-l-split,
+.ws-react-f-split .pf-v6-l-split > .pf-v6-l-split__item {
   padding: var(--pf-t--global--spacer--md);
   border: var(--pf-t--global--border--width--box--default) dashed var(--pf-t--global--border--color--default);
 }

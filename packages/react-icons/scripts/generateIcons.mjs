@@ -3,7 +3,7 @@ import patternflyIcons from './icons/patternflyIcons.mjs';
 import customIcons from './icons/customIcons.mjs';
 import rhIconsMicrons from './icons/rhIconsMicrons.mjs';
 import rhIconsStandard from './icons/rhIconsStandard.mjs';
-import rhIconsSocial from './icons/rhIconsSocial.mjs';
+// import rhIconsSocial from './icons/rhIconsSocial.mjs';
 import rhIconsUI from './icons/rhIconsUI.mjs';
 
 /**
@@ -16,7 +16,7 @@ export function generateIcons() {
     ...customIcons,
     ...rhIconsMicrons,
     ...rhIconsStandard,
-    ...rhIconsSocial,
+    // ...rhIconsSocial,
     ...rhIconsUI
   };
 }

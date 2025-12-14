@@ -1,8 +1,8 @@
 import styles from '@patternfly/react-styles/css/components/Compass/compass';
 import { css } from '@patternfly/react-styles';
 
-/** A wrapper component to be passed as custom content for the compass main header. This should also be wrapped
- * in a compass panel component.
+/** A wrapper component to be passed as custom content for the Compass main header. This should also be wrapped
+ * in a Compass panel component.
  */
 
 export interface CompassMainHeaderContentProps extends React.HTMLProps<HTMLDivElement> {

@@ -1,13 +1,13 @@
-.ws-react-l-level {
+.ws-react-f-level {
   padding: var(--pf-t--global--spacer--sm);
 }
 
-.ws-react-l-level .pf-v6-l-level {
+.ws-react-f-level .pf-v6-l-level {
   min-height: 160px;
 }
 
-.ws-react-l-level .pf-v6-l-level,
-.ws-react-l-level .pf-v6-l-level > div {
+.ws-react-f-level .pf-v6-l-level,
+.ws-react-f-level .pf-v6-l-level > div {
   padding: var(--pf-t--global--spacer--sm);
   border: var(--pf-t--global--border--width--box--default) dashed var(--pf-t--global--border--color--default);
 }
