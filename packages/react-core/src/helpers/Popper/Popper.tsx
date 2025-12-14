@@ -483,8 +483,14 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     clearTimeouts([transitionTimerRef, hideTimerRef]);
     showTimerRef.current = setTimeout(() => {
       setInternalIsVisible(true);
-      setOpacity(1);
-      onShown();
+      // Ensures React has committed the DOM changes and the popper element is rendered
+      requestAnimationFrame(() => {
+        // Ensures Popper.js has calculated and applied the position transform before making element visible
+        requestAnimationFrame(() => {
+          setOpacity(1);
+          onShown();
+        });
+      });
     }, entryDelay);
   };
 
