@@ -22,13 +22,6 @@ import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import OutlinedPlusSquare from '@patternfly/react-icons/dist/esm/icons/outlined-plus-square-icon';
 import OutlinedCopy from '@patternfly/react-icons/dist/esm/icons/outlined-copy-icon';
 import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/outlined-question-circle-icon';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
-import CloudIcon from '@patternfly/react-icons/dist/esm/icons/cloud-icon';
-import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
-import imgAvatar from '../../assets/avatarImg.svg';
-import pfLogo from '../../assets/PF-IconLogo-color.svg';
 
 import './compass.css';
 
@@ -61,12 +54,6 @@ When `footer` is used, its content will fill the width of the screen. By default
 ### With docked nav
 
 ```ts file="CompassDockLayout.tsx"
-
-```
-
-### Docked nav demo
-
-```ts isFullscreen file="CompassDockDemo.tsx"
 
 ```
 
