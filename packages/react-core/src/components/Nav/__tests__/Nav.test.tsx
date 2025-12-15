@@ -259,4 +259,19 @@ describe('Nav', () => {
     );
     expect(screen.getAllByText('this is an icon')[0].parentElement).toHaveClass(styles.navLinkIcon);
   });
+
+  test(`Renders with ${styles.modifiers.docked} class when variant is docked`, () => {
+    renderNav(
+      <Nav variant="docked" data-testid="docked-nav">
+        <NavList>
+          {props.items.map((item) => (
+            <NavItem to={item.to} key={item.to}>
+              {item.label}
+            </NavItem>
+          ))}
+        </NavList>
+      </Nav>
+    );
+    expect(screen.getByTestId('docked-nav')).toHaveClass(styles.modifiers.docked);
+  });
 });
