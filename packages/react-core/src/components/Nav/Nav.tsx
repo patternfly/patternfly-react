@@ -35,7 +35,7 @@ export interface NavProps
   ) => void;
   /** Accessible label for the nav when there are multiple navs on the page */
   'aria-label'?: string;
-  /** For horizontal navs. Docked is in beta. */
+  /** The nav variant to use. Docked is in beta. */
   variant?: 'default' | 'horizontal' | 'horizontal-subnav' | 'docked';
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
