@@ -205,4 +205,23 @@ describe('Toolbar', () => {
       });
     });
   });
+
+  it('Renders with class ${styles.modifiers.vertical} when isVertical is true', () => {
+    const items = (
+      <Fragment>
+        <ToolbarItem>Test</ToolbarItem>
+        <ToolbarItem>Test 2</ToolbarItem>
+        <ToolbarItem variant="separator" />
+        <ToolbarItem>Test 3 </ToolbarItem>
+      </Fragment>
+    );
+
+    render(
+      <Toolbar id="toolbar" isVertical data-testid="Toolbar-test-is-vertical">
+        <ToolbarContent>{items}</ToolbarContent>
+      </Toolbar>
+    );
+
+    expect(screen.getByTestId('Toolbar-test-is-vertical')).toHaveClass(styles.modifiers.vertical);
+  });
 });
