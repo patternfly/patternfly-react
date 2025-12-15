@@ -54,7 +54,7 @@ describe('Toolbar', () => {
         </ToolbarContent>
       </Toolbar>
     );
-    expect(screen.getByTestId('toolbar')).not.toHaveClass('pf-m-no-padding');
+    expect(screen.getByTestId('toolbar')).not.toHaveClass(styles.modifiers.noPadding);
   });
 
   it(`should render toolbar with ${styles.modifiers.noPadding} class when hasNoPadding is true`, () => {
@@ -204,6 +204,20 @@ describe('Toolbar', () => {
         expect(screen.getByTestId('toolbarconent').querySelector('div')).toHaveClass(bpNoWrapClass);
       });
     });
+  });
+
+  it(`Renders toolbar without ${styles.modifiers.vertical} by default`, () => {
+    render(
+      <Toolbar data-testid="Toolbar-test-is-not-vertical">
+        <ToolbarContent>
+          <ToolbarItem>Test</ToolbarItem>
+          <ToolbarItem>Test 2</ToolbarItem>
+          <ToolbarItem variant="separator" />
+          <ToolbarItem>Test 3 </ToolbarItem>
+        </ToolbarContent>
+      </Toolbar>
+    );
+    expect(screen.getByTestId('Toolbar-test-is-not-vertical')).not.toHaveClass(styles.modifiers.vertical);
   });
 
   it('Renders with class ${styles.modifiers.vertical} when isVertical is true', () => {
