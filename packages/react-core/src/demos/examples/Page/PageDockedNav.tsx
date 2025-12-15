@@ -21,7 +21,6 @@ import {
   MastheadContent,
   MastheadBrand,
   MenuToggle,
-  MenuToggleElement,
   Nav,
   NavItem,
   NavList,
@@ -57,11 +56,11 @@ export const PageDockedNav: React.FunctionComponent = () => {
   };
 
   const onDropdownToggle = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+    setIsDropdownOpen((prevIsOpen) => !prevIsOpen);
   };
 
   const onDropdownSelect = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+    setIsDropdownOpen(false);
   };
 
   const dashboardBreadcrumb = (
@@ -87,6 +86,9 @@ export const PageDockedNav: React.FunctionComponent = () => {
   const navItem2Ref = useRef<HTMLAnchorElement>(null);
   const navItem3Ref = useRef<HTMLAnchorElement>(null);
   const navItem4Ref = useRef<HTMLAnchorElement>(null);
+  const settingsRef = useRef<HTMLButtonElement>(null);
+  const helpRef = useRef<HTMLButtonElement>(null);
+  const userMenuRef = useRef<HTMLButtonElement>(null);
 
   const masthead = (
     <Masthead id="icon-router-link" variant="docked">
@@ -146,10 +148,10 @@ export const PageDockedNav: React.FunctionComponent = () => {
                   />
                 </NavList>
               </Nav>
-              <Tooltip triggerRef={navItem1Ref} content="Link 1"></Tooltip>
-              <Tooltip triggerRef={navItem2Ref} content="Link 2"></Tooltip>
-              <Tooltip triggerRef={navItem3Ref} content="Link 3"></Tooltip>
-              <Tooltip triggerRef={navItem4Ref} content="Link 4"></Tooltip>
+              <Tooltip aria="none" aria-live="off" triggerRef={navItem1Ref} content="Link 1"></Tooltip>
+              <Tooltip aria="none" aria-live="off" triggerRef={navItem2Ref} content="Link 2"></Tooltip>
+              <Tooltip aria="none" aria-live="off" triggerRef={navItem3Ref} content="Link 3"></Tooltip>
+              <Tooltip aria="none" aria-live="off" triggerRef={navItem4Ref} content="Link 4"></Tooltip>
             </ToolbarItem>
             <ToolbarGroup
               variant="action-group-plain"
@@ -158,10 +160,19 @@ export const PageDockedNav: React.FunctionComponent = () => {
             >
               <ToolbarGroup variant="action-group-plain" visibility={{ default: 'hidden', lg: 'visible' }}>
                 <ToolbarItem>
-                  <Button aria-label="Settings" isSettings variant="plain" />
+                  <Tooltip aria="none" aria-live="off" triggerRef={settingsRef} content="Settings">
+                    <Button ref={settingsRef} aria-label="Settings" isSettings variant="plain" />
+                  </Tooltip>
                 </ToolbarItem>
                 <ToolbarItem>
-                  <Button aria-label="Help" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
+                  <Tooltip aria="none" aria-live="off" triggerRef={helpRef} content="Help">
+                    <Button
+                      ref={helpRef}
+                      aria-label="Help"
+                      variant={ButtonVariant.plain}
+                      icon={<QuestionCircleIcon />}
+                    />
+                  </Tooltip>
                 </ToolbarItem>
               </ToolbarGroup>
             </ToolbarGroup>
@@ -169,17 +180,23 @@ export const PageDockedNav: React.FunctionComponent = () => {
               <Dropdown
                 isOpen={isDropdownOpen}
                 onSelect={onDropdownSelect}
+                shouldFocusToggleOnSelect
                 onOpenChange={(isOpen: boolean) => setIsDropdownOpen(isOpen)}
-                toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-                  <MenuToggle
-                    ref={toggleRef}
-                    onClick={onDropdownToggle}
-                    isExpanded={isDropdownOpen}
-                    icon={<Avatar src={imgAvatar} alt="" size="sm" />}
-                    variant="plain"
-                    aria-label="User menu"
-                  ></MenuToggle>
-                )}
+                toggle={{
+                  toggleNode: (
+                    <Tooltip content="User menu" aria="none" aria-live="off" triggerRef={userMenuRef}>
+                      <MenuToggle
+                        ref={userMenuRef}
+                        onClick={onDropdownToggle}
+                        isExpanded={isDropdownOpen}
+                        icon={<Avatar src={imgAvatar} alt="" size="sm" />}
+                        variant="plain"
+                        aria-label="User menu"
+                      />
+                    </Tooltip>
+                  ),
+                  toggleRef: userMenuRef
+                }}
               >
                 <DropdownList>{userDropdownItems}</DropdownList>
               </Dropdown>
