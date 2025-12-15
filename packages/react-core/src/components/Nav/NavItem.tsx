@@ -52,6 +52,8 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
+  /** React ref for the anchor element within the nav item. */
+  anchorRef?: React.Ref<HTMLAnchorElement>;
   /** @hide Forwarded ref */
   innerRef?: React.Ref<HTMLLIElement>;
 }
@@ -74,6 +76,7 @@ const NavItemBase: React.FunctionComponent<NavItemProps> = ({
   zIndex = 9999,
   icon,
   innerRef,
+  anchorRef,
   ...props
 }: NavItemProps) => {
   const { flyoutRef, setFlyoutRef, navRef } = useContext(NavContext);
@@ -194,6 +197,7 @@ const NavItemBase: React.FunctionComponent<NavItemProps> = ({
     const preventLinkDefault = preventDefault || !to;
     return (
       <Component
+        ref={anchorRef}
         href={to}
         onClick={(e: any) => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick)}
         className={css(
@@ -222,6 +226,7 @@ const NavItemBase: React.FunctionComponent<NavItemProps> = ({
         className: css(styles.navLink, isActive && styles.modifiers.current, child.props && child.props.className)
       }),
       tabIndex: child.props.tabIndex || tabIndex,
+      ref: anchorRef,
       children: hasFlyout ? (
         <Fragment>
           {child.props.children}

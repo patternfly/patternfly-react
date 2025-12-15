@@ -95,7 +95,7 @@ export const CompassDockDemo: React.FunctionComponent = () => {
                     itemId={0}
                     isActive={activeItem === 0}
                     icon={<CubeIcon />}
-                    ref={navItem1Ref}
+                    anchorRef={navItem1Ref}
                     aria-label="Link 1"
                   />
                   <NavItem
@@ -106,7 +106,7 @@ export const CompassDockDemo: React.FunctionComponent = () => {
                     itemId={1}
                     isActive={activeItem === 1}
                     icon={<FolderIcon />}
-                    ref={navItem2Ref}
+                    anchorRef={navItem2Ref}
                     aria-label="Link 2"
                   />
                   <NavItem
@@ -117,7 +117,7 @@ export const CompassDockDemo: React.FunctionComponent = () => {
                     itemId={2}
                     isActive={activeItem === 2}
                     icon={<CloudIcon />}
-                    ref={navItem3Ref}
+                    anchorRef={navItem3Ref}
                     aria-label="Link 3"
                   />
                   <NavItem
@@ -128,7 +128,7 @@ export const CompassDockDemo: React.FunctionComponent = () => {
                     itemId={3}
                     isActive={activeItem === 3}
                     icon={<CodeIcon />}
-                    ref={navItem4Ref}
+                    anchorRef={navItem4Ref}
                     aria-label="Link 4"
                   />
                 </NavList>
