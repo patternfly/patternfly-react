@@ -76,7 +76,7 @@ export const CompassDockDemo: React.FunctionComponent = () => {
       <MastheadMain>
         <MastheadBrand>
           <MastheadLogo component={(props) => <a {...props} href="#" />}>
-            <Brand src={pfLogo} alt="PatternFly" heights={{ default: '36px' }} />
+            <Brand src={pfLogo} alt="PatternFly" heights={{ default: '37px' }} />
           </MastheadLogo>
         </MastheadBrand>
       </MastheadMain>
