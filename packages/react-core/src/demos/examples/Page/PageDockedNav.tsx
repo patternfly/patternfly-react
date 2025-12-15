@@ -128,7 +128,7 @@ export const PageDockedNav: React.FunctionComponent = () => {
                     preventDefault
                     id="nav-icon-link3"
                     to="#nav-icon-link3"
-                    itemId={0}
+                    itemId={2}
                     isActive={activeItem === 2}
                     icon={<CloudIcon />}
                     ref={navItem3Ref}
