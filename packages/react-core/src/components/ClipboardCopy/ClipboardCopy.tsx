@@ -55,6 +55,10 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   textAriaLabel?: string;
   /** Aria-label to use on the ClipboardCopyToggle. */
   toggleAriaLabel?: string;
+  /** ID to use on the TextInput. */
+  inputId?: string;
+  /** Name attribute to use on the TextInput. */
+  inputName?: string;
   /** Flag to show if the input is read only. */
   isReadOnly?: boolean;
   /** Flag to determine if clipboard copy is in the expanded state initially */
@@ -91,6 +95,10 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   onCopy?: (event: React.ClipboardEvent<HTMLDivElement>, text?: React.ReactNode) => void;
   /** A function that is triggered on changing the text. */
   onChange?: (event: React.FormEvent, text?: string) => void;
+  /** Callback function when text input is focused */
+  onInputFocus?: (event?: any) => void;
+  /** Callback function when text input is blurred (focus leaves) */
+  onInputBlur?: (event?: any) => void;
   /** The text which is copied. */
   children: string | string[];
   /** Additional actions for inline clipboard copy. Should be wrapped with ClipboardCopyAction. */
@@ -177,6 +185,8 @@ class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
       /* eslint-disable @typescript-eslint/no-unused-vars */
       isExpanded,
       onChange, // Don't pass to <div>
+      onInputFocus, // Don't pass to <div>
+      onInputBlur, // Don't pass to <div>
       /* eslint-enable @typescript-eslint/no-unused-vars */
       isReadOnly,
       isCode,
@@ -189,6 +199,8 @@ class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
       clickTip,
       textAriaLabel,
       toggleAriaLabel,
+      inputId,
+      inputName,
       variant,
       position,
       className,
@@ -295,8 +307,11 @@ class ClipboardCopy extends Component<ClipboardCopyProps, ClipboardCopyState> {
                     readOnlyVariant={isReadOnly || this.state.expanded ? 'default' : undefined}
                     onChange={this.updateText}
                     value={this.state.expanded ? this.state.textWhenExpanded : copyableText}
-                    id={`text-input-${id}`}
+                    id={inputId ?? `text-input-${id}`}
+                    name={inputName}
                     aria-label={textAriaLabel}
+                    onFocus={onInputFocus}
+                    onBlur={onInputBlur}
                     {...(isCode && { dir: 'ltr' })}
                   />
                   <ClipboardCopyButton
