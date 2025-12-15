@@ -93,7 +93,7 @@ export const PageDockedNav: React.FunctionComponent = () => {
       <MastheadMain>
         <MastheadBrand>
           <MastheadLogo component={(props) => <a {...props} href="#" />}>
-            <Brand src={pfIconLogo} alt="PatternFly" heights={{ default: '36px' }} />
+            <Brand src={pfIconLogo} alt="PatternFly" heights={{ default: '37px' }} />
           </MastheadLogo>
         </MastheadBrand>
       </MastheadMain>
