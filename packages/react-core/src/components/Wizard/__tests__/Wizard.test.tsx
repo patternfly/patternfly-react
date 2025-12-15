@@ -627,3 +627,42 @@ test('onStepChange skips over disabled or hidden steps and substeps', async () =
     WizardStepChangeScope.Back
   );
 });
+
+test('clicking parent step navigates to first visible sub-step when first sub-step is hidden', async () => {
+  const user = userEvent.setup();
+  const onStepChange = jest.fn();
+
+  render(
+    <Wizard onStepChange={onStepChange}>
+      <WizardStep id="step-1" name="Test step 1" />
+      <WizardStep
+        id="step-2"
+        name="Test step 2"
+        steps={[
+          <WizardStep id="step2-sub1" name="Hidden sub step" isHidden />,
+          <WizardStep id="step2-sub2" name="Visible sub step 1" />,
+          <WizardStep id="step2-sub3" name="Visible sub step 2" />
+        ]}
+      />
+      <WizardStep id="step-3" name="Test step 3" />
+    </Wizard>
+  );
+
+  // Navigate to step 3 first
+  await user.click(screen.getByRole('button', { name: 'Test step 3' }));
+  expect(onStepChange).toHaveBeenCalledWith(
+    null,
+    expect.objectContaining({ id: 'step-3' }),
+    expect.objectContaining({ id: 'step-1' }),
+    WizardStepChangeScope.Nav
+  );
+
+  // Click on parent step 2 - should navigate to the first VISIBLE sub-step (step2-sub2), not crash
+  await user.click(screen.getByRole('button', { name: 'Test step 2' }));
+  expect(onStepChange).toHaveBeenCalledWith(
+    null,
+    expect.objectContaining({ id: 'step2-sub2' }),
+    expect.objectContaining({ id: 'step-3' }),
+    WizardStepChangeScope.Nav
+  );
+});

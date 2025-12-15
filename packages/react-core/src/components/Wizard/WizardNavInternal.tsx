@@ -48,7 +48,7 @@ export const WizardNavInternal = ({
           let firstSubStepIndex: number;
           let hasActiveChild = false;
 
-          const subNavItems = step.subStepIds?.map((subStepId, subStepIndex) => {
+          const subNavItems = step.subStepIds?.map((subStepId, _subStepIndex) => {
             const subStep = steps.find((step) => step.id === subStepId);
             const hasVisitedNextStep = steps.some((step) => step.index > subStep.index && step.isVisited);
             const isSubStepDisabled =
@@ -66,8 +66,8 @@ export const WizardNavInternal = ({
               return;
             }
 
-            // Store the first sub-step index so that when its parent is clicked, the first sub-step is focused
-            if (subStepIndex === 0) {
+            // Store the first visible sub-step index so that when its parent is clicked, the first sub-step is focused
+            if (firstSubStepIndex === undefined) {
               firstSubStepIndex = subStep.index;
             }
 
