@@ -68,6 +68,10 @@ To provide users with more context about a `<DropdownItem>`, pass a short messag
 
 To combine a checkbox or other control with a dropdown menu, use a split button.
 
+A `<MenuToggle>` can be rendered as a split button via `splitButtonItems`. Elements to be displayed before the dropdown toggle button (like the `<MenuToggleCheckbox>`) must be included in the `splitButtonItems`.
+
+If the dropdown menu closes upon selection, you will need to manually shift focus back to the toggle element after a user selects an item from the menu. 
+
 ```ts file="./DropdownWithSplit.tsx"
 
 ```
