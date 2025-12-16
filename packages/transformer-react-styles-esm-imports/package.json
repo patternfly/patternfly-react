@@ -1,7 +1,7 @@
 {
   "name": "transformer-react-styles-esm-imports",
   "private": true,
-  "version": "1.0.1-prerelease.4",
+  "version": "1.0.1-prerelease.5",
   "description": "Transform react-styles/css imports to target mjs files when compiling to ESM.",
   "main": "index.ts",
   "author": "Red Hat",
