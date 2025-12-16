@@ -7,11 +7,11 @@ import {
   Divider,
   MenuToggleElement
 } from '@patternfly/react-core';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 export const DropdownSplitButtonText: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleRef = React.useRef<MenuToggleElement>(null);
+  const toggleRef = useRef<MenuToggleElement>(null);
 
   const onFocus = () => {
     if (!toggleRef.current) {
