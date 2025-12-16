@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.5.0-prerelease.6...@patternfly/react-styles@6.5.0-prerelease.8) (2025-12-16)
+
+### Features
+
+- **docked nav:** add support for docked nav layout ([#12175](https://github.com/patternfly/patternfly-react/issues/12175)) ([5519389](https://github.com/patternfly/patternfly-react/commit/55193896b899aa1e2b8dfbbddd644507988ee31f))
+
 # [6.5.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.5.0-prerelease.5...@patternfly/react-styles@6.5.0-prerelease.6) (2025-11-14)
 
 ### Bug Fixes

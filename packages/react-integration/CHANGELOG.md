@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.2...@patternfly/react-integration@6.5.0-prerelease.4) (2025-12-16)
+
+### Features
+
+- **docked nav:** add support for docked nav layout ([#12175](https://github.com/patternfly/patternfly-react/issues/12175)) ([5519389](https://github.com/patternfly/patternfly-react/commit/55193896b899aa1e2b8dfbbddd644507988ee31f))
+
 # [6.5.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.1...@patternfly/react-integration@6.5.0-prerelease.2) (2025-11-03)
 
 ### Bug Fixes

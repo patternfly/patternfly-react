@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.5.0-prerelease.21...@patternfly/react-templates@6.5.0-prerelease.23) (2025-12-16)
+
+### Bug Fixes
+
+- **react-templates:** fix TypeaheadSelect state synchronization issue ([#12147](https://github.com/patternfly/patternfly-react/issues/12147)) ([d5053dd](https://github.com/patternfly/patternfly-react/commit/d5053dd50a57bef7d0f609510c44d39fe5af017d)), closes [#12146](https://github.com/patternfly/patternfly-react/issues/12146)
+
 # [6.5.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.5.0-prerelease.20...@patternfly/react-templates@6.5.0-prerelease.21) (2025-12-03)
 
 **Note:** Version bump only for package @patternfly/react-templates

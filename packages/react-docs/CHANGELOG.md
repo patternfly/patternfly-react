@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.5.0-prerelease.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.23...@patternfly/react-docs@7.5.0-prerelease.25) (2025-12-16)
+
+### Features
+
+- **docked nav:** add support for docked nav layout ([#12175](https://github.com/patternfly/patternfly-react/issues/12175)) ([5519389](https://github.com/patternfly/patternfly-react/commit/55193896b899aa1e2b8dfbbddd644507988ee31f))
+
 # [7.5.0-prerelease.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.22...@patternfly/react-docs@7.5.0-prerelease.23) (2025-12-03)
 
 **Note:** Version bump only for package @patternfly/react-docs
