@@ -6,7 +6,7 @@
 This project provides a set of React components for the [PatternFly project](https://patternfly.org).  
 
 **Community:** [PatternFly website](https://www.patternfly.org) | [Slack](https://slack.patternfly.org) | [Medium](https://medium.com/patternfly) | [Mailing list](https://www.redhat.com/mailman/listinfo/patternfly)
-
+ 
 ### Table of contents
 1. [PatternFly React packages](#patternfly-react-packages)
 2. [Setup](#Setup)
