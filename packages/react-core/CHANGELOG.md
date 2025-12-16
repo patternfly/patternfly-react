@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.21...@patternfly/react-core@6.5.0-prerelease.24) (2025-12-16)
+
+### Bug Fixes
+
+- **deps:** update dependency focus-trap to v7.6.6 ([#12102](https://github.com/patternfly/patternfly-react/issues/12102)) ([06af4c5](https://github.com/patternfly/patternfly-react/commit/06af4c503674e3fdb07819b75b53a257a7822579))
+- **DrawerPanelContent:** add inert when drawer is closed ([#12027](https://github.com/patternfly/patternfly-react/issues/12027)) ([8928745](https://github.com/patternfly/patternfly-react/commit/8928745fb7364828ed4d581f30f01146bdc9990e))
+- **Drawer:** update refs in examples ([#12152](https://github.com/patternfly/patternfly-react/issues/12152)) ([2767ce0](https://github.com/patternfly/patternfly-react/commit/2767ce0896ef22bbfea5839905ee5cfedac86a80))
+- fixes broken docs link. ([#12157](https://github.com/patternfly/patternfly-react/issues/12157)) ([80b72de](https://github.com/patternfly/patternfly-react/commit/80b72de8ba9a326375cd0919ff5b81ff5b1ebf7c))
+- **form:** keep required asterisk from orphaning ([#11961](https://github.com/patternfly/patternfly-react/issues/11961)) ([d11c186](https://github.com/patternfly/patternfly-react/commit/d11c186313c9820e674fe1cdce7d630b57a62755))
+- **layouts:** update example css & classnames ([#12145](https://github.com/patternfly/patternfly-react/issues/12145)) ([11fe19a](https://github.com/patternfly/patternfly-react/commit/11fe19a02297d85f50e11375820430b2980bc47b))
+- **Wizard:** Fix crash in nav when first sub-step is hidden ([#12166](https://github.com/patternfly/patternfly-react/issues/12166)) ([3730dcf](https://github.com/patternfly/patternfly-react/commit/3730dcfe2a3f35050ba7e39fed16ead322b39521))
+
+### Features
+
+- **Compass:** add isPill to Drawer by default ([#12151](https://github.com/patternfly/patternfly-react/issues/12151)) ([b2cdf1c](https://github.com/patternfly/patternfly-react/commit/b2cdf1cd5d95be91932e6ac11f39e2c0318e6f72))
+- **docked nav:** add support for docked nav layout ([#12175](https://github.com/patternfly/patternfly-react/issues/12175)) ([5519389](https://github.com/patternfly/patternfly-react/commit/55193896b899aa1e2b8dfbbddd644507988ee31f))
+
 # [6.5.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.20...@patternfly/react-core@6.5.0-prerelease.21) (2025-12-03)
 
 **Note:** Version bump only for package @patternfly/react-core
