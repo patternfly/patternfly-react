@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.24...@patternfly/react-core@6.5.0-prerelease.25) (2025-12-17)
+
+### Features
+
+- **ClipboardCopy:** added textinput callbacks and props ([#12180](https://github.com/patternfly/patternfly-react/issues/12180)) ([4f5dcda](https://github.com/patternfly/patternfly-react/commit/4f5dcdae381bb12c9f728716e2be4aa5a8c67cb2))
+
 # [6.5.0-prerelease.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.21...@patternfly/react-core@6.5.0-prerelease.24) (2025-12-16)
 
 ### Bug Fixes
