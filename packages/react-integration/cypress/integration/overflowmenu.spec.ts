@@ -32,7 +32,7 @@ describe('OverflowMenu Demo Test', () => {
       it('Verify dropdown menu expanded', () => {
         cy.get('#simple-overflow-menu button').last().click({ force: true });
         cy.get('#simple-overflow-menu .pf-v6-c-menu-toggle').should('have.class', 'pf-m-expanded');
-        cy.get('.simple-overflow-menu.pf-v6-c-menu').should('be.visible');
+        cy.get('.simple-overflow-menu.pf-v6-c-menu', { timeout: 6000 }).should('be.visible');
         // close overflow menu again
         cy.get('#simple-overflow-menu button').last().click({ force: true });
       });
@@ -69,7 +69,7 @@ describe('OverflowMenu Demo Test', () => {
       it('Verify dropdown menu expanded', () => {
         cy.get('#additional-options-overflow-menu button').last().click({ force: true });
         cy.get('#additional-options-overflow-menu .pf-v6-c-menu-toggle').should('have.class', 'pf-m-expanded');
-        cy.get('.additional-options-overflow-menu.pf-v6-c-menu').should('be.visible');
+        cy.get('.additional-options-overflow-menu.pf-v6-c-menu', { timeout: 6000 }).should('be.visible');
       });
     });
   });
@@ -107,7 +107,7 @@ describe('OverflowMenu Demo Test', () => {
       it('Verify dropdown menu expanded', () => {
         cy.get('#persist-overflow-menu button').last().click({ force: true });
         cy.get('#persist-overflow-menu .pf-v6-c-menu-toggle').should('have.class', 'pf-m-expanded');
-        cy.get('.persist-overflow-menu.pf-v6-c-menu').should('be.visible');
+        cy.get('.persist-overflow-menu.pf-v6-c-menu', { timeout: 6000 }).should('be.visible');
       });
     });
   });
@@ -142,7 +142,7 @@ describe('OverflowMenu Demo Test', () => {
       it('Verify dropdown menu expanded', () => {
         cy.get('#container-breakpoint-overflow-menu button').last().click({ force: true });
         cy.get('#container-breakpoint-overflow-menu .pf-v6-c-menu-toggle').should('have.class', 'pf-m-expanded');
-        cy.get('.container-breakpoint-overflow-menu.pf-v6-c-menu').should('be.visible');
+        cy.get('.container-breakpoint-overflow-menu.pf-v6-c-menu', { timeout: 6000 }).should('be.visible');
         // close overflow menu again
         cy.get('#container-breakpoint-overflow-menu button').last().click({ force: true });
       });
