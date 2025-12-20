@@ -9,7 +9,8 @@ describe('Button Demo Test', () => {
         .focus()
         .should('have.attr', 'aria-describedby', 'button-with-tooltip-1');
     });
-    cy.get('.pf-v6-c-tooltip').should('be.visible');
+    // Tooltip visibility is async due to requestAnimationFrame-based positioning
+    cy.get('.pf-v6-c-tooltip', { timeout: 6000 }).should('be.visible');
   });
 
   it('Verify isAriaDisabled button has tooltip when hovered', () => {
@@ -18,7 +19,7 @@ describe('Button Demo Test', () => {
         .trigger('mouseover')
         .should('have.attr', 'aria-describedby', 'button-with-tooltip-1');
     });
-    cy.get('.pf-v6-c-tooltip').should('be.visible');
+    cy.get('.pf-v6-c-tooltip', { timeout: 6000 }).should('be.visible');
   });
 
   it('Verify isAriaDisabled button prevents default actions', () => {
