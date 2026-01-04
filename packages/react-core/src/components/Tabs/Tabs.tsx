@@ -61,6 +61,8 @@ export interface TabsProps
   onAdd?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
   /** Aria-label for the add button */
   addButtonAriaLabel?: string;
+  /** Aria-label for the list element */
+  tabListAriaLabel?: string;
   /** Uniquely identifies the tabs */
   id?: string;
   /** Flag indicating that the add button is disabled when onAdd is passed in */
@@ -500,6 +502,7 @@ class Tabs extends Component<TabsProps, TabsState> {
       toggleText,
       toggleAriaLabel,
       addButtonAriaLabel,
+      tabListAriaLabel,
       onToggle,
       onClose,
       onAdd,
@@ -626,7 +629,13 @@ class Tabs extends Component<TabsProps, TabsState> {
               />
             </div>
           )}
-          <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons} role="tablist">
+          <ul
+            aria-label={tabListAriaLabel || 'Tab List'}
+            className={css(styles.tabsList)}
+            ref={this.tabList}
+            onScroll={this.handleScrollButtons}
+            role="tablist"
+          >
             {isOverflowHorizontal ? filteredChildrenWithoutOverflow : filteredChildren}
             {hasOverflowTab && <OverflowTab overflowingTabs={overflowingTabProps} {...overflowObjectProps} />}
           </ul>

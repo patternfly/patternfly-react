@@ -12,6 +12,7 @@ exports[`should render accessible tabs 1`] = `
     style="--pf-v6-c-tabs--link-accent--length: 0px; --pf-v6-c-tabs--link-accent--start: 0px;"
   >
     <ul
+      aria-label="Tab List"
       class="pf-v6-c-tabs__list"
       role="tablist"
     >
@@ -129,6 +130,7 @@ exports[`should render box tabs 1`] = `
     style="--pf-v6-c-tabs--link-accent--length: 0px; --pf-v6-c-tabs--link-accent--start: 0px;"
   >
     <ul
+      aria-label="Tab List"
       class="pf-v6-c-tabs__list"
       role="tablist"
     >
@@ -288,6 +290,7 @@ exports[`should render box tabs of secondary variant 1`] = `
     style="--pf-v6-c-tabs--link-accent--length: 0px; --pf-v6-c-tabs--link-accent--start: 0px;"
   >
     <ul
+      aria-label="Tab List"
       class="pf-v6-c-tabs__list"
       role="tablist"
     >
@@ -453,6 +456,7 @@ exports[`should render expandable vertical tabs 1`] = `
       </div>
     </div>
     <ul
+      aria-label="Tab List"
       class="pf-v6-c-tabs__list"
       role="tablist"
     >
@@ -612,6 +616,7 @@ exports[`should render filled tabs 1`] = `
     style="--pf-v6-c-tabs--link-accent--length: 0px; --pf-v6-c-tabs--link-accent--start: 0px;"
   >
     <ul
+      aria-label="Tab List"
       class="pf-v6-c-tabs__list"
       role="tablist"
     >
@@ -729,6 +734,7 @@ exports[`should render simple tabs 1`] = `
     style="--pf-v6-c-tabs--link-accent--length: 0px; --pf-v6-c-tabs--link-accent--start: 0px;"
   >
     <ul
+      aria-label="Tab List"
       class="pf-v6-c-tabs__list"
       role="tablist"
     >
@@ -888,6 +894,7 @@ exports[`should render subtabs 1`] = `
     style="--pf-v6-c-tabs--link-accent--length: 0px; --pf-v6-c-tabs--link-accent--start: 0px;"
   >
     <ul
+      aria-label="Tab List"
       class="pf-v6-c-tabs__list"
       role="tablist"
     >
@@ -974,6 +981,7 @@ exports[`should render subtabs 1`] = `
       style="--pf-v6-c-tabs--link-accent--length: 0; --pf-v6-c-tabs--link-accent--start: 0;"
     >
       <ul
+        aria-label="Tab List"
         class="pf-v6-c-tabs__list"
         role="tablist"
       >
@@ -1117,6 +1125,7 @@ exports[`should render tabs with eventKey Strings 1`] = `
     style="--pf-v6-c-tabs--link-accent--length: 0; --pf-v6-c-tabs--link-accent--start: 0;"
   >
     <ul
+      aria-label="Tab List"
       class="pf-v6-c-tabs__list"
       role="tablist"
     >
@@ -1235,6 +1244,7 @@ exports[`should render tabs with no bottom border 1`] = `
     style="--pf-v6-c-tabs--link-accent--length: 0px; --pf-v6-c-tabs--link-accent--start: 0px;"
   >
     <ul
+      aria-label="Tab List"
       class="pf-v6-c-tabs__list"
       role="tablist"
     >
@@ -1352,6 +1362,7 @@ exports[`should render tabs with separate content 1`] = `
     style="--pf-v6-c-tabs--link-accent--length: 0px; --pf-v6-c-tabs--link-accent--start: 0px;"
   >
     <ul
+      aria-label="Tab List"
       class="pf-v6-c-tabs__list"
       role="tablist"
     >
@@ -1478,6 +1489,7 @@ exports[`should render uncontrolled tabs 1`] = `
     style="--pf-v6-c-tabs--link-accent--length: 0px; --pf-v6-c-tabs--link-accent--start: 0px;"
   >
     <ul
+      aria-label="Tab List"
       class="pf-v6-c-tabs__list"
       role="tablist"
     >
@@ -1637,6 +1649,7 @@ exports[`should render vertical tabs 1`] = `
     style="--pf-v6-c-tabs--link-accent--length: 0px; --pf-v6-c-tabs--link-accent--start: 0px;"
   >
     <ul
+      aria-label="Tab List"
       class="pf-v6-c-tabs__list"
       role="tablist"
     >
