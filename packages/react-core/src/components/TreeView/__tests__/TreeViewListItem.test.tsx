@@ -440,15 +440,6 @@ describe('isDisabled prop', () => {
     expect(screen.getByRole('button', { name: requiredProps.name })).not.toBeDisabled();
   });
 
-  test('Renders selectable button with disabled attribute when isDisabled is true', () => {
-    render(<TreeViewListItem isSelectable isDisabled {...requiredProps} />);
-
-    const treeViewNode = screen.getByRole('treeitem').querySelector(`.${styles.treeViewNode}`);
-    const selectableButton = treeViewNode?.querySelector('button');
-    expect(selectableButton).toBeDisabled();
-    expect(selectableButton).toHaveClass('pf-m-disabled');
-  });
-
   test('Does not call onSelect when isDisabled is true', async () => {
     render(<TreeViewListItem isDisabled onSelect={onSelectMock} {...requiredProps} />);
 
@@ -479,6 +470,59 @@ describe('isDisabled prop', () => {
     await user.click(screen.getByRole('button', { name: requiredProps.name }));
 
     expect(onCollapseMock).not.toHaveBeenCalled();
+  });
+
+  test('Renders toggle with pf-m-disabled class when isDisabled is true for default TreeViewListItem', () => {
+    render(
+      <TreeViewListItem isDisabled {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    const toggle = screen.getByText(requiredProps.name).previousElementSibling;
+    expect(toggle).toHaveClass('pf-m-disabled');
+  });
+
+  test('Renders treeitem with aria-disabled when isDisabled is true for default TreeViewListItem', () => {
+    render(<TreeViewListItem isDisabled {...requiredProps} />);
+
+    expect(screen.getByRole('treeitem')).toHaveAttribute('aria-disabled', 'true');
+  });
+
+  test('Renders treeitem with aria-disabled when isDisabled and isToggleDisabled are true and isSelectable is true', () => {
+    render(
+      <TreeViewListItem isSelectable isDisabled isToggleDisabled {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    expect(screen.getByRole('treeitem')).toHaveAttribute('aria-disabled', 'true');
+  });
+
+  test('Renders treeitem with aria-disabled when isDisabled and isToggleDisabled are true and hasCheckbox is true', () => {
+    render(
+      <TreeViewListItem hasCheckbox isDisabled isToggleDisabled {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    expect(screen.getByRole('treeitem')).toHaveAttribute('aria-disabled', 'true');
+  });
+
+  test('Does not render treeitem with aria-disabled when isDisabled is true, isToggleDisabled is false, and isSelectable is true', () => {
+    render(
+      <TreeViewListItem isSelectable isDisabled {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    expect(screen.getByRole('treeitem')).not.toHaveAttribute('aria-disabled');
+  });
+
+  test('Does not render treeitem with aria-disabled when isDisabled is false', () => {
+    render(<TreeViewListItem isDisabled={false} {...requiredProps} />);
+
+    expect(screen.getByRole('treeitem')).not.toHaveAttribute('aria-disabled');
   });
 });
 
@@ -578,6 +622,39 @@ describe('isToggleDisabled prop', () => {
     await user.click(toggle as Element);
 
     expect(onCollapseMock).not.toHaveBeenCalled();
+  });
+
+  test('Renders toggle span with pf-m-disabled class when isDisabled is true for default TreeViewListItem', () => {
+    render(
+      <TreeViewListItem isDisabled {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    const toggle = screen.getByText(requiredProps.name).previousElementSibling;
+    expect(toggle).toHaveClass('pf-m-disabled');
+  });
+
+  test('Does not render toggle with pf-m-disabled class when isDisabled is true and hasCheckbox is true', () => {
+    render(
+      <TreeViewListItem hasCheckbox isDisabled {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    const toggle = screen.getByText(requiredProps.name).previousElementSibling?.previousElementSibling;
+    expect(toggle).not.toHaveClass('pf-m-disabled');
+  });
+
+  test('Does not render toggle with pf-m-disabled class when isDisabled is true and isSelectable is true', () => {
+    render(
+      <TreeViewListItem isSelectable isDisabled {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    const toggle = screen.getByText(requiredProps.name).previousElementSibling;
+    expect(toggle).not.toHaveClass('pf-m-disabled');
   });
 });
 
