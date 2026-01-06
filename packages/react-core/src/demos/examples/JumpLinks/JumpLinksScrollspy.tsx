@@ -21,11 +21,10 @@ export const JumpLinksScrollspy: React.FunctionComponent = () => {
   const [isVertical, setIsVertical] = useState(true);
   const [offsetHeight, setOffsetHeight] = useState(10);
   const offsetForPadding = 10;
-  let masthead;
 
   // Update offset based on the masthead and jump links nav heights.
   useEffect(() => {
-    masthead = document.getElementsByClassName(mastheadStyles.masthead)[0];
+    const masthead = document.getElementsByClassName(mastheadStyles.masthead)[0];
 
     if (isVertical) {
       setOffsetHeight(masthead.offsetHeight + offsetForPadding);
@@ -35,7 +34,7 @@ export const JumpLinksScrollspy: React.FunctionComponent = () => {
       jumpLinksHeaderHeight && setOffsetHeight(masthead.offsetHeight + jumpLinksHeaderHeight + offsetForPadding);
     }
 
-    getResizeObserver(
+    const observer = getResizeObserver(
       document.getElementsByClassName(mastheadStyles.masthead)[0],
       () => {
         if (isVertical) {
@@ -48,6 +47,8 @@ export const JumpLinksScrollspy: React.FunctionComponent = () => {
       },
       true
     );
+
+    return () => observer();
   }, [isVertical]);
 
   return (

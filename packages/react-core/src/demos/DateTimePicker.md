@@ -20,6 +20,6 @@ In this demo, learn how to use a [CalendarMonth](/components/date-and-time/calen
 
 ### Date and time range picker
 
-```ts file ="examples/DateTimePicker/DateTimeRangePicker.tsx"
+```ts file="examples/DateTimePicker/DateTimeRangePicker.tsx"
 
 ```
