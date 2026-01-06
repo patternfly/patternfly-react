@@ -131,10 +131,11 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
   }
 
   const ToggleComponent = hasCheckbox || isSelectable ? 'button' : 'span';
+  const hasDisabledToggleClass = isToggleDisabled || (Component === 'button' && isDisabled);
 
   const renderToggle = (randomId: string) => (
     <ToggleComponent
-      className={css(styles.treeViewNodeToggle, ToggleComponent === 'button' && isToggleDisabled && 'pf-m-disabled')}
+      className={css(styles.treeViewNodeToggle, hasDisabledToggleClass && 'pf-m-disabled')}
       onClick={(evt: React.MouseEvent) => {
         if (!isToggleDisabled && (isSelectable || hasCheckbox)) {
           if (internalIsExpanded) {
@@ -186,12 +187,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
       <>
         {isCompact && title && <span className={css(styles.treeViewNodeTitle)}>{title}</span>}
         {isSelectable ? (
-          <button
-            tabIndex={-1}
-            className={css(styles.treeViewNodeText, isDisabled && 'pf-m-disabled')}
-            type="button"
-            disabled={isDisabled}
-          >
+          <button tabIndex={-1} className={css(styles.treeViewNodeText)} type="button" disabled={isDisabled}>
             {name}
           </button>
         ) : (
@@ -231,6 +227,9 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
       })
   );
 
+  const isFullyDisabled =
+    (Component === 'button' && isDisabled) || (Component !== 'button' && isDisabled && isToggleDisabled);
+
   return (
     <li
       id={id}
@@ -240,6 +239,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
       tabIndex={-1}
       {...(hasCheckbox && { 'aria-checked': isCheckboxChecked })}
       {...(!hasCheckbox && { 'aria-selected': isSelected })}
+      {...(isFullyDisabled && { 'aria-disabled': true })}
     >
       <div className={css(styles.treeViewContent)}>
         <GenerateId prefix={isSelectable ? 'selectable-id' : 'checkbox-id'}>
@@ -248,7 +248,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
               className={css(
                 styles.treeViewNode,
                 isSelected && styles.modifiers.current,
-                Component === 'button' && isDisabled && 'pf-m-disabled'
+                isDisabled && 'pf-m-disabled'
               )}
               onClick={(evt: React.MouseEvent) => {
                 if (!hasCheckbox) {
