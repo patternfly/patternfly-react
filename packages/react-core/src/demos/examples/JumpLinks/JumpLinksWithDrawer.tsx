@@ -40,7 +40,7 @@ const JumpLinksWrapper = ({ headings }) => {
   );
 };
 
-export const JumpLinksWithDrawer = () => {
+export const JumpLinksWithDrawer: React.FunctionComponent = () => {
   const headings = ['First', 'Second', 'Third', 'Fourth', 'Fifth'];
 
   const [isExpanded, setIsExpanded] = useState(false);
