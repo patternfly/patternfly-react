@@ -12,24 +12,10 @@ import './stack.css';
 
 ### Basic
 
-```js
-import { Stack, StackItem } from '@patternfly/react-core';
-
-<Stack>
-  <StackItem>content</StackItem>
-  <StackItem isFilled>pf-m-fill</StackItem>
-  <StackItem>content</StackItem>
-</Stack>;
+```ts file="StackBasic.tsx"
 ```
 
 ### With gutter
 
-```js
-import { Stack, StackItem } from '@patternfly/react-core';
-
-<Stack hasGutter>
-  <StackItem>content</StackItem>
-  <StackItem isFilled>pf-m-fill</StackItem>
-  <StackItem>content</StackItem>
-</Stack>;
+```ts file="StackWithGutter.tsx"
 ```
