@@ -44,7 +44,7 @@ export const BannerTopBottom: React.FunctionComponent = () => (
               <h1 id="main-title">Main title</h1>
               <p>
                 Body text should be Red Hat Text at 1rem(16px). It should have leading of 1.5rem(24px) because <br />
-                of it’s relative line height of 1.5.
+                of it's relative line height of 1.5.
               </p>
             </Content>
           </PageSection>

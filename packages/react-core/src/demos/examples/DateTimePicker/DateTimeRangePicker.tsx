@@ -11,15 +11,15 @@ import {
 } from '@patternfly/react-core';
 
 export const DateTimeRangePicker: React.FunctionComponent = () => {
-  const [from, setFrom] = useState();
-  const [to, setTo] = useState();
+  const [from, setFrom] = useState<Date | undefined>(undefined);
+  const [to, setTo] = useState<Date | undefined>(undefined);
 
-  const toValidator = (date) =>
+  const toValidator = (date: Date) =>
     isValidDate(from) && yyyyMMddFormat(date) >= yyyyMMddFormat(from)
       ? ''
       : 'The "to" date must be after the "from" date';
 
-  const onFromDateChange = (_event, inputDate, newFromDate) => {
+  const onFromDateChange = (_event: React.FormEvent<HTMLInputElement>, inputDate: string, newFromDate: Date) => {
     if (isValidDate(from) && isValidDate(newFromDate) && inputDate === yyyyMMddFormat(newFromDate)) {
       newFromDate.setHours(from.getHours());
       newFromDate.setMinutes(from.getMinutes());
@@ -29,7 +29,7 @@ export const DateTimeRangePicker: React.FunctionComponent = () => {
     }
   };
 
-  const onFromTimeChange = (_event, time, hour, minute) => {
+  const onFromTimeChange = (_event: React.FormEvent<HTMLInputElement>, _time: string, hour: number, minute: number) => {
     if (isValidDate(from)) {
       const updatedFromDate = new Date(from);
       updatedFromDate.setHours(hour);
@@ -38,7 +38,7 @@ export const DateTimeRangePicker: React.FunctionComponent = () => {
     }
   };
 
-  const onToDateChange = (_event, inputDate, newToDate) => {
+  const onToDateChange = (_event: React.FormEvent<HTMLInputElement>, inputDate: string, newToDate: Date) => {
     if (isValidDate(to) && isValidDate(newToDate) && inputDate === yyyyMMddFormat(newToDate)) {
       newToDate.setHours(to.getHours());
       newToDate.setMinutes(to.getMinutes());
@@ -48,7 +48,7 @@ export const DateTimeRangePicker: React.FunctionComponent = () => {
     }
   };
 
-  const onToTimeChange = (_event, time, hour, minute) => {
+  const onToTimeChange = (_event: React.FormEvent<HTMLInputElement>, _time: string, hour: number, minute: number) => {
     if (isValidDate(to)) {
       const updatedToDate = new Date(to);
       updatedToDate.setHours(hour);
