@@ -25,16 +25,16 @@ import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
 export const TabsOpenWithSecondaryTabs: React.FunctionComponent = () => {
-  const [activeTabKey, setActiveTabKey] = useState(0);
-  const [activeTabKeySecondary, setActiveTabKeySecondary] = useState(10);
+  const [activeTabKey, setActiveTabKey] = useState<number>(0);
+  const [activeTabKeySecondary, setActiveTabKeySecondary] = useState<number>(10);
 
   // Toggle currently active tab
-  const handleTabClick = (_event: React.MouseEvent<HTMLElement>, tabIndex: number | string) => {
+  const handleTabClick = (_event: React.MouseEvent<HTMLElement>, tabIndex: number) => {
     setActiveTabKey(tabIndex);
   };
 
   // Toggle currently active secondary tab
-  const handleTabClickSecondary = (_event: React.MouseEvent<HTMLElement>, tabIndex: number | string) => {
+  const handleTabClickSecondary = (_event: React.MouseEvent<HTMLElement>, tabIndex: number) => {
     setActiveTabKeySecondary(tabIndex);
   };
 
@@ -110,7 +110,7 @@ export const TabsOpenWithSecondaryTabs: React.FunctionComponent = () => {
           </DescriptionListGroup>
           <DescriptionListGroup>
             <DescriptionListTerm>Pod IP</DescriptionListTerm>
-            <DescriptionListDescription>10..345.2.197</DescriptionListDescription>
+            <DescriptionListDescription>10.345.2.197</DescriptionListDescription>
           </DescriptionListGroup>
           <DescriptionListGroup>
             <DescriptionListTerm>Annotations</DescriptionListTerm>
