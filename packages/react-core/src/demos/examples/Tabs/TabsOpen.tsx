@@ -28,7 +28,7 @@ export const TabsOpen: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = useState(0);
 
   // Toggle currently active tab
-  const handleTabClick = (_event, tabIndex) => {
+  const handleTabClick = (_event: React.MouseEvent<HTMLElement>, tabIndex: number | string) => {
     setActiveTabKey(tabIndex);
   };
 
@@ -104,7 +104,7 @@ export const TabsOpen: React.FunctionComponent = () => {
           </DescriptionListGroup>
           <DescriptionListGroup>
             <DescriptionListTerm>Pod IP</DescriptionListTerm>
-            <DescriptionListDescription>10..345.2.197</DescriptionListDescription>
+            <DescriptionListDescription>10.345.2.197</DescriptionListDescription>
           </DescriptionListGroup>
           <DescriptionListGroup>
             <DescriptionListTerm>Annotations</DescriptionListTerm>

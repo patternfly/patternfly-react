@@ -29,12 +29,12 @@ export const TabsOpenWithSecondaryTabs: React.FunctionComponent = () => {
   const [activeTabKeySecondary, setActiveTabKeySecondary] = useState(10);
 
   // Toggle currently active tab
-  const handleTabClick = (_event, tabIndex) => {
+  const handleTabClick = (_event: React.MouseEvent<HTMLElement>, tabIndex: number | string) => {
     setActiveTabKey(tabIndex);
   };
 
   // Toggle currently active secondary tab
-  const handleTabClickSecondary = (_event, tabIndex) => {
+  const handleTabClickSecondary = (_event: React.MouseEvent<HTMLElement>, tabIndex: number | string) => {
     setActiveTabKeySecondary(tabIndex);
   };
 
