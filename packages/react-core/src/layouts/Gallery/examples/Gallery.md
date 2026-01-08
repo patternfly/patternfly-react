@@ -12,123 +12,32 @@ import './gallery.css';
 
 ### Basic
 
-```js
-import { Gallery, GalleryItem } from '@patternfly/react-core';
+```ts file="GalleryBasic.tsx"
 
-<Gallery>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-</Gallery>;
 ```
 
 ### With gutters
 
-```js
-import { Gallery, GalleryItem } from '@patternfly/react-core';
-
-<Gallery hasGutter>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-</Gallery>;
+```ts file="GalleryWithGutters.tsx"
 ```
 
 ### Adjusting min widths
 
-```js
-import { Gallery, GalleryItem } from '@patternfly/react-core';
+```ts file="GalleryAdjustingMinWidths.tsx"
 
-<Gallery
-  hasGutter
-  minWidths={{
-    md: '100px',
-    lg: '150px',
-    xl: '200px',
-    '2xl': '300px'
-  }}
->
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-</Gallery>;
 ```
 
 ### Adjusting max widths
 
-```js
-import { Gallery, GalleryItem } from '@patternfly/react-core';
-
-<Gallery
-  hasGutter
-  maxWidths={{
-    md: '280px',
-    lg: '320px',
-    '2xl': '400px'
-  }}
->
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-</Gallery>;
+```ts file="GalleryAdjustingMaxWidths.tsx"
 ```
 
 ### Adjusting min and max widths
 
-```js
-import { Gallery, GalleryItem } from '@patternfly/react-core';
-
-<Gallery
-  hasGutter
-  minWidths={{
-    default: '100%',
-    md: '100px',
-    xl: '300px'
-  }}
-  maxWidths={{
-    md: '200px',
-    xl: '1fr'
-  }}
->
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-</Gallery>;
+```ts file="GalleryAdjustingMinMaxWidths.tsx"
 ```
 
 ### Alternative components
 
-```js
-import { Gallery, GalleryItem } from '@patternfly/react-core';
-
-<Gallery component="ul">
-  <GalleryItem component="li">Gallery item</GalleryItem>
-  <GalleryItem component="li">Gallery item</GalleryItem>
-  <GalleryItem component="li">Gallery item</GalleryItem>
-  <GalleryItem component="li">Gallery item</GalleryItem>
-  <GalleryItem component="li">Gallery item</GalleryItem>
-</Gallery>;
+```ts file="GalleryAlternativeComponents.tsx"
 ```
