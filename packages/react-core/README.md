@@ -37,7 +37,7 @@ import '@patternfly/react-core/dist/styles/base.css';
 
 #### Example component usage
 
-```js
+```ts
 import { Button } from '@patternfly/react-core';
 
 export default <Button variant="primary">Button</Button>;
