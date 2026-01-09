@@ -1106,6 +1106,266 @@ exports[`should render subtabs 1`] = `
 </DocumentFragment>
 `;
 
+exports[`should render tablist aria-label when provided 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-tabs pf-m-animate-current pf-m-initializing-accent"
+    data-ouia-component-id="OUIA-Generated-Tabs-38"
+    data-ouia-component-type="PF6/Tabs"
+    data-ouia-safe="true"
+    id="tabListLabelTabs"
+    style="--pf-v6-c-tabs--link-accent--length: 0px; --pf-v6-c-tabs--link-accent--start: 0px;"
+  >
+    <ul
+      aria-label="Primary tab list"
+      class="pf-v6-c-tabs__list"
+      role="tablist"
+    >
+      <li
+        class="pf-v6-c-tabs__item pf-m-current"
+        role="presentation"
+      >
+        <button
+          aria-controls="pf-tab-section-0-tab1"
+          aria-selected="true"
+          class="pf-v6-c-tabs__link"
+          data-ouia-component-type="PF6/TabButton"
+          data-ouia-safe="true"
+          id="pf-tab-0-tab1"
+          role="tab"
+          type="button"
+        >
+          <span
+            class="pf-v6-c-tabs__item-text"
+          >
+            "Tab item 1"
+          </span>
+        </button>
+      </li>
+      <li
+        class="pf-v6-c-tabs__item"
+        role="presentation"
+      >
+        <button
+          aria-controls="pf-tab-section-1-tab2"
+          aria-selected="false"
+          class="pf-v6-c-tabs__link"
+          data-ouia-component-type="PF6/TabButton"
+          data-ouia-safe="true"
+          id="pf-tab-1-tab2"
+          role="tab"
+          type="button"
+        >
+          <span
+            class="pf-v6-c-tabs__item-text"
+          >
+            "Tab item 2"
+          </span>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <section
+    aria-labelledby="pf-tab-0-tab1"
+    class="pf-v6-c-tab-content"
+    data-ouia-component-type="PF6/TabContent"
+    data-ouia-safe="true"
+    id="pf-tab-section-0-tab1"
+    role="tabpanel"
+    tabindex="0"
+  >
+    Tab 1 section
+  </section>
+  <section
+    aria-labelledby="pf-tab-1-tab2"
+    class="pf-v6-c-tab-content"
+    data-ouia-component-type="PF6/TabContent"
+    data-ouia-safe="true"
+    hidden=""
+    id="pf-tab-section-1-tab2"
+    role="tabpanel"
+    tabindex="0"
+  >
+    Tab 2 section
+  </section>
+</DocumentFragment>
+`;
+
+exports[`should render tablist aria-labelledby when provided 1`] = `
+<DocumentFragment>
+  <h2
+    id="tablistHeading"
+  >
+    My tabs heading
+  </h2>
+  <div
+    class="pf-v6-c-tabs pf-m-animate-current pf-m-initializing-accent"
+    data-ouia-component-id="OUIA-Generated-Tabs-39"
+    data-ouia-component-type="PF6/Tabs"
+    data-ouia-safe="true"
+    id="tabListLabelledByTabs"
+    style="--pf-v6-c-tabs--link-accent--length: 0px; --pf-v6-c-tabs--link-accent--start: 0px;"
+  >
+    <ul
+      aria-labelledby="tablistHeading"
+      class="pf-v6-c-tabs__list"
+      role="tablist"
+    >
+      <li
+        class="pf-v6-c-tabs__item pf-m-current"
+        role="presentation"
+      >
+        <button
+          aria-controls="pf-tab-section-0-tab1"
+          aria-selected="true"
+          class="pf-v6-c-tabs__link"
+          data-ouia-component-type="PF6/TabButton"
+          data-ouia-safe="true"
+          id="pf-tab-0-tab1"
+          role="tab"
+          type="button"
+        >
+          <span
+            class="pf-v6-c-tabs__item-text"
+          >
+            "Tab item 1"
+          </span>
+        </button>
+      </li>
+      <li
+        class="pf-v6-c-tabs__item"
+        role="presentation"
+      >
+        <button
+          aria-controls="pf-tab-section-1-tab2"
+          aria-selected="false"
+          class="pf-v6-c-tabs__link"
+          data-ouia-component-type="PF6/TabButton"
+          data-ouia-safe="true"
+          id="pf-tab-1-tab2"
+          role="tab"
+          type="button"
+        >
+          <span
+            class="pf-v6-c-tabs__item-text"
+          >
+            "Tab item 2"
+          </span>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <section
+    aria-labelledby="pf-tab-0-tab1"
+    class="pf-v6-c-tab-content"
+    data-ouia-component-type="PF6/TabContent"
+    data-ouia-safe="true"
+    id="pf-tab-section-0-tab1"
+    role="tabpanel"
+    tabindex="0"
+  >
+    Tab 1 section
+  </section>
+  <section
+    aria-labelledby="pf-tab-1-tab2"
+    class="pf-v6-c-tab-content"
+    data-ouia-component-type="PF6/TabContent"
+    data-ouia-safe="true"
+    hidden=""
+    id="pf-tab-section-1-tab2"
+    role="tabpanel"
+    tabindex="0"
+  >
+    Tab 2 section
+  </section>
+</DocumentFragment>
+`;
+
+
+exports[`should not render tablist aria-label or aria-labelledby when neither is provided 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-tabs pf-m-animate-current pf-m-initializing-accent"
+    data-ouia-component-id="OUIA-Generated-Tabs-40"
+    data-ouia-component-type="PF6/Tabs"
+    data-ouia-safe="true"
+    id="noTabListLabelTabs"
+    style="--pf-v6-c-tabs--link-accent--length: 0px; --pf-v6-c-tabs--link-accent--start: 0px;"
+  >
+    <ul
+      class="pf-v6-c-tabs__list"
+      role="tablist"
+    >
+      <li
+        class="pf-v6-c-tabs__item pf-m-current"
+        role="presentation"
+      >
+        <button
+          aria-controls="pf-tab-section-0-tab1"
+          aria-selected="true"
+          class="pf-v6-c-tabs__link"
+          data-ouia-component-type="PF6/TabButton"
+          data-ouia-safe="true"
+          id="pf-tab-0-tab1"
+          role="tab"
+          type="button"
+        >
+          <span
+            class="pf-v6-c-tabs__item-text"
+          >
+            "Tab item 1"
+          </span>
+        </button>
+      </li>
+      <li
+        class="pf-v6-c-tabs__item"
+        role="presentation"
+      >
+        <button
+          aria-controls="pf-tab-section-1-tab2"
+          aria-selected="false"
+          class="pf-v6-c-tabs__link"
+          data-ouia-component-type="PF6/TabButton"
+          data-ouia-safe="true"
+          id="pf-tab-1-tab2"
+          role="tab"
+          type="button"
+        >
+          <span
+            class="pf-v6-c-tabs__item-text"
+          >
+            "Tab item 2"
+          </span>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <section
+    aria-labelledby="pf-tab-0-tab1"
+    class="pf-v6-c-tab-content"
+    data-ouia-component-type="PF6/TabContent"
+    data-ouia-safe="true"
+    id="pf-tab-section-0-tab1"
+    role="tabpanel"
+    tabindex="0"
+  >
+    Tab 1 section
+  </section>
+  <section
+    aria-labelledby="pf-tab-1-tab2"
+    class="pf-v6-c-tab-content"
+    data-ouia-component-type="PF6/TabContent"
+    data-ouia-safe="true"
+    hidden=""
+    id="pf-tab-section-1-tab2"
+    role="tabpanel"
+    tabindex="0"
+  >
+    Tab 2 section
+  </section>
+</DocumentFragment>
+`;
+
 exports[`should render tabs with eventKey Strings 1`] = `
 <DocumentFragment>
   <div

@@ -742,3 +742,51 @@ test(`should render with custom inline style and accent position inline style`, 
 
   expect(screen.getByRole('region')).toHaveStyle(`background-color: #12345;--pf-v6-c-tabs--link-accent--start: 0px;`);
 });
+
+test('should render tablist aria-label when provided', () => {
+  const { asFragment } = render(
+    <Tabs id="tabListLabelTabs" tabListAriaLabel="Primary tab list">
+      <Tab id="tab1" eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>}>
+        Tab 1 section
+      </Tab>
+      <Tab id="tab2" eventKey={1} title={<TabTitleText>"Tab item 2"</TabTitleText>}>
+        Tab 2 section
+      </Tab>
+    </Tabs>
+  );
+
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test('should render tablist aria-labelledby when provided', () => {
+  const { asFragment } = render(
+    <>
+      <h2 id="tablistHeading">My tabs heading</h2>
+      <Tabs id="tabListLabelledByTabs" tabListAriaLabelledBy="tablistHeading">
+        <Tab id="tab1" eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>}>
+          Tab 1 section
+        </Tab>
+        <Tab id="tab2" eventKey={1} title={<TabTitleText>"Tab item 2"</TabTitleText>}>
+          Tab 2 section
+        </Tab>
+      </Tabs>
+    </>
+  );
+
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test('should not render tablist aria-label or aria-labelledby when neither is provided', () => {
+  const { asFragment } = render(
+    <Tabs id="noTabListLabelTabs">
+      <Tab id="tab1" eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>}>
+        Tab 1 section
+      </Tab>
+      <Tab id="tab2" eventKey={1} title={<TabTitleText>"Tab item 2"</TabTitleText>}>
+        Tab 2 section
+      </Tab>
+    </Tabs>
+  );
+
+  expect(asFragment()).toMatchSnapshot();
+});
