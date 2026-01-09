@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.25...@patternfly/react-core@6.5.0-prerelease.26) (2026-01-09)
+
+### Bug Fixes
+
+- **Label:** render add variant labels as buttons ([#12192](https://github.com/patternfly/patternfly-react/issues/12192)) ([371d2c0](https://github.com/patternfly/patternfly-react/commit/371d2c09d463e03def196dba354ae9b856e9d4ac))
+
 # [6.5.0-prerelease.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.24...@patternfly/react-core@6.5.0-prerelease.25) (2025-12-17)
 
 ### Features
