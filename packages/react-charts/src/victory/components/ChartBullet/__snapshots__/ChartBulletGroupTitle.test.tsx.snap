@@ -94,7 +94,7 @@ exports[`renders component data 1`] = `
         </tspan>
       </text>
       <line
-        style="fill: var(--pf-v6-chart-bullet--group-title--divider--Fill--Color, #c7c7c7); opacity: 1; stroke: var(--pf-v6-chart-bullet--group-title--divider--stroke--Color, #c7c7c7); stroke-width: 2;"
+        style="fill: var(--pf-v6-chart-bullet--group-title--divider--Fill--Color, #4d4d4d); opacity: 1; stroke: var(--pf-v6-chart-bullet--group-title--divider--stroke--Color, #4d4d4d); stroke-width: 2;"
         vector-effect="non-scaling-stroke"
         x1="0"
         x2="450"
