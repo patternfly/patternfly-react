@@ -24,7 +24,7 @@ import '@patternfly/react-core/dist/styles/base.css';
 
 #### Example component usage
 
-```js
+```ts
 import { Table, Thead, Tr, Th, Td, Tbody } from '@patternfly/react-table';
 
 export const ComposableTableBasic = () => {
