@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { Component, FormEvent, MouseEvent, ChangeEvent, Ref } from 'react';
 import {
   Button,
   ButtonVariant,
@@ -72,11 +72,11 @@ class ToolbarDemo extends Component<ToolbarProps, ToolbarState> {
     }));
   };
 
-  onInputChange = (_event: React.FormEvent<HTMLInputElement>, newValue: string) => {
+  onInputChange = (_event: FormEvent<HTMLInputElement>, newValue: string) => {
     this.setState({ inputValue: newValue });
   };
 
-  onSelect = (type: keyof Filter, event: React.MouseEvent | React.ChangeEvent, selection: string) => {
+  onSelect = (type: keyof Filter, event: MouseEvent | ChangeEvent, selection: string) => {
     const selectedTarget = event.target as HTMLInputElement;
     const checked = selectedTarget.checked;
     this.setState((prevState) => {
@@ -252,6 +252,14 @@ class ToolbarDemo extends Component<ToolbarProps, ToolbarState> {
         <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl" id="demo-toggle-group">
           {toggleGroupItems}
         </ToolbarToggleGroup>
+        {/* Example of new width and flexGrow props */}
+        <ToolbarItem widths={{ default: 'md', lg: 'lg', xl: 'xl' }} flexGrow={{ default: 'flexGrow', lg: 'flexGrow' }}>
+          <TextInput
+            type="text"
+            aria-label="width and flex-grow example"
+            placeholder="This item has width and flex-grow"
+          />
+        </ToolbarItem>
         <ToolbarGroup variant="action-group-plain">
           <ToolbarItem>
             <Button variant="plain" icon={<EditIcon />} />
@@ -267,7 +275,7 @@ class ToolbarDemo extends Component<ToolbarProps, ToolbarState> {
           <Dropdown
             isOpen={kebabIsOpen}
             onOpenChange={(_event: any) => this.setState({ kebabIsOpen: this.state.kebabIsOpen })}
-            toggle={(toggleRef: React.Ref<any>) => (
+            toggle={(toggleRef: Ref<any>) => (
               <MenuToggle
                 variant="plain"
                 ref={toggleRef}
