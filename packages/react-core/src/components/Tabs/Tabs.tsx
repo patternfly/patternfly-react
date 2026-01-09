@@ -61,7 +61,7 @@ export interface TabsProps
   onAdd?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
   /** Aria-label for the add button */
   addButtonAriaLabel?: string;
-  /** Aria-label for the list element */
+  /** A readable string to create an accessible name for the tablist element. This can be used to differentiate multiple tablists on a page, and should be used for subtabs. */
   tabListAriaLabel?: string;
   /** Uniquely identifies the tabs */
   id?: string;
