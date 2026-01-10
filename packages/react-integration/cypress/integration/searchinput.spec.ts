@@ -53,7 +53,8 @@ describe('Search Input Demo Test', () => {
   it('Verify advanced search and its handlers work', () => {
     cy.get('#enabled-search .pf-v6-c-panel').should('not.exist');
     cy.get('#enabled-search .pf-v6-c-input-group .pf-v6-c-input-group__item >  button').eq(0).click();
-    cy.get('#enabled-search .pf-v6-c-panel').should('be.visible');
+    // Tooltip visibility is async due to requestAnimationFrame-based positioning
+    cy.get('#enabled-search .pf-v6-c-panel', { timeout: 6000 }).should('be.visible');
 
     cy.get('#enabled-search .pf-v6-c-form-control > input').eq(0).type('test');
     cy.get('#enabled-search .pf-v6-c-text-input-group__text-input').should('have.value', 'username:test');
