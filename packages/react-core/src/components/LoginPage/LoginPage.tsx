@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import { css } from '@patternfly/react-styles';
 
 import { BackgroundImage } from '../BackgroundImage';
-import { Brand } from '../Brand';
+import { Brand, BrandProps } from '../Brand';
 import { List, ListVariant } from '../List';
 
 import { Login } from './Login';
@@ -21,6 +21,8 @@ export interface LoginPageProps extends React.HTMLProps<HTMLDivElement> {
   brandImgSrc?: string;
   /** Attribute that specifies the alt text of the brand image for the login page */
   brandImgAlt?: string;
+  /** Additional props for the brand image for the login page */
+  brandImgProps?: BrandProps;
   /** Attribute that specifies the URL of the background image for the login page */
   backgroundImgSrc?: string;
   /** Content rendered inside of the text component of the login page */
@@ -50,6 +52,7 @@ export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
   className = '',
   brandImgSrc = '',
   brandImgAlt = '',
+  brandImgProps,
   backgroundImgSrc = '',
   footerListItems = null,
   textContent = '',
@@ -65,7 +68,7 @@ export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
 }: LoginPageProps) => {
   const HeaderBrand = (
     <Fragment>
-      <Brand src={brandImgSrc} alt={brandImgAlt} />
+      {(brandImgSrc || brandImgProps?.src) && <Brand src={brandImgSrc} alt={brandImgAlt} {...brandImgProps} />}
     </Fragment>
   );
   const Header = <LoginHeader headerBrand={HeaderBrand} />;
