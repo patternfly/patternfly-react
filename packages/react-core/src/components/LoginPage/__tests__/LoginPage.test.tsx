@@ -26,3 +26,20 @@ test('check loginpage example against snapshot', () => {
   );
   expect(asFragment()).toMatchSnapshot();
 });
+
+test('brand is absent without brandImgSrc and brandImgProps.src', () => {
+  const { asFragment } = render(<LoginPage loginTitle="Log into your account" />);
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test('brand is present with brandImgSrc prop', () => {
+  const { asFragment } = render(<LoginPage brandImgSrc="Brand src" loginTitle="Log into your account" />);
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test('brandImgProps successfully renders brand with props', () => {
+  const { asFragment } = render(
+    <LoginPage brandImgProps={{ src: 'Brand src', alt: 'Pf-logo' }} loginTitle="Log into your account" />
+  );
+  expect(asFragment()).toMatchSnapshot();
+});
