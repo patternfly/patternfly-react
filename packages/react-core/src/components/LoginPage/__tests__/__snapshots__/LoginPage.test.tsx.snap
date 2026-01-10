@@ -92,55 +92,6 @@ exports[`brand is present with brandImgSrc prop 1`] = `
 </DocumentFragment>
 `;
 
-exports[`brandImgProps successfully renders brand with props 1`] = `
-<DocumentFragment>
-  <div
-    class="pf-v6-c-login"
-  >
-    <div
-      class="pf-v6-c-login__container"
-    >
-      <header
-        class="pf-v6-c-login__header"
-      >
-        <img
-          alt="Pf-logo"
-          class="pf-v6-c-brand"
-          src="Brand src"
-        />
-      </header>
-      <main
-        class="pf-v6-c-login__main"
-      >
-        <div
-          class="pf-v6-c-login__main-header"
-        >
-          <h2
-            class="pf-v6-c-title pf-m-3xl"
-            data-ouia-component-id="OUIA-Generated-Title-4"
-            data-ouia-component-type="PF6/Title"
-            data-ouia-safe="true"
-          >
-            Log into your account
-          </h2>
-        </div>
-        <div
-          class="pf-v6-c-login__main-body"
-        />
-      </main>
-      <footer
-        class="pf-v6-c-login__footer"
-      >
-        <p />
-        <ul
-          class="pf-v6-c-list"
-        />
-      </footer>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`check loginpage example against snapshot 1`] = `
 <DocumentFragment>
   <div
