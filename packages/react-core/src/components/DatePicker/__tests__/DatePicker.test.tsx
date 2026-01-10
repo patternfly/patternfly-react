@@ -1,4 +1,4 @@
-import { screen, render } from '@testing-library/react';
+import { screen, render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { HelperText, HelperTextItem } from '../../HelperText';
@@ -93,6 +93,11 @@ test('With popover opened', async () => {
 
   await user.click(screen.getByRole('button', { name: 'Toggle date picker' }));
   await screen.findByRole('button', { name: 'Previous month' });
+  // Wait for popper opacity transition after requestAnimationFrame
+  await waitFor(() => {
+    const popover = screen.getByRole('dialog');
+    expect(popover).toHaveStyle({ opacity: '1' });
+  });
 
   expect(asFragment()).toMatchSnapshot();
 });
