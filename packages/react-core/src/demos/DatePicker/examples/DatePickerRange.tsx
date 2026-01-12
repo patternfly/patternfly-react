@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { Split, SplitItem, DatePicker, isValidDate, yyyyMMddFormat } from '@patternfly/react-core';
 
 export const DatePickerRange: React.FunctionComponent = () => {
-  const [from, setFrom] = useState();
-  const [to, setTo] = useState();
+  const [from, setFrom] = useState<Date | undefined>();
+  const [to, setTo] = useState<string>('');
 
   const toValidator = (date: Date) =>
     isValidDate(from) && date >= from ? '' : 'The "to" date must be after the "from" date';
