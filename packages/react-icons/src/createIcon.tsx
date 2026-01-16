@@ -15,7 +15,7 @@ export interface IconDefinition {
   svgClassName?: string;
 }
 
-export interface CreateIconProps extends IconDefinition {
+export interface CreateIconProps {
   name?: string;
   icon?: IconDefinition;
   rhUiIcon?: IconDefinition | null;
