@@ -596,7 +596,7 @@ export const CodeEditor = ({
             )}
             ref={ref}
           >
-            {(isUploadEnabled || emptyState) && !value ? (
+            {isUploadEnabled || emptyState ? (
               <div
                 {...getRootProps({
                   onClick: (event) => event.stopPropagation() // Prevents clicking TextArea from opening file dialog
