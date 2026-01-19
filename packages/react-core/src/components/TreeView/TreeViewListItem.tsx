@@ -135,7 +135,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
 
   const renderToggle = (randomId: string) => (
     <ToggleComponent
-      className={css(styles.treeViewNodeToggle, hasDisabledToggleClass && 'pf-m-disabled')}
+      className={css(styles.treeViewNodeToggle, hasDisabledToggleClass && styles.modifiers.disabled)}
       onClick={(evt: React.MouseEvent) => {
         if (!isToggleDisabled && (isSelectable || hasCheckbox)) {
           if (internalIsExpanded) {
@@ -248,7 +248,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
               className={css(
                 styles.treeViewNode,
                 isSelected && styles.modifiers.current,
-                isDisabled && 'pf-m-disabled'
+                isDisabled && styles.modifiers.disabled
               )}
               onClick={(evt: React.MouseEvent) => {
                 if (!hasCheckbox) {
