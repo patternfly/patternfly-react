@@ -122,7 +122,7 @@ export function createIcon({ name, icon, rhUiIcon = null }: CreateIconProps): Re
       }
 
       if ((set === undefined && rhUiIcon === null) || set !== undefined) {
-        const iconData = set !== undefined && set === 'unified' ? rhUiIcon : icon;
+        const iconData = set !== undefined && set === 'unified' && rhUiIcon !== null ? rhUiIcon : icon;
         const { xOffset, yOffset, width, height, svgPathData, svgClassName } = iconData ?? {};
         const _xOffset = xOffset ?? 0;
         const _yOffset = yOffset ?? 0;
