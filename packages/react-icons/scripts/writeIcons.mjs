@@ -3,7 +3,7 @@ import { outputFileSync, ensureDirSync } from 'fs-extra/esm';
 import { generateIcons } from './generateIcons.mjs';
 import { createElement } from 'react';
 import { renderToString } from 'react-dom/server';
-
+import { pfToRhIcons } from '../src/pfToRhIcons.js';
 import * as url from 'url';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
@@ -17,19 +17,15 @@ const staticDir = join(outDir, 'static');
 const removeSnake = (s) => s.toUpperCase().replace('-', '').replace('_', '');
 const toCamel = (s) => `${s[0].toUpperCase()}${s.substr(1).replace(/([-_][\w])/gi, removeSnake)}`;
 
-const writeCJSExport = (fname, jsName, icon) => {
+const writeCJSExport = (fname, jsName, icon, rhUiIcon = null) => {
   outputFileSync(
     join(outDir, 'js/icons', `${fname}.js`),
     `"use strict"
 exports.__esModule = true;
 exports.${jsName}Config = {
   name: '${jsName}',
-  height: ${icon.height},
-  width: ${icon.width},
-  svgPath: ${JSON.stringify(icon.svgPathData)},
-  yOffset: ${icon.yOffset || 0},
-  xOffset: ${icon.xOffset || 0},
-  svgClassName: ${JSON.stringify(icon.svgClassName)},
+  icon: ${JSON.stringify(icon)},
+  rhUiIcon: ${rhUiIcon ? JSON.stringify(rhUiIcon) : 'null'},
 };
 exports.${jsName} = require('../createIcon').createIcon(exports.${jsName}Config);
 exports["default"] = exports.${jsName};
@@ -37,19 +33,15 @@ exports["default"] = exports.${jsName};
   );
 };
 
-const writeESMExport = (fname, jsName, icon) => {
+const writeESMExport = (fname, jsName, icon, rhUiIcon = null) => {
   outputFileSync(
     join(outDir, 'esm/icons', `${fname}.js`),
     `import { createIcon } from '../createIcon';
 
 export const ${jsName}Config = {
   name: '${jsName}',
-  height: ${icon.height},
-  width: ${icon.width},
-  svgPath: ${JSON.stringify(icon.svgPathData)},
-  yOffset: ${icon.yOffset || 0},
-  xOffset: ${icon.xOffset || 0},
-  svgClassName: ${JSON.stringify(icon.svgClassName)},
+  icon: ${JSON.stringify(icon)},
+  rhUiIcon: ${rhUiIcon ? JSON.stringify(rhUiIcon) : 'null'},
 };
 
 export const ${jsName} = createIcon(${jsName}Config);
@@ -59,17 +51,13 @@ export default ${jsName};
   );
 };
 
-const writeDTSExport = (fname, jsName, icon) => {
+const writeDTSExport = (fname, jsName, icon, rhUiIcon = null) => {
   const text = `import { ComponentClass } from 'react';
 import { SVGIconProps } from '../createIcon';
 export declare const ${jsName}Config: {
   name: '${jsName}',
-  height: ${icon.height},
-  width: ${icon.width},
-  svgPath: ${JSON.stringify(icon.svgPathData)},
-  yOffset: ${icon.yOffset || 0},
-  xOffset: ${icon.xOffset || 0},
-  svgClassName: ${JSON.stringify(icon.svgClassName)},
+  icon: ${JSON.stringify(icon)},
+  rhUiIcon: ${rhUiIcon ? JSON.stringify(rhUiIcon) : 'null'},
 };
 export declare const ${jsName}: ComponentClass<SVGIconProps>;
 export default ${jsName};
@@ -133,9 +121,11 @@ function writeIcons(icons) {
   Object.entries(icons).forEach(([iconName, icon]) => {
     const fname = `${iconName}-icon`;
     const jsName = `${toCamel(iconName)}Icon`;
-    writeESMExport(fname, jsName, icon);
-    writeCJSExport(fname, jsName, icon);
-    writeDTSExport(fname, jsName, icon);
+
+    const altIcon = pfToRhIcons[jsName] ? pfToRhIcons[jsName].icon : null;
+    writeESMExport(fname, jsName, icon, altIcon);
+    writeCJSExport(fname, jsName, icon, altIcon);
+    writeDTSExport(fname, jsName, icon, altIcon);
 
     index.push({ fname, jsName });
   });
