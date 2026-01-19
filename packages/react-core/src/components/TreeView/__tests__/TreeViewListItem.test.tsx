@@ -426,12 +426,12 @@ describe('isDisabled prop', () => {
     jest.clearAllMocks();
   });
 
-  test('Renders button with disabled attribute and pf-m-disabled class when isDisabled is true', () => {
+  test(`Renders button with disabled attribute and ${styles.modifiers.disabled} class when isDisabled is true`, () => {
     render(<TreeViewListItem isDisabled {...requiredProps} />);
 
     const button = screen.getByRole('button', { name: requiredProps.name });
     expect(button).toBeDisabled();
-    expect(button).toHaveClass('pf-m-disabled');
+    expect(button).toHaveClass(styles.modifiers.disabled);
   });
 
   test('Does not render button with disabled attribute when isDisabled is false', () => {
@@ -472,7 +472,7 @@ describe('isDisabled prop', () => {
     expect(onCollapseMock).not.toHaveBeenCalled();
   });
 
-  test('Renders toggle with pf-m-disabled class when isDisabled is true for default TreeViewListItem', () => {
+  test(`Renders toggle with ${styles.modifiers.disabled} class when isDisabled is true for default TreeViewListItem`, () => {
     render(
       <TreeViewListItem isDisabled {...requiredProps}>
         Content
@@ -480,7 +480,7 @@ describe('isDisabled prop', () => {
     );
 
     const toggle = screen.getByText(requiredProps.name).previousElementSibling;
-    expect(toggle).toHaveClass('pf-m-disabled');
+    expect(toggle).toHaveClass(styles.modifiers.disabled);
   });
 
   test('Renders treeitem with aria-disabled when isDisabled is true for default TreeViewListItem', () => {
@@ -536,7 +536,7 @@ describe('isToggleDisabled prop', () => {
     jest.clearAllMocks();
   });
 
-  test('Renders toggle button with disabled attribute and pf-m-disabled class when isToggleDisabled is true and hasCheckbox is passed', () => {
+  test(`Renders toggle button with disabled attribute and ${styles.modifiers.disabled} class when isToggleDisabled is true and hasCheckbox is passed`, () => {
     render(
       <TreeViewListItem hasCheckbox isToggleDisabled {...requiredProps}>
         Content
@@ -545,10 +545,10 @@ describe('isToggleDisabled prop', () => {
 
     const toggle = screen.getByText(requiredProps.name).previousElementSibling?.previousElementSibling;
     expect(toggle).toBeDisabled();
-    expect(toggle).toHaveClass('pf-m-disabled');
+    expect(toggle).toHaveClass(styles.modifiers.disabled);
   });
 
-  test('Renders toggle button with disabled attribute and pf-m-disabled class when isToggleDisabled is true and isSelectable is passed', () => {
+  test(`Renders toggle button with disabled attribute and ${styles.modifiers.disabled} class when isToggleDisabled is true and isSelectable is passed`, () => {
     render(
       <TreeViewListItem isSelectable isToggleDisabled {...requiredProps}>
         Content
@@ -557,7 +557,7 @@ describe('isToggleDisabled prop', () => {
 
     const toggle = screen.getByText(requiredProps.name).previousElementSibling;
     expect(toggle).toBeDisabled();
-    expect(toggle).toHaveClass('pf-m-disabled');
+    expect(toggle).toHaveClass(styles.modifiers.disabled);
   });
 
   test('Does not render toggle span with disabled attribute when isToggleDisabled is true (toggle is span by default)', () => {
@@ -624,7 +624,7 @@ describe('isToggleDisabled prop', () => {
     expect(onCollapseMock).not.toHaveBeenCalled();
   });
 
-  test('Renders toggle span with pf-m-disabled class when isDisabled is true for default TreeViewListItem', () => {
+  test(`Renders toggle span with ${styles.modifiers.disabled} class when isDisabled is true for default TreeViewListItem`, () => {
     render(
       <TreeViewListItem isDisabled {...requiredProps}>
         Content
@@ -632,10 +632,10 @@ describe('isToggleDisabled prop', () => {
     );
 
     const toggle = screen.getByText(requiredProps.name).previousElementSibling;
-    expect(toggle).toHaveClass('pf-m-disabled');
+    expect(toggle).toHaveClass(styles.modifiers.disabled);
   });
 
-  test('Does not render toggle with pf-m-disabled class when isDisabled is true and hasCheckbox is true', () => {
+  test(`Does not render toggle with ${styles.modifiers.disabled} class when isDisabled is true and hasCheckbox is true`, () => {
     render(
       <TreeViewListItem hasCheckbox isDisabled {...requiredProps}>
         Content
@@ -643,10 +643,10 @@ describe('isToggleDisabled prop', () => {
     );
 
     const toggle = screen.getByText(requiredProps.name).previousElementSibling?.previousElementSibling;
-    expect(toggle).not.toHaveClass('pf-m-disabled');
+    expect(toggle).not.toHaveClass(styles.modifiers.disabled);
   });
 
-  test('Does not render toggle with pf-m-disabled class when isDisabled is true and isSelectable is true', () => {
+  test(`Does not render toggle with ${styles.modifiers.disabled} class when isDisabled is true and isSelectable is true`, () => {
     render(
       <TreeViewListItem isSelectable isDisabled {...requiredProps}>
         Content
@@ -654,7 +654,7 @@ describe('isToggleDisabled prop', () => {
     );
 
     const toggle = screen.getByText(requiredProps.name).previousElementSibling;
-    expect(toggle).not.toHaveClass('pf-m-disabled');
+    expect(toggle).not.toHaveClass(styles.modifiers.disabled);
   });
 });
 
