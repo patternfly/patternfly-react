@@ -312,6 +312,8 @@ export const TreeViewListItem = memo(TreeViewListItemBase, (prevProps, nextProps
     prevProps.id !== nextProps.id ||
     prevProps.isExpanded !== nextProps.isExpanded ||
     prevProps.defaultExpanded !== nextProps.defaultExpanded ||
+    prevProps.isDisabled !== nextProps.isDisabled ||
+    prevProps.isToggleDisabled !== nextProps.isToggleDisabled ||
     prevProps.onSelect !== nextProps.onSelect ||
     prevProps.onCheck !== nextProps.onCheck ||
     prevProps.onExpand !== nextProps.onExpand ||
