@@ -40,6 +40,8 @@ export interface ToolbarProps extends React.HTMLProps<HTMLDivElement>, OUIAProps
   isStatic?: boolean;
   /** Flag indicating the toolbar should stick to the top of its container */
   isSticky?: boolean;
+  /** @beta Flag indicating the toolbar has a vertical orientation */
+  isVertical?: boolean;
   /** Insets at various breakpoints. */
   inset?: {
     default?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
@@ -143,6 +145,7 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
       isStatic,
       inset,
       isSticky,
+      isVertical,
       ouiaId,
       numberOfFiltersText,
       customLabelGroupContent,
@@ -167,6 +170,7 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
               isFullHeight && styles.modifiers.fullHeight,
               isStatic && styles.modifiers.static,
               isSticky && styles.modifiers.sticky,
+              isVertical && styles.modifiers.vertical,
               formatBreakpointMods(inset, styles, '', getBreakpoint(width)),
               colorVariant === 'primary' && styles.modifiers.primary,
               colorVariant === 'secondary' && styles.modifiers.secondary,

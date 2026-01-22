@@ -309,6 +309,18 @@ test('Passes textAriaLabel to TextInput', () => {
   expect(screen.getByRole('textbox')).toHaveAccessibleName('text label');
 });
 
+test('Passes inputId to TextInput', () => {
+  render(<ClipboardCopy inputId="custom-input-id">{children}</ClipboardCopy>);
+
+  expect(screen.getByRole('textbox')).toHaveAttribute('id', 'custom-input-id');
+});
+
+test('Passes inputName to TextInput', () => {
+  render(<ClipboardCopy inputName="custom-input-name">{children}</ClipboardCopy>);
+
+  expect(screen.getByRole('textbox')).toHaveAttribute('name', 'custom-input-name');
+});
+
 test('Calls onChange when ClipboardCopy textinput is typed in', async () => {
   const onChangeMock = jest.fn();
   const user = userEvent.setup();
@@ -336,6 +348,66 @@ test('Does not call onChange when ClipboardCopy textinput is not typed in', asyn
   await user.type(screen.getByRole('textbox', { name: 'native input' }), typedText);
 
   expect(onChangeMock).not.toHaveBeenCalled();
+});
+
+test('Calls onFocus when ClipboardCopy textinput is focused', async () => {
+  const onFocusMock = jest.fn();
+  const user = userEvent.setup();
+
+  render(<ClipboardCopy onInputFocus={onFocusMock}>{children}</ClipboardCopy>);
+
+  await user.click(screen.getByRole('textbox'));
+
+  expect(onFocusMock).toHaveBeenCalledTimes(1);
+});
+
+test('Does not call onFocus when ClipboardCopy textinput is not focused', async () => {
+  const onFocusMock = jest.fn();
+  const user = userEvent.setup();
+
+  render(
+    <>
+      <ClipboardCopy onInputFocus={onFocusMock}>{children}</ClipboardCopy>
+      <input aria-label="native input" />
+    </>
+  );
+
+  await user.click(screen.getByRole('textbox', { name: 'native input' }));
+
+  expect(onFocusMock).not.toHaveBeenCalled();
+});
+
+test('Calls onBlur when ClipboardCopy textinput loses focus', async () => {
+  const onBlurMock = jest.fn();
+  const user = userEvent.setup();
+
+  render(
+    <>
+      <ClipboardCopy onInputBlur={onBlurMock}>{children}</ClipboardCopy>
+      <input aria-label="native input" />
+    </>
+  );
+
+  await user.click(screen.getByRole('textbox', { name: 'Copyable input' }));
+  await user.click(screen.getByRole('textbox', { name: 'native input' }));
+
+  expect(onBlurMock).toHaveBeenCalledTimes(1);
+});
+
+test('Does not call onBlur when ClipboardCopy textinput does not lose focus', async () => {
+  const onBlurMock = jest.fn();
+  const user = userEvent.setup();
+
+  render(
+    <>
+      <ClipboardCopy onInputBlur={onBlurMock}>{children}</ClipboardCopy>
+      <input aria-label="native input" />
+    </>
+  );
+
+  await user.click(screen.getByRole('textbox', { name: 'native input' }));
+
+  expect(onBlurMock).not.toHaveBeenCalled();
 });
 
 test('Calls onCopy when ClipboardCopyButton is clicked', async () => {

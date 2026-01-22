@@ -1,7 +1,7 @@
 import styles from '@patternfly/react-styles/css/components/Compass/compass';
 import { css } from '@patternfly/react-styles';
 
-interface CompassPanelProps extends React.HTMLProps<HTMLDivElement> {
+export interface CompassPanelProps extends React.HTMLProps<HTMLDivElement> {
   /** Content of the panel. */
   children: React.ReactNode;
   /** Additional classes added to the panel. */
@@ -30,7 +30,7 @@ export const CompassPanel: React.FunctionComponent<CompassPanelProps> = ({
   isFullHeight,
   isScrollable,
   ...props
-}) => (
+}: CompassPanelProps) => (
   <div
     className={css(
       styles.compassPanel,

@@ -4,7 +4,7 @@ Library that provides CSS-in-JS capabilities
 
 #### Example 
 
-```jsx
+```tsx
 import { css } from '@patternfly/react-styles';
 import styles from './Button.css';
 

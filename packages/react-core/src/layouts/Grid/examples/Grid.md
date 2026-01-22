@@ -1,7 +1,8 @@
 ---
 id: Grid
 cssPrefix: pf-v6-l-grid
-section: layouts
+section: foundations-and-styles
+subsection: layouts
 propComponents: ['Grid', 'GridItem']
 ---
 
@@ -11,134 +12,38 @@ import './grid.css';
 
 ### Basic
 
-```js
-import { Grid, GridItem } from '@patternfly/react-core';
-
-<Grid>
-  <GridItem span={8}>span = 8</GridItem>
-  <GridItem span={4} rowSpan={2}>
-    span = 4, rowSpan = 2
-  </GridItem>
-  <GridItem span={2} rowSpan={3}>
-    span = 2, rowSpan = 3
-  </GridItem>
-  <GridItem span={2}>span = 2</GridItem>
-  <GridItem span={4}>span = 4</GridItem>
-  <GridItem span={2}>span = 2</GridItem>
-  <GridItem span={2}>span = 2</GridItem>
-  <GridItem span={2}>span = 2</GridItem>
-  <GridItem span={4}>span = 4</GridItem>
-  <GridItem span={2}>span = 2</GridItem>
-  <GridItem span={4}>span = 4</GridItem>
-  <GridItem span={4}>span = 4</GridItem>
-</Grid>;
+```ts file="GridBasic.tsx"
 ```
 
 ### With gutters
 
-```js
-import { Grid, GridItem } from '@patternfly/react-core';
-
-<Grid hasGutter>
-  <GridItem span={8}>span = 8</GridItem>
-  <GridItem span={4} rowSpan={2}>
-    span = 4, rowSpan = 2
-  </GridItem>
-  <GridItem span={2} rowSpan={3}>
-    span = 2, rowSpan = 3
-  </GridItem>
-  <GridItem span={2}>span = 2</GridItem>
-  <GridItem span={4}>span = 4</GridItem>
-  <GridItem span={2}>span = 2</GridItem>
-  <GridItem span={2}>span = 2</GridItem>
-  <GridItem span={2}>span = 2</GridItem>
-  <GridItem span={4}>span = 4</GridItem>
-  <GridItem span={2}>span = 2</GridItem>
-  <GridItem span={4}>span = 4</GridItem>
-  <GridItem span={4}>span = 4</GridItem>
-</Grid>;
+```ts file="GridWithGutters.tsx"
 ```
 
 ### With overrides
 
-```js
-import { Grid, GridItem } from '@patternfly/react-core';
-
-<Grid sm={6} md={4} lg={3} xl2={1}>
-  <GridItem span={3} rowSpan={2}>
-    span = 3 rowSpan= 2
-  </GridItem>
-  <GridItem>Grid Item</GridItem>
-  <GridItem>Grid Item</GridItem>
-  <GridItem>Grid Item</GridItem>
-  <GridItem>Grid Item</GridItem>
-  <GridItem>Grid Item</GridItem>
-  <GridItem>Grid Item</GridItem>
-  <GridItem>Grid Item</GridItem>
-  <GridItem>Grid Item</GridItem>
-  <GridItem>Grid Item</GridItem>
-  <GridItem>Grid Item</GridItem>
-  <GridItem>Grid Item</GridItem>
-</Grid>;
+```ts file="GridWithOverrides.tsx"
 ```
 
 ## Ordering
 
 ### Standard ordering
 
-```js
-import { Grid, GridItem } from '@patternfly/react-core';
-
-<Grid hasGutter span={3}>
-  <GridItem order={{ default: '2' }}>Item A</GridItem>
-  <GridItem>Item B</GridItem>
-  <GridItem order={{ default: '-1' }}>Item C</GridItem>
-</Grid>;
+```ts file="GridStandardOrdering.tsx"
 ```
 
 ### Responsive ordering
 
-```js
-import { Grid, GridItem } from '@patternfly/react-core';
-
-<Grid hasGutter span={3}>
-  <GridItem order={{ lg: '2' }}>Item A</GridItem>
-  <GridItem>Item B</GridItem>
-  <GridItem order={{ default: '-1', md: '1' }}>Item C</GridItem>
-</Grid>;
+```ts file="GridResponsiveOrdering.tsx"
 ```
 
 ### Grouped ordering
 
-```js
-import { Grid, GridItem } from '@patternfly/react-core';
+```ts file="GridGroupingOrdering.tsx"
 
-<Grid hasGutter span={12}>
-  <Grid hasGutter span={6} order={{ default: '2' }}>
-    <GridItem order={{ default: '3' }}>Set 1, Item A</GridItem>
-    <GridItem order={{ default: '1' }}>Set 1, Item B</GridItem>
-    <GridItem>Set 1, Item C</GridItem>
-    <GridItem order={{ default: '2' }}>Set 1, Item D</GridItem>
-  </Grid>
-  <Grid hasGutter span={6}>
-    <GridItem order={{ default: '2' }}>Set 2, Item A</GridItem>
-    <GridItem order={{ default: '1' }}>Set 2, Item B</GridItem>
-    <GridItem>Set 2, Item C</GridItem>
-    <GridItem order={{ default: '2' }}>Set 2, Item D</GridItem>
-  </Grid>
-</Grid>;
 ```
 
 ### Alternative components
 
-```js
-import { Grid, GridItem } from '@patternfly/react-core';
-
-<Grid component="ul">
-  <GridItem component="li">Grid item</GridItem>
-  <GridItem component="li">Grid item</GridItem>
-  <GridItem component="li">Grid item</GridItem>
-  <GridItem component="li">Grid item</GridItem>
-  <GridItem component="li">Grid item</GridItem>
-</Grid>;
+```ts file="GridAlternativeComponents.tsx"
 ```

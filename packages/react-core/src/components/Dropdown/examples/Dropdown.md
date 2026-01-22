@@ -16,7 +16,7 @@ propComponents:
   ]
 ---
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 ## Examples
@@ -61,5 +61,17 @@ To group sets of related dropdown items together, use a `<DropdownGroup>`. When 
 To provide users with more context about a `<DropdownItem>`, pass a short message to `description` property. As shown in the example below, an item's description will appear below its label.
 
 ```ts file="./DropdownWithDescriptions.tsx"
+
+```
+
+### Split toggle with checkbox
+
+To combine a checkbox or other control with a dropdown menu, use a split button.
+
+A `<MenuToggle>` can be rendered as a split button via `splitButtonItems`. Elements to be displayed before the dropdown toggle button (like the `<MenuToggleCheckbox>`) must be included in the `splitButtonItems`.
+
+If the dropdown menu closes upon selection, you will need to manually shift focus back to the toggle element after a user selects an item from the menu. 
+
+```ts file="./DropdownWithSplit.tsx"
 
 ```

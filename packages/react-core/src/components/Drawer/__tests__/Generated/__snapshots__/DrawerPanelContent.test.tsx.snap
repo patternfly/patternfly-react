@@ -6,6 +6,7 @@ exports[`DrawerPanelContent should match snapshot (auto-generated) 1`] = `
     class="pf-v6-c-drawer__panel ''"
     hidden=""
     id="generated-id"
+    inert=""
   />
 </DocumentFragment>
 `;

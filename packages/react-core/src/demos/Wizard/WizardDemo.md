@@ -14,30 +14,30 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 
 ### In modal
 
-```js file="../examples/Wizard/InModal.tsx" isFullscreen
+```ts file="../examples/Wizard/InModal.tsx" isFullscreen
 ```
 
 ### In modal, with drawer
 
-```js file="../examples/Wizard/InModalWithDrawer.tsx" isFullscreen
+```ts file="../examples/Wizard/InModalWithDrawer.tsx" isFullscreen
 ```
 
 ### In modal, with drawer and informational step
 
-```js file="../examples/Wizard/InModalWithDrawerInformationalStep.tsx" isFullscreen
+```ts file="../examples/Wizard/InModalWithDrawerInformationalStep.tsx" isFullscreen
 ```
 
 ### In page
 
-```js file="../examples/Wizard/InPage.tsx" isFullscreen
+```ts file="../examples/Wizard/InPage.tsx" isFullscreen
 ```
 
 ### In page, with drawer
 
-```js file="../examples/Wizard/InPageWithDrawer.tsx" isFullscreen
+```ts file="../examples/Wizard/InPageWithDrawer.tsx" isFullscreen
 ```
 
 ### In page, with drawer and informational step
 
-```js file="../examples/Wizard/InPageWithDrawerInformationalStep.tsx" isFullscreen
+```ts file="../examples/Wizard/InPageWithDrawerInformationalStep.tsx" isFullscreen
 ```

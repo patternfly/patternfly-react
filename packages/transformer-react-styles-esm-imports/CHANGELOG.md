@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1-prerelease.11](https://github.com/patternfly/patternfly-react/compare/transformer-react-styles-esm-imports@1.0.1-prerelease.4...transformer-react-styles-esm-imports@1.0.1-prerelease.11) (2025-12-16)
+
+**Note:** Version bump only for package transformer-react-styles-esm-imports
+
 ## [1.0.1-prerelease.4](https://github.com/patternfly/patternfly-react/compare/transformer-react-styles-esm-imports@1.0.1-prerelease.3...transformer-react-styles-esm-imports@1.0.1-prerelease.4) (2024-09-09)
 
 **Note:** Version bump only for package transformer-react-styles-esm-imports

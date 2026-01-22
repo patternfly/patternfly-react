@@ -1,6 +1,7 @@
 ---
 id: Sankey chart
-section: charts
+section: components
+subsection: charts
 propComponents: [
   {
     component: 'Charts',

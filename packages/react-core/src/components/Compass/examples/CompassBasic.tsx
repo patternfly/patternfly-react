@@ -1,4 +1,12 @@
-import { Compass, CompassHeader, CompassHero, CompassContent, CompassMainHeader } from '@patternfly/react-core';
+import {
+  Compass,
+  CompassHeader,
+  CompassHero,
+  CompassContent,
+  CompassMainHeader,
+  CompassPanel,
+  CompassMainHeaderContent
+} from '@patternfly/react-core';
 import './compass.css';
 
 export const CompassBasic: React.FunctionComponent = () => {
@@ -12,7 +20,11 @@ export const CompassBasic: React.FunctionComponent = () => {
       </CompassHero>
       <CompassContent>
         <CompassMainHeader>
-          <div>Content title</div>
+          <CompassPanel>
+            <CompassMainHeaderContent>
+              <div>Content title</div>
+            </CompassMainHeaderContent>
+          </CompassPanel>
         </CompassMainHeader>
         <div>Content</div>
       </CompassContent>
@@ -28,6 +40,7 @@ export const CompassBasic: React.FunctionComponent = () => {
       main={mainContent}
       sidebarEnd={sidebarEndContent}
       footer={footerContent}
+      style={{ height: '600px' }}
     />
   );
 };

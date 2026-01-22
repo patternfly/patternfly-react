@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-compass__nav-home"
+  >
+    <button
+      aria-label="Home"
+      class="pf-v6-c-button pf-m-plain pf-m-circle"
+      data-ouia-component-id="OUIA-Generated-Button-plain-9"
+      data-ouia-component-type="PF6/Button"
+      data-ouia-safe="true"
+      type="button"
+    >
+      <span
+        class="pf-v6-c-button__icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="pf-v6-svg"
+          fill="none"
+          height="1em"
+          viewBox="0 0 20 20"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8.33268 13.334H11.666"
+            stroke="currentcolor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          />
+          <path
+            d="M1.66602 6.66602L9.73102 2.63351C9.89994 2.54905 10.0988 2.54905 10.2677 2.63351L18.3327 6.66602"
+            stroke="currentcolor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          />
+          <path
+            d="M16.6673 9.16602V15.4993C16.6673 16.6039 15.7719 17.4993 14.6673 17.4993H5.33398C4.22941 17.4993 3.33398 16.6039 3.33398 15.4993V9.16602"
+            stroke="currentcolor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Matches the snapshot with custom props 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-compass__nav-home custom-class"
+  >
+    <button
+      aria-label="Custom home"
+      class="pf-v6-c-button pf-m-plain pf-m-circle"
+      data-ouia-component-id="OUIA-Generated-Button-plain-10"
+      data-ouia-component-type="PF6/Button"
+      data-ouia-safe="true"
+      type="button"
+    >
+      <span
+        class="pf-v6-c-button__icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="pf-v6-svg"
+          fill="none"
+          height="1em"
+          viewBox="0 0 20 20"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8.33268 13.334H11.666"
+            stroke="currentcolor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          />
+          <path
+            d="M1.66602 6.66602L9.73102 2.63351C9.89994 2.54905 10.0988 2.54905 10.2677 2.63351L18.3327 6.66602"
+            stroke="currentcolor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          />
+          <path
+            d="M16.6673 9.16602V15.4993C16.6673 16.6039 15.7719 17.4993 14.6673 17.4993H5.33398C4.22941 17.4993 3.33398 16.6039 3.33398 15.4993V9.16602"
+            stroke="currentcolor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;

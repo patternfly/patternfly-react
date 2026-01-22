@@ -20,6 +20,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Additional classes added to the page layout */
   className?: string;
+  /** @beta Indicates the layout variant */
+  variant?: 'default' | 'docked';
   /** Masthead component (e.g. <Masthead />) */
   masthead?: React.ReactNode;
   /** Sidebar component for a side nav, recommended to be a PageSidebar. If set to null, the page grid layout
@@ -229,6 +231,7 @@ class Page extends Component<PageProps, PageState> {
       isBreadcrumbWidthLimited,
       className,
       children,
+      variant,
       masthead,
       sidebar,
       notificationDrawer,
@@ -336,6 +339,7 @@ class Page extends Component<PageProps, PageState> {
           {...rest}
           className={css(
             styles.page,
+            variant === 'docked' && styles.modifiers.dock,
             width !== null && height !== null && 'pf-m-resize-observer',
             width !== null && `pf-m-breakpoint-${getBreakpoint(width)}`,
             height !== null && `pf-m-height-breakpoint-${getVerticalBreakpoint(height)}`,
@@ -344,7 +348,7 @@ class Page extends Component<PageProps, PageState> {
           )}
         >
           {skipToContent}
-          {masthead}
+          {variant === 'docked' ? <div className={css(styles.pageDock)}>{masthead}</div> : masthead}
           {sidebar}
           {notificationDrawer && (
             <div className={css(styles.pageDrawer)}>

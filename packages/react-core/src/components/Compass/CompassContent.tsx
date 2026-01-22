@@ -2,8 +2,8 @@ import { Drawer, DrawerContent, DrawerProps } from '../Drawer';
 import styles from '@patternfly/react-styles/css/components/Compass/compass';
 import { css } from '@patternfly/react-styles';
 
-interface CompassContentProps extends React.HTMLProps<HTMLDivElement> {
-  /** Content of the main compass area. Typically one or more CompassPanel components. */
+export interface CompassContentProps extends React.HTMLProps<HTMLDivElement> {
+  /** Content of the main Compass area. Typically one or more CompassPanel components. */
   children: React.ReactNode;
   /** Additional classes added to the CompassContent */
   className?: string;
@@ -19,7 +19,7 @@ export const CompassContent: React.FunctionComponent<CompassContentProps> = ({
   drawerProps,
   drawerContent,
   ...props
-}) => {
+}: CompassContentProps) => {
   const hasDrawer = drawerContent !== undefined;
 
   const compassContent = (
@@ -30,7 +30,7 @@ export const CompassContent: React.FunctionComponent<CompassContentProps> = ({
 
   if (hasDrawer) {
     return (
-      <Drawer {...drawerProps}>
+      <Drawer isPill {...drawerProps}>
         <DrawerContent panelContent={drawerContent}>{compassContent}</DrawerContent>
       </Drawer>
     );

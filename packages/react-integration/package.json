@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-integration",
-  "version": "6.5.0-prerelease.2",
+  "version": "6.5.0-prerelease.7",
   "private": true,
   "description": "Integration testing for PF5 using demo applications",
   "main": "lib/index.js",
@@ -28,7 +28,7 @@
     "test:integration": "cypress run"
   },
   "devDependencies": {
-    "cypress": "^14.0.1",
+    "cypress": "^14.5.4",
     "cypress-plugin-tab": "^1.0.5",
     "junit-merge": "^2.0.0"
   }

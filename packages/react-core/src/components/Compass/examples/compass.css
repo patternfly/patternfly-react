@@ -1,8 +1,32 @@
-#ws-react-c-compass-basic [class*="pf-v6-c-compass"] {
+#ws-react-a-compass-basic [class*="pf-v6-c-compass"] {
   position: relative;
 }
 
-#ws-react-c-compass-basic [class*="pf-v6-c-compass"]::after {
+#ws-react-a-compass-basic [class*="pf-v6-c-compass"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: var(--pf-t--global--border--width--regular) dashed var(--pf-t--global--border--color--default);
+  pointer-events: none;
+}
+
+#ws-react-a-compass-with-alternate-footer [class*="pf-v6-c-compass"] {
+  position: relative;
+}
+
+#ws-react-a-compass-with-alternate-footer [class*="pf-v6-c-compass"]:not([class*="footer"])::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: var(--pf-t--global--border--width--regular) dashed var(--pf-t--global--border--color--default);
+  pointer-events: none;
+}
+
+#ws-react-a-compass-with-docked-nav [class*="pf-v6-c-compass"] {
+  position: relative;
+}
+
+#ws-react-a-compass-with-docked-nav [class*="pf-v6-c-compass"]:not([class*="footer"])::after {
   content: "";
   position: absolute;
   inset: 0;

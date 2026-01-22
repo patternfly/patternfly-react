@@ -1,6 +1,7 @@
 ---
 id: Colors for charts
-section: charts
+section: components
+subsection: charts
 hideDarkMode: true
 ---
 

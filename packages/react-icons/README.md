@@ -4,13 +4,13 @@ PatternFly Icons as React Components.
 
 ## Usage
 
-```jsx
+```tsx
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 const closeIcon = <TimesIcon />;
 ```
 
-For a list of the available icons please refer to the [PatternFly react docs](https://react-staging.patternfly.org/icons)
+For a list of the available icons please refer to the [PatternFly react docs](https://pf-react-staging.patternfly.org/icons)
 
 ## Styling icons
 
@@ -67,4 +67,29 @@ module.exports = {
     ]
   ]
 }
+```
+
+## Static SVGs
+
+All icons are also available as static SVG files in `@patternfly/react-icons/dist/static`. The static SVGs include all the same attributes as the React components (viewBox, class names, etc.) to ensure visual consistency.
+
+Static SVGs are useful when you need to:
+- Use icons in non-React contexts, such as static HTML
+- Reference icons via URL or file path
+
+### Usage
+
+You can import or reference static SVG files directly:
+
+```jsx
+// In HTML
+<img src="/icons/static/times-icon.svg" alt="Close" />
+
+// In CSS
+.close-icon {
+  background-image: url('/icons/static/times-icon.svg');
+}
+
+// Direct file path
+import timesIcon from '@patternfly/react-icons/dist/static/times-icon.svg';
 ```

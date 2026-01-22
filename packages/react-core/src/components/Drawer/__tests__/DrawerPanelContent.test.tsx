@@ -122,6 +122,26 @@ test('Renders with role="dialog" when focusTrap.enabled is true', () => {
   expect(screen.getByRole('dialog')).toBeInTheDocument();
 });
 
+test('Does not render with inert when drawer is expanded', () => {
+  render(
+    <Drawer isExpanded>
+      <DrawerPanelContent data-testid="drawer-content">Drawer panel content</DrawerPanelContent>
+    </Drawer>
+  );
+
+  expect(screen.getByTestId('drawer-content')).not.toHaveAttribute('inert');
+});
+
+test('Renders with inert when drawer is collapsed', () => {
+  render(
+    <Drawer>
+      <DrawerPanelContent data-testid="drawer-content">Drawer panel content</DrawerPanelContent>
+    </Drawer>
+  );
+
+  expect(screen.getByTestId('drawer-content')).toHaveAttribute('inert');
+});
+
 test('Applies style prop as expected', () => {
   render(
     <Drawer isExpanded>
@@ -159,7 +179,7 @@ test('Style prop overrides boundaryCssVars', () => {
   });
 });
 
-test(`Renders with class ${styles.modifiers.noGlass} when isPill is true`, () => {
+test(`Renders with class ${styles.modifiers.noGlass} when hasNoGlass is true`, () => {
   render(
     <Drawer isExpanded isPill>
       <DrawerPanelContent hasNoGlass>Drawer panel content</DrawerPanelContent>

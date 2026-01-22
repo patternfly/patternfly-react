@@ -3,6 +3,48 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.5.0-prerelease.11...@patternfly/react-icons@6.5.0-prerelease.12) (2026-01-09)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+# [6.5.0-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.5.0-prerelease.8...@patternfly/react-icons@6.5.0-prerelease.11) (2025-12-16)
+
+### Bug Fixes
+
+- remove rh social icon set ([#12164](https://github.com/patternfly/patternfly-react/issues/12164)) ([8dd01a0](https://github.com/patternfly/patternfly-react/commit/8dd01a0493414e70ee00afada489df12f5fac675))
+
+### Features
+
+- **docked nav:** add support for docked nav layout ([#12175](https://github.com/patternfly/patternfly-react/issues/12175)) ([5519389](https://github.com/patternfly/patternfly-react/commit/55193896b899aa1e2b8dfbbddd644507988ee31f))
+
+# [6.5.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.5.0-prerelease.7...@patternfly/react-icons@6.5.0-prerelease.8) (2025-12-03)
+
+### Features
+
+- **react-icons:** update to create static SVGs ([#12154](https://github.com/patternfly/patternfly-react/issues/12154)) ([3d2fd6f](https://github.com/patternfly/patternfly-react/commit/3d2fd6f1d408961e89b37da15aaffa705205afa9))
+
+# [6.5.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.5.0-prerelease.6...@patternfly/react-icons@6.5.0-prerelease.7) (2025-11-20)
+
+### Features
+
+- **react-icons:** add rhds icons ([#12143](https://github.com/patternfly/patternfly-react/issues/12143)) ([606f717](https://github.com/patternfly/patternfly-react/commit/606f71751312d5652b0b515dd521ef92be4b887d))
+
+# [6.5.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.5.0-prerelease.5...@patternfly/react-icons@6.5.0-prerelease.6) (2025-11-14)
+
+### Bug Fixes
+
+- Moves items to new nav. ([#12013](https://github.com/patternfly/patternfly-react/issues/12013)) ([ddd0696](https://github.com/patternfly/patternfly-react/commit/ddd0696796134c7d0f9583ce56e26b0df47156cb))
+
+### Features
+
+- **Compass:** updated mainheader structure to be composable ([#12135](https://github.com/patternfly/patternfly-react/issues/12135)) ([6bcdcaf](https://github.com/patternfly/patternfly-react/commit/6bcdcaf116645aad4c9c0d98ca61045976a84946))
+
+# [6.5.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.5.0-prerelease.4...@patternfly/react-icons@6.5.0-prerelease.5) (2025-11-12)
+
+### Features
+
+- **Hero:** added component ([#12131](https://github.com/patternfly/patternfly-react/issues/12131)) ([8da87a2](https://github.com/patternfly/patternfly-react/commit/8da87a2615bb6cfc350a52677ec6bdae335bb6f8))
+
 # [6.5.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.5.0-prerelease.3...@patternfly/react-icons@6.5.0-prerelease.4) (2025-11-06)
 
 ### Features

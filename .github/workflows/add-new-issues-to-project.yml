@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Team Membership Checker
+      id: teamcheck
       # You may pin to the exact commit or the version.
       # uses: TheModdingInquisition/actions-team-membership@a69636a92bc927f32c3910baac06bacc949c984c
       uses: TheModdingInquisition/actions-team-membership@v1.0
@@ -27,9 +28,10 @@ jobs:
         # The organization of the team to check for. Defaults to the context organization.
         organization: 'patternfly'
         # If the action should exit if the user is not part of the team.
-        exit: true
+        exit: false
               
     - name: Add label if user is a team member
+      if: steps.teamcheck.outputs.permitted == 'true'
       run: |
         curl -X POST \
           -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \

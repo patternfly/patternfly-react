@@ -15,7 +15,7 @@ section: components
 Include JS code blocks:
 ``````md
 ### Your example title
-```js
+```ts
 import { YourComponent } from '@patternfly/react-core';
 
 BasicExample = () => (

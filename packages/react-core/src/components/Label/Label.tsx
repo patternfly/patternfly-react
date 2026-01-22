@@ -338,7 +338,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     );
   }
 
-  const LabelComponent = (isOverflowLabel ? 'button' : 'span') as any;
+  const LabelComponent = (isOverflowLabel || isAddLabel ? 'button' : 'span') as any;
 
   return (
     <LabelComponent

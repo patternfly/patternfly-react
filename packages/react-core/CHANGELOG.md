@@ -3,6 +3,112 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.27...@patternfly/react-core@6.5.0-prerelease.28) (2026-01-12)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [6.5.0-prerelease.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.26...@patternfly/react-core@6.5.0-prerelease.27) (2026-01-09)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [6.5.0-prerelease.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.25...@patternfly/react-core@6.5.0-prerelease.26) (2026-01-09)
+
+### Bug Fixes
+
+- **Label:** render add variant labels as buttons ([#12192](https://github.com/patternfly/patternfly-react/issues/12192)) ([371d2c0](https://github.com/patternfly/patternfly-react/commit/371d2c09d463e03def196dba354ae9b856e9d4ac))
+
+# [6.5.0-prerelease.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.24...@patternfly/react-core@6.5.0-prerelease.25) (2025-12-17)
+
+### Features
+
+- **ClipboardCopy:** added textinput callbacks and props ([#12180](https://github.com/patternfly/patternfly-react/issues/12180)) ([4f5dcda](https://github.com/patternfly/patternfly-react/commit/4f5dcdae381bb12c9f728716e2be4aa5a8c67cb2))
+
+# [6.5.0-prerelease.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.21...@patternfly/react-core@6.5.0-prerelease.24) (2025-12-16)
+
+### Bug Fixes
+
+- **deps:** update dependency focus-trap to v7.6.6 ([#12102](https://github.com/patternfly/patternfly-react/issues/12102)) ([06af4c5](https://github.com/patternfly/patternfly-react/commit/06af4c503674e3fdb07819b75b53a257a7822579))
+- **DrawerPanelContent:** add inert when drawer is closed ([#12027](https://github.com/patternfly/patternfly-react/issues/12027)) ([8928745](https://github.com/patternfly/patternfly-react/commit/8928745fb7364828ed4d581f30f01146bdc9990e))
+- **Drawer:** update refs in examples ([#12152](https://github.com/patternfly/patternfly-react/issues/12152)) ([2767ce0](https://github.com/patternfly/patternfly-react/commit/2767ce0896ef22bbfea5839905ee5cfedac86a80))
+- fixes broken docs link. ([#12157](https://github.com/patternfly/patternfly-react/issues/12157)) ([80b72de](https://github.com/patternfly/patternfly-react/commit/80b72de8ba9a326375cd0919ff5b81ff5b1ebf7c))
+- **form:** keep required asterisk from orphaning ([#11961](https://github.com/patternfly/patternfly-react/issues/11961)) ([d11c186](https://github.com/patternfly/patternfly-react/commit/d11c186313c9820e674fe1cdce7d630b57a62755))
+- **layouts:** update example css & classnames ([#12145](https://github.com/patternfly/patternfly-react/issues/12145)) ([11fe19a](https://github.com/patternfly/patternfly-react/commit/11fe19a02297d85f50e11375820430b2980bc47b))
+- **Wizard:** Fix crash in nav when first sub-step is hidden ([#12166](https://github.com/patternfly/patternfly-react/issues/12166)) ([3730dcf](https://github.com/patternfly/patternfly-react/commit/3730dcfe2a3f35050ba7e39fed16ead322b39521))
+
+### Features
+
+- **Compass:** add isPill to Drawer by default ([#12151](https://github.com/patternfly/patternfly-react/issues/12151)) ([b2cdf1c](https://github.com/patternfly/patternfly-react/commit/b2cdf1cd5d95be91932e6ac11f39e2c0318e6f72))
+- **docked nav:** add support for docked nav layout ([#12175](https://github.com/patternfly/patternfly-react/issues/12175)) ([5519389](https://github.com/patternfly/patternfly-react/commit/55193896b899aa1e2b8dfbbddd644507988ee31f))
+
+# [6.5.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.20...@patternfly/react-core@6.5.0-prerelease.21) (2025-12-03)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [6.5.0-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.19...@patternfly/react-core@6.5.0-prerelease.20) (2025-12-03)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [6.5.0-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.18...@patternfly/react-core@6.5.0-prerelease.19) (2025-12-01)
+
+### Features
+
+- **Dropdown:** Add optional container with ouiaId ([#12022](https://github.com/patternfly/patternfly-react/issues/12022)) ([0811452](https://github.com/patternfly/patternfly-react/commit/0811452f2720872e19d08a3781d4399368745dc8))
+- **ExpandableSection:** Allow more control over toggle icon ([#12051](https://github.com/patternfly/patternfly-react/issues/12051)) ([07c2bbf](https://github.com/patternfly/patternfly-react/commit/07c2bbfb32491c8f69dfa4261c9e1edb9136d487))
+
+# [6.5.0-prerelease.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.17...@patternfly/react-core@6.5.0-prerelease.18) (2025-11-21)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [6.5.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.16...@patternfly/react-core@6.5.0-prerelease.17) (2025-11-20)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [6.5.0-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.15...@patternfly/react-core@6.5.0-prerelease.16) (2025-11-20)
+
+### Features
+
+- **Compass:** add CompassMainFooter ([#12137](https://github.com/patternfly/patternfly-react/issues/12137)) ([1da6fc2](https://github.com/patternfly/patternfly-react/commit/1da6fc2fb7d1f09ca31cc95069dab87c587639f5))
+
+# [6.5.0-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.14...@patternfly/react-core@6.5.0-prerelease.15) (2025-11-19)
+
+### Features
+
+- **Compass:** add compass nav components ([#12138](https://github.com/patternfly/patternfly-react/issues/12138)) ([4bd98bc](https://github.com/patternfly/patternfly-react/commit/4bd98bc297261f79e4a4a7d351e336cf26a526e4))
+
+# [6.5.0-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.13...@patternfly/react-core@6.5.0-prerelease.14) (2025-11-17)
+
+### Bug Fixes
+
+- **Compass:** get props tables rendering correctly ([#12142](https://github.com/patternfly/patternfly-react/issues/12142)) ([399cbc4](https://github.com/patternfly/patternfly-react/commit/399cbc45844152083d0160d63f953aa7f29479d3))
+
+# [6.5.0-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.12...@patternfly/react-core@6.5.0-prerelease.13) (2025-11-14)
+
+### Bug Fixes
+
+- Moves items to new nav. ([#12013](https://github.com/patternfly/patternfly-react/issues/12013)) ([ddd0696](https://github.com/patternfly/patternfly-react/commit/ddd0696796134c7d0f9583ce56e26b0df47156cb))
+
+### Features
+
+- **Compass:** updated mainheader structure to be composable ([#12135](https://github.com/patternfly/patternfly-react/issues/12135)) ([6bcdcaf](https://github.com/patternfly/patternfly-react/commit/6bcdcaf116645aad4c9c0d98ca61045976a84946))
+
+# [6.5.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.11...@patternfly/react-core@6.5.0-prerelease.12) (2025-11-12)
+
+### Features
+
+- **Hero:** added component ([#12131](https://github.com/patternfly/patternfly-react/issues/12131)) ([8da87a2](https://github.com/patternfly/patternfly-react/commit/8da87a2615bb6cfc350a52677ec6bdae335bb6f8))
+
+# [6.5.0-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.10...@patternfly/react-core@6.5.0-prerelease.11) (2025-11-10)
+
+### Bug Fixes
+
+- Moved compass component to generative ui. ([#12133](https://github.com/patternfly/patternfly-react/issues/12133)) ([bb46849](https://github.com/patternfly/patternfly-react/commit/bb4684986bbd3fdb879aa0ff60e2747150bd3722))
+
+# [6.5.0-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.9...@patternfly/react-core@6.5.0-prerelease.10) (2025-11-10)
+
+### Bug Fixes
+
+- **Compass:** wrap in DrawerContentBody when drawer is passed ([#12127](https://github.com/patternfly/patternfly-react/issues/12127)) ([11e1444](https://github.com/patternfly/patternfly-react/commit/11e144430869d2f4d804c9bb6d9cc2d65a9107d0))
+
 # [6.5.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.8...@patternfly/react-core@6.5.0-prerelease.9) (2025-11-06)
 
 ### Bug Fixes

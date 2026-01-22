@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-icons",
-  "version": "6.5.0-prerelease.4",
+  "version": "6.5.0-prerelease.12",
   "description": "PatternFly 4 Icons as React Components",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -26,14 +26,16 @@
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
     "build:single:packages": "node ../../scripts/build-single-packages.mjs --config single-packages.config.json",
+    "build:esm": "tsc --build tsconfig.json",
     "clean": "rimraf dist src/icons src/index.js src/index.d.ts",
-    "generate": "rimraf dist/esm/icons dist/js/icons && node scripts/writeIcons.mjs"
+    "generate": "rimraf dist/esm/icons dist/js/icons dist/static && yarn build:esm && node scripts/writeIcons.mjs"
   },
   "devDependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "@patternfly/patternfly": "6.5.0-prerelease.19",
+    "@patternfly/patternfly": "6.5.0-prerelease.33",
+    "@rhds/icons": "^2.0.0",
     "fs-extra": "^11.3.0",
     "tslib": "^2.8.1"
   },

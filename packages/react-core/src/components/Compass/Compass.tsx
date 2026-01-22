@@ -1,4 +1,4 @@
-import { Drawer, DrawerContent, DrawerProps } from '../Drawer';
+import { Drawer, DrawerContent, DrawerContentBody, DrawerProps } from '../Drawer';
 import styles from '@patternfly/react-styles/css/components/Compass/compass';
 import { css } from '@patternfly/react-styles';
 
@@ -6,8 +6,10 @@ import compassBackgroundImageLight from '@patternfly/react-tokens/dist/esm/c_com
 import compassBackgroundImageDark from '@patternfly/react-tokens/dist/esm/c_compass_BackgroundImage_dark';
 
 export interface CompassProps extends React.HTMLProps<HTMLDivElement> {
-  /** Additional classes added to the compass. */
+  /** Additional classes added to the Compass. */
   className?: string;
+  /** Content of the docked navigation area of the layout */
+  dock?: React.ReactNode;
   /** Content placed at the top of the layout */
   header?: React.ReactNode;
   /** Flag indicating if the header is expanded */
@@ -30,14 +32,15 @@ export interface CompassProps extends React.HTMLProps<HTMLDivElement> {
   drawerContent?: React.ReactNode;
   /** Additional props passed to the drawer */
   drawerProps?: DrawerProps;
-  /** Light theme background image path of the compass */
+  /** Light theme background image path of the Compass  */
   backgroundSrcLight?: string;
-  /** Dark theme background image path of the compass */
+  /** Dark theme background image path of the Compass  */
   backgroundSrcDark?: string;
 }
 
 export const Compass: React.FunctionComponent<CompassProps> = ({
   className,
+  dock,
   header,
   isHeaderExpanded = true,
   sidebarStart,
@@ -52,7 +55,7 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
   backgroundSrcLight,
   backgroundSrcDark,
   ...props
-}) => {
+}: CompassProps) => {
   const hasDrawer = drawerContent !== undefined;
 
   const backgroundImageStyles: { [key: string]: string } = {};
@@ -64,39 +67,54 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
   }
 
   const compassContent = (
-    <div className={css(styles.compass, className)} {...props} style={{ ...props.style, ...backgroundImageStyles }}>
-      <div
-        className={css(styles.compassHeader, isHeaderExpanded && 'pf-m-expanded')}
-        {...(!isHeaderExpanded && { inert: 'true' })}
-      >
-        {header}
-      </div>
-      <div
-        className={css(styles.compassSidebar, styles.modifiers.start, isSidebarStartExpanded && 'pf-m-expanded')}
-        {...(!isSidebarStartExpanded && { inert: 'true' })}
-      >
-        {sidebarStart}
-      </div>
-      <div className={css(styles.compassMain)}>{main}</div>
-      <div
-        className={css(styles.compassSidebar, styles.modifiers.end, isSidebarEndExpanded && 'pf-m-expanded')}
-        {...(!isSidebarEndExpanded && { inert: 'true' })}
-      >
-        {sidebarEnd}
-      </div>
-      <div
-        className={css(styles.compassFooter, isFooterExpanded && 'pf-m-expanded')}
-        {...(!isFooterExpanded && { inert: 'true' })}
-      >
-        {footer}
-      </div>
+    <div
+      className={css(styles.compass, dock !== undefined && styles.modifiers.dock, className)}
+      {...props}
+      style={{ ...props.style, ...backgroundImageStyles }}
+    >
+      {dock && <div className={css(`${styles.compass}__dock`)}>{dock}</div>}
+      {header && (
+        <div
+          className={css(styles.compassHeader, isHeaderExpanded && 'pf-m-expanded')}
+          {...(!isHeaderExpanded && { inert: 'true' })}
+        >
+          {header}
+        </div>
+      )}
+      {sidebarStart && (
+        <div
+          className={css(styles.compassSidebar, styles.modifiers.start, isSidebarStartExpanded && 'pf-m-expanded')}
+          {...(!isSidebarStartExpanded && { inert: 'true' })}
+        >
+          {sidebarStart}
+        </div>
+      )}
+      {main && <div className={css(styles.compassMain)}>{main}</div>}
+      {sidebarEnd && (
+        <div
+          className={css(styles.compassSidebar, styles.modifiers.end, isSidebarEndExpanded && 'pf-m-expanded')}
+          {...(!isSidebarEndExpanded && { inert: 'true' })}
+        >
+          {sidebarEnd}
+        </div>
+      )}
+      {footer && (
+        <div
+          className={css(styles.compassFooter, isFooterExpanded && 'pf-m-expanded')}
+          {...(!isFooterExpanded && { inert: 'true' })}
+        >
+          {footer}
+        </div>
+      )}
     </div>
   );
 
   if (hasDrawer) {
     return (
-      <Drawer {...drawerProps}>
-        <DrawerContent panelContent={drawerContent}>{compassContent}</DrawerContent>
+      <Drawer isPill {...drawerProps}>
+        <DrawerContent panelContent={drawerContent}>
+          <DrawerContentBody>{compassContent}</DrawerContentBody>
+        </DrawerContent>
       </Drawer>
     );
   }

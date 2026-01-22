@@ -3,6 +3,100 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.5.0-prerelease.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.30...@patternfly/react-docs@7.5.0-prerelease.31) (2026-01-12)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.29...@patternfly/react-docs@7.5.0-prerelease.30) (2026-01-09)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.28...@patternfly/react-docs@7.5.0-prerelease.29) (2026-01-09)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.27...@patternfly/react-docs@7.5.0-prerelease.28) (2025-12-17)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.26...@patternfly/react-docs@7.5.0-prerelease.27) (2025-12-17)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.23...@patternfly/react-docs@7.5.0-prerelease.26) (2025-12-16)
+
+### Features
+
+- **docked nav:** add support for docked nav layout ([#12175](https://github.com/patternfly/patternfly-react/issues/12175)) ([5519389](https://github.com/patternfly/patternfly-react/commit/55193896b899aa1e2b8dfbbddd644507988ee31f))
+
+# [7.5.0-prerelease.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.22...@patternfly/react-docs@7.5.0-prerelease.23) (2025-12-03)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.21...@patternfly/react-docs@7.5.0-prerelease.22) (2025-12-03)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.20...@patternfly/react-docs@7.5.0-prerelease.21) (2025-12-01)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.19...@patternfly/react-docs@7.5.0-prerelease.20) (2025-11-21)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.18...@patternfly/react-docs@7.5.0-prerelease.19) (2025-11-21)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.17...@patternfly/react-docs@7.5.0-prerelease.18) (2025-11-20)
+
+### Features
+
+- **react-icons:** add rhds icons ([#12143](https://github.com/patternfly/patternfly-react/issues/12143)) ([606f717](https://github.com/patternfly/patternfly-react/commit/606f71751312d5652b0b515dd521ef92be4b887d))
+
+# [7.5.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.16...@patternfly/react-docs@7.5.0-prerelease.17) (2025-11-20)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.15...@patternfly/react-docs@7.5.0-prerelease.16) (2025-11-19)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.14...@patternfly/react-docs@7.5.0-prerelease.15) (2025-11-17)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.13...@patternfly/react-docs@7.5.0-prerelease.14) (2025-11-14)
+
+### Bug Fixes
+
+- Moves items to new nav. ([#12013](https://github.com/patternfly/patternfly-react/issues/12013)) ([ddd0696](https://github.com/patternfly/patternfly-react/commit/ddd0696796134c7d0f9583ce56e26b0df47156cb))
+
+### Features
+
+- **Compass:** updated mainheader structure to be composable ([#12135](https://github.com/patternfly/patternfly-react/issues/12135)) ([6bcdcaf](https://github.com/patternfly/patternfly-react/commit/6bcdcaf116645aad4c9c0d98ca61045976a84946))
+
+# [7.5.0-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.12...@patternfly/react-docs@7.5.0-prerelease.13) (2025-11-12)
+
+### Features
+
+- **Hero:** added component ([#12131](https://github.com/patternfly/patternfly-react/issues/12131)) ([8da87a2](https://github.com/patternfly/patternfly-react/commit/8da87a2615bb6cfc350a52677ec6bdae335bb6f8))
+
+# [7.5.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.11...@patternfly/react-docs@7.5.0-prerelease.12) (2025-11-10)
+
+### Bug Fixes
+
+- Added missing docs config side nav. ([#12134](https://github.com/patternfly/patternfly-react/issues/12134)) ([f301d54](https://github.com/patternfly/patternfly-react/commit/f301d5424a368b736d4b92157185200840da869e))
+
+# [7.5.0-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.10...@patternfly/react-docs@7.5.0-prerelease.11) (2025-11-10)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.9...@patternfly/react-docs@7.5.0-prerelease.10) (2025-11-10)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
 # [7.5.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.8...@patternfly/react-docs@7.5.0-prerelease.9) (2025-11-06)
 
 ### Features
