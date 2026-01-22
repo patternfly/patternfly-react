@@ -23,7 +23,6 @@ describe('ToolbarItem', () => {
           </ToolbarItem>
         );
         const bpWrapClass = bp === 'default' ? 'pf-m-wrap' : `pf-m-wrap-on-${bp}`;
-
         expect(screen.getByTestId('toolbaritem')).toHaveClass(bpWrapClass);
       });
 
@@ -41,17 +40,17 @@ describe('ToolbarItem', () => {
 
   describe('ToolbarItem widths', () => {
     const bps = ['default', 'sm', 'md', 'lg', 'xl', '2xl'];
-    const sizes = ['sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'];
+    const widths = ['100px', '3rem', '50%', '200px'];
 
     describe.each(bps)('widths at various breakpoints', (bp) => {
-      it.each(sizes)(`applies width CSS var when widths is set to %s at ${bp}`, (size) => {
+      it.each(widths)(`applies width CSS var when widths is set to %s at ${bp}`, (width) => {
         render(
-          <ToolbarItem data-testid="toolbaritem" widths={{ [bp]: size }}>
+          <ToolbarItem data-testid="toolbaritem" widths={{ [bp]: width }}>
             Test
           </ToolbarItem>
         );
         const styleAttr = screen.getByTestId('toolbaritem').getAttribute('style') || '';
-        const cssVarName = `${(toolbarItemWidth as any).name}${bp === 'default' ? '' : `-on-${bp}`}`;
+        const cssVarName = `${toolbarItemWidth.name}${bp === 'default' ? '' : `-on-${bp}`}`;
         expect(styleAttr).toContain(cssVarName);
       });
     });
