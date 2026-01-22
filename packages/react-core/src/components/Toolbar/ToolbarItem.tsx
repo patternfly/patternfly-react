@@ -1,3 +1,4 @@
+import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import { formatBreakpointMods, setBreakpointCssVars, toCamel } from '../../helpers/util';
@@ -18,15 +19,20 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** A type modifier which modifies spacing specifically depending on the type of item */
   variant?: ToolbarItemVariant | 'pagination' | 'label' | 'label-group' | 'separator' | 'expand-all';
-  /** Width modifier at various breakpoints */
+
+  /**
+   * Width modifier at various breakpoints.
+   * Accepts valid CSS width values (e.g. '200px', '3rem', '50%').
+   */
   widths?: {
-    default?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
-    sm?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
-    md?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
-    lg?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
-    xl?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
-    '2xl'?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
+    default?: string;
+    sm?: string;
+    md?: string;
+    lg?: string;
+    xl?: string;
+    '2xl'?: string;
   };
+
   /** Indicates whether a flex grow modifier of 1 is applied at various breakpoints */
   flexGrow?: {
     default?: 'flexGrow';
@@ -36,6 +42,7 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'flexGrow';
     '2xl'?: 'flexGrow';
   };
+
   /** Visibility at various breakpoints. */
   visibility?: {
     default?: 'hidden' | 'visible';
@@ -44,7 +51,8 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'hidden' | 'visible';
     '2xl'?: 'hidden' | 'visible';
   };
-  /** Applies to a child of a flex layout, and aligns that child (and any adjacent children on the other side of it) to one side of the main axis */
+
+  /** Applies to a child of a flex layout, and aligns that child to one side of the main axis */
   align?: {
     default?: 'alignEnd' | 'alignStart' | 'alignCenter';
     md?: 'alignEnd' | 'alignStart' | 'alignCenter';
@@ -52,10 +60,12 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'alignEnd' | 'alignStart' | 'alignCenter';
     '2xl'?: 'alignEnd' | 'alignStart' | 'alignCenter';
   };
+
   /** Vertical alignment of children */
   alignItems?: 'start' | 'center' | 'baseline' | 'default' | 'end' | 'stretch';
   /** Vertical alignment */
   alignSelf?: 'start' | 'center' | 'baseline' | 'default' | 'end' | 'stretch';
+
   /** Sets both the column and row gap at various breakpoints. */
   gap?: {
     default?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
@@ -64,6 +74,7 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
     '2xl'?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
   };
+
   /** Sets only the column gap at various breakpoints. */
   columnGap?: {
     default?:
@@ -117,6 +128,7 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
       | 'columnGap_3xl'
       | 'columnGap_4xl';
   };
+
   /** Sets only the row gap at various breakpoints. */
   rowGap?: {
     default?:
@@ -170,6 +182,7 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
       | 'rowGap_3xl'
       | 'rowGap_4xl';
   };
+
   /** Value to set for row wrapping at various breakpoints */
   rowWrap?: {
     default?: 'wrap' | 'nowrap';
@@ -179,11 +192,12 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'wrap' | 'nowrap';
     '2xl'?: 'wrap' | 'nowrap';
   };
+
   /** id for this data toolbar item */
   id?: string;
   /** Flag indicating if the expand-all variant is expanded or not */
   isAllExpanded?: boolean;
-  /** Flag that modifies the toolbar item to hide overflow and respond to available space. Used for horizontal navigation. */
+  /** Flag that modifies the toolbar item to hide overflow and respond to available space */
   isOverflowContainer?: boolean;
   /** Content to be rendered inside the data toolbar item */
   children?: React.ReactNode;
@@ -244,35 +258,13 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
             formatBreakpointMods(columnGap, styles, '', getBreakpoint(width)),
             formatBreakpointMods(rowGap, styles, '', getBreakpoint(width)),
             formatBreakpointMods(rowWrap, styles, '', getBreakpoint(width)),
-            className,
-            formatBreakpointMods(flexGrow, styles, '', getBreakpoint(width))
+            formatBreakpointMods(flexGrow, styles, '', getBreakpoint(width)),
+            className
           )}
           style={{
             ...style,
-            ...(widths
-              ? setBreakpointCssVars(
-                  Object.entries(widths).reduce(
-                    (acc, [bp, size]) => {
-                      if (!size) {
-                        return acc;
-                      }
-                      const cssVarValueMap: Record<string, string> = {
-                        sm: 'var(--pf-c-toolbar__item--m-w-sm--Width)',
-                        md: 'var(--pf-c-toolbar__item--m-w-md--Width)',
-                        lg: 'var(--pf-c-toolbar__item--m-w-lg--Width)',
-                        xl: 'var(--pf-c-toolbar__item--m-w-xl--Width)',
-                        '2xl': 'var(--pf-c-toolbar__item--m-w-2xl--Width)',
-                        '3xl': 'var(--pf-c-toolbar__item--m-w-3xl--Width)',
-                        '4xl': 'var(--pf-c-toolbar__item--m-w-4xl--Width)'
-                      };
-                      const value = cssVarValueMap[size as keyof typeof cssVarValueMap];
-                      return value ? { ...acc, [bp]: value } : acc;
-                    },
-                    {} as Record<string, string>
-                  ),
-                  (c_toolbar__item_Width as any).name
-                )
-              : undefined)
+            // Apply responsive widths using PatternFly helper
+            ...(widths ? setBreakpointCssVars(widths, c_toolbar__item_Width.name) : undefined)
           }}
           {...(variant === 'label' && { 'aria-hidden': true })}
           id={id}
@@ -285,4 +277,5 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
     </PageContext.Consumer>
   );
 };
+
 ToolbarItem.displayName = 'ToolbarItem';
