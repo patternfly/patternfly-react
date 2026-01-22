@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { FunctionComponent, ReactNode } from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import { formatBreakpointMods, setBreakpointCssVars, toCamel } from '../../helpers/util';
-import c_toolbar__item_Width from '@patternfly/react-tokens/dist/esm/c_toolbar__item_Width';
+import toolbarItemWidth from '@patternfly/react-tokens/dist/esm/c_toolbar__item_Width';
 import { Divider } from '../Divider';
 import { PageContext } from '../Page/PageContext';
 
@@ -15,15 +15,9 @@ export enum ToolbarItemVariant {
 }
 
 export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
-  /** Classes applied to root element of the data toolbar item */
   className?: string;
-  /** A type modifier which modifies spacing specifically depending on the type of item */
   variant?: ToolbarItemVariant | 'pagination' | 'label' | 'label-group' | 'separator' | 'expand-all';
 
-  /**
-   * Width modifier at various breakpoints.
-   * Accepts valid CSS width values (e.g. '200px', '3rem', '50%').
-   */
   widths?: {
     default?: string;
     sm?: string;
@@ -33,7 +27,6 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     '2xl'?: string;
   };
 
-  /** Indicates whether a flex grow modifier of 1 is applied at various breakpoints */
   flexGrow?: {
     default?: 'flexGrow';
     sm?: 'flexGrow';
@@ -43,7 +36,6 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     '2xl'?: 'flexGrow';
   };
 
-  /** Visibility at various breakpoints. */
   visibility?: {
     default?: 'hidden' | 'visible';
     md?: 'hidden' | 'visible';
@@ -52,7 +44,6 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     '2xl'?: 'hidden' | 'visible';
   };
 
-  /** Applies to a child of a flex layout, and aligns that child to one side of the main axis */
   align?: {
     default?: 'alignEnd' | 'alignStart' | 'alignCenter';
     md?: 'alignEnd' | 'alignStart' | 'alignCenter';
@@ -61,12 +52,9 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     '2xl'?: 'alignEnd' | 'alignStart' | 'alignCenter';
   };
 
-  /** Vertical alignment of children */
   alignItems?: 'start' | 'center' | 'baseline' | 'default' | 'end' | 'stretch';
-  /** Vertical alignment */
   alignSelf?: 'start' | 'center' | 'baseline' | 'default' | 'end' | 'stretch';
 
-  /** Sets both the column and row gap at various breakpoints. */
   gap?: {
     default?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
     md?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
@@ -75,7 +63,6 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     '2xl'?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
   };
 
-  /** Sets only the column gap at various breakpoints. */
   columnGap?: {
     default?:
       | 'columnGapNone'
@@ -129,7 +116,6 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
       | 'columnGap_4xl';
   };
 
-  /** Sets only the row gap at various breakpoints. */
   rowGap?: {
     default?:
       | 'rowGapNone'
@@ -183,7 +169,6 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
       | 'rowGap_4xl';
   };
 
-  /** Value to set for row wrapping at various breakpoints */
   rowWrap?: {
     default?: 'wrap' | 'nowrap';
     sm?: 'wrap' | 'nowrap';
@@ -193,17 +178,13 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     '2xl'?: 'wrap' | 'nowrap';
   };
 
-  /** id for this data toolbar item */
   id?: string;
-  /** Flag indicating if the expand-all variant is expanded or not */
   isAllExpanded?: boolean;
-  /** Flag that modifies the toolbar item to hide overflow and respond to available space */
   isOverflowContainer?: boolean;
-  /** Content to be rendered inside the data toolbar item */
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
-export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
+export const ToolbarItem: FunctionComponent<ToolbarItemProps> = ({
   className,
   variant,
   visibility,
@@ -240,6 +221,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
     <PageContext.Consumer>
       {({ width, getBreakpoint }) => (
         <div
+          data-testid="toolbaritem"
           className={css(
             styles.toolbarItem,
             variant && styles.modifiers[toCamel(variant) as 'pagination' | 'label'],
@@ -263,8 +245,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
           )}
           style={{
             ...style,
-            // Apply responsive widths using PatternFly helper
-            ...(widths ? setBreakpointCssVars(widths, c_toolbar__item_Width.name) : undefined)
+            ...(widths ? setBreakpointCssVars(widths, toolbarItemWidth.name) : undefined)
           }}
           {...(variant === 'label' && { 'aria-hidden': true })}
           id={id}

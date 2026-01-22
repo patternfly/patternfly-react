@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { ToolbarItem } from '../ToolbarItem';
-import c_toolbar__item_Width from '@patternfly/react-tokens/dist/esm/c_toolbar__item_Width';
+import toolbarItemWidth from '@patternfly/react-tokens/dist/esm/c_toolbar__item_Width';
 
 describe('ToolbarItem', () => {
   it('should render with pf-m-overflow-container when isOverflowContainer is set', () => {
@@ -51,7 +51,7 @@ describe('ToolbarItem', () => {
           </ToolbarItem>
         );
         const styleAttr = screen.getByTestId('toolbaritem').getAttribute('style') || '';
-        const cssVarName = `${(c_toolbar__item_Width as any).name}${bp === 'default' ? '' : `-on-${bp}`}`;
+        const cssVarName = `${(toolbarItemWidth as any).name}${bp === 'default' ? '' : `-on-${bp}`}`;
         expect(styleAttr).toContain(cssVarName);
       });
     });
