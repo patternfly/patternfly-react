@@ -30,7 +30,7 @@
     "@patternfly/react-drag-drop": "workspace:^",
     "@patternfly/react-icons": "workspace:^",
     "@patternfly/react-styles": "workspace:^",
-    "@patternfly/react-table": "workspace:^",
+    "@patternfly/react-table": "0.1.0",
     "@patternfly/react-templates": "workspace:^",
     "@patternfly/react-tokens": "workspace:^",
     "echarts": "^5.6.0 || ^6.0.0",
