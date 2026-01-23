@@ -28,12 +28,12 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   };
 
   flexGrow?: {
-    default?: 'flexGrow';
-    sm?: 'flexGrow';
-    md?: 'flexGrow';
-    lg?: 'flexGrow';
-    xl?: 'flexGrow';
-    '2xl'?: 'flexGrow';
+    default?: boolean;
+    sm?: boolean;
+    md?: boolean;
+    lg?: boolean;
+    xl?: boolean;
+    '2xl'?: boolean;
   };
 
   visibility?: {
@@ -56,117 +56,30 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   alignSelf?: 'start' | 'center' | 'baseline' | 'default' | 'end' | 'stretch';
 
   gap?: {
-    default?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
-    md?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
-    lg?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
-    xl?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
-    '2xl'?: 'gapNone' | 'gapXs' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap_2xl' | 'gap_3xl' | 'gap_4xl';
+    default?: 'gapNone' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl';
+    sm?: 'gapNone' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl';
+    md?: 'gapNone' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl';
+    lg?: 'gapNone' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl';
+    xl?: 'gapNone' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl';
+    '2xl'?: 'gapNone' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl';
   };
 
   columnGap?: {
-    default?:
-      | 'columnGapNone'
-      | 'columnGapXs'
-      | 'columnGapSm'
-      | 'columnGapMd'
-      | 'columnGapLg'
-      | 'columnGapXl'
-      | 'columnGap_2xl'
-      | 'columnGap_3xl'
-      | 'columnGap_4xl';
-    md?:
-      | 'columnGapNone'
-      | 'columnGapXs'
-      | 'columnGapSm'
-      | 'columnGapMd'
-      | 'columnGapLg'
-      | 'columnGapXl'
-      | 'columnGap_2xl'
-      | 'columnGap_3xl'
-      | 'columnGap_4xl';
-    lg?:
-      | 'columnGapNone'
-      | 'columnGapXs'
-      | 'columnGapSm'
-      | 'columnGapMd'
-      | 'columnGapLg'
-      | 'columnGapXl'
-      | 'columnGap_2xl'
-      | 'columnGap_3xl'
-      | 'columnGap_4xl';
-    xl?:
-      | 'columnGapNone'
-      | 'columnGapXs'
-      | 'columnGapSm'
-      | 'columnGapMd'
-      | 'columnGapLg'
-      | 'columnGapXl'
-      | 'columnGap_2xl'
-      | 'columnGap_3xl'
-      | 'columnGap_4xl';
-    '2xl'?:
-      | 'columnGapNone'
-      | 'columnGapXs'
-      | 'columnGapSm'
-      | 'columnGapMd'
-      | 'columnGapLg'
-      | 'columnGapXl'
-      | 'columnGap_2xl'
-      | 'columnGap_3xl'
-      | 'columnGap_4xl';
+    default?: 'columnGapNone' | 'columnGapSm' | 'columnGapMd' | 'columnGapLg' | 'columnGapXl' | 'columnGap2xl';
+    sm?: 'columnGapNone' | 'columnGapSm' | 'columnGapMd' | 'columnGapLg' | 'columnGapXl' | 'columnGap2xl';
+    md?: 'columnGapNone' | 'columnGapSm' | 'columnGapMd' | 'columnGapLg' | 'columnGapXl' | 'columnGap2xl';
+    lg?: 'columnGapNone' | 'columnGapSm' | 'columnGapMd' | 'columnGapLg' | 'columnGapXl' | 'columnGap2xl';
+    xl?: 'columnGapNone' | 'columnGapSm' | 'columnGapMd' | 'columnGapLg' | 'columnGapXl' | 'columnGap2xl';
+    '2xl'?: 'columnGapNone' | 'columnGapSm' | 'columnGapMd' | 'columnGapLg' | 'columnGapXl' | 'columnGap2xl';
   };
 
   rowGap?: {
-    default?:
-      | 'rowGapNone'
-      | 'rowGapXs'
-      | 'rowGapSm'
-      | 'rowGapMd'
-      | 'rowGapLg'
-      | 'rowGapXl'
-      | 'rowGap_2xl'
-      | 'rowGap_3xl'
-      | 'rowGap_4xl';
-    md?:
-      | 'rowGapNone'
-      | 'rowGapXs'
-      | 'rowGapSm'
-      | 'rowGapMd'
-      | 'rowGapLg'
-      | 'rowGapXl'
-      | 'rowGap_2xl'
-      | 'rowGap_3xl'
-      | 'rowGap_4xl';
-    lg?:
-      | 'rowGapNone'
-      | 'rowGapXs'
-      | 'rowGapSm'
-      | 'rowGapMd'
-      | 'rowGapLg'
-      | 'rowGapXl'
-      | 'rowGap_2xl'
-      | 'rowGap_3xl'
-      | 'rowGap_4xl';
-    xl?:
-      | 'rowGapNone'
-      | 'rowGapXs'
-      | 'rowGapSm'
-      | 'rowGapMd'
-      | 'rowGapLg'
-      | 'rowGapXl'
-      | 'rowGap_2xl'
-      | 'rowGap_3xl'
-      | 'rowGap_4xl';
-    '2xl'?:
-      | 'rowGapNone'
-      | 'rowGapXs'
-      | 'rowGapSm'
-      | 'rowGapMd'
-      | 'rowGapLg'
-      | 'rowGapXl'
-      | 'rowGap_2xl'
-      | 'rowGap_3xl'
-      | 'rowGap_4xl';
+    default?: 'rowGapNone' | 'rowGapSm' | 'rowGapMd' | 'rowGapLg' | 'rowGapXl' | 'rowGap2xl';
+    sm?: 'rowGapNone' | 'rowGapSm' | 'rowGapMd' | 'rowGapLg' | 'rowGapXl' | 'rowGap2xl';
+    md?: 'rowGapNone' | 'rowGapSm' | 'rowGapMd' | 'rowGapLg' | 'rowGapXl' | 'rowGap2xl';
+    lg?: 'rowGapNone' | 'rowGapSm' | 'rowGapMd' | 'rowGapLg' | 'rowGapXl' | 'rowGap2xl';
+    xl?: 'rowGapNone' | 'rowGapSm' | 'rowGapMd' | 'rowGapLg' | 'rowGapXl' | 'rowGap2xl';
+    '2xl'?: 'rowGapNone' | 'rowGapSm' | 'rowGapMd' | 'rowGapLg' | 'rowGapXl' | 'rowGap2xl';
   };
 
   rowWrap?: {
@@ -221,7 +134,6 @@ export const ToolbarItem: FunctionComponent<ToolbarItemProps> = ({
     <PageContext.Consumer>
       {({ width, getBreakpoint }) => (
         <div
-          data-testid="toolbaritem"
           className={css(
             styles.toolbarItem,
             variant && styles.modifiers[toCamel(variant) as 'pagination' | 'label'],
