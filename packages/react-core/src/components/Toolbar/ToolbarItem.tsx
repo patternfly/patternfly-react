@@ -27,6 +27,7 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     '2xl'?: string;
   };
 
+  // ✅ Updated: flexGrow will be boolean in props, converted to string for formatBreakpointMods
   flexGrow?: {
     default?: boolean;
     sm?: boolean;
@@ -55,32 +56,9 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   alignItems?: 'start' | 'center' | 'baseline' | 'default' | 'end' | 'stretch';
   alignSelf?: 'start' | 'center' | 'baseline' | 'default' | 'end' | 'stretch';
 
-  gap?: {
-    default?: 'gapNone' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl';
-    sm?: 'gapNone' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl';
-    md?: 'gapNone' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl';
-    lg?: 'gapNone' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl';
-    xl?: 'gapNone' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl';
-    '2xl'?: 'gapNone' | 'gapSm' | 'gapMd' | 'gapLg' | 'gapXl' | 'gap2xl';
-  };
-
-  columnGap?: {
-    default?: 'columnGapNone' | 'columnGapSm' | 'columnGapMd' | 'columnGapLg' | 'columnGapXl' | 'columnGap2xl';
-    sm?: 'columnGapNone' | 'columnGapSm' | 'columnGapMd' | 'columnGapLg' | 'columnGapXl' | 'columnGap2xl';
-    md?: 'columnGapNone' | 'columnGapSm' | 'columnGapMd' | 'columnGapLg' | 'columnGapXl' | 'columnGap2xl';
-    lg?: 'columnGapNone' | 'columnGapSm' | 'columnGapMd' | 'columnGapLg' | 'columnGapXl' | 'columnGap2xl';
-    xl?: 'columnGapNone' | 'columnGapSm' | 'columnGapMd' | 'columnGapLg' | 'columnGapXl' | 'columnGap2xl';
-    '2xl'?: 'columnGapNone' | 'columnGapSm' | 'columnGapMd' | 'columnGapLg' | 'columnGapXl' | 'columnGap2xl';
-  };
-
-  rowGap?: {
-    default?: 'rowGapNone' | 'rowGapSm' | 'rowGapMd' | 'rowGapLg' | 'rowGapXl' | 'rowGap2xl';
-    sm?: 'rowGapNone' | 'rowGapSm' | 'rowGapMd' | 'rowGapLg' | 'rowGapXl' | 'rowGap2xl';
-    md?: 'rowGapNone' | 'rowGapSm' | 'rowGapMd' | 'rowGapLg' | 'rowGapXl' | 'rowGap2xl';
-    lg?: 'rowGapNone' | 'rowGapSm' | 'rowGapMd' | 'rowGapLg' | 'rowGapXl' | 'rowGap2xl';
-    xl?: 'rowGapNone' | 'rowGapSm' | 'rowGapMd' | 'rowGapLg' | 'rowGapXl' | 'rowGap2xl';
-    '2xl'?: 'rowGapNone' | 'rowGapSm' | 'rowGapMd' | 'rowGapLg' | 'rowGapXl' | 'rowGap2xl';
-  };
+  gap?: any;
+  columnGap?: any;
+  rowGap?: any;
 
   rowWrap?: {
     default?: 'wrap' | 'nowrap';
@@ -130,6 +108,13 @@ export const ToolbarItem: FunctionComponent<ToolbarItemProps> = ({
     );
   }
 
+  // ✅ Convert boolean flexGrow to string for PatternFly
+  const flexGrowMods =
+    flexGrow &&
+    Object.fromEntries(
+      Object.entries(flexGrow).map(([key, value]) => [key, value ? 'flexGrow' : undefined])
+    );
+
   return (
     <PageContext.Consumer>
       {({ width, getBreakpoint }) => (
@@ -152,7 +137,7 @@ export const ToolbarItem: FunctionComponent<ToolbarItemProps> = ({
             formatBreakpointMods(columnGap, styles, '', getBreakpoint(width)),
             formatBreakpointMods(rowGap, styles, '', getBreakpoint(width)),
             formatBreakpointMods(rowWrap, styles, '', getBreakpoint(width)),
-            formatBreakpointMods(flexGrow, styles, '', getBreakpoint(width)),
+            formatBreakpointMods(flexGrowMods, styles, '', getBreakpoint(width)),
             className
           )}
           style={{
