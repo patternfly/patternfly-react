@@ -21,13 +21,24 @@ const getRegexMatches = (string, regex) => {
   return res;
 };
 
-const getDeclarations = (cssAst) =>
+const getLightThemeDeclarations = (cssAst) =>
   cssAst.stylesheet.rules
     .filter(
       (node) =>
         node.type === 'rule' &&
         !node.selectors.includes(`.pf-${version}-t-dark`) &&
         (!node.selectors || !node.selectors.some((item) => item.includes(`.pf-${version}-theme-dark`))) // exclude dark theme blocks since dark theme variable values override default token values
+    )
+    .map((node) => node.declarations.filter((decl) => decl.type === 'declaration'))
+    .reduce((acc, val) => acc.concat(val), []); // flatten
+
+const getDarkThemeDeclarations = (cssAst) =>
+  cssAst.stylesheet.rules
+    .filter(
+      (node) =>
+        node.type === 'rule' &&
+        node.selectors &&
+        node.selectors.some((item) => item.includes(`:where(.pf-${version}-theme-dark)`))
     )
     .map((node) => node.declarations.filter((decl) => decl.type === 'declaration'))
     .reduce((acc, val) => acc.concat(val), []); // flatten
@@ -49,7 +60,7 @@ const getLocalVarsMap = (cssFiles) => {
   cssFiles.forEach((filePath) => {
     const cssAst = parse(readFileSync(filePath, 'utf8'));
 
-    getDeclarations(cssAst).forEach(({ property, value, parent }) => {
+    getLightThemeDeclarations(cssAst).forEach(({ property, value, parent }) => {
       if (res[property]) {
         // Accounts for multiple delcarations out of root scope.
         // TODO: revamp CSS var mapping
@@ -61,6 +72,25 @@ const getLocalVarsMap = (cssFiles) => {
           [parent.selectors[0]]: value
         };
       } else if (property.startsWith('--pf-t')) {
+        res[property] = {
+          ...res[property],
+          [parent.selectors[0]]: value
+        };
+      }
+    });
+  });
+
+  return res;
+};
+
+const getDarkLocalVarsMap = (cssFiles) => {
+  const res = {};
+
+  cssFiles.forEach((filePath) => {
+    const cssAst = parse(readFileSync(filePath, 'utf8'));
+
+    getDarkThemeDeclarations(cssAst).forEach(({ property, value, parent }) => {
+      if (property.startsWith(`--pf-${version}`) || property.startsWith('--pf-t')) {
         res[property] = {
           ...res[property],
           [parent.selectors[0]]: value
@@ -113,13 +143,26 @@ export function generateTokens() {
   const cssGlobalVariablesAst = parse(
     readFileSync(require.resolve('@patternfly/patternfly/base/patternfly-variables.css'), 'utf8')
   );
+
+  // Get dark theme variables map BEFORE filtering out dark theme rules
+  const cssGlobalVariablesDarkMap = {};
+  getDarkThemeDeclarations(cssGlobalVariablesAst).forEach(({ property, value }) => {
+    if (property.startsWith('--pf')) {
+      cssGlobalVariablesDarkMap[property] = value;
+    }
+  });
+
+  // Filter light theme variables (exclude dark theme)
   cssGlobalVariablesAst.stylesheet.rules = cssGlobalVariablesAst.stylesheet.rules.filter(
     (node) => !node.selectors || !node.selectors.some((item) => item.includes(`.pf-${version}-theme-dark`))
   );
 
-  const cssGlobalVariablesMap = getRegexMatches(stringify(cssGlobalVariablesAst), /(--pf-[\w-]*):\s*([\w -_]+);/g);
+  const cssGlobalVariablesMap = {
+    ...getRegexMatches(stringify(cssGlobalVariablesAst), /(--pf-v6-[\w-]*):\s*([\w -_().]+);/g),
+    ...getRegexMatches(stringify(cssGlobalVariablesAst), /(--pf-t--[\w-]*):\s*([^;]+);/g)
+  };
 
-  const getComputedCSSVarValue = (value, selector, varMap) =>
+  const getComputedCSSVarValue = (value, selector, varMap, isDark = false) =>
     value.replace(/var\(([\w-]*)(,.*)?\)/g, (full, m1, m2) => {
       if (m1.startsWith(`--pf-${version}-global`)) {
         if (varMap[m1]) {
@@ -127,9 +170,21 @@ export function generateTokens() {
         } else {
           return full;
         }
+      } else if (m1.startsWith('--pf-t')) {
+        // For semantic tokens, check if they exist in the map
+        if (varMap[m1]) {
+          return varMap[m1] + (m2 || '');
+        } else {
+          // If not found in global map, try to resolve from local variables (e.g., chart tokens)
+          if (selector) {
+            return getFromLocalVarsMap(m1, selector, isDark) + (m2 || '');
+          } else {
+            return full;
+          }
+        }
       } else {
         if (selector) {
-          return getFromLocalVarsMap(m1, selector) + (m2 || '');
+          return getFromLocalVarsMap(m1, selector, isDark) + (m2 || '');
         }
       }
     });
@@ -143,19 +198,20 @@ export function generateTokens() {
       }
     });
 
-  const getVarsMap = (value, selector) => {
+  const getVarsMap = (value, selector, isDark = false) => {
     // evaluate the value and follow the variable chain
     const varsMap = [value];
+    const varMapToUse = isDark ? { ...cssGlobalVariablesMap, ...cssGlobalVariablesDarkMap } : cssGlobalVariablesMap;
 
     let computedValue = value;
     let finalValue = value;
     while (finalValue.includes('var(--pf') || computedValue.includes('var(--pf') || computedValue.includes('$pf-')) {
       // keep following the variable chain until we get to a value
       if (finalValue.includes('var(--pf')) {
-        finalValue = getComputedCSSVarValue(finalValue, selector, cssGlobalVariablesMap);
+        finalValue = getComputedCSSVarValue(finalValue, selector, varMapToUse, isDark);
       }
       if (computedValue.includes('var(--pf')) {
-        computedValue = getComputedCSSVarValue(computedValue, selector);
+        computedValue = getComputedCSSVarValue(computedValue, selector, varMapToUse, isDark);
       } else {
         computedValue = getComputedScssVarValue(computedValue);
       }
@@ -182,21 +238,23 @@ export function generateTokens() {
   // then we need to find:
   // --pf-${version}-c-chip-group--c-chip--MarginBottom: var(--pf-${version}-global--spacer--xs);
   const localVarsMap = getLocalVarsMap(cssFiles);
+  const darkLocalVarsMap = getDarkLocalVarsMap(cssFiles);
 
-  const getFromLocalVarsMap = (match, selector) => {
-    if (localVarsMap[match]) {
+  const getFromLocalVarsMap = (match, selector, isDark = false) => {
+    const varsMap = isDark ? { ...localVarsMap, ...darkLocalVarsMap } : localVarsMap;
+    if (varsMap[match]) {
       // have exact selectors match
-      if (localVarsMap[match][selector]) {
-        return localVarsMap[match][selector];
-      } else if (Object.keys(localVarsMap[match]).length === 1) {
+      if (varsMap[match][selector]) {
+        return varsMap[match][selector];
+      } else if (Object.keys(varsMap[match]).length === 1) {
         // only one match, return its value
-        return Object.values(localVarsMap[match])[0];
+        return Object.values(varsMap[match])[0];
       } else {
         // find the nearest parent selector and return its value
         let bestMatch = '';
         let bestValue = '';
-        for (const key in localVarsMap[match]) {
-          if (localVarsMap[match].hasOwnProperty(key)) {
+        for (const key in varsMap[match]) {
+          if (varsMap[match].hasOwnProperty(key)) {
             // remove trailing * from key to compare
             let sanitizedKey = key.replace(/\*$/, '').trim();
             sanitizedKey = sanitizedKey.replace(/>$/, '').trim();
@@ -206,7 +264,7 @@ export function generateTokens() {
               if (sanitizedKey.length > bestMatch.length) {
                 // longest matching key is the winner
                 bestMatch = key;
-                bestValue = localVarsMap[match][key];
+                bestValue = varsMap[match][key];
               }
             }
           }
@@ -228,8 +286,10 @@ export function generateTokens() {
     const cssAst = parse(readFileSync(filePath, 'utf8'));
     // key is the formatted file name, e.g. c_about_modal_box
     const key = formatFilePathToName(filePath);
+    // darkDeclarations are the dark theme properties within this file
+    const darkDeclarations = getDarkThemeDeclarations(cssAst);
 
-    getDeclarations(cssAst)
+    getLightThemeDeclarations(cssAst)
       .filter(({ property }) => property.startsWith('--pf'))
       .forEach(({ property, value, parent }) => {
         const selector = parent.selectors[0];
@@ -241,6 +301,37 @@ export function generateTokens() {
         };
         if (varsMap.length > 1) {
           propertyObj.values = varsMap;
+        }
+
+        // Check if there's a dark theme override for this property
+        const darkDecl = darkDeclarations.find((decl) => decl.property === property);
+        if (darkDecl) {
+          try {
+            const darkVarsMap = getVarsMap(darkDecl.value, selector, true);
+            propertyObj.darkValue = darkVarsMap[darkVarsMap.length - 1];
+            if (darkVarsMap.length > 1) {
+              propertyObj.darkValues = darkVarsMap;
+            }
+          } catch (e) {
+            // Skip dark value if it can't be resolved
+            // This can happen when dark theme uses variables that don't exist in the light theme
+          }
+        } else if (value.includes('var(--pf')) {
+          // No explicit dark override, but the value references other variables.
+          // Try to resolve the dark value through the dependency chain.
+          try {
+            const darkVarsMap = getVarsMap(value, selector, true);
+            const resolvedDarkValue = darkVarsMap[darkVarsMap.length - 1];
+            // Only add darkValue if it differs from the light value
+            if (resolvedDarkValue !== propertyObj.value) {
+              propertyObj.darkValue = resolvedDarkValue;
+              if (darkVarsMap.length > 1) {
+                propertyObj.darkValues = darkVarsMap;
+              }
+            }
+          } catch (e) {
+            // Skip if dark value can't be resolved through the chain
+          }
         }
 
         fileTokens[key] = fileTokens[key] || {};
