@@ -169,6 +169,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
         ref={(elem) => {
           elem && (elem.indeterminate = checkProps.checked === null);
         }}
+        disabled={isDisabled || checkProps.disabled}
         {...checkProps}
         checked={isCheckboxChecked}
         id={randomId}
