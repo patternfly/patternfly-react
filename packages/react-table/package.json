@@ -44,7 +44,7 @@
     "@patternfly/react-icons": "workspace:^",
     "@patternfly/react-styles": "workspace:^",
     "@patternfly/react-tokens": "workspace:^",
-    "lodash": "^4.17.21",
+    "lodash": "^4.17.23",
     "tslib": "^2.8.1"
   },
   "peerDependencies": {
