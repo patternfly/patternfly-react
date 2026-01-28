@@ -415,6 +415,249 @@ test(`Does not render ${styles.treeViewNode} element with ${styles.modifiers.cur
   expect(treeViewNode).not.toHaveClass(styles.modifiers.current);
 });
 
+// Assisted by Cursor AI
+describe('isDisabled prop', () => {
+  const user = userEvent.setup();
+  const onSelectMock = jest.fn();
+  const onExpandMock = jest.fn();
+  const onCollapseMock = jest.fn();
+
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  test(`Renders button with disabled attribute and ${styles.modifiers.disabled} class when isDisabled is true`, () => {
+    render(<TreeViewListItem isDisabled {...requiredProps} />);
+
+    const button = screen.getByRole('button', { name: requiredProps.name });
+    expect(button).toBeDisabled();
+    expect(button).toHaveClass(styles.modifiers.disabled);
+  });
+
+  test('Does not render button with disabled attribute when isDisabled is false', () => {
+    render(<TreeViewListItem isDisabled={false} {...requiredProps} />);
+
+    expect(screen.getByRole('button', { name: requiredProps.name })).not.toBeDisabled();
+  });
+
+  test('Does not call onSelect when isDisabled is true', async () => {
+    render(<TreeViewListItem isDisabled onSelect={onSelectMock} {...requiredProps} />);
+
+    await user.click(screen.getByRole('button', { name: requiredProps.name }));
+
+    expect(onSelectMock).not.toHaveBeenCalled();
+  });
+
+  test('Does not call onExpand when isDisabled is true and item is collapsed', async () => {
+    render(
+      <TreeViewListItem isDisabled onExpand={onExpandMock} {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    await user.click(screen.getByRole('button', { name: requiredProps.name }));
+
+    expect(onExpandMock).not.toHaveBeenCalled();
+  });
+
+  test('Does not call onCollapse when isDisabled is true and item is expanded', async () => {
+    render(
+      <TreeViewListItem isDisabled isExpanded onCollapse={onCollapseMock} {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    await user.click(screen.getByRole('button', { name: requiredProps.name }));
+
+    expect(onCollapseMock).not.toHaveBeenCalled();
+  });
+
+  test(`Renders toggle with ${styles.modifiers.disabled} class when isDisabled is true for default TreeViewListItem`, () => {
+    render(
+      <TreeViewListItem isDisabled {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    const toggle = screen.getByText(requiredProps.name).previousElementSibling;
+    expect(toggle).toHaveClass(styles.modifiers.disabled);
+  });
+
+  test('Renders treeitem with aria-disabled when isDisabled is true for default TreeViewListItem', () => {
+    render(<TreeViewListItem isDisabled {...requiredProps} />);
+
+    expect(screen.getByRole('treeitem')).toHaveAttribute('aria-disabled', 'true');
+  });
+
+  test('Renders treeitem with aria-disabled when isDisabled and isToggleDisabled are true and isSelectable is true', () => {
+    render(
+      <TreeViewListItem isSelectable isDisabled isToggleDisabled {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    expect(screen.getByRole('treeitem')).toHaveAttribute('aria-disabled', 'true');
+  });
+
+  test('Renders treeitem with aria-disabled when isDisabled and isToggleDisabled are true and hasCheckbox is true', () => {
+    render(
+      <TreeViewListItem hasCheckbox isDisabled isToggleDisabled {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    expect(screen.getByRole('treeitem')).toHaveAttribute('aria-disabled', 'true');
+  });
+
+  test('Does not render treeitem with aria-disabled when isDisabled is true, isToggleDisabled is false, and isSelectable is true', () => {
+    render(
+      <TreeViewListItem isSelectable isDisabled {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    expect(screen.getByRole('treeitem')).not.toHaveAttribute('aria-disabled');
+  });
+
+  test('Does not render treeitem with aria-disabled when isDisabled is false', () => {
+    render(<TreeViewListItem isDisabled={false} {...requiredProps} />);
+
+    expect(screen.getByRole('treeitem')).not.toHaveAttribute('aria-disabled');
+  });
+});
+
+// Assisted by Cursor AI
+describe('isToggleDisabled prop', () => {
+  const user = userEvent.setup();
+  const onExpandMock = jest.fn();
+  const onCollapseMock = jest.fn();
+
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  test(`Renders toggle button with disabled attribute and ${styles.modifiers.disabled} class when isToggleDisabled is true and hasCheckbox is passed`, () => {
+    render(
+      <TreeViewListItem hasCheckbox isToggleDisabled {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    const toggle = screen.getByText(requiredProps.name).previousElementSibling?.previousElementSibling;
+    expect(toggle).toBeDisabled();
+    expect(toggle).toHaveClass(styles.modifiers.disabled);
+  });
+
+  test(`Renders toggle button with disabled attribute and ${styles.modifiers.disabled} class when isToggleDisabled is true and isSelectable is passed`, () => {
+    render(
+      <TreeViewListItem isSelectable isToggleDisabled {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    const toggle = screen.getByText(requiredProps.name).previousElementSibling;
+    expect(toggle).toBeDisabled();
+    expect(toggle).toHaveClass(styles.modifiers.disabled);
+  });
+
+  test('Does not render toggle span with disabled attribute when isToggleDisabled is true (toggle is span by default)', () => {
+    render(
+      <TreeViewListItem isToggleDisabled {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    const toggle = screen.getByText(requiredProps.name).previousElementSibling;
+    expect(toggle?.tagName).toBe('SPAN');
+    expect(toggle).not.toHaveAttribute('disabled');
+  });
+
+  test('Does not call onExpand when isToggleDisabled is true and hasCheckbox is passed', async () => {
+    render(
+      <TreeViewListItem hasCheckbox isToggleDisabled onExpand={onExpandMock} {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    const toggle = screen.getByText(requiredProps.name).previousElementSibling?.previousElementSibling;
+    await user.click(toggle as Element);
+
+    expect(onExpandMock).not.toHaveBeenCalled();
+  });
+
+  test('Does not call onCollapse when isToggleDisabled is true and hasCheckbox is passed', async () => {
+    render(
+      <TreeViewListItem hasCheckbox isToggleDisabled isExpanded onCollapse={onCollapseMock} {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    const toggle = screen.getByText(requiredProps.name).previousElementSibling?.previousElementSibling;
+    await user.click(toggle as Element);
+
+    expect(onCollapseMock).not.toHaveBeenCalled();
+  });
+
+  test('Does not call onExpand when isToggleDisabled is true and isSelectable is passed', async () => {
+    render(
+      <TreeViewListItem isSelectable isToggleDisabled onExpand={onExpandMock} {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    const toggle = screen.getByText(requiredProps.name).previousElementSibling;
+    await user.click(toggle as Element);
+
+    expect(onExpandMock).not.toHaveBeenCalled();
+  });
+
+  test('Does not call onCollapse when isToggleDisabled is true and isSelectable is passed', async () => {
+    render(
+      <TreeViewListItem isSelectable isToggleDisabled isExpanded onCollapse={onCollapseMock} {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    const toggle = screen.getByText(requiredProps.name).previousElementSibling;
+    await user.click(toggle as Element);
+
+    expect(onCollapseMock).not.toHaveBeenCalled();
+  });
+
+  test(`Renders toggle span with ${styles.modifiers.disabled} class when isDisabled is true for default TreeViewListItem`, () => {
+    render(
+      <TreeViewListItem isDisabled {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    const toggle = screen.getByText(requiredProps.name).previousElementSibling;
+    expect(toggle).toHaveClass(styles.modifiers.disabled);
+  });
+
+  test(`Does not render toggle with ${styles.modifiers.disabled} class when isDisabled is true and hasCheckbox is true`, () => {
+    render(
+      <TreeViewListItem hasCheckbox isDisabled {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    const toggle = screen.getByText(requiredProps.name).previousElementSibling?.previousElementSibling;
+    expect(toggle).not.toHaveClass(styles.modifiers.disabled);
+  });
+
+  test(`Does not render toggle with ${styles.modifiers.disabled} class when isDisabled is true and isSelectable is true`, () => {
+    render(
+      <TreeViewListItem isSelectable isDisabled {...requiredProps}>
+        Content
+      </TreeViewListItem>
+    );
+
+    const toggle = screen.getByText(requiredProps.name).previousElementSibling;
+    expect(toggle).not.toHaveClass(styles.modifiers.disabled);
+  });
+});
+
 describe('Callback props', () => {
   const user = userEvent.setup();
   const compareItemsMock = jest.fn();
