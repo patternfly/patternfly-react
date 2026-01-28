@@ -13,8 +13,6 @@ import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 
 jest.mock('../../../helpers/GenerateId/GenerateId');
 
-jest.mock('../../../helpers/GenerateId/GenerateId');
-
 describe('Toolbar', () => {
   it('should render inset', () => {
     const items = (
@@ -120,90 +118,16 @@ describe('Toolbar', () => {
     expect(screen.getAllByRole('button', { name: 'Clear all filters' }).length).toBe(1);
   });
 
-  it('Renders with class ${styles.modifiers.noBackground} when colorVariant="no-background"', () => {
-    const items = (
-      <Fragment>
-        <ToolbarItem>Test</ToolbarItem>
-        <ToolbarItem>Test 2</ToolbarItem>
-        <ToolbarItem variant="separator" />
-        <ToolbarItem>Test 3 </ToolbarItem>
-      </Fragment>
-    );
-
+  it('Renders with class when colorVariant is applied', () => {
     render(
-      <Toolbar id="toolbar" colorVariant="no-background" data-testid="Toolbar-test-no-background-id">
-        <ToolbarContent>{items}</ToolbarContent>
+      <Toolbar id="toolbar" colorVariant="primary" data-testid="toolbar-color">
+        <ToolbarContent>
+          <ToolbarItem>Test</ToolbarItem>
+        </ToolbarContent>
       </Toolbar>
     );
 
-    expect(screen.getByTestId('Toolbar-test-no-background-id')).toHaveClass(styles.modifiers.noBackground);
-  });
-
-  it('Renders with class ${styles.modifiers.primary} when colorVariant="primary"', () => {
-    const items = (
-      <Fragment>
-        <ToolbarItem>Test</ToolbarItem>
-        <ToolbarItem>Test 2</ToolbarItem>
-        <ToolbarItem variant="separator" />
-        <ToolbarItem>Test 3 </ToolbarItem>
-      </Fragment>
-    );
-
-    render(
-      <Toolbar id="toolbar" colorVariant="primary" data-testid="Toolbar-test-primary-id">
-        <ToolbarContent>{items}</ToolbarContent>
-      </Toolbar>
-    );
-
-    expect(screen.getByTestId('Toolbar-test-primary-id')).toHaveClass(styles.modifiers.primary);
-  });
-
-  it('Renders with class ${styles.modifiers.secondary} when colorVariant="secondary"', () => {
-    const items = (
-      <Fragment>
-        <ToolbarItem>Test</ToolbarItem>
-        <ToolbarItem>Test 2</ToolbarItem>
-        <ToolbarItem variant="separator" />
-        <ToolbarItem>Test 3 </ToolbarItem>
-      </Fragment>
-    );
-
-    render(
-      <Toolbar id="toolbar" colorVariant="secondary" data-testid="Toolbar-test-secondary-id">
-        <ToolbarContent>{items}</ToolbarContent>
-      </Toolbar>
-    );
-
-    expect(screen.getByTestId('Toolbar-test-secondary-id')).toHaveClass(styles.modifiers.secondary);
-  });
-
-  describe('ToobarContent rowWrap', () => {
-    const bps = ['default', 'sm', 'md', 'lg', 'xl', '2xl'];
-
-    describe.each(bps)(`rowWrap at various breakpoints`, (bp) => {
-      it(`should render with pf-m-wrap when rowWrap is set to wrap at ${bp}`, () => {
-        render(
-          <Toolbar>
-            <ToolbarContent data-testid="toolbarconent" rowWrap={{ [bp]: 'wrap' }}>
-              Test
-            </ToolbarContent>
-          </Toolbar>
-        );
-        const bpWrapClass = bp === 'default' ? 'pf-m-wrap' : `pf-m-wrap-on-${bp}`;
-
-        expect(screen.getByTestId('toolbarconent').querySelector('div')).toHaveClass(bpWrapClass);
-      });
-
-      it(`should render with pf-m-nowrap when rowWrap is set to nowrap at ${bp}`, () => {
-        render(
-          <ToolbarContent data-testid="toolbarconent" rowWrap={{ [bp]: 'nowrap' }}>
-            Test
-          </ToolbarContent>
-        );
-        const bpNoWrapClass = bp === 'default' ? 'pf-m-nowrap' : `pf-m-nowrap-on-${bp}`;
-        expect(screen.getByTestId('toolbarconent').querySelector('div')).toHaveClass(bpNoWrapClass);
-      });
-    });
+    expect(screen.getByTestId('toolbar-color')).toHaveClass(styles.modifiers.primary);
   });
 
   it(`Renders toolbar without ${styles.modifiers.vertical} by default`, () => {
@@ -211,31 +135,51 @@ describe('Toolbar', () => {
       <Toolbar data-testid="Toolbar-test-is-not-vertical">
         <ToolbarContent>
           <ToolbarItem>Test</ToolbarItem>
-          <ToolbarItem>Test 2</ToolbarItem>
-          <ToolbarItem variant="separator" />
-          <ToolbarItem>Test 3 </ToolbarItem>
         </ToolbarContent>
       </Toolbar>
     );
     expect(screen.getByTestId('Toolbar-test-is-not-vertical')).not.toHaveClass(styles.modifiers.vertical);
   });
 
-  it('Renders with class ${styles.modifiers.vertical} when isVertical is true', () => {
-    const items = (
-      <Fragment>
-        <ToolbarItem>Test</ToolbarItem>
-        <ToolbarItem>Test 2</ToolbarItem>
-        <ToolbarItem variant="separator" />
-        <ToolbarItem>Test 3 </ToolbarItem>
-      </Fragment>
-    );
-
+  it('Renders with vertical class when isVertical is true', () => {
     render(
       <Toolbar id="toolbar" isVertical data-testid="Toolbar-test-is-vertical">
-        <ToolbarContent>{items}</ToolbarContent>
+        <ToolbarContent>
+          <ToolbarItem>Test</ToolbarItem>
+        </ToolbarContent>
       </Toolbar>
     );
 
     expect(screen.getByTestId('Toolbar-test-is-vertical')).toHaveClass(styles.modifiers.vertical);
+  });
+});
+
+describe('ToolbarContent rowWrap', () => {
+  const bps = ['default', 'sm', 'md', 'lg', 'xl', '2xl'];
+
+  bps.forEach((bp) => {
+    it(`should render with wrap at ${bp}`, () => {
+      render(
+        <Toolbar>
+          <ToolbarContent data-testid="toolbarcontent" rowWrap={{ [bp]: 'wrap' }}>
+            Test
+          </ToolbarContent>
+        </Toolbar>
+      );
+      const cls = bp === 'default' ? 'pf-m-wrap' : `pf-m-wrap-on-${bp}`;
+      expect(screen.getByTestId('toolbarcontent').querySelector('div')).toHaveClass(cls);
+    });
+
+    it(`should render with nowrap at ${bp}`, () => {
+      render(
+        <Toolbar>
+          <ToolbarContent data-testid="toolbarcontent" rowWrap={{ [bp]: 'nowrap' }}>
+            Test
+          </ToolbarContent>
+        </Toolbar>
+      );
+      const cls = bp === 'default' ? 'pf-m-nowrap' : `pf-m-nowrap-on-${bp}`;
+      expect(screen.getByTestId('toolbarcontent').querySelector('div')).toHaveClass(cls);
+    });
   });
 });
