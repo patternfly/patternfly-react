@@ -40,6 +40,7 @@ describe('Disabled Tab Demo Test', () => {
 
   it('Verify aria-disabled with tooltip', () => {
     cy.get(withTooltip.button).trigger('mouseover');
-    cy.get('.pf-v6-c-tooltip').should('be.visible');
+    // Tooltip visibility is async due to requestAnimationFrame-based positioning
+    cy.get('.pf-v6-c-tooltip', { timeout: 6000 }).should('be.visible');
   });
 });
