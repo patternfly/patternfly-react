@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.4.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.4.0...@patternfly/react-code-editor@6.4.1) (2026-01-28)
+
+### Bug Fixes
+
+- **CodeEditor:** prevent focus loss ([#12211](https://github.com/patternfly/patternfly-react/issues/12211)) ([#12212](https://github.com/patternfly/patternfly-react/issues/12212)) ([4287fec](https://github.com/patternfly/patternfly-react/commit/4287fec474bfa2dcb898aa21f1aa005966cfe094))
+
 # [6.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.4.0-prerelease.5...@patternfly/react-code-editor@6.4.0) (2025-10-16)
 
 **Note:** Version bump only for package @patternfly/react-code-editor

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.4.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.0...@patternfly/react-core@6.4.1) (2026-01-28)
+
+### Bug Fixes
+
+- **Wizard:** Fix crash in nav when first sub-step is hidden ([#12166](https://github.com/patternfly/patternfly-react/issues/12166)) ([900686d](https://github.com/patternfly/patternfly-react/commit/900686dbfda5ab47731e64e3be1fcd2eeedee358))
+
 # [6.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.0-prerelease.5...@patternfly/react-core@6.4.0) (2025-10-16)
 
 **Note:** Version bump only for package @patternfly/react-core
