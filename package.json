@@ -66,7 +66,7 @@
     "lint-staged": "^15.5.2",
     "mutation-observer": "^1.0.3",
     "plop": "^4.0.4",
-    "prettier": "^3.5.3",
+    "prettier": "^3.8.1",
     "publint": "^0.3.16",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
