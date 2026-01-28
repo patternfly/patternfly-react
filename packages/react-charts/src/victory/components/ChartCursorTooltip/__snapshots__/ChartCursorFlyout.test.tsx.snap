@@ -18,12 +18,12 @@ exports[`allows tooltip via container component 1`] = `
       width="200"
     >
       <g
-        clip-path="url(#victory-clip-4)"
+        clip-path="url(#victory-clip-2)"
         style="height: 100%; width: 100%;"
       >
         <defs>
           <clippath
-            id="victory-clip-4"
+            id="victory-clip-2"
           >
             <rect
               height="100"
@@ -42,12 +42,12 @@ exports[`allows tooltip via container component 1`] = `
         />
       </g>
       <g
-        clip-path="url(#victory-clip-5)"
+        clip-path="url(#victory-clip-3)"
         style="height: 100%; width: 100%;"
       >
         <defs>
           <clippath
-            id="victory-clip-5"
+            id="victory-clip-3"
           >
             <rect
               height="100"
