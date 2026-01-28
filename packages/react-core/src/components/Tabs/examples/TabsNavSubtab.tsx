@@ -27,6 +27,7 @@ export const TabsNavSubtab: React.FunctionComponent = () => {
       onSelect={handleTabClickFirst}
       component={TabsComponent.nav}
       aria-label="Tabs in the sub tabs with nav element example"
+      tabListAriaLabel="Primary"
     >
       <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} href="#" aria-label="Subtabs with nav content users">
         <Tabs
@@ -35,6 +36,7 @@ export const TabsNavSubtab: React.FunctionComponent = () => {
           onSelect={handleTabClickSecond}
           aria-label="Local secondary"
           component={TabsComponent.nav}
+          tabListAriaLabel="Users"
         >
           <Tab eventKey={20} title={<TabTitleText>Item 1</TabTitleText>} href="#">
             Item 1 item section
