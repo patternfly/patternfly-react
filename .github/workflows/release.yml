@@ -9,7 +9,7 @@ concurrency:
 jobs:
   ci:
     name: CI
-    uses: ./.github/workflows/6.4.x.yml
+    uses: ./.github/workflows/main.yml
 
   docs:
     name: Documentation
