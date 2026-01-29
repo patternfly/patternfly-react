@@ -2,14 +2,14 @@ name: Release
 on:
   push:
     branches:
-      - main
+      - 6.4.x
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 jobs:
   ci:
     name: CI
-    uses: ./.github/workflows/main.yml
+    uses: ./.github/workflows/6.4.x.yml
 
   docs:
     name: Documentation
