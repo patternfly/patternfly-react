@@ -28,7 +28,8 @@
     "build:single:packages": "node ../../scripts/build-single-packages.mjs --config single-packages.config.json",
     "build:esm": "tsc --build tsconfig.json",
     "clean": "rimraf dist src/icons src/index.js src/index.d.ts",
-    "generate": "rimraf dist/esm/icons dist/js/icons dist/static && yarn build:esm && node scripts/writeIcons.mjs"
+    "generate": "rimraf dist/esm/icons dist/js/icons dist/static && yarn build:esm && node scripts/ensureEsmPackageJson.mjs && node scripts/writeIcons.mjs",
+    "update-rhds-icons": "node scripts/parseRHIcons.mjs"
   },
   "devDependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
