@@ -46,6 +46,10 @@ export interface TreeViewListItemProps {
    * children.
    */
   isSelectable?: boolean;
+  /** Flag indicating if the tree view item is disabled. */
+  isDisabled?: boolean;
+  /** Flag indicating if the tree view item toggle is disabled. */
+  isToggleDisabled?: boolean;
   /** Data structure of tree view item. */
   itemData?: TreeViewDataItem;
   /** Internal content of a tree view item. */
@@ -81,6 +85,8 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
   title,
   id,
   isExpanded,
+  isDisabled = false,
+  isToggleDisabled = false,
   defaultExpanded = false,
   children = null,
   onSelect,
@@ -125,12 +131,13 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
   }
 
   const ToggleComponent = hasCheckbox || isSelectable ? 'button' : 'span';
+  const hasDisabledToggleClass = isToggleDisabled || (Component === 'button' && isDisabled);
 
   const renderToggle = (randomId: string) => (
     <ToggleComponent
-      className={css(styles.treeViewNodeToggle)}
+      className={css(styles.treeViewNodeToggle, hasDisabledToggleClass && styles.modifiers.disabled)}
       onClick={(evt: React.MouseEvent) => {
-        if (isSelectable || hasCheckbox) {
+        if (!isToggleDisabled && (isSelectable || hasCheckbox)) {
           if (internalIsExpanded) {
             onCollapse && onCollapse(evt, itemData, parentItem);
           } else {
@@ -138,12 +145,12 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
           }
           setIsExpanded(!internalIsExpanded);
         }
-        if (isSelectable) {
+        if (!isToggleDisabled && isSelectable) {
           evt.stopPropagation();
         }
       }}
       {...((hasCheckbox || isSelectable) && { 'aria-labelledby': `label-${randomId}` })}
-      {...(ToggleComponent === 'button' && { type: 'button' })}
+      {...(ToggleComponent === 'button' && { disabled: isToggleDisabled, type: 'button' })}
       tabIndex={-1}
     >
       <span className={css(styles.treeViewNodeToggleIcon)}>
@@ -162,6 +169,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
         ref={(elem) => {
           elem && (elem.indeterminate = checkProps.checked === null);
         }}
+        disabled={isDisabled || checkProps.disabled}
         {...checkProps}
         checked={isCheckboxChecked}
         id={randomId}
@@ -180,7 +188,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
       <>
         {isCompact && title && <span className={css(styles.treeViewNodeTitle)}>{title}</span>}
         {isSelectable ? (
-          <button tabIndex={-1} className={css(styles.treeViewNodeText)} type="button">
+          <button tabIndex={-1} className={css(styles.treeViewNodeText)} type="button" disabled={isDisabled}>
             {name}
           </button>
         ) : (
@@ -220,6 +228,9 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
       })
   );
 
+  const isFullyDisabled =
+    (Component === 'button' && isDisabled) || (Component !== 'button' && isDisabled && isToggleDisabled);
+
   return (
     <li
       id={id}
@@ -229,16 +240,21 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
       tabIndex={-1}
       {...(hasCheckbox && { 'aria-checked': isCheckboxChecked })}
       {...(!hasCheckbox && { 'aria-selected': isSelected })}
+      {...(isFullyDisabled && { 'aria-disabled': true })}
     >
       <div className={css(styles.treeViewContent)}>
         <GenerateId prefix={isSelectable ? 'selectable-id' : 'checkbox-id'}>
           {(randomId) => (
             <Component
-              className={css(styles.treeViewNode, isSelected && styles.modifiers.current)}
+              className={css(
+                styles.treeViewNode,
+                isSelected && styles.modifiers.current,
+                isDisabled && styles.modifiers.disabled
+              )}
               onClick={(evt: React.MouseEvent) => {
                 if (!hasCheckbox) {
-                  onSelect && onSelect(evt, itemData, parentItem);
-                  if (!isSelectable && children && evt.isDefaultPrevented() !== true) {
+                  !isDisabled && onSelect && onSelect(evt, itemData, parentItem);
+                  if (!isDisabled && !isSelectable && children && evt.isDefaultPrevented() !== true) {
                     if (internalIsExpanded) {
                       onCollapse && onCollapse(evt, itemData, parentItem);
                     } else {
@@ -250,7 +266,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
               }}
               {...(hasCheckbox && { htmlFor: randomId })}
               {...((hasCheckbox || (isSelectable && children)) && { id: `label-${randomId}` })}
-              {...(Component === 'button' && { type: 'button' })}
+              {...(Component === 'button' && { type: 'button', disabled: isDisabled })}
             >
               <span className={css(styles.treeViewNodeContainer)}>
                 {children && renderToggle(randomId)}
@@ -297,6 +313,8 @@ export const TreeViewListItem = memo(TreeViewListItemBase, (prevProps, nextProps
     prevProps.id !== nextProps.id ||
     prevProps.isExpanded !== nextProps.isExpanded ||
     prevProps.defaultExpanded !== nextProps.defaultExpanded ||
+    prevProps.isDisabled !== nextProps.isDisabled ||
+    prevProps.isToggleDisabled !== nextProps.isToggleDisabled ||
     prevProps.onSelect !== nextProps.onSelect ||
     prevProps.onCheck !== nextProps.onCheck ||
     prevProps.onExpand !== nextProps.onExpand ||

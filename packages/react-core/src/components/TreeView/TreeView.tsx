@@ -35,6 +35,10 @@ export interface TreeViewDataItem {
   name: React.ReactNode;
   /** Title of a tree view item. Only used in compact presentations. */
   title?: React.ReactNode;
+  /** Flag indicating if the tree view item is disabled. */
+  isDisabled?: boolean;
+  /** Flag indicating if the tree view item toggle is disabled. */
+  isToggleDisabled?: boolean;
 }
 
 /** The main tree view component. */
@@ -158,6 +162,8 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
           id={item.id}
           isExpanded={allExpanded}
           isSelectable={hasSelectableNodes}
+          isDisabled={item.isDisabled}
+          isToggleDisabled={item.isToggleDisabled}
           defaultExpanded={item.defaultExpanded !== undefined ? item.defaultExpanded : defaultAllExpanded}
           onSelect={onSelect}
           onCheck={onCheck}
