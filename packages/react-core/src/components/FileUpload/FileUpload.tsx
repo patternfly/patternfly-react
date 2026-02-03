@@ -4,11 +4,10 @@ import { readFile, fileReaderType } from '../../helpers/fileUtils';
 import { DropEvent } from '../../helpers/typeUtils';
 import { fromEvent } from 'file-selector';
 
-export interface FileUploadProps
-  extends Omit<
-    FileUploadFieldProps,
-    'children' | 'onBrowseButtonClick' | 'onClearButtonClick' | 'isDragActive' | 'containerRef'
-  > {
+export interface FileUploadProps extends Omit<
+  FileUploadFieldProps,
+  'children' | 'onBrowseButtonClick' | 'onClearButtonClick' | 'isDragActive' | 'containerRef'
+> {
   /** Flag to allow editing of a text file's contents after it is selected from disk. */
   allowEditingUploadedText?: boolean;
   /** Aria-label for the text area. */

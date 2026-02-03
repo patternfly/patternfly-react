@@ -41,8 +41,7 @@ type TabElement = React.ReactElement<TabProps, React.JSXElementConstructor<TabPr
 type TabsChild = TabElement | boolean | null | undefined;
 
 export interface TabsProps
-  extends Omit<React.HTMLProps<HTMLElement | HTMLDivElement>, 'onSelect' | 'onToggle'>,
-    OUIAProps {
+  extends Omit<React.HTMLProps<HTMLElement | HTMLDivElement>, 'onSelect' | 'onToggle'>, OUIAProps {
   /** Content rendered inside the tabs component. Only `Tab` components or expressions resulting in a falsy value are allowed here. */
   children: TabsChild | TabsChild[];
   /** Additional classes added to the tabs */

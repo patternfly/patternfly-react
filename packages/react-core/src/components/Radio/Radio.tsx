@@ -6,8 +6,7 @@ import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 import { getUniqueId } from '../../helpers/util';
 
 export interface RadioProps
-  extends Omit<React.HTMLProps<HTMLInputElement>, 'disabled' | 'label' | 'onChange' | 'type'>,
-    OUIAProps {
+  extends Omit<React.HTMLProps<HTMLInputElement>, 'disabled' | 'label' | 'onChange' | 'type'>, OUIAProps {
   /** Additional classes added to the radio wrapper. This wrapper will be div element by default. It will be a label element if
    * isLabelWrapped is true, or it can be overridden by any element specified in the component prop.
    */

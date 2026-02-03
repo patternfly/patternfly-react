@@ -15,8 +15,10 @@ export enum ProgressStepVariant {
   warning = 'warning'
 }
 
-export interface ProgressStepProps
-  extends React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement> {
+export interface ProgressStepProps extends React.DetailedHTMLProps<
+  React.LiHTMLAttributes<HTMLLIElement>,
+  HTMLLIElement
+> {
   /** Content rendered inside the progress step. */
   children?: React.ReactNode;
   /** Additional classes applied to the progress step container. */

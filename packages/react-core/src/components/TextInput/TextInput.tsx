@@ -34,8 +34,7 @@ export interface TextInputExpandedObj {
 }
 
 export interface TextInputProps
-  extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'>,
-    OUIAProps {
+  extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'>, OUIAProps {
   /** Additional classes added to the text input. */
   className?: string;
   /** Flag to show if the text input is disabled. */
