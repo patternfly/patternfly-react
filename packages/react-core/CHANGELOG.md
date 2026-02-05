@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.29...@patternfly/react-core@6.5.0-prerelease.30) (2026-02-05)
+
+### Bug Fixes
+
+- **FileUploadField:** don't render empty dom node ([#12236](https://github.com/patternfly/patternfly-react/issues/12236)) ([57f5823](https://github.com/patternfly/patternfly-react/commit/57f5823f2f2eadbd6d2fa3ec4c8726bee72cefdf))
+
 # [6.5.0-prerelease.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.28...@patternfly/react-core@6.5.0-prerelease.29) (2026-02-05)
 
 ### Features
