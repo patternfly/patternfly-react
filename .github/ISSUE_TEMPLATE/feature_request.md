@@ -18,6 +18,6 @@ Include screenshots or links to Figma or other mockups.
 
 **Any other information?**
 Does this feature require keyboard interaction or focus management?
-Are there any specific accessiblity considerations?
+Are there any specific accessibility considerations?
 
 **If applicable, what is your product and what release date are you targeting?**
