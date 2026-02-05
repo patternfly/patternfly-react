@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.28...@patternfly/react-core@6.5.0-prerelease.29) (2026-02-05)
+
+### Features
+
+- **TreeView:** add support for disabled TreeViewListItems ([#12140](https://github.com/patternfly/patternfly-react/issues/12140)) ([3514831](https://github.com/patternfly/patternfly-react/commit/35148312f5d9ce4e706ad36b801455fc987842bb))
+
 # [6.5.0-prerelease.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.27...@patternfly/react-core@6.5.0-prerelease.28) (2026-01-12)
 
 **Note:** Version bump only for package @patternfly/react-core

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.5.0-prerelease.12...@patternfly/react-icons@6.5.0-prerelease.13) (2026-02-05)
+
+### Features
+
+- Added missing space causing build failure. ([504fcfc](https://github.com/patternfly/patternfly-react/commit/504fcfc162384ba0106359a1aa21263a27c49ab8))
+- **react-icons:** add newest rh brand icons ([#12222](https://github.com/patternfly/patternfly-react/issues/12222)) ([f3613a6](https://github.com/patternfly/patternfly-react/commit/f3613a6a9e36862311f87dc473b601821fa86e14))
+- **TreeView:** add support for disabled TreeViewListItems ([#12140](https://github.com/patternfly/patternfly-react/issues/12140)) ([3514831](https://github.com/patternfly/patternfly-react/commit/35148312f5d9ce4e706ad36b801455fc987842bb))
+
 # [6.5.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.5.0-prerelease.11...@patternfly/react-icons@6.5.0-prerelease.12) (2026-01-09)
 
 **Note:** Version bump only for package @patternfly/react-icons

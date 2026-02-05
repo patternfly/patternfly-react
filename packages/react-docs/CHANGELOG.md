@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.5.0-prerelease.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.33...@patternfly/react-docs@7.5.0-prerelease.34) (2026-02-05)
+
+### Features
+
+- **TreeView:** add support for disabled TreeViewListItems ([#12140](https://github.com/patternfly/patternfly-react/issues/12140)) ([3514831](https://github.com/patternfly/patternfly-react/commit/35148312f5d9ce4e706ad36b801455fc987842bb))
+
 # [7.5.0-prerelease.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.32...@patternfly/react-docs@7.5.0-prerelease.33) (2026-01-28)
 
 **Note:** Version bump only for package @patternfly/react-docs
