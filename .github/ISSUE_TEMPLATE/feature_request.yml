@@ -1,0 +1,99 @@
+name: Feature request
+description: Suggest a new feature or component for PatternFly.
+title: "[Component] - [short description]"
+labels: ["extension", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Thanks for helping improve PatternFly! 
+        Please fill out this form to help the team understand your proposal.
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Is this a new component or an extension?
+      options:
+        - New Component
+        - Variant of an existing component
+        - Enhancement to a current feature
+    validations:
+      required: true
+
+  - type: input
+    id: existing_component
+    attributes:
+      label: Existing Component
+      description: If this is a variant or enhancement, which component does it impact?
+      placeholder: e.g., Table, Select, Wizard
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the feature
+      description: A clear and concise description of the new feature.
+      placeholder: What is the expected behavior? Is there any specific error handling?
+    validations:
+      required: true
+
+  - type: textarea
+    id: user_story
+    attributes:
+      label: User Story
+      description: Providing context helps us understand the priority.
+      placeholder: As a [user role], I want to [action] so that [benefit].
+    validations:
+      required: true
+
+  - type: textarea
+    id: visuals
+    attributes:
+      label: Visuals & Mockups
+      description: Include links to Figma or upload screenshots for desktop/mobile views.
+      placeholder: |
+        - Figma link: 
+        - Screenshots: (Drag images here)
+    validations:
+      required: false
+
+  - type: textarea
+    id: interaction_states
+    attributes:
+      label: Interaction States & Variations
+      description: Describe the behavior across different states.
+      placeholder: |
+        - Initial/Empty:
+        - Loading:
+        - Error/Validation:
+        - Mobile/Responsive Viewport:
+    validations:
+      required: true
+
+  - type: textarea
+    id: accessibility
+    attributes:
+      label: Accessibility (A11y)
+      description: Specific keyboard interaction or focus management requirements.
+      placeholder: e.g., Tab navigation, ARIA labels, or focus traps.
+    validations:
+      required: false
+
+  - type: input
+    id: product_release
+    attributes:
+      label: Product & Target Release
+      description: If applicable, what is your product and target release date?
+      placeholder: e.g., OpenShift 4.15
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: contribution_check
+    attributes:
+      label: Contribution
+      options:
+        - label: I am interested in contributing this feature.
+        - label: I have searched for similar existing requests.
+          required: true
