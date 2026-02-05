@@ -172,29 +172,31 @@ export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
           </InputGroupItem>
         </InputGroup>
       </div>
-      <div className={styles.fileUploadFileDetails}>
-        {!hideDefaultPreview && type === fileReaderType.text && (
-          <TextArea
-            readOnly={isReadOnly || (!!filename && !allowEditingUploadedText)}
-            disabled={isDisabled}
-            isRequired={isRequired}
-            resizeOrientation={TextAreResizeOrientation.vertical}
-            validated={validated}
-            id={id}
-            aria-label={ariaLabel}
-            value={value as string}
-            onChange={onTextAreaChange}
-            onClick={onTextAreaClick}
-            onBlur={onTextAreaBlur}
-            placeholder={textAreaPlaceholder}
-          />
-        )}
-        {isLoading && (
-          <div className={styles.fileUploadFileDetailsSpinner}>
-            <Spinner size={spinnerSize.lg} aria-valuetext={spinnerAriaValueText} />
-          </div>
-        )}
-      </div>
+      {(isLoading || (!hideDefaultPreview && type === fileReaderType.text)) && (
+        <div className={styles.fileUploadFileDetails}>
+          {!hideDefaultPreview && type === fileReaderType.text && (
+            <TextArea
+              readOnly={isReadOnly || (!!filename && !allowEditingUploadedText)}
+              disabled={isDisabled}
+              isRequired={isRequired}
+              resizeOrientation={TextAreResizeOrientation.vertical}
+              validated={validated}
+              id={id}
+              aria-label={ariaLabel}
+              value={value as string}
+              onChange={onTextAreaChange}
+              onClick={onTextAreaClick}
+              onBlur={onTextAreaBlur}
+              placeholder={textAreaPlaceholder}
+            />
+          )}
+          {isLoading && (
+            <div className={styles.fileUploadFileDetailsSpinner}>
+              <Spinner size={spinnerSize.lg} aria-valuetext={spinnerAriaValueText} />
+            </div>
+          )}
+        </div>
+      )}
       {children}
     </div>
   );
