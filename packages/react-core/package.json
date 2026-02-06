@@ -54,7 +54,7 @@
     "tslib": "^2.8.1"
   },
   "devDependencies": {
-    "@patternfly/patternfly": "6.5.0-prerelease.34",
+    "@patternfly/patternfly": "6.5.0-prerelease.36",
     "case-anything": "^3.1.2",
     "css": "^3.0.0",
     "fs-extra": "^11.3.3"
