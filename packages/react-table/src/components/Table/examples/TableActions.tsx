@@ -23,7 +23,7 @@ interface Repository {
   singleAction: string;
 }
 
-type ExampleType = 'defaultToggle' | 'customToggle';
+type ExampleType = 'customToggle';
 
 export const TableActions: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
@@ -45,10 +45,11 @@ export const TableActions: React.FunctionComponent = () => {
   };
 
   // This state is just for the ToggleGroup in this example and isn't necessary for Table usage.
-  const [exampleChoice, setExampleChoice] = useState<ExampleType>('defaultToggle');
+  const [exampleChoice, setExampleChoice] = useState<ExampleType | ''>('');
   const onExampleTypeChange: ToggleGroupItemProps['onChange'] = (event, _isSelected) => {
     const id = event.currentTarget.id;
-    setExampleChoice(id as ExampleType);
+    // Allow toggling off if clicking the already selected item
+    setExampleChoice(exampleChoice === id ? '' : (id as ExampleType));
   };
 
   const customActionsToggle = (props: CustomActionsToggleProps) => (
@@ -95,12 +96,6 @@ export const TableActions: React.FunctionComponent = () => {
   return (
     <Fragment>
       <ToggleGroup aria-label="Default uses kebab toggle">
-        <ToggleGroupItem
-          text="Default actions toggle"
-          buttonId="defaultToggle"
-          isSelected={exampleChoice === 'defaultToggle'}
-          onChange={onExampleTypeChange}
-        />
         <ToggleGroupItem
           text="Custom actions toggle"
           buttonId="customToggle"

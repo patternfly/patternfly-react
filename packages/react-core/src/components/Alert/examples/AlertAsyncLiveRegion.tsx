@@ -42,13 +42,7 @@ export const AsyncLiveRegionAlert: React.FunctionComponent = () => {
           text="Async alerts on"
           buttonId="async-alerts-on"
           isSelected={isActive}
-          onChange={() => setIsActive(true)}
-        />
-        <ToggleGroupItem
-          text="Async alerts off"
-          buttonId="async-alerts-off"
-          isSelected={!isActive}
-          onChange={() => setIsActive(false)}
+          onChange={() => setIsActive(!isActive)}
         />
       </ToggleGroup>
       <AlertGroup hasAnimations isLiveRegion>
