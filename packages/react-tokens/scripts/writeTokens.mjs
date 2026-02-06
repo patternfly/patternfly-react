@@ -74,13 +74,19 @@ function writeTokens(tokens) {
     Object.values(tokenValue)
       .map((values) => Object.entries(values))
       .reduce((acc, val) => acc.concat(val), []) // flatten
-      .forEach(([oldTokenName, { name, value }]) => {
+      .forEach(([oldTokenName, { name, value, darkValue }]) => {
         const isChart = oldTokenName.includes('chart');
         const oldToken = {
           name,
           value: isChart && !isNaN(+value) ? +value : value,
           var: isChart ? `var(${name}, ${value})` : `var(${name})` // Include fallback value for chart vars
         };
+
+        // Add dark theme values if they exist
+        if (darkValue !== undefined) {
+          oldToken.darkValue = isChart && !isNaN(+darkValue) ? +darkValue : darkValue;
+        }
+
         const oldTokenString = JSON.stringify(oldToken, null, 2);
         writeESMExport(oldTokenName, oldTokenString);
         writeCJSExport(oldTokenName, oldTokenString);
