@@ -4517,7 +4517,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@patternfly/ast-helpers@npm:^1.4.0-alpha.335":
+"@patternfly/ast-helpers@npm:^1.4.0-alpha.340":
   version: 1.26.2
   resolution: "@patternfly/ast-helpers@npm:1.26.2"
   dependencies:
@@ -4530,15 +4530,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@patternfly/documentation-framework@npm:^6.33.9":
-  version: 6.33.9
-  resolution: "@patternfly/documentation-framework@npm:6.33.9"
+"@patternfly/documentation-framework@npm:^6.35.0":
+  version: 6.35.0
+  resolution: "@patternfly/documentation-framework@npm:6.35.0"
   dependencies:
     "@babel/core": "npm:^7.28.3"
     "@babel/preset-env": "npm:7.27.1"
     "@babel/preset-react": "npm:^7.24.1"
     "@mdx-js/util": "npm:1.6.16"
-    "@patternfly/ast-helpers": "npm:^1.4.0-alpha.335"
+    "@patternfly/ast-helpers": "npm:^1.4.0-alpha.340"
     "@reach/router": "npm:@gatsbyjs/reach-router@1.3.9"
     "@rspack/core": "npm:^1.5.6"
     "@rspack/dev-server": "npm:^1.1.4"
@@ -4596,12 +4596,13 @@ __metadata:
     "@patternfly/patternfly": ^6.5.0-prerelease.33
     "@patternfly/react-code-editor": ^6.5.0-prerelease.26
     "@patternfly/react-core": ^6.5.0-prerelease.24
+    "@patternfly/react-icons": ^6.5.0-prerelease.11
     "@patternfly/react-table": ^6.5.0-prerelease.24
     react: ^17.0.0 || ^18.0.0
     react-dom: ^17.0.0 || ^18.0.0
   bin:
     pf-docs-framework: scripts/cli/cli.js
-  checksum: 10c0/3f3b801e0c8237f338b00ef819147c9e3a6fa55802ad5da2ec2dabfd1326246b0b822607f9e4dc88be2b47680f714e574d1afdafa28d3734c01b163c53f4701f
+  checksum: 10c0/c6d6415df3a2a857b1cddb621cf583e55e558a3c80ffef4ee196bfe60a9ba94c5a8e092b9b0708a39636d7ca5ac0c95fd270eec3218374f1281cb6b40849281e
   languageName: node
   linkType: hard
 
@@ -4757,7 +4758,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@patternfly/react-docs@workspace:packages/react-docs"
   dependencies:
-    "@patternfly/documentation-framework": "npm:^6.33.9"
+    "@patternfly/documentation-framework": "npm:^6.35.0"
     "@patternfly/patternfly": "npm:6.5.0-prerelease.34"
     "@patternfly/patternfly-a11y": "npm:5.1.0"
     "@patternfly/react-charts": "workspace:^"
