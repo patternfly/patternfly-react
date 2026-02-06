@@ -1,5 +1,5 @@
 import { StrictMode } from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { SearchInput } from '../SearchInput';
@@ -151,6 +151,11 @@ describe('SearchInput', () => {
     expect(screen.getByTestId('test-id')).toContainElement(screen.getByText('First name'));
 
     expect(props.onSearch).toHaveBeenCalled();
+    // Wait for popper opacity transition after requestAnimationFrame
+    await waitFor(() => {
+      const panel = screen.getByText('First name').closest('.pf-v6-c-panel');
+      expect(panel?.parentElement).toHaveStyle({ opacity: '1' });
+    });
     expect(asFragment()).toMatchSnapshot();
   });
 
