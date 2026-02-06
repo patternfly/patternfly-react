@@ -292,6 +292,9 @@ export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> 
   // Find the React root element dynamically instead of hardcoding 'root'
   // Memoized to avoid looking up the root element on every render
   const rootElement = useMemo(() => {
+    if (!canUseDOM) {
+      return null;
+    }
     // Try common root element IDs
     const commonRootIds = ['root', 'app', 'main', '__next'];
     for (const id of commonRootIds) {
