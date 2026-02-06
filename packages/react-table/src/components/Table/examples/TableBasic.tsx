@@ -10,7 +10,7 @@ interface Repository {
   lastCommit: string;
 }
 
-type ExampleType = 'default' | 'compact' | 'compactBorderless';
+type ExampleType = 'compact' | 'compactBorderless';
 
 export const TableBasic: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
@@ -29,21 +29,16 @@ export const TableBasic: React.FunctionComponent = () => {
   };
 
   // This state is just for the ToggleGroup in this example and isn't necessary for Table usage.
-  const [exampleChoice, setExampleChoice] = useState<ExampleType>('default');
+  const [exampleChoice, setExampleChoice] = useState<ExampleType | ''>('');
   const onExampleTypeChange: ToggleGroupItemProps['onChange'] = (event, _isSelected) => {
     const id = event.currentTarget.id;
-    setExampleChoice(id as ExampleType);
+    // Allow toggling off if clicking the already selected item
+    setExampleChoice(exampleChoice === id ? '' : (id as ExampleType));
   };
 
   return (
     <Fragment>
       <ToggleGroup aria-label="Default with single selectable">
-        <ToggleGroupItem
-          text="Default"
-          buttonId="default"
-          isSelected={exampleChoice === 'default'}
-          onChange={onExampleTypeChange}
-        />
         <ToggleGroupItem
           text="Compact"
           buttonId="compact"
@@ -59,7 +54,7 @@ export const TableBasic: React.FunctionComponent = () => {
       </ToggleGroup>
       <Table
         aria-label="Simple table"
-        variant={exampleChoice !== 'default' ? 'compact' : undefined}
+        variant={exampleChoice === 'compact' || exampleChoice === 'compactBorderless' ? 'compact' : undefined}
         borders={exampleChoice !== 'compactBorderless'}
       >
         <Caption>Simple table using composable components</Caption>

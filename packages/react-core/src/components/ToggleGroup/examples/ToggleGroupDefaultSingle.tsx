@@ -5,7 +5,8 @@ export const ToggleGroupDefaultSingle: React.FunctionComponent = () => {
   const [isSelected, setIsSelected] = useState('');
   const handleItemClick = (event, _isSelected: boolean) => {
     const id = event.currentTarget.id;
-    setIsSelected(id);
+    // Allow toggling off if clicking the already selected item
+    setIsSelected(isSelected === id ? '' : id);
   };
   return (
     <ToggleGroup aria-label="Default with single selectable">
