@@ -288,6 +288,21 @@ export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> 
   };
 
   const dragOverlay = <DragOverlay>{activeId && getDragOverlay()}</DragOverlay>;
+
+  // Find the React root element dynamically instead of hardcoding 'root'
+  const getRootElement = () => {
+    // Try common root element IDs
+    const commonRootIds = ['root', 'app', 'main', '__next'];
+    for (const id of commonRootIds) {
+      const element = document.getElementById(id);
+      if (element) {
+        return element;
+      }
+    }
+    // Fallback to document.body if no common root is found
+    return document.body;
+  };
+
   return (
     <DndContext
       sensors={sensors}
@@ -299,7 +314,7 @@ export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> 
       {...props}
     >
       {children}
-      {canUseDOM ? ReactDOM.createPortal(dragOverlay, document.getElementById('root')) : dragOverlay}
+      {canUseDOM ? ReactDOM.createPortal(dragOverlay, getRootElement()) : dragOverlay}
     </DndContext>
   );
 };
