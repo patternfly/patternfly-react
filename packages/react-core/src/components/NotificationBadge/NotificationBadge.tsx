@@ -8,7 +8,8 @@ import { css } from '@patternfly/react-styles';
 export enum NotificationBadgeVariant {
   read = 'read',
   unread = 'unread',
-  attention = 'attention'
+  attention = 'attention',
+  plain = 'plain'
 }
 
 export interface NotificationBadgeProps extends Omit<ButtonProps, 'variant'> {
@@ -29,7 +30,7 @@ export interface NotificationBadgeProps extends Omit<ButtonProps, 'variant'> {
    */
   isExpanded?: boolean;
   /** Determines the variant of the notification badge. */
-  variant?: NotificationBadgeVariant | 'read' | 'unread' | 'attention';
+  variant?: NotificationBadgeVariant | 'read' | 'unread' | 'attention' | 'plain';
   /** Flag indicating whether the notification badge animation should be triggered. Each
    * time this prop is true, the animation will be triggered a single time.
    */
@@ -55,6 +56,8 @@ export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> 
   const hasCount = count > 0;
   const hasChildren = children !== undefined;
   const isAttention = variant === NotificationBadgeVariant.attention;
+  const isPlain = variant === NotificationBadgeVariant.plain;
+  const _buttonState = isPlain ? undefined : (variant as 'read' | 'unread' | 'attention');
   const notificationIcon = isAttention ? attentionIcon : icon;
   let notificationContent: React.ReactNode = null;
 
@@ -77,10 +80,10 @@ export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> 
 
   return (
     <Button
-      variant={ButtonVariant.stateful}
+      variant={isPlain ? ButtonVariant.plain : ButtonVariant.stateful}
       className={buttonClassName}
       aria-expanded={isExpanded}
-      state={variant}
+      state={_buttonState}
       isClicked={isExpanded}
       icon={notificationIcon}
       onAnimationEnd={handleAnimationEnd}
