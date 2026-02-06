@@ -114,7 +114,7 @@ export const SimpleLoginPage: React.FunctionComponent = () => {
   return (
     <LoginPage
       footerListVariants={ListVariant.inline}
-      brandImgProps={{ src: brandImg, alt: 'PatternFly logo', className: 'pf-m-hover' }}
+      brandImgProps={{ src: brandImg, alt: 'PatternFly logo' }}
       backgroundImgSrc="/assets/images/pf-background.svg"
       footerListItems={listItem}
       textContent="This is placeholder text only. Use this area to place any information or introductory message about your application that may be relevant to users."
