@@ -1,7 +1,5 @@
 import { Fragment } from 'react';
-import { Toolbar, ToolbarItem, ToolbarGroup, ToolbarContent } from '@patternfly/react-core';
-import { Button } from '@patternfly/react-core';
-import SearchInput from '@patternfly/react-core/dist/esm/components/SearchInput/SearchInput';
+import { Toolbar, ToolbarItem, ToolbarGroup, ToolbarContent, Button, SearchInput } from '@patternfly/react-core';
 
 export const ToolbarFlexGrowAndWidths: React.FunctionComponent = () => {
   const flexGrowItems = (
