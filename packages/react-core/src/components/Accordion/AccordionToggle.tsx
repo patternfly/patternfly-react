@@ -4,8 +4,10 @@ import styles from '@patternfly/react-styles/css/components/Accordion/accordion'
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { AccordionContext, AccordionItemContext } from './AccordionContext';
 
-export interface AccordionToggleProps
-  extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+export interface AccordionToggleProps extends React.DetailedHTMLProps<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+> {
   /** Content rendered inside the Accordion toggle  */
   children?: React.ReactNode;
   /** Additional classes added to the Accordion Toggle  */

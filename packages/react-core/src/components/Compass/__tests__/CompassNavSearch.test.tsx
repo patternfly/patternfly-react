@@ -20,7 +20,7 @@ test('Renders with default tooltip content', async () => {
 
   const button = screen.getByRole('button');
 
-  user.hover(button);
+  await user.hover(button);
 
   await screen.findByRole('tooltip');
 
@@ -34,7 +34,7 @@ test('Renders with custom tooltip content when provided', async () => {
 
   const button = screen.getByRole('button');
 
-  user.hover(button);
+  await user.hover(button);
 
   await screen.findByRole('tooltip');
 

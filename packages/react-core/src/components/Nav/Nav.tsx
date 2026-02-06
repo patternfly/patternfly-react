@@ -10,7 +10,8 @@ export type NavSelectClickHandler = (
   to: string
 ) => void;
 export interface NavProps
-  extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>, 'onSelect' | 'onToggle'>,
+  extends
+    Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>, 'onSelect' | 'onToggle'>,
     OUIAProps {
   /** Anything that can be rendered inside of the nav */
   children?: React.ReactNode;

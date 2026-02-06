@@ -9,8 +9,7 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { TabAction } from './TabAction';
 
 export interface TabProps
-  extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLButtonElement>, 'title' | 'action'>,
-    OUIAProps {
+  extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLButtonElement>, 'title' | 'action'>, OUIAProps {
   /** content rendered inside the Tab content area. */
   children?: React.ReactNode;
   /** additional classes added to the Tab */

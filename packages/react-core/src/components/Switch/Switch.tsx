@@ -6,8 +6,7 @@ import { getUniqueId } from '../../helpers/util';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export interface SwitchProps
-  extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'>,
-    OUIAProps {
+  extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'>, OUIAProps {
   /** id for the label. */
   id?: string;
   /** Additional classes added to the switch */

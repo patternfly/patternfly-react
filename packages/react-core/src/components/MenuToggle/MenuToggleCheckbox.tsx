@@ -5,8 +5,7 @@ import { PickOptional } from '../../helpers/typeUtils';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
 export interface MenuToggleCheckboxProps
-  extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'checked'>,
-    OUIAProps {
+  extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'checked'>, OUIAProps {
   /** Additional classes added to the MenuToggleCheckbox */
   className?: string;
   /** Flag to show if the checkbox selection is valid or invalid */

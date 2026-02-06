@@ -1,8 +1,10 @@
 import styles from '@patternfly/react-styles/css/components/Avatar/avatar';
 import { css } from '@patternfly/react-styles';
 
-export interface AvatarProps
-  extends React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
+export interface AvatarProps extends React.DetailedHTMLProps<
+  React.ImgHTMLAttributes<HTMLImageElement>,
+  HTMLImageElement
+> {
   /** Additional classes added to the avatar. */
   className?: string;
   /** Attribute that specifies the URL of the image for the avatar. */

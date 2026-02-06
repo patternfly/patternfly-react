@@ -1,8 +1,10 @@
 import styles from '@patternfly/react-styles/css/components/ProgressStepper/progress-stepper';
 import { css } from '@patternfly/react-styles';
 
-export interface ProgressStepperProps
-  extends React.DetailedHTMLProps<React.OlHTMLAttributes<HTMLOListElement>, HTMLOListElement> {
+export interface ProgressStepperProps extends React.DetailedHTMLProps<
+  React.OlHTMLAttributes<HTMLOListElement>,
+  HTMLOListElement
+> {
   /** Content rendered inside the progress stepper. */
   children?: React.ReactNode;
   /** Additional classes applied to the progress stepper container. */

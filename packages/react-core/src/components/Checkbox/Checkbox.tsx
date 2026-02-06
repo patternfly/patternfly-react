@@ -7,8 +7,7 @@ import { getUniqueId } from '../../helpers/util';
 import { ASTERISK } from '../../helpers/htmlConstants';
 
 export interface CheckboxProps
-  extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'>,
-    OUIAProps {
+  extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'>, OUIAProps {
   /** Additional classes added to the checkbox wrapper. This wrapper will be div element by default. It will be a label element if
    * isLabelWrapped is true, or it can be overridden by any element specified in the component prop.
    */
