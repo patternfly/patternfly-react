@@ -60,6 +60,10 @@ export interface TabsProps
   onAdd?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
   /** Aria-label for the add button */
   addButtonAriaLabel?: string;
+  /** A readable string to create an accessible name for the tablist element. This can be used to differentiate multiple tablists on a page, and should be used for subtabs. */
+  tabListAriaLabel?: string;
+  /** Id of an element that provides an accessible name for the tablist. Use this when a visible label already exists on the page. */
+  tabListAriaLabelledBy?: string;
   /** Uniquely identifies the tabs */
   id?: string;
   /** Flag indicating that the add button is disabled when onAdd is passed in */
@@ -499,6 +503,8 @@ class Tabs extends Component<TabsProps, TabsState> {
       toggleText,
       toggleAriaLabel,
       addButtonAriaLabel,
+      tabListAriaLabel,
+      tabListAriaLabelledBy,
       onToggle,
       onClose,
       onAdd,
@@ -625,7 +631,14 @@ class Tabs extends Component<TabsProps, TabsState> {
               />
             </div>
           )}
-          <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons} role="tablist">
+          <ul
+            aria-label={tabListAriaLabel}
+            aria-labelledby={tabListAriaLabelledBy}
+            className={css(styles.tabsList)}
+            ref={this.tabList}
+            onScroll={this.handleScrollButtons}
+            role="tablist"
+          >
             {isOverflowHorizontal ? filteredChildrenWithoutOverflow : filteredChildren}
             {hasOverflowTab && <OverflowTab overflowingTabs={overflowingTabProps} {...overflowObjectProps} />}
           </ul>

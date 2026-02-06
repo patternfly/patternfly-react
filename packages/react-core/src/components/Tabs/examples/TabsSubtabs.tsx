@@ -33,6 +33,7 @@ export const TabsSubtabs: React.FunctionComponent = () => {
         onSelect={handleTabClickFirst}
         isBox={isBox}
         aria-label="Tabs in the tabs with subtabs example"
+        tabListAriaLabel="Primary"
         role="region"
       >
         <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} aria-label="Tabs with subtabs content users">
@@ -41,6 +42,7 @@ export const TabsSubtabs: React.FunctionComponent = () => {
             role="region"
             activeKey={activeTabKey2}
             isSubtab
+            tabListAriaLabel="Users"
             onSelect={handleTabClickSecond}
           >
             <Tab eventKey={20} title={<TabTitleText>Subtab item 1</TabTitleText>}>

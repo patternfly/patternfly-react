@@ -159,6 +159,8 @@ Use subtabs within other components, like modals. Subtabs have less visually pro
 
 To apply subtab styling to tabs, use the `isSubtab` property.
 
+For accessibility, give the primary tablist an accessible name (for example, `tabListAriaLabel="Primary"`) and give any subtab tablist an accessible name that matches the currently selected primary tab (for example, `tabListAriaLabel="Users"`).
+
 ```ts file="./TabsSubtabs.tsx"
 
 ```
