@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.30...@patternfly/react-core@6.5.0-prerelease.31) (2026-02-06)
+
+### Bug Fixes
+
+- **LoginPage:** allow brand props passthrough make brand optional ([#12194](https://github.com/patternfly/patternfly-react/issues/12194)) ([86d09b5](https://github.com/patternfly/patternfly-react/commit/86d09b5bbc360ae076d3bbf41a6a8e04e824e4e4))
+
 # [6.5.0-prerelease.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.29...@patternfly/react-core@6.5.0-prerelease.30) (2026-02-05)
 
 ### Bug Fixes
