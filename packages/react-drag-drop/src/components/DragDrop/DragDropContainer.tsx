@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import * as ReactDOM from 'react-dom';
 import { css } from '@patternfly/react-styles';
 import {
@@ -290,7 +290,8 @@ export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> 
   const dragOverlay = <DragOverlay>{activeId && getDragOverlay()}</DragOverlay>;
 
   // Find the React root element dynamically instead of hardcoding 'root'
-  const getRootElement = () => {
+  // Memoized to avoid looking up the root element on every render
+  const rootElement = useMemo(() => {
     // Try common root element IDs
     const commonRootIds = ['root', 'app', 'main', '__next'];
     for (const id of commonRootIds) {
@@ -301,7 +302,7 @@ export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> 
     }
     // Fallback to document.body if no common root is found
     return document.body;
-  };
+  }, []); // Empty deps - root element doesn't change after mount
 
   return (
     <DndContext
@@ -314,7 +315,7 @@ export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> 
       {...props}
     >
       {children}
-      {canUseDOM ? ReactDOM.createPortal(dragOverlay, getRootElement()) : dragOverlay}
+      {canUseDOM ? ReactDOM.createPortal(dragOverlay, rootElement) : dragOverlay}
     </DndContext>
   );
 };
