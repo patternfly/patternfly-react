@@ -216,6 +216,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
       <Divider
         className={css(className)}
         orientation={{ default: 'vertical' }}
+        style={style}
         {...props}
         {...(isDividerRoleValid && { role: role as 'separator' | 'presentation' })}
       />
