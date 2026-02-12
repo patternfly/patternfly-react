@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import * as ReactDOM from 'react-dom';
 import { css } from '@patternfly/react-styles';
 import {
@@ -66,6 +66,8 @@ export interface DragDropContainerProps extends DndContextProps {
   variant?: 'default' | 'DataList' | 'DualListSelectorList';
   /** Additional classes to apply to the drag overlay */
   overlayProps?: any;
+  /** The parent container to append the drag overlay to. Defaults to document.body. */
+  appendTo?: HTMLElement | (() => HTMLElement);
 }
 
 export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> = ({
@@ -77,6 +79,7 @@ export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> 
   onCancel = () => {},
   variant = 'default',
   overlayProps,
+  appendTo = () => document.body,
   ...props
 }: DragDropContainerProps) => {
   const itemsCopy = useRef<Record<string, DraggableObject[]> | null>(null);
@@ -289,23 +292,7 @@ export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> 
 
   const dragOverlay = <DragOverlay>{activeId && getDragOverlay()}</DragOverlay>;
 
-  // Find the React root element dynamically instead of hardcoding 'root'
-  // Memoized to avoid looking up the root element on every render
-  const rootElement = useMemo(() => {
-    if (!canUseDOM) {
-      return null;
-    }
-    // Try common root element IDs
-    const commonRootIds = ['root', 'app', 'main', '__next'];
-    for (const id of commonRootIds) {
-      const element = document.getElementById(id);
-      if (element) {
-        return element;
-      }
-    }
-    // Fallback to document.body if no common root is found
-    return document.body;
-  }, []); // Empty deps - root element doesn't change after mount
+  const portalTarget = typeof appendTo === 'function' ? appendTo() : appendTo || document.body;
 
   return (
     <DndContext
@@ -318,7 +305,7 @@ export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> 
       {...props}
     >
       {children}
-      {canUseDOM ? ReactDOM.createPortal(dragOverlay, rootElement) : dragOverlay}
+      {canUseDOM && portalTarget ? ReactDOM.createPortal(dragOverlay, portalTarget) : dragOverlay}
     </DndContext>
   );
 };
