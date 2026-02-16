@@ -84,6 +84,13 @@ export function createIcon({ name, icon, rhUiIcon = null }: CreateIconProps): Re
         classNames.push(propsClassName);
       }
 
+      if (set === 'rh-ui' && rhUiIcon === null) {
+        // eslint-disable-next-line no-console
+        console.warn(
+          `Set "rh-ui" was provided for ${name}, but no rh-ui icon data exists for this icon. The default icon will be rendered.`
+        );
+      }
+
       if ((set === undefined && rhUiIcon === null) || set !== undefined) {
         const iconData = set !== undefined && set === 'rh-ui' && rhUiIcon !== null ? rhUiIcon : icon;
         const { xOffset, yOffset, width, height, svgPathData, svgClassName } = iconData ?? {};
