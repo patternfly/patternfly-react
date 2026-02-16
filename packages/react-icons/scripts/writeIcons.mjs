@@ -79,12 +79,7 @@ function generateStaticSVG(iconName, icon) {
   // Create icon component using createIcon
   const IconComponent = createIcon({
     name: jsName,
-    width: icon.width,
-    height: icon.height,
-    svgPath: icon.svgPathData,
-    xOffset: icon.xOffset || 0,
-    yOffset: icon.yOffset || 0,
-    svgClassName: icon.svgClassName
+    icon
   });
 
   // Render the component to string
