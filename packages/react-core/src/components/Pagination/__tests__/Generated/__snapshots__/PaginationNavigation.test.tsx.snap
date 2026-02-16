@@ -44,7 +44,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
               />
             </svg>
             <svg
-              class="pf-v6-icon-unified"
+              class="pf-v6-icon-rh-ui"
               viewBox="0 0 32 32"
             >
               <path
@@ -87,7 +87,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
               />
             </svg>
             <svg
-              class="pf-v6-icon-unified"
+              class="pf-v6-icon-rh-ui"
               viewBox="0 0 32 32"
             >
               <path
@@ -149,7 +149,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
               />
             </svg>
             <svg
-              class="pf-v6-icon-unified"
+              class="pf-v6-icon-rh-ui"
               viewBox="0 0 32 32"
             >
               <path
@@ -192,7 +192,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
               />
             </svg>
             <svg
-              class="pf-v6-icon-unified"
+              class="pf-v6-icon-rh-ui"
               viewBox="0 0 32 32"
             >
               <path

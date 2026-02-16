@@ -11,6 +11,7 @@
   },
   "include": [
     "./src/*",
-    "./src/**/*"
+    "./src/**/*",
+    "scripts/pfToRhIcons.mjs"
   ]
 }

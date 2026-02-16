@@ -43,7 +43,7 @@ exports[`numberInput disables lower threshold 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -107,7 +107,7 @@ exports[`numberInput disables lower threshold 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -166,7 +166,7 @@ exports[`numberInput disables upper threshold 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -231,7 +231,7 @@ exports[`numberInput disables upper threshold 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -291,7 +291,7 @@ exports[`numberInput passes button props successfully 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -356,7 +356,7 @@ exports[`numberInput passes button props successfully 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -415,7 +415,7 @@ exports[`numberInput passes input props successfully 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -479,7 +479,7 @@ exports[`numberInput passes input props successfully 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -539,7 +539,7 @@ exports[`numberInput renders custom width 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -603,7 +603,7 @@ exports[`numberInput renders custom width 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -663,7 +663,7 @@ exports[`numberInput renders defaults & extra props 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -727,7 +727,7 @@ exports[`numberInput renders defaults & extra props 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -787,7 +787,7 @@ exports[`numberInput renders disabled 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -853,7 +853,7 @@ exports[`numberInput renders disabled 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -912,7 +912,7 @@ exports[`numberInput renders error validated 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -963,7 +963,7 @@ exports[`numberInput renders error validated 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -1009,7 +1009,7 @@ exports[`numberInput renders error validated 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -1068,7 +1068,7 @@ exports[`numberInput renders success validated 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -1119,7 +1119,7 @@ exports[`numberInput renders success validated 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -1165,7 +1165,7 @@ exports[`numberInput renders success validated 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -1229,7 +1229,7 @@ exports[`numberInput renders unit & position 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -1293,7 +1293,7 @@ exports[`numberInput renders unit & position 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -1352,7 +1352,7 @@ exports[`numberInput renders unit 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -1416,7 +1416,7 @@ exports[`numberInput renders unit 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -1480,7 +1480,7 @@ exports[`numberInput renders value 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -1544,7 +1544,7 @@ exports[`numberInput renders value 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -1603,7 +1603,7 @@ exports[`numberInput renders warning validated 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -1654,7 +1654,7 @@ exports[`numberInput renders warning validated 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -1700,7 +1700,7 @@ exports[`numberInput renders warning validated 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path

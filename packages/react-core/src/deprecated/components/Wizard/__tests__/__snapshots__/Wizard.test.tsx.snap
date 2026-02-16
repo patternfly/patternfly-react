@@ -39,7 +39,7 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -106,7 +106,7 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path
@@ -194,7 +194,7 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
                           />
                         </svg>
                         <svg
-                          class="pf-v6-icon-unified"
+                          class="pf-v6-icon-rh-ui"
                           viewBox="0 0 32 32"
                         >
                           <path
@@ -410,7 +410,7 @@ exports[`Wizard Wizard should match snapshot 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -477,7 +477,7 @@ exports[`Wizard Wizard should match snapshot 1`] = `
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path
@@ -755,7 +755,7 @@ exports[`Wizard bare wiz 1`] = `
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path

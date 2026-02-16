@@ -38,7 +38,7 @@ exports[`Old Snapshot tests - remove when refactoring passes additional classes 
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path
@@ -90,7 +90,7 @@ exports[`Old Snapshot tests - remove when refactoring renders successfully 1`] =
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path
@@ -151,7 +151,7 @@ exports[`Old Snapshot tests - remove when refactoring shows badge 1`] = `
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path
@@ -195,7 +195,7 @@ exports[`Old Snapshot tests - remove when refactoring shows icon 1`] = `
           />
         </svg>
         <svg
-          class="pf-v6-icon-unified"
+          class="pf-v6-icon-rh-ui"
           viewBox="0 0 32 32"
         >
           <path
@@ -232,7 +232,7 @@ exports[`Old Snapshot tests - remove when refactoring shows icon 1`] = `
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path
@@ -285,7 +285,7 @@ exports[`Old Snapshot tests - remove when refactoring shows isDisabled 1`] = `
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path
@@ -337,7 +337,7 @@ exports[`Old Snapshot tests - remove when refactoring shows isExpanded 1`] = `
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path
@@ -381,7 +381,7 @@ exports[`Old Snapshot tests - remove when refactoring shows isPlain 1`] = `
           />
         </svg>
         <svg
-          class="pf-v6-icon-unified"
+          class="pf-v6-icon-rh-ui"
           viewBox="0 0 32 32"
         >
           <path
@@ -432,7 +432,7 @@ exports[`Old Snapshot tests - remove when refactoring shows isPrimary 1`] = `
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path
@@ -484,7 +484,7 @@ exports[`Old Snapshot tests - remove when refactoring shows plain text 1`] = `
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path

@@ -3,7 +3,7 @@ import { outputFileSync, ensureDirSync } from 'fs-extra/esm';
 import { generateIcons } from './generateIcons.mjs';
 import { createElement } from 'react';
 import { renderToString } from 'react-dom/server';
-import { pfToRhIcons } from '../src/pfToRhIcons.js';
+import { pfToRhIcons } from './icons/pfToRhIcons.mjs';
 import * as url from 'url';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 

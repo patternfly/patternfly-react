@@ -40,7 +40,7 @@ exports[`SearchInput advanced search 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-unified"
+                    class="pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -85,7 +85,7 @@ exports[`SearchInput advanced search 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-unified"
+                    class="pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -127,7 +127,7 @@ exports[`SearchInput advanced search 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -172,7 +172,7 @@ exports[`SearchInput advanced search 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-unified"
+                    class="pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -231,7 +231,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-unified"
+                    class="pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -276,7 +276,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-unified"
+                    class="pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -318,7 +318,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -363,7 +363,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-unified"
+                    class="pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -612,7 +612,7 @@ exports[`SearchInput renders search input in strict mode 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-unified"
+                    class="pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -657,7 +657,7 @@ exports[`SearchInput renders search input in strict mode 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-unified"
+                    class="pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -699,7 +699,7 @@ exports[`SearchInput renders search input in strict mode 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -744,7 +744,7 @@ exports[`SearchInput renders search input in strict mode 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-unified"
+                    class="pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -806,7 +806,7 @@ exports[`SearchInput search input with hint 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -854,7 +854,7 @@ exports[`SearchInput search input with hint 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-unified"
+                    class="pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -889,7 +889,7 @@ exports[`SearchInput search input with hint 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-unified"
+                    class="pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -925,7 +925,7 @@ exports[`SearchInput search input with hint 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -972,7 +972,7 @@ exports[`SearchInput search input with hint 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -1026,7 +1026,7 @@ exports[`SearchInput simple search input 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -1074,7 +1074,7 @@ exports[`SearchInput simple search input 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-unified"
+                    class="pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -1109,7 +1109,7 @@ exports[`SearchInput simple search input 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-unified"
+                    class="pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -1145,7 +1145,7 @@ exports[`SearchInput simple search input 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -1192,7 +1192,7 @@ exports[`SearchInput simple search input 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path

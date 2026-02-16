@@ -25,7 +25,7 @@ exports[`NotificationDrawerListItemHeader list item header with custom icon appl
           />
         </svg>
         <svg
-          class="pf-v6-icon-unified"
+          class="pf-v6-icon-rh-ui"
           viewBox="0 0 32 32"
         >
           <path
@@ -68,7 +68,7 @@ exports[`NotificationDrawerListItemHeader list item header with srTitle applied 
           />
         </svg>
         <svg
-          class="pf-v6-icon-unified"
+          class="pf-v6-icon-rh-ui"
           viewBox="0 0 32 32"
         >
           <path
@@ -116,7 +116,7 @@ exports[`NotificationDrawerListItemHeader list item header with variant applied 
           />
         </svg>
         <svg
-          class="pf-v6-icon-unified"
+          class="pf-v6-icon-rh-ui"
           viewBox="0 0 32 32"
         >
           <path
@@ -159,7 +159,7 @@ exports[`NotificationDrawerListItemHeader renders with PatternFly Core styles 1`
           />
         </svg>
         <svg
-          class="pf-v6-icon-unified"
+          class="pf-v6-icon-rh-ui"
           viewBox="0 0 32 32"
         >
           <path
@@ -202,7 +202,7 @@ exports[`NotificationDrawerListItemHeader renders with correct heading level 1`]
           />
         </svg>
         <svg
-          class="pf-v6-icon-unified"
+          class="pf-v6-icon-rh-ui"
           viewBox="0 0 32 32"
         >
           <path

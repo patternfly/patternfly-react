@@ -136,7 +136,7 @@ exports[`DualListSelector basic 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -180,7 +180,7 @@ exports[`DualListSelector basic 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -225,7 +225,7 @@ exports[`DualListSelector basic 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -270,7 +270,7 @@ exports[`DualListSelector basic 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -458,7 +458,7 @@ exports[`DualListSelector basic with disabled controls 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -503,7 +503,7 @@ exports[`DualListSelector basic with disabled controls 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -548,7 +548,7 @@ exports[`DualListSelector basic with disabled controls 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -593,7 +593,7 @@ exports[`DualListSelector basic with disabled controls 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -792,7 +792,7 @@ exports[`DualListSelector with actions 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -836,7 +836,7 @@ exports[`DualListSelector with actions 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -880,7 +880,7 @@ exports[`DualListSelector with actions 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -925,7 +925,7 @@ exports[`DualListSelector with actions 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -1178,7 +1178,7 @@ exports[`DualListSelector with custom status 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -1222,7 +1222,7 @@ exports[`DualListSelector with custom status 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -1267,7 +1267,7 @@ exports[`DualListSelector with custom status 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -1312,7 +1312,7 @@ exports[`DualListSelector with custom status 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -1420,7 +1420,7 @@ exports[`DualListSelector with search inputs 1`] = `
                       />
                     </svg>
                     <svg
-                      class="pf-v6-icon-unified"
+                      class="pf-v6-icon-rh-ui"
                       viewBox="0 0 32 32"
                     >
                       <path
@@ -1554,7 +1554,7 @@ exports[`DualListSelector with search inputs 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -1598,7 +1598,7 @@ exports[`DualListSelector with search inputs 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -1643,7 +1643,7 @@ exports[`DualListSelector with search inputs 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -1688,7 +1688,7 @@ exports[`DualListSelector with search inputs 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -1751,7 +1751,7 @@ exports[`DualListSelector with search inputs 1`] = `
                       />
                     </svg>
                     <svg
-                      class="pf-v6-icon-unified"
+                      class="pf-v6-icon-rh-ui"
                       viewBox="0 0 32 32"
                     >
                       <path
@@ -1878,7 +1878,7 @@ exports[`DualListSelector with tree 1`] = `
                           />
                         </svg>
                         <svg
-                          class="pf-v6-icon-unified"
+                          class="pf-v6-icon-rh-ui"
                           viewBox="0 0 32 32"
                         >
                           <path
@@ -2019,7 +2019,7 @@ exports[`DualListSelector with tree 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -2063,7 +2063,7 @@ exports[`DualListSelector with tree 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -2108,7 +2108,7 @@ exports[`DualListSelector with tree 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path
@@ -2153,7 +2153,7 @@ exports[`DualListSelector with tree 1`] = `
                 />
               </svg>
               <svg
-                class="pf-v6-icon-unified"
+                class="pf-v6-icon-rh-ui"
                 viewBox="0 0 32 32"
               >
                 <path

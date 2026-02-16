@@ -49,7 +49,7 @@ exports[`Modal Content Test description 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -140,7 +140,7 @@ exports[`Modal Content Test isOpen 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -226,7 +226,7 @@ exports[`Modal Content Test only body 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -312,7 +312,7 @@ exports[`Modal Content Test with footer 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -403,7 +403,7 @@ exports[`Modal Content Test with onclose 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -494,7 +494,7 @@ exports[`Modal Content test without footer 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -580,7 +580,7 @@ exports[`Modal Test with custom footer 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -675,7 +675,7 @@ exports[`Modal Test with custom header 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path

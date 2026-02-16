@@ -30,7 +30,7 @@ exports[`NotificationBadge count 1`] = `
           />
         </svg>
         <svg
-          class="pf-v6-icon-unified"
+          class="pf-v6-icon-rh-ui"
           viewBox="0 0 32 32"
         >
           <path
@@ -78,7 +78,7 @@ exports[`false NotificationBadge needs attention 1`] = `
           />
         </svg>
         <svg
-          class="pf-v6-icon-unified"
+          class="pf-v6-icon-rh-ui"
           viewBox="0 0 32 32"
         >
           <path
@@ -126,7 +126,7 @@ exports[`true NotificationBadge needs attention 1`] = `
           />
         </svg>
         <svg
-          class="pf-v6-icon-unified"
+          class="pf-v6-icon-rh-ui"
           viewBox="0 0 32 32"
         >
           <path

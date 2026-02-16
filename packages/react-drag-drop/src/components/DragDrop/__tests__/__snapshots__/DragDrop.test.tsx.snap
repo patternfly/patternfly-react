@@ -45,7 +45,7 @@ exports[`renders some divs 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -97,7 +97,7 @@ exports[`renders some divs 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -149,7 +149,7 @@ exports[`renders some divs 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path

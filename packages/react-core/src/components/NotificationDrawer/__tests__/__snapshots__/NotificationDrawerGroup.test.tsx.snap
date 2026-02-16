@@ -44,7 +44,7 @@ exports[`NotificationDrawerGroup drawer group with isExpanded applied  1`] = `
               />
             </svg>
             <svg
-              class="pf-v6-icon-unified"
+              class="pf-v6-icon-rh-ui"
               viewBox="0 0 32 32"
             >
               <path
@@ -103,7 +103,7 @@ exports[`NotificationDrawerGroup drawer group with isRead applied  1`] = `
               />
             </svg>
             <svg
-              class="pf-v6-icon-unified"
+              class="pf-v6-icon-rh-ui"
               viewBox="0 0 32 32"
             >
               <path
@@ -162,7 +162,7 @@ exports[`NotificationDrawerGroup renders correct heading level 1`] = `
               />
             </svg>
             <svg
-              class="pf-v6-icon-unified"
+              class="pf-v6-icon-rh-ui"
               viewBox="0 0 32 32"
             >
               <path
@@ -221,7 +221,7 @@ exports[`NotificationDrawerGroup renders with PatternFly Core styles 1`] = `
               />
             </svg>
             <svg
-              class="pf-v6-icon-unified"
+              class="pf-v6-icon-rh-ui"
               viewBox="0 0 32 32"
             >
               <path

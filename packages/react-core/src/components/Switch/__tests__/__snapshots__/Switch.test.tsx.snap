@@ -40,7 +40,7 @@ exports[`Switch no label switch is checked 1`] = `
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path
@@ -93,7 +93,7 @@ exports[`Switch no label switch is not checked 1`] = `
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path
@@ -178,7 +178,7 @@ exports[`Switch switch is checked and disabled 1`] = `
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path
@@ -261,7 +261,7 @@ exports[`Switch switch is not checked and disabled 1`] = `
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path

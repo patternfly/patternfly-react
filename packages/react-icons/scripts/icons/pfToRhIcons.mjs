@@ -1,4 +1,4 @@
-import rhIconsUI from '../scripts/icons/rhIconsUI.mjs';
+import rhIconsUI from './rhIconsUI.mjs';
 
 // Helper function to get icon data, handling cases where icon might not exist
 const getIconData = (iconName) => rhIconsUI[iconName] || null;

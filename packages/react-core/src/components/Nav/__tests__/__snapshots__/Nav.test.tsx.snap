@@ -220,7 +220,7 @@ exports[`Nav Expandable Nav List - Trigger toggle 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -365,7 +365,7 @@ exports[`Nav Expandable Nav List 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -509,7 +509,7 @@ exports[`Nav Expandable Nav List with aria label 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -1051,7 +1051,7 @@ exports[`Nav Nav List with flyout 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path

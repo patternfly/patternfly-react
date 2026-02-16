@@ -43,7 +43,7 @@ exports[`FormSelect Disabled FormSelect input  1`] = `
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path
@@ -99,7 +99,7 @@ exports[`FormSelect FormSelect input with aria-label does not generate console e
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path
@@ -156,7 +156,7 @@ exports[`FormSelect FormSelect input with id does not generate console error 1`]
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path
@@ -211,7 +211,7 @@ exports[`FormSelect FormSelect input with no aria-label or id generates console 
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path
@@ -313,7 +313,7 @@ exports[`FormSelect Grouped FormSelect input 1`] = `
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path
@@ -407,7 +407,7 @@ exports[`FormSelect Simple FormSelect input 1`] = `
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path
@@ -463,7 +463,7 @@ exports[`FormSelect invalid FormSelect input 1`] = `
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path
@@ -492,7 +492,7 @@ exports[`FormSelect invalid FormSelect input 1`] = `
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path
@@ -548,7 +548,7 @@ exports[`FormSelect validated success FormSelect input 1`] = `
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path
@@ -577,7 +577,7 @@ exports[`FormSelect validated success FormSelect input 1`] = `
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path
@@ -633,7 +633,7 @@ exports[`FormSelect validated warning FormSelect input 1`] = `
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path
@@ -662,7 +662,7 @@ exports[`FormSelect validated warning FormSelect input 1`] = `
             />
           </svg>
           <svg
-            class="pf-v6-icon-unified"
+            class="pf-v6-icon-rh-ui"
             viewBox="0 0 32 32"
           >
             <path

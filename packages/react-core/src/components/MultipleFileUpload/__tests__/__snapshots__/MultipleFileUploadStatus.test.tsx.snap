@@ -44,7 +44,7 @@ exports[`MultipleFileUploadStatus renders custom class names 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -132,7 +132,7 @@ exports[`MultipleFileUploadStatus renders status toggle icon 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -168,7 +168,7 @@ exports[`MultipleFileUploadStatus renders status toggle icon 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-unified"
+                    class="pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -246,7 +246,7 @@ exports[`MultipleFileUploadStatus renders status toggle text 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -336,7 +336,7 @@ exports[`MultipleFileUploadStatus renders with expected class names 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-unified"
+                  class="pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path

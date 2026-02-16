@@ -169,7 +169,7 @@ exports[`Toolbar should render with custom label content 1`] = `
                               />
                             </svg>
                             <svg
-                              class="pf-v6-icon-unified"
+                              class="pf-v6-icon-rh-ui"
                               viewBox="0 0 32 32"
                             >
                               <path
@@ -228,7 +228,7 @@ exports[`Toolbar should render with custom label content 1`] = `
                               />
                             </svg>
                             <svg
-                              class="pf-v6-icon-unified"
+                              class="pf-v6-icon-rh-ui"
                               viewBox="0 0 32 32"
                             >
                               <path
@@ -276,7 +276,7 @@ exports[`Toolbar should render with custom label content 1`] = `
                       />
                     </svg>
                     <svg
-                      class="pf-v6-icon-unified"
+                      class="pf-v6-icon-rh-ui"
                       viewBox="0 0 32 32"
                     >
                       <path
