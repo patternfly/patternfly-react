@@ -121,19 +121,6 @@ export function createIcon({ name, icon, rhUiIcon = null }: CreateIconProps): Re
           </svg>
         );
       } else {
-        let defaultIconClassName;
-        let rhUiIconClassName;
-
-        const shouldRenderDefault = set === 'default' || (set === undefined && rhUiIcon !== null);
-        const shouldRenderRhUi = set === 'rh-ui' || (set === undefined && rhUiIcon !== null);
-
-        if (shouldRenderDefault) {
-          defaultIconClassName = 'pf-v6-icon-default';
-        }
-        if (shouldRenderRhUi) {
-          rhUiIconClassName = 'pf-v6-icon-rh-ui';
-        }
-
         return (
           <svg
             className={classNames.join(' ')}
@@ -146,8 +133,8 @@ export function createIcon({ name, icon, rhUiIcon = null }: CreateIconProps): Re
             {...(props as Omit<React.SVGProps<SVGElement>, 'ref'>)} // Lie.
           >
             {hasTitle && <title id={this.id}>{title}</title>}
-            {icon && shouldRenderDefault && createSvg(icon, set === undefined && defaultIconClassName)}
-            {rhUiIcon && shouldRenderRhUi && createSvg(rhUiIcon, set === undefined && rhUiIconClassName)}
+            {icon && createSvg(icon, 'pf-v6-icon-default')}
+            {rhUiIcon && createSvg(rhUiIcon, 'pf-v6-icon-rh-ui')}
           </svg>
         );
       }
