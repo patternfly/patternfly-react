@@ -55,3 +55,15 @@ export const useOUIAId = (componentType: string, id?: OuiaId, variant?: string) 
   const generatedId = useSSRSafeId(`${ouiaPrefix}${componentType}-${variant ? `${variant}-` : ''}`);
   return id ?? generatedId;
 };
+
+let uid = 0;
+
+/**
+ * Legacy counter-based OUIA ID generator for class components that cannot use hooks.
+ * Prefer useOUIAId or useOUIAProps for functional components.
+ *
+ * @deprecated Use useOUIAId in functional components instead.
+ */
+export function getDefaultOUIAId(componentType: string, variant?: string) {
+  return `${ouiaPrefix}${componentType}-${variant ? `${variant}-` : ''}${++uid}`;
+}
