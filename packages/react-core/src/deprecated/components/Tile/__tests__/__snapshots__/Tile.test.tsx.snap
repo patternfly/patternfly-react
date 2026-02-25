@@ -81,24 +81,10 @@ exports[`Tile renders with icon 1`] = `
           fill="currentColor"
           height="1em"
           role="img"
+          viewBox="0 0  "
           width="1em"
         >
-          <svg
-            class="pf-v6-icon-default"
-            viewBox="0 0 448 512"
-          >
-            <path
-              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-            />
-          </svg>
-          <svg
-            class="pf-v6-icon-rh-ui"
-            viewBox="0 0 32 32"
-          >
-            <path
-              d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
-            />
-          </svg>
+          <path />
         </svg>
       </div>
       <div
@@ -130,24 +116,10 @@ exports[`Tile renders with stacked icon 1`] = `
           fill="currentColor"
           height="1em"
           role="img"
+          viewBox="0 0  "
           width="1em"
         >
-          <svg
-            class="pf-v6-icon-default"
-            viewBox="0 0 448 512"
-          >
-            <path
-              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-            />
-          </svg>
-          <svg
-            class="pf-v6-icon-rh-ui"
-            viewBox="0 0 32 32"
-          >
-            <path
-              d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
-            />
-          </svg>
+          <path />
         </svg>
       </div>
       <div
@@ -179,24 +151,10 @@ exports[`Tile renders with stacked large icon 1`] = `
           fill="currentColor"
           height="1em"
           role="img"
+          viewBox="0 0  "
           width="1em"
         >
-          <svg
-            class="pf-v6-icon-default"
-            viewBox="0 0 448 512"
-          >
-            <path
-              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-            />
-          </svg>
-          <svg
-            class="pf-v6-icon-rh-ui"
-            viewBox="0 0 32 32"
-          >
-            <path
-              d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
-            />
-          </svg>
+          <path />
         </svg>
       </div>
       <div

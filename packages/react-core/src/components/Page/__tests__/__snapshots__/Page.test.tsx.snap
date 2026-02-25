@@ -111,7 +111,7 @@ exports[`Page Check page to verify breadcrumb is created - PageBreadcrumb syntax
             <nav
               aria-label="Breadcrumb"
               class="pf-v6-c-breadcrumb"
-              data-ouia-component-id="OUIA-Generated-Breadcrumb-4"
+              data-ouia-component-id="OUIA-Generated-Breadcrumb-:r3:"
               data-ouia-component-type="PF6/Breadcrumb"
               data-ouia-safe="true"
             >
@@ -136,24 +136,10 @@ exports[`Page Check page to verify breadcrumb is created - PageBreadcrumb syntax
                       fill="currentColor"
                       height="1em"
                       role="img"
+                      viewBox="0 0  "
                       width="1em"
                     >
-                      <svg
-                        class="pf-v6-icon-default"
-                        viewBox="0 0 256 512"
-                      >
-                        <path
-                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                        />
-                      </svg>
-                      <svg
-                        class="pf-v6-icon-rh-ui"
-                        viewBox="0 0 32 32"
-                      >
-                        <path
-                          d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                        />
-                      </svg>
+                      <path />
                     </svg>
                   </span>
                   <a
@@ -175,24 +161,10 @@ exports[`Page Check page to verify breadcrumb is created - PageBreadcrumb syntax
                       fill="currentColor"
                       height="1em"
                       role="img"
+                      viewBox="0 0  "
                       width="1em"
                     >
-                      <svg
-                        class="pf-v6-icon-default"
-                        viewBox="0 0 256 512"
-                      >
-                        <path
-                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                        />
-                      </svg>
-                      <svg
-                        class="pf-v6-icon-rh-ui"
-                        viewBox="0 0 32 32"
-                      >
-                        <path
-                          d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                        />
-                      </svg>
+                      <path />
                     </svg>
                   </span>
                   <a
@@ -214,24 +186,10 @@ exports[`Page Check page to verify breadcrumb is created - PageBreadcrumb syntax
                       fill="currentColor"
                       height="1em"
                       role="img"
+                      viewBox="0 0  "
                       width="1em"
                     >
-                      <svg
-                        class="pf-v6-icon-default"
-                        viewBox="0 0 256 512"
-                      >
-                        <path
-                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                        />
-                      </svg>
-                      <svg
-                        class="pf-v6-icon-rh-ui"
-                        viewBox="0 0 32 32"
-                      >
-                        <path
-                          d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                        />
-                      </svg>
+                      <path />
                     </svg>
                   </span>
                   <a
@@ -295,7 +253,7 @@ exports[`Page Check page to verify breadcrumb is created 1`] = `
               <nav
                 aria-label="Breadcrumb"
                 class="pf-v6-c-breadcrumb"
-                data-ouia-component-id="OUIA-Generated-Breadcrumb-1"
+                data-ouia-component-id="OUIA-Generated-Breadcrumb-:r0:"
                 data-ouia-component-type="PF6/Breadcrumb"
                 data-ouia-safe="true"
               >
@@ -320,24 +278,10 @@ exports[`Page Check page to verify breadcrumb is created 1`] = `
                         fill="currentColor"
                         height="1em"
                         role="img"
+                        viewBox="0 0  "
                         width="1em"
                       >
-                        <svg
-                          class="pf-v6-icon-default"
-                          viewBox="0 0 256 512"
-                        >
-                          <path
-                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                          />
-                        </svg>
-                        <svg
-                          class="pf-v6-icon-rh-ui"
-                          viewBox="0 0 32 32"
-                        >
-                          <path
-                            d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                          />
-                        </svg>
+                        <path />
                       </svg>
                     </span>
                     <a
@@ -359,24 +303,10 @@ exports[`Page Check page to verify breadcrumb is created 1`] = `
                         fill="currentColor"
                         height="1em"
                         role="img"
+                        viewBox="0 0  "
                         width="1em"
                       >
-                        <svg
-                          class="pf-v6-icon-default"
-                          viewBox="0 0 256 512"
-                        >
-                          <path
-                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                          />
-                        </svg>
-                        <svg
-                          class="pf-v6-icon-rh-ui"
-                          viewBox="0 0 32 32"
-                        >
-                          <path
-                            d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                          />
-                        </svg>
+                        <path />
                       </svg>
                     </span>
                     <a
@@ -398,24 +328,10 @@ exports[`Page Check page to verify breadcrumb is created 1`] = `
                         fill="currentColor"
                         height="1em"
                         role="img"
+                        viewBox="0 0  "
                         width="1em"
                       >
-                        <svg
-                          class="pf-v6-icon-default"
-                          viewBox="0 0 256 512"
-                        >
-                          <path
-                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                          />
-                        </svg>
-                        <svg
-                          class="pf-v6-icon-rh-ui"
-                          viewBox="0 0 32 32"
-                        >
-                          <path
-                            d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                          />
-                        </svg>
+                        <path />
                       </svg>
                     </span>
                     <a
@@ -480,7 +396,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
               <nav
                 aria-label="Breadcrumb"
                 class="pf-v6-c-breadcrumb"
-                data-ouia-component-id="OUIA-Generated-Breadcrumb-7"
+                data-ouia-component-id="OUIA-Generated-Breadcrumb-:r6:"
                 data-ouia-component-type="PF6/Breadcrumb"
                 data-ouia-safe="true"
               >
@@ -505,24 +421,10 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
                         fill="currentColor"
                         height="1em"
                         role="img"
+                        viewBox="0 0  "
                         width="1em"
                       >
-                        <svg
-                          class="pf-v6-icon-default"
-                          viewBox="0 0 256 512"
-                        >
-                          <path
-                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                          />
-                        </svg>
-                        <svg
-                          class="pf-v6-icon-rh-ui"
-                          viewBox="0 0 32 32"
-                        >
-                          <path
-                            d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                          />
-                        </svg>
+                        <path />
                       </svg>
                     </span>
                     <a
@@ -544,24 +446,10 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
                         fill="currentColor"
                         height="1em"
                         role="img"
+                        viewBox="0 0  "
                         width="1em"
                       >
-                        <svg
-                          class="pf-v6-icon-default"
-                          viewBox="0 0 256 512"
-                        >
-                          <path
-                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                          />
-                        </svg>
-                        <svg
-                          class="pf-v6-icon-rh-ui"
-                          viewBox="0 0 32 32"
-                        >
-                          <path
-                            d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                          />
-                        </svg>
+                        <path />
                       </svg>
                     </span>
                     <a
@@ -583,24 +471,10 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
                         fill="currentColor"
                         height="1em"
                         role="img"
+                        viewBox="0 0  "
                         width="1em"
                       >
-                        <svg
-                          class="pf-v6-icon-default"
-                          viewBox="0 0 256 512"
-                        >
-                          <path
-                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                          />
-                        </svg>
-                        <svg
-                          class="pf-v6-icon-rh-ui"
-                          viewBox="0 0 32 32"
-                        >
-                          <path
-                            d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                          />
-                        </svg>
+                        <path />
                       </svg>
                     </span>
                     <a
@@ -618,7 +492,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
           <nav
             aria-label="Nav"
             class="pf-v6-c-nav pf-m-horizontal pf-m-subnav"
-            data-ouia-component-id="OUIA-Generated-Nav-horizontal-subnav-1"
+            data-ouia-component-id="OUIA-Generated-Nav-horizontal-subnav-:r8:"
             data-ouia-component-type="PF6/Nav"
             data-ouia-safe="true"
           >
@@ -628,7 +502,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
             >
               <li
                 class="pf-v6-c-nav__item"
-                data-ouia-component-id="OUIA-Generated-NavItem-1"
+                data-ouia-component-id="OUIA-Generated-NavItem-:ra:"
                 data-ouia-component-type="PF6/NavItem"
                 data-ouia-safe="true"
               >
@@ -645,7 +519,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
               </li>
               <li
                 class="pf-v6-c-nav__item"
-                data-ouia-component-id="OUIA-Generated-NavItem-2"
+                data-ouia-component-id="OUIA-Generated-NavItem-:rb:"
                 data-ouia-component-type="PF6/NavItem"
                 data-ouia-safe="true"
               >
@@ -661,7 +535,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
               </li>
               <li
                 class="pf-v6-c-nav__item"
-                data-ouia-component-id="OUIA-Generated-NavItem-3"
+                data-ouia-component-id="OUIA-Generated-NavItem-:rc:"
                 data-ouia-component-type="PF6/NavItem"
                 data-ouia-safe="true"
               >
@@ -677,7 +551,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
               </li>
               <li
                 class="pf-v6-c-nav__item"
-                data-ouia-component-id="OUIA-Generated-NavItem-4"
+                data-ouia-component-id="OUIA-Generated-NavItem-:rd:"
                 data-ouia-component-type="PF6/NavItem"
                 data-ouia-safe="true"
               >
@@ -693,7 +567,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
               </li>
               <li
                 class="pf-v6-c-nav__item"
-                data-ouia-component-id="OUIA-Generated-NavItem-5"
+                data-ouia-component-id="OUIA-Generated-NavItem-:re:"
                 data-ouia-component-type="PF6/NavItem"
                 data-ouia-safe="true"
               >
@@ -762,7 +636,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
               <nav
                 aria-label="Nav"
                 class="pf-v6-c-nav pf-m-horizontal pf-m-subnav"
-                data-ouia-component-id="OUIA-Generated-Nav-horizontal-subnav-2"
+                data-ouia-component-id="OUIA-Generated-Nav-horizontal-subnav-:rh:"
                 data-ouia-component-type="PF6/Nav"
                 data-ouia-safe="true"
               >
@@ -772,7 +646,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
                 >
                   <li
                     class="pf-v6-c-nav__item"
-                    data-ouia-component-id="OUIA-Generated-NavItem-6"
+                    data-ouia-component-id="OUIA-Generated-NavItem-:rj:"
                     data-ouia-component-type="PF6/NavItem"
                     data-ouia-safe="true"
                   >
@@ -789,7 +663,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
                   </li>
                   <li
                     class="pf-v6-c-nav__item"
-                    data-ouia-component-id="OUIA-Generated-NavItem-7"
+                    data-ouia-component-id="OUIA-Generated-NavItem-:rk:"
                     data-ouia-component-type="PF6/NavItem"
                     data-ouia-safe="true"
                   >
@@ -805,7 +679,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
                   </li>
                   <li
                     class="pf-v6-c-nav__item"
-                    data-ouia-component-id="OUIA-Generated-NavItem-8"
+                    data-ouia-component-id="OUIA-Generated-NavItem-:rl:"
                     data-ouia-component-type="PF6/NavItem"
                     data-ouia-safe="true"
                   >
@@ -821,7 +695,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
                   </li>
                   <li
                     class="pf-v6-c-nav__item"
-                    data-ouia-component-id="OUIA-Generated-NavItem-9"
+                    data-ouia-component-id="OUIA-Generated-NavItem-:rm:"
                     data-ouia-component-type="PF6/NavItem"
                     data-ouia-safe="true"
                   >
@@ -837,7 +711,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
                   </li>
                   <li
                     class="pf-v6-c-nav__item"
-                    data-ouia-component-id="OUIA-Generated-NavItem-10"
+                    data-ouia-component-id="OUIA-Generated-NavItem-:rn:"
                     data-ouia-component-type="PF6/NavItem"
                     data-ouia-safe="true"
                   >
@@ -873,7 +747,7 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
                     <nav
                       aria-label="Breadcrumb"
                       class="pf-v6-c-breadcrumb"
-                      data-ouia-component-id="OUIA-Generated-Breadcrumb-8"
+                      data-ouia-component-id="OUIA-Generated-Breadcrumb-:rp:"
                       data-ouia-component-type="PF6/Breadcrumb"
                       data-ouia-safe="true"
                     >
@@ -898,24 +772,10 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
                               fill="currentColor"
                               height="1em"
                               role="img"
+                              viewBox="0 0  "
                               width="1em"
                             >
-                              <svg
-                                class="pf-v6-icon-default"
-                                viewBox="0 0 256 512"
-                              >
-                                <path
-                                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                                />
-                              </svg>
-                              <svg
-                                class="pf-v6-icon-rh-ui"
-                                viewBox="0 0 32 32"
-                              >
-                                <path
-                                  d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                                />
-                              </svg>
+                              <path />
                             </svg>
                           </span>
                           <a
@@ -937,24 +797,10 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
                               fill="currentColor"
                               height="1em"
                               role="img"
+                              viewBox="0 0  "
                               width="1em"
                             >
-                              <svg
-                                class="pf-v6-icon-default"
-                                viewBox="0 0 256 512"
-                              >
-                                <path
-                                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                                />
-                              </svg>
-                              <svg
-                                class="pf-v6-icon-rh-ui"
-                                viewBox="0 0 32 32"
-                              >
-                                <path
-                                  d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                                />
-                              </svg>
+                              <path />
                             </svg>
                           </span>
                           <a
@@ -976,24 +822,10 @@ exports[`Page Check page to verify grouped nav and breadcrumb - old / props synt
                               fill="currentColor"
                               height="1em"
                               role="img"
+                              viewBox="0 0  "
                               width="1em"
                             >
-                              <svg
-                                class="pf-v6-icon-default"
-                                viewBox="0 0 256 512"
-                              >
-                                <path
-                                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                                />
-                              </svg>
-                              <svg
-                                class="pf-v6-icon-rh-ui"
-                                viewBox="0 0 32 32"
-                              >
-                                <path
-                                  d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                                />
-                              </svg>
+                              <path />
                             </svg>
                           </span>
                           <a
@@ -1040,7 +872,7 @@ exports[`Page Check page to verify skip to content points to main content region
     >
       <a
         class="pf-v6-c-button pf-m-primary"
-        data-ouia-component-id="OUIA-Generated-Button-primary-1"
+        data-ouia-component-id="OUIA-Generated-Button-primary-:rq:"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         href="#main-content-page-layout-test-nav"
@@ -1080,7 +912,7 @@ exports[`Page Check page to verify skip to content points to main content region
               <nav
                 aria-label="Breadcrumb"
                 class="pf-v6-c-breadcrumb"
-                data-ouia-component-id="OUIA-Generated-Breadcrumb-9"
+                data-ouia-component-id="OUIA-Generated-Breadcrumb-:rr:"
                 data-ouia-component-type="PF6/Breadcrumb"
                 data-ouia-safe="true"
               >
@@ -1105,24 +937,10 @@ exports[`Page Check page to verify skip to content points to main content region
                         fill="currentColor"
                         height="1em"
                         role="img"
+                        viewBox="0 0  "
                         width="1em"
                       >
-                        <svg
-                          class="pf-v6-icon-default"
-                          viewBox="0 0 256 512"
-                        >
-                          <path
-                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                          />
-                        </svg>
-                        <svg
-                          class="pf-v6-icon-rh-ui"
-                          viewBox="0 0 32 32"
-                        >
-                          <path
-                            d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                          />
-                        </svg>
+                        <path />
                       </svg>
                     </span>
                     <a
@@ -1144,24 +962,10 @@ exports[`Page Check page to verify skip to content points to main content region
                         fill="currentColor"
                         height="1em"
                         role="img"
+                        viewBox="0 0  "
                         width="1em"
                       >
-                        <svg
-                          class="pf-v6-icon-default"
-                          viewBox="0 0 256 512"
-                        >
-                          <path
-                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                          />
-                        </svg>
-                        <svg
-                          class="pf-v6-icon-rh-ui"
-                          viewBox="0 0 32 32"
-                        >
-                          <path
-                            d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                          />
-                        </svg>
+                        <path />
                       </svg>
                     </span>
                     <a
@@ -1183,24 +987,10 @@ exports[`Page Check page to verify skip to content points to main content region
                         fill="currentColor"
                         height="1em"
                         role="img"
+                        viewBox="0 0  "
                         width="1em"
                       >
-                        <svg
-                          class="pf-v6-icon-default"
-                          viewBox="0 0 256 512"
-                        >
-                          <path
-                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                          />
-                        </svg>
-                        <svg
-                          class="pf-v6-icon-rh-ui"
-                          viewBox="0 0 32 32"
-                        >
-                          <path
-                            d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                          />
-                        </svg>
+                        <path />
                       </svg>
                     </span>
                     <a
@@ -1305,7 +1095,7 @@ exports[`Page Sticky bottom breadcrumb on all height breakpoints - PageBreadcrum
             <nav
               aria-label="Breadcrumb"
               class="pf-v6-c-breadcrumb"
-              data-ouia-component-id="OUIA-Generated-Breadcrumb-6"
+              data-ouia-component-id="OUIA-Generated-Breadcrumb-:r5:"
               data-ouia-component-type="PF6/Breadcrumb"
               data-ouia-safe="true"
             >
@@ -1330,24 +1120,10 @@ exports[`Page Sticky bottom breadcrumb on all height breakpoints - PageBreadcrum
                       fill="currentColor"
                       height="1em"
                       role="img"
+                      viewBox="0 0  "
                       width="1em"
                     >
-                      <svg
-                        class="pf-v6-icon-default"
-                        viewBox="0 0 256 512"
-                      >
-                        <path
-                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                        />
-                      </svg>
-                      <svg
-                        class="pf-v6-icon-rh-ui"
-                        viewBox="0 0 32 32"
-                      >
-                        <path
-                          d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                        />
-                      </svg>
+                      <path />
                     </svg>
                   </span>
                   <a
@@ -1369,24 +1145,10 @@ exports[`Page Sticky bottom breadcrumb on all height breakpoints - PageBreadcrum
                       fill="currentColor"
                       height="1em"
                       role="img"
+                      viewBox="0 0  "
                       width="1em"
                     >
-                      <svg
-                        class="pf-v6-icon-default"
-                        viewBox="0 0 256 512"
-                      >
-                        <path
-                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                        />
-                      </svg>
-                      <svg
-                        class="pf-v6-icon-rh-ui"
-                        viewBox="0 0 32 32"
-                      >
-                        <path
-                          d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                        />
-                      </svg>
+                      <path />
                     </svg>
                   </span>
                   <a
@@ -1408,24 +1170,10 @@ exports[`Page Sticky bottom breadcrumb on all height breakpoints - PageBreadcrum
                       fill="currentColor"
                       height="1em"
                       role="img"
+                      viewBox="0 0  "
                       width="1em"
                     >
-                      <svg
-                        class="pf-v6-icon-default"
-                        viewBox="0 0 256 512"
-                      >
-                        <path
-                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                        />
-                      </svg>
-                      <svg
-                        class="pf-v6-icon-rh-ui"
-                        viewBox="0 0 32 32"
-                      >
-                        <path
-                          d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                        />
-                      </svg>
+                      <path />
                     </svg>
                   </span>
                   <a
@@ -1489,7 +1237,7 @@ exports[`Page Verify sticky bottom breadcrumb on all height breakpoints 1`] = `
               <nav
                 aria-label="Breadcrumb"
                 class="pf-v6-c-breadcrumb"
-                data-ouia-component-id="OUIA-Generated-Breadcrumb-3"
+                data-ouia-component-id="OUIA-Generated-Breadcrumb-:r2:"
                 data-ouia-component-type="PF6/Breadcrumb"
                 data-ouia-safe="true"
               >
@@ -1514,24 +1262,10 @@ exports[`Page Verify sticky bottom breadcrumb on all height breakpoints 1`] = `
                         fill="currentColor"
                         height="1em"
                         role="img"
+                        viewBox="0 0  "
                         width="1em"
                       >
-                        <svg
-                          class="pf-v6-icon-default"
-                          viewBox="0 0 256 512"
-                        >
-                          <path
-                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                          />
-                        </svg>
-                        <svg
-                          class="pf-v6-icon-rh-ui"
-                          viewBox="0 0 32 32"
-                        >
-                          <path
-                            d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                          />
-                        </svg>
+                        <path />
                       </svg>
                     </span>
                     <a
@@ -1553,24 +1287,10 @@ exports[`Page Verify sticky bottom breadcrumb on all height breakpoints 1`] = `
                         fill="currentColor"
                         height="1em"
                         role="img"
+                        viewBox="0 0  "
                         width="1em"
                       >
-                        <svg
-                          class="pf-v6-icon-default"
-                          viewBox="0 0 256 512"
-                        >
-                          <path
-                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                          />
-                        </svg>
-                        <svg
-                          class="pf-v6-icon-rh-ui"
-                          viewBox="0 0 32 32"
-                        >
-                          <path
-                            d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                          />
-                        </svg>
+                        <path />
                       </svg>
                     </span>
                     <a
@@ -1592,24 +1312,10 @@ exports[`Page Verify sticky bottom breadcrumb on all height breakpoints 1`] = `
                         fill="currentColor"
                         height="1em"
                         role="img"
+                        viewBox="0 0  "
                         width="1em"
                       >
-                        <svg
-                          class="pf-v6-icon-default"
-                          viewBox="0 0 256 512"
-                        >
-                          <path
-                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                          />
-                        </svg>
-                        <svg
-                          class="pf-v6-icon-rh-ui"
-                          viewBox="0 0 32 32"
-                        >
-                          <path
-                            d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                          />
-                        </svg>
+                        <path />
                       </svg>
                     </span>
                     <a
@@ -1671,7 +1377,7 @@ exports[`Page Verify sticky top breadcrumb on all height breakpoints - PageBread
             <nav
               aria-label="Breadcrumb"
               class="pf-v6-c-breadcrumb"
-              data-ouia-component-id="OUIA-Generated-Breadcrumb-5"
+              data-ouia-component-id="OUIA-Generated-Breadcrumb-:r4:"
               data-ouia-component-type="PF6/Breadcrumb"
               data-ouia-safe="true"
             >
@@ -1696,24 +1402,10 @@ exports[`Page Verify sticky top breadcrumb on all height breakpoints - PageBread
                       fill="currentColor"
                       height="1em"
                       role="img"
+                      viewBox="0 0  "
                       width="1em"
                     >
-                      <svg
-                        class="pf-v6-icon-default"
-                        viewBox="0 0 256 512"
-                      >
-                        <path
-                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                        />
-                      </svg>
-                      <svg
-                        class="pf-v6-icon-rh-ui"
-                        viewBox="0 0 32 32"
-                      >
-                        <path
-                          d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                        />
-                      </svg>
+                      <path />
                     </svg>
                   </span>
                   <a
@@ -1735,24 +1427,10 @@ exports[`Page Verify sticky top breadcrumb on all height breakpoints - PageBread
                       fill="currentColor"
                       height="1em"
                       role="img"
+                      viewBox="0 0  "
                       width="1em"
                     >
-                      <svg
-                        class="pf-v6-icon-default"
-                        viewBox="0 0 256 512"
-                      >
-                        <path
-                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                        />
-                      </svg>
-                      <svg
-                        class="pf-v6-icon-rh-ui"
-                        viewBox="0 0 32 32"
-                      >
-                        <path
-                          d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                        />
-                      </svg>
+                      <path />
                     </svg>
                   </span>
                   <a
@@ -1774,24 +1452,10 @@ exports[`Page Verify sticky top breadcrumb on all height breakpoints - PageBread
                       fill="currentColor"
                       height="1em"
                       role="img"
+                      viewBox="0 0  "
                       width="1em"
                     >
-                      <svg
-                        class="pf-v6-icon-default"
-                        viewBox="0 0 256 512"
-                      >
-                        <path
-                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                        />
-                      </svg>
-                      <svg
-                        class="pf-v6-icon-rh-ui"
-                        viewBox="0 0 32 32"
-                      >
-                        <path
-                          d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                        />
-                      </svg>
+                      <path />
                     </svg>
                   </span>
                   <a
@@ -1855,7 +1519,7 @@ exports[`Page Verify sticky top breadcrumb on all height breakpoints 1`] = `
               <nav
                 aria-label="Breadcrumb"
                 class="pf-v6-c-breadcrumb"
-                data-ouia-component-id="OUIA-Generated-Breadcrumb-2"
+                data-ouia-component-id="OUIA-Generated-Breadcrumb-:r1:"
                 data-ouia-component-type="PF6/Breadcrumb"
                 data-ouia-safe="true"
               >
@@ -1880,24 +1544,10 @@ exports[`Page Verify sticky top breadcrumb on all height breakpoints 1`] = `
                         fill="currentColor"
                         height="1em"
                         role="img"
+                        viewBox="0 0  "
                         width="1em"
                       >
-                        <svg
-                          class="pf-v6-icon-default"
-                          viewBox="0 0 256 512"
-                        >
-                          <path
-                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                          />
-                        </svg>
-                        <svg
-                          class="pf-v6-icon-rh-ui"
-                          viewBox="0 0 32 32"
-                        >
-                          <path
-                            d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                          />
-                        </svg>
+                        <path />
                       </svg>
                     </span>
                     <a
@@ -1919,24 +1569,10 @@ exports[`Page Verify sticky top breadcrumb on all height breakpoints 1`] = `
                         fill="currentColor"
                         height="1em"
                         role="img"
+                        viewBox="0 0  "
                         width="1em"
                       >
-                        <svg
-                          class="pf-v6-icon-default"
-                          viewBox="0 0 256 512"
-                        >
-                          <path
-                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                          />
-                        </svg>
-                        <svg
-                          class="pf-v6-icon-rh-ui"
-                          viewBox="0 0 32 32"
-                        >
-                          <path
-                            d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                          />
-                        </svg>
+                        <path />
                       </svg>
                     </span>
                     <a
@@ -1958,24 +1594,10 @@ exports[`Page Verify sticky top breadcrumb on all height breakpoints 1`] = `
                         fill="currentColor"
                         height="1em"
                         role="img"
+                        viewBox="0 0  "
                         width="1em"
                       >
-                        <svg
-                          class="pf-v6-icon-default"
-                          viewBox="0 0 256 512"
-                        >
-                          <path
-                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                          />
-                        </svg>
-                        <svg
-                          class="pf-v6-icon-rh-ui"
-                          viewBox="0 0 32 32"
-                        >
-                          <path
-                            d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                          />
-                        </svg>
+                        <path />
                       </svg>
                     </span>
                     <a

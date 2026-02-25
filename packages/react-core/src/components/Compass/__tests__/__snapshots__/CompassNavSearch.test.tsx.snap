@@ -8,7 +8,7 @@ exports[`Matches the snapshot 1`] = `
     <button
       aria-label="Search"
       class="pf-v6-c-button pf-m-plain pf-m-circle"
-      data-ouia-component-id="OUIA-Generated-Button-plain-9"
+      data-ouia-component-id="OUIA-Generated-Button-plain-:rh:"
       data-ouia-component-type="PF6/Button"
       data-ouia-safe="true"
       type="button"
@@ -54,7 +54,7 @@ exports[`Matches the snapshot with custom props 1`] = `
     <button
       aria-label="Custom search"
       class="pf-v6-c-button pf-m-plain pf-m-circle"
-      data-ouia-component-id="OUIA-Generated-Button-plain-10"
+      data-ouia-component-id="OUIA-Generated-Button-plain-:rj:"
       data-ouia-component-type="PF6/Button"
       data-ouia-safe="true"
       type="button"
