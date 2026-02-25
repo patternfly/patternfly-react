@@ -9,8 +9,7 @@ import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 export interface FormSelectProps
-  extends Omit<React.HTMLProps<HTMLSelectElement>, 'onChange' | 'onBlur' | 'onFocus' | 'disabled'>,
-    OUIAProps {
+  extends Omit<React.HTMLProps<HTMLSelectElement>, 'onChange' | 'onBlur' | 'onFocus' | 'disabled'>, OUIAProps {
   /** content rendered inside the FormSelect */
   children: React.ReactNode;
   /** additional classes added to the FormSelect control */

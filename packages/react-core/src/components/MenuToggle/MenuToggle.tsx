@@ -24,7 +24,8 @@ export enum MenuToggleSize {
 export type MenuToggleElement = HTMLDivElement | HTMLButtonElement;
 
 export interface MenuToggleProps
-  extends Omit<
+  extends
+    Omit<
       React.DetailedHTMLProps<
         React.ButtonHTMLAttributes<HTMLButtonElement> & React.HTMLAttributes<HTMLDivElement>,
         MenuToggleElement

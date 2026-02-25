@@ -6,8 +6,10 @@ import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inl
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
 import { EditableSelectInputProps } from './base/types';
 
-export interface IEditableSelectInputCell
-  extends Omit<React.HTMLProps<HTMLElement | HTMLDivElement>, 'onSelect' | 'onToggle'> {
+export interface IEditableSelectInputCell extends Omit<
+  React.HTMLProps<HTMLElement | HTMLDivElement>,
+  'onSelect' | 'onToggle'
+> {
   /** Row index of this select input cell */
   rowIndex: number;
   /** Cell index of this select input cell */

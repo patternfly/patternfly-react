@@ -15,8 +15,7 @@ import cssStickyCellInlineStart from '@patternfly/react-tokens/dist/esm/c_table_
 import cssStickyCellInlineEnd from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_InsetInlineEnd';
 
 export interface ThProps
-  extends BaseCellProps,
-    Omit<React.HTMLProps<HTMLTableHeaderCellElement>, 'onSelect' | 'width'> {
+  extends BaseCellProps, Omit<React.HTMLProps<HTMLTableHeaderCellElement>, 'onSelect' | 'width'> {
   /**
    * The column header the cell corresponds to. Applicable when this component is used as a direct child to <Tr>.
    * This attribute replaces table header in mobile viewport. It is rendered by ::before pseudo element.

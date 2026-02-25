@@ -6,8 +6,7 @@ import { getOUIAProps, OUIAProps } from '../../helpers';
 import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 
 export interface MenuToggleCheckboxProps
-  extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'checked'>,
-    OUIAProps {
+  extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'checked'>, OUIAProps {
   /** Additional classes added to the MenuToggleCheckbox */
   className?: string;
   /** Flag to show if the checkbox selection is valid or invalid */

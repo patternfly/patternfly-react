@@ -23,8 +23,10 @@ import OutlinedClockIcon from '@patternfly/react-icons/dist/esm/icons/outlined-c
 import cssDatePickerFormControlWidth from '@patternfly/react-tokens/dist/esm/c_date_picker__input_c_form_control_Width';
 import { GenerateId } from '../../helpers';
 
-export interface TimePickerProps
-  extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'> {
+export interface TimePickerProps extends Omit<
+  React.HTMLProps<HTMLDivElement>,
+  'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'
+> {
   /** Additional classes added to the time picker. */
   className?: string;
   /** Accessible label for the time picker */

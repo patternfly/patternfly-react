@@ -4,7 +4,7 @@ exports[`Switch no label switch is checked 1`] = `
 <DocumentFragment>
   <label
     class="pf-v6-c-switch"
-    data-ouia-component-id="OUIA-Generated-Switch-7"
+    data-ouia-component-id="OUIA-Generated-Switch-:rd:"
     data-ouia-component-type="PF6/Switch"
     data-ouia-safe="true"
     for="no-label-switch-is-checked"
@@ -29,24 +29,10 @@ exports[`Switch no label switch is checked 1`] = `
           fill="currentColor"
           height="1em"
           role="img"
+          viewBox="0 0  "
           width="1em"
         >
-          <svg
-            class="pf-v6-icon-default"
-            viewBox="0 0 512 512"
-          >
-            <path
-              d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-            />
-          </svg>
-          <svg
-            class="pf-v6-icon-rh-ui"
-            viewBox="0 0 32 32"
-          >
-            <path
-              d="M11 26.792c-.384 0-.769-.146-1.061-.438l-8.646-8.647a.999.999 0 1 1 1.414-1.414L11 24.586 29.293 6.293a.999.999 0 1 1 1.414 1.414L12.061 26.354a1.497 1.497 0 0 1-1.061.438Z"
-            />
-          </svg>
+          <path />
         </svg>
       </div>
     </span>
@@ -58,7 +44,7 @@ exports[`Switch no label switch is not checked 1`] = `
 <DocumentFragment>
   <label
     class="pf-v6-c-switch"
-    data-ouia-component-id="OUIA-Generated-Switch-8"
+    data-ouia-component-id="OUIA-Generated-Switch-:rf:"
     data-ouia-component-type="PF6/Switch"
     data-ouia-safe="true"
     for="no-label-switch-is-not-checked"
@@ -82,24 +68,10 @@ exports[`Switch no label switch is not checked 1`] = `
           fill="currentColor"
           height="1em"
           role="img"
+          viewBox="0 0  "
           width="1em"
         >
-          <svg
-            class="pf-v6-icon-default"
-            viewBox="0 0 512 512"
-          >
-            <path
-              d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-            />
-          </svg>
-          <svg
-            class="pf-v6-icon-rh-ui"
-            viewBox="0 0 32 32"
-          >
-            <path
-              d="M11 26.792c-.384 0-.769-.146-1.061-.438l-8.646-8.647a.999.999 0 1 1 1.414-1.414L11 24.586 29.293 6.293a.999.999 0 1 1 1.414 1.414L12.061 26.354a1.497 1.497 0 0 1-1.061.438Z"
-            />
-          </svg>
+          <path />
         </svg>
       </div>
     </span>
@@ -111,7 +83,7 @@ exports[`Switch switch is checked 1`] = `
 <DocumentFragment>
   <label
     class="pf-v6-c-switch"
-    data-ouia-component-id="OUIA-Generated-Switch-3"
+    data-ouia-component-id="OUIA-Generated-Switch-:r5:"
     data-ouia-component-type="PF6/Switch"
     data-ouia-safe="true"
     for="switch-is-checked"
@@ -141,7 +113,7 @@ exports[`Switch switch is checked and disabled 1`] = `
 <DocumentFragment>
   <label
     class="pf-v6-c-switch"
-    data-ouia-component-id="OUIA-Generated-Switch-9"
+    data-ouia-component-id="OUIA-Generated-Switch-:rh:"
     data-ouia-component-type="PF6/Switch"
     data-ouia-safe="true"
     for="switch-is-checked-and-disabled"
@@ -167,24 +139,10 @@ exports[`Switch switch is checked and disabled 1`] = `
           fill="currentColor"
           height="1em"
           role="img"
+          viewBox="0 0  "
           width="1em"
         >
-          <svg
-            class="pf-v6-icon-default"
-            viewBox="0 0 512 512"
-          >
-            <path
-              d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-            />
-          </svg>
-          <svg
-            class="pf-v6-icon-rh-ui"
-            viewBox="0 0 32 32"
-          >
-            <path
-              d="M11 26.792c-.384 0-.769-.146-1.061-.438l-8.646-8.647a.999.999 0 1 1 1.414-1.414L11 24.586 29.293 6.293a.999.999 0 1 1 1.414 1.414L12.061 26.354a1.497 1.497 0 0 1-1.061.438Z"
-            />
-          </svg>
+          <path />
         </svg>
       </div>
     </span>
@@ -196,7 +154,7 @@ exports[`Switch switch is not checked 1`] = `
 <DocumentFragment>
   <label
     class="pf-v6-c-switch"
-    data-ouia-component-id="OUIA-Generated-Switch-4"
+    data-ouia-component-id="OUIA-Generated-Switch-:r7:"
     data-ouia-component-type="PF6/Switch"
     data-ouia-safe="true"
     for="switch-is-not-checked"
@@ -225,7 +183,7 @@ exports[`Switch switch is not checked and disabled 1`] = `
 <DocumentFragment>
   <label
     class="pf-v6-c-switch"
-    data-ouia-component-id="OUIA-Generated-Switch-10"
+    data-ouia-component-id="OUIA-Generated-Switch-:rj:"
     data-ouia-component-type="PF6/Switch"
     data-ouia-safe="true"
     for="switch-is-not-checked-and-disabled"
@@ -250,24 +208,10 @@ exports[`Switch switch is not checked and disabled 1`] = `
           fill="currentColor"
           height="1em"
           role="img"
+          viewBox="0 0  "
           width="1em"
         >
-          <svg
-            class="pf-v6-icon-default"
-            viewBox="0 0 512 512"
-          >
-            <path
-              d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-            />
-          </svg>
-          <svg
-            class="pf-v6-icon-rh-ui"
-            viewBox="0 0 32 32"
-          >
-            <path
-              d="M11 26.792c-.384 0-.769-.146-1.061-.438l-8.646-8.647a.999.999 0 1 1 1.414-1.414L11 24.586 29.293 6.293a.999.999 0 1 1 1.414 1.414L12.061 26.354a1.497 1.497 0 0 1-1.061.438Z"
-            />
-          </svg>
+          <path />
         </svg>
       </div>
     </span>
@@ -279,7 +223,7 @@ exports[`Switch switch with only label is checked 1`] = `
 <DocumentFragment>
   <label
     class="pf-v6-c-switch"
-    data-ouia-component-id="OUIA-Generated-Switch-5"
+    data-ouia-component-id="OUIA-Generated-Switch-:r9:"
     data-ouia-component-type="PF6/Switch"
     data-ouia-safe="true"
     for="switch-is-checked"
@@ -310,7 +254,7 @@ exports[`Switch switch with only label is not checked 1`] = `
 <DocumentFragment>
   <label
     class="pf-v6-c-switch"
-    data-ouia-component-id="OUIA-Generated-Switch-6"
+    data-ouia-component-id="OUIA-Generated-Switch-:rb:"
     data-ouia-component-type="PF6/Switch"
     data-ouia-safe="true"
     for="switch-is-not-checked"

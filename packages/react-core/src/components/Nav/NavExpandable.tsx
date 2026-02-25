@@ -9,8 +9,7 @@ import { getOUIAProps, OUIAProps } from '../../helpers';
 import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 
 export interface NavExpandableProps
-  extends Omit<React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>, 'title'>,
-    OUIAProps {
+  extends Omit<React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>, 'title'>, OUIAProps {
   /** Title content shown for the expandable list */
   title: React.ReactNode;
   /** If defined, screen readers will read this text instead of the list title */

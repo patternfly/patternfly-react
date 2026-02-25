@@ -109,7 +109,7 @@ exports[`DualListSelector basic 1`] = `
           aria-disabled="true"
           aria-label="Add selected"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-1"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:r5:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           disabled=""
@@ -125,24 +125,10 @@ exports[`DualListSelector basic 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 256 512"
-              >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </button>
@@ -154,7 +140,7 @@ exports[`DualListSelector basic 1`] = `
           aria-disabled="false"
           aria-label="Add all"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-2"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:r6:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           tabindex="-1"
@@ -169,24 +155,10 @@ exports[`DualListSelector basic 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 448 512"
-              >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M30.354 17.061 17.708 29.707a.997.997 0 0 1-1.414 0 .999.999 0 0 1 0-1.414L28.587 16 16.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121Zm-14-2.122L3.707 2.293a.999.999 0 1 0-1.414 1.414L14.586 16 2.293 28.293a.999.999 0 1 0 1.414 1.414l12.646-12.646a1.501 1.501 0 0 0 0-2.121Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </button>
@@ -198,7 +170,7 @@ exports[`DualListSelector basic 1`] = `
           aria-disabled="true"
           aria-label="Remove all"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-3"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:r7:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           disabled=""
@@ -214,24 +186,10 @@ exports[`DualListSelector basic 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 448 512"
-              >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M15.707 28.293a.999.999 0 1 1-1.414 1.414L1.646 17.061a1.501 1.501 0 0 1 0-2.121L14.293 2.293a.999.999 0 1 1 1.414 1.414L3.414 16l12.293 12.293ZM17.414 16 29.707 3.707a.999.999 0 1 0-1.414-1.414L15.647 14.939a1.501 1.501 0 0 0 0 2.121l12.646 12.646a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414L17.414 15.999Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </button>
@@ -243,7 +201,7 @@ exports[`DualListSelector basic 1`] = `
           aria-disabled="true"
           aria-label="Remove selected"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-4"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:r8:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           disabled=""
@@ -259,24 +217,10 @@ exports[`DualListSelector basic 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 256 512"
-              >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M21 30a.997.997 0 0 1-.707-.293L7.647 17.061a1.501 1.501 0 0 1 0-2.121L20.293 2.293a.999.999 0 1 1 1.414 1.414L9.414 16l12.293 12.293A.999.999 0 0 1 21 30Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </button>
@@ -431,7 +375,7 @@ exports[`DualListSelector basic with disabled controls 1`] = `
           aria-disabled="true"
           aria-label="Add selected"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-13"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:r16:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           disabled=""
@@ -447,24 +391,10 @@ exports[`DualListSelector basic with disabled controls 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 256 512"
-              >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </button>
@@ -476,7 +406,7 @@ exports[`DualListSelector basic with disabled controls 1`] = `
           aria-disabled="true"
           aria-label="Add all"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-14"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:r17:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           disabled=""
@@ -492,24 +422,10 @@ exports[`DualListSelector basic with disabled controls 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 448 512"
-              >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M30.354 17.061 17.708 29.707a.997.997 0 0 1-1.414 0 .999.999 0 0 1 0-1.414L28.587 16 16.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121Zm-14-2.122L3.707 2.293a.999.999 0 1 0-1.414 1.414L14.586 16 2.293 28.293a.999.999 0 1 0 1.414 1.414l12.646-12.646a1.501 1.501 0 0 0 0-2.121Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </button>
@@ -521,7 +437,7 @@ exports[`DualListSelector basic with disabled controls 1`] = `
           aria-disabled="true"
           aria-label="Remove all"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-15"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:r18:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           disabled=""
@@ -537,24 +453,10 @@ exports[`DualListSelector basic with disabled controls 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 448 512"
-              >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M15.707 28.293a.999.999 0 1 1-1.414 1.414L1.646 17.061a1.501 1.501 0 0 1 0-2.121L14.293 2.293a.999.999 0 1 1 1.414 1.414L3.414 16l12.293 12.293ZM17.414 16 29.707 3.707a.999.999 0 1 0-1.414-1.414L15.647 14.939a1.501 1.501 0 0 0 0 2.121l12.646 12.646a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414L17.414 15.999Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </button>
@@ -566,7 +468,7 @@ exports[`DualListSelector basic with disabled controls 1`] = `
           aria-disabled="true"
           aria-label="Remove selected"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-16"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:r19:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           disabled=""
@@ -582,24 +484,10 @@ exports[`DualListSelector basic with disabled controls 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 256 512"
-              >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M21 30a.997.997 0 0 1-.707-.293L7.647 17.061a1.501 1.501 0 0 1 0-2.121L20.293 2.293a.999.999 0 1 1 1.414 1.414L9.414 16l12.293 12.293A.999.999 0 0 1 21 30Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </button>
@@ -765,7 +653,7 @@ exports[`DualListSelector with actions 1`] = `
           aria-disabled="true"
           aria-label="Add selected"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-21"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:r1q:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           disabled=""
@@ -781,24 +669,10 @@ exports[`DualListSelector with actions 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 256 512"
-              >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </button>
@@ -810,7 +684,7 @@ exports[`DualListSelector with actions 1`] = `
           aria-disabled="false"
           aria-label="Add all"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-22"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:r1r:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           tabindex="-1"
@@ -825,24 +699,10 @@ exports[`DualListSelector with actions 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 448 512"
-              >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M30.354 17.061 17.708 29.707a.997.997 0 0 1-1.414 0 .999.999 0 0 1 0-1.414L28.587 16 16.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121Zm-14-2.122L3.707 2.293a.999.999 0 1 0-1.414 1.414L14.586 16 2.293 28.293a.999.999 0 1 0 1.414 1.414l12.646-12.646a1.501 1.501 0 0 0 0-2.121Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </button>
@@ -854,7 +714,7 @@ exports[`DualListSelector with actions 1`] = `
           aria-disabled="false"
           aria-label="Remove all"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-23"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:r1s:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           tabindex="-1"
@@ -869,24 +729,10 @@ exports[`DualListSelector with actions 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 448 512"
-              >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M15.707 28.293a.999.999 0 1 1-1.414 1.414L1.646 17.061a1.501 1.501 0 0 1 0-2.121L14.293 2.293a.999.999 0 1 1 1.414 1.414L3.414 16l12.293 12.293ZM17.414 16 29.707 3.707a.999.999 0 1 0-1.414-1.414L15.647 14.939a1.501 1.501 0 0 0 0 2.121l12.646 12.646a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414L17.414 15.999Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </button>
@@ -898,7 +744,7 @@ exports[`DualListSelector with actions 1`] = `
           aria-disabled="true"
           aria-label="Remove selected"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-24"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:r1t:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           disabled=""
@@ -914,24 +760,10 @@ exports[`DualListSelector with actions 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 256 512"
-              >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M21 30a.997.997 0 0 1-.707-.293L7.647 17.061a1.501 1.501 0 0 1 0-2.121L20.293 2.293a.999.999 0 1 1 1.414 1.414L9.414 16l12.293 12.293A.999.999 0 0 1 21 30Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </button>
@@ -1151,7 +983,7 @@ exports[`DualListSelector with custom status 1`] = `
           aria-disabled="true"
           aria-label="Add selected"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-9"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:rr:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           disabled=""
@@ -1167,24 +999,10 @@ exports[`DualListSelector with custom status 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 256 512"
-              >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </button>
@@ -1196,7 +1014,7 @@ exports[`DualListSelector with custom status 1`] = `
           aria-disabled="false"
           aria-label="Add all"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-10"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:rs:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           tabindex="-1"
@@ -1211,24 +1029,10 @@ exports[`DualListSelector with custom status 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 448 512"
-              >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M30.354 17.061 17.708 29.707a.997.997 0 0 1-1.414 0 .999.999 0 0 1 0-1.414L28.587 16 16.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121Zm-14-2.122L3.707 2.293a.999.999 0 1 0-1.414 1.414L14.586 16 2.293 28.293a.999.999 0 1 0 1.414 1.414l12.646-12.646a1.501 1.501 0 0 0 0-2.121Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </button>
@@ -1240,7 +1044,7 @@ exports[`DualListSelector with custom status 1`] = `
           aria-disabled="true"
           aria-label="Remove all"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-11"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:rt:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           disabled=""
@@ -1256,24 +1060,10 @@ exports[`DualListSelector with custom status 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 448 512"
-              >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M15.707 28.293a.999.999 0 1 1-1.414 1.414L1.646 17.061a1.501 1.501 0 0 1 0-2.121L14.293 2.293a.999.999 0 1 1 1.414 1.414L3.414 16l12.293 12.293ZM17.414 16 29.707 3.707a.999.999 0 1 0-1.414-1.414L15.647 14.939a1.501 1.501 0 0 0 0 2.121l12.646 12.646a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414L17.414 15.999Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </button>
@@ -1285,7 +1075,7 @@ exports[`DualListSelector with custom status 1`] = `
           aria-disabled="true"
           aria-label="Remove selected"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-12"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:ru:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           disabled=""
@@ -1301,24 +1091,10 @@ exports[`DualListSelector with custom status 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 256 512"
-              >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M21 30a.997.997 0 0 1-.707-.293L7.647 17.061a1.501 1.501 0 0 1 0-2.121L20.293 2.293a.999.999 0 1 1 1.414 1.414L9.414 16l12.293 12.293A.999.999 0 0 1 21 30Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </button>
@@ -1409,24 +1185,10 @@ exports[`DualListSelector with search inputs 1`] = `
                     fill="currentColor"
                     height="1em"
                     role="img"
+                    viewBox="0 0  "
                     width="1em"
                   >
-                    <svg
-                      class="pf-v6-icon-default"
-                      viewBox="0 0 512 512"
-                    >
-                      <path
-                        d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                      />
-                    </svg>
-                    <svg
-                      class="pf-v6-icon-rh-ui"
-                      viewBox="0 0 32 32"
-                    >
-                      <path
-                        d="m30.796 29.205-8.557-8.557A11.945 11.945 0 0 0 25 13c0-6.617-5.383-12-12-12S1 6.383 1 13s5.383 12 12 12c2.904 0 5.57-1.038 7.648-2.761l8.556 8.556a1.122 1.122 0 0 0 1.592 0 1.127 1.127 0 0 0 0-1.591ZM3 13C3 7.486 7.486 3 13 3s10 4.486 10 10-4.486 10-10 10S3 18.514 3 13Z"
-                      />
-                    </svg>
+                    <path />
                   </svg>
                 </span>
                 <input
@@ -1527,7 +1289,7 @@ exports[`DualListSelector with search inputs 1`] = `
           aria-disabled="true"
           aria-label="Add selected"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-5"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:rg:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           disabled=""
@@ -1543,24 +1305,10 @@ exports[`DualListSelector with search inputs 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 256 512"
-              >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </button>
@@ -1572,7 +1320,7 @@ exports[`DualListSelector with search inputs 1`] = `
           aria-disabled="false"
           aria-label="Add all"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-6"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:rh:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           tabindex="-1"
@@ -1587,24 +1335,10 @@ exports[`DualListSelector with search inputs 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 448 512"
-              >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M30.354 17.061 17.708 29.707a.997.997 0 0 1-1.414 0 .999.999 0 0 1 0-1.414L28.587 16 16.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121Zm-14-2.122L3.707 2.293a.999.999 0 1 0-1.414 1.414L14.586 16 2.293 28.293a.999.999 0 1 0 1.414 1.414l12.646-12.646a1.501 1.501 0 0 0 0-2.121Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </button>
@@ -1616,7 +1350,7 @@ exports[`DualListSelector with search inputs 1`] = `
           aria-disabled="true"
           aria-label="Remove all"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-7"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:ri:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           disabled=""
@@ -1632,24 +1366,10 @@ exports[`DualListSelector with search inputs 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 448 512"
-              >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M15.707 28.293a.999.999 0 1 1-1.414 1.414L1.646 17.061a1.501 1.501 0 0 1 0-2.121L14.293 2.293a.999.999 0 1 1 1.414 1.414L3.414 16l12.293 12.293ZM17.414 16 29.707 3.707a.999.999 0 1 0-1.414-1.414L15.647 14.939a1.501 1.501 0 0 0 0 2.121l12.646 12.646a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414L17.414 15.999Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </button>
@@ -1661,7 +1381,7 @@ exports[`DualListSelector with search inputs 1`] = `
           aria-disabled="true"
           aria-label="Remove selected"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-8"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:rj:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           disabled=""
@@ -1677,24 +1397,10 @@ exports[`DualListSelector with search inputs 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 256 512"
-              >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M21 30a.997.997 0 0 1-.707-.293L7.647 17.061a1.501 1.501 0 0 1 0-2.121L20.293 2.293a.999.999 0 1 1 1.414 1.414L9.414 16l12.293 12.293A.999.999 0 0 1 21 30Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </button>
@@ -1740,24 +1446,10 @@ exports[`DualListSelector with search inputs 1`] = `
                     fill="currentColor"
                     height="1em"
                     role="img"
+                    viewBox="0 0  "
                     width="1em"
                   >
-                    <svg
-                      class="pf-v6-icon-default"
-                      viewBox="0 0 512 512"
-                    >
-                      <path
-                        d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                      />
-                    </svg>
-                    <svg
-                      class="pf-v6-icon-rh-ui"
-                      viewBox="0 0 32 32"
-                    >
-                      <path
-                        d="m30.796 29.205-8.557-8.557A11.945 11.945 0 0 0 25 13c0-6.617-5.383-12-12-12S1 6.383 1 13s5.383 12 12 12c2.904 0 5.57-1.038 7.648-2.761l8.556 8.556a1.122 1.122 0 0 0 1.592 0 1.127 1.127 0 0 0 0-1.591ZM3 13C3 7.486 7.486 3 13 3s10 4.486 10 10-4.486 10-10 10S3 18.514 3 13Z"
-                      />
-                    </svg>
+                    <path />
                   </svg>
                 </span>
                 <input
@@ -1867,24 +1559,10 @@ exports[`DualListSelector with tree 1`] = `
                         fill="currentColor"
                         height="1em"
                         role="img"
+                        viewBox="0 0  "
                         width="1em"
                       >
-                        <svg
-                          class="pf-v6-icon-default"
-                          viewBox="0 0 256 512"
-                        >
-                          <path
-                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                          />
-                        </svg>
-                        <svg
-                          class="pf-v6-icon-rh-ui"
-                          viewBox="0 0 32 32"
-                        >
-                          <path
-                            d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                          />
-                        </svg>
+                        <path />
                       </svg>
                     </span>
                   </div>
@@ -1992,7 +1670,7 @@ exports[`DualListSelector with tree 1`] = `
           aria-disabled="true"
           aria-label="Add selected"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-17"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:r1f:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           disabled=""
@@ -2008,24 +1686,10 @@ exports[`DualListSelector with tree 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 256 512"
-              >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </button>
@@ -2037,7 +1701,7 @@ exports[`DualListSelector with tree 1`] = `
           aria-disabled="false"
           aria-label="Add all"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-18"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:r1g:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           tabindex="-1"
@@ -2052,24 +1716,10 @@ exports[`DualListSelector with tree 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 448 512"
-              >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M30.354 17.061 17.708 29.707a.997.997 0 0 1-1.414 0 .999.999 0 0 1 0-1.414L28.587 16 16.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121Zm-14-2.122L3.707 2.293a.999.999 0 1 0-1.414 1.414L14.586 16 2.293 28.293a.999.999 0 1 0 1.414 1.414l12.646-12.646a1.501 1.501 0 0 0 0-2.121Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </button>
@@ -2081,7 +1731,7 @@ exports[`DualListSelector with tree 1`] = `
           aria-disabled="true"
           aria-label="Remove all"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-19"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:r1h:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           disabled=""
@@ -2097,24 +1747,10 @@ exports[`DualListSelector with tree 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 448 512"
-              >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M15.707 28.293a.999.999 0 1 1-1.414 1.414L1.646 17.061a1.501 1.501 0 0 1 0-2.121L14.293 2.293a.999.999 0 1 1 1.414 1.414L3.414 16l12.293 12.293ZM17.414 16 29.707 3.707a.999.999 0 1 0-1.414-1.414L15.647 14.939a1.501 1.501 0 0 0 0 2.121l12.646 12.646a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414L17.414 15.999Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </button>
@@ -2126,7 +1762,7 @@ exports[`DualListSelector with tree 1`] = `
           aria-disabled="true"
           aria-label="Remove selected"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-20"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:r1i:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           disabled=""
@@ -2142,24 +1778,10 @@ exports[`DualListSelector with tree 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 256 512"
-              >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M21 30a.997.997 0 0 1-.707-.293L7.647 17.061a1.501 1.501 0 0 1 0-2.121L20.293 2.293a.999.999 0 1 1 1.414 1.414L9.414 16l12.293 12.293A.999.999 0 0 1 21 30Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </button>

@@ -24,7 +24,8 @@ export interface DatePickerRequiredObject {
 /** The main date picker component. */
 
 export interface DatePickerProps
-  extends CalendarFormat,
+  extends
+    CalendarFormat,
     Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'> {
   /** The container to append the menu to. Defaults to 'inline'.
    * If your menu is being cut off you can append it to an element higher up the DOM tree.

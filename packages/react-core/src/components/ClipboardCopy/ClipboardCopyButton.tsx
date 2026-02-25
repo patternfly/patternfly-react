@@ -3,8 +3,10 @@ import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 import { Button } from '../Button';
 import { Tooltip, TooltipPosition } from '../Tooltip';
 
-export interface ClipboardCopyButtonProps
-  extends Omit<React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, 'ref'> {
+export interface ClipboardCopyButtonProps extends Omit<
+  React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
+  'ref'
+> {
   /** Callback for the copy when the button is clicked */
   onClick: (event: React.MouseEvent) => void;
   /** Content of the copy button */

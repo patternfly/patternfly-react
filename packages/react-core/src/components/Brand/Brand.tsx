@@ -4,8 +4,10 @@ import { setBreakpointCssVars } from '../../helpers';
 import cssBrandHeight from '@patternfly/react-tokens/dist/esm/c_brand_Height';
 import cssBrandWidth from '@patternfly/react-tokens/dist/esm/c_brand_Width';
 
-export interface BrandProps
-  extends React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
+export interface BrandProps extends React.DetailedHTMLProps<
+  React.ImgHTMLAttributes<HTMLImageElement>,
+  HTMLImageElement
+> {
   /** Transforms the Brand into a <picture> element from an <img> element. Container for <source> child elements. */
   children?: React.ReactNode;
   /** Additional classes added to the either type of Brand. */

@@ -11,7 +11,7 @@ exports[`Disclosure ExpandableSection 1`] = `
       <button
         aria-controls="content-id"
         class="pf-v6-c-button pf-m-link"
-        data-ouia-component-id="OUIA-Generated-Button-link-6"
+        data-ouia-component-id="OUIA-Generated-Button-link-:rh:"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         id="toggle-id"
@@ -29,24 +29,10 @@ exports[`Disclosure ExpandableSection 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 256 512"
-              >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </span>
@@ -76,7 +62,7 @@ exports[`ExpandableSection 1`] = `
       <button
         aria-controls="content-id"
         class="pf-v6-c-button pf-m-link"
-        data-ouia-component-id="OUIA-Generated-Button-link-1"
+        data-ouia-component-id="OUIA-Generated-Button-link-:r2:"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         id="toggle-id"
@@ -94,24 +80,10 @@ exports[`ExpandableSection 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 256 512"
-              >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </span>
@@ -142,7 +114,7 @@ exports[`Renders ExpandableSection expanded 1`] = `
         aria-controls="content-id"
         aria-expanded="true"
         class="pf-v6-c-button pf-m-link"
-        data-ouia-component-id="OUIA-Generated-Button-link-2"
+        data-ouia-component-id="OUIA-Generated-Button-link-:r5:"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         id="toggle-id"
@@ -160,24 +132,10 @@ exports[`Renders ExpandableSection expanded 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 256 512"
-              >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </span>
@@ -207,7 +165,7 @@ exports[`Renders ExpandableSection indented 1`] = `
         aria-controls="content-id"
         aria-expanded="true"
         class="pf-v6-c-button pf-m-link"
-        data-ouia-component-id="OUIA-Generated-Button-link-7"
+        data-ouia-component-id="OUIA-Generated-Button-link-:rk:"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         id="toggle-id"
@@ -225,24 +183,10 @@ exports[`Renders ExpandableSection indented 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 256 512"
-              >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </span>
@@ -271,7 +215,7 @@ exports[`Renders Uncontrolled ExpandableSection 1`] = `
       <button
         aria-controls="content-id"
         class="pf-v6-c-button pf-m-link"
-        data-ouia-component-id="OUIA-Generated-Button-link-5"
+        data-ouia-component-id="OUIA-Generated-Button-link-:re:"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         id="toggle-id"
@@ -289,24 +233,10 @@ exports[`Renders Uncontrolled ExpandableSection 1`] = `
               fill="currentColor"
               height="1em"
               role="img"
+              viewBox="0 0  "
               width="1em"
             >
-              <svg
-                class="pf-v6-icon-default"
-                viewBox="0 0 256 512"
-              >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                />
-              </svg>
-              <svg
-                class="pf-v6-icon-rh-ui"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                />
-              </svg>
+              <path />
             </svg>
           </span>
         </span>

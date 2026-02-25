@@ -9,8 +9,10 @@ import { NavContext } from './Nav';
 import { PageSidebarContext } from '../Page/PageSidebar';
 import { getResizeObserver } from '../../helpers/resizeObserver';
 
-export interface NavListProps
-  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLUListElement>, HTMLUListElement> {
+export interface NavListProps extends React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLUListElement>,
+  HTMLUListElement
+> {
   /** Children nodes */
   children?: React.ReactNode;
   /** Additional classes added to the list */
