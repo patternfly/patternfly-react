@@ -3,10 +3,8 @@ import { css } from '@patternfly/react-styles';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { Button } from '../Button';
 
-export interface ClipboardCopyToggleProps extends Omit<
-  React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
-  'ref'
-> {
+export interface ClipboardCopyToggleProps
+  extends Omit<React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, 'ref'> {
   onClick: (event: React.MouseEvent) => void;
   id: string;
   contentId: string;
