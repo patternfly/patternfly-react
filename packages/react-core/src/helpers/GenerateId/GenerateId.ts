@@ -1,4 +1,4 @@
-/** This Component can be used to wrap a functional component in order to generate a deterministic ID.
+/** SSR-safe ID generation component using render props.
  * For function components, prefer the useSSRSafeId hook instead.
  *
  * Example of how to use this component
@@ -12,9 +12,7 @@
  *  </GenerateId>
  *  );
  */
-import { Component } from 'react';
-
-let currentId = 0;
+import { useSSRSafeId } from '../useSSRSafeId';
 
 export interface GenerateIdProps {
   /** String to prefix the id with */
@@ -25,17 +23,10 @@ export interface GenerateIdProps {
   isRandom?: boolean;
 }
 
-class GenerateId extends Component<GenerateIdProps, {}> {
-  static displayName = 'GenerateId';
-  static defaultProps = {
-    prefix: 'pf-random-id-',
-    isRandom: false
-  };
-  id = `${this.props.prefix}${currentId++}`;
-
-  render() {
-    return this.props.children(this.id);
-  }
-}
+const GenerateId = ({ prefix = 'pf-random-id-', children }: GenerateIdProps) => {
+  const id = useSSRSafeId(prefix);
+  return children(id) as React.ReactElement;
+};
+GenerateId.displayName = 'GenerateId';
 
 export { GenerateId };

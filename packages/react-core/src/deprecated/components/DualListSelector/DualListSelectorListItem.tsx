@@ -1,7 +1,7 @@
 import { forwardRef, useContext, useRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
-import { getUniqueId } from '../../../helpers';
+import { useSSRSafeId } from '../../../helpers';
 import GripVerticalIcon from '@patternfly/react-icons/dist/esm/icons/grip-vertical-icon';
 import { Button, ButtonVariant } from '../../../components/Button';
 import { DualListSelectorListContext } from './DualListSelectorContext';
@@ -38,7 +38,7 @@ export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelec
   orderIndex,
   children,
   className,
-  id = getUniqueId('dual-list-selector-list-item'),
+  id: idProp,
   isSelected,
   innerRef,
   isDraggable = false,
@@ -47,6 +47,8 @@ export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelec
   draggableButtonAriaLabel = 'Reorder option',
   ...props
 }: DualListSelectorListItemProps) => {
+  const generatedId = useSSRSafeId('dual-list-selector-list-item-');
+  const id = idProp || generatedId;
   const privateRef = useRef<HTMLLIElement>(null);
   const ref = innerRef || privateRef;
   const { setFocusedOption } = useContext(DualListSelectorListContext);
