@@ -79,14 +79,7 @@ export function getDefaultOUIAId(componentType: string, variant?: string) {
   }
   */
   try {
-    let key;
-    if (typeof window !== 'undefined') {
-      // browser environments
-      key = `${window.location.href}-${componentType}-${variant || ''}`;
-    } else {
-      // node/SSR environments
-      key = `${componentType}-${variant || ''}`;
-    }
+    const key = `${componentType}-${variant || ''}`;
     if (!ouiaIdByRoute[key]) {
       ouiaIdByRoute[key] = 0;
     }

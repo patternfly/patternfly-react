@@ -62,9 +62,9 @@ class ToolbarLabelGroupContent extends Component<ToolbarLabelGroupContentProps> 
     let collapseListedFilters = false;
     if (collapseListedFiltersBreakpoint === 'all') {
       collapseListedFilters = true;
-    } else if (canUseDOM) {
-      collapseListedFilters =
-        (canUseDOM ? window.innerWidth : 1200) < globalBreakpoints[collapseListedFiltersBreakpoint];
+    } else if (collapseListedFiltersBreakpoint) {
+      const viewportWidth = canUseDOM ? window.innerWidth : 1200;
+      collapseListedFilters = viewportWidth < globalBreakpoints[collapseListedFiltersBreakpoint];
     }
 
     const isHidden = numberOfFilters === 0 || isExpanded;

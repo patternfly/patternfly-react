@@ -4,7 +4,7 @@ import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { TreeViewDataItem } from './TreeView';
 import { Badge } from '../Badge';
-import { GenerateId } from '../../helpers/GenerateId/GenerateId';
+import { useSSRSafeId } from '../../helpers';
 import { useHasAnimations } from '../../helpers';
 
 export interface TreeViewCheckProps extends Omit<Partial<React.InputHTMLAttributes<HTMLInputElement>>, 'checked'> {
@@ -113,6 +113,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   useMemo
 }: TreeViewListItemProps) => {
+  const randomId = useSSRSafeId(isSelectable ? 'selectable-id' : 'checkbox-id');
   const hasAnimations = useHasAnimations(hasAnimationsProp);
   const [internalIsExpanded, setIsExpanded] = useState(defaultExpanded);
   useEffect(() => {
@@ -243,41 +244,37 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
       {...(isFullyDisabled && { 'aria-disabled': true })}
     >
       <div className={css(styles.treeViewContent)}>
-        <GenerateId prefix={isSelectable ? 'selectable-id' : 'checkbox-id'}>
-          {(randomId) => (
-            <Component
-              className={css(
-                styles.treeViewNode,
-                isSelected && styles.modifiers.current,
-                isDisabled && styles.modifiers.disabled
-              )}
-              onClick={(evt: React.MouseEvent) => {
-                if (!hasCheckbox) {
-                  !isDisabled && onSelect && onSelect(evt, itemData, parentItem);
-                  if (!isDisabled && !isSelectable && children && evt.isDefaultPrevented() !== true) {
-                    if (internalIsExpanded) {
-                      onCollapse && onCollapse(evt, itemData, parentItem);
-                    } else {
-                      onExpand && onExpand(evt, itemData, parentItem);
-                    }
-                    setIsExpanded(!internalIsExpanded);
-                  }
-                }
-              }}
-              {...(hasCheckbox && { htmlFor: randomId })}
-              {...((hasCheckbox || (isSelectable && children)) && { id: `label-${randomId}` })}
-              {...(Component === 'button' && { type: 'button', disabled: isDisabled })}
-            >
-              <span className={css(styles.treeViewNodeContainer)}>
-                {children && renderToggle(randomId)}
-                {hasCheckbox && renderCheck(randomId)}
-                {icon && iconRendered}
-                {renderNodeContent()}
-                {badgeRendered}
-              </span>
-            </Component>
+        <Component
+          className={css(
+            styles.treeViewNode,
+            isSelected && styles.modifiers.current,
+            isDisabled && styles.modifiers.disabled
           )}
-        </GenerateId>
+          onClick={(evt: React.MouseEvent) => {
+            if (!hasCheckbox) {
+              !isDisabled && onSelect && onSelect(evt, itemData, parentItem);
+              if (!isDisabled && !isSelectable && children && evt.isDefaultPrevented() !== true) {
+                if (internalIsExpanded) {
+                  onCollapse && onCollapse(evt, itemData, parentItem);
+                } else {
+                  onExpand && onExpand(evt, itemData, parentItem);
+                }
+                setIsExpanded(!internalIsExpanded);
+              }
+            }
+          }}
+          {...(hasCheckbox && { htmlFor: randomId })}
+          {...((hasCheckbox || (isSelectable && children)) && { id: `label-${randomId}` })}
+          {...(Component === 'button' && { type: 'button', disabled: isDisabled })}
+        >
+          <span className={css(styles.treeViewNodeContainer)}>
+            {children && renderToggle(randomId)}
+            {hasCheckbox && renderCheck(randomId)}
+            {icon && iconRendered}
+            {renderNodeContent()}
+            {badgeRendered}
+          </span>
+        </Component>
         {action && <div className={css(styles.treeViewAction)}>{action}</div>}
       </div>
       {(internalIsExpanded || hasAnimations) && clonedChildren}

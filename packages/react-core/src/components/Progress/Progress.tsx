@@ -3,7 +3,8 @@ import styles from '@patternfly/react-styles/css/components/Progress/progress';
 import { css } from '@patternfly/react-styles';
 import { ProgressContainer, ProgressMeasureLocation } from './ProgressContainer';
 import { AriaProps } from './ProgressBar';
-import { getUniqueId } from '../../helpers/util';
+
+let progressId = 0;
 
 export enum ProgressSize {
   sm = 'sm',
@@ -73,7 +74,7 @@ class Progress extends Component<ProgressProps> {
     'aria-describedby': null as string
   };
 
-  id = this.props.id || getUniqueId();
+  id = this.props.id || `pf-progress-${progressId++}`;
 
   render() {
     const {

@@ -2,14 +2,16 @@ import { Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import { getUniqueId } from '../../helpers/util';
 import { NavContext } from './Nav';
 import { PageSidebarContext } from '../Page/PageSidebar';
 import { PickOptional } from '../../helpers/typeUtils';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
+let navExpandableId = 0;
+
 export interface NavExpandableProps
-  extends Omit<React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>, 'title'>, OUIAProps {
+  extends Omit<React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>, 'title'>,
+    OUIAProps {
   /** Title content shown for the expandable list */
   title: React.ReactNode;
   /** If defined, screen readers will read this text instead of the list title */
@@ -51,7 +53,7 @@ class NavExpandable extends Component<NavExpandableProps, NavExpandableState> {
     id: ''
   };
 
-  id = this.props.id || getUniqueId();
+  id = this.props.id || `pf-nav-expandable-${navExpandableId++}`;
 
   state = {
     expandedState: this.props.isExpanded,

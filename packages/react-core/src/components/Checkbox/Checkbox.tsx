@@ -3,11 +3,13 @@ import styles from '@patternfly/react-styles/css/components/Check/check';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import { getDefaultOUIAId, getOUIAProps, OUIAProps } from '../../helpers';
-import { getUniqueId } from '../../helpers/util';
 import { ASTERISK } from '../../helpers/htmlConstants';
 
+let checkboxDescriptionId = 0;
+
 export interface CheckboxProps
-  extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'>, OUIAProps {
+  extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'>,
+    OUIAProps {
   /** Additional classes added to the checkbox wrapper. This wrapper will be div element by default. It will be a label element if
    * isLabelWrapped is true, or it can be overridden by any element specified in the component prop.
    */
@@ -74,7 +76,7 @@ class Checkbox extends Component<CheckboxProps, CheckboxState> {
     super(props);
     this.state = {
       ouiaStateId: getDefaultOUIAId(Checkbox.displayName),
-      descriptionId: getUniqueId('pf-checkbox-description')
+      descriptionId: `pf-checkbox-description-${checkboxDescriptionId++}`
     };
   }
 

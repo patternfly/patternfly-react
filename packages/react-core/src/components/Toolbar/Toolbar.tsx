@@ -86,7 +86,7 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
   state = {
     isManagedToggleExpanded: false,
     filterInfo: {},
-    windowWidth: canUseDOM ? window.innerWidth : 1200,
+    windowWidth: 1200,
     ouiaStateId: getDefaultOUIAId(Toolbar.displayName)
   };
 
@@ -108,6 +108,9 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
   };
 
   componentDidMount() {
+    if (canUseDOM) {
+      this.setState({ windowWidth: window.innerWidth });
+    }
     if (this.isToggleManaged() && canUseDOM) {
       window.addEventListener('resize', this.closeExpandableContent);
     }

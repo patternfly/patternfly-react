@@ -3,10 +3,12 @@ import styles from '@patternfly/react-styles/css/components/Radio/radio';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
-import { getUniqueId } from '../../helpers/util';
+
+let radioDescriptionId = 0;
 
 export interface RadioProps
-  extends Omit<React.HTMLProps<HTMLInputElement>, 'disabled' | 'label' | 'onChange' | 'type'>, OUIAProps {
+  extends Omit<React.HTMLProps<HTMLInputElement>, 'disabled' | 'label' | 'onChange' | 'type'>,
+    OUIAProps {
   /** Additional classes added to the radio wrapper. This wrapper will be div element by default. It will be a label element if
    * isLabelWrapped is true, or it can be overridden by any element specified in the component prop.
    */
@@ -66,7 +68,7 @@ class Radio extends Component<RadioProps, { ouiaStateId: string; descriptionId: 
     }
     this.state = {
       ouiaStateId: getDefaultOUIAId(Radio.displayName),
-      descriptionId: getUniqueId('pf-radio-description')
+      descriptionId: `pf-radio-description-${radioDescriptionId++}`
     };
   }
 

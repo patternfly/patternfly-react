@@ -93,6 +93,7 @@ export enum ModalVariant {
 
 interface ModalState {
   ouiaStateId: string;
+  mounted: boolean;
 }
 
 class Modal extends Component<ModalProps, ModalState> {
@@ -135,7 +136,8 @@ class Modal extends Component<ModalProps, ModalState> {
     this.backdropId = `pf-modal-part-${backdropIdNum}`;
 
     this.state = {
-      ouiaStateId: getDefaultOUIAId(Modal.displayName, props.variant)
+      ouiaStateId: getDefaultOUIAId(Modal.displayName, props.variant),
+      mounted: false
     };
   }
 
@@ -167,6 +169,7 @@ class Modal extends Component<ModalProps, ModalState> {
   isEmpty = (value: string | null | undefined) => value === null || value === undefined || value === '';
 
   componentDidMount() {
+    this.setState({ mounted: true });
     const {
       appendTo,
       title,
@@ -238,7 +241,7 @@ class Modal extends Component<ModalProps, ModalState> {
       ...props
     } = this.props;
 
-    if (!canUseDOM || !this.getElement(appendTo)) {
+    if (!this.state.mounted || !canUseDOM || !this.getElement(appendTo)) {
       return null;
     }
 

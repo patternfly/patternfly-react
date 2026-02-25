@@ -2,11 +2,13 @@ import { Component, Fragment } from 'react';
 import styles from '@patternfly/react-styles/css/components/Switch/switch';
 import { css } from '@patternfly/react-styles';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
-import { getUniqueId } from '../../helpers/util';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
+let switchId = 0;
+
 export interface SwitchProps
-  extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'>, OUIAProps {
+  extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'>,
+    OUIAProps {
   /** id for the label. */
   id?: string;
   /** Additional classes added to the switch */
@@ -61,7 +63,7 @@ class Switch extends Component<SwitchProps & OUIAProps, { ouiaStateId: string }>
       );
     }
 
-    this.id = props.id || getUniqueId();
+    this.id = props.id || `pf-switch-${switchId++}`;
     this.state = {
       ouiaStateId: getDefaultOUIAId(Switch.displayName)
     };

@@ -2,7 +2,6 @@ import { Component, createRef } from 'react';
 import { css } from '@patternfly/react-styles';
 import datePickerStyles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
 import menuStyles from '@patternfly/react-styles/css/components/Menu/menu';
-import { getUniqueId } from '../../helpers';
 import { Popper } from '../../helpers/Popper/Popper';
 import { Menu, MenuContent, MenuList, MenuItem } from '../Menu';
 import { InputGroup, InputGroupItem } from '../InputGroup';
@@ -23,10 +22,10 @@ import { HelperText, HelperTextItem } from '../HelperText';
 import OutlinedClockIcon from '@patternfly/react-icons/dist/esm/icons/outlined-clock-icon';
 import cssDatePickerFormControlWidth from '@patternfly/react-tokens/dist/esm/c_date_picker__input_c_form_control_Width';
 
-export interface TimePickerProps extends Omit<
-  React.HTMLProps<HTMLDivElement>,
-  'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'
-> {
+let timePickerId = 0;
+
+export interface TimePickerProps
+  extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'> {
   /** Additional classes added to the time picker. */
   className?: string;
   /** Accessible label for the time picker */
@@ -125,8 +124,11 @@ class TimePicker extends Component<TimePickerProps, TimePickerState> {
     zIndex: 9999
   };
 
+  private generatedId: string;
+
   constructor(props: TimePickerProps) {
     super(props);
+    this.generatedId = props.id || `time-picker-${timePickerId++}`;
     const { is24Hour, delimiter, time, includeSeconds, isOpen } = this.props;
     let { minTime, maxTime } = this.props;
     if (minTime === '') {
@@ -479,7 +481,7 @@ class TimePicker extends Component<TimePickerProps, TimePickerState> {
     const style = { [cssDatePickerFormControlWidth.name]: width } as React.CSSProperties;
     const options = makeTimeOptions(stepMinutes, !is24Hour, delimiter, minTimeState, maxTimeState, includeSeconds);
     const isValidFormat = this.isValidFormat(timeState);
-    const randomId = id || getUniqueId('time-picker');
+    const randomId = id || this.generatedId;
 
     const getParentElement = () => {
       if (this.baseComponentRef && this.baseComponentRef.current) {

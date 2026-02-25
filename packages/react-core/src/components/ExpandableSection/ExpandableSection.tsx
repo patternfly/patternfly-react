@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import lineClamp from '@patternfly/react-tokens/dist/esm/c_expandable_section_m_truncate__content_LineClamp';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { PickOptional } from '../../helpers/typeUtils';
-import { debounce, getUniqueId } from '../../helpers/util';
+import { debounce } from '../../helpers/util';
 import { getResizeObserver } from '../../helpers/resizeObserver';
 import { Button } from '../Button';
 
@@ -91,6 +91,9 @@ interface ExpandableSectionState {
   previousWidth: number;
 }
 
+let expandableSectionContentId = 0;
+let expandableSectionToggleId = 0;
+
 const directionClassMap = {
   up: styles.modifiers.expandTop,
   down: styles.modifiers.expandBottom
@@ -106,6 +109,9 @@ const setLineClamp = (lines: number, element: HTMLDivElement) => {
 
 class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSectionState> {
   static displayName = 'ExpandableSection';
+  private generatedContentId = `expandable-section-content-${expandableSectionContentId++}`;
+  private generatedToggleId = `expandable-section-toggle-${expandableSectionToggleId++}`;
+
   constructor(props: ExpandableSectionProps) {
     super(props);
 
@@ -242,8 +248,8 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
 
     let onToggle = onToggleProp;
     let propOrStateIsExpanded = isExpanded;
-    const uniqueContentId = contentId || getUniqueId('expandable-section-content');
-    const uniqueToggleId = toggleId || getUniqueId('expandable-section-toggle');
+    const uniqueContentId = contentId || this.generatedContentId;
+    const uniqueToggleId = toggleId || this.generatedToggleId;
 
     // uncontrolled
     if (isExpanded === undefined) {
