@@ -43,8 +43,17 @@ class ToolbarLabelGroupContent extends Component<ToolbarLabelGroupContentProps, 
     viewportWidth: 1200
   };
 
-  componentDidMount() {
+  handleResize = () => {
     this.setState({ viewportWidth: window.innerWidth });
+  };
+
+  componentDidMount() {
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
   }
 
   render() {
