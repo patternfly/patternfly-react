@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import { useId, useState } from 'react';
 
-const react = require('react');
-const reactUseId: (() => string) | undefined = typeof react.useId === 'function' ? react.useId : undefined;
+const reactUseId: (() => string) | undefined = typeof useId === 'function' ? useId : undefined;
 
 let counter = 0;
 
