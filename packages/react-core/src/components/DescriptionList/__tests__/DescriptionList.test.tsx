@@ -133,7 +133,7 @@ test(`Renders style when isHorizontal and horizontalTermWidthModifier is set`, (
   expect(screen.getByLabelText('list')).toHaveStyle(listStyles);
 });
 
-test.skip(`Renders style when termWidth is set`, () => {
+test(`Renders style when termWidth is set`, () => {
   render(<DescriptionList aria-label="list" isHorizontal termWidth="30px" />);
   const listStyles = {};
   listStyles[`--${styles.descriptionList}__term--width`] = '30px';
