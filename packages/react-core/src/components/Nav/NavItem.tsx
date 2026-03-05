@@ -196,9 +196,9 @@ const NavItemBase: React.FunctionComponent<NavItemProps> = ({
   const tabIndex = isSidebarOpen ? null : -1;
 
   const handleNavItemClick = (event: any, context: NavContextProps, preventLinkDefault: boolean) => {
-    context.onSelect(event, groupId, itemId, to, preventLinkDefault, onClick);
+    context.onSelect?.(event, groupId, itemId, to, preventLinkDefault, onClick);
 
-    if (isManagedSidebar && isMobile && isSidebarOpen) {
+    if (isManagedSidebar && isMobile && isSidebarOpen && !hasFlyout) {
       onSidebarToggle();
     }
   };
