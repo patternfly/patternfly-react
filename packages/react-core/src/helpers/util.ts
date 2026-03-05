@@ -525,14 +525,12 @@ export const clearTimeouts = (timeoutRefs: React.RefObject<any>[]) => {
 };
 
 /**
- * @param {React.RefObject<any>[]} animationFrameRefs - Animation frame refs to clear
+ * @param {React.RefObject<number>} animationFrameRef - Animation frame ref to clear
  */
-export const clearAnimationFrames = (animationFrameRefs: React.RefObject<any>[]) => {
-  animationFrameRefs.forEach((ref) => {
-    if (ref.current) {
-      cancelAnimationFrame(ref.current);
-    }
-  });
+export const clearAnimationFrame = (animationFrameRef: React.RefObject<number>) => {
+  if (animationFrameRef.current) {
+    cancelAnimationFrame(animationFrameRef.current);
+  }
 };
 
 /**
