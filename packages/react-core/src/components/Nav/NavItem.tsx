@@ -15,6 +15,7 @@ import dividerStyles from '@patternfly/react-styles/css/components/Divider/divid
 import { css } from '@patternfly/react-styles';
 import { NavContext, NavSelectClickHandler } from './Nav';
 import { PageSidebarContext } from '../Page/PageSidebar';
+import { PageContext } from '../Page/PageContext';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 import { Popper } from '../../helpers/Popper/Popper';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
@@ -81,6 +82,7 @@ const NavItemBase: React.FunctionComponent<NavItemProps> = ({
 }: NavItemProps) => {
   const { flyoutRef, setFlyoutRef, navRef } = useContext(NavContext);
   const { isSidebarOpen } = useContext(PageSidebarContext);
+  const { isManagedSidebar, isMobile, onSidebarToggle } = useContext(PageContext);
   const [flyoutTarget, setFlyoutTarget] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
   const _ref = useRef<HTMLLIElement>(undefined);
@@ -193,13 +195,21 @@ const NavItemBase: React.FunctionComponent<NavItemProps> = ({
 
   const tabIndex = isSidebarOpen ? null : -1;
 
+  const handleNavItemClick = (event: any, context: any, preventLinkDefault: boolean) => {
+    context.onSelect(event, groupId, itemId, to, preventLinkDefault, onClick);
+
+    if (isManagedSidebar && isMobile && isSidebarOpen) {
+      onSidebarToggle();
+    }
+  };
+
   const renderDefaultLink = (context: any): React.ReactNode => {
     const preventLinkDefault = preventDefault || !to;
     return (
       <Component
         ref={anchorRef}
         href={to}
-        onClick={(e: any) => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick)}
+        onClick={(e: any) => handleNavItemClick(e, context, preventLinkDefault)}
         className={css(
           styles.navLink,
           isActive && styles.modifiers.current,
@@ -220,7 +230,7 @@ const NavItemBase: React.FunctionComponent<NavItemProps> = ({
 
   const renderClonedChild = (context: any, child: React.ReactElement<any>): React.ReactNode =>
     cloneElement(child, {
-      onClick: (e: MouseEvent) => context.onSelect(e, groupId, itemId, to, preventDefault, onClick),
+      onClick: (e: MouseEvent) => handleNavItemClick(e, context, preventDefault),
       'aria-current': isActive ? 'page' : null,
       ...(styleChildren && {
         className: css(styles.navLink, isActive && styles.modifiers.current, child.props && child.props.className)
