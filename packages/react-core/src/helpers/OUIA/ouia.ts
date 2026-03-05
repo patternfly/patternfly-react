@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useSSRSafeId } from '../useSSRSafeId';
 
 type OuiaId = number | string;
 
@@ -10,22 +10,11 @@ export interface OUIAProps {
   ouiaSafe?: boolean;
 }
 
-let uid = 0;
 const ouiaPrefix = 'OUIA-Generated-';
-const ouiaIdByRoute: any = {};
 
-/** Get props to conform to OUIA spec
- *
- * For functional components, use the useOUIAProps function instead
- *
- * In class based components, create a state variable ouiaStateId to create a static generated ID:
- * state = {
- *  ouiaStateId: getDefaultOUIAId(Chip.displayName)
- * }
- * This generated ID should remain alive as long as the component is not unmounted.
- *
- * Then add the attributes to the component
- * {...getOUIAProps('OverflowChip', this.props.ouiaId !== undefined ? this.props.ouiaId : this.state.ouiaStateId)}
+/**
+ * Get props to conform to OUIA spec.
+ * For functional components, use the useOUIAProps hook instead.
  *
  * @param {string} componentType OUIA component type
  * @param {number|string} id OUIA component id
@@ -40,8 +29,8 @@ export function getOUIAProps(componentType: string, id: OuiaId, ouiaSafe: boolea
 }
 
 /**
- * Hooks version of the getOUIAProps function that also memoizes the generated ID
- * Can only be used in functional components
+ * Hooks version of the getOUIAProps function with SSR-safe ID generation.
+ * Can only be used in functional components.
  *
  * @param {string} componentType OUIA component type
  * @param {number|string} id OUIA component id
@@ -55,43 +44,26 @@ export const useOUIAProps = (componentType: string, id?: OuiaId, ouiaSafe: boole
 });
 
 /**
- * Returns the ID or the memoized generated ID
+ * Returns the provided ID or a deterministic SSR-safe generated OUIA ID.
+ * Uses React.useId() under the hood for consistent server/client rendering.
  *
  * @param {string} componentType OUIA component type
  * @param {number|string} id OUIA component id
  * @param {string} variant Optional variant to add to the generated ID
  */
 export const useOUIAId = (componentType: string, id?: OuiaId, variant?: string) => {
-  const defaultOUIAId = useMemo(() => getDefaultOUIAId(componentType, variant), [componentType, variant]);
-  return id ?? defaultOUIAId;
+  const generatedId = useSSRSafeId(`${ouiaPrefix}${componentType}-${variant ? `${variant}-` : ''}`);
+  return id ?? generatedId;
 };
 
+let uid = 0;
+
 /**
- * Returns a generated id based on the URL location
+ * Legacy counter-based OUIA ID generator for class components that cannot use hooks.
+ * Prefer useOUIAId or useOUIAProps for functional components.
  *
- * @param {string} componentType OUIA component type
- * @param {string} variant Optional variant to add to the generated ID
+ * @deprecated Use useOUIAId in functional components instead.
  */
 export function getDefaultOUIAId(componentType: string, variant?: string) {
-  /*
-  ouiaIdByRoute = {
-    [route+componentType]: [number]
-  }
-  */
-  try {
-    let key;
-    if (typeof window !== 'undefined') {
-      // browser environments
-      key = `${window.location.href}-${componentType}-${variant || ''}`;
-    } else {
-      // node/SSR environments
-      key = `${componentType}-${variant || ''}`;
-    }
-    if (!ouiaIdByRoute[key]) {
-      ouiaIdByRoute[key] = 0;
-    }
-    return `${ouiaPrefix}${componentType}-${variant ? `${variant}-` : ''}${++ouiaIdByRoute[key]}`;
-  } catch (exception) {
-    return `${ouiaPrefix}${componentType}-${variant ? `${variant}-` : ''}${++uid}`;
-  }
+  return `${ouiaPrefix}${componentType}-${variant ? `${variant}-` : ''}${++uid}`;
 }

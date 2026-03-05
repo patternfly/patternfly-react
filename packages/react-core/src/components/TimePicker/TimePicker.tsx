@@ -2,7 +2,6 @@ import { Component, createRef } from 'react';
 import { css } from '@patternfly/react-styles';
 import datePickerStyles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
 import menuStyles from '@patternfly/react-styles/css/components/Menu/menu';
-import { getUniqueId } from '../../helpers';
 import { Popper } from '../../helpers/Popper/Popper';
 import { Menu, MenuContent, MenuList, MenuItem } from '../Menu';
 import { InputGroup, InputGroupItem } from '../InputGroup';
@@ -22,6 +21,7 @@ import {
 import { HelperText, HelperTextItem } from '../HelperText';
 import OutlinedClockIcon from '@patternfly/react-icons/dist/esm/icons/outlined-clock-icon';
 import cssDatePickerFormControlWidth from '@patternfly/react-tokens/dist/esm/c_date_picker__input_c_form_control_Width';
+import { GenerateId } from '../../helpers';
 
 export interface TimePickerProps extends Omit<
   React.HTMLProps<HTMLDivElement>,
@@ -479,92 +479,99 @@ class TimePicker extends Component<TimePickerProps, TimePickerState> {
     const style = { [cssDatePickerFormControlWidth.name]: width } as React.CSSProperties;
     const options = makeTimeOptions(stepMinutes, !is24Hour, delimiter, minTimeState, maxTimeState, includeSeconds);
     const isValidFormat = this.isValidFormat(timeState);
-    const randomId = id || getUniqueId('time-picker');
-
-    const getParentElement = () => {
-      if (this.baseComponentRef && this.baseComponentRef.current) {
-        return this.baseComponentRef.current.parentElement;
-      }
-      return null;
-    };
-
-    const menuContainer = (
-      <Menu ref={this.menuRef} isScrollable>
-        <MenuContent maxMenuHeight="200px">
-          <MenuList aria-label={ariaLabel}>
-            {options.map((option, index) => (
-              <MenuItem onClick={this.onSelect} key={option} id={`${randomId}-option-${index}`}>
-                {option}
-              </MenuItem>
-            ))}
-          </MenuList>
-        </MenuContent>
-      </Menu>
-    );
-
-    const textInput = (
-      <TextInput
-        aria-haspopup="menu"
-        id={`${randomId}-input`}
-        aria-label={ariaLabel}
-        validated={isInvalid ? 'error' : 'default'}
-        placeholder={placeholder}
-        value={timeState || ''}
-        type="text"
-        customIcon={<OutlinedClockIcon />}
-        onClick={this.onInputClick}
-        onChange={this.onInputChange}
-        autoComplete="off"
-        isDisabled={isDisabled}
-        isExpanded={isTimeOptionsOpen}
-        ref={this.inputRef}
-        {...inputProps}
-      />
-    );
-
-    let calculatedAppendTo;
-    switch (menuAppendTo) {
-      case 'inline':
-        calculatedAppendTo = () => this.toggleRef.current;
-        break;
-      case 'parent':
-        calculatedAppendTo = getParentElement;
-        break;
-      default:
-        calculatedAppendTo = menuAppendTo as HTMLElement;
-    }
 
     return (
-      <div ref={this.baseComponentRef} className={css(datePickerStyles.datePicker, className)}>
-        <div className={css(datePickerStyles.datePickerInput)} style={style} {...props}>
-          <InputGroup>
-            <InputGroupItem>
-              <div id={randomId}>
-                <div ref={this.toggleRef} style={{ paddingLeft: '0' }}>
-                  <Popper
-                    appendTo={calculatedAppendTo}
-                    trigger={textInput}
-                    triggerRef={this.toggleRef}
-                    popper={menuContainer}
-                    popperRef={this.menuRef}
-                    isVisible={isTimeOptionsOpen}
-                    zIndex={zIndex}
-                  />
-                </div>
+      <GenerateId prefix="time-picker-">
+        {(generatedId) => {
+          const randomId = id || generatedId;
+
+          const getParentElement = () => {
+            if (this.baseComponentRef && this.baseComponentRef.current) {
+              return this.baseComponentRef.current.parentElement;
+            }
+            return null;
+          };
+
+          const menuContainer = (
+            <Menu ref={this.menuRef} isScrollable>
+              <MenuContent maxMenuHeight="200px">
+                <MenuList aria-label={ariaLabel}>
+                  {options.map((option, index) => (
+                    <MenuItem onClick={this.onSelect} key={option} id={`${randomId}-option-${index}`}>
+                      {option}
+                    </MenuItem>
+                  ))}
+                </MenuList>
+              </MenuContent>
+            </Menu>
+          );
+
+          const textInput = (
+            <TextInput
+              aria-haspopup="menu"
+              id={`${randomId}-input`}
+              aria-label={ariaLabel}
+              validated={isInvalid ? 'error' : 'default'}
+              placeholder={placeholder}
+              value={timeState || ''}
+              type="text"
+              customIcon={<OutlinedClockIcon />}
+              onClick={this.onInputClick}
+              onChange={this.onInputChange}
+              autoComplete="off"
+              isDisabled={isDisabled}
+              isExpanded={isTimeOptionsOpen}
+              ref={this.inputRef}
+              {...inputProps}
+            />
+          );
+
+          let calculatedAppendTo;
+          switch (menuAppendTo) {
+            case 'inline':
+              calculatedAppendTo = () => this.toggleRef.current;
+              break;
+            case 'parent':
+              calculatedAppendTo = getParentElement;
+              break;
+            default:
+              calculatedAppendTo = menuAppendTo as HTMLElement;
+          }
+
+          return (
+            <div ref={this.baseComponentRef} className={css(datePickerStyles.datePicker, className)}>
+              <div className={css(datePickerStyles.datePickerInput)} style={style} {...props}>
+                <InputGroup>
+                  <InputGroupItem>
+                    <div id={randomId}>
+                      <div ref={this.toggleRef} style={{ paddingLeft: '0' }}>
+                        <Popper
+                          appendTo={calculatedAppendTo}
+                          trigger={textInput}
+                          triggerRef={this.toggleRef}
+                          popper={menuContainer}
+                          popperRef={this.menuRef}
+                          isVisible={isTimeOptionsOpen}
+                          zIndex={zIndex}
+                        />
+                      </div>
+                    </div>
+                  </InputGroupItem>
+                </InputGroup>
+                {isInvalid && (
+                  <div className={css(datePickerStyles.datePickerHelperText)}>
+                    <HelperText>
+                      <HelperTextItem variant="error">
+                        {!isValidFormat ? invalidFormatErrorMessage : invalidMinMaxErrorMessage}
+                      </HelperTextItem>
+                    </HelperText>
+                  </div>
+                )}
               </div>
-            </InputGroupItem>
-          </InputGroup>
-          {isInvalid && (
-            <div className={css(datePickerStyles.datePickerHelperText)}>
-              <HelperText>
-                <HelperTextItem variant="error">
-                  {!isValidFormat ? invalidFormatErrorMessage : invalidMinMaxErrorMessage}
-                </HelperTextItem>
-              </HelperText>
             </div>
-          )}
-        </div>
-      </div>
+          );
+        }}
+      </GenerateId>
     );
   }
 }

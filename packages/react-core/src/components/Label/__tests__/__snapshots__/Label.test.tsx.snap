@@ -21,7 +21,7 @@ exports[`Label editable label 1`] = `
       <button
         aria-label="Close Something"
         class="pf-v6-c-button pf-m-plain pf-m-no-padding"
-        data-ouia-component-id="OUIA-Generated-Button-plain-3"
+        data-ouia-component-id="OUIA-Generated-Button-plain-:r2:"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
@@ -170,7 +170,7 @@ exports[`Label label with close button 1`] = `
       <button
         aria-label="Close Something"
         class="pf-v6-c-button pf-m-plain pf-m-no-padding"
-        data-ouia-component-id="OUIA-Generated-Button-plain-1"
+        data-ouia-component-id="OUIA-Generated-Button-plain-:r0:"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
@@ -230,7 +230,7 @@ exports[`Label label with close button and outline variant 1`] = `
       <button
         aria-label="Close Something"
         class="pf-v6-c-button pf-m-plain pf-m-no-padding"
-        data-ouia-component-id="OUIA-Generated-Button-plain-2"
+        data-ouia-component-id="OUIA-Generated-Button-plain-:r1:"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"

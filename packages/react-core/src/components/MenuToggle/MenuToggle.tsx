@@ -7,7 +7,8 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
-import { OUIAProps, getDefaultOUIAId, getOUIAProps } from '../../helpers';
+import { OUIAProps, getOUIAProps } from '../../helpers';
+import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 
 export enum MenuToggleStatus {
   success = 'success',
@@ -74,11 +75,7 @@ export interface MenuToggleProps
   ouiaSafe?: boolean;
 }
 
-interface MenuToggleState {
-  ouiaStateId: string;
-}
-
-class MenuToggleBase extends Component<MenuToggleProps, MenuToggleState> {
+class MenuToggleBase extends Component<MenuToggleProps> {
   displayName = 'MenuToggleBase';
   static defaultProps: MenuToggleProps = {
     className: '',
@@ -90,10 +87,6 @@ class MenuToggleBase extends Component<MenuToggleProps, MenuToggleState> {
     isCircle: false,
     size: 'default',
     ouiaSafe: true
-  };
-
-  state: MenuToggleState = {
-    ouiaStateId: getDefaultOUIAId(MenuToggle.displayName, this.props.variant)
   };
 
   render() {
@@ -125,121 +118,132 @@ class MenuToggleBase extends Component<MenuToggleProps, MenuToggleState> {
     const isPlainText = variant === 'plainText';
     const isTypeahead = variant === 'typeahead';
 
-    const ouiaProps = getOUIAProps(MenuToggle.displayName, ouiaId ?? this.state.ouiaStateId, ouiaSafe);
-
-    let _statusIcon = statusIcon;
-    if (!statusIcon) {
-      switch (status) {
-        case MenuToggleStatus.success:
-          _statusIcon = <CheckCircleIcon />;
-          break;
-        case MenuToggleStatus.warning:
-          _statusIcon = <ExclamationTriangleIcon />;
-          break;
-        case MenuToggleStatus.danger:
-          _statusIcon = <ExclamationCircleIcon />;
-          break;
-      }
-    }
-
-    const toggleControls = (
-      <span className={css(styles.menuToggleControls)}>
-        {status !== undefined && <span className={css(styles.menuToggleStatusIcon)}>{_statusIcon}</span>}
-        <span className={css(styles.menuToggleToggleIcon)}>
-          <CaretDownIcon />
-        </span>
-      </span>
-    );
-
-    const content = (
-      <>
-        {(icon || isSettings) && <span className={css(styles.menuToggleIcon)}>{isSettings ? <CogIcon /> : icon}</span>}
-        {isTypeahead ? children : children && <span className={css(styles.menuToggleText)}>{children}</span>}
-        {isValidElement(badge) && <span className={css(styles.menuToggleCount)}>{badge}</span>}
-        {isTypeahead ? (
-          <button
-            type="button"
-            className={css(styles.menuToggleButton)}
-            aria-expanded={isExpanded}
-            onClick={onClick}
-            aria-label={ariaLabel || 'Menu toggle'}
-            tabIndex={-1}
-            {...ouiaProps}
-          >
-            {toggleControls}
-          </button>
-        ) : (
-          !isPlain && toggleControls
-        )}
-      </>
-    );
-
-    const commonStyles = css(
-      styles.menuToggle,
-      isExpanded && styles.modifiers.expanded,
-      variant === 'primary' && styles.modifiers.primary,
-      variant === 'secondary' && styles.modifiers.secondary,
-      status && styles.modifiers[status],
-      (isPlain || isPlainText) && styles.modifiers.plain,
-      isPlainText && 'pf-m-text',
-      isFullHeight && styles.modifiers.fullHeight,
-      isFullWidth && styles.modifiers.fullWidth,
-      isDisabled && styles.modifiers.disabled,
-      isPlaceholder && styles.modifiers.placeholder,
-      isSettings && styles.modifiers.settings,
-      size === MenuToggleSize.sm && styles.modifiers.small,
-      className
-    );
-
-    const componentProps = {
-      children: content,
-      ...(isDisabled && { disabled: true }),
-      ...otherProps
-    };
-
-    if (isTypeahead) {
-      return (
-        <div
-          ref={innerRef as React.Ref<HTMLDivElement>}
-          className={css(commonStyles, styles.modifiers.typeahead)}
-          {...componentProps}
-        />
-      );
-    }
-
-    if (splitButtonItems) {
-      return (
-        <div ref={innerRef as React.Ref<HTMLDivElement>} className={css(commonStyles, styles.modifiers.splitButton)}>
-          {splitButtonItems}
-          <button
-            className={css(styles.menuToggleButton, children && styles.modifiers.text)}
-            type="button"
-            aria-expanded={isExpanded}
-            aria-label={ariaLabel}
-            disabled={isDisabled}
-            onClick={onClick}
-            {...otherProps}
-            {...ouiaProps}
-          >
-            {children && <span className={css(styles.menuToggleText)}>{children}</span>}
-            {toggleControls}
-          </button>
-        </div>
-      );
-    }
-
     return (
-      <button
-        className={css(commonStyles, isCircle && isPlain && styles.modifiers.circle)}
-        type="button"
-        aria-label={ariaLabel}
-        aria-expanded={isExpanded}
-        ref={innerRef as React.Ref<HTMLButtonElement>}
-        disabled={isDisabled}
-        onClick={onClick}
-        {...componentProps}
-        {...ouiaProps}
-      />
+      <SSRSafeIds prefix="pf-" ouiaComponentType={`MenuToggle${variant ? `-${variant}` : ''}`}>
+        {(_, generatedOuiaId) => {
+          const ouiaProps = getOUIAProps(MenuToggle.displayName, ouiaId ?? generatedOuiaId, ouiaSafe);
+
+          let _statusIcon = statusIcon;
+          if (!statusIcon) {
+            switch (status) {
+              case MenuToggleStatus.success:
+                _statusIcon = <CheckCircleIcon />;
+                break;
+              case MenuToggleStatus.warning:
+                _statusIcon = <ExclamationTriangleIcon />;
+                break;
+              case MenuToggleStatus.danger:
+                _statusIcon = <ExclamationCircleIcon />;
+                break;
+            }
+          }
+
+          const toggleControls = (
+            <span className={css(styles.menuToggleControls)}>
+              {status !== undefined && <span className={css(styles.menuToggleStatusIcon)}>{_statusIcon}</span>}
+              <span className={css(styles.menuToggleToggleIcon)}>
+                <CaretDownIcon />
+              </span>
+            </span>
+          );
+
+          const content = (
+            <>
+              {(icon || isSettings) && (
+                <span className={css(styles.menuToggleIcon)}>{isSettings ? <CogIcon /> : icon}</span>
+              )}
+              {isTypeahead ? children : children && <span className={css(styles.menuToggleText)}>{children}</span>}
+              {isValidElement(badge) && <span className={css(styles.menuToggleCount)}>{badge}</span>}
+              {isTypeahead ? (
+                <button
+                  type="button"
+                  className={css(styles.menuToggleButton)}
+                  aria-expanded={isExpanded}
+                  onClick={onClick}
+                  aria-label={ariaLabel || 'Menu toggle'}
+                  tabIndex={-1}
+                  {...ouiaProps}
+                >
+                  {toggleControls}
+                </button>
+              ) : (
+                !isPlain && toggleControls
+              )}
+            </>
+          );
+
+          const commonStyles = css(
+            styles.menuToggle,
+            isExpanded && styles.modifiers.expanded,
+            variant === 'primary' && styles.modifiers.primary,
+            variant === 'secondary' && styles.modifiers.secondary,
+            status && styles.modifiers[status],
+            (isPlain || isPlainText) && styles.modifiers.plain,
+            isPlainText && 'pf-m-text',
+            isFullHeight && styles.modifiers.fullHeight,
+            isFullWidth && styles.modifiers.fullWidth,
+            isDisabled && styles.modifiers.disabled,
+            isPlaceholder && styles.modifiers.placeholder,
+            isSettings && styles.modifiers.settings,
+            size === MenuToggleSize.sm && styles.modifiers.small,
+            className
+          );
+
+          const componentProps = {
+            children: content,
+            ...(isDisabled && { disabled: true }),
+            ...otherProps
+          };
+
+          if (isTypeahead) {
+            return (
+              <div
+                ref={innerRef as React.Ref<HTMLDivElement>}
+                className={css(commonStyles, styles.modifiers.typeahead)}
+                {...componentProps}
+              />
+            ) as React.ReactElement;
+          }
+
+          if (splitButtonItems) {
+            return (
+              <div
+                ref={innerRef as React.Ref<HTMLDivElement>}
+                className={css(commonStyles, styles.modifiers.splitButton)}
+              >
+                {splitButtonItems}
+                <button
+                  className={css(styles.menuToggleButton, children && styles.modifiers.text)}
+                  type="button"
+                  aria-expanded={isExpanded}
+                  aria-label={ariaLabel}
+                  disabled={isDisabled}
+                  onClick={onClick}
+                  {...otherProps}
+                  {...ouiaProps}
+                >
+                  {children && <span className={css(styles.menuToggleText)}>{children}</span>}
+                  {toggleControls}
+                </button>
+              </div>
+            ) as React.ReactElement;
+          }
+
+          return (
+            <button
+              className={css(commonStyles, isCircle && isPlain && styles.modifiers.circle)}
+              type="button"
+              aria-label={ariaLabel}
+              aria-expanded={isExpanded}
+              ref={innerRef as React.Ref<HTMLButtonElement>}
+              disabled={isDisabled}
+              onClick={onClick}
+              {...componentProps}
+              {...ouiaProps}
+            />
+          ) as React.ReactElement;
+        }}
+      </SSRSafeIds>
     );
   }
 }

@@ -21,7 +21,7 @@ exports[`With popover opened 1`] = `
             <input
               aria-invalid="false"
               aria-label="Date picker"
-              data-ouia-component-id="OUIA-Generated-TextInputBase-7"
+              data-ouia-component-id="OUIA-Generated-TextInputBase-:rq:"
               data-ouia-component-type="PF6/TextInput"
               data-ouia-safe="true"
               placeholder="YYYY-MM-DD"
@@ -37,7 +37,7 @@ exports[`With popover opened 1`] = `
             aria-haspopup="dialog"
             aria-label="Toggle date picker"
             class="pf-v6-c-button pf-m-control"
-            data-ouia-component-id="OUIA-Generated-Button-control-7"
+            data-ouia-component-id="OUIA-Generated-Button-control-:rr:"
             data-ouia-component-type="PF6/Button"
             data-ouia-safe="true"
             type="button"
@@ -76,7 +76,7 @@ exports[`With popover opened 1`] = `
       </div>
     </div>
     <div
-      aria-describedby="popover-unique_id_mock-body"
+      aria-describedby="popover-pf-:ro:-body"
       aria-label=""
       aria-modal="true"
       class="pf-v6-c-popover pf-m-no-padding pf-m-width-auto pf-m-bottom"
@@ -94,7 +94,7 @@ exports[`With popover opened 1`] = `
       >
         <div
           class="pf-v6-c-popover__body"
-          id="popover-unique_id_mock-body"
+          id="popover-pf-:ro:-body"
         >
           <div
             class="pf-v6-c-calendar-month"
@@ -108,7 +108,7 @@ exports[`With popover opened 1`] = `
                 <button
                   aria-label="Previous month"
                   class="pf-v6-c-button pf-m-plain"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-1"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-:rt:"
                   data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   type="button"
@@ -155,14 +155,14 @@ exports[`With popover opened 1`] = `
                   >
                     <span
                       hidden=""
-                      id="unique_id_mock"
+                      id="hidden-month-span:rs:"
                     >
                       Month
                     </span>
                     <button
                       aria-expanded="false"
                       class="pf-v6-c-menu-toggle"
-                      data-ouia-component-id="OUIA-Generated-MenuToggle-1"
+                      data-ouia-component-id="OUIA-Generated-MenuToggle-:r10:"
                       data-ouia-component-type="PF6/MenuToggle"
                       data-ouia-safe="true"
                       style="width: 140px;"
@@ -221,7 +221,7 @@ exports[`With popover opened 1`] = `
                       <input
                         aria-invalid="false"
                         aria-label="Select year"
-                        data-ouia-component-id="OUIA-Generated-TextInputBase-8"
+                        data-ouia-component-id="OUIA-Generated-TextInputBase-:r12:"
                         data-ouia-component-type="PF6/TextInput"
                         data-ouia-safe="true"
                         type="number"
@@ -237,7 +237,7 @@ exports[`With popover opened 1`] = `
                 <button
                   aria-label="Next month"
                   class="pf-v6-c-button pf-m-plain"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-2"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-:r13:"
                   data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   type="button"
@@ -860,7 +860,7 @@ exports[`disabled date picker 1`] = `
             <input
               aria-invalid="false"
               aria-label="disabled date picker"
-              data-ouia-component-id="OUIA-Generated-TextInputBase-1"
+              data-ouia-component-id="OUIA-Generated-TextInputBase-:r2:"
               data-ouia-component-type="PF6/TextInput"
               data-ouia-safe="true"
               disabled=""
@@ -877,7 +877,7 @@ exports[`disabled date picker 1`] = `
             aria-haspopup="dialog"
             aria-label="Toggle date picker"
             class="pf-v6-c-button pf-m-control"
-            data-ouia-component-id="OUIA-Generated-Button-control-1"
+            data-ouia-component-id="OUIA-Generated-Button-control-:r3:"
             data-ouia-component-type="PF6/Button"
             data-ouia-safe="true"
             disabled=""
