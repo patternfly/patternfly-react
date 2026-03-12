@@ -126,7 +126,7 @@ function writeIcons(icons) {
   });
 
   const esmIndexString = index
-    .map(({ fname, jsName }) => `export { ${jsName}, ${jsName}Config } from './${fname}';`)
+    .map(({ fname, jsName }) => `export { ${jsName}, ${jsName}Config } from './${fname}.js';`)
     .sort()
     .join('\n');
   outputFileSync(join(outDir, 'esm', 'icons/index.js'), esmIndexString);
