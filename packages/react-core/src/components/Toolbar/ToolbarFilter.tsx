@@ -62,25 +62,24 @@ class ToolbarFilter extends Component<ToolbarFilterProps, ToolbarFilterState> {
     };
   }
 
+  getCategoryKey = () => {
+    const { categoryName } = this.props;
+    return typeof categoryName !== 'string' && categoryName.hasOwnProperty('key')
+      ? categoryName.key
+      : categoryName.toString();
+  };
+
   componentDidMount() {
-    const { categoryName, labels } = this.props;
-    this.context.updateNumberFilters(
-      typeof categoryName !== 'string' && categoryName.hasOwnProperty('key')
-        ? categoryName.key
-        : categoryName.toString(),
-      labels.length
-    );
+    this.context.updateNumberFilters(this.getCategoryKey(), this.props.labels.length);
     this.setState({ isMounted: true });
   }
 
   componentDidUpdate() {
-    const { categoryName, labels } = this.props;
-    this.context.updateNumberFilters(
-      typeof categoryName !== 'string' && categoryName.hasOwnProperty('key')
-        ? categoryName.key
-        : categoryName.toString(),
-      labels.length
-    );
+    this.context.updateNumberFilters(this.getCategoryKey(), this.props.labels.length);
+  }
+
+  componentWillUnmount() {
+    this.context.updateNumberFilters(this.getCategoryKey(), 0);
   }
 
   render() {
@@ -99,10 +98,7 @@ class ToolbarFilter extends Component<ToolbarFilterProps, ToolbarFilterState> {
     } = this.props;
     const { isExpanded: managedIsExpanded, labelGroupContentRef } = this.context;
     const _isExpanded = isExpanded !== undefined ? isExpanded : managedIsExpanded;
-    const categoryKey =
-      typeof categoryName !== 'string' && categoryName.hasOwnProperty('key')
-        ? categoryName.key
-        : categoryName.toString();
+    const categoryKey = this.getCategoryKey();
 
     const labelGroup = labels.length ? (
       <ToolbarItem variant="label-group">
