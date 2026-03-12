@@ -36,7 +36,7 @@ exports["default"] = exports.${jsName};
 const writeESMExport = (fname, jsName, icon, rhUiIcon = null) => {
   outputFileSync(
     join(outDir, 'esm/icons', `${fname}.js`),
-    `import { createIcon } from '../createIcon';
+    `import { createIcon } from '../createIcon.js';
 
 export const ${jsName}Config = {
   name: '${jsName}',
@@ -53,7 +53,7 @@ export default ${jsName};
 
 const writeDTSExport = (fname, jsName, icon, rhUiIcon = null) => {
   const text = `import { ComponentClass } from 'react';
-import { SVGIconProps } from '../createIcon';
+import { SVGIconProps } from '../createIcon.js';
 export declare const ${jsName}Config: {
   name: '${jsName}',
   icon: ${JSON.stringify(icon)},
