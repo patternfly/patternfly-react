@@ -4726,7 +4726,7 @@ __metadata:
     "@patternfly/react-icons": "workspace:^"
     "@patternfly/react-styles": "workspace:^"
     monaco-editor: "npm:^0.55.1"
-    react-dropzone: "npm:14.3.5"
+    react-dropzone: "npm:14.4.1"
     tslib: "npm:^2.8.1"
   peerDependencies:
     react: ^17 || ^18 || ^19
@@ -4746,7 +4746,7 @@ __metadata:
     css: "npm:^3.0.0"
     focus-trap: "npm:7.6.6"
     fs-extra: "npm:^11.3.3"
-    react-dropzone: "npm:^14.3.5"
+    react-dropzone: "npm:^14.4.1"
     tslib: "npm:^2.8.1"
   peerDependencies:
     react: ^17 || ^18 || ^19
@@ -19422,16 +19422,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dropzone@npm:14.3.5, react-dropzone@npm:^14.3.5":
-  version: 14.3.5
-  resolution: "react-dropzone@npm:14.3.5"
+"react-dropzone@npm:14.4.1, react-dropzone@npm:^14.4.1":
+  version: 14.4.1
+  resolution: "react-dropzone@npm:14.4.1"
   dependencies:
     attr-accept: "npm:^2.2.4"
     file-selector: "npm:^2.1.0"
     prop-types: "npm:^15.8.1"
   peerDependencies:
     react: ">= 16.8 || 18.0.0"
-  checksum: 10c0/e3e5dddd3bead7c6410bd3fccc3a87e93086ceac47526a2d35421ef7e11a9e59f47c8af8da5c4600a58ef238a5af87c751a71b6391d5c6f77f1f2857946c07cc
+  checksum: 10c0/ee66f88a06fcd1250f0e0d79cc967055f9b9fb9ce1d024c2ca92ff165b81fb44fe680b5f4e1bd49f9ca64dd834018868a6d8996548426cafcc0d770c075570c8
   languageName: node
   linkType: hard
 
