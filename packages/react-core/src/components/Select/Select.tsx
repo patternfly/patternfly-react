@@ -2,7 +2,8 @@ import { forwardRef, useEffect, useRef } from 'react';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuProps } from '../Menu';
 import { Popper, PopperOptions } from '../../helpers/Popper/Popper';
-import { getOUIAProps, OUIAProps, getDefaultOUIAId, onToggleArrowKeydownDefault } from '../../helpers';
+import { getOUIAProps, OUIAProps, onToggleArrowKeydownDefault } from '../../helpers';
+import { useOUIAId } from '../../helpers/OUIA/ouia';
 import type { SelectOptionProps } from './SelectOption';
 
 /** @deprecated Use PopperOptions instead */
@@ -92,6 +93,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
   focusTimeoutDelay = 0,
   ...props
 }: SelectProps & OUIAProps) => {
+  const generatedOuiaId = useOUIAId(Select.displayName, props.ouiaId);
   const localMenuRef = useRef<HTMLDivElement>(undefined);
   const localToggleRef = useRef<HTMLButtonElement>(undefined);
 
@@ -179,11 +181,7 @@ const SelectBase: React.FunctionComponent<SelectProps & OUIAProps> = ({
       isPlain={isPlain}
       selected={selected}
       isScrollable={isScrollable ?? (menuHeight !== undefined || maxMenuHeight !== undefined)}
-      {...getOUIAProps(
-        Select.displayName,
-        props.ouiaId !== undefined ? props.ouiaId : getDefaultOUIAId(Select.displayName),
-        props.ouiaSafe !== undefined ? props.ouiaSafe : true
-      )}
+      {...getOUIAProps(Select.displayName, generatedOuiaId, props.ouiaSafe !== undefined ? props.ouiaSafe : true)}
       {...props}
     >
       <MenuContent menuHeight={menuHeight} maxMenuHeight={maxMenuHeight}>

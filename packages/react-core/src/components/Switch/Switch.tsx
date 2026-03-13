@@ -2,8 +2,8 @@ import { Component, Fragment } from 'react';
 import styles from '@patternfly/react-styles/css/components/Switch/switch';
 import { css } from '@patternfly/react-styles';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
-import { getUniqueId } from '../../helpers/util';
-import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
+import { getOUIAProps, OUIAProps } from '../../helpers';
+import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 
 export interface SwitchProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'>, OUIAProps {
@@ -39,9 +39,8 @@ export interface SwitchProps
   ouiaSafe?: boolean;
 }
 
-class Switch extends Component<SwitchProps & OUIAProps, { ouiaStateId: string }> {
+class Switch extends Component<SwitchProps & OUIAProps> {
   static displayName = 'Switch';
-  id: string;
 
   static defaultProps: SwitchProps = {
     isChecked: true,
@@ -60,17 +59,11 @@ class Switch extends Component<SwitchProps & OUIAProps, { ouiaStateId: string }>
         'Switch: Switch requires at least one of label, aria-labelledby, or aria-label props to be specified'
       );
     }
-
-    this.id = props.id || getUniqueId();
-    this.state = {
-      ouiaStateId: getDefaultOUIAId(Switch.displayName)
-    };
   }
 
   render() {
     const {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      id,
+      id: idProp,
       className,
       label,
       isChecked,
@@ -86,54 +79,61 @@ class Switch extends Component<SwitchProps & OUIAProps, { ouiaStateId: string }>
       ...props
     } = this.props;
 
-    const hasAccessibleName = label || ariaLabel || ariaLabelledBy;
-    const isAriaLabelledBy = hasAccessibleName && (!ariaLabel || ariaLabelledBy);
-    const useDefaultAriaLabelledBy = !ariaLabelledBy && !ariaLabel;
-    const ariaLabelledByIds = ariaLabelledBy ?? `${this.id}-label`;
-
     return (
-      <label
-        className={css(styles.switch, isReversed && styles.modifiers.reverse, className)}
-        htmlFor={this.id}
-        {...getOUIAProps(Switch.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
-      >
-        <input
-          id={this.id}
-          className={css(styles.switchInput)}
-          type="checkbox"
-          role="switch"
-          onChange={(event) => onChange(event, event.target.checked)}
-          {...(defaultChecked !== undefined ? { defaultChecked } : { checked: isChecked })}
-          disabled={isDisabled}
-          aria-labelledby={isAriaLabelledBy ? ariaLabelledByIds : null}
-          aria-label={ariaLabel}
-          {...props}
-        />
-        {label !== undefined ? (
-          <Fragment>
-            <span className={css(styles.switchToggle)}>
-              {hasCheckIcon && (
-                <span className={css(styles.switchToggleIcon)}>
-                  <CheckIcon />
+      <SSRSafeIds prefix="pf-switch-" ouiaComponentType="Switch">
+        {(generatedId, generatedOuiaId) => {
+          const id = idProp || generatedId;
+          const hasAccessibleName = label || ariaLabel || ariaLabelledBy;
+          const isAriaLabelledBy = hasAccessibleName && (!ariaLabel || ariaLabelledBy);
+          const useDefaultAriaLabelledBy = !ariaLabelledBy && !ariaLabel;
+          const ariaLabelledByIds = ariaLabelledBy ?? `${id}-label`;
+
+          return (
+            <label
+              className={css(styles.switch, isReversed && styles.modifiers.reverse, className)}
+              htmlFor={id}
+              {...getOUIAProps(Switch.displayName, ouiaId !== undefined ? ouiaId : generatedOuiaId, ouiaSafe)}
+            >
+              <input
+                id={id}
+                className={css(styles.switchInput)}
+                type="checkbox"
+                role="switch"
+                onChange={(event) => onChange(event, event.target.checked)}
+                {...(defaultChecked !== undefined ? { defaultChecked } : { checked: isChecked })}
+                disabled={isDisabled}
+                aria-labelledby={isAriaLabelledBy ? ariaLabelledByIds : null}
+                aria-label={ariaLabel}
+                {...props}
+              />
+              {label !== undefined ? (
+                <Fragment>
+                  <span className={css(styles.switchToggle)}>
+                    {hasCheckIcon && (
+                      <span className={css(styles.switchToggleIcon)}>
+                        <CheckIcon />
+                      </span>
+                    )}
+                  </span>
+                  <span
+                    className={css(styles.switchLabel)}
+                    id={isAriaLabelledBy && useDefaultAriaLabelledBy ? `${id}-label` : null}
+                    aria-hidden="true"
+                  >
+                    {label}
+                  </span>
+                </Fragment>
+              ) : (
+                <span className={css(styles.switchToggle)}>
+                  <div className={css(styles.switchToggleIcon)}>
+                    <CheckIcon />
+                  </div>
                 </span>
               )}
-            </span>
-            <span
-              className={css(styles.switchLabel)}
-              id={isAriaLabelledBy && useDefaultAriaLabelledBy ? `${this.id}-label` : null}
-              aria-hidden="true"
-            >
-              {label}
-            </span>
-          </Fragment>
-        ) : (
-          <span className={css(styles.switchToggle)}>
-            <div className={css(styles.switchToggleIcon)}>
-              <CheckIcon />
-            </div>
-          </span>
-        )}
-      </label>
+            </label>
+          );
+        }}
+      </SSRSafeIds>
     );
   }
 }

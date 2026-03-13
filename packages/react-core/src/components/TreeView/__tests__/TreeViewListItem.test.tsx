@@ -359,8 +359,8 @@ test(`Renders ${styles.treeViewNode} element with for and id attributes when has
 
   const treeViewNode = screen.getByRole('treeitem').querySelector(`.${styles.treeViewNode}`);
 
-  expect(treeViewNode).toHaveAttribute('for', expect.stringMatching(/checkbox-id\d+/));
-  expect(treeViewNode).toHaveAttribute('id', expect.stringMatching(/label-checkbox-id\d+/));
+  expect(treeViewNode).toHaveAttribute('for', expect.stringMatching(/checkbox-id/));
+  expect(treeViewNode).toHaveAttribute('id', expect.stringMatching(/label-checkbox-id/));
 });
 
 test(`Renders ${styles.treeViewNode} element with id attribute when isSelectable and children are passed`, () => {
@@ -372,7 +372,7 @@ test(`Renders ${styles.treeViewNode} element with id attribute when isSelectable
 
   const treeViewNode = screen.getByRole('treeitem').querySelector(`.${styles.treeViewNode}`);
 
-  expect(treeViewNode).toHaveAttribute('id', expect.stringMatching(/selectable-id\d+/));
+  expect(treeViewNode).toHaveAttribute('id', expect.stringMatching(/selectable-id/));
 });
 
 test(`Does not render ${styles.treeViewNode} element with additional classes by default`, () => {

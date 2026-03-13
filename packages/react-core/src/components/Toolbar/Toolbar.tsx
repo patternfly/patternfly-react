@@ -1,11 +1,11 @@
 import { Component, createRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
-import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { css } from '@patternfly/react-styles';
 import { ToolbarContext } from './ToolbarUtils';
 import { ToolbarLabelGroupContent } from './ToolbarLabelGroupContent';
 import { formatBreakpointMods, canUseDOM } from '../../helpers/util';
-import { getDefaultOUIAId, getOUIAProps, OUIAProps } from '../../helpers';
+import { getOUIAProps, OUIAProps } from '../../helpers';
+import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 import { PageContext } from '../Page/PageContext';
 
 export enum ToolbarColorVariant {
@@ -71,7 +71,6 @@ export interface ToolbarState {
   filterInfo: FilterInfo;
   /** Used to keep track of window width so we can collapse expanded content when window is resizing */
   windowWidth: number;
-  ouiaStateId: string;
 }
 
 interface FilterInfo {
@@ -86,8 +85,7 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
   state = {
     isManagedToggleExpanded: false,
     filterInfo: {},
-    windowWidth: canUseDOM ? window.innerWidth : 1200,
-    ouiaStateId: getDefaultOUIAId(Toolbar.displayName)
+    windowWidth: 1200
   };
 
   isToggleManaged = () => !(this.props.isExpanded || !!this.props.toggleIsExpanded);
@@ -108,6 +106,9 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
   };
 
   componentDidMount() {
+    if (canUseDOM) {
+      this.setState({ windowWidth: window.innerWidth });
+    }
     if (this.isToggleManaged() && canUseDOM) {
       window.addEventListener('resize', this.closeExpandableContent);
     }
@@ -131,7 +132,7 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
   getNumberOfFilters = () =>
     Object.values(this.state.filterInfo).reduce((acc: any, cur: any) => acc + cur, 0) as number;
 
-  renderToolbar = (randomId: string) => {
+  renderToolbar = (randomId: string, generatedOuiaId?: string) => {
     const {
       hasNoPadding,
       clearAllFilters,
@@ -178,7 +179,7 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
               className
             )}
             id={randomId}
-            {...getOUIAProps(Toolbar.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
+            {...getOUIAProps(Toolbar.displayName, ouiaId !== undefined ? ouiaId : generatedOuiaId)}
             {...props}
           >
             <ToolbarContext.Provider
@@ -215,10 +216,10 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
   };
 
   render() {
-    return this.props.id ? (
-      this.renderToolbar(this.props.id)
-    ) : (
-      <GenerateId>{(randomId) => this.renderToolbar(randomId)}</GenerateId>
+    return (
+      <SSRSafeIds prefix="pf-random-id-" ouiaComponentType="Toolbar">
+        {(generatedId, generatedOuiaId) => this.renderToolbar(this.props.id || generatedId, generatedOuiaId)}
+      </SSRSafeIds>
     );
   }
 }

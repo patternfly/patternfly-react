@@ -13,7 +13,7 @@ import popoverMaxWidth from '@patternfly/react-tokens/dist/esm/c_popover_MaxWidt
 import popoverMinWidth from '@patternfly/react-tokens/dist/esm/c_popover_MinWidth';
 import { FocusTrap } from '../../helpers';
 import { Popper } from '../../helpers/Popper/Popper';
-import { getUniqueId } from '../../helpers/util';
+import { useSSRSafeId } from '../../helpers';
 
 export enum PopoverPosition {
   auto = 'auto',
@@ -276,7 +276,8 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
 }: PopoverProps) => {
   // could make this a prop in the future (true | false | 'toggle')
   // const hideOnClick = true;
-  const uniqueId = id || getUniqueId();
+  const generatedId = useSSRSafeId();
+  const uniqueId = id || generatedId;
   const triggerManually = isVisible !== null;
   const [visible, setVisible] = useState(false);
   const [focusTrapActive, setFocusTrapActive] = useState(Boolean(propWithFocusTrap));

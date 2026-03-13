@@ -14,7 +14,7 @@ import { MenuItemAction } from './MenuItemAction';
 import { Tooltip, TooltipProps } from '../Tooltip';
 import { canUseDOM } from '../../helpers/util';
 import { useIsomorphicLayoutEffect } from '../../helpers/useIsomorphicLayout';
-import { GenerateId } from '../../helpers/GenerateId/GenerateId';
+import { useSSRSafeId } from '../../helpers';
 
 export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onClick'> {
   /** Content rendered inside the menu list item. */
@@ -151,6 +151,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   const innerComponentRef = innerRef || privateRef;
   const flyoutVisible = ref === flyoutRef;
 
+  const randomId = useSSRSafeId();
   const hasFlyout = flyoutMenu !== undefined;
   const showFlyout = (show: boolean) => {
     if (!flyoutVisible && show) {
@@ -343,75 +344,71 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
 
   const renderItem = (
     <>
-      <GenerateId>
-        {(randomId) => (
-          <Component
-            id={id}
-            tabIndex={-1}
-            className={css(styles.menuItem, getIsSelected() && !hasCheckbox && styles.modifiers.selected, className)}
-            aria-current={getAriaCurrent()}
-            {...(!hasCheckbox && { disabled: isDisabled, 'aria-label': ariaLabel })}
-            {...(!hasCheckbox && !flyoutMenu && { role: isSelectMenu ? 'option' : 'menuitem' })}
-            {...(!hasCheckbox && !flyoutMenu && isSelectMenu && { 'aria-selected': getIsSelected() })}
-            ref={innerComponentRef}
-            {...(!hasCheckbox && {
-              onClick: (event: React.KeyboardEvent | React.MouseEvent) => {
-                if (!isAriaDisabled) {
-                  onItemSelect(event, onSelect);
-                  drill && drill(event);
-                  flyoutMenu && handleFlyout(event);
-                } else {
-                  event.preventDefault();
-                }
-              }
-            })}
-            {...(hasCheckbox && { htmlFor: randomId })}
-            {...additionalProps}
-          >
-            <span className={css(styles.menuItemMain)}>
-              {direction === 'up' && (
-                <span className={css(styles.menuItemToggleIcon)}>
-                  <AngleLeftIcon />
-                </span>
-              )}
-              {icon && <span className={css(styles.menuItemIcon)}>{icon}</span>}
-              {hasCheckbox && (
-                <span className={css(styles.menuItemCheck)}>
-                  <Checkbox
-                    id={randomId}
-                    component="span"
-                    isChecked={isSelected || false}
-                    onChange={(event) => onItemSelect(event, onSelect)}
-                    isDisabled={isDisabled}
-                    aria-disabled={isAriaDisabled}
-                  />
-                </span>
-              )}
-              <span className={css(styles.menuItemText)}>{children}</span>
-              {isExternalLink && (
-                <span className={css(styles.menuItemExternalIcon)}>
-                  <ExternalLinkAltIcon />
-                </span>
-              )}
-              {(flyoutMenu || direction === 'down') && (
-                <span className={css(styles.menuItemToggleIcon)}>
-                  <AngleRightIcon />
-                </span>
-              )}
-              {getIsSelected() && (
-                <span className={css(styles.menuItemSelectIcon)}>
-                  <CheckIcon />
-                </span>
-              )}
+      <Component
+        id={id}
+        tabIndex={-1}
+        className={css(styles.menuItem, getIsSelected() && !hasCheckbox && styles.modifiers.selected, className)}
+        aria-current={getAriaCurrent()}
+        {...(!hasCheckbox && { disabled: isDisabled, 'aria-label': ariaLabel })}
+        {...(!hasCheckbox && !flyoutMenu && { role: isSelectMenu ? 'option' : 'menuitem' })}
+        {...(!hasCheckbox && !flyoutMenu && isSelectMenu && { 'aria-selected': getIsSelected() })}
+        ref={innerComponentRef}
+        {...(!hasCheckbox && {
+          onClick: (event: React.KeyboardEvent | React.MouseEvent) => {
+            if (!isAriaDisabled) {
+              onItemSelect(event, onSelect);
+              drill && drill(event);
+              flyoutMenu && handleFlyout(event);
+            } else {
+              event.preventDefault();
+            }
+          }
+        })}
+        {...(hasCheckbox && { htmlFor: randomId })}
+        {...additionalProps}
+      >
+        <span className={css(styles.menuItemMain)}>
+          {direction === 'up' && (
+            <span className={css(styles.menuItemToggleIcon)}>
+              <AngleLeftIcon />
             </span>
-            {description && direction !== 'up' && (
-              <span className={css(styles.menuItemDescription)}>
-                <span>{description}</span>
-              </span>
-            )}
-          </Component>
+          )}
+          {icon && <span className={css(styles.menuItemIcon)}>{icon}</span>}
+          {hasCheckbox && (
+            <span className={css(styles.menuItemCheck)}>
+              <Checkbox
+                id={randomId}
+                component="span"
+                isChecked={isSelected || false}
+                onChange={(event) => onItemSelect(event, onSelect)}
+                isDisabled={isDisabled}
+                aria-disabled={isAriaDisabled}
+              />
+            </span>
+          )}
+          <span className={css(styles.menuItemText)}>{children}</span>
+          {isExternalLink && (
+            <span className={css(styles.menuItemExternalIcon)}>
+              <ExternalLinkAltIcon />
+            </span>
+          )}
+          {(flyoutMenu || direction === 'down') && (
+            <span className={css(styles.menuItemToggleIcon)}>
+              <AngleRightIcon />
+            </span>
+          )}
+          {getIsSelected() && (
+            <span className={css(styles.menuItemSelectIcon)}>
+              <CheckIcon />
+            </span>
+          )}
+        </span>
+        {description && direction !== 'up' && (
+          <span className={css(styles.menuItemDescription)}>
+            <span>{description}</span>
+          </span>
         )}
-      </GenerateId>
+      </Component>
       {flyoutVisible && (
         <MenuContext.Provider value={{ disableHover }}>
           <FlyoutContext.Provider value={{ direction: flyoutXDirection }}>{flyoutMenu}</FlyoutContext.Provider>
