@@ -136,3 +136,11 @@ The toolbar content section will wrap by default, but you can set the `rowRap` p
 ```ts file="./ToolbarItemSpacers.tsx"
 
 ```
+
+### FlexGrow and widths
+
+You can use the `flexGrow` prop to make toolbar items or groups expand to fill available space. The `widths` prop allows you to set custom widths at various breakpoints.
+
+```ts file="./ToolbarFlexGrowAndWidths.tsx"
+
+```
