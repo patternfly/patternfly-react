@@ -46,6 +46,13 @@ interface ToolbarFilterState {
   isMounted: boolean;
 }
 
+const getCategoryKey = (categoryName: string | ToolbarLabelGroup): string => {
+  if (typeof categoryName === 'string') {
+    return categoryName;
+  }
+  return categoryName.key;
+};
+
 class ToolbarFilter extends Component<ToolbarFilterProps, ToolbarFilterState> {
   static displayName = 'ToolbarFilter';
   static contextType = ToolbarContext;
@@ -63,24 +70,16 @@ class ToolbarFilter extends Component<ToolbarFilterProps, ToolbarFilterState> {
   }
 
   componentDidMount() {
-    const { categoryName, labels } = this.props;
-    this.context.updateNumberFilters(
-      typeof categoryName !== 'string' && categoryName.hasOwnProperty('key')
-        ? categoryName.key
-        : categoryName.toString(),
-      labels.length
-    );
+    this.context.updateNumberFilters(getCategoryKey(this.props.categoryName), this.props.labels.length);
     this.setState({ isMounted: true });
   }
 
   componentDidUpdate() {
-    const { categoryName, labels } = this.props;
-    this.context.updateNumberFilters(
-      typeof categoryName !== 'string' && categoryName.hasOwnProperty('key')
-        ? categoryName.key
-        : categoryName.toString(),
-      labels.length
-    );
+    this.context.updateNumberFilters(getCategoryKey(this.props.categoryName), this.props.labels.length);
+  }
+
+  componentWillUnmount() {
+    this.context.updateNumberFilters(getCategoryKey(this.props.categoryName), 0);
   }
 
   render() {
@@ -99,10 +98,7 @@ class ToolbarFilter extends Component<ToolbarFilterProps, ToolbarFilterState> {
     } = this.props;
     const { isExpanded: managedIsExpanded, labelGroupContentRef } = this.context;
     const _isExpanded = isExpanded !== undefined ? isExpanded : managedIsExpanded;
-    const categoryKey =
-      typeof categoryName !== 'string' && categoryName.hasOwnProperty('key')
-        ? categoryName.key
-        : categoryName.toString();
+    const categoryKey = getCategoryKey(categoryName);
 
     const labelGroup = labels.length ? (
       <ToolbarItem variant="label-group">
@@ -116,11 +112,11 @@ class ToolbarFilter extends Component<ToolbarFilterProps, ToolbarFilterState> {
         >
           {labels.map((label) =>
             typeof label === 'string' ? (
-              <Label variant="outline" key={label} onClose={() => deleteLabel(categoryKey, label)}>
+              <Label variant="outline" key={label} onClose={() => deleteLabel?.(categoryKey, label)}>
                 {label}
               </Label>
             ) : (
-              <Label key={label.key} onClose={() => deleteLabel(categoryKey, label)}>
+              <Label key={label.key} onClose={() => deleteLabel?.(categoryKey, label)}>
                 {label.node}
               </Label>
             )
@@ -133,7 +129,7 @@ class ToolbarFilter extends Component<ToolbarFilterProps, ToolbarFilterState> {
       return (
         <Fragment>
           {showToolbarItem && <ToolbarItem {...props}>{children}</ToolbarItem>}
-          {labelGroupContentRef?.current?.firstElementChild !== null &&
+          {labelGroupContentRef?.current?.firstElementChild &&
             ReactDOM.createPortal(labelGroup, labelGroupContentRef.current.firstElementChild)}
         </Fragment>
       );
