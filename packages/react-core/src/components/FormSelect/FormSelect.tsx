@@ -73,7 +73,7 @@ class FormSelect extends Component<FormSelectProps> {
     const hasStatusIcon = ['success', 'error', 'warning'].includes(validated);
 
     return (
-      <SSRSafeIds prefix="pf-" ouiaComponentType={`FormSelect${validated ? `-${validated}` : ''}`}>
+      <SSRSafeIds prefix="pf-" ouiaComponentType={FormSelect.displayName}>
         {(_, generatedOuiaId) => (
           <span
             className={css(
