@@ -210,7 +210,10 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
     if (!existingAria) {
       return;
     }
-    const newAria = existingAria.replace(new RegExp(`\\b${id}\\b`, 'g'), '').trim();
+    const newAria = existingAria
+      .split(/\s+/)
+      .filter((token) => token !== id)
+      .join(' ');
     if (newAria) {
       element.setAttribute(attributeName, newAria);
     } else {
