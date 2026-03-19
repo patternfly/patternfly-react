@@ -179,12 +179,12 @@ test('Style prop overrides boundaryCssVars', () => {
   });
 });
 
-test(`Renders with class ${styles.modifiers.noGlass} when hasNoGlass is true`, () => {
+test(`Renders with class 'pf-m-no-glass' when hasNoGlass is true`, () => {
   render(
     <Drawer isExpanded isPill>
       <DrawerPanelContent hasNoGlass>Drawer panel content</DrawerPanelContent>
     </Drawer>
   );
 
-  expect(screen.getByText('Drawer panel content')).toHaveClass(styles.modifiers.noGlass);
+  expect(screen.getByText('Drawer panel content')).toHaveClass('pf-m-no-glass');
 });
