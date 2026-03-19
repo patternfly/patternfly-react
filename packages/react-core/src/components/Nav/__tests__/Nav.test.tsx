@@ -1,5 +1,5 @@
 import { StrictMode } from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
@@ -242,6 +242,11 @@ describe('Nav', () => {
     );
 
     await user.hover(screen.getByText('My custom node'));
+    // Wait for popper opacity transition after requestAnimationFrame
+    await waitFor(() => {
+      const flyout = screen.getByText('Flyout test').parentElement;
+      expect(flyout).toHaveStyle({ opacity: '1' });
+    });
     expect(asFragment()).toMatchSnapshot();
   });
 

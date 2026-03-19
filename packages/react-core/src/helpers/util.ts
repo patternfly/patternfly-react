@@ -525,6 +525,15 @@ export const clearTimeouts = (timeoutRefs: React.RefObject<any>[]) => {
 };
 
 /**
+ * @param {React.RefObject<number>} animationFrameRef - Animation frame ref to clear
+ */
+export const clearAnimationFrame = (animationFrameRef: React.RefObject<number>) => {
+  if (animationFrameRef.current) {
+    cancelAnimationFrame(animationFrameRef.current);
+  }
+};
+
+/**
  * Helper function to get the language direction of a given element, useful for figuring out if left-to-right
  * or right-to-left specific logic should be applied.
  *
