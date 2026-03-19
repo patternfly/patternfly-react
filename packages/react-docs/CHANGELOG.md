@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.5.0-prerelease.47](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.46...@patternfly/react-docs@7.5.0-prerelease.47) (2026-03-19)
+
+### Bug Fixes
+
+- bump pf-core version 6.5.0-prerelease.55 ([#12282](https://github.com/patternfly/patternfly-react/issues/12282)) ([852ae9a](https://github.com/patternfly/patternfly-react/commit/852ae9aacb9256d10701973c306a4480b663f583))
+
 # [7.5.0-prerelease.46](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.45...@patternfly/react-docs@7.5.0-prerelease.46) (2026-03-18)
 
 **Note:** Version bump only for package @patternfly/react-docs
