@@ -471,7 +471,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                 >
                   <label
                     class="pf-v6-c-form__label"
-                    for="generated-id"
+                    for="pf-:r0:"
                   >
                     <span
                       class="pf-v6-c-form__label-text"
@@ -489,7 +489,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                   >
                     <input
                       aria-invalid="false"
-                      id="generated-id"
+                      id="pf-:r0:"
                       type="text"
                       value=""
                     />

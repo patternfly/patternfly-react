@@ -6,7 +6,7 @@ import { AboutModalBoxBrand } from './AboutModalBoxBrand';
 import { AboutModalBoxCloseButton } from './AboutModalBoxCloseButton';
 import { AboutModalBox } from './AboutModalBox';
 import { Modal, ModalVariant } from '../Modal';
-import { GenerateId } from '../../helpers/GenerateId/GenerateId';
+import { useSSRSafeId } from '../../helpers';
 
 export interface AboutModalProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the about modal */
@@ -56,6 +56,8 @@ export const AboutModal: React.FunctionComponent<AboutModalProps> = ({
   disableFocusTrap,
   ...props
 }: AboutModalProps) => {
+  const ariaLabelledBy = useSSRSafeId('pf-about-modal-title-');
+
   if (brandImageSrc && !brandImageAlt) {
     // eslint-disable-next-line no-console
     console.error(
@@ -73,35 +75,29 @@ export const AboutModal: React.FunctionComponent<AboutModalProps> = ({
     return null;
   }
   return (
-    <GenerateId prefix="pf-about-modal-title-">
-      {(ariaLabelledBy) => (
-        <Modal
-          isOpen={isOpen}
-          variant={ModalVariant.large}
-          {...(productName && { 'aria-labelledby': ariaLabelledBy })}
-          aria-label={ariaLabel}
-          onEscapePress={onClose}
-          appendTo={appendTo}
-          disableFocusTrap={disableFocusTrap}
-        >
-          <AboutModalBox
-            style={
-              backgroundImageSrc
-                ? ({ [backgroundImage.name]: `url(${backgroundImageSrc})` } as React.CSSProperties)
-                : {}
-            }
-            className={css(className)}
-          >
-            <AboutModalBoxBrand src={brandImageSrc} alt={brandImageAlt} />
-            <AboutModalBoxCloseButton aria-label={closeButtonAriaLabel} onClose={onClose} />
-            {productName && <AboutModalBoxHeader id={ariaLabelledBy} productName={productName} />}
-            <AboutModalBoxContent trademark={trademark} hasNoContentContainer={hasNoContentContainer} {...props}>
-              {children}
-            </AboutModalBoxContent>
-          </AboutModalBox>
-        </Modal>
-      )}
-    </GenerateId>
+    <Modal
+      isOpen={isOpen}
+      variant={ModalVariant.large}
+      {...(productName && { 'aria-labelledby': ariaLabelledBy })}
+      aria-label={ariaLabel}
+      onEscapePress={onClose}
+      appendTo={appendTo}
+      disableFocusTrap={disableFocusTrap}
+    >
+      <AboutModalBox
+        style={
+          backgroundImageSrc ? ({ [backgroundImage.name]: `url(${backgroundImageSrc})` } as React.CSSProperties) : {}
+        }
+        className={css(className)}
+      >
+        <AboutModalBoxBrand src={brandImageSrc} alt={brandImageAlt} />
+        <AboutModalBoxCloseButton aria-label={closeButtonAriaLabel} onClose={onClose} />
+        {productName && <AboutModalBoxHeader id={ariaLabelledBy} productName={productName} />}
+        <AboutModalBoxContent trademark={trademark} hasNoContentContainer={hasNoContentContainer} {...props}>
+          {children}
+        </AboutModalBoxContent>
+      </AboutModalBox>
+    </Modal>
   );
 };
 AboutModal.displayName = 'AboutModal';

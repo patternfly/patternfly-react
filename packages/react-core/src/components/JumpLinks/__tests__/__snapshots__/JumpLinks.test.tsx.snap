@@ -3,7 +3,7 @@
 exports[`expandable vertical with subsection 1`] = `
 <DocumentFragment>
   <nav
-    aria-labelledby="unique_id_mock"
+    aria-labelledby="pf-:rg:"
     class="pf-v6-c-jump-links pf-m-vertical pf-m-expandable"
   >
     <div
@@ -18,10 +18,10 @@ exports[`expandable vertical with subsection 1`] = `
           <button
             aria-expanded="false"
             class="pf-v6-c-button pf-m-plain"
-            data-ouia-component-id="OUIA-Generated-Button-plain-1"
+            data-ouia-component-id="OUIA-Generated-Button-plain-:rh:"
             data-ouia-component-type="PF6/Button"
             data-ouia-safe="true"
-            id="unique_id_mock"
+            id="pf-:rg:"
             type="button"
           >
             <span
@@ -66,7 +66,7 @@ exports[`expandable vertical with subsection 1`] = `
         </div>
       </div>
       <ul
-        aria-labelledby="unique_id_mock"
+        aria-labelledby="pf-:rg:"
         class="pf-v6-c-jump-links__list"
         role="list"
       >
@@ -78,7 +78,7 @@ exports[`expandable vertical with subsection 1`] = `
           >
             <a
               class="pf-v6-c-button pf-m-link"
-              data-ouia-component-id="OUIA-Generated-Button-link-13"
+              data-ouia-component-id="OUIA-Generated-Button-link-:ri:"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               href="#"
@@ -103,7 +103,7 @@ exports[`expandable vertical with subsection 1`] = `
           >
             <a
               class="pf-v6-c-button pf-m-link"
-              data-ouia-component-id="OUIA-Generated-Button-link-14"
+              data-ouia-component-id="OUIA-Generated-Button-link-:rj:"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               href="#"
@@ -132,7 +132,7 @@ exports[`expandable vertical with subsection 1`] = `
               >
                 <a
                   class="pf-v6-c-button pf-m-link"
-                  data-ouia-component-id="OUIA-Generated-Button-link-15"
+                  data-ouia-component-id="OUIA-Generated-Button-link-:rk:"
                   data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   href="#"
@@ -157,7 +157,7 @@ exports[`expandable vertical with subsection 1`] = `
               >
                 <a
                   class="pf-v6-c-button pf-m-link"
-                  data-ouia-component-id="OUIA-Generated-Button-link-16"
+                  data-ouia-component-id="OUIA-Generated-Button-link-:rl:"
                   data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   href="#"
@@ -182,7 +182,7 @@ exports[`expandable vertical with subsection 1`] = `
               >
                 <a
                   class="pf-v6-c-button pf-m-link"
-                  data-ouia-component-id="OUIA-Generated-Button-link-17"
+                  data-ouia-component-id="OUIA-Generated-Button-link-:rm:"
                   data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   href="#"
@@ -209,7 +209,7 @@ exports[`expandable vertical with subsection 1`] = `
           >
             <a
               class="pf-v6-c-button pf-m-link"
-              data-ouia-component-id="OUIA-Generated-Button-link-18"
+              data-ouia-component-id="OUIA-Generated-Button-link-:rn:"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               href="#"
@@ -234,7 +234,7 @@ exports[`expandable vertical with subsection 1`] = `
           >
             <a
               class="pf-v6-c-button pf-m-link"
-              data-ouia-component-id="OUIA-Generated-Button-link-19"
+              data-ouia-component-id="OUIA-Generated-Button-link-:ro:"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               href="#"
@@ -280,7 +280,7 @@ exports[`jumplinks centered 1`] = `
           >
             <a
               class="pf-v6-c-button pf-m-link"
-              data-ouia-component-id="OUIA-Generated-Button-link-4"
+              data-ouia-component-id="OUIA-Generated-Button-link-:r5:"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               href="#"
@@ -306,7 +306,7 @@ exports[`jumplinks centered 1`] = `
           >
             <a
               class="pf-v6-c-button pf-m-link"
-              data-ouia-component-id="OUIA-Generated-Button-link-5"
+              data-ouia-component-id="OUIA-Generated-Button-link-:r6:"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               href="#"
@@ -331,7 +331,7 @@ exports[`jumplinks centered 1`] = `
           >
             <a
               class="pf-v6-c-button pf-m-link"
-              data-ouia-component-id="OUIA-Generated-Button-link-6"
+              data-ouia-component-id="OUIA-Generated-Button-link-:r7:"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               href="#"
@@ -357,7 +357,7 @@ exports[`jumplinks centered 1`] = `
 exports[`jumplinks with label 1`] = `
 <DocumentFragment>
   <nav
-    aria-labelledby="unique_id_mock"
+    aria-labelledby="pf-:r8:"
     class="pf-v6-c-jump-links pf-m-center"
   >
     <div
@@ -368,13 +368,13 @@ exports[`jumplinks with label 1`] = `
       >
         <div
           class="pf-v6-c-jump-links__label"
-          id="unique_id_mock"
+          id="pf-:r8:"
         >
           Jump to section
         </div>
       </div>
       <ul
-        aria-labelledby="unique_id_mock"
+        aria-labelledby="pf-:r8:"
         class="pf-v6-c-jump-links__list"
         role="list"
       >
@@ -386,7 +386,7 @@ exports[`jumplinks with label 1`] = `
           >
             <a
               class="pf-v6-c-button pf-m-link"
-              data-ouia-component-id="OUIA-Generated-Button-link-7"
+              data-ouia-component-id="OUIA-Generated-Button-link-:r9:"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               href="#"
@@ -412,7 +412,7 @@ exports[`jumplinks with label 1`] = `
           >
             <a
               class="pf-v6-c-button pf-m-link"
-              data-ouia-component-id="OUIA-Generated-Button-link-8"
+              data-ouia-component-id="OUIA-Generated-Button-link-:ra:"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               href="#"
@@ -437,7 +437,7 @@ exports[`jumplinks with label 1`] = `
           >
             <a
               class="pf-v6-c-button pf-m-link"
-              data-ouia-component-id="OUIA-Generated-Button-link-9"
+              data-ouia-component-id="OUIA-Generated-Button-link-:rb:"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               href="#"
@@ -483,7 +483,7 @@ exports[`simple jumplinks 1`] = `
           >
             <a
               class="pf-v6-c-button pf-m-link"
-              data-ouia-component-id="OUIA-Generated-Button-link-1"
+              data-ouia-component-id="OUIA-Generated-Button-link-:r1:"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               href="#"
@@ -509,7 +509,7 @@ exports[`simple jumplinks 1`] = `
           >
             <a
               class="pf-v6-c-button pf-m-link"
-              data-ouia-component-id="OUIA-Generated-Button-link-2"
+              data-ouia-component-id="OUIA-Generated-Button-link-:r2:"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               href="#"
@@ -534,7 +534,7 @@ exports[`simple jumplinks 1`] = `
           >
             <a
               class="pf-v6-c-button pf-m-link"
-              data-ouia-component-id="OUIA-Generated-Button-link-3"
+              data-ouia-component-id="OUIA-Generated-Button-link-:r3:"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               href="#"
@@ -560,7 +560,7 @@ exports[`simple jumplinks 1`] = `
 exports[`vertical with label 1`] = `
 <DocumentFragment>
   <nav
-    aria-labelledby="unique_id_mock"
+    aria-labelledby="pf-:rc:"
     class="pf-v6-c-jump-links pf-m-vertical"
   >
     <div
@@ -571,13 +571,13 @@ exports[`vertical with label 1`] = `
       >
         <div
           class="pf-v6-c-jump-links__label"
-          id="unique_id_mock"
+          id="pf-:rc:"
         >
           Jump to section
         </div>
       </div>
       <ul
-        aria-labelledby="unique_id_mock"
+        aria-labelledby="pf-:rc:"
         class="pf-v6-c-jump-links__list"
         role="list"
       >
@@ -589,7 +589,7 @@ exports[`vertical with label 1`] = `
           >
             <a
               class="pf-v6-c-button pf-m-link"
-              data-ouia-component-id="OUIA-Generated-Button-link-10"
+              data-ouia-component-id="OUIA-Generated-Button-link-:rd:"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               href="#"
@@ -615,7 +615,7 @@ exports[`vertical with label 1`] = `
           >
             <a
               class="pf-v6-c-button pf-m-link"
-              data-ouia-component-id="OUIA-Generated-Button-link-11"
+              data-ouia-component-id="OUIA-Generated-Button-link-:re:"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               href="#"
@@ -640,7 +640,7 @@ exports[`vertical with label 1`] = `
           >
             <a
               class="pf-v6-c-button pf-m-link"
-              data-ouia-component-id="OUIA-Generated-Button-link-12"
+              data-ouia-component-id="OUIA-Generated-Button-link-:rf:"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               href="#"

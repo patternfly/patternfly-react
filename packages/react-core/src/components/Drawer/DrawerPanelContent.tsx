@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
 import { DrawerColorVariant, DrawerContext } from './Drawer';
 import { formatBreakpointMods, getLanguageDirection } from '../../helpers/util';
-import { GenerateId } from '../../helpers/GenerateId/GenerateId';
+import { useSSRSafeId } from '../../helpers';
 import { FocusTrap } from '../../helpers/FocusTrap/FocusTrap';
 import cssPanelMdFlexBasis from '@patternfly/react-tokens/dist/esm/c_drawer__panel_md_FlexBasis';
 import cssPanelMdFlexBasisMin from '@patternfly/react-tokens/dist/esm/c_drawer__panel_md_FlexBasis_min';
@@ -83,6 +83,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   style,
   ...props
 }: DrawerPanelContentProps) => {
+  const panelId = useSSRSafeId('pf-drawer-panel-');
   const panel = useRef<HTMLDivElement>(undefined);
   const splitterRef = useRef<HTMLDivElement>(undefined);
   const [separatorValue, setSeparatorValue] = useState(0);
@@ -332,105 +333,99 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   const isValidFocusTrap = focusTrap?.enabled && !isStatic;
   const Component = isValidFocusTrap ? FocusTrap : 'div';
 
-  return (
-    <GenerateId prefix="pf-drawer-panel-">
-      {(panelId) => {
-        const focusTrapProps = {
-          tabIndex: -1,
-          'aria-modal': true,
-          role: 'dialog',
-          active: isFocusTrapActive,
-          'aria-labelledby': focusTrap?.['aria-labelledby'] || id || panelId,
-          focusTrapOptions: {
-            fallbackFocus: () => panel.current,
-            onActivate: () => {
-              if (previouslyFocusedElement.current !== document.activeElement) {
-                previouslyFocusedElement.current = document.activeElement;
-              }
-            },
-            onDeactivate: () => {
-              previouslyFocusedElement.current &&
-                previouslyFocusedElement.current.focus &&
-                previouslyFocusedElement.current.focus();
-            },
-            clickOutsideDeactivates: true,
-            returnFocusOnDeactivate: false,
-            // FocusTrap's initialFocus can accept false as a value to prevent initial focus.
-            // We want to prevent this in case false is ever passed in.
-            initialFocus: focusTrap?.elementToFocusOnExpand || undefined,
-            escapeDeactivates: false
-          }
-        };
+  const focusTrapProps = {
+    tabIndex: -1,
+    'aria-modal': true,
+    role: 'dialog',
+    active: isFocusTrapActive,
+    'aria-labelledby': focusTrap?.['aria-labelledby'] || id || panelId,
+    focusTrapOptions: {
+      fallbackFocus: () => panel.current,
+      onActivate: () => {
+        if (previouslyFocusedElement.current !== document.activeElement) {
+          previouslyFocusedElement.current = document.activeElement;
+        }
+      },
+      onDeactivate: () => {
+        previouslyFocusedElement.current &&
+          previouslyFocusedElement.current.focus &&
+          previouslyFocusedElement.current.focus();
+      },
+      clickOutsideDeactivates: true,
+      returnFocusOnDeactivate: false,
+      // FocusTrap's initialFocus can accept false as a value to prevent initial focus.
+      // We want to prevent this in case false is ever passed in.
+      initialFocus: focusTrap?.elementToFocusOnExpand || undefined,
+      escapeDeactivates: false
+    }
+  };
 
-        return (
-          <Component
-            {...(isValidFocusTrap && focusTrapProps)}
-            id={id || panelId}
-            className={css(
-              styles.drawerPanel,
-              isResizable && styles.modifiers.resizable,
-              hasNoGlass && 'pf-m-no-glass',
-              hasNoBorder && styles.modifiers.noBorder,
-              formatBreakpointMods(widths, styles),
-              colorVariant === DrawerColorVariant.noBackground && styles.modifiers.noBackground,
-              colorVariant === DrawerColorVariant.secondary && styles.modifiers.secondary,
-              className
-            )}
-            onTransitionEnd={(ev) => {
-              if ((ev.target as HTMLElement) === panel.current) {
-                if (!hidden && ev.nativeEvent.propertyName === 'transform') {
-                  onExpand(ev);
-                }
-                setIsExpandedInternal(!hidden);
-                // We also need to collapse the space when the panel is hidden to prevent automation from scrolling to it
-                if (hidden && ev.nativeEvent.propertyName === 'transform') {
-                  setShouldCollapseSpace(true);
-                }
-                if (isValidFocusTrap && ev.nativeEvent.propertyName === 'transform') {
-                  setIsFocusTrapActive((prevIsFocusTrapActive) => !prevIsFocusTrapActive);
-                }
-              }
-            }}
-            hidden={hidden}
-            style={{
-              ...((defaultSize || minSize || maxSize) && boundaryCssVars),
-              ...style
-            }}
-            {...(shouldCollapseSpace && { inert: '' })}
-            {...props}
-            ref={panel}
-          >
-            {isExpandedInternal && (
-              <Fragment>
-                {isResizable && (
-                  <Fragment>
-                    <div
-                      className={css(styles.drawerSplitter, position !== 'bottom' && styles.modifiers.vertical)}
-                      role="separator"
-                      tabIndex={0}
-                      aria-orientation={position === 'bottom' ? 'horizontal' : 'vertical'}
-                      aria-label={resizeAriaLabel}
-                      aria-valuenow={separatorValue}
-                      aria-valuemin={0}
-                      aria-valuemax={100}
-                      aria-controls={id || panelId}
-                      onMouseDown={handleMousedown}
-                      onKeyDown={handleKeys}
-                      onTouchStart={handleTouchStart}
-                      ref={splitterRef}
-                    >
-                      <div className={css(styles.drawerSplitterHandle)} aria-hidden></div>
-                    </div>
-                    <div className={css(styles.drawerPanelMain)}>{children}</div>
-                  </Fragment>
-                )}
-                {!isResizable && children}
-              </Fragment>
-            )}
-          </Component>
-        );
+  return (
+    <Component
+      {...(isValidFocusTrap && focusTrapProps)}
+      id={id || panelId}
+      className={css(
+        styles.drawerPanel,
+        isResizable && styles.modifiers.resizable,
+        hasNoGlass && 'pf-m-no-glass',
+        hasNoBorder && styles.modifiers.noBorder,
+        formatBreakpointMods(widths, styles),
+        colorVariant === DrawerColorVariant.noBackground && styles.modifiers.noBackground,
+        colorVariant === DrawerColorVariant.secondary && styles.modifiers.secondary,
+        className
+      )}
+      onTransitionEnd={(ev) => {
+        if ((ev.target as HTMLElement) === panel.current) {
+          if (!hidden && ev.nativeEvent.propertyName === 'transform') {
+            onExpand(ev);
+          }
+          setIsExpandedInternal(!hidden);
+          // We also need to collapse the space when the panel is hidden to prevent automation from scrolling to it
+          if (hidden && ev.nativeEvent.propertyName === 'transform') {
+            setShouldCollapseSpace(true);
+          }
+          if (isValidFocusTrap && ev.nativeEvent.propertyName === 'transform') {
+            setIsFocusTrapActive((prevIsFocusTrapActive) => !prevIsFocusTrapActive);
+          }
+        }
       }}
-    </GenerateId>
+      hidden={hidden}
+      style={{
+        ...((defaultSize || minSize || maxSize) && boundaryCssVars),
+        ...style
+      }}
+      {...(shouldCollapseSpace && { inert: '' })}
+      {...props}
+      ref={panel}
+    >
+      {isExpandedInternal && (
+        <Fragment>
+          {isResizable && (
+            <Fragment>
+              <div
+                className={css(styles.drawerSplitter, position !== 'bottom' && styles.modifiers.vertical)}
+                role="separator"
+                tabIndex={0}
+                aria-orientation={position === 'bottom' ? 'horizontal' : 'vertical'}
+                aria-label={resizeAriaLabel}
+                aria-valuenow={separatorValue}
+                aria-valuemin={0}
+                aria-valuemax={100}
+                aria-controls={id || panelId}
+                onMouseDown={handleMousedown}
+                onKeyDown={handleKeys}
+                onTouchStart={handleTouchStart}
+                ref={splitterRef}
+              >
+                <div className={css(styles.drawerSplitterHandle)} aria-hidden></div>
+              </div>
+              <div className={css(styles.drawerPanelMain)}>{children}</div>
+            </Fragment>
+          )}
+          {!isResizable && children}
+        </Fragment>
+      )}
+    </Component>
   );
 };
 DrawerPanelContent.displayName = 'DrawerPanelContent';

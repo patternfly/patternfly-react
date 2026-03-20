@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
 import { css } from '@patternfly/react-styles';
 import { ExpandableSection } from '../ExpandableSection';
-import { GenerateId } from '../../helpers/GenerateId/GenerateId';
+import { useSSRSafeId } from '../../helpers';
 import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
@@ -34,6 +34,7 @@ export const MultipleFileUploadStatus: React.FunctionComponent<MultipleFileUploa
   'aria-label': ariaLabel,
   ...props
 }: MultipleFileUploadStatusProps) => {
+  const expandableSectionId = useSSRSafeId('pf-expandable-section-');
   const [icon, setIcon] = useState<React.ReactNode>();
   const [isOpen, setIsOpen] = useState(true);
 
@@ -66,21 +67,17 @@ export const MultipleFileUploadStatus: React.FunctionComponent<MultipleFileUploa
 
   return (
     <div className={css(styles.multipleFileUploadStatus, className)} {...props}>
-      <GenerateId prefix="pf-expandable-section-">
-        {(expandableSectionId) => (
-          <ExpandableSection
-            contentId={`${expandableSectionId}-content`}
-            toggleId={`${expandableSectionId}-toggle`}
-            toggleContent={toggle}
-            isExpanded={isOpen}
-            onToggle={toggleExpandableSection}
-          >
-            <ul className={`${styles.multipleFileUploadStatus}-list`} role="list" aria-label={ariaLabel}>
-              {children}
-            </ul>
-          </ExpandableSection>
-        )}
-      </GenerateId>
+      <ExpandableSection
+        contentId={`${expandableSectionId}-content`}
+        toggleId={`${expandableSectionId}-toggle`}
+        toggleContent={toggle}
+        isExpanded={isOpen}
+        onToggle={toggleExpandableSection}
+      >
+        <ul className={`${styles.multipleFileUploadStatus}-list`} role="list" aria-label={ariaLabel}>
+          {children}
+        </ul>
+      </ExpandableSection>
     </div>
   );
 };

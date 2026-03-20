@@ -2,8 +2,8 @@ import { Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/Radio/radio';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
-import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
-import { getUniqueId } from '../../helpers/util';
+import { getOUIAProps, OUIAProps } from '../../helpers';
+import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 
 export interface RadioProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'disabled' | 'label' | 'onChange' | 'type'>, OUIAProps {
@@ -49,7 +49,7 @@ export interface RadioProps
   ouiaSafe?: boolean;
 }
 
-class Radio extends Component<RadioProps, { ouiaStateId: string; descriptionId: string }> {
+class Radio extends Component<RadioProps> {
   static displayName = 'Radio';
   static defaultProps: PickOptional<RadioProps> = {
     className: '',
@@ -64,10 +64,6 @@ class Radio extends Component<RadioProps, { ouiaStateId: string; descriptionId: 
       // eslint-disable-next-line no-console
       console.error('Radio:', 'Radio requires an aria-label to be specified');
     }
-    this.state = {
-      ouiaStateId: getDefaultOUIAId(Radio.displayName),
-      descriptionId: getUniqueId('pf-radio-description')
-    };
   }
 
   handleChange = (event: React.FormEvent<HTMLInputElement>) => {
@@ -102,67 +98,72 @@ class Radio extends Component<RadioProps, { ouiaStateId: string; descriptionId: 
       console.error('Radio:', 'id is required to make input accessible');
     }
 
-    // Handle aria-describedby logic
-    let ariaDescribedByValue: string | undefined;
-    if (ariaDescribedBy !== undefined) {
-      ariaDescribedByValue = ariaDescribedBy === '' ? undefined : ariaDescribedBy;
-    } else if (description) {
-      ariaDescribedByValue = this.state.descriptionId;
-    }
-
-    const inputRendered = (
-      <input
-        {...props}
-        className={css(styles.radioInput, inputClassName)}
-        type="radio"
-        onChange={this.handleChange}
-        aria-invalid={!isValid}
-        aria-describedby={ariaDescribedByValue}
-        disabled={isDisabled}
-        checked={checked || isChecked}
-        {...(checked === undefined && { defaultChecked })}
-        {...(!label && { 'aria-label': ariaLabel })}
-        {...getOUIAProps(Radio.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
-      />
-    );
-
-    const wrapWithLabel = (isLabelWrapped && !component) || component === 'label';
-
-    const Label = wrapWithLabel ? 'span' : 'label';
-    const labelRendered = label ? (
-      <Label
-        className={css(styles.radioLabel, isDisabled && styles.modifiers.disabled)}
-        htmlFor={!wrapWithLabel ? props.id : undefined}
-      >
-        {label}
-      </Label>
-    ) : null;
-
-    const Component = component ?? (wrapWithLabel ? 'label' : 'div');
-
     return (
-      <Component
-        className={css(styles.radio, !label && styles.modifiers.standalone, className)}
-        htmlFor={wrapWithLabel ? props.id : undefined}
-      >
-        {labelPosition === 'start' ? (
-          <>
-            {labelRendered}
-            {inputRendered}
-          </>
-        ) : (
-          <>
-            {inputRendered}
-            {labelRendered}
-          </>
-        )}
-        {description && (
-          <span id={this.state.descriptionId} className={css(styles.radioDescription)}>
-            {description}
-          </span>
-        )}
-        {body && <span className={css(styles.radioBody)}>{body}</span>}
-      </Component>
+      <SSRSafeIds prefix="pf-radio-description-" ouiaComponentType="Radio">
+        {(descriptionId, generatedOuiaId) => {
+          let ariaDescribedByValue: string | undefined;
+          if (ariaDescribedBy !== undefined) {
+            ariaDescribedByValue = ariaDescribedBy === '' ? undefined : ariaDescribedBy;
+          } else if (description) {
+            ariaDescribedByValue = descriptionId;
+          }
+
+          const inputRendered = (
+            <input
+              {...props}
+              className={css(styles.radioInput, inputClassName)}
+              type="radio"
+              onChange={this.handleChange}
+              aria-invalid={!isValid}
+              aria-describedby={ariaDescribedByValue}
+              disabled={isDisabled}
+              checked={checked || isChecked}
+              {...(checked === undefined && { defaultChecked })}
+              {...(!label && { 'aria-label': ariaLabel })}
+              {...getOUIAProps(Radio.displayName, ouiaId !== undefined ? ouiaId : generatedOuiaId, ouiaSafe)}
+            />
+          );
+
+          const wrapWithLabel = (isLabelWrapped && !component) || component === 'label';
+
+          const Label = wrapWithLabel ? 'span' : 'label';
+          const labelRendered = label ? (
+            <Label
+              className={css(styles.radioLabel, isDisabled && styles.modifiers.disabled)}
+              htmlFor={!wrapWithLabel ? props.id : undefined}
+            >
+              {label}
+            </Label>
+          ) : null;
+
+          const WrapperComponent = component ?? (wrapWithLabel ? 'label' : 'div');
+
+          return (
+            <WrapperComponent
+              className={css(styles.radio, !label && styles.modifiers.standalone, className)}
+              htmlFor={wrapWithLabel ? props.id : undefined}
+            >
+              {labelPosition === 'start' ? (
+                <>
+                  {labelRendered}
+                  {inputRendered}
+                </>
+              ) : (
+                <>
+                  {inputRendered}
+                  {labelRendered}
+                </>
+              )}
+              {description && (
+                <span id={descriptionId} className={css(styles.radioDescription)}>
+                  {description}
+                </span>
+              )}
+              {body && <span className={css(styles.radioBody)}>{body}</span>}
+            </WrapperComponent>
+          );
+        }}
+      </SSRSafeIds>
     );
   }
 }

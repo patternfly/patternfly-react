@@ -10,7 +10,7 @@ exports[`MultipleFileUploadMain passes props to the info component as expected 1
     >
       <button
         class="pf-v6-c-button pf-m-secondary"
-        data-ouia-component-id="OUIA-Generated-Button-secondary-4"
+        data-ouia-component-id="OUIA-Generated-Button-secondary-:r3:"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
@@ -60,7 +60,7 @@ exports[`MultipleFileUploadMain passes props to the title as expected 1`] = `
     >
       <button
         class="pf-v6-c-button pf-m-secondary"
-        data-ouia-component-id="OUIA-Generated-Button-secondary-3"
+        data-ouia-component-id="OUIA-Generated-Button-secondary-:r2:"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
@@ -86,7 +86,7 @@ exports[`MultipleFileUploadMain renders custom class names 1`] = `
     >
       <button
         class="pf-v6-c-button pf-m-secondary"
-        data-ouia-component-id="OUIA-Generated-Button-secondary-2"
+        data-ouia-component-id="OUIA-Generated-Button-secondary-:r1:"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
@@ -112,7 +112,7 @@ exports[`MultipleFileUploadMain renders with expected class names 1`] = `
     >
       <button
         class="pf-v6-c-button pf-m-secondary"
-        data-ouia-component-id="OUIA-Generated-Button-secondary-1"
+        data-ouia-component-id="OUIA-Generated-Button-secondary-:r0:"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
