@@ -1,7 +1,7 @@
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 export interface DrawerCloseButtonProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the drawer close button outer <div>. */
@@ -19,7 +19,7 @@ export const DrawerCloseButton: React.FunctionComponent<DrawerCloseButtonProps> 
   ...props
 }: DrawerCloseButtonProps) => (
   <div className={css(styles.drawerClose, className)} {...props}>
-    <Button variant="plain" onClick={onClose} aria-label={ariaLabel} icon={<TimesIcon />} />
+    <Button variant="plain" onClick={onClose} aria-label={ariaLabel} icon={<RhMicronsCloseIcon />} />
   </div>
 );
 DrawerCloseButton.displayName = 'DrawerCloseButton';

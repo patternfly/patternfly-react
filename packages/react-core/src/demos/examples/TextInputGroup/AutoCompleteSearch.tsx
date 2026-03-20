@@ -14,7 +14,7 @@ import {
   LabelGroup
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 export const AutoCompleteSearch: React.FunctionComponent = () => {
   const [inputValue, setInputValue] = useState('');
@@ -233,7 +233,7 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
                 variant="plain"
                 onClick={clearChipsAndInput}
                 aria-label="Clear button for chips and input"
-                icon={<TimesIcon />}
+                icon={<RhMicronsCloseIcon />}
               />
             )}
           </TextInputGroupUtilities>

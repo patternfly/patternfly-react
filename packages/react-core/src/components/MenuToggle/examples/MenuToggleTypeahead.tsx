@@ -6,7 +6,7 @@ import {
   TextInputGroupUtilities,
   Button
 } from '@patternfly/react-core';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 export const MenuToggleTypeahead: React.FunctionComponent = () => {
   const [inputValue, setInputValue] = useState<string>('');
@@ -31,7 +31,7 @@ export const MenuToggleTypeahead: React.FunctionComponent = () => {
               variant="plain"
               onClick={() => setInputValue('')}
               aria-label="Clear input value"
-              icon={<TimesIcon />}
+              icon={<RhMicronsCloseIcon />}
             />
           )}
         </TextInputGroupUtilities>

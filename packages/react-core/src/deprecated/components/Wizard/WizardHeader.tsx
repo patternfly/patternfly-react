@@ -1,7 +1,7 @@
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import { css } from '@patternfly/react-styles';
 import { Button } from '../../../components/Button';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 export interface WizardHeaderProps {
   /** Callback function called when the X (Close) button is clicked */
@@ -35,7 +35,7 @@ export const WizardHeader: React.FunctionComponent<WizardHeaderProps> = ({
   <div className={css(styles.wizardHeader)}>
     {!hideClose && (
       <div className={css(styles.wizardClose)}>
-        <Button variant="plain" aria-label={closeButtonAriaLabel} onClick={onClose} icon={<TimesIcon />} />
+        <Button variant="plain" aria-label={closeButtonAriaLabel} onClick={onClose} icon={<RhMicronsCloseIcon />} />
       </div>
     )}
     <div className={css(styles.wizardTitle)}>

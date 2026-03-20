@@ -6,7 +6,7 @@ import { Tooltip, TooltipPosition } from '../Tooltip';
 import { css } from '@patternfly/react-styles';
 import { useIsomorphicLayoutEffect } from '../../helpers';
 import cssTextMaxWidth from '@patternfly/react-tokens/dist/esm/c_label__text_MaxWidth';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
@@ -240,7 +240,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       aria-label={closeBtnAriaLabel || `Close ${children}`}
       {...(isClickableDisabled && { isDisabled: true })}
       {...closeBtnProps}
-      icon={<TimesIcon />}
+      icon={<RhMicronsCloseIcon />}
     />
   );
 

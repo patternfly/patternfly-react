@@ -3,7 +3,7 @@ import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import { Button, Checkbox, Radio, TextInput, KeyTypes, getUniqueId } from '@patternfly/react-core';
 import PencilAltIcon from '@patternfly/react-icons/dist/esm/icons/pencil-alt-icon';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 import inlineEditStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
 
@@ -60,7 +60,7 @@ const EditButtonsCell: React.FunctionComponent<EditButtonsCellProps> = ({
             onKeyDown={(event) => onKeyDown(event, 'stopEditing')}
             variant="plain"
           >
-            <TimesIcon />
+            <RhMicronsCloseIcon />
           </Button>
         </div>
       </Td>
