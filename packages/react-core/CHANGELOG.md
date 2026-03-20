@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.39](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.38...@patternfly/react-core@6.5.0-prerelease.39) (2026-03-19)
+
+### Bug Fixes
+
+- bump pf-core version 6.5.0-prerelease.55 ([#12282](https://github.com/patternfly/patternfly-react/issues/12282)) ([852ae9a](https://github.com/patternfly/patternfly-react/commit/852ae9aacb9256d10701973c306a4480b663f583))
+
+# [6.5.0-prerelease.38](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.37...@patternfly/react-core@6.5.0-prerelease.38) (2026-03-13)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [6.5.0-prerelease.37](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.36...@patternfly/react-core@6.5.0-prerelease.37) (2026-03-05)
+
+### Bug Fixes
+
+- **DescriptionList:** use correct token for termWidth ([#12253](https://github.com/patternfly/patternfly-react/issues/12253)) ([7c82404](https://github.com/patternfly/patternfly-react/commit/7c82404d085ccd25dc7e8788fc1673aa79cfe45c))
+
+# [6.5.0-prerelease.36](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.35...@patternfly/react-core@6.5.0-prerelease.36) (2026-02-26)
+
+### Bug Fixes
+
+- **CodeBlock:** remove deprecated textId prop from ClipboardCopyButton examples ([#12242](https://github.com/patternfly/patternfly-react/issues/12242)) ([cd2adc0](https://github.com/patternfly/patternfly-react/commit/cd2adc021ef18658c6ea7b0157ce990dbbd2634b))
+
 # [6.5.0-prerelease.35](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.34...@patternfly/react-core@6.5.0-prerelease.35) (2026-02-25)
 
 ### Features

@@ -10,7 +10,6 @@
 - [Issues and Project Board](#issues-and-project-board)
   - [Issue Labels](#issue-labels)
   - [PR Labels](#pr-labels)
-  - [Project Board Columns](#project-board-columns)
 - [Contribution Process](#contribution-process)
   - [Creating Issues for Bugs](#creating-issues-for-bugs)
   - [Creating Issues for New Components](#creating-issues-for-new-components)
@@ -76,16 +75,9 @@ We use issues to track work items, such as bug reports and feature requests. Iss
 
 Our issue tracker utilizes several labels to help organize and identify issues. Here's what they represent and how we use them:
 
-- `bug` - A bug is a _demonstrable problem_ that is caused by the code in the repository. Please check if the issue has already been reported before reporting a new bug.
-- `DevX` - Suggest an enhancement to the developer experience (DX). DX enhancements improve experience for those building UIs with PatternFly, but have little to know end user impact.
-- `Feature` - Suggest a new feature for PatternFly. Features augment or impact end user experience and requires design input.
 - `breaking change` - this issue warrants a major release and potentially changes APIs for downstream consumers.
-- `Tech debt` - Improvements to code that do not affect either user or product developers’ experiences.
-- `documentation` - this issue affects documentation only.
-- `css` - this issue affects CSS or has stylistic changes.
 - `good first issue` - Issues that are ideal for new contributors.
 - `wontfix` - The issue is legitimate, but it is not something the team is currently able or willing to fix or implement. Issues with this label may be revisited in the future.
-- `p1`, `p2`, `p3` - These are priority labels.
 
 ### PR labels
 
@@ -96,17 +88,9 @@ Since the components in patternfly-react are based on patternfly, we want to mak
 - `css approved` - The issue has been reviewed and approved by a member of the css team.
 - `ux approved` - The issue has been reviewed and approved by a member of the ux team.
 
-### Project board columns
+### Integration with Jira
 
-The project board uses the following columns to track issues:
-
-- `Backlog` - Issues that are ready to be worked and available for any contributor to take.
-- `Needs info` - Issues that require any work that would be completed outside of this repo related to css, design or research. For example some component contributions will require updates to css in the core [patternfly](https://github.com/patternfly/patternfly) repo.
-- `Not started` - Issues that are ready to be worked and are already assigned.
-- `In Progress` - Issues that are actively being worked.
-- `PR in Review` - Issues for which a PR is open and are ready for review.
-
-Issues can be manually added to the project board from either the issue page or the project board page.
+We sync our issues to PatternFly's private Jira board. Once an issue is sync'd, a link is added to the issue description in GitHub if someone were to want to track the Jira ticket. Any issue can be assigned an assignee in GitHub or Jira and that information will be sync'd. If an issue is closed in Jira, it will also be closed in GitHub.
 
 ## Contribution process
 
@@ -118,7 +102,6 @@ If you find a bug within the repo, please help us track the issue by following t
     - If it does exist, but doesn’t capture key details that you have noticed, please add a comment to the existing bug.
 2.  Create an issue if one doesn’t already exist.
     - Provide details like what component is affected, steps to reproduce, and any other information that is critical to addressing the issue
-    - Assign the label “bug” to the issue
 
 ### Creating issues for new components
 
@@ -126,7 +109,6 @@ To create an issue for adding a new component to the repo, please observe the fo
 
 1.  If the component does not yet exist as a PatternFly component, please do not start coding yet. Components contributed to PatternFly-React should have a design pattern in PatternFly or be approved PatternFly-Extension components.
 2.  If the component exists in PatternFly core (meaning CSS and the pattern design exists), then create an issue with the following details:
-    - Assign the label `enhancement` to the issue
     - Include the text “Component -“ in the beginning of the title if the issue captures a new component
     - If the component is documented as a [PatternFly library pattern](http://www.patternfly.org/pattern-library/), include a link to it.
 3.  If a component is not in PatternFly, but you feel it would be a good addition to the library, please do the following:

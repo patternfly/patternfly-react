@@ -53,7 +53,6 @@ url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
       <CodeBlockAction>
         <ClipboardCopyButton
           id="expandable-copy-button"
-          textId="code-content"
           aria-label="Copy to clipboard"
           onClick={(e) => onClick(e, copyBlock)}
           exitDelay={copied ? 1500 : 600}

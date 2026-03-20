@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.5.0-prerelease.16...@patternfly/react-icons@6.5.0-prerelease.17) (2026-03-19)
+
+### Bug Fixes
+
+- bump pf-core version 6.5.0-prerelease.55 ([#12282](https://github.com/patternfly/patternfly-react/issues/12282)) ([852ae9a](https://github.com/patternfly/patternfly-react/commit/852ae9aacb9256d10701973c306a4480b663f583))
+
+# [6.5.0-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.5.0-prerelease.15...@patternfly/react-icons@6.5.0-prerelease.16) (2026-03-13)
+
+### Bug Fixes
+
+- **icons:** update internal import specifier ([#12265](https://github.com/patternfly/patternfly-react/issues/12265)) ([e23728b](https://github.com/patternfly/patternfly-react/commit/e23728be802c1c85ec1f62dd93dd39f8bbe74107))
+
 # [6.5.0-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.5.0-prerelease.14...@patternfly/react-icons@6.5.0-prerelease.15) (2026-02-24)
 
 ### Bug Fixes
