@@ -367,7 +367,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
       className={css(
         styles.drawerPanel,
         isResizable && styles.modifiers.resizable,
-        hasNoGlass && styles.modifiers.noGlass,
+        hasNoGlass && 'pf-m-no-glass',
         hasNoBorder && styles.modifiers.noBorder,
         formatBreakpointMods(widths, styles),
         colorVariant === DrawerColorVariant.noBackground && styles.modifiers.noBackground,
