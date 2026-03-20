@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 import PencilAltIcon from '@patternfly/react-icons/dist/esm/icons/pencil-alt-icon';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 import { OnRowEdit } from './TableTypes';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
@@ -47,7 +47,7 @@ export const EditColumn: React.FunctionComponent<EditColumnProps> = ({
           {...props}
           onClick={(e) => onClick(e, 'cancel')}
           variant="plain"
-          icon={<TimesIcon />}
+          icon={<RhMicronsCloseIcon />}
         />
       </div>
     </div>

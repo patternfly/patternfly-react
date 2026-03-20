@@ -54,7 +54,7 @@ import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import PencilAltIcon from '@patternfly/react-icons/dist/esm/icons/pencil-alt-icon';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';

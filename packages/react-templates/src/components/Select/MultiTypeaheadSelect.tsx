@@ -25,7 +25,7 @@ import {
   TextInputGroupMain,
   TextInputGroupUtilities
 } from '@patternfly/react-core/dist/esm/components/TextInputGroup';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 export interface MultiTypeaheadSelectOption extends Omit<SelectOptionProps, 'content'> {
   /** Content of the select option. */
@@ -333,7 +333,7 @@ export const MultiTypeaheadSelectBase: FunctionComponent<MultiTypeaheadSelectPro
         </TextInputGroupMain>
         <TextInputGroupUtilities {...(selected.length === 0 ? { style: { display: 'none' } } : {})}>
           <Button variant="plain" onClick={onClearButtonClick} aria-label="Clear input value">
-            <TimesIcon />
+            <RhMicronsCloseIcon />
           </Button>
         </TextInputGroupUtilities>
       </TextInputGroup>

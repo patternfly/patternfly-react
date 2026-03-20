@@ -25,7 +25,7 @@ import ServerIcon from '@patternfly/react-icons/dist/esm/icons/server-icon';
 import LaptopIcon from '@patternfly/react-icons/dist/esm/icons/laptop-icon';
 import ProjectDiagramIcon from '@patternfly/react-icons/dist/esm/icons/project-diagram-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 ## Examples
 

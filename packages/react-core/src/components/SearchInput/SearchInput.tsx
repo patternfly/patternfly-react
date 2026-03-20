@@ -5,7 +5,7 @@ import { Badge } from '../Badge';
 import { Icon } from '../Icon';
 import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
 import AngleUpIcon from '@patternfly/react-icons/dist/esm/icons/angle-up-icon';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
@@ -350,7 +350,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
               isDisabled={isDisabled}
               aria-label={resetButtonLabel}
               onClick={onClearInput}
-              icon={<TimesIcon />}
+              icon={<RhMicronsCloseIcon />}
             />
           )}
         </TextInputGroupUtilities>
@@ -374,7 +374,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
       variant={ButtonVariant.plain}
       aria-label={toggleAriaLabel}
       aria-expanded={isExpanded}
-      icon={<TimesIcon />}
+      icon={<RhMicronsCloseIcon />}
       onClick={onExpandHandler}
     />
   );
@@ -384,7 +384,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
       variant={ButtonVariant.plain}
       aria-label={toggleAriaLabel}
       aria-expanded={isExpanded}
-      icon={isExpanded ? <TimesIcon /> : <SearchIcon />}
+      icon={isExpanded ? <RhMicronsCloseIcon /> : <SearchIcon />}
       onClick={onExpandHandler}
       ref={searchInputExpandableToggleRef}
     />

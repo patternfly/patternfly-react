@@ -27,7 +27,7 @@ import {
   MenuToggleElement
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 const initialSelectOptions = [
@@ -323,7 +323,7 @@ export class FormDemo extends Component<FormProps, FormState> {
               variant="plain"
               onClick={this.onClearButtonClick}
               aria-label="Clear input value"
-              icon={<TimesIcon />}
+              icon={<RhMicronsCloseIcon />}
             />
           </TextInputGroupUtilities>
         </TextInputGroup>
