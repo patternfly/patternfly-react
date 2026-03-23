@@ -96,7 +96,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
   variant,
   borders = true,
   isStickyHeader = false,
-  isPlain = false,
+  isPlain,
   gridBreakPoint = TableGridBreakpoint.gridMd,
   'aria-label': ariaLabel,
   role = 'grid',
@@ -226,6 +226,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
           isStriped && styles.modifiers.striped,
           isExpandable && styles.modifiers.expandable,
           isPlain && styles.modifiers.plain,
+          isPlain !== undefined && isPlain === false && styles.modifiers.noPlain,
           hasNoInset && stylesTreeView.modifiers.noInset,
           isNested && 'pf-m-nested',
           hasAnimations && styles.modifiers.animateExpand
