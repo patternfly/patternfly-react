@@ -187,7 +187,12 @@ export const Wizard = ({
       mainWrapperRef={wrapperRef}
     >
       <div
-        className={css(styles.wizard, isPlain && 'pf-m-plain', isNoPlainOnGlass && 'pf-m-no-plain', className)}
+        className={css(
+          styles.wizard,
+          isPlain && styles.modifiers.plain,
+          isNoPlainOnGlass && styles.modifiers.noPlain,
+          className
+        )}
         style={{
           ...(height ? { [wizardHeightToken.name]: typeof height === 'number' ? `${height}px` : height } : {}),
           ...(width ? { width } : {})
