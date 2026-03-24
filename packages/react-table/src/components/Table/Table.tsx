@@ -50,6 +50,8 @@ export interface TableProps extends React.HTMLProps<HTMLTableElement>, OUIAProps
   role?: string;
   /** @beta Flag indicating if the table should have plain styling with a transparent background */
   isPlain?: boolean;
+  /** @beta Flag indicating if the table should not have plain styling when in the glass theme */
+  isNoPlainOnGlass?: boolean;
   /** If set to true, the table header sticks to the top of its container */
   isStickyHeader?: boolean;
   /** @hide Forwarded ref */
@@ -96,7 +98,8 @@ const TableBase: React.FunctionComponent<TableProps> = ({
   variant,
   borders = true,
   isStickyHeader = false,
-  isPlain,
+  isPlain = false,
+  isNoPlainOnGlass = false,
   gridBreakPoint = TableGridBreakpoint.gridMd,
   'aria-label': ariaLabel,
   role = 'grid',
@@ -226,7 +229,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
           isStriped && styles.modifiers.striped,
           isExpandable && styles.modifiers.expandable,
           isPlain && styles.modifiers.plain,
-          isPlain !== undefined && isPlain === false && styles.modifiers.noPlain,
+          isNoPlainOnGlass && styles.modifiers.noPlain,
           hasNoInset && stylesTreeView.modifiers.noInset,
           isNested && 'pf-m-nested',
           hasAnimations && styles.modifiers.animateExpand
