@@ -666,3 +666,23 @@ test('clicking parent step navigates to first visible sub-step when first sub-st
     WizardStepChangeScope.Nav
   );
 });
+
+test('Renders with pf-m-plain class when isPlain is true', () => {
+  render(
+    <Wizard isPlain data-testid="wizard-plain">
+      <WizardStep id="test-step" name="Test step" />
+    </Wizard>
+  );
+
+  expect(screen.getByTestId('wizard-plain')).toHaveClass('pf-m-plain');
+});
+
+test('Renders with pf-m-no-plain class when isNoPlainOnGlass is true', () => {
+  render(
+    <Wizard isNoPlainOnGlass data-testid="wizard-no-plain">
+      <WizardStep id="test-step" name="Test step" />
+    </Wizard>
+  );
+
+  expect(screen.getByTestId('wizard-no-plain')).toHaveClass('pf-m-no-plain');
+});

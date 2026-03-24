@@ -63,6 +63,12 @@ import layout from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
 
 ```
 
+### Plain
+
+```ts file="./WizardPlain.tsx"
+
+```
+
 ### Focus content on next/back
 
 To focus the main content element of the `Wizard`, pass in the `shouldFocusContent` property. It is recommended that this is passed in so that users can navigate through a `WizardStep` content in order.
