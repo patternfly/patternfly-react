@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Button, ButtonVariant, ButtonProps } from '../Button';
-import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import RhUiAttentionBellFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
+import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 import styles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
 
@@ -44,8 +44,8 @@ export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> 
   children,
   variant = NotificationBadgeVariant.read,
   count = 0,
-  attentionIcon = <AttentionBellIcon />,
-  icon = <BellIcon />,
+  attentionIcon = <RhUiAttentionBellFillIcon />,
+  icon = <RhUiNotificationFillIcon />,
   className,
   isExpanded = false,
   shouldNotify = false,

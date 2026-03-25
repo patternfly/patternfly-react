@@ -2,12 +2,13 @@
 id: Card
 section: components
 ---
+
 import { Fragment, useState } from 'react';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import RhUiInformationFillIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-information-fill-icon';
 import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
-import { CheckCircleIcon, ExclamationCircleIcon, ExclamationTriangleIcon, BellIcon } from '@patternfly/react-icons';
+import { RhUiCheckCircleFillIcon, RhUiErrorFillIcon, RhUiWarningFillIcon, RhUiNotificationFillIcon } from '@patternfly/react-icons';
 import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
 import { Chart, ChartAxis, ChartGroup, ChartVoronoiContainer, ChartStack, ChartBar, ChartTooltip, ChartDonutThreshold, ChartDonutUtilization, ChartArea, ChartContainer, ChartLabel } from '@patternfly/react-charts/victory';
 import chart_color_yellow_100 from '@patternfly/react-tokens/dist/esm/chart_color_yellow_100';

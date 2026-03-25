@@ -1,22 +1,22 @@
 import { Label, LabelGroup } from '@patternfly/react-core';
-import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
+import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
 
 export const LabelGroupOverflow: React.FunctionComponent = () => (
   <LabelGroup>
-    <Label icon={<InfoCircleIcon />}>Label 1</Label>
-    <Label icon={<InfoCircleIcon />} color="blue">
+    <Label icon={<RhUiInformationFillIcon />}>Label 1</Label>
+    <Label icon={<RhUiInformationFillIcon />} color="blue">
       Label 2
     </Label>
-    <Label icon={<InfoCircleIcon />} color="green">
+    <Label icon={<RhUiInformationFillIcon />} color="green">
       Label 3
     </Label>
-    <Label icon={<InfoCircleIcon />} color="orange">
+    <Label icon={<RhUiInformationFillIcon />} color="orange">
       Label 4
     </Label>
-    <Label icon={<InfoCircleIcon />} color="red">
+    <Label icon={<RhUiInformationFillIcon />} color="red">
       Label 5
     </Label>
-    <Label icon={<InfoCircleIcon />} color="purple">
+    <Label icon={<RhUiInformationFillIcon />} color="purple">
       Label 6
     </Label>
   </LabelGroup>

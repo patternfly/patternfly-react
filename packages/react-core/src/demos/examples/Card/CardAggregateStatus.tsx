@@ -12,9 +12,9 @@ import {
   Stack,
   Icon
 } from '@patternfly/react-core';
-import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
+import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-check-circle-fill-icon';
+import RhUiErrorFillIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-error-fill-icon';
+import RhUiWarningFillIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-warning-fill-icon';
 import cssGridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 interface ContentType {
@@ -44,7 +44,7 @@ const cardData: CardData = {
         {
           icon: (
             <Icon status="success">
-              <CheckCircleIcon />
+              <RhUiCheckCircleFillIcon />
             </Icon>
           )
         }
@@ -57,7 +57,7 @@ const cardData: CardData = {
         {
           icon: (
             <Icon status="warning">
-              <ExclamationTriangleIcon />
+              <RhUiWarningFillIcon />
             </Icon>
           )
         }
@@ -70,7 +70,7 @@ const cardData: CardData = {
         {
           icon: (
             <Icon status="danger">
-              <ExclamationCircleIcon />
+              <RhUiErrorFillIcon />
             </Icon>
           )
         }
@@ -85,7 +85,7 @@ const cardData: CardData = {
         {
           icon: (
             <Icon status="success">
-              <CheckCircleIcon />
+              <RhUiCheckCircleFillIcon />
             </Icon>
           ),
           count: 2
@@ -93,7 +93,7 @@ const cardData: CardData = {
         {
           icon: (
             <Icon status="warning">
-              <ExclamationTriangleIcon />
+              <RhUiWarningFillIcon />
             </Icon>
           ),
           count: 1
@@ -107,7 +107,7 @@ const cardData: CardData = {
         {
           icon: (
             <Icon status="success">
-              <CheckCircleIcon />
+              <RhUiCheckCircleFillIcon />
             </Icon>
           ),
           count: 5
@@ -115,7 +115,7 @@ const cardData: CardData = {
         {
           icon: (
             <Icon status="danger">
-              <ExclamationCircleIcon />
+              <RhUiErrorFillIcon />
             </Icon>
           ),
           count: 12
@@ -129,7 +129,7 @@ const cardData: CardData = {
         {
           icon: (
             <Icon status="warning">
-              <ExclamationTriangleIcon />
+              <RhUiWarningFillIcon />
             </Icon>
           ),
           count: 3
@@ -137,7 +137,7 @@ const cardData: CardData = {
         {
           icon: (
             <Icon status="danger">
-              <ExclamationCircleIcon />
+              <RhUiErrorFillIcon />
             </Icon>
           ),
           count: 7
@@ -153,7 +153,7 @@ const cardData: CardData = {
         {
           icon: (
             <Icon status="danger">
-              <ExclamationCircleIcon />
+              <RhUiErrorFillIcon />
             </Icon>
           ),
           status: '2 errors',
@@ -162,7 +162,7 @@ const cardData: CardData = {
         {
           icon: (
             <Icon status="warning">
-              <ExclamationTriangleIcon />
+              <RhUiWarningFillIcon />
             </Icon>
           ),
           status: '1 warning',
@@ -177,7 +177,7 @@ const cardData: CardData = {
         {
           icon: (
             <Icon status="success">
-              <CheckCircleIcon />
+              <RhUiCheckCircleFillIcon />
             </Icon>
           ),
           status: '2 successes',
@@ -186,7 +186,7 @@ const cardData: CardData = {
         {
           icon: (
             <Icon status="warning">
-              <ExclamationTriangleIcon />
+              <RhUiWarningFillIcon />
             </Icon>
           ),
           status: '3 warnings',
@@ -201,7 +201,7 @@ const cardData: CardData = {
         {
           icon: (
             <Icon status="warning">
-              <ExclamationTriangleIcon />
+              <RhUiWarningFillIcon />
             </Icon>
           ),
           status: '7 warnings',
@@ -210,7 +210,7 @@ const cardData: CardData = {
         {
           icon: (
             <Icon status="danger">
-              <ExclamationCircleIcon />
+              <RhUiErrorFillIcon />
             </Icon>
           ),
           status: '1 error',

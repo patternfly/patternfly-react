@@ -3,7 +3,7 @@ import { Menu, MenuContent, MenuGroup, MenuList, MenuItem, MenuItemAction } from
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 
 export const MenuWithActions: React.FunctionComponent = () => {
   const [selectedItems, setSelectedItems] = useState<number[]>([0, 2, 3]);
@@ -46,7 +46,7 @@ export const MenuWithActions: React.FunctionComponent = () => {
             <MenuItem
               isDisabled
               isSelected={selectedItems.indexOf(1) !== -1}
-              actions={<MenuItemAction icon={<BellIcon />} actionId="alert" aria-label="Alert" />}
+              actions={<MenuItemAction icon={<RhUiNotificationFillIcon />} actionId="alert" aria-label="Alert" />}
               description="This is a description"
               itemId={1}
             >

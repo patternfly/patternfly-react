@@ -15,7 +15,7 @@ import {
   SelectOption,
   Button
 } from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
 import GoogleIcon from '@patternfly/react-icons/dist/esm/icons/google-icon';
 import GithubIcon from '@patternfly/react-icons/dist/esm/icons/github-icon';
 import DropboxIcon from '@patternfly/react-icons/dist/esm/icons/dropbox-icon';
@@ -167,7 +167,7 @@ export const LoginPageLanguageSelect: React.FunctionComponent = () => {
     <LoginForm
       showHelperText={showHelperText}
       helperText="Invalid login credentials."
-      helperTextIcon={<ExclamationCircleIcon />}
+      helperTextIcon={<RhUiErrorFillIcon />}
       usernameLabel="Username"
       usernameValue={username}
       onChangeUsername={handleUsernameChange}

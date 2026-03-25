@@ -26,8 +26,8 @@ import {
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 const initialSelectOptions = [
@@ -358,7 +358,7 @@ export class FormDemo extends Component<FormProps, FormState> {
             />
             <HelperText id="age-helper">
               <HelperTextItem
-                icon={<ExclamationCircleIcon />}
+                icon={<RhUiErrorFillIcon />}
                 variant={isValid ? ValidatedOptions.default : ValidatedOptions.error}
               >
                 {isValid ? 'Please write your age' : 'Age has to be a number'}

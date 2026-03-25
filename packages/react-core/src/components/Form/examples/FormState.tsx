@@ -18,7 +18,7 @@ import {
   TextArea,
   TextInput
 } from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
 
 export const FormState = () => {
   const [isSelectOpen, setIsSelectOpen] = useState(false);
@@ -42,7 +42,7 @@ export const FormState = () => {
               <HelperText>
                 <HelperTextItem
                   variant={errors['input-id'] ? 'error' : 'default'}
-                  {...(errors['input-id'] && { icon: <ExclamationCircleIcon /> })}
+                  {...(errors['input-id'] && { icon: <RhUiErrorFillIcon /> })}
                 >
                   {errors['input-id']}
                 </HelperTextItem>

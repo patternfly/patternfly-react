@@ -19,8 +19,8 @@ import {
   Flex,
   FlexItem
 } from '@patternfly/react-core';
-import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
-import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-check-circle-fill-icon';
+import RhUiInformationFillIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-information-fill-icon';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
@@ -68,7 +68,7 @@ export const TabsOpenWithSecondaryTabs: React.FunctionComponent = () => {
             <DescriptionListDescription>
               <Flex spacer={{ default: 'spacerLg' }}>
                 <FlexItem>
-                  <CheckCircleIcon />
+                  <RhUiCheckCircleFillIcon />
                 </FlexItem>
                 <FlexItem>Running</FlexItem>
               </Flex>
@@ -156,7 +156,7 @@ export const TabsOpenWithSecondaryTabs: React.FunctionComponent = () => {
             </Title>
           </FlexItem>
           <FlexItem flex={{ default: 'flexNone' }}>
-            <Label icon={<InfoCircleIcon />}>Running</Label>
+            <Label icon={<RhUiInformationFillIcon />}>Running</Label>
           </FlexItem>
         </Flex>
       </PageSection>

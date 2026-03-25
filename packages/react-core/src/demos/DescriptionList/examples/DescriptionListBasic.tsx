@@ -13,7 +13,7 @@ import {
   Flex,
   FlexItem
 } from '@patternfly/react-core';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
 export const DescriptionListBasic: React.FunctionComponent = () => (
@@ -43,7 +43,7 @@ export const DescriptionListBasic: React.FunctionComponent = () => (
               <DescriptionListDescription>
                 <Flex>
                   <FlexItem spacer={{ lg: 'spacerSm' }}>
-                    <CheckCircleIcon color="green" />
+                    <RhUiCheckCircleFillIcon color="green" />
                   </FlexItem>
                   <FlexItem>Active</FlexItem>
                 </Flex>

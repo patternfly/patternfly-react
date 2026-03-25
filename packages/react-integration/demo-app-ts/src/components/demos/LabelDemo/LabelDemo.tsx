@@ -1,6 +1,6 @@
 import { Label } from '@patternfly/react-core';
 import { Component } from 'react';
-import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
+import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
 
 export class LabelDemo extends Component {
   componentDidMount() {
@@ -10,9 +10,9 @@ export class LabelDemo extends Component {
   render() {
     return (
       <>
-        <Label id="no-tooltip">Grey</Label> <Label icon={<InfoCircleIcon />}>Grey icon</Label>{' '}
+        <Label id="no-tooltip">Grey</Label> <Label icon={<RhUiInformationFillIcon />}>Grey icon</Label>{' '}
         <Label onClose={() => {}}>Grey removeable</Label>{' '}
-        <Label icon={<InfoCircleIcon />} onClose={() => {}}>
+        <Label icon={<RhUiInformationFillIcon />} onClose={() => {}}>
           Grey icon removeable
         </Label>{' '}
         <Label href="#">Grey link</Label>{' '}
@@ -30,13 +30,13 @@ export class LabelDemo extends Component {
         <Label id="no-tooltip-max-width" variant="outline" textMaxWidth="150px">
           Grey
         </Label>{' '}
-        <Label variant="outline" icon={<InfoCircleIcon />}>
+        <Label variant="outline" icon={<RhUiInformationFillIcon />}>
           Grey icon
         </Label>{' '}
         <Label variant="outline" onClose={() => {}}>
           Grey removeable
         </Label>{' '}
-        <Label variant="outline" icon={<InfoCircleIcon />} onClose={() => {}}>
+        <Label variant="outline" icon={<RhUiInformationFillIcon />} onClose={() => {}}>
           Grey icon removeable
         </Label>{' '}
         <Label variant="outline" href="#">
@@ -46,10 +46,10 @@ export class LabelDemo extends Component {
           Grey link removeable
         </Label>
         <Label color="blue">Blue</Label>{' '}
-        <Label color="blue" icon={<InfoCircleIcon />}>
+        <Label color="blue" icon={<RhUiInformationFillIcon />}>
           Blue icon
         </Label>
-        <Label color="blue" tooltipPosition="top" icon={<InfoCircleIcon />} textMaxWidth="150px">
+        <Label color="blue" tooltipPosition="top" icon={<RhUiInformationFillIcon />} textMaxWidth="150px">
           Very very very very long label text that should be truncated
         </Label>
         <Label isCompact>Compact</Label>

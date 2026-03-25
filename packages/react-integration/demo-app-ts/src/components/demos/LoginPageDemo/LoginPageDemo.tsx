@@ -11,7 +11,7 @@ import {
   ListItem,
   ListVariant
 } from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
 
 export interface LoginPageDemoState {
   showHelperText: boolean;
@@ -59,7 +59,7 @@ export class LoginPageDemo extends Component<React.HTMLProps<HTMLDivElement>, Lo
   render() {
     const helperText = (
       <>
-        <ExclamationCircleIcon />
+        <RhUiErrorFillIcon />
         &nbsp;Invalid login credentials.
       </>
     );

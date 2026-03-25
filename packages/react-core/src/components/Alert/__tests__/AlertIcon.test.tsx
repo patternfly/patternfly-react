@@ -3,14 +3,14 @@ import { render, screen } from '@testing-library/react';
 import { AlertIcon } from '../AlertIcon';
 import styles from '@patternfly/react-styles/css/components/Alert/alert';
 
-jest.mock('@patternfly/react-icons/dist/esm/icons/check-circle-icon', () => () => 'Check circle icon mock');
-jest.mock('@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon', () => () => 'Exclamation circle icon mock');
+jest.mock('@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon', () => () => 'Check circle icon mock');
+jest.mock('@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon', () => () => 'Exclamation circle icon mock');
 jest.mock(
-  '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon',
+  '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon',
   () => () => 'Exclamation triangle icon mock'
 );
-jest.mock('@patternfly/react-icons/dist/esm/icons/info-circle-icon', () => () => 'Info circle icon mock');
-jest.mock('@patternfly/react-icons/dist/esm/icons/bell-icon', () => () => 'Bell icon mock');
+jest.mock('@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon', () => () => 'Info circle icon mock');
+jest.mock('@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon', () => () => 'Bell icon mock');
 
 test('Renders without children', () => {
   render(

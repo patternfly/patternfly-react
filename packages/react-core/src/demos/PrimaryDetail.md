@@ -8,8 +8,8 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-i
 import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
+import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
@@ -32,6 +32,7 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 ### Primary-detail full page
 
 ```ts file="examples/PrimaryDetail/PrimaryDetailFullPage.tsx" isFullscreen
+
 ```
 
 ### Primary-detail content padding
@@ -43,16 +44,19 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 ### Primary-detail card view
 
 ```ts file="examples/PrimaryDetail/PrimaryDetailCardView.tsx" isFullscreen
+
 ```
 
 ### Primary-detail simple list in card
 
 ```ts file="examples/PrimaryDetail/PrimaryDetailSimpleListInCard.tsx" isFullscreen
+
 ```
 
 ### Primary-detail data list in card
 
 ```ts file="examples/PrimaryDetail/PrimaryDetailDataListInCard.tsx" isFullscreen
+
 ```
 
 ### Primary-detail inline modifier

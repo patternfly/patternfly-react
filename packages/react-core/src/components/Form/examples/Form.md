@@ -23,7 +23,7 @@ propComponents:
 ---
 
 import { useRef, useEffect, useState } from 'react';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
 import styles from '@patternfly/react-styles/css/components/Form/form';

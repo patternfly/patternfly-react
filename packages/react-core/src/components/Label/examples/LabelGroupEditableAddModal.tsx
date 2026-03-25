@@ -15,7 +15,7 @@ import {
   Popper
 } from '@patternfly/react-core';
 import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
-import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
+import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
 
 export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
@@ -71,7 +71,7 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
   const onAdd = () => {
     let labelIcon: any;
     if (icon === 'Info circle icon') {
-      labelIcon = <InfoCircleIcon />;
+      labelIcon = <RhUiInformationFillIcon />;
     }
 
     setLabels([
@@ -220,7 +220,7 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
         <MenuList>
           <MenuItem itemId="No icon">No icon</MenuItem>
           <MenuItem itemId="Info circle icon">
-            <InfoCircleIcon />
+            <RhUiInformationFillIcon />
             Info circle icon
           </MenuItem>
         </MenuList>

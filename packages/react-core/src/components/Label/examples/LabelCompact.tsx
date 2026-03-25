@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { Label } from '@patternfly/react-core';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
+import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
 
 export const LabelCompact: React.FunctionComponent = () => (
   <Fragment>
@@ -67,7 +67,7 @@ export const LabelCompact: React.FunctionComponent = () => (
     >
       Compact label with icon that overflows
     </Label>{' '}
-    <Label isDisabled isCompact href="#compact" onClose={() => Function.prototype} icon={<InfoCircleIcon />}>
+    <Label isDisabled isCompact href="#compact" onClose={() => Function.prototype} icon={<RhUiInformationFillIcon />}>
       Compact link removable (disabled)
     </Label>{' '}
     <Label
@@ -75,7 +75,7 @@ export const LabelCompact: React.FunctionComponent = () => (
       isCompact
       onClick={() => Function.prototype}
       onClose={() => Function.prototype}
-      icon={<InfoCircleIcon />}
+      icon={<RhUiInformationFillIcon />}
     >
       Compact clickable removable (disabled)
     </Label>

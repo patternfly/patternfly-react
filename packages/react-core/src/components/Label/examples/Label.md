@@ -7,7 +7,7 @@ propComponents: ['Label', 'LabelGroup']
 
 import { Fragment, useEffect, useRef, useState } from 'react';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
+import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
 import './Label.css';
 
 ## Examples

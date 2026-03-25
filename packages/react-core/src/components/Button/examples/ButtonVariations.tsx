@@ -3,7 +3,7 @@ import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-micron
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-square-alt-icon';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 
 export const ButtonVariations: React.FunctionComponent = () => (
   <>
@@ -50,13 +50,13 @@ export const ButtonVariations: React.FunctionComponent = () => (
     </Flex>
     <br />
     <Flex columnGap={{ default: 'columnGapSm' }}>
-      <Button variant="stateful" icon={<BellIcon />} state="read">
+      <Button variant="stateful" icon={<RhUiNotificationFillIcon />} state="read">
         Stateful read
       </Button>
-      <Button variant="stateful" icon={<BellIcon />} state="unread">
+      <Button variant="stateful" icon={<RhUiNotificationFillIcon />} state="unread">
         Stateful unread
       </Button>
-      <Button variant="stateful" icon={<BellIcon />} state="attention">
+      <Button variant="stateful" icon={<RhUiNotificationFillIcon />} state="attention">
         Stateful attention
       </Button>
     </Flex>

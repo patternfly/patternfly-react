@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
+import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
+import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
 
 import { OUIAProps, useOUIAProps } from '../../helpers';
 import { WizardNavItemStatus } from './types';
@@ -109,9 +109,9 @@ export const WizardNavItem = ({
           <>
             <span className="pf-v6-screen-reader">, {status}</span>
             <span className={css(styles.wizardNavLinkStatusIcon)}>
-              {status === WizardNavItemStatus.Error && <ExclamationCircleIcon />}
-              {status === WizardNavItemStatus.Success && <CheckCircleIcon />}
-              {status === WizardNavItemStatus.Warning && <ExclamationTriangleIcon />}
+              {status === WizardNavItemStatus.Error && <RhUiErrorFillIcon />}
+              {status === WizardNavItemStatus.Success && <RhUiCheckCircleFillIcon />}
+              {status === WizardNavItemStatus.Warning && <RhUiWarningFillIcon />}
             </span>
           </>
         )}

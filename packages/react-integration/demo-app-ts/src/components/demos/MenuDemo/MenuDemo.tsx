@@ -21,7 +21,7 @@ import {
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
 import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
@@ -462,7 +462,7 @@ export class MenuDemo extends Component {
               <MenuItem
                 isDisabled
                 isSelected={selectedItems.indexOf(1) !== -1}
-                actions={<MenuItemAction icon={<BellIcon />} actionId="alert" aria-label="Alert" />}
+                actions={<MenuItemAction icon={<RhUiNotificationFillIcon />} actionId="alert" aria-label="Alert" />}
                 description="This is a description"
                 itemId={1}
               >
@@ -512,7 +512,7 @@ export class MenuDemo extends Component {
         text: 'Item 3',
         description: 'Description 3',
         itemId: 'item-3',
-        action: <BellIcon />,
+        action: <RhUiNotificationFillIcon />,
         actionId: 'bell'
       }
     ];

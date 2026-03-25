@@ -16,8 +16,8 @@ import {
   TabTitleText,
   Title
 } from '@patternfly/react-core';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
 
 const descriptionListData = [
   {
@@ -26,7 +26,7 @@ const descriptionListData = [
     detail: '121 Systems',
     icon: (
       <Icon status="success">
-        <CheckCircleIcon />
+        <RhUiCheckCircleFillIcon />
       </Icon>
     )
   },
@@ -36,7 +36,7 @@ const descriptionListData = [
     detail: '123 Systems',
     icon: (
       <Icon status="danger">
-        <ExclamationCircleIcon />
+        <RhUiErrorFillIcon />
       </Icon>
     )
   },
@@ -46,7 +46,7 @@ const descriptionListData = [
     detail: '122 Systems',
     icon: (
       <Icon status="success">
-        <CheckCircleIcon />
+        <RhUiCheckCircleFillIcon />
       </Icon>
     )
   },
@@ -56,7 +56,7 @@ const descriptionListData = [
     detail: '124 Systems',
     icon: (
       <Icon status="danger">
-        <ExclamationCircleIcon />
+        <RhUiErrorFillIcon />
       </Icon>
     )
   }

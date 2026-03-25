@@ -1,10 +1,10 @@
 import { Label } from '@patternfly/react-core';
-import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
+import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
 
 export const LabelCustomRender: React.FunctionComponent = () => (
   <Label
     color="blue"
-    icon={<InfoCircleIcon />}
+    icon={<RhUiInformationFillIcon />}
     onClose={() => Function.prototype}
     render={({ className, content, componentRef }) => (
       <a className={className} ref={componentRef}>

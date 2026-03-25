@@ -1,6 +1,6 @@
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import { Bullseye, EmptyState, EmptyStateVariant, EmptyStateBody, PageSection } from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 
 export const TableEmptyStateError: React.FunctionComponent = () => (
@@ -21,7 +21,7 @@ export const TableEmptyStateError: React.FunctionComponent = () => (
             <Td colSpan={8}>
               <Bullseye>
                 <EmptyState
-                  icon={ExclamationCircleIcon}
+                  icon={RhUiErrorFillIcon}
                   titleText="Unable to connect"
                   headingLevel="h2"
                   variant={EmptyStateVariant.sm}

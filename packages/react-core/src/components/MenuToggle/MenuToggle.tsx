@@ -4,9 +4,9 @@ import { css } from '@patternfly/react-styles';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import { BadgeProps } from '../Badge';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
+import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
+import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
 import { OUIAProps, getOUIAProps } from '../../helpers';
 import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 
@@ -127,13 +127,13 @@ class MenuToggleBase extends Component<MenuToggleProps> {
           if (!statusIcon) {
             switch (status) {
               case MenuToggleStatus.success:
-                _statusIcon = <CheckCircleIcon />;
+                _statusIcon = <RhUiCheckCircleFillIcon />;
                 break;
               case MenuToggleStatus.warning:
-                _statusIcon = <ExclamationTriangleIcon />;
+                _statusIcon = <RhUiWarningFillIcon />;
                 break;
               case MenuToggleStatus.danger:
-                _statusIcon = <ExclamationCircleIcon />;
+                _statusIcon = <RhUiErrorFillIcon />;
                 break;
             }
           }

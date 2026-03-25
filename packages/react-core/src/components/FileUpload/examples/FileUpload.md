@@ -8,7 +8,6 @@ subsection: file-upload
 
 import { useState } from 'react';
 import FileUploadIcon from '@patternfly/react-icons/dist/esm/icons/file-upload-icon';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 ## Examples
 

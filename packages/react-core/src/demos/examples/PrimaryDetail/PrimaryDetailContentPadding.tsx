@@ -42,8 +42,8 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
+import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
@@ -283,10 +283,10 @@ export const PrimaryDetailContentPadding: React.FunctionComponent = () => {
                         <CubeIcon /> 5
                       </FlexItem>
                       <FlexItem>
-                        <CheckCircleIcon /> 7
+                        <RhUiCheckCircleFillIcon /> 7
                       </FlexItem>
                       <FlexItem>
-                        <ExclamationTriangleIcon /> 5
+                        <RhUiWarningFillIcon /> 5
                       </FlexItem>
                       <FlexItem>
                         <TimesCircleIcon /> 5
@@ -380,10 +380,10 @@ export const PrimaryDetailContentPadding: React.FunctionComponent = () => {
                         <CubeIcon /> 5
                       </FlexItem>
                       <FlexItem>
-                        <CheckCircleIcon /> 7
+                        <RhUiCheckCircleFillIcon /> 7
                       </FlexItem>
                       <FlexItem>
-                        <ExclamationTriangleIcon /> 5
+                        <RhUiWarningFillIcon /> 5
                       </FlexItem>
                       <FlexItem>
                         <TimesCircleIcon /> 5

@@ -22,8 +22,8 @@ import {
   Timestamp,
   Title
 } from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
+import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 import flex from '@patternfly/react-styles/css/utilities/Flex/flex';
 import cssGridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
@@ -77,7 +77,7 @@ export const CardEventsView: React.FunctionComponent = () => {
                   <Flex flexWrap={{ default: 'nowrap' }}>
                     <FlexItem>
                       <Icon status="danger">
-                        <ExclamationCircleIcon />
+                        <RhUiErrorFillIcon />
                       </Icon>
                     </FlexItem>
                     <FlexItem>
@@ -98,7 +98,7 @@ export const CardEventsView: React.FunctionComponent = () => {
                   <Flex flexWrap={{ default: 'nowrap' }}>
                     <FlexItem>
                       <Icon status="success">
-                        <CheckCircleIcon />
+                        <RhUiCheckCircleFillIcon />
                       </Icon>
                     </FlexItem>
                     <FlexItem>
@@ -134,7 +134,7 @@ export const CardEventsView: React.FunctionComponent = () => {
                   <Flex flexWrap={{ default: 'nowrap' }}>
                     <FlexItem>
                       <Icon status="success">
-                        <CheckCircleIcon />
+                        <RhUiCheckCircleFillIcon />
                       </Icon>
                     </FlexItem>
                     <FlexItem>

@@ -3,10 +3,10 @@ import { ProgressStep, ProgressStepVariant } from '../ProgressStep';
 import { capitalize } from '../../../helpers';
 import styles from '@patternfly/react-styles/css/components/ProgressStepper/progress-stepper';
 
-jest.mock('@patternfly/react-icons/dist/esm/icons/check-circle-icon', () => () => 'Success icon mock');
+jest.mock('@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon', () => () => 'Success icon mock');
 jest.mock('@patternfly/react-icons/dist/esm/icons/resources-full-icon', () => () => 'Info icon mock');
-jest.mock('@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon', () => () => 'Warning icon mock');
-jest.mock('@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon', () => () => 'Danger icon mock');
+jest.mock('@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon', () => () => 'Warning icon mock');
+jest.mock('@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon', () => () => 'Danger icon mock');
 
 test('Renders without children', () => {
   render(

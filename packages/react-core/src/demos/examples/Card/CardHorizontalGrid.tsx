@@ -19,7 +19,7 @@ import {
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
-import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
+import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
 import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
@@ -88,16 +88,16 @@ export const CardHorizontalGrid: React.FunctionComponent = () => {
           <Level hasGutter>
             <CardTitle id="titleId">Getting Started</CardTitle>
             <LabelGroup isCompact>
-              <Label isCompact icon={<InfoCircleIcon />} color="blue">
+              <Label isCompact icon={<RhUiInformationFillIcon />} color="blue">
                 Set up your cluster
               </Label>
-              <Label isCompact icon={<InfoCircleIcon />} color="purple">
+              <Label isCompact icon={<RhUiInformationFillIcon />} color="purple">
                 Guided tours
               </Label>
-              <Label isCompact icon={<InfoCircleIcon />} color="green">
+              <Label isCompact icon={<RhUiInformationFillIcon />} color="green">
                 Quick starts
               </Label>
-              <Label isCompact icon={<InfoCircleIcon />} color="orange">
+              <Label isCompact icon={<RhUiInformationFillIcon />} color="orange">
                 Learning resources
               </Label>
             </LabelGroup>
@@ -118,7 +118,7 @@ export const CardHorizontalGrid: React.FunctionComponent = () => {
                 direction={{ default: 'column' }}
                 grow={{ default: 'grow' }}
               >
-                <Label icon={<InfoCircleIcon />} color="blue">
+                <Label icon={<RhUiInformationFillIcon />} color="blue">
                   Set up your cluster
                 </Label>
                 <p>Continue setting up your cluster to access all you cain in the Console</p>
@@ -149,7 +149,7 @@ export const CardHorizontalGrid: React.FunctionComponent = () => {
                 direction={{ default: 'column' }}
                 grow={{ default: 'grow' }}
               >
-                <Label icon={<InfoCircleIcon />} color="purple">
+                <Label icon={<RhUiInformationFillIcon />} color="purple">
                   Guided tours
                 </Label>
                 <p>Tour some of the key features around the console</p>
@@ -177,7 +177,7 @@ export const CardHorizontalGrid: React.FunctionComponent = () => {
                 direction={{ default: 'column' }}
                 grow={{ default: 'grow' }}
               >
-                <Label icon={<InfoCircleIcon />} color="green">
+                <Label icon={<RhUiInformationFillIcon />} color="green">
                   Quick starts
                 </Label>
                 <p>Get started with features using our step-by-step documentation</p>
@@ -208,7 +208,7 @@ export const CardHorizontalGrid: React.FunctionComponent = () => {
                 direction={{ default: 'column' }}
                 grow={{ default: 'grow' }}
               >
-                <Label icon={<InfoCircleIcon />} color="orange">
+                <Label icon={<RhUiInformationFillIcon />} color="orange">
                   Learning resources
                 </Label>
                 <p>Learn about new features within the Console and get started with demo apps</p>

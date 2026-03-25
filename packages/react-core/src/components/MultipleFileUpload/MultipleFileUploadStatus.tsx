@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { ExpandableSection } from '../ExpandableSection';
 import { useSSRSafeId } from '../../helpers';
 import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 
 /** Acts as an expandable container for all uploaded file statuses.
@@ -44,7 +44,7 @@ export const MultipleFileUploadStatus: React.FunctionComponent<MultipleFileUploa
         setIcon(<TimesCircleIcon />);
         break;
       case 'success':
-        setIcon(<CheckCircleIcon />);
+        setIcon(<RhUiCheckCircleFillIcon />);
         break;
       case 'inProgress':
         setIcon(<InProgressIcon />);

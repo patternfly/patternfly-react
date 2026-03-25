@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Form, FormGroup, ActionGroup, TextInput, Button } from '@patternfly/react-core';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 
 export const ButtonProgress: React.FunctionComponent = () => {
   const [loginState, setLoginState] = useState<'notLoggedIn' | 'loading' | 'loggedIn'>('notLoggedIn');
@@ -41,7 +41,7 @@ export const ButtonProgress: React.FunctionComponent = () => {
               : null
           }
           isLoading={loginState === 'loading'}
-          icon={loginState === 'loggedIn' ? <CheckCircleIcon /> : null}
+          icon={loginState === 'loggedIn' ? <RhUiCheckCircleFillIcon /> : null}
           spinnerAriaValueText="Loading..."
         >
           {loginState === 'notLoggedIn' && 'Link account and log in'}

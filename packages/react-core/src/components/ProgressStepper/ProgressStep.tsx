@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/ProgressStepper/progress-stepper';
 import { css } from '@patternfly/react-styles';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 import ResourcesFullIcon from '@patternfly/react-icons/dist/esm/icons/resources-full-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
+import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
 
 export enum ProgressStepVariant {
   default = 'default',
@@ -43,10 +43,10 @@ export interface ProgressStepProps extends React.DetailedHTMLProps<
 const variantIcons = {
   default: undefined as any,
   pending: undefined as any,
-  success: <CheckCircleIcon />,
+  success: <RhUiCheckCircleFillIcon />,
   info: <ResourcesFullIcon />,
-  warning: <ExclamationTriangleIcon />,
-  danger: <ExclamationCircleIcon />
+  warning: <RhUiWarningFillIcon />,
+  danger: <RhUiErrorFillIcon />
 };
 
 const variantStyle = {
