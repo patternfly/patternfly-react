@@ -190,7 +190,7 @@ export const Wizard = ({
         className={css(
           styles.wizard,
           isPlain && styles.modifiers.plain,
-          isNoPlainOnGlass && styles.modifiers.noPlain,
+          isNoPlainOnGlass && styles.modifiers.noPlainOnGlass,
           className
         )}
         style={{

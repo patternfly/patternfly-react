@@ -678,12 +678,12 @@ test(`Renders with ${styles.modifiers.plain} class when isPlain is true`, () => 
   expect(screen.getByTestId('wizard-plain')).toHaveClass(styles.modifiers.plain);
 });
 
-test(`Renders with ${styles.modifiers.noPlain} class when isNoPlainOnGlass is true`, () => {
+test(`Renders with ${styles.modifiers.noPlainOnGlass} class when isNoPlainOnGlass is true`, () => {
   render(
     <Wizard isNoPlainOnGlass data-testid="wizard-no-plain">
       <WizardStep id="test-step" name="Test step" />
     </Wizard>
   );
 
-  expect(screen.getByTestId('wizard-no-plain')).toHaveClass(styles.modifiers.noPlain);
+  expect(screen.getByTestId('wizard-no-plain')).toHaveClass(styles.modifiers.noPlainOnGlass);
 });
