@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Wizard, WizardFooterProps, WizardStep, WizardNavProps, WizardStepChangeScope } from '../';
+import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 
 test('renders step when child is of type WizardStep', () => {
   render(
@@ -667,22 +668,22 @@ test('clicking parent step navigates to first visible sub-step when first sub-st
   );
 });
 
-test('Renders with pf-m-plain class when isPlain is true', () => {
+test(`Renders with ${styles.modifiers.plain} class when isPlain is true`, () => {
   render(
     <Wizard isPlain data-testid="wizard-plain">
       <WizardStep id="test-step" name="Test step" />
     </Wizard>
   );
 
-  expect(screen.getByTestId('wizard-plain')).toHaveClass('pf-m-plain');
+  expect(screen.getByTestId('wizard-plain')).toHaveClass(styles.modifiers.plain);
 });
 
-test('Renders with pf-m-no-plain class when isNoPlainOnGlass is true', () => {
+test(`Renders with ${styles.modifiers.noPlain} class when isNoPlainOnGlass is true`, () => {
   render(
     <Wizard isNoPlainOnGlass data-testid="wizard-no-plain">
       <WizardStep id="test-step" name="Test step" />
     </Wizard>
   );
 
-  expect(screen.getByTestId('wizard-no-plain')).toHaveClass('pf-m-no-plain');
+  expect(screen.getByTestId('wizard-no-plain')).toHaveClass(styles.modifiers.noPlain);
 });
