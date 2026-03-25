@@ -61,7 +61,7 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   shouldFocusContent?: boolean;
   /** Adds plain styling to the wizard. */
   isPlain?: boolean;
-  /** Prevents the wizard from automatically applying plain styling when glass theme is enabled. */
+  /** @beta Prevents the wizard from automatically applying plain styling when glass theme is enabled. */
   isNoPlainOnGlass?: boolean;
 }
 
