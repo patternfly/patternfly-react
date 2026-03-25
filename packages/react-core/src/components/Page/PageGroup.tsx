@@ -27,6 +27,10 @@ export interface PageGroupProps extends React.HTMLProps<HTMLDivElement> {
   hasOverflowScroll?: boolean;
   /** Adds an accessible name to the page group when the hasOverflowScroll prop is set to true. */
   'aria-label'?: string;
+  /** Adds plain styling to the page group. */
+  isPlain?: boolean;
+  /** @beta Prevents the page group from automatically applying plain styling when glass theme is enabled. */
+  isNoPlainOnGlass?: boolean;
 }
 
 export const PageGroup = ({
@@ -38,6 +42,8 @@ export const PageGroup = ({
   hasShadowBottom = false,
   hasOverflowScroll = false,
   'aria-label': ariaLabel,
+  isPlain = false,
+  isNoPlainOnGlass = false,
   ...props
 }: PageGroupProps) => {
   const { height, getVerticalBreakpoint } = useContext(PageContext);
@@ -60,6 +66,8 @@ export const PageGroup = ({
         hasShadowTop && styles.modifiers.shadowTop,
         hasShadowBottom && styles.modifiers.shadowBottom,
         hasOverflowScroll && styles.modifiers.overflowScroll,
+        isPlain && styles.modifiers.plain,
+        isNoPlainOnGlass && styles.modifiers.noPlainOnGlass,
         className
       )}
       {...(hasOverflowScroll && { tabIndex: 0, role: 'region', 'aria-label': ariaLabel })}

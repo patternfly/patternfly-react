@@ -179,3 +179,15 @@ test(`Renders with ${styles.modifiers.noFill} if isFilled={false} is passed`, ()
 
   expect(screen.getByRole('main')).toHaveClass(styles.modifiers.noFill);
 });
+
+test(`Renders with ${styles.modifiers.plain} class when isPlain is true`, () => {
+  render(<PageSection isPlain>test</PageSection>);
+
+  expect(screen.getByText('test')).toHaveClass(styles.modifiers.plain);
+});
+
+test(`Renders with ${styles.modifiers.noPlainOnGlass} class when isPlain is true`, () => {
+  render(<PageSection isNoPlainOnGlass>test</PageSection>);
+
+  expect(screen.getByText('test')).toHaveClass(styles.modifiers.noPlainOnGlass);
+});

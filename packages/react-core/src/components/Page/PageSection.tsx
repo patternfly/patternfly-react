@@ -67,6 +67,10 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   'aria-label'?: string;
   /** Sets the base component to render. Defaults to section */
   component?: keyof React.JSX.IntrinsicElements;
+  /** Adds plain styling to the page section. */
+  isPlain?: boolean;
+  /** @beta Prevents the page section from automatically applying plain styling when glass theme is enabled. */
+  isNoPlainOnGlass?: boolean;
 }
 
 const variantType = {
@@ -98,6 +102,8 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   'aria-label': ariaLabel,
   component = 'section',
   hasBodyWrapper = true,
+  isPlain = false,
+  isNoPlainOnGlass = false,
   ...props
 }: PageSectionProps) => {
   const { height, getVerticalBreakpoint } = useContext(PageContext);
@@ -126,6 +132,8 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
         hasShadowTop && styles.modifiers.shadowTop,
         hasShadowBottom && styles.modifiers.shadowBottom,
         hasOverflowScroll && styles.modifiers.overflowScroll,
+        isPlain && styles.modifiers.plain,
+        isNoPlainOnGlass && styles.modifiers.noPlainOnGlass,
         className
       )}
       {...(hasOverflowScroll && { tabIndex: 0 })}

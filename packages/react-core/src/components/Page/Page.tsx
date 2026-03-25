@@ -348,7 +348,13 @@ class Page extends Component<PageProps, PageState> {
           )}
         >
           {skipToContent}
-          {variant === 'docked' ? <div className={css(styles.pageDock)}>{masthead}</div> : masthead}
+          {variant === 'docked' ? (
+            <div className={css(styles.pageDock)}>
+              <div className={css(styles.pageDockMain)}>{masthead}</div>
+            </div>
+          ) : (
+            masthead
+          )}
           {sidebar}
           {notificationDrawer && (
             <div className={css(styles.pageDrawer)}>
