@@ -11,7 +11,7 @@ export const MenuDrilldownInitialState: React.FunctionComponent = () => {
     'initial-state-drilldownMenuStart'
   ]);
   const [drilldownPath, setDrilldownPath] = useState<string[]>(['group:start_rollout', 'group:app_grouping']);
-  const [menuHeights, setMenuHeights] = useState<any>({ 'initial-state-rootMenu': 216 }); // The root menu height must be defined when starting from a drilled in state
+  const [menuHeights, setMenuHeights] = useState<any>({ 'initial-state-rootMenu': 186 }); // The root menu height must be defined when starting from a drilled in state
   const [activeMenu, setActiveMenu] = useState<string>('initial-state-drilldownMenuStartGrouping');
 
   const drillIn = (
