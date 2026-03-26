@@ -101,3 +101,33 @@ test(`Renders with ${styles.modifiers.noPlainOnGlass} class when isPlain is true
 
   expect(screen.getByText('test')).toHaveClass(styles.modifiers.noPlainOnGlass);
 });
+
+test('Does not log a warning when only isPlain is passed', () => {
+  const consoleWarning = jest.spyOn(console, 'warn').mockImplementation();
+
+  render(<PageGroup isPlain>test</PageGroup>);
+
+  expect(consoleWarning).not.toHaveBeenCalled();
+});
+
+test('Does not log a warning when only isNoPlainOnGlass is passed', () => {
+  const consoleWarning = jest.spyOn(console, 'warn').mockImplementation();
+
+  render(<PageGroup isNoPlainOnGlass>test</PageGroup>);
+
+  expect(consoleWarning).not.toHaveBeenCalled();
+});
+
+test('Logs a warning when both isPlain and isNoPlainOnGlass are passed', () => {
+  const consoleWarning = jest.spyOn(console, 'warn').mockImplementation();
+
+  render(
+    <PageGroup isPlain isNoPlainOnGlass>
+      test
+    </PageGroup>
+  );
+
+  expect(consoleWarning).toHaveBeenCalledWith(
+    `PageGroup: When both isPlain and isNoPlainOnGlass are true, isPlain will take precedence and isNoPlainOnGlass will have no effect. It's recommended to pass only one prop according to the current theme.`
+  );
+});

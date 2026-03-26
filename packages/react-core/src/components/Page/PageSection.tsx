@@ -69,7 +69,7 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   component?: keyof React.JSX.IntrinsicElements;
   /** Adds plain styling to the page section. */
   isPlain?: boolean;
-  /** @beta Prevents the page section from automatically applying plain styling when glass theme is enabled. */
+  /** @beta Prevents the page section from automatically applying plain styling when glass theme is enabled. When both this and isPlain are true, isPlain takes precedence. */
   isNoPlainOnGlass?: boolean;
 }
 
@@ -106,6 +106,13 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   isNoPlainOnGlass = false,
   ...props
 }: PageSectionProps) => {
+  if (isPlain && isNoPlainOnGlass) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      `PageSection: When both isPlain and isNoPlainOnGlass are true, isPlain will take precedence and isNoPlainOnGlass will have no effect. It's recommended to pass only one prop according to the current theme.`
+    );
+  }
+
   const { height, getVerticalBreakpoint } = useContext(PageContext);
 
   useEffect(() => {

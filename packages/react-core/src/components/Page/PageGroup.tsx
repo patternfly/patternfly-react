@@ -29,7 +29,7 @@ export interface PageGroupProps extends React.HTMLProps<HTMLDivElement> {
   'aria-label'?: string;
   /** Adds plain styling to the page group. */
   isPlain?: boolean;
-  /** @beta Prevents the page group from automatically applying plain styling when glass theme is enabled. */
+  /** @beta Prevents the page group from automatically applying plain styling when glass theme is enabled. When both this and isPlain are true, isPlain takes precedence. */
   isNoPlainOnGlass?: boolean;
 }
 
@@ -46,6 +46,13 @@ export const PageGroup = ({
   isNoPlainOnGlass = false,
   ...props
 }: PageGroupProps) => {
+  if (isPlain && isNoPlainOnGlass) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      `PageGroup: When both isPlain and isNoPlainOnGlass are true, isPlain will take precedence and isNoPlainOnGlass will have no effect. It's recommended to pass only one prop according to the current theme.`
+    );
+  }
+
   const { height, getVerticalBreakpoint } = useContext(PageContext);
 
   useEffect(() => {
