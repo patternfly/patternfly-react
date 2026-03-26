@@ -61,7 +61,7 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   shouldFocusContent?: boolean;
   /** Adds plain styling to the wizard. */
   isPlain?: boolean;
-  /** @beta Prevents the wizard from automatically applying plain styling when glass theme is enabled. */
+  /** @beta Prevents the wizard from automatically applying plain styling when glass theme is enabled. When both this and isPlain are true, isPlain takes precedence. */
   isNoPlainOnGlass?: boolean;
 }
 
@@ -85,6 +85,13 @@ export const Wizard = ({
   isNoPlainOnGlass = false,
   ...wrapperProps
 }: WizardProps) => {
+  if (isPlain && isNoPlainOnGlass) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      `Wizard: When both isPlain and isNoPlainOnGlass are true, isPlain will take precedence and isNoPlainOnGlass will have no effect. It's recommended to pass only one prop according to the current theme.`
+    );
+  }
+
   const [activeStepIndex, setActiveStepIndex] = useState(startIndex);
   const initialSteps = buildSteps(children);
   const firstStepRef = useRef(initialSteps[startIndex - 1]);
