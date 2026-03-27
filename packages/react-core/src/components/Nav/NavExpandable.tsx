@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import { NavContext } from './Nav';
 import { PageSidebarContext } from '../Page/PageSidebar';
 import { PickOptional } from '../../helpers/typeUtils';
@@ -139,7 +139,7 @@ class NavExpandable extends Component<NavExpandableProps, NavExpandableState> {
                         )}
                         <span className={css(styles.navToggle)}>
                           <span className={css(styles.navToggleIcon)}>
-                            <AngleRightIcon />
+                            <RhMicronsCaretDownIcon />
                           </span>
                         </span>
                       </button>

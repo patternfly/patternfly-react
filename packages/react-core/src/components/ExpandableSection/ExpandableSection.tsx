@@ -2,7 +2,7 @@ import { Component, createRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/ExpandableSection/expandable-section';
 import { css } from '@patternfly/react-styles';
 import lineClamp from '@patternfly/react-tokens/dist/esm/c_expandable_section_m_truncate__content_LineClamp';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import { PickOptional } from '../../helpers/typeUtils';
 import { debounce } from '../../helpers/util';
 import { getResizeObserver } from '../../helpers/resizeObserver';
@@ -217,7 +217,7 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
       toggleContent,
       toggleAriaLabel,
       toggleAriaLabelledBy,
-      toggleIcon = <AngleRightIcon />,
+      toggleIcon = <RhMicronsCaretDownIcon />,
       hasToggleIcon = true,
       children,
       isExpanded,

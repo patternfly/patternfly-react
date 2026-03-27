@@ -4,8 +4,8 @@ import { Button } from '../Button';
 import { Select, SelectList, SelectOption } from '../Select';
 import { MenuToggle, MenuToggleElement } from '../MenuToggle';
 import { InputGroup, InputGroupItem } from '../InputGroup';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/CalendarMonth/calendar-month';
 import { useSSRSafeId } from '../../helpers';
@@ -292,7 +292,7 @@ export const CalendarMonth = ({
             variant="plain"
             aria-label={prevMonthAriaLabel}
             onClick={(ev: React.MouseEvent) => onMonthClick(ev, prevMonth)}
-            icon={<AngleLeftIcon />}
+            icon={<RhMicronsCaretLeftIcon />}
           />
         </div>
         <InputGroup>
@@ -355,7 +355,7 @@ export const CalendarMonth = ({
             variant="plain"
             aria-label={nextMonthAriaLabel}
             onClick={(ev: React.MouseEvent) => onMonthClick(ev, nextMonth)}
-            icon={<AngleRightIcon />}
+            icon={<RhMicronsCaretRightIcon />}
           />
         </div>
       </div>

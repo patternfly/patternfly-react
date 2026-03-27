@@ -2,7 +2,7 @@ import { Children, cloneElement, Fragment, useCallback, useEffect, useRef, useSt
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/JumpLinks/jump-links';
 import sidebarStyles from '@patternfly/react-styles/css/components/Sidebar/sidebar';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import cssToggleDisplayVar from '@patternfly/react-tokens/dist/esm/c_jump_links__toggle_Display';
 import { Button } from '../Button';
 import { JumpLinksItem, JumpLinksItemProps } from './JumpLinksItem';
@@ -277,7 +277,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
                 aria-expanded={isExpanded}
                 icon={
                   <span className={styles.jumpLinksToggleIcon}>
-                    <AngleRightIcon />
+                    <RhMicronsCaretDownIcon />
                   </span>
                 }
                 id={id}

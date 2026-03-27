@@ -5,7 +5,7 @@ import { CardHeaderMain } from './CardHeaderMain';
 import { CardActions } from './CardActions';
 import { CardSelectableActions } from './CardSelectableActions';
 import { Button } from '../Button';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import { Radio } from '../Radio';
 import { Checkbox } from '../Checkbox';
 import { useSSRSafeId } from '../../helpers';
@@ -107,7 +107,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
               {...toggleButtonProps}
               icon={
                 <span className={css(styles.cardHeaderToggleIcon)}>
-                  <AngleRightIcon />
+                  <RhMicronsCaretDownIcon />
                 </span>
               }
             />

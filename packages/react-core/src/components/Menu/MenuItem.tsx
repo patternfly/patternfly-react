@@ -5,8 +5,8 @@ import topOffset from '@patternfly/react-tokens/dist/esm/c_menu_m_flyout__menu_t
 import rightOffset from '@patternfly/react-tokens/dist/esm/c_menu_m_flyout__menu_m_left_right_offset';
 import leftOffset from '@patternfly/react-tokens/dist/esm/c_menu_m_flyout__menu_left_offset';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
+import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import { Checkbox } from '../Checkbox';
 import { MenuContext, MenuItemContext } from './MenuContext';
@@ -370,7 +370,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
         <span className={css(styles.menuItemMain)}>
           {direction === 'up' && (
             <span className={css(styles.menuItemToggleIcon)}>
-              <AngleLeftIcon />
+              <RhMicronsCaretLeftIcon />
             </span>
           )}
           {icon && <span className={css(styles.menuItemIcon)}>{icon}</span>}
@@ -394,7 +394,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
           )}
           {(flyoutMenu || direction === 'down') && (
             <span className={css(styles.menuItemToggleIcon)}>
-              <AngleRightIcon />
+              <RhMicronsCaretRightIcon />
             </span>
           )}
           {getIsSelected() && (

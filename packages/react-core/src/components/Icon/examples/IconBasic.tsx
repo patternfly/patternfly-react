@@ -1,8 +1,8 @@
 import { Fragment } from 'react';
 import { Icon } from '@patternfly/react-core';
 import LongArrowAltDownIcon from '@patternfly/react-icons/dist/esm/icons/long-arrow-alt-down-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 
 export const IconBasic: React.FunctionComponent = () => (
@@ -11,10 +11,10 @@ export const IconBasic: React.FunctionComponent = () => (
       <LongArrowAltDownIcon />
     </Icon>{' '}
     <Icon>
-      <AngleRightIcon />
+      <RhMicronsCaretRightIcon />
     </Icon>{' '}
     <Icon>
-      <AngleDownIcon />
+      <RhMicronsCaretDownIcon />
     </Icon>{' '}
     <Icon>
       <CogIcon />

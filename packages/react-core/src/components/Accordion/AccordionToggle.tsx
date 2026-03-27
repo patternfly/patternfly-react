@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import { AccordionContext, AccordionItemContext } from './AccordionContext';
 
 export interface AccordionToggleProps extends React.DetailedHTMLProps<
@@ -27,7 +27,7 @@ export const AccordionToggle: React.FunctionComponent<AccordionToggleProps> = ({
 }: AccordionToggleProps) => {
   const renderToggleIcon = () => (
     <span className={css(styles.accordionToggleIcon)}>
-      <AngleRightIcon />
+      <RhMicronsCaretDownIcon />
     </span>
   );
 
