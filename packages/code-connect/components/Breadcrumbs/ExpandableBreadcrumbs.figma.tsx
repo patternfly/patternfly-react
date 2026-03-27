@@ -1,6 +1,6 @@
 import figma from '@figma/code-connect';
 import { Badge, BreadcrumbItem, Dropdown, DropdownItem, DropdownList, Icon, MenuToggle } from '@patternfly/react-core';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
+import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
 
 // Documentation for BreadcrumbItem can be found at https://www.patternfly.org/components/breadcrumb
 
@@ -33,7 +33,7 @@ figma.connect(
             <DropdownItem
               icon={
                 <Icon shouldMirrorRTL>
-                  <AngleLeftIcon />
+                  <RhMicronsCaretLeftIcon />
                 </Icon>
               }
               key="edit"
@@ -44,7 +44,7 @@ figma.connect(
             <DropdownItem
               icon={
                 <Icon shouldMirrorRTL>
-                  <AngleLeftIcon />
+                  <RhMicronsCaretLeftIcon />
                 </Icon>
               }
               key="action"
@@ -55,7 +55,7 @@ figma.connect(
             <DropdownItem
               icon={
                 <Icon shouldMirrorRTL>
-                  <AngleLeftIcon />
+                  <RhMicronsCaretLeftIcon />
                 </Icon>
               }
               key="apps"

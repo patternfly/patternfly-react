@@ -22,7 +22,7 @@ import {
 import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
+import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
@@ -134,7 +134,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
               key="dropdown-start"
               icon={
                 <Icon shouldMirrorRTL>
-                  <AngleLeftIcon />
+                  <RhMicronsCaretLeftIcon />
                 </Icon>
               }
               onClick={(event: any) =>
@@ -181,7 +181,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
               key="dropdown-start"
               icon={
                 <Icon shouldMirrorRTL>
-                  <AngleLeftIcon />
+                  <RhMicronsCaretLeftIcon />
                 </Icon>
               }
               onClick={(event: any) =>
@@ -240,7 +240,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
               key="dropdown-pause"
               icon={
                 <Icon shouldMirrorRTL>
-                  <AngleLeftIcon />
+                  <RhMicronsCaretLeftIcon />
                 </Icon>
               }
               onClick={(event: any) =>
@@ -287,7 +287,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
               key="dropdown-pause"
               icon={
                 <Icon shouldMirrorRTL>
-                  <AngleLeftIcon />
+                  <RhMicronsCaretLeftIcon />
                 </Icon>
               }
               onClick={(event: any) =>

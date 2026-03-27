@@ -7,7 +7,7 @@ import styles from '@patternfly/react-styles/css/components/Alert/alert';
 
 jest.mock('../../Button');
 
-jest.mock('@patternfly/react-icons/dist/esm/icons/angle-right-icon', () => () => 'Icon mock');
+jest.mock('@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon', () => () => 'Icon mock');
 
 test('Renders without children', () => {
   render(
