@@ -181,6 +181,14 @@ Nav tabs should use the `href` property to link the tab to the URL of another pa
 
 ```
 
+### Tabs linked to nav elements with initial hash selection
+
+Use this example to verify that a direct load with a hash fragment selects the matching tab.
+
+```ts file="./TabsNavInitialHash.tsx"
+
+```
+
 ### Subtabs linked to nav elements
 
 Subtabs can also link to nav elements.

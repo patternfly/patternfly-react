@@ -155,6 +155,7 @@ interface TabsState {
   isInitializingAccent: boolean;
   currentLinkAccentLength: string;
   currentLinkAccentStart: string;
+  currentUrlHash: string;
 }
 
 class Tabs extends Component<TabsProps, TabsState> {
@@ -164,20 +165,24 @@ class Tabs extends Component<TabsProps, TabsState> {
   private direction = 'ltr';
   constructor(props: TabsProps) {
     super(props);
+    const currentUrlHash = Tabs.getCurrentUrlHash();
+    const initialActiveKey = Tabs.getActiveKeyFromProps(props, props.defaultActiveKey, currentUrlHash);
+
     this.state = {
       enableScrollButtons: false,
       showScrollButtons: false,
       renderScrollButtons: false,
       disableBackScrollButton: true,
       disableForwardScrollButton: true,
-      shownKeys: this.props.defaultActiveKey !== undefined ? [this.props.defaultActiveKey] : [this.props.activeKey], // only for mountOnEnter case
+      shownKeys: initialActiveKey !== undefined ? [initialActiveKey] : [], // only for mountOnEnter case
       uncontrolledActiveKey: this.props.defaultActiveKey,
       uncontrolledIsExpandedLocal: this.props.defaultIsExpanded,
       ouiaStateId: getDefaultOUIAId(Tabs.displayName),
       overflowingTabCount: 0,
       isInitializingAccent: true,
       currentLinkAccentLength: linkAccentLength.value,
-      currentLinkAccentStart: linkAccentStart.value
+      currentLinkAccentStart: linkAccentStart.value,
+      currentUrlHash
     };
 
     if (this.props.isVertical && this.props.expandable !== undefined) {
@@ -192,6 +197,36 @@ class Tabs extends Component<TabsProps, TabsState> {
   }
 
   scrollTimeout: NodeJS.Timeout = null;
+
+  static getCurrentUrlHash = () => (canUseDOM ? window.location.hash : '');
+
+  static getActiveKeyFromCurrentUrl = (
+    props: Pick<TabsProps, 'children' | 'component' | 'isNav'>,
+    currentUrlHash?: string
+  ) => {
+    if ((!props.isNav && props.component !== TabsComponent.nav) || !currentUrlHash) {
+      return undefined;
+    }
+
+    return Children.toArray(props.children)
+      .filter((child): child is TabElement => isValidElement(child))
+      .filter(({ props }) => !props.isHidden)
+      .find(({ props }) => !props.isDisabled && !props.isAriaDisabled && props.href === currentUrlHash)?.props.eventKey;
+  };
+
+  static getActiveKeyFromProps = (
+    props: TabsProps,
+    uncontrolledActiveKey: TabsState['uncontrolledActiveKey'],
+    currentUrlHash?: string
+  ) => {
+    const activeKeyFromCurrentUrl = Tabs.getActiveKeyFromCurrentUrl(props, currentUrlHash);
+
+    if (activeKeyFromCurrentUrl !== undefined) {
+      return activeKeyFromCurrentUrl;
+    }
+
+    return props.defaultActiveKey !== undefined ? uncontrolledActiveKey : props.activeKey;
+  };
 
   static defaultProps: PickOptional<TabsProps> = {
     activeKey: 0,
@@ -373,7 +408,23 @@ class Tabs extends Component<TabsProps, TabsState> {
     this.setAccentStyles();
   };
 
+  handleHashChange = () => {
+    const currentUrlHash = Tabs.getCurrentUrlHash();
+
+    if (currentUrlHash !== this.state.currentUrlHash) {
+      this.setState({ currentUrlHash });
+    }
+  };
+
+  getLocalActiveKey = (props = this.props, state = this.state) =>
+    Tabs.getActiveKeyFromProps(props, state.uncontrolledActiveKey, state.currentUrlHash);
+
   componentDidMount() {
+    if (canUseDOM) {
+      window.addEventListener('hashchange', this.handleHashChange, false);
+      this.handleHashChange();
+    }
+
     if (!this.props.isVertical) {
       if (canUseDOM) {
         window.addEventListener('resize', this.handleResize, false);
@@ -387,6 +438,10 @@ class Tabs extends Component<TabsProps, TabsState> {
   }
 
   componentWillUnmount() {
+    if (canUseDOM) {
+      window.removeEventListener('hashchange', this.handleHashChange, false);
+    }
+
     if (!this.props.isVertical) {
       if (canUseDOM) {
         window.removeEventListener('resize', this.handleResize, false);
@@ -398,20 +453,24 @@ class Tabs extends Component<TabsProps, TabsState> {
 
   componentDidUpdate(prevProps: TabsProps, prevState: TabsState) {
     this.direction = getLanguageDirection(this.tabList.current);
-    const { activeKey, mountOnEnter, isOverflowHorizontal, children, defaultActiveKey } = this.props;
-    const { shownKeys, overflowingTabCount, enableScrollButtons, uncontrolledActiveKey } = this.state;
+    const { mountOnEnter, isOverflowHorizontal, children } = this.props;
+    const { shownKeys, overflowingTabCount, enableScrollButtons } = this.state;
     const isOnCloseUpdate = !!prevProps.onClose !== !!this.props.onClose;
-    if (
-      (defaultActiveKey !== undefined && prevState.uncontrolledActiveKey !== uncontrolledActiveKey) ||
-      (defaultActiveKey === undefined && prevProps.activeKey !== activeKey) ||
-      isOnCloseUpdate
-    ) {
+    const previousLocalActiveKey = this.getLocalActiveKey(prevProps, prevState);
+    const localActiveKey = this.getLocalActiveKey();
+
+    if (previousLocalActiveKey !== localActiveKey || isOnCloseUpdate) {
       this.setAccentStyles(isOnCloseUpdate);
     }
 
-    if (prevProps.activeKey !== activeKey && mountOnEnter && shownKeys.indexOf(activeKey) < 0) {
+    if (
+      mountOnEnter &&
+      previousLocalActiveKey !== localActiveKey &&
+      localActiveKey !== undefined &&
+      shownKeys.indexOf(localActiveKey) < 0
+    ) {
       this.setState({
-        shownKeys: shownKeys.concat(activeKey)
+        shownKeys: shownKeys.concat(localActiveKey)
       });
     }
 
@@ -463,7 +522,10 @@ class Tabs extends Component<TabsProps, TabsState> {
     // otherwise update state derived from nextProps.defaultActiveKey
     return {
       uncontrolledActiveKey: nextProps.defaultActiveKey,
-      shownKeys: nextProps.defaultActiveKey !== undefined ? [nextProps.defaultActiveKey] : [nextProps.activeKey] // only for mountOnEnter case
+      shownKeys: (() => {
+        const activeKey = Tabs.getActiveKeyFromProps(nextProps, nextProps.defaultActiveKey, prevState.currentUrlHash);
+        return activeKey !== undefined ? [activeKey] : [];
+      })() // only for mountOnEnter case
     };
   }
 
@@ -471,8 +533,8 @@ class Tabs extends Component<TabsProps, TabsState> {
     const {
       className,
       children,
-      activeKey,
-      defaultActiveKey,
+      activeKey: _activeKey,
+      defaultActiveKey: _defaultActiveKey,
       id,
       isAddButtonDisabled,
       isFilled,
@@ -506,13 +568,14 @@ class Tabs extends Component<TabsProps, TabsState> {
       isOverflowHorizontal: isOverflowHorizontal,
       ...props
     } = this.props;
+    void _activeKey;
+    void _defaultActiveKey;
     const {
       showScrollButtons,
       renderScrollButtons,
       disableBackScrollButton,
       disableForwardScrollButton,
       shownKeys,
-      uncontrolledActiveKey,
       uncontrolledIsExpandedLocal,
       overflowingTabCount,
       isInitializingAccent,
@@ -530,7 +593,7 @@ class Tabs extends Component<TabsProps, TabsState> {
     const uniqueId = id || getUniqueId();
     const defaultComponent = isNav && !component ? 'nav' : 'div';
     const Component: any = component !== undefined ? component : defaultComponent;
-    const localActiveKey = defaultActiveKey !== undefined ? uncontrolledActiveKey : activeKey;
+    const localActiveKey = this.getLocalActiveKey();
 
     const isExpandedLocal = defaultIsExpanded !== undefined ? uncontrolledIsExpandedLocal : isExpanded;
     /*  Uncontrolled expandable tabs */

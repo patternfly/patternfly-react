@@ -1,3 +1,4 @@
+import { createRef, useState } from 'react';
 import { render, screen, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Tabs, TabsProps } from '../Tabs';
@@ -7,7 +8,6 @@ import { TabTitleText } from '../TabTitleText';
 import { TabTitleIcon } from '../TabTitleIcon';
 import { TabContent } from '../TabContent';
 import { TabContentBody } from '../TabContentBody';
-import { createRef } from 'react';
 
 jest.mock('../../../helpers/GenerateId/GenerateId');
 
@@ -77,6 +77,72 @@ const renderSeparateTabs = (props?: Pick<TabsProps, 'activeKey' | 'defaultActive
     </>
   );
 };
+
+const navTabs = [
+  {
+    eventKey: 0,
+    title: 'Users',
+    href: '#users',
+    ariaLabel: 'Nav element content users'
+  },
+  {
+    eventKey: 1,
+    title: 'Containers',
+    href: '#containers'
+  },
+  {
+    eventKey: 2,
+    title: 'Database',
+    href: '#database'
+  },
+  {
+    eventKey: 3,
+    title: 'Disabled',
+    href: '#disabled',
+    isDisabled: true
+  },
+  {
+    eventKey: 4,
+    title: 'ARIA Disabled',
+    href: '#aria-disabled',
+    isAriaDisabled: true
+  },
+  {
+    eventKey: 6,
+    title: 'Network',
+    href: '#network'
+  }
+] as const;
+
+const ControlledNavTabs = () => {
+  const [activeTabKey, setActiveTabKey] = useState<string | number>(0);
+
+  return (
+    <Tabs
+      activeKey={activeTabKey}
+      onSelect={(_event, tabIndex) => setActiveTabKey(tabIndex)}
+      component="nav"
+      aria-label="Tabs in the nav element example"
+    >
+      {navTabs.map(({ eventKey, title, href, ariaLabel, ...tabProps }) => (
+        <Tab
+          key={eventKey}
+          eventKey={eventKey}
+          title={<TabTitleText>{title}</TabTitleText>}
+          href={href}
+          aria-label={ariaLabel}
+          {...tabProps}
+        >
+          {title}
+        </Tab>
+      ))}
+    </Tabs>
+  );
+};
+
+afterEach(() => {
+  window.location.hash = '';
+});
 
 test(`Renders with classes ${styles.tabs} and ${styles.modifiers.animateCurrent} by default`, () => {
   render(
@@ -741,4 +807,25 @@ test(`should render with custom inline style and accent position inline style`, 
   );
 
   expect(screen.getByRole('region')).toHaveStyle(`background-color: #12345;--pf-v6-c-tabs--link-accent--start: 0px;`);
+});
+
+test('selects the nav tab that matches the initial URL fragment', () => {
+  window.location.hash = '#database';
+
+  render(<ControlledNavTabs />);
+
+  expect(screen.getByRole('tab', { name: 'Database' })).toHaveAttribute('aria-selected', 'true');
+  expect(screen.getByRole('tab', { name: 'Nav element content users' })).toHaveAttribute('aria-selected', 'false');
+});
+
+test('updates the selected nav tab when the URL fragment changes', () => {
+  render(<ControlledNavTabs />);
+
+  act(() => {
+    window.location.hash = '#network';
+    window.dispatchEvent(new Event('hashchange'));
+  });
+
+  expect(screen.getByRole('tab', { name: 'Network' })).toHaveAttribute('aria-selected', 'true');
+  expect(screen.getByRole('tab', { name: 'Nav element content users' })).toHaveAttribute('aria-selected', 'false');
 });
