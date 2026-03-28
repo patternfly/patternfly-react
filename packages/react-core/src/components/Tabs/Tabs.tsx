@@ -136,6 +136,25 @@ const variantStyle = {
   secondary: styles.modifiers.secondary
 };
 
+const getHashFromHref = (href?: string) => {
+  const hashIndex = href?.indexOf('#') ?? -1;
+
+  return hashIndex >= 0 ? href.slice(hashIndex) : undefined;
+};
+
+const getTabHashActiveKey = ({ children, component, isNav }: Pick<TabsProps, 'children' | 'component' | 'isNav'>) => {
+  if (!canUseDOM || !(component === TabsComponent.nav || isNav) || !window.location.hash) {
+    return undefined;
+  }
+
+  return Children.toArray(children)
+    .filter((child): child is TabElement => isValidElement(child))
+    .filter(({ props }) => !props.isHidden)
+    .find(
+      ({ props }) => !props.isDisabled && !props.isAriaDisabled && getHashFromHref(props.href) === window.location.hash
+    )?.props.eventKey;
+};
+
 interface TabsState {
   /** Used to signal if the scroll buttons should be used  */
   enableScrollButtons: boolean;
@@ -164,13 +183,18 @@ class Tabs extends Component<TabsProps, TabsState> {
   private direction = 'ltr';
   constructor(props: TabsProps) {
     super(props);
+    const hashActiveKey = getTabHashActiveKey(props);
+
     this.state = {
       enableScrollButtons: false,
       showScrollButtons: false,
       renderScrollButtons: false,
       disableBackScrollButton: true,
       disableForwardScrollButton: true,
-      shownKeys: this.props.defaultActiveKey !== undefined ? [this.props.defaultActiveKey] : [this.props.activeKey], // only for mountOnEnter case
+      shownKeys:
+        this.props.defaultActiveKey !== undefined
+          ? [hashActiveKey ?? this.props.defaultActiveKey]
+          : [hashActiveKey ?? this.props.activeKey], // only for mountOnEnter case
       uncontrolledActiveKey: this.props.defaultActiveKey,
       uncontrolledIsExpandedLocal: this.props.defaultIsExpanded,
       ouiaStateId: getDefaultOUIAId(Tabs.displayName),
@@ -221,6 +245,7 @@ class Tabs extends Component<TabsProps, TabsState> {
   ) {
     const { shownKeys } = this.state;
     const { onSelect, defaultActiveKey } = this.props;
+
     // if defaultActiveKey Tabs are uncontrolled, set new active key internally
     if (defaultActiveKey !== undefined) {
       this.setState({
@@ -401,6 +426,7 @@ class Tabs extends Component<TabsProps, TabsState> {
     const { activeKey, mountOnEnter, isOverflowHorizontal, children, defaultActiveKey } = this.props;
     const { shownKeys, overflowingTabCount, enableScrollButtons, uncontrolledActiveKey } = this.state;
     const isOnCloseUpdate = !!prevProps.onClose !== !!this.props.onClose;
+
     if (
       (defaultActiveKey !== undefined && prevState.uncontrolledActiveKey !== uncontrolledActiveKey) ||
       (defaultActiveKey === undefined && prevProps.activeKey !== activeKey) ||
@@ -530,7 +556,8 @@ class Tabs extends Component<TabsProps, TabsState> {
     const uniqueId = id || getUniqueId();
     const defaultComponent = isNav && !component ? 'nav' : 'div';
     const Component: any = component !== undefined ? component : defaultComponent;
-    const localActiveKey = defaultActiveKey !== undefined ? uncontrolledActiveKey : activeKey;
+    const hashActiveKey = getTabHashActiveKey({ children, component, isNav });
+    const localActiveKey = hashActiveKey ?? (defaultActiveKey !== undefined ? uncontrolledActiveKey : activeKey);
 
     const isExpandedLocal = defaultIsExpanded !== undefined ? uncontrolledIsExpandedLocal : isExpanded;
     /*  Uncontrolled expandable tabs */
