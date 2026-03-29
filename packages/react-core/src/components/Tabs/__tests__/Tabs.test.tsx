@@ -7,7 +7,7 @@ import { TabTitleText } from '../TabTitleText';
 import { TabTitleIcon } from '../TabTitleIcon';
 import { TabContent } from '../TabContent';
 import { TabContentBody } from '../TabContentBody';
-import { createRef } from 'react';
+import { createRef, useState } from 'react';
 
 jest.mock('../../../helpers/GenerateId/GenerateId');
 
@@ -117,6 +117,130 @@ test(`Does not render with class ${styles.modifiers.initializingAccent} when com
   });
   expect(screen.getByRole('region')).not.toHaveClass(styles.modifiers.initializingAccent);
   jest.useRealTimers();
+});
+
+describe('hash-based nav selection', () => {
+  beforeEach(() => {
+    window.location.hash = '#/items/2';
+  });
+
+  afterEach(() => {
+    window.location.hash = '';
+  });
+
+  test('should select the nav tab that matches the current URL hash on initial render', () => {
+    render(
+      <Tabs activeKey={0} onSelect={() => undefined} component="nav">
+        <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>} href="#/items/1">
+          Tab item 1
+        </Tab>
+        <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>} href="#/items/2">
+          Tab item 2
+        </Tab>
+        <Tab eventKey={2} title={<TabTitleText>Tab item 3</TabTitleText>} href="#/items/3">
+          Tab item 3
+        </Tab>
+      </Tabs>
+    );
+
+    expect(screen.getByRole('tab', { name: 'Tab item 2' })).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByRole('tab', { name: 'Tab item 1' })).toHaveAttribute('aria-selected', 'false');
+  });
+
+  test('should respect later controlled selections after the initial hash match', async () => {
+    const user = userEvent.setup();
+    const ControlledTabs = () => {
+      const [activeKey, setActiveKey] = useState<string | number>(0);
+
+      return (
+        <Tabs activeKey={activeKey} onSelect={(_event, eventKey) => setActiveKey(eventKey)} component="nav">
+          <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>} href="#/items/1">
+            Tab item 1
+          </Tab>
+          <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>} href="#/items/2">
+            Tab item 2
+          </Tab>
+          <Tab eventKey={2} title={<TabTitleText>Tab item 3</TabTitleText>} href="#/items/3">
+            Tab item 3
+          </Tab>
+        </Tabs>
+      );
+    };
+
+    render(<ControlledTabs />);
+
+    expect(screen.getByRole('tab', { name: 'Tab item 2' })).toHaveAttribute('aria-selected', 'true');
+
+    await user.click(screen.getByRole('tab', { name: 'Tab item 3' }));
+
+    expect(screen.getByRole('tab', { name: 'Tab item 3' })).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByRole('tab', { name: 'Tab item 2' })).toHaveAttribute('aria-selected', 'false');
+  });
+
+  test('should use the URL hash to initialize uncontrolled nav tabs', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Tabs defaultActiveKey={0} isNav>
+        <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>} href="#/items/1">
+          Tab item 1
+        </Tab>
+        <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>} href="#/items/2">
+          Tab item 2
+        </Tab>
+        <Tab eventKey={2} title={<TabTitleText>Tab item 3</TabTitleText>} href="#/items/3">
+          Tab item 3
+        </Tab>
+      </Tabs>
+    );
+
+    expect(screen.getByRole('tab', { name: 'Tab item 2' })).toHaveAttribute('aria-selected', 'true');
+
+    await user.click(screen.getByRole('tab', { name: 'Tab item 1' }));
+
+    expect(screen.getByRole('tab', { name: 'Tab item 1' })).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByRole('tab', { name: 'Tab item 2' })).toHaveAttribute('aria-selected', 'false');
+  });
+
+  test('should ignore hidden, disabled and aria-disabled tabs when matching the current hash', () => {
+    render(
+      <Tabs activeKey={0} onSelect={() => undefined} component="nav">
+        <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>} href="#/items/1">
+          Tab item 1
+        </Tab>
+        <Tab eventKey={1} title={<TabTitleText>Hidden tab</TabTitleText>} href="#/items/2" isHidden>
+          Hidden tab
+        </Tab>
+        <Tab eventKey={2} title={<TabTitleText>Disabled tab</TabTitleText>} href="#/items/2" isDisabled>
+          Disabled tab
+        </Tab>
+        <Tab eventKey={3} title={<TabTitleText>Aria disabled tab</TabTitleText>} href="#/items/2" isAriaDisabled>
+          Aria disabled tab
+        </Tab>
+      </Tabs>
+    );
+
+    expect(screen.queryByRole('tab', { name: 'Hidden tab' })).not.toBeInTheDocument();
+    expect(screen.getByRole('tab', { name: 'Tab item 1' })).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByRole('tab', { name: 'Disabled tab' })).toHaveAttribute('aria-selected', 'false');
+    expect(screen.getByRole('tab', { name: 'Aria disabled tab' })).toHaveAttribute('aria-selected', 'false');
+  });
+
+  test('should ignore the current URL hash when nav behavior is not enabled', () => {
+    render(
+      <Tabs activeKey={0} onSelect={() => undefined}>
+        <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>} href="#/items/1">
+          Tab item 1
+        </Tab>
+        <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>} href="#/items/2">
+          Tab item 2
+        </Tab>
+      </Tabs>
+    );
+
+    expect(screen.getByRole('tab', { name: 'Tab item 1' })).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByRole('tab', { name: 'Tab item 2' })).toHaveAttribute('aria-selected', 'false');
+  });
 });
 
 test(`Renders with class ${styles.modifiers.initializingAccent} when uncontrolled expandable component initially mounts`, async () => {
