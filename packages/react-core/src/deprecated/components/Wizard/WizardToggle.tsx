@@ -88,7 +88,11 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
         <span className={css(styles.wizardToggleList)}>
           <span className={css(styles.wizardToggleListItem)}>
             <span className={css(styles.wizardToggleNum)}>{activeStepIndex}</span> {activeStepName}
-            {activeStepSubName && <RhMicronsCaretRightIcon className={css(styles.wizardToggleSeparator)} />}
+            {activeStepSubName && (
+              <span className={css(styles.wizardToggleSeparator)}>
+                <RhMicronsCaretRightIcon />
+              </span>
+            )}
           </span>
           {activeStepSubName && <span className={css(styles.wizardToggleListItem)}>{activeStepSubName}</span>}
         </span>
