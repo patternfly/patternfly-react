@@ -50,7 +50,7 @@ export interface TableProps extends React.HTMLProps<HTMLTableElement>, OUIAProps
   role?: string;
   /** @beta Flag indicating if the table should have plain styling with a transparent background */
   isPlain?: boolean;
-  /** @beta Flag indicating if the table should not have plain styling when in the glass theme. If isPlain is also set, this property will be ignored. */
+  /** @beta Flag indicating if the table should not have plain styling when in the glass theme */
   isNoPlainOnGlass?: boolean;
   /** If set to true, the table header sticks to the top of its container */
   isStickyHeader?: boolean;
@@ -123,13 +123,6 @@ const TableBase: React.FunctionComponent<TableProps> = ({
 
   const [hasSelectableRows, setHasSelectableRows] = useState(false);
   const [tableCaption, setTableCaption] = useState<React.JSX.Element | undefined>();
-
-  if (isPlain && isNoPlainOnGlass) {
-    // eslint-disable-next-line no-console
-    console.warn(
-      "Table: When both isPlain and isNoPlainOnGlass are true, isPlain will take precedence and isNoPlainOnGlass will have no effect. It's recommended to pass only one prop according to the current theme."
-    );
-  }
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeys);
@@ -236,7 +229,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
           isStriped && styles.modifiers.striped,
           isExpandable && styles.modifiers.expandable,
           isPlain && styles.modifiers.plain,
-          isNoPlainOnGlass && styles.modifiers.noPlain,
+          isNoPlainOnGlass && styles.modifiers.noPlainOnGlass,
           hasNoInset && stylesTreeView.modifiers.noInset,
           isNested && 'pf-m-nested',
           hasAnimations && styles.modifiers.animateExpand

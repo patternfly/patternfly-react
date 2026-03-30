@@ -169,20 +169,20 @@ test(`Does not render with class ${styles.modifiers.plain} when isPlain is false
   expect(screen.getByRole('grid', { name: 'Test table' })).not.toHaveClass(styles.modifiers.plain);
 });
 
-test(`Renders with class ${styles.modifiers.noPlain} when isNoPlainOnGlass is true`, () => {
+test(`Renders with class ${styles.modifiers.noPlainOnGlass} when isNoPlainOnGlass is true`, () => {
   render(<Table isNoPlainOnGlass aria-label="Test table" />);
 
-  expect(screen.getByRole('grid', { name: 'Test table' })).toHaveClass(styles.modifiers.noPlain);
+  expect(screen.getByRole('grid', { name: 'Test table' })).toHaveClass(styles.modifiers.noPlainOnGlass);
 });
 
-test(`Does not render with class ${styles.modifiers.noPlain} when isNoPlainOnGlass is undefined`, () => {
+test(`Does not render with class ${styles.modifiers.noPlainOnGlass} when isNoPlainOnGlass is undefined`, () => {
   render(<Table aria-label="Test table" />);
 
-  expect(screen.getByRole('grid', { name: 'Test table' })).not.toHaveClass(styles.modifiers.noPlain);
+  expect(screen.getByRole('grid', { name: 'Test table' })).not.toHaveClass(styles.modifiers.noPlainOnGlass);
 });
 
-test(`Does not render with class ${styles.modifiers.noPlain} when isNoPlainOnGlass is false`, () => {
+test(`Does not render with class ${styles.modifiers.noPlainOnGlass} when isNoPlainOnGlass is false`, () => {
   render(<Table isNoPlainOnGlass={false} aria-label="Test table" />);
 
-  expect(screen.getByRole('grid', { name: 'Test table' })).not.toHaveClass(styles.modifiers.noPlain);
+  expect(screen.getByRole('grid', { name: 'Test table' })).not.toHaveClass(styles.modifiers.noPlainOnGlass);
 });
