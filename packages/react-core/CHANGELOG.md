@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.4.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.1...@patternfly/react-core@6.4.2) (2026-03-31)
+
+### Bug Fixes
+
+- **Popper:** add null & connected checks for document [6.4.x patch] ([#12286](https://github.com/patternfly/patternfly-react/issues/12286)) ([491fd25](https://github.com/patternfly/patternfly-react/commit/491fd257a1cb8a584e0c9fb5cc17d75e38da1297))
+
 ## [6.4.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.4.0...@patternfly/react-core@6.4.1) (2026-01-28)
 
 ### Bug Fixes
