@@ -35,6 +35,17 @@ type State = {
 
 const EMPTY_MODIFIERS: any = [];
 
+function isReferenceConnected(reference: Element | VirtualElement): boolean {
+  if (reference instanceof Element) {
+    return reference.isConnected;
+  }
+  const { contextElement } = reference;
+  if (contextElement instanceof Element) {
+    return contextElement.isConnected;
+  }
+  return true;
+}
+
 export const usePopper = (
   referenceElement: (Element | VirtualElement) | null | undefined,
   popperElement: HTMLElement | null | undefined,
@@ -111,6 +122,10 @@ export const usePopper = (
 
   useIsomorphicLayoutEffect(() => {
     if (referenceElement == null || popperElement == null) {
+      return;
+    }
+
+    if (!isReferenceConnected(referenceElement) || !popperElement.isConnected) {
       return;
     }
 
