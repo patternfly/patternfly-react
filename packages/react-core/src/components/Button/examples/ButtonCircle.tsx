@@ -1,5 +1,5 @@
 import { Button, Flex } from '@patternfly/react-core';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
@@ -34,7 +34,7 @@ export const ButtonCircle: React.FunctionComponent = () => {
       <Button variant="warning" isCircle icon={<PlusCircleIcon />} aria-label="Add warning circle variant example" />
       <Button variant="link" isCircle icon={<PlusCircleIcon />} aria-label="Add link circle variant example" />
       <Button variant="control" isCircle icon={<CopyIcon />} aria-label="Copy control circle variant example" />
-      <Button variant="plain" isCircle icon={<TimesIcon />} aria-label="Remove plain circle variant example" />
+      <Button variant="plain" isCircle icon={<RhMicronsCloseIcon />} aria-label="Remove plain circle variant example" />
       <Button variant="stateful" isCircle icon={<BellIcon />} aria-label="Stateful unread circle variant example" />
       <Button
         variant="stateful"

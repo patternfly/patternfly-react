@@ -1,6 +1,6 @@
 import { ActionList, ActionListGroup, ActionListItem, Button } from '@patternfly/react-core';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 export const ActionListVertical: React.FunctionComponent = () => (
   <>
@@ -27,7 +27,7 @@ export const ActionListVertical: React.FunctionComponent = () => (
     <ActionList isVertical>
       <ActionListGroup>
         <ActionListItem>
-          <Button aria-label="Close vertical action list group 1" variant="plain" icon={<TimesIcon />} />
+          <Button aria-label="Close vertical action list group 1" variant="plain" icon={<RhMicronsCloseIcon />} />
         </ActionListItem>
         <ActionListItem>
           <Button aria-label="Toggle vertical action list example group 1" variant="plain" icon={<CheckIcon />} />
@@ -35,7 +35,7 @@ export const ActionListVertical: React.FunctionComponent = () => (
       </ActionListGroup>
       <ActionListGroup>
         <ActionListItem>
-          <Button aria-label="Close vertical action list group 2" variant="plain" icon={<TimesIcon />} />
+          <Button aria-label="Close vertical action list group 2" variant="plain" icon={<RhMicronsCloseIcon />} />
         </ActionListItem>
         <ActionListItem>
           <Button aria-label="Toggle vertical action list example group 2" variant="plain" icon={<CheckIcon />} />

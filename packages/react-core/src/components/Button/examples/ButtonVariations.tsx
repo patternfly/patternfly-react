@@ -1,5 +1,5 @@
 import { Button, Flex } from '@patternfly/react-core';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-square-alt-icon';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
@@ -41,7 +41,7 @@ export const ButtonVariations: React.FunctionComponent = () => (
       <Button variant="link" isDanger>
         Danger link
       </Button>
-      <Button variant="plain" aria-label="Action" icon={<TimesIcon />} />
+      <Button variant="plain" aria-label="Action" icon={<RhMicronsCloseIcon />} />
     </Flex>
     <br />
     <Flex columnGap={{ default: 'columnGapSm' }}>
