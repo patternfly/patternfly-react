@@ -491,62 +491,58 @@ exports[`should render expandable vertical tabs 1`] = `
     <div
       class="pf-v6-c-tabs__toggle"
     >
-      <div
-        class="pf-v6-c-tabs__toggle-button"
+      <button
+        aria-labelledby="generated-id-text generated-id-button"
+        class="pf-v6-c-button pf-m-plain"
+        data-ouia-component-id="OUIA-Generated-Button-plain-:r14:"
+        data-ouia-component-type="PF6/Button"
+        data-ouia-safe="true"
+        id="generated-id-button"
+        type="button"
       >
-        <button
-          aria-labelledby="generated-id-text generated-id-button"
-          class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-:r14:"
-          data-ouia-component-type="PF6/Button"
-          data-ouia-safe="true"
-          id="generated-id-button"
-          type="button"
+        <span
+          class="pf-v6-c-button__icon pf-m-start"
         >
           <span
-            class="pf-v6-c-button__icon pf-m-start"
+            class="pf-v6-c-tabs__toggle-icon"
           >
-            <span
-              class="pf-v6-c-tabs__toggle-icon"
+            <svg
+              aria-hidden="true"
+              class="pf-v6-svg"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              width="1em"
             >
               <svg
-                aria-hidden="true"
-                class="pf-v6-svg"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                width="1em"
+                class="pf-v6-icon-default"
+                viewBox="0 0 256 512"
               >
-                <svg
-                  class="pf-v6-icon-default"
-                  viewBox="0 0 256 512"
-                >
-                  <path
-                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  />
-                </svg>
-                <svg
-                  class="pf-v6-icon-rh-ui"
-                  viewBox="0 0 32 32"
-                >
-                  <path
-                    d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
-                  />
-                </svg>
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                />
               </svg>
-            </span>
+              <svg
+                class="pf-v6-icon-rh-ui"
+                viewBox="0 0 32 32"
+              >
+                <path
+                  d="M11 30a.999.999 0 0 1-.707-1.707L22.586 16 10.293 3.707a.999.999 0 1 1 1.414-1.414l12.646 12.646a1.501 1.501 0 0 1 0 2.121L11.707 29.706a.997.997 0 0 1-.707.293Z"
+                />
+              </svg>
+            </svg>
           </span>
+        </span>
+        <span
+          class="pf-v6-c-button__text"
+        >
           <span
-            class="pf-v6-c-button__text"
+            id="generated-id-text"
           >
-            <span
-              id="generated-id-text"
-            >
-              toggle
-            </span>
+            toggle
           </span>
-        </button>
-      </div>
+        </span>
+      </button>
     </div>
     <ul
       class="pf-v6-c-tabs__list"
