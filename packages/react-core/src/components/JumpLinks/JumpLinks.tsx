@@ -7,7 +7,8 @@ import cssToggleDisplayVar from '@patternfly/react-tokens/dist/esm/c_jump_links_
 import { Button } from '../Button';
 import { JumpLinksItem, JumpLinksItemProps } from './JumpLinksItem';
 import { JumpLinksList } from './JumpLinksList';
-import { canUseDOM, formatBreakpointMods, getUniqueId } from '../../helpers/util';
+import { canUseDOM, formatBreakpointMods } from '../../helpers/util';
+import { useSSRSafeId } from '../../helpers';
 
 export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'label'> {
   /** Whether to center children. */
@@ -99,6 +100,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   labelId,
   ...props
 }: JumpLinksProps) => {
+  const generatedId = useSSRSafeId();
   const hasScrollSpy = Boolean(scrollableRef || scrollableSelector);
   const [scrollItems, setScrollItems] = useState(hasScrollSpy ? getScrollItems(children, []) : []);
   const [activeIndex, setActiveIndex] = useState(activeIndexProp);
@@ -244,7 +246,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
           return child;
         });
 
-  const id = labelId ?? getUniqueId();
+  const id = labelId ?? generatedId;
   const hasAriaLabelledBy = expandable || (label && alwaysShowLabel);
   const computedAriaLabel = hasAriaLabelledBy ? null : ariaLabel;
   const computedAriaLabelledBy = hasAriaLabelledBy ? id : null;

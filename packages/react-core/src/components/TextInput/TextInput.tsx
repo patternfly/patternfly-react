@@ -3,7 +3,8 @@ import styles from '@patternfly/react-styles/css/components/FormControl/form-con
 import { css } from '@patternfly/react-styles';
 import { ValidatedOptions } from '../../helpers/constants';
 import { trimLeft } from '../../helpers/util';
-import { getDefaultOUIAId, getOUIAProps, OUIAProps } from '../../helpers';
+import { getOUIAProps, OUIAProps } from '../../helpers';
+import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 import { getResizeObserver } from '../../helpers/resizeObserver';
 import { FormControlIcon } from '../FormControl/FormControlIcon';
 
@@ -91,11 +92,7 @@ export interface TextInputProps
   ouiaSafe?: boolean;
 }
 
-interface TextInputState {
-  ouiaStateId: string;
-}
-
-export class TextInputBase extends Component<TextInputProps, TextInputState> {
+export class TextInputBase extends Component<TextInputProps> {
   static displayName = 'TextInputBase';
   static defaultProps: TextInputProps = {
     'aria-label': null,
@@ -118,9 +115,6 @@ export class TextInputBase extends Component<TextInputProps, TextInputState> {
       // eslint-disable-next-line no-console
       console.error('Text input:', 'Text input requires either an id or aria-label to be specified');
     }
-    this.state = {
-      ouiaStateId: getDefaultOUIAId(TextInputBase.displayName)
-    };
   }
 
   handleChange = (event: React.FormEvent<HTMLInputElement>) => {
@@ -206,41 +200,45 @@ export class TextInputBase extends Component<TextInputProps, TextInputState> {
       : {};
 
     return (
-      <span
-        className={css(
-          styles.formControl,
-          readOnlyVariant && styles.modifiers.readonly,
-          readOnlyVariant === 'plain' && styles.modifiers.plain,
-          isDisabled && styles.modifiers.disabled,
-          (isExpanded || expandedProps?.isExpanded) && styles.modifiers.expanded,
-          customIcon && styles.modifiers.icon,
-          hasStatusIcon && styles.modifiers[validated as 'success' | 'warning' | 'error'],
-          className
-        )}
-      >
-        <input
-          {...props}
-          onFocus={this.onFocus}
-          onBlur={this.onBlur}
-          onChange={this.handleChange}
-          type={type}
-          value={this.sanitizeInputValue(value)}
-          aria-invalid={props['aria-invalid'] ? props['aria-invalid'] : validated === ValidatedOptions.error}
-          {...ariaExpandedProps}
-          required={isRequired}
-          disabled={isDisabled}
-          readOnly={!!readOnlyVariant || readOnly}
-          ref={innerRef || this.inputRef}
-          placeholder={placeholder}
-          {...getOUIAProps(TextInput.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
-        />
-        {(customIcon || hasStatusIcon) && (
-          <span className={css(styles.formControlUtilities)}>
-            {customIcon && <FormControlIcon customIcon={customIcon} />}
-            {hasStatusIcon && <FormControlIcon status={validated as 'success' | 'error' | 'warning'} />}
+      <SSRSafeIds prefix="pf-" ouiaComponentType={TextInputBase.displayName}>
+        {(_, generatedOuiaId) => (
+          <span
+            className={css(
+              styles.formControl,
+              readOnlyVariant && styles.modifiers.readonly,
+              readOnlyVariant === 'plain' && styles.modifiers.plain,
+              isDisabled && styles.modifiers.disabled,
+              (isExpanded || expandedProps?.isExpanded) && styles.modifiers.expanded,
+              customIcon && styles.modifiers.icon,
+              hasStatusIcon && styles.modifiers[validated as 'success' | 'warning' | 'error'],
+              className
+            )}
+          >
+            <input
+              {...props}
+              onFocus={this.onFocus}
+              onBlur={this.onBlur}
+              onChange={this.handleChange}
+              type={type}
+              value={this.sanitizeInputValue(value)}
+              aria-invalid={props['aria-invalid'] ? props['aria-invalid'] : validated === ValidatedOptions.error}
+              {...ariaExpandedProps}
+              required={isRequired}
+              disabled={isDisabled}
+              readOnly={!!readOnlyVariant || readOnly}
+              ref={innerRef || this.inputRef}
+              placeholder={placeholder}
+              {...getOUIAProps(TextInput.displayName, ouiaId !== undefined ? ouiaId : generatedOuiaId, ouiaSafe)}
+            />
+            {(customIcon || hasStatusIcon) && (
+              <span className={css(styles.formControlUtilities)}>
+                {customIcon && <FormControlIcon customIcon={customIcon} />}
+                {hasStatusIcon && <FormControlIcon status={validated as 'success' | 'error' | 'warning'} />}
+              </span>
+            )}
           </span>
         )}
-      </span>
+      </SSRSafeIds>
     );
   }
 

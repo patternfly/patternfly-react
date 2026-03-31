@@ -34,6 +34,8 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   isFullHeight?: boolean;
   /** Modifies the card to include plain styling; this removes border and background */
   isPlain?: boolean;
+  /** Modifies the card to include glass styling when glass theme is enabled */
+  isGlass?: boolean;
   /** Flag indicating if a card is expanded. Modifies the card to be expandable. */
   isExpanded?: boolean;
   /** Card background color variant */
@@ -81,6 +83,7 @@ const CardBase: React.FunctionComponent<CardProps> = ({
   isLarge = false,
   isFullHeight = false,
   isPlain = false,
+  isGlass = false,
   variant = 'default',
   ouiaId,
   ouiaSafe = true,
@@ -138,6 +141,7 @@ const CardBase: React.FunctionComponent<CardProps> = ({
           isLarge && styles.modifiers.displayLg,
           isFullHeight && styles.modifiers.fullHeight,
           isPlain && styles.modifiers.plain,
+          isGlass && styles.modifiers.glass,
           variant === 'secondary' && styles.modifiers.secondary,
           getSelectableModifiers(),
           isDisabled && styles.modifiers.disabled,

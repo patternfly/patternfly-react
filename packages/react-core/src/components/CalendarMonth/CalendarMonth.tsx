@@ -8,7 +8,7 @@ import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-ico
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/CalendarMonth/calendar-month';
-import { getUniqueId } from '../../helpers/util';
+import { useSSRSafeId } from '../../helpers';
 import { isValidDate } from '../../helpers/datetimeUtils';
 
 export enum Weekday {
@@ -170,7 +170,7 @@ export const CalendarMonth = ({
 
   const [hoveredDate, setHoveredDate] = useState<Date>(undefined);
   const focusRef = useRef<HTMLButtonElement>(undefined);
-  const [hiddenMonthId] = useState(getUniqueId('hidden-month-span'));
+  const hiddenMonthId = useSSRSafeId('hidden-month-span');
   const [shouldFocus, setShouldFocus] = useState(false);
 
   const isValidated = (date: Date) => validators.every((validator) => validator(date));

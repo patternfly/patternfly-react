@@ -2,9 +2,6 @@ import { render, screen } from '@testing-library/react';
 import { JumpLinks } from '../JumpLinks';
 import { JumpLinksItem } from '../JumpLinksItem';
 import { JumpLinksList } from '../JumpLinksList';
-import * as utils from '../../../helpers/util';
-
-jest.spyOn(utils, 'getUniqueId').mockReturnValue('unique_id_mock');
 
 test('simple jumplinks', () => {
   const { asFragment } = render(
@@ -140,7 +137,8 @@ test('uses aria-labelledby over aria-label when expandable is passed in', () => 
 test('random id is used with aria-labelledby by default in expandable case', () => {
   render(<JumpLinks expandable={{ default: 'expandable' }}>{expandableJumpLinksItems}</JumpLinks>);
   const navigation = screen.getByRole('navigation', { name: /Toggle jump links/i });
-  expect(navigation).toHaveAttribute('aria-labelledby', 'unique_id_mock');
+  expect(navigation).toHaveAttribute('aria-labelledby');
+  expect(navigation.getAttribute('aria-labelledby')).toBeTruthy();
 });
 
 test('random id is used with aria-labelledby by default in label case', () => {
@@ -150,7 +148,8 @@ test('random id is used with aria-labelledby by default in label case', () => {
     </JumpLinks>
   );
   const navigation = screen.getByRole('navigation', { name: /Jump to section/i });
-  expect(navigation).toHaveAttribute('aria-labelledby', 'unique_id_mock');
+  expect(navigation).toHaveAttribute('aria-labelledby');
+  expect(navigation.getAttribute('aria-labelledby')).toBeTruthy();
 });
 
 test('custom labelId is used with aria-labelledby when it is passed in in expandable case', () => {

@@ -6,7 +6,7 @@ import { ToolbarGroupProps } from './ToolbarGroup';
 import { ToolbarContext, ToolbarContentContext } from './ToolbarUtils';
 import { Button } from '../Button';
 import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_lg';
-import { formatBreakpointMods, toCamel, canUseDOM } from '../../helpers/util';
+import { formatBreakpointMods, toCamel } from '../../helpers/util';
 import { PageContext } from '../Page/PageContext';
 import { ToolbarExpandableContent } from './ToolbarExpandableContent';
 
@@ -157,7 +157,7 @@ class ToolbarToggleGroup extends Component<ToolbarToggleGroupProps> {
   expandableContentRef = createRef<HTMLDivElement>();
 
   isContentPopup = () => {
-    const viewportSize = canUseDOM ? window.innerWidth : 1200;
+    const viewportSize = typeof window !== 'undefined' ? window.innerWidth : 1200;
     const lgBreakpointValue = parseInt(globalBreakpointLg.value);
     return viewportSize < lgBreakpointValue;
   };

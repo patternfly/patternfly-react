@@ -1,6 +1,6 @@
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
-import { GenerateId } from '../../helpers';
+import { useSSRSafeId } from '../../helpers';
 import { DualListSelectorContext } from './DualListSelectorContext';
 import { useHasAnimations } from '../../helpers';
 
@@ -33,24 +33,17 @@ export const DualListSelector: React.FunctionComponent<DualListSelectorProps> = 
   ...props
 }: DualListSelectorProps) => {
   const hasAnimations = useHasAnimations(hasAnimationsProp);
+  const randomId = useSSRSafeId();
 
   return (
     <DualListSelectorContext.Provider value={{ isTree, hasAnimations }}>
-      <GenerateId>
-        {(randomId) => (
-          <div
-            className={css(
-              styles.dualListSelector,
-              hasAnimations && isTree && styles.modifiers.animateExpand,
-              className
-            )}
-            id={id || randomId}
-            {...props}
-          >
-            {children}
-          </div>
-        )}
-      </GenerateId>
+      <div
+        className={css(styles.dualListSelector, hasAnimations && isTree && styles.modifiers.animateExpand, className)}
+        id={id || randomId}
+        {...props}
+      >
+        {children}
+      </div>
     </DualListSelectorContext.Provider>
   );
 };

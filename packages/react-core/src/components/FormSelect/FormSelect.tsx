@@ -4,7 +4,8 @@ import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import { ValidatedOptions } from '../../helpers/constants';
 import { FormControlIcon } from '../FormControl/FormControlIcon';
-import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
+import { getOUIAProps, OUIAProps } from '../../helpers';
+import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 export interface FormSelectProps
@@ -38,7 +39,7 @@ export interface FormSelectProps
   ouiaSafe?: boolean;
 }
 
-class FormSelect extends Component<FormSelectProps, { ouiaStateId: string }> {
+class FormSelect extends Component<FormSelectProps> {
   static displayName = 'FormSelect';
   constructor(props: FormSelectProps) {
     super(props);
@@ -46,9 +47,6 @@ class FormSelect extends Component<FormSelectProps, { ouiaStateId: string }> {
       // eslint-disable-next-line no-console
       console.error('FormSelect requires either an id or aria-label to be specified');
     }
-    this.state = {
-      ouiaStateId: getDefaultOUIAId(FormSelect.displayName, props.validated)
-    };
   }
 
   static defaultProps: PickOptional<FormSelectProps> = {
@@ -75,33 +73,37 @@ class FormSelect extends Component<FormSelectProps, { ouiaStateId: string }> {
     const hasStatusIcon = ['success', 'error', 'warning'].includes(validated);
 
     return (
-      <span
-        className={css(
-          styles.formControl,
-          isDisabled && styles.modifiers.disabled,
-          isSelectedPlaceholder && styles.modifiers.placeholder,
-          hasStatusIcon && styles.modifiers[validated as 'success' | 'warning' | 'error'],
-          className
-        )}
-      >
-        <select
-          {...props}
-          aria-invalid={validated === ValidatedOptions.error}
-          {...getOUIAProps(FormSelect.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
-          onChange={this.handleChange}
-          disabled={isDisabled}
-          required={isRequired}
-          value={value}
-        >
-          {children}
-        </select>
-        <span className={css(styles.formControlUtilities)}>
-          {hasStatusIcon && <FormControlIcon status={validated as 'success' | 'error' | 'warning'} />}
-          <span className={css(styles.formControlToggleIcon)}>
-            <CaretDownIcon />
+      <SSRSafeIds prefix="pf-" ouiaComponentType={FormSelect.displayName}>
+        {(_, generatedOuiaId) => (
+          <span
+            className={css(
+              styles.formControl,
+              isDisabled && styles.modifiers.disabled,
+              isSelectedPlaceholder && styles.modifiers.placeholder,
+              hasStatusIcon && styles.modifiers[validated as 'success' | 'warning' | 'error'],
+              className
+            )}
+          >
+            <select
+              {...props}
+              aria-invalid={validated === ValidatedOptions.error}
+              {...getOUIAProps(FormSelect.displayName, ouiaId !== undefined ? ouiaId : generatedOuiaId, ouiaSafe)}
+              onChange={this.handleChange}
+              disabled={isDisabled}
+              required={isRequired}
+              value={value}
+            >
+              {children}
+            </select>
+            <span className={css(styles.formControlUtilities)}>
+              {hasStatusIcon && <FormControlIcon status={validated as 'success' | 'error' | 'warning'} />}
+              <span className={css(styles.formControlToggleIcon)}>
+                <CaretDownIcon />
+              </span>
+            </span>
           </span>
-        </span>
-      </span>
+        )}
+      </SSRSafeIds>
     );
   }
 }

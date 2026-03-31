@@ -14,7 +14,7 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
         <button
           aria-label="Close"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-2"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:rc:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           type="button"
@@ -113,7 +113,7 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
         <nav
           aria-labelledby="pf-wizard-title-1"
           class="pf-v6-c-wizard__nav"
-          data-ouia-component-id="OUIA-Generated-WizardNav-3"
+          data-ouia-component-id="OUIA-Generated-WizardNav-:rd:"
           data-ouia-component-type="PF6/WizardNav"
           data-ouia-safe="true"
         >
@@ -127,7 +127,7 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
               <button
                 aria-current="step"
                 class="pf-v6-c-wizard__nav-link pf-m-current"
-                data-ouia-component-id="OUIA-Generated-WizardNavItem-7"
+                data-ouia-component-id="OUIA-Generated-WizardNavItem-:re:"
                 data-ouia-component-type="PF6/WizardNavItem"
                 data-ouia-safe="true"
                 type="button"
@@ -146,7 +146,7 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
                 aria-current="false"
                 aria-expanded="false"
                 class="pf-v6-c-wizard__nav-link"
-                data-ouia-component-id="OUIA-Generated-WizardNavItem-8"
+                data-ouia-component-id="OUIA-Generated-WizardNavItem-:rf:"
                 data-ouia-component-type="PF6/WizardNavItem"
                 data-ouia-safe="true"
                 type="button"
@@ -204,7 +204,7 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
                   <button
                     aria-current="false"
                     class="pf-v6-c-wizard__nav-link"
-                    data-ouia-component-id="OUIA-Generated-WizardNavItem-9"
+                    data-ouia-component-id="OUIA-Generated-WizardNavItem-:rh:"
                     data-ouia-component-type="PF6/WizardNavItem"
                     data-ouia-safe="true"
                     type="button"
@@ -222,7 +222,7 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
                   <button
                     aria-current="false"
                     class="pf-v6-c-wizard__nav-link"
-                    data-ouia-component-id="OUIA-Generated-WizardNavItem-10"
+                    data-ouia-component-id="OUIA-Generated-WizardNavItem-:ri:"
                     data-ouia-component-type="PF6/WizardNavItem"
                     data-ouia-safe="true"
                     type="button"
@@ -242,7 +242,7 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
               <button
                 aria-current="false"
                 class="pf-v6-c-wizard__nav-link"
-                data-ouia-component-id="OUIA-Generated-WizardNavItem-11"
+                data-ouia-component-id="OUIA-Generated-WizardNavItem-:rj:"
                 data-ouia-component-type="PF6/WizardNavItem"
                 data-ouia-safe="true"
                 type="button"
@@ -260,7 +260,7 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
               <button
                 aria-current="false"
                 class="pf-v6-c-wizard__nav-link"
-                data-ouia-component-id="OUIA-Generated-WizardNavItem-12"
+                data-ouia-component-id="OUIA-Generated-WizardNavItem-:rk:"
                 data-ouia-component-type="PF6/WizardNavItem"
                 data-ouia-safe="true"
                 type="button"
@@ -300,7 +300,7 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
             >
               <button
                 class="pf-v6-c-button pf-m-secondary"
-                data-ouia-component-id="OUIA-Generated-Button-secondary-2"
+                data-ouia-component-id="OUIA-Generated-Button-secondary-:rl:"
                 data-ouia-component-type="PF6/Button"
                 data-ouia-safe="true"
                 disabled=""
@@ -318,7 +318,7 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
             >
               <button
                 class="pf-v6-c-button pf-m-primary"
-                data-ouia-component-id="OUIA-Generated-Button-primary-2"
+                data-ouia-component-id="OUIA-Generated-Button-primary-:rm:"
                 data-ouia-component-type="PF6/Button"
                 data-ouia-safe="true"
                 type="submit"
@@ -339,7 +339,7 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
             >
               <button
                 class="pf-v6-c-button pf-m-link"
-                data-ouia-component-id="OUIA-Generated-Button-link-2"
+                data-ouia-component-id="OUIA-Generated-Button-link-:rn:"
                 data-ouia-component-type="PF6/Button"
                 data-ouia-safe="true"
                 type="button"
@@ -373,7 +373,7 @@ exports[`Wizard Wizard should match snapshot 1`] = `
         <button
           aria-label="Close"
           class="pf-v6-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-1"
+          data-ouia-component-id="OUIA-Generated-Button-plain-:r0:"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           type="button"
@@ -472,7 +472,7 @@ exports[`Wizard Wizard should match snapshot 1`] = `
         <nav
           aria-labelledby="pf-wizard-title-0"
           class="pf-v6-c-wizard__nav"
-          data-ouia-component-id="OUIA-Generated-WizardNav-1"
+          data-ouia-component-id="OUIA-Generated-WizardNav-:r1:"
           data-ouia-component-type="PF6/WizardNav"
           data-ouia-safe="true"
         >
@@ -486,7 +486,7 @@ exports[`Wizard Wizard should match snapshot 1`] = `
               <button
                 aria-current="step"
                 class="pf-v6-c-wizard__nav-link pf-m-current"
-                data-ouia-component-id="OUIA-Generated-WizardNavItem-1"
+                data-ouia-component-id="OUIA-Generated-WizardNavItem-:r2:"
                 data-ouia-component-type="PF6/WizardNavItem"
                 data-ouia-safe="true"
                 id="step-A"
@@ -505,7 +505,7 @@ exports[`Wizard Wizard should match snapshot 1`] = `
               <button
                 aria-current="false"
                 class="pf-v6-c-wizard__nav-link"
-                data-ouia-component-id="OUIA-Generated-WizardNavItem-2"
+                data-ouia-component-id="OUIA-Generated-WizardNavItem-:r3:"
                 data-ouia-component-type="PF6/WizardNavItem"
                 data-ouia-safe="true"
                 id="step-B"
@@ -527,7 +527,7 @@ exports[`Wizard Wizard should match snapshot 1`] = `
                   <button
                     aria-current="false"
                     class="pf-v6-c-wizard__nav-link"
-                    data-ouia-component-id="OUIA-Generated-WizardNavItem-3"
+                    data-ouia-component-id="OUIA-Generated-WizardNavItem-:r5:"
                     data-ouia-component-type="PF6/WizardNavItem"
                     data-ouia-safe="true"
                     id="step-B-1"
@@ -546,7 +546,7 @@ exports[`Wizard Wizard should match snapshot 1`] = `
                   <button
                     aria-current="false"
                     class="pf-v6-c-wizard__nav-link"
-                    data-ouia-component-id="OUIA-Generated-WizardNavItem-4"
+                    data-ouia-component-id="OUIA-Generated-WizardNavItem-:r6:"
                     data-ouia-component-type="PF6/WizardNavItem"
                     data-ouia-safe="true"
                     id="step-B-2"
@@ -567,7 +567,7 @@ exports[`Wizard Wizard should match snapshot 1`] = `
               <button
                 aria-current="false"
                 class="pf-v6-c-wizard__nav-link"
-                data-ouia-component-id="OUIA-Generated-WizardNavItem-5"
+                data-ouia-component-id="OUIA-Generated-WizardNavItem-:r7:"
                 data-ouia-component-type="PF6/WizardNavItem"
                 data-ouia-safe="true"
                 id="step-C"
@@ -586,7 +586,7 @@ exports[`Wizard Wizard should match snapshot 1`] = `
               <button
                 aria-current="false"
                 class="pf-v6-c-wizard__nav-link"
-                data-ouia-component-id="OUIA-Generated-WizardNavItem-6"
+                data-ouia-component-id="OUIA-Generated-WizardNavItem-:r8:"
                 data-ouia-component-type="PF6/WizardNavItem"
                 data-ouia-safe="true"
                 id="step-D"
@@ -627,7 +627,7 @@ exports[`Wizard Wizard should match snapshot 1`] = `
             >
               <button
                 class="pf-v6-c-button pf-m-secondary"
-                data-ouia-component-id="OUIA-Generated-Button-secondary-1"
+                data-ouia-component-id="OUIA-Generated-Button-secondary-:r9:"
                 data-ouia-component-type="PF6/Button"
                 data-ouia-safe="true"
                 disabled=""
@@ -645,7 +645,7 @@ exports[`Wizard Wizard should match snapshot 1`] = `
             >
               <button
                 class="pf-v6-c-button pf-m-primary"
-                data-ouia-component-id="OUIA-Generated-Button-primary-1"
+                data-ouia-component-id="OUIA-Generated-Button-primary-:ra:"
                 data-ouia-component-type="PF6/Button"
                 data-ouia-safe="true"
                 type="submit"
@@ -666,7 +666,7 @@ exports[`Wizard Wizard should match snapshot 1`] = `
             >
               <button
                 class="pf-v6-c-button pf-m-link"
-                data-ouia-component-id="OUIA-Generated-Button-link-1"
+                data-ouia-component-id="OUIA-Generated-Button-link-:rb:"
                 data-ouia-component-type="PF6/Button"
                 data-ouia-safe="true"
                 type="button"
@@ -749,7 +749,7 @@ exports[`Wizard bare wiz 1`] = `
       >
         <nav
           class="pf-v6-c-wizard__nav"
-          data-ouia-component-id="OUIA-Generated-WizardNav-5"
+          data-ouia-component-id="OUIA-Generated-WizardNav-:ro:"
           data-ouia-component-type="PF6/WizardNav"
           data-ouia-safe="true"
         >
@@ -763,7 +763,7 @@ exports[`Wizard bare wiz 1`] = `
               <button
                 aria-current="step"
                 class="pf-v6-c-wizard__nav-link pf-m-current"
-                data-ouia-component-id="OUIA-Generated-WizardNavItem-13"
+                data-ouia-component-id="OUIA-Generated-WizardNavItem-:rp:"
                 data-ouia-component-type="PF6/WizardNavItem"
                 data-ouia-safe="true"
                 type="button"
@@ -803,7 +803,7 @@ exports[`Wizard bare wiz 1`] = `
             >
               <button
                 class="pf-v6-c-button pf-m-secondary"
-                data-ouia-component-id="OUIA-Generated-Button-secondary-3"
+                data-ouia-component-id="OUIA-Generated-Button-secondary-:rq:"
                 data-ouia-component-type="PF6/Button"
                 data-ouia-safe="true"
                 disabled=""
@@ -821,7 +821,7 @@ exports[`Wizard bare wiz 1`] = `
             >
               <button
                 class="pf-v6-c-button pf-m-primary"
-                data-ouia-component-id="OUIA-Generated-Button-primary-3"
+                data-ouia-component-id="OUIA-Generated-Button-primary-:rr:"
                 data-ouia-component-type="PF6/Button"
                 data-ouia-safe="true"
                 type="submit"
@@ -842,7 +842,7 @@ exports[`Wizard bare wiz 1`] = `
             >
               <button
                 class="pf-v6-c-button pf-m-link"
-                data-ouia-component-id="OUIA-Generated-Button-link-3"
+                data-ouia-component-id="OUIA-Generated-Button-link-:rs:"
                 data-ouia-component-type="PF6/Button"
                 data-ouia-safe="true"
                 type="button"

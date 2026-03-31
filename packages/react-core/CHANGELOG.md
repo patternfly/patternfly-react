@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.42](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.41...@patternfly/react-core@6.5.0-prerelease.42) (2026-03-27)
+
+### Features
+
+- **card:** add isGlass prop ([#12290](https://github.com/patternfly/patternfly-react/issues/12290)) ([f854fa6](https://github.com/patternfly/patternfly-react/commit/f854fa632902f79ec45da6aad1702699f8623e3d))
+
+# [6.5.0-prerelease.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.40...@patternfly/react-core@6.5.0-prerelease.41) (2026-03-25)
+
+### Features
+
+- **NotificationBadge:** add support for plain variant ([#12139](https://github.com/patternfly/patternfly-react/issues/12139)) ([43322f3](https://github.com/patternfly/patternfly-react/commit/43322f3e77e225639566aea2bdb9af0f455637d6))
+
+# [6.5.0-prerelease.40](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.39...@patternfly/react-core@6.5.0-prerelease.40) (2026-03-25)
+
+**Note:** Version bump only for package @patternfly/react-core
+
 # [6.5.0-prerelease.39](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.38...@patternfly/react-core@6.5.0-prerelease.39) (2026-03-19)
 
 ### Bug Fixes

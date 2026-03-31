@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.5.0-prerelease.51](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.50...@patternfly/react-docs@7.5.0-prerelease.51) (2026-03-27)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.50](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.49...@patternfly/react-docs@7.5.0-prerelease.50) (2026-03-27)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.49](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.48...@patternfly/react-docs@7.5.0-prerelease.49) (2026-03-25)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.48](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.47...@patternfly/react-docs@7.5.0-prerelease.48) (2026-03-25)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
 # [7.5.0-prerelease.47](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.46...@patternfly/react-docs@7.5.0-prerelease.47) (2026-03-19)
 
 ### Bug Fixes

@@ -2,7 +2,7 @@ import { Fragment, isValidElement } from 'react';
 import styles from '@patternfly/react-styles/css/components/Form/form';
 import { ASTERISK } from '../../helpers/htmlConstants';
 import { css } from '@patternfly/react-styles';
-import { GenerateId } from '../../helpers/GenerateId/GenerateId';
+import { useSSRSafeId } from '../../helpers';
 
 export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
   /** Anything that can be rendered as FormGroup content. */
@@ -47,6 +47,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   role,
   ...props
 }: FormGroupProps) => {
+  const randomId = useSSRSafeId();
   const isGroupOrRadioGroup = role === 'group' || role === 'radiogroup';
   const LabelComponent = isGroupOrRadioGroup ? 'span' : 'label';
 
@@ -66,44 +67,36 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   );
 
   return (
-    <GenerateId>
-      {(randomId) => (
+    <div
+      className={css(styles.formGroup, className)}
+      {...(role && { role })}
+      {...(isGroupOrRadioGroup && { 'aria-labelledby': `${fieldId || randomId}-legend` })}
+      {...props}
+    >
+      {label && (
         <div
-          className={css(styles.formGroup, className)}
-          {...(role && { role })}
-          {...(isGroupOrRadioGroup && { 'aria-labelledby': `${fieldId || randomId}-legend` })}
-          {...props}
-        >
-          {label && (
-            <div
-              className={css(
-                styles.formGroupLabel,
-                labelInfo && styles.modifiers.info,
-                hasNoPaddingTop && styles.modifiers.noPaddingTop
-              )}
-              {...(isGroupOrRadioGroup && { id: `${fieldId || randomId}-legend` })}
-            >
-              {labelInfo && (
-                <Fragment>
-                  <div className={css(styles.formGroupLabelMain)}>{labelContent}</div>
-                  <div className={css(styles.formGroupLabelInfo)}>{labelInfo}</div>
-                </Fragment>
-              )}
-              {!labelInfo && labelContent}
-            </div>
+          className={css(
+            styles.formGroupLabel,
+            labelInfo && styles.modifiers.info,
+            hasNoPaddingTop && styles.modifiers.noPaddingTop
           )}
-          <div
-            className={css(
-              styles.formGroupControl,
-              isInline && styles.modifiers.inline,
-              isStack && styles.modifiers.stack
-            )}
-          >
-            {children}
-          </div>
+          {...(isGroupOrRadioGroup && { id: `${fieldId || randomId}-legend` })}
+        >
+          {labelInfo && (
+            <Fragment>
+              <div className={css(styles.formGroupLabelMain)}>{labelContent}</div>
+              <div className={css(styles.formGroupLabelInfo)}>{labelInfo}</div>
+            </Fragment>
+          )}
+          {!labelInfo && labelContent}
         </div>
       )}
-    </GenerateId>
+      <div
+        className={css(styles.formGroupControl, isInline && styles.modifiers.inline, isStack && styles.modifiers.stack)}
+      >
+        {children}
+      </div>
+    </div>
   );
 };
 FormGroup.displayName = 'FormGroup';

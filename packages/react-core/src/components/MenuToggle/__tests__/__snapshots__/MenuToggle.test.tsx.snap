@@ -5,7 +5,7 @@ exports[`Old Snapshot tests - remove when refactoring passes additional classes 
   <button
     aria-expanded="false"
     class="pf-v6-c-menu-toggle test-class"
-    data-ouia-component-id="OUIA-Generated-MenuToggle-2"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-:r3:"
     data-ouia-component-type="PF6/MenuToggle"
     data-ouia-safe="true"
     type="button"
@@ -57,7 +57,7 @@ exports[`Old Snapshot tests - remove when refactoring renders successfully 1`] =
   <button
     aria-expanded="false"
     class="pf-v6-c-menu-toggle"
-    data-ouia-component-id="OUIA-Generated-MenuToggle-1"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-:r1:"
     data-ouia-component-type="PF6/MenuToggle"
     data-ouia-safe="true"
     type="button"
@@ -109,7 +109,7 @@ exports[`Old Snapshot tests - remove when refactoring shows badge 1`] = `
   <button
     aria-expanded="false"
     class="pf-v6-c-menu-toggle"
-    data-ouia-component-id="OUIA-Generated-MenuToggle-6"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-:rh:"
     data-ouia-component-type="PF6/MenuToggle"
     data-ouia-safe="true"
     type="button"
@@ -170,7 +170,7 @@ exports[`Old Snapshot tests - remove when refactoring shows icon 1`] = `
   <button
     aria-expanded="false"
     class="pf-v6-c-menu-toggle"
-    data-ouia-component-id="OUIA-Generated-MenuToggle-5"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-:rf:"
     data-ouia-component-type="PF6/MenuToggle"
     data-ouia-safe="true"
     type="button"
@@ -251,7 +251,7 @@ exports[`Old Snapshot tests - remove when refactoring shows isDisabled 1`] = `
   <button
     aria-expanded="false"
     class="pf-v6-c-menu-toggle pf-m-disabled"
-    data-ouia-component-id="OUIA-Generated-MenuToggle-4"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-:r7:"
     data-ouia-component-type="PF6/MenuToggle"
     data-ouia-safe="true"
     disabled=""
@@ -304,7 +304,7 @@ exports[`Old Snapshot tests - remove when refactoring shows isExpanded 1`] = `
   <button
     aria-expanded="true"
     class="pf-v6-c-menu-toggle pf-m-expanded"
-    data-ouia-component-id="OUIA-Generated-MenuToggle-3"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-:r5:"
     data-ouia-component-type="PF6/MenuToggle"
     data-ouia-safe="true"
     type="button"
@@ -356,7 +356,7 @@ exports[`Old Snapshot tests - remove when refactoring shows isPlain 1`] = `
   <button
     aria-expanded="false"
     class="pf-v6-c-menu-toggle pf-m-plain"
-    data-ouia-component-id="OUIA-Generated-MenuToggle-plain-1"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-plain-:rb:"
     data-ouia-component-type="PF6/MenuToggle"
     data-ouia-safe="true"
     type="button"
@@ -399,7 +399,7 @@ exports[`Old Snapshot tests - remove when refactoring shows isPrimary 1`] = `
   <button
     aria-expanded="false"
     class="pf-v6-c-menu-toggle pf-m-primary"
-    data-ouia-component-id="OUIA-Generated-MenuToggle-primary-1"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-primary-:r9:"
     data-ouia-component-type="PF6/MenuToggle"
     data-ouia-safe="true"
     type="button"
@@ -451,7 +451,7 @@ exports[`Old Snapshot tests - remove when refactoring shows plain text 1`] = `
   <button
     aria-expanded="false"
     class="pf-v6-c-menu-toggle pf-m-plain pf-m-text"
-    data-ouia-component-id="OUIA-Generated-MenuToggle-plainText-1"
+    data-ouia-component-id="OUIA-Generated-MenuToggle-plainText-:rd:"
     data-ouia-component-type="PF6/MenuToggle"
     data-ouia-safe="true"
     type="button"
