@@ -4,7 +4,7 @@ exports[`should not render tablist aria-label or aria-labelledby when neither is
 <DocumentFragment>
   <div
     class="pf-v6-c-tabs pf-m-animate-current pf-m-initializing-accent"
-    data-ouia-component-id="OUIA-Generated-Tabs-40"
+    data-ouia-component-id="OUIA-Generated-Tabs-:r2n:"
     data-ouia-component-type="PF6/Tabs"
     data-ouia-safe="true"
     id="noTabListLabelTabs"
