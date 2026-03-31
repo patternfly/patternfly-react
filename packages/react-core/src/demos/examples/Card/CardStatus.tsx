@@ -22,10 +22,8 @@ import {
   Icon
 } from '@patternfly/react-core';
 import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
-import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-notification-fill-icon';
 import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-check-circle-fill-icon';
 import RhUiErrorFillIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-error-fill-icon';
-import RhUiWarningFillIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-warning-fill-icon';
 import t_global_text_color_subtle from '@patternfly/react-tokens/dist/esm/t_global_text_color_subtle';
 
 export const CardStatus: React.FunctionComponent = () => {
@@ -206,21 +204,11 @@ export const CardStatus: React.FunctionComponent = () => {
       <FlexItem spacer={{ default: 'spacerMd' }}>
         <span>Notifications</span>
       </FlexItem>
-      <Label color="red" icon={<RhUiErrorFillIcon />}>
-        1
-      </Label>
-      <Label color="orange" icon={<RhUiWarningFillIcon />}>
-        3
-      </Label>
-      <Label color="green" icon={<RhUiCheckCircleFillIcon />}>
-        3
-      </Label>
-      <Label color="blue" icon={<RhUiErrorFillIcon />}>
-        3
-      </Label>
-      <Label color="green" icon={<RhUiNotificationFillIcon />}>
-        3
-      </Label>
+      <Label status="danger">1</Label>
+      <Label status="warning">3</Label>
+      <Label status="success">3</Label>
+      <Label status="danger">3</Label>
+      <Label status="info">3</Label>
     </Flex>
   );
 
