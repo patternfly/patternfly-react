@@ -598,23 +598,21 @@ class Tabs extends Component<TabsProps, TabsState> {
                   <GenerateId>
                     {(randomId) => (
                       <div className={css(styles.tabsToggle)}>
-                        <div className={css(styles.tabsToggleButton)}>
-                          <Button
-                            onClick={(event) => toggleTabs(event, !isExpandedLocal)}
-                            variant="plain"
-                            aria-label={toggleAriaLabel}
-                            aria-expanded={isExpandedLocal}
-                            id={`${randomId}-button`}
-                            aria-labelledby={`${randomId}-text ${randomId}-button`}
-                            icon={
-                              <span className={css(styles.tabsToggleIcon)}>
-                                <AngleRightIcon />
-                              </span>
-                            }
-                          >
-                            {toggleText && <span id={`${randomId}-text`}>{toggleText}</span>}
-                          </Button>
-                        </div>
+                        <Button
+                          onClick={(event) => toggleTabs(event, !isExpandedLocal)}
+                          variant="plain"
+                          aria-label={toggleAriaLabel}
+                          aria-expanded={isExpandedLocal}
+                          id={`${randomId}-button`}
+                          aria-labelledby={`${randomId}-text ${randomId}-button`}
+                          icon={
+                            <span className={css(styles.tabsToggleIcon)}>
+                              <AngleRightIcon />
+                            </span>
+                          }
+                        >
+                          {toggleText && <span id={`${randomId}-text`}>{toggleText}</span>}
+                        </Button>
                       </div>
                     )}
                   </GenerateId>
