@@ -181,13 +181,21 @@ test(`Renders with ${styles.modifiers.noFill} if isFilled={false} is passed`, ()
 });
 
 test(`Renders with ${styles.modifiers.plain} class when isPlain is true`, () => {
-  render(<PageSection isPlain>test</PageSection>);
+  render(
+    <PageSection hasBodyWrapper={false} isPlain>
+      test
+    </PageSection>
+  );
 
   expect(screen.getByText('test')).toHaveClass(styles.modifiers.plain);
 });
 
 test(`Renders with ${styles.modifiers.noPlainOnGlass} class when isPlain is true`, () => {
-  render(<PageSection isNoPlainOnGlass>test</PageSection>);
+  render(
+    <PageSection hasBodyWrapper={false} isNoPlainOnGlass>
+      test
+    </PageSection>
+  );
 
   expect(screen.getByText('test')).toHaveClass(styles.modifiers.noPlainOnGlass);
 });

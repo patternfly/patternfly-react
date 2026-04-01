@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`page group Verify basic render 1`] = `
+exports[`Verify basic render 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-page__main-group"
@@ -10,7 +10,7 @@ exports[`page group Verify basic render 1`] = `
 </DocumentFragment>
 `;
 
-exports[`page group Verify bottom shadow 1`] = `
+exports[`Verify bottom shadow 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-page__main-group pf-m-shadow-bottom"
@@ -20,7 +20,7 @@ exports[`page group Verify bottom shadow 1`] = `
 </DocumentFragment>
 `;
 
-exports[`page group Verify bottom sticky 1`] = `
+exports[`Verify bottom sticky 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-page__main-group pf-m-sticky-bottom"
@@ -30,7 +30,7 @@ exports[`page group Verify bottom sticky 1`] = `
 </DocumentFragment>
 `;
 
-exports[`page group Verify overflow scroll 1`] = `
+exports[`Verify overflow scroll 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-page__main-group pf-m-overflow-scroll"
@@ -42,7 +42,7 @@ exports[`page group Verify overflow scroll 1`] = `
 </DocumentFragment>
 `;
 
-exports[`page group Verify top shadow 1`] = `
+exports[`Verify top shadow 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-page__main-group pf-m-shadow-top"
@@ -52,7 +52,7 @@ exports[`page group Verify top shadow 1`] = `
 </DocumentFragment>
 `;
 
-exports[`page group Verify top sticky 1`] = `
+exports[`Verify top sticky 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-page__main-group pf-m-sticky-top"
