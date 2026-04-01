@@ -85,13 +85,6 @@ export const Wizard = ({
   isNoPlainOnGlass = false,
   ...wrapperProps
 }: WizardProps) => {
-  if (isPlain && isNoPlainOnGlass) {
-    // eslint-disable-next-line no-console
-    console.warn(
-      `Wizard: When both isPlain and isNoPlainOnGlass are true, isPlain will take precedence and isNoPlainOnGlass will have no effect. It's recommended to pass only one prop according to the current theme.`
-    );
-  }
-
   const [activeStepIndex, setActiveStepIndex] = useState(startIndex);
   const initialSteps = buildSteps(children);
   const firstStepRef = useRef(initialSteps[startIndex - 1]);
