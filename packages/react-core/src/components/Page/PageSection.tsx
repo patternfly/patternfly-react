@@ -106,13 +106,6 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   isNoPlainOnGlass = false,
   ...props
 }: PageSectionProps) => {
-  if (isPlain && isNoPlainOnGlass) {
-    // eslint-disable-next-line no-console
-    console.warn(
-      `PageSection: When both isPlain and isNoPlainOnGlass are true, isPlain will take precedence and isNoPlainOnGlass will have no effect. It's recommended to pass only one prop according to the current theme.`
-    );
-  }
-
   const { height, getVerticalBreakpoint } = useContext(PageContext);
 
   useEffect(() => {

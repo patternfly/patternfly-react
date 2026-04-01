@@ -46,13 +46,6 @@ export const PageGroup = ({
   isNoPlainOnGlass = false,
   ...props
 }: PageGroupProps) => {
-  if (isPlain && isNoPlainOnGlass) {
-    // eslint-disable-next-line no-console
-    console.warn(
-      `PageGroup: When both isPlain and isNoPlainOnGlass are true, isPlain will take precedence and isNoPlainOnGlass will have no effect. It's recommended to pass only one prop according to the current theme.`
-    );
-  }
-
   const { height, getVerticalBreakpoint } = useContext(PageContext);
 
   useEffect(() => {
