@@ -408,13 +408,6 @@ describe('Page', () => {
   });
 
   test(`Renders with ${styles.pageDockMain} wrapper when variant is docked`, () => {
-    render(<Page masthead={<>Masthead</>} data-testid="page"></Page>);
-
-    const pageDockMain = screen.getByText('Masthead').closest(`.${styles.pageDockMain}`);
-    expect(pageDockMain).not.toBeInTheDocument();
-  });
-
-  test(`Renders with ${styles.pageDockMain} wrapper when variant is docked`, () => {
     render(<Page variant="docked" masthead={<>Masthead</>} data-testid="page"></Page>);
 
     const pageDockMain = screen.getByText('Masthead').closest(`.${styles.pageDockMain}`);

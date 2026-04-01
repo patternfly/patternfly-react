@@ -190,7 +190,7 @@ test(`Renders with ${styles.modifiers.plain} class when isPlain is true`, () => 
   expect(screen.getByText('test')).toHaveClass(styles.modifiers.plain);
 });
 
-test(`Renders with ${styles.modifiers.noPlainOnGlass} class when isPlain is true`, () => {
+test(`Renders with ${styles.modifiers.noPlainOnGlass} class when isNoPlainOnGlass is true`, () => {
   render(
     <PageSection hasBodyWrapper={false} isNoPlainOnGlass>
       test
