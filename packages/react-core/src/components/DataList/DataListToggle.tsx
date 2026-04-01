@@ -1,5 +1,5 @@
 import { css } from '@patternfly/react-styles';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import { Button, ButtonProps, ButtonVariant } from '../Button';
 
@@ -44,7 +44,7 @@ export const DataListToggle: React.FunctionComponent<DataListToggleProps> = ({
         {...buttonProps}
         icon={
           <div className={css(styles.dataListToggleIcon)}>
-            <AngleRightIcon />
+            <RhMicronsCaretDownIcon />
           </div>
         }
       />

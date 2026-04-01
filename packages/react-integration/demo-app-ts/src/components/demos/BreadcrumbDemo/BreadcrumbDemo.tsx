@@ -10,7 +10,7 @@ import {
   DropdownList,
   MenuToggle
 } from '@patternfly/react-core';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
+import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 export class BreadcrumbDemo extends Component {
@@ -37,13 +37,13 @@ export class BreadcrumbDemo extends Component {
   render() {
     const { isOpen } = this.state;
     const dropdownItems = [
-      <DropdownItem icon={<AngleLeftIcon />} key="edit">
+      <DropdownItem icon={<RhMicronsCaretLeftIcon />} key="edit">
         Edit
       </DropdownItem>,
-      <DropdownItem icon={<AngleLeftIcon />} key="action">
+      <DropdownItem icon={<RhMicronsCaretLeftIcon />} key="action">
         Deployment
       </DropdownItem>,
-      <DropdownItem icon={<AngleLeftIcon />} key="apps">
+      <DropdownItem icon={<RhMicronsCaretLeftIcon />} key="apps">
         Applications
       </DropdownItem>
     ];

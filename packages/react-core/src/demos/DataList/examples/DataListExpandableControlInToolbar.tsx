@@ -29,7 +29,7 @@ import {
 import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
 
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const DataListExpandableControlInToolbar: React.FunctionComponent = () => {
@@ -96,7 +96,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                   icon={
                     <Icon shouldMirrorRTL>
                       <ToolbarExpandIconWrapper>
-                        <AngleRightIcon />
+                        <RhMicronsCaretDownIcon />
                       </ToolbarExpandIconWrapper>
                     </Icon>
                   }

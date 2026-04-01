@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
 import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
@@ -121,7 +121,7 @@ export const WizardNavItem = ({
               <span className="pf-v6-c-wizard__nav-link-text">{content}</span>
               <span className={css(styles.wizardNavLinkToggle)}>
                 <span className={css(styles.wizardNavLinkToggleIcon)}>
-                  <AngleRightIcon aria-label={`${isCurrent ? 'Collapse' : 'Expand'} step icon`} />
+                  <RhMicronsCaretDownIcon aria-label={`${isCurrent ? 'Collapse' : 'Expand'} step icon`} />
                 </span>
               </span>
             </>

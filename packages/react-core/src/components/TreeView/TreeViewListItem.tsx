@@ -1,7 +1,7 @@
 import { memo, useState, useEffect, Children, isValidElement, cloneElement } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import { TreeViewDataItem } from './TreeView';
 import { Badge } from '../Badge';
 import { useSSRSafeId } from '../../helpers';
@@ -155,7 +155,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
       tabIndex={-1}
     >
       <span className={css(styles.treeViewNodeToggleIcon)}>
-        <AngleRightIcon />
+        <RhMicronsCaretDownIcon />
       </span>
     </ToggleComponent>
   );

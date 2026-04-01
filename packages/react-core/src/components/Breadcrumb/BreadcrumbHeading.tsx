@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import styles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
 import { css } from '@patternfly/react-styles';
 
@@ -32,7 +32,7 @@ export const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> 
     <li {...props} className={css(styles.breadcrumbItem, className)}>
       {showDivider && (
         <span className={styles.breadcrumbItemDivider}>
-          <AngleRightIcon />
+          <RhMicronsCaretRightIcon />
         </span>
       )}
       <h1 className={styles.breadcrumbHeading}>

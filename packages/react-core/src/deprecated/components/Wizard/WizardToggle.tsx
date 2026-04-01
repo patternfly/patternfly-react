@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import { WizardStep } from './Wizard';
 import { WizardBody } from './WizardBody';
@@ -88,7 +88,11 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
         <span className={css(styles.wizardToggleList)}>
           <span className={css(styles.wizardToggleListItem)}>
             <span className={css(styles.wizardToggleNum)}>{activeStepIndex}</span> {activeStepName}
-            {activeStepSubName && <AngleRightIcon className={css(styles.wizardToggleSeparator)} />}
+            {activeStepSubName && (
+              <span className={css(styles.wizardToggleSeparator)}>
+                <RhMicronsCaretRightIcon />
+              </span>
+            )}
           </span>
           {activeStepSubName && <span className={css(styles.wizardToggleListItem)}>{activeStepSubName}</span>}
         </span>
