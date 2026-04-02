@@ -84,12 +84,14 @@ interface TableContextProps {
   registerSelectableRow?: () => void;
   hasAnimations?: boolean;
   variant?: TableVariant | 'compact';
+  isStickyHeader?: boolean;
 }
 
 export const TableContext = createContext<TableContextProps>({
   registerSelectableRow: () => {},
   hasAnimations: false,
-  variant: undefined
+  variant: undefined,
+  isStickyHeader: false
 });
 
 const TableBase: React.FunctionComponent<TableProps> = ({
@@ -214,7 +216,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
   };
 
   return (
-    <TableContext.Provider value={{ registerSelectableRow, hasAnimations, variant }}>
+    <TableContext.Provider value={{ registerSelectableRow, hasAnimations, variant, isStickyHeader }}>
       <table
         aria-label={ariaLabel}
         role={role}
