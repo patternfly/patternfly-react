@@ -29,7 +29,7 @@ export interface PageGroupProps extends React.HTMLProps<HTMLDivElement> {
   'aria-label'?: string;
   /** Adds plain styling to the page group. */
   isPlain?: boolean;
-  /** @beta Prevents the page group from automatically applying plain styling when glass theme is enabled. When both this and isPlain are true, isPlain takes precedence. */
+  /** @beta Prevents the page group from automatically applying plain styling when glass theme is enabled. */
   isNoPlainOnGlass?: boolean;
 }
 

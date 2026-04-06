@@ -69,7 +69,7 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   component?: keyof React.JSX.IntrinsicElements;
   /** Adds plain styling to the page section. */
   isPlain?: boolean;
-  /** @beta Prevents the page section from automatically applying plain styling when glass theme is enabled. When both this and isPlain are true, isPlain takes precedence. */
+  /** @beta Prevents the page section from automatically applying plain styling when glass theme is enabled. */
   isNoPlainOnGlass?: boolean;
 }
 
