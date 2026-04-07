@@ -5,7 +5,7 @@ propComponents: ['Toolbar', 'ToolbarContent', 'ToolbarGroup', 'ToolbarItem', 'To
 section: components
 ---
 
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useRef, useLayoutEffect } from 'react';
 
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
@@ -114,11 +114,13 @@ When all of a toolbar's required elements cannot fit in a single line, you can s
 ```
 
 ## Examples with spacers and wrapping
+
 You may adjust the space between toolbar items to arrange them into groups. Read our spacers documentation to learn more about using spacers.
 
 Items are spaced “16px” apart by default and can be modified by changing their or their parents' `gap`, `columnGap`, and `rowGap` properties. You can set the property values at multiple breakpoints, including "default", "md", "lg", "xl", and "2xl".
 
 ### Toolbar content wrapping
+
 The toolbar content section will wrap by default, but you can set the `rowRap` property to `noWrap` to make it not wrap.
 
 ```ts file="./ToolbarContentWrap.tsx"

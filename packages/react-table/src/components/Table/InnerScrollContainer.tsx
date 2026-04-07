@@ -1,5 +1,6 @@
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table-scrollable';
+import { forwardRef } from 'react';
 
 export interface InnerScrollContainerProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the inner scroll container */
@@ -8,14 +9,14 @@ export interface InnerScrollContainerProps extends React.HTMLProps<HTMLDivElemen
   className?: string;
 }
 
-export const InnerScrollContainer: React.FunctionComponent<InnerScrollContainerProps> = ({
-  children,
-  className,
-  ...props
-}: InnerScrollContainerProps) => (
-  <div className={css(className, styles.scrollInnerWrapper)} {...props}>
+const InnerScrollContainerBase = (
+  { children, className, ...props }: InnerScrollContainerProps,
+  ref: React.ForwardedRef<HTMLDivElement>
+) => (
+  <div ref={ref} className={css(className, styles.scrollInnerWrapper)} {...props}>
     {children}
   </div>
 );
 
+export const InnerScrollContainer = forwardRef(InnerScrollContainerBase);
 InnerScrollContainer.displayName = 'InnerScrollContainer';

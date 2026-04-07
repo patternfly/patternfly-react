@@ -41,7 +41,7 @@ The `Table` component takes an explicit and declarative approach, and its implem
 
 The documentation for the deprecated table implementation can be found under the [React deprecated](/components/table/react-deprecated) tab. It is configuration based and takes a less declarative and more implicit approach to laying out the table structure, such as the rows and cells within it.
 
-import { Fragment, isValidElement, useCallback, useEffect, useRef, useState } from 'react';
+import { Fragment, isValidElement, useLayoutEffect, useCallback, useEffect, useRef, useState } from 'react';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
@@ -327,7 +327,6 @@ To enable a tree table:
    - `checkAriaLabel` - (optional) accessible label for the checkbox
    - `showDetailsAriaLabel` - (optional) accessible label for the show row details button in the responsive view
 4. The first `Td` in each row will pass the following to the `treeRow` prop:
-
    - `onCollapse` - Callback when user expands/collapses a row to reveal/hide the row's children.
    - `onCheckChange` - (optional) Callback when user changes the checkbox on a row.
    - `onToggleRowDetails` - (optional) Callback when user shows/hides the row details in responsive view.
@@ -424,6 +423,14 @@ To prevent the default text wrapping behavior and allow horizontal scrolling, al
 To maintain proper sticky behavior across sticky columns and header, `Table` must be wrapped with `OuterScrollContainer` and `InnerScrollContainer`.
 
 ```ts file="TableStickyColumnsAndHeader.tsx"
+
+```
+
+### Sticky columns and header (scroll-pinned class)
+
+This example matches [Sticky columns and header](#sticky-columns-and-header) but uses the `useTheadPinnedFromScrollParent` hook with refs on `InnerScrollContainer` and `Thead` to toggle `isPinned` and apply the placeholder `PINNED` class when the inner scroll container has been scrolled. If the scroll-root ref is not set, the hook falls back to the exported `getOverflowScrollParent` helper using the thead ref.
+
+```ts file="TableStickyColumnsAndHeaderScrollPinned.tsx"
 
 ```
 
