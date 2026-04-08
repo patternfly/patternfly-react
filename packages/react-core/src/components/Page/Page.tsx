@@ -22,8 +22,13 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** @beta Indicates the layout variant */
   variant?: 'default' | 'docked';
+  /** @beta Flag indicating the docked nav is expanded on mobile. Only applies when variant is docked. */
+  isDockExpanded?: boolean;
+  /** @beta Flag indicating the docked nav should display text. Only applies when variant is docked. */
+  isDockTextExpanded?: boolean;
   /** Masthead component (e.g. <Masthead />) */
   masthead?: React.ReactNode;
+  dockedMasthead?: React.ReactNode;
   /** Sidebar component for a side nav, recommended to be a PageSidebar. If set to null, the page grid layout
    * will render without a sidebar.
    */
@@ -232,7 +237,10 @@ class Page extends Component<PageProps, PageState> {
       className,
       children,
       variant,
+      isDockExpanded = false,
+      isDockTextExpanded = false,
       masthead,
+      dockedMasthead,
       sidebar,
       notificationDrawer,
       isNotificationDrawerExpanded,
@@ -349,9 +357,18 @@ class Page extends Component<PageProps, PageState> {
         >
           {skipToContent}
           {variant === 'docked' ? (
-            <div className={css(styles.pageDock)}>
-              <div className={css(styles.pageDockMain)}>{masthead}</div>
-            </div>
+            <>
+              {masthead}
+              <div
+                className={css(
+                  styles.pageDock,
+                  isDockExpanded && styles.modifiers.expanded,
+                  isDockTextExpanded && styles.modifiers.textExpanded
+                )}
+              >
+                <div className={css(styles.pageDockMain)}>{dockedMasthead}</div>
+              </div>
+            </>
           ) : (
             masthead
           )}

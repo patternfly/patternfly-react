@@ -109,6 +109,10 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   hamburgerVariant?: 'expand' | 'collapse';
   /** @beta Flag indicating the button is a circle button. Intended for buttons that only contain an icon.. */
   isCircle?: boolean;
+  /** @beta Flag indicating the button is a dock variant button. For use in docked navigation. */
+  isDock?: boolean;
+  /** @beta Flag indicating the dock button should display text. Only applies when isDock is true. */
+  isTextExpanded?: boolean;
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Adds count number to button */
@@ -134,6 +138,8 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   isHamburger,
   hamburgerVariant,
   isCircle,
+  isDock = false,
+  isTextExpanded = false,
   spinnerAriaValueText,
   spinnerAriaLabelledBy,
   spinnerAriaLabel,
@@ -265,6 +271,8 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
         size === ButtonSize.sm && styles.modifiers.small,
         size === ButtonSize.lg && styles.modifiers.displayLg,
         isCircle && styles.modifiers.circle,
+        isDock && styles.modifiers.dock,
+        isTextExpanded && styles.modifiers.textExpanded,
         className
       )}
       disabled={isButtonElement ? isDisabled : null}

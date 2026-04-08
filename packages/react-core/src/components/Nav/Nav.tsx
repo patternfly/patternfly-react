@@ -39,6 +39,8 @@ export interface NavProps
   'aria-label'?: string;
   /** The nav variant to use. Docked is in beta. */
   variant?: 'default' | 'horizontal' | 'horizontal-subnav' | 'docked';
+  /** @beta Flag indicating the docked nav should display text. Only applies when variant is docked. */
+  isTextExpanded?: boolean;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
@@ -119,6 +121,7 @@ class Nav extends Component<NavProps, { isScrollable: boolean; flyoutRef: React.
       ouiaId,
       ouiaSafe,
       variant,
+      isTextExpanded = false,
       ...props
     } = this.props;
     const isHorizontal = ['horizontal', 'horizontal-subnav'].includes(variant);
@@ -156,6 +159,7 @@ class Nav extends Component<NavProps, { isScrollable: boolean; flyoutRef: React.
                 isHorizontal && styles.modifiers.horizontal,
                 variant === 'docked' && styles.modifiers.docked,
                 variant === 'horizontal-subnav' && styles.modifiers.subnav,
+                isTextExpanded && styles.modifiers.textExpanded,
                 this.state.isScrollable && styles.modifiers.scrollable,
                 className
               )}
