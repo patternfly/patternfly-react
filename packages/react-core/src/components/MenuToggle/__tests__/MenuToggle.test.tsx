@@ -1,7 +1,7 @@
 import { MenuToggle } from '../MenuToggle';
 import { MenuToggleCheckbox } from '../MenuToggleCheckbox';
 import { Badge } from '../../Badge';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
@@ -45,7 +45,7 @@ describe('Old Snapshot tests - remove when refactoring', () => {
   });
 
   test('shows icon', () => {
-    const { asFragment } = render(<MenuToggle icon={<CogIcon />}>Toggle</MenuToggle>);
+    const { asFragment } = render(<MenuToggle icon={<RhUiSettingsFillIcon />}>Toggle</MenuToggle>);
     expect(asFragment()).toMatchSnapshot();
   });
 

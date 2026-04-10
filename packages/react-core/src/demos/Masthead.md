@@ -7,7 +7,7 @@ import { cloneElement, Fragment, useEffect, useRef, useState } from 'react';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
@@ -24,7 +24,9 @@ Many mastheads contain utilities which collapse into a dropdown at smaller viewp
 ```ts file='./examples/Masthead/MastheadWithUtilitiesAndUserDropdownMenu.tsx' isFullscreen
 
 ```
+
 ### Horizontal nav
+
 ```ts file='./examples/Masthead/MastheadWithHorizontalNav.tsx' isFullscreen
 
 ```

@@ -40,7 +40,7 @@ import {
   ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
@@ -100,7 +100,7 @@ export const PageStickySectionGroup: React.FunctionComponent = () => {
   const kebabDropdownItems = (
     <>
       <DropdownItem>
-        <CogIcon /> Settings
+        <RhUiSettingsFillIcon /> Settings
       </DropdownItem>
       <DropdownItem>
         <HelpIcon /> Help

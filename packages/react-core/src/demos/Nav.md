@@ -4,7 +4,7 @@ section: components
 ---
 
 import { Fragment, useState } from 'react';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
@@ -20,44 +20,53 @@ import { DashboardHeader } from '@patternfly/react-core/dist/js/demos/DashboardH
 ### Default nav
 
 ```ts file="./examples/Nav/NavDefault.tsx" isFullscreen
+
 ```
 
 ### Grouped nav
 
 ```ts file="./examples/Nav/NavGrouped.tsx" isFullscreen
+
 ```
 
 ### Expandable nav
 
 ```ts file="./examples/Nav/NavExpandable.tsx" isFullscreen
+
 ```
 
 ### Horizontal nav
 
 ```ts file="./examples/Nav/NavHorizontal.tsx" isFullscreen
+
 ```
 
 ### Horizontal subnav
 
 ```ts file="./examples/Nav/NavWithSubnav.tsx" isFullscreen
+
 ```
 
 ### Horizontal nav with horizontal subnav
 
 ```ts file="./examples/Nav/NavHorizontalWithSubnav.tsx" isFullscreen
+
 ```
 
 ### Manual nav
 
 ```ts file="./examples/Nav/NavManual.tsx" isFullscreen
+
 ```
 
 ### Flyout nav
 
 ```ts file="./examples/Nav/NavFlyout.tsx" isFullscreen
+
 ```
 
 ### Drilldown nav
 
 ```ts isFullscreen file="./examples/Nav/NavDrilldown.tsx"
+
 ```

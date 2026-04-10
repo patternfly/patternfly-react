@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/MenuToggle/menu-togg
 import { css } from '@patternfly/react-styles';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import { BadgeProps } from '../Badge';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
 import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
@@ -150,7 +150,7 @@ class MenuToggleBase extends Component<MenuToggleProps> {
           const content = (
             <>
               {(icon || isSettings) && (
-                <span className={css(styles.menuToggleIcon)}>{isSettings ? <CogIcon /> : icon}</span>
+                <span className={css(styles.menuToggleIcon)}>{isSettings ? <RhUiSettingsFillIcon /> : icon}</span>
               )}
               {isTypeahead ? children : children && <span className={css(styles.menuToggleText)}>{children}</span>}
               {isValidElement(badge) && <span className={css(styles.menuToggleCount)}>{badge}</span>}

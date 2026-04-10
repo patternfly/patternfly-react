@@ -6,7 +6,7 @@ subsection: menus
 
 import { cloneElement, Fragment, useEffect, useRef, useState } from 'react';
 
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
 import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';

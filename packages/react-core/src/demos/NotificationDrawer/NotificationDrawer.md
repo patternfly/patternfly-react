@@ -6,7 +6,7 @@ section: components
 import { Fragment, useRef, useState } from 'react';
 
 import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
@@ -18,7 +18,6 @@ import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Co
 ## Demos
 
 - Focus must be manually managed when the NotificationDrawer component is opened:
-
   1. Create a React `ref` and pass it into the NotificationDrawer component's `ref` attribute
   2. Pass in a function to the `onNotificationDrawerExpand` prop of the Page component that will place focus on the first interact-able element inside the NotificationDrawer component via the previously created `ref`
 

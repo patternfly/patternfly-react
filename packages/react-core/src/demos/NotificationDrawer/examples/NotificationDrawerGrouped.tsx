@@ -47,7 +47,7 @@ import {
   ToolbarGroup,
   ToolbarContent
 } from '@patternfly/react-core';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
@@ -207,7 +207,7 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
   const kebabDropdownItems = (
     <>
       <DropdownItem>
-        <CogIcon /> Settings
+        <RhUiSettingsFillIcon /> Settings
       </DropdownItem>
       <DropdownItem>
         <HelpIcon /> Help

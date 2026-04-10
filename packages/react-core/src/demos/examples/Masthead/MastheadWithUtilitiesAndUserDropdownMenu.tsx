@@ -50,7 +50,7 @@ import {
   Tooltip
 } from '@patternfly/react-core';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
@@ -372,7 +372,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
   const kebabDropdownItems = (
     <>
       <DropdownItem key="settings">
-        <CogIcon /> Settings
+        <RhUiSettingsFillIcon /> Settings
       </DropdownItem>
       <DropdownItem key="help">
         <HelpIcon /> Help

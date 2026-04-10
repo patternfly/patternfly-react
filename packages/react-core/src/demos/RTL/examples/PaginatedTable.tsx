@@ -48,7 +48,7 @@ import ToolsIcon from '@patternfly/react-icons/dist/esm/icons/tools-icon';
 import ClockIcon from '@patternfly/react-icons/dist/esm/icons/clock-icon';
 import WalkingIcon from '@patternfly/react-icons/dist/esm/icons/walking-icon';
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
@@ -279,7 +279,7 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
 
   const kebabDropdownItems = (
     <>
-      <DropdownItem icon={<CogIcon />}>{translation.kebabDropdown.settings}</DropdownItem>
+      <DropdownItem icon={<RhUiSettingsFillIcon />}>{translation.kebabDropdown.settings}</DropdownItem>
       <DropdownItem icon={<HelpIcon />}>{translation.kebabDropdown.help}</DropdownItem>
     </>
   );

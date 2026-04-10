@@ -1,4 +1,4 @@
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import MapIcon from '@patternfly/react-icons/dist/esm/icons/map-icon';
 import MoonIcon from '@patternfly/react-icons/dist/esm/icons/moon-icon';
 import HashtagIcon from '@patternfly/react-icons/dist/esm/icons/hashtag-icon';
@@ -38,7 +38,7 @@ interface ConfigModalItemProps {
 }
 
 const ConfigModalItem: React.FunctionComponent<ConfigModalItemProps> = ({
-  icon = <CogIcon />,
+  icon = <RhUiSettingsFillIcon />,
   description,
   title,
   id = `ConfigModalItem-${title.replace(/\s+/g, '-').toLowerCase()}`,
@@ -77,7 +77,7 @@ interface ConfigModalSwitchProps extends Omit<ConfigModalItemProps, 'slot'> {
 }
 
 const ConfigModalSwitch: React.FunctionComponent<ConfigModalSwitchProps> = ({
-  icon = <CogIcon />,
+  icon = <RhUiSettingsFillIcon />,
   description,
   title,
   id = `ConfigModalSwitch-${title.replace(/\s+/g, '-').toLowerCase()}`,
