@@ -23,8 +23,16 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
     | 'action-group-inline'
     | 'action-group-plain'
     | 'label-group';
-  /** Visibility at various breakpoints. */
+  /** Visibility at various width breakpoints. */
   visibility?: {
+    default?: 'hidden' | 'visible';
+    md?: 'hidden' | 'visible';
+    lg?: 'hidden' | 'visible';
+    xl?: 'hidden' | 'visible';
+    '2xl'?: 'hidden' | 'visible';
+  };
+  /** Visibility at various height breakpoints. */
+  visibilityAtHeight?: {
     default?: 'hidden' | 'visible';
     md?: 'hidden' | 'visible';
     lg?: 'hidden' | 'visible';
@@ -178,6 +186,7 @@ class ToolbarGroupWithRef extends Component<ToolbarGroupProps> {
   render() {
     const {
       visibility,
+      visibilityAtHeight,
       align,
       alignItems,
       alignSelf,
@@ -195,7 +204,7 @@ class ToolbarGroupWithRef extends Component<ToolbarGroupProps> {
 
     return (
       <PageContext.Consumer>
-        {({ width, getBreakpoint }) => (
+        {({ width, getBreakpoint, height, getVerticalBreakpoint }) => (
           <div
             className={css(
               styles.toolbarGroup,
@@ -209,6 +218,7 @@ class ToolbarGroupWithRef extends Component<ToolbarGroupProps> {
                     | 'labelGroup'
                 ],
               formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(visibilityAtHeight, styles, '', getVerticalBreakpoint(height), true),
               formatBreakpointMods(align, styles, '', getBreakpoint(width)),
               formatBreakpointMods(gap, styles, '', getBreakpoint(width)),
               formatBreakpointMods(columnGap, styles, '', getBreakpoint(width)),

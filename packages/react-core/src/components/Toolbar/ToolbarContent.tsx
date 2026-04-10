@@ -8,8 +8,16 @@ import { PageContext } from '../Page/PageContext';
 export interface ToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the data toolbar content row */
   className?: string;
-  /** Visibility at various breakpoints. */
+  /** Visibility at various width breakpoints. */
   visibility?: {
+    default?: 'hidden' | 'visible';
+    md?: 'hidden' | 'visible';
+    lg?: 'hidden' | 'visible';
+    xl?: 'hidden' | 'visible';
+    '2xl'?: 'hidden' | 'visible';
+  };
+  /** Visibility at various height breakpoints. */
+  visibilityAtHeight?: {
     default?: 'hidden' | 'visible';
     md?: 'hidden' | 'visible';
     lg?: 'hidden' | 'visible';
@@ -59,6 +67,7 @@ class ToolbarContent extends Component<ToolbarContentProps> {
       isExpanded,
       toolbarId,
       visibility,
+      visibilityAtHeight,
       rowWrap,
       alignItems,
       clearAllFilters,
@@ -69,11 +78,12 @@ class ToolbarContent extends Component<ToolbarContentProps> {
 
     return (
       <PageContext.Consumer>
-        {({ width, getBreakpoint }) => (
+        {({ width, getBreakpoint, height, getVerticalBreakpoint }) => (
           <div
             className={css(
               styles.toolbarContent,
               formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(visibilityAtHeight, styles, '', getVerticalBreakpoint(height), true),
               className
             )}
             ref={this.expandableContentRef}

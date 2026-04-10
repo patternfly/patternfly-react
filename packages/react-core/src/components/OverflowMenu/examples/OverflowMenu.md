@@ -27,6 +27,12 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 
 ```
 
+### Simple vertical (responsive)
+
+```ts file="./OverflowMenuSimpleVertical.tsx"
+
+```
+
 ### Group types
 
 ```ts file="./OverflowMenuGroupTypes.tsx"
@@ -45,12 +51,20 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 
 ```
 
-### Breakpoint on container
+### Breakpoint on container width
 
 By passing in the `breakpointReference` property, the overflow menu's breakpoint will be relative to the width of the reference container rather than the viewport width.
 
 You can change the container width in this example by adjusting the slider. As the container width changes, the overflow menu will change between a horizontal menu and a vertical dropdown despite the viewport width not changing.
 
 ```ts file="./OverflowMenuBreakpointOnContainer.tsx"
+
+```
+
+### Breakpoint on container height
+
+By passing in the `breakpointReference` and `isVertical` properties, the overflow menu's breakpoint will be relative to the height of the reference container rather than the viewport height.
+
+```ts file="./OverflowMenuBreakpointOnContainerHeight.tsx"
 
 ```

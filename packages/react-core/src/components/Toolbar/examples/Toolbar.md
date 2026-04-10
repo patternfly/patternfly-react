@@ -34,6 +34,14 @@ To adjust a toolbar’s inset, use the `inset` property. You can set the inset v
 
 ```
 
+### Vertical toolbar
+
+A toolbar's orientation may be changed using the `isVertical` property. Responsive behavior when height is adjusted may be customized for the `ToolbarContent`, `ToolbarGroup`, and `ToolbarItem` components using their respective `visibilityAtHeight` property.
+
+```ts file="./ToolbarVertical.tsx"
+
+```
+
 ### Sticky toolbar
 
 To lock a toolbar and prevent it from scrolling with other content, use a sticky toolbar.
@@ -114,11 +122,13 @@ When all of a toolbar's required elements cannot fit in a single line, you can s
 ```
 
 ## Examples with spacers and wrapping
+
 You may adjust the space between toolbar items to arrange them into groups. Read our spacers documentation to learn more about using spacers.
 
 Items are spaced “16px” apart by default and can be modified by changing their or their parents' `gap`, `columnGap`, and `rowGap` properties. You can set the property values at multiple breakpoints, including "default", "md", "lg", "xl", and "2xl".
 
 ### Toolbar content wrapping
+
 The toolbar content section will wrap by default, but you can set the `rowRap` property to `noWrap` to make it not wrap.
 
 ```ts file="./ToolbarContentWrap.tsx"
