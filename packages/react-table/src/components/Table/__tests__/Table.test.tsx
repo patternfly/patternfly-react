@@ -186,3 +186,39 @@ test(`Does not render with class ${styles.modifiers.noPlainOnGlass} when isNoPla
 
   expect(screen.getByRole('grid', { name: 'Test table' })).not.toHaveClass(styles.modifiers.noPlainOnGlass);
 });
+
+test(`Renders with class ${styles.modifiers.stickyHeaderBase} when isStickyHeaderBase is true`, () => {
+  render(<Table isStickyHeaderBase aria-label="Test table" />);
+
+  expect(screen.getByRole('grid', { name: 'Test table' })).toHaveClass(styles.modifiers.stickyHeaderBase);
+});
+
+test(`Does not render with class ${styles.modifiers.stickyHeaderBase} when isStickyHeaderBase is false`, () => {
+  render(<Table isStickyHeaderBase={false} aria-label="Test table" />);
+
+  expect(screen.getByRole('grid', { name: 'Test table' })).not.toHaveClass(styles.modifiers.stickyHeaderBase);
+});
+
+test(`Does not render with class ${styles.modifiers.stickyHeaderBase} when isStickyHeaderBase is undefined`, () => {
+  render(<Table aria-label="Test table" />);
+
+  expect(screen.getByRole('grid', { name: 'Test table' })).not.toHaveClass(styles.modifiers.stickyHeaderBase);
+});
+
+test(`Renders with class ${styles.modifiers.stickyHeaderStuck} when isStickyHeaderStuck is true`, () => {
+  render(<Table isStickyHeaderStuck aria-label="Test table" />);
+
+  expect(screen.getByRole('grid', { name: 'Test table' })).toHaveClass(styles.modifiers.stickyHeaderStuck);
+});
+
+test(`Does not render with class ${styles.modifiers.stickyHeaderStuck} when isStickyHeaderStuck is false`, () => {
+  render(<Table isStickyHeaderStuck={false} aria-label="Test table" />);
+
+  expect(screen.getByRole('grid', { name: 'Test table' })).not.toHaveClass(styles.modifiers.stickyHeaderStuck);
+});
+
+test(`Does not render with class ${styles.modifiers.stickyHeaderStuck} when isStickyHeaderStuck is undefined`, () => {
+  render(<Table aria-label="Test table" />);
+
+  expect(screen.getByRole('grid', { name: 'Test table' })).not.toHaveClass(styles.modifiers.stickyHeaderStuck);
+});

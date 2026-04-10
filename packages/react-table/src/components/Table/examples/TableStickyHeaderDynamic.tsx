@@ -81,7 +81,7 @@ export const TableStickyHeaderDynamic: React.FunctionComponent = () => {
     <div style={{ height: '400px' }}>
       <InnerScrollContainer ref={scrollContainerRef}>
         <Table
-          aria-label="Sticky columns and header table"
+          aria-label="Dynamic sticky header table"
           gridBreakPoint=""
           isStickyHeaderBase
           isStickyHeaderStuck={isStuck}
@@ -102,13 +102,13 @@ export const TableStickyHeaderDynamic: React.FunctionComponent = () => {
           <Tbody>
             {facts.map((fact) => (
               <Tr key={fact.name}>
-                <Th modifier="nowrap" dataLabel={columnNames.name}>
+                <Td modifier="nowrap" dataLabel={columnNames.name}>
                   {fact.name}
-                </Th>
-                <Th modifier="nowrap" dataLabel={columnNames.state}>
+                </Td>
+                <Td modifier="nowrap" dataLabel={columnNames.state}>
                   <BlueprintIcon />
                   {` ${fact.state}`}
-                </Th>
+                </Td>
                 <Td modifier="nowrap" dataLabel={columnNames.header3}>
                   {fact.detail1}
                 </Td>
