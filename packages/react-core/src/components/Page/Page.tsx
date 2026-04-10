@@ -21,7 +21,7 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the page layout */
   className?: string;
   /** @beta Indicates the layout variant */
-  variant?: 'default' | 'dock';
+  variant?: 'default' | 'docked';
   /** @beta Flag indicating the dock nav is expanded on mobile. Only applies when variant is dock. */
   isDockExpanded?: boolean;
   /** @beta Flag indicating the dock nav should display text. Only applies when variant is dock. */
@@ -348,7 +348,7 @@ class Page extends Component<PageProps, PageState> {
           {...rest}
           className={css(
             styles.page,
-            variant === 'dock' && styles.modifiers.dock,
+            variant === 'docked' && styles.modifiers.dock,
             width !== null && height !== null && 'pf-m-resize-observer',
             width !== null && `pf-m-breakpoint-${getBreakpoint(width)}`,
             height !== null && `pf-m-height-breakpoint-${getVerticalBreakpoint(height)}`,
@@ -357,7 +357,7 @@ class Page extends Component<PageProps, PageState> {
           )}
         >
           {skipToContent}
-          {variant === 'dock' ? (
+          {variant === 'docked' ? (
             <>
               {masthead}
               <div
