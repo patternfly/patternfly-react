@@ -6,7 +6,7 @@ import { useOUIAProps, OUIAProps } from '../../helpers/OUIA/ouia';
 import { Badge } from '../Badge';
 import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
 import OutlinedStarIcon from '@patternfly/react-icons/dist/esm/icons/outlined-star-icon';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import { hamburgerIcon } from './hamburgerIcon';
 
 export enum ButtonVariant {
@@ -215,7 +215,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
     }
 
     if (isSettings) {
-      iconContent = <CogIcon />;
+      iconContent = <RhUiSettingsFillIcon />;
     }
     if (isHamburger) {
       iconContent = hamburgerIcon;
