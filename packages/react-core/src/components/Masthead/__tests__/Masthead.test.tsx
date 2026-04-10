@@ -127,6 +127,29 @@ describe('MastheadLogo', () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test(`Renders with ${styles.modifiers.compact} class when isCompact is true`, () => {
+    render(
+      <MastheadLogo isCompact data-testid="compact-logo">
+        test
+      </MastheadLogo>
+    );
+    expect(screen.getByTestId('compact-logo')).toHaveClass(styles.modifiers.compact);
+  });
+
+  test(`Does not render with ${styles.modifiers.compact} class when isCompact is false`, () => {
+    render(
+      <MastheadLogo isCompact={false} data-testid="logo">
+        test
+      </MastheadLogo>
+    );
+    expect(screen.getByTestId('logo')).not.toHaveClass(styles.modifiers.compact);
+  });
+
+  test(`Does not render with ${styles.modifiers.compact} class when isCompact is not passed`, () => {
+    render(<MastheadLogo data-testid="logo">test</MastheadLogo>);
+    expect(screen.getByTestId('logo')).not.toHaveClass(styles.modifiers.compact);
+  });
 });
 
 describe('MastheadContent', () => {

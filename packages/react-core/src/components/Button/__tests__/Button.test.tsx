@@ -555,6 +555,28 @@ describe('Favorite button', () => {
   });
 });
 
+describe('Dock variant', () => {
+  test(`Renders with class ${styles.modifiers.dock} when isDock = true`, () => {
+    render(<Button isDock>Dock Button</Button>);
+    expect(screen.getByRole('button')).toHaveClass(styles.modifiers.dock);
+  });
+
+  test(`Does not render with class ${styles.modifiers.dock} when isDock is not passed`, () => {
+    render(<Button>Button</Button>);
+    expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.dock);
+  });
+
+  test(`Renders with class ${styles.modifiers.textExpanded} when isTextExpanded = true`, () => {
+    render(<Button isTextExpanded>Text Expanded Button</Button>);
+    expect(screen.getByRole('button')).toHaveClass(styles.modifiers.textExpanded);
+  });
+
+  test(`Does not render with class ${styles.modifiers.textExpanded} when isTextExpanded is not passed`, () => {
+    render(<Button>Button</Button>);
+    expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.textExpanded);
+  });
+});
+
 test(`Renders basic button`, () => {
   const { asFragment } = render(<Button aria-label="basic button">Basic Button</Button>);
   expect(asFragment()).toMatchSnapshot();
