@@ -5,7 +5,7 @@ import { OverflowMenuContext } from './OverflowMenuContext';
 import { debounce } from '../../helpers/util';
 import { globalWidthBreakpoints, globalHeightBreakpoints } from '../../helpers/constants';
 import { getResizeObserver } from '../../helpers/resizeObserver';
-import { PickOptional } from 'src/helpers';
+import { PickOptional } from '../../helpers/typeUtils';
 
 export interface OverflowMenuProps extends React.HTMLProps<HTMLDivElement> {
   /** Any elements that can be rendered in the menu */
