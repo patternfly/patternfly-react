@@ -27,7 +27,9 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 
 ```
 
-### Simple vertical (responsive)
+### Vertical
+
+Passing `isVertical` to `OverflowMenu` will change its behavior to respond to breakpoints based on window height instead of width.
 
 ```ts file="./OverflowMenuSimpleVertical.tsx"
 
@@ -63,8 +65,8 @@ You can change the container width in this example by adjusting the slider. As t
 
 ### Breakpoint on container height
 
-By passing in the `breakpointReference` and `isVertical` properties, the overflow menu's breakpoint will be relative to the height of the reference container rather than the viewport height.
+By passing in the `breakpointReference` and `isVertical` properties, the overflow menu's breakpoint will be determined relative to the height of the reference container rather than the window height.
 
-```ts file="./OverflowMenuBreakpointOnContainerHeight.tsx"
+```ts isFullscreen file="./OverflowMenuBreakpointOnContainerHeight.tsx"
 
 ```

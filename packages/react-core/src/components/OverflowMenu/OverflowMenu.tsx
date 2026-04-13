@@ -12,7 +12,7 @@ export interface OverflowMenuProps extends React.HTMLProps<HTMLDivElement> {
   children?: any;
   /** Additional classes added to the OverflowMenu. */
   className?: string;
-  /** Indicates breakpoint at which to switch between expanded and collapsed states */
+  /** Indicates breakpoint at which to switch between expanded and collapsed states. The "sm" breakpoint does not apply to vertical overflow menus. */
   breakpoint: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   /** A container reference to base the specified breakpoint on instead of the viewport width. */
   breakpointReference?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
@@ -102,6 +102,12 @@ class OverflowMenu extends Component<OverflowMenuProps, OverflowMenuState> {
 
   handleResizeHeight = () => {
     const breakpointHeight = globalHeightBreakpoints[this.props.breakpoint];
+    if (breakpointHeight === 0) {
+      // eslint-disable-next-line no-console
+      console.warn('The "sm" breakpoint does not apply to vertical overflow menus.');
+      return;
+    }
+
     if (!breakpointHeight) {
       // eslint-disable-next-line no-console
       console.error('OverflowMenu will not be visible without a valid breakpoint.');

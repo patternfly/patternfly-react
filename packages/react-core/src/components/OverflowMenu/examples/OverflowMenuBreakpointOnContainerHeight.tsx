@@ -58,53 +58,51 @@ export const OverflowMenuBreakpointOnContainerHeight: React.FunctionComponent = 
 
   return (
     <>
-      <div style={{ height: '100%', maxHeight: '400px' }}>
-        <div>
-          <span id="overflowMenu-hasBreakpointOnContainer-height-slider-label">Current container height</span>:{' '}
-          {containerHeight}%
+      <span id="overflowMenu-hasBreakpointOnContainer-height-slider-label">Current container height</span>:{' '}
+      {containerHeight}%
+      <Slider
+        value={containerHeight}
+        onChange={onChange}
+        max={100}
+        min={20}
+        step={20}
+        showTicks
+        showBoundaries={false}
+        aria-labelledby="overflowMenu-hasBreakpointOnContainer-height-slider-label"
+      />
+      <div style={{ height: '100%' }}>
+        <div ref={containerRef} id="height-breakpoint-reference-container" style={containerStyles}>
+          <OverflowMenu breakpointReference={containerRef} breakpoint="md" isVertical>
+            <OverflowMenuContent>
+              <OverflowMenuItem>Item 1</OverflowMenuItem>
+              <OverflowMenuItem>Item 2</OverflowMenuItem>
+              <OverflowMenuGroup>
+                <OverflowMenuItem>Item 3</OverflowMenuItem>
+                <OverflowMenuItem>Item 4</OverflowMenuItem>
+                <OverflowMenuItem>Item 5</OverflowMenuItem>
+              </OverflowMenuGroup>
+            </OverflowMenuContent>
+            <OverflowMenuControl>
+              <Dropdown
+                onSelect={onSelect}
+                toggle={(toggleRef) => (
+                  <MenuToggle
+                    ref={toggleRef}
+                    aria-label="Height breakpoint on container example overflow menu"
+                    variant="plain"
+                    onClick={onToggle}
+                    isExpanded={isOpen}
+                    icon={<EllipsisVIcon />}
+                  />
+                )}
+                isOpen={isOpen}
+                onOpenChange={(isOpen) => setIsOpen(isOpen)}
+              >
+                <DropdownList>{dropdownItems}</DropdownList>
+              </Dropdown>
+            </OverflowMenuControl>
+          </OverflowMenu>
         </div>
-        <Slider
-          value={containerHeight}
-          onChange={onChange}
-          max={100}
-          min={20}
-          step={20}
-          showTicks
-          showBoundaries={false}
-          aria-labelledby="overflowMenu-hasBreakpointOnContainer-height-slider-label"
-        />
-      </div>
-      <div ref={containerRef} id="height-breakpoint-reference-container" style={containerStyles}>
-        <OverflowMenu breakpointReference={containerRef} breakpoint="sm" isVertical>
-          <OverflowMenuContent>
-            <OverflowMenuItem>Item 1</OverflowMenuItem>
-            <OverflowMenuItem>Item 2</OverflowMenuItem>
-            <OverflowMenuGroup>
-              <OverflowMenuItem>Item 3</OverflowMenuItem>
-              <OverflowMenuItem>Item 4</OverflowMenuItem>
-              <OverflowMenuItem>Item 5</OverflowMenuItem>
-            </OverflowMenuGroup>
-          </OverflowMenuContent>
-          <OverflowMenuControl>
-            <Dropdown
-              onSelect={onSelect}
-              toggle={(toggleRef) => (
-                <MenuToggle
-                  ref={toggleRef}
-                  aria-label="Height breakpoint on container example overflow menu"
-                  variant="plain"
-                  onClick={onToggle}
-                  isExpanded={isOpen}
-                  icon={<EllipsisVIcon />}
-                />
-              )}
-              isOpen={isOpen}
-              onOpenChange={(isOpen) => setIsOpen(isOpen)}
-            >
-              <DropdownList>{dropdownItems}</DropdownList>
-            </Dropdown>
-          </OverflowMenuControl>
-        </OverflowMenu>
       </div>
     </>
   );
