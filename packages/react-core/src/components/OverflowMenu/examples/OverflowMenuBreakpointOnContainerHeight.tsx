@@ -60,7 +60,7 @@ export const OverflowMenuBreakpointOnContainerHeight: React.FunctionComponent = 
     <>
       <div style={{ height: '100%', maxHeight: '400px' }}>
         <div>
-          <span id="overflowMenu-hasBreakpointOnContainer-height-slider-label">Current container width</span>:{' '}
+          <span id="overflowMenu-hasBreakpointOnContainer-height-slider-label">Current container height</span>:{' '}
           {containerHeight}%
         </div>
         <Slider
@@ -75,7 +75,7 @@ export const OverflowMenuBreakpointOnContainerHeight: React.FunctionComponent = 
         />
       </div>
       <div ref={containerRef} id="height-breakpoint-reference-container" style={containerStyles}>
-        <OverflowMenu breakpointReference={containerRef} breakpoint="sm">
+        <OverflowMenu breakpointReference={containerRef} breakpoint="sm" isVertical>
           <OverflowMenuContent>
             <OverflowMenuItem>Item 1</OverflowMenuItem>
             <OverflowMenuItem>Item 2</OverflowMenuItem>

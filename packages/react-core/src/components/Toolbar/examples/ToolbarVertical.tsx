@@ -17,14 +17,14 @@ export const ToolbarGroups: React.FunctionComponent = () => (
           <Button variant="plain" aria-label="sync" icon={<SyncIcon />} />
         </ToolbarItem>
       </ToolbarGroup>
-      <ToolbarGroup variant="action-group-plain" visibility={{ default: 'hidden', md: 'visible' }}>
+      <ToolbarGroup variant="action-group-plain" visibilityAtHeight={{ default: 'hidden', md: 'visible' }}>
         <ToolbarItem>
           <Button variant="plain" aria-label="edit" icon={<EditIcon />} />
         </ToolbarItem>
-        <ToolbarItem visibility={{ default: 'hidden', lg: 'visible' }}>
+        <ToolbarItem visibilityAtHeight={{ default: 'hidden', lg: 'visible' }}>
           <Button variant="plain" aria-label="clone" icon={<CloneIcon />} />
         </ToolbarItem>
-        <ToolbarItem visibility={{ default: 'hidden', lg: 'visible' }}>
+        <ToolbarItem visibilityAtHeight={{ default: 'hidden', lg: 'visible' }}>
           <Button variant="plain" aria-label="sync" icon={<SyncIcon />} />
         </ToolbarItem>
       </ToolbarGroup>
