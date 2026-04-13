@@ -20,6 +20,14 @@ const singlePathIcon: IconDefinition = {
   svgClassName: 'test'
 };
 
+const rhStandardIcon: IconDefinition = {
+  name: 'IconName',
+  width: 10,
+  height: 20,
+  svgPathData: 'svgPath',
+  svgClassName: 'pf-v6-icon-rh-standard'
+};
+
 const iconDef: CreateIconProps = {
   name: 'SinglePathIconName',
   icon: singlePathIcon
@@ -30,8 +38,14 @@ const iconDefWithArrayPath: CreateIconProps = {
   icon: multiPathIcon
 };
 
+const iconDefWithRhStandard: CreateIconProps = {
+  name: 'RhStandardIconName',
+  icon: rhStandardIcon
+};
+
 const SVGIcon = createIcon(iconDef);
 const SVGArrayIcon = createIcon(iconDefWithArrayPath);
+const RhStandardIcon = createIcon(iconDefWithRhStandard);
 
 test('sets correct viewBox', () => {
   render(<SVGIcon />);
@@ -44,6 +58,21 @@ test('sets correct viewBox', () => {
 test('sets correct svgPath if string', () => {
   render(<SVGIcon />);
   expect(screen.getByRole('img', { hidden: true }).querySelector('path')).toHaveAttribute('d', iconDef.svgPath);
+});
+
+test('sets correct svgClassName by default', () => {
+  render(<RhStandardIcon />);
+  expect(screen.getByRole('img', { hidden: true })).toHaveClass('pf-v6-icon-rh-standard');
+});
+
+test('sets svgClassName when noStandardSetStyling is false', () => {
+  render(<RhStandardIcon noStandardSetStyling={false} />);
+  expect(screen.getByRole('img', { hidden: true })).toHaveClass('pf-v6-icon-rh-standard');
+});
+
+test('does not set svgClassName when noStandardSetStyling is true', () => {
+  render(<RhStandardIcon noStandardSetStyling />);
+  expect(screen.getByRole('img', { hidden: true })).not.toHaveClass('pf-v6-icon-rh-standard');
 });
 
 test('sets correct svgPath if array', () => {
