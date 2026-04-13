@@ -54,7 +54,7 @@ export interface TableProps extends React.HTMLProps<HTMLTableElement>, OUIAProps
   isNoPlainOnGlass?: boolean;
   /** If set to true, the table header sticks to the top of its container. This property applies both the sticky position and styling. */
   isStickyHeader?: boolean;
-  /** @beta Flag indicating the table header should have sticky positioning to the top of the parentInnerScrollContainer. */
+  /** @beta Flag indicating the table header should have sticky positioning to the top of the parent InnerScrollContainer. */
   isStickyHeaderBase?: boolean;
   /** @beta Flag indicating the table header should have stuck styling, when the header is not at the top of the scroll container. */
   isStickyHeaderStuck?: boolean;
