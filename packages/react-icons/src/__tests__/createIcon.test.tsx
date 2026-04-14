@@ -65,13 +65,13 @@ test('sets correct svgClassName by default', () => {
   expect(screen.getByRole('img', { hidden: true })).toHaveClass('pf-v6-icon-rh-standard');
 });
 
-test('sets svgClassName when noStandardSetStyling is false', () => {
-  render(<RhStandardIcon noStandardSetStyling={false} />);
+test('sets svgClassName when noDefaultStyle is false', () => {
+  render(<RhStandardIcon noDefaultStyle={false} />);
   expect(screen.getByRole('img', { hidden: true })).toHaveClass('pf-v6-icon-rh-standard');
 });
 
-test('does not set svgClassName when noStandardSetStyling is true', () => {
-  render(<RhStandardIcon noStandardSetStyling />);
+test('does not set svgClassName when noDefaultStyle is true', () => {
+  render(<RhStandardIcon noDefaultStyle />);
   expect(screen.getByRole('img', { hidden: true })).not.toHaveClass('pf-v6-icon-rh-standard');
 });
 
