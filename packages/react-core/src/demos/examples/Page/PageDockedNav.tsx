@@ -324,7 +324,7 @@ export const PageDockedNav: React.FunctionComponent = () => {
                     ref={appsRef}
                     variant="plain"
                     icon={<ThIcon />}
-                    isDock
+                    isDocked
                     isTextExpanded={isDockTextExpanded}
                     aria-label="Applications"
                   >
@@ -336,7 +336,7 @@ export const PageDockedNav: React.FunctionComponent = () => {
                       ref={appsRef}
                       variant="plain"
                       icon={<ThIcon />}
-                      isDock
+                      isDocked
                       isTextExpanded={isDockTextExpanded}
                       aria-label="Applications"
                     >
@@ -352,7 +352,7 @@ export const PageDockedNav: React.FunctionComponent = () => {
                     aria-label="Settings"
                     isSettings
                     variant="plain"
-                    isDock
+                    isDocked
                     isTextExpanded={isDockTextExpanded}
                   >
                     Settings
@@ -364,7 +364,7 @@ export const PageDockedNav: React.FunctionComponent = () => {
                       aria-label="Settings"
                       isSettings
                       variant="plain"
-                      isDock
+                      isDocked
                       isTextExpanded={isDockTextExpanded}
                     >
                       Settings
@@ -378,7 +378,7 @@ export const PageDockedNav: React.FunctionComponent = () => {
                     ref={helpRef}
                     variant="plain"
                     icon={<QuestionCircleIcon />}
-                    isDock
+                    isDocked
                     isTextExpanded={isDockTextExpanded}
                     aria-label="Help"
                   >
@@ -390,7 +390,7 @@ export const PageDockedNav: React.FunctionComponent = () => {
                       ref={helpRef}
                       variant="plain"
                       icon={<QuestionCircleIcon />}
-                      isDock
+                      isDocked
                       isTextExpanded={isDockTextExpanded}
                       aria-label="Help"
                     >
