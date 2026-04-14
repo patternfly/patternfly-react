@@ -53,8 +53,8 @@ export interface MenuToggleProps
   isCircle?: boolean;
   /** Flag indicating whether the toggle is a settings toggle. This will override the icon property */
   isSettings?: boolean;
-  /** @beta Flag indicating the toggle is a dock variant. For use in docked navigation. */
-  isDock?: boolean;
+  /** @beta Flag indicating the menu toggle is a docked variant. For use in docked navigation. */
+  isDocked?: boolean;
   /** @beta Flag indicating the dock toggle should display text. Only applies when isDock is true. */
   isTextExpanded?: boolean;
   /** Elements to display before the toggle button. When included, renders the menu toggle as a split button. */
@@ -92,7 +92,7 @@ class MenuToggleBase extends Component<MenuToggleProps> {
     isInForm: false,
     isPlaceholder: false,
     isCircle: false,
-    isDock: false,
+    isDocked: false,
     isTextExpanded: false,
     size: 'default',
     ouiaSafe: true
@@ -112,7 +112,7 @@ class MenuToggleBase extends Component<MenuToggleProps> {
       isPlaceholder,
       isCircle,
       isSettings,
-      isDock,
+      isDocked,
       isTextExpanded,
       splitButtonItems,
       variant,
@@ -198,7 +198,7 @@ class MenuToggleBase extends Component<MenuToggleProps> {
             isDisabled && styles.modifiers.disabled,
             isPlaceholder && styles.modifiers.placeholder,
             isSettings && styles.modifiers.settings,
-            isDock && styles.modifiers.dock,
+            isDocked && styles.modifiers.dock, // Replace wwith docked class from https://github.com/patternfly/patternfly/pull/8308
             isTextExpanded && styles.modifiers.textExpanded,
             size === MenuToggleSize.sm && styles.modifiers.small,
             className

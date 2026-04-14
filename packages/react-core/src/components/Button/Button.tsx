@@ -109,8 +109,8 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   hamburgerVariant?: 'expand' | 'collapse';
   /** @beta Flag indicating the button is a circle button. Intended for buttons that only contain an icon.. */
   isCircle?: boolean;
-  /** @beta Flag indicating the button is a dock variant button. For use in docked navigation. */
-  isDock?: boolean;
+  /** @beta Flag indicating the button is a docked variant button. For use in docked navigation. */
+  isDocked?: boolean;
   /** @beta Flag indicating the dock button should display text. Only applies when isDock is true. */
   isTextExpanded?: boolean;
   /** @hide Forwarded ref */
@@ -138,7 +138,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   isHamburger,
   hamburgerVariant,
   isCircle,
-  isDock = false,
+  isDocked = false,
   isTextExpanded = false,
   spinnerAriaValueText,
   spinnerAriaLabelledBy,
@@ -271,7 +271,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
         size === ButtonSize.sm && styles.modifiers.small,
         size === ButtonSize.lg && styles.modifiers.displayLg,
         isCircle && styles.modifiers.circle,
-        isDock && styles.modifiers.dock,
+        isDocked && styles.modifiers.dock, // Replace wwith docked class from https://github.com/patternfly/patternfly/pull/8308
         isTextExpanded && styles.modifiers.textExpanded,
         className
       )}
