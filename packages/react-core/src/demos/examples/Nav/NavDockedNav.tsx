@@ -45,7 +45,7 @@ interface NavOnSelectProps {
   to: string;
 }
 
-export const PageDockedNav: React.FunctionComponent = () => {
+export const NavDockedNav: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState(1);
   const [isDockExpanded, setIsDockExpanded] = useState(false);
   const [isDockTextExpanded, setIsDockTextExpanded] = useState(false);
@@ -430,7 +430,7 @@ export const PageDockedNav: React.FunctionComponent = () => {
         isDockExpanded={isDockExpanded}
         isDockTextExpanded={isDockTextExpanded}
         masthead={mobileMasthead}
-        dockedMasthead={dockedMasthead}
+        dockContent={dockedMasthead}
         skipToContent={pageSkipToContent}
         breadcrumb={dashboardBreadcrumb}
         mainContainerId={mainContainerId}

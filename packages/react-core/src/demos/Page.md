@@ -18,8 +18,6 @@ import CloudIcon from '@patternfly/react-icons/dist/esm/icons/cloud-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
 import pfIconLogo from '@patternfly/react-core/src/demos/assets/PF-IconLogo-color.svg';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
 
 - All examples set the `isManagedSidebar` prop on the Page component to have the sidebar automatically close for smaller screen widths. You can also manually control this behavior by not adding the `isManagedSidebar` prop and instead:
   1. Add an onNavToggle callback to PageHeader
@@ -52,11 +50,5 @@ This demonstrates a variety of navigation patterns in the context of a full page
 When adding a context selector/perspective switcher in a `PageSidebar`, you must manually control the open state of the `PageSidebar` as well as ensure any interactive menu toggles or buttons cannot receive focus. This demo adds a `tabIndex` of `-1` when the sidebar is not expanded to achieve this.
 
 ```ts file='./examples/Page/PageContextSelector.tsx' isFullscreen
-
-```
-
-### Docked nav
-
-```ts file='./examples/Page/PageDockedNav.tsx' isFullscreen
 
 ```
