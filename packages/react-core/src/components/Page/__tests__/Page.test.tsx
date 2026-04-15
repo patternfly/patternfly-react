@@ -410,10 +410,10 @@ describe('Page dock variant', () => {
     expect(page.querySelector(`.${styles.pageDockMain}`)).not.toBeInTheDocument();
   });
 
-  test(`Renders with ${styles.modifiers.dock} class when variant is docked`, () => {
+  test(`Renders with ${styles.modifiers.docked} class when variant is docked`, () => {
     render(<Page {...props} variant="docked" data-testid="page"></Page>);
 
-    expect(screen.getByTestId('page')).toHaveClass(styles.modifiers.dock);
+    expect(screen.getByTestId('page')).toHaveClass(styles.modifiers.docked);
   });
 
   test('Renders dock content when dockContent and variant="docked" is passed', () => {
@@ -479,6 +479,15 @@ describe('Page dock variant', () => {
 
     const pageDock = screen.getByText('Dock content').closest(`.${styles.pageDock}`);
     expect(pageDock).toHaveClass(styles.modifiers.textExpanded);
+  test(`Does not render with ${styles.modifiers.docked} class when variant is default`, () => {
+    render(<Page {...props} variant="default" data-testid="page"></Page>);
+
+    expect(screen.getByTestId('page')).not.toHaveClass(styles.modifiers.docked);
+  });
+
+  test(`Does not render with ${styles.modifiers.docked} class when variant is not passed`, () => {
+    render(<Page data-testid="page"></Page>);
+    expect(screen.getByTestId('page')).not.toHaveClass(styles.modifiers.docked);
   });
 
   test(`Renders with ${styles.pageDockMain} wrapper when variant is docked`, () => {

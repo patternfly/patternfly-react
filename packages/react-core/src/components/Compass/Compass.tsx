@@ -68,7 +68,7 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
 
   const compassContent = (
     <div
-      className={css(styles.compass, dock !== undefined && styles.modifiers.dock, className)}
+      className={css(styles.compass, dock !== undefined && styles.modifiers.docked, className)}
       {...props}
       style={{ ...props.style, ...backgroundImageStyles }}
     >

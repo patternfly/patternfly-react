@@ -350,7 +350,7 @@ class Page extends Component<PageProps, PageState> {
           {...rest}
           className={css(
             styles.page,
-            variant === 'docked' && styles.modifiers.dock,
+            variant === 'docked' && styles.modifiers.docked,
             width !== null && height !== null && 'pf-m-resize-observer',
             width !== null && `pf-m-breakpoint-${getBreakpoint(width)}`,
             height !== null && `pf-m-height-breakpoint-${getVerticalBreakpoint(height)}`,
