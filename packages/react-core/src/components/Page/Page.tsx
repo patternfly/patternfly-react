@@ -22,9 +22,9 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** @beta Indicates the layout variant */
   variant?: 'default' | 'docked';
-  /** @beta Flag indicating the dock nav is expanded on mobile. Only applies when variant is dock. */
+  /** @beta Flag indicating the docked nav is expanded on mobile. Only applies when variant is docked. */
   isDockExpanded?: boolean;
-  /** @beta Flag indicating the dock nav should display text. Only applies when variant is dock. */
+  /** @beta Flag indicating the docked nav should display text on desktop. Only applies when variant is docked. */
   isDockTextExpanded?: boolean;
   /** The horizontal masthead content (e.g. <Masthead />). When using the dock variant, this content will only render at mobile viewports. */
   masthead?: React.ReactNode;

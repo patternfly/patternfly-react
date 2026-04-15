@@ -80,29 +80,25 @@ import { DashboardHeader } from '@patternfly/react-core/dist/js/demos/DashboardH
 
 ### Docked nav
 
-The docked navigation pattern provides a responsive vertical navigation layout that adapts between mobile and desktop viewports. On mobile, the navigation appears as an overlay, while on desktop it displays as a persistent vertical sidebar that can toggle between icon-only and text+icon modes.
+To save space in the UI, you can use docked navigation to replace text-labeled navigation items with relevant icons. On mobile (or narrow viewports), docked navigation appears as an overlay, while on desktop (or wider viewports) it displays as a persistent vertical sidebar that can toggle between icon-only and text+icon modes.
+
+This demo includes the following features:
 
 **Key implementation requirements:**
 
-1. **Page component**: Set `variant="docked"` to enable the docked layout. Pass `isDockExpanded` and `isDockTextExpanded` state props to control mobile overlay and desktop text visibility.
+1. A [page](/components/page) component with a docked layout, enabled with `variant="docked"`. Control the mobile overlay with `isDockExpanded` and the desktop label visibility with `isDockTextExpanded`.
 
-2. **Masthead structure**: Use two separate mastheads:
-   - **Mobile masthead**: Set `display={{ default: 'inline' }}` so it only appears on mobile. Include a hamburger toggle button, logo, and any mobile-specific actions.
-   - **Docked masthead**: Set `variant="docked"` for the vertical navigation sidebar. This contains the navigation toggle, nav items, and action buttons.
+2. Two separate [masthead](/components/masthead) components:
+   - **Horizontal mobile masthead**: Shown on small viewports using `display={{ default: 'inline' }}`, with a hamburger menu toggle button, brand logo, and action buttons that should be immediately visible to users.
+   - **Vertical docked masthead**: Uses `variant="docked"` to create a thinner navigation sidebar with a hamburger menu toggle button, nav items, and action buttons.
 
-3. **Navigation component**: Set `variant="docked"` on Nav and pass `isTextExpanded={isDockTextExpanded}` to control text visibility. NavItems should include both icons and text children—the Nav component will handle showing/hiding text based on state.
+3. A [navigation](/components/navigation) component with `variant="docked"` and multiple `<NavItem>` components that must include both icons and text labels. To control text visibility, `isTextExpanded={isDockTextExpanded}` is passed to the `<Nav>` component.
 
-4. **Buttons and toggles**: Use `isDocked` and `isTextExpanded` props on Button and MenuToggle components within the docked navigation. These props apply dock-specific styling that toggles between icon-only and text+icon display.
+4. [Button](/components/button) and [menu toggle](/components/menus/menu-toggle) components, which use `isDocked` and `isTextExpanded` to toggle between icon-only and text+icon styles. When the nav is docked, and only icons are shown, tooltips must provide full text labels for the navigation items, buttons, and menu toggles.
 
-5. **Logo variants**: Use `isCompact` prop on MastheadLogo to show an icon-only logo when the dock is collapsed, and a full logo with text when expanded.
+5. A `<MastheadLogo>` component that uses `isCompact` to show an icon-only logo when the dock is collapsed, and a full logo with text when expanded.
 
-6. **Focus management**: Implement focus shifting between the mobile toggle button and docked nav toggle button when opening/closing the navigation for better keyboard accessibility.
-
-7. **Tooltips**: Only render tooltips when text is hidden (icon-only mode) to avoid showing redundant information when text labels are already visible.
-
-8. **State management**:
-   - `isDockExpanded`: Controls whether the mobile overlay is shown
-   - `isDockTextExpanded`: Controls whether text is displayed alongside icons on desktop
+**Note**: For better keyboard accessibility, ensure that focus shifts between the hamburger menu toggle button in the mobile masthead and the docked overlay menu toggle button as the navigation is opened and closed.
 
 ```ts file="./examples/Nav/NavDockedNav.tsx" isFullscreen
 
