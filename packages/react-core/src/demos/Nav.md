@@ -84,9 +84,7 @@ To save space in the UI, you can use docked navigation to replace text-labeled n
 
 This demo includes the following features:
 
-**Key implementation requirements:**
-
-1. A [page](/components/page) component with a docked layout, enabled with `variant="docked"`. Control the mobile overlay with `isDockExpanded` and the desktop label visibility with `isDockTextExpanded`.
+1. A [page](/components/page) component with a docked layout, enabled via `variant="docked"`. Control the mobile overlay with `isDockExpanded` and the desktop label visibility with `isDockTextExpanded`.
 
 2. Two separate [masthead](/components/masthead) components:
    - **Horizontal mobile masthead**: Shown on small viewports using `display={{ default: 'inline' }}`, with a hamburger menu toggle button, brand logo, and action buttons that should be immediately visible to users.
@@ -94,7 +92,7 @@ This demo includes the following features:
 
 3. A [navigation](/components/navigation) component with `variant="docked"` and multiple `<NavItem>` components that must include both icons and text labels. To control text visibility, `isTextExpanded={isDockTextExpanded}` is passed to the `<Nav>` component.
 
-4. [Button](/components/button) and [menu toggle](/components/menus/menu-toggle) components, which use `isDocked` and `isTextExpanded` to toggle between icon-only and text+icon styles. When the nav is docked, and only icons are shown, tooltips must provide full text labels for the navigation items, buttons, and menu toggles.
+4. [Button](/components/button) and [menu toggle](/components/menus/menu-toggle) components, which use `isDocked` and `isTextExpanded` to toggle between icon-only and text+icon styles. When the nav is docked, and only icons are shown, [tooltips](/components/tooltip) must provide full text labels for the navigation items, buttons, and menu toggles.
 
 5. A `<MastheadLogo>` component that uses `isCompact` to show an icon-only logo when the dock is collapsed, and a full logo with text when expanded.
 
