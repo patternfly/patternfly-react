@@ -166,13 +166,22 @@ test(`Does not render with class ${styles.modifiers.dock} when isDocked is not p
   expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.dock);
 });
 
-test(`Renders with class ${styles.modifiers.textExpanded} when isTextExpanded is passed`, () => {
-  render(<MenuToggle isTextExpanded>Text Expanded Toggle</MenuToggle>);
+test(`Renders with class ${styles.modifiers.textExpanded} when isTextExpanded is passed and isDocked is passed`, () => {
+  render(
+    <MenuToggle isTextExpanded isDocked>
+      Text Expanded Toggle
+    </MenuToggle>
+  );
   expect(screen.getByRole('button')).toHaveClass(styles.modifiers.textExpanded);
 });
 
 test(`Does not render with class ${styles.modifiers.textExpanded} when isTextExpanded is not passed`, () => {
   render(<MenuToggle>Toggle</MenuToggle>);
+  expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.textExpanded);
+});
+
+test(`Does not render with class ${styles.modifiers.textExpanded} when isTextExpanded is passed but isDocked is not passed`, () => {
+  render(<MenuToggle isTextExpanded>Text Expanded Toggle</MenuToggle>);
   expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.textExpanded);
 });
 

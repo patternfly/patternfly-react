@@ -203,11 +203,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
           />
         </MastheadToggle>
         <MastheadBrand>
-          <MastheadLogo component={(props) => <a {...props} href="#" />}>
-            {mobileTextLogo}
-            {/* <Brand src={pfHorizontalLogo} alt="PatternFly" heights={{ default: '36px' }} className="show-light" /> */}
-            {/* <Brand src={pfHorizontalLogoReverse} alt="PatternFly" heights={{ default: '36px' }} className="show-dark" /> */}
-          </MastheadLogo>
+          <MastheadLogo component={(props) => <a {...props} href="#" />}>{mobileTextLogo}</MastheadLogo>
         </MastheadBrand>
       </MastheadMain>
       <MastheadContent>
@@ -240,11 +236,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
           <MastheadLogo component={(props) => <a {...props} href="#" />} isCompact>
             <Brand src={pfIconLogo} alt="PatternFly" heights={{ default: '37px' }} />
           </MastheadLogo>
-          <MastheadLogo component={(props) => <a {...props} href="#" />}>
-            {dockTextLogo}
-            {/* <Brand src={pfHorizontalLogo} alt="PatternFly" heights={{ default: '37px' }} className="show-light" />
-            <Brand src={pfHorizontalLogoReverse} alt="PatternFly" heights={{ default: '37px' }} className="show-dark" /> */}
-          </MastheadLogo>
+          <MastheadLogo component={(props) => <a {...props} href="#" />}>{dockTextLogo}</MastheadLogo>
         </MastheadBrand>
       </MastheadMain>
       <Divider />

@@ -125,7 +125,7 @@ class Nav extends Component<NavProps, { isScrollable: boolean; flyoutRef: React.
       ...props
     } = this.props;
     const isHorizontal = ['horizontal', 'horizontal-subnav'].includes(variant);
-
+    const isDocked = variant === 'docked';
     return (
       <SSRSafeIds prefix="pf-" ouiaComponentType={`Nav${variant ? `-${variant}` : ''}`}>
         {(_, generatedOuiaId) => (
@@ -157,9 +157,9 @@ class Nav extends Component<NavProps, { isScrollable: boolean; flyoutRef: React.
               className={css(
                 styles.nav,
                 isHorizontal && styles.modifiers.horizontal,
-                variant === 'docked' && styles.modifiers.docked,
+                isDocked && styles.modifiers.docked,
                 variant === 'horizontal-subnav' && styles.modifiers.subnav,
-                isTextExpanded && styles.modifiers.textExpanded,
+                isDocked && isTextExpanded && styles.modifiers.textExpanded,
                 this.state.isScrollable && styles.modifiers.scrollable,
                 className
               )}

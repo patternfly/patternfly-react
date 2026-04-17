@@ -566,13 +566,22 @@ describe('Dock variant', () => {
     expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.dock);
   });
 
-  test(`Renders with class ${styles.modifiers.textExpanded} when isTextExpanded = true`, () => {
-    render(<Button isTextExpanded>Text Expanded Button</Button>);
+  test(`Renders with class ${styles.modifiers.textExpanded} when isTextExpanded = true and isDocked = true`, () => {
+    render(
+      <Button isTextExpanded isDocked>
+        Text Expanded Button
+      </Button>
+    );
     expect(screen.getByRole('button')).toHaveClass(styles.modifiers.textExpanded);
   });
 
   test(`Does not render with class ${styles.modifiers.textExpanded} when isTextExpanded is not passed`, () => {
     render(<Button>Button</Button>);
+    expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.textExpanded);
+  });
+
+  test(`Does not render with class ${styles.modifiers.textExpanded} when isTextExpanded = true but isDocked is not passed`, () => {
+    render(<Button isTextExpanded>Text Expanded Button</Button>);
     expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.textExpanded);
   });
 

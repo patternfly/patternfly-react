@@ -198,8 +198,8 @@ class MenuToggleBase extends Component<MenuToggleProps> {
             isDisabled && styles.modifiers.disabled,
             isPlaceholder && styles.modifiers.placeholder,
             isSettings && styles.modifiers.settings,
-            isDocked && styles.modifiers.dock, // Replace wwith docked class from https://github.com/patternfly/patternfly/pull/8308
-            isTextExpanded && styles.modifiers.textExpanded,
+            isDocked && styles.modifiers.dock, // Replace with docked class from https://github.com/patternfly/patternfly/pull/8308
+            isDocked && isTextExpanded && styles.modifiers.textExpanded,
             size === MenuToggleSize.sm && styles.modifiers.small,
             className
           );

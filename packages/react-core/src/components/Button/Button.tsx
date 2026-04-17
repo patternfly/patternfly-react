@@ -111,7 +111,7 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   isCircle?: boolean;
   /** @beta Flag indicating the button is a docked variant button. For use in docked navigation. */
   isDocked?: boolean;
-  /** @beta Flag indicating the dock button should display text. Only applies when isDock is true. */
+  /** @beta Flag indicating the dock button should display text. Only applies when isDocked is true. */
   isTextExpanded?: boolean;
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
@@ -271,8 +271,8 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
         size === ButtonSize.sm && styles.modifiers.small,
         size === ButtonSize.lg && styles.modifiers.displayLg,
         isCircle && styles.modifiers.circle,
-        isDocked && styles.modifiers.dock, // Replace wwith docked class from https://github.com/patternfly/patternfly/pull/8308
-        isTextExpanded && styles.modifiers.textExpanded,
+        isDocked && styles.modifiers.dock, // Replace with docked class from https://github.com/patternfly/patternfly/pull/8308
+        isDocked && isTextExpanded && styles.modifiers.textExpanded,
         className
       )}
       disabled={isButtonElement ? isDisabled : null}
