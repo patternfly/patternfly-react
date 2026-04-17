@@ -55,7 +55,7 @@ export interface MenuToggleProps
   isSettings?: boolean;
   /** @beta Flag indicating the menu toggle is a docked variant. For use in docked navigation. */
   isDocked?: boolean;
-  /** @beta Flag indicating the dock toggle should display text. Only applies when isDock is true. */
+  /** @beta Flag indicating the docked toggle should display text. Only applies when isDocked is true. */
   isTextExpanded?: boolean;
   /** Elements to display before the toggle button. When included, renders the menu toggle as a split button. */
   splitButtonItems?: React.ReactNode[];

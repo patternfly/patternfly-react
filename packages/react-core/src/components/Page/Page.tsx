@@ -24,11 +24,13 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   variant?: 'default' | 'docked';
   /** @beta Flag indicating the docked nav is expanded on mobile. Only applies when variant is docked. */
   isDockExpanded?: boolean;
-  /** @beta Flag indicating the docked nav should display text on desktop. Only applies when variant is docked. */
+  /** @beta Flag indicating the docked nav should display text on desktop. Only applies when variant is docked, and will handle
+   * setting isTextExpanded on individual isDocked components.
+   * */
   isDockTextExpanded?: boolean;
-  /** The horizontal masthead content (e.g. <Masthead />). When using the dock variant, this content will only render at mobile viewports. */
+  /** The horizontal masthead content (e.g. <Masthead />). When using the docked variant, this content will only render at mobile viewports. */
   masthead?: React.ReactNode;
-  /** @beta Content to render in the vertical dock when variant of dock is used. At mobile viewports, this content will be replaced with the content passed to masthead. */
+  /** @beta Content to render in the vertical dock when variant of docked is used. At mobile viewports, this content will be replaced with the content passed to masthead. */
   dockContent?: React.ReactNode;
   /** Sidebar component for a side nav, recommended to be a PageSidebar. If set to null, the page grid layout
    * will render without a sidebar.

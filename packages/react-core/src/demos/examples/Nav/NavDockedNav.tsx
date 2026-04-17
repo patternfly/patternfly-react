@@ -171,21 +171,24 @@ export const NavDockedNav: React.FunctionComponent = () => {
   const mobileToggleRef = useRef<HTMLButtonElement>(null);
   const dockedToggleRef = useRef<HTMLButtonElement>(null);
 
-  const onToggleDock = () => {
-    const willBeExpanded = !isDockExpanded;
-    setIsDockExpanded(willBeExpanded);
-    setIsDockTextExpanded(!isDockTextExpanded);
+  const onMobileToggle = () => {
+    setIsDockExpanded(!isDockExpanded);
 
-    // Shift focus between mobile and docked toggle buttons
     setTimeout(() => {
-      if (willBeExpanded) {
-        // Opening: focus the docked toggle button
-        dockedToggleRef.current?.focus();
-      } else {
-        // Closing: focus the mobile toggle button
-        mobileToggleRef.current?.focus();
-      }
+      dockedToggleRef.current?.focus();
     }, 200);
+  };
+
+  const onToggleDock = () => {
+    if (isDockExpanded) {
+      setIsDockExpanded(!isDockExpanded);
+
+      setTimeout(() => {
+        mobileToggleRef.current?.focus();
+      }, 200);
+    } else {
+      setIsDockTextExpanded(!isDockTextExpanded);
+    }
   };
 
   // Mobile masthead - shown on mobile viewports only, hidden on desktop
@@ -198,7 +201,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
             variant="plain"
             aria-label="Global navigation"
             isSidebarOpen={isDockExpanded}
-            onSidebarToggle={onToggleDock}
+            onSidebarToggle={onMobileToggle}
             isHamburgerButton
           />
         </MastheadToggle>
@@ -244,7 +247,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
         <Toolbar isVertical>
           <ToolbarContent>
             <ToolbarItem>
-              <Nav onSelect={onNavSelect} variant="docked" isTextExpanded={isDockTextExpanded} aria-label="Global">
+              <Nav onSelect={onNavSelect} variant="docked" aria-label="Global">
                 <NavList>
                   <NavItem
                     preventDefault
@@ -312,26 +315,12 @@ export const NavDockedNav: React.FunctionComponent = () => {
             >
               <ToolbarItem>
                 {isDockTextExpanded ? (
-                  <MenuToggle
-                    ref={appsRef}
-                    variant="plain"
-                    icon={<ThIcon />}
-                    isDocked
-                    isTextExpanded={isDockTextExpanded}
-                    aria-label="Applications"
-                  >
+                  <MenuToggle ref={appsRef} variant="plain" icon={<ThIcon />} isDocked aria-label="Applications">
                     Applications
                   </MenuToggle>
                 ) : (
                   <Tooltip aria="none" aria-live="off" triggerRef={appsRef} content="Applications">
-                    <MenuToggle
-                      ref={appsRef}
-                      variant="plain"
-                      icon={<ThIcon />}
-                      isDocked
-                      isTextExpanded={isDockTextExpanded}
-                      aria-label="Applications"
-                    >
+                    <MenuToggle ref={appsRef} variant="plain" icon={<ThIcon />} isDocked aria-label="Applications">
                       Applications
                     </MenuToggle>
                   </Tooltip>
@@ -339,26 +328,12 @@ export const NavDockedNav: React.FunctionComponent = () => {
               </ToolbarItem>
               <ToolbarItem>
                 {isDockTextExpanded ? (
-                  <Button
-                    ref={settingsRef}
-                    aria-label="Settings"
-                    isSettings
-                    variant="plain"
-                    isDocked
-                    isTextExpanded={isDockTextExpanded}
-                  >
+                  <Button ref={settingsRef} aria-label="Settings" isSettings variant="plain" isDocked>
                     Settings
                   </Button>
                 ) : (
                   <Tooltip aria="none" aria-live="off" triggerRef={settingsRef} content="Settings">
-                    <Button
-                      ref={settingsRef}
-                      aria-label="Settings"
-                      isSettings
-                      variant="plain"
-                      isDocked
-                      isTextExpanded={isDockTextExpanded}
-                    >
+                    <Button ref={settingsRef} aria-label="Settings" isSettings variant="plain" isDocked>
                       Settings
                     </Button>
                   </Tooltip>
@@ -366,26 +341,12 @@ export const NavDockedNav: React.FunctionComponent = () => {
               </ToolbarItem>
               <ToolbarItem>
                 {isDockTextExpanded ? (
-                  <MenuToggle
-                    ref={helpRef}
-                    variant="plain"
-                    icon={<QuestionCircleIcon />}
-                    isDocked
-                    isTextExpanded={isDockTextExpanded}
-                    aria-label="Help"
-                  >
+                  <MenuToggle ref={helpRef} variant="plain" icon={<QuestionCircleIcon />} isDocked aria-label="Help">
                     Help
                   </MenuToggle>
                 ) : (
                   <Tooltip aria="none" aria-live="off" triggerRef={helpRef} content="Help">
-                    <MenuToggle
-                      ref={helpRef}
-                      variant="plain"
-                      icon={<QuestionCircleIcon />}
-                      isDocked
-                      isTextExpanded={isDockTextExpanded}
-                      aria-label="Help"
-                    >
+                    <MenuToggle ref={helpRef} variant="plain" icon={<QuestionCircleIcon />} isDocked aria-label="Help">
                       Help
                     </MenuToggle>
                   </Tooltip>
