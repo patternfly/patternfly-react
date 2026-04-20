@@ -130,26 +130,29 @@ class ToolbarFilter extends Component<ToolbarFilterProps, ToolbarFilterState> {
     ) : null;
 
     if (!_isExpanded && this.state.isMounted) {
+      const collapsedLabelPortalTarget = labelGroupContentRef?.current?.firstElementChild ?? null;
       return (
         <Fragment>
           {showToolbarItem && <ToolbarItem {...props}>{children}</ToolbarItem>}
-          {labelGroupContentRef?.current?.firstElementChild !== null &&
-            ReactDOM.createPortal(labelGroup, labelGroupContentRef.current.firstElementChild)}
+          {collapsedLabelPortalTarget !== null && ReactDOM.createPortal(labelGroup, collapsedLabelPortalTarget)}
         </Fragment>
       );
     }
 
     return (
       <ToolbarContentContext.Consumer>
-        {({ labelContainerRef }) => (
-          <Fragment>
-            {showToolbarItem && <ToolbarItem {...props}>{children}</ToolbarItem>}
-            {labelContainerRef.current && ReactDOM.createPortal(labelGroup, labelContainerRef.current)}
-            {expandableLabelContainerRef &&
-              expandableLabelContainerRef.current &&
-              ReactDOM.createPortal(labelGroup, expandableLabelContainerRef.current)}
-          </Fragment>
-        )}
+        {({ labelContainerRef }) => {
+          const labelContainer = labelContainerRef?.current ?? null;
+          return (
+            <Fragment>
+              {showToolbarItem && <ToolbarItem {...props}>{children}</ToolbarItem>}
+              {labelContainer !== null && ReactDOM.createPortal(labelGroup, labelContainer)}
+              {expandableLabelContainerRef &&
+                expandableLabelContainerRef.current &&
+                ReactDOM.createPortal(labelGroup, expandableLabelContainerRef.current)}
+            </Fragment>
+          );
+        }}
       </ToolbarContentContext.Consumer>
     );
   }
