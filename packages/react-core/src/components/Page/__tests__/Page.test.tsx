@@ -391,21 +391,21 @@ describe('Page', () => {
   });
 });
 
-describe('Page dock variant', () => {
-  test(`Does not render with dock classes when variant is default`, () => {
+describe('Page docked variant', () => {
+  test(`Does not render with docked classes when variant is default`, () => {
     render(<Page {...props} variant="default" data-testid="page"></Page>);
 
     const page = screen.getByTestId('page');
-    expect(page).not.toHaveClass(styles.modifiers.dock);
+    expect(page).not.toHaveClass(styles.modifiers.docked);
     expect(page.querySelector(`.${styles.pageDock}`)).not.toBeInTheDocument();
     expect(page.querySelector(`.${styles.pageDockMain}`)).not.toBeInTheDocument();
   });
 
-  test(`Does not render with dock classes when variant is not passed`, () => {
+  test(`Does not render with docked classes when variant is not passed`, () => {
     render(<Page data-testid="page"></Page>);
 
     const page = screen.getByTestId('page');
-    expect(page).not.toHaveClass(styles.modifiers.dock);
+    expect(page).not.toHaveClass(styles.modifiers.docked);
     expect(page.querySelector(`.${styles.pageDock}`)).not.toBeInTheDocument();
     expect(page.querySelector(`.${styles.pageDockMain}`)).not.toBeInTheDocument();
   });
@@ -479,6 +479,8 @@ describe('Page dock variant', () => {
 
     const pageDock = screen.getByText('Dock content').closest(`.${styles.pageDock}`);
     expect(pageDock).toHaveClass(styles.modifiers.textExpanded);
+  });
+
   test(`Does not render with ${styles.modifiers.docked} class when variant is default`, () => {
     render(<Page {...props} variant="default" data-testid="page"></Page>);
 

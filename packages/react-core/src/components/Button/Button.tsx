@@ -271,7 +271,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
         size === ButtonSize.sm && styles.modifiers.small,
         size === ButtonSize.lg && styles.modifiers.displayLg,
         isCircle && styles.modifiers.circle,
-        isDocked && styles.modifiers.dock, // Replace with docked class from https://github.com/patternfly/patternfly/pull/8308
+        isDocked && styles.modifiers.docked,
         isDocked && isTextExpanded && styles.modifiers.textExpanded,
         className
       )}
