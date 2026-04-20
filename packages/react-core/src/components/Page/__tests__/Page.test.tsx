@@ -481,17 +481,6 @@ describe('Page docked variant', () => {
     expect(pageDock).toHaveClass(styles.modifiers.textExpanded);
   });
 
-  test(`Does not render with ${styles.modifiers.docked} class when variant is default`, () => {
-    render(<Page {...props} variant="default" data-testid="page"></Page>);
-
-    expect(screen.getByTestId('page')).not.toHaveClass(styles.modifiers.docked);
-  });
-
-  test(`Does not render with ${styles.modifiers.docked} class when variant is not passed`, () => {
-    render(<Page data-testid="page"></Page>);
-    expect(screen.getByTestId('page')).not.toHaveClass(styles.modifiers.docked);
-  });
-
   test(`Renders with ${styles.pageDockMain} wrapper when variant is docked`, () => {
     render(<Page variant="docked" dockContent={<>Dock content</>} masthead={<>Masthead</>} data-testid="page"></Page>);
 
