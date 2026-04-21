@@ -17,7 +17,7 @@ propComponents:
 
 import { useState } from 'react';
 import { Button, DescriptionList, DescriptionListTerm, DescriptionListDescription, DescriptionListGroup, DescriptionListTermHelpText, DescriptionListTermHelpTextButton, Popover, Checkbox, Card } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
+import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import BookIcon from '@patternfly/react-icons/dist/esm/icons/book-icon';
 import KeyIcon from '@patternfly/react-icons/dist/esm/icons/key-icon';

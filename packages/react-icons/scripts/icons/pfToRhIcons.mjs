@@ -115,6 +115,7 @@ export const pfToRhIcons = {
   PficonTemplateIcon: { name: 'rh-ui-template', icon: getIconData('rh-ui-template') },
   PficonVcenterIcon: { name: 'rh-ui-virtual-machine-center', icon: getIconData('rh-ui-virtual-machine-center') },
   PlayIcon: { name: 'rh-ui-play', icon: getIconData('rh-ui-play') },
+  PlusCircleIcon: { name: 'rh-ui-add-circle-fill', icon: getIconData('rh-ui-add-circle-fill') },
   PlusIcon: { name: 'rh-ui-add', icon: getIconData('rh-ui-add') },
   PortIcon: { name: 'rh-ui-port', icon: getIconData('rh-ui-port') },
   PowerOffIcon: { name: 'rh-ui-power', icon: getIconData('rh-ui-power') },

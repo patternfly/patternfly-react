@@ -18,7 +18,7 @@ import {
   Title
 } from '@patternfly/react-core';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
-import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
+import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 
 export const DescriptionListInDrawer: React.FunctionComponent = () => {
   const drawerRef = useRef<HTMLDivElement>(null);
@@ -89,7 +89,7 @@ export const DescriptionListInDrawer: React.FunctionComponent = () => {
           <DescriptionListGroup>
             <DescriptionListTerm>Pod selector</DescriptionListTerm>
             <DescriptionListDescription>
-              <Button variant="link" isInline icon={<PlusCircleIcon />}>
+              <Button variant="link" isInline icon={<RhUiAddCircleFillIcon />}>
                 app=MyApp
               </Button>
             </DescriptionListDescription>

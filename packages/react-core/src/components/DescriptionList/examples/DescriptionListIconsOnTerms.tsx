@@ -5,7 +5,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
+import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import BookIcon from '@patternfly/react-icons/dist/esm/icons/book-icon';
 import KeyIcon from '@patternfly/react-icons/dist/esm/icons/key-icon';
@@ -31,7 +31,7 @@ export const DescriptionListIconsOnTerms: React.FunctionComponent = () => (
     <DescriptionListGroup>
       <DescriptionListTerm icon={<GlobeIcon />}>Pod selector</DescriptionListTerm>
       <DescriptionListDescription>
-        <Button variant="link" isInline icon={<PlusCircleIcon />}>
+        <Button variant="link" isInline icon={<RhUiAddCircleFillIcon />}>
           app=MyApp
         </Button>
       </DescriptionListDescription>
