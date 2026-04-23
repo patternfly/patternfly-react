@@ -69,7 +69,7 @@ To apply compact styling to a `<ToggleGroup>`, use `isCompact`.
 
 ### Full-width toggle group
 
-To make toggle group items fill the available horizontal space, use `isFill` on a `<ToggleGroup>`.
+To make toggle group items fill the available horizontal space, use `isFill` on a `<ToggleGroup>`. The following example shows full width toggle groups for a single select, multi select, and single select with disabled item.
 
 ```ts file="./ToggleGroupFill.tsx"
 
