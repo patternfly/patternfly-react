@@ -10,17 +10,20 @@ export const ToggleGroupFill: React.FunctionComponent = () => {
   });
   const [isSelectedDisabled, setIsSelectedDisabled] = useState('toggle-group-fill-disabled-1');
 
-  const handleItemClickBasic = (event) => {
+  const handleItemClickBasic = (event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => {
     const id = event.currentTarget.id;
     setIsSelectedBasic(id);
   };
 
-  const handleItemClickMulti = (event, isSelected: boolean) => {
+  const handleItemClickMulti = (
+    event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent,
+    isSelected: boolean
+  ) => {
     const id = event.currentTarget.id;
     setIsSelectedMulti((prevIsSelected) => ({ ...prevIsSelected, [id]: isSelected }));
   };
 
-  const handleItemClickDisabled = (event) => {
+  const handleItemClickDisabled = (event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => {
     const id = event.currentTarget.id;
     setIsSelectedDisabled(id);
   };

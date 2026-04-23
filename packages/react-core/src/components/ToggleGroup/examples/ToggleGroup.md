@@ -67,7 +67,7 @@ To apply compact styling to a `<ToggleGroup>`, use `isCompact`.
 
 ```
 
-### Full width toggle group
+### Full-width toggle group
 
 To make toggle group items fill the available horizontal space, use `isFill`.
 
