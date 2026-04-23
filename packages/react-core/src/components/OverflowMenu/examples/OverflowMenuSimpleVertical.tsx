@@ -36,7 +36,7 @@ export const OverflowMenuSimpleVertical: React.FunctionComponent = () => {
     <OverflowMenuDropdownItem itemId={3} key="item4" isShared>
       Item 4
     </OverflowMenuDropdownItem>,
-    <OverflowMenuDropdownItem itemId={5} key="item5" isShared>
+    <OverflowMenuDropdownItem itemId={4} key="item5" isShared>
       Item 5
     </OverflowMenuDropdownItem>
   ];

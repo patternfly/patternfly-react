@@ -14,7 +14,7 @@ export const ToolbarVertical: React.FunctionComponent = () => (
           Item 5 (visible above lg breakpoint)
         </ToolbarItem>
         <ToolbarItem visibilityAtHeight={{ default: 'hidden', lg: 'visible' }}>
-          Item 6 (visible above md breakpoint)
+          Item 6 (visible above lg breakpoint)
         </ToolbarItem>
       </ToolbarGroup>
     </ToolbarContent>
