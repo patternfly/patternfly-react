@@ -220,7 +220,7 @@ describe('Toolbar', () => {
     expect(screen.getByTestId('Toolbar-test-is-not-vertical')).not.toHaveClass(styles.modifiers.vertical);
   });
 
-  it('Renders with class ${styles.modifiers.vertical} when isVertical is true', () => {
+  it(`Renders with class ${styles.modifiers.vertical} when isVertical is true`, () => {
     const items = (
       <Fragment>
         <ToolbarItem>Test</ToolbarItem>
@@ -237,5 +237,40 @@ describe('Toolbar', () => {
     );
 
     expect(screen.getByTestId('Toolbar-test-is-vertical')).toHaveClass(styles.modifiers.vertical);
+  });
+
+  it(`Does not add ${styles.modifiers.stickyBase} and ${styles.modifiers.stickyStuck} classes by default`, () => {
+    render(
+      <Toolbar data-testid="toolbar-sticky-default">
+        <ToolbarContent>
+          <ToolbarItem>Test</ToolbarItem>
+        </ToolbarContent>
+      </Toolbar>
+    );
+    const el = screen.getByTestId('toolbar-sticky-default');
+    expect(el).not.toHaveClass(styles.modifiers.stickyBase);
+    expect(el).not.toHaveClass(styles.modifiers.stickyStuck);
+  });
+
+  it(`Adds ${styles.modifiers.stickyBase} when isStickyBase is true`, () => {
+    render(
+      <Toolbar data-testid="toolbar-sticky-base" isStickyBase>
+        <ToolbarContent>
+          <ToolbarItem>Test</ToolbarItem>
+        </ToolbarContent>
+      </Toolbar>
+    );
+    expect(screen.getByTestId('toolbar-sticky-base')).toHaveClass(styles.modifiers.stickyBase);
+  });
+
+  it(`Adds ${styles.modifiers.stickyStuck} when isStickyStuck is true`, () => {
+    render(
+      <Toolbar data-testid="toolbar-sticky-stuck" isStickyStuck>
+        <ToolbarContent>
+          <ToolbarItem>Test</ToolbarItem>
+        </ToolbarContent>
+      </Toolbar>
+    );
+    expect(screen.getByTestId('toolbar-sticky-stuck')).toHaveClass(styles.modifiers.stickyStuck);
   });
 });
