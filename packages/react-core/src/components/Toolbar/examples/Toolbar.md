@@ -46,7 +46,7 @@ In the following example, toggle the "is toolbar sticky" checkbox to see the dif
 
 ### Dynamic sticky toolbar
 
-A toolbar may alternatively be made sticky with two properties: `isStickyBase` and `isStickyStuck` - which allows separate control of the sticky position and sticky styling respectively.
+A toolbar may alternatively be made sticky with two properties: `isStickyBase` and `isStickyStuck` - which allows separate control of the sticky position and sticky styling respectively. In this example, `isStickyStuck` is only applied when the sticky element is not at the top of the scroll parent container.
 
 ```ts file="./ToolbarDynamicSticky.tsx"
 
