@@ -21,7 +21,7 @@ ouia: true
 ---
 
 import { Fragment, createRef, useEffect, useRef, useState } from 'react';
-import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
 import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';

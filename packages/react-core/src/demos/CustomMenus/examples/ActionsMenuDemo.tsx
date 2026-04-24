@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { MenuToggle, MenuItemAction, Select, SelectGroup, SelectList, SelectOption } from '@patternfly/react-core';
-import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
 import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
@@ -76,7 +76,7 @@ export const ActionsMenuDemo: React.FunctionComponent = () => {
           </SelectOption>
           <SelectOption
             isSelected={selectedItems.includes(3)}
-            actions={<MenuItemAction icon={<BarsIcon />} actionId="expand" aria-label="Expand" />}
+            actions={<MenuItemAction icon={<RhUiMenuBarsIcon />} actionId="expand" aria-label="Expand" />}
             description="This is a description"
             value={3}
           >
