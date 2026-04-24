@@ -5077,13 +5077,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@patternfly/patternfly@npm:6.5.0-prerelease.72":
-  version: 6.5.0-prerelease.72
-  resolution: "@patternfly/patternfly@npm:6.5.0-prerelease.72"
-  checksum: 10c0/b8d92a11b287d06efad3f410eb356ad60cbbdac3fbcb1e58a99c792253f81e7fcf154f57b0e5a40fbb9d7361364dab02925ecf21db2877e643a23101b8b0745a
-  languageName: node
-  linkType: hard
-
 "@patternfly/react-charts@workspace:^, @patternfly/react-charts@workspace:packages/react-charts":
   version: 0.0.0-use.local
   resolution: "@patternfly/react-charts@workspace:packages/react-charts"
