@@ -8,9 +8,17 @@ import compassBackgroundImageDark from '@patternfly/react-tokens/dist/esm/c_comp
 export interface CompassProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Compass. */
   className?: string;
+  /** The horizontal masthead content (e.g. <Masthead />). This masthead will only render when dock content is passed and only at mobile viewports. */
+  masthead?: React.ReactNode;
   /** Content of the docked navigation area of the layout */
   dock?: React.ReactNode;
-  /** Content placed at the top of the layout */
+  /** @beta Flag indicating the docked nav is expanded on mobile. Only applies when dock content is passed. */
+  isDockExpanded?: boolean;
+  /** @beta Flag indicating the docked nav should display text on desktop. Only applies when dock content is passed, and will handle
+   * setting isTextExpanded on individual isDocked components.
+   */
+  isDockTextExpanded?: boolean;
+  /** Content placed at the top of the compass layout */
   header?: React.ReactNode;
   /** Flag indicating if the header is expanded */
   isHeaderExpanded?: boolean;
@@ -40,7 +48,10 @@ export interface CompassProps extends React.HTMLProps<HTMLDivElement> {
 
 export const Compass: React.FunctionComponent<CompassProps> = ({
   className,
+  masthead,
   dock,
+  isDockExpanded,
+  isDockTextExpanded,
   header,
   isHeaderExpanded = true,
   sidebarStart,
@@ -72,7 +83,18 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
       {...props}
       style={{ ...props.style, ...backgroundImageStyles }}
     >
-      {dock && <div className={css(`${styles.compass}__dock`)}>{dock}</div>}
+      {dock && masthead}
+      {dock && (
+        <div
+          className={css(
+            `${styles.compass}__dock`,
+            isDockExpanded && styles.modifiers.expanded,
+            isDockTextExpanded && styles.modifiers.textExpanded
+          )}
+        >
+          {dock}
+        </div>
+      )}
       {header && (
         <div
           className={css(styles.compassHeader, isHeaderExpanded && 'pf-m-expanded')}

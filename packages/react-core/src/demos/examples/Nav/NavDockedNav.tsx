@@ -299,7 +299,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
                   </NavItem>
                 </NavList>
               </Nav>
-              {!isDockTextExpanded && (
+              {!isDockTextExpanded && !isDockExpanded && (
                 <>
                   <Tooltip aria="none" aria-live="off" triggerRef={navItem1Ref} content="System panel"></Tooltip>
                   <Tooltip aria="none" aria-live="off" triggerRef={navItem2Ref} content="Policy"></Tooltip>
@@ -314,7 +314,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
               gap={{ default: 'gapNone', md: 'gapMd' }}
             >
               <ToolbarItem>
-                {isDockTextExpanded ? (
+                {isDockTextExpanded || isDockExpanded ? (
                   <MenuToggle ref={appsRef} variant="plain" icon={<ThIcon />} isDocked aria-label="Applications">
                     Applications
                   </MenuToggle>
@@ -327,7 +327,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
                 )}
               </ToolbarItem>
               <ToolbarItem>
-                {isDockTextExpanded ? (
+                {isDockTextExpanded || isDockExpanded ? (
                   <Button ref={settingsRef} aria-label="Settings" isSettings variant="plain" isDocked>
                     Settings
                   </Button>
@@ -340,7 +340,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
                 )}
               </ToolbarItem>
               <ToolbarItem>
-                {isDockTextExpanded ? (
+                {isDockTextExpanded || isDockExpanded ? (
                   <MenuToggle
                     ref={helpRef}
                     variant="plain"

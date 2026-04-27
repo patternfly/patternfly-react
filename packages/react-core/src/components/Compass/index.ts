@@ -1,5 +1,6 @@
 export * from './Compass';
 export * from './CompassContent';
+export * from './CompassDockMain';
 export * from './CompassHeader';
 export * from './CompassHero';
 export * from './CompassMainHeader';

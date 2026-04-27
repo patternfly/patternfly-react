@@ -180,3 +180,33 @@ test(`Does not render with ${styles.modifiers.docked} class when dock is not pas
   render(<Compass data-testid="compass" />);
   expect(screen.getByTestId('compass')).not.toHaveClass(styles.modifiers.docked);
 });
+
+test('Does not render masthead content when dock is not passed', () => {
+  render(<Compass masthead="Masthead content" />);
+  expect(screen.queryByText('Masthead content')).not.toBeInTheDocument();
+});
+
+test('Renders masthead content when dock is passed', () => {
+  render(<Compass masthead={<div>Masthead content</div>} dock={<div>Dock content</div>} />);
+  expect(screen.getByText('Masthead content')).toBeVisible();
+});
+
+test(`Renders dock with ${styles.modifiers.expanded} class when isDockExpanded is true`, () => {
+  render(<Compass dock="Dock content" isDockExpanded />);
+  expect(screen.getByText('Dock content')).toHaveClass(styles.modifiers.expanded);
+});
+
+test(`Renders dock without ${styles.modifiers.expanded} class when isDockExpanded is false`, () => {
+  render(<Compass dock="Dock content" isDockExpanded={false} />);
+  expect(screen.getByText('Dock content')).not.toHaveClass(styles.modifiers.expanded);
+});
+
+test(`Renders dock with ${styles.modifiers.textExpanded} class when isDockTextExpanded is true`, () => {
+  render(<Compass dock="Dock content" isDockTextExpanded />);
+  expect(screen.getByText('Dock content')).toHaveClass(styles.modifiers.textExpanded);
+});
+
+test(`Renders dock without ${styles.modifiers.textExpanded} class when isDockTextExpanded is false`, () => {
+  render(<Compass dock="Dock content" isDockTextExpanded={false} />);
+  expect(screen.getByText('Dock content')).not.toHaveClass(styles.modifiers.textExpanded);
+});
