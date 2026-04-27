@@ -3,6 +3,7 @@ import MapIcon from '@patternfly/react-icons/dist/esm/icons/map-icon';
 import MoonIcon from '@patternfly/react-icons/dist/esm/icons/moon-icon';
 import HashtagIcon from '@patternfly/react-icons/dist/esm/icons/hashtag-icon';
 import FontIcon from '@patternfly/react-icons/dist/esm/icons/font-icon';
+import AdjustIcon from '@patternfly/react-icons/dist/esm/icons/adjust-icon';
 import { CodeEditor, CodeEditorControl } from '@patternfly/react-code-editor';
 import {
   Flex,
@@ -156,6 +157,7 @@ export const CodeEditorConfigurationModal: React.FunctionComponent = () => {
 
   const [isMinimapVisible, setIsMinimapVisible] = useState(true);
   const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isHighContrastTheme, setIsHighContrastTheme] = useState(false);
   const [isLineNumbersVisible, setIsLineNumbersVisible] = useState(true);
   const [fontSize, setFontSize] = useState(14);
 
@@ -180,6 +182,14 @@ export const CodeEditorConfigurationModal: React.FunctionComponent = () => {
         isChecked={isDarkTheme}
         onChange={(_e, checked) => setIsDarkTheme(checked)}
         icon={<MoonIcon />}
+      />
+      <ConfigModalSwitch
+        key="high-contrast-theme-switch"
+        title="High contrast theme"
+        description="Switch the editor to a high contrast color theme"
+        isChecked={isHighContrastTheme}
+        onChange={(_e, checked) => setIsHighContrastTheme(checked)}
+        icon={<AdjustIcon />}
       />
       <ConfigModalSwitch
         key="line-numbers-switch"
@@ -221,6 +231,7 @@ export const CodeEditorConfigurationModal: React.FunctionComponent = () => {
       customControls={customControl}
       height="400px"
       isDarkTheme={isDarkTheme}
+      isHighContrastTheme={isHighContrastTheme}
       isLineNumbersVisible={isLineNumbersVisible}
       isMinimapVisible={isMinimapVisible}
       onChange={onChange}
