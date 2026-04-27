@@ -4,7 +4,7 @@ section: AI
 subsection: Generative UIs
 ---
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import OutlinedPlusSquare from '@patternfly/react-icons/dist/esm/icons/outlined-plus-square-icon';
 import OutlinedCopy from '@patternfly/react-icons/dist/esm/icons/outlined-copy-icon';
@@ -18,6 +18,7 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import imgAvatar from '../assets/avatarImg.svg';
 import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
 import pfLogo from '../assets/PF-IconLogo-color.svg';
+import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_lg';
 
 ## Demos
 

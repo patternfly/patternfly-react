@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import {
   Compass,
   CompassContent,
@@ -36,6 +36,7 @@ import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import pfLogo from '../../assets/PF-IconLogo-color.svg';
 import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
+import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_lg';
 
 interface NavOnSelectProps {
   groupId: number | string;
@@ -47,6 +48,20 @@ export const CompassDockDemo: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState<number>(0);
   const [isDockExpanded, setIsDockExpanded] = useState(false);
   const [isDockTextExpanded, setIsDockTextExpanded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mobileBreakpoint = Number.parseInt(globalBreakpointLg.value) * 16;
+    const mediaQuery = window.matchMedia(`(max-width: ${mobileBreakpoint}px)`);
+    const handleResize = (e: MediaQueryListEvent | MediaQueryList) => {
+      setIsMobile(e.matches);
+    };
+
+    handleResize(mediaQuery);
+    mediaQuery.addEventListener('change', handleResize);
+
+    return () => mediaQuery.removeEventListener('change', handleResize);
+  }, []);
 
   const onNavSelect = (_event: React.FormEvent<HTMLInputElement>, selectedItem: NavOnSelectProps) => {
     typeof selectedItem.itemId === 'number' && setActiveItem(selectedItem.itemId);
@@ -71,12 +86,14 @@ export const CompassDockDemo: React.FunctionComponent = () => {
   };
 
   const onToggleDock = () => {
-    if (isDockExpanded) {
+    if (isMobile) {
       setIsDockExpanded(!isDockExpanded);
 
-      setTimeout(() => {
-        mobileToggleRef.current?.focus();
-      }, 200);
+      if (isDockExpanded) {
+        setTimeout(() => {
+          mobileToggleRef.current?.focus();
+        }, 200);
+      }
     } else {
       setIsDockTextExpanded(!isDockTextExpanded);
     }
