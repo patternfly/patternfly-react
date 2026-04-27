@@ -221,7 +221,7 @@ export const CompassDockDemo: React.FunctionComponent = () => {
 
   // Docked masthead - vertical navigation sidebar
   const dockContent = (
-    <CompassDockMain>
+    <CompassDockMain {...(isMobile && !isDockExpanded && { inert: '' })}>
       <Masthead display={{ default: undefined }} id="docked-masthead" variant="docked">
         <MastheadMain>
           <MastheadToggle>

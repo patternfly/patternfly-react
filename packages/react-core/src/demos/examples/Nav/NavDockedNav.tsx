@@ -240,7 +240,12 @@ export const NavDockedNav: React.FunctionComponent = () => {
 
   // Docked masthead - vertical navigation sidebar
   const dockedMasthead = (
-    <Masthead display={{ default: undefined }} id="docked-masthead" variant="docked">
+    <Masthead
+      {...(isMobile && !isDockExpanded && { inert: '' })}
+      display={{ default: undefined }}
+      id="docked-masthead"
+      variant="docked"
+    >
       <MastheadMain>
         <MastheadToggle>
           <Button
