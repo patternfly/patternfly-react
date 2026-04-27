@@ -590,3 +590,5 @@ export const getInlineStartProperty = (
   const widthProperty: 'offsetWidth' | 'clientWidth' | 'scrollWidth' = `${inlineType}Width`;
   return ancestorElement[widthProperty] - (targetElement[inlineProperty] + targetElement[widthProperty]);
 };
+
+// Contributed via automated bounty system
