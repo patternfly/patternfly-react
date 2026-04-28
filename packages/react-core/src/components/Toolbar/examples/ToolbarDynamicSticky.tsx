@@ -45,7 +45,7 @@ export const ToolbarDynamicSticky = () => {
 
   return (
     <div id="dynamic-sticky-scroll-parent" ref={scrollParentRef} style={{ overflowY: 'scroll', height: '200px' }}>
-      <Toolbar id="toolbar-sticky" inset={{ default: 'insetNone' }} isStickyBase isStickyStuck={isStickyStuck}>
+      <Toolbar id="toolbar-dynamic-sticky" inset={{ default: 'insetNone' }} isStickyBase isStickyStuck={isStickyStuck}>
         <ToolbarContent>
           <ToolbarItem>
             <SearchInput
