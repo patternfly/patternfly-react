@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { createElement, Fragment } from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
@@ -206,6 +206,32 @@ describe('Toolbar', () => {
     });
   });
 
+  const bps = ['default', 'md', 'lg', 'xl', '2xl'] as const;
+  describe.each(bps)(`ToolbarContent visibilityAtHeight`, (bp) => {
+    it(`Applies correct visible class at ${bp}`, () => {
+      render(
+        <ToolbarContent data-testid="toolbarcontent" visibilityAtHeight={{ [bp]: 'visible' }}>
+          Test
+        </ToolbarContent>
+      );
+
+      if (bp !== 'default') {
+        expect(screen.getByTestId('toolbarcontent')).toHaveClass(`pf-m-visible-on-${bp}-height`);
+      }
+    });
+
+    it(`Applies correct hidden class at ${bp}`, () => {
+      render(
+        <ToolbarContent data-testid="toolbarcontent" visibilityAtHeight={{ [bp]: 'hidden' }}>
+          Test
+        </ToolbarContent>
+      );
+
+      const expectedClass = bp === 'default' ? 'pf-m-hidden' : `pf-m-hidden-on-${bp}-height`;
+      expect(screen.getByTestId('toolbarcontent')).toHaveClass(expectedClass);
+    });
+  });
+
   it(`Renders toolbar without ${styles.modifiers.vertical} by default`, () => {
     render(
       <Toolbar data-testid="Toolbar-test-is-not-vertical">
@@ -220,7 +246,7 @@ describe('Toolbar', () => {
     expect(screen.getByTestId('Toolbar-test-is-not-vertical')).not.toHaveClass(styles.modifiers.vertical);
   });
 
-  it('Renders with class ${styles.modifiers.vertical} when isVertical is true', () => {
+  it(`Renders with class ${styles.modifiers.vertical} when isVertical is true`, () => {
     const items = (
       <Fragment>
         <ToolbarItem>Test</ToolbarItem>

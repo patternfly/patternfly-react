@@ -42,7 +42,7 @@ export const OverflowMenuSimpleVertical: React.FunctionComponent = () => {
   ];
 
   return (
-    <OverflowMenu breakpoint="lg" isVertical>
+    <OverflowMenu breakpoint="md" isVertical>
       <OverflowMenuContent>
         <OverflowMenuItem>Item</OverflowMenuItem>
         <OverflowMenuItem>Item</OverflowMenuItem>
