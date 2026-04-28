@@ -5233,7 +5233,7 @@ __metadata:
     "@fortawesome/free-regular-svg-icons": "npm:^5.15.4"
     "@fortawesome/free-solid-svg-icons": "npm:^5.15.4"
     "@patternfly/patternfly": "npm:6.5.0-prerelease.78"
-    "@rhds/icons": "npm:^2.1.0"
+    "@rhds/icons": "npm:^2.2.0"
     fs-extra: "npm:^11.3.3"
     tslib: "npm:^2.8.1"
   peerDependencies:
@@ -5592,6 +5592,13 @@ __metadata:
   version: 2.1.0
   resolution: "@rhds/icons@npm:2.1.0"
   checksum: 10c0/07076008d0d31e038741beacb22d14cd993617263d6f39cb50089f116c74e678a682aec24bc3565649b2634ebbe87aaa6d2b04ea6e4197af554df4059af14c55
+  languageName: node
+  linkType: hard
+
+"@rhds/icons@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "@rhds/icons@npm:2.2.0"
+  checksum: 10c0/ded19d0056864f284cf1a43b7f4d3959ca9347e3ced78414eb7f6a20901fcb4071a8900d1f1a7840ec7105740c5d1453d1b90c4f2b0355c274fbbba7f52bd50a
   languageName: node
   linkType: hard
 
