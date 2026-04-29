@@ -22,22 +22,6 @@ import { Fragment, useState, useRef, useLayoutEffect } from 'react';
 
 ```
 
-### Plain top
-
-To apply plain styling to a pagination, use `isPlain`. Plain styling removes the background and border, which is useful when the pagination is placed inside another component with its own background.
-
-```ts file="./PaginationPlainTop.tsx"
-
-```
-
-### Plain bottom
-
-To apply plain styling to a bottom pagination, use `isPlain` along with `variant={PaginationVariant.bottom}`.
-
-```ts file="./PaginationPlainBottom.tsx"
-
-```
-
 ### Indeterminate
 
 By not passing `itemCount` and passing `toggleTemplate` you can customize the toggle with text.

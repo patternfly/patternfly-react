@@ -123,13 +123,9 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement>, OUIAPr
   isDisabled?: boolean;
   /** Flag indicating if pagination is compact. */
   isCompact?: boolean;
-  /** @beta Adds plain styling to the pagination. */
-  isPlain?: boolean;
-  /** @beta Prevents the pagination from automatically applying plain styling when glass theme is enabled. */
-  isNoPlainOnGlass?: boolean;
   /** Flag indicating if pagination should not be sticky on mobile. */
   isStatic?: boolean;
-  /** Flag indicating if pagination should stick to its position (based on variant). For dynamic sticky contro, use isStickyBase
+  /** Flag indicating if pagination should stick to its position (based on variant). For dynamic sticky control, use isStickyBase
    * and isStickyStuck instead.
    */
   isSticky?: boolean;
@@ -201,8 +197,6 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
   variant = PaginationVariant.top,
   isDisabled = false,
   isCompact = false,
-  isPlain = false,
-  isNoPlainOnGlass = false,
   isStatic = false,
   isSticky = false,
   isStickyBase = false,
@@ -307,8 +301,6 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
         isSticky && !isStickyBase && !isStickyStuck && styles.modifiers.sticky,
         isStickyBase && styles.modifiers.stickyBase,
         isStickyStuck && styles.modifiers.stickyStuck,
-        isPlain && styles.modifiers.plain,
-        isNoPlainOnGlass && styles.modifiers.noPlainOnGlass,
         className
       )}
       {...(widgetId && { id: `${widgetId}-${variant}-pagination` })}

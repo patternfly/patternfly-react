@@ -119,28 +119,6 @@ describe('Pagination', () => {
       expect(screen.getByTestId('pagination-insets')).toHaveClass('pf-m-page-insets');
     });
 
-    test(`should not render ${styles.modifiers.plain} class by default`, () => {
-      render(<Pagination data-testid="pagination-plain-default" itemCount={20} />);
-      expect(screen.getByTestId('pagination-plain-default')).not.toHaveClass(styles.modifiers.plain);
-    });
-
-    test(`should render ${styles.modifiers.plain} class when isPlain is true`, () => {
-      render(<Pagination data-testid="pagination-plain" itemCount={20} isPlain />);
-      expect(screen.getByTestId('pagination-plain')).toHaveClass(styles.modifiers.plain);
-    });
-
-    test(`should not render ${styles.modifiers.noPlainOnGlass} class by default`, () => {
-      render(<Pagination data-testid="pagination-no-plain-on-glass-default" itemCount={20} />);
-      expect(screen.getByTestId('pagination-no-plain-on-glass-default')).not.toHaveClass(
-        styles.modifiers.noPlainOnGlass
-      );
-    });
-
-    test(`should render ${styles.modifiers.noPlainOnGlass} class when isNoPlainOnGlass is true`, () => {
-      render(<Pagination data-testid="pagination-no-plain-on-glass" itemCount={20} isNoPlainOnGlass />);
-      expect(screen.getByTestId('pagination-no-plain-on-glass')).toHaveClass(styles.modifiers.noPlainOnGlass);
-    });
-
     test(`should not render ${styles.modifiers.stickyBase} class by default`, () => {
       render(<Pagination data-testid="pagination-sticky-base-default" itemCount={20} />);
       expect(screen.getByTestId('pagination-sticky-base-default')).not.toHaveClass(styles.modifiers.stickyBase);

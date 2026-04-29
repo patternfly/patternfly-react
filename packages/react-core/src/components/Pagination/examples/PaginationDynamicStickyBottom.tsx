@@ -11,7 +11,7 @@ import {
 
 export const PaginationDynamicStickyBottom: React.FunctionComponent = () => {
   const scrollParentRef = useRef<HTMLDivElement>(null);
-  const isStickyStuck = useIsStuckFromScrollParent({ shouldTrack: true, scrollParentRef });
+  const isStickyStuck = useIsStuckFromScrollParent({ shouldTrack: true, scrollParentRef, position: 'bottom' });
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(50);
   const itemCount = 523;

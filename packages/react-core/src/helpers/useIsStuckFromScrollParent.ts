@@ -5,12 +5,15 @@ import { useLayoutEffect, useState } from 'react';
 
 export function useIsStuckFromScrollParent({
   shouldTrack,
-  scrollParentRef
+  scrollParentRef,
+  position = 'top'
 }: {
   /** Indicates whether to track the scroll top position of the scroll parent element */
   shouldTrack: boolean;
   /** Reference to the scroll parent element */
   scrollParentRef: React.RefObject<any>;
+  /** Whether "stuck" should be measured from top or bottom edge */
+  position?: 'top' | 'bottom';
 }): boolean {
   const [isStuck, setIsStuck] = useState(false);
 
@@ -27,12 +30,16 @@ export function useIsStuckFromScrollParent({
     }
 
     const syncFromScroll = () => {
+      if (position === 'bottom') {
+        setIsStuck(scrollElement.scrollTop + scrollElement.clientHeight < scrollElement.scrollHeight);
+        return;
+      }
       setIsStuck(scrollElement.scrollTop > 0);
     };
     syncFromScroll();
     scrollElement.addEventListener('scroll', syncFromScroll, { passive: true });
     return () => scrollElement.removeEventListener('scroll', syncFromScroll);
-  }, [shouldTrack, scrollParentRef]);
+  }, [shouldTrack, scrollParentRef, position]);
 
   return isStuck;
 }
