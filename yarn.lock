@@ -5595,13 +5595,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rhds/icons@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "@rhds/icons@npm:2.2.0"
-  checksum: 10c0/ded19d0056864f284cf1a43b7f4d3959ca9347e3ced78414eb7f6a20901fcb4071a8900d1f1a7840ec7105740c5d1453d1b90c4f2b0355c274fbbba7f52bd50a
-  languageName: node
-  linkType: hard
-
 "@rolldown/pluginutils@npm:1.0.0-beta.27":
   version: 1.0.0-beta.27
   resolution: "@rolldown/pluginutils@npm:1.0.0-beta.27"
