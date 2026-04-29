@@ -123,10 +123,20 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement>, OUIAPr
   isDisabled?: boolean;
   /** Flag indicating if pagination is compact. */
   isCompact?: boolean;
+  /** @beta Adds plain styling to the pagination. */
+  isPlain?: boolean;
+  /** @beta Prevents the pagination from automatically applying plain styling when glass theme is enabled. */
+  isNoPlainOnGlass?: boolean;
   /** Flag indicating if pagination should not be sticky on mobile. */
   isStatic?: boolean;
-  /** Flag indicating if pagination should stick to its position (based on variant). */
+  /** Flag indicating if pagination should stick to its position (based on variant). For dynamic sticky contro, use isStickyBase
+   * and isStickyStuck instead.
+   */
   isSticky?: boolean;
+  /** @beta Flag indicating the pagination should have sticky positioning relative to its container. */
+  isStickyBase?: boolean;
+  /** @beta Flag indicating the pagination should have stuck styling, when the pagination is not at the top (for top variant) or bottom (for bottom variant) of the scroll container. */
+  isStickyStuck?: boolean;
   /** Total number of items. */
   itemCount?: number;
   /** Last index of items on current page. */
@@ -191,8 +201,12 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
   variant = PaginationVariant.top,
   isDisabled = false,
   isCompact = false,
-  isSticky = false,
+  isPlain = false,
+  isNoPlainOnGlass = false,
   isStatic = false,
+  isSticky = false,
+  isStickyBase = false,
+  isStickyStuck = false,
   dropDirection: dropDirectionProp,
   toggleTemplate,
   perPage = defaultPerPageOptions[0].value,
@@ -290,7 +304,11 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
         usePageInsets && styles.modifiers.pageInsets,
         formatBreakpointMods(inset, styles),
         isStatic && styles.modifiers.static,
-        isSticky && styles.modifiers.sticky,
+        isSticky && !isStickyBase && !isStickyStuck && styles.modifiers.sticky,
+        isStickyBase && styles.modifiers.stickyBase,
+        isStickyStuck && styles.modifiers.stickyStuck,
+        isPlain && styles.modifiers.plain,
+        isNoPlainOnGlass && styles.modifiers.noPlainOnGlass,
         className
       )}
       {...(widgetId && { id: `${widgetId}-${variant}-pagination` })}
