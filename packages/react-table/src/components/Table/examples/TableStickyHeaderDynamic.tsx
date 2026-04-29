@@ -1,6 +1,7 @@
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, InnerScrollContainer } from '@patternfly/react-table';
 import RhUiBlueprintIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-blueprint-icon';
+import { useIsStuckFromScrollParent } from '@patternfly/react-core';
 
 interface Fact {
   name: string;
@@ -13,40 +14,6 @@ interface Fact {
   detail6: string;
   detail7: string;
 }
-
-const useIsStuckFromScrollParent = ({
-  shouldTrack,
-  scrollParentRef
-}: {
-  /** Indicates whether to track the scroll top position of the scroll parent element */
-  shouldTrack: boolean;
-  /** Reference to the scroll parent element */
-  scrollParentRef: React.RefObject<any>;
-}): boolean => {
-  const [isStuck, setIsStuck] = useState(false);
-
-  useLayoutEffect(() => {
-    if (!shouldTrack) {
-      setIsStuck(false);
-      return;
-    }
-
-    const scrollElement = scrollParentRef.current;
-    if (!scrollElement) {
-      setIsStuck(false);
-      return;
-    }
-
-    const syncFromScroll = () => {
-      setIsStuck(scrollElement.scrollTop > 0);
-    };
-    syncFromScroll();
-    scrollElement.addEventListener('scroll', syncFromScroll, { passive: true });
-    return () => scrollElement.removeEventListener('scroll', syncFromScroll);
-  }, [shouldTrack, scrollParentRef]);
-
-  return isStuck;
-};
 
 export const TableStickyHeaderDynamic: React.FunctionComponent = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);

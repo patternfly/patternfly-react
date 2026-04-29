@@ -1,39 +1,12 @@
-import { useLayoutEffect, useState, useRef } from 'react';
-import { Toolbar, ToolbarItem, ToolbarContent, SearchInput, Checkbox } from '@patternfly/react-core';
-
-const useIsStuckFromScrollParent = ({
-  shouldTrack,
-  scrollParentRef
-}: {
-  /** Indicates whether to track the scroll top position of the scroll parent element */
-  shouldTrack: boolean;
-  /** Reference to the scroll parent element */
-  scrollParentRef: React.RefObject<any>;
-}): boolean => {
-  const [isStuck, setIsStuck] = useState(false);
-
-  useLayoutEffect(() => {
-    if (!shouldTrack) {
-      setIsStuck(false);
-      return;
-    }
-
-    const scrollElement = scrollParentRef.current;
-    if (!scrollElement) {
-      setIsStuck(false);
-      return;
-    }
-
-    const syncFromScroll = () => {
-      setIsStuck(scrollElement.scrollTop > 0);
-    };
-    syncFromScroll();
-    scrollElement.addEventListener('scroll', syncFromScroll, { passive: true });
-    return () => scrollElement.removeEventListener('scroll', syncFromScroll);
-  }, [shouldTrack, scrollParentRef]);
-
-  return isStuck;
-};
+import { useState, useRef } from 'react';
+import {
+  Toolbar,
+  ToolbarItem,
+  ToolbarContent,
+  SearchInput,
+  Checkbox,
+  useIsStuckFromScrollParent
+} from '@patternfly/react-core';
 
 export const ToolbarDynamicSticky = () => {
   const scrollParentRef = useRef<HTMLDivElement>(null);

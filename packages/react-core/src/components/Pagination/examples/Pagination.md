@@ -24,11 +24,15 @@ import { Fragment, useState, useRef, useLayoutEffect } from 'react';
 
 ### Plain top
 
+To apply plain styling to a pagination, use `isPlain`. Plain styling removes the background and border, which is useful when the pagination is placed inside another component with its own background.
+
 ```ts file="./PaginationPlainTop.tsx"
 
 ```
 
 ### Plain bottom
+
+To apply plain styling to a bottom pagination, use `isPlain` along with `variant={PaginationVariant.bottom}`.
 
 ```ts file="./PaginationPlainBottom.tsx"
 
@@ -80,11 +84,15 @@ By not passing `itemCount` and passing `toggleTemplate` you can customize the to
 
 ### Dynamic sticky top
 
+A pagination may alternatively be made sticky with two properties: `isStickyBase` and `isStickyStuck`, which allows separate control of the sticky position and sticky styling respectively. In this example, `isStickyStuck` is only applied when the pagination is not at the top of the scroll parent container.
+
 ```ts isFullscreen file="./PaginationDynamicStickyTop.tsx"
 
 ```
 
 ### Dynamic sticky bottom
+
+A bottom pagination may alternatively be made sticky with two properties: `isStickyBase` and `isStickyStuck`, which allows separate control of the sticky position and sticky styling respectively. In this example, `isStickyStuck` is only applied when the pagination is not at the bottom of the scroll parent container.
 
 ```ts isFullscreen file="./PaginationDynamicStickyBottom.tsx"
 
