@@ -13,5 +13,4 @@ export * from './SSRSafeIds/SSRSafeIds';
 export * from './KeyboardHandler';
 export * from './resizeObserver';
 export * from './useInterval';
-export * from './useIsStuckFromScrollParent';
 export * from './datetimeUtils';
