@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { TextInput } from '../TextInput';
 import { Button } from '../Button';
-import { Select, SelectList, SelectOption } from '../Select';
+import { Select, SelectList, SelectOption, SelectProps } from '../Select';
 import { MenuToggle, MenuToggleElement } from '../MenuToggle';
 import { InputGroup, InputGroupItem } from '../InputGroup';
 import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
@@ -81,6 +81,8 @@ export interface CalendarProps extends CalendarFormat, Omit<React.HTMLProps<HTML
   onSelectToggle?: (open: boolean) => void;
   /** Functions that returns if a date is valid and selectable. */
   validators?: ((date: Date) => boolean)[];
+  /** Additional props passed to the month select component. */
+  monthSelectProps?: SelectProps;
 }
 
 const buildCalendar = (year: number, month: number, weekStart: number, validators: ((date: Date) => boolean)[]) => {
@@ -143,6 +145,7 @@ export const CalendarMonth = ({
   cellAriaLabel,
   isDateFocused = false,
   inlineProps,
+  monthSelectProps,
   ...props
 }: CalendarProps) => {
   const longMonths = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
@@ -328,6 +331,7 @@ export const CalendarMonth = ({
                 }}
                 selected={monthFormatted}
                 popperProps={{ appendTo: 'inline' }}
+                {...monthSelectProps}
               >
                 <SelectList>
                   {longMonths.map((longMonth, index) => (
