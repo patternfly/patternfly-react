@@ -285,7 +285,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   let LabelComponentChildElement = 'span';
   if (href) {
     LabelComponentChildElement = 'a';
-  } else if (isEditable || (onLabelClick && !isOverflowLabel && !isAddLabel)) {
+  } else if (isEditable || (onLabelClick && !isOverflowLabel && !isAddLabel && onClose)) {
     LabelComponentChildElement = 'button';
   }
 
@@ -338,7 +338,9 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     );
   }
 
-  const LabelComponent = (isOverflowLabel || isAddLabel ? 'button' : 'span') as any;
+  const LabelComponent = (
+    isOverflowLabel || isAddLabel || (!!onLabelClick && !isEditable && !onClose) ? 'button' : 'span'
+  ) as any;
 
   return (
     <LabelComponent
@@ -358,8 +360,9 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         isAddLabel && styles.modifiers.add,
         className
       )}
-      onClick={isOverflowLabel || isAddLabel ? onLabelClick : undefined}
+      onClick={isOverflowLabel || isAddLabel || (!!onLabelClick && !isEditable && !onClose) ? onLabelClick : undefined}
       {...(LabelComponent === 'button' && { type: 'button' })}
+      {...(isClickableDisabled && !!onLabelClick && !isEditable && !onClose && { disabled: true })}
     >
       {!isEditableActive && labelComponentChild}
       {!isEditableActive && onClose && closeButton}
