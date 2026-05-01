@@ -68,7 +68,7 @@ By not passing `itemCount` and passing `toggleTemplate` you can customize the to
 
 ### Dynamic sticky top
 
-A pagination may alternatively be made sticky with two properties: `isStickyBase` and `isStickyStuck`, which allows separate control of the sticky position and sticky styling respectively. In this example, `isStickyStuck` is only applied when the pagination is not at the top of the scroll parent container.
+Pagination can be made sticky via two properties: `isStickyBase`, which allows separate control of the sticky position, and `isStickyStuck`, which applies the sticky styling. In this example, `isStickyStuck` is only applied when the pagination is not at the top of the scroll parent container.
 
 ```ts isFullscreen file="./PaginationDynamicStickyTop.tsx"
 
@@ -76,7 +76,7 @@ A pagination may alternatively be made sticky with two properties: `isStickyBase
 
 ### Dynamic sticky bottom
 
-A bottom pagination may alternatively be made sticky with two properties: `isStickyBase` and `isStickyStuck`, which allows separate control of the sticky position and sticky styling respectively. In this example, `isStickyStuck` is only applied when the pagination is not at the bottom of the scroll parent container.
+Bottom pagination can be made sticky via two properties: `isStickyBase`, which allows separate control of the sticky position, and `isStickyStuck`, which applies the sticky styling. In this example, `isStickyStuck` is only applied when the pagination is not at the bottom of the scroll parent container.
 
 ```ts isFullscreen file="./PaginationDynamicStickyBottom.tsx"
 
