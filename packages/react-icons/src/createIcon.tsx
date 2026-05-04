@@ -1,15 +1,11 @@
-import { Component, type ReactNode } from 'react';
+import { Component, type ComponentClass, type ReactNode } from 'react';
 
 export interface SVGPathObject {
   path: string;
   className?: string;
 }
 
-/**
- * Serialized / nested icon data (e.g. from the icon generator or JSON), not the flat {@link CreateIconProps}
- * shape. `svgPathData` is preferred; deprecated `svgPath` is still supported (at least one path field is
- * required at runtime; if both are set, `svgPathData` takes precedence).
- */
+/** Icon data format */
 export interface IconDefinition {
   name?: string;
   width: number;
@@ -22,19 +18,16 @@ export interface IconDefinition {
   svgPath?: string | SVGPathObject[];
 }
 
-/**
- * Nested (current) public API: `{ icon, rhUiIcon?, name? }` as produced by the icon generator and
- * `createIconBase` consumers.
- */
-export interface CreateIconBaseProps {
+/** Argument shape for {@link createIconBase} (module-private interface, not exported). */
+interface CreateIconBaseProps {
   name?: string;
-  icon: IconDefinition;
+  icon?: IconDefinition;
   rhUiIcon?: IconDefinition | null;
 }
 
 /**
- * @deprecated Prefer {@link createIconBase} with a nested {@link IconDefinition} using `svgPathData` instead
- * of this flat `createIcon` shape and legacy `svgPath` field.
+ * Flat props shape for {@link createIcon}: layout fields plus `svgPath` (mapped to {@link IconDefinition.svgPathData}
+ * on the nested `icon` before calling {@link createIconBase}).
  */
 export interface CreateIconProps {
   name?: string;
@@ -58,7 +51,7 @@ export interface SVGIconProps extends Omit<React.HTMLProps<SVGElement>, 'ref'> {
 
 let currentId = 0;
 
-/** Renders the same path markup as the historical `createIcon` implementation. */
+/** Renders `<path>` elements from `svgPathData` (string `d` or array of `{ path, className? }`). */
 function getSvgPaths(svgPathData: string | SVGPathObject[] | undefined): ReactNode {
   return svgPathData && Array.isArray(svgPathData) ? (
     svgPathData.map((pathObject, index) => (
@@ -70,7 +63,8 @@ function getSvgPaths(svgPathData: string | SVGPathObject[] | undefined): ReactNo
 }
 
 const createSvg = (icon: IconDefinition, iconClassName: string) => {
-  const { xOffset, yOffset, width, height, svgPathData, svgPath, svgClassName } = icon ?? {};
+  const { xOffset, yOffset, width, height, svgPathData, svgClassName } = icon ?? {};
+  const resolvedPathData = svgPathData ?? icon?.svgPath;
   const _xOffset = xOffset ?? 0;
   const _yOffset = yOffset ?? 0;
   const viewBox = [_xOffset, _yOffset, width, height].join(' ');
@@ -86,20 +80,18 @@ const createSvg = (icon: IconDefinition, iconClassName: string) => {
 
   return (
     <svg viewBox={viewBox} className={classNames.join(' ')}>
-      {getSvgPaths(svgPathData ?? svgPath)}
+      {getSvgPaths(resolvedPathData)}
     </svg>
   );
 };
 
 /**
- * Factory for the nested / current icon API. Behavior matches the pre-split `createIcon` on `main` (this name
- * replaces the original export). For path mapping from the flat `svgPath` shape, use {@link createIcon} only.
+ * Nested icon factory (used by generated icon modules under `dist`). Omitted from published typings when
+ * `stripInternal` is enabled; use {@link createIcon} for the flat `svgPath` + layout props shape.
+ *
+ * @internal
  */
-export function createIconBase({
-  name,
-  icon,
-  rhUiIcon = null
-}: CreateIconBaseProps): React.ComponentClass<SVGIconProps> {
+export function createIconBase({ name, icon, rhUiIcon = null }: CreateIconBaseProps): ComponentClass<SVGIconProps> {
   if (icon == null) {
     throw new Error(
       `@patternfly/react-icons: createIconBase requires an \`icon\` definition (name: ${name ?? 'unknown'}).`
@@ -114,7 +106,10 @@ export function createIconBase({
       noDefaultStyle: false
     };
 
-    /** Renders one root `<svg>`; either a single variant or nested inner SVGs for RH UI swap. */
+    /**
+     * One root `<svg>`: a single flat variant when `set` is defined, or when `set` is omitted and `rhUiIcon` is
+     * null; when `set` is omitted and `rhUiIcon` is set, nested inner `<svg>`s (default + RH UI swap layout).
+     */
     render() {
       const { title, className: propsClassName, set, noDefaultStyle, ...props } = this.props;
 
@@ -134,7 +129,8 @@ export function createIconBase({
 
       if ((set === undefined && rhUiIcon === null) || set !== undefined) {
         const iconData = set !== undefined && set === 'rh-ui' && rhUiIcon !== null ? rhUiIcon : icon;
-        const { xOffset, yOffset, width, height, svgPathData, svgPath, svgClassName } = iconData ?? {};
+        const { xOffset, yOffset, width, height, svgPathData, svgClassName } = iconData ?? {};
+        const resolvedPathData = svgPathData ?? iconData?.svgPath;
         const _xOffset = xOffset ?? 0;
         const _yOffset = yOffset ?? 0;
         const viewBox = [_xOffset, _yOffset, width, height].join(' ');
@@ -156,7 +152,7 @@ export function createIconBase({
             {...(props as Omit<React.SVGProps<SVGElement>, 'ref'>)} // Lie.
           >
             {hasTitle && <title id={this.id}>{title}</title>}
-            {getSvgPaths(svgPathData ?? svgPath)}
+            {getSvgPaths(resolvedPathData)}
           </svg>
         );
       }
@@ -181,20 +177,20 @@ export function createIconBase({
 }
 
 /**
- * Flat **legacy** entry point: turn {@link CreateIconProps} (`svgPath` + layout fields) into a nested
- * `icon: IconDefinition` with `svgPathData` set from `svgPath`, then call {@link createIconBase}. Use
- * {@link createIconBase} directly for nested `icon` objects that already use `svgPathData`.
+ * Maps {@link CreateIconProps} (flat layout + `svgPath`) to a nested {@link IconDefinition} (`svgPath` →
+ * `svgPathData`), then returns the component class from {@link createIconBase}. Generated icon modules call
+ * {@link createIconBase} directly with nested data (see `@internal` on `createIconBase`).
  */
-export function createIcon(legacy: CreateIconProps): React.ComponentClass<SVGIconProps> {
-  const { rhUiIcon = null, ...flat } = legacy;
+export function createIcon(props: CreateIconProps): ComponentClass<SVGIconProps> {
+  const { rhUiIcon = null, ...rest } = props;
   const icon: IconDefinition = {
-    name: flat.name,
-    width: flat.width,
-    height: flat.height,
-    xOffset: flat.xOffset,
-    yOffset: flat.yOffset,
-    svgClassName: flat.svgClassName,
-    svgPathData: flat.svgPath
+    name: rest.name,
+    width: rest.width,
+    height: rest.height,
+    xOffset: rest.xOffset,
+    yOffset: rest.yOffset,
+    svgClassName: rest.svgClassName,
+    svgPathData: rest.svgPath
   };
   return createIconBase({ name: icon.name, icon, rhUiIcon });
 }

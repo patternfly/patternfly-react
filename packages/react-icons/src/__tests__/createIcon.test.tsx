@@ -1,12 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import {
-  IconDefinition,
-  CreateIconBaseProps,
-  CreateIconProps,
-  createIcon,
-  createIconBase,
-  SVGPathObject
-} from '../createIcon';
+import { IconDefinition, CreateIconProps, createIcon, createIconBase, SVGPathObject } from '../createIcon';
+
+/** Mirrors the non-exported argument type of {@link createIconBase} for tests. */
+type CreateIconBaseProps = Parameters<typeof createIconBase>[0];
 
 const multiPathIcon: IconDefinition = {
   name: 'IconName',
@@ -70,7 +66,7 @@ test('sets correct svgPath if string', () => {
   );
 });
 
-test('accepts legacy flat createIcon({ svgPath }) shape', () => {
+test('accepts flat createIcon({ svgPath }) shape', () => {
   const legacyDef: CreateIconProps = {
     name: 'LegacyIcon',
     width: 10,
@@ -117,7 +113,7 @@ test('throws when createIconBase omits icon', () => {
     createIconBase({
       name: 'MissingDefaultIcon',
       rhUiIcon: null
-    } as any)
+    })
   ).toThrow('@patternfly/react-icons: createIconBase requires an `icon` definition (name: MissingDefaultIcon).');
 });
 
