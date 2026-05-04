@@ -1,10 +1,6 @@
 import { Drawer, DrawerContent, DrawerContentBody, DrawerProps } from '../Drawer';
 import styles from '@patternfly/react-styles/css/components/Compass/compass';
 import { css } from '@patternfly/react-styles';
-
-import compassBackgroundImageLight from '@patternfly/react-tokens/dist/esm/c_compass_BackgroundImage_light';
-import compassBackgroundImageDark from '@patternfly/react-tokens/dist/esm/c_compass_BackgroundImage_dark';
-
 export interface CompassProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Compass. */
   className?: string;
@@ -40,10 +36,6 @@ export interface CompassProps extends React.HTMLProps<HTMLDivElement> {
   drawerContent?: React.ReactNode;
   /** Additional props passed to the drawer */
   drawerProps?: DrawerProps;
-  /** Light theme background image path of the Compass  */
-  backgroundSrcLight?: string;
-  /** Dark theme background image path of the Compass  */
-  backgroundSrcDark?: string;
 }
 
 export const Compass: React.FunctionComponent<CompassProps> = ({
@@ -63,26 +55,12 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
   isFooterExpanded = true,
   drawerContent,
   drawerProps,
-  backgroundSrcLight,
-  backgroundSrcDark,
   ...props
 }: CompassProps) => {
   const hasDrawer = drawerContent !== undefined;
 
-  const backgroundImageStyles: { [key: string]: string } = {};
-  if (backgroundSrcLight) {
-    backgroundImageStyles[compassBackgroundImageLight.name] = `url(${backgroundSrcLight})`;
-  }
-  if (backgroundSrcDark) {
-    backgroundImageStyles[compassBackgroundImageDark.name] = `url(${backgroundSrcDark})`;
-  }
-
   const compassContent = (
-    <div
-      className={css(styles.compass, dock !== undefined && styles.modifiers.docked, className)}
-      {...props}
-      style={{ ...props.style, ...backgroundImageStyles }}
-    >
+    <div className={css(styles.compassContainer, dock !== undefined && styles.modifiers.docked, className)} {...props}>
       {dock && masthead}
       {dock && (
         <div
@@ -133,15 +111,17 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
 
   if (hasDrawer) {
     return (
-      <Drawer isPill {...drawerProps}>
-        <DrawerContent panelContent={drawerContent}>
-          <DrawerContentBody>{compassContent}</DrawerContentBody>
-        </DrawerContent>
-      </Drawer>
+      <div className={css(styles.compass)}>
+        <Drawer isPill {...drawerProps}>
+          <DrawerContent panelContent={drawerContent}>
+            <DrawerContentBody>{compassContent}</DrawerContentBody>
+          </DrawerContent>
+        </Drawer>
+      </div>
     );
   }
 
-  return compassContent;
+  return <div className={css(styles.compass)}>{compassContent}</div>;
 };
 
 Compass.displayName = 'Compass';
