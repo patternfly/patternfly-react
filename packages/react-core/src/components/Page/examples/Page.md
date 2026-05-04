@@ -6,7 +6,7 @@ propComponents:
   ['Page', 'PageSidebar', 'PageSidebarBody', 'PageSection', 'PageGroup', 'PageBreadcrumb', 'PageToggleButton']
 ---
 
-import { useState } from 'react';
+import { useState, useLayoutEffect, useRef } from 'react';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import pageSectionWidthLimitMaxWidth from '@patternfly/react-tokens/dist/esm/c_page_section_m_limit_width_MaxWidth';
 
@@ -129,5 +129,15 @@ The content in this example is placed in a card to better illustrate how the sec
 To remove the default background color from a page section or group, use the `isPlain` property on `<PageSection>` or `<PageGroup>` components.
 
 ```ts file="./PagePlainSections.tsx"
+
+```
+
+### Dynamic sticky section
+
+A page section may be made sticky with separate control of its sticky positioning and stuck styling using the `stickyBase` and `isStickyStuck` properties. The `stickyBase` property accepts a value of `"top"` or `"bottom"` and applies the base sticky positioning in the given direction. The `isStickyStuck` property applies visual "stuck" styling such as a background, box shadow, and border, and should be toggled based on the scroll position of the scroll parent container.
+
+In this example, a scroll event listener on the scroll parent container toggles `isStickyStuck` when `scrollTop > 0`, so the stuck styling appears only when the content is scrolled.
+
+```ts file="./PageDynamicStickySection.tsx"
 
 ```
