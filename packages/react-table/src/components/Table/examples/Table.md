@@ -158,6 +158,14 @@ checking checkboxes will check intermediate rows' checkboxes.
 
 ```
 
+### Selectable with indeterminate state
+
+This example demonstrates the indeterminate state support for the select-all checkbox. When some (but not all) rows are selected, the header checkbox displays a dash/minus icon to indicate partial selection.
+
+```ts file="TableSelectableIndeterminate.tsx"
+
+```
+
 ### Selectable radio input
 
 Similarly to the selectable example above, the radio buttons use the first column. The first header cell is empty, and each body row's first cell has radio button props.

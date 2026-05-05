@@ -21,6 +21,8 @@ export interface SelectColumnProps {
   id?: string;
   /** name for the input element - required by Radio component */
   name?: string;
+  /** Whether the checkbox should be in an indeterminate state */
+  isIndeterminate?: boolean;
 }
 
 export const SelectColumn: React.FunctionComponent<SelectColumnProps> = ({
@@ -33,12 +35,22 @@ export const SelectColumn: React.FunctionComponent<SelectColumnProps> = ({
   tooltipProps,
   id,
   name,
+  isIndeterminate,
   ...props
 }: SelectColumnProps) => {
   const inputRef = createRef<any>();
 
   const handleChange = (event: React.FormEvent<HTMLInputElement>, _checked: boolean) => {
     onSelect && onSelect(event);
+  };
+
+  // PatternFly Checkbox supports indeterminate via isChecked: null
+  const checkboxProps = {
+    ...props,
+    id,
+    ref: inputRef,
+    onChange: handleChange,
+    ...(isIndeterminate && { isChecked: null })
   };
 
   const commonProps = {
@@ -51,7 +63,7 @@ export const SelectColumn: React.FunctionComponent<SelectColumnProps> = ({
   const content = (
     <Fragment>
       {selectVariant === RowSelectVariant.checkbox ? (
-        <Checkbox {...commonProps} />
+        <Checkbox {...checkboxProps} />
       ) : (
         <Radio {...commonProps} name={name} />
       )}
