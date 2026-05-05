@@ -15,6 +15,7 @@ import {
   DropdownList,
   Icon,
   Label,
+  LabelColor,
   Masthead,
   MastheadMain,
   MastheadLogo,
@@ -39,7 +40,6 @@ import {
   ToolbarItem,
   Truncate
 } from '@patternfly/react-core';
-import { LabelColor } from '../../../components/Label/Label';
 
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import translationsEn from './examples/translations.en.json';

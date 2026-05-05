@@ -41,7 +41,7 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   /** Additional classes added to the label. */
   className?: string;
   /** Color of the label. */
-  color?: 'blue' | 'teal' | 'green' | 'orange' | 'purple' | 'red' | 'orangered' | 'grey' | 'yellow';
+  color?: 'blue' | 'teal' | 'green' | 'orange' | 'purple' | 'red' | 'orangered' | 'grey' | 'yellow' | LabelColor;
   /** Variant of the label. */
   variant?: 'outline' | 'filled' | 'overflow' | 'add';
   /** Status of the label with a respective icon and color. Overrides the color set by the color property. */

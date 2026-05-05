@@ -8,6 +8,7 @@ import {
   Level,
   LabelGroup,
   Label,
+  LabelColor,
   Grid,
   Flex,
   List,
@@ -19,7 +20,6 @@ import {
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
-import { LabelColor } from '../../../components/Label/Label';
 import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
 import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';

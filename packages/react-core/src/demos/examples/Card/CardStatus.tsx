@@ -10,6 +10,7 @@ import {
   Grid,
   GridItem,
   Label,
+  LabelStatus,
   NotificationDrawer,
   NotificationDrawerBody,
   NotificationDrawerGroup,
@@ -21,7 +22,6 @@ import {
   Title,
   Icon
 } from '@patternfly/react-core';
-import { LabelStatus } from '../../../components/Label/Label';
 import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
 import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-check-circle-fill-icon';
 import RhUiErrorFillIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-error-fill-icon';

@@ -15,11 +15,11 @@ import {
   DescriptionListTerm,
   DescriptionListDescription,
   Label,
+  LabelColor,
   LabelGroup,
   Flex,
   FlexItem
 } from '@patternfly/react-core';
-import { LabelColor } from '../../../components/Label/Label';
 import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-check-circle-fill-icon';
 import RhUiInformationFillIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-information-fill-icon';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
