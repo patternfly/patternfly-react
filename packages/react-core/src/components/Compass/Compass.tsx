@@ -60,7 +60,7 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
   const hasDrawer = drawerContent !== undefined;
 
   const compassContent = (
-    <div className={css(styles.compassContainer, dock !== undefined && styles.modifiers.docked, className)} {...props}>
+    <div className={css(styles.compassContainer)}>
       {dock && masthead}
       {dock && (
         <div
@@ -109,19 +109,19 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
     </div>
   );
 
-  if (hasDrawer) {
-    return (
-      <div className={css(styles.compass)}>
+  return (
+    <div className={css(styles.compass, dock !== undefined && styles.modifiers.docked, className)} {...props}>
+      {hasDrawer ? (
         <Drawer isPill {...drawerProps}>
           <DrawerContent panelContent={drawerContent}>
             <DrawerContentBody>{compassContent}</DrawerContentBody>
           </DrawerContent>
         </Drawer>
-      </div>
-    );
-  }
-
-  return <div className={css(styles.compass)}>{compassContent}</div>;
+      ) : (
+        compassContent
+      )}
+    </div>
+  );
 };
 
 Compass.displayName = 'Compass';

@@ -6,38 +6,42 @@ exports[`Matches the snapshot with basic layout 1`] = `
     class="pf-v6-c-compass"
   >
     <div
-      class="pf-v6-c-compass__header pf-m-expanded"
+      class=""
     >
-      <div>
-        Header
+      <div
+        class="pf-v6-c-compass__header pf-m-expanded"
+      >
+        <div>
+          Header
+        </div>
       </div>
-    </div>
-    <div
-      class="pf-v6-c-compass__sidebar pf-m-start pf-m-expanded"
-    >
-      <div>
-        Sidebar start
+      <div
+        class="pf-v6-c-compass__sidebar pf-m-start pf-m-expanded"
+      >
+        <div>
+          Sidebar start
+        </div>
       </div>
-    </div>
-    <div
-      class="pf-v6-c-compass__main"
-    >
-      <div>
-        Main content
+      <div
+        class="pf-v6-c-compass__main"
+      >
+        <div>
+          Main content
+        </div>
       </div>
-    </div>
-    <div
-      class="pf-v6-c-compass__sidebar pf-m-end pf-m-expanded"
-    >
-      <div>
-        Sidebar end
+      <div
+        class="pf-v6-c-compass__sidebar pf-m-end pf-m-expanded"
+      >
+        <div>
+          Sidebar end
+        </div>
       </div>
-    </div>
-    <div
-      class="pf-v6-c-compass__footer pf-m-expanded"
-    >
-      <div>
-        Footer
+      <div
+        class="pf-v6-c-compass__footer pf-m-expanded"
+      >
+        <div>
+          Footer
+        </div>
       </div>
     </div>
   </div>
@@ -47,60 +51,64 @@ exports[`Matches the snapshot with basic layout 1`] = `
 exports[`Matches the snapshot with drawer 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v6-c-drawer pf-m-expanded pf-m-pill"
+    class="pf-v6-c-compass"
   >
     <div
-      class="pf-v6-c-drawer__main"
+      class="pf-v6-c-drawer pf-m-expanded pf-m-pill"
     >
       <div
-        class="pf-v6-c-drawer__content"
+        class="pf-v6-c-drawer__main"
       >
         <div
-          class="pf-v6-c-drawer__body"
+          class="pf-v6-c-drawer__content"
         >
           <div
-            class="pf-v6-c-compass"
+            class="pf-v6-c-drawer__body"
           >
             <div
-              class="pf-v6-c-compass__header pf-m-expanded"
+              class=""
             >
-              <div>
-                Header
+              <div
+                class="pf-v6-c-compass__header pf-m-expanded"
+              >
+                <div>
+                  Header
+                </div>
               </div>
-            </div>
-            <div
-              class="pf-v6-c-compass__sidebar pf-m-start pf-m-expanded"
-            >
-              <div>
-                Sidebar start
+              <div
+                class="pf-v6-c-compass__sidebar pf-m-start pf-m-expanded"
+              >
+                <div>
+                  Sidebar start
+                </div>
               </div>
-            </div>
-            <div
-              class="pf-v6-c-compass__main"
-            >
-              <div>
-                Main content
+              <div
+                class="pf-v6-c-compass__main"
+              >
+                <div>
+                  Main content
+                </div>
               </div>
-            </div>
-            <div
-              class="pf-v6-c-compass__sidebar pf-m-end pf-m-expanded"
-            >
-              <div>
-                Sidebar end
+              <div
+                class="pf-v6-c-compass__sidebar pf-m-end pf-m-expanded"
+              >
+                <div>
+                  Sidebar end
+                </div>
               </div>
-            </div>
-            <div
-              class="pf-v6-c-compass__footer pf-m-expanded"
-            >
-              <div>
-                Footer
+              <div
+                class="pf-v6-c-compass__footer pf-m-expanded"
+              >
+                <div>
+                  Footer
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div>
-        Drawer content
+        <div>
+          Drawer content
+        </div>
       </div>
     </div>
   </div>
