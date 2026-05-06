@@ -79,20 +79,6 @@ test('accepts flat createIcon({ svgPath }) shape', () => {
   expect(screen.getByRole('img', { hidden: true }).querySelector('path')).toHaveAttribute('d', 'legacy-path');
 });
 
-test('createIconBase accepts nested icon with deprecated svgPath field', () => {
-  const nestedLegacyPath: CreateIconBaseProps = {
-    name: 'NestedLegacyPathIcon',
-    icon: {
-      width: 8,
-      height: 8,
-      svgPath: 'nested-legacy-d'
-    }
-  };
-  const NestedIcon = createIconBase(nestedLegacyPath);
-  render(<NestedIcon />);
-  expect(screen.getByRole('img', { hidden: true }).querySelector('path')).toHaveAttribute('d', 'nested-legacy-d');
-});
-
 test('sets correct svgClassName by default', () => {
   render(<RhStandardIcon />);
   expect(screen.getByRole('img', { hidden: true })).toHaveClass('pf-v6-icon-rh-standard');
@@ -106,15 +92,6 @@ test('sets svgClassName when noDefaultStyle is false', () => {
 test('does not set svgClassName when noDefaultStyle is true', () => {
   render(<RhStandardIcon noDefaultStyle />);
   expect(screen.getByRole('img', { hidden: true })).not.toHaveClass('pf-v6-icon-rh-standard');
-});
-
-test('throws when createIconBase omits icon', () => {
-  expect(() =>
-    createIconBase({
-      name: 'MissingDefaultIcon',
-      rhUiIcon: null
-    })
-  ).toThrow('@patternfly/react-icons: createIconBase requires an `icon` definition (name: MissingDefaultIcon).');
 });
 
 test('sets correct svgPath if array', () => {
@@ -243,5 +220,16 @@ describe('rh-ui mapping: nested SVGs, set prop, and warnings', () => {
     } finally {
       warnSpy.mockRestore();
     }
+  });
+
+  test('warns when createIconBase omits icon', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+    createIconBase({
+      name: 'MissingDefaultIcon',
+      rhUiIcon: null
+    });
+    expect(warnSpy).toHaveBeenCalledWith(
+      '@patternfly/react-icons: createIconBase is missing an `icon` definition (name: MissingDefaultIcon).'
+    );
   });
 });

@@ -6,7 +6,7 @@ export interface SVGPathObject {
 }
 
 /** Icon data format */
-export interface IconDefinition {
+export interface IconData {
   name?: string;
   width: number;
   height: number;
@@ -14,22 +14,17 @@ export interface IconDefinition {
   yOffset?: number;
   svgClassName?: string;
   svgPathData?: string | SVGPathObject[];
-  /** @deprecated Use `svgPathData` for nested definitions. */
-  svgPath?: string | SVGPathObject[];
 }
 
-/** Argument shape for {@link createIconBase} (module-private interface, not exported). */
+/** Internal API props  */
 interface CreateIconBaseProps {
   name?: string;
-  icon?: IconDefinition;
-  rhUiIcon?: IconDefinition | null;
+  icon?: IconData;
+  rhUiIcon?: IconData | null;
 }
 
-/**
- * Flat props shape for {@link createIcon}: layout fields plus `svgPath` (mapped to {@link IconDefinition.svgPathData}
- * on the nested `icon` before calling {@link createIconBase}).
- */
-export interface CreateIconProps {
+/** Public API props */
+export interface IconDefinition {
   name?: string;
   width: number;
   height: number;
@@ -37,9 +32,10 @@ export interface CreateIconProps {
   yOffset?: number;
   svgPath?: string | SVGPathObject[];
   svgClassName?: string;
-  rhUiIcon?: IconDefinition | null;
+  rhUiIcon?: IconData | null;
 }
 
+/** Additional svg props */
 export interface SVGIconProps extends Omit<React.HTMLProps<SVGElement>, 'ref'> {
   title?: string;
   className?: string;
@@ -51,7 +47,7 @@ export interface SVGIconProps extends Omit<React.HTMLProps<SVGElement>, 'ref'> {
 
 let currentId = 0;
 
-/** Renders `<path>` elements from `svgPathData` (string `d` or array of `{ path, className? }`). */
+/** Returns svg path(s) from a given svg data object. */
 function getSvgPaths(svgPathData: string | SVGPathObject[] | undefined): ReactNode {
   return svgPathData && Array.isArray(svgPathData) ? (
     svgPathData.map((pathObject, index) => (
@@ -62,9 +58,8 @@ function getSvgPaths(svgPathData: string | SVGPathObject[] | undefined): ReactNo
   );
 }
 
-const createSvg = (icon: IconDefinition, iconClassName: string) => {
+const createInnerSvg = (icon: IconData, iconClassName: string) => {
   const { xOffset, yOffset, width, height, svgPathData, svgClassName } = icon ?? {};
-  const resolvedPathData = svgPathData ?? icon?.svgPath;
   const _xOffset = xOffset ?? 0;
   const _yOffset = yOffset ?? 0;
   const viewBox = [_xOffset, _yOffset, width, height].join(' ');
@@ -80,21 +75,20 @@ const createSvg = (icon: IconDefinition, iconClassName: string) => {
 
   return (
     <svg viewBox={viewBox} className={classNames.join(' ')}>
-      {getSvgPaths(resolvedPathData)}
+      {getSvgPaths(svgPathData)}
     </svg>
   );
 };
 
 /**
- * Nested icon factory (used by generated icon modules under `dist`). Omitted from published typings when
- * `stripInternal` is enabled; use {@link createIcon} for the flat `svgPath` + layout props shape.
- *
+ * Internal API for creating icons. Subject to change at any time. Please use `createIcon` instead.
  * @internal
  */
 export function createIconBase({ name, icon, rhUiIcon = null }: CreateIconBaseProps): ComponentClass<SVGIconProps> {
   if (icon == null) {
-    throw new Error(
-      `@patternfly/react-icons: createIconBase requires an \`icon\` definition (name: ${name ?? 'unknown'}).`
+    // eslint-disable-next-line no-console
+    console.warn(
+      `@patternfly/react-icons: createIconBase is missing an \`icon\` definition (name: ${name ?? 'unknown'}).`
     );
   }
   return class SVGIcon extends Component<SVGIconProps> {
@@ -106,10 +100,6 @@ export function createIconBase({ name, icon, rhUiIcon = null }: CreateIconBasePr
       noDefaultStyle: false
     };
 
-    /**
-     * One root `<svg>`: a single flat variant when `set` is defined, or when `set` is omitted and `rhUiIcon` is
-     * null; when `set` is omitted and `rhUiIcon` is set, nested inner `<svg>`s (default + RH UI swap layout).
-     */
     render() {
       const { title, className: propsClassName, set, noDefaultStyle, ...props } = this.props;
 
@@ -121,7 +111,7 @@ export function createIconBase({ name, icon, rhUiIcon = null }: CreateIconBasePr
       }
 
       if (set === 'rh-ui' && rhUiIcon === null) {
-        // eslint-disable-next-line no-console -- same behavior as main branch createIcon
+        // eslint-disable-next-line no-console
         console.warn(
           `Set "rh-ui" was provided for ${name}, but no rh-ui icon data exists for this icon. The default icon will be rendered.`
         );
@@ -130,7 +120,6 @@ export function createIconBase({ name, icon, rhUiIcon = null }: CreateIconBasePr
       if ((set === undefined && rhUiIcon === null) || set !== undefined) {
         const iconData = set !== undefined && set === 'rh-ui' && rhUiIcon !== null ? rhUiIcon : icon;
         const { xOffset, yOffset, width, height, svgPathData, svgClassName } = iconData ?? {};
-        const resolvedPathData = svgPathData ?? iconData?.svgPath;
         const _xOffset = xOffset ?? 0;
         const _yOffset = yOffset ?? 0;
         const viewBox = [_xOffset, _yOffset, width, height].join(' ');
@@ -152,7 +141,7 @@ export function createIconBase({ name, icon, rhUiIcon = null }: CreateIconBasePr
             {...(props as Omit<React.SVGProps<SVGElement>, 'ref'>)} // Lie.
           >
             {hasTitle && <title id={this.id}>{title}</title>}
-            {getSvgPaths(resolvedPathData)}
+            {getSvgPaths(svgPathData)}
           </svg>
         );
       }
@@ -168,22 +157,18 @@ export function createIconBase({ name, icon, rhUiIcon = null }: CreateIconBasePr
           {...(props as Omit<React.SVGProps<SVGElement>, 'ref'>)} // Lie.
         >
           {hasTitle && <title id={this.id}>{title}</title>}
-          {icon && createSvg(icon, 'pf-v6-icon-default')}
-          {rhUiIcon && createSvg(rhUiIcon, 'pf-v6-icon-rh-ui')}
+          {icon && createInnerSvg(icon, 'pf-v6-icon-default')}
+          {rhUiIcon && createInnerSvg(rhUiIcon, 'pf-v6-icon-rh-ui')}
         </svg>
       );
     }
   };
 }
 
-/**
- * Maps {@link CreateIconProps} (flat layout + `svgPath`) to a nested {@link IconDefinition} (`svgPath` →
- * `svgPathData`), then returns the component class from {@link createIconBase}. Generated icon modules call
- * {@link createIconBase} directly with nested data (see `@internal` on `createIconBase`).
- */
-export function createIcon(props: CreateIconProps): ComponentClass<SVGIconProps> {
+/** Public API for creating icons. Will be maintained up to breaking releases. */
+export function createIcon(props: IconDefinition): ComponentClass<SVGIconProps> {
   const { rhUiIcon = null, ...rest } = props;
-  const icon: IconDefinition = {
+  const icon: IconData = {
     name: rest.name,
     width: rest.width,
     height: rest.height,
