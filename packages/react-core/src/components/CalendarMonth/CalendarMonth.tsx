@@ -84,8 +84,8 @@ export interface CalendarProps extends CalendarFormat, Omit<React.HTMLProps<HTML
   /** The container to append the month select menu to. Defaults to 'inline'.
    * If your menu is being cut off you can append it to an element higher up the DOM tree.
    * Some examples:
-   * menuAppendTo={() => document.body};
-   * menuAppendTo={document.getElementById('target')}
+   * monthAppendTo={() => document.body};
+   * monthAppendTo={document.getElementById('target')}
    */
   monthAppendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement) | 'inline';
 }
