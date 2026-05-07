@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { TextInput } from '../TextInput';
 import { Button } from '../Button';
-import { Select, SelectList, SelectOption, SelectProps } from '../Select';
+import { Select, SelectList, SelectOption } from '../Select';
 import { MenuToggle, MenuToggleElement } from '../MenuToggle';
 import { InputGroup, InputGroupItem } from '../InputGroup';
 import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
@@ -81,8 +81,13 @@ export interface CalendarProps extends CalendarFormat, Omit<React.HTMLProps<HTML
   onSelectToggle?: (open: boolean) => void;
   /** Functions that returns if a date is valid and selectable. */
   validators?: ((date: Date) => boolean)[];
-  /** Additional props passed to the month select component. */
-  monthSelectProps?: SelectProps;
+  /** The container to append the month select menu to. Defaults to 'inline'.
+   * If your menu is being cut off you can append it to an element higher up the DOM tree.
+   * Some examples:
+   * menuAppendTo={() => document.body};
+   * menuAppendTo={document.getElementById('target')}
+   */
+  monthAppendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement) | 'inline';
 }
 
 const buildCalendar = (year: number, month: number, weekStart: number, validators: ((date: Date) => boolean)[]) => {
@@ -145,7 +150,7 @@ export const CalendarMonth = ({
   cellAriaLabel,
   isDateFocused = false,
   inlineProps,
-  monthSelectProps,
+  monthAppendTo = 'inline',
   ...props
 }: CalendarProps) => {
   const longMonths = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
@@ -330,8 +335,7 @@ export const CalendarMonth = ({
                   onMonthChange(ev, newDate);
                 }}
                 selected={monthFormatted}
-                popperProps={{ appendTo: 'inline' }}
-                {...monthSelectProps}
+                popperProps={{ appendTo: monthAppendTo }}
               >
                 <SelectList>
                   {longMonths.map((longMonth, index) => (
