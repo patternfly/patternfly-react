@@ -21,6 +21,7 @@ import {
   DragCancelEvent
 } from '@dnd-kit/core';
 import { arrayMove, sortableKeyboardCoordinates } from '@dnd-kit/sortable';
+import { restrictToWindowEdges } from '@dnd-kit/modifiers';
 import { Draggable } from './Draggable';
 import { DraggableDataListItem } from './DraggableDataListItem';
 import { DraggableDualListSelectorListItem } from './DraggableDualListSelectorListItem';
@@ -103,7 +104,9 @@ export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> 
   );
 
   const sensors = useSensors(
-    useSensor(PointerSensor),
+    useSensor(PointerSensor, {
+      activationConstraint: { distance: 8 }
+    }),
     useSensor(KeyboardSensor, {
       coordinateGetter: sortableKeyboardCoordinates
     })
@@ -298,6 +301,7 @@ export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> 
     <DndContext
       sensors={sensors}
       collisionDetection={collisionDetectionStrategy}
+      modifiers={[restrictToWindowEdges]}
       onDragEnd={handleDragEnd}
       onDragOver={handleDragOver}
       onDragStart={handleDragStart}
