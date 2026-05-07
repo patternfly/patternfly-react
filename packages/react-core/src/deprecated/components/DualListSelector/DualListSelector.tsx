@@ -1,7 +1,7 @@
 import { Component, createRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
-import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
+import RhUiDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-double-caret-left-icon';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
@@ -746,7 +746,7 @@ class DualListSelector extends Component<DualListSelectorProps, DualListSelector
                       tooltipContent={removeAllTooltip}
                       tooltipProps={removeAllTooltipProps}
                     >
-                      <AngleDoubleLeftIcon />
+                      <RhUiDoubleCaretLeftIcon />
                     </DualListSelectorControl>
                     <DualListSelectorControl
                       onClick={isTree ? this.removeTreeSelected : this.removeSelected}

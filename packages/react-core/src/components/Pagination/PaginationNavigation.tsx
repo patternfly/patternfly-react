@@ -2,7 +2,7 @@ import { Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
 import { css } from '@patternfly/react-styles';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
-import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
+import RhUiDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-double-caret-left-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
 import { Button, ButtonVariant } from '../Button';
@@ -195,7 +195,7 @@ class PaginationNavigation extends Component<PaginationNavigationProps, Paginati
                 this.handleNewPage(event, 1);
                 this.setState({ userInputPage: 1 });
               }}
-              icon={<AngleDoubleLeftIcon />}
+              icon={<RhUiDoubleCaretLeftIcon />}
             />
           </div>
         )}

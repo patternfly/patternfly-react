@@ -14,7 +14,7 @@ import {
   EmptyStateBody,
   EmptyStateActions
 } from '@patternfly/react-core';
-import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
+import RhUiDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-double-caret-left-icon';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
@@ -165,7 +165,7 @@ export const DualListSelectorSearch: React.FunctionComponent = () => {
           isDisabled={chosenOptions.length === 0}
           onClick={() => moveAll(false)}
           aria-label="Remove all"
-          icon={<AngleDoubleLeftIcon />}
+          icon={<RhUiDoubleCaretLeftIcon />}
         />
         <DualListSelectorControl
           onClick={() => moveSelected(false)}
