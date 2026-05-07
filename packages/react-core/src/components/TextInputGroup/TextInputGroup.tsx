@@ -1,6 +1,7 @@
 import { createContext, useRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
 import { css } from '@patternfly/react-styles';
+import { ValidatedOptions } from '../../helpers/constants';
 
 export interface TextInputGroupProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the text input group */
@@ -11,8 +12,11 @@ export interface TextInputGroupProps extends React.HTMLProps<HTMLDivElement> {
   isDisabled?: boolean;
   /** Flag to indicate the toggle has no border or background */
   isPlain?: boolean;
-  /** Status variant of the text input group. */
-  validated?: 'success' | 'warning' | 'error';
+  /** Value to indicate if the text input group is modified to show that validation state.
+   * If set to success, warning, or error, the group will show that state.
+   * If set to default, no validation styling is applied (use to clear a prior validation state).
+   */
+  validated?: 'success' | 'warning' | 'error' | 'default' | ValidatedOptions;
   /** @hide A reference object to attach to the input box */
   innerRef?: React.RefObject<any>;
 }
@@ -32,6 +36,7 @@ export const TextInputGroup: React.FunctionComponent<TextInputGroupProps> = ({
 }: TextInputGroupProps) => {
   const ref = useRef(null);
   const textInputGroupRef = innerRef || ref;
+  const hasValidatedModifier = ['success', 'error', 'warning'].includes(validated);
 
   return (
     <TextInputGroupContext.Provider value={{ isDisabled, validated }}>
@@ -41,7 +46,7 @@ export const TextInputGroup: React.FunctionComponent<TextInputGroupProps> = ({
           styles.textInputGroup,
           isDisabled && styles.modifiers.disabled,
           isPlain && styles.modifiers.plain,
-          validated && styles.modifiers[validated],
+          hasValidatedModifier && styles.modifiers[validated as 'success' | 'warning' | 'error'],
           className
         )}
         {...props}

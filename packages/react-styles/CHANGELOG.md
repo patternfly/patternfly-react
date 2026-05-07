@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.5.0-prerelease.21...@patternfly/react-styles@6.5.0-prerelease.22) (2026-05-07)
+
+### Features
+
+- **Pagination:** added dynamic sticky and plain ([#12388](https://github.com/patternfly/patternfly-react/issues/12388)) ([7c4f9df](https://github.com/patternfly/patternfly-react/commit/7c4f9dfac4c4a63deecd9fb4d517c5713a617f9e))
+
 # [6.5.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.5.0-prerelease.20...@patternfly/react-styles@6.5.0-prerelease.21) (2026-04-28)
 
 ### Features

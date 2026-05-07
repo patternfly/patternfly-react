@@ -35,7 +35,7 @@ import {
   MenuToggleElement
 } from '@patternfly/react-core';
 import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
-import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
+import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 import pfIcon from './assets/pf-logo-small.svg';
 import activeMQIcon from './assets/activemq-core_200x150.png';
 import avroIcon from './assets/camel-avro_200x150.png';
@@ -481,7 +481,7 @@ export const CardViewBasic: React.FunctionComponent = () => {
                 <EmptyState
                   headingLevel="h2"
                   titleText="Add a new card to your page"
-                  icon={PlusCircleIcon}
+                  icon={RhUiAddCircleFillIcon}
                   variant={EmptyStateVariant.xs}
                 >
                   <EmptyStateFooter>

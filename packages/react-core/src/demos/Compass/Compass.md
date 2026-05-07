@@ -1,7 +1,6 @@
 ---
 id: Compass
-section: AI
-subsection: Generative UIs
+section: components
 ---
 
 import { useRef, useState, useEffect } from 'react';

@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.71](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.70...@patternfly/react-core@6.5.0-prerelease.71) (2026-05-07)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [6.5.0-prerelease.70](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.69...@patternfly/react-core@6.5.0-prerelease.70) (2026-05-07)
+
+### Features
+
+- **CalendarMonth:** add select appendTo passthrough ([#12391](https://github.com/patternfly/patternfly-react/issues/12391)) ([bdd5556](https://github.com/patternfly/patternfly-react/commit/bdd55564d24b112c95629d3096c4a9b66f0421e4))
+- **Pagination:** added dynamic sticky and plain ([#12388](https://github.com/patternfly/patternfly-react/issues/12388)) ([7c4f9df](https://github.com/patternfly/patternfly-react/commit/7c4f9dfac4c4a63deecd9fb4d517c5713a617f9e))
+
+# [6.5.0-prerelease.69](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.68...@patternfly/react-core@6.5.0-prerelease.69) (2026-05-07)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [6.5.0-prerelease.68](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.67...@patternfly/react-core@6.5.0-prerelease.68) (2026-05-05)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [6.5.0-prerelease.67](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.66...@patternfly/react-core@6.5.0-prerelease.67) (2026-05-05)
+
+### Features
+
+- **Drawer:** Added support for glass ([#12305](https://github.com/patternfly/patternfly-react/issues/12305)) ([bce395d](https://github.com/patternfly/patternfly-react/commit/bce395dc88c4a462b5950fb939d4e14327c7b559))
+
+# [6.5.0-prerelease.66](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.65...@patternfly/react-core@6.5.0-prerelease.66) (2026-05-05)
+
+**Note:** Version bump only for package @patternfly/react-core
+
 # [6.5.0-prerelease.65](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.64...@patternfly/react-core@6.5.0-prerelease.65) (2026-05-01)
 
 ### Bug Fixes

@@ -452,6 +452,42 @@ exports[`Label label with red color with outline variant 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Label label with orangered color 1`] = `
+<DocumentFragment>
+  <span
+    class="pf-v6-c-label pf-m-orangered pf-m-filled"
+  >
+    <span
+      class="pf-v6-c-label__content"
+    >
+      <span
+        class="pf-v6-c-label__text"
+      >
+        Something
+      </span>
+    </span>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`Label label with orangered color with outline variant 1`] = `
+<DocumentFragment>
+  <span
+    class="pf-v6-c-label pf-m-orangered pf-m-outline"
+  >
+    <span
+      class="pf-v6-c-label__content"
+    >
+      <span
+        class="pf-v6-c-label__text"
+      >
+        Something
+      </span>
+    </span>
+  </span>
+</DocumentFragment>
+`;
+
 exports[`Label label with teal color 1`] = `
 <DocumentFragment>
   <span

@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.100](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.5.0-prerelease.99...demo-app-ts@6.5.0-prerelease.100) (2026-05-07)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [6.5.0-prerelease.99](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.5.0-prerelease.98...demo-app-ts@6.5.0-prerelease.99) (2026-05-07)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [6.5.0-prerelease.98](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.5.0-prerelease.97...demo-app-ts@6.5.0-prerelease.98) (2026-05-07)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [6.5.0-prerelease.97](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.5.0-prerelease.96...demo-app-ts@6.5.0-prerelease.97) (2026-05-05)
+
+**Note:** Version bump only for package demo-app-ts
+
+# [6.5.0-prerelease.96](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.5.0-prerelease.95...demo-app-ts@6.5.0-prerelease.96) (2026-05-05)
+
+### Features
+
+- **Drawer:** Added support for glass ([#12305](https://github.com/patternfly/patternfly-react/issues/12305)) ([bce395d](https://github.com/patternfly/patternfly-react/commit/bce395dc88c4a462b5950fb939d4e14327c7b559))
+
+# [6.5.0-prerelease.95](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.5.0-prerelease.94...demo-app-ts@6.5.0-prerelease.95) (2026-05-05)
+
+**Note:** Version bump only for package demo-app-ts
+
 # [6.5.0-prerelease.94](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.5.0-prerelease.93...demo-app-ts@6.5.0-prerelease.94) (2026-05-01)
 
 **Note:** Version bump only for package demo-app-ts

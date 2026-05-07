@@ -1,8 +1,7 @@
 ---
 id: Compass
 cssPrefix: pf-v6-c-compass
-section: AI
-subsection: Generative UIs
+section: components
 beta: true
 propComponents:
   [

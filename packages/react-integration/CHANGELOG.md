@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.16...@patternfly/react-integration@6.5.0-prerelease.17) (2026-05-05)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+# [6.5.0-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.15...@patternfly/react-integration@6.5.0-prerelease.16) (2026-05-05)
+
+### Features
+
+- **Drawer:** Added support for glass ([#12305](https://github.com/patternfly/patternfly-react/issues/12305)) ([bce395d](https://github.com/patternfly/patternfly-react/commit/bce395dc88c4a462b5950fb939d4e14327c7b559))
+
 # [6.5.0-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.14...@patternfly/react-integration@6.5.0-prerelease.15) (2026-04-27)
 
 **Note:** Version bump only for package @patternfly/react-integration

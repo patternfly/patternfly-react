@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Label, LabelGroup, LabelProps } from '@patternfly/react-core';
+import { Label, LabelColor, LabelGroup } from '@patternfly/react-core';
 import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
 
 export const LabelGroupVerticalCategoryOverflowRemovable: React.FunctionComponent = () => {
@@ -15,7 +15,7 @@ export const LabelGroupVerticalCategoryOverflowRemovable: React.FunctionComponen
   return (
     <LabelGroup categoryName="Group label with a very long name" isVertical isClosable onClick={deleteCategory}>
       {labels.map(([labelText, labelColor]) => (
-        <Label icon={<RhUiInformationFillIcon />} color={labelColor as LabelProps['color']} key={labelText}>
+        <Label icon={<RhUiInformationFillIcon />} color={labelColor as LabelColor} key={labelText}>
           {labelText}
         </Label>
       ))}

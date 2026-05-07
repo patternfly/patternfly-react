@@ -15,6 +15,7 @@ import {
   DropdownList,
   Icon,
   Label,
+  LabelColor,
   Masthead,
   MastheadMain,
   MastheadLogo,
@@ -180,7 +181,7 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
       case 'רץ':
         return (
           <Label
-            color="green"
+            color={LabelColor.green}
             icon={
               <Icon shouldMirrorRTL>
                 <WalkingIcon />
@@ -199,7 +200,7 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
                 <HandPaperIcon />
               </Icon>
             }
-            color="red"
+            color={LabelColor.red}
           >
             {translation.table.rows.status.stopped}
           </Label>
@@ -207,14 +208,14 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
       case 'Needs maintenance':
       case 'זקוק לתחזוקה':
         return (
-          <Label icon={<ToolsIcon />} color="blue">
+          <Label icon={<ToolsIcon />} color={LabelColor.blue}>
             {translation.table.rows.status.needsMaintenance}
           </Label>
         );
       case 'Down':
       case 'מטה':
         return (
-          <Label icon={<ClockIcon />} color="orange">
+          <Label icon={<ClockIcon />} color={LabelColor.orange}>
             {translation.table.rows.status.down}
           </Label>
         );

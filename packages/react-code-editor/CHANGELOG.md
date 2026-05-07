@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.74](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.5.0-prerelease.73...@patternfly/react-code-editor@6.5.0-prerelease.74) (2026-05-07)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+# [6.5.0-prerelease.73](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.5.0-prerelease.72...@patternfly/react-code-editor@6.5.0-prerelease.73) (2026-05-07)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+# [6.5.0-prerelease.72](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.5.0-prerelease.71...@patternfly/react-code-editor@6.5.0-prerelease.72) (2026-05-07)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+# [6.5.0-prerelease.71](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.5.0-prerelease.70...@patternfly/react-code-editor@6.5.0-prerelease.71) (2026-05-05)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+# [6.5.0-prerelease.70](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.5.0-prerelease.69...@patternfly/react-code-editor@6.5.0-prerelease.70) (2026-05-05)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+# [6.5.0-prerelease.69](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.5.0-prerelease.68...@patternfly/react-code-editor@6.5.0-prerelease.69) (2026-05-05)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
 # [6.5.0-prerelease.68](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.5.0-prerelease.67...@patternfly/react-code-editor@6.5.0-prerelease.68) (2026-05-01)
 
 **Note:** Version bump only for package @patternfly/react-code-editor
