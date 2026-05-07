@@ -34,8 +34,8 @@ export interface HeroProps extends Omit<React.HTMLProps<HTMLDivElement>, 'conten
     stop2?: string;
     stop3?: string;
   };
-  /** Flag indicating whether glass styles are removed from the hero when a glass theme is applied. */
-  hasNoGlass?: boolean;
+  /** Flag indicating the hero has glass styling when glass theme is applied. */
+  isGlass?: boolean;
   /** Modifies the width of the hero body. */
   bodyWidth?: string;
   /** Modifies the max-width of the hero body. */
@@ -49,7 +49,7 @@ export const Hero: React.FunctionComponent<HeroProps> = ({
   backgroundSrcDark,
   gradientLight,
   gradientDark,
-  hasNoGlass = false,
+  isGlass = false,
   bodyWidth,
   bodyMaxWidth,
   ...props
@@ -90,7 +90,7 @@ export const Hero: React.FunctionComponent<HeroProps> = ({
 
   return (
     <div
-      className={css(styles.hero, hasNoGlass && styles.modifiers.noGlass, className)}
+      className={css(styles.hero, isGlass && styles.modifiers.glass, className)}
       style={{ ...props.style, ...customStyles }}
       {...props}
     >

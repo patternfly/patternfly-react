@@ -16,10 +16,28 @@ test('Renders with children', () => {
   expect(screen.getByText('Test content')).toBeVisible();
 });
 
-test(`Renders with ${styles.hero} class on wrapper by defaulty`, () => {
+test(`Renders with ${styles.hero} class on wrapper by default`, () => {
   render(<Hero>Test</Hero>);
 
   expect(screen.getByText('Test').parentElement).toHaveClass(`${styles.hero}`, { exact: true });
+});
+
+test(`Renders with ${styles.modifiers.glass} class when isGlass is true`, () => {
+  render(<Hero isGlass>Test</Hero>);
+
+  expect(screen.getByText('Test').parentElement).toHaveClass(`${styles.modifiers.glass}`, { exact: true });
+});
+
+test(`Renders without ${styles.modifiers.glass} class when isGlass is false`, () => {
+  render(<Hero isGlass={false}>Test</Hero>);
+
+  expect(screen.getByText('Test').parentElement).not.toHaveClass(`${styles.modifiers.glass}`, { exact: true });
+});
+
+test(`Renders without ${styles.modifiers.glass} class by default`, () => {
+  render(<Hero>Test</Hero>);
+
+  expect(screen.getByText('Test').parentElement).not.toHaveClass(`${styles.modifiers.glass}`, { exact: true });
 });
 
 test('Renders with custom class name on wrapper when className prop is provided', () => {
