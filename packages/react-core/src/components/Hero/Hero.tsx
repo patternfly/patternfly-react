@@ -34,7 +34,7 @@ export interface HeroProps extends Omit<React.HTMLProps<HTMLDivElement>, 'conten
     stop2?: string;
     stop3?: string;
   };
-  /** Flag indicating the hero has glass styling when glass theme is applied. */
+  /** @beta Flag indicating the hero has glass styling when glass theme is applied. */
   isGlass?: boolean;
   /** Modifies the width of the hero body. */
   bodyWidth?: string;
