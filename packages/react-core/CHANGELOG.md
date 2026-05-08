@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.74](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.73...@patternfly/react-core@6.5.0-prerelease.74) (2026-05-08)
+
+### Bug Fixes
+
+- Update compass.css for example CSS ([29a7f97](https://github.com/patternfly/patternfly-react/commit/29a7f9797c21ec1f12c6c40c207eb694a9155d47))
+
 # [6.5.0-prerelease.73](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.72...@patternfly/react-core@6.5.0-prerelease.73) (2026-05-08)
 
 ### Features
