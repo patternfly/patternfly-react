@@ -149,7 +149,9 @@ export const CompassBasic: React.FunctionComponent = () => {
   const mainContent = (
     <>
       <CompassHero>
-        <Hero gradientDark={{ stop1: '#000', stop2: '#1b0d33', stop3: '#3d2785' }}>Hero</Hero>
+        <Hero isGlass gradientDark={{ stop1: '#000', stop2: '#1b0d33', stop3: '#3d2785' }}>
+          Hero
+        </Hero>
       </CompassHero>
       <CompassMainHeader title={<Title headingLevel="h1">Content title</Title>} />
       <CompassContent>
