@@ -158,6 +158,14 @@ checking checkboxes will check intermediate rows' checkboxes.
 
 ```
 
+### Selectable with indeterminate state
+
+To indicate partial selection, use `isIndeterminate` on the header's `select` prop. When some (but not all) selectable rows are selected, the header checkbox will convey this information to assistive technologies and also display a dash instead of a checkmark.
+
+```ts file="TableSelectableIndeterminate.tsx"
+
+```
+
 ### Selectable radio input
 
 Similarly to the selectable example above, the radio buttons use the first column. The first header cell is empty, and each body row's first cell has radio button props.

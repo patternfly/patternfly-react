@@ -54,3 +54,26 @@ test('Additional content renders after children when additionalContent is passed
   expect(thChildren.item(0)?.textContent).toEqual('Test');
   expect(thChildren.item(1)?.textContent).toEqual('Extra');
 });
+
+test('Renders checkbox without indeterminate state by default', () => {
+  render(<Th select={{ onSelect: jest.fn(), isSelected: false }} aria-label="Select all" />);
+
+  const checkbox = screen.getByRole('checkbox') as HTMLInputElement;
+  expect(checkbox).not.toBeChecked();
+  expect(checkbox.indeterminate).toBe(false);
+});
+
+test('Renders checkbox with indeterminate state when isIndeterminate is true', () => {
+  render(<Th select={{ onSelect: jest.fn(), isSelected: false, isIndeterminate: true }} aria-label="Select all" />);
+
+  const checkbox = screen.getByRole('checkbox') as HTMLInputElement;
+  expect(checkbox.indeterminate).toBe(true);
+});
+
+test('Renders checked checkbox when isSelected is true and isIndeterminate is false', () => {
+  render(<Th select={{ onSelect: jest.fn(), isSelected: true, isIndeterminate: false }} aria-label="Select all" />);
+
+  const checkbox = screen.getByRole('checkbox') as HTMLInputElement;
+  expect(checkbox).toBeChecked();
+  expect(checkbox.indeterminate).toBe(false);
+});
