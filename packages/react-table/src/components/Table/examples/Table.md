@@ -160,7 +160,7 @@ checking checkboxes will check intermediate rows' checkboxes.
 
 ### Selectable with indeterminate state
 
-This example demonstrates the indeterminate state support for the select-all checkbox. When some (but not all) rows are selected, the header checkbox displays a dash/minus icon to indicate partial selection.
+To indicate partial selection, use `isIndeterminate` on the header's `select` prop. When some (but not all) selectable rows are selected, the header checkbox will convey this information to assistive technologies and also display a dash instead of a checkmark.
 
 ```ts file="TableSelectableIndeterminate.tsx"
 

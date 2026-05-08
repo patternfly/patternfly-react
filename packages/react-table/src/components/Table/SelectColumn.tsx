@@ -44,20 +44,16 @@ export const SelectColumn: React.FunctionComponent<SelectColumnProps> = ({
     onSelect && onSelect(event);
   };
 
-  // PatternFly Checkbox supports indeterminate via isChecked: null
-  const checkboxProps = {
-    ...props,
-    id,
-    ref: inputRef,
-    onChange: handleChange,
-    ...(isIndeterminate && { isChecked: null })
-  };
-
   const commonProps = {
     ...props,
     id,
     ref: inputRef,
     onChange: handleChange
+  };
+
+  const checkboxProps = {
+    ...commonProps,
+    ...(isIndeterminate && { isChecked: null })
   };
 
   const content = (
