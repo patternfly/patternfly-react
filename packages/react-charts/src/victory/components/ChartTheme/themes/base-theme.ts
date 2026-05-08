@@ -57,6 +57,8 @@ import chart_legend_gutter_Width from '@patternfly/react-tokens/dist/esm/chart_l
 import chart_legend_orientation from '@patternfly/react-tokens/dist/esm/chart_legend_orientation';
 import chart_legend_title_orientation from '@patternfly/react-tokens/dist/esm/chart_legend_title_orientation';
 import chart_legend_data_type from '@patternfly/react-tokens/dist/esm/chart_legend_data_type';
+import chart_legend_data_stroke_Color from '@patternfly/react-tokens/dist/esm/chart_legend_data_stroke_Color';
+import chart_legend_data_stroke_Width from '@patternfly/react-tokens/dist/esm/chart_legend_data_stroke_Width';
 import chart_legend_title_Padding from '@patternfly/react-tokens/dist/esm/chart_legend_title_Padding';
 import chart_line_data_Fill from '@patternfly/react-tokens/dist/esm/chart_line_data_Fill';
 import chart_line_data_Opacity from '@patternfly/react-tokens/dist/esm/chart_line_data_Opacity';
@@ -300,7 +302,9 @@ export const BaseTheme: ChartThemeDefinition = {
     titleOrientation: chart_legend_title_orientation.value,
     style: {
       data: {
-        type: chart_legend_data_type.value
+        type: chart_legend_data_type.value,
+        stroke: chart_legend_data_stroke_Color.var,
+        strokeWidth: chart_legend_data_stroke_Width.var
       },
       labels: LABEL_PROPS,
       title: {
@@ -328,7 +332,7 @@ export const BaseTheme: ChartThemeDefinition = {
       data: {
         padding: chart_pie_data_Padding.value,
         stroke: chart_pie_data_stroke_Color.var,
-        strokeWidth: chart_pie_data_stroke_Width.value
+        strokeWidth: chart_pie_data_stroke_Width.var
       },
       labels: {
         ...LABEL_PROPS,
