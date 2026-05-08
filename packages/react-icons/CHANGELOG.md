@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.5.0-prerelease.33...@patternfly/react-icons@6.5.0-prerelease.34) (2026-05-08)
+
+### Features
+
+- **Hero:** glass styling update ([#12412](https://github.com/patternfly/patternfly-react/issues/12412)) ([bea138e](https://github.com/patternfly/patternfly-react/commit/bea138ecd4d33a2f591dac628b875b295ec71c31))
+
 # [6.5.0-prerelease.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.5.0-prerelease.32...@patternfly/react-icons@6.5.0-prerelease.33) (2026-05-08)
 
 ### Features
