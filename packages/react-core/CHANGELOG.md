@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.72](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.71...@patternfly/react-core@6.5.0-prerelease.72) (2026-05-08)
+
+### Features
+
+- **Page:** add dynamic sticky section support ([#12409](https://github.com/patternfly/patternfly-react/issues/12409)) ([97b29d3](https://github.com/patternfly/patternfly-react/commit/97b29d3fafc14ee01f0bbf0d2bdbc527d62f2a16))
+
 # [6.5.0-prerelease.71](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.70...@patternfly/react-core@6.5.0-prerelease.71) (2026-05-07)
 
 **Note:** Version bump only for package @patternfly/react-core
