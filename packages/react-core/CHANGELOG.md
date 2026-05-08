@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.74](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.73...@patternfly/react-core@6.5.0-prerelease.74) (2026-05-08)
+
+### Bug Fixes
+
+- Update compass.css for example CSS ([29a7f97](https://github.com/patternfly/patternfly-react/commit/29a7f9797c21ec1f12c6c40c207eb694a9155d47))
+
+# [6.5.0-prerelease.73](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.72...@patternfly/react-core@6.5.0-prerelease.73) (2026-05-08)
+
+### Features
+
+- **Hero:** glass styling update ([#12412](https://github.com/patternfly/patternfly-react/issues/12412)) ([bea138e](https://github.com/patternfly/patternfly-react/commit/bea138ecd4d33a2f591dac628b875b295ec71c31))
+
+# [6.5.0-prerelease.72](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.71...@patternfly/react-core@6.5.0-prerelease.72) (2026-05-08)
+
+### Features
+
+- **Page:** add dynamic sticky section support ([#12409](https://github.com/patternfly/patternfly-react/issues/12409)) ([97b29d3](https://github.com/patternfly/patternfly-react/commit/97b29d3fafc14ee01f0bbf0d2bdbc527d62f2a16))
+
+# [6.5.0-prerelease.71](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.70...@patternfly/react-core@6.5.0-prerelease.71) (2026-05-07)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+# [6.5.0-prerelease.70](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.69...@patternfly/react-core@6.5.0-prerelease.70) (2026-05-07)
+
+### Features
+
+- **CalendarMonth:** add select appendTo passthrough ([#12391](https://github.com/patternfly/patternfly-react/issues/12391)) ([bdd5556](https://github.com/patternfly/patternfly-react/commit/bdd55564d24b112c95629d3096c4a9b66f0421e4))
+- **Pagination:** added dynamic sticky and plain ([#12388](https://github.com/patternfly/patternfly-react/issues/12388)) ([7c4f9df](https://github.com/patternfly/patternfly-react/commit/7c4f9dfac4c4a63deecd9fb4d517c5713a617f9e))
+
+# [6.5.0-prerelease.69](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.68...@patternfly/react-core@6.5.0-prerelease.69) (2026-05-07)
+
+**Note:** Version bump only for package @patternfly/react-core
+
 # [6.5.0-prerelease.68](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.67...@patternfly/react-core@6.5.0-prerelease.68) (2026-05-05)
 
 **Note:** Version bump only for package @patternfly/react-core

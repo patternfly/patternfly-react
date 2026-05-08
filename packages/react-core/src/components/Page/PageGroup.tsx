@@ -17,6 +17,10 @@ export interface PageGroupProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'top' | 'bottom';
     '2xl'?: 'top' | 'bottom';
   };
+  /** @beta Applies the base sticky positioning to the top or bottom of the scroll parent container. */
+  stickyBase?: 'top' | 'bottom';
+  /** @beta Flag indicating if the group has stuck styling, applied when the group is not at the edge of the scroll parent container. */
+  isStickyStuck?: boolean;
   /** Enables the page group to fill the available vertical space if true, or disable filling if false. */
   isFilled?: boolean;
   /** Modifier indicating if PageGroup should have a shadow at the top */
@@ -37,6 +41,8 @@ export const PageGroup = ({
   className = '',
   children,
   stickyOnBreakpoint,
+  stickyBase,
+  isStickyStuck = false,
   isFilled,
   hasShadowTop = false,
   hasShadowBottom = false,
@@ -61,6 +67,10 @@ export const PageGroup = ({
       className={css(
         styles.pageMainGroup,
         formatBreakpointMods(stickyOnBreakpoint, styles, 'sticky-', getVerticalBreakpoint(height), true),
+        stickyBase === 'top' && styles.modifiers.stickyTopBase,
+        stickyBase === 'bottom' && styles.modifiers.stickyBottomBase,
+        isStickyStuck && stickyBase === 'top' && styles.modifiers.stickyTopStuck,
+        isStickyStuck && stickyBase === 'bottom' && styles.modifiers.stickyBottomStuck,
         isFilled === false && styles.modifiers.noFill,
         isFilled === true && styles.modifiers.fill,
         hasShadowTop && styles.modifiers.shadowTop,

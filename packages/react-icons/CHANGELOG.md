@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.5.0-prerelease.33...@patternfly/react-icons@6.5.0-prerelease.34) (2026-05-08)
+
+### Features
+
+- **Hero:** glass styling update ([#12412](https://github.com/patternfly/patternfly-react/issues/12412)) ([bea138e](https://github.com/patternfly/patternfly-react/commit/bea138ecd4d33a2f591dac628b875b295ec71c31))
+
+# [6.5.0-prerelease.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.5.0-prerelease.32...@patternfly/react-icons@6.5.0-prerelease.33) (2026-05-08)
+
+### Features
+
+- **Page:** add dynamic sticky section support ([#12409](https://github.com/patternfly/patternfly-react/issues/12409)) ([97b29d3](https://github.com/patternfly/patternfly-react/commit/97b29d3fafc14ee01f0bbf0d2bdbc527d62f2a16))
+
+# [6.5.0-prerelease.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.5.0-prerelease.31...@patternfly/react-icons@6.5.0-prerelease.32) (2026-05-07)
+
+### Bug Fixes
+
+- **createIcon:** Fix broken API in createIcon.tsx ([#12336](https://github.com/patternfly/patternfly-react/issues/12336)) ([726063b](https://github.com/patternfly/patternfly-react/commit/726063bf5a991f0e64af157014dfdfef77ec4dd3))
+
+# [6.5.0-prerelease.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.5.0-prerelease.30...@patternfly/react-icons@6.5.0-prerelease.31) (2026-05-07)
+
+### Features
+
+- **Pagination:** added dynamic sticky and plain ([#12388](https://github.com/patternfly/patternfly-react/issues/12388)) ([7c4f9df](https://github.com/patternfly/patternfly-react/commit/7c4f9dfac4c4a63deecd9fb4d517c5713a617f9e))
+
 # [6.5.0-prerelease.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.5.0-prerelease.29...@patternfly/react-icons@6.5.0-prerelease.30) (2026-05-05)
 
 **Note:** Version bump only for package @patternfly/react-icons

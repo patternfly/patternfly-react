@@ -180,6 +180,8 @@ export interface ThSelectType {
   onSelect?: OnSelect;
   /** Whether the cell is selected */
   isSelected: boolean;
+  /** Whether the select checkbox should be in an indeterminate state (some items selected) */
+  isIndeterminate?: boolean;
   /** Flag indicating the select checkbox in the th is disabled */
   isHeaderSelectDisabled?: boolean;
   /** Whether to disable the selection */

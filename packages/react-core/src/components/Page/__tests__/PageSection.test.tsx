@@ -199,3 +199,67 @@ test(`Renders with ${styles.modifiers.noPlainOnGlass} class when isNoPlainOnGlas
 
   expect(screen.getByText('test')).toHaveClass(styles.modifiers.noPlainOnGlass);
 });
+
+test(`Does not add sticky base or sticky stuck classes by default`, () => {
+  render(<PageSection component="main">test</PageSection>);
+  const section = screen.getByRole('main');
+  expect(section).not.toHaveClass(styles.modifiers.stickyTopBase);
+  expect(section).not.toHaveClass(styles.modifiers.stickyBottomBase);
+  expect(section).not.toHaveClass(styles.modifiers.stickyTopStuck);
+  expect(section).not.toHaveClass(styles.modifiers.stickyBottomStuck);
+});
+
+test(`Adds ${styles.modifiers.stickyTopBase} without stuck class when stickyBase="top"`, () => {
+  render(
+    <PageSection component="main" stickyBase="top">
+      test
+    </PageSection>
+  );
+  const section = screen.getByRole('main');
+  expect(section).toHaveClass(styles.modifiers.stickyTopBase);
+  expect(section).not.toHaveClass(styles.modifiers.stickyTopStuck);
+});
+
+test(`Adds ${styles.modifiers.stickyBottomBase} without stuck class when stickyBase="bottom"`, () => {
+  render(
+    <PageSection component="main" stickyBase="bottom">
+      test
+    </PageSection>
+  );
+  const section = screen.getByRole('main');
+  expect(section).toHaveClass(styles.modifiers.stickyBottomBase);
+  expect(section).not.toHaveClass(styles.modifiers.stickyBottomStuck);
+});
+
+test(`Adds ${styles.modifiers.stickyTopStuck} when stickyBase="top" and isStickyStuck`, () => {
+  render(
+    <PageSection component="main" stickyBase="top" isStickyStuck>
+      test
+    </PageSection>
+  );
+  const section = screen.getByRole('main');
+  expect(section).toHaveClass(styles.modifiers.stickyTopBase);
+  expect(section).toHaveClass(styles.modifiers.stickyTopStuck);
+});
+
+test(`Adds ${styles.modifiers.stickyBottomStuck} when stickyBase="bottom" and isStickyStuck`, () => {
+  render(
+    <PageSection component="main" stickyBase="bottom" isStickyStuck>
+      test
+    </PageSection>
+  );
+  const section = screen.getByRole('main');
+  expect(section).toHaveClass(styles.modifiers.stickyBottomBase);
+  expect(section).toHaveClass(styles.modifiers.stickyBottomStuck);
+});
+
+test(`Does not add stuck class when isStickyStuck is true but stickyBase is not set`, () => {
+  render(
+    <PageSection component="main" isStickyStuck>
+      test
+    </PageSection>
+  );
+  const section = screen.getByRole('main');
+  expect(section).not.toHaveClass(styles.modifiers.stickyTopStuck);
+  expect(section).not.toHaveClass(styles.modifiers.stickyBottomStuck);
+});
