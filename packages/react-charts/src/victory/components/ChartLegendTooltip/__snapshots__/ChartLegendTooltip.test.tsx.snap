@@ -29,7 +29,7 @@ exports[`allows tooltip via container component 1`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: var(--pf-v6-chart-axis--axis--stroke--Color, #c7c7c7); fill: var(--pf-v6-chart-axis--axis--Fill, transparent); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
+          style="stroke: var(--pf-v6-chart-axis--axis--stroke--Color, #e0e0e0); fill: var(--pf-v6-chart-axis--axis--Fill, transparent); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
           vector-effect="non-scaling-stroke"
           x1="50"
           x2="400"
@@ -42,7 +42,7 @@ exports[`allows tooltip via container component 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #c7c7c7); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #e0e0e0); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="50"
@@ -73,7 +73,7 @@ exports[`allows tooltip via container component 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #c7c7c7); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #e0e0e0); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="166.66666666666666"
             x2="166.66666666666666"
@@ -104,7 +104,7 @@ exports[`allows tooltip via container component 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #c7c7c7); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #e0e0e0); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="283.3333333333333"
             x2="283.3333333333333"
@@ -135,7 +135,7 @@ exports[`allows tooltip via container component 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #c7c7c7); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #e0e0e0); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="400"
             x2="400"
@@ -167,7 +167,7 @@ exports[`allows tooltip via container component 1`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: var(--pf-v6-chart-axis--axis--stroke--Color, #c7c7c7); fill: var(--pf-v6-chart-axis--axis--Fill, transparent); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
+          style="stroke: var(--pf-v6-chart-axis--axis--stroke--Color, #e0e0e0); fill: var(--pf-v6-chart-axis--axis--Fill, transparent); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
           vector-effect="non-scaling-stroke"
           x1="50"
           x2="50"
@@ -180,7 +180,7 @@ exports[`allows tooltip via container component 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-v6-chart-axis--grid--stroke--Color, #c7c7c7); fill: var(--pf-v6-chart-axis--grid--Fill, none); pointer-events: painted; stroke-linecap: round; stroke-linejoin: round;"
+            style="stroke: var(--pf-v6-chart-axis--grid--stroke--Color, #e0e0e0); fill: var(--pf-v6-chart-axis--grid--Fill, none); pointer-events: painted; stroke-linecap: round; stroke-linejoin: round;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="400"
@@ -190,7 +190,7 @@ exports[`allows tooltip via container component 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #c7c7c7); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #e0e0e0); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="45"
@@ -221,7 +221,7 @@ exports[`allows tooltip via container component 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-v6-chart-axis--grid--stroke--Color, #c7c7c7); fill: var(--pf-v6-chart-axis--grid--Fill, none); pointer-events: painted; stroke-linecap: round; stroke-linejoin: round;"
+            style="stroke: var(--pf-v6-chart-axis--grid--stroke--Color, #e0e0e0); fill: var(--pf-v6-chart-axis--grid--Fill, none); pointer-events: painted; stroke-linecap: round; stroke-linejoin: round;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="400"
@@ -231,7 +231,7 @@ exports[`allows tooltip via container component 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #c7c7c7); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #e0e0e0); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="45"
@@ -262,7 +262,7 @@ exports[`allows tooltip via container component 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-v6-chart-axis--grid--stroke--Color, #c7c7c7); fill: var(--pf-v6-chart-axis--grid--Fill, none); pointer-events: painted; stroke-linecap: round; stroke-linejoin: round;"
+            style="stroke: var(--pf-v6-chart-axis--grid--stroke--Color, #e0e0e0); fill: var(--pf-v6-chart-axis--grid--Fill, none); pointer-events: painted; stroke-linecap: round; stroke-linejoin: round;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="400"
@@ -272,7 +272,7 @@ exports[`allows tooltip via container component 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #c7c7c7); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #e0e0e0); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="45"
@@ -415,7 +415,7 @@ exports[`allows tooltip via container component 1`] = `
       z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-v6-chart-theme--green--ColorScale--100, #63993d);"
+          style="stroke: var(--pf-v6-chart-legend--data--stroke--Color, rgba(255, 255, 255, 0.0000)); stroke-width: var(--pf-v6-chart-legend--data--stroke--Width, 0px); fill: var(--pf-v6-chart-theme--green--ColorScale--100, #63993d);"
         />
         <path
           d="M 193.44, 248.156
@@ -435,7 +435,7 @@ exports[`allows tooltip via container component 1`] = `
       z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-v6-chart-theme--green--ColorScale--200, #afdc8f);"
+          style="stroke: var(--pf-v6-chart-legend--data--stroke--Color, rgba(255, 255, 255, 0.0000)); stroke-width: var(--pf-v6-chart-legend--data--stroke--Width, 0px); fill: var(--pf-v6-chart-theme--green--ColorScale--200, #afdc8f);"
         />
         <path
           d="M 234.32799999999997, 250.872
@@ -445,7 +445,7 @@ exports[`allows tooltip via container component 1`] = `
       z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-v6-chart-theme--green--ColorScale--300, #204d00);"
+          style="stroke: var(--pf-v6-chart-legend--data--stroke--Color, rgba(255, 255, 255, 0.0000)); stroke-width: var(--pf-v6-chart-legend--data--stroke--Width, 0px); fill: var(--pf-v6-chart-theme--green--ColorScale--300, #204d00);"
         />
         <path
           d="M 273.928, 250.872
@@ -455,7 +455,7 @@ exports[`allows tooltip via container component 1`] = `
       z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-v6-chart-theme--green--ColorScale--400, #87bb62);"
+          style="stroke: var(--pf-v6-chart-legend--data--stroke--Color, rgba(255, 255, 255, 0.0000)); stroke-width: var(--pf-v6-chart-legend--data--stroke--Width, 0px); fill: var(--pf-v6-chart-theme--green--ColorScale--400, #87bb62);"
         />
         <text
           direction="inherit"
