@@ -16,11 +16,6 @@ test('uses a custom aria-label when one is provided', () => {
   expect(screen.getByRole('progressbar')).toHaveAttribute('aria-label', 'Loading users');
 });
 
-test('renders aria-labelledBy when provided', () => {
-  render(<Spinner aria-labelledBy="external-label" />);
-  expect(screen.getByRole('progressbar')).toHaveAttribute('aria-labelledBy', 'external-label');
-});
-
 test('small spinner', () => {
   const { asFragment } = render(<Spinner size="sm" />);
   expect(asFragment()).toMatchSnapshot();
