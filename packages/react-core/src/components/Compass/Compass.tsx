@@ -110,7 +110,7 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
   );
 
   return (
-    <div className={css(styles.compass, dock !== undefined && styles.modifiers.docked, className)} {...props}>
+    <div className={css(styles.compass, dock && styles.modifiers.docked, className)} {...props}>
       {hasDrawer ? (
         <Drawer isPill {...drawerProps}>
           <DrawerContent panelContent={drawerContent}>

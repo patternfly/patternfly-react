@@ -21,7 +21,7 @@ export interface CompassMainHeaderProps extends Omit<React.HTMLProps<HTMLDivElem
   /** Additional props passed to the Panel that wraps the main header content when using the title or toolbar props. When using the
    * children prop, you should pass your own Panel.
    */
-  compassPanelProps?: Omit<PanelProps, 'children'>;
+  panelProps?: Omit<PanelProps, 'children'>;
 }
 
 export const CompassMainHeader: React.FunctionComponent<CompassMainHeaderProps> = ({
@@ -29,12 +29,12 @@ export const CompassMainHeader: React.FunctionComponent<CompassMainHeaderProps> 
   title,
   toolbar,
   children,
-  compassPanelProps,
+  panelProps,
   ...props
 }: CompassMainHeaderProps) => {
   const _content =
     title !== undefined || toolbar !== undefined ? (
-      <Panel {...compassPanelProps}>
+      <Panel {...panelProps}>
         <PanelMain>
           <PanelMainBody>
             <CompassMainHeaderContent>
