@@ -40,7 +40,7 @@ export const CompassBasic: React.FunctionComponent = () => {
 
   const navContent = (
     <>
-      <Panel isPill>
+      <Panel isPill isGlass>
         <PanelMain>
           <PanelMainBody>
             <CompassNavContent>
@@ -70,7 +70,7 @@ export const CompassBasic: React.FunctionComponent = () => {
           </PanelMainBody>
         </PanelMain>
       </Panel>
-      <Panel isPill>
+      <Panel isPill isGlass>
         <PanelMain>
           <PanelMainBody style={{ padding: 0 }}>
             <TabContent id="subtabs" ref={subTabsRef}>
@@ -105,7 +105,7 @@ export const CompassBasic: React.FunctionComponent = () => {
   );
 
   const sidebarContent = (
-    <Panel isPill>
+    <Panel isPill isGlass>
       <PanelMain>
         <PanelMainBody>
           <ActionList isIconList isVertical>
@@ -155,7 +155,7 @@ export const CompassBasic: React.FunctionComponent = () => {
       </CompassHero>
       <CompassMainHeader title={<Title headingLevel="h1">Content title</Title>} panelProps={{ isGlass: true }} />
       <CompassContent>
-        <Panel isScrollable isAutoHeight isFullHeight isGlass>
+        <Panel isScrollable isAutoHeight isGlass>
           <PanelMain>
             <PanelMainBody>Content</PanelMainBody>
           </PanelMain>
@@ -166,7 +166,7 @@ export const CompassBasic: React.FunctionComponent = () => {
   const sidebarEndContent = sidebarContent;
   const footerContent = (
     <CompassMessageBar>
-      <Panel isPill>
+      <Panel isPill isGlass>
         <PanelMain>
           <PanelMainBody style={{ padding: 0 }}>Message bar</PanelMainBody>
         </PanelMain>
