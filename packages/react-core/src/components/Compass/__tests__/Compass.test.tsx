@@ -99,27 +99,6 @@ test('Renders with drawer when drawerContent is provided', () => {
   expect(screen.getByText('Drawer content')).toBeVisible();
 });
 
-test('Renders with light background image when backgroundSrcLight is provided', () => {
-  const backgroundSrc = 'light-bg.jpg';
-  render(<Compass backgroundSrcLight={backgroundSrc} data-testid="compass" />);
-  expect(screen.getByTestId('compass')).toHaveStyle(`--pf-v6-c-compass--BackgroundImage--light: url(${backgroundSrc})`);
-});
-
-test('Renders with dark background image when backgroundSrcDark is provided', () => {
-  const backgroundSrc = 'dark-bg.jpg';
-  render(<Compass backgroundSrcDark={backgroundSrc} data-testid="compass" />);
-  expect(screen.getByTestId('compass')).toHaveStyle(`--pf-v6-c-compass--BackgroundImage--dark: url(${backgroundSrc})`);
-});
-
-test('Renders with both light and dark background images when both are provided', () => {
-  const lightSrc = 'light-bg.jpg';
-  const darkSrc = 'dark-bg.jpg';
-  render(<Compass backgroundSrcLight={lightSrc} backgroundSrcDark={darkSrc} data-testid="compass" />);
-  const compassElement = screen.getByTestId('compass');
-  expect(compassElement).toHaveStyle(`--pf-v6-c-compass--BackgroundImage--light: url(${lightSrc})`);
-  expect(compassElement).toHaveStyle(`--pf-v6-c-compass--BackgroundImage--dark: url(${darkSrc})`);
-});
-
 test('Renders with additional props spread to the component', () => {
   render(<Compass aria-label="Test label" data-testid="compass" />);
   expect(screen.getByTestId('compass')).toHaveAccessibleName('Test label');

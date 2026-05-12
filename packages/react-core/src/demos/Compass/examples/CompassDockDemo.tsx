@@ -377,9 +377,9 @@ export const CompassDockDemo: React.FunctionComponent = () => {
 
   const mainContent = (
     <>
-      <CompassMainHeader title={<Title headingLevel="h1">Content title</Title>} />
+      <CompassMainHeader title={<Title headingLevel="h1">Content title</Title>} panelProps={{ isGlass: true }} />
       <CompassContent>
-        <Panel>
+        <Panel isScrollable isAutoHeight isGlass>
           <PanelMain>
             <PanelMainBody>Content</PanelMainBody>
           </PanelMain>

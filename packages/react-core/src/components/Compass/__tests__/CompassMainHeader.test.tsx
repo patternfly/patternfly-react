@@ -100,19 +100,15 @@ test('Does not render Panel when children are passed', () => {
   expect(content).not.toHaveClass(panelStyles.panel);
 });
 
-test('Passes props to Panel when title and compassPanelProps is passed', () => {
-  render(
-    <CompassMainHeader data-testid="test-id" compassPanelProps={{ className: 'panel-class' }} title="Title text" />
-  );
+test('Passes props to Panel when title and panelProps is passed', () => {
+  render(<CompassMainHeader data-testid="test-id" panelProps={{ className: 'panel-class' }} title="Title text" />);
 
   const panel = screen.getByTestId('test-id').firstChild;
   expect(panel).toHaveClass('panel-class');
 });
 
-test('Passes props to Panel when toolbar and compassPanelProps is passed', () => {
-  render(
-    <CompassMainHeader data-testid="test-id" compassPanelProps={{ className: 'panel-class' }} toolbar="Toolbar text" />
-  );
+test('Passes props to Panel when toolbar and panelProps is passed', () => {
+  render(<CompassMainHeader data-testid="test-id" panelProps={{ className: 'panel-class' }} toolbar="Toolbar text" />);
 
   const panel = screen.getByTestId('test-id').firstChild;
   expect(panel).toHaveClass('panel-class');
