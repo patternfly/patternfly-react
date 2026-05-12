@@ -6,7 +6,7 @@ exports[`Matches the snapshot with basic layout 1`] = `
     class="pf-v6-c-compass"
   >
     <div
-      class=""
+      class="pf-v6-c-compass__container"
     >
       <div
         class="pf-v6-c-compass__header pf-m-expanded"
@@ -66,7 +66,7 @@ exports[`Matches the snapshot with drawer 1`] = `
             class="pf-v6-c-drawer__body"
           >
             <div
-              class=""
+              class="pf-v6-c-compass__container"
             >
               <div
                 class="pf-v6-c-compass__header pf-m-expanded"
