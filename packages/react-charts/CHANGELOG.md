@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.5.0-prerelease.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.5.0-prerelease.27...@patternfly/react-charts@8.5.0-prerelease.28) (2026-05-12)
+
+### Features
+
+- **react-charts:** add high contrast ([#12419](https://github.com/patternfly/patternfly-react/issues/12419)) ([e9c801c](https://github.com/patternfly/patternfly-react/commit/e9c801c84067fb9ed42d10d19deadf8dfca55289))
+
 # [8.5.0-prerelease.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.5.0-prerelease.26...@patternfly/react-charts@8.5.0-prerelease.27) (2026-05-08)
 
 **Note:** Version bump only for package @patternfly/react-charts

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.5.0-prerelease.23...@patternfly/react-tokens@6.5.0-prerelease.24) (2026-05-12)
+
+### Features
+
+- **react-charts:** add high contrast ([#12419](https://github.com/patternfly/patternfly-react/issues/12419)) ([e9c801c](https://github.com/patternfly/patternfly-react/commit/e9c801c84067fb9ed42d10d19deadf8dfca55289))
+
 # [6.5.0-prerelease.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.5.0-prerelease.22...@patternfly/react-tokens@6.5.0-prerelease.23) (2026-05-08)
 
 ### Features
