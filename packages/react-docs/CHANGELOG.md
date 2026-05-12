@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.5.0-prerelease.88](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.87...@patternfly/react-docs@7.5.0-prerelease.88) (2026-05-12)
+
+### Features
+
+- **Compass:** remove background props, update structure ([#12408](https://github.com/patternfly/patternfly-react/issues/12408)) ([5564f73](https://github.com/patternfly/patternfly-react/commit/5564f730fb899c3f8968cbcc567cbded2def367e))
+
 # [7.5.0-prerelease.87](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.86...@patternfly/react-docs@7.5.0-prerelease.87) (2026-05-12)
 
 ### Features

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.36](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.5.0-prerelease.35...@patternfly/react-icons@6.5.0-prerelease.36) (2026-05-12)
+
+### Features
+
+- **Compass:** remove background props, update structure ([#12408](https://github.com/patternfly/patternfly-react/issues/12408)) ([5564f73](https://github.com/patternfly/patternfly-react/commit/5564f730fb899c3f8968cbcc567cbded2def367e))
+
 # [6.5.0-prerelease.35](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.5.0-prerelease.34...@patternfly/react-icons@6.5.0-prerelease.35) (2026-05-12)
 
 ### Features
