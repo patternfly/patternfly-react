@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.78](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-drag-drop@6.5.0-prerelease.77...@patternfly/react-drag-drop@6.5.0-prerelease.78) (2026-05-13)
+
+### Bug Fixes
+
+- **DragDropSort:** support custom drag button aria-label and fix falsy id overlay ([#12417](https://github.com/patternfly/patternfly-react/issues/12417)) ([4721880](https://github.com/patternfly/patternfly-react/commit/4721880b1055e3b31eeccbdc2c2e5dbccc448242))
+
 # [6.5.0-prerelease.77](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-drag-drop@6.5.0-prerelease.76...@patternfly/react-drag-drop@6.5.0-prerelease.77) (2026-05-12)
 
 **Note:** Version bump only for package @patternfly/react-drag-drop
