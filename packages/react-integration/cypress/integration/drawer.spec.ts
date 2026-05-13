@@ -1,6 +1,6 @@
-const visitDrawerDemoWithGlassTheme = () => {
+const visitDrawerDemoWithGlassTheme = (viewportWidth: number = 1280) => {
   cy.visit('http://localhost:3000/drawer-demo-nav-link');
-  cy.viewport(1280, 800);
+  cy.viewport(viewportWidth, 800);
   cy.document().then((doc) => {
     doc.documentElement.classList.add('pf-v6-theme-glass');
   });
@@ -129,9 +129,10 @@ describe('Drawer Demo Test', () => {
     });
   });
 
-  // Blocked on Core: https://github.com/patternfly/patternfly/issues/8340
-  it.skip('glass theme: drawer panel has no glass CSS when isGlass is false', () => {
-    visitDrawerDemoWithGlassTheme();
+  // We only want to test at mobile viewport for this, as at desktop a drawer panel should correclty have
+  // a transprent (or rgba(0,0,0,0)) background, which incorrectly triggers a failure here.
+  it('glass theme: drawer panel has no glass CSS when isGlass is false', () => {
+    visitDrawerDemoWithGlassTheme(700);
 
     cy.get('#drawer-glass-theme-no-isglass.pf-v6-c-drawer').should(($drawer) => {
       expect($drawer).to.have.length(1);
