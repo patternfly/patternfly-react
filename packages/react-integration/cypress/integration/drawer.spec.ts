@@ -129,8 +129,7 @@ describe('Drawer Demo Test', () => {
     });
   });
 
-  // Blocked on Core: https://github.com/patternfly/patternfly/issues/8340
-  it.skip('glass theme: drawer panel has no glass CSS when isGlass is false', () => {
+  it('glass theme: drawer panel has no glass CSS when isGlass is false', () => {
     visitDrawerDemoWithGlassTheme();
 
     cy.get('#drawer-glass-theme-no-isglass.pf-v6-c-drawer').should(($drawer) => {
