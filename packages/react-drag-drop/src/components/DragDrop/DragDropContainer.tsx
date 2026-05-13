@@ -111,7 +111,7 @@ export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> 
 
   const collisionDetectionStrategy: CollisionDetection = useCallback(
     (args) => {
-      if (activeId && activeId in items) {
+      if (activeId != null && activeId in items) {
         return closestCenter({
           ...args,
           droppableContainers: args.droppableContainers.filter((container) => container.id in items)
@@ -144,7 +144,7 @@ export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> 
       if (hasRecentlyMovedContainer.current) {
         lastOverId.current = activeId;
       }
-      return lastOverId.current ? [{ id: lastOverId.current }] : [];
+      return lastOverId.current != null ? [{ id: lastOverId.current }] : [];
     },
     [activeId, items]
   );
@@ -168,7 +168,7 @@ export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> 
     const { id: activeId } = active;
     const { id: overId } = over;
 
-    if (!overId || activeId in items) {
+    if (overId == null || activeId in items) {
       return;
     }
 
@@ -240,7 +240,7 @@ export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> 
   };
 
   const getDragOverlay = () => {
-    if (!activeId) {
+    if (activeId == null) {
       return;
     }
     const item = findItem(activeId, findContainer(activeId));
@@ -290,7 +290,7 @@ export const DragDropContainer: React.FunctionComponent<DragDropContainerProps> 
     );
   };
 
-  const dragOverlay = <DragOverlay>{activeId && getDragOverlay()}</DragOverlay>;
+  const dragOverlay = <DragOverlay>{activeId != null && getDragOverlay()}</DragOverlay>;
 
   const portalTarget = typeof appendTo === 'function' ? appendTo() : appendTo || document.body;
 
