@@ -1,0 +1,299 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormGroup should render correctly when label is not a string with Children = Array 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-form__group"
+    data-ouia-component-id="OUIA-Generated-FormGroup-:rm:"
+    data-ouia-component-type="PF6/FormGroup"
+    data-ouia-safe="true"
+  >
+    <div
+      class="pf-v6-c-form__group-label"
+    >
+      <label
+        class="pf-v6-c-form__label"
+        for="id"
+      >
+        <span
+          class="pf-v6-c-form__label-text"
+        >
+          <div>
+            label
+          </div>
+        </span>
+      </label>
+        
+    </div>
+    <div
+      class="pf-v6-c-form__group-control"
+    >
+      <input
+        aria-label="label"
+      />
+      <input
+        id="id"
+      />
+      <input />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`FormGroup should render default form group variant 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-form__group"
+    data-ouia-component-id="OUIA-Generated-FormGroup-:r0:"
+    data-ouia-component-type="PF6/FormGroup"
+    data-ouia-safe="true"
+  >
+    <div
+      class="pf-v6-c-form__group-label"
+    >
+      <label
+        class="pf-v6-c-form__label"
+        for="label-id"
+      >
+        <span
+          class="pf-v6-c-form__label-text"
+        >
+          label
+        </span>
+      </label>
+        
+    </div>
+    <div
+      class="pf-v6-c-form__group-control"
+    >
+      <input
+        id="label-id"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`FormGroup should render form group variant with node label 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-form__group"
+    data-ouia-component-id="OUIA-Generated-FormGroup-:r8:"
+    data-ouia-component-type="PF6/FormGroup"
+    data-ouia-safe="true"
+  >
+    <div
+      class="pf-v6-c-form__group-label"
+    >
+      <label
+        class="pf-v6-c-form__label"
+        for="id"
+      >
+        <span
+          class="pf-v6-c-form__label-text"
+        >
+          <h1>
+            Header
+          </h1>
+        </span>
+      </label>
+        
+    </div>
+    <div
+      class="pf-v6-c-form__group-control"
+    >
+      <input
+        aria-label="input"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`FormGroup should render form group variant with required label 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-form__group"
+    data-ouia-component-id="OUIA-Generated-FormGroup-:r6:"
+    data-ouia-component-type="PF6/FormGroup"
+    data-ouia-safe="true"
+  >
+    <div
+      class="pf-v6-c-form__group-label"
+    >
+      <label
+        class="pf-v6-c-form__label"
+        for="label-id"
+      >
+        <span
+          class="pf-v6-c-form__label-text"
+        >
+          label
+        </span>
+        <span
+          aria-hidden="true"
+          class="pf-v6-c-form__label-required"
+        >
+           *
+        </span>
+      </label>
+        
+    </div>
+    <div
+      class="pf-v6-c-form__group-control"
+    >
+      <input
+        id="label-id"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`FormGroup should render form group variant without label 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-form__group"
+    data-ouia-component-id="OUIA-Generated-FormGroup-:rk:"
+    data-ouia-component-type="PF6/FormGroup"
+    data-ouia-safe="true"
+  >
+    <div
+      class="pf-v6-c-form__group-control"
+    >
+      <input
+        aria-label="input"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`FormGroup should render form group with additional label info 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-form__group"
+    data-ouia-component-id="OUIA-Generated-FormGroup-:ra:"
+    data-ouia-component-type="PF6/FormGroup"
+    data-ouia-safe="true"
+  >
+    <div
+      class="pf-v6-c-form__group-label pf-m-info"
+    >
+      <div
+        class="pf-v6-c-form__group-label-main"
+      >
+        <label
+          class="pf-v6-c-form__label"
+          for="id"
+        >
+          <span
+            class="pf-v6-c-form__label-text"
+          >
+            <h1>
+              Header
+            </h1>
+          </span>
+        </label>
+          
+      </div>
+      <div
+        class="pf-v6-c-form__group-label-info"
+      >
+        more info
+      </div>
+    </div>
+    <div
+      class="pf-v6-c-form__group-control"
+    >
+      <input
+        aria-label="input"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`FormGroup should render horizontal form group variant 1`] = `
+<DocumentFragment>
+  <form
+    class="pf-v6-c-form pf-m-horizontal"
+    data-ouia-component-id="OUIA-Generated-Form-:re:"
+    data-ouia-component-type="PF6/Form"
+    data-ouia-safe="true"
+    novalidate=""
+  >
+    <div
+      class="pf-v6-c-form__group"
+      data-ouia-component-id="OUIA-Generated-FormGroup-:rf:"
+      data-ouia-component-type="PF6/FormGroup"
+      data-ouia-safe="true"
+    >
+      <div
+        class="pf-v6-c-form__group-label"
+      >
+        <label
+          class="pf-v6-c-form__label"
+          for="label-id"
+        >
+          <span
+            class="pf-v6-c-form__label-text"
+          >
+            label
+          </span>
+        </label>
+          
+      </div>
+      <div
+        class="pf-v6-c-form__group-control"
+      >
+        <input
+          id="label-id"
+        />
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`FormGroup should render stacked horizontal form group variant 1`] = `
+<DocumentFragment>
+  <form
+    class="pf-v6-c-form pf-m-horizontal"
+    data-ouia-component-id="OUIA-Generated-Form-:rh:"
+    data-ouia-component-type="PF6/Form"
+    data-ouia-safe="true"
+    novalidate=""
+  >
+    <div
+      class="pf-v6-c-form__group"
+      data-ouia-component-id="OUIA-Generated-FormGroup-:ri:"
+      data-ouia-component-type="PF6/FormGroup"
+      data-ouia-safe="true"
+    >
+      <div
+        class="pf-v6-c-form__group-label"
+      >
+        <label
+          class="pf-v6-c-form__label"
+          for="label-id"
+        >
+          <span
+            class="pf-v6-c-form__label-text"
+          >
+            label
+          </span>
+        </label>
+          
+      </div>
+      <div
+        class="pf-v6-c-form__group-control pf-m-stack"
+      >
+        <input
+          id="label-id"
+        />
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
