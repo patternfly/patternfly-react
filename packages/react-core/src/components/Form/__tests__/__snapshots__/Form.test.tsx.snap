@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form component should render default form variant 1`] = `
+<DocumentFragment>
+  <form
+    class="pf-v6-c-form"
+    data-ouia-component-id="OUIA-Generated-Form-:r0:"
+    data-ouia-component-type="PF6/Form"
+    data-ouia-safe="true"
+    novalidate=""
+  />
+</DocumentFragment>
+`;
+
+exports[`Form component should render form with limited width 1`] = `
+<DocumentFragment>
+  <form
+    class="pf-v6-c-form pf-m-limit-width"
+    data-ouia-component-id="OUIA-Generated-Form-:r2:"
+    data-ouia-component-type="PF6/Form"
+    data-ouia-safe="true"
+    novalidate=""
+  />
+</DocumentFragment>
+`;
+
+exports[`Form component should render horizontal form variant 1`] = `
+<DocumentFragment>
+  <form
+    class="pf-v6-c-form pf-m-horizontal"
+    data-ouia-component-id="OUIA-Generated-Form-:r1:"
+    data-ouia-component-type="PF6/Form"
+    data-ouia-safe="true"
+    novalidate=""
+  />
+</DocumentFragment>
+`;
