@@ -38,8 +38,12 @@ export interface ToolbarProps extends React.HTMLProps<HTMLDivElement>, OUIAProps
   isFullHeight?: boolean;
   /** Flag indicating the toolbar is static */
   isStatic?: boolean;
-  /** Flag indicating the toolbar should stick to the top of its container */
+  /** Flag indicating the toolbar should stick to the top of its container. This property applies both the sticky position and styling. */
   isSticky?: boolean;
+  /** @beta Flag indicating the toolbar should have sticky positioning to the top of its container */
+  isStickyBase?: boolean;
+  /** @beta Flag indicating the toolbar should have stuck styling, when the toolbar is not at the top of the scroll container */
+  isStickyStuck?: boolean;
   /** @beta Flag indicating the toolbar has a vertical orientation */
   isVertical?: boolean;
   /** Insets at various breakpoints. */
@@ -144,6 +148,8 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
       children,
       isFullHeight,
       isStatic,
+      isStickyBase,
+      isStickyStuck,
       inset,
       isSticky,
       isVertical,
@@ -171,6 +177,8 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
               isFullHeight && styles.modifiers.fullHeight,
               isStatic && styles.modifiers.static,
               isSticky && styles.modifiers.sticky,
+              isStickyBase && styles.modifiers.stickyBase,
+              isStickyStuck && styles.modifiers.stickyStuck,
               isVertical && styles.modifiers.vertical,
               formatBreakpointMods(inset, styles, '', getBreakpoint(width)),
               colorVariant === 'primary' && styles.modifiers.primary,

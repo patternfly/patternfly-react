@@ -52,8 +52,12 @@ export interface TableProps extends React.HTMLProps<HTMLTableElement>, OUIAProps
   isPlain?: boolean;
   /** @beta Flag indicating if the table should not have plain styling when in the glass theme */
   isNoPlainOnGlass?: boolean;
-  /** If set to true, the table header sticks to the top of its container */
+  /** If set to true, the table header sticks to the top of its container. This property applies both the sticky position and styling. */
   isStickyHeader?: boolean;
+  /** @beta Flag indicating the table header should have sticky positioning to the top of the parent InnerScrollContainer. */
+  isStickyHeaderBase?: boolean;
+  /** @beta Flag indicating the table header should have stuck styling, when the header is not at the top of the scroll container. */
+  isStickyHeaderStuck?: boolean;
   /** @hide Forwarded ref */
   innerRef?: React.RefObject<any>;
   /** Flag indicating table is a tree table */
@@ -98,6 +102,8 @@ const TableBase: React.FunctionComponent<TableProps> = ({
   variant,
   borders = true,
   isStickyHeader = false,
+  isStickyHeaderBase = false,
+  isStickyHeaderStuck = false,
   isPlain = false,
   isNoPlainOnGlass = false,
   gridBreakPoint = TableGridBreakpoint.gridMd,
@@ -225,6 +231,8 @@ const TableBase: React.FunctionComponent<TableProps> = ({
           styles.modifiers[variant],
           !borders && styles.modifiers.noBorderRows,
           isStickyHeader && styles.modifiers.stickyHeader,
+          isStickyHeaderBase && styles.modifiers.stickyHeaderBase,
+          isStickyHeaderStuck && styles.modifiers.stickyHeaderStuck,
           isTreeTable && stylesTreeView.modifiers.treeView,
           isStriped && styles.modifiers.striped,
           isExpandable && styles.modifiers.expandable,

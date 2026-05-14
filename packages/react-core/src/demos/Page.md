@@ -7,7 +7,7 @@ import { useState, useRef, useEffect } from 'react';
 import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import LightbulbIcon from '@patternfly/react-icons/dist/esm/icons/lightbulb-icon';

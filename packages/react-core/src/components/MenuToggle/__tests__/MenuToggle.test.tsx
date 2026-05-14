@@ -156,14 +156,14 @@ test('Does not render custom icon when icon prop and isSettings are passed', () 
   expect(screen.queryByText('Custom icon')).not.toBeInTheDocument();
 });
 
-test(`Renders with class ${styles.modifiers.dock} when isDocked is passed`, () => {
+test(`Renders with class ${styles.modifiers.docked} when isDocked is passed`, () => {
   render(<MenuToggle isDocked>Dock Toggle</MenuToggle>);
-  expect(screen.getByRole('button')).toHaveClass(styles.modifiers.dock);
+  expect(screen.getByRole('button')).toHaveClass(styles.modifiers.docked);
 });
 
-test(`Does not render with class ${styles.modifiers.dock} when isDocked is not passed`, () => {
+test(`Does not render with class ${styles.modifiers.docked} when isDocked is not passed`, () => {
   render(<MenuToggle>Toggle</MenuToggle>);
-  expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.dock);
+  expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.docked);
 });
 
 test(`Renders with class ${styles.modifiers.textExpanded} when isTextExpanded is passed and isDocked is passed`, () => {
@@ -185,13 +185,13 @@ test(`Does not render with class ${styles.modifiers.textExpanded} when isTextExp
   expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.textExpanded);
 });
 
-test(`Renders with both ${styles.modifiers.dock} and ${styles.modifiers.textExpanded} when both props are passed`, () => {
+test(`Renders with both ${styles.modifiers.docked} and ${styles.modifiers.textExpanded} when both props are passed`, () => {
   render(
     <MenuToggle isDocked isTextExpanded>
       Dock Text Expanded Toggle
     </MenuToggle>
   );
   const button = screen.getByRole('button');
-  expect(button).toHaveClass(styles.modifiers.dock);
+  expect(button).toHaveClass(styles.modifiers.docked);
   expect(button).toHaveClass(styles.modifiers.textExpanded);
 });

@@ -3,6 +3,98 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.82](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.81...@patternfly/react-table@6.5.0-prerelease.82) (2026-05-14)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [6.5.0-prerelease.81](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.80...@patternfly/react-table@6.5.0-prerelease.81) (2026-05-13)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [6.5.0-prerelease.80](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.79...@patternfly/react-table@6.5.0-prerelease.80) (2026-05-12)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [6.5.0-prerelease.79](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.78...@patternfly/react-table@6.5.0-prerelease.79) (2026-05-12)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [6.5.0-prerelease.78](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.77...@patternfly/react-table@6.5.0-prerelease.78) (2026-05-08)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [6.5.0-prerelease.77](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.76...@patternfly/react-table@6.5.0-prerelease.77) (2026-05-08)
+
+### Features
+
+- **Table:** add indeterminate checkbox state support for select-all header ([#12411](https://github.com/patternfly/patternfly-react/issues/12411)) ([b1c906d](https://github.com/patternfly/patternfly-react/commit/b1c906dd8ffafe1b4d19355a5fb2da7d34c16043)), closes [#12404](https://github.com/patternfly/patternfly-react/issues/12404)
+
+# [6.5.0-prerelease.76](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.75...@patternfly/react-table@6.5.0-prerelease.76) (2026-05-08)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [6.5.0-prerelease.75](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.74...@patternfly/react-table@6.5.0-prerelease.75) (2026-05-08)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [6.5.0-prerelease.74](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.73...@patternfly/react-table@6.5.0-prerelease.74) (2026-05-07)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [6.5.0-prerelease.73](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.72...@patternfly/react-table@6.5.0-prerelease.73) (2026-05-07)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [6.5.0-prerelease.72](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.71...@patternfly/react-table@6.5.0-prerelease.72) (2026-05-07)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [6.5.0-prerelease.71](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.70...@patternfly/react-table@6.5.0-prerelease.71) (2026-05-05)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [6.5.0-prerelease.70](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.69...@patternfly/react-table@6.5.0-prerelease.70) (2026-05-05)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [6.5.0-prerelease.69](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.68...@patternfly/react-table@6.5.0-prerelease.69) (2026-05-05)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [6.5.0-prerelease.68](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.67...@patternfly/react-table@6.5.0-prerelease.68) (2026-05-01)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [6.5.0-prerelease.67](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.66...@patternfly/react-table@6.5.0-prerelease.67) (2026-04-29)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [6.5.0-prerelease.66](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.65...@patternfly/react-table@6.5.0-prerelease.66) (2026-04-28)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [6.5.0-prerelease.65](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.64...@patternfly/react-table@6.5.0-prerelease.65) (2026-04-27)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [6.5.0-prerelease.64](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.63...@patternfly/react-table@6.5.0-prerelease.64) (2026-04-24)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [6.5.0-prerelease.63](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.62...@patternfly/react-table@6.5.0-prerelease.63) (2026-04-24)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+# [6.5.0-prerelease.62](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.61...@patternfly/react-table@6.5.0-prerelease.62) (2026-04-22)
+
+### Features
+
+- **Table:** support dynamic sticky styling ([#12348](https://github.com/patternfly/patternfly-react/issues/12348)) ([a8118e2](https://github.com/patternfly/patternfly-react/commit/a8118e2c5cca4ccc26f9cf0d9be59e07c4d2a3e0))
+
+# [6.5.0-prerelease.61](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.60...@patternfly/react-table@6.5.0-prerelease.61) (2026-04-20)
+
+**Note:** Version bump only for package @patternfly/react-table
+
 # [6.5.0-prerelease.60](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.5.0-prerelease.59...@patternfly/react-table@6.5.0-prerelease.60) (2026-04-17)
 
 **Note:** Version bump only for package @patternfly/react-table

@@ -5,7 +5,7 @@ section: patterns
 
 import { Fragment, useState } from 'react';
 import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
-import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
+import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 import pfIcon from '../assets/pf-logo-small.svg';
 import activeMQIcon from '../assets/activemq-core_200x150.png';
 import avroIcon from '../assets/camel-avro_200x150.png';

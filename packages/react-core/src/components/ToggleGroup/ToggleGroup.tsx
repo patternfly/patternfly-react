@@ -10,6 +10,8 @@ export interface ToggleGroupProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** Modifies the toggle group to include compact styling. */
   isCompact?: boolean;
+  /** Modifies the toggle group items to fill the available space. */
+  isFill?: boolean;
   /** Disable all toggle group items under this component. */
   areAllGroupsDisabled?: boolean;
   /** Accessible label for the toggle group */
@@ -20,6 +22,7 @@ export const ToggleGroup: React.FunctionComponent<ToggleGroupProps> = ({
   className,
   children,
   isCompact = false,
+  isFill = false,
   areAllGroupsDisabled = false,
   'aria-label': ariaLabel,
   ...props
@@ -32,7 +35,12 @@ export const ToggleGroup: React.FunctionComponent<ToggleGroupProps> = ({
 
   return (
     <div
-      className={css(styles.toggleGroup, isCompact && styles.modifiers.compact, className)}
+      className={css(
+        styles.toggleGroup,
+        isCompact && styles.modifiers.compact,
+        isFill && styles.modifiers.fill,
+        className
+      )}
       role="group"
       aria-label={ariaLabel}
       {...props}

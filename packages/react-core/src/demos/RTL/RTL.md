@@ -13,7 +13,7 @@ import WalkingIcon from '@patternfly/react-icons/dist/esm/icons/walking-icon';
 import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import HandPaperIcon from '@patternfly/react-icons/dist/esm/icons/hand-paper-icon';

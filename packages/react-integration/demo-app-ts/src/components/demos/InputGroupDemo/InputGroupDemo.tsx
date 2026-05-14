@@ -3,7 +3,7 @@ import DollarSignIcon from '@patternfly/react-icons/dist/esm/icons/dollar-sign-i
 import AtIcon from '@patternfly/react-icons/dist/esm/icons/at-icon';
 import CalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/calendar-alt-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import {
   Button,
   ButtonVariant,
@@ -191,7 +191,11 @@ export class InputGroupDemo extends Component<{}, InputGroupState> {
               position={PopoverPosition.top}
               bodyContent="This field is an example of input group with popover"
             >
-              <Button variant={ButtonVariant.control} aria-label="popover for input" icon={<QuestionCircleIcon />} />
+              <Button
+                variant={ButtonVariant.control}
+                aria-label="popover for input"
+                icon={<RhUiQuestionMarkCircleFillIcon />}
+              />
             </Popover>
           </InputGroupItem>
         </InputGroup>

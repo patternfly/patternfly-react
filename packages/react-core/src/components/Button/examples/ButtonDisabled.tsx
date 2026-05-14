@@ -1,6 +1,6 @@
 import { Button, Flex } from '@patternfly/react-core';
 import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
-import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
+import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 
 export const ButtonDisabled: React.FunctionComponent = () => (
@@ -25,7 +25,7 @@ export const ButtonDisabled: React.FunctionComponent = () => (
     </Flex>
     <br />
     <Flex columnGap={{ default: 'columnGapSm' }}>
-      <Button isDisabled variant="link" icon={<PlusCircleIcon />}>
+      <Button isDisabled variant="link" icon={<RhUiAddCircleFillIcon />}>
         Link
       </Button>
       <Button isDisabled variant="link" isInline>

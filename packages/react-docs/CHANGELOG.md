@@ -3,6 +3,116 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.5.0-prerelease.91](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.90...@patternfly/react-docs@7.5.0-prerelease.91) (2026-05-14)
+
+### Features
+
+- **ver:** core bump ([#12427](https://github.com/patternfly/patternfly-react/issues/12427)) ([71b2433](https://github.com/patternfly/patternfly-react/commit/71b243388f761946db0043da8c288df1a1e9b70a))
+
+# [7.5.0-prerelease.90](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.89...@patternfly/react-docs@7.5.0-prerelease.90) (2026-05-13)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.89](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.88...@patternfly/react-docs@7.5.0-prerelease.89) (2026-05-13)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.88](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.87...@patternfly/react-docs@7.5.0-prerelease.88) (2026-05-12)
+
+### Features
+
+- **Compass:** remove background props, update structure ([#12408](https://github.com/patternfly/patternfly-react/issues/12408)) ([5564f73](https://github.com/patternfly/patternfly-react/commit/5564f730fb899c3f8968cbcc567cbded2def367e))
+
+# [7.5.0-prerelease.87](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.86...@patternfly/react-docs@7.5.0-prerelease.87) (2026-05-12)
+
+### Features
+
+- **react-charts:** add high contrast ([#12419](https://github.com/patternfly/patternfly-react/issues/12419)) ([e9c801c](https://github.com/patternfly/patternfly-react/commit/e9c801c84067fb9ed42d10d19deadf8dfca55289))
+
+# [7.5.0-prerelease.86](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.85...@patternfly/react-docs@7.5.0-prerelease.86) (2026-05-08)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.85](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.84...@patternfly/react-docs@7.5.0-prerelease.85) (2026-05-08)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.84](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.83...@patternfly/react-docs@7.5.0-prerelease.84) (2026-05-08)
+
+### Features
+
+- **Hero:** glass styling update ([#12412](https://github.com/patternfly/patternfly-react/issues/12412)) ([bea138e](https://github.com/patternfly/patternfly-react/commit/bea138ecd4d33a2f591dac628b875b295ec71c31))
+
+# [7.5.0-prerelease.83](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.82...@patternfly/react-docs@7.5.0-prerelease.83) (2026-05-08)
+
+### Features
+
+- **Page:** add dynamic sticky section support ([#12409](https://github.com/patternfly/patternfly-react/issues/12409)) ([97b29d3](https://github.com/patternfly/patternfly-react/commit/97b29d3fafc14ee01f0bbf0d2bdbc527d62f2a16))
+
+# [7.5.0-prerelease.82](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.81...@patternfly/react-docs@7.5.0-prerelease.82) (2026-05-07)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.81](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.80...@patternfly/react-docs@7.5.0-prerelease.81) (2026-05-07)
+
+### Features
+
+- **Pagination:** added dynamic sticky and plain ([#12388](https://github.com/patternfly/patternfly-react/issues/12388)) ([7c4f9df](https://github.com/patternfly/patternfly-react/commit/7c4f9dfac4c4a63deecd9fb4d517c5713a617f9e))
+
+# [7.5.0-prerelease.80](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.79...@patternfly/react-docs@7.5.0-prerelease.80) (2026-05-07)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.79](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.78...@patternfly/react-docs@7.5.0-prerelease.79) (2026-05-05)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.78](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.77...@patternfly/react-docs@7.5.0-prerelease.78) (2026-05-05)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.77](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.76...@patternfly/react-docs@7.5.0-prerelease.77) (2026-05-05)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.76](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.75...@patternfly/react-docs@7.5.0-prerelease.76) (2026-05-01)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.75](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.74...@patternfly/react-docs@7.5.0-prerelease.75) (2026-04-29)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.74](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.73...@patternfly/react-docs@7.5.0-prerelease.74) (2026-04-28)
+
+### Features
+
+- **Compass:** added responsive docked compass ([#12382](https://github.com/patternfly/patternfly-react/issues/12382)) ([ccad519](https://github.com/patternfly/patternfly-react/commit/ccad5191fb4ee814a555a8fb73fcdc4b878463ea))
+
+# [7.5.0-prerelease.73](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.72...@patternfly/react-docs@7.5.0-prerelease.73) (2026-04-27)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.72](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.71...@patternfly/react-docs@7.5.0-prerelease.72) (2026-04-24)
+
+### Features
+
+- **ToggleGroup:** added full width variant ([#12374](https://github.com/patternfly/patternfly-react/issues/12374)) ([bf01ade](https://github.com/patternfly/patternfly-react/commit/bf01adecddf38e4d5fc3bc49d68ec9982dc97485))
+
+# [7.5.0-prerelease.71](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.70...@patternfly/react-docs@7.5.0-prerelease.71) (2026-04-24)
+
+### Features
+
+- **Panel, CompassPanel:** Removed CompassPanel component. Updated Panel component for use in with compass ([#12372](https://github.com/patternfly/patternfly-react/issues/12372)) ([51f4467](https://github.com/patternfly/patternfly-react/commit/51f44678475ed6cbfab6b5cdbad712a5e2535235))
+
+# [7.5.0-prerelease.70](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.69...@patternfly/react-docs@7.5.0-prerelease.70) (2026-04-22)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+# [7.5.0-prerelease.69](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.68...@patternfly/react-docs@7.5.0-prerelease.69) (2026-04-20)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
 # [7.5.0-prerelease.68](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.67...@patternfly/react-docs@7.5.0-prerelease.68) (2026-04-17)
 
 **Note:** Version bump only for package @patternfly/react-docs

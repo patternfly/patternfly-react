@@ -15,6 +15,7 @@ import {
   DropdownList,
   Icon,
   Label,
+  LabelColor,
   Masthead,
   MastheadMain,
   MastheadLogo,
@@ -49,7 +50,7 @@ import ClockIcon from '@patternfly/react-icons/dist/esm/icons/clock-icon';
 import WalkingIcon from '@patternfly/react-icons/dist/esm/icons/walking-icon';
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import HandPaperIcon from '@patternfly/react-icons/dist/esm/icons/hand-paper-icon';
@@ -180,7 +181,7 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
       case 'רץ':
         return (
           <Label
-            color="green"
+            color={LabelColor.green}
             icon={
               <Icon shouldMirrorRTL>
                 <WalkingIcon />
@@ -199,7 +200,7 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
                 <HandPaperIcon />
               </Icon>
             }
-            color="red"
+            color={LabelColor.red}
           >
             {translation.table.rows.status.stopped}
           </Label>
@@ -207,14 +208,14 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
       case 'Needs maintenance':
       case 'זקוק לתחזוקה':
         return (
-          <Label icon={<ToolsIcon />} color="blue">
+          <Label icon={<ToolsIcon />} color={LabelColor.blue}>
             {translation.table.rows.status.needsMaintenance}
           </Label>
         );
       case 'Down':
       case 'מטה':
         return (
-          <Label icon={<ClockIcon />} color="orange">
+          <Label icon={<ClockIcon />} color={LabelColor.orange}>
             {translation.table.rows.status.down}
           </Label>
         );
@@ -345,7 +346,7 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
                   <Button
                     aria-label={translation.kebabDropdown.help}
                     variant={ButtonVariant.plain}
-                    icon={<QuestionCircleIcon />}
+                    icon={<RhUiQuestionMarkCircleFillIcon />}
                   />
                 </ToolbarItem>
               </ToolbarGroup>

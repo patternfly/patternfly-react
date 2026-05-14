@@ -147,7 +147,7 @@ exports[`ChartBar 1`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: var(--pf-v6-chart-boxplot--median--stroke--Color, #1f1f1f); padding: 8px; stroke-width: 1;"
+          style="stroke: var(--pf-v6-chart-boxplot--median--stroke--Color, #ffffff); padding: 8px; stroke-width: 1;"
           vector-effect="non-scaling-stroke"
           x1="40"
           x2="60"
@@ -157,7 +157,7 @@ exports[`ChartBar 1`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: var(--pf-v6-chart-boxplot--median--stroke--Color, #1f1f1f); padding: 8px; stroke-width: 1;"
+          style="stroke: var(--pf-v6-chart-boxplot--median--stroke--Color, #ffffff); padding: 8px; stroke-width: 1;"
           vector-effect="non-scaling-stroke"
           x1="390"
           x2="410"
@@ -327,7 +327,7 @@ exports[`ChartBar 2`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: var(--pf-v6-chart-boxplot--median--stroke--Color, #1f1f1f); padding: 8px; stroke-width: 1;"
+          style="stroke: var(--pf-v6-chart-boxplot--median--stroke--Color, #ffffff); padding: 8px; stroke-width: 1;"
           vector-effect="non-scaling-stroke"
           x1="40"
           x2="60"
@@ -337,7 +337,7 @@ exports[`ChartBar 2`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: var(--pf-v6-chart-boxplot--median--stroke--Color, #1f1f1f); padding: 8px; stroke-width: 1;"
+          style="stroke: var(--pf-v6-chart-boxplot--median--stroke--Color, #ffffff); padding: 8px; stroke-width: 1;"
           vector-effect="non-scaling-stroke"
           x1="390"
           x2="410"
@@ -635,7 +635,7 @@ exports[`renders component data 1`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: var(--pf-v6-chart-boxplot--median--stroke--Color, #1f1f1f); padding: 8px; stroke-width: 1;"
+          style="stroke: var(--pf-v6-chart-boxplot--median--stroke--Color, #ffffff); padding: 8px; stroke-width: 1;"
           vector-effect="non-scaling-stroke"
           x1="70"
           x2="90"
@@ -645,7 +645,7 @@ exports[`renders component data 1`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: var(--pf-v6-chart-boxplot--median--stroke--Color, #1f1f1f); padding: 8px; stroke-width: 1;"
+          style="stroke: var(--pf-v6-chart-boxplot--median--stroke--Color, #ffffff); padding: 8px; stroke-width: 1;"
           vector-effect="non-scaling-stroke"
           x1="118.33333333333331"
           x2="138.33333333333331"
@@ -655,7 +655,7 @@ exports[`renders component data 1`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: var(--pf-v6-chart-boxplot--median--stroke--Color, #1f1f1f); padding: 8px; stroke-width: 1;"
+          style="stroke: var(--pf-v6-chart-boxplot--median--stroke--Color, #ffffff); padding: 8px; stroke-width: 1;"
           vector-effect="non-scaling-stroke"
           x1="166.66666666666666"
           x2="186.66666666666666"
@@ -665,7 +665,7 @@ exports[`renders component data 1`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: var(--pf-v6-chart-boxplot--median--stroke--Color, #1f1f1f); padding: 8px; stroke-width: 1;"
+          style="stroke: var(--pf-v6-chart-boxplot--median--stroke--Color, #ffffff); padding: 8px; stroke-width: 1;"
           vector-effect="non-scaling-stroke"
           x1="214.99999999999997"
           x2="234.99999999999997"
@@ -679,7 +679,7 @@ exports[`renders component data 1`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: var(--pf-v6-chart-axis--axis--stroke--Color, #c7c7c7); fill: var(--pf-v6-chart-axis--axis--Fill, transparent); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
+          style="stroke: var(--pf-v6-chart-axis--axis--stroke--Color, #e0e0e0); fill: var(--pf-v6-chart-axis--axis--Fill, transparent); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
           vector-effect="non-scaling-stroke"
           x1="50"
           x2="250"
@@ -692,7 +692,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #c7c7c7); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #e0e0e0); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="80"
             x2="80"
@@ -723,7 +723,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #c7c7c7); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #e0e0e0); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="128.33333333333331"
             x2="128.33333333333331"
@@ -754,7 +754,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #c7c7c7); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #e0e0e0); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="176.66666666666666"
             x2="176.66666666666666"
@@ -785,7 +785,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #c7c7c7); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #e0e0e0); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="224.99999999999997"
             x2="224.99999999999997"
@@ -817,7 +817,7 @@ exports[`renders component data 1`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: var(--pf-v6-chart-axis--axis--stroke--Color, #c7c7c7); fill: var(--pf-v6-chart-axis--axis--Fill, transparent); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
+          style="stroke: var(--pf-v6-chart-axis--axis--stroke--Color, #e0e0e0); fill: var(--pf-v6-chart-axis--axis--Fill, transparent); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
           vector-effect="non-scaling-stroke"
           x1="50"
           x2="50"
@@ -830,7 +830,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #c7c7c7); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #e0e0e0); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="45"
@@ -861,7 +861,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #c7c7c7); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #e0e0e0); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="45"
@@ -892,7 +892,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #c7c7c7); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #e0e0e0); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="45"
@@ -923,7 +923,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #c7c7c7); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #e0e0e0); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="45"
@@ -954,7 +954,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #c7c7c7); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-v6-chart-axis--tick--stroke--Color, #e0e0e0); fill: var(--pf-v6-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="45"

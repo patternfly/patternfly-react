@@ -1,11 +1,11 @@
 import { Button, Flex, Tooltip } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
+import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 
 export const ButtonAriaDisabled: React.FunctionComponent = () => (
   <>
     <Flex columnGap={{ default: 'columnGapSm' }}>
       <Button isAriaDisabled>Primary aria disabled</Button>
-      <Button isAriaDisabled variant="link" icon={<PlusCircleIcon />}>
+      <Button isAriaDisabled variant="link" icon={<RhUiAddCircleFillIcon />}>
         Link aria disabled
       </Button>
       <Button isAriaDisabled variant="link" isInline>

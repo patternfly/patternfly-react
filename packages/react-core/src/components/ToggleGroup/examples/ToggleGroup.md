@@ -4,6 +4,7 @@ section: components
 cssPrefix: pf-v6-c-toggle-group
 propComponents: ['ToggleGroup', 'ToggleGroupItem']
 ---
+
 import './toggleGroup.css';
 
 import { useRef, useState } from 'react';
@@ -21,6 +22,7 @@ A single select toggle group allows users to toggle between multiple items.
 To indicate whether a `<ToggleGroupItem>` is selected or not, use the `isSelected` property.
 
 ```ts file="./ToggleGroupDefaultSingle.tsx"
+
 ```
 
 ### Multi select toggle group
@@ -30,6 +32,7 @@ A multi select toggle group allows users to select multiple items at once.
 When a toggle item is disabled it cannot be selected. Click the "Disable all" button in the following example to see this in action.
 
 ```ts file="./ToggleGroupDefaultMultiple.tsx"
+
 ```
 
 ### With icons
@@ -39,6 +42,7 @@ You can use a recognizable icon as a toggle item label.
 To do this, pass an imported icon to the `icon` property of a `<ToggleGroupItem>`.
 
 ```ts file="./ToggleGroupIcon.tsx"
+
 ```
 
 ### With text and icons
@@ -50,13 +54,23 @@ To do this, pass a descriptive label to the `text` property of a `<ToggleGroupIt
 When passing both `text` and `icon` properties to a `<ToggleGroupItem>`, you can also pass in `iconPosition` to determine whether the icon is rendered at the start or end of the item.
 
 ```ts file="./ToggleGroupTextIcon.tsx"
+
 ```
 
 ### Compact toggle group
 
-When space in a UI is limited, you can use a compact toggle group. 
+When space in a UI is limited, you can use a compact toggle group.
 
 To apply compact styling to a `<ToggleGroup>`, use `isCompact`.
 
 ```ts file="./ToggleGroupCompact.tsx"
+
+```
+
+### Full-width toggle group
+
+To make toggle group items fill the available horizontal space, use `isFill` on a `<ToggleGroup>`. The following example shows full-width toggle groups for a single-select, multi-select, and single-select with disabled item.
+
+```ts file="./ToggleGroupFill.tsx"
+
 ```

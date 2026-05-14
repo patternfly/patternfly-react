@@ -3,6 +3,68 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.5.0-prerelease.27...@patternfly/react-styles@6.5.0-prerelease.28) (2026-05-14)
+
+### Features
+
+- **ver:** core bump ([#12427](https://github.com/patternfly/patternfly-react/issues/12427)) ([71b2433](https://github.com/patternfly/patternfly-react/commit/71b243388f761946db0043da8c288df1a1e9b70a))
+
+# [6.5.0-prerelease.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.5.0-prerelease.26...@patternfly/react-styles@6.5.0-prerelease.27) (2026-05-13)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+# [6.5.0-prerelease.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.5.0-prerelease.25...@patternfly/react-styles@6.5.0-prerelease.26) (2026-05-12)
+
+### Features
+
+- **Compass:** remove background props, update structure ([#12408](https://github.com/patternfly/patternfly-react/issues/12408)) ([5564f73](https://github.com/patternfly/patternfly-react/commit/5564f730fb899c3f8968cbcc567cbded2def367e))
+
+# [6.5.0-prerelease.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.5.0-prerelease.24...@patternfly/react-styles@6.5.0-prerelease.25) (2026-05-12)
+
+### Features
+
+- **react-charts:** add high contrast ([#12419](https://github.com/patternfly/patternfly-react/issues/12419)) ([e9c801c](https://github.com/patternfly/patternfly-react/commit/e9c801c84067fb9ed42d10d19deadf8dfca55289))
+
+# [6.5.0-prerelease.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.5.0-prerelease.23...@patternfly/react-styles@6.5.0-prerelease.24) (2026-05-08)
+
+### Features
+
+- **Hero:** glass styling update ([#12412](https://github.com/patternfly/patternfly-react/issues/12412)) ([bea138e](https://github.com/patternfly/patternfly-react/commit/bea138ecd4d33a2f591dac628b875b295ec71c31))
+
+# [6.5.0-prerelease.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.5.0-prerelease.22...@patternfly/react-styles@6.5.0-prerelease.23) (2026-05-08)
+
+### Features
+
+- **Page:** add dynamic sticky section support ([#12409](https://github.com/patternfly/patternfly-react/issues/12409)) ([97b29d3](https://github.com/patternfly/patternfly-react/commit/97b29d3fafc14ee01f0bbf0d2bdbc527d62f2a16))
+
+# [6.5.0-prerelease.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.5.0-prerelease.21...@patternfly/react-styles@6.5.0-prerelease.22) (2026-05-07)
+
+### Features
+
+- **Pagination:** added dynamic sticky and plain ([#12388](https://github.com/patternfly/patternfly-react/issues/12388)) ([7c4f9df](https://github.com/patternfly/patternfly-react/commit/7c4f9dfac4c4a63deecd9fb4d517c5713a617f9e))
+
+# [6.5.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.5.0-prerelease.20...@patternfly/react-styles@6.5.0-prerelease.21) (2026-04-28)
+
+### Features
+
+- **Compass:** added responsive docked compass ([#12382](https://github.com/patternfly/patternfly-react/issues/12382)) ([ccad519](https://github.com/patternfly/patternfly-react/commit/ccad5191fb4ee814a555a8fb73fcdc4b878463ea))
+
+# [6.5.0-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.5.0-prerelease.19...@patternfly/react-styles@6.5.0-prerelease.20) (2026-04-24)
+
+### Features
+
+- **ToggleGroup:** added full width variant ([#12374](https://github.com/patternfly/patternfly-react/issues/12374)) ([bf01ade](https://github.com/patternfly/patternfly-react/commit/bf01adecddf38e4d5fc3bc49d68ec9982dc97485))
+
+# [6.5.0-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.5.0-prerelease.18...@patternfly/react-styles@6.5.0-prerelease.19) (2026-04-24)
+
+### Features
+
+- **Panel, CompassPanel:** Removed CompassPanel component. Updated Panel component for use in with compass ([#12372](https://github.com/patternfly/patternfly-react/issues/12372)) ([51f4467](https://github.com/patternfly/patternfly-react/commit/51f44678475ed6cbfab6b5cdbad712a5e2535235))
+
+# [6.5.0-prerelease.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.5.0-prerelease.17...@patternfly/react-styles@6.5.0-prerelease.18) (2026-04-20)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
 # [6.5.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.5.0-prerelease.16...@patternfly/react-styles@6.5.0-prerelease.17) (2026-04-13)
 
 ### Features

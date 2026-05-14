@@ -7,7 +7,9 @@ import {
   CompassHero,
   CompassContent,
   CompassMainHeader,
-  CompassPanel,
+  Panel,
+  PanelMain,
+  PanelMainBody,
   CompassMessageBar,
   CompassNavContent,
   CompassNavHome,
@@ -29,7 +31,7 @@ import {
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import OutlinedPlusSquare from '@patternfly/react-icons/dist/esm/icons/outlined-plus-square-icon';
 import OutlinedCopy from '@patternfly/react-icons/dist/esm/icons/outlined-copy-icon';
-import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/outlined-question-circle-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 
 export const CompassBasic: React.FunctionComponent = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
@@ -38,96 +40,108 @@ export const CompassBasic: React.FunctionComponent = () => {
 
   const navContent = (
     <>
-      <CompassPanel isPill>
-        <CompassNavContent>
-          <CompassNavHome onClick={() => console.log('Home')} />
-          <CompassNavMain>
-            <Tabs
-              activeKey={activeTab}
-              isNav
-              onSelect={(_event, tabIndex) => setActiveTab(tabIndex as number)}
-              component={TabsComponent.nav}
-              aria-label="Compass navigation tabs"
-            >
-              <Tab
-                tabContentId="subtabs"
-                tabContentRef={subTabsRef}
-                eventKey={0}
-                title={<TabTitleText>Tab 1</TabTitleText>}
-                aria-label="Compass tab with subtabs"
-              />
-              <Tab eventKey={1} title={<TabTitleText>Tab 2</TabTitleText>} />
-              <Tab eventKey={2} title={<TabTitleText>Tab 3</TabTitleText>} />
-              <Tab eventKey={3} title={<TabTitleText>Disabled Tab 4</TabTitleText>} isDisabled />
-            </Tabs>
-          </CompassNavMain>
-          <CompassNavSearch onClick={() => console.log('Search')} />
-        </CompassNavContent>
-      </CompassPanel>
-      <CompassPanel isPill hasNoPadding>
-        <TabContent id="subtabs" ref={subTabsRef}>
-          <CompassNavContent>
-            <CompassNavMain>
-              <Tabs
-                activeKey={activeSubtab}
-                isSubtab
-                isNav
-                onSelect={(_event, tabIndex) => setActiveSubtab(tabIndex as number)}
-                aria-label="Compass navigation subtabs"
-              >
-                <Tab
-                  tabContentId="subtab-1"
-                  eventKey={0}
-                  title={
-                    <TabTitleText>
-                      <div id="subtab-1">Subtab 1</div>
-                    </TabTitleText>
-                  }
-                />
-                <Tab eventKey={1} title={<TabTitleText>Subtab 2</TabTitleText>} />
-                <Tab eventKey={2} title={<TabTitleText>Disabled Subtab 3</TabTitleText>} isDisabled />
-              </Tabs>
-            </CompassNavMain>
-          </CompassNavContent>
-        </TabContent>
-      </CompassPanel>
+      <Panel isPill isGlass>
+        <PanelMain>
+          <PanelMainBody>
+            <CompassNavContent>
+              <CompassNavHome onClick={() => console.log('Home')} />
+              <CompassNavMain>
+                <Tabs
+                  activeKey={activeTab}
+                  isNav
+                  onSelect={(_event, tabIndex) => setActiveTab(tabIndex as number)}
+                  component={TabsComponent.nav}
+                  aria-label="Compass navigation tabs"
+                >
+                  <Tab
+                    tabContentId="subtabs"
+                    tabContentRef={subTabsRef}
+                    eventKey={0}
+                    title={<TabTitleText>Tab 1</TabTitleText>}
+                    aria-label="Compass tab with subtabs"
+                  />
+                  <Tab eventKey={1} title={<TabTitleText>Tab 2</TabTitleText>} />
+                  <Tab eventKey={2} title={<TabTitleText>Tab 3</TabTitleText>} />
+                  <Tab eventKey={3} title={<TabTitleText>Disabled Tab 4</TabTitleText>} isDisabled />
+                </Tabs>
+              </CompassNavMain>
+              <CompassNavSearch onClick={() => console.log('Search')} />
+            </CompassNavContent>
+          </PanelMainBody>
+        </PanelMain>
+      </Panel>
+      <Panel isPill isGlass>
+        <PanelMain>
+          <PanelMainBody style={{ padding: 0 }}>
+            <TabContent id="subtabs" ref={subTabsRef}>
+              <CompassNavContent>
+                <CompassNavMain>
+                  <Tabs
+                    activeKey={activeSubtab}
+                    isSubtab
+                    isNav
+                    onSelect={(_event, tabIndex) => setActiveSubtab(tabIndex as number)}
+                    aria-label="Compass navigation subtabs"
+                  >
+                    <Tab
+                      tabContentId="subtab-1"
+                      eventKey={0}
+                      title={
+                        <TabTitleText>
+                          <div id="subtab-1">Subtab 1</div>
+                        </TabTitleText>
+                      }
+                    />
+                    <Tab eventKey={1} title={<TabTitleText>Subtab 2</TabTitleText>} />
+                    <Tab eventKey={2} title={<TabTitleText>Disabled Subtab 3</TabTitleText>} isDisabled />
+                  </Tabs>
+                </CompassNavMain>
+              </CompassNavContent>
+            </TabContent>
+          </PanelMainBody>
+        </PanelMain>
+      </Panel>
     </>
   );
 
   const sidebarContent = (
-    <CompassPanel isPill>
-      <ActionList isIconList isVertical>
-        <ActionListGroup>
-          <ActionListItem>
-            <Tooltip content="Play">
-              <Button isCircle variant="plain" icon={<PlayIcon />} aria-label="Play" />
-            </Tooltip>
-          </ActionListItem>
-          <ActionListItem>
-            <Tooltip content="Add">
-              <Button isCircle variant="plain" icon={<OutlinedPlusSquare />} aria-label="Add" />
-            </Tooltip>
-          </ActionListItem>
-        </ActionListGroup>
-        <ActionListItem>
-          <Tooltip content="Copy">
-            <Button isCircle variant="plain" icon={<OutlinedCopy />} aria-label="Copy" />
-          </Tooltip>
-        </ActionListItem>
-        <ActionListGroup>
-          <ActionListItem>
-            <Tooltip content="Help">
-              <Button isCircle variant="plain" icon={<OutlinedQuestionCircleIcon />} aria-label="Help" />
-            </Tooltip>
-          </ActionListItem>
-          <ActionListItem>
-            <Tooltip content="Second copy">
-              <Button isCircle variant="plain" icon={<OutlinedCopy />} aria-label="Copy2" />
-            </Tooltip>
-          </ActionListItem>
-        </ActionListGroup>
-      </ActionList>
-    </CompassPanel>
+    <Panel isPill isGlass>
+      <PanelMain>
+        <PanelMainBody>
+          <ActionList isIconList isVertical>
+            <ActionListGroup>
+              <ActionListItem>
+                <Tooltip content="Play">
+                  <Button isCircle variant="plain" icon={<PlayIcon />} aria-label="Play" />
+                </Tooltip>
+              </ActionListItem>
+              <ActionListItem>
+                <Tooltip content="Add">
+                  <Button isCircle variant="plain" icon={<OutlinedPlusSquare />} aria-label="Add" />
+                </Tooltip>
+              </ActionListItem>
+            </ActionListGroup>
+            <ActionListItem>
+              <Tooltip content="Copy">
+                <Button isCircle variant="plain" icon={<OutlinedCopy />} aria-label="Copy" />
+              </Tooltip>
+            </ActionListItem>
+            <ActionListGroup>
+              <ActionListItem>
+                <Tooltip content="Help">
+                  <Button isCircle variant="plain" icon={<RhUiQuestionMarkCircleIcon />} aria-label="Help" />
+                </Tooltip>
+              </ActionListItem>
+              <ActionListItem>
+                <Tooltip content="Second copy">
+                  <Button isCircle variant="plain" icon={<OutlinedCopy />} aria-label="Copy2" />
+                </Tooltip>
+              </ActionListItem>
+            </ActionListGroup>
+          </ActionList>
+        </PanelMainBody>
+      </PanelMain>
+    </Panel>
   );
 
   const headerContent = <CompassHeader logo={<div>logo</div>} nav={navContent} profile={<div>Profile</div>} />;
@@ -135,20 +149,28 @@ export const CompassBasic: React.FunctionComponent = () => {
   const mainContent = (
     <>
       <CompassHero>
-        <Hero gradientDark={{ stop1: '#000', stop2: '#1b0d33', stop3: '#3d2785' }}>Hero</Hero>
+        <Hero isGlass gradientDark={{ stop1: '#000', stop2: '#1b0d33', stop3: '#3d2785' }}>
+          Hero
+        </Hero>
       </CompassHero>
-      <CompassMainHeader title={<Title headingLevel="h1">Content title</Title>} />
+      <CompassMainHeader title={<Title headingLevel="h1">Content title</Title>} panelProps={{ isGlass: true }} />
       <CompassContent>
-        <CompassPanel>Content</CompassPanel>
+        <Panel isScrollable isAutoHeight isGlass>
+          <PanelMain>
+            <PanelMainBody>Content</PanelMainBody>
+          </PanelMain>
+        </Panel>
       </CompassContent>
     </>
   );
   const sidebarEndContent = sidebarContent;
   const footerContent = (
     <CompassMessageBar>
-      <CompassPanel isPill hasNoPadding>
-        Message bar
-      </CompassPanel>
+      <Panel isPill isGlass>
+        <PanelMain>
+          <PanelMainBody style={{ padding: 0 }}>Message bar</PanelMainBody>
+        </PanelMain>
+      </Panel>
     </CompassMessageBar>
   );
 

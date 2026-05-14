@@ -178,7 +178,7 @@ export const PrimaryDetailContentPadding: React.FunctionComponent = () => {
   );
 
   const panelContent = (
-    <DrawerPanelContent>
+    <DrawerPanelContent isPlain>
       <DrawerHead>
         <Title headingLevel="h2" size="xl">
           node-{drawerPanelBodyContent}
@@ -429,7 +429,7 @@ export const PrimaryDetailContentPadding: React.FunctionComponent = () => {
       <Divider component="div" />
       <PageSection padding={{ default: 'noPadding' }} aria-label="Drawer content section">
         <Drawer isExpanded={isDrawerExpanded}>
-          <DrawerContent panelContent={panelContent} colorVariant="no-background">
+          <DrawerContent panelContent={panelContent}>
             <DrawerContentBody hasPadding>{drawerContent}</DrawerContentBody>
           </DrawerContent>
         </Drawer>

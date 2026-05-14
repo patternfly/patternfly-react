@@ -51,6 +51,10 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'top' | 'bottom';
     '2xl'?: 'top' | 'bottom';
   };
+  /** @beta Applies the base sticky positioning to the top or bottom of the scroll parent container. */
+  stickyBase?: 'top' | 'bottom';
+  /** @beta Flag indicating if the section has stuck styling, applied when the section is not at the edge of the scroll parent container. */
+  isStickyStuck?: boolean;
   /** Modifier indicating if PageSection should have a shadow at the top */
   hasShadowTop?: boolean;
   /** Modifier indicating if PageSection should have a shadow at the bottom */
@@ -96,6 +100,8 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   isWidthLimited = false,
   isCenterAligned = false,
   stickyOnBreakpoint,
+  stickyBase,
+  isStickyStuck = false,
   hasShadowTop = false,
   hasShadowBottom = false,
   hasOverflowScroll = false,
@@ -124,6 +130,10 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
         variantType[type],
         formatBreakpointMods(padding, styles),
         formatBreakpointMods(stickyOnBreakpoint, styles, 'sticky-', getVerticalBreakpoint(height), true),
+        stickyBase === 'top' && styles.modifiers.stickyTopBase,
+        stickyBase === 'bottom' && styles.modifiers.stickyBottomBase,
+        isStickyStuck && stickyBase === 'top' && styles.modifiers.stickyTopStuck,
+        isStickyStuck && stickyBase === 'bottom' && styles.modifiers.stickyBottomStuck,
         type === PageSectionTypes.default && variantStyle[variant],
         isFilled === false && styles.modifiers.noFill,
         isFilled === true && styles.modifiers.fill,

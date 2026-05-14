@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Label } from '@patternfly/react-core';
+import { Label, LabelColor } from '@patternfly/react-core';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
 
@@ -42,24 +42,24 @@ export const LabelCompact: React.FunctionComponent = () => (
     >
       Compact clickable removable (disabled)
     </Label>
-    <Label variant="outline" color="blue" isCompact icon={<CubeIcon />}>
+    <Label variant="outline" color={LabelColor.blue} isCompact icon={<CubeIcon />}>
       Compact icon
     </Label>
-    <Label variant="outline" color="blue" isCompact onClose={() => Function.prototype}>
+    <Label variant="outline" color={LabelColor.blue} isCompact onClose={() => Function.prototype}>
       Compact removable
     </Label>
-    <Label variant="outline" color="blue" isCompact icon={<CubeIcon />} onClose={() => Function.prototype}>
+    <Label variant="outline" color={LabelColor.blue} isCompact icon={<CubeIcon />} onClose={() => Function.prototype}>
       Compact icon removable
     </Label>
-    <Label variant="outline" color="blue" isCompact href="#compact">
+    <Label variant="outline" color={LabelColor.blue} isCompact href="#compact">
       Compact link
     </Label>
-    <Label variant="outline" color="blue" isCompact href="#compact" onClose={() => Function.prototype}>
+    <Label variant="outline" color={LabelColor.blue} isCompact href="#compact" onClose={() => Function.prototype}>
       Compact link removable
     </Label>
     <Label
       variant="outline"
-      color="blue"
+      color={LabelColor.blue}
       isCompact
       icon={<CubeIcon />}
       onClose={() => Function.prototype}

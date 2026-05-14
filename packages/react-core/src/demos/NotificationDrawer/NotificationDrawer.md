@@ -9,7 +9,7 @@ import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-
 import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';

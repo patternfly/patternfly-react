@@ -53,7 +53,7 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import pfIcon from '@patternfly/react-core/src/demos/assets/pf-logo-small.svg';
 import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
@@ -406,7 +406,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
               <Button aria-label="Settings" isSettings variant="plain" />
             </ToolbarItem>
             <ToolbarItem>
-              <Button aria-label="Help" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
+              <Button aria-label="Help" variant={ButtonVariant.plain} icon={<RhUiQuestionMarkCircleFillIcon />} />
             </ToolbarItem>
           </ToolbarGroup>
           <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
