@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.5.0-prerelease.27...@patternfly/react-styles@6.5.0-prerelease.28) (2026-05-14)
+
+### Features
+
+- **ver:** core bump ([#12427](https://github.com/patternfly/patternfly-react/issues/12427)) ([71b2433](https://github.com/patternfly/patternfly-react/commit/71b243388f761946db0043da8c288df1a1e9b70a))
+
 # [6.5.0-prerelease.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@6.5.0-prerelease.26...@patternfly/react-styles@6.5.0-prerelease.27) (2026-05-13)
 
 **Note:** Version bump only for package @patternfly/react-styles
