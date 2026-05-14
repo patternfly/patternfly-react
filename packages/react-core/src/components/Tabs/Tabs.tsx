@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
 import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
-import RhUiCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-caret-down-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 import {
   isElementInView,
@@ -609,7 +609,7 @@ class Tabs extends Component<TabsProps, TabsState> {
                             aria-labelledby={`${randomId}-text ${randomId}-button`}
                             icon={
                               <span className={css(styles.tabsToggleIcon)}>
-                                <RhUiCaretDownIcon />
+                                <RhMicronsCaretDownIcon />
                               </span>
                             }
                           >

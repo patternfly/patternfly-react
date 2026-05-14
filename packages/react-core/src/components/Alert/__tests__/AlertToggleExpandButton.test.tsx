@@ -8,18 +8,16 @@ import styles from '@patternfly/react-styles/css/components/Alert/alert';
 
 jest.mock('../../Button');
 
-jest.mock('@patternfly/react-icons/dist/esm/icons/rh-ui-caret-down-icon', () => () => 'Icon mock');
+jest.mock('@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon', () => () => 'Icon mock');
 
 test('Renders without children', () => {
   render(
-    <div data-testid="container">
-      <AlertContext.Provider value={{ title: 'title', variantLabel: 'variantLabel' }}>
-        <AlertToggleExpandButton />
-      </AlertContext.Provider>
-    </div>
+    <AlertContext.Provider value={{ title: 'title', variantLabel: 'variantLabel' }}>
+      <AlertToggleExpandButton />
+    </AlertContext.Provider>
   );
 
-  expect(screen.getByTestId('container').firstChild).toBeVisible();
+  expect(screen.getByRole('button')).toBeVisible();
 });
 
 test('Renders with an aria label composed with the title and variantLabel provided via a context by default', () => {

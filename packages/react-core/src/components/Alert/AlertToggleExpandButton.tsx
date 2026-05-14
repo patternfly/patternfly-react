@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Button, ButtonProps, ButtonVariant } from '../Button';
 import { AlertContext } from './AlertContext';
-import RhUiCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-caret-down-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Alert/alert';
 
@@ -33,7 +33,7 @@ export const AlertToggleExpandButton: React.FunctionComponent<AlertToggleExpandB
       {...props}
       icon={
         <span className={css(styles.alertToggleIcon)}>
-          <RhUiCaretDownIcon />
+          <RhMicronsCaretDownIcon />
         </span>
       }
     />

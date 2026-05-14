@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import { Icon } from '@patternfly/react-core';
 import LongArrowAltDownIcon from '@patternfly/react-icons/dist/esm/icons/long-arrow-alt-down-icon';
 import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
-import RhUiCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-caret-down-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 
 export const IconBasic: React.FunctionComponent = () => (
@@ -14,7 +14,7 @@ export const IconBasic: React.FunctionComponent = () => (
       <RhMicronsCaretRightIcon />
     </Icon>{' '}
     <Icon>
-      <RhUiCaretDownIcon />
+      <RhMicronsCaretDownIcon />
     </Icon>{' '}
     <Icon>
       <RhUiSettingsFillIcon />

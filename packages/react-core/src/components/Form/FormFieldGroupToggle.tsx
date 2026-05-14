@@ -1,6 +1,6 @@
 import styles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
-import RhUiCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-caret-down-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import { Button } from '../Button';
 
 export interface FormFieldGroupToggleProps extends React.HTMLProps<HTMLDivElement> {
@@ -38,7 +38,7 @@ export const FormFieldGroupToggle: React.FunctionComponent<FormFieldGroupToggleP
         id={toggleId}
         icon={
           <span className={css(styles.formFieldGroupToggleIcon)}>
-            <RhUiCaretDownIcon />
+            <RhMicronsCaretDownIcon />
           </span>
         }
       />

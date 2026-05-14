@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import RhUiCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-caret-down-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import { css } from '@patternfly/react-styles';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 import styles from '@patternfly/react-styles/css/components/Table/table';
@@ -34,7 +34,7 @@ export const CollapseColumn: React.FunctionComponent<CollapseColumnProps> = ({
         aria-expanded={isOpen}
         icon={
           <div className={css(styles.tableToggleIcon)}>
-            <RhUiCaretDownIcon />
+            <RhMicronsCaretDownIcon />
           </div>
         }
       />

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import RhUiCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-caret-down-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
 import maxLines from '@patternfly/react-tokens/dist/esm/c_notification_drawer__group_toggle_title_max_lines';
@@ -111,7 +111,7 @@ export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawer
           </div>
 
           <span className={styles.notificationDrawerGroupToggleIcon}>
-            <RhUiCaretDownIcon />
+            <RhMicronsCaretDownIcon />
           </span>
         </button>
       </HeadingLevel>

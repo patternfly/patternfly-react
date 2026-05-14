@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/DualListSelector/dua
 import { css } from '@patternfly/react-styles';
 import { DualListSelectorTreeItemData } from './DualListSelectorTree';
 import { Badge } from '../../../components/Badge';
-import RhUiCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-caret-down-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import { flattenTree } from './treeUtils';
 import { DualListSelectorListContext } from './DualListSelectorContext';
 
@@ -119,7 +119,7 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
                 tabIndex={-1}
               >
                 <span className={css(styles.dualListSelectorItemToggleIcon)}>
-                  <RhUiCaretDownIcon />
+                  <RhMicronsCaretDownIcon />
                 </span>
               </div>
             )}
