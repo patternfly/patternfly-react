@@ -11,7 +11,7 @@ import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-micron
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-square-alt-icon';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
-import RhUiCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-caret-right-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';

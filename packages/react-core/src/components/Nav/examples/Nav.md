@@ -8,7 +8,7 @@ ouia: true
 
 import { useState } from 'react';
 import './nav.css';
-import RhUiCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-caret-right-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import UserIcon from '@patternfly/react-icons/dist/esm/icons/user-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';

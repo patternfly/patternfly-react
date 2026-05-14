@@ -1,5 +1,5 @@
 import { Button, Flex } from '@patternfly/react-core';
-import RhUiCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-caret-right-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 
 export const ButtonCallToAction: React.FunctionComponent = () => (
   <Flex columnGap={{ default: 'columnGapSm' }}>
@@ -12,7 +12,7 @@ export const ButtonCallToAction: React.FunctionComponent = () => (
     <Button variant="tertiary" size="lg">
       Call to action
     </Button>
-    <Button variant="link" size="lg" icon={<RhUiCaretRightIcon />} iconPosition="end">
+    <Button variant="link" size="lg" icon={<RhMicronsCaretRightIcon />} iconPosition="end">
       Call to action
     </Button>
   </Flex>
