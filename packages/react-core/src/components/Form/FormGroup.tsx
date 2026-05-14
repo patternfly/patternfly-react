@@ -2,9 +2,9 @@ import { Fragment, isValidElement } from 'react';
 import styles from '@patternfly/react-styles/css/components/Form/form';
 import { ASTERISK } from '../../helpers/htmlConstants';
 import { css } from '@patternfly/react-styles';
-import { useSSRSafeId } from '../../helpers';
+import { useSSRSafeId, useOUIAProps, OUIAProps } from '../../helpers';
 
-export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
+export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'>, OUIAProps {
   /** Anything that can be rendered as FormGroup content. */
   children?: React.ReactNode;
   /** Additional classes added to the FormGroup. */
@@ -31,6 +31,10 @@ export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'l
    * radio inputs, or pass in "group" when the form group contains multiple of any other input type.
    */
   role?: string;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
@@ -45,8 +49,11 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   isStack = false,
   fieldId,
   role,
+  ouiaId,
+  ouiaSafe = true,
   ...props
 }: FormGroupProps) => {
+  const ouiaProps = useOUIAProps(FormGroup.displayName, ouiaId, ouiaSafe);
   const randomId = useSSRSafeId();
   const isGroupOrRadioGroup = role === 'group' || role === 'radiogroup';
   const LabelComponent = isGroupOrRadioGroup ? 'span' : 'label';
@@ -72,6 +79,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
       {...(role && { role })}
       {...(isGroupOrRadioGroup && { 'aria-labelledby': `${fieldId || randomId}-legend` })}
       {...props}
+      {...ouiaProps}
     >
       {label && (
         <div
