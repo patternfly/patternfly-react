@@ -11,7 +11,7 @@ import ToolsIcon from '@patternfly/react-icons/dist/esm/icons/tools-icon';
 import ClockIcon from '@patternfly/react-icons/dist/esm/icons/clock-icon';
 import WalkingIcon from '@patternfly/react-icons/dist/esm/icons/walking-icon';
 import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
-import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
 import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
