@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { usePopper } from './thirdparty/react-popper/usePopper';
 import { Options as OffsetOptions } from './thirdparty/popper-core/modifiers/offset';
 import { Placement, Modifier } from './thirdparty/popper-core';
-import { clearTimeouts } from '../util';
+import { clearAnimationFrame, clearTimeouts } from '../util';
 import { css } from '@patternfly/react-styles';
 import '@patternfly/react-styles/css/components/Popper/Popper.css';
 import { getLanguageDirection } from '../util';
@@ -234,6 +234,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   const transitionTimerRef = useRef(null);
   const showTimerRef = useRef(null);
   const hideTimerRef = useRef(null);
+  const animationFrameRef = useRef<number>(null);
   const prevExitDelayRef = useRef<number>(undefined);
 
   const refOrTrigger = refElement || triggerElement;
@@ -275,6 +276,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   useEffect(
     () => () => {
       clearTimeouts([transitionTimerRef, hideTimerRef, showTimerRef]);
+      clearAnimationFrame(animationFrameRef);
     },
     []
   );
@@ -469,6 +471,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   useEffect(() => {
     if (prevExitDelayRef.current < exitDelay) {
       clearTimeouts([transitionTimerRef, hideTimerRef]);
+      clearAnimationFrame(animationFrameRef);
       hideTimerRef.current = setTimeout(() => {
         transitionTimerRef.current = setTimeout(() => {
           setInternalIsVisible(false);
@@ -481,16 +484,25 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   const show = () => {
     onShow();
     clearTimeouts([transitionTimerRef, hideTimerRef]);
+    clearAnimationFrame(animationFrameRef);
     showTimerRef.current = setTimeout(() => {
       setInternalIsVisible(true);
-      setOpacity(1);
-      onShown();
+      // Ensures React has committed the DOM changes and the popper element is rendered
+      animationFrameRef.current = requestAnimationFrame(() => {
+        // Ensures Popper.js has calculated and applied the position transform before making element visible
+        animationFrameRef.current = requestAnimationFrame(() => {
+          setOpacity(1);
+          onShown();
+          animationFrameRef.current = null;
+        });
+      });
     }, entryDelay);
   };
 
   const hide = () => {
     onHide();
     clearTimeouts([showTimerRef]);
+    clearAnimationFrame(animationFrameRef);
     hideTimerRef.current = setTimeout(() => {
       setOpacity(0);
       transitionTimerRef.current = setTimeout(() => {
