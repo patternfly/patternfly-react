@@ -3,6 +3,7 @@ import { css } from '@patternfly/react-styles';
 import { FormFieldGroupToggle } from './FormFieldGroupToggle';
 import { useSSRSafeId } from '../../helpers';
 import { useHasAnimations } from '../../helpers';
+import { IS_INERT } from '../../helpers/inert';
 
 export interface InternalFormFieldGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label' | 'onToggle'> {
   /** Anything that can be rendered as form field group content. */
@@ -72,7 +73,7 @@ export const InternalFormFieldGroup: React.FunctionComponent<InternalFormFieldGr
       {(!isExpandable || (isExpandable && isExpanded) || (hasAnimations && isExpandable)) && (
         <div
           className={css(styles.formFieldGroupBody)}
-          {...(hasAnimations && isExpandable && !isExpanded && { inert: '' })}
+          {...(hasAnimations && isExpandable && !isExpanded && { inert: IS_INERT })}
         >
           {children}
         </div>
