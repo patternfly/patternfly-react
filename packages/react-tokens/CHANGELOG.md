@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.5.0-prerelease.27...@patternfly/react-tokens@6.5.0-prerelease.28) (2026-05-19)
+
+### Features
+
+- **ver:** bump core to .93 ([#12429](https://github.com/patternfly/patternfly-react/issues/12429)) ([bdbbf84](https://github.com/patternfly/patternfly-react/commit/bdbbf84d9b4bc6f4434b51d99ca5db0563841af8))
+
 # [6.5.0-prerelease.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.5.0-prerelease.26...@patternfly/react-tokens@6.5.0-prerelease.27) (2026-05-14)
 
 ### Features

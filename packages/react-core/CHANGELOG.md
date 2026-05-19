@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.79](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.78...@patternfly/react-core@6.5.0-prerelease.79) (2026-05-19)
+
+### Features
+
+- **ver:** bump core to .93 ([#12429](https://github.com/patternfly/patternfly-react/issues/12429)) ([bdbbf84](https://github.com/patternfly/patternfly-react/commit/bdbbf84d9b4bc6f4434b51d99ca5db0563841af8))
+
 # [6.5.0-prerelease.78](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.5.0-prerelease.77...@patternfly/react-core@6.5.0-prerelease.78) (2026-05-14)
 
 ### Features
