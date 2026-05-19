@@ -8,9 +8,7 @@ exports[`Flex Nested flex 1`] = `
     <div
       class="pf-v6-l-flex"
     >
-      <div
-        class=""
-      >
+      <div>
         Test
       </div>
     </div>
@@ -23,9 +21,7 @@ exports[`Flex Simple flex with single item 1`] = `
   <div
     class="pf-v6-l-flex"
   >
-    <div
-      class=""
-    >
+    <div>
       Test
     </div>
   </div>
@@ -37,9 +33,7 @@ exports[`Flex alternative component 1`] = `
   <ul
     class="pf-v6-l-flex"
   >
-    <li
-      class=""
-    >
+    <li>
       Test
     </li>
   </ul>
