@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 6.5.0 (2026-05-20)
+
+### Reverts
+
+- Revert "chore(release): releasing packages [ci skip]" ([7185856](https://github.com/patternfly/patternfly-react/commit/7185856d4985da5129bbabd6c460049e7048dd2a))
+
 # [6.5.0-prerelease.82](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.5.0-prerelease.81...@patternfly/react-code-editor@6.5.0-prerelease.82) (2026-05-19)
 
 **Note:** Version bump only for package @patternfly/react-code-editor

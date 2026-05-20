@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 7.5.0 (2026-05-20)
+
+### Reverts
+
+- Revert "chore(release): releasing packages [ci skip]" ([7185856](https://github.com/patternfly/patternfly-react/commit/7185856d4985da5129bbabd6c460049e7048dd2a))
+
 # [7.5.0-prerelease.92](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.5.0-prerelease.91...@patternfly/react-docs@7.5.0-prerelease.92) (2026-05-19)
 
 ### Features
