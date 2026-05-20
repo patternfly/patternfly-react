@@ -32,7 +32,7 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = ({
   'aria-valuetext': ariaValueText = 'Loading...',
   diameter,
   isInline = false,
-  'aria-label': ariaLabel,
+  'aria-label': ariaLabel = 'Contents',
   'aria-labelledBy': ariaLabelledBy,
   ...props
 }: SpinnerProps) => (
@@ -42,9 +42,8 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = ({
     aria-valuetext={ariaValueText}
     viewBox="0 0 100 100"
     {...(diameter && { style: { [cssDiameter.name]: diameter } as React.CSSProperties })}
-    {...(ariaLabel && { 'aria-label': ariaLabel })}
+    aria-label={ariaLabel}
     {...(ariaLabelledBy && { 'aria-labelledBy': ariaLabelledBy })}
-    {...(!ariaLabel && !ariaLabelledBy && { 'aria-label': 'Contents' })}
     {...props}
   >
     <circle className={styles.spinnerPath} cx="50" cy="50" r="45" fill="none" />
