@@ -1,4 +1,4 @@
-import { HTMLProps, ReactNode, useEffect, useRef, useState } from 'react';
+import { HTMLProps, ReactNode, useEffect, useMemo, useRef, useState } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/CodeEditor/code-editor';
 import fileUploadStyles from '@patternfly/react-styles/css/components/FileUpload/file-upload';
@@ -157,6 +157,8 @@ export interface CodeEditorProps extends Omit<HTMLProps<HTMLDivElement>, 'onChan
   isCopyEnabled?: boolean;
   /** Flag indicating the editor is styled using monaco's dark theme. */
   isDarkTheme?: boolean;
+  /** Flag indicating the editor is styled using a high contrast theme. When combined with isDarkTheme, uses monaco's 'hc-black' theme; otherwise uses 'hc-light'. */
+  isHighContrast?: boolean;
   /** Flag that enables component to consume the available height of its container. If `height` prop is set to 100%, this will also become enabled. */
   isFullHeight?: boolean;
   /** Flag indicating the editor has a plain header. */
@@ -286,6 +288,7 @@ export const CodeEditor = ({
   height,
   isCopyEnabled = false,
   isDarkTheme = false,
+  isHighContrast = false,
   isDownloadEnabled = false,
   isFullHeight = false,
   isHeaderPlain = false,
@@ -462,6 +465,19 @@ export const CodeEditor = ({
     headerMainContent ||
     !!shortcutsPopoverProps.bodyContent;
 
+  const theme = useMemo(() => {
+    if (isDarkTheme && isHighContrast) {
+      return 'hc-black';
+    }
+    if (isHighContrast) {
+      return 'hc-light';
+    }
+    if (isDarkTheme) {
+      return 'pf-v6-theme-dark';
+    }
+    return 'pf-v6-theme-light';
+  }, [isDarkTheme, isHighContrast]);
+
   return (
     <Dropzone multiple={false} onDropAccepted={onDropAccepted} onDropRejected={onDropRejected}>
       {({ getRootProps, getInputProps, isDragActive, open }) => {
@@ -579,7 +595,7 @@ export const CodeEditor = ({
               onChange={onModelChange}
               onMount={editorDidMount}
               loading={loading}
-              theme={isDarkTheme ? 'pf-v6-theme-dark' : 'pf-v6-theme-light'}
+              theme={theme}
               {...editorProps}
               beforeMount={editorBeforeMount}
             />

@@ -4,12 +4,16 @@ import { Checkbox } from '@patternfly/react-core';
 
 export const CodeEditorBasic: React.FunctionComponent = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isHighContrast, setIsHighContrast] = useState(false);
   const [isLineNumbersVisible, setIsLineNumbersVisible] = useState(true);
   const [isReadOnly, setIsReadOnly] = useState(false);
   const [isMinimapVisible, setIsMinimapVisible] = useState(false);
 
   const toggleDarkTheme = (checked) => {
     setIsDarkTheme(checked);
+  };
+  const toggleHighContrast = (checked) => {
+    setIsHighContrast(checked);
   };
 
   const toggleLineNumbers = (checked) => {
@@ -44,6 +48,14 @@ export const CodeEditorBasic: React.FunctionComponent = () => {
         name="toggle-theme"
       />
       <Checkbox
+        label="High contrast"
+        isChecked={isHighContrast}
+        onChange={(_event, checked) => toggleHighContrast(checked)}
+        aria-label="high contrast checkbox"
+        id="toggle-high-contrast"
+        name="toggle-high-contrast"
+      />
+      <Checkbox
         label="Line numbers"
         isChecked={isLineNumbersVisible}
         onChange={(_event, checked) => toggleLineNumbers(checked)}
@@ -69,6 +81,7 @@ export const CodeEditorBasic: React.FunctionComponent = () => {
       />
       <CodeEditor
         isDarkTheme={isDarkTheme}
+        isHighContrast={isHighContrast}
         isLineNumbersVisible={isLineNumbersVisible}
         isReadOnly={isReadOnly}
         isMinimapVisible={isMinimapVisible}

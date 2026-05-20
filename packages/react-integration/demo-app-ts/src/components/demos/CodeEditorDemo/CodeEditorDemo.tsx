@@ -5,6 +5,7 @@ import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
 interface CodeEditorDemoState {
   isDarkTheme: boolean;
+  isHighContrast: boolean;
   isLineNumbersVisible: boolean;
   isReadOnly: boolean;
   isMinimapVisible: boolean;
@@ -17,6 +18,7 @@ export class CodeEditorDemo extends Component<CodeEditorProps, CodeEditorDemoSta
     super(props);
     this.state = {
       isDarkTheme: false,
+      isHighContrast: false,
       isLineNumbersVisible: true,
       isReadOnly: false,
       isMinimapVisible: true,
@@ -27,6 +29,12 @@ export class CodeEditorDemo extends Component<CodeEditorProps, CodeEditorDemoSta
   toggleDarkTheme = (checked: boolean) => {
     this.setState({
       isDarkTheme: checked
+    });
+  };
+
+  toggleHighContrast = (checked: boolean) => {
+    this.setState({
+      isHighContrast: checked
     });
   };
 
@@ -70,7 +78,7 @@ export class CodeEditorDemo extends Component<CodeEditorProps, CodeEditorDemoSta
   };
 
   render() {
-    const { isDarkTheme, isLineNumbersVisible, isReadOnly, isMinimapVisible, code } = this.state;
+    const { isDarkTheme, isHighContrast, isLineNumbersVisible, isReadOnly, isMinimapVisible, code } = this.state;
 
     const customControl = (
       <CodeEditorControl
@@ -90,6 +98,14 @@ export class CodeEditorDemo extends Component<CodeEditorProps, CodeEditorDemoSta
           aria-label="dark theme checkbox"
           id="toggle-theme"
           name="toggle-theme"
+        />
+        <Checkbox
+          label="High contrast"
+          isChecked={isHighContrast}
+          onChange={(_event, checked) => this.toggleHighContrast(checked)}
+          aria-label="high contrast checkbox"
+          id="toggle-high-contrast"
+          name="toggle-high-contrast"
         />
         <Checkbox
           label="Line numbers"
@@ -120,6 +136,7 @@ export class CodeEditorDemo extends Component<CodeEditorProps, CodeEditorDemoSta
         </Button>
         <CodeEditor
           isDarkTheme={isDarkTheme}
+          isHighContrast={isHighContrast}
           isLineNumbersVisible={isLineNumbersVisible}
           isReadOnly={isReadOnly}
           isMinimapVisible={isMinimapVisible}

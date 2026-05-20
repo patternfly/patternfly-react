@@ -2,7 +2,9 @@ import { render, screen, act } from '@testing-library/react';
 import { CodeEditor, Language } from '../CodeEditor';
 import styles from '@patternfly/react-styles/css/components/CodeEditor/code-editor';
 
-jest.mock('@monaco-editor/react', () => jest.fn(() => <div data-testid="mock-editor"></div>));
+jest.mock('@monaco-editor/react', () =>
+  jest.fn((props: any) => <div data-testid="mock-editor" data-theme={props.theme}></div>)
+);
 
 test('Matches snapshot without props', () => {
   const { asFragment } = render(<CodeEditor code="test" />);
@@ -71,4 +73,24 @@ test(`Renders with shortcuts when shortcutsPopoverButtonText is passed`, () => {
     screen.getByText('shortcuts-button').click();
   });
   expect(screen.getByText('shortcuts')).toBeInTheDocument();
+});
+
+test('Uses pf-v6-theme-light by default', () => {
+  render(<CodeEditor code="test" />);
+  expect(screen.getByTestId('mock-editor')).toHaveAttribute('data-theme', 'pf-v6-theme-light');
+});
+
+test('Uses pf-v6-theme-dark when isDarkTheme is true', () => {
+  render(<CodeEditor isDarkTheme code="test" />);
+  expect(screen.getByTestId('mock-editor')).toHaveAttribute('data-theme', 'pf-v6-theme-dark');
+});
+
+test('Uses hc-light when isHighContrast is true', () => {
+  render(<CodeEditor isHighContrast code="test" />);
+  expect(screen.getByTestId('mock-editor')).toHaveAttribute('data-theme', 'hc-light');
+});
+
+test('Uses hc-black when both isHighContrast and isDarkTheme are true', () => {
+  render(<CodeEditor isHighContrast isDarkTheme code="test" />);
+  expect(screen.getByTestId('mock-editor')).toHaveAttribute('data-theme', 'hc-black');
 });
