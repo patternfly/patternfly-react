@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.111](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.5.0-prerelease.110...demo-app-ts@6.5.0-prerelease.111) (2026-05-27)
+
+### Features
+
+- **CodeEditor:** add isHighContrastTheme ([#12384](https://github.com/patternfly/patternfly-react/issues/12384)) ([bee95e6](https://github.com/patternfly/patternfly-react/commit/bee95e6397fcc7ee326ac8d29d59f65365db02bf))
+
 # [6.5.0-prerelease.110](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.5.0-prerelease.109...demo-app-ts@6.5.0-prerelease.110) (2026-05-26)
 
 **Note:** Version bump only for package demo-app-ts
