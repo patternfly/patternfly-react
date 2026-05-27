@@ -15,6 +15,7 @@ import MapIcon from '@patternfly/react-icons/dist/esm/icons/map-icon';
 import MoonIcon from '@patternfly/react-icons/dist/esm/icons/moon-icon';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import FontIcon from '@patternfly/react-icons/dist/esm/icons/font-icon';
+import AdjustIcon from '@patternfly/react-icons/dist/esm/icons/adjust-icon';
 
 ## Examples
 

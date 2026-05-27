@@ -164,6 +164,7 @@ exports[`Matches snapshot with control buttons enabled 1`] = `
         >
           <div
             data-testid="mock-editor"
+            data-theme="pf-v6-theme-light"
           />
         </div>
       </div>
@@ -196,6 +197,7 @@ exports[`Matches snapshot without props 1`] = `
       >
         <div
           data-testid="mock-editor"
+          data-theme="pf-v6-theme-light"
         />
       </div>
     </div>
