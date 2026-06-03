@@ -32,3 +32,11 @@ In the following example, a flex layout is used inside the banner content to sho
 ```ts file="./BannerStatus.tsx"
 
 ```
+
+### Pill
+
+Banners may also have a rounded pill style by passing the `isPill` prop.
+
+```ts file="./BannerPill.tsx"
+
+```
