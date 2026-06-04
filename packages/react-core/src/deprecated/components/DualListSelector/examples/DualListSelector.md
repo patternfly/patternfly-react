@@ -29,7 +29,7 @@ DualListSelectorControlsWrapper as DLSControlsWrapperDeprecated,
 DualListSelectorControl as DLSControlDeprecated,
 DualListSelectorTree as DLSTreeDeprecated,
 } from '@patternfly/react-core/deprecated';
-import RhUiDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-double-caret-left-icon';
+import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-left-icon';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
