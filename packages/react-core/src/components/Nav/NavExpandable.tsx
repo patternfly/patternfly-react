@@ -30,6 +30,8 @@ export interface NavExpandableProps
   onExpand?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, val: boolean) => void;
   /** Additional props added to the NavExpandable <button> */
   buttonProps?: any;
+  /** Icon added before the nav item children. */
+  icon?: React.ReactNode;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
 }
@@ -84,6 +86,7 @@ class NavExpandable extends Component<NavExpandableProps, NavExpandableState> {
 
   render() {
     const {
+      icon,
       title,
       srText,
       children,
@@ -132,11 +135,8 @@ class NavExpandable extends Component<NavExpandableProps, NavExpandableState> {
                         tabIndex={isSidebarOpen ? null : -1}
                         {...buttonProps}
                       >
-                        {typeof title !== 'string' ? (
-                          <span className={css(`${styles.nav}__link-text`)}>{title}</span>
-                        ) : (
-                          title
-                        )}
+                        {icon && <span className={css(styles.navLinkIcon)}>{icon}</span>}
+                        {typeof title !== 'string' ? <span className={css(styles.navLinkText)}>{title}</span> : title}
                         <span className={css(styles.navToggle)}>
                           <span className={css(styles.navToggleIcon)}>
                             <RhMicronsCaretDownIcon />

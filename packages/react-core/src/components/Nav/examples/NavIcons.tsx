@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Nav, NavItem, NavList } from '@patternfly/react-core';
+import { Nav, NavExpandable, NavItem, NavList } from '@patternfly/react-core';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
 import CloudIcon from '@patternfly/react-icons/dist/esm/icons/cloud-icon';
+import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 import LinkIcon from '@patternfly/react-icons/dist/esm/icons/link-icon';
 
 export const NavIcons: React.FunctionComponent = () => {
@@ -55,6 +56,26 @@ export const NavIcons: React.FunctionComponent = () => {
         >
           Link 4
         </NavItem>
+        <NavExpandable title="Expandable" icon={<FolderOpenIcon />} groupId="nav-icon-expandable">
+          <NavItem
+            preventDefault
+            id="nav-icon-expandable-link1"
+            to="#nav-icon-expandable-link1"
+            itemId={4}
+            isActive={activeItem === 4}
+          >
+            Subnav link 1
+          </NavItem>
+          <NavItem
+            preventDefault
+            id="nav-icon-expandable-link2"
+            to="#nav-icon-expandable-link2"
+            itemId={5}
+            isActive={activeItem === 5}
+          >
+            Subnav link 2
+          </NavItem>
+        </NavExpandable>
       </NavList>
     </Nav>
   );
