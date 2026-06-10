@@ -7,7 +7,7 @@ propComponents:
 ---
 
 import { useState, useLayoutEffect, useRef } from 'react';
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
+import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-menu-bars-icon';
 import pageSectionWidthLimitMaxWidth from '@patternfly/react-tokens/dist/esm/c_page_section_m_limit_width_MaxWidth';
 
 ## Examples
