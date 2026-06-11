@@ -58,7 +58,7 @@ exports[`Table Actions table 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-rh-ui"
+                    class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -199,7 +199,7 @@ exports[`Table Actions table 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-rh-ui"
+                  class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -292,7 +292,7 @@ exports[`Table Actions table 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-rh-ui"
+                  class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -385,7 +385,7 @@ exports[`Table Actions table 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-rh-ui"
+                  class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -478,7 +478,7 @@ exports[`Table Actions table 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-rh-ui"
+                  class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -571,7 +571,7 @@ exports[`Table Actions table 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-rh-ui"
+                  class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -664,7 +664,7 @@ exports[`Table Actions table 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-rh-ui"
+                  class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -757,7 +757,7 @@ exports[`Table Actions table 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-rh-ui"
+                  class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -850,7 +850,7 @@ exports[`Table Actions table 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-rh-ui"
+                  class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -943,7 +943,7 @@ exports[`Table Actions table 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-rh-ui"
+                  class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -1018,7 +1018,7 @@ exports[`Table Cell header table 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-rh-ui"
+                    class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -1601,7 +1601,7 @@ exports[`Table Collapsible nested table 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-rh-ui"
+                    class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -1685,7 +1685,7 @@ exports[`Table Collapsible nested table 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-v6-svg"
+                  class="pf-v6-svg pf-v6-icon-rh-microns"
                   fill="currentColor"
                   height="1em"
                   role="img"
@@ -1776,7 +1776,7 @@ exports[`Table Collapsible nested table 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-v6-svg"
+                  class="pf-v6-svg pf-v6-icon-rh-microns"
                   fill="currentColor"
                   height="1em"
                   role="img"
@@ -1938,7 +1938,7 @@ exports[`Table Collapsible nested table 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-v6-svg"
+                  class="pf-v6-svg pf-v6-icon-rh-microns"
                   fill="currentColor"
                   height="1em"
                   role="img"
@@ -2374,7 +2374,7 @@ exports[`Table Collapsible table 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-rh-ui"
+                    class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -2458,7 +2458,7 @@ exports[`Table Collapsible table 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-v6-svg"
+                  class="pf-v6-svg pf-v6-icon-rh-microns"
                   fill="currentColor"
                   height="1em"
                   role="img"
@@ -2675,7 +2675,7 @@ exports[`Table Collapsible table 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-v6-svg"
+                  class="pf-v6-svg pf-v6-icon-rh-microns"
                   fill="currentColor"
                   height="1em"
                   role="img"
@@ -4426,7 +4426,7 @@ exports[`Table Selectable table 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-rh-ui"
+                    class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -5172,7 +5172,7 @@ exports[`Table Selectable table with Radio 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-rh-ui"
+                    class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -6035,7 +6035,7 @@ exports[`Table Simple Actions table 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-rh-ui"
+                    class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -6176,7 +6176,7 @@ exports[`Table Simple Actions table 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-rh-ui"
+                  class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -6269,7 +6269,7 @@ exports[`Table Simple Actions table 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-rh-ui"
+                  class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -6362,7 +6362,7 @@ exports[`Table Simple Actions table 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-rh-ui"
+                  class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -6455,7 +6455,7 @@ exports[`Table Simple Actions table 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-rh-ui"
+                  class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -6548,7 +6548,7 @@ exports[`Table Simple Actions table 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-rh-ui"
+                  class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -6641,7 +6641,7 @@ exports[`Table Simple Actions table 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-rh-ui"
+                  class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -6734,7 +6734,7 @@ exports[`Table Simple Actions table 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-rh-ui"
+                  class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -6827,7 +6827,7 @@ exports[`Table Simple Actions table 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-rh-ui"
+                  class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -6920,7 +6920,7 @@ exports[`Table Simple Actions table 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-rh-ui"
+                  class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -7014,7 +7014,7 @@ exports[`Table Simple Actions table 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-rh-ui"
+                  class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -7089,7 +7089,7 @@ exports[`Table Table variants Breakpoint -  1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-rh-ui"
+                    class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -7629,7 +7629,7 @@ exports[`Table Table variants Breakpoint - grid 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-rh-ui"
+                    class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -8169,7 +8169,7 @@ exports[`Table Table variants Breakpoint - grid-2xl 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-rh-ui"
+                    class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -8709,7 +8709,7 @@ exports[`Table Table variants Breakpoint - grid-lg 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-rh-ui"
+                    class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -9249,7 +9249,7 @@ exports[`Table Table variants Breakpoint - grid-md 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-rh-ui"
+                    class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -9789,7 +9789,7 @@ exports[`Table Table variants Breakpoint - grid-xl 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-rh-ui"
+                    class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -10329,7 +10329,7 @@ exports[`Table Table variants Size - compact 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-rh-ui"
+                    class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -11062,7 +11062,7 @@ exports[`Table simple Editable table 1`] = `
                         />
                       </svg>
                       <svg
-                        class="pf-v6-icon-rh-ui"
+                        class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                         viewBox="0 0 32 32"
                       >
                         <path
@@ -11089,7 +11089,7 @@ exports[`Table simple Editable table 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      class="pf-v6-svg"
+                      class="pf-v6-svg pf-v6-icon-rh-microns"
                       fill="currentColor"
                       height="1em"
                       role="img"
@@ -11135,7 +11135,7 @@ exports[`Table simple Editable table 1`] = `
                       />
                     </svg>
                     <svg
-                      class="pf-v6-icon-rh-ui"
+                      class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                       viewBox="0 0 32 32"
                     >
                       <path
@@ -11326,7 +11326,7 @@ exports[`Table simple Editable table 1`] = `
                         />
                       </svg>
                       <svg
-                        class="pf-v6-icon-rh-ui"
+                        class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                         viewBox="0 0 32 32"
                       >
                         <path
@@ -11353,7 +11353,7 @@ exports[`Table simple Editable table 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      class="pf-v6-svg"
+                      class="pf-v6-svg pf-v6-icon-rh-microns"
                       fill="currentColor"
                       height="1em"
                       role="img"
@@ -11399,7 +11399,7 @@ exports[`Table simple Editable table 1`] = `
                       />
                     </svg>
                     <svg
-                      class="pf-v6-icon-rh-ui"
+                      class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                       viewBox="0 0 32 32"
                     >
                       <path
@@ -11476,7 +11476,7 @@ exports[`Table simple Row click table 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-rh-ui"
+                    class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -12016,7 +12016,7 @@ exports[`Table simple Sortable table 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-rh-ui"
+                    class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path

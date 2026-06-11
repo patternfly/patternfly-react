@@ -15,7 +15,7 @@ exports[`NotificationBadge count 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="pf-v6-svg"
+        class="pf-v6-svg pf-v6-icon-rh-ui"
         fill="currentColor"
         height="1em"
         role="img"
@@ -51,7 +51,7 @@ exports[`false NotificationBadge needs attention 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="pf-v6-svg"
+        class="pf-v6-svg pf-v6-icon-rh-ui"
         fill="currentColor"
         height="1em"
         role="img"
@@ -87,7 +87,7 @@ exports[`true NotificationBadge needs attention 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="pf-v6-svg"
+        class="pf-v6-svg pf-v6-icon-rh-ui"
         fill="currentColor"
         height="1em"
         role="img"

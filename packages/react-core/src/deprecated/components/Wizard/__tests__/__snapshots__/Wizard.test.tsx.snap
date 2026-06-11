@@ -24,7 +24,7 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="pf-v6-svg"
+              class="pf-v6-svg pf-v6-icon-rh-microns"
               fill="currentColor"
               height="1em"
               role="img"
@@ -79,7 +79,7 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-v6-svg"
+          class="pf-v6-svg pf-v6-icon-rh-microns"
           fill="currentColor"
           height="1em"
           role="img"
@@ -155,7 +155,7 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        class="pf-v6-svg"
+                        class="pf-v6-svg pf-v6-icon-rh-microns"
                         fill="currentColor"
                         height="1em"
                         role="img"
@@ -359,7 +359,7 @@ exports[`Wizard Wizard should match snapshot 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="pf-v6-svg"
+              class="pf-v6-svg pf-v6-icon-rh-microns"
               fill="currentColor"
               height="1em"
               role="img"
@@ -414,7 +414,7 @@ exports[`Wizard Wizard should match snapshot 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-v6-svg"
+          class="pf-v6-svg pf-v6-icon-rh-microns"
           fill="currentColor"
           height="1em"
           role="img"
@@ -680,7 +680,7 @@ exports[`Wizard bare wiz 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-v6-svg"
+          class="pf-v6-svg pf-v6-icon-rh-microns"
           fill="currentColor"
           height="1em"
           role="img"

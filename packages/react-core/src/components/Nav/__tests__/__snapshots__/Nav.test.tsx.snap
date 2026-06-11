@@ -205,7 +205,7 @@ exports[`Nav Expandable Nav List - Trigger toggle 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-v6-svg"
+                class="pf-v6-svg pf-v6-icon-rh-microns"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -338,7 +338,7 @@ exports[`Nav Expandable Nav List 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-v6-svg"
+                class="pf-v6-svg pf-v6-icon-rh-microns"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -470,7 +470,7 @@ exports[`Nav Expandable Nav List with aria label 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-v6-svg"
+                class="pf-v6-svg pf-v6-icon-rh-microns"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -1000,7 +1000,7 @@ exports[`Nav Nav List with flyout 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-v6-svg"
+                class="pf-v6-svg pf-v6-icon-rh-microns"
                 fill="currentColor"
                 height="1em"
                 role="img"

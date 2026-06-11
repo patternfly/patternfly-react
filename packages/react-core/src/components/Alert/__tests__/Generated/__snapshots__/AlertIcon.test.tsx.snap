@@ -7,7 +7,7 @@ exports[`AlertIcon should match snapshot (auto-generated) 1`] = `
   >
     <svg
       aria-hidden="true"
-      class="pf-v6-svg"
+      class="pf-v6-svg pf-v6-icon-rh-ui"
       fill="currentColor"
       height="1em"
       role="img"

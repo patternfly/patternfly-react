@@ -40,7 +40,7 @@ exports[`SearchInput advanced search 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-rh-ui"
+                    class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -70,7 +70,7 @@ exports[`SearchInput advanced search 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-v6-svg"
+                  class="pf-v6-svg pf-v6-icon-rh-microns"
                   fill="currentColor"
                   height="1em"
                   role="img"
@@ -100,7 +100,7 @@ exports[`SearchInput advanced search 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="pf-v6-svg"
+              class="pf-v6-svg pf-v6-icon-rh-microns"
               fill="currentColor"
               height="1em"
               role="img"
@@ -133,7 +133,7 @@ exports[`SearchInput advanced search 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-v6-svg"
+                  class="pf-v6-svg pf-v6-icon-rh-microns"
                   fill="currentColor"
                   height="1em"
                   role="img"
@@ -195,7 +195,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-rh-ui"
+                    class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -225,7 +225,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-v6-svg"
+                  class="pf-v6-svg pf-v6-icon-rh-microns"
                   fill="currentColor"
                   height="1em"
                   role="img"
@@ -255,7 +255,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="pf-v6-svg"
+              class="pf-v6-svg pf-v6-icon-rh-microns"
               fill="currentColor"
               height="1em"
               role="img"
@@ -288,7 +288,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-v6-svg"
+                  class="pf-v6-svg pf-v6-icon-rh-microns"
                   fill="currentColor"
                   height="1em"
                   role="img"
@@ -444,7 +444,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        class="pf-v6-svg"
+                        class="pf-v6-svg pf-v6-icon-rh-ui"
                         fill="currentColor"
                         height="1em"
                         role="img"
@@ -540,7 +540,7 @@ exports[`SearchInput renders search input in strict mode 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-rh-ui"
+                    class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -570,7 +570,7 @@ exports[`SearchInput renders search input in strict mode 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-v6-svg"
+                  class="pf-v6-svg pf-v6-icon-rh-microns"
                   fill="currentColor"
                   height="1em"
                   role="img"
@@ -600,7 +600,7 @@ exports[`SearchInput renders search input in strict mode 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="pf-v6-svg"
+              class="pf-v6-svg pf-v6-icon-rh-microns"
               fill="currentColor"
               height="1em"
               role="img"
@@ -633,7 +633,7 @@ exports[`SearchInput renders search input in strict mode 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-v6-svg"
+                  class="pf-v6-svg pf-v6-icon-rh-microns"
                   fill="currentColor"
                   height="1em"
                   role="img"
@@ -698,7 +698,7 @@ exports[`SearchInput search input with hint 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-rh-ui"
+                  class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -746,7 +746,7 @@ exports[`SearchInput search input with hint 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-rh-ui"
+                    class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -781,7 +781,7 @@ exports[`SearchInput search input with hint 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-rh-ui"
+                    class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -802,7 +802,7 @@ exports[`SearchInput search input with hint 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-v6-svg"
+                class="pf-v6-svg pf-v6-icon-rh-microns"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -837,7 +837,7 @@ exports[`SearchInput search input with hint 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-v6-svg"
+                class="pf-v6-svg pf-v6-icon-rh-microns"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -894,7 +894,7 @@ exports[`SearchInput simple search input 1`] = `
                   />
                 </svg>
                 <svg
-                  class="pf-v6-icon-rh-ui"
+                  class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                   viewBox="0 0 32 32"
                 >
                   <path
@@ -942,7 +942,7 @@ exports[`SearchInput simple search input 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-rh-ui"
+                    class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -977,7 +977,7 @@ exports[`SearchInput simple search input 1`] = `
                     />
                   </svg>
                   <svg
-                    class="pf-v6-icon-rh-ui"
+                    class="pf-v6-icon-rh-ui pf-v6-icon-rh-ui"
                     viewBox="0 0 32 32"
                   >
                     <path
@@ -998,7 +998,7 @@ exports[`SearchInput simple search input 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-v6-svg"
+                class="pf-v6-svg pf-v6-icon-rh-microns"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -1033,7 +1033,7 @@ exports[`SearchInput simple search input 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-v6-svg"
+                class="pf-v6-svg pf-v6-icon-rh-microns"
                 fill="currentColor"
                 height="1em"
                 role="img"
