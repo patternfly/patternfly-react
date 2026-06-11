@@ -6,7 +6,7 @@ import { ValidatedOptions } from '../../helpers/constants';
 import { FormControlIcon } from '../FormControl/FormControlIcon';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
-import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 
 export interface FormSelectProps
   extends Omit<React.HTMLProps<HTMLSelectElement>, 'onChange' | 'onBlur' | 'onFocus' | 'disabled'>, OUIAProps {
@@ -98,7 +98,7 @@ class FormSelect extends Component<FormSelectProps> {
             <span className={css(styles.formControlUtilities)}>
               {hasStatusIcon && <FormControlIcon status={validated as 'success' | 'error' | 'warning'} />}
               <span className={css(styles.formControlToggleIcon)}>
-                <CaretDownIcon />
+                <RhMicronsCaretDownIcon />
               </span>
             </span>
           </span>

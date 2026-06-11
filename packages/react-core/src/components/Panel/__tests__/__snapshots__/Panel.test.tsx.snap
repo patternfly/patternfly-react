@@ -28,6 +28,24 @@ exports[`Matches the snapshot with hasNoBorder 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Matches the snapshot with isAutoHeight 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-panel pf-m-scrollable pf-m-scrollable-auto-height"
+  >
+    <div
+      class="pf-v6-c-panel__main"
+    >
+      <div
+        class="pf-v6-c-panel__main-body"
+      >
+        Test
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Matches the snapshot with isFullHeight 1`] = `
 <DocumentFragment>
   <div
@@ -50,24 +68,6 @@ exports[`Matches the snapshot with isGlass 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-panel pf-m-glass"
-  >
-    <div
-      class="pf-v6-c-panel__main"
-    >
-      <div
-        class="pf-v6-c-panel__main-body"
-      >
-        Test
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Matches the snapshot with isAutoHeight 1`] = `
-<DocumentFragment>
-  <div
-    class="pf-v6-c-panel pf-m-scrollable pf-m-scrollable-auto-height"
   >
     <div
       class="pf-v6-c-panel__main"

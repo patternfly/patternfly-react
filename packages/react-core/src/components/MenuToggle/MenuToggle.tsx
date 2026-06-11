@@ -1,7 +1,7 @@
 import { Component, forwardRef, isValidElement } from 'react';
 import styles from '@patternfly/react-styles/css/components/MenuToggle/menu-toggle';
 import { css } from '@patternfly/react-styles';
-import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import { BadgeProps } from '../Badge';
 import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
@@ -154,7 +154,7 @@ class MenuToggleBase extends Component<MenuToggleProps> {
             <span className={css(styles.menuToggleControls)}>
               {status !== undefined && <span className={css(styles.menuToggleStatusIcon)}>{_statusIcon}</span>}
               <span className={css(styles.menuToggleToggleIcon)}>
-                <CaretDownIcon />
+                <RhMicronsCaretDownIcon />
               </span>
             </span>
           );
