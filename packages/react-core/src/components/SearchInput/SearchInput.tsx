@@ -7,8 +7,8 @@ import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-ico
 import AngleUpIcon from '@patternfly/react-icons/dist/esm/icons/angle-up-icon';
 import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
-import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
 import { AdvancedSearchMenu } from './AdvancedSearchMenu';
 import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities } from '../TextInputGroup';
 import { InputGroup, InputGroupItem } from '../InputGroup';
@@ -479,7 +479,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
             isDisabled={isDisabled}
             icon={
               <Icon shouldMirrorRTL>
-                <ArrowRightIcon />
+                <RhMicronsCaretRightIcon />
               </Icon>
             }
           />

@@ -21,7 +21,7 @@ import {
   MenuToggleElement
 } from '@patternfly/react-core';
 import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
-import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
@@ -135,7 +135,14 @@ export const CardHorizontalGrid: React.FunctionComponent = () => {
                   </ListItem>
                 </List>
               </Flex>
-              <Button href="#" component="a" variant="link" isInline icon={<ArrowRightIcon />} iconPosition="right">
+              <Button
+                href="#"
+                component="a"
+                variant="link"
+                isInline
+                icon={<RhMicronsCaretRightIcon />}
+                iconPosition="right"
+              >
                 View all set up cluster steps
               </Button>
             </Flex>
@@ -163,7 +170,14 @@ export const CardHorizontalGrid: React.FunctionComponent = () => {
                   </ListItem>
                 </List>
               </Flex>
-              <Button href="#" component="a" variant="link" isInline icon={<ArrowRightIcon />} iconPosition="right">
+              <Button
+                href="#"
+                component="a"
+                variant="link"
+                isInline
+                icon={<RhMicronsCaretRightIcon />}
+                iconPosition="right"
+              >
                 View all guided tours
               </Button>
             </Flex>
@@ -194,7 +208,14 @@ export const CardHorizontalGrid: React.FunctionComponent = () => {
                   </ListItem>
                 </List>
               </Flex>
-              <Button href="#" component="a" variant="link" isInline icon={<ArrowRightIcon />} iconPosition="right">
+              <Button
+                href="#"
+                component="a"
+                variant="link"
+                isInline
+                icon={<RhMicronsCaretRightIcon />}
+                iconPosition="right"
+              >
                 View all quick starts
               </Button>
             </Flex>
@@ -228,7 +249,14 @@ export const CardHorizontalGrid: React.FunctionComponent = () => {
                   </ListItem>
                 </List>
               </Flex>
-              <Button href="#" component="a" variant="link" isInline icon={<ArrowRightIcon />} iconPosition="right">
+              <Button
+                href="#"
+                component="a"
+                variant="link"
+                isInline
+                icon={<RhMicronsCaretRightIcon />}
+                iconPosition="right"
+              >
                 View all learning resources
               </Button>
             </Flex>
