@@ -1,7 +1,7 @@
 import { Button, Flex } from '@patternfly/react-core';
 import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
-import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
+import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
 import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 
@@ -48,7 +48,7 @@ export const ButtonCircle: React.FunctionComponent = () => {
         aria-label="Add warning circle variant example"
       />
       <Button variant="link" isCircle icon={<RhUiAddCircleFillIcon />} aria-label="Add link circle variant example" />
-      <Button variant="control" isCircle icon={<CopyIcon />} aria-label="Copy control circle variant example" />
+      <Button variant="control" isCircle icon={<RhUiCopyFillIcon />} aria-label="Copy control circle variant example" />
       <Button variant="plain" isCircle icon={<RhMicronsCloseIcon />} aria-label="Remove plain circle variant example" />
       <Button
         variant="stateful"

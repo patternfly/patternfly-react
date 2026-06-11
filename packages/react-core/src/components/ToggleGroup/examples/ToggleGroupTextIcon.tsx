@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 import UndoIcon from '@patternfly/react-icons/dist/esm/icons/undo-icon';
-import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
+import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
 import ShareSquareIcon from '@patternfly/react-icons/dist/esm/icons/share-square-icon';
 
 export const ToggleGroupIcon: React.FunctionComponent = () => {
@@ -18,7 +18,7 @@ export const ToggleGroupIcon: React.FunctionComponent = () => {
     <>
       <ToggleGroup aria-label="Text and icon toggle group with icons at start">
         <ToggleGroupItem
-          icon={<CopyIcon />}
+          icon={<RhUiCopyFillIcon />}
           text="Copy"
           buttonId="toggle-group-text-icons-1"
           isSelected={isSelected['toggle-group-text-icons-1']}
@@ -42,7 +42,7 @@ export const ToggleGroupIcon: React.FunctionComponent = () => {
       <br />
       <ToggleGroup aria-label="Text and icon toggle group with icons at end">
         <ToggleGroupItem
-          icon={<CopyIcon />}
+          icon={<RhUiCopyFillIcon />}
           iconPosition="end"
           text="Copy"
           buttonId="toggle-group-text-icons-4"
