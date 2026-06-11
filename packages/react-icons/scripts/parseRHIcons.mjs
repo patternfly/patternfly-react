@@ -19,10 +19,10 @@ const ICON_TYPES = [
 ];
 
 const ICON_TYPE_CLASSES = {
-  ui: '',
+  ui: 'pf-v6-icon-rh-ui',
   standard: 'pf-v6-icon-rh-standard',
   // social: '',
-  microns: ''
+  microns: 'pf-v6-icon-rh-microns'
 };
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
