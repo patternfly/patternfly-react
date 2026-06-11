@@ -81,6 +81,12 @@ A flyout should be a `Menu` component. Press `space` or `right arrow` to open a 
 
 ```
 
+### Expandable with icons
+
+```ts file="./NavExpandableIcons.tsx"
+
+```
+
 
 ## Types
 

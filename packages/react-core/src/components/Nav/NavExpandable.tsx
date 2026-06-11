@@ -12,6 +12,8 @@ export interface NavExpandableProps
   extends Omit<React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>, 'title'>, OUIAProps {
   /** Title content shown for the expandable list */
   title: React.ReactNode;
+  /** Icon added before the nav expandable children. */
+  icon?: React.ReactNode;
   /** If defined, screen readers will read this text instead of the list title */
   srText?: string;
   /** Boolean to pragmatically expand or collapse section */
@@ -85,6 +87,7 @@ class NavExpandable extends Component<NavExpandableProps, NavExpandableState> {
   render() {
     const {
       title,
+      icon,
       srText,
       children,
       className,
@@ -132,6 +135,7 @@ class NavExpandable extends Component<NavExpandableProps, NavExpandableState> {
                         tabIndex={isSidebarOpen ? null : -1}
                         {...buttonProps}
                       >
+                        {icon && <span className={css(styles.navLinkIcon)}>{icon}</span>}
                         {typeof title !== 'string' ? (
                           <span className={css(`${styles.nav}__link-text`)}>{title}</span>
                         ) : (
