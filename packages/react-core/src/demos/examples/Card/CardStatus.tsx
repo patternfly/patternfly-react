@@ -10,6 +10,7 @@ import {
   Grid,
   GridItem,
   Label,
+  LabelStatus,
   NotificationDrawer,
   NotificationDrawerBody,
   NotificationDrawerGroup,
@@ -204,11 +205,11 @@ export const CardStatus: React.FunctionComponent = () => {
       <FlexItem spacer={{ default: 'spacerMd' }}>
         <span>Notifications</span>
       </FlexItem>
-      <Label status="danger">1</Label>
-      <Label status="warning">3</Label>
-      <Label status="success">3</Label>
-      <Label status="danger">3</Label>
-      <Label status="info">3</Label>
+      <Label status={LabelStatus.danger}>1</Label>
+      <Label status={LabelStatus.warning}>3</Label>
+      <Label status={LabelStatus.success}>3</Label>
+      <Label status={LabelStatus.danger}>3</Label>
+      <Label status={LabelStatus.info}>3</Label>
     </Flex>
   );
 

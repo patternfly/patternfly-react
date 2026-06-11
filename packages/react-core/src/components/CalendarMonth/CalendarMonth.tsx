@@ -81,6 +81,13 @@ export interface CalendarProps extends CalendarFormat, Omit<React.HTMLProps<HTML
   onSelectToggle?: (open: boolean) => void;
   /** Functions that returns if a date is valid and selectable. */
   validators?: ((date: Date) => boolean)[];
+  /** The container to append the month select menu to. Defaults to 'inline'.
+   * If your menu is being cut off you can append it to an element higher up the DOM tree.
+   * Some examples:
+   * monthAppendTo={() => document.body};
+   * monthAppendTo={document.getElementById('target')}
+   */
+  monthAppendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement) | 'inline';
 }
 
 const buildCalendar = (year: number, month: number, weekStart: number, validators: ((date: Date) => boolean)[]) => {
@@ -143,6 +150,7 @@ export const CalendarMonth = ({
   cellAriaLabel,
   isDateFocused = false,
   inlineProps,
+  monthAppendTo = 'inline',
   ...props
 }: CalendarProps) => {
   const longMonths = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
@@ -327,7 +335,7 @@ export const CalendarMonth = ({
                   onMonthChange(ev, newDate);
                 }}
                 selected={monthFormatted}
-                popperProps={{ appendTo: 'inline' }}
+                popperProps={{ appendTo: monthAppendTo }}
               >
                 <SelectList>
                   {longMonths.map((longMonth, index) => (

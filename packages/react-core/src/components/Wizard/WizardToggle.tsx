@@ -2,7 +2,7 @@ import { Fragment, useCallback, useEffect } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
-import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
 import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 
@@ -122,7 +122,7 @@ export const WizardToggle = ({
         </span>
 
         <span className={css(styles.wizardToggleIcon)}>
-          <CaretDownIcon />
+          <RhMicronsCaretDownIcon />
         </span>
       </button>
       <div className={css(styles.wizardOuterWrap)}>

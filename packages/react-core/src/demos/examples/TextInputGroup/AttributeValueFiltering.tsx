@@ -40,8 +40,8 @@ export const AttributeValueFiltering: React.FunctionComponent = () => {
   const [menuItems, setMenuItems] = useState<React.ReactElement<any>[]>([]);
 
   /** refs used to detect when clicks occur inside vs outside of the textInputGroup and menu popper */
-  const menuRef = useRef<HTMLDivElement>(undefined);
-  const textInputGroupRef = useRef<HTMLDivElement>(undefined);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const textInputGroupRef = useRef<HTMLDivElement>(null);
 
   /** callback for updating the inputValue state in this component so that the input can be controlled */
   const handleInputChange = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
@@ -107,7 +107,7 @@ export const AttributeValueFiltering: React.FunctionComponent = () => {
     const divider = <Divider key="divider" />;
 
     setMenuItems([headingItem, divider, ...filteredMenuItems]);
-  }, [inputValue]);
+  }, [inputValue, menuItemsText, selectedKey]);
 
   /** add selected key/value pair as a chip in the chip group */
   const selectValue = (selectedValue: string) => {
@@ -117,22 +117,30 @@ export const AttributeValueFiltering: React.FunctionComponent = () => {
 
   /** update the input to show the selected key and the menu to show the values associated with that specific key */
   const selectKey = (selectedText: string) => {
+    const values = data[selectedText];
+
+    if (!values) {
+      return;
+    }
+
     setInputValue(`${selectedText}: `);
     setSelectedKey(selectedText);
-    setMenuItemsText(data[selectedText]);
+    setMenuItemsText(values);
   };
 
   const handleEnter = () => {
-    /** do nothing if the menu contains no real results */
-    if (menuItems.length === 1) {
+    /** bail if heading + divider + first option are not all present */
+    const firstResult = menuItems[2]?.props?.children;
+
+    if (!firstResult) {
       return;
     }
 
     /** perform the appropriate action based on key selection state */
     if (selectedKey.length) {
-      selectValue(menuItems[2].props.children);
+      selectValue(firstResult);
     } else {
-      selectKey(menuItems[2].props.children);
+      selectKey(firstResult);
     }
   };
 
@@ -144,7 +152,7 @@ export const AttributeValueFiltering: React.FunctionComponent = () => {
   };
 
   /** allow the user to select a key by simply typing it and entering a colon, exact (case sensitive) matches only */
-  const handleColon = () => {
+  const handleColon = (event: React.KeyboardEvent) => {
     if (!selectedKey.length && keyNames.includes(inputValue)) {
       selectKey(inputValue);
       event.preventDefault();
@@ -172,7 +180,7 @@ export const AttributeValueFiltering: React.FunctionComponent = () => {
         handleBackspace();
         break;
       case ':':
-        handleColon();
+        handleColon(event);
         break;
       case 'ArrowUp':
       case 'ArrowDown':
@@ -182,24 +190,24 @@ export const AttributeValueFiltering: React.FunctionComponent = () => {
   };
 
   /** perform the proper key or value selection when a menu item is selected */
-  const onSelect = (event: React.MouseEvent<Element, MouseEvent>, _itemId: string | number) => {
-    const selectedText = (event.target as HTMLElement).innerText;
+  const onSelect = (event: React.MouseEvent<Element, MouseEvent> | undefined, _itemId: string | number) => {
+    const selectedText = (event?.target as HTMLElement | undefined)?.innerText.trim() || '';
 
     if (selectedKey.length) {
       selectValue(selectedText);
     } else {
       selectKey(selectedText);
     }
-    event.stopPropagation();
-    textInputGroupRef.current.querySelector('input').focus();
+    event?.stopPropagation();
+    textInputGroupRef.current?.querySelector('input')?.focus();
   };
 
   /** close the menu when a click occurs outside of the menu or text input group */
-  const handleClick = (event: MouseEvent) => {
+  const handleClick = (event: MouseEvent | undefined) => {
     if (
       menuRef.current &&
-      !menuRef.current.contains(event.target as HTMLElement) &&
-      !textInputGroupRef.current.contains(event.target as HTMLElement)
+      !menuRef.current.contains(event?.target as HTMLElement) &&
+      !textInputGroupRef.current?.contains(event?.target as HTMLElement)
     ) {
       setMenuIsOpen(false);
     }

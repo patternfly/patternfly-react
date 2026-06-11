@@ -9,7 +9,7 @@ import { Fragment, useRef, useState } from 'react';
 import AtIcon from '@patternfly/react-icons/dist/esm/icons/at-icon';
 import DollarSignIcon from '@patternfly/react-icons/dist/esm/icons/dollar-sign-icon';
 import CalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/calendar-alt-icon';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 
 ## Examples
 

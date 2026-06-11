@@ -11,7 +11,7 @@ import {
   MenuToggle
 } from '@patternfly/react-core';
 import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
-import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 
 export class BreadcrumbDemo extends Component {
   static displayName = 'BreadcrumbDemo';
@@ -74,7 +74,7 @@ export class BreadcrumbDemo extends Component {
                 <Badge isRead screenReaderText="additional items">
                   {dropdownItems.length}
                   <span>
-                    <CaretDownIcon />
+                    <RhMicronsCaretDownIcon />
                   </span>
                 </Badge>
               </MenuToggle>

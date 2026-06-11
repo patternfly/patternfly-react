@@ -1,9 +1,9 @@
-import { Label } from '@patternfly/react-core';
+import { Label, LabelColor } from '@patternfly/react-core';
 import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
 
 export const LabelCustomRender: React.FunctionComponent = () => (
   <Label
-    color="blue"
+    color={LabelColor.blue}
     icon={<RhUiInformationFillIcon />}
     onClose={() => Function.prototype}
     render={({ className, content, componentRef }) => (

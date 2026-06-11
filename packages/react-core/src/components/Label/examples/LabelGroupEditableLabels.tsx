@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LabelGroup, Label } from '@patternfly/react-core';
+import { LabelGroup, Label, LabelColor } from '@patternfly/react-core';
 
 export const LabelGroupEditableLabels: React.FunctionComponent = () => {
   const [label1, setLabel1] = useState('Editable label');
@@ -9,7 +9,7 @@ export const LabelGroupEditableLabels: React.FunctionComponent = () => {
   return (
     <LabelGroup numLabels={5} isEditable>
       <Label
-        color="blue"
+        color={LabelColor.blue}
         onClose={() => Function.prototype}
         onEditCancel={(_event, prevText) => setLabel1(prevText)}
         onEditComplete={(_event, newText) => setLabel1(newText)}
@@ -21,9 +21,9 @@ export const LabelGroupEditableLabels: React.FunctionComponent = () => {
       >
         {label1}
       </Label>
-      <Label color="green">Static label</Label>
+      <Label color={LabelColor.green}>Static label</Label>
       <Label
-        color="blue"
+        color={LabelColor.blue}
         onClose={() => Function.prototype}
         onEditCancel={(_event, prevText) => setLabel2(prevText)}
         onEditComplete={(_event, newText) => setLabel2(newText)}
@@ -36,7 +36,7 @@ export const LabelGroupEditableLabels: React.FunctionComponent = () => {
         {label2}
       </Label>
       <Label
-        color="blue"
+        color={LabelColor.blue}
         onClose={() => Function.prototype}
         onEditCancel={(_event, prevText) => setLabel3(prevText)}
         onEditComplete={(_event, newText) => setLabel3(newText)}

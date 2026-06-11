@@ -15,6 +15,7 @@ import {
   DescriptionListTerm,
   DescriptionListDescription,
   Label,
+  LabelColor,
   LabelGroup,
   Flex,
   FlexItem
@@ -73,7 +74,7 @@ export const TabsOpen: React.FunctionComponent = () => {
             <DescriptionListDescription>
               <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                 <FlexItem>
-                  <Label color="teal">NS</Label>
+                  <Label color={LabelColor.teal}>NS</Label>
                 </FlexItem>
                 <FlexItem>
                   <a href="#">knative-serving-ingress</a>
@@ -115,7 +116,7 @@ export const TabsOpen: React.FunctionComponent = () => {
             <DescriptionListDescription>
               <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                 <FlexItem>
-                  <Label color="purple">N</Label>
+                  <Label color={LabelColor.purple}>N</Label>
                 </FlexItem>
                 <FlexItem>ip-10-0-233-118.us-east-2.computer.external</FlexItem>
               </Flex>
@@ -142,7 +143,7 @@ export const TabsOpen: React.FunctionComponent = () => {
           flexWrap={{ default: 'noWrap' }}
         >
           <FlexItem>
-            <Label color="blue">N</Label>
+            <Label color={LabelColor.blue}>N</Label>
           </FlexItem>
           <FlexItem>
             <Title headingLevel="h1" size="2xl">

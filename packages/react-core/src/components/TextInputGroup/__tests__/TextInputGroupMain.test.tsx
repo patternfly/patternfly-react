@@ -251,6 +251,16 @@ describe('TextInputGroupMain', () => {
     expect(screen.getByRole('textbox').nextElementSibling).toHaveClass(styles.modifiers.status);
   });
 
+  it('does not render a status icon when validated is default', () => {
+    render(
+      <TextInputGroupContext.Provider value={{ validated: 'default' }}>
+        <TextInputGroupMain />
+      </TextInputGroupContext.Provider>
+    );
+
+    expect(screen.queryByRole('textbox').nextElementSibling).toBeNull();
+  });
+
   it('does not call onChange callback when the input does not change', () => {
     const onChangeMock = jest.fn();
 

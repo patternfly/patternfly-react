@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button, Checkbox, FormGroup, SearchInput } from '@patternfly/react-core';
-import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-square-alt-icon';
+import RhUiExternalLinkFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-external-link-fill-icon';
 
 export const SearchInputAdvanced: React.FunctionComponent = () => {
   const [value, setValue] = useState('username:player firstname:john');
@@ -45,7 +45,7 @@ export const SearchInputAdvanced: React.FunctionComponent = () => {
         formAdditionalItems={
           useCustomFooter ? (
             <FormGroup>
-              <Button variant="link" isInline icon={<ExternalLinkSquareAltIcon />} iconPosition="end">
+              <Button variant="link" isInline icon={<RhUiExternalLinkFillIcon />} iconPosition="end">
                 Link
               </Button>
             </FormGroup>

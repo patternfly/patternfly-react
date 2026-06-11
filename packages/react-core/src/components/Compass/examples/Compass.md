@@ -1,8 +1,7 @@
 ---
 id: Compass
 cssPrefix: pf-v6-c-compass
-section: AI
-subsection: Generative UIs
+section: components
 beta: true
 propComponents:
   [
@@ -11,7 +10,6 @@ propComponents:
     'CompassContent',
     'CompassHero',
     'CompassMainHeader',
-    'CompassPanel',
     'CompassMessageBar',
     'CompassMainFooter'
   ]
@@ -21,7 +19,7 @@ import { useRef, useState, useEffect } from 'react';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import OutlinedPlusSquare from '@patternfly/react-icons/dist/esm/icons/outlined-plus-square-icon';
 import OutlinedCopy from '@patternfly/react-icons/dist/esm/icons/outlined-copy-icon';
-import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/outlined-question-circle-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 
 import './compass.css';
 
@@ -33,11 +31,11 @@ In a basic Compass layout, content can be passed to the following props to popul
 
 - `header`: Content rendered at the top of the page, typically including a `<CompassHeader>` component that divides the header into 3 areas, with a logo or brand, middle navigation, and profile.
 - `sidebarStart`: Content rendered at the horizontal start of the page (by default, the left side).
-- `main`: Content rendered in the center of the page, typically including a `<CompassMainHeader>` or `<CompassHero>`, along with a `<CompassContent>` filled with 1 or more `<CompassPanel>` components.
+- `main`: Content rendered in the center of the page, typically including a `<CompassMainHeader>` or `<CompassHero>`, along with a `<CompassContent>` filled with 1 or more `<Panel>` components.
 - `sidebarEnd`: Content rendered at the horizontal end of the page (by default, the right side).
 - `footer`: Content rendered at the bottom of the page.
 
-To customize the background image of the `<Compass>` and `<CompassHero>` components, you can use their respective `backgroundSrcLight` and `backgroundSrcDark` props. You can also add and customize a color gradient background for the `<CompassHero>` component by using the `gradientLight` and `gradientDark` props.
+The background image of `<Compass>` is set at a global level alongside the theme. You can customize the background image of the `<Hero>` inside `<CompassHero>` by using its `backgroundSrcLight` and `backgroundSrcDark` props, or you may set a gradient using the `gradientLight` and `gradientDark` props.
 
 ```ts isBeta file="CompassBasic.tsx"
 
@@ -67,10 +65,14 @@ When using the `children` property in the `<CompassMainHeader>` component, there
 
 ```noLive
 <CompassMainHeader>
-  <CompassPanel>
-    <CompassMainHeaderContent>
-      {Your custom content goes here, which can include the <CompassMainHeaderTitle> and/or <CompassMainHeaderToolbar> sub-components}
-    </CompassMainHeaderContent>
-  </CompassPanel>
+  <Panel>
+    <PanelMain>
+      <PanelMainBody>
+        <CompassMainHeaderContent>
+          {Your custom content goes here, which can include the <CompassMainHeaderTitle> and/or <CompassMainHeaderToolbar> sub-components}
+        </CompassMainHeaderContent>
+      </PanelMainBody>
+    </PanelMain>
+  </Panel>
 </CompassMainHeader>
 ```

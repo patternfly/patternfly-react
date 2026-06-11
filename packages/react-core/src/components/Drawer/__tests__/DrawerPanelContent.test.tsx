@@ -13,7 +13,7 @@ test(`Renders with only class ${styles.drawerPanel} by default`, () => {
   expect(screen.getByText('Drawer panel content')).toHaveClass(styles.drawerPanel, { exact: true });
 });
 
-test(`Renders with class ${styles.modifiers.noBackground} when colorVariant="no-background"`, () => {
+test(`Renders with class ${styles.modifiers.noBackground} when deprecated colorVariant="no-background" is used`, () => {
   render(
     <Drawer isExpanded>
       <DrawerPanelContent colorVariant="no-background">Drawer panel content</DrawerPanelContent>
@@ -187,4 +187,34 @@ test(`Renders with class 'pf-m-no-glass' when hasNoGlass is true`, () => {
   );
 
   expect(screen.getByText('Drawer panel content')).toHaveClass('pf-m-no-glass');
+});
+
+test(`Renders with class ${styles.modifiers.glass} when isGlass is true`, () => {
+  render(
+    <Drawer isExpanded>
+      <DrawerPanelContent isGlass>Drawer panel content</DrawerPanelContent>
+    </Drawer>
+  );
+
+  expect(screen.getByText('Drawer panel content')).toHaveClass(styles.modifiers.glass);
+});
+
+test(`Renders with class ${styles.modifiers.plain} when isPlain is true`, () => {
+  render(
+    <Drawer isExpanded>
+      <DrawerPanelContent isPlain>Drawer panel content</DrawerPanelContent>
+    </Drawer>
+  );
+
+  expect(screen.getByText('Drawer panel content')).toHaveClass(styles.modifiers.plain);
+});
+
+test(`Renders with class ${styles.modifiers.noPlainOnGlass} when isNoPlainOnGlass is true`, () => {
+  render(
+    <Drawer isExpanded>
+      <DrawerPanelContent isNoPlainOnGlass>Drawer panel content</DrawerPanelContent>
+    </Drawer>
+  );
+
+  expect(screen.getByText('Drawer panel content')).toHaveClass(styles.modifiers.noPlainOnGlass);
 });

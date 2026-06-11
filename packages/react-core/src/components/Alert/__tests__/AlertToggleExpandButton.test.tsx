@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 
 import { AlertToggleExpandButton } from '../AlertToggleExpandButton';
 import { AlertContext } from '../AlertContext';
@@ -11,14 +12,12 @@ jest.mock('@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon', (
 
 test('Renders without children', () => {
   render(
-    <div data-testid="container">
-      <AlertContext.Provider value={{ title: 'title', variantLabel: 'variantLabel' }}>
-        <AlertToggleExpandButton />
-      </AlertContext.Provider>
-    </div>
+    <AlertContext.Provider value={{ title: 'title', variantLabel: 'variantLabel' }}>
+      <AlertToggleExpandButton />
+    </AlertContext.Provider>
   );
 
-  expect(screen.getByTestId('container').firstChild).toBeVisible();
+  expect(screen.getByRole('button')).toBeVisible();
 });
 
 test('Renders with an aria label composed with the title and variantLabel provided via a context by default', () => {

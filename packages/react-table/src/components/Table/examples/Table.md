@@ -41,7 +41,7 @@ The `Table` component takes an explicit and declarative approach, and its implem
 
 The documentation for the deprecated table implementation can be found under the [React deprecated](/components/table/react-deprecated) tab. It is configuration based and takes a less declarative and more implicit approach to laying out the table structure, such as the rows and cells within it.
 
-import { Fragment, isValidElement, useCallback, useEffect, useRef, useState } from 'react';
+import { Fragment, isValidElement, useCallback, useEffect, useRef, useState, useLayoutEffect } from 'react';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
@@ -50,7 +50,7 @@ import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
 import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
 import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
-import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
+import RhUiBlueprintIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-blueprint-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import PencilAltIcon from '@patternfly/react-icons/dist/esm/icons/pencil-alt-icon';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
@@ -155,6 +155,14 @@ type OnSelect = (
 checking checkboxes will check intermediate rows' checkboxes.
 
 ```ts file="TableSelectable.tsx"
+
+```
+
+### Selectable with indeterminate state
+
+To indicate partial selection, use `isIndeterminate` on the header's `select` prop. When some (but not all) selectable rows are selected, the header checkbox will convey this information to assistive technologies and also display a dash instead of a checkmark.
+
+```ts file="TableSelectableIndeterminate.tsx"
 
 ```
 
@@ -327,7 +335,6 @@ To enable a tree table:
    - `checkAriaLabel` - (optional) accessible label for the checkbox
    - `showDetailsAriaLabel` - (optional) accessible label for the show row details button in the responsive view
 4. The first `Td` in each row will pass the following to the `treeRow` prop:
-
    - `onCollapse` - Callback when user expands/collapses a row to reveal/hide the row's children.
    - `onCheckChange` - (optional) Callback when user changes the checkbox on a row.
    - `onToggleRowDetails` - (optional) Callback when user shows/hides the row details in responsive view.
@@ -416,6 +423,16 @@ To make multiple right-aligned columns sticky:
 To prevent the default text wrapping behavior and allow horizontal scrolling, all `Th` or `Td` cells should also have the `modifier="nowrap"` property.
 
 ```ts file="TableRightStickyColumn.tsx"
+
+```
+
+### Dynamic sticky header
+
+A sticky header may alternatively be implemented with two properties: `isStickyHeaderBase` and `isStickyHeaderStuck` - which allows separate control of the sticky position and sticky styling. `isStickyHeaderBase` should always be applied to make the header position sticky, and `isStickyHeaderStuck` may be applied dynamically to enable the sticky styling, such as when the sticky header is not at the top of the scroll parent as shown in the example.
+
+`isStickyHeader` acts as if both properties are present and true when applied, and is useful when dynamic sticky styling is not necessary.
+
+```ts file="TableStickyHeaderDynamic.tsx"
 
 ```
 

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import {
   LabelGroup,
   Label,
+  LabelColor,
   Button,
   Form,
   FormGroup,
@@ -244,7 +245,7 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
           <Label
             key={label.id}
             id={label.id}
-            color="blue"
+            color={LabelColor.blue}
             onClose={() => onClose(label.id)}
             onEditCancel={(_event, prevText) => onEdit(prevText, index)}
             onEditComplete={(_event, newText) => onEdit(newText, index)}

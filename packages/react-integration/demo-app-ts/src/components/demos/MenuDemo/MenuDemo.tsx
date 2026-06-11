@@ -22,7 +22,7 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-i
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
 import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
-import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
 import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
 import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
@@ -477,7 +477,7 @@ export class MenuDemo extends Component {
               </MenuItem>
               <MenuItem
                 isSelected={selectedItems.indexOf(3) !== -1}
-                actions={<MenuItemAction icon={<BarsIcon />} actionId="expand" aria-label="Expand" />}
+                actions={<MenuItemAction icon={<RhUiMenuBarsIcon />} actionId="expand" aria-label="Expand" />}
                 description="This is a description"
                 itemId={3}
               >
@@ -498,7 +498,7 @@ export class MenuDemo extends Component {
         text: 'Item 1',
         description: 'Description 1',
         itemId: 'item-1',
-        action: <BarsIcon />,
+        action: <RhUiMenuBarsIcon />,
         actionId: 'bars'
       },
       {

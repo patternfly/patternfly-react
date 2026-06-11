@@ -37,6 +37,12 @@ export interface DrawerPanelContentProps extends Omit<React.HTMLProps<HTMLDivEle
   isResizable?: boolean;
   /** @beta Flag indicating that the drawer panel should disable glass styles. This prop is intended to work with isPill drawers. */
   hasNoGlass?: boolean;
+  /** @beta Flag indicating that the drawer panel should use glass styles when in glass theme */
+  isGlass?: boolean;
+  /** @beta Flag indicating that the drawer panel should use plain styles. This only applies when the drawer is static or inline. */
+  isPlain?: boolean;
+  /** @beta Flag indicating that plain styles should be disabled when glass styles are used. This only applies when the drawer is static or inline. */
+  isNoPlainOnGlass?: boolean;
   /** Callback for resize end. */
   onResize?: (event: MouseEvent | TouchEvent | React.KeyboardEvent, width: number, id: string) => void;
   /** The minimum size of a drawer. */
@@ -56,7 +62,10 @@ export interface DrawerPanelContentProps extends Omit<React.HTMLProps<HTMLDivEle
     xl?: 'width_25' | 'width_33' | 'width_50' | 'width_66' | 'width_75' | 'width_100';
     '2xl'?: 'width_25' | 'width_33' | 'width_50' | 'width_66' | 'width_75' | 'width_100';
   };
-  /** Color variant of the background of the drawer panel */
+  /**
+   * Color variant of the background of the drawer panel.
+   * The `no-background`is deprecated; use the `isPlain` prop instead.
+   */
   colorVariant?: DrawerColorVariant | 'no-background' | 'default' | 'secondary';
   /** Adds and customizes a focus trap on the drawer panel content. */
   focusTrap?: DrawerPanelFocusTrapObject;
@@ -71,6 +80,9 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   hasNoBorder = false,
   isResizable = false,
   hasNoGlass = false,
+  isGlass = false,
+  isPlain = false,
+  isNoPlainOnGlass = false,
   onResize,
   minSize,
   defaultSize,
@@ -368,6 +380,9 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
         styles.drawerPanel,
         isResizable && styles.modifiers.resizable,
         hasNoGlass && 'pf-m-no-glass',
+        isGlass && styles.modifiers.glass,
+        isPlain && styles.modifiers.plain,
+        isNoPlainOnGlass && styles.modifiers.noPlainOnGlass,
         hasNoBorder && styles.modifiers.noBorder,
         formatBreakpointMods(widths, styles),
         colorVariant === DrawerColorVariant.noBackground && styles.modifiers.noBackground,

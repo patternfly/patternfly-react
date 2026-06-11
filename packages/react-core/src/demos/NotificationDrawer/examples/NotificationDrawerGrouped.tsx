@@ -50,7 +50,7 @@ import {
 import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.PF-HorizontalLogo-Color.svg';
@@ -245,7 +245,11 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
                 <Button aria-label="Settings actions" isSettings variant="plain" />
               </ToolbarItem>
               <ToolbarItem>
-                <Button aria-label="Help actions" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
+                <Button
+                  aria-label="Help actions"
+                  variant={ButtonVariant.plain}
+                  icon={<RhUiQuestionMarkCircleFillIcon />}
+                />
               </ToolbarItem>
             </ToolbarGroup>
           </ToolbarGroup>

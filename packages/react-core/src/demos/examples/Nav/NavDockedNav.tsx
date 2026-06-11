@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import {
   Brand,
   Breadcrumb,
@@ -30,7 +30,7 @@ import {
   ToolbarItem,
   Tooltip
 } from '@patternfly/react-core';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
 import CloudIcon from '@patternfly/react-icons/dist/esm/icons/cloud-icon';
@@ -38,6 +38,7 @@ import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import pfIconLogo from '@patternfly/react-core/src/demos/assets/PF-IconLogo-color.svg';
+import globalBreakpointXl from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_xl';
 
 interface NavOnSelectProps {
   groupId: number | string;
@@ -49,6 +50,20 @@ export const NavDockedNav: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState(1);
   const [isDockExpanded, setIsDockExpanded] = useState(false);
   const [isDockTextExpanded, setIsDockTextExpanded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mobileBreakpoint = Number.parseInt(globalBreakpointXl.value) * 16;
+    const mediaQuery = window.matchMedia(`(max-width: ${mobileBreakpoint}px)`);
+    const handleResize = (e: MediaQueryListEvent | MediaQueryList) => {
+      setIsMobile(e.matches);
+    };
+
+    handleResize(mediaQuery);
+    mediaQuery.addEventListener('change', handleResize);
+
+    return () => mediaQuery.removeEventListener('change', handleResize);
+  }, []);
 
   const onNavSelect = (_event: React.FormEvent<HTMLInputElement>, selectedItem: NavOnSelectProps) => {
     typeof selectedItem.itemId === 'number' && setActiveItem(selectedItem.itemId);
@@ -180,12 +195,14 @@ export const NavDockedNav: React.FunctionComponent = () => {
   };
 
   const onToggleDock = () => {
-    if (isDockExpanded) {
+    if (isMobile) {
       setIsDockExpanded(!isDockExpanded);
 
-      setTimeout(() => {
-        mobileToggleRef.current?.focus();
-      }, 200);
+      if (isDockExpanded) {
+        setTimeout(() => {
+          mobileToggleRef.current?.focus();
+        }, 200);
+      }
     } else {
       setIsDockTextExpanded(!isDockTextExpanded);
     }
@@ -223,7 +240,12 @@ export const NavDockedNav: React.FunctionComponent = () => {
 
   // Docked masthead - vertical navigation sidebar
   const dockedMasthead = (
-    <Masthead display={{ default: undefined }} id="docked-masthead" variant="docked">
+    <Masthead
+      {...(isMobile && !isDockExpanded && { inert: '' })}
+      display={{ default: undefined }}
+      id="docked-masthead"
+      variant="docked"
+    >
       <MastheadMain>
         <MastheadToggle>
           <Button
@@ -299,7 +321,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
                   </NavItem>
                 </NavList>
               </Nav>
-              {!isDockTextExpanded && (
+              {!isDockTextExpanded && !isDockExpanded && (
                 <>
                   <Tooltip aria="none" aria-live="off" triggerRef={navItem1Ref} content="System panel"></Tooltip>
                   <Tooltip aria="none" aria-live="off" triggerRef={navItem2Ref} content="Policy"></Tooltip>
@@ -314,7 +336,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
               gap={{ default: 'gapNone', md: 'gapMd' }}
             >
               <ToolbarItem>
-                {isDockTextExpanded ? (
+                {isDockTextExpanded || isDockExpanded ? (
                   <MenuToggle ref={appsRef} variant="plain" icon={<ThIcon />} isDocked aria-label="Applications">
                     Applications
                   </MenuToggle>
@@ -327,7 +349,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
                 )}
               </ToolbarItem>
               <ToolbarItem>
-                {isDockTextExpanded ? (
+                {isDockTextExpanded || isDockExpanded ? (
                   <Button ref={settingsRef} aria-label="Settings" isSettings variant="plain" isDocked>
                     Settings
                   </Button>
@@ -340,13 +362,25 @@ export const NavDockedNav: React.FunctionComponent = () => {
                 )}
               </ToolbarItem>
               <ToolbarItem>
-                {isDockTextExpanded ? (
-                  <MenuToggle ref={helpRef} variant="plain" icon={<QuestionCircleIcon />} isDocked aria-label="Help">
+                {isDockTextExpanded || isDockExpanded ? (
+                  <MenuToggle
+                    ref={helpRef}
+                    variant="plain"
+                    icon={<RhUiQuestionMarkCircleFillIcon />}
+                    isDocked
+                    aria-label="Help"
+                  >
                     Help
                   </MenuToggle>
                 ) : (
                   <Tooltip aria="none" aria-live="off" triggerRef={helpRef} content="Help">
-                    <MenuToggle ref={helpRef} variant="plain" icon={<QuestionCircleIcon />} isDocked aria-label="Help">
+                    <MenuToggle
+                      ref={helpRef}
+                      variant="plain"
+                      icon={<RhUiQuestionMarkCircleFillIcon />}
+                      isDocked
+                      aria-label="Help"
+                    >
                       Help
                     </MenuToggle>
                   </Tooltip>

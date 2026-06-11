@@ -3,6 +3,72 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.6.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.5.1-prerelease.0...@patternfly/react-charts@8.6.0-prerelease.1) (2026-05-26)
+
+### Bug Fixes
+
+- updated to do 6.6.0 prereleases. ([#12434](https://github.com/patternfly/patternfly-react/issues/12434)) ([6e09ce8](https://github.com/patternfly/patternfly-react/commit/6e09ce8322ff13354991d901782231d437249aa6))
+
+## [8.5.1-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.5.0...@patternfly/react-charts@8.5.1-prerelease.0) (2026-05-21)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# 8.5.0 (2026-05-20)
+
+### Reverts
+
+- Revert "chore(release): releasing packages [ci skip]" ([7185856](https://github.com/patternfly/patternfly-react/commit/7185856d4985da5129bbabd6c460049e7048dd2a))
+
+# [8.5.0-prerelease.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.5.0-prerelease.31...@patternfly/react-charts@8.5.0-prerelease.32) (2026-05-19)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# [8.5.0-prerelease.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.5.0-prerelease.30...@patternfly/react-charts@8.5.0-prerelease.31) (2026-05-14)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# [8.5.0-prerelease.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.5.0-prerelease.29...@patternfly/react-charts@8.5.0-prerelease.30) (2026-05-13)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# [8.5.0-prerelease.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.5.0-prerelease.28...@patternfly/react-charts@8.5.0-prerelease.29) (2026-05-12)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# [8.5.0-prerelease.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.5.0-prerelease.27...@patternfly/react-charts@8.5.0-prerelease.28) (2026-05-12)
+
+### Features
+
+- **react-charts:** add high contrast ([#12419](https://github.com/patternfly/patternfly-react/issues/12419)) ([e9c801c](https://github.com/patternfly/patternfly-react/commit/e9c801c84067fb9ed42d10d19deadf8dfca55289))
+
+# [8.5.0-prerelease.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.5.0-prerelease.26...@patternfly/react-charts@8.5.0-prerelease.27) (2026-05-08)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# [8.5.0-prerelease.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.5.0-prerelease.25...@patternfly/react-charts@8.5.0-prerelease.26) (2026-05-08)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# [8.5.0-prerelease.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.5.0-prerelease.24...@patternfly/react-charts@8.5.0-prerelease.25) (2026-05-07)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# [8.5.0-prerelease.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.5.0-prerelease.23...@patternfly/react-charts@8.5.0-prerelease.24) (2026-04-28)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# [8.5.0-prerelease.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.5.0-prerelease.22...@patternfly/react-charts@8.5.0-prerelease.23) (2026-04-24)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# [8.5.0-prerelease.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.5.0-prerelease.21...@patternfly/react-charts@8.5.0-prerelease.22) (2026-04-24)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+# [8.5.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.5.0-prerelease.20...@patternfly/react-charts@8.5.0-prerelease.21) (2026-04-20)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
 # [8.5.0-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.5.0-prerelease.19...@patternfly/react-charts@8.5.0-prerelease.20) (2026-04-13)
 
 **Note:** Version bump only for package @patternfly/react-charts

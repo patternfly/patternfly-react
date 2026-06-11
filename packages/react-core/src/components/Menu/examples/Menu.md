@@ -21,7 +21,7 @@ ouia: true
 ---
 
 import { Fragment, createRef, useEffect, useRef, useState } from 'react';
-import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
 import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
@@ -30,7 +30,7 @@ import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
 import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
 import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
-import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 
 ## Examples
 

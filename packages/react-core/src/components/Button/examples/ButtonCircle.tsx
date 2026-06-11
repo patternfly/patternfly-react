@@ -1,6 +1,6 @@
 import { Button, Flex } from '@patternfly/react-core';
 import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
-import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
+import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
@@ -22,17 +22,32 @@ export const ButtonCircle: React.FunctionComponent = () => {
 
   return (
     <Flex columnGap={{ default: 'columnGapSm' }}>
-      <Button isCircle icon={<PlusCircleIcon />} aria-label="Add primary circle variant example" />
+      <Button isCircle icon={<RhUiAddCircleFillIcon />} aria-label="Add primary circle variant example" />
       <Button
         variant="secondary"
         isCircle
-        icon={<PlusCircleIcon />}
+        icon={<RhUiAddCircleFillIcon />}
         aria-label="Add secondary circle variant example"
       />
-      <Button variant="tertiary" isCircle icon={<PlusCircleIcon />} aria-label="Add tertiary circle variant example" />
-      <Button variant="danger" isCircle icon={<PlusCircleIcon />} aria-label="Add danger circle variant example" />
-      <Button variant="warning" isCircle icon={<PlusCircleIcon />} aria-label="Add warning circle variant example" />
-      <Button variant="link" isCircle icon={<PlusCircleIcon />} aria-label="Add link circle variant example" />
+      <Button
+        variant="tertiary"
+        isCircle
+        icon={<RhUiAddCircleFillIcon />}
+        aria-label="Add tertiary circle variant example"
+      />
+      <Button
+        variant="danger"
+        isCircle
+        icon={<RhUiAddCircleFillIcon />}
+        aria-label="Add danger circle variant example"
+      />
+      <Button
+        variant="warning"
+        isCircle
+        icon={<RhUiAddCircleFillIcon />}
+        aria-label="Add warning circle variant example"
+      />
+      <Button variant="link" isCircle icon={<RhUiAddCircleFillIcon />} aria-label="Add link circle variant example" />
       <Button variant="control" isCircle icon={<CopyIcon />} aria-label="Copy control circle variant example" />
       <Button variant="plain" isCircle icon={<RhMicronsCloseIcon />} aria-label="Remove plain circle variant example" />
       <Button
