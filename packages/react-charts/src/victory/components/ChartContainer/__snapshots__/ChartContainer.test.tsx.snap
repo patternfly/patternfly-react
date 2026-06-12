@@ -76,7 +76,7 @@ exports[`renders container via ChartLegend 1`] = `
       z"
           role="presentation"
           shape-rendering="auto"
-          style="stroke: var(--pf-v6-chart-legend--data--stroke--Color, rgba(255, 255, 255, 0.0000)); stroke-width: var(--pf-v6-chart-legend--data--stroke--Width, 0px); fill: var(--pf-v6-chart-theme--blue--ColorScale--100, #0066cc);"
+          style="stroke: var(--pf-v6-chart-legend--data--stroke--Color, rgb(255, 255, 255, 0.0000)); stroke-width: var(--pf-v6-chart-legend--data--stroke--Width, 0px); fill: var(--pf-v6-chart-theme--blue--ColorScale--100, #0066cc);"
         />
         <path
           d="M 48.728, 22.872
@@ -86,7 +86,7 @@ exports[`renders container via ChartLegend 1`] = `
       z"
           role="presentation"
           shape-rendering="auto"
-          style="stroke: var(--pf-v6-chart-legend--data--stroke--Color, rgba(255, 255, 255, 0.0000)); stroke-width: var(--pf-v6-chart-legend--data--stroke--Width, 0px); fill: var(--pf-v6-chart-theme--blue--ColorScale--200, #92c5f9);"
+          style="stroke: var(--pf-v6-chart-legend--data--stroke--Color, rgb(255, 255, 255, 0.0000)); stroke-width: var(--pf-v6-chart-legend--data--stroke--Width, 0px); fill: var(--pf-v6-chart-theme--blue--ColorScale--200, #92c5f9);"
         />
         <text
           direction="inherit"
