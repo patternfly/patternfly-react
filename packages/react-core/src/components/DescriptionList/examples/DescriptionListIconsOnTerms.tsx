@@ -10,7 +10,7 @@ import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import BookIcon from '@patternfly/react-icons/dist/esm/icons/book-icon';
 import KeyIcon from '@patternfly/react-icons/dist/esm/icons/key-icon';
 import GlobeIcon from '@patternfly/react-icons/dist/esm/icons/globe-icon';
-import FlagIcon from '@patternfly/react-icons/dist/esm/icons/flag-icon';
+import RhUiFlagFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-flag-fill-icon';
 
 export const DescriptionListIconsOnTerms: React.FunctionComponent = () => (
   <DescriptionList aria-label="With icons examples">
@@ -37,7 +37,7 @@ export const DescriptionListIconsOnTerms: React.FunctionComponent = () => (
       </DescriptionListDescription>
     </DescriptionListGroup>
     <DescriptionListGroup>
-      <DescriptionListTerm icon={<FlagIcon />}>Annotation</DescriptionListTerm>
+      <DescriptionListTerm icon={<RhUiFlagFillIcon />}>Annotation</DescriptionListTerm>
       <DescriptionListDescription>2 Annotations</DescriptionListDescription>
     </DescriptionListGroup>
   </DescriptionList>
