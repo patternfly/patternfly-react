@@ -31,14 +31,16 @@
     "generate": "rimraf dist/esm/icons dist/js/icons dist/static && yarn build:esm && node scripts/ensureEsmPackageJson.mjs && node scripts/writeIcons.mjs",
     "update-rhds-icons": "node scripts/parseRHIcons.mjs"
   },
+  "dependencies": {
+    "tslib": "^2.8.1"
+  },
   "devDependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@patternfly/patternfly": "6.5.2",
     "@rhds/icons": "^2.2.0",
-    "fs-extra": "^11.3.3",
-    "tslib": "^2.8.1"
+    "fs-extra": "^11.3.3"
   },
   "peerDependencies": {
     "react": "^17 || ^18 || ^19",
