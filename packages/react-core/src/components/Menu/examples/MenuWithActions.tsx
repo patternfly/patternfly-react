@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Menu, MenuContent, MenuGroup, MenuList, MenuItem, MenuItemAction } from '@patternfly/react-core';
 import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
-import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
+import RhUiClipboardFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clipboard-fill-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 
@@ -54,7 +54,7 @@ export const MenuWithActions: React.FunctionComponent = () => {
             </MenuItem>
             <MenuItem
               isSelected={selectedItems.indexOf(2) !== -1}
-              actions={<MenuItemAction icon={<ClipboardIcon />} actionId="copy" aria-label="Copy" />}
+              actions={<MenuItemAction icon={<RhUiClipboardFillIcon />} actionId="copy" aria-label="Copy" />}
               itemId={2}
             >
               Item 3

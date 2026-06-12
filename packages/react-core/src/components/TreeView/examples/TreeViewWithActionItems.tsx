@@ -8,7 +8,7 @@ import {
   MenuToggle,
   TreeViewDataItem
 } from '@patternfly/react-core';
-import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
+import RhUiClipboardFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clipboard-fill-icon';
 import HamburgerIcon from '@patternfly/react-icons/dist/esm/icons/hamburger-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
@@ -71,7 +71,7 @@ export const TreeViewWithActionItems: React.FunctionComponent = () => {
         {
           name: 'Application 1',
           id: 'example7-App1',
-          action: <Button variant="plain" aria-label="Launch app 1" icon={<ClipboardIcon />} />,
+          action: <Button variant="plain" aria-label="Launch app 1" icon={<RhUiClipboardFillIcon />} />,
           actionProps: {
             'aria-label': 'Launch app 1'
           },

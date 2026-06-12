@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react';
 import { Menu, MenuContent, MenuItem, MenuItemAction, MenuGroup, MenuList, Divider } from '@patternfly/react-core';
 import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
-import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
+import RhUiClipboardFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clipboard-fill-icon';
 import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 
 export const MenuWithFavorites: React.FunctionComponent = () => {
@@ -39,7 +39,7 @@ export const MenuWithFavorites: React.FunctionComponent = () => {
       text: 'Item 2',
       description: 'Description 2',
       itemId: 'item-2',
-      action: <ClipboardIcon />,
+      action: <RhUiClipboardFillIcon />,
       actionId: 'clipboard'
     },
     {
