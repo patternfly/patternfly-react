@@ -253,6 +253,7 @@ class Table extends Component<TableProps, {}> {
       actionsToggle,
       onFavorite,
       canSortFavorites,
+      variant,
       // order of columns: Collapsible | Selectable | Favoritable
       firstUserColumnIndex: [onCollapse, onSelect, onFavorite].filter((callback) => callback).length
     });

@@ -3046,6 +3046,758 @@ exports[`Table Collapsible table 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Table Compact table with Radio select 1`] = `
+<DocumentFragment>
+  <table
+    aria-label="Compact table with radio"
+    class="pf-v6-c-table pf-m-grid-md pf-m-compact"
+    data-ouia-component-id="OUIA-Generated-Table-:rb8:"
+    data-ouia-component-type="PF6/Table"
+    data-ouia-safe="true"
+    role="grid"
+  >
+    <thead
+      class="pf-v6-c-table__thead"
+    >
+      <tr
+        class="pf-v6-c-table__tr"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rb9:"
+        data-ouia-component-type="PF6/TableRow"
+        data-ouia-safe="true"
+      >
+        <th
+          class="pf-v6-c-table__th"
+          data-key="0"
+          data-label=""
+          scope=""
+          tabindex="-1"
+        />
+        <th
+          class="pf-v6-c-table__th pf-v6-c-table__sort"
+          data-key="1"
+          data-label="Header cell"
+          scope="col"
+          tabindex="-1"
+        >
+          <button
+            class="pf-v6-c-table__button"
+            type="button"
+          >
+            <div
+              class="pf-v6-c-table__button-content"
+            >
+              <span
+                class="pf-v6-c-table__text"
+              >
+                Header cell
+              </span>
+              <span
+                class="pf-v6-c-table__sort-indicator"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="pf-v6-svg"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  width="1em"
+                >
+                  <svg
+                    class="pf-v6-icon-default"
+                    viewBox="0 0 256 512"
+                  >
+                    <path
+                      d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
+                    />
+                  </svg>
+                  <svg
+                    class="pf-v6-icon-rh-ui"
+                    viewBox="0 0 32 32"
+                  >
+                    <path
+                      d="M21.293 23.293 17 27.586V4.414l4.293 4.293a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414l-5.646-5.646a1.5 1.5 0 0 0-2.121 0L9.294 7.293a.999.999 0 1 0 1.414 1.414l4.293-4.293v23.172l-4.293-4.293a.999.999 0 1 0-1.414 1.414l5.646 5.646c.292.293.676.438 1.061.438s.768-.146 1.061-.438l5.646-5.646a.999.999 0 1 0-1.414-1.414Z"
+                    />
+                  </svg>
+                </svg>
+              </span>
+            </div>
+          </button>
+        </th>
+        <th
+          class="pf-v6-c-table__th"
+          data-key="2"
+          data-label="Branches"
+          scope="col"
+          tabindex="-1"
+        >
+          Branches
+        </th>
+        <th
+          class="pf-v6-c-table__th"
+          data-key="3"
+          data-label="Pull requests"
+          scope="col"
+          tabindex="-1"
+        >
+          Pull requests
+        </th>
+        <th
+          class="pf-v6-c-table__th"
+          data-key="4"
+          data-label="Workspaces"
+          scope="col"
+          tabindex="-1"
+        >
+          Workspaces
+        </th>
+        <th
+          class="pf-v6-c-table__th"
+          data-key="5"
+          data-label="Last Commit"
+          scope="col"
+          tabindex="-1"
+        >
+          Last Commit
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="pf-v6-c-table__tbody"
+      role="rowgroup"
+    >
+      <tr
+        class="pf-v6-c-table__tr"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rba:"
+        data-ouia-component-type="PF6/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class="pf-v6-c-table__td pf-v6-c-table__check"
+          data-key="0"
+          tabindex="-1"
+        >
+          <div
+            class="pf-v6-c-radio pf-m-standalone"
+          >
+            <input
+              aria-invalid="false"
+              aria-label="Select row 0"
+              class="pf-v6-c-radio__input"
+              data-ouia-component-id="OUIA-Generated-Radio-:rbc:"
+              data-ouia-component-type="PF6/Radio"
+              data-ouia-safe="true"
+              id="select-0"
+              name="radioGroup"
+              type="radio"
+            />
+          </div>
+        </td>
+        <th
+          class="pf-v6-c-table__td"
+          data-key="1"
+          data-label="Header cell"
+          tabindex="-1"
+        >
+          <div
+            id="test-headercol-0"
+          >
+            one
+          </div>
+        </th>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="2"
+          data-label="Branches"
+          tabindex="-1"
+        >
+          two
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="3"
+          data-label="Pull requests"
+          tabindex="-1"
+        >
+          three
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="4"
+          data-label="Workspaces"
+          tabindex="-1"
+        >
+          four
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="5"
+          data-label="Last Commit"
+          tabindex="-1"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rbd:"
+        data-ouia-component-type="PF6/TableRow"
+        data-ouia-safe="true"
+        hidden=""
+      >
+        <td
+          class="pf-v6-c-table__td"
+          data-key="0"
+          tabindex="-1"
+        />
+        <th
+          class="pf-v6-c-table__td"
+          data-key="1"
+          data-label="Header cell"
+          tabindex="-1"
+        >
+          <div
+            id="test-headercol-1"
+          >
+            one
+          </div>
+        </th>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="2"
+          data-label="Branches"
+          tabindex="-1"
+        >
+          two
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="3"
+          data-label="Pull requests"
+          tabindex="-1"
+        >
+          three
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="4"
+          data-label="Workspaces"
+          tabindex="-1"
+        >
+          four
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="5"
+          data-label="Last Commit"
+          tabindex="-1"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rbe:"
+        data-ouia-component-type="PF6/TableRow"
+        data-ouia-safe="true"
+        hidden=""
+      >
+        <td
+          class="pf-v6-c-table__td"
+          data-key="0"
+          tabindex="-1"
+        />
+        <th
+          class="pf-v6-c-table__td"
+          data-key="1"
+          data-label="Header cell"
+          tabindex="-1"
+        >
+          <div
+            id="test-headercol-2"
+          >
+            one
+          </div>
+        </th>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="2"
+          data-label="Branches"
+          tabindex="-1"
+        >
+          two
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="3"
+          data-label="Pull requests"
+          tabindex="-1"
+        >
+          three
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="4"
+          data-label="Workspaces"
+          tabindex="-1"
+        >
+          four
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="5"
+          data-label="Last Commit"
+          tabindex="-1"
+        >
+          five
+        </td>
+      </tr>
+    </tbody>
+    <tbody
+      class="pf-v6-c-table__tbody"
+      role="rowgroup"
+    >
+      <tr
+        class="pf-v6-c-table__tr"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rbf:"
+        data-ouia-component-type="PF6/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class="pf-v6-c-table__td pf-v6-c-table__check"
+          data-key="0"
+          tabindex="-1"
+        >
+          <div
+            class="pf-v6-c-radio pf-m-standalone"
+          >
+            <input
+              aria-invalid="false"
+              aria-label="Select row 3"
+              class="pf-v6-c-radio__input"
+              data-ouia-component-id="OUIA-Generated-Radio-:rbh:"
+              data-ouia-component-type="PF6/Radio"
+              data-ouia-safe="true"
+              id="select-3"
+              name="radioGroup"
+              type="radio"
+            />
+          </div>
+        </td>
+        <th
+          class="pf-v6-c-table__td"
+          data-key="1"
+          data-label="Header cell"
+          tabindex="-1"
+        >
+          <div
+            id="test-headercol-3"
+          >
+            one
+          </div>
+        </th>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="2"
+          data-label="Branches"
+          tabindex="-1"
+        >
+          two
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="3"
+          data-label="Pull requests"
+          tabindex="-1"
+        >
+          three
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="4"
+          data-label="Workspaces"
+          tabindex="-1"
+        >
+          four
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="5"
+          data-label="Last Commit"
+          tabindex="-1"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rbi:"
+        data-ouia-component-type="PF6/TableRow"
+        data-ouia-safe="true"
+        hidden=""
+      >
+        <td
+          class="pf-v6-c-table__td"
+          data-key="0"
+          tabindex="-1"
+        />
+        <th
+          class="pf-v6-c-table__td"
+          data-key="1"
+          data-label="Header cell"
+          tabindex="-1"
+        >
+          <div
+            id="test-headercol-4"
+          >
+            one
+          </div>
+        </th>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="2"
+          data-label="Branches"
+          tabindex="-1"
+        >
+          two
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="3"
+          data-label="Pull requests"
+          tabindex="-1"
+        >
+          three
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="4"
+          data-label="Workspaces"
+          tabindex="-1"
+        >
+          four
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="5"
+          data-label="Last Commit"
+          tabindex="-1"
+        >
+          five
+        </td>
+      </tr>
+    </tbody>
+    <tbody
+      class="pf-v6-c-table__tbody"
+      role="rowgroup"
+    >
+      <tr
+        class="pf-v6-c-table__tr"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rbj:"
+        data-ouia-component-type="PF6/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class="pf-v6-c-table__td pf-v6-c-table__check"
+          data-key="0"
+          tabindex="-1"
+        >
+          <div
+            class="pf-v6-c-radio pf-m-standalone"
+          >
+            <input
+              aria-invalid="false"
+              aria-label="Select row 5"
+              class="pf-v6-c-radio__input"
+              data-ouia-component-id="OUIA-Generated-Radio-:rbl:"
+              data-ouia-component-type="PF6/Radio"
+              data-ouia-safe="true"
+              id="select-5"
+              name="radioGroup"
+              type="radio"
+            />
+          </div>
+        </td>
+        <th
+          class="pf-v6-c-table__td"
+          data-key="1"
+          data-label="Header cell"
+          tabindex="-1"
+        >
+          <div
+            id="test-headercol-5"
+          >
+            one
+          </div>
+        </th>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="2"
+          data-label="Branches"
+          tabindex="-1"
+        >
+          two
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="3"
+          data-label="Pull requests"
+          tabindex="-1"
+        >
+          three
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="4"
+          data-label="Workspaces"
+          tabindex="-1"
+        >
+          four
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="5"
+          data-label="Last Commit"
+          tabindex="-1"
+        >
+          five
+        </td>
+      </tr>
+    </tbody>
+    <tbody
+      class="pf-v6-c-table__tbody"
+      role="rowgroup"
+    >
+      <tr
+        class="pf-v6-c-table__tr"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rbm:"
+        data-ouia-component-type="PF6/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class="pf-v6-c-table__td pf-v6-c-table__check"
+          data-key="0"
+          tabindex="-1"
+        >
+          <div
+            class="pf-v6-c-radio pf-m-standalone"
+          >
+            <input
+              aria-invalid="false"
+              aria-label="Select row 6"
+              class="pf-v6-c-radio__input"
+              data-ouia-component-id="OUIA-Generated-Radio-:rbo:"
+              data-ouia-component-type="PF6/Radio"
+              data-ouia-safe="true"
+              id="select-6"
+              name="radioGroup"
+              type="radio"
+            />
+          </div>
+        </td>
+        <th
+          class="pf-v6-c-table__td"
+          data-key="1"
+          data-label="Header cell"
+          tabindex="-1"
+        >
+          <div
+            id="test-headercol-6"
+          >
+            one
+          </div>
+        </th>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="2"
+          data-label="Branches"
+          tabindex="-1"
+        >
+          two
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="3"
+          data-label="Pull requests"
+          tabindex="-1"
+        >
+          three
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="4"
+          data-label="Workspaces"
+          tabindex="-1"
+        >
+          four
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="5"
+          data-label="Last Commit"
+          tabindex="-1"
+        >
+          five
+        </td>
+      </tr>
+    </tbody>
+    <tbody
+      class="pf-v6-c-table__tbody"
+      role="rowgroup"
+    >
+      <tr
+        class="pf-v6-c-table__tr"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rbp:"
+        data-ouia-component-type="PF6/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class="pf-v6-c-table__td pf-v6-c-table__check"
+          data-key="0"
+          tabindex="-1"
+        >
+          <div
+            class="pf-v6-c-radio pf-m-standalone"
+          >
+            <input
+              aria-invalid="false"
+              aria-label="Select row 7"
+              class="pf-v6-c-radio__input"
+              data-ouia-component-id="OUIA-Generated-Radio-:rbr:"
+              data-ouia-component-type="PF6/Radio"
+              data-ouia-safe="true"
+              id="select-7"
+              name="radioGroup"
+              type="radio"
+            />
+          </div>
+        </td>
+        <th
+          class="pf-v6-c-table__td"
+          data-key="1"
+          data-label="Header cell"
+          tabindex="-1"
+        >
+          <div
+            id="test-headercol-7"
+          >
+            one
+          </div>
+        </th>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="2"
+          data-label="Branches"
+          tabindex="-1"
+        >
+          two
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="3"
+          data-label="Pull requests"
+          tabindex="-1"
+        >
+          three
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="4"
+          data-label="Workspaces"
+          tabindex="-1"
+        >
+          four
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="5"
+          data-label="Last Commit"
+          tabindex="-1"
+        >
+          five
+        </td>
+      </tr>
+    </tbody>
+    <tbody
+      class="pf-v6-c-table__tbody"
+      role="rowgroup"
+    >
+      <tr
+        class="pf-v6-c-table__tr"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rbs:"
+        data-ouia-component-type="PF6/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class="pf-v6-c-table__td pf-v6-c-table__check"
+          data-key="0"
+          tabindex="-1"
+        >
+          <div
+            class="pf-v6-c-radio pf-m-standalone"
+          >
+            <input
+              aria-invalid="false"
+              aria-label="Select row 8"
+              class="pf-v6-c-radio__input"
+              data-ouia-component-id="OUIA-Generated-Radio-:rbu:"
+              data-ouia-component-type="PF6/Radio"
+              data-ouia-safe="true"
+              id="select-8"
+              name="radioGroup"
+              type="radio"
+            />
+          </div>
+        </td>
+        <th
+          class="pf-v6-c-table__td"
+          data-key="1"
+          data-label="Header cell"
+          tabindex="-1"
+        >
+          <div
+            id="test-headercol-8"
+          >
+            one
+          </div>
+        </th>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="2"
+          data-label="Branches"
+          tabindex="-1"
+        >
+          two
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="3"
+          data-label="Pull requests"
+          tabindex="-1"
+        >
+          three
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="4"
+          data-label="Workspaces"
+          tabindex="-1"
+        >
+          four
+        </td>
+        <td
+          class="pf-v6-c-table__td"
+          data-key="5"
+          data-label="Last Commit"
+          tabindex="-1"
+        >
+          five
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
 exports[`Table Compound Expandable table 1`] = `
 <DocumentFragment>
   <table
@@ -3227,7 +3979,7 @@ exports[`Table Control text table 1`] = `
   <table
     aria-label="Aria labeled"
     class="pf-v6-c-table pf-m-grid-md"
-    data-ouia-component-id="OUIA-Generated-Table-:rb8:"
+    data-ouia-component-id="OUIA-Generated-Table-:rbv:"
     data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
@@ -3237,7 +3989,7 @@ exports[`Table Control text table 1`] = `
     >
       <tr
         class="pf-v6-c-table__tr"
-        data-ouia-component-id="OUIA-Generated-TableRow-:rb9:"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rc0:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
@@ -3294,7 +4046,7 @@ exports[`Table Control text table 1`] = `
     >
       <tr
         class="pf-v6-c-table__tr"
-        data-ouia-component-id="OUIA-Generated-TableRow-:rba:"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rc1:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
@@ -3345,7 +4097,7 @@ exports[`Table Control text table 1`] = `
       </tr>
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
-        data-ouia-component-id="OUIA-Generated-TableRow-:rbb:"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rc2:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
         hidden=""
@@ -3397,7 +4149,7 @@ exports[`Table Control text table 1`] = `
       </tr>
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
-        data-ouia-component-id="OUIA-Generated-TableRow-:rbc:"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rc3:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
         hidden=""
@@ -3454,7 +4206,7 @@ exports[`Table Control text table 1`] = `
     >
       <tr
         class="pf-v6-c-table__tr"
-        data-ouia-component-id="OUIA-Generated-TableRow-:rbd:"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rc4:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
@@ -3505,7 +4257,7 @@ exports[`Table Control text table 1`] = `
       </tr>
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
-        data-ouia-component-id="OUIA-Generated-TableRow-:rbe:"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rc5:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
         hidden=""
@@ -3562,7 +4314,7 @@ exports[`Table Control text table 1`] = `
     >
       <tr
         class="pf-v6-c-table__tr"
-        data-ouia-component-id="OUIA-Generated-TableRow-:rbf:"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rc6:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
@@ -3618,7 +4370,7 @@ exports[`Table Control text table 1`] = `
     >
       <tr
         class="pf-v6-c-table__tr"
-        data-ouia-component-id="OUIA-Generated-TableRow-:rbg:"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rc7:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
@@ -3674,7 +4426,7 @@ exports[`Table Control text table 1`] = `
     >
       <tr
         class="pf-v6-c-table__tr"
-        data-ouia-component-id="OUIA-Generated-TableRow-:rbh:"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rc8:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
@@ -3730,7 +4482,7 @@ exports[`Table Control text table 1`] = `
     >
       <tr
         class="pf-v6-c-table__tr"
-        data-ouia-component-id="OUIA-Generated-TableRow-:rbi:"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rc9:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
@@ -3789,7 +4541,7 @@ exports[`Table Header width table 1`] = `
   <table
     aria-label="Aria labeled"
     class="pf-v6-c-table pf-m-grid-md"
-    data-ouia-component-id="OUIA-Generated-Table-:rbj:"
+    data-ouia-component-id="OUIA-Generated-Table-:rca:"
     data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
@@ -3799,7 +4551,7 @@ exports[`Table Header width table 1`] = `
     >
       <tr
         class="pf-v6-c-table__tr"
-        data-ouia-component-id="OUIA-Generated-TableRow-:rbk:"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rcb:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
@@ -3856,7 +4608,7 @@ exports[`Table Header width table 1`] = `
     >
       <tr
         class="pf-v6-c-table__tr"
-        data-ouia-component-id="OUIA-Generated-TableRow-:rbl:"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rcc:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
@@ -3907,7 +4659,7 @@ exports[`Table Header width table 1`] = `
       </tr>
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
-        data-ouia-component-id="OUIA-Generated-TableRow-:rbm:"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rcd:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
         hidden=""
@@ -3959,7 +4711,7 @@ exports[`Table Header width table 1`] = `
       </tr>
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
-        data-ouia-component-id="OUIA-Generated-TableRow-:rbn:"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rce:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
         hidden=""
@@ -4016,7 +4768,7 @@ exports[`Table Header width table 1`] = `
     >
       <tr
         class="pf-v6-c-table__tr"
-        data-ouia-component-id="OUIA-Generated-TableRow-:rbo:"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rcf:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
@@ -4067,7 +4819,7 @@ exports[`Table Header width table 1`] = `
       </tr>
       <tr
         class="pf-v6-c-table__tr pf-v6-c-table__expandable-row"
-        data-ouia-component-id="OUIA-Generated-TableRow-:rbp:"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rcg:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
         hidden=""
@@ -4124,7 +4876,7 @@ exports[`Table Header width table 1`] = `
     >
       <tr
         class="pf-v6-c-table__tr"
-        data-ouia-component-id="OUIA-Generated-TableRow-:rbq:"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rch:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
@@ -4180,7 +4932,7 @@ exports[`Table Header width table 1`] = `
     >
       <tr
         class="pf-v6-c-table__tr"
-        data-ouia-component-id="OUIA-Generated-TableRow-:rbr:"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rci:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
@@ -4236,7 +4988,7 @@ exports[`Table Header width table 1`] = `
     >
       <tr
         class="pf-v6-c-table__tr"
-        data-ouia-component-id="OUIA-Generated-TableRow-:rbs:"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rcj:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
@@ -4292,7 +5044,7 @@ exports[`Table Header width table 1`] = `
     >
       <tr
         class="pf-v6-c-table__tr"
-        data-ouia-component-id="OUIA-Generated-TableRow-:rbt:"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rck:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
@@ -5864,7 +6616,7 @@ exports[`Table Selectable table with selected expandable row 1`] = `
   <table
     aria-label="Aria labeled"
     class="pf-v6-c-table pf-m-grid-md"
-    data-ouia-component-id="OUIA-Generated-Table-:rbu:"
+    data-ouia-component-id="OUIA-Generated-Table-:rcl:"
     data-ouia-component-type="PF6/Table"
     data-ouia-safe="true"
     role="grid"
@@ -5874,7 +6626,7 @@ exports[`Table Selectable table with selected expandable row 1`] = `
     >
       <tr
         class="pf-v6-c-table__tr"
-        data-ouia-component-id="OUIA-Generated-TableRow-:rbv:"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rcm:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
@@ -5893,7 +6645,7 @@ exports[`Table Selectable table with selected expandable row 1`] = `
               aria-label="Select all rows"
               checked=""
               class="pf-v6-c-check__input"
-              data-ouia-component-id="OUIA-Generated-Checkbox-:rc1:"
+              data-ouia-component-id="OUIA-Generated-Checkbox-:rco:"
               data-ouia-component-type="PF6/Checkbox"
               data-ouia-safe="true"
               id="select-all"
@@ -5918,7 +6670,7 @@ exports[`Table Selectable table with selected expandable row 1`] = `
     >
       <tr
         class="pf-v6-c-table__tr"
-        data-ouia-component-id="OUIA-Generated-TableRow-:rc2:"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rcp:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
@@ -5935,7 +6687,7 @@ exports[`Table Selectable table with selected expandable row 1`] = `
               aria-label="Select row 0"
               checked=""
               class="pf-v6-c-check__input"
-              data-ouia-component-id="OUIA-Generated-Checkbox-:rc4:"
+              data-ouia-component-id="OUIA-Generated-Checkbox-:rcr:"
               data-ouia-component-type="PF6/Checkbox"
               data-ouia-safe="true"
               id="select-0"
@@ -5954,7 +6706,7 @@ exports[`Table Selectable table with selected expandable row 1`] = `
       </tr>
       <tr
         class="pf-v6-c-table__tr"
-        data-ouia-component-id="OUIA-Generated-TableRow-:rc5:"
+        data-ouia-component-id="OUIA-Generated-TableRow-:rcs:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
