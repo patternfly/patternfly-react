@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { MultipleFileUploadStatus } from '../MultipleFileUploadStatus';
-import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-icon';
+import RhUiInProgressIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-in-progress-icon';
 
 jest.mock('../../../helpers/GenerateId/GenerateId');
 
@@ -22,7 +22,7 @@ describe('MultipleFileUploadStatus', () => {
 
   test('renders status toggle icon', () => {
     const { asFragment } = render(
-      <MultipleFileUploadStatus statusToggleIcon={<InProgressIcon />}>Foo</MultipleFileUploadStatus>
+      <MultipleFileUploadStatus statusToggleIcon={<RhUiInProgressIcon />}>Foo</MultipleFileUploadStatus>
     );
     expect(asFragment()).toMatchSnapshot();
   });
