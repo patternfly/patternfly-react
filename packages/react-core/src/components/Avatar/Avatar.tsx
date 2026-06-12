@@ -11,7 +11,7 @@ export interface AvatarProps extends React.DetailedHTMLProps<
   className?: string;
   /** Attribute that specifies the URL of the image for the avatar. */
   src?: string;
-  /** Attribute that specifies the alternate text of the image for the avatar. Will set aria-label for children or initials avatars. */
+  /** Attribute that specifies the alternate text of the image for the avatar. Will set aria-label avatars using children or initials. */
   alt: string;
   /** Flag to indicate the avatar should have a border. */
   isBordered?: boolean;

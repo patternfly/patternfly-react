@@ -2,5 +2,6 @@
 #ws-react-c-avatar-with-initials,
 #ws-react-c-avatar-with-icons {
   display: flex;
+  flex-wrap: wrap;
   gap: 3px;
 }
