@@ -19,7 +19,7 @@ import {
   getSeconds
 } from './TimePickerUtils';
 import { HelperText, HelperTextItem } from '../HelperText';
-import OutlinedClockIcon from '@patternfly/react-icons/dist/esm/icons/outlined-clock-icon';
+import RhUiClockIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clock-icon';
 import cssDatePickerFormControlWidth from '@patternfly/react-tokens/dist/esm/c_date_picker__input_c_form_control_Width';
 import { GenerateId } from '../../helpers';
 
@@ -515,7 +515,7 @@ class TimePicker extends Component<TimePickerProps, TimePickerState> {
               placeholder={placeholder}
               value={timeState || ''}
               type="text"
-              customIcon={<OutlinedClockIcon />}
+              customIcon={<RhUiClockIcon />}
               onClick={this.onInputClick}
               onChange={this.onInputChange}
               autoComplete="off"
