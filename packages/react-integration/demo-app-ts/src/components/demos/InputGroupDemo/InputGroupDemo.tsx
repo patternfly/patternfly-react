@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import DollarSignIcon from '@patternfly/react-icons/dist/esm/icons/dollar-sign-icon';
 import AtIcon from '@patternfly/react-icons/dist/esm/icons/at-icon';
-import CalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/calendar-alt-icon';
+import RhUiCalendarIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-calendar-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import {
@@ -163,7 +163,7 @@ export class InputGroupDemo extends Component<{}, InputGroupState> {
         <br />
         <InputGroup>
           <InputGroupText component="label" htmlFor="textInput9">
-            <CalendarAltIcon />
+            <RhUiCalendarIcon />
           </InputGroupText>
           <InputGroupItem>
             <TextInput name="textInput9" id="textInput9" type="date" aria-label="Date input example" />
