@@ -7,7 +7,7 @@ propComponents: ['ProgressStepper', 'ProgressStep']
 
 import { Fragment, useState } from 'react';
 import RhUiInProgressIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-in-progress-icon';
-import PendingIcon from '@patternfly/react-icons/dist/esm/icons/pending-icon';
+import RhUiPendingIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-pending-icon';
 
 ## Examples
 
