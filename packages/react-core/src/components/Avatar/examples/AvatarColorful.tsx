@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { Avatar } from '@patternfly/react-core';
 
-const _avatarIcon = (
+const avatarSvg = (
   <svg aria-hidden="true" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 36 36">
     <path fill="currentColor" d="M17.7,20.1c-3.5,0-6.4-2.9-6.4-6.4s2.9-6.4,6.4-6.4,6.4,2.9,6.4,6.4-2.8,6.4-6.4,6.4Z" />
     <path
@@ -13,30 +13,30 @@ const _avatarIcon = (
 
 <Fragment>
   <Avatar color="red" alt="red svg avatar">
-    {_avatarIcon}
+    {avatarSvg}
   </Avatar>
   <Avatar color="orangered" alt="orangered svg avatar">
-    {_avatarIcon}
+    {avatarSvg}
   </Avatar>
   <Avatar color="orange" alt="orange svg avatar">
-    {_avatarIcon}
+    {avatarSvg}
   </Avatar>
   <Avatar color="yellow" alt="yellow svg avatar">
-    {_avatarIcon}
+    {avatarSvg}
   </Avatar>
   <Avatar color="green" alt="green svg avatar">
-    {_avatarIcon}
+    {avatarSvg}
   </Avatar>
   <Avatar color="teal" alt="teal svg avatar">
-    {_avatarIcon}
+    {avatarSvg}
   </Avatar>
   <Avatar color="blue" alt="blue svg avatar">
-    {_avatarIcon}
+    {avatarSvg}
   </Avatar>
   <Avatar color="purple" alt="purple svg avatar">
-    {_avatarIcon}
+    {avatarSvg}
   </Avatar>
   <Avatar color="gray" alt="gray svg avatar">
-    {_avatarIcon}
+    {avatarSvg}
   </Avatar>
 </Fragment>;
