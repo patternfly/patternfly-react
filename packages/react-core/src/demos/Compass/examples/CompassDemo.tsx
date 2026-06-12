@@ -30,7 +30,7 @@ import {
 } from '@patternfly/react-core';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import OutlinedPlusSquare from '@patternfly/react-icons/dist/esm/icons/outlined-plus-square-icon';
-import OutlinedCopy from '@patternfly/react-icons/dist/esm/icons/outlined-copy-icon';
+import RhUiCopyIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-icon';
 import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 
 export const CompassBasic: React.FunctionComponent = () => {
@@ -123,7 +123,7 @@ export const CompassBasic: React.FunctionComponent = () => {
             </ActionListGroup>
             <ActionListItem>
               <Tooltip content="Copy">
-                <Button isCircle variant="plain" icon={<OutlinedCopy />} aria-label="Copy" />
+                <Button isCircle variant="plain" icon={<RhUiCopyIcon />} aria-label="Copy" />
               </Tooltip>
             </ActionListItem>
             <ActionListGroup>
@@ -134,7 +134,7 @@ export const CompassBasic: React.FunctionComponent = () => {
               </ActionListItem>
               <ActionListItem>
                 <Tooltip content="Second copy">
-                  <Button isCircle variant="plain" icon={<OutlinedCopy />} aria-label="Copy2" />
+                  <Button isCircle variant="plain" icon={<RhUiCopyIcon />} aria-label="Copy2" />
                 </Tooltip>
               </ActionListItem>
             </ActionListGroup>
