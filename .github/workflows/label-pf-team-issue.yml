@@ -1,0 +1,9 @@
+name: Label PF Team issues
+on:
+  issues:
+    types:
+      - opened
+jobs:
+  label:
+    uses: patternfly/.github/.github/workflows/add-pf-team-label-workflow.yml@fdb52a63a2220ec8a3b6c2d43f312cda708ffa06
+    secrets: inherit

@@ -1,6 +1,8 @@
 name: Documentation
 on:
   pull_request_target:
+  issue_comment:
+    types: [created]
   workflow_call:
     secrets:
       SURGE_LOGIN:
@@ -10,17 +12,23 @@ on:
       GH_PR_TOKEN:
         required: true
 jobs:
+  check-permissions:
+    uses: patternfly/.github/.github/workflows/check-team-membership.yml@fdb52a63a2220ec8a3b6c2d43f312cda708ffa06
+    secrets: inherit
+
   deploy:
     name: Build, test & deploy
     runs-on: ubuntu-latest
+    needs: check-permissions
+    if: github.event_name == 'workflow_call' || needs.check-permissions.outputs.allowed == 'true'
     env:
       SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
       SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
       GH_PR_TOKEN: ${{ secrets.GH_PR_TOKEN }}
-      GH_PR_NUM: ${{ github.event.number }}
+      GH_PR_NUM: ${{ needs.check-permissions.outputs.pr-number }}
     steps:
       - name: Check out project from PR branch
-        if: github.event_name == 'pull_request_target'
+        if: github.event_name == 'pull_request_target' || github.event_name == 'issue_comment'
         uses: actions/checkout@v4
         with:
           # Checkout the merge commit so that we can access the PR's changes.
@@ -28,7 +36,7 @@ jobs:
           ref: refs/pull/${{ env.GH_PR_NUM }}/head
 
       - name: Check out project
-        if: github.event_name != 'pull_request_target'
+        if: github.event_name == 'workflow_call'
         uses: actions/checkout@v4
 
       - name: Set up and build project
