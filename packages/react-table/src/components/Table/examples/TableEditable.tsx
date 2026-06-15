@@ -1,7 +1,7 @@
 import { isValidElement, useRef, useState } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import { Button, Checkbox, Radio, TextInput, KeyTypes, getUniqueId } from '@patternfly/react-core';
-import PencilAltIcon from '@patternfly/react-icons/dist/esm/icons/pencil-alt-icon';
+import RhUiEditFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-edit-fill-icon';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 import inlineEditStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
@@ -75,7 +75,7 @@ const EditButtonsCell: React.FunctionComponent<EditButtonsCellProps> = ({
           onKeyDown={(event) => onKeyDown(event, 'edit')}
           variant="plain"
         >
-          <PencilAltIcon />
+          <RhUiEditFillIcon />
         </Button>
       </Td>
     </>

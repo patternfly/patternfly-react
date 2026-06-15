@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
-import PencilAltIcon from '@patternfly/react-icons/dist/esm/icons/pencil-alt-icon';
+import RhUiEditFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-edit-fill-icon';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 import { OnRowEdit } from './TableTypes';
@@ -57,7 +57,7 @@ export const EditColumn: React.FunctionComponent<EditColumnProps> = ({
         {...props}
         onClick={(e) => onClick(e, 'edit')}
         variant="plain"
-        icon={<PencilAltIcon />}
+        icon={<RhUiEditFillIcon />}
       />
     </div>
   </Fragment>
