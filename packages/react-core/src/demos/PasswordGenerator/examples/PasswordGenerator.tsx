@@ -12,7 +12,7 @@ import {
   MenuItemAction
 } from '@patternfly/react-core';
 import RedoIcon from '@patternfly/react-icons/dist/esm/icons/redo-icon';
-import EyeIcon from '@patternfly/react-icons/dist/esm/icons/eye-icon';
+import RhUiViewFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-view-fill-icon';
 import EyeSlashIcon from '@patternfly/react-icons/dist/esm/icons/eye-slash-icon';
 
 export const PasswordGenerator: React.FunctionComponent = () => {
@@ -123,7 +123,7 @@ export const PasswordGenerator: React.FunctionComponent = () => {
             variant="control"
             onClick={() => setPasswordHidden(!passwordHidden)}
             aria-label={passwordHidden ? 'Show password' : 'Hide password'}
-            icon={passwordHidden ? <EyeIcon /> : <EyeSlashIcon />}
+            icon={passwordHidden ? <RhUiViewFillIcon /> : <EyeSlashIcon />}
           />
         </InputGroupItem>
       </InputGroup>
