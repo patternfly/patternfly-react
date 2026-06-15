@@ -45,9 +45,6 @@ export default <Button variant="primary">Button</Button>;
 
 All component documentation is available on [PatternFly.org](https://www.patternfly.org/components/about-modal).
 
-#### Advanced usage
-1. [Applying Overpass font](https://github.com/patternfly/patternfly-react/blob/main/ADVANCED-USAGE-README.md#Applying-Overpass-font)
-
 ### Contribution guidelines
 All React contributors must first be [PatternFly community contributors](https://www.patternfly.org/contribute/about). If you are already a PatternFly community contributor, check out the [React contribution guidelines](https://github.com/patternfly/patternfly-react/tree/main/CONTRIBUTING.md) to make React contributions.
 
