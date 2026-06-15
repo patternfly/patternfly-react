@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 
 import { ModalBoxTitle } from '../ModalBoxTitle';
-import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
+import RhUiAttentionBellFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
 
 test('ModalBoxTitle alert variant', () => {
   const { asFragment } = render(
@@ -50,7 +50,7 @@ test('ModalBoxTitle success variant', () => {
 
 test('ModalBoxTitle custom icon variant', () => {
   const { asFragment } = render(
-    <ModalBoxTitle title="Test Modal Box custom" id="boxId" titleIconVariant={BullhornIcon}>
+    <ModalBoxTitle title="Test Modal Box custom" id="boxId" titleIconVariant={RhUiAttentionBellFillIcon}>
       content
     </ModalBoxTitle>
   );

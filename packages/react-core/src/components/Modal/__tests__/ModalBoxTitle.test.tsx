@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { ModalBoxTitle } from '../ModalBoxTitle';
-import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
+import RhUiAttentionBellFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
 import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 
 test('ModalBoxTitle alert variant', () => {
@@ -37,7 +37,7 @@ test('ModalBoxTitle success variant', () => {
 
 test('ModalBoxTitle custom icon variant', () => {
   const { asFragment } = render(
-    <ModalBoxTitle title="Test Modal Box custom" id="boxId" titleIconVariant={BullhornIcon} />
+    <ModalBoxTitle title="Test Modal Box custom" id="boxId" titleIconVariant={RhUiAttentionBellFillIcon} />
   );
   expect(asFragment()).toMatchSnapshot();
 });
