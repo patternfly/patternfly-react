@@ -6,7 +6,7 @@ import { Checkbox } from '../Checkbox';
 import { ValidatedOptions } from '../../helpers/constants';
 import { InputGroup, InputGroupItem } from '../InputGroup';
 import RhUiViewFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-view-fill-icon';
-import EyeSlashIcon from '@patternfly/react-icons/dist/esm/icons/eye-slash-icon';
+import RhUiViewOffFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-view-off-fill-icon';
 import { HelperText, HelperTextItem } from '../HelperText';
 
 export interface LoginFormProps extends Omit<React.HTMLProps<HTMLFormElement>, 'ref'> {
@@ -130,7 +130,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
                 variant="control"
                 onClick={() => setPasswordHidden(!passwordHidden)}
                 aria-label={passwordHidden ? showPasswordAriaLabel : hidePasswordAriaLabel}
-                icon={passwordHidden ? <RhUiViewFillIcon /> : <EyeSlashIcon />}
+                icon={passwordHidden ? <RhUiViewFillIcon /> : <RhUiViewOffFillIcon />}
               />
             </InputGroupItem>
           </InputGroup>
