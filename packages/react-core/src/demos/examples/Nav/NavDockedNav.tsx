@@ -34,7 +34,7 @@ import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/ico
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
 import CloudIcon from '@patternfly/react-icons/dist/esm/icons/cloud-icon';
-import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import pfIconLogo from '@patternfly/react-core/src/demos/assets/PF-IconLogo-color.svg';
@@ -313,7 +313,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
                     to="#nav-link4"
                     itemId={3}
                     isActive={activeItem === 3}
-                    icon={<CodeIcon />}
+                    icon={<RhUiCodeIcon />}
                     anchorRef={navItem4Ref}
                     aria-label="Network services"
                   >

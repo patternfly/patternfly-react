@@ -19,7 +19,7 @@ import type { editor } from 'monaco-editor';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
-import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import Dropzone, { FileRejection } from 'react-dropzone';
 import { CodeEditorContext } from './CodeEditorUtils';
@@ -480,7 +480,12 @@ export const CodeEditor = ({
         const editorEmptyState =
           emptyState ||
           (isUploadEnabled ? (
-            <EmptyState variant={EmptyStateVariant.sm} titleText={emptyStateTitle} icon={CodeIcon} headingLevel="h4">
+            <EmptyState
+              variant={EmptyStateVariant.sm}
+              titleText={emptyStateTitle}
+              icon={RhUiCodeIcon}
+              headingLevel="h4"
+            >
               <EmptyStateBody>{emptyStateBody}</EmptyStateBody>
               {!isReadOnly && (
                 <EmptyStateFooter>
@@ -498,7 +503,12 @@ export const CodeEditor = ({
               )}
             </EmptyState>
           ) : (
-            <EmptyState variant={EmptyStateVariant.sm} titleText={emptyStateTitle} icon={CodeIcon} headingLevel="h4">
+            <EmptyState
+              variant={EmptyStateVariant.sm}
+              titleText={emptyStateTitle}
+              icon={RhUiCodeIcon}
+              headingLevel="h4"
+            >
               {!isReadOnly && (
                 <EmptyStateFooter>
                   <EmptyStateActions>
@@ -569,7 +579,7 @@ export const CodeEditor = ({
             {isLanguageLabelVisible && (
               <div className={css(styles.codeEditorTab)}>
                 <span className={css(styles.codeEditorTabIcon)}>
-                  <CodeIcon />
+                  <RhUiCodeIcon />
                 </span>
                 <span className={css(styles.codeEditorTabText)}>{language.toUpperCase()}</span>
               </div>
