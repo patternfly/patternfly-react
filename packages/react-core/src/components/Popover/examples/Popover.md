@@ -11,7 +11,7 @@ import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-u
 import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
 import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
-import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
+import RhUiAttentionBellFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
 
 ## Examples
 

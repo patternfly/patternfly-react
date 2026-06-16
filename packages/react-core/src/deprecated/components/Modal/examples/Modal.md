@@ -12,7 +12,7 @@ import { Fragment, useRef, useState } from 'react';
 import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
 import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
 import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
-import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
+import RhUiAttentionBellFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
@@ -111,7 +111,7 @@ To add an icon before a modal’s title, use the `titleIconVariant`, which can b
 
 ### Custom title icon
 
-To add a custom icon before a modal’s title, set `titleIconVariant` to an imported custom icon. The following example imports and uses a bullhorn icon.
+To add a custom icon before a modal’s title, set `titleIconVariant` to an imported custom icon. The following example imports and uses an icon.
 
 ```ts file="./ModalCustomTitleIcon.tsx"
 
