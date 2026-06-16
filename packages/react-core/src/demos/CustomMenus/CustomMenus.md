@@ -14,7 +14,7 @@ import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
 import RhUiClipboardFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clipboard-fill-icon';
 import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
-import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
+import RhUiGripHorizontalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-grip-horizontal-fill-icon';
 import brandImg from '../assets/PF-IconLogo.svg';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
