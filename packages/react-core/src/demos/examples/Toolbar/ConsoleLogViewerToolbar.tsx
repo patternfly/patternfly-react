@@ -23,7 +23,7 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 import PauseIcon from '@patternfly/react-icons/dist/esm/icons/pause-icon';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import ExpandIcon from '@patternfly/react-icons/dist/esm/icons/expand-icon';
-import RhUiExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-external-link-icon';
+import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
 import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
@@ -430,7 +430,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
                 ref={toggleRef}
                 isExpanded={externalExpandedMobile}
                 onClick={onExternalToggleMobile}
-                icon={<RhUiExternalLinkIcon />}
+                icon={<RhMicronsExternalLinkIcon />}
                 aria-label="External logs"
               />
             )}
