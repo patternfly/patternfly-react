@@ -5,7 +5,7 @@ cssPrefix: pf-v6-c-list
 propComponents: ['List', 'ListItem']
 ---
 
-import BookOpenIcon from '@patternfly/react-icons/dist/esm/icons/book-open-icon';
+import RhUiLearnFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-learn-fill-icon';
 import KeyIcon from '@patternfly/react-icons/dist/esm/icons/key-icon';
 import DesktopIcon from '@patternfly/react-icons/dist/esm/icons/desktop-icon';
 
