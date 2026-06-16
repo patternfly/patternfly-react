@@ -1,7 +1,7 @@
 import { Fragment, useState, FunctionComponent } from 'react';
 import { Checkbox, Flex, FlexItem } from '@patternfly/react-core';
 import { SimpleDropdown, SimpleDropdownItem } from '@patternfly/react-templates';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export const SimpleDropdownExample: FunctionComponent = () => {
   const [isDisabled, setIsDisabled] = useState(false);
@@ -43,7 +43,7 @@ export const SimpleDropdownExample: FunctionComponent = () => {
             toggleVariant="plain"
             initialItems={items}
             isDisabled={isDisabled}
-            toggleContent={<EllipsisVIcon />}
+            toggleContent={<RhUiEllipsisVerticalFillIcon />}
             toggleAriaLabel="Plain dropdown toggle"
           />
         </FlexItem>

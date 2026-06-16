@@ -23,7 +23,7 @@ import {
   ToolbarContent,
   PaginationVariant
 } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
@@ -101,7 +101,7 @@ export const DataListStaticBottomPagination: React.FunctionComponent = () => {
           </OverflowMenuItem>
           <OverflowMenuControl hasAdditionalOptions>
             <MenuToggle aria-label="Toolbar kebab overflow menu" variant="plain">
-              <EllipsisVIcon />
+              <RhUiEllipsisVerticalFillIcon />
             </MenuToggle>
           </OverflowMenuControl>
         </OverflowMenu>

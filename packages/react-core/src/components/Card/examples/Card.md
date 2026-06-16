@@ -19,7 +19,7 @@ ouia: true
 import { Fragment, useState } from 'react';
 import pfLogo from '../../assets/PF-HorizontalLogo-Color.svg';
 import pfLogoSmall from '../../assets/PF-IconLogo.svg';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 
 ## Examples

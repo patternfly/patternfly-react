@@ -12,7 +12,7 @@ import {
   Dropdown,
   DropdownList
 } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export const OverflowMenuBreakpointOnContainerHeight: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -92,7 +92,7 @@ export const OverflowMenuBreakpointOnContainerHeight: React.FunctionComponent = 
                     variant="plain"
                     onClick={onToggle}
                     isExpanded={isOpen}
-                    icon={<EllipsisVIcon />}
+                    icon={<RhUiEllipsisVerticalFillIcon />}
                   />
                 )}
                 isOpen={isOpen}

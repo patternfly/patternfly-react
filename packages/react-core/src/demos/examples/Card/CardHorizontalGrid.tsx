@@ -23,7 +23,7 @@ import {
 import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
 import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export const CardHorizontalGrid: React.FunctionComponent = () => {
   const [isCardExpanded, setIsCardExpanded] = useState(false);
@@ -64,7 +64,7 @@ export const CardHorizontalGrid: React.FunctionComponent = () => {
           onClick={onActionToggle}
           variant="plain"
           aria-label="Horizontal card grid demo kebab toggle"
-          icon={<EllipsisVIcon />}
+          icon={<RhUiEllipsisVerticalFillIcon />}
         />
       )}
     >

@@ -22,7 +22,7 @@ import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export const ToolbarWithFilters: React.FunctionComponent = () => {
   const [inputValue, setInputValue] = useState('');
@@ -231,7 +231,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
               onClick={onKebabToggle}
               variant="plain"
               aria-label="Toolbar with filters example kebab toggle"
-              icon={<EllipsisVIcon />}
+              icon={<RhUiEllipsisVerticalFillIcon />}
             />
           )}
         >

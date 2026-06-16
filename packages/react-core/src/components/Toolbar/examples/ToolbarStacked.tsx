@@ -24,7 +24,7 @@ import {
   ToolbarItem
 } from '@patternfly/react-core';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export const ToolbarStacked: React.FunctionComponent = () => {
   // toggle group - three option menus with labels, two icon buttons, Kebab menu - right aligned
@@ -229,7 +229,7 @@ export const ToolbarStacked: React.FunctionComponent = () => {
                       variant="plain"
                       onClick={onKebabToggle}
                       isExpanded={kebabIsOpen}
-                      icon={<EllipsisVIcon />}
+                      icon={<RhUiEllipsisVerticalFillIcon />}
                     />
                   )}
                   isOpen={kebabIsOpen}

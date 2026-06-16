@@ -14,7 +14,7 @@ For custom use cases, please see the dropdown component suite from [@patternfly/
 import { Fragment, useState, FunctionComponent } from 'react';
 import { Checkbox, Flex, FlexItem } from '@patternfly/react-core';
 import { SimpleDropdown } from '@patternfly/react-templates';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 ## Examples
 

@@ -2,7 +2,7 @@ import { MenuToggle } from '../MenuToggle';
 import { MenuToggleCheckbox } from '../MenuToggleCheckbox';
 import { Badge } from '../../Badge';
 import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
 import styles from '@patternfly/react-styles/css/components/MenuToggle/menu-toggle';
@@ -35,7 +35,7 @@ describe('Old Snapshot tests - remove when refactoring', () => {
   });
 
   test('shows isPlain', () => {
-    const { asFragment } = render(<MenuToggle variant="plain" icon={<EllipsisVIcon />} />);
+    const { asFragment } = render(<MenuToggle variant="plain" icon={<RhUiEllipsisVerticalFillIcon />} />);
     expect(asFragment()).toMatchSnapshot();
   });
 

@@ -30,7 +30,7 @@ import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrap
 
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export const DataListExpandableControlInToolbar: React.FunctionComponent = () => {
   const [expanded, setExpanded] = useState(['ex-toggle1', 'ex-toggle3']);
@@ -188,7 +188,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                         isExpanded={isOpen1}
                         variant="plain"
                         aria-label="Primary content kebab toggle"
-                        icon={<EllipsisVIcon />}
+                        icon={<RhUiEllipsisVerticalFillIcon />}
                       />
                     )}
                   >
@@ -264,7 +264,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                         isExpanded={isOpen2}
                         variant="plain"
                         aria-label="Secondary content kebab toggle"
-                        icon={<EllipsisVIcon />}
+                        icon={<RhUiEllipsisVerticalFillIcon />}
                       />
                     )}
                   >
@@ -340,7 +340,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                         isExpanded={isOpen3}
                         variant="plain"
                         aria-label="Tertiary content kebab toggle"
-                        icon={<EllipsisVIcon />}
+                        icon={<RhUiEllipsisVerticalFillIcon />}
                       />
                     )}
                   >
