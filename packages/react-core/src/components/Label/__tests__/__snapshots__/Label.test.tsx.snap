@@ -31,7 +31,7 @@ exports[`Label editable label 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-v6-svg"
+            class="pf-v6-svg pf-v6-icon-rh-microns"
             fill="currentColor"
             height="1em"
             role="img"
@@ -168,7 +168,7 @@ exports[`Label label with close button 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-v6-svg"
+            class="pf-v6-svg pf-v6-icon-rh-microns"
             fill="currentColor"
             height="1em"
             role="img"
@@ -216,7 +216,7 @@ exports[`Label label with close button and outline variant 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="pf-v6-svg"
+            class="pf-v6-svg pf-v6-icon-rh-microns"
             fill="currentColor"
             height="1em"
             role="img"
@@ -380,6 +380,42 @@ exports[`Label label with orange color with outline variant 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Label label with orangered color 1`] = `
+<DocumentFragment>
+  <span
+    class="pf-v6-c-label pf-m-orangered pf-m-filled"
+  >
+    <span
+      class="pf-v6-c-label__content"
+    >
+      <span
+        class="pf-v6-c-label__text"
+      >
+        Something
+      </span>
+    </span>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`Label label with orangered color with outline variant 1`] = `
+<DocumentFragment>
+  <span
+    class="pf-v6-c-label pf-m-orangered pf-m-outline"
+  >
+    <span
+      class="pf-v6-c-label__content"
+    >
+      <span
+        class="pf-v6-c-label__text"
+      >
+        Something
+      </span>
+    </span>
+  </span>
+</DocumentFragment>
+`;
+
 exports[`Label label with purple color 1`] = `
 <DocumentFragment>
   <span
@@ -438,42 +474,6 @@ exports[`Label label with red color with outline variant 1`] = `
 <DocumentFragment>
   <span
     class="pf-v6-c-label pf-m-red pf-m-outline"
-  >
-    <span
-      class="pf-v6-c-label__content"
-    >
-      <span
-        class="pf-v6-c-label__text"
-      >
-        Something
-      </span>
-    </span>
-  </span>
-</DocumentFragment>
-`;
-
-exports[`Label label with orangered color 1`] = `
-<DocumentFragment>
-  <span
-    class="pf-v6-c-label pf-m-orangered pf-m-filled"
-  >
-    <span
-      class="pf-v6-c-label__content"
-    >
-      <span
-        class="pf-v6-c-label__text"
-      >
-        Something
-      </span>
-    </span>
-  </span>
-</DocumentFragment>
-`;
-
-exports[`Label label with orangered color with outline variant 1`] = `
-<DocumentFragment>
-  <span
-    class="pf-v6-c-label pf-m-orangered pf-m-outline"
   >
     <span
       class="pf-v6-c-label__content"

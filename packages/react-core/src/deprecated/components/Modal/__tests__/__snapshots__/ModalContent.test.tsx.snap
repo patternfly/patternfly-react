@@ -34,7 +34,7 @@ exports[`Modal Content Test description 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-v6-svg"
+                class="pf-v6-svg pf-v6-icon-rh-microns"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -113,7 +113,7 @@ exports[`Modal Content Test isOpen 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-v6-svg"
+                class="pf-v6-svg pf-v6-icon-rh-microns"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -187,7 +187,7 @@ exports[`Modal Content Test only body 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-v6-svg"
+                class="pf-v6-svg pf-v6-icon-rh-microns"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -261,7 +261,7 @@ exports[`Modal Content Test with footer 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-v6-svg"
+                class="pf-v6-svg pf-v6-icon-rh-microns"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -340,7 +340,7 @@ exports[`Modal Content Test with onclose 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-v6-svg"
+                class="pf-v6-svg pf-v6-icon-rh-microns"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -419,7 +419,7 @@ exports[`Modal Content test without footer 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-v6-svg"
+                class="pf-v6-svg pf-v6-icon-rh-microns"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -493,7 +493,7 @@ exports[`Modal Test with custom footer 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-v6-svg"
+                class="pf-v6-svg pf-v6-icon-rh-microns"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -576,7 +576,7 @@ exports[`Modal Test with custom header 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-v6-svg"
+                class="pf-v6-svg pf-v6-icon-rh-microns"
                 fill="currentColor"
                 height="1em"
                 role="img"

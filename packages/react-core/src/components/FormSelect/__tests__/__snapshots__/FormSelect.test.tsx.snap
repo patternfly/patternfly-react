@@ -28,7 +28,7 @@ exports[`FormSelect Disabled FormSelect input  1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-v6-svg"
+          class="pf-v6-svg pf-v6-icon-rh-microns"
           fill="currentColor"
           height="1em"
           role="img"
@@ -72,7 +72,7 @@ exports[`FormSelect FormSelect input with aria-label does not generate console e
       >
         <svg
           aria-hidden="true"
-          class="pf-v6-svg"
+          class="pf-v6-svg pf-v6-icon-rh-microns"
           fill="currentColor"
           height="1em"
           role="img"
@@ -117,7 +117,7 @@ exports[`FormSelect FormSelect input with id does not generate console error 1`]
       >
         <svg
           aria-hidden="true"
-          class="pf-v6-svg"
+          class="pf-v6-svg pf-v6-icon-rh-microns"
           fill="currentColor"
           height="1em"
           role="img"
@@ -160,7 +160,7 @@ exports[`FormSelect FormSelect input with no aria-label or id generates console 
       >
         <svg
           aria-hidden="true"
-          class="pf-v6-svg"
+          class="pf-v6-svg pf-v6-icon-rh-microns"
           fill="currentColor"
           height="1em"
           role="img"
@@ -250,7 +250,7 @@ exports[`FormSelect Grouped FormSelect input 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-v6-svg"
+          class="pf-v6-svg pf-v6-icon-rh-microns"
           fill="currentColor"
           height="1em"
           role="img"
@@ -332,7 +332,7 @@ exports[`FormSelect Simple FormSelect input 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-v6-svg"
+          class="pf-v6-svg pf-v6-icon-rh-microns"
           fill="currentColor"
           height="1em"
           role="img"
@@ -376,7 +376,7 @@ exports[`FormSelect invalid FormSelect input 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-v6-svg"
+          class="pf-v6-svg pf-v6-icon-rh-ui"
           fill="currentColor"
           height="1em"
           role="img"
@@ -393,7 +393,7 @@ exports[`FormSelect invalid FormSelect input 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-v6-svg"
+          class="pf-v6-svg pf-v6-icon-rh-microns"
           fill="currentColor"
           height="1em"
           role="img"
@@ -437,7 +437,7 @@ exports[`FormSelect validated success FormSelect input 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-v6-svg"
+          class="pf-v6-svg pf-v6-icon-rh-ui"
           fill="currentColor"
           height="1em"
           role="img"
@@ -454,7 +454,7 @@ exports[`FormSelect validated success FormSelect input 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-v6-svg"
+          class="pf-v6-svg pf-v6-icon-rh-microns"
           fill="currentColor"
           height="1em"
           role="img"
@@ -498,7 +498,7 @@ exports[`FormSelect validated warning FormSelect input 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-v6-svg"
+          class="pf-v6-svg pf-v6-icon-rh-ui"
           fill="currentColor"
           height="1em"
           role="img"
@@ -515,7 +515,7 @@ exports[`FormSelect validated warning FormSelect input 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-v6-svg"
+          class="pf-v6-svg pf-v6-icon-rh-microns"
           fill="currentColor"
           height="1em"
           role="img"

@@ -60,7 +60,7 @@ exports[`TextInput invalid text input 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-v6-svg"
+          class="pf-v6-svg pf-v6-icon-rh-ui"
           fill="currentColor"
           height="1em"
           role="img"
@@ -155,7 +155,7 @@ exports[`TextInput validated text input error 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-v6-svg"
+          class="pf-v6-svg pf-v6-icon-rh-ui"
           fill="currentColor"
           height="1em"
           role="img"

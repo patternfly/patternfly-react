@@ -290,7 +290,7 @@ exports[`Progress variant danger 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-v6-svg"
+          class="pf-v6-svg pf-v6-icon-rh-ui"
           fill="currentColor"
           height="1em"
           role="img"
@@ -343,7 +343,7 @@ exports[`Progress variant success 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-v6-svg"
+          class="pf-v6-svg pf-v6-icon-rh-ui"
           fill="currentColor"
           height="1em"
           role="img"
@@ -396,7 +396,7 @@ exports[`Progress variant warning 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-v6-svg"
+          class="pf-v6-svg pf-v6-icon-rh-ui"
           fill="currentColor"
           height="1em"
           role="img"

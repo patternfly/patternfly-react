@@ -19,7 +19,7 @@ exports[`Matches snapshot 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="pf-v6-svg"
+          class="pf-v6-svg pf-v6-icon-rh-microns"
           fill="currentColor"
           height="1em"
           role="img"

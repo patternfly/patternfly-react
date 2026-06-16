@@ -46,7 +46,7 @@ exports[`Drawer expands from bottom 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-v6-svg"
+                    class="pf-v6-svg pf-v6-icon-rh-microns"
                     fill="currentColor"
                     height="1em"
                     role="img"
@@ -138,7 +138,7 @@ exports[`Drawer has resizable callback and id 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      class="pf-v6-svg"
+                      class="pf-v6-svg pf-v6-icon-rh-microns"
                       fill="currentColor"
                       height="1em"
                       role="img"
@@ -232,7 +232,7 @@ exports[`Drawer has resizable css and color variants 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      class="pf-v6-svg"
+                      class="pf-v6-svg pf-v6-icon-rh-microns"
                       fill="currentColor"
                       height="1em"
                       role="img"
@@ -362,7 +362,7 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = false 1`] 
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-v6-svg"
+                    class="pf-v6-svg pf-v6-icon-rh-microns"
                     fill="currentColor"
                     height="1em"
                     role="img"
@@ -435,7 +435,7 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = true 1`] =
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-v6-svg"
+                    class="pf-v6-svg pf-v6-icon-rh-microns"
                     fill="currentColor"
                     height="1em"
                     role="img"
@@ -508,7 +508,7 @@ exports[`Drawer isExpanded = true and isInline = true and isStatic = false 1`] =
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-v6-svg"
+                    class="pf-v6-svg pf-v6-icon-rh-microns"
                     fill="currentColor"
                     height="1em"
                     role="img"
