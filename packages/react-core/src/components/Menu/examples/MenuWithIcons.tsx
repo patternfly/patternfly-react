@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import RhUiBranchIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-icon';
 import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
@@ -17,7 +17,7 @@ export const MenuWithIcons: React.FunctionComponent = () => {
     <Menu onSelect={onSelect} activeItemId={activeItem}>
       <MenuContent>
         <MenuList>
-          <MenuItem icon={<CodeBranchIcon />} itemId={0}>
+          <MenuItem icon={<RhUiBranchIcon />} itemId={0}>
             From git
           </MenuItem>
           <MenuItem icon={<LayerGroupIcon />} itemId={1}>

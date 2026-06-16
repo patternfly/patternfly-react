@@ -4,7 +4,7 @@ section: patterns
 ---
 
 import { Fragment, useState } from 'react';
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import RhUiBranchIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-icon';
 import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';

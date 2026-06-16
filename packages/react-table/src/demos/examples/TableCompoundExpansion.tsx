@@ -16,8 +16,8 @@ import {
   SelectOption,
   PaginationVariant
 } from '@patternfly/react-core';
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
+import RhUiBranchIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
@@ -226,7 +226,7 @@ export const TableCompoundExpansion: React.FunctionComponent = () => {
                   >
                     <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                       <FlexItem>
-                        <CodeBranchIcon key="icon" />
+                        <RhUiBranchIcon key="icon" />
                       </FlexItem>
                       <FlexItem>{repo.branches}</FlexItem>
                     </Flex>

@@ -24,8 +24,8 @@ import {
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
+import RhUiBranchIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
 import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
@@ -104,7 +104,7 @@ export const DataListBasic: React.FunctionComponent = () => {
                           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                             <FlexItem>
                               <Icon>
-                                <CodeBranchIcon />
+                                <RhUiBranchIcon />
                               </Icon>
                               10 <span className="pf-v6-screen-reader">Branches</span>
                             </FlexItem>
@@ -155,7 +155,7 @@ export const DataListBasic: React.FunctionComponent = () => {
                           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                             <FlexItem>
                               <Icon>
-                                <CodeBranchIcon />
+                                <RhUiBranchIcon />
                               </Icon>
                               5 <span className="pf-v6-screen-reader">Branches</span>
                             </FlexItem>
@@ -253,7 +253,7 @@ export const DataListBasic: React.FunctionComponent = () => {
                           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                             <FlexItem>
                               <Icon>
-                                <CodeBranchIcon />
+                                <RhUiBranchIcon />
                               </Icon>
                               10
                               <span className="pf-v6-screen-reader">Branches</span>
@@ -305,7 +305,7 @@ export const DataListBasic: React.FunctionComponent = () => {
                           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                             <FlexItem>
                               <Icon>
-                                <CodeBranchIcon />
+                                <RhUiBranchIcon />
                               </Icon>
                               5 <span className="pf-v6-screen-reader">Branches</span>
                             </FlexItem>

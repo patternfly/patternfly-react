@@ -2,8 +2,8 @@ import { Fragment, useState } from 'react';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 import { compoundExpand } from '@patternfly/react-table';
 
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
+import RhUiBranchIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
@@ -76,7 +76,7 @@ export const LegacyTableCompoundExpandable: React.FunctionComponent = () => {
         {
           title: (
             <Fragment>
-              <CodeBranchIcon key="icon" /> {repo.branches}
+              <RhUiBranchIcon key="icon" /> {repo.branches}
             </Fragment>
           ),
           props: {

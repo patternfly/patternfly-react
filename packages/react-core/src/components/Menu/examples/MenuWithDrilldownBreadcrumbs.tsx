@@ -20,7 +20,7 @@ import {
   MenuToggleElement
 } from '@patternfly/react-core';
 import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import RhUiBranchIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-icon';
 import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
 import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
@@ -440,7 +440,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
               onClick={() => setBreadcrumb(addStorageBreadcrumb)}
               drilldownMenu={
                 <DrilldownMenu id="breadcrumbs-drilldownMenuStorage">
-                  <MenuItem icon={<CodeBranchIcon />} itemId="git">
+                  <MenuItem icon={<RhUiBranchIcon />} itemId="git">
                     From git
                   </MenuItem>
                   <MenuItem icon={<LayerGroupIcon />} itemId="container">

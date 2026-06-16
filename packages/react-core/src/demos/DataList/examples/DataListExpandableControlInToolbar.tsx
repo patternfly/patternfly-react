@@ -28,7 +28,7 @@ import {
 
 import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
 
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import RhUiBranchIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-icon';
 import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
@@ -160,7 +160,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                 <DataListItemCells
                   dataListCells={[
                     <DataListCell isIcon key="icon">
-                      <CodeBranchIcon />
+                      <RhUiBranchIcon />
                     </DataListCell>,
                     <DataListCell key="primary content">
                       <div id="ex-item1">Primary content</div>
@@ -237,7 +237,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                 <DataListItemCells
                   dataListCells={[
                     <DataListCell isIcon key="icon">
-                      <CodeBranchIcon />
+                      <RhUiBranchIcon />
                     </DataListCell>,
                     <DataListCell key="secondary content">
                       <div id="ex-item2">Secondary content</div>
@@ -313,7 +313,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                 <DataListItemCells
                   dataListCells={[
                     <DataListCell isIcon key="icon">
-                      <CodeBranchIcon />
+                      <RhUiBranchIcon />
                     </DataListCell>,
                     <DataListCell key="tertiary content">
                       <div id="ex-item3">Tertiary content</div>
