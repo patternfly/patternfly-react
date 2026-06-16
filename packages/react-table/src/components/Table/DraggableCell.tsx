@@ -1,4 +1,4 @@
-import GripVerticalIcon from '@patternfly/react-icons/dist/esm/icons/grip-vertical-icon';
+import RhUiGripVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-grip-vertical-fill-icon';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 
 export interface DraggableCellProps {
@@ -23,7 +23,7 @@ export const DraggableCell: React.FunctionComponent<DraggableCellProps> = ({
     aria-label={ariaLabel || `Draggable row draggable button`}
     onClick={onClick}
     {...props}
-    icon={<GripVerticalIcon />}
+    icon={<RhUiGripVerticalFillIcon />}
   />
 );
 
