@@ -26,7 +26,7 @@ import RhUiClipboardFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
+import RhUiTableIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-table-icon';
 import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
 import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
