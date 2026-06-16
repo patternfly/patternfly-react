@@ -9,7 +9,7 @@ import {
   SelectOption as NewSelectOption
 } from '@patternfly/react-core/dist/esm/components/Select';
 
-import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
+import RhUiSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sort-down-large-to-small-icon';
 
 interface Repository {
   name: string;
@@ -137,7 +137,7 @@ export const LegacyTableSortableCustom: React.FunctionComponent = () => {
                   isExpanded={isSortDropdownOpen}
                   variant="plain"
                   aria-label="Sort columns"
-                  icon={<SortAmountDownIcon />}
+                  icon={<RhUiSortDownLargeToSmallIcon />}
                 />
               )}
             >
