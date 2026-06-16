@@ -16,10 +16,6 @@ propComponents:
 ---
 
 import { useRef, useState, useEffect } from 'react';
-import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
-import OutlinedPlusSquare from '@patternfly/react-icons/dist/esm/icons/outlined-plus-square-icon';
-import RhUiCopyIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-icon';
-import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 
 import './compass.css';
 
