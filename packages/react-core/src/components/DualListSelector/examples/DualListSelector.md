@@ -20,7 +20,7 @@ import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import RhUiSortDownSmallToLargeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sort-down-small-to-large-icon';
+import RhMicronsSortDownSmallToLargeIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-small-to-large-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import { DragDropSort, DragDropContainer, Droppable as NewDroppable } from '@patternfly/react-drag-drop';
