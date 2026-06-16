@@ -26,7 +26,7 @@ import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-ico
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
-import PficonSortCommonDescIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-desc-icon';
+import RhUiSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sort-down-large-to-small-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
@@ -133,7 +133,7 @@ export const DualListSelectorWithActionsDemo: React.FunctionComponent = () => {
         return direction === 'asc' ? 'ascending' : 'descending';
       },
       getIcon(direction: SortDirection) {
-        return direction === 'asc' ? <PficonSortCommonAscIcon /> : <PficonSortCommonDescIcon />;
+        return direction === 'asc' ? <PficonSortCommonAscIcon /> : <RhUiSortDownLargeToSmallIcon />;
       }
     };
 
