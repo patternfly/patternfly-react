@@ -91,6 +91,38 @@ test.each(colors)('Renders with passed color prop: %s', (color) => {
   expect(screen.getByText('Test')).toHaveClass(styles.modifiers[color]);
 });
 
+test('Passes alt prop as aria-label when initials are passed', () => {
+  render(<Avatar alt="User avatar" initials="AB" />);
+  expect(screen.getByRole('img')).toHaveAccessibleName('User avatar');
+});
+
+test('Passes alt prop as aria-label when children are passed', () => {
+  render(<Avatar alt="User avatar">Test</Avatar>);
+  expect(screen.getByRole('img')).toHaveAccessibleName('User avatar');
+});
+
+test('Applies aria-hidden="true" when alt is empty string and initials are passed', () => {
+  render(<Avatar alt="" initials="AB" />);
+  expect(screen.getByRole('img', { hidden: true })).toHaveAttribute('aria-hidden', 'true');
+});
+
+test('Applies aria-hidden="true" when alt is empty string and children are passed', () => {
+  render(<Avatar alt="">Test</Avatar>);
+  expect(screen.getByRole('img', { hidden: true })).toHaveAttribute('aria-hidden', 'true');
+});
+
+test('Does not apply aria-label attribute when alt is empty string and initials are passed', () => {
+  render(<Avatar alt="" initials="AB" />);
+  const avatar = screen.getByRole('img', { hidden: true });
+  expect(avatar).not.toHaveAttribute('aria-label');
+});
+
+test('Does not apply aria-label attribute when alt is empty string and children are passed', () => {
+  render(<Avatar alt="">Test</Avatar>);
+  const avatar = screen.getByRole('img', { hidden: true });
+  expect(avatar).not.toHaveAttribute('aria-label');
+});
+
 test('Matches the snapshot', () => {
   const { asFragment } = render(<Avatar alt="avatar" aria-label="Avatar test" src="test.png" className="test-class" />);
 

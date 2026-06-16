@@ -5,13 +5,15 @@ export interface AvatarProps extends React.DetailedHTMLProps<
   React.ImgHTMLAttributes<HTMLImageElement>,
   HTMLImageElement
 > {
-  /** Content rendered inside the avatar. */
+  /** Content rendered inside the avatar, such as custom svg's or icons. */
   children?: React.ReactNode;
   /** Additional classes added to the avatar. */
   className?: string;
-  /** Attribute that specifies the URL of the image for the avatar. */
+  /** Specifies the URL of the image for the avatar. */
   src?: string;
-  /** Attribute that specifies the alternate text of the image for the avatar. Will set aria-label avatars using children or initials. */
+  /** Specifies the alternate text of the image for the avatar. Will instead set the aria-label when using children or initials; to hide the avatar
+   * from assistive technologies when passing children or initials, pass an empty string to the alt prop.
+   */
   alt: string;
   /** Flag to indicate the avatar should have a border. */
   isBordered?: boolean;
@@ -35,13 +37,15 @@ export const Avatar: React.FunctionComponent<AvatarProps> = ({
   ...props
 }: AvatarProps) => {
   const avatarClasses = css(styles.avatar, styles.modifiers[size], isBordered && styles.modifiers.bordered, className);
+  const isAltEmptyString = alt === '';
 
   if (initials || children) {
     return (
       <div
         className={css(avatarClasses, color && styles.modifiers.colorful, color && styles.modifiers[color])}
         role="img"
-        aria-label={alt}
+        aria-hidden={isAltEmptyString || undefined}
+        {...(!isAltEmptyString && { 'aria-label': alt })}
         {...props}
       >
         {initials && (
