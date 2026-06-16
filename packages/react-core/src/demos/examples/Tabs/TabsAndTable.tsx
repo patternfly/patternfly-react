@@ -53,7 +53,7 @@ import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
-import RhUiSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sort-down-large-to-small-icon';
+import RhMicronsSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-large-to-small-icon';
 import { KeyTypes } from '../../../helpers';
 import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
 
@@ -184,7 +184,7 @@ export const TablesAndTabs = () => {
           </ToolbarItem>
         </ToolbarToggleGroup>
         <ToolbarItem>
-          <MenuToggle variant="plain" aria-label="Sort columns" icon={<RhUiSortDownLargeToSmallIcon />} />
+          <MenuToggle variant="plain" aria-label="Sort columns" icon={<RhMicronsSortDownLargeToSmallIcon />} />
         </ToolbarItem>
         <OverflowMenu breakpoint="md">
           <OverflowMenuContent>

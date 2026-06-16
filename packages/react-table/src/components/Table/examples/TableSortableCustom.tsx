@@ -11,7 +11,7 @@ import {
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
-import RhUiSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sort-down-large-to-small-icon';
+import RhMicronsSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-large-to-small-icon';
 
 interface Repository {
   name: string;
@@ -117,7 +117,7 @@ export const TableSortableCustom: React.FunctionComponent = () => {
                   isExpanded={isSortDropdownOpen}
                   variant="plain"
                   aria-label="Sort columns"
-                  icon={<RhUiSortDownLargeToSmallIcon />}
+                  icon={<RhMicronsSortDownLargeToSmallIcon />}
                 />
               )}
             >
