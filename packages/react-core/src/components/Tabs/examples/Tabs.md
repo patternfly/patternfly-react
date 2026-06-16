@@ -23,7 +23,7 @@ import BoxIcon from '@patternfly/react-icons/dist/esm/icons/box-icon';
 import DatabaseIcon from '@patternfly/react-icons/dist/esm/icons/database-icon';
 import ServerIcon from '@patternfly/react-icons/dist/esm/icons/server-icon';
 import LaptopIcon from '@patternfly/react-icons/dist/esm/icons/laptop-icon';
-import ProjectDiagramIcon from '@patternfly/react-icons/dist/esm/icons/project-diagram-icon';
+import RhUiInfrastructureFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-infrastructure-fill-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
