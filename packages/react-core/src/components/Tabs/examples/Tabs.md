@@ -19,7 +19,7 @@ ouia: true
 
 import { createRef, Fragment, useEffect, useRef, useState } from 'react';
 import RhUiUsersFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-users-fill-icon';
-import BoxIcon from '@patternfly/react-icons/dist/esm/icons/box-icon';
+import RhUiContainerFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-container-fill-icon';
 import DatabaseIcon from '@patternfly/react-icons/dist/esm/icons/database-icon';
 import ServerIcon from '@patternfly/react-icons/dist/esm/icons/server-icon';
 import LaptopIcon from '@patternfly/react-icons/dist/esm/icons/laptop-icon';
