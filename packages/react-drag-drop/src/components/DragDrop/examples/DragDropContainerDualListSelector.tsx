@@ -10,8 +10,8 @@ import { DragDropContainer, DraggableObject, Droppable as NewDroppable } from '@
 
 import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-left-icon';
 import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
-import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
 import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
+import RhMicronsDoubleCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-right-icon';
 
 export const DragDropContainerDualListSelector: React.FunctionComponent = () => {
   const [ignoreNextOptionSelect, setIgnoreNextOptionSelect] = useState(false);
@@ -156,7 +156,7 @@ export const DragDropContainerDualListSelector: React.FunctionComponent = () => 
             onClick={() => moveAll(true)}
             aria-label="Add all"
           >
-            <AngleDoubleRightIcon />
+            <RhMicronsDoubleCaretRightIcon />
           </DualListSelectorControl>
           <DualListSelectorControl
             isDisabled={chosenOptions.length === 0}

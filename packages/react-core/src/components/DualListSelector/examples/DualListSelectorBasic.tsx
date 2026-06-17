@@ -9,7 +9,7 @@ import {
 } from '@patternfly/react-core';
 import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-left-icon';
 import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
-import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
+import RhMicronsDoubleCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-right-icon';
 import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 
 interface Option {
@@ -111,7 +111,7 @@ export const DualListSelectorBasic: React.FunctionComponent = () => {
           isDisabled={availableOptions.length === 0}
           onClick={() => moveAll(true)}
           aria-label="Add all"
-          icon={<AngleDoubleRightIcon />}
+          icon={<RhMicronsDoubleCaretRightIcon />}
         />
         <DualListSelectorControl
           isDisabled={chosenOptions.length === 0}
