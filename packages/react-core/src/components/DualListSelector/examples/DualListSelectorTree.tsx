@@ -16,7 +16,7 @@ import {
   EmptyStateActions
 } from '@patternfly/react-core';
 import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-left-icon';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
+import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
@@ -308,7 +308,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
           onClick={() => moveChecked(false)}
           isDisabled={!checkedLeafIds.filter((x) => visibleChosenLeafIds.includes(x)).length}
           aria-label="Remove selected"
-          icon={<AngleLeftIcon />}
+          icon={<RhMicronsCaretLeftIcon />}
         />
       </DualListSelectorControlsWrapper>
       {buildPane(true)}

@@ -22,7 +22,7 @@ import {
   MenuToggleElement
 } from '@patternfly/react-core';
 import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-left-icon';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
+import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import RhUiSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sort-down-large-to-small-icon';
@@ -312,7 +312,7 @@ export const DualListSelectorWithActionsDemo: React.FunctionComponent = () => {
             onClick={() => moveSelected(false)}
             isDisabled={!chosenOptions.some((option) => option.selected) || isDisabled}
             aria-label="Remove selected"
-            icon={<AngleLeftIcon />}
+            icon={<RhMicronsCaretLeftIcon />}
           />
         </DualListSelectorControlsWrapper>
         <DualListSelectorPane
