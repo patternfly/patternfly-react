@@ -47,7 +47,7 @@ import translationsHe from './examples/translations.he.json';
 import AlignRightIcon from '@patternfly/react-icons/dist/esm/icons/align-right-icon';
 import ToolsIcon from '@patternfly/react-icons/dist/esm/icons/tools-icon';
 import ClockIcon from '@patternfly/react-icons/dist/esm/icons/clock-icon';
-import WalkingIcon from '@patternfly/react-icons/dist/esm/icons/walking-icon';
+import RhUiRunningIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-running-icon';
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
 import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
@@ -184,7 +184,7 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
             color={LabelColor.green}
             icon={
               <Icon shouldMirrorRTL>
-                <WalkingIcon />
+                <RhUiRunningIcon />
               </Icon>
             }
           >
