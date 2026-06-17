@@ -1,6 +1,6 @@
 import styles from '@patternfly/react-styles/css/components/HelperText/helper-text';
 import { css } from '@patternfly/react-styles';
-import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
+import RhUiMinusIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-minus-icon';
 import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
 import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
@@ -37,7 +37,7 @@ export interface HelperTextItemProps extends React.HTMLProps<HTMLDivElement | HT
 }
 
 const defaultVariantIcons = {
-  indeterminate: <MinusIcon />,
+  indeterminate: <RhUiMinusIcon />,
   warning: <RhUiWarningFillIcon />,
   success: <RhUiCheckCircleFillIcon />,
   error: <RhUiErrorFillIcon />
