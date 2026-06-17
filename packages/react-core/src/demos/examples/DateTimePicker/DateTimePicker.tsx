@@ -13,7 +13,7 @@ import {
   MenuToggleElement
 } from '@patternfly/react-core';
 import RhUiCalendarIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-calendar-icon';
-import OutlinedClockIcon from '@patternfly/react-icons/dist/esm/icons/outlined-clock-icon';
+import RhUiClockIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clock-icon';
 
 export const DateTimePicker: React.FunctionComponent = () => {
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
@@ -65,7 +65,7 @@ export const DateTimePicker: React.FunctionComponent = () => {
           onClick={onToggleTime}
           isExpanded={isTimeOpen}
           aria-label="Time picker"
-          icon={<OutlinedClockIcon />}
+          icon={<RhUiClockIcon />}
         />
       )}
     >
