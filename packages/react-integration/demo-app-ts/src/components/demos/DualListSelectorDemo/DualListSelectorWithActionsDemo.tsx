@@ -24,7 +24,7 @@ import {
 import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-left-icon';
 import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import RhUiSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sort-down-large-to-small-icon';
 import RhMicronsSortDownSmallToLargeIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-small-to-large-icon';
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
@@ -299,7 +299,7 @@ export const DualListSelectorWithActionsDemo: React.FunctionComponent = () => {
             isDisabled={!availableOptions.some((option) => option.selected) || isDisabled}
             onClick={() => moveSelected(true)}
             aria-label="Add selected"
-            icon={<AngleRightIcon />}
+            icon={<RhMicronsCaretRightIcon />}
           />
           <DualListSelectorControl
             isDisabled={availableOptions.length === 0 || isDisabled}

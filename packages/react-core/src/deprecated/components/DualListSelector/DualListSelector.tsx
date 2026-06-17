@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-left-icon';
 import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import { DualListSelectorPane } from './DualListSelectorPane';
 import { GenerateId, PickOptional } from '../../../helpers';
 import { DualListSelectorTreeItemData } from './DualListSelectorTree';
@@ -726,7 +726,7 @@ class DualListSelector extends Component<DualListSelectorProps, DualListSelector
                       tooltipContent={addSelectedTooltip}
                       tooltipProps={addSelectedTooltipProps}
                     >
-                      <AngleRightIcon />
+                      <RhMicronsCaretRightIcon />
                     </DualListSelectorControl>
                     <DualListSelectorControl
                       isDisabled={availableOptions.length === 0 || isDisabled}

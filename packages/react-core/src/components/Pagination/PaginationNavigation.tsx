@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Pagination/paginatio
 import { css } from '@patternfly/react-styles';
 import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
 import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-left-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
 import { Button, ButtonVariant } from '../Button';
 import { TextInput } from '../TextInput';
@@ -247,7 +247,7 @@ class PaginationNavigation extends Component<PaginationNavigationProps, Paginati
               this.handleNewPage(event, newPage);
               this.setState({ userInputPage: newPage });
             }}
-            icon={<AngleRightIcon />}
+            icon={<RhMicronsCaretRightIcon />}
           />
         </div>
         {!isCompact && (

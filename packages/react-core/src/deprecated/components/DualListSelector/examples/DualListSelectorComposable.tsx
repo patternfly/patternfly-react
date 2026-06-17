@@ -20,7 +20,7 @@ import {
 import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-left-icon';
 import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import RhMicronsSortDownSmallToLargeIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-small-to-large-icon';
 import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 
@@ -198,7 +198,7 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
           aria-label="Add selected"
           tooltipContent="Add selected"
         >
-          <AngleRightIcon />
+          <RhMicronsCaretRightIcon />
         </DLSControlDeprecated>
         <DLSControlDeprecated
           isDisabled={availableOptions.length === 0}
