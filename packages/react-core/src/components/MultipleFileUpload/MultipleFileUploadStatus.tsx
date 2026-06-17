@@ -5,7 +5,7 @@ import { ExpandableSection } from '../ExpandableSection';
 import { useSSRSafeId } from '../../helpers';
 import RhUiInProgressIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-in-progress-icon';
 import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
-import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
+import RhUiCloseCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-close-circle-fill-icon';
 
 /** Acts as an expandable container for all uploaded file statuses.
  * An optional text and/or icon can also be passed into this sub-component.
@@ -41,7 +41,7 @@ export const MultipleFileUploadStatus: React.FunctionComponent<MultipleFileUploa
   useEffect(() => {
     switch (statusToggleIcon) {
       case 'danger':
-        setIcon(<TimesCircleIcon />);
+        setIcon(<RhUiCloseCircleFillIcon />);
         break;
       case 'success':
         setIcon(<RhUiCheckCircleFillIcon />);

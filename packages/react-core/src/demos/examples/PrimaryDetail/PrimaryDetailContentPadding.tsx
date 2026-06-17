@@ -46,7 +46,7 @@ import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-u
 import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
-import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
+import RhUiCloseCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-close-circle-fill-icon';
 
 interface SelectOptionType extends Omit<SelectOptionProps, 'children'> {
   label: string;
@@ -293,7 +293,7 @@ export const PrimaryDetailContentPadding: React.FunctionComponent = () => {
                         <RhUiWarningFillIcon /> 5
                       </FlexItem>
                       <FlexItem>
-                        <TimesCircleIcon /> 5
+                        <RhUiCloseCircleFillIcon /> 5
                       </FlexItem>
                       <FlexItem>Updated 2 days ago</FlexItem>
                     </Flex>
@@ -390,7 +390,7 @@ export const PrimaryDetailContentPadding: React.FunctionComponent = () => {
                         <RhUiWarningFillIcon /> 5
                       </FlexItem>
                       <FlexItem>
-                        <TimesCircleIcon /> 5
+                        <RhUiCloseCircleFillIcon /> 5
                       </FlexItem>
                       <FlexItem>Updated 2 days ago</FlexItem>
                     </Flex>
