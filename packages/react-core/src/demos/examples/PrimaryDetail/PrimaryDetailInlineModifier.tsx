@@ -44,10 +44,9 @@ import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-bra
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 import RhUiCloseCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-close-circle-fill-icon';
-
+import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
 interface SelectOptionType extends Omit<SelectOptionProps, 'children'> {
   label: string;
 }
@@ -176,7 +175,7 @@ export const PrimaryDetailInlineModifier: React.FunctionComponent = () => {
   );
 
   const ToolbarItems = (
-    <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+    <ToolbarToggleGroup toggleIcon={<RhUiFilterFillIcon />} breakpoint="xl">
       {toggleGroupItems}
     </ToolbarToggleGroup>
   );

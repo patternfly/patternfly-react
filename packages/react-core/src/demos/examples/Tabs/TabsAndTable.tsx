@@ -52,8 +52,8 @@ import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import RhMicronsSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-large-to-small-icon';
+import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
 import { KeyTypes } from '../../../helpers';
 import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
 
@@ -178,7 +178,7 @@ export const TablesAndTabs = () => {
   const toolbar = (
     <Toolbar id="page-layout-table-column-management-action-toolbar-top">
       <ToolbarContent>
-        <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+        <ToolbarToggleGroup toggleIcon={<RhUiFilterFillIcon />} breakpoint="xl">
           <ToolbarItem>
             <MenuToggle>Name</MenuToggle>
           </ToolbarItem>

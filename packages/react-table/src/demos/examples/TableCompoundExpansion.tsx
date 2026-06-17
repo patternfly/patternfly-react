@@ -20,7 +20,7 @@ import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon
 import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
 
 export const TableCompoundExpansion: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
@@ -93,7 +93,7 @@ export const TableCompoundExpansion: React.FunctionComponent = () => {
                 ref={toggleRef}
                 onClick={() => setIsSelectOpen(!isSelectOpen)}
                 isExpanded={isSelectOpen}
-                icon={<FilterIcon />}
+                icon={<RhUiFilterFillIcon />}
               >
                 Status
               </MenuToggle>

@@ -29,7 +29,7 @@ Button,
 Bullseye,
 ToolbarToggleGroup
 } from '@patternfly/react-core';
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
 import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 

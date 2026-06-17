@@ -9,9 +9,9 @@ import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-u
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import RhMicronsSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-large-to-small-icon';
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
 import display from '@patternfly/react-styles/css/utilities/Display/display';
 import sizing from '@patternfly/react-styles/css/utilities/Sizing/sizing';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';

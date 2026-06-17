@@ -18,7 +18,7 @@ import {
   SelectList,
   SelectOption
 } from '@patternfly/react-core';
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
 import RhUiSyncIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sync-icon';
@@ -205,7 +205,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
 
   const toolbarItems = (
     <Fragment>
-      <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+      <ToolbarToggleGroup toggleIcon={<RhUiFilterFillIcon />} breakpoint="xl">
         {toggleGroupItems}
       </ToolbarToggleGroup>
       <ToolbarGroup variant="action-group-plain">
