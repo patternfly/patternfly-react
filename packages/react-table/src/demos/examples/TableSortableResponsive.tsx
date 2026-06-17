@@ -31,7 +31,7 @@ import {
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
-import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
+import RhUiSyncIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sync-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import RhMicronsSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-large-to-small-icon';
 import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
@@ -217,7 +217,7 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
             <Button aria-label="Clone" variant="plain" icon={<RhUiCopyFillIcon />} />
           </ToolbarItem>
           <ToolbarItem>
-            <Button aria-label="Sync" variant="plain" icon={<SyncIcon />} />
+            <Button aria-label="Sync" variant="plain" icon={<RhUiSyncIcon />} />
           </ToolbarItem>
         </ToolbarGroup>
         <ToolbarItem variant="pagination">{renderPagination('top', true)}</ToolbarItem>

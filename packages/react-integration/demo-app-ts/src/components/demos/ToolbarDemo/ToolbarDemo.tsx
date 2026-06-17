@@ -27,7 +27,7 @@ import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-micro
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
-import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
+import RhUiSyncIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sync-icon';
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 interface Filter {
@@ -260,7 +260,7 @@ class ToolbarDemo extends Component<ToolbarProps, ToolbarState> {
             <Button variant="plain" icon={<RhUiCopyFillIcon />} />
           </ToolbarItem>
           <ToolbarItem>
-            <Button variant="plain" icon={<SyncIcon />} />
+            <Button variant="plain" icon={<RhUiSyncIcon />} />
           </ToolbarItem>
         </ToolbarGroup>
         <ToolbarItem>

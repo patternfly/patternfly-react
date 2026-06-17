@@ -9,7 +9,7 @@ import { Fragment, useState, useLayoutEffect, useRef } from 'react';
 
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
-import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
+import RhUiSyncIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sync-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';

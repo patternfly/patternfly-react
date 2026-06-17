@@ -17,7 +17,7 @@ import {
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
-import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
+import RhUiSyncIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sync-icon';
 
 export const ToolbarCustomLabelGroupContent: React.FunctionComponent = () => {
   const [statusIsExpanded, setStatusIsExpanded] = useState<boolean>(false);
@@ -180,7 +180,7 @@ export const ToolbarCustomLabelGroupContent: React.FunctionComponent = () => {
           <Button variant="plain" aria-label="clone" icon={<RhUiCopyFillIcon />} />
         </ToolbarItem>
         <ToolbarItem>
-          <Button variant="plain" aria-label="sync" icon={<SyncIcon />} />
+          <Button variant="plain" aria-label="sync" icon={<RhUiSyncIcon />} />
         </ToolbarItem>
       </ToolbarGroup>
     </Fragment>
