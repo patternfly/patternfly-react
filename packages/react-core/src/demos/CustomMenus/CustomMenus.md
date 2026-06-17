@@ -14,7 +14,7 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-i
 import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
-import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
+import RhUiClipboardFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clipboard-fill-icon';
 import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
 import brandImg from '../assets/PF-IconLogo.svg';

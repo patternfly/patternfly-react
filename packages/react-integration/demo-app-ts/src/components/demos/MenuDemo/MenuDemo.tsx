@@ -23,7 +23,7 @@ import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
 import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
-import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
+import RhUiClipboardFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clipboard-fill-icon';
 import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 
@@ -470,7 +470,7 @@ export class MenuDemo extends Component {
               </MenuItem>
               <MenuItem
                 isSelected={selectedItems.indexOf(2) !== -1}
-                actions={<MenuItemAction icon={<ClipboardIcon />} actionId="copy" aria-label="Copy" />}
+                actions={<MenuItemAction icon={<RhUiClipboardFillIcon />} actionId="copy" aria-label="Copy" />}
                 itemId={2}
               >
                 Item 3
@@ -505,7 +505,7 @@ export class MenuDemo extends Component {
         text: 'Item 2',
         description: 'Description 2',
         itemId: 'item-2',
-        action: <ClipboardIcon />,
+        action: <RhUiClipboardFillIcon />,
         actionId: 'clipboard'
       },
       {
