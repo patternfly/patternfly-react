@@ -34,7 +34,7 @@ import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
+import RhMicronsSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-large-to-small-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
@@ -151,7 +151,7 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
                 onClick={() => setIsSortDropdownOpen(!isSortDropdownOpen)}
                 isExpanded={isSortDropdownOpen}
                 variant="plain"
-                icon={<SortAmountDownIcon />}
+                icon={<RhMicronsSortDownLargeToSmallIcon />}
               />
             )}
           >

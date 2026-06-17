@@ -27,7 +27,7 @@ import {
 import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import { DragDropSort } from '@patternfly/react-drag-drop';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
-import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
+import RhMicronsSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-large-to-small-icon';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 import { capitalize } from '@patternfly/react-table/src/components/Table/utils/utils';
 import { rows, columns, SampleDataRow } from '@patternfly/react-table/dist/esm/demos/sampleData';
@@ -312,7 +312,7 @@ export const TableColumnManagement: React.FunctionComponent = () => {
                 <MenuToggle
                   variant="plain"
                   aria-label="Sort columns"
-                  icon={<SortAmountDownIcon aria-hidden="true" />}
+                  icon={<RhMicronsSortDownLargeToSmallIcon aria-hidden="true" />}
                 />
               </OverflowMenuItem>
               <OverflowMenuGroup groupType="button" isPersistent>
