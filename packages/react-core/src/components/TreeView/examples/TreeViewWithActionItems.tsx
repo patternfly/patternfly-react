@@ -9,7 +9,7 @@ import {
   TreeViewDataItem
 } from '@patternfly/react-core';
 import RhUiClipboardFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clipboard-fill-icon';
-import HamburgerIcon from '@patternfly/react-icons/dist/esm/icons/hamburger-icon';
+import RhUiStorageFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-storage-fill-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export const TreeViewWithActionItems: React.FunctionComponent = () => {
@@ -83,7 +83,7 @@ export const TreeViewWithActionItems: React.FunctionComponent = () => {
         {
           name: 'Application 2',
           id: 'example7-App2',
-          action: <Button variant="plain" aria-label="Launch app 1" icon={<HamburgerIcon />} />,
+          action: <Button variant="plain" aria-label="Launch app 2" icon={<RhUiStorageFillIcon />} />,
           children: [
             { name: 'Settings', id: 'example7-App2Settings' },
             {
