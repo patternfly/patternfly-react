@@ -5,7 +5,7 @@ import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 import { Checkbox } from '@patternfly/react-core/dist/esm/components/Checkbox';
 import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
-import EllipsisHIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-h-icon';
+import RhUiEllipsisHorizontalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-horizontal-fill-icon';
 
 export const treeRow =
   (onCollapse: OnTreeRowCollapse, onCheckChange?: OnCheckChange, onToggleRowDetails?: OnToggleRowDetails) =>
@@ -84,7 +84,7 @@ export const treeRow =
                   }
                   icon={
                     <span className={`${styles.table}__details-toggle-icon`}>
-                      <EllipsisHIcon />
+                      <RhUiEllipsisHorizontalFillIcon />
                     </span>
                   }
                 />
