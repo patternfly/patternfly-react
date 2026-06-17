@@ -4,7 +4,7 @@ import {
   DualListSelector as DLSDeprecated,
   DualListSelectorProps as DLSPropsDeprecated
 } from '@patternfly/react-core/deprecated';
-import PficonSortCommonDescIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-desc-icon';
+import RhUiSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sort-down-large-to-small-icon';
 import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
@@ -126,7 +126,7 @@ class DualListSelectorDeprecatedWithActionsDemo extends Component<DLSPropsDeprec
         onClick={() => this.onSort('available')}
         aria-label="Sort"
         key="availableSortButton"
-        icon={this.state.availableDescending ? <PficonSortCommonDescIcon /> : <PficonSortCommonAscIcon />}
+        icon={this.state.availableDescending ? <RhUiSortDownLargeToSmallIcon /> : <PficonSortCommonAscIcon />}
       />,
       <Dropdown
         key="availableDropdown"
@@ -153,7 +153,7 @@ class DualListSelectorDeprecatedWithActionsDemo extends Component<DLSPropsDeprec
         onClick={() => this.onSort('chosen')}
         aria-label="Sort"
         key="chosenSortButton"
-        icon={this.state.chosenDescending ? <PficonSortCommonDescIcon /> : <PficonSortCommonAscIcon />}
+        icon={this.state.chosenDescending ? <RhUiSortDownLargeToSmallIcon /> : <PficonSortCommonAscIcon />}
       />,
       <Dropdown
         isOpen={this.state.isChosenKebabOpen}
