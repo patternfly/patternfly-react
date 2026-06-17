@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Alert, AlertActionCloseButton } from '@patternfly/react-core';
-import UserIcon from '@patternfly/react-icons/dist/esm/icons/user-icon';
+import RhUiProfileFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-profile-fill-icon';
 
 interface AlertDemoState {
   alertOneVisible: boolean;
@@ -59,7 +59,7 @@ export class AlertDemo extends Component<{}, AlertDemoState> {
           truncateTitle={3}
           tooltipPosition="bottom"
         />
-        <Alert id="custom-icon-alert" title="Custom icon alert title" customIcon={<UserIcon />}>
+        <Alert id="custom-icon-alert" title="Custom icon alert title" customIcon={<RhUiProfileFillIcon />}>
           Custom icon alert description
         </Alert>
         <Alert id="expandable-alert" title="Expandable alert title" isExpandable>
