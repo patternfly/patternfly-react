@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities, Button } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 export const TextInputGroupUtilitiesAndIcon: React.FunctionComponent = () => {
@@ -24,7 +24,7 @@ export const TextInputGroupUtilitiesAndIcon: React.FunctionComponent = () => {
 
   return (
     <TextInputGroup>
-      <TextInputGroupMain icon={<SearchIcon />} value={inputValue} onChange={handleInputChange} />
+      <TextInputGroupMain icon={<RhMicronsSearchIcon />} value={inputValue} onChange={handleInputChange} />
       {showUtilities && (
         <TextInputGroupUtilities>
           {showClearButton && (

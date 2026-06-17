@@ -30,7 +30,7 @@ Bullseye,
 ToolbarToggleGroup
 } from '@patternfly/react-core';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 
 ## Filtering demos

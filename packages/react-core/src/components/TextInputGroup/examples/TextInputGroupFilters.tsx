@@ -7,7 +7,7 @@ import {
   LabelGroup,
   Button
 } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 export const TextInputGroupFilters: React.FunctionComponent = () => {
@@ -57,7 +57,11 @@ export const TextInputGroupFilters: React.FunctionComponent = () => {
 
   return (
     <TextInputGroup>
-      <TextInputGroupMain icon={showSearchIcon && <SearchIcon />} value={inputValue} onChange={handleInputChange}>
+      <TextInputGroupMain
+        icon={showSearchIcon && <RhMicronsSearchIcon />}
+        value={inputValue}
+        onChange={handleInputChange}
+      >
         <LabelGroup>
           {currentChips.map((currentChip) => (
             <Label key={currentChip} variant="outline" onClose={() => deleteChip(currentChip)}>

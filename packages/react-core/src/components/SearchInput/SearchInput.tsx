@@ -5,7 +5,7 @@ import { Badge } from '../Badge';
 import { Icon } from '../Icon';
 import AngleUpIcon from '@patternfly/react-icons/dist/esm/icons/angle-up-icon';
 import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import RhMicronsCaretDownFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-fill-icon';
 import { AdvancedSearchMenu } from './AdvancedSearchMenu';
@@ -307,7 +307,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     <TextInputGroup isDisabled={isDisabled} {...searchInputProps}>
       <TextInputGroupMain
         hint={hint}
-        icon={<SearchIcon />}
+        icon={<RhMicronsSearchIcon />}
         innerRef={searchInputInputRef}
         value={searchValue}
         placeholder={placeholder}
@@ -362,7 +362,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
       variant={ButtonVariant.plain}
       aria-label={toggleAriaLabel}
       aria-expanded={isExpanded}
-      icon={<SearchIcon />}
+      icon={<RhMicronsSearchIcon />}
       onClick={onExpandHandler}
       ref={searchInputExpandableToggleRef}
     />
@@ -383,7 +383,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
       variant={ButtonVariant.plain}
       aria-label={toggleAriaLabel}
       aria-expanded={isExpanded}
-      icon={isExpanded ? <RhMicronsCloseIcon /> : <SearchIcon />}
+      icon={isExpanded ? <RhMicronsCloseIcon /> : <RhMicronsSearchIcon />}
       onClick={onExpandHandler}
       ref={searchInputExpandableToggleRef}
     />

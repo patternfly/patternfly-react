@@ -5,7 +5,7 @@ import styles from '@patternfly/react-styles/css/components/TextInputGroup/text-
 
 import { TextInputGroupMain } from '../TextInputGroupMain';
 import { TextInputGroupContext } from '../TextInputGroup';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 
 describe('TextInputGroupMain', () => {
   it('renders without children', () => {
@@ -77,7 +77,7 @@ describe('TextInputGroupMain', () => {
   });
 
   it('renders the icon when passed', () => {
-    render(<TextInputGroupMain icon={<SearchIcon />} />);
+    render(<TextInputGroupMain icon={<RhMicronsSearchIcon />} />);
 
     const icon = screen.getByRole('img', { hidden: true });
 
@@ -85,7 +85,7 @@ describe('TextInputGroupMain', () => {
   });
 
   it('renders the icon as aria hidden', () => {
-    render(<TextInputGroupMain icon={<SearchIcon />} />);
+    render(<TextInputGroupMain icon={<RhMicronsSearchIcon />} />);
 
     const icon = screen.getByRole('img', { hidden: true });
 

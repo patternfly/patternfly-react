@@ -13,7 +13,7 @@ import {
   Label,
   LabelGroup
 } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 export const AttributeValueFiltering: React.FunctionComponent = () => {
@@ -226,7 +226,7 @@ export const AttributeValueFiltering: React.FunctionComponent = () => {
     <div ref={textInputGroupRef}>
       <TextInputGroup>
         <TextInputGroupMain
-          icon={showSearchIcon && <SearchIcon />}
+          icon={showSearchIcon && <RhMicronsSearchIcon />}
           value={inputValue}
           onChange={handleInputChange}
           onFocus={() => setMenuIsOpen(true)}

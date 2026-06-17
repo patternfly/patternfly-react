@@ -45,7 +45,7 @@ import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 
 interface SelectOptionType extends Omit<SelectOptionProps, 'children'> {
@@ -114,7 +114,11 @@ export const PrimaryDetailInlineModifier: React.FunctionComponent = () => {
             />
           </InputGroupItem>
           <InputGroupItem>
-            <Button variant={ButtonVariant.control} aria-label="search button for search input" icon={<SearchIcon />} />
+            <Button
+              variant={ButtonVariant.control}
+              aria-label="search button for search input"
+              icon={<RhMicronsSearchIcon />}
+            />
           </InputGroupItem>
         </InputGroup>
       </ToolbarItem>

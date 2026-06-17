@@ -22,8 +22,8 @@ import {
   MenuToggle,
   Divider
 } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 
 interface GroupsNotificationDrawerDemoState {
   isDrawerOpen: boolean;
@@ -391,7 +391,7 @@ class GroupsNotificationDrawerDemo extends Component<NotificationDrawerProps, Gr
                 <EmptyState
                   headingLevel="h2"
                   titleText="No alerts found"
-                  icon={SearchIcon}
+                  icon={RhMicronsSearchIcon}
                   variant={EmptyStateVariant.full}
                 >
                   <EmptyStateBody>
