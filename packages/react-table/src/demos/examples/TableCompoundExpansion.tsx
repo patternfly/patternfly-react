@@ -17,7 +17,7 @@ import {
   PaginationVariant
 } from '@patternfly/react-core';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
@@ -234,7 +234,7 @@ export const TableCompoundExpansion: React.FunctionComponent = () => {
                   <Td dataLabel={columnNames.prs} compoundExpand={compoundExpandParams(repo, 'prs', rowIndex, 2)}>
                     <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                       <FlexItem>
-                        <CodeIcon key="icon" />
+                        <RhUiCodeIcon key="icon" />
                       </FlexItem>
                       <FlexItem>{repo.prs}</FlexItem>
                     </Flex>{' '}

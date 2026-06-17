@@ -40,7 +40,7 @@ import {
 } from '@patternfly/react-core';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
@@ -234,7 +234,7 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
                         <CodeBranchIcon /> 10
                       </FlexItem>
                       <FlexItem>
-                        <CodeIcon /> 4
+                        <RhUiCodeIcon /> 4
                       </FlexItem>
                       <FlexItem>
                         <CubeIcon /> 5
@@ -277,7 +277,7 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
                         <CodeBranchIcon /> 10
                       </FlexItem>
                       <FlexItem>
-                        <CodeIcon /> 4
+                        <RhUiCodeIcon /> 4
                       </FlexItem>
                       <FlexItem>
                         <CubeIcon /> 5
@@ -331,7 +331,7 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
                         <CodeBranchIcon /> 10
                       </FlexItem>
                       <FlexItem>
-                        <CodeIcon /> 4
+                        <RhUiCodeIcon /> 4
                       </FlexItem>
                       <FlexItem>
                         <CubeIcon /> 5
@@ -374,7 +374,7 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
                         <CodeBranchIcon /> 10
                       </FlexItem>
                       <FlexItem>
-                        <CodeIcon /> 4
+                        <RhUiCodeIcon /> 4
                       </FlexItem>
                       <FlexItem>
                         <CubeIcon /> 5

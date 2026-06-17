@@ -3,7 +3,7 @@ import { compoundExpand, IRow, ICell, IRowCell } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 import { DemoSortableTable } from './TableSortableForCompoundExpandableDemo';
@@ -51,7 +51,7 @@ export class TableEditableCompoundExpandableDemo extends Component<TableProps, T
             {
               title: (
                 <>
-                  <CodeIcon key="icon" /> 4
+                  <RhUiCodeIcon key="icon" /> 4
                 </>
               ),
               props: { isOpen: false, ariaControls: 'compoound-expansion-table-2' }
@@ -128,7 +128,7 @@ export class TableEditableCompoundExpandableDemo extends Component<TableProps, T
             {
               title: (
                 <>
-                  <CodeIcon key="icon" /> 4
+                  <RhUiCodeIcon key="icon" /> 4
                 </>
               ),
               props: { isOpen: false, ariaControls: 'compoound-expansion-table-5' }

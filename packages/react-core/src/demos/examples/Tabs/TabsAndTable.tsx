@@ -49,7 +49,7 @@ import {
   CustomActionsToggleProps
 } from '@patternfly/react-table';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
@@ -265,7 +265,7 @@ export const TablesAndTabs = () => {
               <Flex>
                 <FlexItem>{repo.prs}</FlexItem>
                 <FlexItem>
-                  <CodeIcon key="icon" />
+                  <RhUiCodeIcon key="icon" />
                 </FlexItem>
               </Flex>
             </Td>

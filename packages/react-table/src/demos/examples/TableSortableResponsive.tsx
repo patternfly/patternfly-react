@@ -32,7 +32,7 @@ import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
-import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
@@ -285,7 +285,7 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
                     <Td dataLabel={columns[2]} width={10}>
                       <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                         <FlexItem>
-                          <CodeIcon key="icon" />
+                          <RhUiCodeIcon key="icon" />
                         </FlexItem>
                         <FlexItem>{row.applications}</FlexItem>
                       </Flex>
