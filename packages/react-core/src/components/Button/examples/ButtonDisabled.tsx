@@ -1,7 +1,7 @@
 import { Button, Flex } from '@patternfly/react-core';
 import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
-import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
+import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
 
 export const ButtonDisabled: React.FunctionComponent = () => (
   <>
@@ -41,7 +41,7 @@ export const ButtonDisabled: React.FunctionComponent = () => (
       <Button isDisabled variant="control">
         Control
       </Button>
-      <Button isDisabled variant="control" aria-label="Copy" icon={<CopyIcon />} />
+      <Button isDisabled variant="control" aria-label="Copy" icon={<RhUiCopyFillIcon />} />
     </Flex>
   </>
 );

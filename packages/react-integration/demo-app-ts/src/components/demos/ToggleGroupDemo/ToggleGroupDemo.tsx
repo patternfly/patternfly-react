@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { ToggleGroup, ToggleGroupItem, ToggleGroupProps } from '@patternfly/react-core';
 import UndoIcon from '@patternfly/react-icons/dist/esm/icons/undo-icon';
-import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
+import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
 import ShareSquareIcon from '@patternfly/react-icons/dist/esm/icons/share-square-icon';
 
 interface ToggleGroupState {
@@ -67,7 +67,7 @@ export class ToggleGroupDemo extends Component<ToggleGroupProps, ToggleGroupStat
         </ToggleGroup>
         <ToggleGroup>
           <ToggleGroupItem
-            icon={<CopyIcon />}
+            icon={<RhUiCopyFillIcon />}
             key={3}
             buttonId="third"
             isSelected={isSelected.third}
@@ -107,7 +107,7 @@ export class ToggleGroupDemo extends Component<ToggleGroupProps, ToggleGroupStat
             isSelected={isSelected.seventh}
             onChange={this.handleItemClick}
           />
-          <ToggleGroupItem icon={<CopyIcon />} text="Option 3" key={8} isDisabled />
+          <ToggleGroupItem icon={<RhUiCopyFillIcon />} text="Option 3" key={8} isDisabled />
         </ToggleGroup>
       </>
     );

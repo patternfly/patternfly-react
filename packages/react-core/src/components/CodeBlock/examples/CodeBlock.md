@@ -6,7 +6,7 @@ propComponents: ['CodeBlock', 'CodeBlockAction', 'CodeBlockCode']
 ---
 
 import { Fragment, useState } from 'react';
-import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
+import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
 **Important note:** to format code exactly as it is, you should use String.raw\`your code here\`.

@@ -10,7 +10,7 @@ import './toggleGroup.css';
 import { useRef, useState } from 'react';
 import { ToggleGroup, ToggleGroupItem, Button, Stack, StackItem } from '@patternfly/react-core';
 import UndoIcon from '@patternfly/react-icons/dist/esm/icons/undo-icon';
-import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
+import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
 import ShareSquareIcon from '@patternfly/react-icons/dist/esm/icons/share-square-icon';
 
 ## Examples
