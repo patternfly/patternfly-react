@@ -1,7 +1,6 @@
-#ws-react-c-avatar-basic,
-#ws-react-c-avatar-with-initials,
-#ws-react-c-avatar-with-children {
+.ws-react-c-avatar {
   display: flex;
   flex-wrap: wrap;
-  gap: 3px;
+  gap: var(--pf-t--global--spacer--sm);
+  align-items: end;
 }

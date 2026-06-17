@@ -1,4 +1,8 @@
 import { Avatar } from '@patternfly/react-core';
-import avatarImg from '../../assets/img_avatar-light.svg';
+import RhUiAiChatbotIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ai-chatbot-icon';
 
-<Avatar src={avatarImg} alt="Avatar with border" isBordered />;
+export const AvatarBordered: React.FunctionComponent = () => (
+  <Avatar alt="Avatar with border" isBordered>
+    <RhUiAiChatbotIcon />
+  </Avatar>
+);
