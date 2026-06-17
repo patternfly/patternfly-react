@@ -48,7 +48,7 @@ import {
   ToolbarContent
 } from '@patternfly/react-core';
 import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
@@ -210,7 +210,7 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
         <RhUiSettingsFillIcon /> Settings
       </DropdownItem>
       <DropdownItem>
-        <HelpIcon /> Help
+        <RhUiQuestionMarkCircleIcon /> Help
       </DropdownItem>
     </>
   );

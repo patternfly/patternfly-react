@@ -20,7 +20,7 @@ import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-
 import RhUiUploadIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-upload-icon';
 import RhUiDownloadIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-download-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 import Dropzone, { FileRejection } from 'react-dropzone';
 import { CodeEditorContext } from './CodeEditorUtils';
 import { CodeEditorControl } from './CodeEditorControl';
@@ -566,7 +566,7 @@ export const CodeEditor = ({
             {!!shortcutsPopoverProps.bodyContent && (
               <div className={`${styles.codeEditor}__keyboard-shortcuts`}>
                 <Popover {...shortcutsPopoverProps}>
-                  <Button variant={ButtonVariant.link} icon={<HelpIcon />}>
+                  <Button variant={ButtonVariant.link} icon={<RhUiQuestionMarkCircleIcon />}>
                     {shortcutsPopoverButtonText}
                   </Button>
                 </Popover>

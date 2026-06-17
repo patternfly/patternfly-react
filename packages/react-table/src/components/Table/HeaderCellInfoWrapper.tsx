@@ -1,4 +1,4 @@
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { Tooltip, TooltipProps } from '@patternfly/react-core/dist/esm/components/Tooltip';
@@ -55,7 +55,7 @@ export const HeaderCellInfoWrapper: React.FunctionComponent<ColumnHelpWrapperPro
             variant="plain"
             hasNoPadding
             aria-label={ariaLabel || (typeof info === 'string' && info) || 'More info'}
-            icon={<HelpIcon />}
+            icon={<RhUiQuestionMarkCircleIcon />}
           />
         </Tooltip>
       ) : (
@@ -64,7 +64,7 @@ export const HeaderCellInfoWrapper: React.FunctionComponent<ColumnHelpWrapperPro
             variant="plain"
             hasNoPadding
             aria-label={ariaLabel || (typeof info === 'string' && info) || 'More info'}
-            icon={<HelpIcon />}
+            icon={<RhUiQuestionMarkCircleIcon />}
           />
         </Popover>
       )}

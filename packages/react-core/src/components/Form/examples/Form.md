@@ -24,7 +24,7 @@ propComponents:
 
 import { useRef, useEffect, useState } from 'react';
 import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 import RhUiTrashFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-trash-fill-icon';
 import styles from '@patternfly/react-styles/css/components/Form/form';
 
