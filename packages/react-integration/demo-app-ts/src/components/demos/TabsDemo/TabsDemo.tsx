@@ -1,6 +1,6 @@
 import { Component, createRef, RefObject } from 'react';
 import { Tabs, Tab, TabContent, TabTitleText, TabTitleIcon, Button } from '@patternfly/react-core';
-import UsersIcon from '@patternfly/react-icons/dist/esm/icons/users-icon';
+import RhUiUsersFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-users-fill-icon';
 
 export class TabDemo extends Component {
   state = {
@@ -86,7 +86,7 @@ export class TabDemo extends Component {
             title={
               <>
                 <TabTitleIcon>
-                  <UsersIcon />
+                  <RhUiUsersFillIcon />
                 </TabTitleIcon>
                 <TabTitleText>Tab item 3</TabTitleText>
               </>
