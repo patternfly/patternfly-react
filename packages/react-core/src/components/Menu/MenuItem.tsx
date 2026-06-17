@@ -7,7 +7,7 @@ import leftOffset from '@patternfly/react-tokens/dist/esm/c_menu_m_flyout__menu_
 import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
 import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
 import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
-import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
+import RhMicronsCheckmarkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-checkmark-icon';
 import { Checkbox } from '../Checkbox';
 import { MenuContext, MenuItemContext } from './MenuContext';
 import { MenuItemAction } from './MenuItemAction';
@@ -399,7 +399,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
           )}
           {getIsSelected() && (
             <span className={css(styles.menuItemSelectIcon)}>
-              <CheckIcon />
+              <RhMicronsCheckmarkIcon />
             </span>
           )}
         </span>

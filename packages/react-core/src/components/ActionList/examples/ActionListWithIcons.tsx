@@ -1,6 +1,6 @@
 import { ActionList, ActionListGroup, ActionListItem, Button } from '@patternfly/react-core';
 import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
-import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
+import RhMicronsCheckmarkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-checkmark-icon';
 
 export const ActionListWithIcons: React.FunctionComponent = () => (
   <>
@@ -15,7 +15,12 @@ export const ActionListWithIcons: React.FunctionComponent = () => (
         />
       </ActionListItem>
       <ActionListItem>
-        <Button variant="plain" id="with-icons-check-button" aria-label="check icon button" icon={<CheckIcon />} />
+        <Button
+          variant="plain"
+          id="with-icons-check-button"
+          aria-label="check icon button"
+          icon={<RhMicronsCheckmarkIcon />}
+        />
       </ActionListItem>
     </ActionList>
     <br />
@@ -35,7 +40,7 @@ export const ActionListWithIcons: React.FunctionComponent = () => (
             variant="plain"
             id="with-icons-list-check-button"
             aria-label="check icon button"
-            icon={<CheckIcon />}
+            icon={<RhMicronsCheckmarkIcon />}
           />
         </ActionListItem>
       </ActionListGroup>
@@ -53,7 +58,7 @@ export const ActionListWithIcons: React.FunctionComponent = () => (
             variant="plain"
             id="with-icons-group-check-button"
             aria-label="check icon button"
-            icon={<CheckIcon />}
+            icon={<RhMicronsCheckmarkIcon />}
           />
         </ActionListItem>
       </ActionListGroup>

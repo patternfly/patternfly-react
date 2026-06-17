@@ -8,7 +8,6 @@ import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
 import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
 import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
-import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import RhMicronsCloseIcon from  '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 ## Demos
