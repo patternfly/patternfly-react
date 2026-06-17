@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import { Button, ButtonVariant } from '../Button';
 import { Badge } from '../Badge';
 import { Icon } from '../Icon';
-import AngleUpIcon from '@patternfly/react-icons/dist/esm/icons/angle-up-icon';
+import RhMicronsCaretUpIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-up-icon';
 import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
@@ -332,7 +332,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
                 aria-label={previousNavigationButtonAriaLabel}
                 isDisabled={isDisabled || isPreviousNavigationButtonDisabled}
                 onClick={onPreviousClick}
-                icon={<AngleUpIcon />}
+                icon={<RhMicronsCaretUpIcon />}
               />
               <Button
                 variant={ButtonVariant.plain}
