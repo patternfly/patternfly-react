@@ -24,7 +24,7 @@ import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-i
 import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
 import RhUiClipboardFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clipboard-fill-icon';
-import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
+import RhUiTableIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-table-icon';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 
 export class MenuDemo extends Component {
@@ -599,7 +599,7 @@ export class MenuDemo extends Component {
             <MenuItem id="single-select-item-2" itemId={1}>
               Option 2
             </MenuItem>
-            <MenuItem id="single-select-item-3" icon={<TableIcon />} itemId={2}>
+            <MenuItem id="single-select-item-3" icon={<RhUiTableIcon />} itemId={2}>
               Option 3
             </MenuItem>
           </MenuList>
@@ -629,7 +629,7 @@ export class MenuDemo extends Component {
             <MenuItem id="multi-select-item-2" itemId={1}>
               Option 2
             </MenuItem>
-            <MenuItem id="multi-select-item-3" icon={<TableIcon />} itemId={2}>
+            <MenuItem id="multi-select-item-3" icon={<RhUiTableIcon />} itemId={2}>
               Option 3
             </MenuItem>
           </MenuList>
