@@ -12,7 +12,7 @@ import {
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
-import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/outlined-calendar-alt-icon';
+import RhUiCalendarIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-calendar-icon';
 import OutlinedClockIcon from '@patternfly/react-icons/dist/esm/icons/outlined-clock-icon';
 
 export const DateTimePicker: React.FunctionComponent = () => {
@@ -74,12 +74,7 @@ export const DateTimePicker: React.FunctionComponent = () => {
   );
 
   const calendarButton = (
-    <Button
-      variant="control"
-      aria-label="Toggle the calendar"
-      onClick={onToggleCalendar}
-      icon={<OutlinedCalendarAltIcon />}
-    />
+    <Button variant="control" aria-label="Toggle the calendar" onClick={onToggleCalendar} icon={<RhUiCalendarIcon />} />
   );
 
   return (
