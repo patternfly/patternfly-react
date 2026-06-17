@@ -12,7 +12,7 @@ import { CodeEditor, CodeEditorControl, Language } from '@patternfly/react-code-
 import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import HashtagIcon from '@patternfly/react-icons/dist/esm/icons/hashtag-icon';
 import MapIcon from '@patternfly/react-icons/dist/esm/icons/map-icon';
-import MoonIcon from '@patternfly/react-icons/dist/esm/icons/moon-icon';
+import RhUiDarkModeFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-dark-mode-fill-icon';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import FontIcon from '@patternfly/react-icons/dist/esm/icons/font-icon';
 import AdjustIcon from '@patternfly/react-icons/dist/esm/icons/adjust-icon';

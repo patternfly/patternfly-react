@@ -1,6 +1,6 @@
 import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import MapIcon from '@patternfly/react-icons/dist/esm/icons/map-icon';
-import MoonIcon from '@patternfly/react-icons/dist/esm/icons/moon-icon';
+import RhUiDarkModeFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-dark-mode-fill-icon';
 import HashtagIcon from '@patternfly/react-icons/dist/esm/icons/hashtag-icon';
 import FontIcon from '@patternfly/react-icons/dist/esm/icons/font-icon';
 import AdjustIcon from '@patternfly/react-icons/dist/esm/icons/adjust-icon';
@@ -181,7 +181,7 @@ export const CodeEditorConfigurationModal: React.FunctionComponent = () => {
         description="Switch the editor to a dark color theme"
         isChecked={isDarkTheme}
         onChange={(_e, checked) => setIsDarkTheme(checked)}
-        icon={<MoonIcon />}
+        icon={<RhUiDarkModeFillIcon />}
       />
       <ConfigModalSwitch
         key="high-contrast-theme-switch"
