@@ -1,6 +1,6 @@
 import { ProgressStepper, ProgressStep } from '@patternfly/react-core';
 import RhUiInProgressIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-in-progress-icon';
-import PendingIcon from '@patternfly/react-icons/dist/esm/icons/pending-icon';
+import RhUiPendingIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-pending-icon';
 
 export const ProgressStepperCustomIcons: React.FunctionComponent = () => (
   <ProgressStepper aria-label="Progress stepper with custom icons">
@@ -23,7 +23,7 @@ export const ProgressStepperCustomIcons: React.FunctionComponent = () => (
     </ProgressStep>
     <ProgressStep
       variant="pending"
-      icon={<PendingIcon />}
+      icon={<RhUiPendingIcon />}
       id="custom-step3"
       titleId="custom-step3-title"
       aria-label="pending step"
