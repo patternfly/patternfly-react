@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { TextInput } from '@patternfly/react-core';
-import CalendarIcon from '@patternfly/react-icons/dist/esm/icons/calendar-icon';
+import RhUiCalendarFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-calendar-fill-icon';
 import ClockIcon from '@patternfly/react-icons/dist/esm/icons/clock-icon';
 
 export const TextInputCustomIcon: React.FunctionComponent = () => {
@@ -12,7 +12,7 @@ export const TextInputCustomIcon: React.FunctionComponent = () => {
       <TextInput
         value={calendar}
         type="text"
-        customIcon={<CalendarIcon />}
+        customIcon={<RhUiCalendarFillIcon />}
         onChange={(_event, value) => setCalendar(value)}
         aria-label="text input example with calendar icon"
       />
