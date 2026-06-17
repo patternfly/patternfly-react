@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
-import UndoIcon from '@patternfly/react-icons/dist/esm/icons/undo-icon';
+import RhUiUndoIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-undo-icon';
 import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
 import ShareSquareIcon from '@patternfly/react-icons/dist/esm/icons/share-square-icon';
 
@@ -25,7 +25,7 @@ export const ToggleGroupIcon: React.FunctionComponent = () => {
           onChange={handleItemClick}
         />
         <ToggleGroupItem
-          icon={<UndoIcon />}
+          icon={<RhUiUndoIcon />}
           text="Undo"
           buttonId="toggle-group-text-icons-2"
           isSelected={isSelected['toggle-group-text-icons-2']}
@@ -50,7 +50,7 @@ export const ToggleGroupIcon: React.FunctionComponent = () => {
           onChange={handleItemClick}
         />
         <ToggleGroupItem
-          icon={<UndoIcon />}
+          icon={<RhUiUndoIcon />}
           iconPosition="end"
           text="Undo"
           buttonId="toggle-group-text-icons-5"
