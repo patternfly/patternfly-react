@@ -2,7 +2,7 @@ import { forwardRef, useContext, useRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
 import { useSSRSafeId } from '../../helpers';
-import GripVerticalIcon from '@patternfly/react-icons/dist/esm/icons/grip-vertical-icon';
+import RhUiGripVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-grip-vertical-fill-icon';
 import { Button, ButtonVariant } from '../Button';
 import { DualListSelectorListContext } from './DualListSelectorContext';
 
@@ -86,7 +86,7 @@ export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelec
             <Button
               variant={ButtonVariant.plain}
               component="span"
-              icon={<GripVerticalIcon style={{ verticalAlign: '-0.3em' }} />}
+              icon={<RhUiGripVerticalFillIcon style={{ verticalAlign: '-0.3em' }} />}
             />
           </div>
         )}

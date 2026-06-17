@@ -1,6 +1,6 @@
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
-import GripVerticalIcon from '@patternfly/react-icons/dist/esm/icons/grip-vertical-icon';
+import RhUiGripVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-grip-vertical-fill-icon';
 
 export interface DataListDragButtonProps extends React.HTMLProps<HTMLButtonElement> {
   /** Additional classes added to the drag button */
@@ -23,7 +23,7 @@ export const DataListDragButton: React.FunctionComponent<DataListDragButtonProps
     {...props}
   >
     <span className={css(styles.dataListItemDraggableIcon)}>
-      <GripVerticalIcon />
+      <RhUiGripVerticalFillIcon />
     </span>
   </button>
 );
