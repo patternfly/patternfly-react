@@ -27,7 +27,7 @@ import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
-import RhUiBranchIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-icon';
+import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import { rows } from '@patternfly/react-core/dist/esm/demos/sampleData';
 
@@ -153,7 +153,7 @@ export const DataListStaticBottomPagination: React.FunctionComponent = () => {
                             <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                               <FlexItem>
                                 <Icon>
-                                  <RhUiBranchIcon />
+                                  <RhUiBranchFillIcon />
                                 </Icon>{' '}
                                 {threads}
                                 <span className="pf-v6-screen-reader">Branches</span>

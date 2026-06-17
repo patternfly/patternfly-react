@@ -18,7 +18,7 @@ import {
   Spinner,
   SearchInput
 } from '@patternfly/react-core';
-import RhUiBranchIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-icon';
+import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
 import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
@@ -193,7 +193,7 @@ export class MenuDemo extends Component {
         </Title>
         <Menu onSelect={this.onSimpleSelect} activeItemId={activeItem} id="menu-with-icons">
           <MenuList>
-            <MenuItem id="icons-menu-item-1" icon={<RhUiBranchIcon id="code-branch-icon" />} itemId={0}>
+            <MenuItem id="icons-menu-item-1" icon={<RhUiBranchFillIcon id="code-branch-icon" />} itemId={0}>
               From Git
             </MenuItem>
             <MenuItem id="icons-menu-item-2" icon={<LayerGroupIcon id="layer-group-icon" />} itemId={1}>
@@ -405,15 +405,21 @@ export class MenuDemo extends Component {
         </Title>
         <Menu id="menu-with-description" onSelect={this.onSimpleSelect} activeItemId={activeItem}>
           <MenuList>
-            <MenuItem id="description-item-1" icon={<RhUiBranchIcon />} description="Description" itemId={0}>
+            <MenuItem id="description-item-1" icon={<RhUiBranchFillIcon />} description="Description" itemId={0}>
               Action 1
             </MenuItem>
-            <MenuItem id="description-item-2" isDisabled icon={<RhUiBranchIcon />} description="Description" itemId={1}>
+            <MenuItem
+              id="description-item-2"
+              isDisabled
+              icon={<RhUiBranchFillIcon />}
+              description="Description"
+              itemId={1}
+            >
               Action 2 disabled
             </MenuItem>
             <MenuItem
               id="description-item-3"
-              icon={<RhUiBranchIcon />}
+              icon={<RhUiBranchFillIcon />}
               description="Nunc non ornare ex, et pretium dui. Duis nec augue at urna elementum blandit tincidunt eget metus. Aenean sed metus id urna dignissim interdum. Aenean vel nisl vitae arcu vehicula pulvinar eget nec turpis. Cras sit amet est est."
               itemId={2}
             >
@@ -446,7 +452,7 @@ export class MenuDemo extends Component {
                 isSelected={selectedItems.indexOf(0) !== -1}
                 actions={
                   <MenuItemAction
-                    icon={<RhUiBranchIcon />}
+                    icon={<RhUiBranchFillIcon />}
                     actionId="code"
                     // eslint-disable-next-line no-console
                     onClick={() => console.log('clicked on code icon')}

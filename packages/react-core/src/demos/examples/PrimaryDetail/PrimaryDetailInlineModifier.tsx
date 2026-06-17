@@ -40,7 +40,7 @@ import {
 } from '@patternfly/react-core';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
-import RhUiBranchIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-icon';
+import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
@@ -231,7 +231,7 @@ export const PrimaryDetailInlineModifier: React.FunctionComponent = () => {
                     </FlexItem>
                     <Flex spaceItems={{ default: 'spaceItemsMd' }}>
                       <FlexItem>
-                        <RhUiBranchIcon /> 10
+                        <RhUiBranchFillIcon /> 10
                       </FlexItem>
                       <FlexItem>
                         <RhUiCodeIcon /> 4
@@ -274,7 +274,7 @@ export const PrimaryDetailInlineModifier: React.FunctionComponent = () => {
                     </FlexItem>
                     <Flex spaceItems={{ default: 'spaceItemsMd' }}>
                       <FlexItem>
-                        <RhUiBranchIcon /> 10
+                        <RhUiBranchFillIcon /> 10
                       </FlexItem>
                       <FlexItem>
                         <RhUiCodeIcon /> 4
@@ -328,7 +328,7 @@ export const PrimaryDetailInlineModifier: React.FunctionComponent = () => {
                     </FlexItem>
                     <Flex spaceItems={{ default: 'spaceItemsMd' }}>
                       <FlexItem>
-                        <RhUiBranchIcon /> 10
+                        <RhUiBranchFillIcon /> 10
                       </FlexItem>
                       <FlexItem>
                         <RhUiCodeIcon /> 4
@@ -371,7 +371,7 @@ export const PrimaryDetailInlineModifier: React.FunctionComponent = () => {
                     </FlexItem>
                     <Flex spaceItems={{ default: 'spaceItemsMd' }}>
                       <FlexItem>
-                        <RhUiBranchIcon /> 10
+                        <RhUiBranchFillIcon /> 10
                       </FlexItem>
                       <FlexItem>
                         <RhUiCodeIcon /> 4

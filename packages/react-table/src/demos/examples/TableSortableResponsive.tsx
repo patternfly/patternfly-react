@@ -34,7 +34,7 @@ import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import RhMicronsSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-large-to-small-icon';
-import RhUiBranchIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-icon';
+import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
@@ -277,7 +277,7 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
                     <Td dataLabel={columns[1]} width={10}>
                       <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                         <FlexItem>
-                          <RhUiBranchIcon key="icon" />
+                          <RhUiBranchFillIcon key="icon" />
                         </FlexItem>
                         <FlexItem>{row.threads}</FlexItem>
                       </Flex>

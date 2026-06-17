@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { MenuToggle, MenuItemAction, Select, SelectGroup, SelectList, SelectOption } from '@patternfly/react-core';
 import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
 import RhUiClipboardFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clipboard-fill-icon';
-import RhUiBranchIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-icon';
+import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 
 export const ActionsMenuDemo: React.FunctionComponent = () => {
@@ -46,7 +46,7 @@ export const ActionsMenuDemo: React.FunctionComponent = () => {
             isSelected={selectedItems.includes(0)}
             actions={
               <MenuItemAction
-                icon={<RhUiBranchIcon />}
+                icon={<RhUiBranchFillIcon />}
                 actionId="code"
                 // eslint-disable-next-line no-console
                 onClick={() => console.log('clicked on code icon')}
