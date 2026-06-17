@@ -8,7 +8,7 @@ import {
   TextInput,
   Button
 } from '@patternfly/react-core';
-import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
+import RhUiTrashFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-trash-fill-icon';
 
 export const FormFieldGroups: React.FunctionComponent = () => {
   const initialValues = {
@@ -75,7 +75,7 @@ export const FormFieldGroups: React.FunctionComponent = () => {
             <FormFieldGroupHeader
               titleText={{ text: 'Nested field group 1', id: 'nested-field-group1-titleText-id' }}
               titleDescription="Nested field group 1 description text."
-              actions={<Button variant="plain" aria-label="Remove" icon={<TrashIcon />} />}
+              actions={<Button variant="plain" aria-label="Remove" icon={<RhUiTrashFillIcon />} />}
             />
           }
         >
@@ -104,7 +104,7 @@ export const FormFieldGroups: React.FunctionComponent = () => {
           header={
             <FormFieldGroupHeader
               titleText={{ text: 'Nested field group 2', id: 'nested-field-group2-titleText-id' }}
-              actions={<Button variant="plain" aria-label="Remove" icon={<TrashIcon />} />}
+              actions={<Button variant="plain" aria-label="Remove" icon={<RhUiTrashFillIcon />} />}
             />
           }
         >
@@ -134,7 +134,7 @@ export const FormFieldGroups: React.FunctionComponent = () => {
             <FormFieldGroupHeader
               titleText={{ text: 'Nested field group 3', id: 'nested-field-group3-titleText-id' }}
               titleDescription="Field group 3 description text."
-              actions={<Button variant="plain" aria-label="Remove" icon={<TrashIcon />} />}
+              actions={<Button variant="plain" aria-label="Remove" icon={<RhUiTrashFillIcon />} />}
             />
           }
         >
