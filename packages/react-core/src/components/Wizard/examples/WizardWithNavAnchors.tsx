@@ -1,5 +1,5 @@
 import { Button, Wizard, WizardStep } from '@patternfly/react-core';
-import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
+import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
 import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
 
 export const WizardWithNavAnchors: React.FunctionComponent = () => (
@@ -7,7 +7,7 @@ export const WizardWithNavAnchors: React.FunctionComponent = () => (
     <WizardStep
       name={
         <>
-          <ExternalLinkAltIcon /> PF3
+          <RhMicronsExternalLinkIcon /> PF3
         </>
       }
       id="navanchors-pf3-step"
@@ -18,7 +18,7 @@ export const WizardWithNavAnchors: React.FunctionComponent = () => (
     <WizardStep
       name={
         <>
-          <ExternalLinkAltIcon /> PF4
+          <RhMicronsExternalLinkIcon /> PF4
         </>
       }
       id="navanchors-pf4-step"

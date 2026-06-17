@@ -1,6 +1,6 @@
 import { Button } from '@patternfly/react-core';
 import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
-import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
+import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
 import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
 
 export const WizardWithNavAnchors: React.FunctionComponent = () => {
@@ -8,7 +8,7 @@ export const WizardWithNavAnchors: React.FunctionComponent = () => {
     {
       name: (
         <div>
-          <ExternalLinkAltIcon /> PF3
+          <RhMicronsExternalLinkIcon /> PF3
         </div>
       ),
       component: <p>Step 1: Read about PF3</p>,
@@ -17,7 +17,7 @@ export const WizardWithNavAnchors: React.FunctionComponent = () => {
     {
       name: (
         <div>
-          <ExternalLinkAltIcon /> PF4
+          <RhMicronsExternalLinkIcon /> PF4
         </div>
       ),
       component: <p>Step 2: Read about PF4</p>,

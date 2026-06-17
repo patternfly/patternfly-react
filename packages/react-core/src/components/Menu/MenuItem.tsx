@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import topOffset from '@patternfly/react-tokens/dist/esm/c_menu_m_flyout__menu_top_offset';
 import rightOffset from '@patternfly/react-tokens/dist/esm/c_menu_m_flyout__menu_m_left_right_offset';
 import leftOffset from '@patternfly/react-tokens/dist/esm/c_menu_m_flyout__menu_left_offset';
-import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
+import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
 import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
 import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
@@ -389,7 +389,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
           <span className={css(styles.menuItemText)}>{children}</span>
           {isExternalLink && (
             <span className={css(styles.menuItemExternalIcon)}>
-              <ExternalLinkAltIcon />
+              <RhMicronsExternalLinkIcon />
             </span>
           )}
           {(flyoutMenu || direction === 'down') && (

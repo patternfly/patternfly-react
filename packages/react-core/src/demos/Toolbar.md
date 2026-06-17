@@ -7,7 +7,7 @@ import { Fragment, useState } from 'react';
 import PauseIcon from '@patternfly/react-icons/dist/esm/icons/pause-icon';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import ExpandIcon from '@patternfly/react-icons/dist/esm/icons/expand-icon';
-import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
+import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
 import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
 import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';

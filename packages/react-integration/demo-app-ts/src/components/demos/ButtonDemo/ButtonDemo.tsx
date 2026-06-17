@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Button, ButtonProps, ButtonSize, Tooltip } from '@patternfly/react-core';
 import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
-import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
+import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
 import '@patternfly/react-styles/css/utilities/Spacing/spacing.css';
 import { Link } from 'react-router-dom';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
@@ -42,7 +42,7 @@ export class ButtonDemo extends Component<ButtonProps, ButtonDemoState> {
     className: spacing.mSm,
     component: 'a',
     href: 'https://github.com/patternfly/patternfly-react',
-    icon: <ExternalLinkAltIcon />,
+    icon: <RhMicronsExternalLinkIcon />,
     target: '_blank'
   };
 
