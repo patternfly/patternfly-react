@@ -16,7 +16,7 @@ import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
 import CloudIcon from '@patternfly/react-icons/dist/esm/icons/cloud-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
-import RhUiGripHorizontalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-grip-horizontal-fill-icon';
+import RhUiThumbnailViewSmallFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-thumbnail-view-small-fill-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import pfIconLogo from '@patternfly/react-core/src/demos/assets/PF-IconLogo-color.svg';
 import { DashboardBreadcrumb } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';

@@ -10,7 +10,7 @@ import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-
 import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
-import RhUiGripHorizontalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-grip-horizontal-fill-icon';
+import RhUiThumbnailViewSmallFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-thumbnail-view-small-fill-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import pfIcon from './assets/pf-logo-small.svg';
 import pfLogo from './assets/PF-HorizontalLogo-Color.svg';

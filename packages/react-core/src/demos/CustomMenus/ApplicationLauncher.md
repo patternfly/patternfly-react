@@ -20,7 +20,7 @@ propComponents:
 
 import { cloneElement, Fragment, useRef, useState } from 'react';
 
-import RhUiGripHorizontalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-grip-horizontal-fill-icon';
+import RhUiThumbnailViewSmallFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-thumbnail-view-small-fill-icon';
 import brandImg from '../assets/PF-IconLogo.svg';
 
 As the application launcher component is now deprecated, an application launcher may now be built using the new suite of menu components. This is showcased in the following demo, which uses the new [dropdown](/components/menus/dropdown) component that is built off of menu.

@@ -35,7 +35,7 @@ import CloudIcon from '@patternfly/react-icons/dist/esm/icons/cloud-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import pfLogo from '../../assets/PF-IconLogo-color.svg';
-import RhUiGripHorizontalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-grip-horizontal-fill-icon';
+import RhUiThumbnailViewSmallFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-thumbnail-view-small-fill-icon';
 import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_lg';
 
 interface NavOnSelectProps {
@@ -321,7 +321,7 @@ export const CompassDockDemo: React.FunctionComponent = () => {
                     <MenuToggle
                       ref={appsRef}
                       variant="plain"
-                      icon={<RhUiGripHorizontalFillIcon />}
+                      icon={<RhUiThumbnailViewSmallFillIcon />}
                       isDocked
                       aria-label="Applications"
                     >
@@ -332,7 +332,7 @@ export const CompassDockDemo: React.FunctionComponent = () => {
                       <MenuToggle
                         ref={appsRef}
                         variant="plain"
-                        icon={<RhUiGripHorizontalFillIcon />}
+                        icon={<RhUiThumbnailViewSmallFillIcon />}
                         isDocked
                         aria-label="Applications"
                       >

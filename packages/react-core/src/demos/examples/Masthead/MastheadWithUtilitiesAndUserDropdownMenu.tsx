@@ -52,7 +52,7 @@ import {
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import RhUiGripHorizontalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-grip-horizontal-fill-icon';
+import RhUiThumbnailViewSmallFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-thumbnail-view-small-fill-icon';
 import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import pfIcon from '@patternfly/react-core/src/demos/assets/pf-logo-small.svg';
@@ -156,7 +156,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
       onClick={onToggleClick}
       isExpanded={isOpen}
       style={{ width: 'auto' }}
-      icon={<RhUiGripHorizontalFillIcon />}
+      icon={<RhUiThumbnailViewSmallFillIcon />}
     />
   );
 
