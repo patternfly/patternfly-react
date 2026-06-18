@@ -9,8 +9,8 @@ import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import BookIcon from '@patternfly/react-icons/dist/esm/icons/book-icon';
 import KeyIcon from '@patternfly/react-icons/dist/esm/icons/key-icon';
-import GlobeIcon from '@patternfly/react-icons/dist/esm/icons/globe-icon';
 import RhUiFlagFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-flag-fill-icon';
+import RhUiLanguageFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-language-fill-icon';
 
 export const DescriptionListIconsOnTerms: React.FunctionComponent = () => (
   <DescriptionList aria-label="With icons examples">
@@ -29,7 +29,7 @@ export const DescriptionListIconsOnTerms: React.FunctionComponent = () => (
       <DescriptionListDescription>example</DescriptionListDescription>
     </DescriptionListGroup>
     <DescriptionListGroup>
-      <DescriptionListTerm icon={<GlobeIcon />}>Pod selector</DescriptionListTerm>
+      <DescriptionListTerm icon={<RhUiLanguageFillIcon />}>Pod selector</DescriptionListTerm>
       <DescriptionListDescription>
         <Button variant="link" isInline icon={<RhUiAddCircleFillIcon />}>
           app=MyApp
