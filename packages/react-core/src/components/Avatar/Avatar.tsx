@@ -5,7 +5,7 @@ export interface AvatarProps extends React.DetailedHTMLProps<
   React.ImgHTMLAttributes<HTMLImageElement>,
   HTMLImageElement
 > {
-  /** Content rendered inside the avatar, such as custom svg's or icons. */
+  /** Content rendered inside the avatar, such as custom svgs or icons. */
   children?: React.ReactNode;
   /** Additional classes added to the avatar. */
   className?: string;

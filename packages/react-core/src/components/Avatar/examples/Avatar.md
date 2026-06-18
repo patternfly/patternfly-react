@@ -22,7 +22,7 @@ Pass in the `src` property to apply an image for the avatar, or pass `children` 
 
 ### Color modifiers
 
-Color modifiers add visual interest and automatically include a border. The available colors are: "red", "orangered", "orange", "yellow", "green", "teal", "blue", "purple", and "gray".
+Color modifiers add visual interest and automatically include a border. The available colors are: "red," "orangered," "orange," "yellow," "green," "teal," "blue," "purple," and "gray".
 
 ```ts file="./AvatarColorModifiers.tsx"
 
@@ -46,7 +46,7 @@ A border can be applied by passing the `isBordered` property to a non-colorful a
 
 ### Size variations
 
-An avatar can be rendered at different sizes by passing the `size` property. The available sizes are: "sm", "md" (the default size), "lg", and "xl".
+An avatar can be rendered at different sizes by passing the `size` property. The available sizes are: "sm," "md" (the default size), "lg," and "xl".
 
 ```ts file="./AvatarSizeVariations.tsx"
 
