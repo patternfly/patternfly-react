@@ -25,8 +25,8 @@ import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
 import RhUiSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sort-down-large-to-small-icon';
+import RhMicronsSortDownSmallToLargeIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-small-to-large-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
@@ -133,7 +133,7 @@ export const DualListSelectorWithActionsDemo: React.FunctionComponent = () => {
         return direction === 'asc' ? 'ascending' : 'descending';
       },
       getIcon(direction: SortDirection) {
-        return direction === 'asc' ? <PficonSortCommonAscIcon /> : <RhUiSortDownLargeToSmallIcon />;
+        return direction === 'asc' ? <RhMicronsSortDownSmallToLargeIcon /> : <RhUiSortDownLargeToSmallIcon />;
       }
     };
 

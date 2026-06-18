@@ -25,7 +25,7 @@ import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
+import RhMicronsSortDownSmallToLargeIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-small-to-large-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
@@ -155,7 +155,7 @@ export const DualListSelectorComplexOptionsActionsNext: React.FunctionComponent 
             aria-label="Sort Available"
             key="availableSortButton"
             isDisabled={isDisabled}
-            icon={<PficonSortCommonAscIcon />}
+            icon={<RhMicronsSortDownSmallToLargeIcon />}
           />,
           <Dropdown
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
@@ -190,7 +190,7 @@ export const DualListSelectorComplexOptionsActionsNext: React.FunctionComponent 
             aria-label="Sort Chosen"
             key="chosenSortButton"
             isDisabled={isDisabled}
-            icon={<PficonSortCommonAscIcon />}
+            icon={<RhMicronsSortDownSmallToLargeIcon />}
           />,
           <Dropdown
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
