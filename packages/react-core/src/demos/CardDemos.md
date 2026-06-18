@@ -4,7 +4,7 @@ section: components
 ---
 
 import { Fragment, useState } from 'react';
-import { EllipsisVIcon, RhMicronsCaretRightIcon, RhUiCheckCircleFillIcon, RhUiErrorFillIcon, RhMicronsExternalLinkIcon, RhUiInformationFillIcon, RhUiWarningFillIcon, RhUiNotificationFillIcon } from '@patternfly/react-icons';
+import { RhUiEllipsisVerticalFillIcon, RhMicronsCaretRightIcon, RhUiCheckCircleFillIcon, RhUiErrorFillIcon, RhMicronsExternalLinkIcon, RhUiInformationFillIcon, RhUiWarningFillIcon, RhUiNotificationFillIcon } from '@patternfly/react-icons';
 import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
 import { Chart, ChartAxis, ChartGroup, ChartVoronoiContainer, ChartStack, ChartBar, ChartTooltip, ChartDonutThreshold, ChartDonutUtilization, ChartArea, ChartContainer, ChartLabel } from '@patternfly/react-charts/victory';
 import chart_color_yellow_100 from '@patternfly/react-tokens/dist/esm/chart_color_yellow_100';

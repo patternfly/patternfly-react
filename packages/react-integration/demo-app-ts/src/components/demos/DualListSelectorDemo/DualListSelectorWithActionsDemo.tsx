@@ -28,7 +28,7 @@ import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-i
 import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
 import RhUiSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sort-down-large-to-small-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 interface Option {
   text: string;
@@ -190,7 +190,7 @@ export const DualListSelectorWithActionsDemo: React.FunctionComponent = () => {
                 variant="plain"
                 id="complex-available-toggle"
                 aria-label="Complex actions example available kebab toggle"
-                icon={<EllipsisVIcon />}
+                icon={<RhUiEllipsisVerticalFillIcon />}
               />
             )}
             isOpen={isAvailableKebabOpen}
@@ -225,7 +225,7 @@ export const DualListSelectorWithActionsDemo: React.FunctionComponent = () => {
                 variant="plain"
                 id="complex-chosen-toggle"
                 aria-label="Complex actions example chosen kebab toggle"
-                icon={<EllipsisVIcon />}
+                icon={<RhUiEllipsisVerticalFillIcon />}
               />
             )}
             isOpen={isChosenKebabOpen}

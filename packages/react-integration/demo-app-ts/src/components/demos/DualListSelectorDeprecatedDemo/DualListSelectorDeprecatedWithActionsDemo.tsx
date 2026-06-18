@@ -6,7 +6,7 @@ import {
 } from '@patternfly/react-core/deprecated';
 import RhUiSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sort-down-large-to-small-icon';
 import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 interface DualListSelectorState {
   availableOptions: React.ReactNode[];
@@ -139,7 +139,7 @@ class DualListSelectorDeprecatedWithActionsDemo extends Component<DLSPropsDeprec
             ref={toggleRef}
             isExpanded={this.state.isAvailableKebabOpen}
             onClick={() => this.onToggle('available')}
-            icon={<EllipsisVIcon />}
+            icon={<RhUiEllipsisVerticalFillIcon />}
           />
         )}
       >
@@ -166,7 +166,7 @@ class DualListSelectorDeprecatedWithActionsDemo extends Component<DLSPropsDeprec
             ref={toggleRef}
             isExpanded={this.state.isChosenKebabOpen}
             onClick={() => this.onToggle('chosen')}
-            icon={<EllipsisVIcon />}
+            icon={<RhUiEllipsisVerticalFillIcon />}
           />
         )}
       >

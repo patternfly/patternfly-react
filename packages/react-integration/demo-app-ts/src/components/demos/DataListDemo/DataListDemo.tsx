@@ -13,7 +13,7 @@ import {
   DropdownList,
   MenuToggle
 } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 interface DataListState {
   selectedDataListItemId: string;
@@ -82,7 +82,7 @@ class DataListDemo extends Component<DataListProps, DataListState> {
                       ref={toggleRef}
                       isExpanded={this.state.isOpen}
                       onClick={this.onToggle}
-                      icon={<EllipsisVIcon />}
+                      icon={<RhUiEllipsisVerticalFillIcon />}
                     />
                   )}
                 >

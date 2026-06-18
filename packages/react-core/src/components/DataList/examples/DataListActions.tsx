@@ -13,7 +13,7 @@ import {
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export const DataListActions: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -86,7 +86,7 @@ export const DataListActions: React.FunctionComponent = () => {
                     onClick={onToggle}
                     variant="plain"
                     aria-label="Data list with actions example kebab toggle"
-                    icon={<EllipsisVIcon />}
+                    icon={<RhUiEllipsisVerticalFillIcon />}
                   />
                 )}
                 isOpen={isOpen}

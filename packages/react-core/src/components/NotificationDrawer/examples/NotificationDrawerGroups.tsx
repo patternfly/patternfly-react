@@ -21,7 +21,7 @@ import {
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 export const NotificationDrawerGroups: React.FunctionComponent = () => {
@@ -89,7 +89,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
               onClick={() => onToggle('groups-kebab-toggle-1')}
               variant="plain"
               aria-label={`Groups example header kebab toggle`}
-              icon={<EllipsisVIcon />}
+              icon={<RhUiEllipsisVerticalFillIcon />}
             />
           )}
         >
@@ -124,7 +124,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                         onClick={() => onToggle('groups-kebab-toggle-2')}
                         variant="plain"
                         aria-label={`Groups example group 1 notification 1 kebab toggle`}
-                        icon={<EllipsisVIcon />}
+                        icon={<RhUiEllipsisVerticalFillIcon />}
                       />
                     )}
                   >
@@ -154,7 +154,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                         onClick={() => onToggle('groups-kebab-toggle-3')}
                         variant="plain"
                         aria-label={`Groups example group 1 notification 2 kebab toggle`}
-                        icon={<EllipsisVIcon />}
+                        icon={<RhUiEllipsisVerticalFillIcon />}
                       />
                     )}
                   >
@@ -185,7 +185,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                         onClick={() => onToggle('groups-kebab-toggle-4')}
                         variant="plain"
                         aria-label={`Groups example group 1 notification 3 kebab toggle`}
-                        icon={<EllipsisVIcon />}
+                        icon={<RhUiEllipsisVerticalFillIcon />}
                       />
                     )}
                   >
@@ -215,7 +215,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                         onClick={() => onToggle('groups-kebab-toggle-5')}
                         variant="plain"
                         aria-label={`Groups example group 1 notification 4 kebab toggle`}
-                        icon={<EllipsisVIcon />}
+                        icon={<RhUiEllipsisVerticalFillIcon />}
                       />
                     )}
                   >
@@ -254,7 +254,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                         onClick={() => onToggle('groups-kebab-toggle-6')}
                         variant="plain"
                         aria-label={`Groups example group 2 notification 1 kebab toggle`}
-                        icon={<EllipsisVIcon />}
+                        icon={<RhUiEllipsisVerticalFillIcon />}
                       />
                     )}
                   >
@@ -284,7 +284,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                         onClick={() => onToggle('groups-kebab-toggle-7')}
                         variant="plain"
                         aria-label={`Groups example group 2 notification 2 kebab toggle`}
-                        icon={<EllipsisVIcon />}
+                        icon={<RhUiEllipsisVerticalFillIcon />}
                       />
                     )}
                   >
@@ -315,7 +315,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                         onClick={() => onToggle('groups-kebab-toggle-8')}
                         variant="plain"
                         aria-label={`Groups example group 2 notification 3 kebab toggle`}
-                        icon={<EllipsisVIcon />}
+                        icon={<RhUiEllipsisVerticalFillIcon />}
                       />
                     )}
                   >
@@ -345,7 +345,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                         onClick={() => onToggle('groups-kebab-toggle-9')}
                         variant="plain"
                         aria-label={`Groups example group 2 notification 4 kebab toggle`}
-                        icon={<EllipsisVIcon />}
+                        icon={<RhUiEllipsisVerticalFillIcon />}
                       />
                     )}
                   >

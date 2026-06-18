@@ -28,7 +28,7 @@ import {
   MenuToggleElement
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import { DashboardHeader } from '@patternfly/react-core/dist/js/demos/DashboardHeader';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
@@ -248,7 +248,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
               variant="plain"
               onClick={() => onDropdownToggle('dropdown-toggle-id-0')}
               aria-label="Notification drawer actions"
-              icon={<EllipsisVIcon />}
+              icon={<RhUiEllipsisVerticalFillIcon />}
             />
           )}
         >
@@ -279,7 +279,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
                         variant="plain"
                         onClick={() => onDropdownToggle(key)}
                         aria-label={`Notification ${index + 1} actions`}
-                        icon={<EllipsisVIcon />}
+                        icon={<RhUiEllipsisVerticalFillIcon />}
                       />
                     )}
                   >

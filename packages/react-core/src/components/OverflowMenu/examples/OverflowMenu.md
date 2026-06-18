@@ -17,7 +17,7 @@ import { useRef, useState } from 'react';
 import AlignLeftIcon from '@patternfly/react-icons/dist/esm/icons/align-left-icon';
 import AlignCenterIcon from '@patternfly/react-icons/dist/esm/icons/align-center-icon';
 import AlignRightIcon from '@patternfly/react-icons/dist/esm/icons/align-right-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 ## Examples
 

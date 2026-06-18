@@ -10,7 +10,7 @@ import {
 } from '@patternfly/react-core';
 import RhUiClipboardFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clipboard-fill-icon';
 import RhUiStorageFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-storage-fill-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export const TreeViewWithActionItems: React.FunctionComponent = () => {
   const [activeItems, setActiveItems] = useState<TreeViewDataItem[]>();
@@ -47,7 +47,7 @@ export const TreeViewWithActionItems: React.FunctionComponent = () => {
               onClick={onToggle}
               variant="plain"
               aria-label="Tree view with actions example kebab toggle"
-              icon={<EllipsisVIcon />}
+              icon={<RhUiEllipsisVerticalFillIcon />}
             />
           )}
         >

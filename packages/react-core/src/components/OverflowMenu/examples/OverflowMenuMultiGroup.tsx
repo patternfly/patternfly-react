@@ -12,7 +12,7 @@ import {
   Dropdown,
   DropdownList
 } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import AlignLeftIcon from '@patternfly/react-icons/dist/esm/icons/align-left-icon';
 import AlignCenterIcon from '@patternfly/react-icons/dist/esm/icons/align-center-icon';
 import AlignRightIcon from '@patternfly/react-icons/dist/esm/icons/align-right-icon';
@@ -88,7 +88,7 @@ export const OverflowMenuMultiGroup: React.FunctionComponent = () => {
               variant="plain"
               onClick={onToggle}
               isExpanded={isOpen}
-              icon={<EllipsisVIcon />}
+              icon={<RhUiEllipsisVerticalFillIcon />}
             />
           )}
           isOpen={isOpen}

@@ -51,7 +51,7 @@ import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-s
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.PF-HorizontalLogo-Color.svg';
 
@@ -271,7 +271,7 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
                     onClick={onKebabDropdownToggle}
                     variant="plain"
                     aria-label="Settings and help"
-                    icon={<EllipsisVIcon />}
+                    icon={<RhUiEllipsisVerticalFillIcon />}
                   />
                 )}
               >
@@ -403,7 +403,7 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
               variant="plain"
               onClick={() => onToggle('toggle-id-0')}
               isExpanded={isActionsMenuOpen['toggle-id-0'] || false}
-              icon={<EllipsisVIcon />}
+              icon={<RhUiEllipsisVerticalFillIcon />}
             />
           )}
         >
@@ -444,7 +444,7 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
                           variant="plain"
                           onClick={() => onToggle('toggle-id-5')}
                           isExpanded={isActionsMenuOpen['toggle-id-5'] || false}
-                          icon={<EllipsisVIcon />}
+                          icon={<RhUiEllipsisVerticalFillIcon />}
                         />
                       )}
                     >
@@ -479,7 +479,7 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
                           variant="plain"
                           onClick={() => onToggle('toggle-id-6')}
                           isExpanded={isActionsMenuOpen['toggle-id-6'] || false}
-                          icon={<EllipsisVIcon />}
+                          icon={<RhUiEllipsisVerticalFillIcon />}
                         />
                       )}
                     >
@@ -515,7 +515,7 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
                           variant="plain"
                           onClick={() => onToggle('toggle-id-7')}
                           isExpanded={isActionsMenuOpen['toggle-id-7'] || false}
-                          icon={<EllipsisVIcon />}
+                          icon={<RhUiEllipsisVerticalFillIcon />}
                         />
                       )}
                     >
@@ -550,7 +550,7 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
                           variant="plain"
                           onClick={() => onToggle('toggle-id-8')}
                           isExpanded={isActionsMenuOpen['toggle-id-8'] || false}
-                          icon={<EllipsisVIcon />}
+                          icon={<RhUiEllipsisVerticalFillIcon />}
                         />
                       )}
                     >
@@ -594,7 +594,7 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
                           variant="plain"
                           onClick={() => onToggle('toggle-id-9')}
                           isExpanded={isActionsMenuOpen['toggle-id-9'] || false}
-                          icon={<EllipsisVIcon />}
+                          icon={<RhUiEllipsisVerticalFillIcon />}
                         />
                       )}
                     >
@@ -629,7 +629,7 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
                           variant="plain"
                           onClick={() => onToggle('toggle-id-10')}
                           isExpanded={isActionsMenuOpen['toggle-id-10'] || false}
-                          icon={<EllipsisVIcon />}
+                          icon={<RhUiEllipsisVerticalFillIcon />}
                         />
                       )}
                     >
@@ -665,7 +665,7 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
                           variant="plain"
                           onClick={() => onToggle('toggle-id-11')}
                           isExpanded={isActionsMenuOpen['toggle-id-11'] || false}
-                          icon={<EllipsisVIcon />}
+                          icon={<RhUiEllipsisVerticalFillIcon />}
                         />
                       )}
                     >
@@ -700,7 +700,7 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
                           variant="plain"
                           onClick={() => onToggle('toggle-id-12')}
                           isExpanded={isActionsMenuOpen['toggle-id-12'] || false}
-                          icon={<EllipsisVIcon />}
+                          icon={<RhUiEllipsisVerticalFillIcon />}
                         />
                       )}
                     >

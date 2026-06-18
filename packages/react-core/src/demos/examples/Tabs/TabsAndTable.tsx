@@ -48,8 +48,8 @@ import {
   ActionsColumn,
   CustomActionsToggleProps
 } from '@patternfly/react-table';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
@@ -171,7 +171,7 @@ export const TablesAndTabs = () => {
       aria-haspopup="menu"
       isExpanded={props.isOpen}
       ref={props.toggleRef}
-      icon={<EllipsisVIcon />}
+      icon={<RhUiEllipsisVerticalFillIcon />}
     />
   );
 
@@ -207,7 +207,7 @@ export const TablesAndTabs = () => {
                   variant="plain"
                   onClick={() => {}}
                   isExpanded={false}
-                  icon={<EllipsisVIcon />}
+                  icon={<RhUiEllipsisVerticalFillIcon />}
                 />
               )}
               isOpen={false}

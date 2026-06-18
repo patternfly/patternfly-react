@@ -23,7 +23,7 @@ import {
   Divider
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 interface GroupsNotificationDrawerDemoState {
   isDrawerOpen: boolean;
@@ -106,7 +106,7 @@ class GroupsNotificationDrawerDemo extends Component<NotificationDrawerProps, Gr
                 variant="plain"
                 onClick={() => this.onToggle('toggle-id-0')}
                 isExpanded={isOpenMap['toggle-id-0'] || false}
-                icon={<EllipsisVIcon />}
+                icon={<RhUiEllipsisVerticalFillIcon />}
               />
             )}
           >
@@ -143,7 +143,7 @@ class GroupsNotificationDrawerDemo extends Component<NotificationDrawerProps, Gr
                           variant="plain"
                           onClick={() => this.onToggle('toggle-id-5')}
                           isExpanded={isOpenMap['toggle-id-5'] || false}
-                          icon={<EllipsisVIcon />}
+                          icon={<RhUiEllipsisVerticalFillIcon />}
                         />
                       )}
                     >
@@ -173,7 +173,7 @@ class GroupsNotificationDrawerDemo extends Component<NotificationDrawerProps, Gr
                           variant="plain"
                           onClick={() => this.onToggle('toggle-id-6')}
                           isExpanded={isOpenMap['toggle-id-6'] || false}
-                          icon={<EllipsisVIcon />}
+                          icon={<RhUiEllipsisVerticalFillIcon />}
                         />
                       )}
                     >
@@ -204,7 +204,7 @@ class GroupsNotificationDrawerDemo extends Component<NotificationDrawerProps, Gr
                           variant="plain"
                           onClick={() => this.onToggle('toggle-id-7')}
                           isExpanded={isOpenMap['toggle-id-7'] || false}
-                          icon={<EllipsisVIcon />}
+                          icon={<RhUiEllipsisVerticalFillIcon />}
                         />
                       )}
                     >
@@ -234,7 +234,7 @@ class GroupsNotificationDrawerDemo extends Component<NotificationDrawerProps, Gr
                           variant="plain"
                           onClick={() => this.onToggle('toggle-id-8')}
                           isExpanded={isOpenMap['toggle-id-8'] || false}
-                          icon={<EllipsisVIcon />}
+                          icon={<RhUiEllipsisVerticalFillIcon />}
                         />
                       )}
                     >
@@ -276,7 +276,7 @@ class GroupsNotificationDrawerDemo extends Component<NotificationDrawerProps, Gr
                           variant="plain"
                           onClick={() => this.onToggle('toggle-id-9')}
                           isExpanded={isOpenMap['toggle-id-9'] || false}
-                          icon={<EllipsisVIcon />}
+                          icon={<RhUiEllipsisVerticalFillIcon />}
                         />
                       )}
                     >
@@ -306,7 +306,7 @@ class GroupsNotificationDrawerDemo extends Component<NotificationDrawerProps, Gr
                           variant="plain"
                           onClick={() => this.onToggle('toggle-id-10')}
                           isExpanded={isOpenMap['toggle-id-10'] || false}
-                          icon={<EllipsisVIcon />}
+                          icon={<RhUiEllipsisVerticalFillIcon />}
                         />
                       )}
                     >
@@ -337,7 +337,7 @@ class GroupsNotificationDrawerDemo extends Component<NotificationDrawerProps, Gr
                           variant="plain"
                           onClick={() => this.onToggle('toggle-id-11')}
                           isExpanded={isOpenMap['toggle-id-11'] || false}
-                          icon={<EllipsisVIcon />}
+                          icon={<RhUiEllipsisVerticalFillIcon />}
                         />
                       )}
                     >
@@ -367,7 +367,7 @@ class GroupsNotificationDrawerDemo extends Component<NotificationDrawerProps, Gr
                           variant="plain"
                           onClick={() => this.onToggle('toggle-id-12')}
                           isExpanded={isOpenMap['toggle-id-12'] || false}
-                          icon={<EllipsisVIcon />}
+                          icon={<RhUiEllipsisVerticalFillIcon />}
                         />
                       )}
                     >

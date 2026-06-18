@@ -39,7 +39,7 @@ import {
 import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
 import { DashboardBreadcrumb } from '@patternfly/react-core/src/demos/DashboardWrapper';
@@ -184,7 +184,7 @@ export const NavHorizontalWithSubnav: React.FunctionComponent = () => {
                   onClick={onKebabDropdownToggle}
                   variant="plain"
                   aria-label="Settings and help"
-                  icon={<EllipsisVIcon />}
+                  icon={<RhUiEllipsisVerticalFillIcon />}
                 />
               )}
             >
@@ -204,7 +204,7 @@ export const NavHorizontalWithSubnav: React.FunctionComponent = () => {
                   onClick={onFullKebabToggle}
                   variant="plain"
                   aria-label="Toolbar menu"
-                  icon={<EllipsisVIcon />}
+                  icon={<RhUiEllipsisVerticalFillIcon />}
                 />
               )}
             >

@@ -28,7 +28,7 @@ import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 interface Filter {
   risk: string[];
@@ -273,7 +273,7 @@ class ToolbarDemo extends Component<ToolbarProps, ToolbarState> {
                 ref={toggleRef}
                 onClick={this.onKebabToggle}
                 isExpanded={kebabIsOpen}
-                icon={<EllipsisVIcon />}
+                icon={<RhUiEllipsisVerticalFillIcon />}
               />
             )}
           >

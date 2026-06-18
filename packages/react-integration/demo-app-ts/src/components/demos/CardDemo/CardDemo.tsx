@@ -16,7 +16,7 @@ import {
   DropdownList,
   MenuToggle
 } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import { Component } from 'react';
 
 const pfLogo = '../../../assets/images/pfLogo.svg';
@@ -149,7 +149,7 @@ class CardDemo extends Component {
               ref={toggleRef}
               isExpanded={this.state.isOpen}
               onClick={this.onToggle}
-              icon={<EllipsisVIcon />}
+              icon={<RhUiEllipsisVerticalFillIcon />}
             />
           )}
         >

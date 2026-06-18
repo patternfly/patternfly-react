@@ -14,7 +14,7 @@ import {
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 
 export const DataListMixedExpandable: React.FunctionComponent = () => {
@@ -94,7 +94,7 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
                     onClick={onToggle1}
                     variant="plain"
                     aria-label="Data list mixed expandable example kebab toggle 1"
-                    icon={<EllipsisVIcon />}
+                    icon={<RhUiEllipsisVerticalFillIcon />}
                   />
                 )}
                 isOpen={isOpen1}
@@ -166,7 +166,7 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
                     onClick={onToggle2}
                     variant="plain"
                     aria-label="Data list mixed expandable example kebab toggle 2"
-                    icon={<EllipsisVIcon />}
+                    icon={<RhUiEllipsisVerticalFillIcon />}
                   />
                 )}
                 isOpen={isOpen2}
@@ -226,7 +226,7 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
                     onClick={onToggle3}
                     variant="plain"
                     aria-label="Data list mixed expandable example kebab toggle 3"
-                    icon={<EllipsisVIcon />}
+                    icon={<RhUiEllipsisVerticalFillIcon />}
                   />
                 )}
                 isOpen={isOpen3}

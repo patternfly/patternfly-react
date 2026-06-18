@@ -9,7 +9,7 @@ propComponents: ['MenuToggle', 'MenuToggleAction', 'MenuToggleCheckbox']
 import { Fragment, useState } from 'react';
 import './MenuToggle.css'
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
@@ -93,7 +93,7 @@ Variant styling can be applied to menu toggles. In the following example, the to
 
 ### Plain toggle with icon
 
-To apply plain styling to a menu toggle with an icon, pass in `variant="plain"`. This will remove the default bottom border and caret. You may pass in an `icon` to serve as the menu toggle. The following example passes in an `EllipsisVIcon`.
+To apply plain styling to a menu toggle with an icon, pass in `variant="plain"`. This will remove the default bottom border and caret. You may pass in an `icon` to serve as the menu toggle. The following example passes in an `RhUiEllipsisVerticalFillIcon`.
 
 If the toggle does not have any visible text content, use the `aria-label` property to provide an accessible name.
 

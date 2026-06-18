@@ -49,7 +49,7 @@ import {
   SearchInput,
   Tooltip
 } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
@@ -422,7 +422,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
                   isExpanded={isKebabDropdownOpen}
                   variant="plain"
                   aria-label="Settings and help"
-                  icon={<EllipsisVIcon />}
+                  icon={<RhUiEllipsisVerticalFillIcon />}
                 />
               )}
             >
@@ -442,7 +442,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
                   isExpanded={isFullKebabDropdownOpen}
                   variant="plain"
                   aria-label="Toolbar menu"
-                  icon={<EllipsisVIcon />}
+                  icon={<RhUiEllipsisVerticalFillIcon />}
                 />
               )}
             >
