@@ -415,7 +415,7 @@ exports[`allows tooltip via container component 1`] = `
       z"
           role="presentation"
           shape-rendering="auto"
-          style="stroke: var(--pf-v6-chart-legend--data--stroke--Color, rgba(255, 255, 255, 0.0000)); stroke-width: var(--pf-v6-chart-legend--data--stroke--Width, 0px); fill: var(--pf-v6-chart-theme--green--ColorScale--100, #63993d);"
+          style="stroke: var(--pf-v6-chart-legend--data--stroke--Color, rgb(255, 255, 255, 0.0000)); stroke-width: var(--pf-v6-chart-legend--data--stroke--Width, 0px); fill: var(--pf-v6-chart-theme--green--ColorScale--100, #63993d);"
         />
         <path
           d="M 193.44, 248.156
@@ -435,7 +435,7 @@ exports[`allows tooltip via container component 1`] = `
       z"
           role="presentation"
           shape-rendering="auto"
-          style="stroke: var(--pf-v6-chart-legend--data--stroke--Color, rgba(255, 255, 255, 0.0000)); stroke-width: var(--pf-v6-chart-legend--data--stroke--Width, 0px); fill: var(--pf-v6-chart-theme--green--ColorScale--200, #afdc8f);"
+          style="stroke: var(--pf-v6-chart-legend--data--stroke--Color, rgb(255, 255, 255, 0.0000)); stroke-width: var(--pf-v6-chart-legend--data--stroke--Width, 0px); fill: var(--pf-v6-chart-theme--green--ColorScale--200, #afdc8f);"
         />
         <path
           d="M 234.32799999999997, 250.872
@@ -445,7 +445,7 @@ exports[`allows tooltip via container component 1`] = `
       z"
           role="presentation"
           shape-rendering="auto"
-          style="stroke: var(--pf-v6-chart-legend--data--stroke--Color, rgba(255, 255, 255, 0.0000)); stroke-width: var(--pf-v6-chart-legend--data--stroke--Width, 0px); fill: var(--pf-v6-chart-theme--green--ColorScale--300, #204d00);"
+          style="stroke: var(--pf-v6-chart-legend--data--stroke--Color, rgb(255, 255, 255, 0.0000)); stroke-width: var(--pf-v6-chart-legend--data--stroke--Width, 0px); fill: var(--pf-v6-chart-theme--green--ColorScale--300, #204d00);"
         />
         <path
           d="M 273.928, 250.872
@@ -455,7 +455,7 @@ exports[`allows tooltip via container component 1`] = `
       z"
           role="presentation"
           shape-rendering="auto"
-          style="stroke: var(--pf-v6-chart-legend--data--stroke--Color, rgba(255, 255, 255, 0.0000)); stroke-width: var(--pf-v6-chart-legend--data--stroke--Width, 0px); fill: var(--pf-v6-chart-theme--green--ColorScale--400, #87bb62);"
+          style="stroke: var(--pf-v6-chart-legend--data--stroke--Color, rgb(255, 255, 255, 0.0000)); stroke-width: var(--pf-v6-chart-legend--data--stroke--Width, 0px); fill: var(--pf-v6-chart-theme--green--ColorScale--400, #87bb62);"
         />
         <text
           direction="inherit"

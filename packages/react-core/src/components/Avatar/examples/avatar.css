@@ -1,0 +1,7 @@
+.ws-react-c-avatar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--pf-t--global--spacer--sm);
+  align-items: end;
+  height: auto !important;
+}

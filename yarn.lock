@@ -5070,10 +5070,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@patternfly/patternfly@npm:6.5.2":
-  version: 6.5.2
-  resolution: "@patternfly/patternfly@npm:6.5.2"
-  checksum: 10c0/39a6d06f831f1783b6003dfc98c028c653485e2cd6d15fbad3199514161e249fdff8519e29145a082a174a1b4cbdd21d1f716ddcd1d5c00abfeaacabca0b2518
+"@patternfly/patternfly@npm:6.6.0-prerelease.9":
+  version: 6.6.0-prerelease.9
+  resolution: "@patternfly/patternfly@npm:6.6.0-prerelease.9"
+  checksum: 10c0/08c5eeb91df014d0e66e7dc21d3963e619e21188e553d7770b4e75be53466d141702db67105f6e71405912d74bf79cd6a3371c119bf6eccd8815a4b38e5f7e1d
   languageName: node
   linkType: hard
 
@@ -5171,7 +5171,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@patternfly/react-core@workspace:packages/react-core"
   dependencies:
-    "@patternfly/patternfly": "npm:6.5.2"
+    "@patternfly/patternfly": "npm:6.6.0-prerelease.9"
     "@patternfly/react-icons": "workspace:^"
     "@patternfly/react-styles": "workspace:^"
     "@patternfly/react-tokens": "workspace:^"
@@ -5192,7 +5192,7 @@ __metadata:
   resolution: "@patternfly/react-docs@workspace:packages/react-docs"
   dependencies:
     "@patternfly/documentation-framework": "npm:^6.36.8"
-    "@patternfly/patternfly": "npm:6.5.2"
+    "@patternfly/patternfly": "npm:6.6.0-prerelease.9"
     "@patternfly/patternfly-a11y": "npm:5.1.0"
     "@patternfly/react-charts": "workspace:^"
     "@patternfly/react-code-editor": "workspace:^"
@@ -5232,7 +5232,7 @@ __metadata:
     "@fortawesome/free-brands-svg-icons": "npm:^5.15.4"
     "@fortawesome/free-regular-svg-icons": "npm:^5.15.4"
     "@fortawesome/free-solid-svg-icons": "npm:^5.15.4"
-    "@patternfly/patternfly": "npm:6.5.2"
+    "@patternfly/patternfly": "npm:6.6.0-prerelease.9"
     "@rhds/icons": "npm:^2.2.0"
     fs-extra: "npm:^11.3.3"
     tslib: "npm:^2.8.1"
@@ -5319,7 +5319,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@patternfly/react-styles@workspace:packages/react-styles"
   dependencies:
-    "@patternfly/patternfly": "npm:6.5.2"
+    "@patternfly/patternfly": "npm:6.6.0-prerelease.9"
     change-case: "npm:^5.4.4"
     fs-extra: "npm:^11.3.3"
   languageName: unknown
@@ -5361,7 +5361,7 @@ __metadata:
   resolution: "@patternfly/react-tokens@workspace:packages/react-tokens"
   dependencies:
     "@adobe/css-tools": "npm:^4.4.4"
-    "@patternfly/patternfly": "npm:6.5.2"
+    "@patternfly/patternfly": "npm:6.6.0-prerelease.9"
     fs-extra: "npm:^11.3.3"
   languageName: unknown
   linkType: soft
