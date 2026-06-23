@@ -3,7 +3,7 @@ import { Tabs, Tab, TabTitleText, TabTitleIcon } from '@patternfly/react-core';
 import RhUiUsersFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-users-fill-icon';
 import RhUiContainerFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-container-fill-icon';
 import DatabaseIcon from '@patternfly/react-icons/dist/esm/icons/database-icon';
-import ServerIcon from '@patternfly/react-icons/dist/esm/icons/server-icon';
+import RhUiServerStackFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-server-stack-fill-icon';
 import LaptopIcon from '@patternfly/react-icons/dist/esm/icons/laptop-icon';
 import RhUiInfrastructureFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-infrastructure-fill-icon';
 
@@ -69,7 +69,7 @@ export const TabsIconAndText: React.FunctionComponent = () => {
         title={
           <>
             <TabTitleIcon>
-              <ServerIcon />
+              <RhUiServerStackFillIcon />
             </TabTitleIcon>{' '}
             <TabTitleText>Server</TabTitleText>{' '}
           </>
