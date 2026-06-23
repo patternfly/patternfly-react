@@ -105,12 +105,11 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   const [isFocusTrapActive, setIsFocusTrapActive] = useState(false);
   const [shouldCollapseSpace, setShouldCollapseSpace] = useState(hidden);
   const previouslyFocusedElement = useRef(null);
-  let currWidth: number = 0;
-  let panelRect: DOMRect;
-  let end: number;
-  let start: number;
-  let bottom: number;
-  let setInitialVals: boolean = true;
+  const resizeState = useRef({
+    initialPointerPos: 0,
+    initialPanelSize: 0,
+    currWidth: 0
+  });
 
   if (isStatic && focusTrap?.enabled) {
     // eslint-disable-next-line no-console
@@ -186,8 +185,20 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     return Math.round((newSplitterPos + Number.EPSILON) * 100) / 100;
   };
 
+  const setInitialResizeState = (controlPosition: number) => {
+    const panelRect = panel.current.getBoundingClientRect();
+    const initialPanelSize = position === 'bottom' ? panelRect.height : panelRect.width;
+
+    resizeState.current = {
+      initialPointerPos: controlPosition,
+      initialPanelSize,
+      currWidth: initialPanelSize
+    };
+  };
+
   const handleTouchStart = (e: React.TouchEvent) => {
     e.stopPropagation();
+    setInitialResizeState(position === 'bottom' ? e.touches[0].clientY : e.touches[0].clientX);
     document.addEventListener('touchmove', callbackTouchMove, { passive: false });
     document.addEventListener('touchend', callbackTouchEnd);
     isResizing = true;
@@ -196,11 +207,11 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   const handleMousedown = (e: React.MouseEvent) => {
     e.stopPropagation();
     e.preventDefault();
+    setInitialResizeState(position === 'bottom' ? e.clientY : e.clientX);
     document.addEventListener('mousemove', callbackMouseMove);
     document.addEventListener('mouseup', callbackMouseUp);
     drawerRef.current.classList.add(css(styles.modifiers.resizing));
     isResizing = true;
-    setInitialVals = true;
   };
 
   const handleMouseMove = (e: MouseEvent) => {
@@ -223,33 +234,22 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
       return;
     }
 
-    if (setInitialVals) {
-      panelRect = panel.current.getBoundingClientRect();
-      if (isRTL) {
-        start = panelRect.right;
-        end = panelRect.left;
-      } else {
-        end = panelRect.right;
-        start = panelRect.left;
-      }
-      bottom = panelRect.bottom;
-      setInitialVals = false;
-    }
-    const mousePos = controlPosition;
+    const { initialPointerPos, initialPanelSize } = resizeState.current;
+    const delta = controlPosition - initialPointerPos;
     let newSize = 0;
     if (position === 'end' || position === 'right') {
-      newSize = isRTL ? mousePos - end : end - mousePos;
+      newSize = isRTL ? initialPanelSize + delta : initialPanelSize - delta;
     } else if (position === 'start' || position === 'left') {
-      newSize = isRTL ? start - mousePos : mousePos - start;
+      newSize = isRTL ? initialPanelSize - delta : initialPanelSize + delta;
     } else {
-      newSize = bottom - mousePos;
+      newSize = initialPanelSize - delta;
     }
 
     if (position === 'bottom') {
       panel.current.style.overflowAnchor = 'none';
     }
     panel.current.style.setProperty(cssPanelMdFlexBasis.name, newSize + 'px');
-    currWidth = newSize;
+    resizeState.current.currWidth = newSize;
     setSeparatorValue(calcValueNow());
   };
 
@@ -259,8 +259,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     }
     drawerRef.current.classList.remove(css(styles.modifiers.resizing));
     isResizing = false;
-    onResize && onResize(e, currWidth, id);
-    setInitialVals = true;
+    onResize && onResize(e, resizeState.current.currWidth, id);
     document.removeEventListener('mousemove', callbackMouseMove);
     document.removeEventListener('mouseup', callbackMouseUp);
   };
@@ -271,7 +270,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
       return;
     }
     isResizing = false;
-    onResize && onResize(e, currWidth, id);
+    onResize && onResize(e, resizeState.current.currWidth, id);
     document.removeEventListener('touchmove', callbackTouchMove);
     document.removeEventListener('touchend', callbackTouchEnd);
   };
@@ -301,7 +300,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     e.preventDefault();
 
     if (key === 'Escape' || key === 'Enter') {
-      onResize && onResize(e, currWidth, id);
+      onResize && onResize(e, resizeState.current.currWidth, id);
     }
     const panelRect = panel.current.getBoundingClientRect();
     newSize = position === 'bottom' ? panelRect.height : panelRect.width;
@@ -328,7 +327,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
       panel.current.style.overflowAnchor = 'none';
     }
     panel.current.style.setProperty(cssPanelMdFlexBasis.name, newSize + 'px');
-    currWidth = newSize;
+    resizeState.current.currWidth = newSize;
     setSeparatorValue(calcValueNow());
   };
   const boundaryCssVars: any = {};
