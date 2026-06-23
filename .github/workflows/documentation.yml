@@ -13,7 +13,6 @@ on:
         required: true
 jobs:
   check-permissions:
-    if: github.event_name != 'workflow_call'
     uses: patternfly/.github/.github/workflows/check-team-membership.yml@fdb52a63a2220ec8a3b6c2d43f312cda708ffa06
     secrets: inherit
 
@@ -42,7 +41,7 @@ jobs:
       - name: Check out project
         if: github.event_name == 'workflow_call'
         uses: actions/checkout@v4
-
+e
       - name: Set up and build project
         uses: ./.github/actions/setup-project
 
