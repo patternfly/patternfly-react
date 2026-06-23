@@ -32,7 +32,7 @@ import {
 } from '@patternfly/react-core';
 import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
+import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
 import CloudIcon from '@patternfly/react-icons/dist/esm/icons/cloud-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
@@ -289,7 +289,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
                     to="#nav-link2"
                     itemId={1}
                     isActive={activeItem === 1}
-                    icon={<FolderIcon />}
+                    icon={<RhUiFolderFillIcon />}
                     anchorRef={navItem2Ref}
                     aria-label="Policy"
                   >

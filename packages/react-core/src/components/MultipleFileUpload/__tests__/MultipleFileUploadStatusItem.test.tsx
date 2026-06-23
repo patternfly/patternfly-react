@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import { MultipleFileUploadStatusItem } from '../MultipleFileUploadStatusItem';
-import FileImageIcon from '@patternfly/react-icons/dist/esm/icons/file-image-icon';
+import RhUiImageFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-image-fill-icon';
 
 describe('MultipleFileUploadStatusItem', () => {
   test('renders with expected class names', () => {
@@ -26,7 +26,7 @@ describe('MultipleFileUploadStatusItem', () => {
     const { asFragment } = render(
       <MultipleFileUploadStatusItem
         file={testFile}
-        fileIcon={<FileImageIcon />}
+        fileIcon={<RhUiImageFillIcon />}
         fileName="testCustomFileName.txt"
         fileSize={42}
         progressId="test-progress-id"
@@ -42,7 +42,7 @@ describe('MultipleFileUploadStatusItem', () => {
     const { asFragment } = render(
       <MultipleFileUploadStatusItem
         file={testFile}
-        fileIcon={<FileImageIcon />}
+        fileIcon={<RhUiImageFillIcon />}
         fileName="testCustomFileName.txt"
         fileSize={42}
         progressId="test-progress-id"
@@ -58,7 +58,7 @@ describe('MultipleFileUploadStatusItem', () => {
     const { asFragment } = render(
       <MultipleFileUploadStatusItem
         file={testFile}
-        fileIcon={<FileImageIcon />}
+        fileIcon={<RhUiImageFillIcon />}
         fileName="testCustomFileName.txt"
         fileSize={42}
         progressId="test-progress-id"

@@ -9,7 +9,7 @@ import OutlinedPlusSquare from '@patternfly/react-icons/dist/esm/icons/outlined-
 import RhUiCopyIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-icon';
 import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
+import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
 import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import CloudIcon from '@patternfly/react-icons/dist/esm/icons/cloud-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';

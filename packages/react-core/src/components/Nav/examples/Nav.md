@@ -10,8 +10,8 @@ import { useState } from 'react';
 import './nav.css';
 import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
-import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
+import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
+import RhUiFolderOpenFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-open-fill-icon';
 import CloudIcon from '@patternfly/react-icons/dist/esm/icons/cloud-icon';
 import RhUiLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-link-icon';
 
@@ -80,7 +80,6 @@ A flyout should be a `Menu` component. Press `space` or `right arrow` to open a 
 ```ts file="./NavIcons.tsx"
 
 ```
-
 
 ## Types
 

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Nav, NavExpandable, NavItem, NavList } from '@patternfly/react-core';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
+import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
 import CloudIcon from '@patternfly/react-icons/dist/esm/icons/cloud-icon';
-import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
+import RhUiFolderOpenFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-open-fill-icon';
 import RhUiLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-link-icon';
 
 export const NavIcons: React.FunctionComponent = () => {
@@ -32,7 +32,7 @@ export const NavIcons: React.FunctionComponent = () => {
           to="#nav-icon-link2"
           itemId={1}
           isActive={activeItem === 1}
-          icon={<FolderIcon />}
+          icon={<RhUiFolderFillIcon />}
         >
           Link 2
         </NavItem>
@@ -56,7 +56,7 @@ export const NavIcons: React.FunctionComponent = () => {
         >
           Link 4
         </NavItem>
-        <NavExpandable title="Expandable" icon={<FolderOpenIcon />} groupId="nav-icon-expandable">
+        <NavExpandable title="Expandable" icon={<RhUiFolderOpenFillIcon />} groupId="nav-icon-expandable">
           <NavItem
             preventDefault
             id="nav-icon-expandable-link1"
