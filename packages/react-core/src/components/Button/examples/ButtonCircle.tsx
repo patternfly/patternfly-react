@@ -3,7 +3,7 @@ import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-micron
 import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
 import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
-import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
+import RhUiUploadIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-upload-icon';
 
 interface LoadingPropsType {
   spinnerAriaValueText: string;
@@ -75,7 +75,7 @@ export const ButtonCircle: React.FunctionComponent = () => {
         isCircle
         {...(!isUploading && { 'aria-label': 'Upload circle variant example' })}
         onClick={() => setIsUploading(!isUploading)}
-        icon={<UploadIcon />}
+        icon={<RhUiUploadIcon />}
         {...uploadingProps}
       />
     </Flex>

@@ -24,8 +24,8 @@ import RhUiPauseFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-paus
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import RhUiExpandIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-expand-icon';
 import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
-import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
 import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
+import RhUiDownloadIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-download-icon';
 
 export const ConsoleLogViewerToolbar: React.FC = () => {
   const firstOptions = {
@@ -451,7 +451,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
                 ref={toggleRef}
                 isExpanded={downloadExpandedMobile}
                 onClick={onDownloadToggleMobile}
-                icon={<DownloadIcon />}
+                icon={<RhUiDownloadIcon />}
                 aria-label="Download"
               />
             )}

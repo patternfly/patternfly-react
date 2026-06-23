@@ -7,7 +7,7 @@ subsection: file-upload
 ---
 
 import { useState } from 'react';
-import FileUploadIcon from '@patternfly/react-icons/dist/esm/icons/file-upload-icon';
+import RhUiDocumentFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-document-fill-icon';
 
 ## Examples
 
@@ -21,6 +21,7 @@ Pressing _Clear_ button triggers `onClearClick` event.
 ### Simple text file
 
 ```ts file="./FileUploadSimpleText.tsx"
+
 ```
 
 ### With helper text
@@ -28,6 +29,7 @@ Pressing _Clear_ button triggers `onClearClick` event.
 You can pass in the `<FileUploadHelperText` sub-component via the `children` property to `<FileUpload>`.
 
 ```ts file="./FileUploadWithHelperText.tsx"
+
 ```
 
 ### Text file with edits allowed
@@ -36,6 +38,7 @@ A user can always type instead of selecting a file, but by default, once a user 
 Typing/pasting text in the box will call `onTextChange` with a string, and a string value is expected for the `value` prop. :
 
 ```ts file="./FileUploadTextWithEdits.tsx"
+
 ```
 
 ### Restricting file size and type
@@ -49,6 +52,7 @@ Restricting file sizes and types in this way is for user convenience only, and i
 ### Text file with restrictions
 
 ```ts file="./FileUploadTextWithRestrictions.tsx"
+
 ```
 
 ### Other file types
@@ -58,6 +62,7 @@ If no `type` prop is specified, the component will not read files directly. When
 ### Simple file of any format
 
 ```ts file="./FileUploadSimpleFile.tsx"
+
 ```
 
 ### Customizing the file preview
@@ -67,6 +72,7 @@ Regardless of `type`, the preview area (the TextArea, or any future implementati
 ### Custom file preview
 
 ```ts file="./FileUploadCustomPreview.tsx"
+
 ```
 
 ### Bringing your own file browse logic
@@ -78,6 +84,7 @@ Note that the `isLoading` prop is styled to position the spinner dead center abo
 ### Custom file upload
 
 ```ts file="./FileUploadCustomUpload.tsx"
+
 ```
 
 ## Types
