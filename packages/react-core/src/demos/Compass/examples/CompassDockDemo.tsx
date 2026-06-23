@@ -31,7 +31,7 @@ import {
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
 import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
-import CloudIcon from '@patternfly/react-icons/dist/esm/icons/cloud-icon';
+import RhUiCloudFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cloud-fill-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 import pfLogo from '../../assets/PF-IconLogo-color.svg';
@@ -281,7 +281,7 @@ export const CompassDockDemo: React.FunctionComponent = () => {
                       to="#nav-icon-link3"
                       itemId={2}
                       isActive={activeItem === 2}
-                      icon={<CloudIcon />}
+                      icon={<RhUiCloudFillIcon />}
                       anchorRef={navItem3Ref}
                       aria-label="Authentication"
                     >

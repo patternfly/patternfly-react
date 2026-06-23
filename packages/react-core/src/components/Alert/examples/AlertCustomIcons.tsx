@@ -4,7 +4,7 @@ import RhUiUsersFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-user
 import RhUiContainerFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-container-fill-icon';
 import DatabaseIcon from '@patternfly/react-icons/dist/esm/icons/database-icon';
 import RhUiServerStackFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-server-stack-fill-icon';
-import LaptopIcon from '@patternfly/react-icons/dist/esm/icons/laptop-icon';
+import RhUiLaptopFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-laptop-fill-icon';
 
 export const AlertCustomIcons: React.FunctionComponent = () => (
   <Fragment>
@@ -12,6 +12,6 @@ export const AlertCustomIcons: React.FunctionComponent = () => (
     <Alert customIcon={<RhUiContainerFillIcon />} variant="info" title="Info alert title" />
     <Alert customIcon={<DatabaseIcon />} variant="success" title="Success alert title" />
     <Alert customIcon={<RhUiServerStackFillIcon />} variant="warning" title="Warning alert title" />
-    <Alert customIcon={<LaptopIcon />} variant="danger" title="Danger alert title" />
+    <Alert customIcon={<RhUiLaptopFillIcon />} variant="danger" title="Danger alert title" />
   </Fragment>
 );

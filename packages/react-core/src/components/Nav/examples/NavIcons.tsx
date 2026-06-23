@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { Nav, NavExpandable, NavItem, NavList } from '@patternfly/react-core';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
-import CloudIcon from '@patternfly/react-icons/dist/esm/icons/cloud-icon';
 import RhUiFolderOpenFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-open-fill-icon';
+import RhUiCloudFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cloud-fill-icon';
 import RhUiLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-link-icon';
 
 export const NavIcons: React.FunctionComponent = () => {
@@ -42,7 +42,7 @@ export const NavIcons: React.FunctionComponent = () => {
           to="#nav-icon-link3"
           itemId={2}
           isActive={activeItem === 2}
-          icon={<CloudIcon />}
+          icon={<RhUiCloudFillIcon />}
         >
           Link 3
         </NavItem>
