@@ -26,8 +26,8 @@ import {
   StackItem,
   Checkbox
 } from '@patternfly/react-core';
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
+import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import t_global_color_brand_default from '@patternfly/react-tokens/dist/esm/t_global_color_brand_default';
 
@@ -801,7 +801,7 @@ export const TableComposableDemo = () => {
       } else if (index === 1) {
         return (
           <>
-            <CodeBranchIcon key="icon" /> {cell}
+            <RhUiBranchFillIcon key="icon" /> {cell}
           </>
         );
       } else if (index === 2) {

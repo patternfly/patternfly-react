@@ -15,7 +15,7 @@ import {
   MenuToggleElement
 } from '@patternfly/react-core';
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 
 export const DataListMixedExpandable: React.FunctionComponent = () => {
   const [isOpen1, setIsOpen1] = useState(false);
@@ -68,7 +68,7 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
             <DataListItemCells
               dataListCells={[
                 <DataListCell isIcon key="icon">
-                  <CodeBranchIcon />
+                  <RhUiBranchFillIcon />
                 </DataListCell>,
                 <DataListCell key="primary content">
                   <div id="m-ex-item1">Primary content</div>
@@ -141,7 +141,7 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
             <DataListItemCells
               dataListCells={[
                 <DataListCell isIcon key="icon">
-                  <CodeBranchIcon />
+                  <RhUiBranchFillIcon />
                 </DataListCell>,
                 <DataListCell key="secondary content">
                   <div id="m-ex-item2">Secondary content</div>
@@ -201,7 +201,7 @@ export const DataListMixedExpandable: React.FunctionComponent = () => {
             <DataListItemCells
               dataListCells={[
                 <DataListCell isIcon key="icon">
-                  <CodeBranchIcon />
+                  <RhUiBranchFillIcon />
                 </DataListCell>,
                 <DataListCell key="tertiary content">
                   <div id="m-ex-item3">Tertiary content</div>

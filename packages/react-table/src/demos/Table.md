@@ -51,7 +51,7 @@ import { DragDropSort } from '@patternfly/react-drag-drop';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';

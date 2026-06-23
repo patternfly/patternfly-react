@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 
 export const MenuWithDescription: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState(0);
@@ -15,14 +15,14 @@ export const MenuWithDescription: React.FunctionComponent = () => {
     <Menu onSelect={onSelect} activeItemId={activeItem}>
       <MenuContent>
         <MenuList>
-          <MenuItem icon={<CodeBranchIcon />} description="Description" itemId={0}>
+          <MenuItem icon={<RhUiBranchFillIcon />} description="Description" itemId={0}>
             Action 1
           </MenuItem>
-          <MenuItem isDisabled icon={<CodeBranchIcon />} description="Description" itemId={1}>
+          <MenuItem isDisabled icon={<RhUiBranchFillIcon />} description="Description" itemId={1}>
             Action 2 disabled
           </MenuItem>
           <MenuItem
-            icon={<CodeBranchIcon />}
+            icon={<RhUiBranchFillIcon />}
             description="Nunc non ornare ex, et pretium dui. Duis nec augue at urna elementum blandit tincidunt eget metus. Aenean sed metus id urna dignissim interdum. Aenean vel nisl vitae arcu vehicula pulvinar eget nec turpis. Cras sit amet est est."
             itemId={2}
           >

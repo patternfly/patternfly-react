@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Menu, MenuContent, MenuList, MenuItem, Divider, DrilldownMenu } from '@patternfly/react-core';
 import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
@@ -189,7 +189,7 @@ export class MenuDrilldownDemo extends Component {
                     Add storage
                   </MenuItem>
                   <Divider component="li" />
-                  <MenuItem icon={<CodeBranchIcon />} itemId="git">
+                  <MenuItem icon={<RhUiBranchFillIcon />} itemId="git">
                     From Git
                   </MenuItem>
                   <MenuItem icon={<LayerGroupIcon />} itemId="container">

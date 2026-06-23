@@ -50,7 +50,7 @@ import {
 } from '@patternfly/react-table';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import RhMicronsSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-large-to-small-icon';
@@ -257,7 +257,7 @@ export const TablesAndTabs = () => {
               <Flex>
                 <FlexItem>{repo.branches}</FlexItem>
                 <FlexItem>
-                  <CodeBranchIcon key="icon" />
+                  <RhUiBranchFillIcon key="icon" />
                 </FlexItem>
               </Flex>
             </Td>
