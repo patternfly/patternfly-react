@@ -20,7 +20,7 @@ import {
 } from '@patternfly/react-core';
 import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
+import RhUiServerStackFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-server-stack-fill-icon';
 import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
 import RhUiClipboardFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clipboard-fill-icon';
@@ -196,7 +196,7 @@ export class MenuDemo extends Component {
             <MenuItem id="icons-menu-item-1" icon={<RhUiBranchFillIcon id="code-branch-icon" />} itemId={0}>
               From Git
             </MenuItem>
-            <MenuItem id="icons-menu-item-2" icon={<LayerGroupIcon id="layer-group-icon" />} itemId={1}>
+            <MenuItem id="icons-menu-item-2" icon={<RhUiServerStackFillIcon id="layer-group-icon" />} itemId={1}>
               Container Image
             </MenuItem>
             <MenuItem id="icons-menu-item-3" icon={<CubeIcon id="cube-icon" />} itemId={2}>

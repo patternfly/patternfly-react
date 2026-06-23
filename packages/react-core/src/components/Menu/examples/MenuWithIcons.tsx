@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
 import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
-import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
+import RhUiServerStackFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-server-stack-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 export const MenuWithIcons: React.FunctionComponent = () => {
@@ -20,7 +20,7 @@ export const MenuWithIcons: React.FunctionComponent = () => {
           <MenuItem icon={<RhUiBranchFillIcon />} itemId={0}>
             From git
           </MenuItem>
-          <MenuItem icon={<LayerGroupIcon />} itemId={1}>
+          <MenuItem icon={<RhUiServerStackFillIcon />} itemId={1}>
             Container image
           </MenuItem>
           <MenuItem icon={<CubeIcon />} itemId={2}>
