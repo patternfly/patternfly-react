@@ -9,8 +9,8 @@ import { useState } from 'react';
 import { Slider, Button, Content, ContentVariants } from '@patternfly/react-core';
 import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
-import LockIcon from '@patternfly/react-icons/dist/esm/icons/lock-icon';
-import LockOpenIcon from '@patternfly/react-icons/dist/esm/icons/lock-open-icon';
+import RhUiLockFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-lock-fill-icon';
+import RhUiUnlockFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-unlock-fill-icon';
 
 ## Examples
 

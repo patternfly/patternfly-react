@@ -20,7 +20,7 @@ import { Button, DescriptionList, DescriptionListTerm, DescriptionListDescriptio
 import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import BookIcon from '@patternfly/react-icons/dist/esm/icons/book-icon';
-import KeyIcon from '@patternfly/react-icons/dist/esm/icons/key-icon';
+import RhUiKeyIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-key-icon';
 import RhUiFlagFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-flag-fill-icon';
 import RhUiLanguageFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-language-fill-icon';
 
@@ -29,66 +29,79 @@ import RhUiLanguageFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-l
 ### Basic
 
 ```ts file='./DescriptionListBasic.tsx'
+
 ```
 
 ### Term help text
 
 ```ts file='./DescriptionListWithTermHelpText.tsx'
+
 ```
 
 ### Default 2 col
 
 ```ts file='./DescriptionListDefaultTwoCol.tsx'
+
 ```
 
 ### Default 3 col on lg
 
 ```ts file='./DescriptionListDefaultThreeColLg.tsx'
+
 ```
 
 ### Horizontal
 
 ```ts file='./DescriptionListHorizontal.tsx'
+
 ```
 
 ### Horizontal using custom term width modifier
 
 ```ts file='./DescriptionListHorizontalCustomTermWidth.tsx'
+
 ```
 
 ### Horizontal 2 col
 
 ```ts file='./DescriptionListHorizontalTwoCol.tsx'
+
 ```
 
 ### Horizontal 3 col on lg
 
 ```ts file='./DescriptionListHorizontalThreeColLg.tsx'
+
 ```
 
 ### Compact
 
 ```ts file='./DescriptionListCompact.tsx'
+
 ```
 
 ### Compact horizontal
 
 ```ts file='./DescriptionListCompactHorizontal.tsx'
+
 ```
 
 ### Fluid horizontal
 
 ```ts file='./DescriptionListFluidHorizontal.tsx'
+
 ```
 
 ### Column fill
 
 ```ts file='./DescriptionListColumnFill.tsx'
+
 ```
 
 ### Large display size
 
 ```ts file='./DescriptionListWithLargeDisplaySize.tsx'
+
 ```
 
 ## Responsive column definitions
@@ -96,16 +109,19 @@ import RhUiLanguageFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-l
 ### Default responsive columns
 
 ```ts file='./DescriptionListDefaultResponsiveColumns.tsx'
+
 ```
 
 ### Horizontal responsive columns
 
 ```ts file='./DescriptionListHorizontalResponsiveColumns.tsx'
+
 ```
 
 ### Responsive horizontal, vertical group layout
 
 ```ts file='./DescriptionListResponsiveHoriVertGroup.tsx'
+
 ```
 
 ## Auto-column-width
@@ -113,11 +129,13 @@ import RhUiLanguageFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-l
 ### Default auto column width
 
 ```ts file='./DescriptionListDefaultAutoColumn.tsx'
+
 ```
 
 ### Horizontal auto column width
 
 ```ts file='./DescriptionListHorizontalAutoColumn.tsx'
+
 ```
 
 ## Inline grid
@@ -125,6 +143,7 @@ import RhUiLanguageFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-l
 ### Default inline grid
 
 ```ts file='./DescriptionListDefaultInlineGrid.tsx'
+
 ```
 
 ## Card variants
@@ -134,21 +153,25 @@ A [card component](/components/card) can be used in place of a description list 
 ### Description list with card
 
 ```ts file='./DescriptionListWithCard.tsx'
+
 ```
 
 ### Description list with large display size and card
 
 ```ts file='./DescriptionListWithLargeDisplaySizeAndCard.tsx'
+
 ```
 
 ### Display size with card, three column on large breakpoint
 
 ```ts file='./DescriptionListDisplaySizeAndCardThreeColumn.tsx'
+
 ```
 
 ### Display size with card, horizontal, modified term width
 
 ```ts file='./DescriptionListDisplaySizeAndCardHorizontalTermWidth.tsx'
+
 ```
 
 ## Auto fit
@@ -156,16 +179,19 @@ A [card component](/components/card) can be used in place of a description list 
 ### Auto-fit basic
 
 ```ts file='./DescriptionListAutoFitBasic.tsx'
+
 ```
 
 ### Auto-fit, min width modified grid template columns
 
 ```ts file='./DescriptionListAutoFitMinWidthModified.tsx'
+
 ```
 
 ### Auto-fit, min width modified, responsive grid template columns
 
 ```ts file='./DescriptionListAutoFitMinWidthResponsive.tsx'
+
 ```
 
 ## With icons
@@ -173,4 +199,5 @@ A [card component](/components/card) can be used in place of a description list 
 ### Icons on terms
 
 ```ts file='./DescriptionListIconsOnTerms.tsx'
+
 ```

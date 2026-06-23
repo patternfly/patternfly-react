@@ -6,7 +6,7 @@ propComponents: ['List', 'ListItem']
 ---
 
 import RhUiLearnFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-learn-fill-icon';
-import KeyIcon from '@patternfly/react-icons/dist/esm/icons/key-icon';
+import RhUiKeyIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-key-icon';
 import DesktopIcon from '@patternfly/react-icons/dist/esm/icons/desktop-icon';
 
 ## Examples
