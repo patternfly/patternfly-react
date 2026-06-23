@@ -8,6 +8,7 @@ propComponents: ['EmptyState', 'EmptyStateBody', 'EmptyStateFooter', 'EmptyState
 import { useState } from 'react';
 import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 import RhUiCubesIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cubes-icon';
+import RhUiModuleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-module-icon';
 
 ## Examples
 
