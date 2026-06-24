@@ -35,7 +35,7 @@ import CloudIcon from '@patternfly/react-icons/dist/esm/icons/cloud-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import pfLogo from '../../assets/PF-IconLogo-color.svg';
-import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
+import RhUiThumbnailViewSmallFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-thumbnail-view-small-fill-icon';
 import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_lg';
 
 interface NavOnSelectProps {
@@ -318,12 +318,24 @@ export const CompassDockDemo: React.FunctionComponent = () => {
               >
                 <ToolbarItem>
                   {isDockTextExpanded || isDockExpanded ? (
-                    <MenuToggle ref={appsRef} variant="plain" icon={<ThIcon />} isDocked aria-label="Applications">
+                    <MenuToggle
+                      ref={appsRef}
+                      variant="plain"
+                      icon={<RhUiThumbnailViewSmallFillIcon />}
+                      isDocked
+                      aria-label="Applications"
+                    >
                       Applications
                     </MenuToggle>
                   ) : (
                     <Tooltip aria="none" aria-live="off" triggerRef={appsRef} content="Applications">
-                      <MenuToggle ref={appsRef} variant="plain" icon={<ThIcon />} isDocked aria-label="Applications">
+                      <MenuToggle
+                        ref={appsRef}
+                        variant="plain"
+                        icon={<RhUiThumbnailViewSmallFillIcon />}
+                        isDocked
+                        aria-label="Applications"
+                      >
                         Applications
                       </MenuToggle>
                     </Tooltip>
