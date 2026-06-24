@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.6.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.6.0-prerelease.6...@patternfly/react-templates@6.6.0-prerelease.8) (2026-06-24)
+
+### Bug Fixes
+
+- **EllipsisVIcon:** Replace EllipsisVIcon with RhUiEllipsisVerticalFillIcon ([#12481](https://github.com/patternfly/patternfly-react/issues/12481)) ([29f223e](https://github.com/patternfly/patternfly-react/commit/29f223e6f0869af70d4b6f0733660a9573466342))
+
 # [6.6.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.6.0-prerelease.5...@patternfly/react-templates@6.6.0-prerelease.6) (2026-06-15)
 
 **Note:** Version bump only for package @patternfly/react-templates

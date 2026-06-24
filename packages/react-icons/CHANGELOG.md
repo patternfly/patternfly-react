@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.6.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.6.0-prerelease.1...@patternfly/react-icons@6.6.0-prerelease.3) (2026-06-24)
+
+### Bug Fixes
+
+- **react-icons:** move tslib to deps ([#12454](https://github.com/patternfly/patternfly-react/issues/12454)) ([65c1213](https://github.com/patternfly/patternfly-react/commit/65c1213a7c1a04faac6afc16280b01d86b9bd301))
+
+### Features
+
+- **Avatar:** support colorful ([#12460](https://github.com/patternfly/patternfly-react/issues/12460)) ([46d9e5a](https://github.com/patternfly/patternfly-react/commit/46d9e5a6b2781600d01378d9c26e74fb954437cb))
+
 # [6.6.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.5.1-prerelease.0...@patternfly/react-icons@6.6.0-prerelease.1) (2026-05-26)
 
 ### Bug Fixes

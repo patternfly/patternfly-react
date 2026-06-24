@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.6.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.6.0-prerelease.7...@patternfly/react-code-editor@6.6.0-prerelease.9) (2026-06-24)
+
+### Bug Fixes
+
+- **CodeIcon:** Replace CodeIcon with RhUiCodeIcon ([#12488](https://github.com/patternfly/patternfly-react/issues/12488)) ([9562dbe](https://github.com/patternfly/patternfly-react/commit/9562dbe059fc5ca5182a177ae72943ae05fcaeea))
+- **CopyIcon:** Replace CopyIcon with RhUiCopyFillIcon ([#12449](https://github.com/patternfly/patternfly-react/issues/12449)) ([a2798bd](https://github.com/patternfly/patternfly-react/commit/a2798bd477fedc37c8a3a706464eb864706254a3))
+- **MoonIcon:** Replace MoonIcon with RhUiDarkModeFillIcon ([#12471](https://github.com/patternfly/patternfly-react/issues/12471)) ([6ca4fd4](https://github.com/patternfly/patternfly-react/commit/6ca4fd420c42847220e3da9fadae0edbd15c10ea))
+
 # [6.6.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.6.0-prerelease.6...@patternfly/react-code-editor@6.6.0-prerelease.7) (2026-06-15)
 
 **Note:** Version bump only for package @patternfly/react-code-editor

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.6.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.6.0-prerelease.1...@patternfly/react-charts@8.6.0-prerelease.3) (2026-06-24)
+
+### Features
+
+- **Avatar:** support colorful ([#12460](https://github.com/patternfly/patternfly-react/issues/12460)) ([46d9e5a](https://github.com/patternfly/patternfly-react/commit/46d9e5a6b2781600d01378d9c26e74fb954437cb))
+
 # [8.6.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.5.1-prerelease.0...@patternfly/react-charts@8.6.0-prerelease.1) (2026-05-26)
 
 ### Bug Fixes

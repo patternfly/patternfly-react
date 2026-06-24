@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.6.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-drag-drop@6.6.0-prerelease.6...@patternfly/react-drag-drop@6.6.0-prerelease.8) (2026-06-24)
+
+### Bug Fixes
+
+- **PficonSortCommonAscIcon:** Replace PficonSortCommonAscIcon with RhUiSortDownSmallToLargeIcon ([#12485](https://github.com/patternfly/patternfly-react/issues/12485)) ([909f747](https://github.com/patternfly/patternfly-react/commit/909f747a449b449cde415c31a77a33b1559bfe08))
+
 # [6.6.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-drag-drop@6.6.0-prerelease.5...@patternfly/react-drag-drop@6.6.0-prerelease.6) (2026-06-15)
 
 **Note:** Version bump only for package @patternfly/react-drag-drop

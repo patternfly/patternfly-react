@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.6.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.6.0-prerelease.6...@patternfly/react-table@6.6.0-prerelease.8) (2026-06-24)
+
+### Bug Fixes
+
+- **CodeBranchIcon:** Replace CodeBranchIcon with RhUiBranchIcon ([#12489](https://github.com/patternfly/patternfly-react/issues/12489)) ([aa4f9fd](https://github.com/patternfly/patternfly-react/commit/aa4f9fdfb7a0e95b8b01f6b08db2947af3ee55cb))
+- **CodeIcon:** Replace CodeIcon with RhUiCodeIcon ([#12488](https://github.com/patternfly/patternfly-react/issues/12488)) ([9562dbe](https://github.com/patternfly/patternfly-react/commit/9562dbe059fc5ca5182a177ae72943ae05fcaeea))
+- **EllipsisHIcon:** Replace EllipsisHIcon with RhUiEllipsisHorizontalFillIcon ([#12480](https://github.com/patternfly/patternfly-react/issues/12480)) ([07a896d](https://github.com/patternfly/patternfly-react/commit/07a896d893f1e3b12e8a958ace8b5eab7704520d))
+- **EllipsisVIcon:** Replace EllipsisVIcon with RhUiEllipsisVerticalFillIcon ([#12481](https://github.com/patternfly/patternfly-react/issues/12481)) ([29f223e](https://github.com/patternfly/patternfly-react/commit/29f223e6f0869af70d4b6f0733660a9573466342))
+- **GripVerticalIcon:** Replace GripVerticalIcon with RhUiGripVerticalFillIcon ([#12478](https://github.com/patternfly/patternfly-react/issues/12478)) ([0e16ab5](https://github.com/patternfly/patternfly-react/commit/0e16ab539564b9a4b43a6fc3dad1c75da28ce51a))
+- **PencilAltIcon:** Replace PencilAltIcon with RhUiEditFillIcon ([#12467](https://github.com/patternfly/patternfly-react/issues/12467)) ([351df49](https://github.com/patternfly/patternfly-react/commit/351df49c19b43c358ee6f8249f21e82522ac6bc1))
+- **SortAmountDownIcon:** Replace SortAmountDownIcon with RhUiSortDownLargeToSmallIcon ([#12484](https://github.com/patternfly/patternfly-react/issues/12484)) ([37c2292](https://github.com/patternfly/patternfly-react/commit/37c2292c89637444b332fcbec909fc97b11971ae))
+
 # [6.6.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.6.0-prerelease.5...@patternfly/react-table@6.6.0-prerelease.6) (2026-06-15)
 
 **Note:** Version bump only for package @patternfly/react-table

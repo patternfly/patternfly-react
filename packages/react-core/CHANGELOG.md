@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.6.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.0-prerelease.6...@patternfly/react-core@6.6.0-prerelease.8) (2026-06-24)
+
+### Bug Fixes
+
+- **BookOpenIcon:** Replace BookOpenIcon with RhUiLearnFillIcon ([#12487](https://github.com/patternfly/patternfly-react/issues/12487)) ([fa56c9e](https://github.com/patternfly/patternfly-react/commit/fa56c9ecc1fe067187efe671edf8a7cf51ff3e86))
+- **BoxIcon:** Replace BoxIcon with RhUiContainerFillIcon ([#12482](https://github.com/patternfly/patternfly-react/issues/12482)) ([5f07ec9](https://github.com/patternfly/patternfly-react/commit/5f07ec9d81355f594301ae04b8e2674ebebb0d51))
+- **BullhornIcon:** Replace BullhornIcon with RhUiAttentionBellFillIcon ([#12466](https://github.com/patternfly/patternfly-react/issues/12466)) ([7d594f4](https://github.com/patternfly/patternfly-react/commit/7d594f419c721d89dff699b76768ac6c884375cc))
+- **CalendarAltIcon:** Replace CalendarAltIcon with RhUiCalendarIcon ([#12462](https://github.com/patternfly/patternfly-react/issues/12462)) ([e1e02f2](https://github.com/patternfly/patternfly-react/commit/e1e02f25b17cc5b4d7f775ef1fc0aee61753e0ad))
+- **CalendarIcon:** Replace CalendarIcon with RhUiCalendarFillIcon ([#12461](https://github.com/patternfly/patternfly-react/issues/12461)) ([773acc8](https://github.com/patternfly/patternfly-react/commit/773acc801df3eada9f334092f58c66a46414c073))
+- **ClipboardIcon:** Replace ClipboardIcon with RhUiClipboardFillIcon ([#12455](https://github.com/patternfly/patternfly-react/issues/12455)) ([f763158](https://github.com/patternfly/patternfly-react/commit/f7631588c8643c9a567054e35e3d01af33a4ffbf))
+- **ClockIcon:** Replace ClockIcon with RhUiClockFillIcon ([#12464](https://github.com/patternfly/patternfly-react/issues/12464)) ([e9d08f9](https://github.com/patternfly/patternfly-react/commit/e9d08f9eb615a0d78a2ffff0e8e2cfeccf615784))
+- **CodeBranchIcon:** Replace CodeBranchIcon with RhUiBranchIcon ([#12489](https://github.com/patternfly/patternfly-react/issues/12489)) ([aa4f9fd](https://github.com/patternfly/patternfly-react/commit/aa4f9fdfb7a0e95b8b01f6b08db2947af3ee55cb))
+- **CodeIcon:** Replace CodeIcon with RhUiCodeIcon ([#12488](https://github.com/patternfly/patternfly-react/issues/12488)) ([9562dbe](https://github.com/patternfly/patternfly-react/commit/9562dbe059fc5ca5182a177ae72943ae05fcaeea))
+- **CopyIcon:** Replace CopyIcon with RhUiCopyFillIcon ([#12449](https://github.com/patternfly/patternfly-react/issues/12449)) ([a2798bd](https://github.com/patternfly/patternfly-react/commit/a2798bd477fedc37c8a3a706464eb864706254a3))
+- **Drawer:** account for cursor position in resize ([#12506](https://github.com/patternfly/patternfly-react/issues/12506)) ([0cd3a4d](https://github.com/patternfly/patternfly-react/commit/0cd3a4d39455642f51304573def0378063b12236))
+- **EllipsisVIcon:** Replace EllipsisVIcon with RhUiEllipsisVerticalFillIcon ([#12481](https://github.com/patternfly/patternfly-react/issues/12481)) ([29f223e](https://github.com/patternfly/patternfly-react/commit/29f223e6f0869af70d4b6f0733660a9573466342))
+- **ExternalLinkAltIcon:** Replace ExternalLinkAltIcon with RhUiExternalLinkIcon ([#12490](https://github.com/patternfly/patternfly-react/issues/12490)) ([300a85c](https://github.com/patternfly/patternfly-react/commit/300a85c3742b3e88bc022adeae7ca6749d66151f))
+- **EyeIcon:** Replace EyeIcon with RhUiViewFillIcon ([#12473](https://github.com/patternfly/patternfly-react/issues/12473)) ([d25461c](https://github.com/patternfly/patternfly-react/commit/d25461c567c8a1eff9db8e75171752409ec03fff))
+- **EyeSlashIcon:** Replace EyeSlashIcon with RhUiViewOffFillIcon ([#12472](https://github.com/patternfly/patternfly-react/issues/12472)) ([b643f46](https://github.com/patternfly/patternfly-react/commit/b643f46d376b9616bc6193b36427a9ebfd297a88))
+- **FlagIcon:** Replace FlagIcon with RhUiFlagFillIcon ([#12457](https://github.com/patternfly/patternfly-react/issues/12457)) ([420ce64](https://github.com/patternfly/patternfly-react/commit/420ce6453aca3f67f81d6aca2a77f12670171e0c))
+- **GlobeIcon:** Replace GlobeIcon with RhUiLanguageFillIcon ([#12470](https://github.com/patternfly/patternfly-react/issues/12470)) ([6198934](https://github.com/patternfly/patternfly-react/commit/619893463d31bc19b767d8f42e3be79455a0a51f))
+- **GripVerticalIcon:** Replace GripVerticalIcon with RhUiGripVerticalFillIcon ([#12478](https://github.com/patternfly/patternfly-react/issues/12478)) ([0e16ab5](https://github.com/patternfly/patternfly-react/commit/0e16ab539564b9a4b43a6fc3dad1c75da28ce51a))
+- **HamburgerIcon:** Replace HamburgerIcon with RhUiStorageFillIcon ([#12479](https://github.com/patternfly/patternfly-react/issues/12479)) ([68f2475](https://github.com/patternfly/patternfly-react/commit/68f247557f3da3e09b13a6af784ab2c6f1fc5a9b))
+- **HandPaperIcon:** Replace HandPaperIcon with RhUiStopCircleFillIcon ([#12469](https://github.com/patternfly/patternfly-react/issues/12469)) ([71b4735](https://github.com/patternfly/patternfly-react/commit/71b473523694471aee005fbb47a68963b2c16b6e))
+- **InfrastructureIcons:** replaced with RH brand icons part 1 ([#12501](https://github.com/patternfly/patternfly-react/issues/12501)) ([a479b4c](https://github.com/patternfly/patternfly-react/commit/a479b4c354ca970383cfefeb5eb532b519b2ea73))
+- **InProgressIcon:** Replace InProgressIcon with RhUiInProgressIcon ([#12458](https://github.com/patternfly/patternfly-react/issues/12458)) ([bc8bb7c](https://github.com/patternfly/patternfly-react/commit/bc8bb7c7e0309b39e2d2ed5ff4c383292711375c))
+- **LinkIcon:** Replace LinkIcon with RhUiLinkIcon ([#12456](https://github.com/patternfly/patternfly-react/issues/12456)) ([8381d72](https://github.com/patternfly/patternfly-react/commit/8381d7259298b69e940cf09c5d475acd11abe56e))
+- **OutlinedCalendarAltIcon:** Replace OutlinedCalendarAltIcon with RhUiCalendarIcon ([#12463](https://github.com/patternfly/patternfly-react/issues/12463)) ([b786d6d](https://github.com/patternfly/patternfly-react/commit/b786d6de172960d158436f8bc6bfc332c0ce8769))
+- **OutlinedClockIcon:** Replace OutlinedClockIcon with RhUiClockIcon ([#12465](https://github.com/patternfly/patternfly-react/issues/12465)) ([cbdab57](https://github.com/patternfly/patternfly-react/commit/cbdab57e065340e2336bdf86ec33aea059fec60b))
+- **OutlinedCopy:** Replace OutlinedCopy with RhUiCopyIcon ([#12453](https://github.com/patternfly/patternfly-react/issues/12453)) ([0550ca7](https://github.com/patternfly/patternfly-react/commit/0550ca7172e63cedf849faec04164cef7d6fb270))
+- **PendingIcon:** Replace PendingIcon with RhUiPendingIcon ([#12459](https://github.com/patternfly/patternfly-react/issues/12459)) ([7637e43](https://github.com/patternfly/patternfly-react/commit/7637e43d2d17c79c817e46411326db1d19dfa376))
+- **PficonSortCommonAscIcon:** Replace PficonSortCommonAscIcon with RhUiSortDownSmallToLargeIcon ([#12485](https://github.com/patternfly/patternfly-react/issues/12485)) ([909f747](https://github.com/patternfly/patternfly-react/commit/909f747a449b449cde415c31a77a33b1559bfe08))
+- **ProjectDiagramIcon:** Replace ProjectDiagramIcon with RhUiInfrastructureFillIcon ([#12483](https://github.com/patternfly/patternfly-react/issues/12483)) ([0b85076](https://github.com/patternfly/patternfly-react/commit/0b850768aeafec652e0f80ecce236098c21e7a29))
+- **rtl-demo:** update paginated table demo layout and status labels ([#12491](https://github.com/patternfly/patternfly-react/issues/12491)) ([51fc8dc](https://github.com/patternfly/patternfly-react/commit/51fc8dc6fbf91b4d9ca73f0afca6b58655041720))
+- **SortAmountDownIcon:** Replace SortAmountDownIcon with RhUiSortDownLargeToSmallIcon ([#12484](https://github.com/patternfly/patternfly-react/issues/12484)) ([37c2292](https://github.com/patternfly/patternfly-react/commit/37c2292c89637444b332fcbec909fc97b11971ae))
+- **TableIcon:** Replace TableIcon with RhUiTableIcon ([#12476](https://github.com/patternfly/patternfly-react/issues/12476)) ([b6c1b00](https://github.com/patternfly/patternfly-react/commit/b6c1b002cea1ebc02c20d89f302f39631de08c6e))
+- **ThIcon:** Replace ThIcon with RhUiGripHorizontalFillIcon ([#12477](https://github.com/patternfly/patternfly-react/issues/12477)) ([4b4fbf7](https://github.com/patternfly/patternfly-react/commit/4b4fbf7c9ef966786c3103cbcc38bd9b235a683a))
+- **UserIcon:** Replace UserIcon with RhUiProfileFillIcon ([#12452](https://github.com/patternfly/patternfly-react/issues/12452)) ([a1404e3](https://github.com/patternfly/patternfly-react/commit/a1404e3365f2c0bef9dc11863bb69bd49d497a33))
+- **UsersIcon:** Replace with brand icon ([#12450](https://github.com/patternfly/patternfly-react/issues/12450)) ([34193c6](https://github.com/patternfly/patternfly-react/commit/34193c67b1a2435d0165c33336d01c2e9b20a2dc))
+- **WalkingIcon:** Replace WalkingIcon with RhUiRunningIcon ([#12468](https://github.com/patternfly/patternfly-react/issues/12468)) ([256cd06](https://github.com/patternfly/patternfly-react/commit/256cd06ce6ad5142d0ebc7c3fafb13de2b4c12d9))
+
+### Features
+
+- **Avatar:** support colorful ([#12460](https://github.com/patternfly/patternfly-react/issues/12460)) ([46d9e5a](https://github.com/patternfly/patternfly-react/commit/46d9e5a6b2781600d01378d9c26e74fb954437cb))
+- **NavExpandable:** allow option to pass an icon ([#12444](https://github.com/patternfly/patternfly-react/issues/12444)) ([ebbc3e9](https://github.com/patternfly/patternfly-react/commit/ebbc3e9d06df7b6fca62e7d3f51769104add44b1))
+
 # [6.6.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.0-prerelease.5...@patternfly/react-core@6.6.0-prerelease.6) (2026-06-15)
 
 ### Features

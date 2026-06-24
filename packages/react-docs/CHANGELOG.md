@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.6.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.0-prerelease.7...@patternfly/react-docs@7.6.0-prerelease.9) (2026-06-24)
+
+### Features
+
+- **Avatar:** support colorful ([#12460](https://github.com/patternfly/patternfly-react/issues/12460)) ([46d9e5a](https://github.com/patternfly/patternfly-react/commit/46d9e5a6b2781600d01378d9c26e74fb954437cb))
+
 # [7.6.0-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.0-prerelease.6...@patternfly/react-docs@7.6.0-prerelease.7) (2026-06-15)
 
 **Note:** Version bump only for package @patternfly/react-docs
