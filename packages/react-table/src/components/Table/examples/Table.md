@@ -452,6 +452,7 @@ To make a nested column header:
 2. Pass `nestedHeaderColumnSpans` to `Table`. `nestedHeaderColumnSpans` is an array of numbers representing the column spans of the top level columns to `Table`, where each number is equal to the number of sub columns for a column, or `1` if a column contains no sub columns.
 3. Pass `hasNestedHeader` to `Thead`.
 4. Pass two `Tr` as children of `Thead`.
+5. If the parent `Table` has a sticky header, pass an additional `Tr isBorderRow` in `Thead` to create the bottom border in the `Thead`.
 
 The first `Tr` represents the top level of columns, and each must pass either `rowSpan` if the column does not contain sub columns or `colSpan` if the column contains sub columns. The value of `rowSpan` is equal to the number of rows the nested header will span, typically `2`, and the value of `colSpan` is equal to the number of sub columns in a column. Each `Th` except the last should also pass `hasRightBorder`.
 
