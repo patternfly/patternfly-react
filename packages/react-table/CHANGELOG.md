@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.6.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.6.0-prerelease.8...@patternfly/react-table@6.6.0-prerelease.9) (2026-06-26)
+
+### Bug Fixes
+
+- **table:** updated nested sticky header example with isBorderRow tr ([#12527](https://github.com/patternfly/patternfly-react/issues/12527)) ([5a70995](https://github.com/patternfly/patternfly-react/commit/5a709952ee5c6913c203e1d215a6e215abd048dd))
+
 # [6.6.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.6.0-prerelease.6...@patternfly/react-table@6.6.0-prerelease.8) (2026-06-24)
 
 ### Bug Fixes
