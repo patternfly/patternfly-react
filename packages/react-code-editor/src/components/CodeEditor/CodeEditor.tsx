@@ -386,6 +386,9 @@ export const CodeEditor = ({
     editorRef.current = editor;
     if (height === 'sizeToFit') {
       setHeightToFitContent();
+      editor.onDidContentSizeChange(() => {
+        setHeightToFitContent();
+      });
     }
   };
 
