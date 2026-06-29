@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "composite": false,
+    "declarationMap": false
+  },
+  "include": ["**/examples/**/*.tsx", "**/demos/examples/**/*.tsx"],
+  "exclude": ["**/**.test.tsx", "**/**.test.ts", "**/__mocks__/**"]
+}
