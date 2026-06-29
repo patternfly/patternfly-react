@@ -1,10 +1,17 @@
 {
-  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "noEmit": true,
-    "composite": false,
-    "declarationMap": false
+    "jsx": "react-jsx",
+    "lib": ["es2015", "dom"],
+    "target": "es2015",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "strictNullChecks": false,
+    "isolatedModules": true,
+    "noEmit": true
   },
-  "include": ["**/examples/**/*.tsx", "**/demos/examples/**/*.tsx"],
+  "include": ["**/examples/**/*.tsx"],
   "exclude": ["**/**.test.tsx", "**/**.test.ts", "**/__mocks__/**"]
 }
