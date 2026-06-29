@@ -50,6 +50,12 @@ import RhUiUnlockFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-unl
 
 ```
 
+### Custom step tooltip
+
+```ts file="./SliderCustomTooltip.tsx"
+
+```
+
 ## Types
 
 ### SliderOnChangeEvent

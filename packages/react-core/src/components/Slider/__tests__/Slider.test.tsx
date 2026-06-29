@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Slider } from '../Slider';
 import { Button } from '../../Button';
 
@@ -76,6 +77,17 @@ describe('slider', () => {
   test('renders slider with tooltip on thumb', () => {
     const { asFragment } = render(<Slider value={50} hasTooltipOverThumb />);
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('renders slider with custom tooltip content on thumb', async () => {
+    const user = userEvent.setup();
+
+    render(<Slider value={50} hasTooltipOverThumb tooltipContent="Custom tooltip content" />);
+
+    await user.hover(screen.getByRole('slider'));
+
+    await screen.findByRole('tooltip');
+    expect(screen.getByRole('tooltip')).toHaveTextContent('Custom tooltip content');
   });
 });
 

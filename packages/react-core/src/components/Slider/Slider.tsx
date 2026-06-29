@@ -42,8 +42,10 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   className?: string;
   /** Array of custom slider step objects (value and label of each step) for the slider. */
   customSteps?: SliderStepObject[];
-  /* Adds a tooltip over the slider thumb containing the current value. */
+  /** Enables a tooltip over the silder thumb. Defaults to the current value, or tooltipContent if provided. */
   hasTooltipOverThumb?: boolean;
+  /** Content of the tooltip over the slider thumb. Defaults to the current value.  */
+  tooltipContent?: React.ReactNode;
   /** Accessible label for the input field. */
   inputAriaLabel?: string;
   /** Text label that is place after the input field. */
@@ -101,6 +103,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   inputAriaLabel = 'Slider value input',
   thumbAriaLabel = 'Value',
   hasTooltipOverThumb = false,
+  tooltipContent,
   inputPosition = 'end',
   onChange,
   leftActions,
@@ -477,7 +480,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
             className={css('pf-v6-m-tabular-nums')}
             triggerRef={thumbRef}
             entryDelay={0}
-            content={findAriaTextValue()}
+            content={tooltipContent ? tooltipContent : findAriaTextValue()}
           >
             {thumbComponent}
           </Tooltip>
