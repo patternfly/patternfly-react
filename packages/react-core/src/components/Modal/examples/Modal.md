@@ -8,7 +8,6 @@ ouia: true
 
 import { Fragment, useRef, useState } from 'react';
 import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
-import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import RhUiAttentionBellFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';

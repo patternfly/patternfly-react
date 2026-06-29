@@ -11,7 +11,6 @@ import { Fragment, useRef, useState } from 'react';
 
 import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
 import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
-import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import RhUiAttentionBellFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';

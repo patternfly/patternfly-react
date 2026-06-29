@@ -8,7 +8,7 @@ import AngleUpIcon from '@patternfly/react-icons/dist/esm/icons/angle-up-icon';
 import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
-import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
+import RhMicronsCaretDownFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-fill-icon';
 import { AdvancedSearchMenu } from './AdvancedSearchMenu';
 import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities } from '../TextInputGroup';
 import { InputGroup, InputGroupItem } from '../InputGroup';
@@ -465,7 +465,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
             onClick={onToggle}
             isDisabled={isDisabled}
             aria-expanded={isSearchMenuOpen}
-            icon={<RhMicronsCaretDownIcon />}
+            icon={<RhMicronsCaretDownFillIcon />}
           />
         </InputGroupItem>
       )}

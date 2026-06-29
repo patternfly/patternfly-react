@@ -17,8 +17,8 @@ import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-
 import RhUiThumbnailViewSmallFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-thumbnail-view-small-fill-icon';
 import brandImg from '../assets/PF-IconLogo.svg';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
-import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+import RhMicronsCaretDownFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-fill-icon';
+import RhMicronsCloseIcon from  '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 import avatarImg from '../assets/avatarImg.svg';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
