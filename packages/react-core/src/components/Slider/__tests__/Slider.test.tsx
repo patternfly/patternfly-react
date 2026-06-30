@@ -116,3 +116,11 @@ test('renders slider with aria-describedby', () => {
 
   expect(slider).toBeVisible();
 });
+
+test('renders slider with thumbAriaValueText', () => {
+  render(<Slider value={50} thumbAriaValueText="Half capacity" />);
+
+  const slider = screen.getByRole('slider');
+
+  expect(slider).toHaveAttribute('aria-valuetext', 'Half capacity');
+});

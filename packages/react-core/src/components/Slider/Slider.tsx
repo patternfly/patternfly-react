@@ -83,8 +83,10 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   showTicks?: boolean;
   /** The step interval. */
   step?: number;
-  /* Accessible label for the slider thumb. */
+  /** Accessible label for the slider thumb. */
   thumbAriaLabel?: string;
+  /** Accessible text for the current value of the slider. Defaults to the current value. */
+  thumbAriaValueText?: string;
   /** Current value of the slider.  */
   value?: number;
 }
@@ -102,6 +104,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   inputLabel,
   inputAriaLabel = 'Slider value input',
   thumbAriaLabel = 'Value',
+  thumbAriaValueText,
   hasTooltipOverThumb = false,
   tooltipContent,
   inputPosition = 'end',
@@ -428,8 +431,8 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
       aria-valuemin={customSteps ? customSteps[0].value : min}
       aria-valuemax={customSteps ? customSteps[customSteps.length - 1].value : max}
       aria-valuenow={localValue}
-      aria-valuetext={findAriaTextValue()}
-      aria-label={thumbAriaLabel}
+      aria-valuetext={thumbAriaValueText ? thumbAriaValueText : findAriaTextValue()}
+      aria-label={thumbAriaLabel ? thumbAriaLabel : thumbAriaLabel}
       aria-disabled={isDisabled}
       aria-describedby={ariaDescribedby}
       aria-labelledby={ariaLabelledby}
