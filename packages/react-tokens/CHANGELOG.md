@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.6.0-prerelease.4...@patternfly/react-tokens@6.6.0) (2026-07-01)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
 # [6.6.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.6.0-prerelease.3...@patternfly/react-tokens@6.6.0-prerelease.4) (2026-06-26)
 
 ### Features

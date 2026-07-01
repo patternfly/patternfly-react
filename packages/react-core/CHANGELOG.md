@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.0-prerelease.9...@patternfly/react-core@6.6.0) (2026-07-01)
+
+### Bug Fixes
+
+- **AngleDownIcon:** Replace AngleDownIcon with RhMicronsCaretDownIcon ([#12494](https://github.com/patternfly/patternfly-react/issues/12494)) ([cdd6975](https://github.com/patternfly/patternfly-react/commit/cdd6975dff73a678ae855b49814fa6af9ee97993))
+- **RhMicronCaretDown:** Replace with fill for menus ([#12532](https://github.com/patternfly/patternfly-react/issues/12532)) ([2729a13](https://github.com/patternfly/patternfly-react/commit/2729a139db37a50afa6ca15c44b20fb545005847))
+
 # [6.6.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.0-prerelease.8...@patternfly/react-core@6.6.0-prerelease.9) (2026-06-26)
 
 ### Features
