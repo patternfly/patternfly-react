@@ -12,6 +12,8 @@ jobs:
       - name: Check out project
         uses: actions/checkout@v4
         with:
+          # Fetch all history for all branches and tags, which is needed for the release script.
+          fetch-depth: 0
           # Pass in an administrator token to get around branch protection.
           token: ${{ secrets.GH_TOKEN_REDALLEN }}
 
