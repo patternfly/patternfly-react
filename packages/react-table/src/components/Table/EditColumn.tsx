@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 import RhUiEditFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-edit-fill-icon';
-import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
+import RhMicronsCheckmarkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-checkmark-icon';
 import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 import { OnRowEdit } from './TableTypes';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
@@ -38,7 +38,7 @@ export const EditColumn: React.FunctionComponent<EditColumnProps> = ({
           {...props}
           onClick={(e) => onClick(e, 'save')}
           variant="plain"
-          icon={<CheckIcon />}
+          icon={<RhMicronsCheckmarkIcon />}
         />
       </div>
       <div className={css(inlineStyles.inlineEditAction)}>

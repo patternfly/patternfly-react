@@ -1,7 +1,7 @@
 import { Component, Fragment } from 'react';
 import styles from '@patternfly/react-styles/css/components/Switch/switch';
 import { css } from '@patternfly/react-styles';
-import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
+import RhMicronsCheckmarkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-checkmark-icon';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 
@@ -111,7 +111,7 @@ class Switch extends Component<SwitchProps & OUIAProps> {
                   <span className={css(styles.switchToggle)}>
                     {hasCheckIcon && (
                       <span className={css(styles.switchToggleIcon)}>
-                        <CheckIcon />
+                        <RhMicronsCheckmarkIcon />
                       </span>
                     )}
                   </span>
@@ -126,7 +126,7 @@ class Switch extends Component<SwitchProps & OUIAProps> {
               ) : (
                 <span className={css(styles.switchToggle)}>
                   <div className={css(styles.switchToggleIcon)}>
-                    <CheckIcon />
+                    <RhMicronsCheckmarkIcon />
                   </div>
                 </span>
               )}
