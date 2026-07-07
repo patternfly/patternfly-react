@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, TreeRowWrapper, TdProps } from '@patternfly/react-table';
 import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
-import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
-import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
+import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
+import RhUiFolderOpenFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-open-fill-icon';
 
 interface RepositoriesTreeNode {
   name: string;
@@ -139,7 +139,7 @@ export const TableTree: React.FunctionComponent = () => {
     const isChecked = isNodeChecked(node);
     let icon = <LeafIcon />;
     if (node.children) {
-      icon = isExpanded ? <FolderOpenIcon /> : <FolderIcon />;
+      icon = isExpanded ? <RhUiFolderOpenFillIcon /> : <RhUiFolderFillIcon />;
     }
 
     const treeRow: TdProps['treeRow'] = {

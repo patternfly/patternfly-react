@@ -20,8 +20,8 @@ import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-bra
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
-import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
-import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
+import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
+import RhUiFolderOpenFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-open-fill-icon';
 import RhMicronsSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-large-to-small-icon';
 import {
 Select as NewSelect,

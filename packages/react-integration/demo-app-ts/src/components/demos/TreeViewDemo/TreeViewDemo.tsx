@@ -7,8 +7,8 @@ import {
   TreeViewDataItem,
   TreeViewSearch
 } from '@patternfly/react-core';
-import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
-import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
+import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
+import RhUiFolderOpenFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-open-fill-icon';
 import { Component } from 'react';
 
 export class TreeViewDemo extends Component {
@@ -189,8 +189,8 @@ export class TreeViewDemo extends Component {
         name: 'ApplicationLauncher',
         id: 'FAppLaunch',
         hasCheckbox: true,
-        icon: <FolderIcon />,
-        expandedIcon: <FolderOpenIcon />,
+        icon: <RhUiFolderFillIcon />,
+        expandedIcon: <RhUiFolderOpenFillIcon />,
         children: [
           {
             name: 'Application 1',
@@ -225,7 +225,7 @@ export class TreeViewDemo extends Component {
         id: 'FCost',
         hasBadge: true,
         customBadgeContent: 'custom badge',
-        action: <Button variant="plain" aria-label="Folder action" icon={<FolderIcon />} />,
+        action: <Button variant="plain" aria-label="Folder action" icon={<RhUiFolderFillIcon />} />,
         children: [
           {
             name: 'Application 3',
