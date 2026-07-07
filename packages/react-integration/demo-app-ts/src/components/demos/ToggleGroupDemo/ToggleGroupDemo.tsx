@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { ToggleGroup, ToggleGroupItem, ToggleGroupProps } from '@patternfly/react-core';
-import UndoIcon from '@patternfly/react-icons/dist/esm/icons/undo-icon';
+import RhUiUndoIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-undo-icon';
 import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
 import ShareSquareIcon from '@patternfly/react-icons/dist/esm/icons/share-square-icon';
 
@@ -75,7 +75,7 @@ export class ToggleGroupDemo extends Component<ToggleGroupProps, ToggleGroupStat
             aria-label="copy icon button"
           />
           <ToggleGroupItem
-            icon={<UndoIcon />}
+            icon={<RhUiUndoIcon />}
             key={4}
             buttonId="fourth"
             isSelected={isSelected.fourth}
