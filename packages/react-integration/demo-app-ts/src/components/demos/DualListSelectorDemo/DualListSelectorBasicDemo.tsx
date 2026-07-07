@@ -8,7 +8,7 @@ import {
   DualListSelectorControl
 } from '@patternfly/react-core';
 import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-left-icon';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
+import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 
@@ -131,7 +131,7 @@ export const DualListSelectorBasicDemo: React.FunctionComponent = () => {
           aria-label="Remove selected"
           tooltipContent="Remove selected"
           tooltipProps={{ position: 'bottom', 'aria-live': 'off' }}
-          icon={<AngleLeftIcon />}
+          icon={<RhMicronsCaretLeftIcon />}
         />
       </DualListSelectorControlsWrapper>
       <DualListSelectorPane

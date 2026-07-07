@@ -2,7 +2,7 @@ import { Component, createRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
 import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-left-icon';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
+import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { DualListSelectorPane } from './DualListSelectorPane';
@@ -759,7 +759,7 @@ class DualListSelector extends Component<DualListSelectorProps, DualListSelector
                       tooltipContent={removeSelectedTooltip}
                       tooltipProps={removeSelectedTooltipProps}
                     >
-                      <AngleLeftIcon />
+                      <RhMicronsCaretLeftIcon />
                     </DualListSelectorControl>
                   </DualListSelectorControlsWrapper>
                   <DualListSelectorPane

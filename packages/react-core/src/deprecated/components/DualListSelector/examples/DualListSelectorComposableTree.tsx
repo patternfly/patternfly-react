@@ -18,7 +18,7 @@ import {
   DualListSelectorTreeItemData as DLSTreeItemDataDeprecated
 } from '@patternfly/react-core/deprecated';
 import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-left-icon';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
+import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
@@ -316,7 +316,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
           isDisabled={!checkedLeafIds.filter((x) => !!chosenLeafIds.includes(x)).length}
           aria-label="Remove selected"
         >
-          <AngleLeftIcon />
+          <RhMicronsCaretLeftIcon />
         </DLSControlDeprecated>
       </DLSControlsWrapperDeprecated>
       {buildPane(true)}
