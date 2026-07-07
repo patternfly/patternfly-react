@@ -5,7 +5,7 @@ section: patterns
 
 import { Fragment, useState } from 'react';
 import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
-import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
+import RhUiTrashFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-trash-fill-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';

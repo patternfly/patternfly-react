@@ -37,7 +37,7 @@ import {
   ToolbarContent,
   MenuToggleElement
 } from '@patternfly/react-core';
-import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
+import RhUiTrashFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-trash-fill-icon';
 import pfIcon from './assets/pf-logo-small.svg';
 import activeMQIcon from './assets/activemq-core_200x150.png';
 import avroIcon from './assets/camel-avro_200x150.png';
@@ -536,7 +536,7 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
                           deleteItem(product);
                         }}
                       >
-                        <TrashIcon />
+                        <RhUiTrashFillIcon />
                         Delete
                       </DropdownItem>
                     </DropdownList>
