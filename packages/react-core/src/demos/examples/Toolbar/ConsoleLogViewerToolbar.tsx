@@ -25,7 +25,7 @@ import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import ExpandIcon from '@patternfly/react-icons/dist/esm/icons/expand-icon';
 import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
 import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 
 export const ConsoleLogViewerToolbar: React.FC = () => {
   const firstOptions = {
@@ -254,7 +254,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
   };
 
   const LogsSearchInput = (
-    <ToolbarToggleGroup toggleIcon={<SearchIcon />} breakpoint="lg">
+    <ToolbarToggleGroup toggleIcon={<RhMicronsSearchIcon />} breakpoint="lg">
       <ToolbarItem>
         <SearchInput
           placeholder="Search logs"

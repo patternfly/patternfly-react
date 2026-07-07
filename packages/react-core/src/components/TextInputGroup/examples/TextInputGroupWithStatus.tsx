@@ -8,7 +8,7 @@ import {
   Flex,
   FlexItem
 } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 export const TextInputGroupWithStatus: React.FunctionComponent = () => {
@@ -37,7 +37,7 @@ export const TextInputGroupWithStatus: React.FunctionComponent = () => {
       <FlexItem>
         <TextInputGroup validated={ValidatedOptions.warning}>
           <TextInputGroupMain
-            icon={<SearchIcon />}
+            icon={<RhMicronsSearchIcon />}
             value={warningValue}
             onChange={(_event, value) => setWarningValue(value)}
           />
@@ -46,7 +46,7 @@ export const TextInputGroupWithStatus: React.FunctionComponent = () => {
       <FlexItem>
         <TextInputGroup validated={ValidatedOptions.error}>
           <TextInputGroupMain
-            icon={<SearchIcon />}
+            icon={<RhMicronsSearchIcon />}
             value={errorValue}
             onChange={(_event, value) => setErrorValue(value)}
           />

@@ -2,7 +2,7 @@ import { Component } from 'react';
 import DollarSignIcon from '@patternfly/react-icons/dist/esm/icons/dollar-sign-icon';
 import AtIcon from '@patternfly/react-icons/dist/esm/icons/at-icon';
 import RhUiCalendarIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-calendar-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import {
   Button,
@@ -176,7 +176,11 @@ export class InputGroupDemo extends Component<{}, InputGroupState> {
             <TextInput name="textInput11" id="textInput11" type="search" aria-label="search input example" />
           </InputGroupItem>
           <InputGroupItem>
-            <Button variant={ButtonVariant.control} aria-label="search button for search input" icon={<SearchIcon />} />
+            <Button
+              variant={ButtonVariant.control}
+              aria-label="search button for search input"
+              icon={<RhMicronsSearchIcon />}
+            />
           </InputGroupItem>
         </InputGroup>
         <br />

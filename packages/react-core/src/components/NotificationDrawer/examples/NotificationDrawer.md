@@ -17,8 +17,8 @@ propComponents:
 ---
 
 import { useState } from 'react';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 
 ## Examples
 

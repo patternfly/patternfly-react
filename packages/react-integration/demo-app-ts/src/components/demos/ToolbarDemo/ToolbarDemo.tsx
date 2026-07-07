@@ -23,7 +23,7 @@ import {
   SelectList,
   SelectOption
 } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
@@ -188,7 +188,7 @@ class ToolbarDemo extends Component<ToolbarProps, ToolbarState> {
               <Button
                 variant={ButtonVariant.tertiary}
                 aria-label="search button for search input"
-                icon={<SearchIcon />}
+                icon={<RhMicronsSearchIcon />}
               />
             </InputGroupItem>
           </InputGroup>

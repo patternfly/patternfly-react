@@ -14,7 +14,7 @@ Note: Table lives in its own package at [@patternfly/react-table](https://www.np
 This deprecated `Table` component is configuration-based and takes a less declarative and more implicit approach to laying out the table structure, such as the rows and cells within it.
 
 import { Fragment, isValidElement, useCallback, useEffect, useRef, useState } from 'react';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';

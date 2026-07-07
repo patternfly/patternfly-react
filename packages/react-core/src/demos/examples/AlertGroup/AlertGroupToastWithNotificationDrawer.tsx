@@ -27,8 +27,8 @@ import {
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/js/icons/rh-microns-search-icon';
 import { DashboardHeader } from '@patternfly/react-core/dist/js/demos/DashboardHeader';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
@@ -295,7 +295,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
           <EmptyState
             headingLevel="h2"
             titleText="No notifications found"
-            icon={SearchIcon}
+            icon={RhMicronsSearchIcon}
             variant={EmptyStateVariant.full}
           >
             <EmptyStateBody>There are currently no notifications.</EmptyStateBody>

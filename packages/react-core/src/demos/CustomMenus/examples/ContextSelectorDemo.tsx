@@ -14,7 +14,7 @@ import {
   DropdownList,
   DropdownItem
 } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 
 interface ItemData {
   text: string;
@@ -128,7 +128,7 @@ export const ContextSelectorDemo: React.FunctionComponent = () => {
                 aria-label="Search menu items"
                 id="pf-v6-context-selector-search-button-id-1"
                 onClick={onSearchButtonClick}
-                icon={<SearchIcon />}
+                icon={<RhMicronsSearchIcon />}
               />
             </InputGroupItem>
           </InputGroup>

@@ -49,7 +49,7 @@ import {
 } from '@patternfly/react-core';
 import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
@@ -723,7 +723,7 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
                 <EmptyState
                   headingLevel="h2"
                   titleText="No alerts found"
-                  icon={SearchIcon}
+                  icon={RhMicronsSearchIcon}
                   variant={EmptyStateVariant.full}
                 >
                   <EmptyStateBody>
@@ -741,7 +741,12 @@ export const NotificationDrawerGrouped: React.FunctionComponent = () => {
           </NotificationDrawerGroupList>
         )}
         {!shouldShowNotifications && (
-          <EmptyState headingLevel="h2" titleText="No alerts found" icon={SearchIcon} variant={EmptyStateVariant.full}>
+          <EmptyState
+            headingLevel="h2"
+            titleText="No alerts found"
+            icon={RhMicronsSearchIcon}
+            variant={EmptyStateVariant.full}
+          >
             <EmptyStateBody>
               There are currently no alerts. There may be silenced critical alerts however.
             </EmptyStateBody>

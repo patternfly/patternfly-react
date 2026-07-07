@@ -8,7 +8,7 @@ import {
   EmptyStateFooter,
   EmptyStateActions
 } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 
 // This example has been simplified to focus on the empty state. In real usage,
 // you may want to derive your rows from typed underlying data and minimal state. See other examples.
@@ -28,7 +28,12 @@ export const TableEmptyState: React.FunctionComponent = () => (
       <Tr>
         <Td colSpan={8}>
           <Bullseye>
-            <EmptyState headingLevel="h2" titleText="No results found" icon={SearchIcon} variant={EmptyStateVariant.sm}>
+            <EmptyState
+              headingLevel="h2"
+              titleText="No results found"
+              icon={RhMicronsSearchIcon}
+              variant={EmptyStateVariant.sm}
+            >
               <EmptyStateBody>Clear all filters and try again.</EmptyStateBody>
               <EmptyStateFooter>
                 <EmptyStateActions>

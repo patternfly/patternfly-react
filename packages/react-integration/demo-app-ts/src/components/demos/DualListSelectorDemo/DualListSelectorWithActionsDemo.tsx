@@ -27,8 +27,8 @@ import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-d
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import RhUiSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sort-down-large-to-small-icon';
 import RhMicronsSortDownSmallToLargeIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-small-to-large-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 
 interface Option {
   text: string;
@@ -244,7 +244,12 @@ export const DualListSelectorWithActionsDemo: React.FunctionComponent = () => {
   };
 
   const buildEmptyState = (isAvailable: boolean) => (
-    <EmptyState headingLevel="h4" titleText="No results found" icon={SearchIcon} variant={EmptyStateVariant.sm}>
+    <EmptyState
+      headingLevel="h4"
+      titleText="No results found"
+      icon={RhMicronsSearchIcon}
+      variant={EmptyStateVariant.sm}
+    >
       <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
       <EmptyStateFooter>
         <EmptyStateActions>

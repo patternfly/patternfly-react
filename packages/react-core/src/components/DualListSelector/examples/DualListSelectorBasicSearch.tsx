@@ -18,7 +18,7 @@ import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 
 interface Option {
   text: string;
@@ -107,7 +107,12 @@ export const DualListSelectorSearch: React.FunctionComponent = () => {
   );
 
   const buildEmptyState = (isAvailable: boolean) => (
-    <EmptyState titleText="No results found" variant={EmptyStateVariant.sm} headingLevel="h4" icon={SearchIcon}>
+    <EmptyState
+      titleText="No results found"
+      variant={EmptyStateVariant.sm}
+      headingLevel="h4"
+      icon={RhMicronsSearchIcon}
+    >
       <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
       <EmptyStateFooter>
         <EmptyStateActions>
