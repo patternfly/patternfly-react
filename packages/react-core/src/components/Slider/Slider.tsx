@@ -56,6 +56,8 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   isDisabled?: boolean;
   /** Flag to show value input field. */
   isInputVisible?: boolean;
+  /** Flag indicating if the input value should also update the slider value as the user types. When false, the slider will update its value on blur or enter key press. */
+  isInputLive?: boolean;
   /** @deprecated Use startActions instead. Actions placed at the start of the slider. */
   leftActions?: React.ReactNode;
   /** Actions placed at the start of the slider. */
@@ -97,6 +99,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   isDisabled = false,
   isInputVisible = false,
   inputValue = 0,
+  isInputLive = false,
   inputLabel,
   inputAriaLabel = 'Slider value input',
   thumbAriaLabel = 'Value',
@@ -145,8 +148,11 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   const widthChars = useMemo(() => localInputValue.toString().length, [localInputValue]);
   const inputStyle = { [cssFormControlWidthChars.name]: widthChars } as React.CSSProperties;
 
-  const onChangeHandler = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
-    setLocalInputValue(Number(value));
+  const onChangeHandler = (event: React.FormEvent<HTMLInputElement>, value: string) => {
+    const newValue = Number(value);
+    setLocalInputValue(newValue);
+
+    isInputLive && onChange(event, localValue, newValue, setLocalInputValue);
   };
 
   const handleKeyPressOnInput = (event: React.KeyboardEvent) => {
