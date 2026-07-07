@@ -152,7 +152,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     const newValue = Number(value);
     setLocalInputValue(newValue);
 
-    isInputLive && onChange(event, localValue, newValue, setLocalInputValue);
+    isInputLive && onChange && onChange(event, localValue, newValue, setLocalInputValue);
   };
 
   const handleKeyPressOnInput = (event: React.KeyboardEvent) => {
