@@ -22,7 +22,7 @@ import {
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 import PauseIcon from '@patternfly/react-icons/dist/esm/icons/pause-icon';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
-import ExpandIcon from '@patternfly/react-icons/dist/esm/icons/expand-icon';
+import RhUiExpandIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-expand-icon';
 import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
 import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
 import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
@@ -470,7 +470,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
       {rightAlignedItemsMobile}
       <ToolbarItem>
         <Tooltip position="top" content={<div>Expand</div>}>
-          <Button variant="plain" aria-label="expand" icon={<ExpandIcon />} />
+          <Button variant="plain" aria-label="expand" icon={<RhUiExpandIcon />} />
         </Tooltip>
       </ToolbarItem>
     </Fragment>
