@@ -20,7 +20,7 @@ import {
   MenuFooter
 } from '@patternfly/react-core';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
-import PauseIcon from '@patternfly/react-icons/dist/esm/icons/pause-icon';
+import RhUiPauseFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-pause-fill-icon';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import RhUiExpandIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-expand-icon';
 import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
@@ -313,7 +313,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
         <Button
           variant={isPaused ? 'plain' : 'link'}
           onClick={pauseOrStart}
-          icon={isPaused ? <PlayIcon /> : <PauseIcon />}
+          icon={isPaused ? <PlayIcon /> : <RhUiPauseFillIcon />}
         >
           {isPaused ? ` Resume Log` : ` Pause Log`}
         </Button>
@@ -370,7 +370,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
             variant="plain"
             onClick={pauseOrStart}
             aria-label={isPaused ? 'Play' : 'Paused'}
-            icon={isPaused ? <PlayIcon /> : <PauseIcon />}
+            icon={isPaused ? <PlayIcon /> : <RhUiPauseFillIcon />}
           />
         </Tooltip>
       </ToolbarItem>
