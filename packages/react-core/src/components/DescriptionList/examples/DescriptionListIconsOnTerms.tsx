@@ -8,7 +8,7 @@ import {
 import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import BookIcon from '@patternfly/react-icons/dist/esm/icons/book-icon';
-import KeyIcon from '@patternfly/react-icons/dist/esm/icons/key-icon';
+import RhUiKeyIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-key-icon';
 import RhUiFlagFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-flag-fill-icon';
 import RhUiLanguageFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-language-fill-icon';
 
@@ -25,7 +25,7 @@ export const DescriptionListIconsOnTerms: React.FunctionComponent = () => (
       </DescriptionListDescription>
     </DescriptionListGroup>
     <DescriptionListGroup>
-      <DescriptionListTerm icon={<KeyIcon />}>Labels</DescriptionListTerm>
+      <DescriptionListTerm icon={<RhUiKeyIcon />}>Labels</DescriptionListTerm>
       <DescriptionListDescription>example</DescriptionListDescription>
     </DescriptionListGroup>
     <DescriptionListGroup>

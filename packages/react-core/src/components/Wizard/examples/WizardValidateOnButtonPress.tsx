@@ -21,7 +21,7 @@ import {
   WizardFooterWrapper,
   useWizardContext
 } from '@patternfly/react-core';
-import CogsIcon from '@patternfly/react-icons/dist/esm/icons/cogs-icon';
+import RhUiGearGroupFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-gear-group-fill-icon';
 import layout from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
 
 interface ValidationProgressProps {
@@ -50,7 +50,7 @@ const ValidationProgress: React.FunctionComponent<ValidationProgressProps> = ({ 
       <EmptyState
         headingLevel="h4"
         titleText={percentValidated === 100 ? 'Validation complete' : 'Validating credentials'}
-        icon={CogsIcon}
+        icon={RhUiGearGroupFillIcon}
         variant="lg"
       >
         <EmptyStateBody>

@@ -15,7 +15,7 @@ DrawerContent, DrawerContentBody, DrawerHead, DrawerPanelContent, DrawerSection,
 import { Wizard as WizardDeprecated, WizardFooter as WizardFooterDeprecated, WizardContextConsumer as WizardContextConsumerDeprecated } from '@patternfly/react-core/deprecated';
 import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
 import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
-import CogsIcon from '@patternfly/react-icons/dist/esm/icons/cogs-icon';
+import RhUiGearGroupFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-gear-group-fill-icon';
 
 If you seek a wizard solution that allows for more composition, see the [React](/components/wizard) tab.
 

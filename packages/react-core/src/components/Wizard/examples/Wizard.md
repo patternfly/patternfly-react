@@ -20,7 +20,7 @@ propComponents:
   ]
 ---
 
-import { createContext, useCallback, useContext, useRef, useState } from 'react';
+import { createContext, useCallback, useContext, useRef, useState, useEffect } from 'react';
 import {
 FormGroup,
 TextInput,
@@ -51,7 +51,7 @@ WizardHeader
 } from '@patternfly/react-core';
 import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
 import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
-import CogsIcon from '@patternfly/react-icons/dist/esm/icons/cogs-icon';
+import RhUiGearGroupFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-gear-group-fill-icon';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import layout from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
 
