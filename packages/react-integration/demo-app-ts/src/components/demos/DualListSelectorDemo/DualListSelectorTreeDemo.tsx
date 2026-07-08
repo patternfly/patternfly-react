@@ -17,7 +17,7 @@ import {
 } from '@patternfly/react-core';
 import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-left-icon';
 import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
-import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
+import RhMicronsDoubleCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-right-icon';
 import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 
@@ -300,7 +300,7 @@ const DualListSelectorComposableTree: React.FunctionComponent<ExampleProps> = ({
           isDisabled={chosenLeafIds.length === memoizedAllLeaves.length}
           onClick={() => moveAll(true)}
           aria-label="Add all"
-          icon={<AngleDoubleRightIcon />}
+          icon={<RhMicronsDoubleCaretRightIcon />}
         />
         <DualListSelectorControl
           isDisabled={chosenLeafIds.length === 0}
