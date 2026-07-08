@@ -385,7 +385,9 @@ export const CodeEditor = ({
     onEditorDidMount(editor, monaco);
     editorRef.current = editor;
     if (height === 'sizeToFit') {
-      setHeightToFitContent();
+      editor.onDidContentSizeChange(() => {
+        setHeightToFitContent();
+      });
     }
   };
 
