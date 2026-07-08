@@ -33,7 +33,7 @@ import {
 import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
-import CloudIcon from '@patternfly/react-icons/dist/esm/icons/cloud-icon';
+import RhUiCloudFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cloud-fill-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import RhUiThumbnailViewSmallFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-thumbnail-view-small-fill-icon';
 import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
@@ -301,7 +301,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
                     to="#nav-link3"
                     itemId={2}
                     isActive={activeItem === 2}
-                    icon={<CloudIcon />}
+                    icon={<RhUiCloudFillIcon />}
                     anchorRef={navItem3Ref}
                     aria-label="Authentication"
                   >

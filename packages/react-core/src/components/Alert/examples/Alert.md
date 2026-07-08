@@ -12,7 +12,7 @@ import RhUiUsersFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-user
 import RhUiContainerFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-container-fill-icon';
 import DatabaseIcon from '@patternfly/react-icons/dist/esm/icons/database-icon';
 import RhUiServerStackFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-server-stack-fill-icon';
-import LaptopIcon from '@patternfly/react-icons/dist/esm/icons/laptop-icon';
+import RhUiLaptopFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-laptop-fill-icon';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 
 Micro animations have been added for `<Alert>` components within an `<AlertGroup>`. By default, you must opt into animations, since they can require updates to tests. To enable or disable animations as needed, use the `hasAnimations` property. With animations enabled, we recommend you ensure that dynamically-added alerts are prepended to a list of alerts, rather than appended to the end of it.
