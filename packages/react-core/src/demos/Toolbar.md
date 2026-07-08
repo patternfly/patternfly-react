@@ -5,7 +5,7 @@ section: components
 
 import { Fragment, useState } from 'react';
 import RhUiPauseFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-pause-fill-icon';
-import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
+import RhUiPlayFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
 import RhUiExpandIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-expand-icon';
 import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
 import RhUiDownloadIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-download-icon';

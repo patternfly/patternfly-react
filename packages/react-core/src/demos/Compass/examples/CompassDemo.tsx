@@ -28,7 +28,7 @@ import {
   Title,
   Tooltip
 } from '@patternfly/react-core';
-import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
+import RhUiPlayFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
 import RhUiAddSquareIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-square-icon';
 import RhUiCopyIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-icon';
 import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
@@ -112,7 +112,7 @@ export const CompassBasic: React.FunctionComponent = () => {
             <ActionListGroup>
               <ActionListItem>
                 <Tooltip content="Play">
-                  <Button isCircle variant="plain" icon={<PlayIcon />} aria-label="Play" />
+                  <Button isCircle variant="plain" icon={<RhUiPlayFillIcon />} aria-label="Play" />
                 </Tooltip>
               </ActionListItem>
               <ActionListItem>
