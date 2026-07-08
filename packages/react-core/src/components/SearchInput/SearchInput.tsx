@@ -6,7 +6,8 @@ import { Icon } from '../Icon';
 import RhMicronsCaretUpIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-up-icon';
 import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
-import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
+import RhMicronsArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-arrow-right-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import RhMicronsCaretDownFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-fill-icon';
 import { AdvancedSearchMenu } from './AdvancedSearchMenu';
 import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities } from '../TextInputGroup';
@@ -339,7 +340,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
                 aria-label={nextNavigationButtonAriaLabel}
                 isDisabled={isDisabled || isNextNavigationButtonDisabled}
                 onClick={onNextClick}
-                icon={<RhMicronsCaretDownFillIcon />}
+                icon={<RhMicronsCaretDownIcon />}
               />
             </div>
           )}
@@ -478,7 +479,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
             isDisabled={isDisabled}
             icon={
               <Icon shouldMirrorRTL>
-                <RhMicronsCaretRightIcon />
+                <RhMicronsArrowRightIcon />
               </Icon>
             }
           />
