@@ -66,6 +66,7 @@ export const FormState = () => {
                 ref={toggleRef}
                 onClick={(isOpen) => setIsSelectOpen(isOpen)}
                 isExpanded={isSelectOpen}
+                isInForm
                 style={
                   {
                     width: '200px'
