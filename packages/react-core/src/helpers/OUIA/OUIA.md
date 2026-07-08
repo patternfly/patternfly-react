@@ -57,6 +57,8 @@ component.
 * [Content](/components/content)
 * [Dropdown](/components/menus/dropdown)
 * [DropdownItem](/components/menus/dropdown)
+* [Form](/components/forms/form)
+* [FormGroup](/components/forms/form)
 * [FormSelect](/components/forms/form-select)
 * [Menu](/components/menus/menu)
 * [Modal](/components/modal)

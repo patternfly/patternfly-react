@@ -4,10 +4,16 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
 <DocumentFragment>
   <form
     class="pf-v6-c-form"
+    data-ouia-component-id="OUIA-Generated-Form-:r1k:"
+    data-ouia-component-type="PF6/Form"
+    data-ouia-safe="true"
     novalidate=""
   >
     <div
       class="pf-v6-c-form__group"
+      data-ouia-component-id="OUIA-Generated-FormGroup-:r1l:"
+      data-ouia-component-type="PF6/FormGroup"
+      data-ouia-safe="true"
     >
       <div
         class="pf-v6-c-form__group-label"
@@ -38,7 +44,7 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
         >
           <input
             aria-invalid="false"
-            data-ouia-component-id="OUIA-Generated-TextInputBase-:r17:"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-:r1o:"
             data-ouia-component-type="PF6/TextInput"
             data-ouia-safe="true"
             id="pf-login-username-id"
@@ -52,6 +58,9 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
     </div>
     <div
       class="pf-v6-c-form__group"
+      data-ouia-component-id="OUIA-Generated-FormGroup-:r1p:"
+      data-ouia-component-type="PF6/FormGroup"
+      data-ouia-safe="true"
     >
       <div
         class="pf-v6-c-form__group-label"
@@ -82,7 +91,7 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
         >
           <input
             aria-invalid="false"
-            data-ouia-component-id="OUIA-Generated-TextInputBase-:r1a:"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-:r1s:"
             data-ouia-component-type="PF6/TextInput"
             data-ouia-safe="true"
             id="pf-login-password-id"
@@ -96,6 +105,9 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
     </div>
     <div
       class="pf-v6-c-form__group"
+      data-ouia-component-id="OUIA-Generated-FormGroup-:r1t:"
+      data-ouia-component-type="PF6/FormGroup"
+      data-ouia-safe="true"
     >
       <div
         class="pf-v6-c-form__group-control"
@@ -106,7 +118,7 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
           <input
             aria-invalid="false"
             class="pf-v6-c-check__input"
-            data-ouia-component-id="OUIA-Generated-Checkbox-:r1d:"
+            data-ouia-component-id="OUIA-Generated-Checkbox-:r20:"
             data-ouia-component-type="PF6/Checkbox"
             data-ouia-safe="true"
             id="pf-login-remember-me-id"
@@ -132,7 +144,7 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
         >
           <button
             class="pf-v6-c-button pf-m-primary pf-m-block"
-            data-ouia-component-id="OUIA-Generated-Button-primary-:r1e:"
+            data-ouia-component-id="OUIA-Generated-Button-primary-:r21:"
             data-ouia-component-type="PF6/Button"
             data-ouia-safe="true"
             type="submit"
@@ -154,10 +166,16 @@ exports[`LoginForm LoginForm with show password 1`] = `
 <DocumentFragment>
   <form
     class="pf-v6-c-form"
+    data-ouia-component-id="OUIA-Generated-Form-:r22:"
+    data-ouia-component-type="PF6/Form"
+    data-ouia-safe="true"
     novalidate=""
   >
     <div
       class="pf-v6-c-form__group"
+      data-ouia-component-id="OUIA-Generated-FormGroup-:r23:"
+      data-ouia-component-type="PF6/FormGroup"
+      data-ouia-safe="true"
     >
       <div
         class="pf-v6-c-form__group-label"
@@ -188,7 +206,7 @@ exports[`LoginForm LoginForm with show password 1`] = `
         >
           <input
             aria-invalid="false"
-            data-ouia-component-id="OUIA-Generated-TextInputBase-:r1h:"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-:r26:"
             data-ouia-component-type="PF6/TextInput"
             data-ouia-safe="true"
             id="pf-login-username-id"
@@ -202,6 +220,9 @@ exports[`LoginForm LoginForm with show password 1`] = `
     </div>
     <div
       class="pf-v6-c-form__group"
+      data-ouia-component-id="OUIA-Generated-FormGroup-:r27:"
+      data-ouia-component-type="PF6/FormGroup"
+      data-ouia-safe="true"
     >
       <div
         class="pf-v6-c-form__group-label"
@@ -238,7 +259,7 @@ exports[`LoginForm LoginForm with show password 1`] = `
             >
               <input
                 aria-invalid="false"
-                data-ouia-component-id="OUIA-Generated-TextInputBase-:r1k:"
+                data-ouia-component-id="OUIA-Generated-TextInputBase-:r2a:"
                 data-ouia-component-type="PF6/TextInput"
                 data-ouia-safe="true"
                 id="pf-login-password-id"
@@ -255,7 +276,7 @@ exports[`LoginForm LoginForm with show password 1`] = `
             <button
               aria-label="Show password"
               class="pf-v6-c-button pf-m-control"
-              data-ouia-component-id="OUIA-Generated-Button-control-:r1l:"
+              data-ouia-component-id="OUIA-Generated-Button-control-:r2b:"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               type="button"
@@ -293,7 +314,7 @@ exports[`LoginForm LoginForm with show password 1`] = `
         >
           <button
             class="pf-v6-c-button pf-m-primary pf-m-block"
-            data-ouia-component-id="OUIA-Generated-Button-primary-:r1m:"
+            data-ouia-component-id="OUIA-Generated-Button-primary-:r2c:"
             data-ouia-component-type="PF6/Button"
             data-ouia-safe="true"
             type="submit"
@@ -315,10 +336,16 @@ exports[`LoginForm should render Login form 1`] = `
 <DocumentFragment>
   <form
     class="pf-v6-c-form"
+    data-ouia-component-id="OUIA-Generated-Form-:r0:"
+    data-ouia-component-type="PF6/Form"
+    data-ouia-safe="true"
     novalidate=""
   >
     <div
       class="pf-v6-c-form__group"
+      data-ouia-component-id="OUIA-Generated-FormGroup-:r1:"
+      data-ouia-component-type="PF6/FormGroup"
+      data-ouia-safe="true"
     >
       <div
         class="pf-v6-c-form__group-label"
@@ -349,7 +376,7 @@ exports[`LoginForm should render Login form 1`] = `
         >
           <input
             aria-invalid="false"
-            data-ouia-component-id="OUIA-Generated-TextInputBase-:r2:"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-:r4:"
             data-ouia-component-type="PF6/TextInput"
             data-ouia-safe="true"
             id="pf-login-username-id"
@@ -363,6 +390,9 @@ exports[`LoginForm should render Login form 1`] = `
     </div>
     <div
       class="pf-v6-c-form__group"
+      data-ouia-component-id="OUIA-Generated-FormGroup-:r5:"
+      data-ouia-component-type="PF6/FormGroup"
+      data-ouia-safe="true"
     >
       <div
         class="pf-v6-c-form__group-label"
@@ -393,7 +423,7 @@ exports[`LoginForm should render Login form 1`] = `
         >
           <input
             aria-invalid="false"
-            data-ouia-component-id="OUIA-Generated-TextInputBase-:r5:"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-:r8:"
             data-ouia-component-type="PF6/TextInput"
             data-ouia-safe="true"
             id="pf-login-password-id"
@@ -416,7 +446,7 @@ exports[`LoginForm should render Login form 1`] = `
         >
           <button
             class="pf-v6-c-button pf-m-primary pf-m-block"
-            data-ouia-component-id="OUIA-Generated-Button-primary-:r6:"
+            data-ouia-component-id="OUIA-Generated-Button-primary-:r9:"
             data-ouia-component-type="PF6/Button"
             data-ouia-safe="true"
             type="submit"
