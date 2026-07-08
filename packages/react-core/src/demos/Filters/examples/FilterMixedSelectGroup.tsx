@@ -23,7 +23,7 @@ import {
 } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
 
 interface Repository {
   name: string;
@@ -290,7 +290,7 @@ export const FilterMixedSelectGroup: React.FunctionComponent = () => {
       ref={statusToggleRef}
       onClick={onStatusToggleClick}
       isExpanded={isStatusMenuOpen}
-      icon={<FilterIcon />}
+      icon={<RhUiFilterFillIcon />}
       style={
         {
           width: '200px'
@@ -389,7 +389,7 @@ export const FilterMixedSelectGroup: React.FunctionComponent = () => {
       onClick={onLocationMenuToggleClick}
       isExpanded={isLocationMenuOpen}
       {...(locationSelections.length > 0 && { badge: <Badge isRead>{locationSelections.length}</Badge> })}
-      icon={<FilterIcon />}
+      icon={<RhUiFilterFillIcon />}
       style={
         {
           width: '200px'
@@ -464,7 +464,7 @@ export const FilterMixedSelectGroup: React.FunctionComponent = () => {
     >
       <ToolbarContent>
         <ToolbarItem>{toolbarBulkSelect}</ToolbarItem>
-        <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+        <ToolbarToggleGroup toggleIcon={<RhUiFilterFillIcon />} breakpoint="xl">
           <ToolbarFilter
             labels={statusSelection !== '' ? [statusSelection] : ([] as string[])}
             deleteLabel={() => setStatusSelection('')}

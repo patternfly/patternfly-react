@@ -10,7 +10,7 @@ import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
 import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 import RhUiCloseCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-close-circle-fill-icon';
 import pfIcon from './assets/pf-logo-small.svg';

@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem, ToolbarToggleGroup } from '@patternfly/react-core';
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
 
 export class ToolbarVisibilityDemo extends Component {
   static displayName = 'ToolbarVisibilityDemo';
@@ -61,7 +61,7 @@ export class ToolbarVisibilityDemo extends Component {
         <Toolbar>
           <ToolbarContent>
             <ToolbarToggleGroup
-              toggleIcon={<FilterIcon />}
+              toggleIcon={<RhUiFilterFillIcon />}
               breakpoint="md"
               visibility={{ default: 'visible', md: 'hidden' }}
             >
@@ -72,7 +72,7 @@ export class ToolbarVisibilityDemo extends Component {
         <Toolbar>
           <ToolbarContent>
             <ToolbarToggleGroup
-              toggleIcon={<FilterIcon />}
+              toggleIcon={<RhUiFilterFillIcon />}
               breakpoint="lg"
               visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}
             >
@@ -83,7 +83,7 @@ export class ToolbarVisibilityDemo extends Component {
         <Toolbar>
           <ToolbarContent>
             <ToolbarToggleGroup
-              toggleIcon={<FilterIcon />}
+              toggleIcon={<RhUiFilterFillIcon />}
               breakpoint="xl"
               visibility={{ default: 'hidden', lg: 'visible', xl: 'hidden' }}
             >
@@ -94,7 +94,7 @@ export class ToolbarVisibilityDemo extends Component {
         <Toolbar>
           <ToolbarContent>
             <ToolbarToggleGroup
-              toggleIcon={<FilterIcon />}
+              toggleIcon={<RhUiFilterFillIcon />}
               breakpoint="2xl"
               visibility={{ default: 'hidden', xl: 'visible', '2xl': 'hidden' }}
             >
@@ -105,7 +105,7 @@ export class ToolbarVisibilityDemo extends Component {
         <Toolbar>
           <ToolbarContent>
             <ToolbarToggleGroup
-              toggleIcon={<FilterIcon />}
+              toggleIcon={<RhUiFilterFillIcon />}
               breakpoint="md"
               visibility={{ default: 'hidden', '2xl': 'visible' }}
             >

@@ -25,7 +25,7 @@ import {
 } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
 
 interface Repository {
   name: string;
@@ -523,7 +523,7 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
       ref={attributeToggleRef}
       onClick={onAttributeToggleClick}
       isExpanded={isAttributeMenuOpen}
-      icon={<FilterIcon />}
+      icon={<RhUiFilterFillIcon />}
     >
       {activeAttributeMenu}
     </MenuToggle>
@@ -582,7 +582,7 @@ export const FilterAttributeSearch: React.FunctionComponent = () => {
     >
       <ToolbarContent>
         <ToolbarItem>{toolbarBulkSelect}</ToolbarItem>
-        <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+        <ToolbarToggleGroup toggleIcon={<RhUiFilterFillIcon />} breakpoint="xl">
           <ToolbarGroup variant="filter-group">
             <ToolbarItem>{attributeDropdown}</ToolbarItem>
             <ToolbarFilter
