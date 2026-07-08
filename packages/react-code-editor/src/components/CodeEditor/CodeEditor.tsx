@@ -17,8 +17,8 @@ import { getResizeObserver } from '@patternfly/react-core/dist/esm/helpers/resiz
 import Editor, { BeforeMount, EditorProps, Monaco } from '@monaco-editor/react';
 import type { editor } from 'monaco-editor';
 import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
-import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
-import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
+import RhUiUploadIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-upload-icon';
+import RhUiDownloadIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-download-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import Dropzone, { FileRejection } from 'react-dropzone';
@@ -541,7 +541,7 @@ export const CodeEditor = ({
                 )}
                 {isUploadEnabled && (
                   <CodeEditorControl
-                    icon={<UploadIcon />}
+                    icon={<RhUiUploadIcon />}
                     aria-label={uploadButtonAriaLabel}
                     tooltipProps={{ content: <div>{uploadButtonToolTipText}</div>, ...tooltipProps }}
                     onClick={open}
@@ -549,7 +549,7 @@ export const CodeEditor = ({
                 )}
                 {isDownloadEnabled && (!showEmptyState || !!value) && (
                   <CodeEditorControl
-                    icon={<DownloadIcon />}
+                    icon={<RhUiDownloadIcon />}
                     aria-label={downloadButtonAriaLabel}
                     tooltipProps={{ content: <div>{downloadButtonToolTipText}</div>, ...tooltipProps }}
                     onClick={() => {

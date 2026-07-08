@@ -8,7 +8,7 @@ import RhUiPauseFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-paus
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import RhUiExpandIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-expand-icon';
 import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
-import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
+import RhUiDownloadIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-download-icon';
 import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 import RhMicronsCloseIcon from  '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';

@@ -48,7 +48,7 @@ ModalBody,
 ModalFooter,
 } from '@patternfly/react-core';
 import { DragDropSort } from '@patternfly/react-drag-drop';
-import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
+import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
