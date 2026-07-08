@@ -16,6 +16,8 @@ import { Wizard as WizardDeprecated, WizardFooter as WizardFooterDeprecated, Wiz
 import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
 import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
 import RhUiGearGroupFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-gear-group-fill-icon';
+import CogsIcon from '@patternfly/react-icons/dist/esm/icons/cogs-icon';
+import layout from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
 
 If you seek a wizard solution that allows for more composition, see the [React](/components/wizard) tab.
 
