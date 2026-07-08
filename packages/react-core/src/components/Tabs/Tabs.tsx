@@ -5,7 +5,7 @@ import { PickOptional } from '../../helpers/typeUtils';
 import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
 import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
-import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
+import RhUiAddIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-icon';
 import {
   isElementInView,
   formatBreakpointMods,
@@ -662,7 +662,7 @@ class Tabs extends Component<TabsProps, TabsState> {
                       variant="plain"
                       aria-label={addButtonAriaLabel || 'Add tab'}
                       onClick={onAdd}
-                      icon={<PlusIcon />}
+                      icon={<RhUiAddIcon />}
                       isDisabled={isAddButtonDisabled}
                     />
                   </span>

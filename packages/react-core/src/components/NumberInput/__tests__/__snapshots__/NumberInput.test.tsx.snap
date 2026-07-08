@@ -84,24 +84,12 @@ exports[`numberInput disables lower threshold 1`] = `
                 fill="currentColor"
                 height="1em"
                 role="img"
+                viewBox="0 0 32 32"
                 width="1em"
               >
-                <svg
-                  class="pf-v6-icon-default"
-                  viewBox="0 0 448 512"
-                >
-                  <path
-                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-                <svg
-                  class="pf-v6-icon-rh-ui"
-                  viewBox="0 0 32 32"
-                >
-                  <path
-                    d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
-                  />
-                </svg>
+                <path
+                  d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
+                />
               </svg>
             </span>
           </span>
@@ -196,24 +184,12 @@ exports[`numberInput disables upper threshold 1`] = `
                 fill="currentColor"
                 height="1em"
                 role="img"
+                viewBox="0 0 32 32"
                 width="1em"
               >
-                <svg
-                  class="pf-v6-icon-default"
-                  viewBox="0 0 448 512"
-                >
-                  <path
-                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-                <svg
-                  class="pf-v6-icon-rh-ui"
-                  viewBox="0 0 32 32"
-                >
-                  <path
-                    d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
-                  />
-                </svg>
+                <path
+                  d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
+                />
               </svg>
             </span>
           </span>
@@ -309,24 +285,12 @@ exports[`numberInput passes button props successfully 1`] = `
                 fill="currentColor"
                 height="1em"
                 role="img"
+                viewBox="0 0 32 32"
                 width="1em"
               >
-                <svg
-                  class="pf-v6-icon-default"
-                  viewBox="0 0 448 512"
-                >
-                  <path
-                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-                <svg
-                  class="pf-v6-icon-rh-ui"
-                  viewBox="0 0 32 32"
-                >
-                  <path
-                    d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
-                  />
-                </svg>
+                <path
+                  d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
+                />
               </svg>
             </span>
           </span>
@@ -420,24 +384,12 @@ exports[`numberInput passes input props successfully 1`] = `
                 fill="currentColor"
                 height="1em"
                 role="img"
+                viewBox="0 0 32 32"
                 width="1em"
               >
-                <svg
-                  class="pf-v6-icon-default"
-                  viewBox="0 0 448 512"
-                >
-                  <path
-                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-                <svg
-                  class="pf-v6-icon-rh-ui"
-                  viewBox="0 0 32 32"
-                >
-                  <path
-                    d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
-                  />
-                </svg>
+                <path
+                  d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
+                />
               </svg>
             </span>
           </span>
@@ -532,24 +484,12 @@ exports[`numberInput renders custom width 1`] = `
                 fill="currentColor"
                 height="1em"
                 role="img"
+                viewBox="0 0 32 32"
                 width="1em"
               >
-                <svg
-                  class="pf-v6-icon-default"
-                  viewBox="0 0 448 512"
-                >
-                  <path
-                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-                <svg
-                  class="pf-v6-icon-rh-ui"
-                  viewBox="0 0 32 32"
-                >
-                  <path
-                    d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
-                  />
-                </svg>
+                <path
+                  d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
+                />
               </svg>
             </span>
           </span>
@@ -644,24 +584,12 @@ exports[`numberInput renders defaults & extra props 1`] = `
                 fill="currentColor"
                 height="1em"
                 role="img"
+                viewBox="0 0 32 32"
                 width="1em"
               >
-                <svg
-                  class="pf-v6-icon-default"
-                  viewBox="0 0 448 512"
-                >
-                  <path
-                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-                <svg
-                  class="pf-v6-icon-rh-ui"
-                  viewBox="0 0 32 32"
-                >
-                  <path
-                    d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
-                  />
-                </svg>
+                <path
+                  d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
+                />
               </svg>
             </span>
           </span>
@@ -758,24 +686,12 @@ exports[`numberInput renders disabled 1`] = `
                 fill="currentColor"
                 height="1em"
                 role="img"
+                viewBox="0 0 32 32"
                 width="1em"
               >
-                <svg
-                  class="pf-v6-icon-default"
-                  viewBox="0 0 448 512"
-                >
-                  <path
-                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-                <svg
-                  class="pf-v6-icon-rh-ui"
-                  viewBox="0 0 32 32"
-                >
-                  <path
-                    d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
-                  />
-                </svg>
+                <path
+                  d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
+                />
               </svg>
             </span>
           </span>
@@ -890,24 +806,12 @@ exports[`numberInput renders error validated 1`] = `
                 fill="currentColor"
                 height="1em"
                 role="img"
+                viewBox="0 0 32 32"
                 width="1em"
               >
-                <svg
-                  class="pf-v6-icon-default"
-                  viewBox="0 0 448 512"
-                >
-                  <path
-                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-                <svg
-                  class="pf-v6-icon-rh-ui"
-                  viewBox="0 0 32 32"
-                >
-                  <path
-                    d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
-                  />
-                </svg>
+                <path
+                  d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
+                />
               </svg>
             </span>
           </span>
@@ -1022,24 +926,12 @@ exports[`numberInput renders success validated 1`] = `
                 fill="currentColor"
                 height="1em"
                 role="img"
+                viewBox="0 0 32 32"
                 width="1em"
               >
-                <svg
-                  class="pf-v6-icon-default"
-                  viewBox="0 0 448 512"
-                >
-                  <path
-                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-                <svg
-                  class="pf-v6-icon-rh-ui"
-                  viewBox="0 0 32 32"
-                >
-                  <path
-                    d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
-                  />
-                </svg>
+                <path
+                  d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
+                />
               </svg>
             </span>
           </span>
@@ -1138,24 +1030,12 @@ exports[`numberInput renders unit & position 1`] = `
                 fill="currentColor"
                 height="1em"
                 role="img"
+                viewBox="0 0 32 32"
                 width="1em"
               >
-                <svg
-                  class="pf-v6-icon-default"
-                  viewBox="0 0 448 512"
-                >
-                  <path
-                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-                <svg
-                  class="pf-v6-icon-rh-ui"
-                  viewBox="0 0 32 32"
-                >
-                  <path
-                    d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
-                  />
-                </svg>
+                <path
+                  d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
+                />
               </svg>
             </span>
           </span>
@@ -1249,24 +1129,12 @@ exports[`numberInput renders unit 1`] = `
                 fill="currentColor"
                 height="1em"
                 role="img"
+                viewBox="0 0 32 32"
                 width="1em"
               >
-                <svg
-                  class="pf-v6-icon-default"
-                  viewBox="0 0 448 512"
-                >
-                  <path
-                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-                <svg
-                  class="pf-v6-icon-rh-ui"
-                  viewBox="0 0 32 32"
-                >
-                  <path
-                    d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
-                  />
-                </svg>
+                <path
+                  d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
+                />
               </svg>
             </span>
           </span>
@@ -1365,24 +1233,12 @@ exports[`numberInput renders value 1`] = `
                 fill="currentColor"
                 height="1em"
                 role="img"
+                viewBox="0 0 32 32"
                 width="1em"
               >
-                <svg
-                  class="pf-v6-icon-default"
-                  viewBox="0 0 448 512"
-                >
-                  <path
-                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-                <svg
-                  class="pf-v6-icon-rh-ui"
-                  viewBox="0 0 32 32"
-                >
-                  <path
-                    d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
-                  />
-                </svg>
+                <path
+                  d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
+                />
               </svg>
             </span>
           </span>
@@ -1497,24 +1353,12 @@ exports[`numberInput renders warning validated 1`] = `
                 fill="currentColor"
                 height="1em"
                 role="img"
+                viewBox="0 0 32 32"
                 width="1em"
               >
-                <svg
-                  class="pf-v6-icon-default"
-                  viewBox="0 0 448 512"
-                >
-                  <path
-                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-                <svg
-                  class="pf-v6-icon-rh-ui"
-                  viewBox="0 0 32 32"
-                >
-                  <path
-                    d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
-                  />
-                </svg>
+                <path
+                  d="M29 15H17V3a1 1 0 0 0-2 0v12H3a1 1 0 0 0 0 2h12v12a1 1 0 0 0 2 0V17h12a1 1 0 0 0 0-2Z"
+                />
               </svg>
             </span>
           </span>

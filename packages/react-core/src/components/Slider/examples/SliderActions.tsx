@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Slider, SliderOnChangeEvent, Button, Content } from '@patternfly/react-core';
 import RhUiMinusIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-minus-icon';
-import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
+import RhUiAddIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-icon';
 import RhUiLockFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-lock-fill-icon';
 import RhUiUnlockFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-unlock-fill-icon';
 
@@ -69,7 +69,7 @@ export const SliderActions: React.FunctionComponent = () => {
         value={value1}
         onChange={onChange1}
         startActions={<Button variant="plain" aria-label="Minus" onClick={onMinusClick} icon={<RhUiMinusIcon />} />}
-        endActions={<Button variant="plain" aria-label="Plus" onClick={onPlusClick} icon={<PlusIcon />} />}
+        endActions={<Button variant="plain" aria-label="Plus" onClick={onPlusClick} icon={<RhUiAddIcon />} />}
       />
       <br />
       <br />

@@ -8,8 +8,8 @@ propComponents: ['MenuToggle', 'MenuToggleAction', 'MenuToggleCheckbox']
 
 import { Fragment, useState } from 'react';
 import './MenuToggle.css'
-import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhUiAddIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
@@ -65,7 +65,7 @@ To create a "settings" menu toggle that will animate on hover and focus, you can
 
 ### Custom icons
 
-To add a recognizable icon to a menu toggle, use the `icon` property. The following example adds a `PlusIcon` to the toggle.
+To add a recognizable icon to a menu toggle, use the `icon` property. The following example adds an `RhUiAddIcon` to the toggle.
 
 For most basic icons, it is recommended to wrap it inside our [icon component](/components/icon).
 
