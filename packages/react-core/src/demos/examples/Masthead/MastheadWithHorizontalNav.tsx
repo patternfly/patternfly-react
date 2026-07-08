@@ -38,7 +38,7 @@ import {
 } from '@patternfly/react-core';
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
@@ -132,7 +132,7 @@ export const MastheadWithHorizontalNav: React.FunctionComponent = () => {
         <RhUiSettingsFillIcon /> Settings
       </DropdownItem>
       <DropdownItem key="help">
-        <HelpIcon /> Help
+        <RhUiQuestionMarkCircleIcon /> Help
       </DropdownItem>
     </>
   );

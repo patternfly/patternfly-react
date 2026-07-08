@@ -24,7 +24,7 @@ import DatabaseIcon from '@patternfly/react-icons/dist/esm/icons/database-icon';
 import RhUiServerStackFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-server-stack-fill-icon';
 import RhUiLaptopFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-laptop-fill-icon';
 import RhUiInfrastructureFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-infrastructure-fill-icon';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 ## Examples

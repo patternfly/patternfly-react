@@ -24,7 +24,7 @@ import {
   PageToggleButton
 } from '@patternfly/react-core';
 import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import imgAvatar from '@patternfly/react-table/src/demos/assets/avatarImg.svg';
@@ -90,7 +90,7 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ notificationBa
         <RhUiSettingsFillIcon /> Settings
       </DropdownItem>
       <DropdownItem>
-        <HelpIcon /> Help
+        <RhUiQuestionMarkCircleIcon /> Help
       </DropdownItem>
     </>
   );
