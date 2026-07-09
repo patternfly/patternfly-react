@@ -28,10 +28,6 @@
     transform: translate3d(0, -24px, 0);
 }
 
-/* TODO [Gustavo]: My local setup has reduced animations at the OS level which kicks this media query on.
-     Chrome doesn't have an easy way to FORCE animations on in this case so commenting this out for now.
-     It should be enabled if PR is merged in. */
-/* *
 @media screen and (prefers-reduced-motion: reduce) {
     .pf-v6-c-modal-animated,
     .pf-v6-c-modal-animated-open,
@@ -39,4 +35,3 @@
         transition: none;
     }
 }
-/* */
