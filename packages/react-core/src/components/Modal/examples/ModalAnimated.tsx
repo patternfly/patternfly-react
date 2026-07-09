@@ -14,12 +14,12 @@ export const ModalAnimated: React.FunctionComponent = () => {
         Show animated modal
       </Button>
       <Modal
-        animated
+        hasAnimations
         variant={ModalVariant.large}
         isOpen={isModalOpen}
         aria-labelledby="modal-animated-label"
         aria-describedby="modal-animated-description"
-        elementToFocus="#modal-custom-focus-confirm-button"
+        elementToFocus="#modal-animated-confirm-button"
       >
         <ModalHeader title="Animated Modal Header" labelId="modal-animated-label" />
         <ModalBody id="modal-animated-description">
@@ -30,7 +30,7 @@ export const ModalAnimated: React.FunctionComponent = () => {
           est laborum.
         </ModalBody>
         <ModalFooter>
-          <Button id="modal-custom-focus-confirm-button" key="confirm" variant="primary" onClick={handleModalToggle}>
+          <Button id="modal-animated-confirm-button" key="confirm" variant="primary" onClick={handleModalToggle}>
             Confirm
           </Button>
           <Button key="cancel" variant="link" onClick={handleModalToggle}>

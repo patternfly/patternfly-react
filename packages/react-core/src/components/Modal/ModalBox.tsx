@@ -20,8 +20,8 @@ export interface ModalBoxProps extends React.HTMLProps<HTMLDivElement> {
   positionOffset?: string;
   /** Variant of the modal. */
   variant?: 'small' | 'medium' | 'large' | 'default';
-  /** Whether the Modal should open/close with animations. (BETA) */
-  animated?: boolean;
+  /** Flag indicating whether animations are enabled. */
+  hasAnimations?: boolean;
   /** Flag to show the modal. */
   isOpen?: boolean;
 }
@@ -37,7 +37,7 @@ export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
   'aria-describedby': ariaDescribedby,
   style,
   isOpen,
-  animated,
+  hasAnimations,
   ...props
 }: ModalBoxProps) => {
   if (positionOffset) {
@@ -53,9 +53,9 @@ export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
       aria-modal="true"
       className={css(
         styles.modalBox,
-        animated && stylesAnimated.modalAnimated,
-        animated && isOpen === true && stylesAnimated.modalAnimatedOpen,
-        animated && isOpen !== true && stylesAnimated.modalAnimatedClosed,
+        hasAnimations && stylesAnimated.modalAnimated,
+        hasAnimations && isOpen === true && stylesAnimated.modalAnimatedOpen,
+        hasAnimations && isOpen !== true && stylesAnimated.modalAnimatedClosed,
         className,
         position === 'top' && styles.modifiers.alignTop,
         variant === 'large' && styles.modifiers.lg,

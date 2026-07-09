@@ -1,7 +1,7 @@
 import { FocusTrap } from '../../helpers';
 import bullsEyeStyles from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
 import { css } from '@patternfly/react-styles';
-import { getOUIAProps, OUIAProps } from '../../helpers';
+import { getOUIAProps, OUIAProps, useHasAnimations } from '../../helpers';
 import { Backdrop } from '../Backdrop';
 import { ModalBoxCloseButton } from './ModalBoxCloseButton';
 import { ModalBox } from './ModalBox';
@@ -49,8 +49,8 @@ export interface ModalContentProps extends OUIAProps {
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
-  /** Whether the Modal should open/close with animations. (BETA) */
-  animated?: boolean;
+  /** Flag indicating whether animations are enabled. */
+  hasAnimations?: boolean;
 }
 
 export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
@@ -74,10 +74,12 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   ouiaSafe = true,
   elementToFocus,
   focusTrapId,
-  animated,
+  hasAnimations: hasAnimationsProp,
   ...props
 }: ModalContentProps) => {
-  if (!isOpen && !animated) {
+  const hasAnimations = useHasAnimations(hasAnimationsProp);
+
+  if (!isOpen && !hasAnimations) {
     return null;
   }
 
@@ -95,7 +97,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     <ModalBox
       className={css(className)}
       isOpen={isOpen}
-      animated={animated}
+      hasAnimations={hasAnimations}
       variant={variant}
       position={position}
       positionOffset={positionOffset}
@@ -119,12 +121,12 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     </ModalBox>
   );
   let focusTrapActive = !disableFocusTrap;
-  if (animated) {
+  if (hasAnimations) {
     focusTrapActive = !disableFocusTrap && isOpen;
   }
 
   return (
-    <Backdrop className={css(backdropClassName)} id={backdropId} animated={animated} isVisible={isOpen}>
+    <Backdrop className={css(backdropClassName)} id={backdropId} hasAnimations={hasAnimations} isVisible={isOpen}>
       <FocusTrap
         active={focusTrapActive}
         focusTrapOptions={{
