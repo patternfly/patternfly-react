@@ -1,5 +1,6 @@
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
+import stylesAnimated from '@patternfly/react-styles/css/components/ModalAnimations/modal-animations';
 import topSpacer from '@patternfly/react-tokens/dist/esm/c_modal_box_m_align_top_spacer';
 
 export interface ModalBoxProps extends React.HTMLProps<HTMLDivElement> {
@@ -19,6 +20,10 @@ export interface ModalBoxProps extends React.HTMLProps<HTMLDivElement> {
   positionOffset?: string;
   /** Variant of the modal. */
   variant?: 'small' | 'medium' | 'large' | 'default';
+  /** Whether the Modal should open/close with animations. (BETA) */
+  animated?: boolean;
+  /** Flag to show the modal. */
+  isOpen?: boolean;
 }
 
 export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
@@ -31,6 +36,8 @@ export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
   'aria-label': ariaLabel,
   'aria-describedby': ariaDescribedby,
   style,
+  isOpen,
+  animated,
   ...props
 }: ModalBoxProps) => {
   if (positionOffset) {
@@ -46,6 +53,9 @@ export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
       aria-modal="true"
       className={css(
         styles.modalBox,
+        animated && stylesAnimated.modalAnimated,
+        animated && isOpen === true && stylesAnimated.modalAnimatedOpen,
+        animated && isOpen !== true && stylesAnimated.modalAnimatedClosed,
         className,
         position === 'top' && styles.modifiers.alignTop,
         variant === 'large' && styles.modifiers.lg,

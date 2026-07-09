@@ -7,9 +7,10 @@ ouia: true
 ---
 
 import { Fragment, useRef, useState } from 'react';
-import RhUiWarningIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-icon';
+import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import RhUiAttentionBellFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
-import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
 
 ## Examples
@@ -152,5 +153,14 @@ To enable form submission from a button in the modal's footer (outside of the `<
 To customize which element inside the modal receives focus when initially opened, use the `elementToFocus` property`.
 
 ```ts file="./ModalCustomFocus.tsx"
+
+```
+
+### Animated modal
+
+To allow modals to animate as they open and close, set the `animated` property accordingly.
+_Animated modals may have an impact on rendering performance_
+
+```ts file="./ModalAnimated.tsx"
 
 ```

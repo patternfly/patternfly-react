@@ -49,6 +49,8 @@ export interface ModalContentProps extends OUIAProps {
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
+  /** Whether the Modal should open/close with animations. (BETA) */
+  animated?: boolean;
 }
 
 export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
@@ -72,9 +74,10 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   ouiaSafe = true,
   elementToFocus,
   focusTrapId,
+  animated,
   ...props
 }: ModalContentProps) => {
-  if (!isOpen) {
+  if (!isOpen && !animated) {
     return null;
   }
 
@@ -91,6 +94,8 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   const modalBox = (
     <ModalBox
       className={css(className)}
+      isOpen={isOpen}
+      animated={animated}
       variant={variant}
       position={position}
       positionOffset={positionOffset}
@@ -113,10 +118,15 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       {children}
     </ModalBox>
   );
+  let focusTrapActive = !disableFocusTrap;
+  if (animated) {
+    focusTrapActive = !disableFocusTrap && isOpen;
+  }
+
   return (
-    <Backdrop className={css(backdropClassName)} id={backdropId}>
+    <Backdrop className={css(backdropClassName)} id={backdropId} animated={animated} isVisible={isOpen}>
       <FocusTrap
-        active={!disableFocusTrap}
+        active={focusTrapActive}
         focusTrapOptions={{
           clickOutsideDeactivates: true,
           tabbableOptions: { displayCheck: 'none' },
