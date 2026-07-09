@@ -8,12 +8,26 @@ test('simple spinner', () => {
 
 test('uses default aria-label of "Contents" when none is provided', () => {
   render(<Spinner />);
-  expect(screen.getByRole('progressbar')).toHaveAttribute('aria-label', 'Contents');
+  expect(screen.getByRole('progressbar')).toHaveAccessibleName('Contents');
 });
 
 test('uses a custom aria-label when one is provided', () => {
   render(<Spinner aria-label="Loading users" />);
-  expect(screen.getByRole('progressbar')).toHaveAttribute('aria-label', 'Loading users');
+  expect(screen.getByRole('progressbar')).toHaveAccessibleName('Loading users');
+});
+
+test('keeps the default aria-label when aria-labelledby is provided', () => {
+  render(
+    <>
+      <span id="spinner-label">Loading reports</span>
+      <Spinner aria-labelledby="spinner-label" />
+    </>
+  );
+
+  const spinner = screen.getByRole('progressbar');
+  expect(spinner).toHaveAttribute('aria-label', 'Contents');
+  expect(spinner).toHaveAttribute('aria-labelledby', 'spinner-label');
+  expect(spinner).toHaveAccessibleName('Loading reports');
 });
 
 test('small spinner', () => {
