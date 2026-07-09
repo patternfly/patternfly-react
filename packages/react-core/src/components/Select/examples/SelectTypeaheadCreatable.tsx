@@ -205,7 +205,7 @@ export const SelectTypeaheadCreatable: React.FunctionComponent = () => {
   };
 
   const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
-    <MenuToggle
+    <MenuToggle aria-haspopup="listbox"
       ref={toggleRef}
       variant="typeahead"
       aria-label="Typeahead creatable menu toggle"

@@ -146,7 +146,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
             aria-label="Status"
             role="menu"
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-              <MenuToggle
+              <MenuToggle aria-haspopup="listbox"
                 ref={toggleRef}
                 onClick={onStatusToggle}
                 isExpanded={isStatusExpanded}
@@ -177,7 +177,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
             aria-label="Risk"
             role="menu"
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-              <MenuToggle
+              <MenuToggle aria-haspopup="listbox"
                 ref={toggleRef}
                 onClick={onRiskToggle}
                 isExpanded={isRiskExpanded}

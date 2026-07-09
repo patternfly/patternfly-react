@@ -61,7 +61,7 @@ export const ToolbarGroups: React.FunctionComponent = () => {
       <ToolbarItem>
         <Select
           toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-            <MenuToggle
+            <MenuToggle aria-haspopup="listbox"
               ref={toggleRef}
               onClick={() => onToggle('first')}
               isExpanded={firstIsExpanded}
@@ -91,7 +91,7 @@ export const ToolbarGroups: React.FunctionComponent = () => {
       <ToolbarItem>
         <Select
           toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-            <MenuToggle
+            <MenuToggle aria-haspopup="listbox"
               ref={toggleRef}
               onClick={() => onToggle('second')}
               isExpanded={secondIsExpanded}
@@ -121,7 +121,7 @@ export const ToolbarGroups: React.FunctionComponent = () => {
       <ToolbarItem>
         <Select
           toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-            <MenuToggle
+            <MenuToggle aria-haspopup="listbox"
               ref={toggleRef}
               onClick={() => onToggle('third')}
               isExpanded={thirdIsExpanded}

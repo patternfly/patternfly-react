@@ -67,7 +67,7 @@ export const ToolbarConsumerManagedToggleGroup: React.FunctionComponent = () => 
         <ToolbarItem>
           <Select
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-              <MenuToggle
+              <MenuToggle aria-haspopup="listbox"
                 ref={toggleRef}
                 onClick={() => onStatusToggle()}
                 isExpanded={statusIsExpanded}
@@ -97,7 +97,7 @@ export const ToolbarConsumerManagedToggleGroup: React.FunctionComponent = () => 
         <ToolbarItem>
           <Select
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-              <MenuToggle
+              <MenuToggle aria-haspopup="listbox"
                 ref={toggleRef}
                 onClick={() => onRiskToggle()}
                 isExpanded={riskIsExpanded}
