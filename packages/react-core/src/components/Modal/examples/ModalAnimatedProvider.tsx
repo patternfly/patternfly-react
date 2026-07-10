@@ -25,6 +25,7 @@ export const ModalAnimatedProvider: React.FunctionComponent = () => {
         <Modal
           variant={ModalVariant.large}
           isOpen={isModalOpen}
+          onClose={handleModalToggle}
           aria-labelledby="modal-animated-provider-label"
           aria-describedby="modal-animated-provider-description"
           elementToFocus="#modal-animated-provider-confirm-button"
