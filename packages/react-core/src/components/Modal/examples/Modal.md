@@ -11,6 +11,7 @@ import RhUiWarningIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warnin
 import RhUiAttentionBellFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
 import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
+import './Modal.css';
 
 ## Examples
 
