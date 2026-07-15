@@ -16,7 +16,7 @@ test('uses a custom aria-label when one is provided', () => {
   expect(screen.getByRole('progressbar')).toHaveAccessibleName('Loading users');
 });
 
-test('keeps the default aria-label when aria-labelledby is provided', () => {
+test('Renders with accessible name via aria-labelledby when passed', () => {
   render(
     <>
       <span id="spinner-label">Loading reports</span>
@@ -24,10 +24,12 @@ test('keeps the default aria-label when aria-labelledby is provided', () => {
     </>
   );
 
-  const spinner = screen.getByRole('progressbar');
-  expect(spinner).toHaveAttribute('aria-label', 'Contents');
-  expect(spinner).toHaveAttribute('aria-labelledby', 'spinner-label');
-  expect(spinner).toHaveAccessibleName('Loading reports');
+  expect(screen.getByRole('progressbar')).toHaveAccessibleName('Loading reports');
+});
+
+test('Renders with aria-label even when aria-labelledby is passed', () => {
+  render(<Spinner aria-labelledby="external-label" />);
+  expect(screen.getByRole('progressbar')).toHaveAttribute('aria-label', 'Contents');
 });
 
 test('small spinner', () => {
