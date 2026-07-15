@@ -3,11 +3,13 @@ import { MenuToggle } from '@patternfly/react-core';
 
 export const MenuToggleVariantStyles: React.FunctionComponent = () => (
   <Fragment>
-    <MenuToggle variant="primary">Collapsed</MenuToggle>{' '}
-    <MenuToggle variant="primary" isExpanded>
+    <MenuToggle aria-haspopup={false} variant="primary">
+      Collapsed
+    </MenuToggle>{' '}
+    <MenuToggle aria-haspopup={false} variant="primary" isExpanded>
       Expanded
     </MenuToggle>{' '}
-    <MenuToggle variant="primary" isDisabled>
+    <MenuToggle aria-haspopup={false} variant="primary" isDisabled>
       Disabled
     </MenuToggle>
   </Fragment>

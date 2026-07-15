@@ -187,7 +187,8 @@ export const SelectMultiTypeahead: React.FunctionComponent = () => {
   };
 
   const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
-    <MenuToggle aria-haspopup="listbox"
+    <MenuToggle
+      aria-haspopup="listbox"
       variant="typeahead"
       aria-label="Multi typeahead menu toggle"
       onClick={onToggleClick}

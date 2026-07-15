@@ -62,7 +62,8 @@ export const FormState = () => {
             selected={getValue('select-id')}
             isOpen={isSelectOpen}
             toggle={(toggleRef) => (
-              <MenuToggle aria-haspopup="listbox"
+              <MenuToggle
+                aria-haspopup="listbox"
                 ref={toggleRef}
                 onClick={(isOpen) => setIsSelectOpen(isOpen)}
                 isExpanded={isSelectOpen}

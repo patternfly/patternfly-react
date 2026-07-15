@@ -108,7 +108,8 @@ export const TooltipOptions: React.FunctionComponent = () => {
           position (will flip if enableFlip is true). The 'auto' position requires enableFlip to be set to true.
           <Select
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-              <MenuToggle aria-haspopup="listbox"
+              <MenuToggle
+                aria-haspopup="listbox"
                 ref={toggleRef}
                 onClick={() => setPositionSelectOpen(!positionSelectOpen)}
                 isExpanded={positionSelectOpen}
@@ -191,7 +192,8 @@ export const TooltipOptions: React.FunctionComponent = () => {
             isOpen={flipSelectOpen}
             selected={flipBehavior}
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-              <MenuToggle aria-haspopup="listbox"
+              <MenuToggle
+                aria-haspopup="listbox"
                 ref={toggleRef}
                 onClick={() => setFlipSelectOpen(!flipSelectOpen)}
                 isExpanded={flipSelectOpen}

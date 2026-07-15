@@ -137,6 +137,7 @@ exports[`With popover opened 1`] = `
                     </span>
                     <button
                       aria-expanded="false"
+                      aria-haspopup="menu"
                       class="pf-v6-c-menu-toggle"
                       data-ouia-component-id="OUIA-Generated-MenuToggle-:r10:"
                       data-ouia-component-type="PF6/MenuToggle"

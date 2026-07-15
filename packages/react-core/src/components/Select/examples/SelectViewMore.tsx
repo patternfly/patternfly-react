@@ -100,7 +100,8 @@ export const SelectViewMore: React.FunctionComponent = () => {
   };
 
   const toggle = (
-    <MenuToggle aria-haspopup="listbox"
+    <MenuToggle
+      aria-haspopup="listbox"
       ref={toggleRef}
       onClick={onToggleClick}
       isExpanded={isOpen}

@@ -200,7 +200,8 @@ export const SelectMultiTypeaheadCreatable: React.FunctionComponent = () => {
   const getChildren = (value: string) => initialSelectOptions.find((option) => option.value === value)?.children;
 
   const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
-    <MenuToggle aria-haspopup="listbox"
+    <MenuToggle
+      aria-haspopup="listbox"
       variant="typeahead"
       aria-label="Multi typeahead creatable menu toggle"
       onClick={onToggleClick}

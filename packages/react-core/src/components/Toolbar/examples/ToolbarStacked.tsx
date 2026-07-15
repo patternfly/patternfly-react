@@ -135,7 +135,8 @@ export const ToolbarStacked: React.FunctionComponent = () => {
       <ToolbarItem>
         <Select
           toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-            <MenuToggle aria-haspopup="listbox"
+            <MenuToggle
+              aria-haspopup="listbox"
               ref={toggleRef}
               onClick={() => onResourceToggle()}
               isExpanded={resourceIsExpanded}
@@ -169,7 +170,8 @@ export const ToolbarStacked: React.FunctionComponent = () => {
       <ToolbarItem>
         <Select
           toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-            <MenuToggle aria-haspopup="listbox"
+            <MenuToggle
+              aria-haspopup="listbox"
               ref={toggleRef}
               onClick={() => onStatusToggle()}
               isExpanded={statusIsExpanded}

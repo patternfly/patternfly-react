@@ -10,7 +10,8 @@ export const SelectFooter: React.FunctionComponent = () => {
   };
 
   const toggle = (toggleRef) => (
-    <MenuToggle aria-haspopup="listbox"
+    <MenuToggle
+      aria-haspopup="listbox"
       ref={toggleRef}
       onClick={onToggleClick}
       isExpanded={isOpen}
