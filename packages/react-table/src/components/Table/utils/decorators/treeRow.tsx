@@ -4,7 +4,7 @@ import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-tree-view';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 import { Checkbox } from '@patternfly/react-core/dist/esm/components/Checkbox';
-import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import RhUiEllipsisHorizontalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-horizontal-fill-icon';
 
 export const treeRow =
@@ -54,7 +54,7 @@ export const treeRow =
                   aria-label={toggleAriaLabel || `${isExpanded ? 'Collapse' : 'Expand'} row ${rowIndex}`}
                   icon={
                     <div className={css(stylesTreeView.tableToggleIcon)}>
-                      <RhMicronsCaretDownIcon />
+                      <RhMicronsCaretRightIcon />
                     </div>
                   }
                 />
