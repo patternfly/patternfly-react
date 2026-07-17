@@ -29,7 +29,7 @@ test('Renders with accessible name via aria-labelledby when passed', () => {
 
 test('Renders with aria-label even when aria-labelledby is passed', () => {
   render(<Spinner aria-labelledby="external-label" />);
-  expect(screen.getByRole('progressbar')).toHaveAttribute('aria-label', 'Contents');
+  expect(screen.getByRole('progressbar')).toHaveAccessibleName('Contents');
 });
 
 test('small spinner', () => {
