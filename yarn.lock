@@ -5192,13 +5192,8 @@ __metadata:
   resolution: "@patternfly/react-docs@workspace:packages/react-docs"
   dependencies:
     "@patternfly/documentation-framework": "npm:^6.36.8"
-<<<<<<< HEAD
-    "@patternfly/patternfly": "npm:6.6.0-prerelease.18"
-    "@patternfly/patternfly-a11y": "npm:5.2.1"
-=======
     "@patternfly/patternfly": "npm:6.6.0-prerelease.20"
-    "@patternfly/patternfly-a11y": "npm:5.1.0"
->>>>>>> 00f3443eac (chore: bump to latest core)
+    "@patternfly/patternfly-a11y": "npm:5.2.1"
     "@patternfly/react-charts": "workspace:^"
     "@patternfly/react-code-editor": "workspace:^"
     "@patternfly/react-core": "workspace:^"
