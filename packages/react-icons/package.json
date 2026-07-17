@@ -38,7 +38,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "@patternfly/patternfly": "^6.6.0",
+    "@patternfly/patternfly": "6.6.0-prerelease.20",
     "@rhds/icons": "^2.2.0",
     "fs-extra": "^11.3.3"
   },
