@@ -54,6 +54,7 @@ component.
 * [Card](/components/card)
 * [Checkbox](/components/forms/checkbox)
 * [Chip](/components/chip)
+* [ClipboardCopy](/components/clipboard-copy)
 * [Content](/components/content)
 * [Dropdown](/components/menus/dropdown)
 * [DropdownItem](/components/menus/dropdown)
