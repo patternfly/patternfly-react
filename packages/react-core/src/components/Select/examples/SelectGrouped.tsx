@@ -27,6 +27,7 @@ export const SelectGrouped: React.FunctionComponent = () => {
 
   const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
     <MenuToggle
+      aria-haspopup="listbox"
       ref={toggleRef}
       onClick={onToggleClick}
       isExpanded={isOpen}

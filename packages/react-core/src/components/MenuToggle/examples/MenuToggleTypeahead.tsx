@@ -16,7 +16,7 @@ export const MenuToggleTypeahead: React.FunctionComponent = () => {
   };
 
   return (
-    <MenuToggle variant="typeahead" isFullWidth aria-label="Typeahead menu toggle">
+    <MenuToggle aria-haspopup={false} variant="typeahead" isFullWidth aria-label="Typeahead menu toggle">
       <TextInputGroup isPlain>
         <TextInputGroupMain
           value={inputValue}

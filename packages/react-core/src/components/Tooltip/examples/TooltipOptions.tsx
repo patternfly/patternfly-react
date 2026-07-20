@@ -109,6 +109,7 @@ export const TooltipOptions: React.FunctionComponent = () => {
           <Select
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
               <MenuToggle
+                aria-haspopup="listbox"
                 ref={toggleRef}
                 onClick={() => setPositionSelectOpen(!positionSelectOpen)}
                 isExpanded={positionSelectOpen}
@@ -192,6 +193,7 @@ export const TooltipOptions: React.FunctionComponent = () => {
             selected={flipBehavior}
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
               <MenuToggle
+                aria-haspopup="listbox"
                 ref={toggleRef}
                 onClick={() => setFlipSelectOpen(!flipSelectOpen)}
                 isExpanded={flipSelectOpen}

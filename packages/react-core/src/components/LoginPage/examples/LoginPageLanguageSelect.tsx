@@ -82,6 +82,7 @@ export const LoginPageLanguageSelect: React.FunctionComponent = () => {
       aria-label="Select Language"
       toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
         <MenuToggle
+          aria-haspopup="listbox"
           ref={toggleRef}
           onClick={() => setIsHeaderUtilsOpen(!isHeaderUtilsOpen)}
           isExpanded={isHeaderUtilsOpen}

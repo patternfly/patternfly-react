@@ -196,6 +196,7 @@ export const SelectMultiTypeaheadCheckbox: React.FunctionComponent = () => {
 
   const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
     <MenuToggle
+      aria-haspopup="listbox"
       variant="typeahead"
       aria-label="Multi typeahead checkbox menu toggle"
       onClick={onToggleClick}
