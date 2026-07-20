@@ -55,6 +55,7 @@ component.
 * [Checkbox](/components/forms/checkbox)
 * [Chip](/components/chip)
 * [Content](/components/content)
+* [Drawer](/components/drawer)
 * [Dropdown](/components/menus/dropdown)
 * [DropdownItem](/components/menus/dropdown)
 * [Form](/components/forms/form)
