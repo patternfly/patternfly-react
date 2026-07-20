@@ -11,9 +11,8 @@ import { PopoverCloseButton } from './PopoverCloseButton';
 import { PopoverArrow } from './PopoverArrow';
 import popoverMaxWidth from '@patternfly/react-tokens/dist/esm/c_popover_MaxWidth';
 import popoverMinWidth from '@patternfly/react-tokens/dist/esm/c_popover_MinWidth';
-import { FocusTrap } from '../../helpers';
+import { FocusTrap, useSSRSafeId, useOUIAProps, OUIAProps } from '../../helpers';
 import { Popper } from '../../helpers/Popper/Popper';
-import { useSSRSafeId } from '../../helpers';
 
 export enum PopoverPosition {
   auto = 'auto',
@@ -35,7 +34,7 @@ export enum PopoverPosition {
  * that has a property specifically for passing in popover properties.
  */
 
-export interface PopoverProps {
+export interface PopoverProps extends OUIAProps {
   /** Text announced by screen reader when alert severity variant is set to indicate
    * severity level.
    */
@@ -211,6 +210,10 @@ export interface PopoverProps {
   withFocusTrap?: boolean;
   /** The z-index of the popover. */
   zIndex?: number;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 const alertStyle = {
@@ -272,12 +275,15 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   hasNoPadding = false,
   hasAutoWidth = false,
   elementToFocus,
+  ouiaId,
+  ouiaSafe = true,
   ...rest
 }: PopoverProps) => {
   // could make this a prop in the future (true | false | 'toggle')
   // const hideOnClick = true;
   const generatedId = useSSRSafeId();
   const uniqueId = id || generatedId;
+  const ouiaProps = useOUIAProps(Popover.displayName, ouiaId, ouiaSafe);
   const triggerManually = isVisible !== null;
   const [visible, setVisible] = useState(false);
   const [focusTrapActive, setFocusTrapActive] = useState(Boolean(propWithFocusTrap));
@@ -473,6 +479,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         maxWidth: hasCustomMaxWidth ? maxWidth : null
       }}
       {...rest}
+      {...ouiaProps}
     >
       <PopoverArrow />
       <PopoverContent>
