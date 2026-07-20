@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { SliderStep } from './SliderStep';
 import { InputGroup, InputGroupText, InputGroupItem } from '../InputGroup';
 import { TextInput } from '../TextInput';
-import { Tooltip } from '../Tooltip';
+import { Tooltip, TooltipProps } from '../Tooltip';
 import cssSliderValue from '@patternfly/react-tokens/dist/esm/c_slider_value';
 import cssFormControlWidthChars from '@patternfly/react-tokens/dist/esm/c_slider__value_c_form_control_width_chars';
 import { getLanguageDirection } from '../../helpers/util';
@@ -46,6 +46,8 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   hasTooltipOverThumb?: boolean;
   /** Content of the tooltip over the slider thumb. Defaults to the current value.  */
   tooltipContent?: React.ReactNode;
+  /** Additional props passed to the tooltip. */
+  tooltipProps?: Omit<TooltipProps, 'content'>;
   /** Accessible label for the input field. */
   inputAriaLabel?: string;
   /** Text label that is place after the input field. */
@@ -107,6 +109,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   thumbAriaValueText,
   hasTooltipOverThumb = false,
   tooltipContent,
+  tooltipProps,
   inputPosition = 'end',
   onChange,
   leftActions,
@@ -431,8 +434,8 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
       aria-valuemin={customSteps ? customSteps[0].value : min}
       aria-valuemax={customSteps ? customSteps[customSteps.length - 1].value : max}
       aria-valuenow={localValue}
-      aria-valuetext={thumbAriaValueText ? thumbAriaValueText : findAriaTextValue()}
-      aria-label={thumbAriaLabel ? thumbAriaLabel : thumbAriaLabel}
+      aria-valuetext={thumbAriaValueText ?? findAriaTextValue()}
+      aria-label={thumbAriaLabel}
       aria-disabled={isDisabled}
       aria-describedby={ariaDescribedby}
       aria-labelledby={ariaLabelledby}
@@ -483,7 +486,8 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
             className={css('pf-v6-m-tabular-nums')}
             triggerRef={thumbRef}
             entryDelay={0}
-            content={tooltipContent ? tooltipContent : findAriaTextValue()}
+            content={tooltipContent ?? findAriaTextValue()}
+            {...tooltipProps}
           >
             {thumbComponent}
           </Tooltip>

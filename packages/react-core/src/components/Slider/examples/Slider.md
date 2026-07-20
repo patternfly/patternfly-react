@@ -52,6 +52,10 @@ import RhUiUnlockFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-unl
 
 ### Custom step tooltip
 
+You can customize the content of the tooltip by passing the tooltipContent property. By default this tooltip will act as a description to the slider thumb, and thus shouldn't include critical information about the current slider step unless that information is part of the step's aria-valuetext.
+
+If instead you want the tooltip to act as the human-readable value of the slider step - such as when all slider step labels are hidden - you must also pass the thumbAriaValueText property with the same string value as the tooltipContent. Additionally, you should pass the tooltip props object {aria: 'none', 'aria-live': 'off'} to tooltipProps in order to help prevent duplicate announcement from assistive technologies.
+
 ```ts file="./SliderCustomTooltip.tsx"
 
 ```
