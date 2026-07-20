@@ -4,7 +4,7 @@ import { DescriptionList } from '../DescriptionList';
 import styles from '@patternfly/react-styles/css/components/DescriptionList/description-list';
 
 test('Renders to match snapshot', () => {
-  const { asFragment } = render(<DescriptionList />);
+  const { asFragment } = render(<DescriptionList ouiaId="ouia-id" />);
   expect(asFragment()).toMatchSnapshot();
 });
 
@@ -154,4 +154,24 @@ test(`Renders style when isAutoFit and horizontalTermWidthModifier is set`, () =
     'style',
     `--${styles.descriptionList}--GridTemplateColumns--min: 50px; --${styles.descriptionList}--GridTemplateColumns--min-on-sm: 50px; --${styles.descriptionList}--GridTemplateColumns--min-on-md: 100px; --${styles.descriptionList}--GridTemplateColumns--min-on-lg: 150px; --${styles.descriptionList}--GridTemplateColumns--min-on-xl: 200px; --${styles.descriptionList}--GridTemplateColumns--min-on-2xl: 300px;`
   );
+});
+
+test('Renders with custom ouiaId', () => {
+  render(<DescriptionList aria-label="list" ouiaId="test-id" />);
+  expect(screen.getByLabelText('list')).toHaveAttribute('data-ouia-component-id', 'test-id');
+});
+
+test('Renders with expected ouia component type', () => {
+  render(<DescriptionList aria-label="list" ouiaId="test-id" />);
+  expect(screen.getByLabelText('list')).toHaveAttribute('data-ouia-component-type', 'PF6/DescriptionList');
+});
+
+test('Renders with ouiaSafe defaulting to true', () => {
+  render(<DescriptionList aria-label="list" ouiaId="test-id" />);
+  expect(screen.getByLabelText('list')).toHaveAttribute('data-ouia-safe', 'true');
+});
+
+test('Renders with ouiaSafe=false when specified', () => {
+  render(<DescriptionList aria-label="list" ouiaId="test-id" ouiaSafe={false} />);
+  expect(screen.getByLabelText('list')).toHaveAttribute('data-ouia-safe', 'false');
 });
