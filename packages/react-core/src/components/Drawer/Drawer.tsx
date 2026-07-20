@@ -1,6 +1,7 @@
 import { createContext, useRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
+import { useOUIAProps, OUIAProps } from '../../helpers';
 
 export enum DrawerColorVariant {
   default = 'default',
@@ -11,7 +12,7 @@ export enum DrawerColorVariant {
   noBackground = 'no-background'
 }
 
-export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
+export interface DrawerProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Additional classes added to the Drawer. */
   className?: string;
   /** Content rendered in the drawer panel */
@@ -28,6 +29,10 @@ export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
   position?: 'start' | 'end' | 'bottom' | 'left' | 'right';
   /** Callback when drawer panel is expanded after waiting 250ms for animation to complete. */
   onExpand?: (event: KeyboardEvent | React.MouseEvent | React.TransitionEvent) => void;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 export interface DrawerContextProps {
@@ -59,8 +64,11 @@ export const Drawer: React.FunctionComponent<DrawerProps> = ({
   isStatic = false,
   position = 'end',
   onExpand = () => {},
+  ouiaId,
+  ouiaSafe = true,
   ...props
 }: DrawerProps) => {
+  const ouiaProps = useOUIAProps(Drawer.displayName, ouiaId, ouiaSafe);
   const drawerRef = useRef<HTMLDivElement>(undefined);
   const drawerContentRef = useRef<HTMLDivElement>(undefined);
 
@@ -79,6 +87,7 @@ export const Drawer: React.FunctionComponent<DrawerProps> = ({
         )}
         ref={drawerRef}
         {...props}
+        {...ouiaProps}
       >
         {children}
       </div>

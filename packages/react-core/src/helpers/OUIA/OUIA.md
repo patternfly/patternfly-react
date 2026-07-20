@@ -57,6 +57,7 @@ component.
 * [ClipboardCopy](/components/clipboard-copy)
 * [Content](/components/content)
 * [DescriptionList](/components/description-list)
+* [Drawer](/components/drawer)
 * [Dropdown](/components/menus/dropdown)
 * [DropdownItem](/components/menus/dropdown)
 * [ExpandableSection](/components/expandable-section)
