@@ -120,3 +120,16 @@ exports[`DualListSelector with search inputs 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`Matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-dual-list-selector"
+    data-ouia-component-id="ouia-id"
+    data-ouia-component-type="PF6/DualListSelector"
+    data-ouia-safe="true"
+    data-testid="test-id"
+    id="pf-:re:"
+  />
+</DocumentFragment>
+`;
