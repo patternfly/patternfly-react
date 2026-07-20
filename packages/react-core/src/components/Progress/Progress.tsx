@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Progress/progress';
 import { css } from '@patternfly/react-styles';
 import { ProgressContainer, ProgressMeasureLocation } from './ProgressContainer';
 import { AriaProps } from './ProgressBar';
-import { GenerateId } from '../../helpers';
+import { GenerateId, getOUIAProps, OUIAProps } from '../../helpers';
 
 export enum ProgressSize {
   sm = 'sm',
@@ -11,7 +11,7 @@ export enum ProgressSize {
   lg = 'lg'
 }
 
-export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'size' | 'label' | 'title'> {
+export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'size' | 'label' | 'title'>, OUIAProps {
   /** Classname for progress component. */
   className?: string;
   /** Size variant of progress. */
@@ -50,6 +50,10 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
   helperText?: React.ReactNode;
   /** Flag indicating whether the status icon should be hidden, helpful when space is limited (such as within table cells). When set to true, you must ensure the context of the status is provided in another way, such as via the progress measure. */
   hideStatusIcon?: boolean;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 class Progress extends Component<ProgressProps> {
@@ -70,7 +74,8 @@ class Progress extends Component<ProgressProps> {
     tooltipPosition: 'top' as 'auto' | 'top' | 'bottom' | 'left' | 'right',
     'aria-label': null as string,
     'aria-labelledby': null as string,
-    'aria-describedby': null as string
+    'aria-describedby': null as string,
+    ouiaSafe: true
   };
 
   render() {
@@ -94,6 +99,8 @@ class Progress extends Component<ProgressProps> {
       'aria-describedby': ariaDescribedBy,
       helperText,
       hideStatusIcon,
+      ouiaId,
+      ouiaSafe,
       ...props
     } = this.props;
 
@@ -147,6 +154,7 @@ class Progress extends Component<ProgressProps> {
                 className
               )}
               id={id}
+              {...getOUIAProps(Progress.displayName, ouiaId, ouiaSafe)}
             >
               <ProgressContainer
                 parentId={id}
