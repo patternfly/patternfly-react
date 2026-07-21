@@ -134,13 +134,13 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
       </div>
     </div>
     <div
-      class="pf-v6-c-form__group pf-m-action"
+      class="pf-v6-c-action-list"
     >
       <div
-        class="pf-v6-c-form__group-control"
+        class="pf-v6-c-action-list__group"
       >
         <div
-          class="pf-v6-c-form__actions"
+          class="pf-v6-c-action-list__item"
         >
           <button
             class="pf-v6-c-button pf-m-primary pf-m-block"
@@ -304,13 +304,13 @@ exports[`LoginForm LoginForm with show password 1`] = `
       </div>
     </div>
     <div
-      class="pf-v6-c-form__group pf-m-action"
+      class="pf-v6-c-action-list"
     >
       <div
-        class="pf-v6-c-form__group-control"
+        class="pf-v6-c-action-list__group"
       >
         <div
-          class="pf-v6-c-form__actions"
+          class="pf-v6-c-action-list__item"
         >
           <button
             class="pf-v6-c-button pf-m-primary pf-m-block"
@@ -436,13 +436,13 @@ exports[`LoginForm should render Login form 1`] = `
       </div>
     </div>
     <div
-      class="pf-v6-c-form__group pf-m-action"
+      class="pf-v6-c-action-list"
     >
       <div
-        class="pf-v6-c-form__group-control"
+        class="pf-v6-c-action-list__group"
       >
         <div
-          class="pf-v6-c-form__actions"
+          class="pf-v6-c-action-list__item"
         >
           <button
             class="pf-v6-c-button pf-m-primary pf-m-block"

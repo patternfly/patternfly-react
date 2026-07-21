@@ -1,6 +1,7 @@
 import styles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
 
+/** @deprecated Use ActionList, ActionListGroup, and ActionListItem instead. */
 export interface ActionGroupProps extends React.HTMLProps<HTMLDivElement> {
   /** Anything that can be rendered as ActionGroup content. */
   children?: React.ReactNode;
@@ -8,6 +9,7 @@ export interface ActionGroupProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
+/** @deprecated Use ActionList, ActionListGroup, and ActionListItem instead. */
 export const ActionGroup: React.FunctionComponent<ActionGroupProps> = ({
   children = null,
   className = '',
