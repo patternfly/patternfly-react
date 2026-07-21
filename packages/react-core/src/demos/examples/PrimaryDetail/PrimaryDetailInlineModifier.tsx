@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import {
   Button,
   ButtonVariant,
@@ -23,8 +23,10 @@ import {
   DrawerHead,
   DrawerPanelBody,
   DrawerPanelContent,
+  DrawerSection,
   Flex,
   FlexItem,
+  Icon,
   InputGroup,
   InputGroupItem,
   PageSection,
@@ -98,8 +100,8 @@ export const PrimaryDetailInlineModifier: React.FunctionComponent = () => {
     setSelectedDataListItemId('');
   };
 
-  const toggleGroupItems = (
-    <Flex alignItems={{ default: 'alignItemsCenter' }}>
+  const ToolbarItems = (
+    <ToolbarToggleGroup toggleIcon={<RhUiFilterFillIcon />} breakpoint="xl" alignItems="center">
       <ToolbarItem>
         <InputGroup>
           <InputGroupItem isFill>
@@ -121,7 +123,7 @@ export const PrimaryDetailInlineModifier: React.FunctionComponent = () => {
           </InputGroupItem>
         </InputGroup>
       </ToolbarItem>
-      <ToolbarGroup variant="filter-group">
+      <ToolbarGroup variant="filter-group" alignItems="center">
         <ToolbarItem>
           <Select
             aria-label="Status select"
@@ -171,12 +173,6 @@ export const PrimaryDetailInlineModifier: React.FunctionComponent = () => {
           </Select>
         </ToolbarItem>
       </ToolbarGroup>
-    </Flex>
-  );
-
-  const ToolbarItems = (
-    <ToolbarToggleGroup toggleIcon={<RhUiFilterFillIcon />} breakpoint="xl">
-      {toggleGroupItems}
     </ToolbarToggleGroup>
   );
 
@@ -211,211 +207,224 @@ export const PrimaryDetailInlineModifier: React.FunctionComponent = () => {
   );
 
   const drawerContent = (
-    <Fragment>
-      <Toolbar id="inline-modifier-data-toolbar">
-        <ToolbarContent>{ToolbarItems}</ToolbarContent>
-      </Toolbar>
-      <DataList
-        aria-label="data list"
-        selectedDataListItemId={selectedDataListItemId}
-        onSelectDataListItem={onSelectDataListItem}
-      >
-        <DataListItem id="inline-modifier-item1">
-          <DataListItemRow>
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell key="primary-content">
-                  <Flex spaceItems={{ default: 'spaceItemsMd' }} direction={{ default: 'column' }}>
+    <DataList
+      aria-label="data list"
+      selectedDataListItemId={selectedDataListItemId}
+      onSelectDataListItem={onSelectDataListItem}
+    >
+      <DataListItem id="inline-modifier-item1">
+        <DataListItemRow>
+          <DataListItemCells
+            dataListCells={[
+              <DataListCell key="primary-content">
+                <Flex spaceItems={{ default: 'spaceItemsMd' }} direction={{ default: 'column' }}>
+                  <FlexItem>
+                    <p>patternfly</p>
+                    <small>
+                      Working repo for PatternFly 5 <a>https://pf5.patternfly.org/</a>
+                    </small>
+                  </FlexItem>
+                  <Flex spaceItems={{ default: 'spaceItemsMd' }}>
                     <FlexItem>
-                      <p>patternfly</p>
-                      <small>
-                        Working repo for PatternFly 5 <a>https://pf5.patternfly.org/</a>
-                      </small>
+                      <RhUiBranchFillIcon /> 10
                     </FlexItem>
-                    <Flex spaceItems={{ default: 'spaceItemsMd' }}>
-                      <FlexItem>
-                        <RhUiBranchFillIcon /> 10
-                      </FlexItem>
-                      <FlexItem>
-                        <RhUiCodeIcon /> 4
-                      </FlexItem>
-                      <FlexItem>
-                        <CubeIcon /> 5
-                      </FlexItem>
-                      <FlexItem>Updated 2 days ago</FlexItem>
-                    </Flex>
-                  </Flex>
-                </DataListCell>,
-                <DataListAction
-                  key="actions"
-                  aria-labelledby="inline-modifier-item1 inline-modifier-action1"
-                  id="inline-modifier-action1"
-                  aria-label="Actions"
-                >
-                  <Stack>
-                    <StackItem>
-                      <Button variant={ButtonVariant.secondary}>Secondary</Button>
-                    </StackItem>
-                    <StackItem>
-                      <Button variant={ButtonVariant.link}>Link Button</Button>
-                    </StackItem>
-                  </Stack>
-                </DataListAction>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-        <DataListItem id="inline-modifier-item2">
-          <DataListItemRow>
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell key="primary-content">
-                  <Flex spaceItems={{ default: 'spaceItemsMd' }} direction={{ default: 'column' }}>
                     <FlexItem>
-                      <p>patternfly-elements</p>
-                      <small>PatternFly elements</small>
+                      <RhUiCodeIcon /> 4
                     </FlexItem>
-                    <Flex spaceItems={{ default: 'spaceItemsMd' }}>
-                      <FlexItem>
-                        <RhUiBranchFillIcon /> 10
-                      </FlexItem>
-                      <FlexItem>
-                        <RhUiCodeIcon /> 4
-                      </FlexItem>
-                      <FlexItem>
-                        <CubeIcon /> 5
-                      </FlexItem>
-                      <FlexItem>
-                        <RhUiCheckCircleFillIcon /> 7
-                      </FlexItem>
-                      <FlexItem>
-                        <RhUiWarningFillIcon /> 5
-                      </FlexItem>
-                      <FlexItem>
-                        <RhUiCloseCircleFillIcon /> 5
-                      </FlexItem>
-                      <FlexItem>Updated 2 days ago</FlexItem>
-                    </Flex>
-                  </Flex>
-                </DataListCell>,
-                <DataListAction
-                  key="actions"
-                  aria-labelledby="inline-modifier-item2 inline-modifier-action2"
-                  id="inline-modifier-action2"
-                  aria-label="Actions"
-                >
-                  <Stack>
-                    <StackItem>
-                      <Button variant={ButtonVariant.secondary}>Secondary</Button>
-                    </StackItem>
-                    <StackItem>
-                      <Button variant={ButtonVariant.link}>Link Button</Button>
-                    </StackItem>
-                  </Stack>
-                </DataListAction>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-        <DataListItem id="inline-modifier-item3">
-          <DataListItemRow>
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell key="primary-content">
-                  <Flex spaceItems={{ default: 'spaceItemsMd' }} direction={{ default: 'column' }}>
                     <FlexItem>
-                      <p>patternfly</p>
-                      <small>
-                        Working repo for PatternFly 5 <a>https://pf5.patternfly.org/</a>
-                      </small>
+                      <CubeIcon /> 5
                     </FlexItem>
-                    <Flex spaceItems={{ default: 'spaceItemsMd' }}>
-                      <FlexItem>
-                        <RhUiBranchFillIcon /> 10
-                      </FlexItem>
-                      <FlexItem>
-                        <RhUiCodeIcon /> 4
-                      </FlexItem>
-                      <FlexItem>
-                        <CubeIcon /> 5
-                      </FlexItem>
-                      <FlexItem>Updated 2 days ago</FlexItem>
-                    </Flex>
+                    <FlexItem>Updated 2 days ago</FlexItem>
                   </Flex>
-                </DataListCell>,
-                <DataListAction
-                  key="actions"
-                  aria-labelledby="inline-modifier-item3 inline-modifier-action3"
-                  id="inline-modifier-action3"
-                  aria-label="Actions"
-                >
-                  <Stack>
-                    <StackItem>
-                      <Button variant={ButtonVariant.secondary}>Secondary</Button>
-                    </StackItem>
-                    <StackItem>
-                      <Button variant={ButtonVariant.link}>Link Button</Button>
-                    </StackItem>
-                  </Stack>
-                </DataListAction>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-        <DataListItem id="inline-modifier-item4">
-          <DataListItemRow>
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell key="primary-content">
-                  <Flex spaceItems={{ default: 'spaceItemsMd' }} direction={{ default: 'column' }}>
+                </Flex>
+              </DataListCell>,
+              <DataListAction
+                key="actions"
+                aria-labelledby="inline-modifier-item1 inline-modifier-action1"
+                id="inline-modifier-action1"
+                aria-label="Actions"
+              >
+                <Stack>
+                  <StackItem>
+                    <Button variant={ButtonVariant.secondary}>Secondary</Button>
+                  </StackItem>
+                  <StackItem>
+                    <Button variant={ButtonVariant.link}>Link Button</Button>
+                  </StackItem>
+                </Stack>
+              </DataListAction>
+            ]}
+          />
+        </DataListItemRow>
+      </DataListItem>
+      <DataListItem id="inline-modifier-item2">
+        <DataListItemRow>
+          <DataListItemCells
+            dataListCells={[
+              <DataListCell key="primary-content">
+                <Flex spaceItems={{ default: 'spaceItemsMd' }} direction={{ default: 'column' }}>
+                  <FlexItem>
+                    <p>patternfly-elements</p>
+                    <small>PatternFly elements</small>
+                  </FlexItem>
+                  <Flex spaceItems={{ default: 'spaceItemsMd' }}>
                     <FlexItem>
-                      <p>patternfly-elements</p>
-                      <small>PatternFly elements</small>
+                      <RhUiBranchFillIcon /> 10
                     </FlexItem>
-                    <Flex spaceItems={{ default: 'spaceItemsMd' }}>
-                      <FlexItem>
-                        <RhUiBranchFillIcon /> 10
-                      </FlexItem>
-                      <FlexItem>
-                        <RhUiCodeIcon /> 4
-                      </FlexItem>
-                      <FlexItem>
-                        <CubeIcon /> 5
-                      </FlexItem>
-                      <FlexItem>
-                        <RhUiCheckCircleFillIcon /> 7
-                      </FlexItem>
-                      <FlexItem>
-                        <RhUiWarningFillIcon /> 5
-                      </FlexItem>
-                      <FlexItem>
-                        <RhUiCloseCircleFillIcon /> 5
-                      </FlexItem>
-                      <FlexItem>Updated 2 days ago</FlexItem>
-                    </Flex>
+                    <FlexItem>
+                      <RhUiCodeIcon /> 4
+                    </FlexItem>
+                    <FlexItem>
+                      <CubeIcon /> 5
+                    </FlexItem>
+                    <FlexItem>
+                      <Icon status="success">
+                        <RhUiCheckCircleFillIcon />
+                      </Icon>{' '}
+                      7
+                    </FlexItem>
+                    <FlexItem>
+                      <Icon status="warning">
+                        <RhUiWarningFillIcon />
+                      </Icon>{' '}
+                      5
+                    </FlexItem>
+                    <FlexItem>
+                      <Icon status="danger">
+                        <RhUiCloseCircleFillIcon />
+                      </Icon>{' '}
+                      5
+                    </FlexItem>
+                    <FlexItem>Updated 2 days ago</FlexItem>
                   </Flex>
-                </DataListCell>,
-                <DataListAction
-                  key="actions"
-                  aria-labelledby="inline-modifier-item4 inline-modifier-action4"
-                  id="inline-modifier-action4"
-                  aria-label="Actions"
-                >
-                  <Stack>
-                    <StackItem>
-                      <Button variant={ButtonVariant.secondary}>Secondary</Button>
-                    </StackItem>
-                    <StackItem>
-                      <Button variant={ButtonVariant.link}>Link Button</Button>
-                    </StackItem>
-                  </Stack>
-                </DataListAction>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-      </DataList>
-    </Fragment>
+                </Flex>
+              </DataListCell>,
+              <DataListAction
+                key="actions"
+                aria-labelledby="inline-modifier-item2 inline-modifier-action2"
+                id="inline-modifier-action2"
+                aria-label="Actions"
+              >
+                <Stack>
+                  <StackItem>
+                    <Button variant={ButtonVariant.secondary}>Secondary</Button>
+                  </StackItem>
+                  <StackItem>
+                    <Button variant={ButtonVariant.link}>Link Button</Button>
+                  </StackItem>
+                </Stack>
+              </DataListAction>
+            ]}
+          />
+        </DataListItemRow>
+      </DataListItem>
+      <DataListItem id="inline-modifier-item3">
+        <DataListItemRow>
+          <DataListItemCells
+            dataListCells={[
+              <DataListCell key="primary-content">
+                <Flex spaceItems={{ default: 'spaceItemsMd' }} direction={{ default: 'column' }}>
+                  <FlexItem>
+                    <p>patternfly</p>
+                    <small>
+                      Working repo for PatternFly 5 <a>https://pf5.patternfly.org/</a>
+                    </small>
+                  </FlexItem>
+                  <Flex spaceItems={{ default: 'spaceItemsMd' }}>
+                    <FlexItem>
+                      <RhUiBranchFillIcon /> 10
+                    </FlexItem>
+                    <FlexItem>
+                      <RhUiCodeIcon /> 4
+                    </FlexItem>
+                    <FlexItem>
+                      <CubeIcon /> 5
+                    </FlexItem>
+                    <FlexItem>Updated 2 days ago</FlexItem>
+                  </Flex>
+                </Flex>
+              </DataListCell>,
+              <DataListAction
+                key="actions"
+                aria-labelledby="inline-modifier-item3 inline-modifier-action3"
+                id="inline-modifier-action3"
+                aria-label="Actions"
+              >
+                <Stack>
+                  <StackItem>
+                    <Button variant={ButtonVariant.secondary}>Secondary</Button>
+                  </StackItem>
+                  <StackItem>
+                    <Button variant={ButtonVariant.link}>Link Button</Button>
+                  </StackItem>
+                </Stack>
+              </DataListAction>
+            ]}
+          />
+        </DataListItemRow>
+      </DataListItem>
+      <DataListItem id="inline-modifier-item4">
+        <DataListItemRow>
+          <DataListItemCells
+            dataListCells={[
+              <DataListCell key="primary-content">
+                <Flex spaceItems={{ default: 'spaceItemsMd' }} direction={{ default: 'column' }}>
+                  <FlexItem>
+                    <p>patternfly-elements</p>
+                    <small>PatternFly elements</small>
+                  </FlexItem>
+                  <Flex spaceItems={{ default: 'spaceItemsMd' }}>
+                    <FlexItem>
+                      <RhUiBranchFillIcon /> 10
+                    </FlexItem>
+                    <FlexItem>
+                      <RhUiCodeIcon /> 4
+                    </FlexItem>
+                    <FlexItem>
+                      <CubeIcon /> 5
+                    </FlexItem>
+                    <FlexItem>
+                      <Icon status="success">
+                        <RhUiCheckCircleFillIcon />
+                      </Icon>{' '}
+                      7
+                    </FlexItem>
+                    <FlexItem>
+                      <Icon status="warning">
+                        <RhUiWarningFillIcon />
+                      </Icon>{' '}
+                      5
+                    </FlexItem>
+                    <FlexItem>
+                      <Icon status="danger">
+                        <RhUiCloseCircleFillIcon />
+                      </Icon>{' '}
+                      5
+                    </FlexItem>
+                    <FlexItem>Updated 2 days ago</FlexItem>
+                  </Flex>
+                </Flex>
+              </DataListCell>,
+              <DataListAction
+                key="actions"
+                aria-labelledby="inline-modifier-item4 inline-modifier-action4"
+                id="inline-modifier-action4"
+                aria-label="Actions"
+              >
+                <Stack>
+                  <StackItem>
+                    <Button variant={ButtonVariant.secondary}>Secondary</Button>
+                  </StackItem>
+                  <StackItem>
+                    <Button variant={ButtonVariant.link}>Link Button</Button>
+                  </StackItem>
+                </Stack>
+              </DataListAction>
+            ]}
+          />
+        </DataListItemRow>
+      </DataListItem>
+    </DataList>
   );
 
   return (
@@ -432,6 +441,16 @@ export const PrimaryDetailInlineModifier: React.FunctionComponent = () => {
       <Divider component="div" />
       <PageSection padding={{ default: 'noPadding' }} aria-label="Card with drawer content">
         <Drawer isExpanded={isDrawerExpanded} isInline>
+          <DrawerSection>
+            <Toolbar
+              id="inline-modifier-data-toolbar"
+              inset={{ default: 'insetLg' }}
+              style={{ paddingBlockStart: 'var(--pf-t--global--spacer--md)' }}
+            >
+              <ToolbarContent alignItems="center">{ToolbarItems}</ToolbarContent>
+            </Toolbar>
+            <Divider component="div" />
+          </DrawerSection>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
           </DrawerContent>

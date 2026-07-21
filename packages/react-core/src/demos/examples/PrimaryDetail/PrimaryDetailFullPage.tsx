@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import {
   Button,
   ButtonVariant,
@@ -23,8 +23,10 @@ import {
   DrawerHead,
   DrawerPanelBody,
   DrawerPanelContent,
+  DrawerSection,
   Flex,
   FlexItem,
+  Icon,
   InputGroup,
   InputGroupItem,
   PageSection,
@@ -99,8 +101,8 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
     setSelectedDataListItemId('');
   };
 
-  const toggleGroupItems = (
-    <Flex alignItems={{ default: 'alignItemsCenter' }}>
+  const ToolbarItems = (
+    <ToolbarToggleGroup toggleIcon={<RhUiFilterFillIcon />} breakpoint="xl" alignItems="center">
       <ToolbarItem>
         <InputGroup>
           <InputGroupItem isFill>
@@ -122,7 +124,7 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
           </InputGroupItem>
         </InputGroup>
       </ToolbarItem>
-      <ToolbarGroup variant="filter-group">
+      <ToolbarGroup variant="filter-group" alignItems="center">
         <ToolbarItem>
           <Select
             aria-label="Status select"
@@ -172,12 +174,6 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
           </Select>
         </ToolbarItem>
       </ToolbarGroup>
-    </Flex>
-  );
-
-  const ToolbarItems = (
-    <ToolbarToggleGroup toggleIcon={<RhUiFilterFillIcon />} breakpoint="xl">
-      {toggleGroupItems}
     </ToolbarToggleGroup>
   );
 
@@ -212,211 +208,224 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
   );
 
   const drawerContent = (
-    <Fragment>
-      <Toolbar id="full-page-data-toolbar">
-        <ToolbarContent>{ToolbarItems}</ToolbarContent>
-      </Toolbar>
-      <DataList
-        aria-label="data list"
-        selectedDataListItemId={selectedDataListItemId}
-        onSelectDataListItem={onSelectDataListItem}
-      >
-        <DataListItem id="full-page-item1">
-          <DataListItemRow>
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell key="primary-content">
-                  <Flex spaceItems={{ default: 'spaceItemsMd' }} direction={{ default: 'column' }}>
+    <DataList
+      aria-label="data list"
+      selectedDataListItemId={selectedDataListItemId}
+      onSelectDataListItem={onSelectDataListItem}
+    >
+      <DataListItem id="full-page-item1">
+        <DataListItemRow>
+          <DataListItemCells
+            dataListCells={[
+              <DataListCell key="primary-content">
+                <Flex spaceItems={{ default: 'spaceItemsMd' }} direction={{ default: 'column' }}>
+                  <FlexItem>
+                    <p>patternfly</p>
+                    <small>
+                      Working repo for PatternFly 5 <a>https://pf5.patternfly.org/</a>
+                    </small>
+                  </FlexItem>
+                  <Flex spaceItems={{ default: 'spaceItemsMd' }}>
                     <FlexItem>
-                      <p>patternfly</p>
-                      <small>
-                        Working repo for PatternFly 5 <a>https://pf5.patternfly.org/</a>
-                      </small>
+                      <RhUiBranchFillIcon /> 10
                     </FlexItem>
-                    <Flex spaceItems={{ default: 'spaceItemsMd' }}>
-                      <FlexItem>
-                        <RhUiBranchFillIcon /> 10
-                      </FlexItem>
-                      <FlexItem>
-                        <RhUiCodeIcon /> 4
-                      </FlexItem>
-                      <FlexItem>
-                        <CubeIcon /> 5
-                      </FlexItem>
-                      <FlexItem>Updated 2 days ago</FlexItem>
-                    </Flex>
-                  </Flex>
-                </DataListCell>,
-                <DataListAction
-                  key="actions"
-                  aria-labelledby="full-page-item1 full-page-action1"
-                  id="full-page-action1"
-                  aria-label="Actions"
-                >
-                  <Stack>
-                    <StackItem>
-                      <Button variant={ButtonVariant.secondary}>Secondary</Button>
-                    </StackItem>
-                    <StackItem>
-                      <Button variant={ButtonVariant.link}>Link Button</Button>
-                    </StackItem>
-                  </Stack>
-                </DataListAction>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-        <DataListItem id="full-page-item2">
-          <DataListItemRow>
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell key="primary-content">
-                  <Flex spaceItems={{ default: 'spaceItemsMd' }} direction={{ default: 'column' }}>
                     <FlexItem>
-                      <p>patternfly-elements</p>
-                      <small>PatternFly elements</small>
+                      <RhUiCodeIcon /> 4
                     </FlexItem>
-                    <Flex spaceItems={{ default: 'spaceItemsMd' }}>
-                      <FlexItem>
-                        <RhUiBranchFillIcon /> 10
-                      </FlexItem>
-                      <FlexItem>
-                        <RhUiCodeIcon /> 4
-                      </FlexItem>
-                      <FlexItem>
-                        <CubeIcon /> 5
-                      </FlexItem>
-                      <FlexItem>
-                        <RhUiCheckCircleFillIcon /> 7
-                      </FlexItem>
-                      <FlexItem>
-                        <RhUiWarningFillIcon /> 5
-                      </FlexItem>
-                      <FlexItem>
-                        <RhUiCloseCircleFillIcon /> 5
-                      </FlexItem>
-                      <FlexItem>Updated 2 days ago</FlexItem>
-                    </Flex>
-                  </Flex>
-                </DataListCell>,
-                <DataListAction
-                  key="actions"
-                  aria-labelledby="full-page-item2 full-page-action2"
-                  id="full-page-action2"
-                  aria-label="Actions"
-                >
-                  <Stack>
-                    <StackItem>
-                      <Button variant={ButtonVariant.secondary}>Secondary</Button>
-                    </StackItem>
-                    <StackItem>
-                      <Button variant={ButtonVariant.link}>Link Button</Button>
-                    </StackItem>
-                  </Stack>
-                </DataListAction>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-        <DataListItem id="full-page-item3">
-          <DataListItemRow>
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell key="primary-content">
-                  <Flex spaceItems={{ default: 'spaceItemsMd' }} direction={{ default: 'column' }}>
                     <FlexItem>
-                      <p>patternfly</p>
-                      <small>
-                        Working repo for PatternFly 5 <a>https://pf5.patternfly.org/</a>
-                      </small>
+                      <CubeIcon /> 5
                     </FlexItem>
-                    <Flex spaceItems={{ default: 'spaceItemsMd' }}>
-                      <FlexItem>
-                        <RhUiBranchFillIcon /> 10
-                      </FlexItem>
-                      <FlexItem>
-                        <RhUiCodeIcon /> 4
-                      </FlexItem>
-                      <FlexItem>
-                        <CubeIcon /> 5
-                      </FlexItem>
-                      <FlexItem>Updated 2 days ago</FlexItem>
-                    </Flex>
+                    <FlexItem>Updated 2 days ago</FlexItem>
                   </Flex>
-                </DataListCell>,
-                <DataListAction
-                  key="actions"
-                  aria-labelledby="full-page-item3 full-page-action3"
-                  id="full-page-action3"
-                  aria-label="Actions"
-                >
-                  <Stack>
-                    <StackItem>
-                      <Button variant={ButtonVariant.secondary}>Secondary</Button>
-                    </StackItem>
-                    <StackItem>
-                      <Button variant={ButtonVariant.link}>Link Button</Button>
-                    </StackItem>
-                  </Stack>
-                </DataListAction>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-        <DataListItem id="full-page-item4">
-          <DataListItemRow>
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell key="primary-content">
-                  <Flex spaceItems={{ default: 'spaceItemsMd' }} direction={{ default: 'column' }}>
+                </Flex>
+              </DataListCell>,
+              <DataListAction
+                key="actions"
+                aria-labelledby="full-page-item1 full-page-action1"
+                id="full-page-action1"
+                aria-label="Actions"
+              >
+                <Stack>
+                  <StackItem>
+                    <Button variant={ButtonVariant.secondary}>Secondary</Button>
+                  </StackItem>
+                  <StackItem>
+                    <Button variant={ButtonVariant.link}>Link Button</Button>
+                  </StackItem>
+                </Stack>
+              </DataListAction>
+            ]}
+          />
+        </DataListItemRow>
+      </DataListItem>
+      <DataListItem id="full-page-item2">
+        <DataListItemRow>
+          <DataListItemCells
+            dataListCells={[
+              <DataListCell key="primary-content">
+                <Flex spaceItems={{ default: 'spaceItemsMd' }} direction={{ default: 'column' }}>
+                  <FlexItem>
+                    <p>patternfly-elements</p>
+                    <small>PatternFly elements</small>
+                  </FlexItem>
+                  <Flex spaceItems={{ default: 'spaceItemsMd' }}>
                     <FlexItem>
-                      <p>patternfly-elements</p>
-                      <small>PatternFly elements</small>
+                      <RhUiBranchFillIcon /> 10
                     </FlexItem>
-                    <Flex spaceItems={{ default: 'spaceItemsMd' }}>
-                      <FlexItem>
-                        <RhUiBranchFillIcon /> 10
-                      </FlexItem>
-                      <FlexItem>
-                        <RhUiCodeIcon /> 4
-                      </FlexItem>
-                      <FlexItem>
-                        <CubeIcon /> 5
-                      </FlexItem>
-                      <FlexItem>
-                        <RhUiCheckCircleFillIcon /> 7
-                      </FlexItem>
-                      <FlexItem>
-                        <RhUiWarningFillIcon /> 5
-                      </FlexItem>
-                      <FlexItem>
-                        <RhUiCloseCircleFillIcon /> 5
-                      </FlexItem>
-                      <FlexItem>Updated 2 days ago</FlexItem>
-                    </Flex>
+                    <FlexItem>
+                      <RhUiCodeIcon /> 4
+                    </FlexItem>
+                    <FlexItem>
+                      <CubeIcon /> 5
+                    </FlexItem>
+                    <FlexItem>
+                      <Icon status="success">
+                        <RhUiCheckCircleFillIcon />
+                      </Icon>{' '}
+                      7
+                    </FlexItem>
+                    <FlexItem>
+                      <Icon status="warning">
+                        <RhUiWarningFillIcon />
+                      </Icon>{' '}
+                      5
+                    </FlexItem>
+                    <FlexItem>
+                      <Icon status="danger">
+                        <RhUiCloseCircleFillIcon />
+                      </Icon>{' '}
+                      5
+                    </FlexItem>
+                    <FlexItem>Updated 2 days ago</FlexItem>
                   </Flex>
-                </DataListCell>,
-                <DataListAction
-                  key="actions"
-                  aria-labelledby="full-page-item4 full-page-action4"
-                  id="full-page-action4"
-                  aria-label="Actions"
-                >
-                  <Stack>
-                    <StackItem>
-                      <Button variant={ButtonVariant.secondary}>Secondary</Button>
-                    </StackItem>
-                    <StackItem>
-                      <Button variant={ButtonVariant.link}>Link Button</Button>
-                    </StackItem>
-                  </Stack>
-                </DataListAction>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-      </DataList>
-    </Fragment>
+                </Flex>
+              </DataListCell>,
+              <DataListAction
+                key="actions"
+                aria-labelledby="full-page-item2 full-page-action2"
+                id="full-page-action2"
+                aria-label="Actions"
+              >
+                <Stack>
+                  <StackItem>
+                    <Button variant={ButtonVariant.secondary}>Secondary</Button>
+                  </StackItem>
+                  <StackItem>
+                    <Button variant={ButtonVariant.link}>Link Button</Button>
+                  </StackItem>
+                </Stack>
+              </DataListAction>
+            ]}
+          />
+        </DataListItemRow>
+      </DataListItem>
+      <DataListItem id="full-page-item3">
+        <DataListItemRow>
+          <DataListItemCells
+            dataListCells={[
+              <DataListCell key="primary-content">
+                <Flex spaceItems={{ default: 'spaceItemsMd' }} direction={{ default: 'column' }}>
+                  <FlexItem>
+                    <p>patternfly</p>
+                    <small>
+                      Working repo for PatternFly 5 <a>https://pf5.patternfly.org/</a>
+                    </small>
+                  </FlexItem>
+                  <Flex spaceItems={{ default: 'spaceItemsMd' }}>
+                    <FlexItem>
+                      <RhUiBranchFillIcon /> 10
+                    </FlexItem>
+                    <FlexItem>
+                      <RhUiCodeIcon /> 4
+                    </FlexItem>
+                    <FlexItem>
+                      <CubeIcon /> 5
+                    </FlexItem>
+                    <FlexItem>Updated 2 days ago</FlexItem>
+                  </Flex>
+                </Flex>
+              </DataListCell>,
+              <DataListAction
+                key="actions"
+                aria-labelledby="full-page-item3 full-page-action3"
+                id="full-page-action3"
+                aria-label="Actions"
+              >
+                <Stack>
+                  <StackItem>
+                    <Button variant={ButtonVariant.secondary}>Secondary</Button>
+                  </StackItem>
+                  <StackItem>
+                    <Button variant={ButtonVariant.link}>Link Button</Button>
+                  </StackItem>
+                </Stack>
+              </DataListAction>
+            ]}
+          />
+        </DataListItemRow>
+      </DataListItem>
+      <DataListItem id="full-page-item4">
+        <DataListItemRow>
+          <DataListItemCells
+            dataListCells={[
+              <DataListCell key="primary-content">
+                <Flex spaceItems={{ default: 'spaceItemsMd' }} direction={{ default: 'column' }}>
+                  <FlexItem>
+                    <p>patternfly-elements</p>
+                    <small>PatternFly elements</small>
+                  </FlexItem>
+                  <Flex spaceItems={{ default: 'spaceItemsMd' }}>
+                    <FlexItem>
+                      <RhUiBranchFillIcon /> 10
+                    </FlexItem>
+                    <FlexItem>
+                      <RhUiCodeIcon /> 4
+                    </FlexItem>
+                    <FlexItem>
+                      <CubeIcon /> 5
+                    </FlexItem>
+                    <FlexItem>
+                      <Icon status="success">
+                        <RhUiCheckCircleFillIcon />
+                      </Icon>{' '}
+                      7
+                    </FlexItem>
+                    <FlexItem>
+                      <Icon status="warning">
+                        <RhUiWarningFillIcon />
+                      </Icon>{' '}
+                      5
+                    </FlexItem>
+                    <FlexItem>
+                      <Icon status="danger">
+                        <RhUiCloseCircleFillIcon />
+                      </Icon>{' '}
+                      5
+                    </FlexItem>
+                    <FlexItem>Updated 2 days ago</FlexItem>
+                  </Flex>
+                </Flex>
+              </DataListCell>,
+              <DataListAction
+                key="actions"
+                aria-labelledby="full-page-item4 full-page-action4"
+                id="full-page-action4"
+                aria-label="Actions"
+              >
+                <Stack>
+                  <StackItem>
+                    <Button variant={ButtonVariant.secondary}>Secondary</Button>
+                  </StackItem>
+                  <StackItem>
+                    <Button variant={ButtonVariant.link}>Link Button</Button>
+                  </StackItem>
+                </Stack>
+              </DataListAction>
+            ]}
+          />
+        </DataListItemRow>
+      </DataListItem>
+    </DataList>
   );
 
   return (
@@ -433,6 +442,16 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
       <Divider component="div" />
       <PageSection padding={{ default: 'noPadding' }} aria-label="Card with drawer content">
         <Drawer isExpanded={isDrawerExpanded}>
+          <DrawerSection>
+            <Toolbar
+              id="full-page-data-toolbar"
+              inset={{ default: 'insetLg' }}
+              style={{ paddingBlockStart: 'var(--pf-t--global--spacer--md)' }}
+            >
+              <ToolbarContent alignItems="center">{ToolbarItems}</ToolbarContent>
+            </Toolbar>
+            <Divider component="div" />
+          </DrawerSection>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
           </DrawerContent>

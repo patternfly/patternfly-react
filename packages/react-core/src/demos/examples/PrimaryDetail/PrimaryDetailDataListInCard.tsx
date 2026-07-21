@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import {
   Card,
   Content,
@@ -19,6 +19,7 @@ import {
   DrawerHead,
   DrawerPanelBody,
   DrawerPanelContent,
+  DrawerSection,
   Dropdown,
   DropdownItem,
   DropdownList,
@@ -88,95 +89,72 @@ export const PrimaryDetailDataListInCard: React.FunctionComponent = () => {
   );
 
   const drawerContent = (
-    <Fragment>
-      <Toolbar id="data-list-data-toolbar">
-        <ToolbarContent>
-          <ToolbarItem>
-            <Dropdown
-              onSelect={onDropdownSelect}
-              isOpen={isDropdownOpen}
-              onOpenChange={(isOpen) => setIsDropdownOpen(isOpen)}
-              toggle={(toggleRef) => (
-                <MenuToggle ref={toggleRef} isExpanded={isDropdownOpen} onClick={onDropdownToggle}>
-                  Dropdown
-                </MenuToggle>
-              )}
-            >
-              <DropdownList>
-                <DropdownItem key="option1">Option 1</DropdownItem>
-                <DropdownItem key="option2">Option 2</DropdownItem>
-              </DropdownList>
-            </Dropdown>
-          </ToolbarItem>
-        </ToolbarContent>
-      </Toolbar>
-      <DataList
-        aria-label="selectable data list example"
-        selectedDataListItemId={selectedDataListItemId}
-        onSelectDataListItem={onSelectDataListItem}
-      >
-        <DataListItem aria-label="data-list-item1-in-card" id="data-list-item1">
-          <DataListItemRow>
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell key="node 1">
-                  <div>Node 1</div>
-                  <a href="#">siemur/test-space</a>
-                </DataListCell>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-        <DataListItem aria-label="data-list-item2-in-card" id="data-list-item2">
-          <DataListItemRow>
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell key="node 2">
-                  <div>Node 2</div>
-                  <a href="#">siemur/test-space</a>
-                </DataListCell>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-        <DataListItem aria-label="data-list-item3-in-card" id="data-list-item3">
-          <DataListItemRow>
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell key="node 3">
-                  <div>Node 3</div>
-                  <a href="#">siemur/test-space</a>
-                </DataListCell>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-        <DataListItem aria-label="data-list-item4-in-card" id="data-list-item4">
-          <DataListItemRow>
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell key="node 4">
-                  <div>Node 4</div>
-                  <a href="#">siemur/test-space</a>
-                </DataListCell>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-        <DataListItem aria-label="data-list-item5-in-card" id="data-list-item5">
-          <DataListItemRow>
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell key="node 5">
-                  <div>Node 5</div>
-                  <a href="#">siemur/test-space</a>
-                </DataListCell>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-      </DataList>
-    </Fragment>
+    <DataList
+      aria-label="selectable data list example"
+      selectedDataListItemId={selectedDataListItemId}
+      onSelectDataListItem={onSelectDataListItem}
+    >
+      <DataListItem aria-label="data-list-item1-in-card" id="data-list-item1">
+        <DataListItemRow>
+          <DataListItemCells
+            dataListCells={[
+              <DataListCell key="node 1">
+                <div>Node 1</div>
+                <a href="#">siemur/test-space</a>
+              </DataListCell>
+            ]}
+          />
+        </DataListItemRow>
+      </DataListItem>
+      <DataListItem aria-label="data-list-item2-in-card" id="data-list-item2">
+        <DataListItemRow>
+          <DataListItemCells
+            dataListCells={[
+              <DataListCell key="node 2">
+                <div>Node 2</div>
+                <a href="#">siemur/test-space</a>
+              </DataListCell>
+            ]}
+          />
+        </DataListItemRow>
+      </DataListItem>
+      <DataListItem aria-label="data-list-item3-in-card" id="data-list-item3">
+        <DataListItemRow>
+          <DataListItemCells
+            dataListCells={[
+              <DataListCell key="node 3">
+                <div>Node 3</div>
+                <a href="#">siemur/test-space</a>
+              </DataListCell>
+            ]}
+          />
+        </DataListItemRow>
+      </DataListItem>
+      <DataListItem aria-label="data-list-item4-in-card" id="data-list-item4">
+        <DataListItemRow>
+          <DataListItemCells
+            dataListCells={[
+              <DataListCell key="node 4">
+                <div>Node 4</div>
+                <a href="#">siemur/test-space</a>
+              </DataListCell>
+            ]}
+          />
+        </DataListItemRow>
+      </DataListItem>
+      <DataListItem aria-label="data-list-item5-in-card" id="data-list-item5">
+        <DataListItemRow>
+          <DataListItemCells
+            dataListCells={[
+              <DataListCell key="node 5">
+                <div>Node 5</div>
+                <a href="#">siemur/test-space</a>
+              </DataListCell>
+            ]}
+          />
+        </DataListItemRow>
+      </DataListItem>
+    </DataList>
   );
 
   return (
@@ -193,7 +171,35 @@ export const PrimaryDetailDataListInCard: React.FunctionComponent = () => {
       <Divider component="div" />
       <PageSection aria-label="Card with drawer content">
         <Card>
-          <Drawer isStatic isExpanded={isExpanded}>
+          <Drawer isInline isExpanded={isExpanded}>
+            <DrawerSection>
+              <Toolbar
+                id="data-list-data-toolbar"
+                inset={{ default: 'insetMd' }}
+                style={{ paddingBlockStart: 'var(--pf-t--global--spacer--md)' }}
+              >
+                <ToolbarContent alignItems="center">
+                  <ToolbarItem>
+                    <Dropdown
+                      onSelect={onDropdownSelect}
+                      isOpen={isDropdownOpen}
+                      onOpenChange={(isOpen) => setIsDropdownOpen(isOpen)}
+                      toggle={(toggleRef) => (
+                        <MenuToggle ref={toggleRef} isExpanded={isDropdownOpen} onClick={onDropdownToggle}>
+                          Dropdown
+                        </MenuToggle>
+                      )}
+                    >
+                      <DropdownList>
+                        <DropdownItem key="option1">Option 1</DropdownItem>
+                        <DropdownItem key="option2">Option 2</DropdownItem>
+                      </DropdownList>
+                    </Dropdown>
+                  </ToolbarItem>
+                </ToolbarContent>
+              </Toolbar>
+              <Divider component="div" />
+            </DrawerSection>
             <DrawerContent panelContent={panelContent}>
               <DrawerContentBody>{drawerContent}</DrawerContentBody>
             </DrawerContent>

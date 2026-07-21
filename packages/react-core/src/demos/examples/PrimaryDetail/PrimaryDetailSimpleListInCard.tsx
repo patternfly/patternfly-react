@@ -102,7 +102,7 @@ export const PrimaryDetailSimpleListInCard: React.FunctionComponent = () => {
       <Divider component="div" />
       <PageSection aria-label="Card with drawer content">
         <Card>
-          <Drawer isStatic isExpanded={isExpanded}>
+          <Drawer isInline isExpanded={isExpanded}>
             <DrawerContent panelContent={panelContent}>
               <DrawerContentBody>{drawerContent}</DrawerContentBody>
             </DrawerContent>
