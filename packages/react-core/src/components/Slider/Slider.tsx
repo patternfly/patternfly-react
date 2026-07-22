@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { SliderStep } from './SliderStep';
 import { InputGroup, InputGroupText, InputGroupItem } from '../InputGroup';
 import { TextInput } from '../TextInput';
-import { Tooltip } from '../Tooltip';
+import { Tooltip, TooltipProps } from '../Tooltip';
 import cssSliderValue from '@patternfly/react-tokens/dist/esm/c_slider_value';
 import cssFormControlWidthChars from '@patternfly/react-tokens/dist/esm/c_slider__value_c_form_control_width_chars';
 import { getLanguageDirection } from '../../helpers/util';
@@ -42,8 +42,12 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   className?: string;
   /** Array of custom slider step objects (value and label of each step) for the slider. */
   customSteps?: SliderStepObject[];
-  /* Adds a tooltip over the slider thumb containing the current value. */
+  /** Enables a tooltip over the silder thumb. Defaults to the current value, or tooltipContent if provided. */
   hasTooltipOverThumb?: boolean;
+  /** Content of the tooltip over the slider thumb. Defaults to the current value.  */
+  tooltipContent?: React.ReactNode;
+  /** Additional props passed to the tooltip. */
+  tooltipProps?: Omit<TooltipProps, 'content'>;
   /** Accessible label for the input field. */
   inputAriaLabel?: string;
   /** Text label that is place after the input field. */
@@ -83,8 +87,10 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   showTicks?: boolean;
   /** The step interval. */
   step?: number;
-  /* Accessible label for the slider thumb. */
+  /** Accessible label for the slider thumb. */
   thumbAriaLabel?: string;
+  /** Accessible text for the current value of the slider. Defaults to the current value. */
+  thumbAriaValueText?: string;
   /** Current value of the slider.  */
   value?: number;
 }
@@ -103,7 +109,10 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   inputLabel,
   inputAriaLabel = 'Slider value input',
   thumbAriaLabel = 'Value',
+  thumbAriaValueText,
   hasTooltipOverThumb = false,
+  tooltipContent,
+  tooltipProps,
   inputPosition = 'end',
   onChange,
   leftActions,
@@ -431,7 +440,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
       aria-valuemin={customSteps ? customSteps[0].value : min}
       aria-valuemax={customSteps ? customSteps[customSteps.length - 1].value : max}
       aria-valuenow={localValue}
-      aria-valuetext={findAriaTextValue()}
+      aria-valuetext={thumbAriaValueText ?? findAriaTextValue()}
       aria-label={thumbAriaLabel}
       aria-disabled={isDisabled}
       aria-describedby={ariaDescribedby}
@@ -483,7 +492,8 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
             className={css('pf-v6-m-tabular-nums')}
             triggerRef={thumbRef}
             entryDelay={0}
-            content={findAriaTextValue()}
+            content={tooltipContent ?? findAriaTextValue()}
+            {...tooltipProps}
           >
             {thumbComponent}
           </Tooltip>
