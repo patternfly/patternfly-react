@@ -10,7 +10,8 @@ jest.mock('../TreeViewList', () => ({
     toolbar,
     'aria-label': ariaLabel,
     'aria-labelledby': ariaLabelledBy,
-    isMultiSelectable
+    isMultiSelectable,
+    id
   }) => (
     <div data-testid="TreeViewList-mock">
       <p>{`TreeViewList isNested: ${isNested}`}</p>
@@ -18,6 +19,7 @@ jest.mock('../TreeViewList', () => ({
       <p>{`TreeViewList aria-label: ${ariaLabel}`}</p>
       <p>{`TreeViewList aria-labelledBy: ${ariaLabelledBy}`}</p>
       <p>{`TreeViewList isMultiSelectable: ${isMultiSelectable}`}</p>
+      <p>{`TreeViewList id: ${id}`}</p>
       <div data-testid="TreeViewList-children">{children}</div>
     </div>
   )
@@ -163,6 +165,11 @@ test('Passes data as children TreeViewList', () => {
   render(<TreeView data={[basicData]} />);
 
   expect(screen.getByTestId('TreeViewList-children')).toContainHTML('TreeViewListItem name: Basic data name');
+});
+test('Passes rootListId to TreeViewList', () => {
+  render(<TreeView rootListId="test-root-list-id" data={[basicData]} />);
+
+  expect(screen.getByText('TreeViewList id: test-root-list-id')).toBeVisible();
 });
 
 test('Passes data action to TreeViewListItem', () => {
