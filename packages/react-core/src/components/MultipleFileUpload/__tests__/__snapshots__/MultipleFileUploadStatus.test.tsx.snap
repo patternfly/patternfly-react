@@ -7,6 +7,8 @@ exports[`MultipleFileUploadStatus renders custom class names 1`] = `
   >
     <div
       class="pf-v6-c-expandable-section pf-m-expanded"
+      data-ouia-component-type="PF6/ExpandableSection"
+      data-ouia-safe="true"
     >
       <div
         class="pf-v6-c-expandable-section__toggle"
@@ -83,6 +85,8 @@ exports[`MultipleFileUploadStatus renders status toggle icon 1`] = `
   >
     <div
       class="pf-v6-c-expandable-section pf-m-expanded"
+      data-ouia-component-type="PF6/ExpandableSection"
+      data-ouia-safe="true"
     >
       <div
         class="pf-v6-c-expandable-section__toggle"
@@ -173,6 +177,8 @@ exports[`MultipleFileUploadStatus renders status toggle text 1`] = `
   >
     <div
       class="pf-v6-c-expandable-section pf-m-expanded"
+      data-ouia-component-type="PF6/ExpandableSection"
+      data-ouia-safe="true"
     >
       <div
         class="pf-v6-c-expandable-section__toggle"
@@ -251,6 +257,8 @@ exports[`MultipleFileUploadStatus renders with expected class names 1`] = `
   >
     <div
       class="pf-v6-c-expandable-section pf-m-expanded"
+      data-ouia-component-type="PF6/ExpandableSection"
+      data-ouia-safe="true"
     >
       <div
         class="pf-v6-c-expandable-section__toggle"
