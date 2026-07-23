@@ -68,6 +68,7 @@ component.
 * [NavExpandable](/components/navigation)
 * [NavItem](/components/navigation)
 * [Pagination](/components/pagination)
+* [Progress](/components/progress)
 * [Radio](/components/forms/radio)
 * [Select](/components/menus/select)
 * [Switch](/components/switch)
