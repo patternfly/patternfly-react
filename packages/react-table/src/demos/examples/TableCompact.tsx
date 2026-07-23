@@ -12,6 +12,7 @@ import {
   ToolbarGroup,
   ToolbarItem,
   Label,
+  LabelStatus,
   PaginationVariant
 } from '@patternfly/react-core';
 import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
@@ -113,13 +114,13 @@ export const TableCompact: React.FunctionComponent = () => {
   const renderLabel = (labelText: string) => {
     switch (labelText) {
       case 'Running':
-        return <Label color="green">{labelText}</Label>;
+        return <Label status={LabelStatus.success}>{labelText}</Label>;
       case 'Stopped':
-        return <Label color="orange">{labelText}</Label>;
+        return <Label status={LabelStatus.warning}>{labelText}</Label>;
       case 'Needs Maintenance':
-        return <Label color="blue">{labelText}</Label>;
+        return <Label status={LabelStatus.info}>{labelText}</Label>;
       case 'Down':
-        return <Label color="red">{labelText}</Label>;
+        return <Label status={LabelStatus.danger}>{labelText}</Label>;
       default:
         return <></>;
     }

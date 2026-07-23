@@ -1,4 +1,4 @@
-import { Label, PageSection } from '@patternfly/react-core';
+import { Label, LabelStatus, PageSection } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td, TableText } from '@patternfly/react-table';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
@@ -7,13 +7,13 @@ export const TableStickyHeader: React.FunctionComponent = () => {
   const renderLabel = (labelText: string) => {
     switch (labelText) {
       case 'Running':
-        return <Label color="green">{labelText}</Label>;
+        return <Label status={LabelStatus.success}>{labelText}</Label>;
       case 'Stopped':
-        return <Label color="orange">{labelText}</Label>;
+        return <Label status={LabelStatus.warning}>{labelText}</Label>;
       case 'Needs Maintenance':
-        return <Label color="blue">{labelText}</Label>;
+        return <Label status={LabelStatus.info}>{labelText}</Label>;
       case 'Down':
-        return <Label color="red">{labelText}</Label>;
+        return <Label status={LabelStatus.danger}>{labelText}</Label>;
     }
   };
 
