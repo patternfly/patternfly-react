@@ -134,7 +134,7 @@ export const NavFlyout: React.FunctionComponent = () => {
           gap={{ default: 'gapNone', md: 'gapMd' }}
         >
           <ToolbarItem>
-            <NotificationBadge aria-label="Notifications" variant={NotificationBadgeVariant.read} onClick={() => {}} />
+            <NotificationBadge aria-label="Notifications" variant={NotificationBadgeVariant.plain} onClick={() => {}} />
           </ToolbarItem>
           <ToolbarGroup variant="action-group-plain" visibility={{ default: 'hidden', lg: 'visible' }}>
             <ToolbarItem>
