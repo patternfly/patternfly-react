@@ -9,7 +9,8 @@ propComponents:
     'OverflowMenuControl',
     'OverflowMenuDropdownItem',
     'OverflowMenuGroup',
-    'OverflowMenuItem'
+    'OverflowMenuItem',
+    'OverflowMenuContext'
   ]
 ---
 
