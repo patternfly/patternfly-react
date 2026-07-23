@@ -70,6 +70,7 @@ component.
 * [Pagination](/components/pagination)
 * [Radio](/components/forms/radio)
 * [Select](/components/menus/select)
+* [Slider](/components/slider)
 * [Switch](/components/switch)
 * [TabContent](/components/tabs)
 * [Tabs](/components/tabs)
