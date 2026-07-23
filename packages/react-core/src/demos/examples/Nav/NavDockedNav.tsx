@@ -39,6 +39,7 @@ import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import pfIconLogo from '@patternfly/react-core/src/demos/assets/PF-IconLogo-color.svg';
 import globalBreakpointXl from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_xl';
+import { IS_INERT } from '../../../helpers/inert';
 
 interface NavOnSelectProps {
   groupId: number | string;
@@ -241,7 +242,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
   // Docked masthead - vertical navigation sidebar
   const dockedMasthead = (
     <Masthead
-      {...(isMobile && !isDockExpanded && { inert: '' })}
+      {...(isMobile && !isDockExpanded && { inert: IS_INERT })}
       display={{ default: undefined }}
       id="docked-masthead"
       variant="docked"

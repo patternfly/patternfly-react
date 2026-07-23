@@ -37,7 +37,7 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import pfLogo from '../../assets/PF-IconLogo-color.svg';
 import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
 import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_lg';
-
+import { IS_INERT } from '../../../helpers/inert';
 interface NavOnSelectProps {
   groupId: number | string;
   itemId: number | string;
@@ -221,7 +221,7 @@ export const CompassDockDemo: React.FunctionComponent = () => {
 
   // Docked masthead - vertical navigation sidebar
   const dockContent = (
-    <CompassDockMain {...(isMobile && !isDockExpanded && { inert: '' })}>
+    <CompassDockMain {...(isMobile && !isDockExpanded && { inert: IS_INERT })}>
       <Masthead display={{ default: undefined }} id="docked-masthead" variant="docked">
         <MastheadMain>
           <MastheadToggle>
