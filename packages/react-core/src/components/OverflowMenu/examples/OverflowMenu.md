@@ -9,8 +9,7 @@ propComponents:
     'OverflowMenuControl',
     'OverflowMenuDropdownItem',
     'OverflowMenuGroup',
-    'OverflowMenuItem',
-    'OverflowMenuContext'
+    'OverflowMenuItem'
   ]
 ---
 
@@ -19,6 +18,8 @@ import AlignLeftIcon from '@patternfly/react-icons/dist/esm/icons/align-left-ico
 import AlignCenterIcon from '@patternfly/react-icons/dist/esm/icons/align-center-icon';
 import AlignRightIcon from '@patternfly/react-icons/dist/esm/icons/align-right-icon';
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+
+`OverflowMenuContext` is also available to import and use to further customize and refine behaviors that should respect responsive breakpoints. This context provides the `isBelowBreakpoint` boolean that will update when the specified breakpoint is reached.
 
 ## Examples
 
