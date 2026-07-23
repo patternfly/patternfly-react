@@ -47,18 +47,6 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 
 ```
 
-### Primary-detail simple list in card
-
-```ts file="examples/PrimaryDetail/PrimaryDetailSimpleListInCard.tsx" isFullscreen
-
-```
-
-### Primary-detail data list in card
-
-```ts file="examples/PrimaryDetail/PrimaryDetailDataListInCard.tsx" isFullscreen
-
-```
-
 ### Primary-detail inline modifier
 
 ```ts file="examples/PrimaryDetail/PrimaryDetailInlineModifier.tsx" isFullscreen

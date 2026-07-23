@@ -438,7 +438,6 @@ export const PrimaryDetailInlineModifier: React.FunctionComponent = () => {
           </p>
         </Content>
       </PageSection>
-      <Divider component="div" />
       <PageSection padding={{ default: 'noPadding' }} aria-label="Card with drawer content">
         <Drawer isExpanded={isDrawerExpanded} isInline>
           <DrawerSection>

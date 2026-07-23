@@ -439,7 +439,6 @@ export const PrimaryDetailContentPadding: React.FunctionComponent = () => {
           </p>
         </Content>
       </PageSection>
-      <Divider component="div" />
       <PageSection padding={{ default: 'noPadding' }} aria-label="Drawer content section">
         <Drawer isExpanded={isDrawerExpanded}>
           <DrawerSection>
