@@ -84,6 +84,8 @@ export interface TreeViewProps {
   icon?: React.ReactNode;
   /** ID of the tree view. */
   id?: string;
+  /** ID of the root tree view list. */
+  rootListId?: string;
   /** Flag indicating whether multiple nodes can be selected in the tree view. This will also set the
    * aria-multiselectable attribute on the tree view list which is required to be true when multiple selection is intended.
    * Can only be applied to the root tree view list.
@@ -113,6 +115,8 @@ export interface TreeViewProps {
    * the next breaking change release in favor of defaulting to always-rendered items.
    */
   hasAnimations?: boolean;
+  /** @hide Flag indicating whether the tree view list should be inert. */
+  inert?: boolean;
 }
 
 export const TreeView: React.FunctionComponent<TreeViewProps> = ({
@@ -141,6 +145,8 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
   'aria-label': ariaLabel,
   'aria-labelledby': ariaLabelledby,
   hasAnimations: hasAnimationsProp,
+  rootListId,
+  inert,
   ...props
 }: TreeViewProps) => {
   const hasAnimations = useHasAnimations(hasAnimationsProp);
@@ -151,7 +157,8 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
       isMultiSelectable={isMultiSelectable}
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledby}
-      {...props}
+      id={rootListId}
+      inert={inert}
     >
       {data.map((item) => (
         <TreeViewListItem
