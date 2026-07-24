@@ -207,7 +207,9 @@ export interface PopoverProps {
   showClose?: boolean;
   /** Sets an interaction to open popover, defaults to "click" */
   triggerAction?: 'click' | 'hover';
-  /** Whether to trap focus in the popover. */
+  /** Whether to trap focus in the popover. When using a triggerAction of "hover", this will be set to false
+   * by default and must remain false.
+   */
   withFocusTrap?: boolean;
   /** The z-index of the popover. */
   zIndex?: number;
@@ -267,7 +269,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   ],
   animationDuration = 300,
   id,
-  withFocusTrap: propWithFocusTrap,
+  withFocusTrap: propWithFocusTrap = triggerAction === 'hover' ? false : undefined,
   triggerRef,
   hasNoPadding = false,
   hasAutoWidth = false,

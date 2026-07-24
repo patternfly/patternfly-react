@@ -25,6 +25,8 @@ By default, the `appendTo` prop of the popover will append to the document body 
 
 ### Hoverable
 
+Pass the `triggerAction="hover"` property to make a `<Popover>` that is triggered via hover and focus rather than on click. When using a hoverable Popover, you **must not** include any interactive or semantic content (e.g. buttons, links, headings, lists, etc), as focus is not intended to enter a hoverable `<Popover>`. Including such content may cause an inaccessible UI for users who are not able to reach the content when navigating via assistive tech.
+
 ```ts file="./PopoverHover.tsx"
 
 ```
