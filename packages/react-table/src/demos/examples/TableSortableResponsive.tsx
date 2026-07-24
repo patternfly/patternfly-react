@@ -20,6 +20,7 @@ import {
   OverflowMenuDropdownItem,
   PaginationVariant,
   Label,
+  LabelStatus,
   Select,
   OverflowMenu,
   OverflowMenuContent,
@@ -120,13 +121,13 @@ export const TableSortableResponsive: React.FunctionComponent = () => {
   const renderLabel = (labelText: string) => {
     switch (labelText) {
       case 'Running':
-        return <Label color="green">{labelText}</Label>;
+        return <Label status={LabelStatus.success}>{labelText}</Label>;
       case 'Stopped':
-        return <Label color="orange">{labelText}</Label>;
+        return <Label status={LabelStatus.warning}>{labelText}</Label>;
       case 'Needs Maintenance':
-        return <Label color="blue">{labelText}</Label>;
+        return <Label status={LabelStatus.info}>{labelText}</Label>;
       case 'Down':
-        return <Label color="red">{labelText}</Label>;
+        return <Label status={LabelStatus.danger}>{labelText}</Label>;
     }
   };
 

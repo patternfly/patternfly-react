@@ -10,6 +10,7 @@ import {
   MenuToggle,
   MenuToggleElement,
   Label,
+  LabelStatus,
   Select,
   SelectOption,
   PaginationVariant
@@ -67,25 +68,25 @@ export const TableStaticBottomPagination: React.FunctionComponent = () => {
       case 'Running':
         return (
           <span>
-            <Label color="green">{labelText}</Label>
+            <Label status={LabelStatus.success}>{labelText}</Label>
           </span>
         );
       case 'Stopped':
         return (
           <span>
-            <Label color="orange">{labelText}</Label>
+            <Label status={LabelStatus.warning}>{labelText}</Label>
           </span>
         );
       case 'Needs Maintenance':
         return (
           <span>
-            <Label color="blue">{labelText}</Label>
+            <Label status={LabelStatus.info}>{labelText}</Label>
           </span>
         );
       case 'Down':
         return (
           <span>
-            <Label color="red">{labelText}</Label>
+            <Label status={LabelStatus.danger}>{labelText}</Label>
           </span>
         );
     }

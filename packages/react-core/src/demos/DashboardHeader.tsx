@@ -149,7 +149,7 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ notificationBa
                 <ToolbarItem>
                   <NotificationBadge
                     aria-label="Notifications"
-                    variant={NotificationBadgeVariant.read}
+                    variant={NotificationBadgeVariant.plain}
                     onClick={() => {}}
                   />
                 </ToolbarItem>
