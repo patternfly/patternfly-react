@@ -142,6 +142,10 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
       return;
     }
     const scrollPosition = Math.ceil(scrollableElement.scrollTop + offset);
+    // Take into account the last section not having enough content to trigger a scroll position; without
+    // checking if at the bottom of the scroll container, the last JumpLinksItem never becomes "active".
+    const isAtBottom =
+      Math.ceil(scrollableElement.scrollTop + scrollableElement.clientHeight) >= scrollableElement.scrollHeight;
     window.requestAnimationFrame(() => {
       let newScrollItems = scrollItems;
       // Items might have rendered after this component or offsetTop values may need
@@ -151,6 +155,11 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
       if (requiresRefresh) {
         newScrollItems = getScrollItems(children, []);
         setScrollItems(newScrollItems);
+      }
+
+      if (isAtBottom) {
+        const lastIndex = newScrollItems.length - 1;
+        return setActiveIndex(lastIndex);
       }
 
       const scrollElements = newScrollItems
