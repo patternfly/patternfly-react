@@ -21,7 +21,7 @@
   "devDependencies": {
     "@patternfly/patternfly": "6.6.0-prerelease.20",
     "change-case": "^5.4.4",
-    "fs-extra": "^11.3.3"
+    "fs-extra": "^11.4.0"
   },
   "license": "MIT"
 }
