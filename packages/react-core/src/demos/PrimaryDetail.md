@@ -35,27 +35,9 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 
 ```
 
-### Primary-detail content padding
-
-```ts file="examples/PrimaryDetail/PrimaryDetailContentPadding.tsx" isFullscreen
-
-```
-
 ### Primary-detail card view
 
 ```ts file="examples/PrimaryDetail/PrimaryDetailCardView.tsx" isFullscreen
-
-```
-
-### Primary-detail simple list in card
-
-```ts file="examples/PrimaryDetail/PrimaryDetailSimpleListInCard.tsx" isFullscreen
-
-```
-
-### Primary-detail data list in card
-
-```ts file="examples/PrimaryDetail/PrimaryDetailDataListInCard.tsx" isFullscreen
 
 ```
 
