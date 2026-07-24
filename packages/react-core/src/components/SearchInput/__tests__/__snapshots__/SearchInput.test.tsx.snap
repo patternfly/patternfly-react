@@ -442,28 +442,40 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                   class="pf-v6-c-form__group-control"
                 >
                   <div
-                    class="pf-v6-c-form__actions"
+                    class="pf-v6-c-action-list"
                   >
-                    <button
-                      class="pf-v6-c-button pf-m-primary"
-                      type="submit"
+                    <div
+                      class="pf-v6-c-action-list__group"
                     >
-                      <span
-                        class="pf-v6-c-button__text"
+                      <div
+                        class="pf-v6-c-action-list__item"
                       >
-                        Search
-                      </span>
-                    </button>
-                    <button
-                      class="pf-v6-c-button pf-m-link"
-                      type="reset"
-                    >
-                      <span
-                        class="pf-v6-c-button__text"
+                        <button
+                          class="pf-v6-c-button pf-m-primary"
+                          type="submit"
+                        >
+                          <span
+                            class="pf-v6-c-button__text"
+                          >
+                            Search
+                          </span>
+                        </button>
+                      </div>
+                      <div
+                        class="pf-v6-c-action-list__item"
                       >
-                        Reset
-                      </span>
-                    </button>
+                        <button
+                          class="pf-v6-c-button pf-m-link"
+                          type="reset"
+                        >
+                          <span
+                            class="pf-v6-c-button__text"
+                          >
+                            Reset
+                          </span>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

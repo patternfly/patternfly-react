@@ -7,7 +7,9 @@ import {
   FormSelect,
   FormSelectOption,
   Checkbox,
-  ActionGroup,
+  ActionList,
+  ActionListGroup,
+  ActionListItem,
   Button,
   Radio,
   HelperText,
@@ -112,10 +114,18 @@ export const FormHorizontal: React.FunctionComponent = () => {
         <Radio name="horizontal-inline-radio" label="Central" id="horizontal-inline-radio-02" />
         <Radio name="horizontal-inline-radio" label="Pacific" id="horizontal-inline-radio-03" />
       </FormGroup>
-      <ActionGroup>
-        <Button variant="primary">Submit</Button>
-        <Button variant="link">Cancel</Button>
-      </ActionGroup>
+      <FormGroup isAction>
+        <ActionList>
+          <ActionListGroup>
+            <ActionListItem>
+              <Button variant="primary">Submit</Button>
+            </ActionListItem>
+            <ActionListItem>
+              <Button variant="link">Cancel</Button>
+            </ActionListItem>
+          </ActionListGroup>
+        </ActionList>
+      </FormGroup>
     </Form>
   );
 };

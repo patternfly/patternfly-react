@@ -34,6 +34,15 @@ describe('FormGroup', () => {
     expect(screen.getByTestId('form-group-test-id').firstElementChild).toHaveClass('pf-m-no-padding-top');
   });
 
+  test('should render action form group variant', () => {
+    render(
+      <FormGroup isAction data-testid="form-group-test-id">
+        <button type="submit">Submit</button>
+      </FormGroup>
+    );
+    expect(screen.getByTestId('form-group-test-id')).toHaveClass('pf-m-action');
+  });
+
   test('should render form group variant with required label', () => {
     const { asFragment } = render(
       <FormGroup label="label" isRequired fieldId="label-id">

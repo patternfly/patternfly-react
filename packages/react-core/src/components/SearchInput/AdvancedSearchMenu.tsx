@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Button } from '../Button';
-import { ActionGroup, Form, FormGroup } from '../Form';
+import { ActionList, ActionListGroup, ActionListItem } from '../ActionList';
+import { Form, FormGroup } from '../Form';
 import { TextInput } from '../TextInput';
 import { useSSRSafeId } from '../../helpers';
 import { SearchInputSearchAttribute } from './SearchInput';
@@ -202,16 +203,24 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
           <Form>
             {buildFormGroups()}
             {formAdditionalItems ? formAdditionalItems : null}
-            <ActionGroup>
-              <Button variant="primary" type="submit" onClick={onSearchHandler} isDisabled={!value}>
-                {submitSearchButtonLabel}
-              </Button>
-              {!!onClear && (
-                <Button variant="link" type="reset" onClick={onClear}>
-                  {resetButtonLabel}
-                </Button>
-              )}
-            </ActionGroup>
+            <FormGroup isAction>
+              <ActionList>
+                <ActionListGroup>
+                  <ActionListItem>
+                    <Button variant="primary" type="submit" onClick={onSearchHandler} isDisabled={!value}>
+                      {submitSearchButtonLabel}
+                    </Button>
+                  </ActionListItem>
+                  {!!onClear && (
+                    <ActionListItem>
+                      <Button variant="link" type="reset" onClick={onClear}>
+                        {resetButtonLabel}
+                      </Button>
+                    </ActionListItem>
+                  )}
+                </ActionListGroup>
+              </ActionList>
+            </FormGroup>
           </Form>
         </PanelMainBody>
       </PanelMain>

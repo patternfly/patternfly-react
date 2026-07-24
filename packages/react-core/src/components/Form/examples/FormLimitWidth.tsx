@@ -5,7 +5,9 @@ import {
   TextInput,
   Checkbox,
   Popover,
-  ActionGroup,
+  ActionList,
+  ActionListGroup,
+  ActionListItem,
   Button,
   Radio,
   HelperText,
@@ -123,10 +125,18 @@ export const FormLimitWidth: React.FunctionComponent = () => {
       <FormGroup fieldId="checkbox02">
         <Checkbox label="I'd like updates via email." id="checkbox02" name="checkbox02" aria-label="Update via email" />
       </FormGroup>
-      <ActionGroup>
-        <Button variant="primary">Submit</Button>
-        <Button variant="link">Cancel</Button>
-      </ActionGroup>
+      <FormGroup isAction>
+        <ActionList>
+          <ActionListGroup>
+            <ActionListItem>
+              <Button variant="primary">Submit</Button>
+            </ActionListItem>
+            <ActionListItem>
+              <Button variant="link">Cancel</Button>
+            </ActionListItem>
+          </ActionListGroup>
+        </ActionList>
+      </FormGroup>
     </Form>
   );
 };

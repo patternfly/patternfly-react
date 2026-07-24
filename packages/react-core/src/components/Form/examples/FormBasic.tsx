@@ -5,7 +5,9 @@ import {
   TextInput,
   Checkbox,
   Popover,
-  ActionGroup,
+  ActionList,
+  ActionListGroup,
+  ActionListItem,
   Button,
   Radio,
   HelperText,
@@ -123,10 +125,18 @@ export const FormBasic: React.FunctionComponent = () => {
       <FormGroup fieldId="checkbox01">
         <Checkbox label="I'd like updates via email." id="checkbox01" name="checkbox01" aria-label="Update via email" />
       </FormGroup>
-      <ActionGroup>
-        <Button variant="primary">Submit</Button>
-        <Button variant="link">Cancel</Button>
-      </ActionGroup>
+      <FormGroup isAction>
+        <ActionList>
+          <ActionListGroup>
+            <ActionListItem>
+              <Button variant="primary">Submit</Button>
+            </ActionListItem>
+            <ActionListItem>
+              <Button variant="link">Cancel</Button>
+            </ActionListItem>
+          </ActionListGroup>
+        </ActionList>
+      </FormGroup>
     </Form>
   );
 };
