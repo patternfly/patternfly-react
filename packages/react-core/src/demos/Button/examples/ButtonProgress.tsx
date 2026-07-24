@@ -35,32 +35,34 @@ export const ButtonProgress: React.FunctionComponent = () => {
           aria-label="password input"
         />
       </FormGroup>
-      <ActionList>
-        <ActionListGroup>
-          <ActionListItem>
-            <Button
-              variant="primary"
-              onClick={
-                loginState === 'notLoggedIn'
-                  ? () => {
-                      setLoginState('loading');
-                      setTimeout(() => {
-                        setLoginState('loggedIn');
-                      }, 3000);
-                    }
-                  : null
-              }
-              isLoading={loginState === 'loading'}
-              icon={loginState === 'loggedIn' ? <RhUiCheckCircleFillIcon /> : null}
-              spinnerAriaValueText="Loading..."
-            >
-              {loginState === 'notLoggedIn' && 'Link account and log in'}
-              {loginState === 'loading' && 'Linking account'}
-              {loginState === 'loggedIn' && 'Logged in'}
-            </Button>
-          </ActionListItem>
-        </ActionListGroup>
-      </ActionList>
+      <FormGroup isAction>
+        <ActionList>
+          <ActionListGroup>
+            <ActionListItem>
+              <Button
+                variant="primary"
+                onClick={
+                  loginState === 'notLoggedIn'
+                    ? () => {
+                        setLoginState('loading');
+                        setTimeout(() => {
+                          setLoginState('loggedIn');
+                        }, 3000);
+                      }
+                    : null
+                }
+                isLoading={loginState === 'loading'}
+                icon={loginState === 'loggedIn' ? <RhUiCheckCircleFillIcon /> : null}
+                spinnerAriaValueText="Loading..."
+              >
+                {loginState === 'notLoggedIn' && 'Link account and log in'}
+                {loginState === 'loading' && 'Linking account'}
+                {loginState === 'loggedIn' && 'Logged in'}
+              </Button>
+            </ActionListItem>
+          </ActionListGroup>
+        </ActionList>
+      </FormGroup>
     </Form>
   );
 };

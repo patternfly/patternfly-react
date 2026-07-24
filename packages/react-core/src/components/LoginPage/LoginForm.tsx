@@ -148,21 +148,23 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
           />
         </FormGroup>
       )}
-      <ActionList>
-        <ActionListGroup>
-          <ActionListItem>
-            <Button
-              variant="primary"
-              type="submit"
-              onClick={onLoginButtonClick}
-              isBlock
-              isDisabled={isLoginButtonDisabled}
-            >
-              {loginButtonLabel}
-            </Button>
-          </ActionListItem>
-        </ActionListGroup>
-      </ActionList>
+      <FormGroup isAction>
+        <ActionList>
+          <ActionListGroup>
+            <ActionListItem>
+              <Button
+                variant="primary"
+                type="submit"
+                onClick={onLoginButtonClick}
+                isBlock
+                isDisabled={isLoginButtonDisabled}
+              >
+                {loginButtonLabel}
+              </Button>
+            </ActionListItem>
+          </ActionListGroup>
+        </ActionList>
+      </FormGroup>
     </Form>
   );
 };

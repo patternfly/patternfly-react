@@ -21,6 +21,8 @@ export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'l
   isInline?: boolean;
   /** Sets the FormGroupControl to be stacked */
   isStack?: boolean;
+  /** Sets the FormGroup action modifier. Used to contain form action buttons. */
+  isAction?: boolean;
   /** Removes top spacer from label. */
   hasNoPaddingTop?: boolean;
   /** ID of an individual field or a group of multiple fields. Required when a role of "group" or "radiogroup" is passed in.
@@ -47,6 +49,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   isInline = false,
   hasNoPaddingTop = false,
   isStack = false,
+  isAction = false,
   fieldId,
   role,
   ouiaId,
@@ -75,7 +78,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
 
   return (
     <div
-      className={css(styles.formGroup, className)}
+      className={css(styles.formGroup, isAction && styles.modifiers.action, className)}
       {...(role && { role })}
       {...(isGroupOrRadioGroup && { 'aria-labelledby': `${fieldId || randomId}-legend` })}
       {...props}

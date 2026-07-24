@@ -91,34 +91,36 @@ export const FormState = () => {
             </SelectList>
           </Select>
 
-          <ActionList>
-            <ActionListGroup>
-              <ActionListItem>
-                <Button
-                  type={ButtonType.submit}
-                  onClick={(e) => {
-                    e.preventDefault();
+          <FormGroup isAction>
+            <ActionList>
+              <ActionListGroup>
+                <ActionListItem>
+                  <Button
+                    type={ButtonType.submit}
+                    onClick={(e) => {
+                      e.preventDefault();
 
-                    if (!values['input-id']) {
-                      setError('input-id', 'Input value is required.');
-                    } else {
-                      alert(`Form submitted with: \n ${JSON.stringify(values)}`);
-                    }
-                  }}
-                >
-                  Submit
-                </Button>
-              </ActionListItem>
-              <ActionListItem>
-                <Button
-                  variant={ButtonVariant.link}
-                  onClick={() => setFormStateExpanded((prevExpanded) => !prevExpanded)}
-                >
-                  {`${formStateExpanded ? 'Hide' : 'Show'} form state`}
-                </Button>
-              </ActionListItem>
-            </ActionListGroup>
-          </ActionList>
+                      if (!values['input-id']) {
+                        setError('input-id', 'Input value is required.');
+                      } else {
+                        alert(`Form submitted with: \n ${JSON.stringify(values)}`);
+                      }
+                    }}
+                  >
+                    Submit
+                  </Button>
+                </ActionListItem>
+                <ActionListItem>
+                  <Button
+                    variant={ButtonVariant.link}
+                    onClick={() => setFormStateExpanded((prevExpanded) => !prevExpanded)}
+                  >
+                    {`${formStateExpanded ? 'Hide' : 'Show'} form state`}
+                  </Button>
+                </ActionListItem>
+              </ActionListGroup>
+            </ActionList>
+          </FormGroup>
           {formStateExpanded && (
             <>
               <Divider />

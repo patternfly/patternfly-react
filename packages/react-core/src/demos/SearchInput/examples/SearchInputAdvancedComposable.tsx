@@ -292,22 +292,24 @@ export const SearchInputAdvancedComposable: React.FunctionComponent = () => {
                   </FormGroup>
                 </GridItem>
               </Grid>
-              <ActionList>
-                <ActionListGroup>
-                  <ActionListItem>
-                    <Button variant="primary" type="submit" onClick={(e) => onSubmit(null, e)}>
-                      Submit
-                    </Button>
-                  </ActionListItem>
-                  <ActionListItem>
-                    {!!onClear && (
-                      <Button variant="link" type="reset" onClick={onClear}>
-                        Reset
+              <FormGroup isAction>
+                <ActionList>
+                  <ActionListGroup>
+                    <ActionListItem>
+                      <Button variant="primary" type="submit" onClick={(e) => onSubmit(null, e)}>
+                        Submit
                       </Button>
-                    )}
-                  </ActionListItem>
-                </ActionListGroup>
-              </ActionList>
+                    </ActionListItem>
+                    <ActionListItem>
+                      {!!onClear && (
+                        <Button variant="link" type="reset" onClick={onClear}>
+                          Reset
+                        </Button>
+                      )}
+                    </ActionListItem>
+                  </ActionListGroup>
+                </ActionList>
+              </FormGroup>
             </Form>
           </PanelMainBody>
         </PanelMain>

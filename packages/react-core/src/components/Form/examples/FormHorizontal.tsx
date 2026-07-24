@@ -114,16 +114,18 @@ export const FormHorizontal: React.FunctionComponent = () => {
         <Radio name="horizontal-inline-radio" label="Central" id="horizontal-inline-radio-02" />
         <Radio name="horizontal-inline-radio" label="Pacific" id="horizontal-inline-radio-03" />
       </FormGroup>
-      <ActionList>
-        <ActionListGroup>
-          <ActionListItem>
-            <Button variant="primary">Submit</Button>
-          </ActionListItem>
-          <ActionListItem>
-            <Button variant="link">Cancel</Button>
-          </ActionListItem>
-        </ActionListGroup>
-      </ActionList>
+      <FormGroup isAction>
+        <ActionList>
+          <ActionListGroup>
+            <ActionListItem>
+              <Button variant="primary">Submit</Button>
+            </ActionListItem>
+            <ActionListItem>
+              <Button variant="link">Cancel</Button>
+            </ActionListItem>
+          </ActionListGroup>
+        </ActionList>
+      </FormGroup>
     </Form>
   );
 };

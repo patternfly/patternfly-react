@@ -203,22 +203,24 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
           <Form>
             {buildFormGroups()}
             {formAdditionalItems ? formAdditionalItems : null}
-            <ActionList>
-              <ActionListGroup>
-                <ActionListItem>
-                  <Button variant="primary" type="submit" onClick={onSearchHandler} isDisabled={!value}>
-                    {submitSearchButtonLabel}
-                  </Button>
-                </ActionListItem>
-                {!!onClear && (
+            <FormGroup isAction>
+              <ActionList>
+                <ActionListGroup>
                   <ActionListItem>
-                    <Button variant="link" type="reset" onClick={onClear}>
-                      {resetButtonLabel}
+                    <Button variant="primary" type="submit" onClick={onSearchHandler} isDisabled={!value}>
+                      {submitSearchButtonLabel}
                     </Button>
                   </ActionListItem>
-                )}
-              </ActionListGroup>
-            </ActionList>
+                  {!!onClear && (
+                    <ActionListItem>
+                      <Button variant="link" type="reset" onClick={onClear}>
+                        {resetButtonLabel}
+                      </Button>
+                    </ActionListItem>
+                  )}
+                </ActionListGroup>
+              </ActionList>
+            </FormGroup>
           </Form>
         </PanelMainBody>
       </PanelMain>
