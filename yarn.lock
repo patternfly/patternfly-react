@@ -4963,7 +4963,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@patternfly/documentation-framework@npm:^6.40.0":
+"@patternfly/documentation-framework@npm:^6.49.2":
   version: 6.49.2
   resolution: "@patternfly/documentation-framework@npm:6.49.2"
   dependencies:
@@ -5191,7 +5191,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@patternfly/react-docs@workspace:packages/react-docs"
   dependencies:
-    "@patternfly/documentation-framework": "npm:^6.40.0"
+    "@patternfly/documentation-framework": "npm:^6.49.2"
     "@patternfly/patternfly": "npm:6.6.0-prerelease.20"
     "@patternfly/patternfly-a11y": "npm:5.2.1"
     "@patternfly/react-charts": "workspace:^"
