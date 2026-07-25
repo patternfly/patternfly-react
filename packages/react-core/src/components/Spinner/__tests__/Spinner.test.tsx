@@ -27,6 +27,11 @@ test('Renders with accessible name via aria-labelledby when passed', () => {
   expect(screen.getByRole('progressbar')).toHaveAccessibleName('Loading reports');
 });
 
+test('Renders legacy aria-labelledBy as aria-labelledby', () => {
+  render(<Spinner aria-labelledBy="external-label" />);
+  expect(screen.getByRole('progressbar')).toHaveAttribute('aria-labelledby', 'external-label');
+});
+
 test('Renders with aria-label even when aria-labelledby is passed', () => {
   render(<Spinner aria-labelledby="external-label" />);
   expect(screen.getByRole('progressbar')).toHaveAccessibleName('Contents');

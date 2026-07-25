@@ -43,7 +43,7 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = ({
     viewBox="0 0 100 100"
     {...(diameter && { style: { [cssDiameter.name]: diameter } as React.CSSProperties })}
     aria-label={ariaLabel}
-    {...(ariaLabelledBy && { 'aria-labelledBy': ariaLabelledBy })}
+    {...(ariaLabelledBy && { 'aria-labelledby': ariaLabelledBy })}
     {...props}
   >
     <circle className={styles.spinnerPath} cx="50" cy="50" r="45" fill="none" />
