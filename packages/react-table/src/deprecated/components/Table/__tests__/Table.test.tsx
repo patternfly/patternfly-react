@@ -279,6 +279,25 @@ describe('Table', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('Compact table with Radio select', () => {
+    const onSelect: OnSelect = () => undefined;
+    const { asFragment } = render(
+      <Table
+        aria-label="Compact table with radio"
+        variant={TableVariant.compact}
+        selectVariant={RowSelectVariant.radio}
+        onSelect={onSelect}
+        cells={columns}
+        rows={rows}
+      >
+        <TableHeader />
+        <TableBody />
+      </Table>
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('Control text table', () => {
     const controlTextColumns: ICell[] = [
       { ...(columns[0] as object), transforms: [nowrap] },
