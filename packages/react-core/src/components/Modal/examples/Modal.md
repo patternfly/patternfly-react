@@ -11,6 +11,7 @@ import RhUiWarningIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warnin
 import RhUiAttentionBellFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
 import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
+import './Modal.css';
 
 ## Examples
 
@@ -152,5 +153,21 @@ To enable form submission from a button in the modal's footer (outside of the `<
 To customize which element inside the modal receives focus when initially opened, use the `elementToFocus` property`.
 
 ```ts file="./ModalCustomFocus.tsx"
+
+```
+
+### Animated modal (hasAnimations)
+
+To allow modals to animate as they open and close, set the `hasAnimations` property on the modal.
+
+```ts file="./ModalAnimated.tsx"
+
+```
+
+### Animated modal (AnimationsProvider)
+
+To enable animations globally, wrap your application with `AnimationsProvider`. All modals within the provider will animate without needing individual `hasAnimations` props.
+
+```ts file="./ModalAnimatedProvider.tsx"
 
 ```

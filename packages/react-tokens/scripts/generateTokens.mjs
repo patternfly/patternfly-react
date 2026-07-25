@@ -33,11 +33,11 @@ const getDeclarations = (cssAst) =>
     .reduce((acc, val) => acc.concat(val), []); // flatten
 
 const formatFilePathToName = (filePath) => {
-  // const filePathArr = filePath.split('/');
+  const normalizedPath = filePath.replace(/\\/g, '/');
   let prefix = '';
-  if (filePath.includes('components/')) {
+  if (normalizedPath.includes('components/')) {
     prefix = 'c_';
-  } else if (filePath.includes('layouts/')) {
+  } else if (normalizedPath.includes('layouts/')) {
     prefix = 'l_';
   }
   return `${prefix}${basename(filePath, '.css').replace(/-+/g, '_')}`;
