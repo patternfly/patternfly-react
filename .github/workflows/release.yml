@@ -14,6 +14,8 @@ jobs:
   docs:
     name: Documentation
     uses: ./.github/workflows/documentation.yml
+    with:
+      is-release: true
     secrets: inherit
 
   deploy:

@@ -4,6 +4,12 @@ on:
   issue_comment:
     types: [created]
   workflow_call:
+    inputs:
+      is-release:
+        description: Whether this is invoked from the Release workflow (skip PR permission gating).
+        type: boolean
+        required: false
+        default: false
     secrets:
       SURGE_LOGIN:
         required: true
@@ -23,7 +29,7 @@ jobs:
     if: >-
       always() &&
       !cancelled() &&
-      (github.event_name == 'workflow_call' || needs.check-permissions.outputs.allowed == 'true')
+      (inputs.is-release || needs.check-permissions.outputs.allowed == 'true')
     env:
       SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
       SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
@@ -39,7 +45,7 @@ jobs:
           ref: refs/pull/${{ env.GH_PR_NUM }}/head
 
       - name: Check out project
-        if: github.event_name == 'workflow_call'
+        if: inputs.is-release
         uses: actions/checkout@v4
       - name: Set up and build project
         uses: ./.github/actions/setup-project
