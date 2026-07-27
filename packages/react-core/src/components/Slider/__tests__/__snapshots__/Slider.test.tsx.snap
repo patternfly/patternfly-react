@@ -65,7 +65,8 @@ exports[`slider renders continuous slider 1`] = `
           data-ouia-component-id="OUIA-Generated-TextInputBase-:r1:"
           data-ouia-component-type="PF6/TextInput"
           data-ouia-safe="true"
-          type="number"
+          inputmode="decimal"
+          type="text"
           value="50"
         />
       </span>
@@ -259,7 +260,8 @@ exports[`slider renders discrete slider 1`] = `
           data-ouia-component-id="OUIA-Generated-TextInputBase-:r3:"
           data-ouia-component-type="PF6/TextInput"
           data-ouia-safe="true"
-          type="number"
+          inputmode="decimal"
+          type="text"
           value="50"
         />
       </span>
@@ -431,7 +433,8 @@ exports[`slider renders slider with input 1`] = `
               data-ouia-component-id="OUIA-Generated-TextInputBase-:r5:"
               data-ouia-component-type="PF6/TextInput"
               data-ouia-safe="true"
-              type="number"
+              inputmode="decimal"
+              type="text"
               value="50"
             />
           </span>
@@ -521,7 +524,8 @@ exports[`slider renders slider with input above thumb 1`] = `
                 data-ouia-component-id="OUIA-Generated-TextInputBase-:r7:"
                 data-ouia-component-type="PF6/TextInput"
                 data-ouia-safe="true"
-                type="number"
+                inputmode="decimal"
+                type="text"
                 value="50"
               />
             </span>

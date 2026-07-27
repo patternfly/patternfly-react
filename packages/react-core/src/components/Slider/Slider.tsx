@@ -7,7 +7,7 @@ import { TextInput } from '../TextInput';
 import { Tooltip, TooltipProps } from '../Tooltip';
 import cssSliderValue from '@patternfly/react-tokens/dist/esm/c_slider_value';
 import cssFormControlWidthChars from '@patternfly/react-tokens/dist/esm/c_slider__value_c_form_control_width_chars';
-import { getLanguageDirection } from '../../helpers/util';
+import { formatLocalizedDecimal, getLanguageDirection, parseLocalizedDecimal } from '../../helpers/util';
 
 /** Properties for creating custom steps in a slider. These properties should be passed in as
  * an object within an array to the slider component's customSteps property.
@@ -93,6 +93,8 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   thumbAriaValueText?: string;
   /** Current value of the slider.  */
   value?: number;
+  /** Locale string used for input formatting and parsing. See https://developer.mozilla.org/en-US/docs/Glossary/BCP_47_language_tag for more information. */
+  locale?: string;
 }
 
 const getPercentage = (current: number, max: number) => (100 * current) / max;
@@ -126,13 +128,22 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   showBoundaries = true,
   'aria-describedby': ariaDescribedby,
   'aria-labelledby': ariaLabelledby,
+  locale,
   ...props
 }: SliderProps) => {
   const sliderRailRef = useRef<HTMLDivElement>(undefined);
   const thumbRef = useRef<HTMLDivElement>(undefined);
+  const isInputFocusedRef = useRef(false);
+  let formatter: Intl.NumberFormat;
+  try {
+    formatter = new Intl.NumberFormat(locale);
+  } catch {
+    formatter = new Intl.NumberFormat(); // grabs default locale
+  }
 
   const [localValue, setValue] = useState(value);
   const [localInputValue, setLocalInputValue] = useState(inputValue);
+  const [inputDisplayValue, setInputDisplayValue] = useState(() => formatLocalizedDecimal(inputValue, formatter));
 
   let isRTL: boolean;
 
@@ -144,9 +155,45 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     setValue(value);
   }, [value]);
 
+  const updateInputDisplay = useCallback((numericValue: number) => {
+    setInputDisplayValue(formatLocalizedDecimal(numericValue, formatter));
+  }, []);
+
+  const updateInputFromSliderValue = useCallback(
+    (numericValue: number) => {
+      if (!isInputVisible) {
+        return;
+      }
+
+      setLocalInputValue(numericValue);
+      if (!isInputFocusedRef.current) {
+        updateInputDisplay(numericValue);
+      }
+    },
+    [isInputVisible, updateInputDisplay]
+  );
+
+  const setLocalInputValueWithDisplay = useCallback<React.Dispatch<React.SetStateAction<number>>>(
+    (nextValue) => {
+      setLocalInputValue((previousValue) => {
+        const resolvedValue = typeof nextValue === 'function' ? nextValue(previousValue) : nextValue;
+
+        if (!isInputFocusedRef.current) {
+          updateInputDisplay(resolvedValue);
+        }
+
+        return resolvedValue;
+      });
+    },
+    [updateInputDisplay]
+  );
+
   useEffect(() => {
-    setLocalInputValue(inputValue);
-  }, [inputValue]);
+    if (!isInputFocusedRef.current) {
+      setLocalInputValue(inputValue);
+      updateInputDisplay(inputValue);
+    }
+  }, [inputValue, updateInputDisplay]);
 
   let diff = 0;
   let snapValue: number;
@@ -154,27 +201,44 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   // calculate style value percentage
   const stylePercent = ((localValue - min) * 100) / (max - min);
   const style = { [cssSliderValue.name]: `${stylePercent}%` } as React.CSSProperties;
-  const widthChars = useMemo(() => localInputValue.toString().length, [localInputValue]);
+  const widthChars = useMemo(() => inputDisplayValue.length || 1, [inputDisplayValue]);
   const inputStyle = { [cssFormControlWidthChars.name]: widthChars } as React.CSSProperties;
 
   const onChangeHandler = (event: React.FormEvent<HTMLInputElement>, value: string) => {
-    const newValue = Number(value);
-    setLocalInputValue(newValue);
+    setInputDisplayValue(value);
 
-    isInputLive && onChange && onChange(event, localValue, newValue, setLocalInputValue);
+    const parsedValue = parseLocalizedDecimal(value, formatter);
+
+    if (!Number.isNaN(parsedValue)) {
+      setLocalInputValue(parsedValue);
+      isInputLive && onChange && onChange(event, localValue, parsedValue, setLocalInputValueWithDisplay);
+    }
   };
 
   const handleKeyPressOnInput = (event: React.KeyboardEvent) => {
     if (event.key === 'Enter') {
       event.preventDefault();
+      const parsedValue = parseLocalizedDecimal(inputDisplayValue, formatter);
+
+      if (!Number.isNaN(parsedValue)) {
+        setLocalInputValue(parsedValue);
+        updateInputDisplay(parsedValue);
+      }
+
       if (onChange) {
-        onChange(event, localValue, localInputValue, setLocalInputValue);
+        onChange(
+          event,
+          localValue,
+          Number.isNaN(parsedValue) ? localInputValue : parsedValue,
+          setLocalInputValueWithDisplay
+        );
       }
     }
   };
 
-  const onInputFocus = (e: any) => {
+  const onInputFocus = (e: React.SyntheticEvent<HTMLInputElement>) => {
     e.stopPropagation();
+    isInputFocusedRef.current = true;
   };
 
   const onThumbClick = () => {
@@ -182,8 +246,16 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   };
 
   const onBlur = (event: React.FocusEvent<HTMLInputElement>) => {
+    isInputFocusedRef.current = false;
+
+    const parsedValue = parseLocalizedDecimal(inputDisplayValue, formatter);
+    const resolvedInputValue = Number.isNaN(parsedValue) ? localInputValue : parsedValue;
+
+    setLocalInputValue(resolvedInputValue);
+    updateInputDisplay(resolvedInputValue);
+
     if (onChange) {
-      onChange(event, localValue, localInputValue, setLocalInputValue);
+      onChange(event, localValue, resolvedInputValue, setLocalInputValueWithDisplay);
     }
   };
 
@@ -240,8 +312,9 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     if (snapValue && !areCustomStepsContinuous) {
       thumbRef.current.style.setProperty(cssSliderValue.name, `${snapValue}%`);
       setValue(snapValue);
+      updateInputFromSliderValue(snapValue);
       if (onChange) {
-        onChange(e, snapValue);
+        onChange(e, snapValue, undefined, setLocalInputValueWithDisplay);
       }
     }
   };
@@ -308,16 +381,22 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     }
 
     // Call onchange callback
+    const resolvedValue = snapValue !== undefined ? snapValue : newValue;
+    updateInputFromSliderValue(resolvedValue);
+
     if (onChange) {
-      if (snapValue !== undefined) {
-        onChange(e, snapValue);
-      } else {
-        onChange(e, newValue);
-      }
+      onChange(e, resolvedValue, undefined, setLocalInputValueWithDisplay);
     }
   };
 
-  const callbackThumbMove = useCallback(handleThumbMove, [min, max, customSteps, onChange]);
+  const callbackThumbMove = useCallback(handleThumbMove, [
+    min,
+    max,
+    customSteps,
+    onChange,
+    updateInputFromSliderValue,
+    setLocalInputValueWithDisplay
+  ]);
   const callbackThumbUp = useCallback(handleThumbDragEnd, [min, max, customSteps, onChange]);
 
   const handleThumbKeys = (e: React.KeyboardEvent) => {
@@ -373,8 +452,9 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     if (newValue !== localValue) {
       thumbRef.current.style.setProperty(cssSliderValue.name, `${newValue}%`);
       setValue(newValue);
+      updateInputFromSliderValue(newValue);
       if (onChange) {
-        onChange(e, newValue);
+        onChange(e, newValue, undefined, setLocalInputValueWithDisplay);
       }
     }
   };
@@ -383,8 +463,9 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     const textInput = (
       <TextInput
         isDisabled={isDisabled}
-        type="number"
-        value={localInputValue}
+        type="text"
+        inputMode="decimal"
+        value={inputDisplayValue}
         aria-label={inputAriaLabel}
         onKeyDown={handleKeyPressOnInput}
         onChange={onChangeHandler}

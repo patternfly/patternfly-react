@@ -590,3 +590,59 @@ export const getInlineStartProperty = (
   const widthProperty: 'offsetWidth' | 'clientWidth' | 'scrollWidth' = `${inlineType}Width`;
   return ancestorElement[widthProperty] - (targetElement[inlineProperty] + targetElement[widthProperty]);
 };
+
+/**
+ * Parses a decimal input string, accepting both comma and dot as the decimal separator.
+ * Given the locale, it discovers the locale's separators and integers using a reference value.
+ *
+ * @param {string} value - The input string to parse
+ * @param {Intl.NumberFormat} formatter - The Intl.NumberFormat instance to use for formatting
+ * @returns {number} - The parsed number, or NaN if the input is not a valid number
+ */
+export const parseLocalizedDecimal = (value: string, formatter: Intl.NumberFormat): number => {
+  if (typeof value !== 'string' || !value.trim()) {
+    return NaN;
+  }
+
+  const parts = formatter.formatToParts(12345.6);
+  const groupSymbol = parts.find((p) => p.type === 'group')?.value || ',';
+  const decimalSymbol = parts.find((p) => p.type === 'decimal')?.value || '.';
+
+  // in case of non-Arabic numerals
+  const digitParts = formatter.formatToParts(1234567890);
+  const localDigits = digitParts
+    .filter((p) => p.type === 'integer')
+    .map((p) => p.value)
+    .join('');
+  let normalizedString = value;
+  if (localDigits.length === 10 && localDigits !== '1234567890') {
+    const standardDigits = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+    const digitMap = new Map();
+    [...localDigits].forEach((char, idx) => digitMap.set(char, standardDigits[idx]));
+    normalizedString = [...value].map((char) => digitMap.get(char) || char).join('');
+  }
+
+  const escapeRegex = (str: string) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+  const cleaned = normalizedString
+    .replace(new RegExp(escapeRegex(groupSymbol), 'g'), '')
+    .replace(new RegExp(escapeRegex(decimalSymbol), 'g'), '.')
+    .replace(/[^0-9.-]/g, '');
+
+  return parseFloat(cleaned);
+};
+
+/**
+ * Formats a number using the decimal separator for the given locale.
+ *
+ * @param {number} value - The number to format
+ * @param {Intl.NumberFormat} formatter - Intl.NumberFormat instance to use for formatting
+ * @returns {string} - The formatted number string
+ */
+export const formatLocalizedDecimal = (value: number, formatter: Intl.NumberFormat): string => {
+  if (Number.isNaN(value)) {
+    return '';
+  }
+
+  return formatter.format(value);
+};

@@ -4,6 +4,7 @@
     "jsx": "react-jsx",
     "lib": [
       "es2015",
+      "es2018.intl",
       "dom"
     ],
     "target": "es2015",

@@ -1,12 +1,15 @@
 import {
   capitalize,
+  formatLocalizedDecimal,
+  formatBreakpointMods,
+  getElementLocale,
   getUniqueId,
   debounce,
   isElementInView,
+  parseLocalizedDecimal,
   sideElementIsOutOfView,
   fillTemplate,
-  pluralize,
-  formatBreakpointMods
+  pluralize
 } from '../util';
 import { SIDE } from '../constants';
 import styles from '@patternfly/react-styles/css/layouts/Flex/flex';
@@ -109,4 +112,20 @@ test('formatBreakpointMods', () => {
   expect(formatBreakpointMods({ default: 'spacerNone' }, styles)).toEqual('pf-m-spacer-none');
   expect(formatBreakpointMods({ md: 'spacerNone' }, styles)).toEqual('pf-m-spacer-none-on-md');
   expect(formatBreakpointMods({ default: 'column', lg: 'row' }, styles)).toEqual('pf-m-column pf-m-row-on-lg');
+});
+
+test('parseLocalizedDecimal accepts dot and comma decimal separators', () => {
+  const enFormatter = new Intl.NumberFormat('en');
+  const esFormatter = new Intl.NumberFormat('es');
+
+  expect(parseLocalizedDecimal('50.2', enFormatter)).toBe(50.2);
+  expect(parseLocalizedDecimal('50,2', esFormatter)).toBe(50.2);
+  expect(parseLocalizedDecimal('1.234,56', esFormatter)).toBe(1234.56);
+  expect(parseLocalizedDecimal('1,234.56', enFormatter)).toBe(1234.56);
+  expect(parseLocalizedDecimal('', enFormatter)).toBeNaN();
+});
+
+test('formatLocalizedDecimal uses locale decimal separator', () => {
+  expect(formatLocalizedDecimal(50.2, new Intl.NumberFormat('en-US'))).toBe('50.2');
+  expect(formatLocalizedDecimal(50.2, new Intl.NumberFormat('de-DE'))).toBe('50,2');
 });

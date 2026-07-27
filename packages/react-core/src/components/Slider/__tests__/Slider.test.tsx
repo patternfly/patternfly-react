@@ -124,3 +124,24 @@ test('renders slider with thumbAriaValueText', () => {
 
   expect(slider).toHaveAttribute('aria-valuetext', 'Half capacity');
 });
+
+test('displays localized decimal separator based on language', () => {
+  render(<Slider value={50.2} isInputVisible inputValue={50.2} locale="de-DE" />);
+
+  expect(screen.getByRole('textbox', { name: 'Slider value input' })).toHaveValue('50,2');
+});
+
+test('accepts comma decimal input and normalizes on blur', async () => {
+  const user = userEvent.setup();
+  const onChange = jest.fn();
+
+  render(<Slider value={50} isInputVisible inputValue={50} locale="de-DE" onChange={onChange} />);
+
+  const input = screen.getByRole('textbox', { name: 'Slider value input' });
+  await user.clear(input);
+  await user.type(input, '62,5');
+  await user.tab();
+
+  expect(input).toHaveValue('62,5');
+  expect(onChange).toHaveBeenLastCalledWith(expect.any(Object), 50, 62.5, expect.any(Function));
+});
