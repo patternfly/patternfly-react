@@ -205,7 +205,7 @@ export interface PopoverProps {
   shouldOpen?: (event: MouseEvent | KeyboardEvent, showFunction?: () => void) => void;
   /** Flag indicating whether the close button should be shown. */
   showClose?: boolean;
-  /** Sets an interaction to open popover, defaults to "click" */
+  /** @deprecated Sets an interaction to open popover, defaults to "click" */
   triggerAction?: 'click' | 'hover';
   /** Whether to trap focus in the popover. When using a triggerAction of "hover", this will be set to false
    * by default and must remain false.
