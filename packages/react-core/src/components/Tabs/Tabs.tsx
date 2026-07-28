@@ -248,7 +248,15 @@ class Tabs extends Component<TabsProps, TabsState> {
     tabContentRef: React.RefObject<any>
   ) {
     const { shownKeys, initialActiveKey } = this.state;
-    const { onSelect, defaultActiveKey } = this.props;
+    const { onSelect, defaultActiveKey, component, isNav } = this.props;
+
+    if (event.currentTarget instanceof HTMLAnchorElement && event.currentTarget.hasAttribute('href')) {
+      event.preventDefault();
+
+      if (canUseDOM && (component === TabsComponent.nav || isNav)) {
+        window.history.pushState(null, '', event.currentTarget.href);
+      }
+    }
 
     // if defaultActiveKey Tabs are uncontrolled, set new active key internally
     if (defaultActiveKey !== undefined) {

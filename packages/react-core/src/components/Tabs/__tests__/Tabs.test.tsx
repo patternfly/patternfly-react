@@ -147,6 +147,58 @@ describe('hash-based nav selection', () => {
     expect(screen.getByRole('tab', { name: 'Tab item 1' })).toHaveAttribute('aria-selected', 'false');
   });
 
+  test('should select the nav tab that matches the current URL hash when isNav is enabled', () => {
+    render(
+      <Tabs activeKey={0} onSelect={() => undefined} isNav>
+        <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>} href="#/items/1">
+          Tab item 1
+        </Tab>
+        <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>} href="#/items/2">
+          Tab item 2
+        </Tab>
+      </Tabs>
+    );
+
+    expect(screen.getByRole('tab', { name: 'Tab item 2' })).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByRole('tab', { name: 'Tab item 1' })).toHaveAttribute('aria-selected', 'false');
+  });
+
+  test('should fall back to activeKey when no tab href matches the current hash', () => {
+    window.location.hash = '#/items/unknown';
+
+    render(
+      <Tabs activeKey={0} onSelect={() => undefined} component="nav">
+        <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>} href="#/items/1">
+          Tab item 1
+        </Tab>
+        <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>} href="#/items/2">
+          Tab item 2
+        </Tab>
+      </Tabs>
+    );
+
+    expect(screen.getByRole('tab', { name: 'Tab item 1' })).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByRole('tab', { name: 'Tab item 2' })).toHaveAttribute('aria-selected', 'false');
+  });
+
+  test('should fall back to activeKey when the URL hash is empty', () => {
+    window.location.hash = '';
+
+    render(
+      <Tabs activeKey={0} onSelect={() => undefined} component="nav">
+        <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>} href="#/items/1">
+          Tab item 1
+        </Tab>
+        <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>} href="#/items/2">
+          Tab item 2
+        </Tab>
+      </Tabs>
+    );
+
+    expect(screen.getByRole('tab', { name: 'Tab item 1' })).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByRole('tab', { name: 'Tab item 2' })).toHaveAttribute('aria-selected', 'false');
+  });
+
   test('should respect later controlled selections after the initial hash match', async () => {
     const user = userEvent.setup();
     const ControlledTabs = () => {
@@ -240,6 +292,46 @@ describe('hash-based nav selection', () => {
 
     expect(screen.getByRole('tab', { name: 'Tab item 1' })).toHaveAttribute('aria-selected', 'true');
     expect(screen.getByRole('tab', { name: 'Tab item 2' })).toHaveAttribute('aria-selected', 'false');
+  });
+
+  test('should prevent default anchor navigation when selecting a tab with an href', async () => {
+    const user = userEvent.setup();
+    window.location.hash = '';
+
+    render(
+      <Tabs activeKey={0} onSelect={() => undefined}>
+        <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>} href="#/items/1">
+          Tab item 1
+        </Tab>
+        <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>} href="#/items/2">
+          Tab item 2
+        </Tab>
+      </Tabs>
+    );
+
+    await user.click(screen.getByRole('tab', { name: 'Tab item 2' }));
+
+    expect(window.location.hash).toBe('');
+  });
+
+  test('should update the URL hash when selecting a nav tab with an href', async () => {
+    const user = userEvent.setup();
+    window.location.hash = '';
+
+    render(
+      <Tabs activeKey={0} onSelect={() => undefined} isNav>
+        <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} href="#users">
+          Users
+        </Tab>
+        <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>} href="#containers">
+          Containers
+        </Tab>
+      </Tabs>
+    );
+
+    await user.click(screen.getByRole('tab', { name: 'Containers' }));
+
+    expect(window.location.hash).toBe('#containers');
   });
 });
 
