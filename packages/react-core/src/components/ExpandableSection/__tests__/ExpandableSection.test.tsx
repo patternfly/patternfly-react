@@ -8,7 +8,11 @@ import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-
 const props = { contentId: 'content-id', toggleId: 'toggle-id' };
 
 test('ExpandableSection', () => {
-  const { asFragment } = render(<ExpandableSection {...props}>test </ExpandableSection>);
+  const { asFragment } = render(
+    <ExpandableSection {...props} ouiaId="ouia-id">
+      test{' '}
+    </ExpandableSection>
+  );
   expect(asFragment()).toMatchSnapshot();
 });
 
@@ -305,4 +309,28 @@ test('Renders toggle icon by default when hasToggleIcon is true', () => {
 
   const button = screen.getByRole('button');
   expect(button.querySelector('.pf-v6-c-expandable-section__toggle-icon')).toBeInTheDocument();
+});
+
+test('Renders with custom ouiaId', () => {
+  const { container } = render(<ExpandableSection ouiaId="test-id">Test content</ExpandableSection>);
+  expect(container.firstChild).toHaveAttribute('data-ouia-component-id', 'test-id');
+});
+
+test('Renders with expected ouia component type', () => {
+  const { container } = render(<ExpandableSection ouiaId="test-id">Test content</ExpandableSection>);
+  expect(container.firstChild).toHaveAttribute('data-ouia-component-type', 'PF6/ExpandableSection');
+});
+
+test('Renders with ouiaSafe defaulting to true', () => {
+  const { container } = render(<ExpandableSection ouiaId="test-id">Test content</ExpandableSection>);
+  expect(container.firstChild).toHaveAttribute('data-ouia-safe', 'true');
+});
+
+test('Renders with ouiaSafe=false when specified', () => {
+  const { container } = render(
+    <ExpandableSection ouiaId="test-id" ouiaSafe={false}>
+      Test content
+    </ExpandableSection>
+  );
+  expect(container.firstChild).toHaveAttribute('data-ouia-safe', 'false');
 });

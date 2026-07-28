@@ -1,11 +1,12 @@
 import { memo, useState, useEffect, Children, isValidElement, cloneElement } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
-import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import { TreeViewDataItem } from './TreeView';
 import { Badge } from '../Badge';
 import { useSSRSafeId } from '../../helpers';
 import { useHasAnimations } from '../../helpers';
+import { IS_INERT } from '../../helpers/inert';
 
 export interface TreeViewCheckProps extends Omit<Partial<React.InputHTMLAttributes<HTMLInputElement>>, 'checked'> {
   checked?: boolean | null;
@@ -155,7 +156,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
       tabIndex={-1}
     >
       <span className={css(styles.treeViewNodeToggleIcon)}>
-        <RhMicronsCaretDownIcon />
+        <RhMicronsCaretRightIcon />
       </span>
     </ToggleComponent>
   );
@@ -225,7 +226,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
     (child) =>
       isValidElement(child) &&
       cloneElement(child as React.ReactElement<any>, {
-        inert: internalIsExpanded ? undefined : ''
+        inert: internalIsExpanded ? undefined : IS_INERT
       })
   );
 

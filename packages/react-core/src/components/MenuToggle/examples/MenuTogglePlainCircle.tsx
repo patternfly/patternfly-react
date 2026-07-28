@@ -12,6 +12,7 @@ export const MenuTogglePlainCircle: React.FunctionComponent = () => (
       aria-label="plain circle kebab"
     />{' '}
     <MenuToggle
+      aria-haspopup={false}
       isCircle
       icon={<RhUiEllipsisVerticalFillIcon />}
       variant="plain"
@@ -19,6 +20,7 @@ export const MenuTogglePlainCircle: React.FunctionComponent = () => (
       aria-label="plain circle expanded kebab"
     />{' '}
     <MenuToggle
+      aria-haspopup={false}
       isCircle
       icon={<RhUiEllipsisVerticalFillIcon />}
       variant="plain"

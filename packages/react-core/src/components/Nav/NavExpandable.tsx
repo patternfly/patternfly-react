@@ -7,6 +7,7 @@ import { PageSidebarContext } from '../Page/PageSidebar';
 import { PickOptional } from '../../helpers/typeUtils';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
+import { IS_INERT } from '../../helpers/inert';
 
 export interface NavExpandableProps
   extends Omit<React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>, 'title'>, OUIAProps {
@@ -149,7 +150,7 @@ class NavExpandable extends Component<NavExpandableProps, NavExpandableState> {
                     className={css(styles.navSubnav)}
                     aria-labelledby={navId}
                     hidden={expandedState ? null : true}
-                    {...(!expandedState && { inert: '' })}
+                    {...(!expandedState && { inert: IS_INERT })}
                   >
                     {srText && (
                       <h2 className="pf-v6-screen-reader" id={navId}>

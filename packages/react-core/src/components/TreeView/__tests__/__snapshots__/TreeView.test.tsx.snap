@@ -41,6 +41,9 @@ exports[`Matches snapshot 1`] = `
         <p>
           TreeViewList isMultiSelectable: false
         </p>
+        <p>
+          TreeViewList id: undefined
+        </p>
         <div
           data-testid="TreeViewList-children"
         >

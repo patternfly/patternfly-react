@@ -4,13 +4,13 @@ import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.sv
 
 export const MenuToggleAvatarText: React.FunctionComponent = () => (
   <Fragment>
-    <MenuToggle aria-haspopup={false} icon={<Avatar src={imgAvatar} alt="avatar" />}>
+    <MenuToggle aria-haspopup={false} icon={<Avatar src={imgAvatar} alt="avatar" size="sm" />}>
       Ned Username
     </MenuToggle>{' '}
-    <MenuToggle aria-haspopup={false} icon={<Avatar src={imgAvatar} alt="avatar" />} isExpanded>
+    <MenuToggle aria-haspopup={false} icon={<Avatar src={imgAvatar} alt="avatar" size="sm" />} isExpanded>
       Ned Username
     </MenuToggle>{' '}
-    <MenuToggle aria-haspopup={false} icon={<Avatar src={imgAvatar} alt="avatar" />} isDisabled>
+    <MenuToggle aria-haspopup={false} icon={<Avatar src={imgAvatar} alt="avatar" size="sm" />} isDisabled>
       Ned Username
     </MenuToggle>
   </Fragment>

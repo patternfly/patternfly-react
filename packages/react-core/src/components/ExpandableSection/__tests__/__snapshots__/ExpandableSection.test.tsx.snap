@@ -4,6 +4,8 @@ exports[`Disclosure ExpandableSection 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-expandable-section pf-m-display-lg pf-m-limit-width"
+    data-ouia-component-type="PF6/ExpandableSection"
+    data-ouia-safe="true"
   >
     <div
       class="pf-v6-c-expandable-section__toggle"
@@ -57,6 +59,9 @@ exports[`ExpandableSection 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-expandable-section"
+    data-ouia-component-id="ouia-id"
+    data-ouia-component-type="PF6/ExpandableSection"
+    data-ouia-safe="true"
   >
     <div
       class="pf-v6-c-expandable-section__toggle"
@@ -110,6 +115,8 @@ exports[`Renders ExpandableSection expanded 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-expandable-section pf-m-expanded"
+    data-ouia-component-type="PF6/ExpandableSection"
+    data-ouia-safe="true"
   >
     <div
       class="pf-v6-c-expandable-section__toggle"
@@ -163,6 +170,8 @@ exports[`Renders ExpandableSection indented 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-expandable-section pf-m-expanded pf-m-indented"
+    data-ouia-component-type="PF6/ExpandableSection"
+    data-ouia-safe="true"
   >
     <div
       class="pf-v6-c-expandable-section__toggle"
@@ -216,6 +225,8 @@ exports[`Renders Uncontrolled ExpandableSection 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-expandable-section"
+    data-ouia-component-type="PF6/ExpandableSection"
+    data-ouia-safe="true"
   >
     <div
       class="pf-v6-c-expandable-section__toggle"

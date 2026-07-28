@@ -31,7 +31,8 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
 
   const style = {
     transform: CSS.Transform.toString(transform),
-    transition
+    transition,
+    ...(!useDragButton && { touchAction: 'none' as const })
   };
 
   return useDragButton ? (

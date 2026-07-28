@@ -23,6 +23,8 @@ export interface TreeViewListProps extends React.HTMLProps<HTMLUListElement> {
    * this or the aria-label property must be passed in.
    */
   'aria-labelledby'?: string;
+  /** @hide Flag indicating whether the tree view list should be inert. */
+  inert?: boolean;
 }
 
 export const TreeViewList: React.FunctionComponent<TreeViewListProps> = ({
