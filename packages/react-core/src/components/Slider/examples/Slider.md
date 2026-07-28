@@ -32,6 +32,14 @@ import RhUiUnlockFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-unl
 
 ```
 
+### With localized input
+
+To format and parse decimal values using locale-specific separators, use the `locale` prop with a BCP 47 language tag. For example, German (`de-DE`) and Spanish (`es-ES`) use a comma, while English (`en-US`) uses a period.
+
+```ts file="./SliderValueLocalizedInput.tsx"
+
+```
+
 ### Thumb value input
 
 ```ts file="./SliderThumbValueInput.tsx"

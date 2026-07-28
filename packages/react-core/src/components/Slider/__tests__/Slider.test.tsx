@@ -145,3 +145,9 @@ test('accepts comma decimal input and normalizes on blur', async () => {
   expect(input).toHaveValue('62,5');
   expect(onChange).toHaveBeenLastCalledWith(expect.any(Object), 50, 62.5, expect.any(Function));
 });
+
+test('renders with invalid locale using default number formatting', () => {
+  render(<Slider value={50.2} isInputVisible inputValue={50.2} locale="invalid-locale-tag" />);
+
+  expect(screen.getByRole('textbox', { name: 'Slider value input' })).toHaveValue('50.2');
+});

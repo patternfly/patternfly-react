@@ -592,8 +592,9 @@ export const getInlineStartProperty = (
 };
 
 /**
- * Parses a decimal input string, accepting both comma and dot as the decimal separator.
- * Given the locale, it discovers the locale's separators and integers using a reference value.
+ * Parses a decimal input string using the given formatter's locale decimal separator.
+ * Grouping separators are not supported; use a formatter with `useGrouping: false`
+ * to avoid ambiguity between group and decimal separators in some locales.
  *
  * @param {string} value - The input string to parse
  * @param {Intl.NumberFormat} formatter - The Intl.NumberFormat instance to use for formatting
@@ -605,31 +606,48 @@ export const parseLocalizedDecimal = (value: string, formatter: Intl.NumberForma
   }
 
   const parts = formatter.formatToParts(12345.6);
-  const groupSymbol = parts.find((p) => p.type === 'group')?.value || ',';
-  const decimalSymbol = parts.find((p) => p.type === 'decimal')?.value || '.';
+  const groupSymbol = parts.find((p) => p.type === 'group')?.value;
+  const decimalPart = parts.find((p) => p.type === 'decimal');
+  const decimalSymbol = decimalPart?.value ?? '.';
+  const normalizedString = value.trim();
 
-  // in case of non-Arabic numerals
-  const digitParts = formatter.formatToParts(1234567890);
-  const localDigits = digitParts
-    .filter((p) => p.type === 'integer')
-    .map((p) => p.value)
-    .join('');
-  let normalizedString = value;
-  if (localDigits.length === 10 && localDigits !== '1234567890') {
-    const standardDigits = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
-    const digitMap = new Map();
-    [...localDigits].forEach((char, idx) => digitMap.set(char, standardDigits[idx]));
-    normalizedString = [...value].map((char) => digitMap.get(char) || char).join('');
+  if (groupSymbol && normalizedString.includes(groupSymbol)) {
+    return NaN;
   }
 
-  const escapeRegex = (str: string) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const decimalIndex = normalizedString.indexOf(decimalSymbol);
+  const hasDecimalSeparator = decimalIndex !== -1;
 
-  const cleaned = normalizedString
-    .replace(new RegExp(escapeRegex(groupSymbol), 'g'), '')
-    .replace(new RegExp(escapeRegex(decimalSymbol), 'g'), '.')
-    .replace(/[^0-9.-]/g, '');
+  if (hasDecimalSeparator && normalizedString.indexOf(decimalSymbol, decimalIndex + decimalSymbol.length) !== -1) {
+    return NaN;
+  }
 
-  return parseFloat(cleaned);
+  const charsWithoutDecimal = hasDecimalSeparator
+    ? normalizedString.slice(0, decimalIndex) + normalizedString.slice(decimalIndex + decimalSymbol.length)
+    : normalizedString;
+
+  if (!/^[+-]?\d*$/.test(charsWithoutDecimal)) {
+    return NaN;
+  }
+
+  let intPart = hasDecimalSeparator ? normalizedString.slice(0, decimalIndex) : normalizedString;
+  const fracPart = hasDecimalSeparator ? normalizedString.slice(decimalIndex + decimalSymbol.length) : undefined;
+
+  let sign = '';
+  if (intPart.startsWith('-') || intPart.startsWith('+')) {
+    sign = intPart[0] === '-' ? '-' : '';
+    intPart = intPart.slice(1);
+  }
+
+  if (!/^\d*$/.test(intPart) || (fracPart !== undefined && !/^\d*$/.test(fracPart))) {
+    return NaN;
+  }
+
+  if (intPart === '' && (fracPart === undefined || fracPart === '')) {
+    return NaN;
+  }
+
+  return parseFloat(`${sign}${intPart || '0'}${fracPart !== undefined ? `.${fracPart}` : ''}`);
 };
 
 /**
@@ -645,4 +663,35 @@ export const formatLocalizedDecimal = (value: number, formatter: Intl.NumberForm
   }
 
   return formatter.format(value);
+};
+
+/**
+ * Returns a stable character width for a localized slider input based on its range, so the
+ * input doesn't resize as its value changes (e.g. going from "0.99" to "1").
+ *
+ * Checks the formatted length of three values: the min, the max, and a value 1% below the
+ * max (to account for decimals that may be longer than the max itself, e.g. a 0-1 range).
+ * Never shrinks below the currently displayed value, so the input can grow while typing.
+ *
+ * @param {Intl.NumberFormat} formatter - Intl.NumberFormat instance to use for formatting
+ * @param {number} min - The minimum value
+ * @param {number} max - The maximum value
+ * @param {number} inputDisplayValue - The value shown in the input field
+ * @returns {number} - The character width for the slider input
+ */
+export const getLocalizedInputWidthChars = (
+  formatter: Intl.NumberFormat,
+  min: number,
+  max: number,
+  inputDisplayValue: string
+): number => {
+  const nearMax = max > min ? max - (max - min) / 100 : max;
+
+  const widestBoundaryLength = Math.max(
+    formatLocalizedDecimal(min, formatter).length,
+    formatLocalizedDecimal(max, formatter).length,
+    formatLocalizedDecimal(nearMax, formatter).length
+  );
+
+  return Math.max(widestBoundaryLength, inputDisplayValue.length, 1);
 };

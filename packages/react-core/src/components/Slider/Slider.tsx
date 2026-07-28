@@ -7,7 +7,12 @@ import { TextInput } from '../TextInput';
 import { Tooltip, TooltipProps } from '../Tooltip';
 import cssSliderValue from '@patternfly/react-tokens/dist/esm/c_slider_value';
 import cssFormControlWidthChars from '@patternfly/react-tokens/dist/esm/c_slider__value_c_form_control_width_chars';
-import { formatLocalizedDecimal, getLanguageDirection, parseLocalizedDecimal } from '../../helpers/util';
+import {
+  formatLocalizedDecimal,
+  getLanguageDirection,
+  getLocalizedInputWidthChars,
+  parseLocalizedDecimal
+} from '../../helpers/util';
 
 /** Properties for creating custom steps in a slider. These properties should be passed in as
  * an object within an array to the slider component's customSteps property.
@@ -134,12 +139,17 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   const sliderRailRef = useRef<HTMLDivElement>(undefined);
   const thumbRef = useRef<HTMLDivElement>(undefined);
   const isInputFocusedRef = useRef(false);
-  let formatter: Intl.NumberFormat;
-  try {
-    formatter = new Intl.NumberFormat(locale);
-  } catch {
-    formatter = new Intl.NumberFormat(); // grabs default locale
-  }
+  const formatter = useMemo(() => {
+    try {
+      return new Intl.NumberFormat(locale, { useGrouping: false });
+    } catch (error) {
+      if (error instanceof RangeError) {
+        // this is what happens if a bad locale is passed in
+        return new Intl.NumberFormat(undefined, { useGrouping: false });
+      }
+      throw error;
+    }
+  }, [locale]);
 
   const [localValue, setValue] = useState(value);
   const [localInputValue, setLocalInputValue] = useState(inputValue);
@@ -155,9 +165,12 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     setValue(value);
   }, [value]);
 
-  const updateInputDisplay = useCallback((numericValue: number) => {
-    setInputDisplayValue(formatLocalizedDecimal(numericValue, formatter));
-  }, []);
+  const updateInputDisplay = useCallback(
+    (numericValue: number) => {
+      setInputDisplayValue(formatLocalizedDecimal(numericValue, formatter));
+    },
+    [formatter]
+  );
 
   const updateInputFromSliderValue = useCallback(
     (numericValue: number) => {
@@ -201,8 +214,15 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   // calculate style value percentage
   const stylePercent = ((localValue - min) * 100) / (max - min);
   const style = { [cssSliderValue.name]: `${stylePercent}%` } as React.CSSProperties;
-  const widthChars = useMemo(() => inputDisplayValue.length || 1, [inputDisplayValue]);
-  const inputStyle = { [cssFormControlWidthChars.name]: widthChars } as React.CSSProperties;
+  const inputStyle = useMemo(() => {
+    if (!isInputVisible) {
+      return undefined;
+    }
+
+    const widthChars = getLocalizedInputWidthChars(formatter, min, max, inputDisplayValue);
+
+    return { [cssFormControlWidthChars.name]: widthChars } as React.CSSProperties;
+  }, [isInputVisible, formatter, min, max, inputDisplayValue]);
 
   const onChangeHandler = (event: React.FormEvent<HTMLInputElement>, value: string) => {
     setInputDisplayValue(value);
@@ -312,9 +332,10 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     if (snapValue && !areCustomStepsContinuous) {
       thumbRef.current.style.setProperty(cssSliderValue.name, `${snapValue}%`);
       setValue(snapValue);
-      updateInputFromSliderValue(snapValue);
       if (onChange) {
         onChange(e, snapValue, undefined, setLocalInputValueWithDisplay);
+      } else {
+        updateInputFromSliderValue(snapValue);
       }
     }
   };
@@ -382,10 +403,11 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
 
     // Call onchange callback
     const resolvedValue = snapValue !== undefined ? snapValue : newValue;
-    updateInputFromSliderValue(resolvedValue);
 
     if (onChange) {
       onChange(e, resolvedValue, undefined, setLocalInputValueWithDisplay);
+    } else {
+      updateInputFromSliderValue(resolvedValue);
     }
   };
 
@@ -452,9 +474,10 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     if (newValue !== localValue) {
       thumbRef.current.style.setProperty(cssSliderValue.name, `${newValue}%`);
       setValue(newValue);
-      updateInputFromSliderValue(newValue);
       if (onChange) {
         onChange(e, newValue, undefined, setLocalInputValueWithDisplay);
+      } else {
+        updateInputFromSliderValue(newValue);
       }
     }
   };

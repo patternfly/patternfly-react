@@ -3,6 +3,7 @@ import {
   formatLocalizedDecimal,
   formatBreakpointMods,
   getElementLocale,
+  getLocalizedInputWidthChars,
   getUniqueId,
   debounce,
   isElementInView,
@@ -114,18 +115,62 @@ test('formatBreakpointMods', () => {
   expect(formatBreakpointMods({ default: 'column', lg: 'row' }, styles)).toEqual('pf-m-column pf-m-row-on-lg');
 });
 
-test('parseLocalizedDecimal accepts dot and comma decimal separators', () => {
-  const enFormatter = new Intl.NumberFormat('en');
-  const esFormatter = new Intl.NumberFormat('es');
+test('parseLocalizedDecimal accepts locale-formatted decimals', () => {
+  const enFormatter = new Intl.NumberFormat('en', { useGrouping: false });
+  const esFormatter = new Intl.NumberFormat('es', { useGrouping: false });
+  const deFormatter = new Intl.NumberFormat('de-DE', { useGrouping: false });
 
   expect(parseLocalizedDecimal('50.2', enFormatter)).toBe(50.2);
   expect(parseLocalizedDecimal('50,2', esFormatter)).toBe(50.2);
-  expect(parseLocalizedDecimal('1.234,56', esFormatter)).toBe(1234.56);
-  expect(parseLocalizedDecimal('1,234.56', enFormatter)).toBe(1234.56);
+  expect(parseLocalizedDecimal('0,625', deFormatter)).toBe(0.625);
   expect(parseLocalizedDecimal('', enFormatter)).toBeNaN();
+});
+
+test('parseLocalizedDecimal rejects mismatched separators', () => {
+  const enFormatter = new Intl.NumberFormat('en-US', { useGrouping: false });
+  const deFormatter = new Intl.NumberFormat('de-DE', { useGrouping: false });
+
+  expect(parseLocalizedDecimal('50,2', enFormatter)).toBeNaN();
+  expect(parseLocalizedDecimal('50.2', deFormatter)).toBeNaN();
+  expect(parseLocalizedDecimal('50,2', deFormatter)).toBe(50.2);
+});
+
+test('parseLocalizedDecimal rejects grouping separators', () => {
+  const enFormatter = new Intl.NumberFormat('en-US');
+  const esFormatter = new Intl.NumberFormat('es');
+  const deFormatter = new Intl.NumberFormat('de-DE');
+  const enINFormatter = new Intl.NumberFormat('en-IN');
+
+  expect(parseLocalizedDecimal('1,234.56', enFormatter)).toBeNaN();
+  expect(parseLocalizedDecimal('12.345,67', esFormatter)).toBeNaN();
+  expect(parseLocalizedDecimal('1.234,56', deFormatter)).toBeNaN();
+  expect(parseLocalizedDecimal('12,34,567', enINFormatter)).toBeNaN();
+});
+
+test('parseLocalizedDecimal rejects malformed numeric tokens', () => {
+  const enFormatter = new Intl.NumberFormat('en-US');
+
+  expect(parseLocalizedDecimal('12abc', enFormatter)).toBeNaN();
+  expect(parseLocalizedDecimal('1,2abc', enFormatter)).toBeNaN();
+  expect(parseLocalizedDecimal('12-3', enFormatter)).toBeNaN();
+  expect(parseLocalizedDecimal('--12', enFormatter)).toBeNaN();
+  expect(parseLocalizedDecimal('+-12', enFormatter)).toBeNaN();
+  expect(parseLocalizedDecimal('12.3.4', enFormatter)).toBeNaN();
+  expect(parseLocalizedDecimal('abc', enFormatter)).toBeNaN();
+
+  expect(parseLocalizedDecimal('-50.2', enFormatter)).toBe(-50.2);
+  expect(parseLocalizedDecimal('+12', enFormatter)).toBe(12);
+  expect(parseLocalizedDecimal('1,234.56', enFormatter)).toBeNaN();
 });
 
 test('formatLocalizedDecimal uses locale decimal separator', () => {
   expect(formatLocalizedDecimal(50.2, new Intl.NumberFormat('en-US'))).toBe('50.2');
   expect(formatLocalizedDecimal(50.2, new Intl.NumberFormat('de-DE'))).toBe('50,2');
+});
+
+test('getLocalizedInputWidthChars stays wide enough for shorter formatted values', () => {
+  const formatter = new Intl.NumberFormat('de-DE', { useGrouping: false });
+
+  expect(getLocalizedInputWidthChars(formatter, 0, 1, '1')).toBe(formatLocalizedDecimal(0.99, formatter).length);
+  expect(getLocalizedInputWidthChars(formatter, 0, 100, '5')).toBe(formatLocalizedDecimal(100, formatter).length);
 });
