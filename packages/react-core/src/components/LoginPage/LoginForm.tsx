@@ -147,9 +147,11 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
           />
         </FormGroup>
       )}
-      <Button variant="primary" type="submit" onClick={onLoginButtonClick} isBlock isDisabled={isLoginButtonDisabled}>
-        {loginButtonLabel}
-      </Button>
+      <FormGroup isActionGroup>
+        <Button variant="primary" type="submit" onClick={onLoginButtonClick} isBlock isDisabled={isLoginButtonDisabled}>
+          {loginButtonLabel}
+        </Button>
+      </FormGroup>
     </Form>
   );
 };
