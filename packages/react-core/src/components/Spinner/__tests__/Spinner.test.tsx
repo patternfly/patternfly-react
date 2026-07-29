@@ -27,9 +27,14 @@ test('Renders with accessible name via aria-labelledby when passed', () => {
   expect(screen.getByRole('progressbar')).toHaveAccessibleName('Loading reports');
 });
 
-test('Renders legacy aria-labelledBy as aria-labelledby', () => {
+test('Renders deprecated aria-labelledBy as aria-labelledby', () => {
   render(<Spinner aria-labelledBy="external-label" />);
   expect(screen.getByRole('progressbar')).toHaveAttribute('aria-labelledby', 'external-label');
+});
+
+test('Prefers aria-labelledby over the deprecated aria-labelledBy when both are passed', () => {
+  render(<Spinner aria-labelledby="lowercase-label" aria-labelledBy="deprecated-label" />);
+  expect(screen.getByRole('progressbar')).toHaveAttribute('aria-labelledby', 'lowercase-label');
 });
 
 test('Renders with aria-label even when aria-labelledby is passed', () => {
