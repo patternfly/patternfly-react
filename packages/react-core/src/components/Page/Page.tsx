@@ -275,6 +275,8 @@ class Page extends Component<PageProps, PageState> {
       groupProps,
       breadcrumbProps,
       isContentFilled,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      mainRef,
       ...rest
     } = this.props;
     const { mobileView, mobileIsSidebarOpen, desktopIsSidebarOpen, width, height } = this.state;
