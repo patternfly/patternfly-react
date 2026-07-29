@@ -4,7 +4,7 @@ exports[`FormGroup should render correctly when label is not a string with Child
 <DocumentFragment>
   <div
     class="pf-v6-c-form__group"
-    data-ouia-component-id="OUIA-Generated-FormGroup-:rm:"
+    data-ouia-component-id="OUIA-Generated-FormGroup-:ro:"
     data-ouia-component-type="PF6/FormGroup"
     data-ouia-safe="true"
   >
@@ -78,7 +78,7 @@ exports[`FormGroup should render form group variant with node label 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-form__group"
-    data-ouia-component-id="OUIA-Generated-FormGroup-:r8:"
+    data-ouia-component-id="OUIA-Generated-FormGroup-:ra:"
     data-ouia-component-type="PF6/FormGroup"
     data-ouia-safe="true"
   >
@@ -114,7 +114,7 @@ exports[`FormGroup should render form group variant with required label 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-form__group"
-    data-ouia-component-id="OUIA-Generated-FormGroup-:r6:"
+    data-ouia-component-id="OUIA-Generated-FormGroup-:r8:"
     data-ouia-component-type="PF6/FormGroup"
     data-ouia-safe="true"
   >
@@ -154,7 +154,7 @@ exports[`FormGroup should render form group variant without label 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-form__group"
-    data-ouia-component-id="OUIA-Generated-FormGroup-:rk:"
+    data-ouia-component-id="OUIA-Generated-FormGroup-:rm:"
     data-ouia-component-type="PF6/FormGroup"
     data-ouia-safe="true"
   >
@@ -173,7 +173,7 @@ exports[`FormGroup should render form group with additional label info 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-form__group"
-    data-ouia-component-id="OUIA-Generated-FormGroup-:ra:"
+    data-ouia-component-id="OUIA-Generated-FormGroup-:rc:"
     data-ouia-component-type="PF6/FormGroup"
     data-ouia-safe="true"
   >
@@ -218,14 +218,14 @@ exports[`FormGroup should render horizontal form group variant 1`] = `
 <DocumentFragment>
   <form
     class="pf-v6-c-form pf-m-horizontal"
-    data-ouia-component-id="OUIA-Generated-Form-:re:"
+    data-ouia-component-id="OUIA-Generated-Form-:rg:"
     data-ouia-component-type="PF6/Form"
     data-ouia-safe="true"
     novalidate=""
   >
     <div
       class="pf-v6-c-form__group"
-      data-ouia-component-id="OUIA-Generated-FormGroup-:rf:"
+      data-ouia-component-id="OUIA-Generated-FormGroup-:rh:"
       data-ouia-component-type="PF6/FormGroup"
       data-ouia-safe="true"
     >
@@ -260,14 +260,14 @@ exports[`FormGroup should render stacked horizontal form group variant 1`] = `
 <DocumentFragment>
   <form
     class="pf-v6-c-form pf-m-horizontal"
-    data-ouia-component-id="OUIA-Generated-Form-:rh:"
+    data-ouia-component-id="OUIA-Generated-Form-:rj:"
     data-ouia-component-type="PF6/Form"
     data-ouia-safe="true"
     novalidate=""
   >
     <div
       class="pf-v6-c-form__group"
-      data-ouia-component-id="OUIA-Generated-FormGroup-:ri:"
+      data-ouia-component-id="OUIA-Generated-FormGroup-:rk:"
       data-ouia-component-type="PF6/FormGroup"
       data-ouia-safe="true"
     >

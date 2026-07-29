@@ -133,31 +133,19 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
         </div>
       </div>
     </div>
-    <div
-      class="pf-v6-c-form__group pf-m-action"
+    <button
+      class="pf-v6-c-button pf-m-primary pf-m-block"
+      data-ouia-component-id="OUIA-Generated-Button-primary-:r21:"
+      data-ouia-component-type="PF6/Button"
+      data-ouia-safe="true"
+      type="submit"
     >
-      <div
-        class="pf-v6-c-form__group-control"
+      <span
+        class="pf-v6-c-button__text"
       >
-        <div
-          class="pf-v6-c-form__actions"
-        >
-          <button
-            class="pf-v6-c-button pf-m-primary pf-m-block"
-            data-ouia-component-id="OUIA-Generated-Button-primary-:r21:"
-            data-ouia-component-type="PF6/Button"
-            data-ouia-safe="true"
-            type="submit"
-          >
-            <span
-              class="pf-v6-c-button__text"
-            >
-              Log In
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
+        Log In
+      </span>
+    </button>
   </form>
 </DocumentFragment>
 `;
@@ -303,31 +291,19 @@ exports[`LoginForm LoginForm with show password 1`] = `
         </div>
       </div>
     </div>
-    <div
-      class="pf-v6-c-form__group pf-m-action"
+    <button
+      class="pf-v6-c-button pf-m-primary pf-m-block"
+      data-ouia-component-id="OUIA-Generated-Button-primary-:r2c:"
+      data-ouia-component-type="PF6/Button"
+      data-ouia-safe="true"
+      type="submit"
     >
-      <div
-        class="pf-v6-c-form__group-control"
+      <span
+        class="pf-v6-c-button__text"
       >
-        <div
-          class="pf-v6-c-form__actions"
-        >
-          <button
-            class="pf-v6-c-button pf-m-primary pf-m-block"
-            data-ouia-component-id="OUIA-Generated-Button-primary-:r2c:"
-            data-ouia-component-type="PF6/Button"
-            data-ouia-safe="true"
-            type="submit"
-          >
-            <span
-              class="pf-v6-c-button__text"
-            >
-              Log In
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
+        Log In
+      </span>
+    </button>
   </form>
 </DocumentFragment>
 `;
@@ -435,31 +411,19 @@ exports[`LoginForm should render Login form 1`] = `
         </span>
       </div>
     </div>
-    <div
-      class="pf-v6-c-form__group pf-m-action"
+    <button
+      class="pf-v6-c-button pf-m-primary pf-m-block"
+      data-ouia-component-id="OUIA-Generated-Button-primary-:r9:"
+      data-ouia-component-type="PF6/Button"
+      data-ouia-safe="true"
+      type="submit"
     >
-      <div
-        class="pf-v6-c-form__group-control"
+      <span
+        class="pf-v6-c-button__text"
       >
-        <div
-          class="pf-v6-c-form__actions"
-        >
-          <button
-            class="pf-v6-c-button pf-m-primary pf-m-block"
-            data-ouia-component-id="OUIA-Generated-Button-primary-:r9:"
-            data-ouia-component-type="PF6/Button"
-            data-ouia-safe="true"
-            type="submit"
-          >
-            <span
-              class="pf-v6-c-button__text"
-            >
-              Log In
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
+        Log In
+      </span>
+    </button>
   </form>
 </DocumentFragment>
 `;
