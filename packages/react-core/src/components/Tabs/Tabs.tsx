@@ -195,10 +195,7 @@ class Tabs extends Component<TabsProps, TabsState> {
       renderScrollButtons: false,
       disableBackScrollButton: true,
       disableForwardScrollButton: true,
-      shownKeys:
-        this.props.defaultActiveKey !== undefined
-          ? [hashActiveKey ?? this.props.defaultActiveKey]
-          : [hashActiveKey ?? this.props.activeKey], // only for mountOnEnter case
+      shownKeys: [hashActiveKey ?? this.props.defaultActiveKey ?? this.props.activeKey],
       uncontrolledActiveKey: hashActiveKey ?? this.props.defaultActiveKey,
       initialActiveKey: this.props.defaultActiveKey === undefined ? hashActiveKey : undefined,
       uncontrolledIsExpandedLocal: this.props.defaultIsExpanded,
