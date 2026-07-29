@@ -36,7 +36,7 @@ describe('FormGroup', () => {
 
   test('should render action form group variant', () => {
     render(
-      <FormGroup isAction data-testid="form-group-test-id">
+      <FormGroup isActionGroup data-testid="form-group-test-id">
         <button type="submit">Submit</button>
       </FormGroup>
     );

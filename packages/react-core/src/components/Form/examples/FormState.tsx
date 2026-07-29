@@ -91,7 +91,7 @@ export const FormState = () => {
             </SelectList>
           </Select>
 
-          <FormGroup isAction>
+          <FormGroup isActionGroup>
             <ActionList>
               <ActionListGroup>
                 <ActionListItem>

@@ -125,7 +125,7 @@ export const FormBasic: React.FunctionComponent = () => {
       <FormGroup fieldId="checkbox01">
         <Checkbox label="I'd like updates via email." id="checkbox01" name="checkbox01" aria-label="Update via email" />
       </FormGroup>
-      <FormGroup isAction>
+      <FormGroup isActionGroup>
         <ActionList>
           <ActionListGroup>
             <ActionListItem>

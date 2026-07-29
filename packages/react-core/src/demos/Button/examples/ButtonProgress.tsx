@@ -35,7 +35,7 @@ export const ButtonProgress: React.FunctionComponent = () => {
           aria-label="password input"
         />
       </FormGroup>
-      <FormGroup isAction>
+      <FormGroup isActionGroup>
         <ActionList>
           <ActionListGroup>
             <ActionListItem>

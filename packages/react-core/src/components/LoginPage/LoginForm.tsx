@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Form, FormGroup, FormHelperText } from '../Form';
-import { ActionList, ActionListGroup, ActionListItem } from '../ActionList';
 import { TextInput } from '../TextInput';
 import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
@@ -148,23 +147,9 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
           />
         </FormGroup>
       )}
-      <FormGroup isAction>
-        <ActionList>
-          <ActionListGroup>
-            <ActionListItem>
-              <Button
-                variant="primary"
-                type="submit"
-                onClick={onLoginButtonClick}
-                isBlock
-                isDisabled={isLoginButtonDisabled}
-              >
-                {loginButtonLabel}
-              </Button>
-            </ActionListItem>
-          </ActionListGroup>
-        </ActionList>
-      </FormGroup>
+      <Button variant="primary" type="submit" onClick={onLoginButtonClick} isBlock isDisabled={isLoginButtonDisabled}>
+        {loginButtonLabel}
+      </Button>
     </Form>
   );
 };

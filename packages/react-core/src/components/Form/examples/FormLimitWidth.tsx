@@ -125,7 +125,7 @@ export const FormLimitWidth: React.FunctionComponent = () => {
       <FormGroup fieldId="checkbox02">
         <Checkbox label="I'd like updates via email." id="checkbox02" name="checkbox02" aria-label="Update via email" />
       </FormGroup>
-      <FormGroup isAction>
+      <FormGroup isActionGroup>
         <ActionList>
           <ActionListGroup>
             <ActionListItem>

@@ -203,7 +203,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
           <Form>
             {buildFormGroups()}
             {formAdditionalItems ? formAdditionalItems : null}
-            <FormGroup isAction>
+            <FormGroup isActionGroup>
               <ActionList>
                 <ActionListGroup>
                   <ActionListItem>

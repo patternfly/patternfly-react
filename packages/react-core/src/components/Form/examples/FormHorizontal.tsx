@@ -114,7 +114,7 @@ export const FormHorizontal: React.FunctionComponent = () => {
         <Radio name="horizontal-inline-radio" label="Central" id="horizontal-inline-radio-02" />
         <Radio name="horizontal-inline-radio" label="Pacific" id="horizontal-inline-radio-03" />
       </FormGroup>
-      <FormGroup isAction>
+      <FormGroup isActionGroup>
         <ActionList>
           <ActionListGroup>
             <ActionListItem>
