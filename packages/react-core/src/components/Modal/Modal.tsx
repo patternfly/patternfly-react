@@ -111,7 +111,8 @@ class Modal extends Component<ModalProps, ModalState> {
     const target: HTMLElement = this.getElement(appendTo);
     const bodyChildren = target.children;
     for (const child of Array.from(bodyChildren)) {
-      if (child.id !== this.backdropId) {
+      const isPopperElement = child.hasAttribute('data-popper-placement');
+      if (child.id !== this.backdropId && !isPopperElement) {
         hide ? child.setAttribute('aria-hidden', '' + hide) : child.removeAttribute('aria-hidden');
       }
     }
