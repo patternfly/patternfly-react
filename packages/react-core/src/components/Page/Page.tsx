@@ -97,6 +97,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   horizontalSubnav?: React.ReactNode;
   /** Accessible label, can be used to name main section */
   mainAriaLabel?: string;
+  /** Reference for the main section of the page */
+  mainRef?: React.RefObject<HTMLDivElement>;
   /** Flag indicating if the horizontal sub navigation should be in a group */
   isHorizontalSubnavGrouped?: boolean;
   /** Flag indicating if the breadcrumb should be in a group */
@@ -132,9 +134,10 @@ class Page extends Component<PageProps, PageState> {
     onNotificationDrawerExpand: () => null,
     mainComponent: 'main',
     getBreakpoint,
-    getVerticalBreakpoint
+    getVerticalBreakpoint,
+    mainRef: undefined
   };
-  mainRef = createRef<HTMLDivElement>();
+  mainRef = this.props?.mainRef ? this.props.mainRef : createRef<HTMLDivElement>();
   pageRef = createRef<HTMLDivElement>();
   observer: any = () => {};
 
@@ -272,6 +275,8 @@ class Page extends Component<PageProps, PageState> {
       groupProps,
       breadcrumbProps,
       isContentFilled,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      mainRef,
       ...rest
     } = this.props;
     const { mobileView, mobileIsSidebarOpen, desktopIsSidebarOpen, width, height } = this.state;
