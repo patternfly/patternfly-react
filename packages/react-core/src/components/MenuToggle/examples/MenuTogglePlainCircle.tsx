@@ -4,8 +4,15 @@ import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons
 
 export const MenuTogglePlainCircle: React.FunctionComponent = () => (
   <Fragment>
-    <MenuToggle isCircle icon={<RhUiEllipsisVerticalFillIcon />} variant="plain" aria-label="plain circle kebab" />{' '}
     <MenuToggle
+      aria-haspopup={false}
+      isCircle
+      icon={<RhUiEllipsisVerticalFillIcon />}
+      variant="plain"
+      aria-label="plain circle kebab"
+    />{' '}
+    <MenuToggle
+      aria-haspopup={false}
       isCircle
       icon={<RhUiEllipsisVerticalFillIcon />}
       variant="plain"
@@ -13,6 +20,7 @@ export const MenuTogglePlainCircle: React.FunctionComponent = () => (
       aria-label="plain circle expanded kebab"
     />{' '}
     <MenuToggle
+      aria-haspopup={false}
       isCircle
       icon={<RhUiEllipsisVerticalFillIcon />}
       variant="plain"

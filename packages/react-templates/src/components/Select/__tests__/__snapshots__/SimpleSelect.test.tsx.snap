@@ -4,6 +4,7 @@ exports[`Matches snapshot 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="true"
+    aria-haspopup="menu"
     class="pf-v6-c-menu-toggle pf-m-expanded"
     data-ouia-component-id="OUIA-Generated-MenuToggle-:r22:"
     data-ouia-component-type="PF6/MenuToggle"
@@ -45,6 +46,7 @@ exports[`checkbox select with no props snapshot 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
+    aria-haspopup="menu"
     class="pf-v6-c-menu-toggle"
     data-ouia-component-id="OUIA-Generated-MenuToggle-:r1v:"
     data-ouia-component-type="PF6/MenuToggle"
