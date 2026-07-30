@@ -41,20 +41,20 @@ The `Table` component takes an explicit and declarative approach, and its implem
 
 The documentation for the deprecated table implementation can be found under the [React deprecated](/components/table/react-deprecated) tab. It is configuration based and takes a less declarative and more implicit approach to laying out the table structure, such as the rows and cells within it.
 
-import { Fragment, isValidElement, useCallback, useEffect, useRef, useState } from 'react';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import { Fragment, isValidElement, useCallback, useEffect, useRef, useState, useLayoutEffect } from 'react';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
+import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
+import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
-import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
-import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
-import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
-import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import PencilAltIcon from '@patternfly/react-icons/dist/esm/icons/pencil-alt-icon';
-import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
+import RhUiFolderOpenFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-open-fill-icon';
+import RhMicronsSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-large-to-small-icon';
+import RhUiBlueprintIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-blueprint-icon';
+import RhUiEditFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-edit-fill-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhMicronsCheckmarkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-checkmark-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
@@ -155,6 +155,14 @@ type OnSelect = (
 checking checkboxes will check intermediate rows' checkboxes.
 
 ```ts file="TableSelectable.tsx"
+
+```
+
+### Selectable with indeterminate state
+
+To indicate partial selection, use `isIndeterminate` on the header's `select` prop. When some (but not all) selectable rows are selected, the header checkbox will convey this information to assistive technologies and also display a dash instead of a checkmark.
+
+```ts file="TableSelectableIndeterminate.tsx"
 
 ```
 
@@ -327,7 +335,6 @@ To enable a tree table:
    - `checkAriaLabel` - (optional) accessible label for the checkbox
    - `showDetailsAriaLabel` - (optional) accessible label for the show row details button in the responsive view
 4. The first `Td` in each row will pass the following to the `treeRow` prop:
-
    - `onCollapse` - Callback when user expands/collapses a row to reveal/hide the row's children.
    - `onCheckChange` - (optional) Callback when user changes the checkbox on a row.
    - `onToggleRowDetails` - (optional) Callback when user shows/hides the row details in responsive view.
@@ -419,6 +426,16 @@ To prevent the default text wrapping behavior and allow horizontal scrolling, al
 
 ```
 
+### Dynamic sticky header
+
+A sticky header may alternatively be implemented with two properties: `isStickyHeaderBase` and `isStickyHeaderStuck` - which allows separate control of the sticky position and sticky styling. `isStickyHeaderBase` should always be applied to make the header position sticky, and `isStickyHeaderStuck` may be applied dynamically to enable the sticky styling, such as when the sticky header is not at the top of the scroll parent as shown in the example.
+
+`isStickyHeader` acts as if both properties are present and true when applied, and is useful when dynamic sticky styling is not necessary.
+
+```ts file="TableStickyHeaderDynamic.tsx"
+
+```
+
 ### Sticky columns and header
 
 To maintain proper sticky behavior across sticky columns and header, `Table` must be wrapped with `OuterScrollContainer` and `InnerScrollContainer`.
@@ -435,6 +452,7 @@ To make a nested column header:
 2. Pass `nestedHeaderColumnSpans` to `Table`. `nestedHeaderColumnSpans` is an array of numbers representing the column spans of the top level columns to `Table`, where each number is equal to the number of sub columns for a column, or `1` if a column contains no sub columns.
 3. Pass `hasNestedHeader` to `Thead`.
 4. Pass two `Tr` as children of `Thead`.
+5. If the parent `Table` has a sticky header, pass an additional `Tr isBorderRow` in `Thead` to create the bottom border in the `Thead`.
 
 The first `Tr` represents the top level of columns, and each must pass either `rowSpan` if the column does not contain sub columns or `colSpan` if the column contains sub columns. The value of `rowSpan` is equal to the number of rows the nested header will span, typically `2`, and the value of `colSpan` is equal to the number of sub columns in a column. Each `Th` except the last should also pass `hasRightBorder`.
 

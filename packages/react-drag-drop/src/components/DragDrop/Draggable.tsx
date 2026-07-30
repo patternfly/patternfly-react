@@ -13,6 +13,8 @@ export interface DraggableProps extends React.HTMLProps<HTMLDivElement> {
   id?: string;
   /** Flag indicating the draggable element should include a drag button. */
   useDragButton?: boolean;
+  /** Accessible name of the drag button. */
+  dragButtonAriaLabel?: string;
 }
 
 export const Draggable: React.FunctionComponent<DraggableProps> = ({
@@ -20,6 +22,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   id,
   className,
   useDragButton = false,
+  dragButtonAriaLabel,
   ...props
 }: DraggableProps) => {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
@@ -28,7 +31,8 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
 
   const style = {
     transform: CSS.Transform.toString(transform),
-    transition
+    transition,
+    ...(!useDragButton && { touchAction: 'none' as const })
   };
 
   return useDragButton ? (
@@ -38,7 +42,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
       style={style}
       {...props}
     >
-      <DragButton {...attributes} {...listeners} />
+      <DragButton {...attributes} {...listeners} {...(dragButtonAriaLabel && { 'aria-label': dragButtonAriaLabel })} />
       {children}
     </div>
   ) : (

@@ -1,16 +1,22 @@
 import { Drawer, DrawerContent, DrawerContentBody, DrawerProps } from '../Drawer';
 import styles from '@patternfly/react-styles/css/components/Compass/compass';
 import { css } from '@patternfly/react-styles';
-
-import compassBackgroundImageLight from '@patternfly/react-tokens/dist/esm/c_compass_BackgroundImage_light';
-import compassBackgroundImageDark from '@patternfly/react-tokens/dist/esm/c_compass_BackgroundImage_dark';
+import { IS_INERT } from '../../helpers/inert';
 
 export interface CompassProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Compass. */
   className?: string;
+  /** The horizontal masthead content (e.g. <Masthead />). This masthead will only render when dock content is passed and only at mobile viewports. */
+  masthead?: React.ReactNode;
   /** Content of the docked navigation area of the layout */
   dock?: React.ReactNode;
-  /** Content placed at the top of the layout */
+  /** @beta Flag indicating the docked nav is expanded on mobile. Only applies when dock content is passed. */
+  isDockExpanded?: boolean;
+  /** @beta Flag indicating the docked nav should display text on desktop. Only applies when dock content is passed, and
+   * will handle toggling the visibility of the text in individual isDocked components.
+   */
+  isDockTextExpanded?: boolean;
+  /** Content placed at the top of the compass layout */
   header?: React.ReactNode;
   /** Flag indicating if the header is expanded */
   isHeaderExpanded?: boolean;
@@ -32,15 +38,14 @@ export interface CompassProps extends React.HTMLProps<HTMLDivElement> {
   drawerContent?: React.ReactNode;
   /** Additional props passed to the drawer */
   drawerProps?: DrawerProps;
-  /** Light theme background image path of the Compass  */
-  backgroundSrcLight?: string;
-  /** Dark theme background image path of the Compass  */
-  backgroundSrcDark?: string;
 }
 
 export const Compass: React.FunctionComponent<CompassProps> = ({
   className,
+  masthead,
   dock,
+  isDockExpanded,
+  isDockTextExpanded,
   header,
   isHeaderExpanded = true,
   sidebarStart,
@@ -52,31 +57,28 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
   isFooterExpanded = true,
   drawerContent,
   drawerProps,
-  backgroundSrcLight,
-  backgroundSrcDark,
   ...props
 }: CompassProps) => {
   const hasDrawer = drawerContent !== undefined;
 
-  const backgroundImageStyles: { [key: string]: string } = {};
-  if (backgroundSrcLight) {
-    backgroundImageStyles[compassBackgroundImageLight.name] = `url(${backgroundSrcLight})`;
-  }
-  if (backgroundSrcDark) {
-    backgroundImageStyles[compassBackgroundImageDark.name] = `url(${backgroundSrcDark})`;
-  }
-
   const compassContent = (
-    <div
-      className={css(styles.compass, dock !== undefined && styles.modifiers.dock, className)}
-      {...props}
-      style={{ ...props.style, ...backgroundImageStyles }}
-    >
-      {dock && <div className={css(`${styles.compass}__dock`)}>{dock}</div>}
+    <div className={css(styles.compassContainer)}>
+      {dock && masthead}
+      {dock && (
+        <div
+          className={css(
+            `${styles.compass}__dock`,
+            isDockExpanded && styles.modifiers.expanded,
+            isDockTextExpanded && styles.modifiers.textExpanded
+          )}
+        >
+          {dock}
+        </div>
+      )}
       {header && (
         <div
           className={css(styles.compassHeader, isHeaderExpanded && 'pf-m-expanded')}
-          {...(!isHeaderExpanded && { inert: 'true' })}
+          {...(!isHeaderExpanded && { inert: IS_INERT })}
         >
           {header}
         </div>
@@ -84,7 +86,7 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
       {sidebarStart && (
         <div
           className={css(styles.compassSidebar, styles.modifiers.start, isSidebarStartExpanded && 'pf-m-expanded')}
-          {...(!isSidebarStartExpanded && { inert: 'true' })}
+          {...(!isSidebarStartExpanded && { inert: IS_INERT })}
         >
           {sidebarStart}
         </div>
@@ -93,7 +95,7 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
       {sidebarEnd && (
         <div
           className={css(styles.compassSidebar, styles.modifiers.end, isSidebarEndExpanded && 'pf-m-expanded')}
-          {...(!isSidebarEndExpanded && { inert: 'true' })}
+          {...(!isSidebarEndExpanded && { inert: IS_INERT })}
         >
           {sidebarEnd}
         </div>
@@ -101,7 +103,7 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
       {footer && (
         <div
           className={css(styles.compassFooter, isFooterExpanded && 'pf-m-expanded')}
-          {...(!isFooterExpanded && { inert: 'true' })}
+          {...(!isFooterExpanded && { inert: IS_INERT })}
         >
           {footer}
         </div>
@@ -109,17 +111,19 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
     </div>
   );
 
-  if (hasDrawer) {
-    return (
-      <Drawer isPill {...drawerProps}>
-        <DrawerContent panelContent={drawerContent}>
-          <DrawerContentBody>{compassContent}</DrawerContentBody>
-        </DrawerContent>
-      </Drawer>
-    );
-  }
-
-  return compassContent;
+  return (
+    <div className={css(styles.compass, dock && styles.modifiers.docked, className)} {...props}>
+      {hasDrawer ? (
+        <Drawer isPill {...drawerProps}>
+          <DrawerContent panelContent={drawerContent}>
+            <DrawerContentBody>{compassContent}</DrawerContentBody>
+          </DrawerContent>
+        </Drawer>
+      ) : (
+        compassContent
+      )}
+    </div>
+  );
 };
 
 Compass.displayName = 'Compass';

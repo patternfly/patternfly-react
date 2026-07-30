@@ -16,7 +16,7 @@ import {
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export const DataListWidthModifiers: React.FunctionComponent = () => {
   const [show, setShow] = useState(true);
@@ -103,7 +103,7 @@ export const DataListWidthModifiers: React.FunctionComponent = () => {
                       onClick={onToggle1}
                       variant="plain"
                       aria-label="Data list width modifiers example kebab toggle 1"
-                      icon={<EllipsisVIcon />}
+                      icon={<RhUiEllipsisVerticalFillIcon />}
                     />
                   )}
                   isOpen={isOpen1}
@@ -176,7 +176,7 @@ export const DataListWidthModifiers: React.FunctionComponent = () => {
                       onClick={onToggle2}
                       variant="plain"
                       aria-label="Data list width modifiers example kebab toggle 2"
-                      icon={<EllipsisVIcon />}
+                      icon={<RhUiEllipsisVerticalFillIcon />}
                     />
                   )}
                   isOpen={isOpen2}

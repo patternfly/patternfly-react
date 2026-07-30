@@ -6,12 +6,34 @@ import { Tooltip, TooltipPosition } from '../Tooltip';
 import { css } from '@patternfly/react-styles';
 import { useIsomorphicLayoutEffect } from '../../helpers';
 import cssTextMaxWidth from '@patternfly/react-tokens/dist/esm/c_label__text_MaxWidth';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
-import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
+import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
+import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
+import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
+
+/** Semantic status for labels (default icon and status styling). */
+export enum LabelStatus {
+  success = 'success',
+  warning = 'warning',
+  danger = 'danger',
+  info = 'info',
+  custom = 'custom'
+}
+
+/** Label palette color when not using the `status` prop. */
+export enum LabelColor {
+  blue = 'blue',
+  teal = 'teal',
+  green = 'green',
+  orange = 'orange',
+  purple = 'purple',
+  red = 'red',
+  orangered = 'orangered',
+  grey = 'grey',
+  yellow = 'yellow'
+}
 
 export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   /** Content rendered inside the label. */
@@ -19,7 +41,7 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   /** Additional classes added to the label. */
   className?: string;
   /** Color of the label. */
-  color?: 'blue' | 'teal' | 'green' | 'orange' | 'purple' | 'red' | 'orangered' | 'grey' | 'yellow';
+  color?: 'blue' | 'teal' | 'green' | 'orange' | 'purple' | 'red' | 'orangered' | 'grey' | 'yellow' | LabelColor;
   /** Variant of the label. */
   variant?: 'outline' | 'filled' | 'overflow' | 'add';
   /** Status of the label with a respective icon and color. Overrides the color set by the color property. */
@@ -82,30 +104,30 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   }) => React.ReactNode;
 }
 
-const colorStyles = {
-  blue: styles.modifiers.blue,
-  teal: styles.modifiers.teal,
-  green: styles.modifiers.green,
-  orange: styles.modifiers.orange,
-  purple: styles.modifiers.purple,
-  red: styles.modifiers.red,
-  orangered: styles.modifiers.orangered,
-  yellow: styles.modifiers.yellow,
-  grey: ''
+const colorStyles: Record<LabelColor, string> = {
+  [LabelColor.blue]: styles.modifiers.blue,
+  [LabelColor.teal]: styles.modifiers.teal,
+  [LabelColor.green]: styles.modifiers.green,
+  [LabelColor.orange]: styles.modifiers.orange,
+  [LabelColor.purple]: styles.modifiers.purple,
+  [LabelColor.red]: styles.modifiers.red,
+  [LabelColor.orangered]: styles.modifiers.orangered,
+  [LabelColor.yellow]: styles.modifiers.yellow,
+  [LabelColor.grey]: ''
 };
 
-const statusIcons = {
-  success: <CheckCircleIcon />,
-  warning: <ExclamationTriangleIcon />,
-  danger: <ExclamationCircleIcon />,
-  info: <InfoCircleIcon />,
-  custom: <BellIcon />
+const statusIcons: Record<LabelStatus, React.ReactNode> = {
+  [LabelStatus.success]: <RhUiCheckCircleFillIcon />,
+  [LabelStatus.warning]: <RhUiWarningFillIcon />,
+  [LabelStatus.danger]: <RhUiErrorFillIcon />,
+  [LabelStatus.info]: <RhUiInformationFillIcon />,
+  [LabelStatus.custom]: <RhUiNotificationFillIcon />
 };
 
 export const Label: React.FunctionComponent<LabelProps> = ({
   children,
   className = '',
-  color = 'grey',
+  color = LabelColor.grey,
   variant = 'filled',
   status,
   isCompact = false,
@@ -240,7 +262,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       aria-label={closeBtnAriaLabel || `Close ${children}`}
       {...(isClickableDisabled && { isDisabled: true })}
       {...closeBtnProps}
-      icon={<TimesIcon />}
+      icon={<RhMicronsCloseIcon />}
     />
   );
 

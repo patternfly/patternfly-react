@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import {
-  ActionGroup,
+  ActionList,
+  ActionListGroup,
+  ActionListItem,
   Button,
   ButtonType,
   ButtonVariant,
@@ -18,7 +20,7 @@ import {
   TextArea,
   TextInput
 } from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
 
 export const FormState = () => {
   const [isSelectOpen, setIsSelectOpen] = useState(false);
@@ -42,7 +44,7 @@ export const FormState = () => {
               <HelperText>
                 <HelperTextItem
                   variant={errors['input-id'] ? 'error' : 'default'}
-                  {...(errors['input-id'] && { icon: <ExclamationCircleIcon /> })}
+                  {...(errors['input-id'] && { icon: <RhUiErrorFillIcon /> })}
                 >
                   {errors['input-id']}
                 </HelperTextItem>
@@ -66,6 +68,7 @@ export const FormState = () => {
                 ref={toggleRef}
                 onClick={(isOpen) => setIsSelectOpen(isOpen)}
                 isExpanded={isSelectOpen}
+                isInForm
                 style={
                   {
                     width: '200px'
@@ -88,25 +91,36 @@ export const FormState = () => {
             </SelectList>
           </Select>
 
-          <ActionGroup>
-            <Button
-              type={ButtonType.submit}
-              onClick={(e) => {
-                e.preventDefault();
+          <FormGroup isActionGroup>
+            <ActionList>
+              <ActionListGroup>
+                <ActionListItem>
+                  <Button
+                    type={ButtonType.submit}
+                    onClick={(e) => {
+                      e.preventDefault();
 
-                if (!values['input-id']) {
-                  setError('input-id', 'Input value is required.');
-                } else {
-                  alert(`Form submitted with: \n ${JSON.stringify(values)}`);
-                }
-              }}
-            >
-              Submit
-            </Button>
-            <Button variant={ButtonVariant.link} onClick={() => setFormStateExpanded((prevExpanded) => !prevExpanded)}>
-              {`${formStateExpanded ? 'Hide' : 'Show'} form state`}
-            </Button>
-          </ActionGroup>
+                      if (!values['input-id']) {
+                        setError('input-id', 'Input value is required.');
+                      } else {
+                        alert(`Form submitted with: \n ${JSON.stringify(values)}`);
+                      }
+                    }}
+                  >
+                    Submit
+                  </Button>
+                </ActionListItem>
+                <ActionListItem>
+                  <Button
+                    variant={ButtonVariant.link}
+                    onClick={() => setFormStateExpanded((prevExpanded) => !prevExpanded)}
+                  >
+                    {`${formStateExpanded ? 'Hide' : 'Show'} form state`}
+                  </Button>
+                </ActionListItem>
+              </ActionListGroup>
+            </ActionList>
+          </FormGroup>
           {formStateExpanded && (
             <>
               <Divider />

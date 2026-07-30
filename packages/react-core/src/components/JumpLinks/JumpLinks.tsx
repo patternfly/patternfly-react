@@ -2,12 +2,13 @@ import { Children, cloneElement, Fragment, useCallback, useEffect, useRef, useSt
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/JumpLinks/jump-links';
 import sidebarStyles from '@patternfly/react-styles/css/components/Sidebar/sidebar';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import cssToggleDisplayVar from '@patternfly/react-tokens/dist/esm/c_jump_links__toggle_Display';
 import { Button } from '../Button';
 import { JumpLinksItem, JumpLinksItemProps } from './JumpLinksItem';
 import { JumpLinksList } from './JumpLinksList';
-import { canUseDOM, formatBreakpointMods, getUniqueId } from '../../helpers/util';
+import { canUseDOM, formatBreakpointMods } from '../../helpers/util';
+import { useSSRSafeId } from '../../helpers';
 
 export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'label'> {
   /** Whether to center children. */
@@ -99,6 +100,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   labelId,
   ...props
 }: JumpLinksProps) => {
+  const generatedId = useSSRSafeId();
   const hasScrollSpy = Boolean(scrollableRef || scrollableSelector);
   const [scrollItems, setScrollItems] = useState(hasScrollSpy ? getScrollItems(children, []) : []);
   const [activeIndex, setActiveIndex] = useState(activeIndexProp);
@@ -244,7 +246,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
           return child;
         });
 
-  const id = labelId ?? getUniqueId();
+  const id = labelId ?? generatedId;
   const hasAriaLabelledBy = expandable || (label && alwaysShowLabel);
   const computedAriaLabel = hasAriaLabelledBy ? null : ariaLabel;
   const computedAriaLabelledBy = hasAriaLabelledBy ? id : null;
@@ -275,7 +277,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
                 aria-expanded={isExpanded}
                 icon={
                   <span className={styles.jumpLinksToggleIcon}>
-                    <AngleRightIcon />
+                    <RhMicronsCaretDownIcon />
                   </span>
                 }
                 id={id}

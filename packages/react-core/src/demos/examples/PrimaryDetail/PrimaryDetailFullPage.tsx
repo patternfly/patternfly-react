@@ -39,14 +39,14 @@ import {
   MenuToggle
 } from '@patternfly/react-core';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
+import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
+import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
+import RhUiCloseCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-close-circle-fill-icon';
+import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
 
 interface SelectOptionType extends Omit<SelectOptionProps, 'children'> {
   label: string;
@@ -114,7 +114,11 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
             />
           </InputGroupItem>
           <InputGroupItem>
-            <Button variant={ButtonVariant.control} aria-label="search button for search input" icon={<SearchIcon />} />
+            <Button
+              variant={ButtonVariant.control}
+              aria-label="search button for search input"
+              icon={<RhMicronsSearchIcon />}
+            />
           </InputGroupItem>
         </InputGroup>
       </ToolbarItem>
@@ -172,7 +176,7 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
   );
 
   const ToolbarItems = (
-    <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+    <ToolbarToggleGroup toggleIcon={<RhUiFilterFillIcon />} breakpoint="xl">
       {toggleGroupItems}
     </ToolbarToggleGroup>
   );
@@ -231,10 +235,10 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
                     </FlexItem>
                     <Flex spaceItems={{ default: 'spaceItemsMd' }}>
                       <FlexItem>
-                        <CodeBranchIcon /> 10
+                        <RhUiBranchFillIcon /> 10
                       </FlexItem>
                       <FlexItem>
-                        <CodeIcon /> 4
+                        <RhUiCodeIcon /> 4
                       </FlexItem>
                       <FlexItem>
                         <CubeIcon /> 5
@@ -274,22 +278,22 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
                     </FlexItem>
                     <Flex spaceItems={{ default: 'spaceItemsMd' }}>
                       <FlexItem>
-                        <CodeBranchIcon /> 10
+                        <RhUiBranchFillIcon /> 10
                       </FlexItem>
                       <FlexItem>
-                        <CodeIcon /> 4
+                        <RhUiCodeIcon /> 4
                       </FlexItem>
                       <FlexItem>
                         <CubeIcon /> 5
                       </FlexItem>
                       <FlexItem>
-                        <CheckCircleIcon /> 7
+                        <RhUiCheckCircleFillIcon /> 7
                       </FlexItem>
                       <FlexItem>
-                        <ExclamationTriangleIcon /> 5
+                        <RhUiWarningFillIcon /> 5
                       </FlexItem>
                       <FlexItem>
-                        <TimesCircleIcon /> 5
+                        <RhUiCloseCircleFillIcon /> 5
                       </FlexItem>
                       <FlexItem>Updated 2 days ago</FlexItem>
                     </Flex>
@@ -328,10 +332,10 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
                     </FlexItem>
                     <Flex spaceItems={{ default: 'spaceItemsMd' }}>
                       <FlexItem>
-                        <CodeBranchIcon /> 10
+                        <RhUiBranchFillIcon /> 10
                       </FlexItem>
                       <FlexItem>
-                        <CodeIcon /> 4
+                        <RhUiCodeIcon /> 4
                       </FlexItem>
                       <FlexItem>
                         <CubeIcon /> 5
@@ -371,22 +375,22 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
                     </FlexItem>
                     <Flex spaceItems={{ default: 'spaceItemsMd' }}>
                       <FlexItem>
-                        <CodeBranchIcon /> 10
+                        <RhUiBranchFillIcon /> 10
                       </FlexItem>
                       <FlexItem>
-                        <CodeIcon /> 4
+                        <RhUiCodeIcon /> 4
                       </FlexItem>
                       <FlexItem>
                         <CubeIcon /> 5
                       </FlexItem>
                       <FlexItem>
-                        <CheckCircleIcon /> 7
+                        <RhUiCheckCircleFillIcon /> 7
                       </FlexItem>
                       <FlexItem>
-                        <ExclamationTriangleIcon /> 5
+                        <RhUiWarningFillIcon /> 5
                       </FlexItem>
                       <FlexItem>
-                        <TimesCircleIcon /> 5
+                        <RhUiCloseCircleFillIcon /> 5
                       </FlexItem>
                       <FlexItem>Updated 2 days ago</FlexItem>
                     </Flex>

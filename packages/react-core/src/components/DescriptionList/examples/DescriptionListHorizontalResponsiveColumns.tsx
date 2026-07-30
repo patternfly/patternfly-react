@@ -5,7 +5,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
+import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 
 export const DescriptionListHorizontalResponsiveColumns: React.FunctionComponent = () => (
   <DescriptionList isHorizontal columnModifier={{ lg: '2Col', xl: '3Col' }} aria-label="Horizontal responsive columns">
@@ -26,7 +26,7 @@ export const DescriptionListHorizontalResponsiveColumns: React.FunctionComponent
     <DescriptionListGroup>
       <DescriptionListTerm>Pod selector</DescriptionListTerm>
       <DescriptionListDescription>
-        <Button variant="link" isInline icon={<PlusCircleIcon />}>
+        <Button variant="link" isInline icon={<RhUiAddCircleFillIcon />}>
           app=MyApp
         </Button>
       </DescriptionListDescription>

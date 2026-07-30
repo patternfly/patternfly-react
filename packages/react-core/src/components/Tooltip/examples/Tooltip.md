@@ -6,8 +6,8 @@ propComponents: ['Tooltip']
 ---
 
 import { useEffect, useRef, useState } from 'react';
-import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/outlined-question-circle-icon';
-import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
 import './TooltipExamples.css';
 
 ## Examples

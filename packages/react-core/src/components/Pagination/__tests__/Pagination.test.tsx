@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { Pagination, PaginationVariant } from '../index';
 import { KeyTypes } from '../../../helpers';
+import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
 
 describe('Pagination', () => {
   describe('component render', () => {
@@ -116,6 +117,26 @@ describe('Pagination', () => {
     test('page insets', () => {
       render(<Pagination data-testid="pagination-insets" usePageInsets />);
       expect(screen.getByTestId('pagination-insets')).toHaveClass('pf-m-page-insets');
+    });
+
+    test(`should not render ${styles.modifiers.stickyBase} class by default`, () => {
+      render(<Pagination data-testid="pagination-sticky-base-default" itemCount={20} />);
+      expect(screen.getByTestId('pagination-sticky-base-default')).not.toHaveClass(styles.modifiers.stickyBase);
+    });
+
+    test(`should render ${styles.modifiers.stickyBase} class when isStickyBase is true`, () => {
+      render(<Pagination data-testid="pagination-sticky-base" itemCount={20} isStickyBase />);
+      expect(screen.getByTestId('pagination-sticky-base')).toHaveClass(styles.modifiers.stickyBase);
+    });
+
+    test(`should not render ${styles.modifiers.stickyStuck} class by default`, () => {
+      render(<Pagination data-testid="pagination-sticky-stuck-default" itemCount={20} />);
+      expect(screen.getByTestId('pagination-sticky-stuck-default')).not.toHaveClass(styles.modifiers.stickyStuck);
+    });
+
+    test(`should render ${styles.modifiers.stickyStuck} class when isStickyStuck is true`, () => {
+      render(<Pagination data-testid="pagination-sticky-stuck" itemCount={20} isStickyStuck />);
+      expect(screen.getByTestId('pagination-sticky-stuck')).toHaveClass(styles.modifiers.stickyStuck);
     });
   });
 

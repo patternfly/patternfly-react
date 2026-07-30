@@ -3,18 +3,21 @@ import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflo
 import { css } from '@patternfly/react-styles';
 import { OverflowMenuContext } from './OverflowMenuContext';
 import { debounce } from '../../helpers/util';
-import { globalWidthBreakpoints } from '../../helpers/constants';
+import { globalWidthBreakpoints, globalHeightBreakpoints } from '../../helpers/constants';
 import { getResizeObserver } from '../../helpers/resizeObserver';
+import { PickOptional } from '../../helpers/typeUtils';
 
 export interface OverflowMenuProps extends React.HTMLProps<HTMLDivElement> {
   /** Any elements that can be rendered in the menu */
   children?: any;
   /** Additional classes added to the OverflowMenu. */
   className?: string;
-  /** Indicates breakpoint at which to switch between horizontal menu and vertical dropdown */
+  /** Indicates breakpoint at which to switch between expanded and collapsed states. The "sm" breakpoint does not apply to vertical overflow menus. */
   breakpoint: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   /** A container reference to base the specified breakpoint on instead of the viewport width. */
   breakpointReference?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
+  /** Indicates the overflow menu orientation is vertical and should respond to height changes instead of width. */
+  isVertical?: boolean;
 }
 
 export interface OverflowMenuState extends React.HTMLProps<HTMLDivElement> {
@@ -24,6 +27,11 @@ export interface OverflowMenuState extends React.HTMLProps<HTMLDivElement> {
 
 class OverflowMenu extends Component<OverflowMenuProps, OverflowMenuState> {
   static displayName = 'OverflowMenu';
+
+  static defaultProps: PickOptional<OverflowMenuProps> = {
+    isVertical: false
+  };
+
   constructor(props: OverflowMenuProps) {
     super(props);
     this.state = {
@@ -69,6 +77,15 @@ class OverflowMenu extends Component<OverflowMenuProps, OverflowMenuState> {
   }
 
   handleResize = () => {
+    const { isVertical } = this.props;
+    if (isVertical) {
+      this.handleResizeHeight();
+    } else {
+      this.handleResizeWidth();
+    }
+  };
+
+  handleResizeWidth = () => {
     const breakpointWidth = globalWidthBreakpoints[this.props.breakpoint];
     if (!breakpointWidth) {
       // eslint-disable-next-line no-console
@@ -83,14 +100,35 @@ class OverflowMenu extends Component<OverflowMenuProps, OverflowMenuState> {
     }
   };
 
+  handleResizeHeight = () => {
+    const breakpointHeight = globalHeightBreakpoints[this.props.breakpoint];
+    if (breakpointHeight === 0) {
+      // eslint-disable-next-line no-console
+      console.warn('The "sm" breakpoint does not apply to vertical overflow menus.');
+      return;
+    }
+
+    if (!breakpointHeight) {
+      // eslint-disable-next-line no-console
+      console.error('OverflowMenu will not be visible without a valid breakpoint.');
+      return;
+    }
+
+    const relativeHeight = this.state.breakpointRef ? this.state.breakpointRef.clientHeight : window.innerHeight;
+    const isBelowBreakpoint = relativeHeight < breakpointHeight;
+    if (this.state.isBelowBreakpoint !== isBelowBreakpoint) {
+      this.setState({ isBelowBreakpoint });
+    }
+  };
+
   handleResizeWithDelay = debounce(this.handleResize, 250);
 
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { className, breakpoint, children, breakpointReference, ...props } = this.props;
+    const { className, breakpoint, children, breakpointReference, isVertical, ...props } = this.props;
 
     return (
-      <div {...props} className={css(styles.overflowMenu, className)}>
+      <div {...props} className={css(styles.overflowMenu, isVertical && styles.modifiers.vertical, className)}>
         <OverflowMenuContext.Provider value={{ isBelowBreakpoint: this.state.isBelowBreakpoint }}>
           {children}
         </OverflowMenuContext.Provider>

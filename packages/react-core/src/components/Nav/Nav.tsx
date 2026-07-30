@@ -1,7 +1,8 @@
 import { Component, createContext, createRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
-import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
+import { getOUIAProps, OUIAProps } from '../../helpers';
+import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 
 export type NavSelectClickHandler = (
   event: React.FormEvent<HTMLInputElement>,
@@ -38,6 +39,8 @@ export interface NavProps
   'aria-label'?: string;
   /** The nav variant to use. Docked is in beta. */
   variant?: 'default' | 'horizontal' | 'horizontal-subnav' | 'docked';
+  /** @beta Flag indicating the docked nav should display text. Only applies when variant is docked. */
+  isTextExpanded?: boolean;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
@@ -63,10 +66,7 @@ export interface NavContextProps {
 export const navContextDefaults = {};
 export const NavContext = createContext<NavContextProps>(navContextDefaults);
 
-class Nav extends Component<
-  NavProps,
-  { isScrollable: boolean; ouiaStateId: string; flyoutRef: React.Ref<HTMLLIElement> | null }
-> {
+class Nav extends Component<NavProps, { isScrollable: boolean; flyoutRef: React.Ref<HTMLLIElement> | null }> {
   static displayName = 'Nav';
   static defaultProps: NavProps = {
     onSelect: () => undefined,
@@ -76,7 +76,6 @@ class Nav extends Component<
 
   state = {
     isScrollable: false,
-    ouiaStateId: getDefaultOUIAId(Nav.displayName, this.props.variant),
     flyoutRef: null as React.Ref<HTMLLIElement>
   };
 
@@ -122,52 +121,58 @@ class Nav extends Component<
       ouiaId,
       ouiaSafe,
       variant,
+      isTextExpanded = false,
       ...props
     } = this.props;
     const isHorizontal = ['horizontal', 'horizontal-subnav'].includes(variant);
-
+    const isDocked = variant === 'docked';
     return (
-      <NavContext.Provider
-        value={{
-          onSelect: (
-            event: React.FormEvent<HTMLInputElement>,
-            groupId: number | string,
-            itemId: number | string,
-            to: string,
-            preventDefault: boolean,
-            onClick: (
-              e: React.FormEvent<HTMLInputElement>,
-              itemId: number | string,
-              groupId: number | string,
-              to: string
-            ) => void
-          ) => this.onSelect(event, groupId, itemId, to, preventDefault, onClick),
-          onToggle: (event: React.MouseEvent<HTMLButtonElement>, groupId: number | string, expanded: boolean) =>
-            this.onToggle(event, groupId, expanded),
-          updateIsScrollable: (isScrollable: boolean) => this.setState({ isScrollable }),
-          isHorizontal: ['horizontal', 'horizontal-subnav'].includes(variant),
-          flyoutRef: this.state.flyoutRef,
-          setFlyoutRef: (flyoutRef) => this.setState({ flyoutRef }),
-          navRef: this.navRef
-        }}
-      >
-        <nav
-          className={css(
-            styles.nav,
-            isHorizontal && styles.modifiers.horizontal,
-            variant === 'docked' && styles.modifiers.docked,
-            variant === 'horizontal-subnav' && styles.modifiers.subnav,
-            this.state.isScrollable && styles.modifiers.scrollable,
-            className
-          )}
-          aria-label={ariaLabel || (variant === 'horizontal-subnav' ? 'Local' : 'Global')}
-          ref={this.navRef}
-          {...getOUIAProps(Nav.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
-          {...props}
-        >
-          {children}
-        </nav>
-      </NavContext.Provider>
+      <SSRSafeIds prefix="pf-" ouiaComponentType={`Nav${variant ? `-${variant}` : ''}`}>
+        {(_, generatedOuiaId) => (
+          <NavContext.Provider
+            value={{
+              onSelect: (
+                event: React.FormEvent<HTMLInputElement>,
+                groupId: number | string,
+                itemId: number | string,
+                to: string,
+                preventDefault: boolean,
+                onClick: (
+                  e: React.FormEvent<HTMLInputElement>,
+                  itemId: number | string,
+                  groupId: number | string,
+                  to: string
+                ) => void
+              ) => this.onSelect(event, groupId, itemId, to, preventDefault, onClick),
+              onToggle: (event: React.MouseEvent<HTMLButtonElement>, groupId: number | string, expanded: boolean) =>
+                this.onToggle(event, groupId, expanded),
+              updateIsScrollable: (isScrollable: boolean) => this.setState({ isScrollable }),
+              isHorizontal: ['horizontal', 'horizontal-subnav'].includes(variant),
+              flyoutRef: this.state.flyoutRef,
+              setFlyoutRef: (flyoutRef) => this.setState({ flyoutRef }),
+              navRef: this.navRef
+            }}
+          >
+            <nav
+              className={css(
+                styles.nav,
+                isHorizontal && styles.modifiers.horizontal,
+                isDocked && styles.modifiers.docked,
+                variant === 'horizontal-subnav' && styles.modifiers.subnav,
+                isDocked && isTextExpanded && styles.modifiers.textExpanded,
+                this.state.isScrollable && styles.modifiers.scrollable,
+                className
+              )}
+              aria-label={ariaLabel || (variant === 'horizontal-subnav' ? 'Local' : 'Global')}
+              ref={this.navRef}
+              {...getOUIAProps(Nav.displayName, ouiaId !== undefined ? ouiaId : generatedOuiaId, ouiaSafe)}
+              {...props}
+            >
+              {children}
+            </nav>
+          </NavContext.Provider>
+        )}
+      </SSRSafeIds>
     );
   }
 }

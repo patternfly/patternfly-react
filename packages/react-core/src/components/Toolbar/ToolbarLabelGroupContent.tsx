@@ -1,7 +1,6 @@
 import { Component, RefObject } from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
-import { canUseDOM } from '../../helpers/util';
 
 import { ToolbarItem } from './ToolbarItem';
 import { Button } from '../Button';
@@ -32,13 +31,30 @@ export interface ToolbarLabelGroupContentProps extends React.HTMLProps<HTMLDivEl
   customLabelGroupContent?: React.ReactNode;
 }
 
-class ToolbarLabelGroupContent extends Component<ToolbarLabelGroupContentProps> {
+class ToolbarLabelGroupContent extends Component<ToolbarLabelGroupContentProps, { viewportWidth: number }> {
   static displayName = 'ToolbarLabelGroupContent';
   static defaultProps: PickOptional<ToolbarLabelGroupContentProps> = {
     clearFiltersButtonText: 'Clear all filters',
     collapseListedFiltersBreakpoint: 'lg',
     numberOfFiltersText: (numberOfFilters: number) => `${numberOfFilters} filters applied`
   };
+
+  state = {
+    viewportWidth: 1200
+  };
+
+  handleResize = () => {
+    this.setState({ viewportWidth: window.innerWidth });
+  };
+
+  componentDidMount() {
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  }
 
   render() {
     const {
@@ -62,9 +78,8 @@ class ToolbarLabelGroupContent extends Component<ToolbarLabelGroupContentProps> 
     let collapseListedFilters = false;
     if (collapseListedFiltersBreakpoint === 'all') {
       collapseListedFilters = true;
-    } else if (canUseDOM) {
-      collapseListedFilters =
-        (canUseDOM ? window.innerWidth : 1200) < globalBreakpoints[collapseListedFiltersBreakpoint];
+    } else if (collapseListedFiltersBreakpoint) {
+      collapseListedFilters = this.state.viewportWidth < globalBreakpoints[collapseListedFiltersBreakpoint];
     }
 
     const isHidden = numberOfFilters === 0 || isExpanded;

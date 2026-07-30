@@ -12,7 +12,7 @@ import {
   SelectList,
   SelectOption
 } from '@patternfly/react-core';
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
 
 export const ToolbarComponentManagedToggleGroup: React.FunctionComponent = () => {
   const [inputValue, setInputValue] = useState('');
@@ -124,7 +124,7 @@ export const ToolbarComponentManagedToggleGroup: React.FunctionComponent = () =>
   );
 
   const items = (
-    <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+    <ToolbarToggleGroup toggleIcon={<RhUiFilterFillIcon />} breakpoint="xl">
       {toggleGroupItems}
     </ToolbarToggleGroup>
   );

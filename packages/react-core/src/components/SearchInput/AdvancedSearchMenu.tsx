@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { Button } from '../Button';
-import { ActionGroup, Form, FormGroup } from '../Form';
+import { ActionList, ActionListGroup, ActionListItem } from '../ActionList';
+import { Form, FormGroup } from '../Form';
 import { TextInput } from '../TextInput';
-import { GenerateId } from '../../helpers';
+import { useSSRSafeId } from '../../helpers';
 import { SearchInputSearchAttribute } from './SearchInput';
 import { Panel, PanelMain, PanelMainBody } from '../Panel';
 import { css } from '@patternfly/react-styles';
@@ -67,6 +68,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
   isSearchMenuOpen,
   onToggleAdvancedMenu
 }: AdvancedSearchMenuProps) => {
+  const hasWordsId = useSSRSafeId();
   const firstAttrRef = useRef(null);
   const [putFocusBackOnInput, setPutFocusBackOnInput] = useState(false);
 
@@ -182,18 +184,14 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
       }
     });
     formGroups.push(
-      <GenerateId key={'hasWords'}>
-        {(randomId) => (
-          <FormGroup label={hasWordsAttrLabel} fieldId={randomId}>
-            <TextInput
-              type="text"
-              id={randomId}
-              value={getValue('haswords')}
-              onChange={(evt, value) => handleValueChange('haswords', value, evt)}
-            />
-          </FormGroup>
-        )}
-      </GenerateId>
+      <FormGroup key="hasWords" label={hasWordsAttrLabel} fieldId={hasWordsId}>
+        <TextInput
+          type="text"
+          id={hasWordsId}
+          value={getValue('haswords')}
+          onChange={(evt, value) => handleValueChange('haswords', value, evt)}
+        />
+      </FormGroup>
     );
     return formGroups;
   };
@@ -205,16 +203,24 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
           <Form>
             {buildFormGroups()}
             {formAdditionalItems ? formAdditionalItems : null}
-            <ActionGroup>
-              <Button variant="primary" type="submit" onClick={onSearchHandler} isDisabled={!value}>
-                {submitSearchButtonLabel}
-              </Button>
-              {!!onClear && (
-                <Button variant="link" type="reset" onClick={onClear}>
-                  {resetButtonLabel}
-                </Button>
-              )}
-            </ActionGroup>
+            <FormGroup isActionGroup>
+              <ActionList>
+                <ActionListGroup>
+                  <ActionListItem>
+                    <Button variant="primary" type="submit" onClick={onSearchHandler} isDisabled={!value}>
+                      {submitSearchButtonLabel}
+                    </Button>
+                  </ActionListItem>
+                  {!!onClear && (
+                    <ActionListItem>
+                      <Button variant="link" type="reset" onClick={onClear}>
+                        {resetButtonLabel}
+                      </Button>
+                    </ActionListItem>
+                  )}
+                </ActionListGroup>
+              </ActionList>
+            </FormGroup>
           </Form>
         </PanelMainBody>
       </PanelMain>

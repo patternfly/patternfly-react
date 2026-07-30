@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react';
 import { Button } from '@patternfly/react-core';
 import { Modal as ModalDeprecated } from '@patternfly/react-core/deprecated';
-import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
+import RhUiAttentionBellFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
 
 export const ModalCustomTitleIcon: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -17,7 +17,7 @@ export const ModalCustomTitleIcon: React.FunctionComponent = () => {
       </Button>
       <ModalDeprecated
         title="Custom title icon modal"
-        titleIconVariant={BullhornIcon}
+        titleIconVariant={RhUiAttentionBellFillIcon}
         isOpen={isModalOpen}
         onClose={handleModalToggle}
         aria-describedby="modal-custom-icon-description"

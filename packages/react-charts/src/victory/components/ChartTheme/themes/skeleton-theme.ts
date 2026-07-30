@@ -124,6 +124,10 @@ export const ColorTheme = (props: ColorThemeInterface): ChartThemeDefinition => 
         labels: LABEL_PROPS,
         title: {
           ...LABEL_PROPS
+        },
+        data: {
+          stroke: 'transparent',
+          strokeWidth: 0
         }
       }
     },

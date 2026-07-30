@@ -1,13 +1,13 @@
 import { render, screen } from '@testing-library/react';
 import { kebabCase } from 'case-anything';
 import { Icon, IconSize } from '../Icon';
-import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
+import RhMicronsCheckmarkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-checkmark-icon';
 import styles from '@patternfly/react-styles/css/components/Icon/icon';
 
 test('renders basic icon successfully', () => {
   const { asFragment } = render(
     <Icon>
-      <CheckIcon />
+      <RhMicronsCheckmarkIcon />
     </Icon>
   );
   expect(asFragment()).toMatchSnapshot();
@@ -16,7 +16,7 @@ test('renders basic icon successfully', () => {
 test('checks basic icon structure', () => {
   render(
     <Icon title="icon">
-      <CheckIcon />
+      <RhMicronsCheckmarkIcon />
     </Icon>
   );
   const iconContainer = screen.getByTitle('icon');
@@ -33,7 +33,7 @@ test('renders without children', () => {
 test('sets additional custom class successfully', () => {
   render(
     <Icon className="test" title="custom-icon">
-      <CheckIcon />
+      <RhMicronsCheckmarkIcon />
     </Icon>
   );
   const iconContainer = screen.getByTitle('custom-icon');
@@ -61,7 +61,7 @@ Object.values([
   test(`sets icon size modifier successfully - ${size}`, () => {
     render(
       <Icon iconSize={size as IconSize} title={`content-${size}-icon`}>
-        <CheckIcon />
+        <RhMicronsCheckmarkIcon />
       </Icon>
     );
     const iconContainer = screen.getByTitle(`content-${size}-icon`).querySelector(`.${styles.iconContent}`);
@@ -74,7 +74,7 @@ Object.values([
   test(`sets progress icon size modifier successfully - ${size}`, () => {
     render(
       <Icon isInProgress progressIconSize={size as IconSize} title={`progress-content-${size}-icon`}>
-        <CheckIcon />
+        <RhMicronsCheckmarkIcon />
       </Icon>
     );
     const iconContainer = screen.getByTitle(`progress-content-${size}-icon`).querySelector(`.${styles.iconProgress}`);
@@ -87,7 +87,7 @@ Object.values([
   test(`sets size modifier successfully - ${size}`, () => {
     render(
       <Icon size={size as IconSize} title={`${size}-icon`}>
-        <CheckIcon />
+        <RhMicronsCheckmarkIcon />
       </Icon>
     );
     const iconContainer = screen.getByTitle(`${size}-icon`);
@@ -101,7 +101,7 @@ Object.values([
 test('check icon without iconSize', () => {
   render(
     <Icon title="no-icon-size">
-      <CheckIcon />
+      <RhMicronsCheckmarkIcon />
     </Icon>
   );
   const iconContainer = screen.getByTitle('no-icon-size').querySelector(`.${styles.iconContent}`);
@@ -111,7 +111,7 @@ test('check icon without iconSize', () => {
 test('check icon without progress icon size', () => {
   render(
     <Icon title="no-progress-icon-size">
-      <CheckIcon />
+      <RhMicronsCheckmarkIcon />
     </Icon>
   );
   const iconContainer = screen.getByTitle('no-progress-icon-size').querySelector(`.${styles.iconProgress}`);
@@ -121,7 +121,7 @@ test('check icon without progress icon size', () => {
 test('check icon without size', () => {
   render(
     <Icon title="no-size">
-      <CheckIcon />
+      <RhMicronsCheckmarkIcon />
     </Icon>
   );
   const iconContainer = screen.getByTitle('no-size');
@@ -132,7 +132,7 @@ Object.values(['custom', 'info', 'success', 'warning', 'danger']).forEach((statu
   test(`sets status modifier successfully - ${status}`, () => {
     render(
       <Icon status={status as 'custom' | 'info' | 'success' | 'warning' | 'danger'} title={`${status}-icon`}>
-        <CheckIcon />
+        <RhMicronsCheckmarkIcon />
       </Icon>
     );
     const iconContent = screen.getByTitle(`${status}-icon`).querySelector(`.${styles.iconContent}`);
@@ -144,7 +144,7 @@ Object.values(['custom', 'info', 'success', 'warning', 'danger']).forEach((statu
 test('check icon without status', () => {
   render(
     <Icon title="no-status">
-      <CheckIcon />
+      <RhMicronsCheckmarkIcon />
     </Icon>
   );
   const iconContent = screen.getByTitle('no-status').querySelector(`.${styles.iconContent}`);
@@ -154,7 +154,7 @@ test('check icon without status', () => {
 test('sets isInline successfully', () => {
   render(
     <Icon isInline title="inline-icon">
-      <CheckIcon />
+      <RhMicronsCheckmarkIcon />
     </Icon>
   );
   const iconContainer = screen.getByTitle('inline-icon');
@@ -165,7 +165,7 @@ test('sets isInline successfully', () => {
 test('check icon without isInline', () => {
   render(
     <Icon title="no-inline">
-      <CheckIcon />
+      <RhMicronsCheckmarkIcon />
     </Icon>
   );
   const iconContainer = screen.getByTitle('no-inline');
@@ -175,7 +175,7 @@ test('check icon without isInline', () => {
 test('sets isInProgress successfully', () => {
   render(
     <Icon isInProgress title="progress-icon">
-      <CheckIcon />
+      <RhMicronsCheckmarkIcon />
     </Icon>
   );
   const iconContainer = screen.getByTitle('progress-icon');
@@ -188,7 +188,7 @@ test('sets isInProgress successfully', () => {
 test('check icon without isInProgress', () => {
   render(
     <Icon title="no-in-progress">
-      <CheckIcon />
+      <RhMicronsCheckmarkIcon />
     </Icon>
   );
   const iconContainer = screen.getByTitle('no-in-progress');
@@ -198,7 +198,7 @@ test('check icon without isInProgress', () => {
 test('sets default progres aria-label successfully', () => {
   render(
     <Icon isInProgress defaultProgressArialabel="test" title="progress-icon">
-      <CheckIcon />
+      <RhMicronsCheckmarkIcon />
     </Icon>
   );
 
@@ -207,8 +207,8 @@ test('sets default progres aria-label successfully', () => {
 
 test('renders progress icon successfully', () => {
   const { asFragment } = render(
-    <Icon isInProgress progressIcon={<CheckIcon />}>
-      <CheckIcon />
+    <Icon isInProgress progressIcon={<RhMicronsCheckmarkIcon />}>
+      <RhMicronsCheckmarkIcon />
     </Icon>
   );
   expect(asFragment()).toMatchSnapshot();

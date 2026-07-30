@@ -12,8 +12,8 @@ import {
   SelectOption
 } from '@patternfly/react-core';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
-import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
-import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
+import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
+import RhUiSyncIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sync-icon';
 
 export const ToolbarGroups: React.FunctionComponent = () => {
   const firstOptions = ['A', 'B', 'C'];
@@ -157,10 +157,10 @@ export const ToolbarGroups: React.FunctionComponent = () => {
         <Button variant="plain" aria-label="edit" icon={<EditIcon />} />
       </ToolbarItem>
       <ToolbarItem>
-        <Button variant="plain" aria-label="clone" icon={<CloneIcon />} />
+        <Button variant="plain" aria-label="clone" icon={<RhUiCopyFillIcon />} />
       </ToolbarItem>
       <ToolbarItem>
-        <Button variant="plain" aria-label="sync" icon={<SyncIcon />} />
+        <Button variant="plain" aria-label="sync" icon={<RhUiSyncIcon />} />
       </ToolbarItem>
     </Fragment>
   );

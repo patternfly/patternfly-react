@@ -8,12 +8,12 @@ ouia: true
 
 import { useState } from 'react';
 import './nav.css';
-import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
-import UserIcon from '@patternfly/react-icons/dist/esm/icons/user-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
-import CloudIcon from '@patternfly/react-icons/dist/esm/icons/cloud-icon';
-import LinkIcon from '@patternfly/react-icons/dist/esm/icons/link-icon';
+import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
+import RhUiFolderOpenFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-open-fill-icon';
+import RhUiCloudFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cloud-fill-icon';
+import RhUiLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-link-icon';
 
 ## Examples
 
@@ -75,12 +75,11 @@ A flyout should be a `Menu` component. Press `space` or `right arrow` to open a 
 
 ```
 
-### With item icons
+### With icons
 
 ```ts file="./NavIcons.tsx"
 
 ```
-
 
 ## Types
 

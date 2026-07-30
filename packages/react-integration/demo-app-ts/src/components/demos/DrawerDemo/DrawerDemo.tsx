@@ -118,6 +118,60 @@ export class DrawerDemo extends Component<DrawerProps, DrawerDemoState> {
     const drawerContent =
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium est a porttitor vehicula. Quisque vel commodo urna. Morbi mattis rutrum ante, id vehicula ex accumsan ut. Morbi viverra, eros vel porttitor facilisis, eros purus aliquet erat,nec lobortis felis elit pulvinar sem. Vivamus vulputate, risus eget commodo eleifend, eros nibh porta quam, vitae lacinia leo libero at magna. Maecenas aliquam sagittis orci, et posuere nisi ultrices sit amet. Aliquam ex odio, malesuada sed posuere quis, pellentesque at mauris. Phasellus venenatis massa ex, eget pulvinar libero auctor pretium. Aliquam erat volutpat. Duis euismod justo in quam ullamcorper, in commodo massa vulputate.';
 
+    const glassThemePlainInlinePanelContent = (
+      <DrawerPanelContent
+        id="drawer-panel-glass-plain-inline"
+        data-testid="drawer-glass-plain-panel-inline"
+        isPlain
+        isNoPlainOnGlass
+        isGlass
+      >
+        <DrawerHead>
+          <span>Glass theme plain / no-plain-on-glass combo (inline)</span>
+        </DrawerHead>
+      </DrawerPanelContent>
+    );
+
+    const glassThemePlainStaticPanelContent = (
+      <DrawerPanelContent
+        id="drawer-panel-glass-plain-static"
+        data-testid="drawer-glass-plain-panel-static"
+        isPlain
+        isNoPlainOnGlass
+        isGlass
+      >
+        <DrawerHead>
+          <span>Glass theme plain / no-plain-on-glass combo (static)</span>
+        </DrawerHead>
+      </DrawerPanelContent>
+    );
+
+    const glassThemePlainOverlayPanelContent = (
+      <DrawerPanelContent
+        id="drawer-panel-glass-plain-overlay"
+        data-testid="drawer-glass-plain-panel-overlay"
+        isPlain
+        isNoPlainOnGlass
+        isGlass
+      >
+        <DrawerHead>
+          <span>Glass theme plain / no-plain-on-glass combo (overlay)</span>
+        </DrawerHead>
+      </DrawerPanelContent>
+    );
+
+    const glassThemeInlinePanelNoIsGlass = (
+      <DrawerPanelContent
+        id="drawer-panel-glass-theme-no-isglass"
+        data-testid="drawer-panel-content-glass-theme-no-isglass"
+        isPlain
+      >
+        <DrawerHead>
+          <span>Glass theme on html, isPlain, isGlass false</span>
+        </DrawerHead>
+      </DrawerPanelContent>
+    );
+
     return (
       <>
         <Button id="toggleButton" onClick={this.onClick}>
@@ -130,7 +184,12 @@ export class DrawerDemo extends Component<DrawerProps, DrawerDemoState> {
           position="bottom"
           style={{ minHeight: '300px', height: '300px' }}
         >
-          <DrawerSection colorVariant={DrawerColorVariant.default}>drawer-section</DrawerSection>
+          <DrawerSection colorVariant={DrawerColorVariant.default} data-testid="drawer-section-default">
+            drawer-section
+          </DrawerSection>
+          <DrawerSection isPlain data-testid="drawer-section-is-plain">
+            drawer-section plain
+          </DrawerSection>
           <DrawerContent colorVariant={DrawerColorVariant.default} panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
           </DrawerContent>
@@ -151,6 +210,47 @@ export class DrawerDemo extends Component<DrawerProps, DrawerDemoState> {
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
           </DrawerContent>
         </Drawer>
+        <div id="drawer-glass-plain-demos">
+          {/*
+            Split drawers so integration tests cover isInline, isStatic, and default overlay separately.
+            Plain / glass / no-plain-on-glass Core styles apply to inline & static; overlay keeps modifiers from React only.
+          */}
+          <Drawer
+            id="drawer-glass-plain-inline"
+            isExpanded={true}
+            isInline={true}
+            style={{ minHeight: '120px', height: '120px' }}
+          >
+            <DrawerContent colorVariant={DrawerColorVariant.default} panelContent={glassThemePlainInlinePanelContent}>
+              <DrawerContentBody>Glass theme + isPlain + isGlass (inline)</DrawerContentBody>
+            </DrawerContent>
+          </Drawer>
+          <Drawer
+            id="drawer-glass-plain-static"
+            isExpanded={true}
+            isStatic={true}
+            style={{ minHeight: '120px', height: '120px' }}
+          >
+            <DrawerContent colorVariant={DrawerColorVariant.default} panelContent={glassThemePlainStaticPanelContent}>
+              <DrawerContentBody>Glass theme + isPlain + isGlass (static)</DrawerContentBody>
+            </DrawerContent>
+          </Drawer>
+          <Drawer id="drawer-glass-plain-overlay" isExpanded={true} style={{ minHeight: '120px', height: '120px' }}>
+            <DrawerContent colorVariant={DrawerColorVariant.default} panelContent={glassThemePlainOverlayPanelContent}>
+              <DrawerContentBody>Glass theme + isPlain + isGlass (default overlay)</DrawerContentBody>
+            </DrawerContent>
+          </Drawer>
+          <Drawer
+            id="drawer-glass-theme-no-isglass"
+            isExpanded={true}
+            isInline={true}
+            style={{ minHeight: '120px', height: '120px' }}
+          >
+            <DrawerContent colorVariant={DrawerColorVariant.default} panelContent={glassThemeInlinePanelNoIsGlass}>
+              <DrawerContentBody>pf-v6-theme-glass + isPlain only (no isGlass)</DrawerContentBody>
+            </DrawerContent>
+          </Drawer>
+        </div>
       </>
     );
   }

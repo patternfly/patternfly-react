@@ -4,7 +4,8 @@ import { canUseDOM, KeyTypes, PickOptional } from '../../helpers';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
 import { ModalContent } from './ModalContent';
-import { OUIAProps, getDefaultOUIAId } from '../../helpers';
+import { OUIAProps } from '../../helpers';
+import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 
 export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** The parent container to append the modal to. Defaults to "document.body". */
@@ -62,7 +63,7 @@ export enum ModalVariant {
 }
 
 interface ModalState {
-  ouiaStateId: string;
+  mounted: boolean;
 }
 
 class Modal extends Component<ModalProps, ModalState> {
@@ -87,7 +88,7 @@ class Modal extends Component<ModalProps, ModalState> {
     this.backdropId = `pf-modal-part-${backdropId}`;
 
     this.state = {
-      ouiaStateId: getDefaultOUIAId(Modal.displayName, props.variant)
+      mounted: false
     };
   }
 
@@ -119,6 +120,7 @@ class Modal extends Component<ModalProps, ModalState> {
   isEmpty = (value: string | null | undefined) => value === null || value === undefined || value === '';
 
   componentDidMount() {
+    this.setState({ mounted: true });
     const { appendTo } = this.props;
     const target: HTMLElement = this.getElement(appendTo);
     target.addEventListener('keydown', this.handleEscKeyClick, false);
@@ -166,26 +168,32 @@ class Modal extends Component<ModalProps, ModalState> {
       ...props
     } = this.props;
 
-    if (!canUseDOM || !this.getElement(appendTo)) {
+    if (!this.state.mounted || !canUseDOM || !this.getElement(appendTo)) {
       return null;
     }
 
-    return ReactDOM.createPortal(
-      <ModalContent
-        boxId={this.boxId}
-        backdropId={this.backdropId}
-        aria-label={ariaLabel}
-        aria-describedby={ariaDescribedby}
-        aria-labelledby={ariaLabelledby}
-        ouiaId={ouiaId !== undefined ? ouiaId : this.state.ouiaStateId}
-        ouiaSafe={ouiaSafe}
-        position={position}
-        elementToFocus={elementToFocus}
-        backdropClassName={props.backdropClassName}
-        {...props}
-      />,
-      this.getElement(appendTo)
-    ) as React.ReactElement<any>;
+    return (
+      <SSRSafeIds prefix="pf-" ouiaComponentType={`Modal${this.props.variant ? `-${this.props.variant}` : ''}`}>
+        {(_, generatedOuiaId) =>
+          ReactDOM.createPortal(
+            <ModalContent
+              boxId={this.boxId}
+              backdropId={this.backdropId}
+              aria-label={ariaLabel}
+              aria-describedby={ariaDescribedby}
+              aria-labelledby={ariaLabelledby}
+              ouiaId={ouiaId !== undefined ? ouiaId : generatedOuiaId}
+              ouiaSafe={ouiaSafe}
+              position={position}
+              elementToFocus={elementToFocus}
+              backdropClassName={props.backdropClassName}
+              {...props}
+            />,
+            this.getElement(appendTo)
+          ) as React.ReactElement<any>
+        }
+      </SSRSafeIds>
+    );
   }
 }
 

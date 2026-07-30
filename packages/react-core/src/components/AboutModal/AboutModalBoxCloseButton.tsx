@@ -1,7 +1,7 @@
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/AboutModalBox/about-modal-box';
 import { Button } from '../Button';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 export interface AboutModalBoxCloseButtonProps extends React.HTMLProps<HTMLDivElement> {
   /** A callback for when the close button is clicked  */
@@ -16,7 +16,7 @@ export const AboutModalBoxCloseButton: React.FunctionComponent<AboutModalBoxClos
   ...props
 }: AboutModalBoxCloseButtonProps) => (
   <div className={css(styles.aboutModalBoxClose)} {...props}>
-    <Button variant="plain" onClick={onClose} aria-label={ariaLabel} icon={<TimesIcon />} />
+    <Button variant="plain" onClick={onClose} aria-label={ariaLabel} icon={<RhMicronsCloseIcon />} />
   </div>
 );
 AboutModalBoxCloseButton.displayName = 'AboutModalBoxCloseButton';

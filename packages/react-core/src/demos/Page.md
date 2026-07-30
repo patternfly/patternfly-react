@@ -4,24 +4,20 @@ section: components
 ---
 
 import { useState, useRef, useEffect } from 'react';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
+import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
-import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
-import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
+import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
 import LightbulbIcon from '@patternfly/react-icons/dist/esm/icons/lightbulb-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
-import CloudIcon from '@patternfly/react-icons/dist/esm/icons/cloud-icon';
-import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import RhUiCloudFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cloud-fill-icon';
 import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
 import pfIconLogo from '@patternfly/react-core/src/demos/assets/PF-IconLogo-color.svg';
 
 - All examples set the `isManagedSidebar` prop on the Page component to have the sidebar automatically close for smaller screen widths. You can also manually control this behavior by not adding the `isManagedSidebar` prop and instead:
-
   1. Add an onNavToggle callback to PageHeader
   2. Pass a boolean into the isNavOpen prop to PageSidebar
 
@@ -52,11 +48,5 @@ This demonstrates a variety of navigation patterns in the context of a full page
 When adding a context selector/perspective switcher in a `PageSidebar`, you must manually control the open state of the `PageSidebar` as well as ensure any interactive menu toggles or buttons cannot receive focus. This demo adds a `tabIndex` of `-1` when the sidebar is not expanded to achieve this.
 
 ```ts file='./examples/Page/PageContextSelector.tsx' isFullscreen
-
-```
-
-### Docked nav
-
-```ts file='./examples/Page/PageDockedNav.tsx' isFullscreen
 
 ```

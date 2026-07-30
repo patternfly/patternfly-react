@@ -7,9 +7,9 @@ import { pfToRhIcons } from './icons/pfToRhIcons.mjs';
 import * as url from 'url';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
-// Import createIcon from compiled dist (build:esm must run first)
+// Import createIconBase from compiled dist (build:esm must run first)
 const createIconModule = await import('../dist/esm/createIcon.js');
-const createIcon = createIconModule.createIcon;
+const createIconBase = createIconModule.createIconBase;
 
 const outDir = join(__dirname, '../dist');
 const staticDir = join(outDir, 'static');
@@ -27,7 +27,7 @@ exports.${jsName}Config = {
   icon: ${JSON.stringify(icon)},
   rhUiIcon: ${rhUiIcon ? JSON.stringify(rhUiIcon) : 'null'},
 };
-exports.${jsName} = require('../createIcon').createIcon(exports.${jsName}Config);
+exports.${jsName} = require('../createIcon').createIconBase(exports.${jsName}Config);
 exports["default"] = exports.${jsName};
     `.trim()
   );
@@ -36,7 +36,7 @@ exports["default"] = exports.${jsName};
 const writeESMExport = (fname, jsName, icon, rhUiIcon = null) => {
   outputFileSync(
     join(outDir, 'esm/icons', `${fname}.js`),
-    `import { createIcon } from '../createIcon';
+    `import { createIconBase } from '../createIcon.js';
 
 export const ${jsName}Config = {
   name: '${jsName}',
@@ -44,7 +44,7 @@ export const ${jsName}Config = {
   rhUiIcon: ${rhUiIcon ? JSON.stringify(rhUiIcon) : 'null'},
 };
 
-export const ${jsName} = createIcon(${jsName}Config);
+export const ${jsName} = createIconBase(${jsName}Config);
 
 export default ${jsName};
     `.trim()
@@ -53,7 +53,7 @@ export default ${jsName};
 
 const writeDTSExport = (fname, jsName, icon, rhUiIcon = null) => {
   const text = `import { ComponentClass } from 'react';
-import { SVGIconProps } from '../createIcon';
+import { SVGIconProps } from '../createIcon.js';
 export declare const ${jsName}Config: {
   name: '${jsName}',
   icon: ${JSON.stringify(icon)},
@@ -68,7 +68,7 @@ export default ${jsName};
 };
 
 /**
- * Generates a static SVG string from icon data using createIcon
+ * Generates a static SVG string from icon data using createIconBase
  * @param {string} iconName The name of the icon
  * @param {object} icon The icon data object
  * @returns {string} Static SVG markup
@@ -76,8 +76,8 @@ export default ${jsName};
 function generateStaticSVG(iconName, icon) {
   const jsName = `${toCamel(iconName)}Icon`;
 
-  // Create icon component using createIcon
-  const IconComponent = createIcon({
+  // Create icon component using createIconBase
+  const IconComponent = createIconBase({
     name: jsName,
     icon
   });
@@ -126,7 +126,7 @@ function writeIcons(icons) {
   });
 
   const esmIndexString = index
-    .map(({ fname, jsName }) => `export { ${jsName}, ${jsName}Config } from './${fname}';`)
+    .map(({ fname, jsName }) => `export { ${jsName}, ${jsName}Config } from './${fname}.js';`)
     .sort()
     .join('\n');
   outputFileSync(join(outDir, 'esm', 'icons/index.js'), esmIndexString);

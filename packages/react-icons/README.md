@@ -5,9 +5,9 @@ PatternFly Icons as React Components.
 ## Usage
 
 ```tsx
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from  '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
-const closeIcon = <TimesIcon />;
+const closeIcon = <RhMicronsCloseIcon />;
 ```
 
 For a list of the available icons please refer to the [PatternFly react docs](https://pf-react-staging.patternfly.org/icons)
@@ -47,7 +47,7 @@ optimization: {
 Use ESM module imports to enable tree shaking with no additional setup required.
 
 ```JS
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from  '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 ```
 
 To enable tree shaking with named imports for CJS modules, utilize [babel-plugin-transform-imports](https://www.npmjs.com/package/babel-plugin-transform-imports) and update a babel.config.js file to utilize the plugin:
@@ -83,13 +83,13 @@ You can import or reference static SVG files directly:
 
 ```jsx
 // In HTML
-<img src="/icons/static/times-icon.svg" alt="Close" />
+<img src="/icons/static/rh-microns-close-icon.svg" alt="Close" />
 
 // In CSS
 .close-icon {
-  background-image: url('/icons/static/times-icon.svg');
+  background-image: url('/icons/static/rh-microns-close-icon.svg');
 }
 
 // Direct file path
-import timesIcon from '@patternfly/react-icons/dist/static/times-icon.svg';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/static/rh-microns-close-icon.svg';
 ```

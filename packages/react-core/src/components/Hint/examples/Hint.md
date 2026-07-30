@@ -6,7 +6,7 @@ propComponents: ['Hint', 'HintTitle', 'HintBody', 'HintFooter']
 ---
 
 import { Fragment, useState } from 'react';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 ## Examples
 

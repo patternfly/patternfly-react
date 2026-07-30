@@ -1,4 +1,4 @@
-import { HTMLProps, ReactNode, useEffect, useRef, useState } from 'react';
+import { HTMLProps, ReactNode, useEffect, useMemo, useRef, useState } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/CodeEditor/code-editor';
 import fileUploadStyles from '@patternfly/react-styles/css/components/FileUpload/file-upload';
@@ -16,11 +16,11 @@ import { TooltipPosition } from '@patternfly/react-core/dist/esm/components/Tool
 import { getResizeObserver } from '@patternfly/react-core/dist/esm/helpers/resizeObserver';
 import Editor, { BeforeMount, EditorProps, Monaco } from '@monaco-editor/react';
 import type { editor } from 'monaco-editor';
-import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
-import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
-import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
-import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
+import RhUiUploadIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-upload-icon';
+import RhUiDownloadIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-download-icon';
+import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 import Dropzone, { FileRejection } from 'react-dropzone';
 import { CodeEditorContext } from './CodeEditorUtils';
 import { CodeEditorControl } from './CodeEditorControl';
@@ -157,6 +157,8 @@ export interface CodeEditorProps extends Omit<HTMLProps<HTMLDivElement>, 'onChan
   isCopyEnabled?: boolean;
   /** Flag indicating the editor is styled using monaco's dark theme. */
   isDarkTheme?: boolean;
+  /** Flag indicating the editor is styled using monaco's high contrast themes. */
+  isHighContrastTheme?: boolean;
   /** Flag that enables component to consume the available height of its container. If `height` prop is set to 100%, this will also become enabled. */
   isFullHeight?: boolean;
   /** Flag indicating the editor has a plain header. */
@@ -286,6 +288,7 @@ export const CodeEditor = ({
   height,
   isCopyEnabled = false,
   isDarkTheme = false,
+  isHighContrastTheme = false,
   isDownloadEnabled = false,
   isFullHeight = false,
   isHeaderPlain = false,
@@ -382,7 +385,9 @@ export const CodeEditor = ({
     onEditorDidMount(editor, monaco);
     editorRef.current = editor;
     if (height === 'sizeToFit') {
-      setHeightToFitContent();
+      editor.onDidContentSizeChange(() => {
+        setHeightToFitContent();
+      });
     }
   };
 
@@ -462,6 +467,13 @@ export const CodeEditor = ({
     headerMainContent ||
     !!shortcutsPopoverProps.bodyContent;
 
+  const theme = useMemo(() => {
+    if (isHighContrastTheme) {
+      return isDarkTheme ? 'hc-black' : 'hc-light';
+    }
+    return isDarkTheme ? 'pf-v6-theme-dark' : 'pf-v6-theme-light';
+  }, [isHighContrastTheme, isDarkTheme]);
+
   return (
     <Dropzone multiple={false} onDropAccepted={onDropAccepted} onDropRejected={onDropRejected}>
       {({ getRootProps, getInputProps, isDragActive, open }) => {
@@ -470,7 +482,12 @@ export const CodeEditor = ({
         const editorEmptyState =
           emptyState ||
           (isUploadEnabled ? (
-            <EmptyState variant={EmptyStateVariant.sm} titleText={emptyStateTitle} icon={CodeIcon} headingLevel="h4">
+            <EmptyState
+              variant={EmptyStateVariant.sm}
+              titleText={emptyStateTitle}
+              icon={RhUiCodeIcon}
+              headingLevel="h4"
+            >
               <EmptyStateBody>{emptyStateBody}</EmptyStateBody>
               {!isReadOnly && (
                 <EmptyStateFooter>
@@ -488,7 +505,12 @@ export const CodeEditor = ({
               )}
             </EmptyState>
           ) : (
-            <EmptyState variant={EmptyStateVariant.sm} titleText={emptyStateTitle} icon={CodeIcon} headingLevel="h4">
+            <EmptyState
+              variant={EmptyStateVariant.sm}
+              titleText={emptyStateTitle}
+              icon={RhUiCodeIcon}
+              headingLevel="h4"
+            >
               {!isReadOnly && (
                 <EmptyStateFooter>
                   <EmptyStateActions>
@@ -507,7 +529,7 @@ export const CodeEditor = ({
               <CodeEditorContext.Provider value={{ code: value }}>
                 {isCopyEnabled && (!showEmptyState || !!value) && (
                   <CodeEditorControl
-                    icon={<CopyIcon />}
+                    icon={<RhUiCopyFillIcon />}
                     aria-label={copyButtonAriaLabel}
                     tooltipProps={{
                       ...tooltipProps,
@@ -521,7 +543,7 @@ export const CodeEditor = ({
                 )}
                 {isUploadEnabled && (
                   <CodeEditorControl
-                    icon={<UploadIcon />}
+                    icon={<RhUiUploadIcon />}
                     aria-label={uploadButtonAriaLabel}
                     tooltipProps={{ content: <div>{uploadButtonToolTipText}</div>, ...tooltipProps }}
                     onClick={open}
@@ -529,7 +551,7 @@ export const CodeEditor = ({
                 )}
                 {isDownloadEnabled && (!showEmptyState || !!value) && (
                   <CodeEditorControl
-                    icon={<DownloadIcon />}
+                    icon={<RhUiDownloadIcon />}
                     aria-label={downloadButtonAriaLabel}
                     tooltipProps={{ content: <div>{downloadButtonToolTipText}</div>, ...tooltipProps }}
                     onClick={() => {
@@ -544,7 +566,7 @@ export const CodeEditor = ({
             {!!shortcutsPopoverProps.bodyContent && (
               <div className={`${styles.codeEditor}__keyboard-shortcuts`}>
                 <Popover {...shortcutsPopoverProps}>
-                  <Button variant={ButtonVariant.link} icon={<HelpIcon />}>
+                  <Button variant={ButtonVariant.link} icon={<RhUiQuestionMarkCircleIcon />}>
                     {shortcutsPopoverButtonText}
                   </Button>
                 </Popover>
@@ -559,7 +581,7 @@ export const CodeEditor = ({
             {isLanguageLabelVisible && (
               <div className={css(styles.codeEditorTab)}>
                 <span className={css(styles.codeEditorTabIcon)}>
-                  <CodeIcon />
+                  <RhUiCodeIcon />
                 </span>
                 <span className={css(styles.codeEditorTabText)}>{language.toUpperCase()}</span>
               </div>
@@ -579,7 +601,7 @@ export const CodeEditor = ({
               onChange={onModelChange}
               onMount={editorDidMount}
               loading={loading}
-              theme={isDarkTheme ? 'pf-v6-theme-dark' : 'pf-v6-theme-light'}
+              theme={theme}
               {...editorProps}
               beforeMount={editorBeforeMount}
             />

@@ -12,7 +12,7 @@ import {
   Divider,
   Popover
 } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
+import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 import { Component } from 'react';
 
 export class DescriptionListDemo extends Component {
@@ -47,7 +47,7 @@ export class DescriptionListDemo extends Component {
             <DescriptionListGroup>
               <DescriptionListTerm>Pod selector</DescriptionListTerm>
               <DescriptionListDescription>
-                <Button variant="link" isInline icon={<PlusCircleIcon />}>
+                <Button variant="link" isInline icon={<RhUiAddCircleFillIcon />}>
                   app=MyApp
                 </Button>
               </DescriptionListDescription>
@@ -105,7 +105,7 @@ export class DescriptionListDemo extends Component {
                 </Popover>
               </DescriptionListTermHelpText>
               <DescriptionListDescription>
-                <Button variant="link" isInline icon={<PlusCircleIcon />}>
+                <Button variant="link" isInline icon={<RhUiAddCircleFillIcon />}>
                   app=MyApp
                 </Button>
               </DescriptionListDescription>
@@ -152,7 +152,7 @@ export class DescriptionListDemo extends Component {
             <DescriptionListGroup>
               <DescriptionListTerm>Pod selector</DescriptionListTerm>
               <DescriptionListDescription>
-                <Button variant="link" isInline icon={<PlusCircleIcon />}>
+                <Button variant="link" isInline icon={<RhUiAddCircleFillIcon />}>
                   app=MyApp
                 </Button>
               </DescriptionListDescription>
@@ -199,7 +199,7 @@ export class DescriptionListDemo extends Component {
             <DescriptionListGroup>
               <DescriptionListTerm>Pod selector</DescriptionListTerm>
               <DescriptionListDescription>
-                <Button variant="link" isInline icon={<PlusCircleIcon />}>
+                <Button variant="link" isInline icon={<RhUiAddCircleFillIcon />}>
                   app=MyApp
                 </Button>
               </DescriptionListDescription>
@@ -242,7 +242,7 @@ export class DescriptionListDemo extends Component {
             <DescriptionListGroup>
               <DescriptionListTerm>Pod selector</DescriptionListTerm>
               <DescriptionListDescription>
-                <Button variant="link" isInline icon={<PlusCircleIcon />}>
+                <Button variant="link" isInline icon={<RhUiAddCircleFillIcon />}>
                   app=MyApp
                 </Button>
               </DescriptionListDescription>
@@ -286,7 +286,7 @@ export class DescriptionListDemo extends Component {
             <DescriptionListGroup>
               <DescriptionListTerm>Pod selector</DescriptionListTerm>
               <DescriptionListDescription>
-                <Button variant="link" isInline icon={<PlusCircleIcon />}>
+                <Button variant="link" isInline icon={<RhUiAddCircleFillIcon />}>
                   app=MyApp
                 </Button>
               </DescriptionListDescription>
@@ -329,7 +329,7 @@ export class DescriptionListDemo extends Component {
             <DescriptionListGroup>
               <DescriptionListTerm>Pod selector</DescriptionListTerm>
               <DescriptionListDescription>
-                <Button variant="link" isInline icon={<PlusCircleIcon />}>
+                <Button variant="link" isInline icon={<RhUiAddCircleFillIcon />}>
                   app=MyApp
                 </Button>
               </DescriptionListDescription>
@@ -376,7 +376,7 @@ export class DescriptionListDemo extends Component {
             <DescriptionListGroup>
               <DescriptionListTerm>Pod selector</DescriptionListTerm>
               <DescriptionListDescription>
-                <Button variant="link" isInline icon={<PlusCircleIcon />}>
+                <Button variant="link" isInline icon={<RhUiAddCircleFillIcon />}>
                   app=MyApp
                 </Button>
               </DescriptionListDescription>
@@ -417,7 +417,7 @@ export class DescriptionListDemo extends Component {
             <DescriptionListGroup>
               <DescriptionListTerm>Pod selector</DescriptionListTerm>
               <DescriptionListDescription>
-                <Button variant="link" isInline icon={<PlusCircleIcon />}>
+                <Button variant="link" isInline icon={<RhUiAddCircleFillIcon />}>
                   app=MyApp
                 </Button>
               </DescriptionListDescription>
@@ -458,7 +458,7 @@ export class DescriptionListDemo extends Component {
             <DescriptionListGroup>
               <DescriptionListTerm>Pod selector</DescriptionListTerm>
               <DescriptionListDescription>
-                <Button variant="link" isInline icon={<PlusCircleIcon />}>
+                <Button variant="link" isInline icon={<RhUiAddCircleFillIcon />}>
                   app=MyApp
                 </Button>
               </DescriptionListDescription>

@@ -10,8 +10,8 @@ import {
   DropdownList,
   MenuToggle
 } from '@patternfly/react-core';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
-import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
+import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
+import RhMicronsCaretDownFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-fill-icon';
 
 export class BreadcrumbDemo extends Component {
   static displayName = 'BreadcrumbDemo';
@@ -37,13 +37,13 @@ export class BreadcrumbDemo extends Component {
   render() {
     const { isOpen } = this.state;
     const dropdownItems = [
-      <DropdownItem icon={<AngleLeftIcon />} key="edit">
+      <DropdownItem icon={<RhMicronsCaretLeftIcon />} key="edit">
         Edit
       </DropdownItem>,
-      <DropdownItem icon={<AngleLeftIcon />} key="action">
+      <DropdownItem icon={<RhMicronsCaretLeftIcon />} key="action">
         Deployment
       </DropdownItem>,
-      <DropdownItem icon={<AngleLeftIcon />} key="apps">
+      <DropdownItem icon={<RhMicronsCaretLeftIcon />} key="apps">
         Applications
       </DropdownItem>
     ];
@@ -74,7 +74,7 @@ export class BreadcrumbDemo extends Component {
                 <Badge isRead screenReaderText="additional items">
                   {dropdownItems.length}
                   <span>
-                    <CaretDownIcon />
+                    <RhMicronsCaretDownFillIcon />
                   </span>
                 </Badge>
               </MenuToggle>

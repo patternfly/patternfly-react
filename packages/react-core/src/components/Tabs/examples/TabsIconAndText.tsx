@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Tabs, Tab, TabTitleText, TabTitleIcon } from '@patternfly/react-core';
-import UsersIcon from '@patternfly/react-icons/dist/esm/icons/users-icon';
-import BoxIcon from '@patternfly/react-icons/dist/esm/icons/box-icon';
+import RhUiUsersFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-users-fill-icon';
+import RhUiContainerFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-container-fill-icon';
 import DatabaseIcon from '@patternfly/react-icons/dist/esm/icons/database-icon';
-import ServerIcon from '@patternfly/react-icons/dist/esm/icons/server-icon';
-import LaptopIcon from '@patternfly/react-icons/dist/esm/icons/laptop-icon';
-import ProjectDiagramIcon from '@patternfly/react-icons/dist/esm/icons/project-diagram-icon';
+import RhUiServerStackFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-server-stack-fill-icon';
+import RhUiLaptopFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-laptop-fill-icon';
+import RhUiInfrastructureFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-infrastructure-fill-icon';
 
 export const TabsIconAndText: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = useState<string | number>(0);
@@ -29,7 +29,7 @@ export const TabsIconAndText: React.FunctionComponent = () => {
         title={
           <>
             <TabTitleIcon>
-              <UsersIcon />
+              <RhUiUsersFillIcon />
             </TabTitleIcon>{' '}
             <TabTitleText>Users</TabTitleText>{' '}
           </>
@@ -43,7 +43,7 @@ export const TabsIconAndText: React.FunctionComponent = () => {
         title={
           <>
             <TabTitleIcon>
-              <BoxIcon />
+              <RhUiContainerFillIcon />
             </TabTitleIcon>{' '}
             <TabTitleText>Containers</TabTitleText>{' '}
           </>
@@ -69,7 +69,7 @@ export const TabsIconAndText: React.FunctionComponent = () => {
         title={
           <>
             <TabTitleIcon>
-              <ServerIcon />
+              <RhUiServerStackFillIcon />
             </TabTitleIcon>{' '}
             <TabTitleText>Server</TabTitleText>{' '}
           </>
@@ -82,7 +82,7 @@ export const TabsIconAndText: React.FunctionComponent = () => {
         title={
           <>
             <TabTitleIcon>
-              <LaptopIcon />
+              <RhUiLaptopFillIcon />
             </TabTitleIcon>{' '}
             <TabTitleText>System</TabTitleText>{' '}
           </>
@@ -95,7 +95,7 @@ export const TabsIconAndText: React.FunctionComponent = () => {
         title={
           <>
             <TabTitleIcon>
-              <ProjectDiagramIcon />
+              <RhUiInfrastructureFillIcon />
             </TabTitleIcon>{' '}
             <TabTitleText>Network</TabTitleText>{' '}
           </>

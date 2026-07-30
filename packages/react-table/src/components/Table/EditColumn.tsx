@@ -1,8 +1,8 @@
 import { Fragment } from 'react';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
-import PencilAltIcon from '@patternfly/react-icons/dist/esm/icons/pencil-alt-icon';
-import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhUiEditFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-edit-fill-icon';
+import RhMicronsCheckmarkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-checkmark-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 import { OnRowEdit } from './TableTypes';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
@@ -38,7 +38,7 @@ export const EditColumn: React.FunctionComponent<EditColumnProps> = ({
           {...props}
           onClick={(e) => onClick(e, 'save')}
           variant="plain"
-          icon={<CheckIcon />}
+          icon={<RhMicronsCheckmarkIcon />}
         />
       </div>
       <div className={css(inlineStyles.inlineEditAction)}>
@@ -47,7 +47,7 @@ export const EditColumn: React.FunctionComponent<EditColumnProps> = ({
           {...props}
           onClick={(e) => onClick(e, 'cancel')}
           variant="plain"
-          icon={<TimesIcon />}
+          icon={<RhMicronsCloseIcon />}
         />
       </div>
     </div>
@@ -57,7 +57,7 @@ export const EditColumn: React.FunctionComponent<EditColumnProps> = ({
         {...props}
         onClick={(e) => onClick(e, 'edit')}
         variant="plain"
-        icon={<PencilAltIcon />}
+        icon={<RhUiEditFillIcon />}
       />
     </div>
   </Fragment>

@@ -3,6 +3,7 @@
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "./dist/esm",
+    "stripInternal": true,
     "rootDirs": [
       "src",
       "src/icons",

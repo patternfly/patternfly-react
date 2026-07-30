@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, TdProps, ExpandableRowContent } from '@patternfly/react-table';
 
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
+import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 interface Repository {
@@ -83,14 +83,14 @@ export const TableCompoundExpandable: React.FunctionComponent = () => {
                 dataLabel={columnNames.branches}
                 compoundExpand={compoundExpandParams(repo, 'branches', rowIndex, 1)}
               >
-                <CodeBranchIcon key="icon" /> {repo.branches}
+                <RhUiBranchFillIcon key="icon" /> {repo.branches}
               </Td>
               <Td
                 width={10}
                 dataLabel={columnNames.prs}
                 compoundExpand={compoundExpandParams(repo, 'prs', rowIndex, 2)}
               >
-                <CodeIcon key="icon" /> {repo.prs}
+                <RhUiCodeIcon key="icon" /> {repo.prs}
               </Td>
               <Td
                 width={10}

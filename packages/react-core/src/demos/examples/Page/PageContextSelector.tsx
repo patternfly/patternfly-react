@@ -40,10 +40,10 @@ import {
   ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
 interface NavOnSelectProps {
@@ -114,10 +114,10 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
   const kebabDropdownItems = (
     <>
       <DropdownItem>
-        <CogIcon /> Settings
+        <RhUiSettingsFillIcon /> Settings
       </DropdownItem>
       <DropdownItem>
-        <HelpIcon /> Help
+        <RhUiQuestionMarkCircleIcon /> Help
       </DropdownItem>
     </>
   );
@@ -153,7 +153,7 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
               <Button aria-label="Settings" isSettings variant="plain" />
             </ToolbarItem>
             <ToolbarItem>
-              <Button aria-label="Help" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
+              <Button aria-label="Help" variant={ButtonVariant.plain} icon={<RhUiQuestionMarkCircleFillIcon />} />
             </ToolbarItem>
           </ToolbarGroup>
           <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
@@ -169,7 +169,7 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
                   isExpanded={isKebabDropdownOpen}
                   variant="plain"
                   aria-label="Settings and help"
-                  icon={<EllipsisVIcon />}
+                  icon={<RhUiEllipsisVerticalFillIcon />}
                 />
               )}
             >
@@ -189,7 +189,7 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
                   isExpanded={isFullKebabDropdownOpen}
                   variant="plain"
                   aria-label="Toolbar menu"
-                  icon={<EllipsisVIcon />}
+                  icon={<RhUiEllipsisVerticalFillIcon />}
                 />
               )}
             >

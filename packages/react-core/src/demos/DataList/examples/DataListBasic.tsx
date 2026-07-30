@@ -21,15 +21,15 @@ import {
   ToolbarItem,
   ToolbarContent
 } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
+import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
+import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
 
 export const DataListBasic: React.FunctionComponent = () => {
   const renderPagination = () => <Pagination itemCount={5} page={1} variant="top" isCompact />;
@@ -57,7 +57,11 @@ export const DataListBasic: React.FunctionComponent = () => {
             <Button variant="primary">Create instance</Button>
           </OverflowMenuItem>
           <OverflowMenuControl hasAdditionalOptions>
-            <MenuToggle aria-label="Toolbar kebab overflow menu" variant="plain" icon={<EllipsisVIcon />} />
+            <MenuToggle
+              aria-label="Toolbar kebab overflow menu"
+              variant="plain"
+              icon={<RhUiEllipsisVerticalFillIcon />}
+            />
           </OverflowMenuControl>
         </OverflowMenu>
       </ToolbarItem>
@@ -100,13 +104,13 @@ export const DataListBasic: React.FunctionComponent = () => {
                           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                             <FlexItem>
                               <Icon>
-                                <CodeBranchIcon />
+                                <RhUiBranchFillIcon />
                               </Icon>
                               10 <span className="pf-v6-screen-reader">Branches</span>
                             </FlexItem>
                             <FlexItem>
                               <Icon>
-                                <CodeIcon />
+                                <RhUiCodeIcon />
                               </Icon>
                               4 <span className="pf-v6-screen-reader">Code blocks</span>
                             </FlexItem>
@@ -151,13 +155,13 @@ export const DataListBasic: React.FunctionComponent = () => {
                           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                             <FlexItem>
                               <Icon>
-                                <CodeBranchIcon />
+                                <RhUiBranchFillIcon />
                               </Icon>
                               5 <span className="pf-v6-screen-reader">Branches</span>
                             </FlexItem>
                             <FlexItem>
                               <Icon>
-                                <CodeIcon />
+                                <RhUiCodeIcon />
                               </Icon>
                               9 <span className="pf-v6-screen-reader">Code blocks</span>
                             </FlexItem>
@@ -169,20 +173,20 @@ export const DataListBasic: React.FunctionComponent = () => {
                             </FlexItem>
                             <FlexItem>
                               <Icon status="success">
-                                <CheckCircleIcon />
+                                <RhUiCheckCircleFillIcon />
                               </Icon>
                               11
                               <span className="pf-v6-screen-reader">Completed</span>
                             </FlexItem>
                             <FlexItem>
                               <Icon status="warning">
-                                <ExclamationTriangleIcon />
+                                <RhUiWarningFillIcon />
                               </Icon>
                               4 <span className="pf-v6-screen-reader">Warnings</span>
                             </FlexItem>
                             <FlexItem>
                               <Icon status="danger">
-                                <ExclamationCircleIcon />
+                                <RhUiErrorFillIcon />
                               </Icon>
                               1 <span className="pf-v6-screen-reader">Error</span>
                             </FlexItem>
@@ -249,14 +253,14 @@ export const DataListBasic: React.FunctionComponent = () => {
                           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                             <FlexItem>
                               <Icon>
-                                <CodeBranchIcon />
+                                <RhUiBranchFillIcon />
                               </Icon>
                               10
                               <span className="pf-v6-screen-reader">Branches</span>
                             </FlexItem>
                             <FlexItem>
                               <Icon>
-                                <CodeIcon />
+                                <RhUiCodeIcon />
                               </Icon>
                               4 <span className="pf-v6-screen-reader">Code blocks</span>
                             </FlexItem>
@@ -301,13 +305,13 @@ export const DataListBasic: React.FunctionComponent = () => {
                           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                             <FlexItem>
                               <Icon>
-                                <CodeBranchIcon />
+                                <RhUiBranchFillIcon />
                               </Icon>
                               5 <span className="pf-v6-screen-reader">Branches</span>
                             </FlexItem>
                             <FlexItem>
                               <Icon>
-                                <CodeIcon />
+                                <RhUiCodeIcon />
                               </Icon>
                               9 <span className="pf-v6-screen-reader">Code blocks</span>
                             </FlexItem>
@@ -319,19 +323,19 @@ export const DataListBasic: React.FunctionComponent = () => {
                             </FlexItem>
                             <FlexItem>
                               <Icon status="success">
-                                <CheckCircleIcon />
+                                <RhUiCheckCircleFillIcon />
                               </Icon>
                               11 <span className="pf-v6-screen-reader">Completed</span>
                             </FlexItem>
                             <FlexItem>
                               <Icon status="warning">
-                                <ExclamationTriangleIcon />
+                                <RhUiWarningFillIcon />
                               </Icon>
                               4 <span className="pf-v6-screen-reader">Warnings</span>
                             </FlexItem>
                             <FlexItem>
                               <Icon status="danger">
-                                <ExclamationCircleIcon />
+                                <RhUiErrorFillIcon />
                               </Icon>
                               1 <span className="pf-v6-screen-reader">Error</span>
                             </FlexItem>

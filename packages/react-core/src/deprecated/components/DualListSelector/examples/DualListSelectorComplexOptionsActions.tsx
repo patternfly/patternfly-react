@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react';
 import { Button, ButtonVariant, Checkbox } from '@patternfly/react-core';
 import { DualListSelector as DLSDeprecated } from '@patternfly/react-core/deprecated';
-import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
+import RhMicronsSortDownSmallToLargeIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-small-to-large-icon';
 
 export const DualListSelectorComplexOptionsActions: React.FunctionComponent = () => {
   const [availableOptions, setAvailableOptions] = useState<React.ReactNode[]>([
@@ -47,7 +47,7 @@ export const DualListSelectorComplexOptionsActions: React.FunctionComponent = ()
       aria-label="Sort available options"
       key="availableSortButton"
       isDisabled={isDisabled}
-      icon={<PficonSortCommonAscIcon />}
+      icon={<RhMicronsSortDownSmallToLargeIcon />}
     />
   ];
 
@@ -58,7 +58,7 @@ export const DualListSelectorComplexOptionsActions: React.FunctionComponent = ()
       aria-label="Sort chosen options"
       key="chosenSortButton"
       isDisabled={isDisabled}
-      icon={<PficonSortCommonAscIcon />}
+      icon={<RhMicronsSortDownSmallToLargeIcon />}
     />
   ];
 

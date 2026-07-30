@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Tooltip, Button } from '@patternfly/react-core';
-import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
+import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
 
 export const TooltipIcon: React.FunctionComponent = () => {
   const [showSuccessContent, setShowSuccessContent] = useState(false);
@@ -15,7 +15,7 @@ export const TooltipIcon: React.FunctionComponent = () => {
           variant="plain"
           id="tt-ref"
           onClick={() => setShowSuccessContent(!showSuccessContent)}
-          icon={<CopyIcon />}
+          icon={<RhUiCopyFillIcon />}
         />
       </Tooltip>
     </div>

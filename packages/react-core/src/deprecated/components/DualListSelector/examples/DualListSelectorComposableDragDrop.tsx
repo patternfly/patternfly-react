@@ -11,10 +11,10 @@ import {
   DualListSelectorControlsWrapper as DLSControlsWrapperDeprecated,
   DualListSelectorControl as DLSControlDeprecated
 } from '@patternfly/react-core/deprecated';
-import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
-import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-left-icon';
+import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
+import RhMicronsDoubleCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-right-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 
 export const DualListSelectorComposableDragDrop: React.FunctionComponent = () => {
   const [ignoreNextOptionSelect, setIgnoreNextOptionSelect] = useState(false);
@@ -121,28 +121,28 @@ export const DualListSelectorComposableDragDrop: React.FunctionComponent = () =>
           onClick={() => moveSelected(true)}
           aria-label="Add selected"
         >
-          <AngleRightIcon />
+          <RhMicronsCaretRightIcon />
         </DLSControlDeprecated>
         <DLSControlDeprecated
           isDisabled={availableOptions.length === 0}
           onClick={() => moveAll(true)}
           aria-label="Add all"
         >
-          <AngleDoubleRightIcon />
+          <RhMicronsDoubleCaretRightIcon />
         </DLSControlDeprecated>
         <DLSControlDeprecated
           isDisabled={chosenOptions.length === 0}
           onClick={() => moveAll(false)}
           aria-label="Remove all"
         >
-          <AngleDoubleLeftIcon />
+          <RhMicronsDoubleCaretLeftIcon />
         </DLSControlDeprecated>
         <DLSControlDeprecated
           onClick={() => moveSelected(false)}
           isDisabled={!chosenOptions.some((option) => option.selected)}
           aria-label="Remove selected"
         >
-          <AngleLeftIcon />
+          <RhMicronsCaretLeftIcon />
         </DLSControlDeprecated>
       </DLSControlsWrapperDeprecated>
       <DragDrop

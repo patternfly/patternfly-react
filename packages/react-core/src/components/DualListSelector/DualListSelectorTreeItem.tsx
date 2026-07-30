@@ -3,10 +3,11 @@ import styles from '@patternfly/react-styles/css/components/DualListSelector/dua
 import { css } from '@patternfly/react-styles';
 import { DualListSelectorTreeItemData } from './DualListSelectorTree';
 import { Badge } from '../Badge';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import { flattenTree } from './treeUtils';
 import { DualListSelectorListContext } from './DualListSelectorContext';
 import { useHasAnimations } from '../../helpers';
+import { IS_INERT } from '../../helpers/inert';
 
 export interface DualListSelectorTreeItemProps extends React.HTMLProps<HTMLLIElement> {
   /** Content rendered inside the dual list selector. */
@@ -78,7 +79,7 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
     (child) =>
       isValidElement(child) &&
       cloneElement(child as React.ReactElement<any>, {
-        inert: isExpanded ? undefined : ''
+        inert: isExpanded ? undefined : IS_INERT
       })
   );
 
@@ -136,7 +137,7 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
                 tabIndex={-1}
               >
                 <span className={css(styles.dualListSelectorItemToggleIcon)}>
-                  <AngleRightIcon />
+                  <RhMicronsCaretRightIcon />
                 </span>
               </div>
             )}

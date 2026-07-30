@@ -274,4 +274,49 @@ describe('Nav', () => {
     );
     expect(screen.getByTestId('docked-nav')).toHaveClass(styles.modifiers.docked);
   });
+
+  test(`Renders with ${styles.modifiers.textExpanded} class when isTextExpanded is true and variant is docked`, () => {
+    renderNav(
+      <Nav isTextExpanded variant="docked" data-testid="text-expanded-nav">
+        <NavList>
+          {props.items.map((item) => (
+            <NavItem to={item.to} key={item.to}>
+              {item.label}
+            </NavItem>
+          ))}
+        </NavList>
+      </Nav>
+    );
+    expect(screen.getByTestId('text-expanded-nav')).toHaveClass(styles.modifiers.textExpanded);
+  });
+
+  test(`Does not render with ${styles.modifiers.textExpanded} class when isTextExpanded is not passed`, () => {
+    renderNav(
+      <Nav data-testid="nav">
+        <NavList>
+          {props.items.map((item) => (
+            <NavItem to={item.to} key={item.to}>
+              {item.label}
+            </NavItem>
+          ))}
+        </NavList>
+      </Nav>
+    );
+    expect(screen.getByTestId('nav')).not.toHaveClass(styles.modifiers.textExpanded);
+  });
+
+  test(`Does not render with ${styles.modifiers.textExpanded} class when isTextExpanded is true but variant is not docked`, () => {
+    renderNav(
+      <Nav isTextExpanded data-testid="nav">
+        <NavList>
+          {props.items.map((item) => (
+            <NavItem to={item.to} key={item.to}>
+              {item.label}
+            </NavItem>
+          ))}
+        </NavList>
+      </Nav>
+    );
+    expect(screen.getByTestId('nav')).not.toHaveClass(styles.modifiers.textExpanded);
+  });
 });

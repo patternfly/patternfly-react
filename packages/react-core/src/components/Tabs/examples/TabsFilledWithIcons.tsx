@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Tabs, Tab, TabTitleText, TabTitleIcon, Checkbox } from '@patternfly/react-core';
-import UsersIcon from '@patternfly/react-icons/dist/esm/icons/users-icon';
-import BoxIcon from '@patternfly/react-icons/dist/esm/icons/box-icon';
+import RhUiUsersFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-users-fill-icon';
+import RhUiContainerFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-container-fill-icon';
 import DatabaseIcon from '@patternfly/react-icons/dist/esm/icons/database-icon';
 
 export const TabsFilledWithIcons: React.FunctionComponent = () => {
@@ -34,7 +34,7 @@ export const TabsFilledWithIcons: React.FunctionComponent = () => {
           title={
             <>
               <TabTitleIcon>
-                <UsersIcon />
+                <RhUiUsersFillIcon />
               </TabTitleIcon>{' '}
               <TabTitleText>Users</TabTitleText>{' '}
             </>
@@ -48,7 +48,7 @@ export const TabsFilledWithIcons: React.FunctionComponent = () => {
           title={
             <>
               <TabTitleIcon>
-                <BoxIcon />
+                <RhUiContainerFillIcon />
               </TabTitleIcon>{' '}
               <TabTitleText>Containers</TabTitleText>{' '}
             </>

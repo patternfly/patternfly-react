@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Form, FormGroup, FormHelperText, HelperText, HelperTextItem, TextInput } from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
+import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
+import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 
 export const PasswordStrengthDemo: React.FunctionComponent = () => {
   type HelperTextItemVariant = 'default' | 'indeterminate' | 'warning' | 'success' | 'error';
@@ -18,7 +18,7 @@ export const PasswordStrengthDemo: React.FunctionComponent = () => {
   const [ruleCharacters, setRuleCharacters] = useState<HelperTextItemVariant>('indeterminate');
   const [passStrength, setPassStrength] = useState<PassStrength>({
     variant: 'error',
-    icon: <ExclamationCircleIcon />,
+    icon: <RhUiErrorFillIcon />,
     text: 'Weak'
   });
 
@@ -72,11 +72,11 @@ export const PasswordStrengthDemo: React.FunctionComponent = () => {
     }
 
     if (strCount < 3) {
-      setPassStrength({ variant: 'error', icon: <ExclamationCircleIcon />, text: 'Weak' });
+      setPassStrength({ variant: 'error', icon: <RhUiErrorFillIcon />, text: 'Weak' });
     } else if (strCount < 5) {
-      setPassStrength({ variant: 'warning', icon: <ExclamationTriangleIcon />, text: 'Medium' });
+      setPassStrength({ variant: 'warning', icon: <RhUiWarningFillIcon />, text: 'Medium' });
     } else {
-      setPassStrength({ variant: 'success', icon: <CheckCircleIcon />, text: 'Strong' });
+      setPassStrength({ variant: 'success', icon: <RhUiCheckCircleFillIcon />, text: 'Strong' });
     }
   };
 

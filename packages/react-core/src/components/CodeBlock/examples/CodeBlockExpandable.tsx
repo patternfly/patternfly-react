@@ -9,7 +9,7 @@ import {
   Button,
   Tooltip
 } from '@patternfly/react-core';
-import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
+import RhUiPlayFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
 
 export const ExpandableCodeBlock: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -73,7 +73,7 @@ url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
           <Button
             variant="plain"
             aria-label="Run in web terminal"
-            icon={<PlayIcon />}
+            icon={<RhUiPlayFillIcon />}
             onClick={() => setisRunning(!isRunning)}
           />
         </Tooltip>

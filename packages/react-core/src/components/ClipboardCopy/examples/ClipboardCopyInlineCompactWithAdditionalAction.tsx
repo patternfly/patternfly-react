@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ClipboardCopy, ClipboardCopyAction, Button, Tooltip } from '@patternfly/react-core';
-import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
+import RhUiPlayFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
 
 export const ClipboardCopyInlineCompactWithAdditionalAction: React.FunctionComponent = () => {
   const [isRunning, setisRunning] = useState(false);
@@ -24,7 +24,7 @@ export const ClipboardCopyInlineCompactWithAdditionalAction: React.FunctionCompo
               variant="plain"
               hasNoPadding
               aria-label="Run in web terminal"
-              icon={<PlayIcon />}
+              icon={<RhUiPlayFillIcon />}
               onClick={() => setisRunning(!isRunning)}
             />
           </Tooltip>

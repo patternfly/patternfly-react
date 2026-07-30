@@ -7,8 +7,8 @@ deprecated: true
 ---
 
 import { useState } from 'react';
-import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import RhUiAddIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-icon';
+import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 import './Tile.css';
 
 **Note:** Tile has been deprecated. Use the [card](/components/card#cards-as-tiles) component instead.

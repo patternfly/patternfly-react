@@ -51,6 +51,10 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'top' | 'bottom';
     '2xl'?: 'top' | 'bottom';
   };
+  /** @beta Applies the base sticky positioning to the top or bottom of the scroll parent container. */
+  stickyBase?: 'top' | 'bottom';
+  /** @beta Flag indicating if the section has stuck styling, applied when the section is not at the edge of the scroll parent container. */
+  isStickyStuck?: boolean;
   /** Modifier indicating if PageSection should have a shadow at the top */
   hasShadowTop?: boolean;
   /** Modifier indicating if PageSection should have a shadow at the bottom */
@@ -67,6 +71,10 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   'aria-label'?: string;
   /** Sets the base component to render. Defaults to section */
   component?: keyof React.JSX.IntrinsicElements;
+  /** Adds plain styling to the page section. */
+  isPlain?: boolean;
+  /** @beta Prevents the page section from automatically applying plain styling when glass theme is enabled. */
+  isNoPlainOnGlass?: boolean;
 }
 
 const variantType = {
@@ -92,12 +100,16 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   isWidthLimited = false,
   isCenterAligned = false,
   stickyOnBreakpoint,
+  stickyBase,
+  isStickyStuck = false,
   hasShadowTop = false,
   hasShadowBottom = false,
   hasOverflowScroll = false,
   'aria-label': ariaLabel,
   component = 'section',
   hasBodyWrapper = true,
+  isPlain = false,
+  isNoPlainOnGlass = false,
   ...props
 }: PageSectionProps) => {
   const { height, getVerticalBreakpoint } = useContext(PageContext);
@@ -118,6 +130,10 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
         variantType[type],
         formatBreakpointMods(padding, styles),
         formatBreakpointMods(stickyOnBreakpoint, styles, 'sticky-', getVerticalBreakpoint(height), true),
+        stickyBase === 'top' && styles.modifiers.stickyTopBase,
+        stickyBase === 'bottom' && styles.modifiers.stickyBottomBase,
+        isStickyStuck && stickyBase === 'top' && styles.modifiers.stickyTopStuck,
+        isStickyStuck && stickyBase === 'bottom' && styles.modifiers.stickyBottomStuck,
         type === PageSectionTypes.default && variantStyle[variant],
         isFilled === false && styles.modifiers.noFill,
         isFilled === true && styles.modifiers.fill,
@@ -126,6 +142,8 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
         hasShadowTop && styles.modifiers.shadowTop,
         hasShadowBottom && styles.modifiers.shadowBottom,
         hasOverflowScroll && styles.modifiers.overflowScroll,
+        isPlain && styles.modifiers.plain,
+        isNoPlainOnGlass && styles.modifiers.noPlainOnGlass,
         className
       )}
       {...(hasOverflowScroll && { tabIndex: 0 })}

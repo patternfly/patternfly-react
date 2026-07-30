@@ -48,30 +48,28 @@ ModalBody,
 ModalFooter,
 } from '@patternfly/react-core';
 import { DragDropSort } from '@patternfly/react-drag-drop';
-import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
-import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
-import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
+import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
+import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
-import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
-import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
-import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
-import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhMicronsSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-large-to-small-icon';
+import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
+import RhUiSyncIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sync-icon';
+import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
+import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
+import RhUiBlueprintIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-blueprint-icon';
+import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 
 ## Demos
 

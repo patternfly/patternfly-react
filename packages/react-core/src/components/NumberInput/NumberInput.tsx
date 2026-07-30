@@ -1,7 +1,7 @@
 import styles from '@patternfly/react-styles/css/components/NumberInput/number-input';
 import { css } from '@patternfly/react-styles';
-import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
-import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
+import RhUiMinusIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-minus-icon';
+import RhUiAddIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-icon';
 import { InputGroup, InputGroupItem } from '../InputGroup';
 import { Button, ButtonProps } from '../Button';
 import { KeyTypes, ValidatedOptions } from '../../helpers';
@@ -125,7 +125,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
             onClick={(evt) => onMinus(evt, inputName)}
             icon={
               <span className={css(styles.numberInputIcon)}>
-                <MinusIcon />
+                <RhUiMinusIcon />
               </span>
             }
             {...minusBtnProps}
@@ -154,7 +154,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
             onClick={(evt) => onPlus(evt, inputName)}
             icon={
               <span className={css(styles.numberInputIcon)}>
-                <PlusIcon />
+                <RhUiAddIcon />
               </span>
             }
             {...plusBtnProps}

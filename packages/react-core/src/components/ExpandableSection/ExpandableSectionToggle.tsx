@@ -1,6 +1,6 @@
 import styles from '@patternfly/react-styles/css/components/ExpandableSection/expandable-section';
 import { css } from '@patternfly/react-styles';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import { Button } from '../Button';
 
 /** Acts as the toggle sub-component when the main expandable section component has the isDetached
@@ -85,7 +85,7 @@ export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionT
                   isExpanded && direction === 'up' && styles.modifiers.expandTop // TODO: next breaking change move this class to the outer styles.expandableSection wrapper
                 )}
               >
-                <AngleRightIcon />
+                <RhMicronsCaretDownIcon />
               </span>
             )
           })}

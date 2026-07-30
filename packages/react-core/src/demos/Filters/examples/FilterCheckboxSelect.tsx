@@ -16,7 +16,7 @@ import {
   Pagination
 } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
 
 interface Repository {
   name: string;
@@ -289,7 +289,7 @@ export const FilterCheckboxSelect: React.FunctionComponent = () => {
       ref={toggleRef}
       onClick={onToggleClick}
       isExpanded={isOpen}
-      icon={<FilterIcon />}
+      icon={<RhUiFilterFillIcon />}
       {...(selections.length > 0 && { badge: <Badge isRead>{selections.length}</Badge> })}
       style={
         {

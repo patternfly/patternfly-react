@@ -17,7 +17,7 @@ import { NavContext, NavSelectClickHandler } from './Nav';
 import { PageSidebarContext } from '../Page/PageSidebar';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 import { Popper } from '../../helpers/Popper/Popper';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 
 export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'>, OUIAProps {
   /** Content rendered inside the nav item. */
@@ -181,7 +181,7 @@ const NavItemBase: React.FunctionComponent<NavItemProps> = ({
   const flyoutButton = (
     <span className={css(styles.navToggle)}>
       <span className={css(styles.navToggleIcon)}>
-        <AngleRightIcon />
+        <RhMicronsCaretRightIcon />
       </span>
     </span>
   );

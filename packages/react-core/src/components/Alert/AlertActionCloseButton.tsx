@@ -1,6 +1,6 @@
 import { useRef, useContext } from 'react';
 import { Button, ButtonVariant, ButtonProps } from '../Button';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 import { AlertContext } from './AlertContext';
 import { AlertGroupContext } from './AlertGroupContext';
 import alertGroupStyles from '@patternfly/react-styles/css/components/Alert/alert-group';
@@ -50,7 +50,7 @@ export const AlertActionCloseButton: React.FunctionComponent<AlertActionCloseBut
           onClick={handleOnClick}
           aria-label={ariaLabel === '' ? `Close ${variantLabel || alertVariantLabel} alert: ${title}` : ariaLabel}
           className={className}
-          icon={<TimesIcon />}
+          icon={<RhMicronsCloseIcon />}
           {...props}
         />
       )}

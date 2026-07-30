@@ -9,7 +9,7 @@ export const selectable: ITransform = (
   { rowIndex, columnIndex, rowData, column, property, tooltip }: IExtra
 ) => {
   const {
-    extraParams: { onSelect, selectVariant, allRowsSelected, isHeaderSelectDisabled }
+    extraParams: { onSelect, selectVariant, allRowsSelected, isHeaderSelectDisabled, isIndeterminate }
   } = column;
   const extraData = {
     rowIndex,
@@ -70,6 +70,7 @@ export const selectable: ITransform = (
         onSelect={selectClick}
         name={selectName}
         tooltip={tooltip}
+        isIndeterminate={rowId === -1 ? isIndeterminate : undefined}
       >
         {label as React.ReactNode}
       </SelectColumn>

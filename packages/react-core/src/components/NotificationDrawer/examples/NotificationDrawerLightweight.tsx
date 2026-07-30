@@ -16,7 +16,7 @@ import {
   NotificationDrawerListItemHeader,
   EmptyStateActions
 } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 
 export const NotificationDrawerLightweight: React.FunctionComponent = () => {
   const [firstGroupExpanded, setFirstGroupExpanded] = useState(false);
@@ -174,7 +174,7 @@ export const NotificationDrawerLightweight: React.FunctionComponent = () => {
               <EmptyState
                 headingLevel="h2"
                 titleText="No alerts found"
-                icon={SearchIcon}
+                icon={RhMicronsSearchIcon}
                 variant={EmptyStateVariant.full}
               >
                 <EmptyStateBody>

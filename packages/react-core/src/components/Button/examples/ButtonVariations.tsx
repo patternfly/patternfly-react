@@ -1,9 +1,9 @@
 import { Button, Flex } from '@patternfly/react-core';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
-import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
-import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-square-alt-icon';
-import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+import RhUiExternalLinkFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-external-link-fill-icon';
+import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
+import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
+import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 
 export const ButtonVariations: React.FunctionComponent = () => (
   <>
@@ -29,10 +29,10 @@ export const ButtonVariations: React.FunctionComponent = () => (
     </Flex>
     <br />
     <Flex columnGap={{ default: 'columnGapSm' }}>
-      <Button variant="link" icon={<PlusCircleIcon />}>
+      <Button variant="link" icon={<RhUiAddCircleFillIcon />}>
         Link
       </Button>
-      <Button variant="link" icon={<ExternalLinkSquareAltIcon />} iconPosition="end">
+      <Button variant="link" icon={<RhUiExternalLinkFillIcon />} iconPosition="end">
         Link
       </Button>
       <Button variant="link" isInline>
@@ -41,22 +41,22 @@ export const ButtonVariations: React.FunctionComponent = () => (
       <Button variant="link" isDanger>
         Danger link
       </Button>
-      <Button variant="plain" aria-label="Action" icon={<TimesIcon />} />
+      <Button variant="plain" aria-label="Action" icon={<RhMicronsCloseIcon />} />
     </Flex>
     <br />
     <Flex columnGap={{ default: 'columnGapSm' }}>
       <Button variant="control">Control</Button>
-      <Button variant="control" aria-label="Copy" icon={<CopyIcon />} />
+      <Button variant="control" aria-label="Copy" icon={<RhUiCopyFillIcon />} />
     </Flex>
     <br />
     <Flex columnGap={{ default: 'columnGapSm' }}>
-      <Button variant="stateful" icon={<BellIcon />} state="read">
+      <Button variant="stateful" icon={<RhUiNotificationFillIcon />} state="read">
         Stateful read
       </Button>
-      <Button variant="stateful" icon={<BellIcon />} state="unread">
+      <Button variant="stateful" icon={<RhUiNotificationFillIcon />} state="unread">
         Stateful unread
       </Button>
-      <Button variant="stateful" icon={<BellIcon />} state="attention">
+      <Button variant="stateful" icon={<RhUiNotificationFillIcon />} state="attention">
         Stateful attention
       </Button>
     </Flex>

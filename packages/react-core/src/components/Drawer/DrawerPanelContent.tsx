@@ -3,11 +3,12 @@ import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
 import { DrawerColorVariant, DrawerContext } from './Drawer';
 import { formatBreakpointMods, getLanguageDirection } from '../../helpers/util';
-import { GenerateId } from '../../helpers/GenerateId/GenerateId';
+import { useSSRSafeId } from '../../helpers';
 import { FocusTrap } from '../../helpers/FocusTrap/FocusTrap';
 import cssPanelMdFlexBasis from '@patternfly/react-tokens/dist/esm/c_drawer__panel_md_FlexBasis';
 import cssPanelMdFlexBasisMin from '@patternfly/react-tokens/dist/esm/c_drawer__panel_md_FlexBasis_min';
 import cssPanelMdFlexBasisMax from '@patternfly/react-tokens/dist/esm/c_drawer__panel_md_FlexBasis_max';
+import { IS_INERT } from '../../helpers/inert';
 
 export interface DrawerPanelFocusTrapObject {
   /** Enables a focus trap on the drawer panel content. This will also automatically
@@ -37,6 +38,12 @@ export interface DrawerPanelContentProps extends Omit<React.HTMLProps<HTMLDivEle
   isResizable?: boolean;
   /** @beta Flag indicating that the drawer panel should disable glass styles. This prop is intended to work with isPill drawers. */
   hasNoGlass?: boolean;
+  /** @beta Flag indicating that the drawer panel should use glass styles when in glass theme */
+  isGlass?: boolean;
+  /** @beta Flag indicating that the drawer panel should use plain styles. This only applies when the drawer is static or inline. */
+  isPlain?: boolean;
+  /** @beta Flag indicating that plain styles should be disabled when glass styles are used. This only applies when the drawer is static or inline. */
+  isNoPlainOnGlass?: boolean;
   /** Callback for resize end. */
   onResize?: (event: MouseEvent | TouchEvent | React.KeyboardEvent, width: number, id: string) => void;
   /** The minimum size of a drawer. */
@@ -56,7 +63,10 @@ export interface DrawerPanelContentProps extends Omit<React.HTMLProps<HTMLDivEle
     xl?: 'width_25' | 'width_33' | 'width_50' | 'width_66' | 'width_75' | 'width_100';
     '2xl'?: 'width_25' | 'width_33' | 'width_50' | 'width_66' | 'width_75' | 'width_100';
   };
-  /** Color variant of the background of the drawer panel */
+  /**
+   * Color variant of the background of the drawer panel.
+   * The `no-background`is deprecated; use the `isPlain` prop instead.
+   */
   colorVariant?: DrawerColorVariant | 'no-background' | 'default' | 'secondary';
   /** Adds and customizes a focus trap on the drawer panel content. */
   focusTrap?: DrawerPanelFocusTrapObject;
@@ -71,6 +81,9 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   hasNoBorder = false,
   isResizable = false,
   hasNoGlass = false,
+  isGlass = false,
+  isPlain = false,
+  isNoPlainOnGlass = false,
   onResize,
   minSize,
   defaultSize,
@@ -83,6 +96,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   style,
   ...props
 }: DrawerPanelContentProps) => {
+  const panelId = useSSRSafeId('pf-drawer-panel-');
   const panel = useRef<HTMLDivElement>(undefined);
   const splitterRef = useRef<HTMLDivElement>(undefined);
   const [separatorValue, setSeparatorValue] = useState(0);
@@ -92,12 +106,11 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   const [isFocusTrapActive, setIsFocusTrapActive] = useState(false);
   const [shouldCollapseSpace, setShouldCollapseSpace] = useState(hidden);
   const previouslyFocusedElement = useRef(null);
-  let currWidth: number = 0;
-  let panelRect: DOMRect;
-  let end: number;
-  let start: number;
-  let bottom: number;
-  let setInitialVals: boolean = true;
+  const resizeState = useRef({
+    initialPointerPos: 0,
+    initialPanelSize: 0,
+    currWidth: 0
+  });
 
   if (isStatic && focusTrap?.enabled) {
     // eslint-disable-next-line no-console
@@ -173,8 +186,20 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     return Math.round((newSplitterPos + Number.EPSILON) * 100) / 100;
   };
 
+  const setInitialResizeState = (controlPosition: number) => {
+    const panelRect = panel.current.getBoundingClientRect();
+    const initialPanelSize = position === 'bottom' ? panelRect.height : panelRect.width;
+
+    resizeState.current = {
+      initialPointerPos: controlPosition,
+      initialPanelSize,
+      currWidth: initialPanelSize
+    };
+  };
+
   const handleTouchStart = (e: React.TouchEvent) => {
     e.stopPropagation();
+    setInitialResizeState(position === 'bottom' ? e.touches[0].clientY : e.touches[0].clientX);
     document.addEventListener('touchmove', callbackTouchMove, { passive: false });
     document.addEventListener('touchend', callbackTouchEnd);
     isResizing = true;
@@ -183,11 +208,11 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   const handleMousedown = (e: React.MouseEvent) => {
     e.stopPropagation();
     e.preventDefault();
+    setInitialResizeState(position === 'bottom' ? e.clientY : e.clientX);
     document.addEventListener('mousemove', callbackMouseMove);
     document.addEventListener('mouseup', callbackMouseUp);
     drawerRef.current.classList.add(css(styles.modifiers.resizing));
     isResizing = true;
-    setInitialVals = true;
   };
 
   const handleMouseMove = (e: MouseEvent) => {
@@ -210,33 +235,22 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
       return;
     }
 
-    if (setInitialVals) {
-      panelRect = panel.current.getBoundingClientRect();
-      if (isRTL) {
-        start = panelRect.right;
-        end = panelRect.left;
-      } else {
-        end = panelRect.right;
-        start = panelRect.left;
-      }
-      bottom = panelRect.bottom;
-      setInitialVals = false;
-    }
-    const mousePos = controlPosition;
+    const { initialPointerPos, initialPanelSize } = resizeState.current;
+    const delta = controlPosition - initialPointerPos;
     let newSize = 0;
     if (position === 'end' || position === 'right') {
-      newSize = isRTL ? mousePos - end : end - mousePos;
+      newSize = isRTL ? initialPanelSize + delta : initialPanelSize - delta;
     } else if (position === 'start' || position === 'left') {
-      newSize = isRTL ? start - mousePos : mousePos - start;
+      newSize = isRTL ? initialPanelSize - delta : initialPanelSize + delta;
     } else {
-      newSize = bottom - mousePos;
+      newSize = initialPanelSize - delta;
     }
 
     if (position === 'bottom') {
       panel.current.style.overflowAnchor = 'none';
     }
     panel.current.style.setProperty(cssPanelMdFlexBasis.name, newSize + 'px');
-    currWidth = newSize;
+    resizeState.current.currWidth = newSize;
     setSeparatorValue(calcValueNow());
   };
 
@@ -246,8 +260,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     }
     drawerRef.current.classList.remove(css(styles.modifiers.resizing));
     isResizing = false;
-    onResize && onResize(e, currWidth, id);
-    setInitialVals = true;
+    onResize && onResize(e, resizeState.current.currWidth, id);
     document.removeEventListener('mousemove', callbackMouseMove);
     document.removeEventListener('mouseup', callbackMouseUp);
   };
@@ -258,7 +271,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
       return;
     }
     isResizing = false;
-    onResize && onResize(e, currWidth, id);
+    onResize && onResize(e, resizeState.current.currWidth, id);
     document.removeEventListener('touchmove', callbackTouchMove);
     document.removeEventListener('touchend', callbackTouchEnd);
   };
@@ -288,7 +301,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     e.preventDefault();
 
     if (key === 'Escape' || key === 'Enter') {
-      onResize && onResize(e, currWidth, id);
+      onResize && onResize(e, resizeState.current.currWidth, id);
     }
     const panelRect = panel.current.getBoundingClientRect();
     newSize = position === 'bottom' ? panelRect.height : panelRect.width;
@@ -315,7 +328,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
       panel.current.style.overflowAnchor = 'none';
     }
     panel.current.style.setProperty(cssPanelMdFlexBasis.name, newSize + 'px');
-    currWidth = newSize;
+    resizeState.current.currWidth = newSize;
     setSeparatorValue(calcValueNow());
   };
   const boundaryCssVars: any = {};
@@ -332,105 +345,102 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   const isValidFocusTrap = focusTrap?.enabled && !isStatic;
   const Component = isValidFocusTrap ? FocusTrap : 'div';
 
-  return (
-    <GenerateId prefix="pf-drawer-panel-">
-      {(panelId) => {
-        const focusTrapProps = {
-          tabIndex: -1,
-          'aria-modal': true,
-          role: 'dialog',
-          active: isFocusTrapActive,
-          'aria-labelledby': focusTrap?.['aria-labelledby'] || id || panelId,
-          focusTrapOptions: {
-            fallbackFocus: () => panel.current,
-            onActivate: () => {
-              if (previouslyFocusedElement.current !== document.activeElement) {
-                previouslyFocusedElement.current = document.activeElement;
-              }
-            },
-            onDeactivate: () => {
-              previouslyFocusedElement.current &&
-                previouslyFocusedElement.current.focus &&
-                previouslyFocusedElement.current.focus();
-            },
-            clickOutsideDeactivates: true,
-            returnFocusOnDeactivate: false,
-            // FocusTrap's initialFocus can accept false as a value to prevent initial focus.
-            // We want to prevent this in case false is ever passed in.
-            initialFocus: focusTrap?.elementToFocusOnExpand || undefined,
-            escapeDeactivates: false
-          }
-        };
+  const focusTrapProps = {
+    tabIndex: -1,
+    'aria-modal': true,
+    role: 'dialog',
+    active: isFocusTrapActive,
+    'aria-labelledby': focusTrap?.['aria-labelledby'] || id || panelId,
+    focusTrapOptions: {
+      fallbackFocus: () => panel.current,
+      onActivate: () => {
+        if (previouslyFocusedElement.current !== document.activeElement) {
+          previouslyFocusedElement.current = document.activeElement;
+        }
+      },
+      onDeactivate: () => {
+        previouslyFocusedElement.current &&
+          previouslyFocusedElement.current.focus &&
+          previouslyFocusedElement.current.focus();
+      },
+      clickOutsideDeactivates: true,
+      returnFocusOnDeactivate: false,
+      // FocusTrap's initialFocus can accept false as a value to prevent initial focus.
+      // We want to prevent this in case false is ever passed in.
+      initialFocus: focusTrap?.elementToFocusOnExpand || undefined,
+      escapeDeactivates: false
+    }
+  };
 
-        return (
-          <Component
-            {...(isValidFocusTrap && focusTrapProps)}
-            id={id || panelId}
-            className={css(
-              styles.drawerPanel,
-              isResizable && styles.modifiers.resizable,
-              hasNoGlass && styles.modifiers.noGlass,
-              hasNoBorder && styles.modifiers.noBorder,
-              formatBreakpointMods(widths, styles),
-              colorVariant === DrawerColorVariant.noBackground && styles.modifiers.noBackground,
-              colorVariant === DrawerColorVariant.secondary && styles.modifiers.secondary,
-              className
-            )}
-            onTransitionEnd={(ev) => {
-              if ((ev.target as HTMLElement) === panel.current) {
-                if (!hidden && ev.nativeEvent.propertyName === 'transform') {
-                  onExpand(ev);
-                }
-                setIsExpandedInternal(!hidden);
-                // We also need to collapse the space when the panel is hidden to prevent automation from scrolling to it
-                if (hidden && ev.nativeEvent.propertyName === 'transform') {
-                  setShouldCollapseSpace(true);
-                }
-                if (isValidFocusTrap && ev.nativeEvent.propertyName === 'transform') {
-                  setIsFocusTrapActive((prevIsFocusTrapActive) => !prevIsFocusTrapActive);
-                }
-              }
-            }}
-            hidden={hidden}
-            style={{
-              ...((defaultSize || minSize || maxSize) && boundaryCssVars),
-              ...style
-            }}
-            {...(shouldCollapseSpace && { inert: '' })}
-            {...props}
-            ref={panel}
-          >
-            {isExpandedInternal && (
-              <Fragment>
-                {isResizable && (
-                  <Fragment>
-                    <div
-                      className={css(styles.drawerSplitter, position !== 'bottom' && styles.modifiers.vertical)}
-                      role="separator"
-                      tabIndex={0}
-                      aria-orientation={position === 'bottom' ? 'horizontal' : 'vertical'}
-                      aria-label={resizeAriaLabel}
-                      aria-valuenow={separatorValue}
-                      aria-valuemin={0}
-                      aria-valuemax={100}
-                      aria-controls={id || panelId}
-                      onMouseDown={handleMousedown}
-                      onKeyDown={handleKeys}
-                      onTouchStart={handleTouchStart}
-                      ref={splitterRef}
-                    >
-                      <div className={css(styles.drawerSplitterHandle)} aria-hidden></div>
-                    </div>
-                    <div className={css(styles.drawerPanelMain)}>{children}</div>
-                  </Fragment>
-                )}
-                {!isResizable && children}
-              </Fragment>
-            )}
-          </Component>
-        );
+  return (
+    <Component
+      {...(isValidFocusTrap && focusTrapProps)}
+      id={id || panelId}
+      className={css(
+        styles.drawerPanel,
+        isResizable && styles.modifiers.resizable,
+        hasNoGlass && 'pf-m-no-glass',
+        isGlass && styles.modifiers.glass,
+        isPlain && styles.modifiers.plain,
+        isNoPlainOnGlass && styles.modifiers.noPlainOnGlass,
+        hasNoBorder && styles.modifiers.noBorder,
+        formatBreakpointMods(widths, styles),
+        colorVariant === DrawerColorVariant.noBackground && styles.modifiers.noBackground,
+        colorVariant === DrawerColorVariant.secondary && styles.modifiers.secondary,
+        className
+      )}
+      onTransitionEnd={(ev) => {
+        if ((ev.target as HTMLElement) === panel.current) {
+          if (!hidden && ev.nativeEvent.propertyName === 'transform') {
+            onExpand(ev);
+          }
+          setIsExpandedInternal(!hidden);
+          // We also need to collapse the space when the panel is hidden to prevent automation from scrolling to it
+          if (hidden && ev.nativeEvent.propertyName === 'transform') {
+            setShouldCollapseSpace(true);
+          }
+          if (isValidFocusTrap && ev.nativeEvent.propertyName === 'transform') {
+            setIsFocusTrapActive((prevIsFocusTrapActive) => !prevIsFocusTrapActive);
+          }
+        }
       }}
-    </GenerateId>
+      hidden={hidden}
+      style={{
+        ...((defaultSize || minSize || maxSize) && boundaryCssVars),
+        ...style
+      }}
+      {...(shouldCollapseSpace && { inert: IS_INERT })}
+      {...props}
+      ref={panel}
+    >
+      {isExpandedInternal && (
+        <Fragment>
+          {isResizable && (
+            <Fragment>
+              <div
+                className={css(styles.drawerSplitter, position !== 'bottom' && styles.modifiers.vertical)}
+                role="separator"
+                tabIndex={0}
+                aria-orientation={position === 'bottom' ? 'horizontal' : 'vertical'}
+                aria-label={resizeAriaLabel}
+                aria-valuenow={separatorValue}
+                aria-valuemin={0}
+                aria-valuemax={100}
+                aria-controls={id || panelId}
+                onMouseDown={handleMousedown}
+                onKeyDown={handleKeys}
+                onTouchStart={handleTouchStart}
+                ref={splitterRef}
+              >
+                <div className={css(styles.drawerSplitterHandle)} aria-hidden></div>
+              </div>
+              <div className={css(styles.drawerPanelMain)}>{children}</div>
+            </Fragment>
+          )}
+          {!isResizable && children}
+        </Fragment>
+      )}
+    </Component>
   );
 };
 DrawerPanelContent.displayName = 'DrawerPanelContent';

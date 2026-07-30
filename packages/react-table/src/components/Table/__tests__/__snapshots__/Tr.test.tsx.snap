@@ -6,7 +6,7 @@ exports[`Matches snapshot with children 1`] = `
     <tbody>
       <tr
         class="pf-v6-c-table__tr"
-        data-ouia-component-id="OUIA-Generated-TableRow-6"
+        data-ouia-component-id="OUIA-Generated-TableRow-:r5:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       >
@@ -25,7 +25,7 @@ exports[`Matches snapshot without children 1`] = `
     <tbody>
       <tr
         class="pf-v6-c-table__tr"
-        data-ouia-component-id="OUIA-Generated-TableRow-5"
+        data-ouia-component-id="OUIA-Generated-TableRow-:r4:"
         data-ouia-component-type="PF6/TableRow"
         data-ouia-safe="true"
       />

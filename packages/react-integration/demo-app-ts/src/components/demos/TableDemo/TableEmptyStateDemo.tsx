@@ -10,7 +10,7 @@ import {
   EmptyStateVariant,
   EmptyStateFooter
 } from '@patternfly/react-core';
-import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
+import RhUiModuleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-module-icon';
 
 class EmptyStateTable extends Component<TableProps, { columns: (ICell | string)[]; rows: IRow[] }> {
   static displayName = 'EmptyStateTable';
@@ -29,7 +29,7 @@ class EmptyStateTable extends Component<TableProps, { columns: (ICell | string)[
           heightAuto: true,
           props: { colSpan: '8' },
           title: (
-            <EmptyState headingLevel="h5" titleText="Empty state" icon={CubesIcon} variant={EmptyStateVariant.sm}>
+            <EmptyState headingLevel="h5" titleText="Empty state" icon={RhUiModuleIcon} variant={EmptyStateVariant.sm}>
               <EmptyStateBody>
                 This represents an the empty state pattern in Patternfly 4. Hopefully it's simple enough to use but
                 flexible enough to meet a variety of needs.

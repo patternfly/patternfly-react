@@ -1,7 +1,7 @@
 import { forwardRef, useContext, useEffect, useRef, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
-import { getUniqueId, handleArrows } from '../../../helpers';
+import { handleArrows, useSSRSafeId } from '../../../helpers';
 import { DualListSelectorList } from './DualListSelectorList';
 import { DualListSelectorContext, DualListSelectorListContext } from './DualListSelectorContext';
 
@@ -37,10 +37,12 @@ export const DualListSelectorListWrapperBase: React.FunctionComponent<DualListSe
   selectedOptions = [],
   onOptionSelect,
   displayOption,
-  id = getUniqueId('dual-list-selector-list'),
+  id: idProp,
   isDisabled = false,
   ...props
 }: DualListSelectorListWrapperProps) => {
+  const generatedId = useSSRSafeId('dual-list-selector-list-');
+  const id = idProp || generatedId;
   const [focusedOption, setFocusedOption] = useState('');
   const ref = useRef(null);
   const menuRef = innerRef || ref;

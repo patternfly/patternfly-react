@@ -1,6 +1,6 @@
 import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
 import { css } from '@patternfly/react-styles';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import { Button } from '../Button';
 
 export interface ClipboardCopyToggleProps extends Omit<
@@ -31,7 +31,7 @@ export const ClipboardCopyToggle: React.FunctionComponent<ClipboardCopyTogglePro
     {...props}
     icon={
       <div className={css(styles.clipboardCopyToggleIcon)}>
-        <AngleRightIcon />
+        <RhMicronsCaretDownIcon />
       </div>
     }
   />

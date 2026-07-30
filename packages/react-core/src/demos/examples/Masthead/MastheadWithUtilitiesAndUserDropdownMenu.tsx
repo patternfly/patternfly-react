@@ -49,11 +49,11 @@ import {
   SearchInput,
   Tooltip
 } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
+import RhUiThumbnailViewSmallFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-thumbnail-view-small-fill-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import pfIcon from '@patternfly/react-core/src/demos/assets/pf-logo-small.svg';
 import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
@@ -156,7 +156,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
       onClick={onToggleClick}
       isExpanded={isOpen}
       style={{ width: 'auto' }}
-      icon={<ThIcon />}
+      icon={<RhUiThumbnailViewSmallFillIcon />}
     />
   );
 
@@ -372,10 +372,10 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
   const kebabDropdownItems = (
     <>
       <DropdownItem key="settings">
-        <CogIcon /> Settings
+        <RhUiSettingsFillIcon /> Settings
       </DropdownItem>
       <DropdownItem key="help">
-        <HelpIcon /> Help
+        <RhUiQuestionMarkCircleIcon /> Help
       </DropdownItem>
     </>
   );
@@ -406,7 +406,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
               <Button aria-label="Settings" isSettings variant="plain" />
             </ToolbarItem>
             <ToolbarItem>
-              <Button aria-label="Help" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
+              <Button aria-label="Help" variant={ButtonVariant.plain} icon={<RhUiQuestionMarkCircleFillIcon />} />
             </ToolbarItem>
           </ToolbarGroup>
           <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
@@ -422,7 +422,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
                   isExpanded={isKebabDropdownOpen}
                   variant="plain"
                   aria-label="Settings and help"
-                  icon={<EllipsisVIcon />}
+                  icon={<RhUiEllipsisVerticalFillIcon />}
                 />
               )}
             >
@@ -442,7 +442,7 @@ export const MastheadWithUtilitiesAndUserDropdownMenu: React.FunctionComponent =
                   isExpanded={isFullKebabDropdownOpen}
                   variant="plain"
                   aria-label="Toolbar menu"
-                  icon={<EllipsisVIcon />}
+                  icon={<RhUiEllipsisVerticalFillIcon />}
                 />
               )}
             >

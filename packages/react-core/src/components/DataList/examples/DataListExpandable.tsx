@@ -14,8 +14,8 @@ import {
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 
 export const DataListExpandable: React.FunctionComponent = () => {
   const [isOpen1, setIsOpen1] = useState(false);
@@ -66,7 +66,7 @@ export const DataListExpandable: React.FunctionComponent = () => {
             <DataListItemCells
               dataListCells={[
                 <DataListCell isIcon key="icon">
-                  <CodeBranchIcon />
+                  <RhUiBranchFillIcon />
                 </DataListCell>,
                 <DataListCell key="primary content">
                   <div id="ex-item1">Primary content</div>
@@ -92,7 +92,7 @@ export const DataListExpandable: React.FunctionComponent = () => {
                     onClick={onToggle1}
                     variant="plain"
                     aria-label="Data list exapndable example kebaby toggle 1"
-                    icon={<EllipsisVIcon />}
+                    icon={<RhUiEllipsisVerticalFillIcon />}
                   />
                 )}
                 isOpen={isOpen1}
@@ -137,7 +137,7 @@ export const DataListExpandable: React.FunctionComponent = () => {
             <DataListItemCells
               dataListCells={[
                 <DataListCell isIcon key="icon">
-                  <CodeBranchIcon />
+                  <RhUiBranchFillIcon />
                 </DataListCell>,
                 <DataListCell key="secondary content">
                   <div id="ex-item2">Secondary content</div>
@@ -162,7 +162,7 @@ export const DataListExpandable: React.FunctionComponent = () => {
                     onClick={onToggle2}
                     variant="plain"
                     aria-label="Data list exapndable example kebaby toggle 2"
-                    icon={<EllipsisVIcon />}
+                    icon={<RhUiEllipsisVerticalFillIcon />}
                   />
                 )}
                 isOpen={isOpen2}
@@ -207,7 +207,7 @@ export const DataListExpandable: React.FunctionComponent = () => {
             <DataListItemCells
               dataListCells={[
                 <DataListCell isIcon key="icon">
-                  <CodeBranchIcon />
+                  <RhUiBranchFillIcon />
                 </DataListCell>,
                 <DataListCell key="tertiary content">
                   <div id="ex-item3">Tertiary content</div>
@@ -232,7 +232,7 @@ export const DataListExpandable: React.FunctionComponent = () => {
                     onClick={onToggle3}
                     variant="plain"
                     aria-label="Data list exapndable example kebaby toggle 3"
-                    icon={<EllipsisVIcon />}
+                    icon={<RhUiEllipsisVerticalFillIcon />}
                   />
                 )}
                 isOpen={isOpen3}

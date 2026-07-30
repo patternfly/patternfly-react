@@ -22,8 +22,16 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** @beta Indicates the layout variant */
   variant?: 'default' | 'docked';
-  /** Masthead component (e.g. <Masthead />) */
+  /** @beta Flag indicating the docked nav is expanded on mobile. Only applies when variant is docked. */
+  isDockExpanded?: boolean;
+  /** @beta Flag indicating the docked nav should display text on desktop. Only applies when variant is docked, and
+   * will handle toggling the visibility of the text in individual isDocked components.
+   */
+  isDockTextExpanded?: boolean;
+  /** The horizontal masthead content (e.g. <Masthead />). When using the docked variant, this content will only render at mobile viewports. */
   masthead?: React.ReactNode;
+  /** @beta Content to render in the vertical dock when variant of docked is used. At mobile viewports, this content will be replaced with the content passed to masthead. */
+  dockContent?: React.ReactNode;
   /** Sidebar component for a side nav, recommended to be a PageSidebar. If set to null, the page grid layout
    * will render without a sidebar.
    */
@@ -232,7 +240,10 @@ class Page extends Component<PageProps, PageState> {
       className,
       children,
       variant,
+      isDockExpanded = false,
+      isDockTextExpanded = false,
       masthead,
+      dockContent,
       sidebar,
       notificationDrawer,
       isNotificationDrawerExpanded,
@@ -339,7 +350,7 @@ class Page extends Component<PageProps, PageState> {
           {...rest}
           className={css(
             styles.page,
-            variant === 'docked' && styles.modifiers.dock,
+            variant === 'docked' && styles.modifiers.docked,
             width !== null && height !== null && 'pf-m-resize-observer',
             width !== null && `pf-m-breakpoint-${getBreakpoint(width)}`,
             height !== null && `pf-m-height-breakpoint-${getVerticalBreakpoint(height)}`,
@@ -348,7 +359,22 @@ class Page extends Component<PageProps, PageState> {
           )}
         >
           {skipToContent}
-          {variant === 'docked' ? <div className={css(styles.pageDock)}>{masthead}</div> : masthead}
+          {variant === 'docked' ? (
+            <>
+              {masthead}
+              <div
+                className={css(
+                  styles.pageDock,
+                  isDockExpanded && styles.modifiers.expanded,
+                  isDockTextExpanded && styles.modifiers.textExpanded
+                )}
+              >
+                <div className={css(styles.pageDockMain)}>{dockContent}</div>
+              </div>
+            </>
+          ) : (
+            masthead
+          )}
           {sidebar}
           {notificationDrawer && (
             <div className={css(styles.pageDrawer)}>

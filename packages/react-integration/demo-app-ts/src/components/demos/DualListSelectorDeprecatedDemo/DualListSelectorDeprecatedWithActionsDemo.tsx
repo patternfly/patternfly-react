@@ -4,9 +4,9 @@ import {
   DualListSelector as DLSDeprecated,
   DualListSelectorProps as DLSPropsDeprecated
 } from '@patternfly/react-core/deprecated';
-import PficonSortCommonDescIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-desc-icon';
-import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sort-down-large-to-small-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhMicronsSortDownSmallToLargeIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-small-to-large-icon';
 
 interface DualListSelectorState {
   availableOptions: React.ReactNode[];
@@ -126,7 +126,7 @@ class DualListSelectorDeprecatedWithActionsDemo extends Component<DLSPropsDeprec
         onClick={() => this.onSort('available')}
         aria-label="Sort"
         key="availableSortButton"
-        icon={this.state.availableDescending ? <PficonSortCommonDescIcon /> : <PficonSortCommonAscIcon />}
+        icon={this.state.availableDescending ? <RhUiSortDownLargeToSmallIcon /> : <RhMicronsSortDownSmallToLargeIcon />}
       />,
       <Dropdown
         key="availableDropdown"
@@ -139,7 +139,7 @@ class DualListSelectorDeprecatedWithActionsDemo extends Component<DLSPropsDeprec
             ref={toggleRef}
             isExpanded={this.state.isAvailableKebabOpen}
             onClick={() => this.onToggle('available')}
-            icon={<EllipsisVIcon />}
+            icon={<RhUiEllipsisVerticalFillIcon />}
           />
         )}
       >
@@ -153,7 +153,7 @@ class DualListSelectorDeprecatedWithActionsDemo extends Component<DLSPropsDeprec
         onClick={() => this.onSort('chosen')}
         aria-label="Sort"
         key="chosenSortButton"
-        icon={this.state.chosenDescending ? <PficonSortCommonDescIcon /> : <PficonSortCommonAscIcon />}
+        icon={this.state.chosenDescending ? <RhUiSortDownLargeToSmallIcon /> : <RhMicronsSortDownSmallToLargeIcon />}
       />,
       <Dropdown
         isOpen={this.state.isChosenKebabOpen}
@@ -166,7 +166,7 @@ class DualListSelectorDeprecatedWithActionsDemo extends Component<DLSPropsDeprec
             ref={toggleRef}
             isExpanded={this.state.isChosenKebabOpen}
             onClick={() => this.onToggle('chosen')}
-            icon={<EllipsisVIcon />}
+            icon={<RhUiEllipsisVerticalFillIcon />}
           />
         )}
       >

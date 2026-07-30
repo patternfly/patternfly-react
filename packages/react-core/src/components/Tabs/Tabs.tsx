@@ -2,11 +2,11 @@ import { Children, Component, createRef, isValidElement } from 'react';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
+import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
+import RhUiAddIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-icon';
 import {
-  getUniqueId,
   isElementInView,
   formatBreakpointMods,
   getLanguageDirection,
@@ -17,7 +17,8 @@ import { TabProps } from './Tab';
 import { TabsContextProvider } from './TabsContext';
 import { OverflowTab, HorizontalOverflowPopperProps } from './OverflowTab';
 import { Button } from '../Button';
-import { getOUIAProps, OUIAProps, getDefaultOUIAId, canUseDOM } from '../../helpers';
+import { getOUIAProps, OUIAProps, canUseDOM } from '../../helpers';
+import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import linkAccentLength from '@patternfly/react-tokens/dist/esm/c_tabs_link_accent_length';
 import linkAccentStart from '@patternfly/react-tokens/dist/esm/c_tabs_link_accent_start';
@@ -139,6 +140,25 @@ const variantStyle = {
   secondary: styles.modifiers.secondary
 };
 
+const getHashFromHref = (href?: string) => {
+  const hashIndex = href?.indexOf('#') ?? -1;
+
+  return hashIndex >= 0 ? href.slice(hashIndex) : undefined;
+};
+
+const getTabHashActiveKey = ({ children, component, isNav }: Pick<TabsProps, 'children' | 'component' | 'isNav'>) => {
+  if (!canUseDOM || !(component === TabsComponent.nav || isNav) || !window.location.hash) {
+    return undefined;
+  }
+
+  return Children.toArray(children)
+    .filter((child): child is TabElement => isValidElement(child))
+    .filter(({ props }) => !props.isHidden)
+    .find(
+      ({ props }) => !props.isDisabled && !props.isAriaDisabled && getHashFromHref(props.href) === window.location.hash
+    )?.props.eventKey;
+};
+
 interface TabsState {
   /** Used to signal if the scroll buttons should be used  */
   enableScrollButtons: boolean;
@@ -151,9 +171,9 @@ interface TabsState {
   disableBackScrollButton: boolean;
   disableForwardScrollButton: boolean;
   shownKeys: (string | number)[];
-  uncontrolledActiveKey: number | string;
+  uncontrolledActiveKey: number | string | undefined;
+  initialActiveKey: number | string | undefined;
   uncontrolledIsExpandedLocal: boolean;
-  ouiaStateId: string;
   overflowingTabCount: number;
   isInitializingAccent: boolean;
   currentLinkAccentLength: string;
@@ -167,16 +187,18 @@ class Tabs extends Component<TabsProps, TabsState> {
   private direction = 'ltr';
   constructor(props: TabsProps) {
     super(props);
+    const hashActiveKey = getTabHashActiveKey(props);
+
     this.state = {
       enableScrollButtons: false,
       showScrollButtons: false,
       renderScrollButtons: false,
       disableBackScrollButton: true,
       disableForwardScrollButton: true,
-      shownKeys: this.props.defaultActiveKey !== undefined ? [this.props.defaultActiveKey] : [this.props.activeKey], // only for mountOnEnter case
-      uncontrolledActiveKey: this.props.defaultActiveKey,
+      shownKeys: [hashActiveKey ?? this.props.defaultActiveKey ?? this.props.activeKey],
+      uncontrolledActiveKey: hashActiveKey ?? this.props.defaultActiveKey,
+      initialActiveKey: this.props.defaultActiveKey === undefined ? hashActiveKey : undefined,
       uncontrolledIsExpandedLocal: this.props.defaultIsExpanded,
-      ouiaStateId: getDefaultOUIAId(Tabs.displayName),
       overflowingTabCount: 0,
       isInitializingAccent: true,
       currentLinkAccentLength: linkAccentLength.value,
@@ -222,14 +244,26 @@ class Tabs extends Component<TabsProps, TabsState> {
     eventKey: number | string,
     tabContentRef: React.RefObject<any>
   ) {
-    const { shownKeys } = this.state;
-    const { onSelect, defaultActiveKey } = this.props;
+    const { shownKeys, initialActiveKey } = this.state;
+    const { onSelect, defaultActiveKey, component, isNav } = this.props;
+
+    if (event.currentTarget instanceof HTMLAnchorElement && event.currentTarget.hasAttribute('href')) {
+      event.preventDefault();
+
+      if (canUseDOM && (component === TabsComponent.nav || isNav)) {
+        window.history.pushState(null, '', event.currentTarget.href);
+      }
+    }
+
     // if defaultActiveKey Tabs are uncontrolled, set new active key internally
     if (defaultActiveKey !== undefined) {
       this.setState({
         uncontrolledActiveKey: eventKey
       });
     } else {
+      if (initialActiveKey !== undefined) {
+        this.setState({ initialActiveKey: undefined });
+      }
       onSelect(event, eventKey);
     }
 
@@ -402,8 +436,9 @@ class Tabs extends Component<TabsProps, TabsState> {
   componentDidUpdate(prevProps: TabsProps, prevState: TabsState) {
     this.direction = getLanguageDirection(this.tabList.current);
     const { activeKey, mountOnEnter, isOverflowHorizontal, children, defaultActiveKey } = this.props;
-    const { shownKeys, overflowingTabCount, enableScrollButtons, uncontrolledActiveKey } = this.state;
+    const { shownKeys, overflowingTabCount, enableScrollButtons, uncontrolledActiveKey, initialActiveKey } = this.state;
     const isOnCloseUpdate = !!prevProps.onClose !== !!this.props.onClose;
+
     if (
       (defaultActiveKey !== undefined && prevState.uncontrolledActiveKey !== uncontrolledActiveKey) ||
       (defaultActiveKey === undefined && prevProps.activeKey !== activeKey) ||
@@ -416,6 +451,10 @@ class Tabs extends Component<TabsProps, TabsState> {
       this.setState({
         shownKeys: shownKeys.concat(activeKey)
       });
+    }
+
+    if (defaultActiveKey === undefined && prevProps.activeKey !== activeKey && initialActiveKey !== undefined) {
+      this.setState({ initialActiveKey: undefined });
     }
 
     if (
@@ -518,6 +557,7 @@ class Tabs extends Component<TabsProps, TabsState> {
       disableForwardScrollButton,
       shownKeys,
       uncontrolledActiveKey,
+      initialActiveKey,
       uncontrolledIsExpandedLocal,
       overflowingTabCount,
       isInitializingAccent,
@@ -532,10 +572,9 @@ class Tabs extends Component<TabsProps, TabsState> {
     const filteredChildrenOverflowing = filteredChildren.slice(filteredChildren.length - overflowingTabCount);
     const overflowingTabProps = filteredChildrenOverflowing.map((child: React.ReactElement<TabProps>) => child.props);
 
-    const uniqueId = id || getUniqueId();
     const defaultComponent = isNav && !component ? 'nav' : 'div';
     const Component: any = component !== undefined ? component : defaultComponent;
-    const localActiveKey = defaultActiveKey !== undefined ? uncontrolledActiveKey : activeKey;
+    const localActiveKey = defaultActiveKey !== undefined ? uncontrolledActiveKey : (initialActiveKey ?? activeKey);
 
     const isExpandedLocal = defaultIsExpanded !== undefined ? uncontrolledIsExpandedLocal : isExpanded;
     /*  Uncontrolled expandable tabs */
@@ -551,138 +590,145 @@ class Tabs extends Component<TabsProps, TabsState> {
     const overflowObjectProps = typeof isOverflowHorizontal === 'object' ? { ...isOverflowHorizontal } : {};
 
     return (
-      <TabsContextProvider
-        value={{
-          variant,
-          mountOnEnter,
-          unmountOnExit,
-          localActiveKey,
-          uniqueId,
-          setAccentStyles: this.setAccentStyles,
-          handleTabClick: (...args) => this.handleTabClick(...args),
-          handleTabClose: onClose
-        }}
-      >
-        <Component
-          aria-label={ariaLabel}
-          className={css(
-            styles.tabs,
-            styles.modifiers.animateCurrent,
-            isFilled && styles.modifiers.fill,
-            isSubtab && styles.modifiers.subtab,
-            isNav && styles.modifiers.nav,
-            isVertical && styles.modifiers.vertical,
-            isVertical && expandable && formatBreakpointMods(expandable, styles),
-            isVertical && expandable && isExpandedLocal && styles.modifiers.expanded,
-            isBox && styles.modifiers.box,
-            showScrollButtons && styles.modifiers.scrollable,
-            usePageInsets && styles.modifiers.pageInsets,
-            hasNoBorderBottom && styles.modifiers.noBorderBottom,
-            formatBreakpointMods(inset, styles),
-            variantStyle[variant],
-            hasOverflowTab && styles.modifiers.overflow,
-            isInitializingAccent && styles.modifiers.initializingAccent,
-            className
-          )}
-          {...getOUIAProps(Tabs.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
-          id={id && id}
-          {...props}
-          style={{
-            [linkAccentLength.name]: currentLinkAccentLength,
-            [linkAccentStart.name]: currentLinkAccentStart,
-            ...props.style
-          }}
-        >
-          {expandable && isVertical && (
-            <GenerateId>
-              {(randomId) => (
-                <div className={css(styles.tabsToggle)}>
-                  <div className={css(styles.tabsToggleButton)}>
+      <SSRSafeIds prefix="pf-random-id-" ouiaComponentType={Tabs.displayName}>
+        {(generatedId, generatedOuiaId) => {
+          const uniqueId = id || generatedId;
+          return (
+            <TabsContextProvider
+              value={{
+                variant,
+                mountOnEnter,
+                unmountOnExit,
+                localActiveKey,
+                uniqueId,
+                setAccentStyles: this.setAccentStyles,
+                handleTabClick: (...args) => this.handleTabClick(...args),
+                handleTabClose: onClose
+              }}
+            >
+              <Component
+                aria-label={ariaLabel}
+                className={css(
+                  styles.tabs,
+                  styles.modifiers.animateCurrent,
+                  isFilled && styles.modifiers.fill,
+                  isSubtab && styles.modifiers.subtab,
+                  isNav && styles.modifiers.nav,
+                  isVertical && styles.modifiers.vertical,
+                  isVertical && expandable && formatBreakpointMods(expandable, styles),
+                  isVertical && expandable && isExpandedLocal && styles.modifiers.expanded,
+                  isBox && styles.modifiers.box,
+                  showScrollButtons && styles.modifiers.scrollable,
+                  usePageInsets && styles.modifiers.pageInsets,
+                  hasNoBorderBottom && styles.modifiers.noBorderBottom,
+                  formatBreakpointMods(inset, styles),
+                  variantStyle[variant],
+                  hasOverflowTab && styles.modifiers.overflow,
+                  isInitializingAccent && styles.modifiers.initializingAccent,
+                  className
+                )}
+                {...getOUIAProps(Tabs.displayName, ouiaId !== undefined ? ouiaId : generatedOuiaId, ouiaSafe)}
+                id={id && id}
+                {...props}
+                style={{
+                  [linkAccentLength.name]: currentLinkAccentLength,
+                  [linkAccentStart.name]: currentLinkAccentStart,
+                  ...props.style
+                }}
+              >
+                {expandable && isVertical && (
+                  <GenerateId>
+                    {(randomId) => (
+                      <div className={css(styles.tabsToggle)}>
+                        <div className={'pf-v6-c-tabs__toggle-button'}>
+                          <Button
+                            onClick={(event) => toggleTabs(event, !isExpandedLocal)}
+                            variant="plain"
+                            aria-label={toggleAriaLabel}
+                            aria-expanded={isExpandedLocal}
+                            id={`${randomId}-button`}
+                            aria-labelledby={`${randomId}-text ${randomId}-button`}
+                            icon={
+                              <span className={css(styles.tabsToggleIcon)}>
+                                <RhMicronsCaretDownIcon />
+                              </span>
+                            }
+                          >
+                            {toggleText && <span id={`${randomId}-text`}>{toggleText}</span>}
+                          </Button>
+                        </div>
+                      </div>
+                    )}
+                  </GenerateId>
+                )}
+                {renderScrollButtons && (
+                  <div className={css(styles.tabsScrollButton)}>
                     <Button
-                      onClick={(event) => toggleTabs(event, !isExpandedLocal)}
+                      aria-label={backScrollAriaLabel || leftScrollAriaLabel}
+                      onClick={this.scrollBack}
+                      isDisabled={disableBackScrollButton}
+                      aria-hidden={disableBackScrollButton}
+                      ref={this.leftScrollButtonRef}
                       variant="plain"
-                      aria-label={toggleAriaLabel}
-                      aria-expanded={isExpandedLocal}
-                      id={`${randomId}-button`}
-                      aria-labelledby={`${randomId}-text ${randomId}-button`}
-                      icon={
-                        <span className={css(styles.tabsToggleIcon)}>
-                          <AngleRightIcon />
-                        </span>
-                      }
-                    >
-                      {toggleText && <span id={`${randomId}-text`}>{toggleText}</span>}
-                    </Button>
+                      icon={<RhMicronsCaretLeftIcon />}
+                    />
                   </div>
-                </div>
-              )}
-            </GenerateId>
-          )}
-          {renderScrollButtons && (
-            <div className={css(styles.tabsScrollButton)}>
-              <Button
-                aria-label={backScrollAriaLabel || leftScrollAriaLabel}
-                onClick={this.scrollBack}
-                isDisabled={disableBackScrollButton}
-                aria-hidden={disableBackScrollButton}
-                ref={this.leftScrollButtonRef}
-                variant="plain"
-                icon={<AngleLeftIcon />}
-              />
-            </div>
-          )}
-          <ul
-            aria-label={tabListAriaLabel}
-            aria-labelledby={tabListAriaLabelledBy}
-            className={css(styles.tabsList)}
-            ref={this.tabList}
-            onScroll={this.handleScrollButtons}
-            role="tablist"
-          >
-            {isOverflowHorizontal ? filteredChildrenWithoutOverflow : filteredChildren}
-            {hasOverflowTab && <OverflowTab overflowingTabs={overflowingTabProps} {...overflowObjectProps} />}
-          </ul>
-          {renderScrollButtons && (
-            <div className={css(styles.tabsScrollButton)}>
-              <Button
-                aria-label={forwardScrollAriaLabel || rightScrollAriaLabel}
-                onClick={this.scrollForward}
-                isDisabled={disableForwardScrollButton}
-                aria-hidden={disableForwardScrollButton}
-                variant="plain"
-                icon={<AngleRightIcon />}
-              />
-            </div>
-          )}
-          {onAdd !== undefined && (
-            <span className={css(styles.tabsAdd)}>
-              <Button
-                variant="plain"
-                aria-label={addButtonAriaLabel || 'Add tab'}
-                onClick={onAdd}
-                icon={<PlusIcon />}
-                isDisabled={isAddButtonDisabled}
-              />
-            </span>
-          )}
-        </Component>
-        {filteredChildren
-          .filter(
-            (child) =>
-              child.props.children &&
-              !(unmountOnExit && child.props.eventKey !== localActiveKey) &&
-              !(mountOnEnter && shownKeys.indexOf(child.props.eventKey) === -1)
-          )
-          .map((child) => (
-            <TabContent
-              key={child.props.eventKey}
-              activeKey={localActiveKey}
-              child={child}
-              id={child.props.id || uniqueId}
-              ouiaId={child.props.ouiaId}
-            />
-          ))}
-      </TabsContextProvider>
+                )}
+                <ul
+                  aria-label={tabListAriaLabel}
+                  aria-labelledby={tabListAriaLabelledBy}
+                  className={css(styles.tabsList)}
+                  ref={this.tabList}
+                  onScroll={this.handleScrollButtons}
+                  role="tablist"
+                >
+                  {isOverflowHorizontal ? filteredChildrenWithoutOverflow : filteredChildren}
+                  {hasOverflowTab && <OverflowTab overflowingTabs={overflowingTabProps} {...overflowObjectProps} />}
+                </ul>
+                {renderScrollButtons && (
+                  <div className={css(styles.tabsScrollButton)}>
+                    <Button
+                      aria-label={forwardScrollAriaLabel || rightScrollAriaLabel}
+                      onClick={this.scrollForward}
+                      isDisabled={disableForwardScrollButton}
+                      aria-hidden={disableForwardScrollButton}
+                      variant="plain"
+                      icon={<RhMicronsCaretRightIcon />}
+                    />
+                  </div>
+                )}
+                {onAdd !== undefined && (
+                  <span className={css(styles.tabsAdd)}>
+                    <Button
+                      variant="plain"
+                      aria-label={addButtonAriaLabel || 'Add tab'}
+                      onClick={onAdd}
+                      icon={<RhUiAddIcon />}
+                      isDisabled={isAddButtonDisabled}
+                    />
+                  </span>
+                )}
+              </Component>
+              {filteredChildren
+                .filter(
+                  (child) =>
+                    child.props.children &&
+                    !(unmountOnExit && child.props.eventKey !== localActiveKey) &&
+                    !(mountOnEnter && shownKeys.indexOf(child.props.eventKey) === -1)
+                )
+                .map((child) => (
+                  <TabContent
+                    key={child.props.eventKey}
+                    activeKey={localActiveKey}
+                    child={child}
+                    id={child.props.id || uniqueId}
+                    ouiaId={child.props.ouiaId}
+                  />
+                ))}
+            </TabsContextProvider>
+          );
+        }}
+      </SSRSafeIds>
     );
   }
 }

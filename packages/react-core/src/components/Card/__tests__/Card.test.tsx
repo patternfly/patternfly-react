@@ -86,6 +86,11 @@ describe('Card', () => {
     expect(consoleWarnMock).toHaveBeenCalled();
   });
 
+  test('card with isGlass applied', () => {
+    render(<Card isGlass>glass card</Card>);
+    expect(screen.getByText('glass card')).toHaveClass('pf-m-glass');
+  });
+
   test('card with variant set to secondary ', () => {
     render(<Card variant="secondary">secondary card</Card>);
 

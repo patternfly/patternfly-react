@@ -79,4 +79,22 @@ describe('OverflowMenu', () => {
 
     expect(resizeObserver).toHaveBeenCalledWith(containerRef.current, expect.any(Function));
   });
+
+  test(`applies ${styles.modifiers.vertical} when isVertical is passed`, () => {
+    render(<OverflowMenu breakpoint="md" isVertical data-testid="test-id" />);
+    expect(screen.getByTestId('test-id')).toHaveClass(styles.modifiers.vertical);
+  });
+
+  test('warns when using "sm" breakpoint and isVertical is passed', () => {
+    const warnMock = jest.fn() as any;
+    const originalConsole = global.console;
+    global.console = { ...originalConsole, warn: warnMock } as any;
+
+    try {
+      render(<OverflowMenu breakpoint="sm" isVertical />);
+      expect(warnMock).toHaveBeenCalledWith('The "sm" breakpoint does not apply to vertical overflow menus.');
+    } finally {
+      global.console = originalConsole;
+    }
+  });
 });

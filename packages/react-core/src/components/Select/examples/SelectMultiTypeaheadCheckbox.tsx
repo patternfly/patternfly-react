@@ -11,7 +11,7 @@ import {
   TextInputGroupUtilities,
   Button
 } from '@patternfly/react-core';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 const initialSelectOptions: SelectOptionProps[] = [
   { value: 'Alabama', children: 'Alabama' },
@@ -219,7 +219,12 @@ export const SelectMultiTypeaheadCheckbox: React.FunctionComponent = () => {
           aria-controls="select-multi-typeahead-checkbox-listbox"
         />
         <TextInputGroupUtilities {...(selected.length === 0 ? { style: { display: 'none' } } : {})}>
-          <Button variant="plain" onClick={onClearButtonClick} aria-label="Clear input value" icon={<TimesIcon />} />
+          <Button
+            variant="plain"
+            onClick={onClearButtonClick}
+            aria-label="Clear input value"
+            icon={<RhMicronsCloseIcon />}
+          />
         </TextInputGroupUtilities>
       </TextInputGroup>
     </MenuToggle>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import { useOUIAProps, OUIAProps } from '../../../helpers';
 
 export interface WizardNavItemProps extends OUIAProps {
@@ -95,7 +95,7 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
               <span className="pf-v6-c-wizard__nav-link-text">{content}</span>
               <span className={css(styles.wizardNavLinkToggle)}>
                 <span className={css(styles.wizardNavLinkToggleIcon)}>
-                  <AngleRightIcon />
+                  <RhMicronsCaretDownIcon />
                 </span>
               </span>
             </>

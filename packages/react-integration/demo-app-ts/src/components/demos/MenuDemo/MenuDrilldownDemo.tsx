@@ -1,8 +1,8 @@
 import { Component } from 'react';
 import { Menu, MenuContent, MenuList, MenuItem, Divider, DrilldownMenu } from '@patternfly/react-core';
-import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
+import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
+import RhUiStorageDomainFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-storage-domain-fill-icon';
+import RhUiServerStackFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-server-stack-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 /* eslint-disable no-console */
@@ -181,18 +181,18 @@ export class MenuDrilldownDemo extends Component {
             </MenuItem>
             <MenuItem
               itemId="group:storage"
-              icon={<StorageDomainIcon />}
+              icon={<RhUiStorageDomainFillIcon />}
               direction="down"
               drilldownMenu={
                 <DrilldownMenu id="drilldownMenuStorage">
-                  <MenuItem itemId="group:storage" icon={<StorageDomainIcon />} direction="up">
+                  <MenuItem itemId="group:storage" icon={<RhUiStorageDomainFillIcon />} direction="up">
                     Add storage
                   </MenuItem>
                   <Divider component="li" />
-                  <MenuItem icon={<CodeBranchIcon />} itemId="git">
+                  <MenuItem icon={<RhUiBranchFillIcon />} itemId="git">
                     From Git
                   </MenuItem>
-                  <MenuItem icon={<LayerGroupIcon />} itemId="container">
+                  <MenuItem icon={<RhUiServerStackFillIcon />} itemId="container">
                     Container Image
                   </MenuItem>
                   <MenuItem icon={<CubeIcon />} itemId="docker">

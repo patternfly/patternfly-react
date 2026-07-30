@@ -34,8 +34,8 @@ import {
   SelectOption,
   MenuToggleElement
 } from '@patternfly/react-core';
-import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
-import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
+import RhUiTrashFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-trash-fill-icon';
+import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 import pfIcon from './assets/pf-logo-small.svg';
 import activeMQIcon from './assets/activemq-core_200x150.png';
 import avroIcon from './assets/camel-avro_200x150.png';
@@ -46,7 +46,7 @@ import sparkIcon from './assets/camel-spark_200x150.png';
 import swaggerIcon from './assets/camel-swagger-java_200x150.png';
 import azureIcon from './assets/FuseConnector_Icons_AzureServices.png';
 import restIcon from './assets/FuseConnector_Icons_REST.png';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 import { data } from '@patternfly/react-core/src/demos/CardView/examples/CardViewData.jsx';
 
@@ -427,7 +427,7 @@ export const CardViewBasic: React.FunctionComponent = () => {
                   variant="plain"
                   onClick={onToolbarKebabDropdownToggle}
                   isExpanded={isLowerToolbarKebabDropdownOpen}
-                  icon={<EllipsisVIcon />}
+                  icon={<RhUiEllipsisVerticalFillIcon />}
                 />
               )}
               isOpen={isLowerToolbarKebabDropdownOpen}
@@ -481,7 +481,7 @@ export const CardViewBasic: React.FunctionComponent = () => {
                 <EmptyState
                   headingLevel="h2"
                   titleText="Add a new card to your page"
-                  icon={PlusCircleIcon}
+                  icon={RhUiAddCircleFillIcon}
                   variant={EmptyStateVariant.xs}
                 >
                   <EmptyStateFooter>
@@ -517,7 +517,7 @@ export const CardViewBasic: React.FunctionComponent = () => {
                                 onCardKebabDropdownToggle(e, key.toString());
                               }}
                               isExpanded={!!state[key]}
-                              icon={<EllipsisVIcon />}
+                              icon={<RhUiEllipsisVerticalFillIcon />}
                             />
                           )}
                           popperProps={{ position: 'right' }}
@@ -529,7 +529,7 @@ export const CardViewBasic: React.FunctionComponent = () => {
                                 deleteItem(product);
                               }}
                             >
-                              <TrashIcon />
+                              <RhUiTrashFillIcon />
                               Delete
                             </DropdownItem>
                           </DropdownList>

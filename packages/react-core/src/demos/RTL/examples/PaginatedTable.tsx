@@ -6,15 +6,14 @@ import {
   BreadcrumbItem,
   Button,
   ButtonVariant,
-  Card,
   Content,
   Divider,
   Dropdown,
   DropdownGroup,
   DropdownItem,
   DropdownList,
-  Icon,
   Label,
+  LabelStatus,
   Masthead,
   MastheadMain,
   MastheadLogo,
@@ -45,14 +44,14 @@ import translationsEn from './examples/translations.en.json';
 import translationsHe from './examples/translations.he.json';
 import AlignRightIcon from '@patternfly/react-icons/dist/esm/icons/align-right-icon';
 import ToolsIcon from '@patternfly/react-icons/dist/esm/icons/tools-icon';
-import ClockIcon from '@patternfly/react-icons/dist/esm/icons/clock-icon';
-import WalkingIcon from '@patternfly/react-icons/dist/esm/icons/walking-icon';
+import RhUiRunningIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-running-icon';
+import RhUiClockFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clock-fill-icon';
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import HandPaperIcon from '@patternfly/react-icons/dist/esm/icons/hand-paper-icon';
+import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
+import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import RhUiStopCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-stop-circle-fill-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 import { rows } from '@patternfly/react-core/dist/esm/demos/sampleDataRTL';
 
@@ -179,42 +178,28 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
       case 'Running':
       case 'רץ':
         return (
-          <Label
-            color="green"
-            icon={
-              <Icon shouldMirrorRTL>
-                <WalkingIcon />
-              </Icon>
-            }
-          >
+          <Label status={LabelStatus.success} icon={<RhUiRunningIcon className="pf-v6-m-mirror-inline-rtl" />}>
             {translation.table.rows.status.running}
           </Label>
         );
       case 'Stopped':
       case 'עצר':
         return (
-          <Label
-            icon={
-              <Icon shouldMirrorRTL>
-                <HandPaperIcon />
-              </Icon>
-            }
-            color="red"
-          >
+          <Label status={LabelStatus.danger} icon={<RhUiStopCircleFillIcon className="pf-v6-m-mirror-inline-rtl" />}>
             {translation.table.rows.status.stopped}
           </Label>
         );
       case 'Needs maintenance':
       case 'זקוק לתחזוקה':
         return (
-          <Label icon={<ToolsIcon />} color="blue">
+          <Label status={LabelStatus.info} icon={<ToolsIcon />}>
             {translation.table.rows.status.needsMaintenance}
           </Label>
         );
       case 'Down':
       case 'מטה':
         return (
-          <Label icon={<ClockIcon />} color="orange">
+          <Label status={LabelStatus.warning} icon={<RhUiClockFillIcon />}>
             {translation.table.rows.status.down}
           </Label>
         );
@@ -228,11 +213,7 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
           <ToolbarItem>
             <Button
               variant="primary"
-              icon={
-                <Icon shouldMirrorRTL>
-                  <AlignRightIcon />
-                </Icon>
-              }
+              icon={<AlignRightIcon className="pf-v6-m-mirror-inline-rtl" />}
               iconPosition="end"
               onClick={switchTranslation}
             >
@@ -279,8 +260,8 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
 
   const kebabDropdownItems = (
     <>
-      <DropdownItem icon={<CogIcon />}>{translation.kebabDropdown.settings}</DropdownItem>
-      <DropdownItem icon={<HelpIcon />}>{translation.kebabDropdown.help}</DropdownItem>
+      <DropdownItem icon={<RhUiSettingsFillIcon />}>{translation.kebabDropdown.settings}</DropdownItem>
+      <DropdownItem icon={<RhUiQuestionMarkCircleIcon />}>{translation.kebabDropdown.help}</DropdownItem>
     </>
   );
 
@@ -345,7 +326,7 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
                   <Button
                     aria-label={translation.kebabDropdown.help}
                     variant={ButtonVariant.plain}
-                    icon={<QuestionCircleIcon />}
+                    icon={<RhUiQuestionMarkCircleFillIcon />}
                   />
                 </ToolbarItem>
               </ToolbarGroup>
@@ -362,7 +343,7 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
                       onClick={onKebabDropdownToggle}
                       variant="plain"
                       aria-label={translation.kebabDropdown.settingsAndHelp}
-                      icon={<EllipsisVIcon />}
+                      icon={<RhUiEllipsisVerticalFillIcon />}
                     />
                   )}
                 >
@@ -382,7 +363,7 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
                       onClick={onFullKebabToggle}
                       variant="plain"
                       aria-label={translation.kebabAndUserDropdown.toolbarMenuAriaLabel}
-                      icon={<EllipsisVIcon />}
+                      icon={<RhUiEllipsisVerticalFillIcon />}
                     />
                   )}
                 >
@@ -442,52 +423,50 @@ export const PaginatedTableAction: React.FunctionComponent = () => {
           </Content>
         </PageSection>
         <PageSection>
-          <Card>
-            {toolbarItems}
-            <Table variant="compact" aria-label={translation.table.ariaLabel}>
-              <Thead>
-                <Tr>
-                  {columns.map((column, columnIndex) => (
-                    <Th key={columnIndex}>{column}</Th>
-                  ))}
-                </Tr>
-              </Thead>
-              <Tbody>
-                {paginatedRows.map((row: Row, rowIndex: number) => (
-                  <Tr key={rowIndex}>
-                    <>
-                      {Object.entries(row).map(([key, value]) => {
-                        if (key === 'status') {
-                          return (
-                            <Td key={key} width={15} dataLabel="Status">
-                              {renderLabel(value)}
-                            </Td>
-                          );
-                        } else if (key === 'url') {
-                          return (
-                            // Passing dir="rtl" forces truncation at the start of the URL,
-                            // resulting in the unique portion being visible regardless of language
-                            <Td key={key} dataLabel="URL" width={15}>
-                              <a href="#">
-                                <Truncate content={row.url} position={isDirRTL ? 'end' : 'start'} />
-                              </a>
-                            </Td>
-                          );
-                        } else {
-                          return (
-                            <Td key={key} dataLabel={key === 'lastModified' ? 'Last modified' : capitalize(key)}>
-                              {value}
-                            </Td>
-                          );
-                        }
-                      })}
-                    </>
-                  </Tr>
+          {toolbarItems}
+          <Table variant="compact" aria-label={translation.table.ariaLabel}>
+            <Thead>
+              <Tr>
+                {columns.map((column, columnIndex) => (
+                  <Th key={columnIndex}>{column}</Th>
                 ))}
-              </Tbody>
-            </Table>
-            {renderPagination(PaginationVariant.bottom)}
-          </Card>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {paginatedRows.map((row: Row, rowIndex: number) => (
+                <Tr key={rowIndex}>
+                  <>
+                    {Object.entries(row).map(([key, value]) => {
+                      if (key === 'status') {
+                        return (
+                          <Td key={key} width={15} dataLabel="Status">
+                            {renderLabel(value)}
+                          </Td>
+                        );
+                      } else if (key === 'url') {
+                        return (
+                          // Passing dir="rtl" forces truncation at the start of the URL,
+                          // resulting in the unique portion being visible regardless of language
+                          <Td key={key} dataLabel="URL" width={15}>
+                            <a href="#">
+                              <Truncate content={row.url} position={isDirRTL ? 'end' : 'start'} />
+                            </a>
+                          </Td>
+                        );
+                      } else {
+                        return (
+                          <Td key={key} dataLabel={key === 'lastModified' ? 'Last modified' : capitalize(key)}>
+                            {value}
+                          </Td>
+                        );
+                      }
+                    })}
+                  </>
+                </Tr>
+              ))}
+            </Tbody>
+          </Table>
+          {renderPagination(PaginationVariant.bottom)}
         </PageSection>
       </Page>
     </Fragment>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Dropdown, DropdownItem, DropdownList, Divider, MenuToggle, MenuToggleElement } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export const DropdownWithKebab: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +27,7 @@ export const DropdownWithKebab: React.FunctionComponent = () => {
           variant="plain"
           onClick={onToggleClick}
           isExpanded={isOpen}
-          icon={<EllipsisVIcon />}
+          icon={<RhUiEllipsisVerticalFillIcon />}
         />
       )}
       shouldFocusToggleOnSelect

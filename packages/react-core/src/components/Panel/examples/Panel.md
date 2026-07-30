@@ -46,13 +46,22 @@ propComponents: [Panel, PanelMain, PanelMainBody, PanelHeader, PanelFooter]
 
 ```ts file="PanelSecondaryVariant.tsx"
 ```
-
 ### Scrollable
 
 ```ts file="PanelScrollable.tsx"
 ```
 
+### Scrollable with auto height
+
+```ts file="PanelScrollableWithAutoHeight.tsx"
+```
+
 ### Scrollable with header and footer
 
 ```ts file="PanelScrollableHeaderFooter.tsx"
+```
+
+### Pill
+
+```ts file="PanelPill.tsx"
 ```

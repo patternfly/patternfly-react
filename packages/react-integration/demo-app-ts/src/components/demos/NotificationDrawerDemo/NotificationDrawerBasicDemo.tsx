@@ -15,7 +15,7 @@ import {
   MenuToggleElement,
   Divider
 } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 interface BasicNotificationDrawerDemoState {
   isDrawerOpen: boolean;
@@ -71,7 +71,7 @@ export class BasicNotificationDrawerDemo extends Component<NotificationDrawerPro
                 onClick={() => this.onToggle(0)}
                 id="toggle-id-0"
                 variant="plain"
-                icon={<EllipsisVIcon />}
+                icon={<RhUiEllipsisVerticalFillIcon />}
               />
             )}
           >
@@ -101,7 +101,7 @@ export class BasicNotificationDrawerDemo extends Component<NotificationDrawerPro
                       onClick={() => this.onToggle(1)}
                       id="toggle-id-1"
                       variant="plain"
-                      icon={<EllipsisVIcon />}
+                      icon={<RhUiEllipsisVerticalFillIcon />}
                     />
                   )}
                 >
@@ -130,7 +130,7 @@ export class BasicNotificationDrawerDemo extends Component<NotificationDrawerPro
                       onClick={() => this.onToggle(2)}
                       id="toggle-id-2"
                       variant="plain"
-                      icon={<EllipsisVIcon />}
+                      icon={<RhUiEllipsisVerticalFillIcon />}
                     />
                   )}
                 >
@@ -161,7 +161,7 @@ export class BasicNotificationDrawerDemo extends Component<NotificationDrawerPro
                       onClick={() => this.onToggle(3)}
                       id="toggle-id-3"
                       variant="plain"
-                      icon={<EllipsisVIcon />}
+                      icon={<RhUiEllipsisVerticalFillIcon />}
                     />
                   )}
                 >
@@ -194,7 +194,7 @@ export class BasicNotificationDrawerDemo extends Component<NotificationDrawerPro
                       onClick={() => this.onToggle(4)}
                       id="toggle-id-4"
                       variant="plain"
-                      icon={<EllipsisVIcon />}
+                      icon={<RhUiEllipsisVerticalFillIcon />}
                     />
                   )}
                 >
@@ -220,7 +220,7 @@ export class BasicNotificationDrawerDemo extends Component<NotificationDrawerPro
                       onClick={() => this.onToggle(5)}
                       id="toggle-id-5"
                       variant="plain"
-                      icon={<EllipsisVIcon />}
+                      icon={<RhUiEllipsisVerticalFillIcon />}
                     />
                   )}
                 >

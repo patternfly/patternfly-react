@@ -3,8 +3,8 @@ import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/m
 import { css } from '@patternfly/react-styles';
 import { Progress } from '../Progress';
 import { Button } from '../Button';
-import FileIcon from '@patternfly/react-icons/dist/esm/icons/file-icon';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhUiDocumentFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-document-fill-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 /** Automatically reads an uploaded file to render a visual representation of it, including
  * its name, size, and read status. This sub-component also allows custom reading of files
@@ -149,7 +149,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
 
   return (
     <li className={css(styles.multipleFileUploadStatusItem, className)} {...props}>
-      <div className={styles.multipleFileUploadStatusItemIcon}>{fileIcon || <FileIcon />}</div>
+      <div className={styles.multipleFileUploadStatusItemIcon}>{fileIcon || <RhUiDocumentFillIcon />}</div>
       <div className={styles.multipleFileUploadStatusItemMain}>
         <div className="pf-v6-screen-reader" aria-live="polite">
           {progressAriaLiveMessage &&
@@ -170,7 +170,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
         />
       </div>
       <div className={`${styles.multipleFileUploadStatusItem}-close`}>
-        <Button variant="plain" aria-label={buttonAriaLabel} onClick={onClearClick} icon={<TimesIcon />} />
+        <Button variant="plain" aria-label={buttonAriaLabel} onClick={onClearClick} icon={<RhMicronsCloseIcon />} />
       </div>
     </li>
   );

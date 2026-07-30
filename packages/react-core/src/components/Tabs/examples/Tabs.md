@@ -18,14 +18,14 @@ ouia: true
 ---
 
 import { createRef, Fragment, useEffect, useRef, useState } from 'react';
-import UsersIcon from '@patternfly/react-icons/dist/esm/icons/users-icon';
-import BoxIcon from '@patternfly/react-icons/dist/esm/icons/box-icon';
+import RhUiUsersFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-users-fill-icon';
+import RhUiContainerFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-container-fill-icon';
 import DatabaseIcon from '@patternfly/react-icons/dist/esm/icons/database-icon';
-import ServerIcon from '@patternfly/react-icons/dist/esm/icons/server-icon';
-import LaptopIcon from '@patternfly/react-icons/dist/esm/icons/laptop-icon';
-import ProjectDiagramIcon from '@patternfly/react-icons/dist/esm/icons/project-diagram-icon';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhUiServerStackFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-server-stack-fill-icon';
+import RhUiLaptopFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-laptop-fill-icon';
+import RhUiInfrastructureFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-infrastructure-fill-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 ## Examples
 

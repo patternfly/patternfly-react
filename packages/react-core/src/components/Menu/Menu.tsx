@@ -2,7 +2,8 @@ import { Component, createRef, forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import breadcrumbStyles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
 import { css } from '@patternfly/react-styles';
-import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
+import { getOUIAProps, OUIAProps } from '../../helpers';
+import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 import { MenuContext } from './MenuContext';
 import type { MenuItemProps } from './MenuItem';
 import { canUseDOM } from '../../helpers/util';
@@ -67,7 +68,6 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
 }
 
 export interface MenuState {
-  ouiaStateId: string;
   transitionMoveTarget: HTMLElement;
   flyoutRef: React.Ref<HTMLLIElement> | null;
   currentDrilldownMenuId: string;
@@ -95,7 +95,6 @@ class MenuBase extends Component<MenuProps, MenuState> {
   }
 
   state: MenuState = {
-    ouiaStateId: getDefaultOUIAId(Menu.displayName),
     transitionMoveTarget: null,
     flyoutRef: null,
     currentDrilldownMenuId: this.props.id
@@ -264,72 +263,76 @@ class MenuBase extends Component<MenuProps, MenuState> {
     } = this.props;
     const _isMenuDrilledIn = isMenuDrilledIn || (drilledInMenus && drilledInMenus.includes(id)) || false;
     return (
-      <MenuContext.Provider
-        value={{
-          menuId: id,
-          parentMenu: parentMenu || id,
-          onSelect,
-          onActionClick,
-          activeItemId,
-          selected,
-          drilledInMenus,
-          drilldownItemPath,
-          onDrillIn,
-          onDrillOut,
-          onGetMenuHeight,
-          flyoutRef: this.state.flyoutRef,
-          setFlyoutRef: (flyoutRef) => this.setState({ flyoutRef }),
-          disableHover: this.context?.disableHover ?? false,
-          role
-        }}
-      >
-        {isRootMenu && (
-          <KeyboardHandler
-            containerRef={(this.menuRef as React.RefObject<HTMLDivElement | null>) || null}
-            additionalKeyHandler={this.handleExtraKeys}
-            createNavigableElements={this.createNavigableElements}
-            isActiveElement={(element: Element) =>
-              document.activeElement.closest('li') === element || // if element is a basic MenuItem
-              document.activeElement.parentElement === element ||
-              document.activeElement.closest(`.${styles.menuSearch}`) === element || // if element is a MenuSearch
-              (document.activeElement.closest('ol') && document.activeElement.closest('ol').firstChild === element)
-            }
-            getFocusableElement={(navigableElement: Element) =>
-              (navigableElement?.tagName === 'DIV' && navigableElement.querySelector('input')) || // for MenuSearchInput
-              ((navigableElement.firstChild as Element)?.tagName === 'LABEL' &&
-                navigableElement.querySelector('input')) || // for MenuItem checkboxes
-              ((navigableElement.firstChild as Element)?.tagName === 'DIV' &&
-                navigableElement.querySelector('a, button, input')) || // For aria-disabled element that is rendered inside a div with "display: contents" styling
-              (navigableElement.firstChild as Element)
-            }
-            noHorizontalArrowHandling={
-              document.activeElement &&
-              (document.activeElement.classList.contains(breadcrumbStyles.breadcrumbLink) ||
-                document.activeElement.tagName === 'INPUT')
-            }
-            noEnterHandling
-            noSpaceHandling
-          />
+      <SSRSafeIds prefix="pf-" ouiaComponentType={Menu.displayName}>
+        {(_, generatedOuiaId) => (
+          <MenuContext.Provider
+            value={{
+              menuId: id,
+              parentMenu: parentMenu || id,
+              onSelect,
+              onActionClick,
+              activeItemId,
+              selected,
+              drilledInMenus,
+              drilldownItemPath,
+              onDrillIn,
+              onDrillOut,
+              onGetMenuHeight,
+              flyoutRef: this.state.flyoutRef,
+              setFlyoutRef: (flyoutRef) => this.setState({ flyoutRef }),
+              disableHover: this.context?.disableHover ?? false,
+              role
+            }}
+          >
+            {isRootMenu && (
+              <KeyboardHandler
+                containerRef={(this.menuRef as React.RefObject<HTMLDivElement | null>) || null}
+                additionalKeyHandler={this.handleExtraKeys}
+                createNavigableElements={this.createNavigableElements}
+                isActiveElement={(element: Element) =>
+                  document.activeElement.closest('li') === element || // if element is a basic MenuItem
+                  document.activeElement.parentElement === element ||
+                  document.activeElement.closest(`.${styles.menuSearch}`) === element || // if element is a MenuSearch
+                  (document.activeElement.closest('ol') && document.activeElement.closest('ol').firstChild === element)
+                }
+                getFocusableElement={(navigableElement: Element) =>
+                  (navigableElement?.tagName === 'DIV' && navigableElement.querySelector('input')) || // for MenuSearchInput
+                  ((navigableElement.firstChild as Element)?.tagName === 'LABEL' &&
+                    navigableElement.querySelector('input')) || // for MenuItem checkboxes
+                  ((navigableElement.firstChild as Element)?.tagName === 'DIV' &&
+                    navigableElement.querySelector('a, button, input')) || // For aria-disabled element that is rendered inside a div with "display: contents" styling
+                  (navigableElement.firstChild as Element)
+                }
+                noHorizontalArrowHandling={
+                  document.activeElement &&
+                  (document.activeElement.classList.contains(breadcrumbStyles.breadcrumbLink) ||
+                    document.activeElement.tagName === 'INPUT')
+                }
+                noEnterHandling
+                noSpaceHandling
+              />
+            )}
+            <div
+              id={id}
+              className={css(
+                styles.menu,
+                isPlain && styles.modifiers.plain,
+                isScrollable && styles.modifiers.scrollable,
+                containsFlyout && styles.modifiers.flyout,
+                isNavFlyout && 'pf-m-nav',
+                containsDrilldown && styles.modifiers.drilldown,
+                _isMenuDrilledIn && styles.modifiers.drilledIn,
+                className
+              )}
+              ref={this.menuRef}
+              {...getOUIAProps(Menu.displayName, ouiaId !== undefined ? ouiaId : generatedOuiaId, ouiaSafe)}
+              {...props}
+            >
+              {children}
+            </div>
+          </MenuContext.Provider>
         )}
-        <div
-          id={id}
-          className={css(
-            styles.menu,
-            isPlain && styles.modifiers.plain,
-            isScrollable && styles.modifiers.scrollable,
-            containsFlyout && styles.modifiers.flyout,
-            isNavFlyout && 'pf-m-nav',
-            containsDrilldown && styles.modifiers.drilldown,
-            _isMenuDrilledIn && styles.modifiers.drilledIn,
-            className
-          )}
-          ref={this.menuRef}
-          {...getOUIAProps(Menu.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
-          {...props}
-        >
-          {children}
-        </div>
-      </MenuContext.Provider>
+      </SSRSafeIds>
     );
   }
 }

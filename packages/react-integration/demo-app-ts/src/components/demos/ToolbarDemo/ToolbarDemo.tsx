@@ -23,12 +23,12 @@ import {
   SelectList,
   SelectOption
 } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
+import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
-import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
-import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
+import RhUiSyncIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sync-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 interface Filter {
   risk: string[];
@@ -188,7 +188,7 @@ class ToolbarDemo extends Component<ToolbarProps, ToolbarState> {
               <Button
                 variant={ButtonVariant.tertiary}
                 aria-label="search button for search input"
-                icon={<SearchIcon />}
+                icon={<RhMicronsSearchIcon />}
               />
             </InputGroupItem>
           </InputGroup>
@@ -249,7 +249,7 @@ class ToolbarDemo extends Component<ToolbarProps, ToolbarState> {
 
     const toolbarItems = (
       <>
-        <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl" id="demo-toggle-group">
+        <ToolbarToggleGroup toggleIcon={<RhUiFilterFillIcon />} breakpoint="xl" id="demo-toggle-group">
           {toggleGroupItems}
         </ToolbarToggleGroup>
         <ToolbarGroup variant="action-group-plain">
@@ -257,10 +257,10 @@ class ToolbarDemo extends Component<ToolbarProps, ToolbarState> {
             <Button variant="plain" icon={<EditIcon />} />
           </ToolbarItem>
           <ToolbarItem>
-            <Button variant="plain" icon={<CloneIcon />} />
+            <Button variant="plain" icon={<RhUiCopyFillIcon />} />
           </ToolbarItem>
           <ToolbarItem>
-            <Button variant="plain" icon={<SyncIcon />} />
+            <Button variant="plain" icon={<RhUiSyncIcon />} />
           </ToolbarItem>
         </ToolbarGroup>
         <ToolbarItem>
@@ -273,7 +273,7 @@ class ToolbarDemo extends Component<ToolbarProps, ToolbarState> {
                 ref={toggleRef}
                 onClick={this.onKebabToggle}
                 isExpanded={kebabIsOpen}
-                icon={<EllipsisVIcon />}
+                icon={<RhUiEllipsisVerticalFillIcon />}
               />
             )}
           >

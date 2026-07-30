@@ -1,8 +1,9 @@
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import MapIcon from '@patternfly/react-icons/dist/esm/icons/map-icon';
-import MoonIcon from '@patternfly/react-icons/dist/esm/icons/moon-icon';
+import RhUiDarkModeFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-dark-mode-fill-icon';
 import HashtagIcon from '@patternfly/react-icons/dist/esm/icons/hashtag-icon';
 import FontIcon from '@patternfly/react-icons/dist/esm/icons/font-icon';
+import AdjustIcon from '@patternfly/react-icons/dist/esm/icons/adjust-icon';
 import { CodeEditor, CodeEditorControl } from '@patternfly/react-code-editor';
 import {
   Flex,
@@ -38,7 +39,7 @@ interface ConfigModalItemProps {
 }
 
 const ConfigModalItem: React.FunctionComponent<ConfigModalItemProps> = ({
-  icon = <CogIcon />,
+  icon = <RhUiSettingsFillIcon />,
   description,
   title,
   id = `ConfigModalItem-${title.replace(/\s+/g, '-').toLowerCase()}`,
@@ -77,7 +78,7 @@ interface ConfigModalSwitchProps extends Omit<ConfigModalItemProps, 'slot'> {
 }
 
 const ConfigModalSwitch: React.FunctionComponent<ConfigModalSwitchProps> = ({
-  icon = <CogIcon />,
+  icon = <RhUiSettingsFillIcon />,
   description,
   title,
   id = `ConfigModalSwitch-${title.replace(/\s+/g, '-').toLowerCase()}`,
@@ -156,6 +157,7 @@ export const CodeEditorConfigurationModal: React.FunctionComponent = () => {
 
   const [isMinimapVisible, setIsMinimapVisible] = useState(true);
   const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isHighContrastTheme, setIsHighContrastTheme] = useState(false);
   const [isLineNumbersVisible, setIsLineNumbersVisible] = useState(true);
   const [fontSize, setFontSize] = useState(14);
 
@@ -179,7 +181,15 @@ export const CodeEditorConfigurationModal: React.FunctionComponent = () => {
         description="Switch the editor to a dark color theme"
         isChecked={isDarkTheme}
         onChange={(_e, checked) => setIsDarkTheme(checked)}
-        icon={<MoonIcon />}
+        icon={<RhUiDarkModeFillIcon />}
+      />
+      <ConfigModalSwitch
+        key="high-contrast-theme-switch"
+        title="High contrast theme"
+        description="Switch the editor to a high contrast color theme"
+        isChecked={isHighContrastTheme}
+        onChange={(_e, checked) => setIsHighContrastTheme(checked)}
+        icon={<AdjustIcon />}
       />
       <ConfigModalSwitch
         key="line-numbers-switch"
@@ -221,6 +231,7 @@ export const CodeEditorConfigurationModal: React.FunctionComponent = () => {
       customControls={customControl}
       height="400px"
       isDarkTheme={isDarkTheme}
+      isHighContrastTheme={isHighContrastTheme}
       isLineNumbersVisible={isLineNumbersVisible}
       isMinimapVisible={isMinimapVisible}
       onChange={onChange}

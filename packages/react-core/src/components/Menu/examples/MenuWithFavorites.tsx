@@ -1,8 +1,8 @@
 import { Fragment, useState } from 'react';
 import { Menu, MenuContent, MenuItem, MenuItemAction, MenuGroup, MenuList, Divider } from '@patternfly/react-core';
-import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
-import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
+import RhUiClipboardFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clipboard-fill-icon';
+import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 
 export const MenuWithFavorites: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState(0);
@@ -32,21 +32,21 @@ export const MenuWithFavorites: React.FunctionComponent = () => {
       text: 'Item 1',
       description: 'Description 1',
       itemId: 'item-1',
-      action: <BarsIcon />,
+      action: <RhUiMenuBarsIcon />,
       actionId: 'bars'
     },
     {
       text: 'Item 2',
       description: 'Description 2',
       itemId: 'item-2',
-      action: <ClipboardIcon />,
+      action: <RhUiClipboardFillIcon />,
       actionId: 'clipboard'
     },
     {
       text: 'Item 3',
       description: 'Description 3',
       itemId: 'item-3',
-      action: <BellIcon />,
+      action: <RhUiNotificationFillIcon />,
       actionId: 'bell'
     }
   ];

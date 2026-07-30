@@ -14,10 +14,10 @@ import {
   SelectList,
   SelectOption
 } from '@patternfly/react-core';
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
-import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
-import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
+import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
+import RhUiSyncIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sync-icon';
 
 export const ToolbarCustomLabelGroupContent: React.FunctionComponent = () => {
   const [statusIsExpanded, setStatusIsExpanded] = useState<boolean>(false);
@@ -169,7 +169,7 @@ export const ToolbarCustomLabelGroupContent: React.FunctionComponent = () => {
 
   const toolbarItems = (
     <Fragment>
-      <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+      <ToolbarToggleGroup toggleIcon={<RhUiFilterFillIcon />} breakpoint="xl">
         {toggleGroupItems}
       </ToolbarToggleGroup>
       <ToolbarGroup variant="action-group-plain">
@@ -177,10 +177,10 @@ export const ToolbarCustomLabelGroupContent: React.FunctionComponent = () => {
           <Button variant="plain" aria-label="edit" icon={<EditIcon />} />
         </ToolbarItem>
         <ToolbarItem>
-          <Button variant="plain" aria-label="clone" icon={<CloneIcon />} />
+          <Button variant="plain" aria-label="clone" icon={<RhUiCopyFillIcon />} />
         </ToolbarItem>
         <ToolbarItem>
-          <Button variant="plain" aria-label="sync" icon={<SyncIcon />} />
+          <Button variant="plain" aria-label="sync" icon={<RhUiSyncIcon />} />
         </ToolbarItem>
       </ToolbarGroup>
     </Fragment>

@@ -1,5 +1,5 @@
 import { createRef } from 'react';
-import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
+import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
 import { Button } from '../Button';
 import { Tooltip, TooltipPosition } from '../Tooltip';
 
@@ -87,7 +87,7 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
         aria-label={ariaLabel}
         className={className}
         id={id}
-        icon={<CopyIcon />}
+        icon={<RhUiCopyFillIcon />}
         {...props}
         ref={triggerRef}
       />

@@ -2,10 +2,11 @@ import { Component, createRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/ExpandableSection/expandable-section';
 import { css } from '@patternfly/react-styles';
 import lineClamp from '@patternfly/react-tokens/dist/esm/c_expandable_section_m_truncate__content_LineClamp';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import { PickOptional } from '../../helpers/typeUtils';
-import { debounce, getUniqueId } from '../../helpers/util';
+import { debounce } from '../../helpers/util';
 import { getResizeObserver } from '../../helpers/resizeObserver';
+import { GenerateId, getOUIAProps, OUIAProps } from '../../helpers';
 import { Button } from '../Button';
 
 export enum ExpandableSectionVariant {
@@ -15,7 +16,7 @@ export enum ExpandableSectionVariant {
 
 /** The main expandable section component. */
 
-export interface ExpandableSectionProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onToggle'> {
+export interface ExpandableSectionProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onToggle'>, OUIAProps {
   /** Content rendered inside the expandable section. */
   children?: React.ReactNode;
   /** Additional classes added to the expandable section. */
@@ -83,6 +84,10 @@ export interface ExpandableSectionProps extends Omit<React.HTMLProps<HTMLDivElem
    * This is useful when the toggle text should function as a heading in the document structure.
    */
   toggleWrapper?: 'div' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 interface ExpandableSectionState {
@@ -106,6 +111,7 @@ const setLineClamp = (lines: number, element: HTMLDivElement) => {
 
 class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSectionState> {
   static displayName = 'ExpandableSection';
+
   constructor(props: ExpandableSectionProps) {
     super(props);
 
@@ -132,7 +138,8 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
     displaySize: 'default',
     isWidthLimited: false,
     isIndented: false,
-    variant: 'default'
+    variant: 'default',
+    ouiaSafe: true
   };
 
   private calculateToggleText(
@@ -215,7 +222,7 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
       toggleContent,
       toggleAriaLabel,
       toggleAriaLabelledBy,
-      toggleIcon = <AngleRightIcon />,
+      toggleIcon = <RhMicronsCaretDownIcon />,
       hasToggleIcon = true,
       children,
       isExpanded,
@@ -230,6 +237,8 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
       truncateMaxLines,
       direction,
       toggleWrapper = 'div',
+      ouiaId,
+      ouiaSafe,
       ...props
     } = this.props;
 
@@ -242,8 +251,6 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
 
     let onToggle = onToggleProp;
     let propOrStateIsExpanded = isExpanded;
-    const uniqueContentId = contentId || getUniqueId('expandable-section-content');
-    const uniqueToggleId = toggleId || getUniqueId('expandable-section-toggle');
 
     // uncontrolled
     if (isExpanded === undefined) {
@@ -264,55 +271,69 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
       typeof toggleContent === 'function' ? toggleContent(propOrStateIsExpanded) : toggleContent;
     const ToggleWrapper = toggleWrapper as any;
 
-    const expandableToggle = !isDetached && (
-      <ToggleWrapper className={`${styles.expandableSection}__toggle`}>
-        <Button
-          variant="link"
-          {...(variant === ExpandableSectionVariant.truncate && { isInline: true })}
-          aria-expanded={propOrStateIsExpanded}
-          aria-controls={uniqueContentId}
-          id={uniqueToggleId}
-          onClick={(event) => onToggle(event, !propOrStateIsExpanded)}
-          {...(variant !== ExpandableSectionVariant.truncate &&
-            hasToggleIcon && {
-              icon: <span className={css(styles.expandableSectionToggleIcon)}>{toggleIcon}</span>
-            })}
-          aria-label={toggleAriaLabel}
-          aria-labelledby={toggleAriaLabelledBy}
-        >
-          {computedToggleContent || computedToggleText}
-        </Button>
-      </ToggleWrapper>
-    );
-
     return (
-      <div
-        className={css(
-          styles.expandableSection,
-          propOrStateIsExpanded && styles.modifiers.expanded,
-          displaySize === 'lg' && styles.modifiers.displayLg,
-          isWidthLimited && styles.modifiers.limitWidth,
-          isIndented && styles.modifiers.indented,
-          isDetached && direction && directionClassMap[direction],
-          isDetached && direction && 'pf-m-detached',
-          variant === ExpandableSectionVariant.truncate && styles.modifiers.truncate,
-          className
+      <GenerateId prefix="expandable-section-content-">
+        {(genContentId) => (
+          <GenerateId prefix="expandable-section-toggle-">
+            {(genToggleId) => {
+              const uniqueContentId = contentId || genContentId;
+              const uniqueToggleId = toggleId || genToggleId;
+
+              const expandableToggle = !isDetached && (
+                <ToggleWrapper className={`${styles.expandableSection}__toggle`}>
+                  <Button
+                    variant="link"
+                    {...(variant === ExpandableSectionVariant.truncate && { isInline: true })}
+                    aria-expanded={propOrStateIsExpanded}
+                    aria-controls={uniqueContentId}
+                    id={uniqueToggleId}
+                    onClick={(event) => onToggle(event, !propOrStateIsExpanded)}
+                    {...(variant !== ExpandableSectionVariant.truncate &&
+                      hasToggleIcon && {
+                        icon: <span className={css(styles.expandableSectionToggleIcon)}>{toggleIcon}</span>
+                      })}
+                    aria-label={toggleAriaLabel}
+                    aria-labelledby={toggleAriaLabelledBy}
+                  >
+                    {computedToggleContent || computedToggleText}
+                  </Button>
+                </ToggleWrapper>
+              );
+
+              return (
+                <div
+                  className={css(
+                    styles.expandableSection,
+                    propOrStateIsExpanded && styles.modifiers.expanded,
+                    displaySize === 'lg' && styles.modifiers.displayLg,
+                    isWidthLimited && styles.modifiers.limitWidth,
+                    isIndented && styles.modifiers.indented,
+                    isDetached && direction && directionClassMap[direction],
+                    isDetached && direction && 'pf-m-detached',
+                    variant === ExpandableSectionVariant.truncate && styles.modifiers.truncate,
+                    className
+                  )}
+                  {...props}
+                  {...getOUIAProps(ExpandableSection.displayName, ouiaId, ouiaSafe)}
+                >
+                  {variant === ExpandableSectionVariant.default && expandableToggle}
+                  <div
+                    ref={this.expandableContentRef}
+                    className={css(styles.expandableSectionContent)}
+                    hidden={variant !== ExpandableSectionVariant.truncate && !propOrStateIsExpanded}
+                    id={uniqueContentId}
+                    aria-labelledby={uniqueToggleId}
+                    role="region"
+                  >
+                    {children}
+                  </div>
+                  {variant === ExpandableSectionVariant.truncate && this.state.hasToggle && expandableToggle}
+                </div>
+              );
+            }}
+          </GenerateId>
         )}
-        {...props}
-      >
-        {variant === ExpandableSectionVariant.default && expandableToggle}
-        <div
-          ref={this.expandableContentRef}
-          className={css(styles.expandableSectionContent)}
-          hidden={variant !== ExpandableSectionVariant.truncate && !propOrStateIsExpanded}
-          id={uniqueContentId}
-          aria-labelledby={uniqueToggleId}
-          role="region"
-        >
-          {children}
-        </div>
-        {variant === ExpandableSectionVariant.truncate && this.state.hasToggle && expandableToggle}
-      </div>
+      </GenerateId>
     );
   }
 }

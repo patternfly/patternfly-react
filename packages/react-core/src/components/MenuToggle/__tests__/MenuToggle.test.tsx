@@ -1,8 +1,8 @@
 import { MenuToggle } from '../MenuToggle';
 import { MenuToggleCheckbox } from '../MenuToggleCheckbox';
 import { Badge } from '../../Badge';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
 import styles from '@patternfly/react-styles/css/components/MenuToggle/menu-toggle';
@@ -35,7 +35,7 @@ describe('Old Snapshot tests - remove when refactoring', () => {
   });
 
   test('shows isPlain', () => {
-    const { asFragment } = render(<MenuToggle variant="plain" icon={<EllipsisVIcon />} />);
+    const { asFragment } = render(<MenuToggle variant="plain" icon={<RhUiEllipsisVerticalFillIcon />} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -45,7 +45,7 @@ describe('Old Snapshot tests - remove when refactoring', () => {
   });
 
   test('shows icon', () => {
-    const { asFragment } = render(<MenuToggle icon={<CogIcon />}>Toggle</MenuToggle>);
+    const { asFragment } = render(<MenuToggle icon={<RhUiSettingsFillIcon />}>Toggle</MenuToggle>);
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -56,6 +56,13 @@ describe('Old Snapshot tests - remove when refactoring', () => {
 });
 
 const toggleVariants = ['default', 'plain', 'primary', 'plainText', 'secondary', 'typeahead'];
+
+test(`Renders with classes ${styles.modifiers.plain} and ${styles.modifiers.text} when variant="plainText" is passed`, () => {
+  render(<MenuToggle variant="plainText">Toggle</MenuToggle>);
+  const toggle = screen.getByRole('button');
+  expect(toggle).toHaveClass(styles.modifiers.plain);
+  expect(toggle).toHaveClass(styles.modifiers.text);
+});
 
 test(`Renders with class ${styles.modifiers.small} when size="sm" is passed`, () => {
   render(<MenuToggle size="sm">Toggle</MenuToggle>);
@@ -101,6 +108,16 @@ test('split toggle passes onClick', async () => {
   expect(mockClick).toHaveBeenCalled();
 });
 
+test(`Renders with class ${styles.modifiers.form} when isInForm is passed`, () => {
+  render(<MenuToggle isInForm>Toggle</MenuToggle>);
+  expect(screen.getByRole('button')).toHaveClass(styles.modifiers.form);
+});
+
+test(`Does not render class ${styles.modifiers.form} when isInForm is false`, () => {
+  render(<MenuToggle isInForm={false}>Toggle</MenuToggle>);
+  expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.form);
+});
+
 test(`Renders with class ${styles.modifiers.placeholder} when isPlaceholder is passed`, () => {
   render(<MenuToggle isPlaceholder>Toggle</MenuToggle>);
   expect(screen.getByRole('button')).toHaveClass(styles.modifiers.placeholder);
@@ -137,4 +154,44 @@ test('Does not render custom icon when icon prop and isSettings are passed', () 
     </MenuToggle>
   );
   expect(screen.queryByText('Custom icon')).not.toBeInTheDocument();
+});
+
+test(`Renders with class ${styles.modifiers.docked} when isDocked is passed`, () => {
+  render(<MenuToggle isDocked>Dock Toggle</MenuToggle>);
+  expect(screen.getByRole('button')).toHaveClass(styles.modifiers.docked);
+});
+
+test(`Does not render with class ${styles.modifiers.docked} when isDocked is not passed`, () => {
+  render(<MenuToggle>Toggle</MenuToggle>);
+  expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.docked);
+});
+
+test(`Renders with class ${styles.modifiers.textExpanded} when isTextExpanded is passed and isDocked is passed`, () => {
+  render(
+    <MenuToggle isTextExpanded isDocked>
+      Text Expanded Toggle
+    </MenuToggle>
+  );
+  expect(screen.getByRole('button')).toHaveClass(styles.modifiers.textExpanded);
+});
+
+test(`Does not render with class ${styles.modifiers.textExpanded} when isTextExpanded is not passed`, () => {
+  render(<MenuToggle>Toggle</MenuToggle>);
+  expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.textExpanded);
+});
+
+test(`Does not render with class ${styles.modifiers.textExpanded} when isTextExpanded is passed but isDocked is not passed`, () => {
+  render(<MenuToggle isTextExpanded>Text Expanded Toggle</MenuToggle>);
+  expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.textExpanded);
+});
+
+test(`Renders with both ${styles.modifiers.docked} and ${styles.modifiers.textExpanded} when both props are passed`, () => {
+  render(
+    <MenuToggle isDocked isTextExpanded>
+      Dock Text Expanded Toggle
+    </MenuToggle>
+  );
+  const button = screen.getByRole('button');
+  expect(button).toHaveClass(styles.modifiers.docked);
+  expect(button).toHaveClass(styles.modifiers.textExpanded);
 });

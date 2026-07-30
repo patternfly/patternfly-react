@@ -18,6 +18,13 @@ const ICON_TYPES = [
   // Add new types here as they become available in @rhds/icons
 ];
 
+const ICON_TYPE_CLASSES = {
+  ui: '',
+  standard: 'pf-v6-icon-rh-standard',
+  // social: '',
+  microns: ''
+};
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const require = createRequire(import.meta.url);
 
@@ -106,10 +113,11 @@ async function processSvgFile(iconName, iconType) {
 /**
  * Formats an object as an ES module export with proper formatting.
  * @param {object} obj The object to format.
+ * @param {string} iconType The set of the icon.
  * @param {number} indent The indentation level.
  * @returns {string} Formatted module string.
  */
-function formatModule(obj, indent = 0) {
+function formatModule(obj, iconType, indent = 0) {
   const spaces = '  '.repeat(indent);
   const entries = Object.entries(obj);
   if (entries.length === 0) {
@@ -129,6 +137,11 @@ function formatModule(obj, indent = 0) {
       lines.push(`${spaces}    yOffset: ${value.yOffset},`);
       lines.push(`${spaces}    width: ${value.width},`);
       lines.push(`${spaces}    height: ${value.height},`);
+
+      // Handle set-specific svgClassName
+      if (ICON_TYPE_CLASSES[iconType]) {
+        lines.push(`${spaces}    svgClassName: '${ICON_TYPE_CLASSES[iconType]}',`);
+      }
 
       // Handle svgPathData: string or array of objects
       if (Array.isArray(value.svgPathData)) {
@@ -223,7 +236,7 @@ async function processSVGs() {
       // Capitalize first letter, and handle special case for 'ui' -> 'UI'
       const capitalizedType = iconType === 'ui' ? 'UI' : iconType.charAt(0).toUpperCase() + iconType.slice(1);
       const outputFile = path.join(OUTPUT_DIR, `rhIcons${capitalizedType}.mjs`);
-      const moduleOutput = `export default ${formatModule(iconsObject)};\n`;
+      const moduleOutput = `export default ${formatModule(iconsObject, iconType)};\n`;
       await fs.writeFile(outputFile, moduleOutput, 'utf-8');
       console.log(`Output written to: ${outputFile}`);
     }

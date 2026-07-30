@@ -50,7 +50,9 @@ export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
           aria-hidden={!sidebarOpen}
           {...props}
         >
-          <PageSidebarContext.Provider value={{ isSidebarOpen: sidebarOpen }}>{children}</PageSidebarContext.Provider>
+          <PageSidebarContext.Provider value={{ isSidebarOpen: sidebarOpen }}>
+            <div className={css(styles.pageSidebarMain)}>{children}</div>
+          </PageSidebarContext.Provider>
         </div>
       );
     }}

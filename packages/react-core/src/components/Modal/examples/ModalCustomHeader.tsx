@@ -12,7 +12,7 @@ import {
   Flex
 } from '@patternfly/react-core';
 
-import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
+import RhUiWarningIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-icon';
 
 export const ModalCustomHeaderFooter: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -55,7 +55,7 @@ export const ModalCustomHeaderFooter: React.FunctionComponent = () => {
         <ModalFooter>
           <Title headingLevel="h4" size={TitleSizes.md}>
             <Flex spaceItems={{ default: 'spaceItemsSm' }}>
-              <WarningTriangleIcon />
+              <RhUiWarningIcon />
               <span>Custom modal footer.</span>
             </Flex>
           </Title>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button, Flex } from '@patternfly/react-core';
-import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
+import RhUiUploadIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-upload-icon';
 
 interface LoadingPropsType {
   spinnerAriaValueText: string;
@@ -59,7 +59,7 @@ export const ButtonProgress: React.FunctionComponent = () => {
         variant="plain"
         {...(!isUploading && { 'aria-label': 'Upload' })}
         onClick={() => setIsUploading(!isUploading)}
-        icon={<UploadIcon />}
+        icon={<RhUiUploadIcon />}
         {...uploadingProps}
       />
       <br />

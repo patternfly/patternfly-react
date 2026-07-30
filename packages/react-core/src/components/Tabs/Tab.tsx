@@ -5,7 +5,7 @@ import { TabButton } from './TabButton';
 import { TabsContext } from './TabsContext';
 import { css } from '@patternfly/react-styles';
 import { Tooltip } from '../Tooltip';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 import { TabAction } from './TabAction';
 
 export interface TabProps
@@ -138,7 +138,7 @@ const TabBase: React.FunctionComponent<TabProps> = ({
           onClick={(event: any) => handleTabClose(event, eventKey, tabContentRef)}
           isDisabled={isCloseDisabled}
         >
-          <TimesIcon />
+          <RhMicronsCloseIcon />
         </TabAction>
       )}
     </li>

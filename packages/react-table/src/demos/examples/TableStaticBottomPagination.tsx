@@ -15,7 +15,7 @@ import {
   PaginationVariant
 } from '@patternfly/react-core';
 import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
 
@@ -100,7 +100,7 @@ export const TableStaticBottomPagination: React.FunctionComponent = () => {
             aria-label="Select Input"
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
               <MenuToggle
-                icon={<FilterIcon />}
+                icon={<RhUiFilterFillIcon />}
                 ref={toggleRef}
                 onClick={() => setIsSelectOpen(!isSelectOpen)}
                 isExpanded={isSelectOpen}

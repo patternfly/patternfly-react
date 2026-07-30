@@ -1,6 +1,6 @@
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
-import { getUniqueId } from '../../helpers';
+import { useSSRSafeId } from '../../helpers';
 import { DualListSelectorListWrapper } from './DualListSelectorListWrapper';
 import { DualListSelectorPaneContext } from './DualListSelectorContext';
 import { SearchInput } from '../SearchInput';
@@ -44,50 +44,54 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
   searchInput,
   children,
   title = '',
-  id = getUniqueId('dual-list-selector-pane'),
+  id: idProp,
   isDisabled = false,
   listMinHeight,
   ...props
-}: DualListSelectorPaneProps) => (
-  <div
-    className={css(styles.dualListSelectorPane, isChosen ? styles.modifiers.chosen : 'pf-m-available', className)}
-    {...props}
-  >
-    {title && (
-      <div className={css(styles.dualListSelectorHeader)}>
-        <div className={`${styles.dualListSelector}__title`}>
-          <div className={css(styles.dualListSelectorTitleText)}>{title}</div>
-        </div>
-      </div>
-    )}
-    {(actions || searchInput) && (
-      <div className={css(styles.dualListSelectorTools)}>
-        {searchInput && (
-          <div className={css(styles.dualListSelectorToolsFilter)}>
-            {searchInput ? searchInput : <SearchInput isDisabled={isDisabled} />}
+}: DualListSelectorPaneProps) => {
+  const generatedId = useSSRSafeId('dual-list-selector-pane');
+  const id = idProp ?? generatedId;
+  return (
+    <div
+      className={css(styles.dualListSelectorPane, isChosen ? styles.modifiers.chosen : 'pf-m-available', className)}
+      {...props}
+    >
+      {title && (
+        <div className={css(styles.dualListSelectorHeader)}>
+          <div className={`${styles.dualListSelector}__title`}>
+            <div className={css(styles.dualListSelectorTitleText)}>{title}</div>
           </div>
-        )}
-        {actions && <div className={css(styles.dualListSelectorToolsActions)}>{actions}</div>}
-      </div>
-    )}
-    {status && (
-      <div className={css(styles.dualListSelectorStatus)}>
-        <div className={css(styles.dualListSelectorStatusText)} id={`${id}-status`}>
-          {status}
         </div>
-      </div>
-    )}
-    <DualListSelectorPaneContext.Provider value={{ isChosen }}>
-      <DualListSelectorListWrapper
-        aria-labelledby={`${id}-status`}
-        id={`${id}-list`}
-        {...(listMinHeight && {
-          style: { [cssMenuMinHeight.name]: listMinHeight } as React.CSSProperties
-        })}
-      >
-        {children}
-      </DualListSelectorListWrapper>
-    </DualListSelectorPaneContext.Provider>
-  </div>
-);
+      )}
+      {(actions || searchInput) && (
+        <div className={css(styles.dualListSelectorTools)}>
+          {searchInput && (
+            <div className={css(styles.dualListSelectorToolsFilter)}>
+              {searchInput ? searchInput : <SearchInput isDisabled={isDisabled} />}
+            </div>
+          )}
+          {actions && <div className={css(styles.dualListSelectorToolsActions)}>{actions}</div>}
+        </div>
+      )}
+      {status && (
+        <div className={css(styles.dualListSelectorStatus)}>
+          <div className={css(styles.dualListSelectorStatusText)} id={`${id}-status`}>
+            {status}
+          </div>
+        </div>
+      )}
+      <DualListSelectorPaneContext.Provider value={{ isChosen }}>
+        <DualListSelectorListWrapper
+          aria-labelledby={`${id}-status`}
+          id={`${id}-list`}
+          {...(listMinHeight && {
+            style: { [cssMenuMinHeight.name]: listMinHeight } as React.CSSProperties
+          })}
+        >
+          {children}
+        </DualListSelectorListWrapper>
+      </DualListSelectorPaneContext.Provider>
+    </div>
+  );
+};
 DualListSelectorPane.displayName = 'DualListSelectorPane';

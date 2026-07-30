@@ -6,7 +6,7 @@ propComponents: ['NotificationBadge']
 ---
 
 import { useEffect, useState } from 'react';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 
 ## Examples
 

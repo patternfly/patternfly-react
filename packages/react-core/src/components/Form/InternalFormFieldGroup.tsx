@@ -1,8 +1,9 @@
 import styles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
 import { FormFieldGroupToggle } from './FormFieldGroupToggle';
-import { GenerateId } from '../../helpers';
+import { useSSRSafeId } from '../../helpers';
 import { useHasAnimations } from '../../helpers';
+import { IS_INERT } from '../../helpers/inert';
 
 export interface InternalFormFieldGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label' | 'onToggle'> {
   /** Anything that can be rendered as form field group content. */
@@ -37,6 +38,7 @@ export const InternalFormFieldGroup: React.FunctionComponent<InternalFormFieldGr
   hasAnimations: hasAnimationsProp,
   ...props
 }: InternalFormFieldGroupProps) => {
+  const toggleId = useSSRSafeId('form-field-group-toggle');
   const hasAnimations = useHasAnimations(hasAnimationsProp);
   const headerTitleText = header ? header.props.titleText : null;
   if (isExpandable && !toggleAriaLabel && !headerTitleText) {
@@ -59,23 +61,19 @@ export const InternalFormFieldGroup: React.FunctionComponent<InternalFormFieldGr
       {...props}
     >
       {isExpandable && (
-        <GenerateId prefix="form-field-group-toggle">
-          {(id) => (
-            <FormFieldGroupToggle
-              onToggle={onToggle}
-              isExpanded={isExpanded}
-              aria-label={toggleAriaLabel}
-              toggleId={id}
-              {...(headerTitleText && { 'aria-labelledby': `${header.props.titleText.id} ${id}` })}
-            />
-          )}
-        </GenerateId>
+        <FormFieldGroupToggle
+          onToggle={onToggle}
+          isExpanded={isExpanded}
+          aria-label={toggleAriaLabel}
+          toggleId={toggleId}
+          {...(headerTitleText && { 'aria-labelledby': `${header.props.titleText.id} ${toggleId}` })}
+        />
       )}
       {header && header}
       {(!isExpandable || (isExpandable && isExpanded) || (hasAnimations && isExpandable)) && (
         <div
           className={css(styles.formFieldGroupBody)}
-          {...(hasAnimations && isExpandable && !isExpanded && { inert: '' })}
+          {...(hasAnimations && isExpandable && !isExpanded && { inert: IS_INERT })}
         >
           {children}
         </div>

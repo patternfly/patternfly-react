@@ -1,6 +1,6 @@
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 import { Button, ButtonVariant } from '../Button';
 
 export interface NotificationDrawerHeaderProps extends React.HTMLProps<HTMLDivElement> {
@@ -49,7 +49,7 @@ export const NotificationDrawerHeader: React.FunctionComponent<NotificationDrawe
               variant={ButtonVariant.plain}
               aria-label={closeButtonAriaLabel}
               onClick={(event) => onClose(event)}
-              icon={<TimesIcon />}
+              icon={<RhMicronsCloseIcon />}
             />
           </div>
         )}

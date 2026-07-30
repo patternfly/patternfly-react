@@ -5,6 +5,9 @@ import { css } from '@patternfly/react-styles';
 export enum DrawerColorVariant {
   default = 'default',
   secondary = 'secondary',
+  /**
+   * @deprecated `DrawerColorVariant.noBackground` is deprecated. Use the `isPlain` prop on `DrawerPanelContent` and the `DrawerSection`instead.
+   */
   noBackground = 'no-background'
 }
 

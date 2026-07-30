@@ -8,6 +8,7 @@ import {
   Level,
   LabelGroup,
   Label,
+  LabelColor,
   Grid,
   Flex,
   List,
@@ -19,10 +20,10 @@ import {
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
-import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
-import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
-import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
+import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export const CardHorizontalGrid: React.FunctionComponent = () => {
   const [isCardExpanded, setIsCardExpanded] = useState(false);
@@ -63,7 +64,7 @@ export const CardHorizontalGrid: React.FunctionComponent = () => {
           onClick={onActionToggle}
           variant="plain"
           aria-label="Horizontal card grid demo kebab toggle"
-          icon={<EllipsisVIcon />}
+          icon={<RhUiEllipsisVerticalFillIcon />}
         />
       )}
     >
@@ -88,16 +89,16 @@ export const CardHorizontalGrid: React.FunctionComponent = () => {
           <Level hasGutter>
             <CardTitle id="titleId">Getting Started</CardTitle>
             <LabelGroup isCompact>
-              <Label isCompact icon={<InfoCircleIcon />} color="blue">
+              <Label isCompact icon={<RhUiInformationFillIcon />} color={LabelColor.blue}>
                 Set up your cluster
               </Label>
-              <Label isCompact icon={<InfoCircleIcon />} color="purple">
+              <Label isCompact icon={<RhUiInformationFillIcon />} color={LabelColor.purple}>
                 Guided tours
               </Label>
-              <Label isCompact icon={<InfoCircleIcon />} color="green">
+              <Label isCompact icon={<RhUiInformationFillIcon />} color={LabelColor.green}>
                 Quick starts
               </Label>
-              <Label isCompact icon={<InfoCircleIcon />} color="orange">
+              <Label isCompact icon={<RhUiInformationFillIcon />} color={LabelColor.orange}>
                 Learning resources
               </Label>
             </LabelGroup>
@@ -118,7 +119,7 @@ export const CardHorizontalGrid: React.FunctionComponent = () => {
                 direction={{ default: 'column' }}
                 grow={{ default: 'grow' }}
               >
-                <Label icon={<InfoCircleIcon />} color="blue">
+                <Label icon={<RhUiInformationFillIcon />} color={LabelColor.blue}>
                   Set up your cluster
                 </Label>
                 <p>Continue setting up your cluster to access all you cain in the Console</p>
@@ -134,7 +135,14 @@ export const CardHorizontalGrid: React.FunctionComponent = () => {
                   </ListItem>
                 </List>
               </Flex>
-              <Button href="#" component="a" variant="link" isInline icon={<ArrowRightIcon />} iconPosition="right">
+              <Button
+                href="#"
+                component="a"
+                variant="link"
+                isInline
+                icon={<RhMicronsCaretRightIcon />}
+                iconPosition="right"
+              >
                 View all set up cluster steps
               </Button>
             </Flex>
@@ -149,7 +157,7 @@ export const CardHorizontalGrid: React.FunctionComponent = () => {
                 direction={{ default: 'column' }}
                 grow={{ default: 'grow' }}
               >
-                <Label icon={<InfoCircleIcon />} color="purple">
+                <Label icon={<RhUiInformationFillIcon />} color={LabelColor.purple}>
                   Guided tours
                 </Label>
                 <p>Tour some of the key features around the console</p>
@@ -162,7 +170,14 @@ export const CardHorizontalGrid: React.FunctionComponent = () => {
                   </ListItem>
                 </List>
               </Flex>
-              <Button href="#" component="a" variant="link" isInline icon={<ArrowRightIcon />} iconPosition="right">
+              <Button
+                href="#"
+                component="a"
+                variant="link"
+                isInline
+                icon={<RhMicronsCaretRightIcon />}
+                iconPosition="right"
+              >
                 View all guided tours
               </Button>
             </Flex>
@@ -177,7 +192,7 @@ export const CardHorizontalGrid: React.FunctionComponent = () => {
                 direction={{ default: 'column' }}
                 grow={{ default: 'grow' }}
               >
-                <Label icon={<InfoCircleIcon />} color="green">
+                <Label icon={<RhUiInformationFillIcon />} color={LabelColor.green}>
                   Quick starts
                 </Label>
                 <p>Get started with features using our step-by-step documentation</p>
@@ -193,7 +208,14 @@ export const CardHorizontalGrid: React.FunctionComponent = () => {
                   </ListItem>
                 </List>
               </Flex>
-              <Button href="#" component="a" variant="link" isInline icon={<ArrowRightIcon />} iconPosition="right">
+              <Button
+                href="#"
+                component="a"
+                variant="link"
+                isInline
+                icon={<RhMicronsCaretRightIcon />}
+                iconPosition="right"
+              >
                 View all quick starts
               </Button>
             </Flex>
@@ -208,7 +230,7 @@ export const CardHorizontalGrid: React.FunctionComponent = () => {
                 direction={{ default: 'column' }}
                 grow={{ default: 'grow' }}
               >
-                <Label icon={<InfoCircleIcon />} color="orange">
+                <Label icon={<RhUiInformationFillIcon />} color={LabelColor.orange}>
                   Learning resources
                 </Label>
                 <p>Learn about new features within the Console and get started with demo apps</p>
@@ -219,7 +241,7 @@ export const CardHorizontalGrid: React.FunctionComponent = () => {
                   <ListItem>
                     <a href="#">
                       OpenShift 4.5: Top Tasks
-                      <ExternalLinkAltIcon />
+                      <RhMicronsExternalLinkIcon />
                     </a>
                   </ListItem>
                   <ListItem>
@@ -227,7 +249,14 @@ export const CardHorizontalGrid: React.FunctionComponent = () => {
                   </ListItem>
                 </List>
               </Flex>
-              <Button href="#" component="a" variant="link" isInline icon={<ArrowRightIcon />} iconPosition="right">
+              <Button
+                href="#"
+                component="a"
+                variant="link"
+                isInline
+                icon={<RhMicronsCaretRightIcon />}
+                iconPosition="right"
+              >
                 View all learning resources
               </Button>
             </Flex>

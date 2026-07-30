@@ -37,4 +37,30 @@ describe('ToolbarItem', () => {
       });
     });
   });
+
+  const bps = ['default', 'md', 'lg', 'xl', '2xl'] as const;
+  describe.each(bps)(`ToolbarItem visibilityAtHeight`, (bp) => {
+    it(`Applies correct visible class at ${bp}`, () => {
+      render(
+        <ToolbarItem data-testid="toolbaritem" visibilityAtHeight={{ [bp]: 'visible' }}>
+          Test
+        </ToolbarItem>
+      );
+
+      if (bp !== 'default') {
+        expect(screen.getByTestId('toolbaritem')).toHaveClass(`pf-m-visible-on-${bp}-height`);
+      }
+    });
+
+    it(`Applies correct hidden class at ${bp}`, () => {
+      render(
+        <ToolbarItem data-testid="toolbaritem" visibilityAtHeight={{ [bp]: 'hidden' }}>
+          Test
+        </ToolbarItem>
+      );
+
+      const expectedClass = bp === 'default' ? 'pf-m-hidden' : `pf-m-hidden-on-${bp}-height`;
+      expect(screen.getByTestId('toolbaritem')).toHaveClass(expectedClass);
+    });
+  });
 });

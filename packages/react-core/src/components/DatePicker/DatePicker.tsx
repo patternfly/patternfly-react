@@ -6,7 +6,7 @@ import { TextInput, TextInputProps } from '../TextInput/TextInput';
 import { Button } from '../Button';
 import { Popover, PopoverProps } from '../Popover/Popover';
 import { InputGroup, InputGroupItem } from '../InputGroup';
-import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/outlined-calendar-alt-icon';
+import RhUiCalendarIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-calendar-icon';
 import { CalendarMonth, CalendarFormat } from '../CalendarMonth';
 import { KeyTypes } from '../../helpers';
 import { isValidDate } from '../../helpers/datetimeUtils';
@@ -333,7 +333,7 @@ const DatePickerBase = (
                 aria-label={buttonAriaLabel}
                 onClick={() => setPopoverOpen(!popoverOpen)}
                 isDisabled={isDisabled}
-                icon={<OutlinedCalendarAltIcon />}
+                icon={<RhUiCalendarIcon />}
                 aria-haspopup="dialog"
               />
             </InputGroupItem>

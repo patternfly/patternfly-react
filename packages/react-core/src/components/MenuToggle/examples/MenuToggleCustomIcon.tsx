@@ -1,16 +1,16 @@
 import { Fragment } from 'react';
 import { MenuToggle } from '@patternfly/react-core';
-import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
+import RhUiAddIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-icon';
 
 export const MenuToggleCustomIcon: React.FC = () => (
   <Fragment>
-    <MenuToggle icon={<PlusIcon />} variant="primary">
+    <MenuToggle icon={<RhUiAddIcon />} variant="primary">
       Icon
     </MenuToggle>{' '}
-    <MenuToggle icon={<PlusIcon />} variant="secondary">
+    <MenuToggle icon={<RhUiAddIcon />} variant="secondary">
       Icon
     </MenuToggle>{' '}
-    <MenuToggle icon={<PlusIcon />} variant="secondary" isDisabled>
+    <MenuToggle icon={<RhUiAddIcon />} variant="secondary" isDisabled>
       Icon
     </MenuToggle>
   </Fragment>

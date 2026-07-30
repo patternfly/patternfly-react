@@ -12,6 +12,8 @@ export interface BannerProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** If set to true, the banner sticks to the top of its container */
   isSticky?: boolean;
+  /** If set to true, the banner will have a pill shape */
+  isPill?: boolean;
   /** Text announced by screen readers to indicate the type of banner. This prop should only
    * be passed in when the banner conveys status/severity.
    */
@@ -36,6 +38,7 @@ export const Banner: React.FunctionComponent<StatusBanner | NonStatusBanner> = (
   className,
   screenReaderText,
   isSticky = false,
+  isPill = false,
   color,
   status,
   ...props
@@ -52,7 +55,13 @@ export const Banner: React.FunctionComponent<StatusBanner | NonStatusBanner> = (
 
   return (
     <div
-      className={css(styles.banner, getStatusOrColorModifier(), isSticky && styles.modifiers.sticky, className)}
+      className={css(
+        styles.banner,
+        getStatusOrColorModifier(),
+        isSticky && styles.modifiers.sticky,
+        isPill && styles.modifiers.pill,
+        className
+      )}
       {...props}
     >
       {screenReaderText && <span className="pf-v6-screen-reader">{screenReaderText}</span>}

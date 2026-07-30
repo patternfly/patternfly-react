@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FileUpload } from '@patternfly/react-core';
-import FileUploadIcon from '@patternfly/react-icons/dist/esm/icons/file-upload-icon';
+import RhUiDocumentFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-document-fill-icon';
 
 export const CustomPreviewFileUpload: React.FunctionComponent = () => {
   const [value, setValue] = useState<File>();
@@ -29,7 +29,7 @@ export const CustomPreviewFileUpload: React.FunctionComponent = () => {
     >
       {value && (
         <div>
-          <FileUploadIcon width="2em" height="2em" /> Custom preview here for your {value.size}-byte file named{' '}
+          <RhUiDocumentFillIcon width="2em" height="2em" /> Custom preview here for your {value.size}-byte file named{' '}
           {value.name}
         </div>
       )}

@@ -9,7 +9,7 @@ import {
   EmptyStateActions,
   PageSection
 } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 
 export const TableEmptyStateDefault: React.FunctionComponent = () => (
@@ -31,7 +31,7 @@ export const TableEmptyStateDefault: React.FunctionComponent = () => (
               <Bullseye>
                 <EmptyState
                   titleText="No results found"
-                  icon={SearchIcon}
+                  icon={RhMicronsSearchIcon}
                   headingLevel="h2"
                   variant={EmptyStateVariant.sm}
                 >

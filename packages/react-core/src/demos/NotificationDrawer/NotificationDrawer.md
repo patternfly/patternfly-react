@@ -5,20 +5,19 @@ section: components
 
 import { Fragment, useRef, useState } from 'react';
 
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
+import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
+import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-menu-bars-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
 
 ## Demos
 
 - Focus must be manually managed when the NotificationDrawer component is opened:
-
   1. Create a React `ref` and pass it into the NotificationDrawer component's `ref` attribute
   2. Pass in a function to the `onNotificationDrawerExpand` prop of the Page component that will place focus on the first interact-able element inside the NotificationDrawer component via the previously created `ref`
 

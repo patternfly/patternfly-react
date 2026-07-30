@@ -1,26 +1,26 @@
 import { Fragment } from 'react';
 import { Icon } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
+import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 
 export const HeadingIconSizes: React.FunctionComponent = () => (
   <Fragment>
     <Icon size="headingSm">
-      <PlusCircleIcon />
+      <RhUiAddCircleFillIcon />
     </Icon>{' '}
     <Icon size="headingMd">
-      <PlusCircleIcon />
+      <RhUiAddCircleFillIcon />
     </Icon>{' '}
     <Icon size="headingLg">
-      <PlusCircleIcon />
+      <RhUiAddCircleFillIcon />
     </Icon>{' '}
     <Icon size="headingXl">
-      <PlusCircleIcon />
+      <RhUiAddCircleFillIcon />
     </Icon>{' '}
     <Icon size="heading_2xl">
-      <PlusCircleIcon />
+      <RhUiAddCircleFillIcon />
     </Icon>{' '}
     <Icon size="heading_3xl">
-      <PlusCircleIcon />
+      <RhUiAddCircleFillIcon />
     </Icon>
   </Fragment>
 );

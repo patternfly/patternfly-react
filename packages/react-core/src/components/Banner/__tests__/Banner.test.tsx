@@ -121,6 +121,21 @@ test('Renders with inherited element props spread to the component', () => {
   expect(screen.getByText('Test')).toHaveAccessibleName('Test label');
 });
 
+test(`Renders with class name ${styles.modifiers.pill} when isPill prop is true`, () => {
+  render(<Banner isPill>Test</Banner>);
+  expect(screen.getByText('Test')).toHaveClass(styles.modifiers.pill);
+});
+
+test(`Does not render with class name ${styles.modifiers.pill} when isPill is false`, () => {
+  render(<Banner isPill={false}>Test</Banner>);
+  expect(screen.getByText('Test')).not.toHaveClass(styles.modifiers.pill);
+});
+
+test(`Does not render with class name ${styles.modifiers.pill} when isPill is undefined`, () => {
+  render(<Banner>Test</Banner>);
+  expect(screen.getByText('Test')).not.toHaveClass(styles.modifiers.pill);
+});
+
 test('Matches the snapshot', () => {
   const { asFragment } = render(<Banner>Test</Banner>);
   expect(asFragment()).toMatchSnapshot();

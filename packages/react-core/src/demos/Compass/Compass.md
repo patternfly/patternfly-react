@@ -1,21 +1,23 @@
 ---
 id: Compass
-section: AI
-subsection: Generative UIs
+section: components
 ---
 
-import { useRef, useState } from 'react';
-import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
-import OutlinedPlusSquare from '@patternfly/react-icons/dist/esm/icons/outlined-plus-square-icon';
-import OutlinedCopy from '@patternfly/react-icons/dist/esm/icons/outlined-copy-icon';
-import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/outlined-question-circle-icon';
+import { useRef, useState, useEffect } from 'react';
+import RhUiPlayFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
+import RhUiAddSquareIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-square-icon';
+import RhUiCopyIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
-import CloudIcon from '@patternfly/react-icons/dist/esm/icons/cloud-icon';
-import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
+import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
+import RhUiCloudFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cloud-fill-icon';
+import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 import imgAvatar from '../assets/avatarImg.svg';
+import RhUiThumbnailViewSmallFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-thumbnail-view-small-fill-icon';
 import pfLogo from '../assets/PF-IconLogo-color.svg';
+import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_lg';
 
 ## Demos
 

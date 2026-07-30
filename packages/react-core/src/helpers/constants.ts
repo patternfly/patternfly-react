@@ -10,11 +10,11 @@ import globalHeightBreakpointLg from '@patternfly/react-tokens/dist/esm/t_global
 import globalHeightBreakpointXl from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_height_xl';
 import globalHeightBreakpoint2xl from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_height_2xl';
 
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
-import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
+import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
+import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
+import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 
 export const SIDE = { RIGHT: 'right', LEFT: 'left', BOTH: 'both', NONE: 'none' };
 
@@ -55,9 +55,9 @@ export const globalHeightBreakpoints = {
 };
 
 export const statusIcons = {
-  success: CheckCircleIcon,
-  danger: ExclamationCircleIcon,
-  warning: ExclamationTriangleIcon,
-  info: InfoCircleIcon,
-  custom: BellIcon
+  success: RhUiCheckCircleFillIcon,
+  danger: RhUiErrorFillIcon,
+  warning: RhUiWarningFillIcon,
+  info: RhUiInformationFillIcon,
+  custom: RhUiNotificationFillIcon
 };

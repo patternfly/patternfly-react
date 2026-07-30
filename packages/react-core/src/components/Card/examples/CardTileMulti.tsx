@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Card, CardHeader, CardBody, Gallery, Flex } from '@patternfly/react-core';
-import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
+import RhUiAddIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-icon';
 
 export const CardTileMulti: React.FunctionComponent = () => {
   const [isChecked1, setIsChecked1] = useState(false);
@@ -39,7 +39,7 @@ export const CardTileMulti: React.FunctionComponent = () => {
           }}
         >
           <Flex gap={{ default: 'gapSm' }} alignItems={{ default: 'alignItemsCenter' }}>
-            <PlusIcon />
+            <RhUiAddIcon />
             <b>Tile header</b>
           </Flex>
         </CardHeader>
@@ -56,7 +56,7 @@ export const CardTileMulti: React.FunctionComponent = () => {
           }}
         >
           <Flex gap={{ default: 'gapSm' }} alignItems={{ default: 'alignItemsCenter' }}>
-            <PlusIcon />
+            <RhUiAddIcon />
             <b>Tile header</b>
           </Flex>
         </CardHeader>
@@ -73,7 +73,7 @@ export const CardTileMulti: React.FunctionComponent = () => {
           }}
         >
           <Flex gap={{ default: 'gapSm' }} alignItems={{ default: 'alignItemsCenter' }}>
-            <PlusIcon />
+            <RhUiAddIcon />
             <b>Tile header (disabled)</b>
           </Flex>
         </CardHeader>

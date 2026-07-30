@@ -3,6 +3,92 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.22...@patternfly/react-integration@6.5.0-prerelease.23) (2026-06-24)
+
+### Bug Fixes
+
+- **CalendarAltIcon:** Replace CalendarAltIcon with RhUiCalendarIcon ([#12462](https://github.com/patternfly/patternfly-react/issues/12462)) ([e1e02f2](https://github.com/patternfly/patternfly-react/commit/e1e02f25b17cc5b4d7f775ef1fc0aee61753e0ad))
+- **ClipboardIcon:** Replace ClipboardIcon with RhUiClipboardFillIcon ([#12455](https://github.com/patternfly/patternfly-react/issues/12455)) ([f763158](https://github.com/patternfly/patternfly-react/commit/f7631588c8643c9a567054e35e3d01af33a4ffbf))
+- **CodeBranchIcon:** Replace CodeBranchIcon with RhUiBranchIcon ([#12489](https://github.com/patternfly/patternfly-react/issues/12489)) ([aa4f9fd](https://github.com/patternfly/patternfly-react/commit/aa4f9fdfb7a0e95b8b01f6b08db2947af3ee55cb))
+- **CodeIcon:** Replace CodeIcon with RhUiCodeIcon ([#12488](https://github.com/patternfly/patternfly-react/issues/12488)) ([9562dbe](https://github.com/patternfly/patternfly-react/commit/9562dbe059fc5ca5182a177ae72943ae05fcaeea))
+- **CopyIcon:** Replace CopyIcon with RhUiCopyFillIcon ([#12449](https://github.com/patternfly/patternfly-react/issues/12449)) ([a2798bd](https://github.com/patternfly/patternfly-react/commit/a2798bd477fedc37c8a3a706464eb864706254a3))
+- **EllipsisVIcon:** Replace EllipsisVIcon with RhUiEllipsisVerticalFillIcon ([#12481](https://github.com/patternfly/patternfly-react/issues/12481)) ([29f223e](https://github.com/patternfly/patternfly-react/commit/29f223e6f0869af70d4b6f0733660a9573466342))
+- **ExternalLinkAltIcon:** Replace ExternalLinkAltIcon with RhUiExternalLinkIcon ([#12490](https://github.com/patternfly/patternfly-react/issues/12490)) ([300a85c](https://github.com/patternfly/patternfly-react/commit/300a85c3742b3e88bc022adeae7ca6749d66151f))
+- **InfrastructureIcons:** replaced with RH brand icons part 1 ([#12501](https://github.com/patternfly/patternfly-react/issues/12501)) ([a479b4c](https://github.com/patternfly/patternfly-react/commit/a479b4c354ca970383cfefeb5eb532b519b2ea73))
+- **PficonSortCommonAscIcon:** Replace PficonSortCommonAscIcon with RhUiSortDownSmallToLargeIcon ([#12485](https://github.com/patternfly/patternfly-react/issues/12485)) ([909f747](https://github.com/patternfly/patternfly-react/commit/909f747a449b449cde415c31a77a33b1559bfe08))
+- **PficonSortCommonDescIcon:** Replace PficonSortCommonDescIcon with RhUiSortDownLargeToSmallIcon ([#12486](https://github.com/patternfly/patternfly-react/issues/12486)) ([61aa3e2](https://github.com/patternfly/patternfly-react/commit/61aa3e2b723458669d1bfdd7814f812df06767b3))
+- **TableIcon:** Replace TableIcon with RhUiTableIcon ([#12476](https://github.com/patternfly/patternfly-react/issues/12476)) ([b6c1b00](https://github.com/patternfly/patternfly-react/commit/b6c1b002cea1ebc02c20d89f302f39631de08c6e))
+- **UserIcon:** Replace UserIcon with RhUiProfileFillIcon ([#12452](https://github.com/patternfly/patternfly-react/issues/12452)) ([a1404e3](https://github.com/patternfly/patternfly-react/commit/a1404e3365f2c0bef9dc11863bb69bd49d497a33))
+- **UsersIcon:** Replace with brand icon ([#12450](https://github.com/patternfly/patternfly-react/issues/12450)) ([34193c6](https://github.com/patternfly/patternfly-react/commit/34193c67b1a2435d0165c33336d01c2e9b20a2dc))
+
+# [6.5.0-prerelease.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.21...@patternfly/react-integration@6.5.0-prerelease.22) (2026-06-11)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+# [6.5.0-prerelease.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.20...@patternfly/react-integration@6.5.0-prerelease.21) (2026-06-11)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+# [6.5.0-prerelease.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.19...@patternfly/react-integration@6.5.0-prerelease.20) (2026-06-10)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+# [6.5.0-prerelease.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.18...@patternfly/react-integration@6.5.0-prerelease.19) (2026-05-27)
+
+### Features
+
+- **CodeEditor:** add isHighContrastTheme ([#12384](https://github.com/patternfly/patternfly-react/issues/12384)) ([bee95e6](https://github.com/patternfly/patternfly-react/commit/bee95e6397fcc7ee326ac8d29d59f65365db02bf))
+
+# [6.5.0-prerelease.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.17...@patternfly/react-integration@6.5.0-prerelease.18) (2026-05-13)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+# [6.5.0-prerelease.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.16...@patternfly/react-integration@6.5.0-prerelease.17) (2026-05-05)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+# [6.5.0-prerelease.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.15...@patternfly/react-integration@6.5.0-prerelease.16) (2026-05-05)
+
+### Features
+
+- **Drawer:** Added support for glass ([#12305](https://github.com/patternfly/patternfly-react/issues/12305)) ([bce395d](https://github.com/patternfly/patternfly-react/commit/bce395dc88c4a462b5950fb939d4e14327c7b559))
+
+# [6.5.0-prerelease.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.14...@patternfly/react-integration@6.5.0-prerelease.15) (2026-04-27)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+# [6.5.0-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.13...@patternfly/react-integration@6.5.0-prerelease.14) (2026-04-13)
+
+### Features
+
+- **Data list:** Add isNoPlainOnGlass prop to add pf-m-no-plain modfier to the data list ([#12292](https://github.com/patternfly/patternfly-react/issues/12292)) ([f71da53](https://github.com/patternfly/patternfly-react/commit/f71da53cd09a53442ff3fffc43790b08a7465506))
+
+# [6.5.0-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.12...@patternfly/react-integration@6.5.0-prerelease.13) (2026-04-13)
+
+### Features
+
+- **Accordion:** Added isPlain and isNoPlainOnGlass prop to Accordion ([#12288](https://github.com/patternfly/patternfly-react/issues/12288)) ([55ffb51](https://github.com/patternfly/patternfly-react/commit/55ffb51760542045f9b7dac0af584cee4a3eff4e))
+
+# [6.5.0-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.11...@patternfly/react-integration@6.5.0-prerelease.12) (2026-04-01)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+# [6.5.0-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.10...@patternfly/react-integration@6.5.0-prerelease.11) (2026-04-01)
+
+### Features
+
+- **icons:** updated caret icons to RH microns ([#12298](https://github.com/patternfly/patternfly-react/issues/12298)) ([688a5af](https://github.com/patternfly/patternfly-react/commit/688a5afb40c28f0b293301d1e68f0359b7a0604d))
+
+# [6.5.0-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.9...@patternfly/react-integration@6.5.0-prerelease.10) (2026-03-31)
+
+### Features
+
+- **icons:** update close icons to use the rh micron ([#12283](https://github.com/patternfly/patternfly-react/issues/12283)) ([fc82a9c](https://github.com/patternfly/patternfly-react/commit/fc82a9c646739a11732e7934d860f3913932168f))
+
+# [6.5.0-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.8...@patternfly/react-integration@6.5.0-prerelease.9) (2026-03-25)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
 # [6.5.0-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.7...@patternfly/react-integration@6.5.0-prerelease.8) (2026-01-28)
 
 **Note:** Version bump only for package @patternfly/react-integration

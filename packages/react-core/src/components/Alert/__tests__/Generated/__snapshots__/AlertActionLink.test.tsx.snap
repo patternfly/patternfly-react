@@ -4,7 +4,7 @@ exports[`AlertActionLink should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <button
     class="pf-v6-c-button pf-m-link pf-m-inline ''"
-    data-ouia-component-id="OUIA-Generated-Button-link-1"
+    data-ouia-component-id="OUIA-Generated-Button-link-:r0:"
     data-ouia-component-type="PF6/Button"
     data-ouia-safe="true"
     type="button"

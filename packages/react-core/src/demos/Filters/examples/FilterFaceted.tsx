@@ -23,8 +23,8 @@ import {
   EmptyStateActions
 } from '@patternfly/react-core';
 import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
+import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
 
 interface Repository {
   name: string;
@@ -320,7 +320,7 @@ export const FilterFaceted: React.FunctionComponent = () => {
       {...(areSelectionsPresent && {
         badge: <Badge isRead>{locationSelections.length + statusSelections.length}</Badge>
       })}
-      icon={<FilterIcon />}
+      icon={<RhUiFilterFillIcon />}
       style={
         {
           width: '200px'
@@ -413,7 +413,7 @@ export const FilterFaceted: React.FunctionComponent = () => {
     >
       <ToolbarContent>
         <ToolbarItem>{toolbarBulkSelect}</ToolbarItem>
-        <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+        <ToolbarToggleGroup toggleIcon={<RhUiFilterFillIcon />} breakpoint="xl">
           <ToolbarFilter
             labels={statusSelections}
             deleteLabel={(category, label) => onLabelDelete(category as string, label as string)}
@@ -438,7 +438,7 @@ export const FilterFaceted: React.FunctionComponent = () => {
   );
 
   const emptyState = (
-    <EmptyState headingLevel="h4" titleText="No results found" icon={SearchIcon}>
+    <EmptyState headingLevel="h4" titleText="No results found" icon={RhMicronsSearchIcon}>
       <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
       <EmptyStateFooter>
         <EmptyStateActions>

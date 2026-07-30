@@ -8,6 +8,8 @@ export * from './OUIA/ouia';
 export * from './util';
 export * from './Popper/Popper';
 export * from './useIsomorphicLayout';
+export * from './useSSRSafeId';
+export * from './SSRSafeIds/SSRSafeIds';
 export * from './KeyboardHandler';
 export * from './resizeObserver';
 export * from './useInterval';

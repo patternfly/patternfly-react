@@ -14,7 +14,7 @@ import {
 import AlignLeftIcon from '@patternfly/react-icons/dist/esm/icons/align-left-icon';
 import AlignCenterIcon from '@patternfly/react-icons/dist/esm/icons/align-center-icon';
 import AlignRightIcon from '@patternfly/react-icons/dist/esm/icons/align-right-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export class OverflowMenuDemo extends Component {
   static displayName = 'OverflowMenuDemo';
@@ -88,7 +88,7 @@ export class OverflowMenuDemo extends Component {
                 variant="plain"
                 onClick={this.onSimpleToggle}
                 isExpanded={isSimpleOpen}
-                icon={<EllipsisVIcon />}
+                icon={<RhUiEllipsisVerticalFillIcon />}
               />
             )}
             isOpen={isSimpleOpen}
@@ -174,7 +174,7 @@ export class OverflowMenuDemo extends Component {
                 variant="plain"
                 onClick={this.onAdditionalOptionsToggle}
                 isExpanded={isAdditionalOptionsOpen}
-                icon={<EllipsisVIcon />}
+                icon={<RhUiEllipsisVerticalFillIcon />}
               />
             )}
             isOpen={isAdditionalOptionsOpen}
@@ -240,7 +240,7 @@ export class OverflowMenuDemo extends Component {
                 variant="plain"
                 onClick={this.onPersistToggle}
                 isExpanded={isPersistOpen}
-                icon={<EllipsisVIcon />}
+                icon={<RhUiEllipsisVerticalFillIcon />}
               />
             )}
             isOpen={isPersistOpen}
@@ -314,7 +314,7 @@ export class OverflowMenuDemo extends Component {
                   variant="plain"
                   onClick={this.onContainerBreakpointToggle}
                   isExpanded={isContainerBreakpointOpen}
-                  icon={<EllipsisVIcon />}
+                  icon={<RhUiEllipsisVerticalFillIcon />}
                 />
               )}
               isOpen={isContainerBreakpointOpen}

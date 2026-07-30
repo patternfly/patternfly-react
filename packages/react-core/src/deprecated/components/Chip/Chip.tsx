@@ -1,7 +1,8 @@
 import { Component, Fragment } from 'react';
 import { TooltipPosition } from '../../../components/Tooltip';
 import { Label, LabelProps } from '../../../components/Label';
-import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../../helpers';
+import { getOUIAProps, OUIAProps } from '../../../helpers';
+import { SSRSafeIds } from '../../../helpers/SSRSafeIds/SSRSafeIds';
 
 export interface ChipProps extends LabelProps, OUIAProps {
   /** Badge to add to the chip. The badge will be rendered after the chip text. */
@@ -77,26 +78,30 @@ class Chip extends Component<ChipProps> {
     } = this.props;
 
     return (
-      <Label
-        variant="outline"
-        className={className}
-        textMaxWidth={textMaxWidth}
-        tooltipPosition={tooltipPosition}
-        {...(!isReadOnly &&
-          !isOverflowChip && {
-            onClose: onClick,
-            closeBtnAriaLabel: closeBtnAriaLabel ? closeBtnAriaLabel : `Close ${children}`
-          })}
-        {...(isOverflowChip && { onClick, variant: 'overflow' })}
-        {...getOUIAProps(
-          isOverflowChip ? 'OverflowChip' : Chip.displayName,
-          ouiaId !== undefined ? ouiaId : getDefaultOUIAId(Chip.displayName)
+      <SSRSafeIds prefix="pf-" ouiaComponentType={Chip.displayName}>
+        {(_, generatedOuiaId) => (
+          <Label
+            variant="outline"
+            className={className}
+            textMaxWidth={textMaxWidth}
+            tooltipPosition={tooltipPosition}
+            {...(!isReadOnly &&
+              !isOverflowChip && {
+                onClose: onClick,
+                closeBtnAriaLabel: closeBtnAriaLabel ? closeBtnAriaLabel : `Close ${children}`
+              })}
+            {...(isOverflowChip && { onClick, variant: 'overflow' })}
+            {...getOUIAProps(
+              isOverflowChip ? 'OverflowChip' : Chip.displayName,
+              ouiaId !== undefined ? ouiaId : generatedOuiaId
+            )}
+            {...props}
+          >
+            {children}
+            {badge && <Fragment> {badge}</Fragment>}
+          </Label>
         )}
-        {...props}
-      >
-        {children}
-        {badge && <Fragment> {badge}</Fragment>}
-      </Label>
+      </SSRSafeIds>
     );
   }
 }

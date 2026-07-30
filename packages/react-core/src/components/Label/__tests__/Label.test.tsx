@@ -2,9 +2,9 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
-import { Label } from '../Label';
+import { Label, LabelColor } from '../Label';
 
-const labelColors = ['blue', 'teal', 'green', 'orange', 'purple', 'red', 'grey', 'yellow'];
+const labelColors = Object.values(LabelColor);
 
 describe('Label', () => {
   test('renders', () => {
@@ -51,17 +51,17 @@ describe('Label', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  labelColors.forEach((color: string) =>
+  labelColors.forEach((color) =>
     test(`label with ${color} color`, () => {
-      const { asFragment } = render(<Label color={color as any}>Something</Label>);
+      const { asFragment } = render(<Label color={color}>Something</Label>);
       expect(asFragment()).toMatchSnapshot();
     })
   );
 
-  labelColors.forEach((color: string) =>
+  labelColors.forEach((color) =>
     test(`label with ${color} color with outline variant`, () => {
       const { asFragment } = render(
-        <Label color={color as any} variant="outline">
+        <Label color={color} variant="outline">
           Something
         </Label>
       );

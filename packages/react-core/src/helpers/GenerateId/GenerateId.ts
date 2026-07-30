@@ -1,4 +1,6 @@
-/** This Component can be used to wrap a functional component in order to generate a random ID
+/** SSR-safe ID generation component using render props.
+ * For function components, prefer the useSSRSafeId hook instead.
+ *
  * Example of how to use this component
  *
  * const Component = ({id}: {id: string}) => (
@@ -10,41 +12,21 @@
  *  </GenerateId>
  *  );
  */
-import { Component } from 'react';
-import { getUniqueId } from '../util';
-
-let currentId = 0;
-
-// gives us a unique (enough) id to add to the generated id that it should prevent issues with duplicate ids
-function getRandomId() {
-  if (typeof crypto !== 'undefined' && crypto.randomUUID) {
-    return crypto.randomUUID();
-  } else {
-    return getUniqueId();
-  }
-}
+import { useSSRSafeId } from '../useSSRSafeId';
 
 export interface GenerateIdProps {
-  /** String to prefix the random id with */
+  /** String to prefix the id with */
   prefix?: string;
   /** Component to be rendered with the generated id */
   children(id: string): React.ReactNode;
-  /** Flag to add randomness to the generated id, should be used whenever possible */
+  /** @deprecated Has no effect. Kept for backward compatibility. */
   isRandom?: boolean;
 }
 
-class GenerateId extends Component<GenerateIdProps, {}> {
-  static displayName = 'GenerateId';
-  static defaultProps = {
-    prefix: 'pf-random-id-',
-    isRandom: false
-  };
-  uniqueElement = this.props.isRandom ? getRandomId() : currentId++;
-  id = `${this.props.prefix}${this.uniqueElement}`;
-
-  render() {
-    return this.props.children(this.id);
-  }
-}
+const GenerateId = ({ prefix = 'pf-random-id-', children }: GenerateIdProps) => {
+  const id = useSSRSafeId(prefix);
+  return children(id) as React.ReactElement;
+};
+GenerateId.displayName = 'GenerateId';
 
 export { GenerateId };

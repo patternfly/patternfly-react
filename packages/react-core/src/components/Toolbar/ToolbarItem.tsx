@@ -17,8 +17,16 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** A type modifier which modifies spacing specifically depending on the type of item */
   variant?: ToolbarItemVariant | 'pagination' | 'label' | 'label-group' | 'separator' | 'expand-all';
-  /** Visibility at various breakpoints. */
+  /** Visibility at various width breakpoints. */
   visibility?: {
+    default?: 'hidden' | 'visible';
+    md?: 'hidden' | 'visible';
+    lg?: 'hidden' | 'visible';
+    xl?: 'hidden' | 'visible';
+    '2xl'?: 'hidden' | 'visible';
+  };
+  /** Visibility at various height breakpoints. */
+  visibilityAtHeight?: {
     default?: 'hidden' | 'visible';
     md?: 'hidden' | 'visible';
     lg?: 'hidden' | 'visible';
@@ -174,6 +182,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   className,
   variant,
   visibility,
+  visibilityAtHeight,
   gap,
   columnGap,
   rowGap,
@@ -202,7 +211,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
 
   return (
     <PageContext.Consumer>
-      {({ width, getBreakpoint }) => (
+      {({ width, getBreakpoint, height, getVerticalBreakpoint }) => (
         <div
           className={css(
             styles.toolbarItem,
@@ -211,6 +220,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
             isAllExpanded && styles.modifiers.expanded,
             isOverflowContainer && styles.modifiers.overflowContainer,
             formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
+            formatBreakpointMods(visibilityAtHeight, styles, '', getVerticalBreakpoint(height), true),
             formatBreakpointMods(align, styles, '', getBreakpoint(width)),
             formatBreakpointMods(gap, styles, '', getBreakpoint(width)),
             formatBreakpointMods(columnGap, styles, '', getBreakpoint(width)),

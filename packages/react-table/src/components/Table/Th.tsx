@@ -158,7 +158,8 @@ const ThBase: React.FunctionComponent<ThProps> = ({
             onSelect: select?.onSelect,
             selectVariant: 'checkbox',
             allRowsSelected: select.isSelected,
-            isHeaderSelectDisabled: !!select.isHeaderSelectDisabled
+            isHeaderSelectDisabled: !!select.isHeaderSelectDisabled,
+            isIndeterminate: select?.isIndeterminate
           }
         },
         tooltip: tooltip as string,

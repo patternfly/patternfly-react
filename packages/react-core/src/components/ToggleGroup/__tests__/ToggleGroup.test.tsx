@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { ToggleGroup } from '../ToggleGroup';
 import { ToggleGroupItem } from '../ToggleGroupItem';
+import styles from '@patternfly/react-styles/css/components/ToggleGroup/toggle-group';
 
 const props = {
   onChange: jest.fn(),
@@ -57,6 +58,28 @@ describe('ToggleGroup', () => {
       </ToggleGroup>
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test(`does not apply ${styles.modifiers.fill} modifier class by default`, () => {
+    render(
+      <ToggleGroup aria-label="Default toggle group">
+        <ToggleGroupItem text="Test" />
+        <ToggleGroupItem text="Test" />
+      </ToggleGroup>
+    );
+    const toggleGroup = screen.getByRole('group');
+    expect(toggleGroup).not.toHaveClass(styles.modifiers.fill);
+  });
+
+  test(`applies ${styles.modifiers.fill} modifier class when isFill is true`, () => {
+    render(
+      <ToggleGroup isFill aria-label="Fill toggle group">
+        <ToggleGroupItem text="Test" />
+        <ToggleGroupItem text="Test" />
+      </ToggleGroup>
+    );
+    const toggleGroup = screen.getByRole('group');
+    expect(toggleGroup).toHaveClass(styles.modifiers.fill);
   });
 
   test('should render non-ToggleGroupItem children', () => {

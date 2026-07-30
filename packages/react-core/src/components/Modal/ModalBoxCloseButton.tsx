@@ -1,7 +1,7 @@
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 import { Button } from '../Button';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 import { OUIAProps } from '../../helpers';
 
 export interface ModalBoxCloseButtonProps extends OUIAProps {
@@ -29,7 +29,7 @@ export const ModalBoxCloseButton: React.FunctionComponent<ModalBoxCloseButtonPro
       aria-label={ariaLabel}
       {...(ouiaId && { ouiaId: `${ouiaId}-${ModalBoxCloseButton.displayName}` })}
       {...props}
-      icon={<TimesIcon />}
+      icon={<RhMicronsCloseIcon />}
     />
   </div>
 );

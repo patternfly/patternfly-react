@@ -6,8 +6,8 @@ propComponents:
   ['Page', 'PageSidebar', 'PageSidebarBody', 'PageSection', 'PageGroup', 'PageBreadcrumb', 'PageToggleButton']
 ---
 
-import { useState } from 'react';
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
+import { useState, useLayoutEffect, useRef } from 'react';
+import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-menu-bars-icon';
 import pageSectionWidthLimitMaxWidth from '@patternfly/react-tokens/dist/esm/c_page_section_m_limit_width_MaxWidth';
 
 ## Examples
@@ -20,7 +20,7 @@ A page will typically contain the following components:
 
 The `<MastheadMain>` component includes the smaller area that typically contains the `<MastheadToggle>` and a `<MastheadLogo>`. `<MastheadContent>` represents the main portion of the masthead, and will typically contain a `<Toolbar>` or other menu-like components, like a `<Dropdown>`.
 
-  - Mastheads contain a `<MastheadMain>` component, which includes the `<MastheadToggle>`, a `<MastheadLogo>`,  and the page's toolbar (via `<MastheadContent>`.) The `<MastheadToggle>` component contains a `<PageToggleButton>`, and the `<MastheadLogo>` component contains a `<MastheadBrand>`. 
+- Mastheads contain a `<MastheadMain>` component, which includes the `<MastheadToggle>`, a `<MastheadLogo>`, and the page's toolbar (via `<MastheadContent>`.) The `<MastheadToggle>` component contains a `<PageToggleButton>`, and the `<MastheadLogo>` component contains a `<MastheadBrand>`.
 - 1 or more `<PageSidebarBody>` components inside `<PageSidebar>` for vertical navigation or other sidebar content
 - 1 or more `<PageSection>` components
 
@@ -121,5 +121,23 @@ By default, a page section spans the width of the page. To reduce the width of a
 The content in this example is placed in a card to better illustrate how the section behaves when it is centered, but a card is not required to center a page section.
 
 ```ts file="./PageCenteredSection.tsx"
+
+```
+
+### Plain sections and groups
+
+To remove the default background color from a page section or group, use the `isPlain` property on `<PageSection>` or `<PageGroup>` components.
+
+```ts file="./PagePlainSections.tsx"
+
+```
+
+### Dynamic sticky section
+
+A page section may be made sticky with separate control of its sticky positioning and stuck styling using the `stickyBase` and `isStickyStuck` properties. The `stickyBase` property accepts a value of `"top"` or `"bottom"` and applies the base sticky positioning in the given direction. The `isStickyStuck` property applies visual "stuck" styling such as a background, box shadow, and border, and should be toggled based on the scroll position of the scroll parent container.
+
+In this example, a scroll event listener on the scroll parent container toggles `isStickyStuck` when `scrollTop > 0`, so the stuck styling appears only when the content is scrolled.
+
+```ts file="./PageDynamicStickySection.tsx"
 
 ```

@@ -7,8 +7,8 @@ ouia: true
 ---
 
 import { useRef, useState } from 'react';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
-import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
+import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
+import RhMicronsCaretDownFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-fill-icon';
 
 ## Examples
 

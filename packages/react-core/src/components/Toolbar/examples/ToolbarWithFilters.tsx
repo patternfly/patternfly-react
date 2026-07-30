@@ -18,11 +18,11 @@ import {
   SelectList,
   SelectOption
 } from '@patternfly/react-core';
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
-import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
-import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
+import RhUiSyncIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sync-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export const ToolbarWithFilters: React.FunctionComponent = () => {
   const [inputValue, setInputValue] = useState('');
@@ -205,7 +205,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
 
   const toolbarItems = (
     <Fragment>
-      <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+      <ToolbarToggleGroup toggleIcon={<RhUiFilterFillIcon />} breakpoint="xl">
         {toggleGroupItems}
       </ToolbarToggleGroup>
       <ToolbarGroup variant="action-group-plain">
@@ -213,10 +213,10 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
           <Button variant="plain" aria-label="edit" icon={<EditIcon />} />
         </ToolbarItem>
         <ToolbarItem>
-          <Button variant="plain" aria-label="clone" icon={<CloneIcon />} />
+          <Button variant="plain" aria-label="clone" icon={<RhUiCopyFillIcon />} />
         </ToolbarItem>
         <ToolbarItem>
-          <Button variant="plain" aria-label="sync" icon={<SyncIcon />} />
+          <Button variant="plain" aria-label="sync" icon={<RhUiSyncIcon />} />
         </ToolbarItem>
       </ToolbarGroup>
       <ToolbarItem>
@@ -231,7 +231,7 @@ export const ToolbarWithFilters: React.FunctionComponent = () => {
               onClick={onKebabToggle}
               variant="plain"
               aria-label="Toolbar with filters example kebab toggle"
-              icon={<EllipsisVIcon />}
+              icon={<RhUiEllipsisVerticalFillIcon />}
             />
           )}
         >

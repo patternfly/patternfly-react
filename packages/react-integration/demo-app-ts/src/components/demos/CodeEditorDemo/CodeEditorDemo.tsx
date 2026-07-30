@@ -1,10 +1,11 @@
 import { Component } from 'react';
 import { CodeEditor, CodeEditorControl, CodeEditorProps, Language } from '@patternfly/react-code-editor';
 import { Button, Checkbox } from '@patternfly/react-core';
-import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
+import RhUiPlayFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
 
 interface CodeEditorDemoState {
   isDarkTheme: boolean;
+  isHighContrastTheme: boolean;
   isLineNumbersVisible: boolean;
   isReadOnly: boolean;
   isMinimapVisible: boolean;
@@ -17,6 +18,7 @@ export class CodeEditorDemo extends Component<CodeEditorProps, CodeEditorDemoSta
     super(props);
     this.state = {
       isDarkTheme: false,
+      isHighContrastTheme: false,
       isLineNumbersVisible: true,
       isReadOnly: false,
       isMinimapVisible: true,
@@ -27,6 +29,12 @@ export class CodeEditorDemo extends Component<CodeEditorProps, CodeEditorDemoSta
   toggleDarkTheme = (checked: boolean) => {
     this.setState({
       isDarkTheme: checked
+    });
+  };
+
+  toggleHighContrastTheme = (checked: boolean) => {
+    this.setState({
+      isHighContrastTheme: checked
     });
   };
 
@@ -70,11 +78,10 @@ export class CodeEditorDemo extends Component<CodeEditorProps, CodeEditorDemoSta
   };
 
   render() {
-    const { isDarkTheme, isLineNumbersVisible, isReadOnly, isMinimapVisible, code } = this.state;
-
+    const { isDarkTheme, isHighContrastTheme, isLineNumbersVisible, isReadOnly, isMinimapVisible, code } = this.state;
     const customControl = (
       <CodeEditorControl
-        icon={<PlayIcon />}
+        icon={<RhUiPlayFillIcon />}
         aria-label="Execute code"
         onClick={this.onExecuteCode}
         isVisible={code !== ''}
@@ -90,6 +97,14 @@ export class CodeEditorDemo extends Component<CodeEditorProps, CodeEditorDemoSta
           aria-label="dark theme checkbox"
           id="toggle-theme"
           name="toggle-theme"
+        />
+        <Checkbox
+          label="High contrast theme"
+          isChecked={isHighContrastTheme}
+          onChange={(_event, checked) => this.toggleHighContrastTheme(checked)}
+          aria-label="high contrast theme checkbox"
+          id="toggle-high-contrast-theme"
+          name="toggle-high-contrast-theme"
         />
         <Checkbox
           label="Line numbers"
@@ -120,6 +135,7 @@ export class CodeEditorDemo extends Component<CodeEditorProps, CodeEditorDemoSta
         </Button>
         <CodeEditor
           isDarkTheme={isDarkTheme}
+          isHighContrastTheme={isHighContrastTheme}
           isLineNumbersVisible={isLineNumbersVisible}
           isReadOnly={isReadOnly}
           isMinimapVisible={isMinimapVisible}

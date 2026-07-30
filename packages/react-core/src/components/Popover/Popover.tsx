@@ -13,7 +13,7 @@ import popoverMaxWidth from '@patternfly/react-tokens/dist/esm/c_popover_MaxWidt
 import popoverMinWidth from '@patternfly/react-tokens/dist/esm/c_popover_MinWidth';
 import { FocusTrap } from '../../helpers';
 import { Popper } from '../../helpers/Popper/Popper';
-import { getUniqueId } from '../../helpers/util';
+import { useSSRSafeId } from '../../helpers';
 
 export enum PopoverPosition {
   auto = 'auto',
@@ -205,9 +205,11 @@ export interface PopoverProps {
   shouldOpen?: (event: MouseEvent | KeyboardEvent, showFunction?: () => void) => void;
   /** Flag indicating whether the close button should be shown. */
   showClose?: boolean;
-  /** Sets an interaction to open popover, defaults to "click" */
+  /** @deprecated Sets an interaction to open popover, defaults to "click" */
   triggerAction?: 'click' | 'hover';
-  /** Whether to trap focus in the popover. */
+  /** Whether to trap focus in the popover. When using a triggerAction of "hover", this will be set to false
+   * by default and must remain false.
+   */
   withFocusTrap?: boolean;
   /** The z-index of the popover. */
   zIndex?: number;
@@ -267,7 +269,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   ],
   animationDuration = 300,
   id,
-  withFocusTrap: propWithFocusTrap,
+  withFocusTrap: propWithFocusTrap = triggerAction === 'hover' ? false : undefined,
   triggerRef,
   hasNoPadding = false,
   hasAutoWidth = false,
@@ -276,7 +278,8 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
 }: PopoverProps) => {
   // could make this a prop in the future (true | false | 'toggle')
   // const hideOnClick = true;
-  const uniqueId = id || getUniqueId();
+  const generatedId = useSSRSafeId();
+  const uniqueId = id || generatedId;
   const triggerManually = isVisible !== null;
   const [visible, setVisible] = useState(false);
   const [focusTrapActive, setFocusTrapActive] = useState(Boolean(propWithFocusTrap));

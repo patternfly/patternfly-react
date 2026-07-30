@@ -19,10 +19,10 @@ import {
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
-import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
+import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
+import RhUiStorageDomainFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-storage-domain-fill-icon';
+import RhUiServerStackFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-server-stack-fill-icon';
+import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
@@ -134,7 +134,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
               key="dropdown-start"
               icon={
                 <Icon shouldMirrorRTL>
-                  <AngleLeftIcon />
+                  <RhMicronsCaretLeftIcon />
                 </Icon>
               }
               onClick={(event: any) =>
@@ -181,7 +181,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
               key="dropdown-start"
               icon={
                 <Icon shouldMirrorRTL>
-                  <AngleLeftIcon />
+                  <RhMicronsCaretLeftIcon />
                 </Icon>
               }
               onClick={(event: any) =>
@@ -240,7 +240,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
               key="dropdown-pause"
               icon={
                 <Icon shouldMirrorRTL>
-                  <AngleLeftIcon />
+                  <RhMicronsCaretLeftIcon />
                 </Icon>
               }
               onClick={(event: any) =>
@@ -287,7 +287,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
               key="dropdown-pause"
               icon={
                 <Icon shouldMirrorRTL>
-                  <AngleLeftIcon />
+                  <RhMicronsCaretLeftIcon />
                 </Icon>
               }
               onClick={(event: any) =>
@@ -435,15 +435,15 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
             </MenuItem>
             <MenuItem
               itemId="group:storage"
-              icon={<StorageDomainIcon />}
+              icon={<RhUiStorageDomainFillIcon />}
               direction="down"
               onClick={() => setBreadcrumb(addStorageBreadcrumb)}
               drilldownMenu={
                 <DrilldownMenu id="breadcrumbs-drilldownMenuStorage">
-                  <MenuItem icon={<CodeBranchIcon />} itemId="git">
+                  <MenuItem icon={<RhUiBranchFillIcon />} itemId="git">
                     From git
                   </MenuItem>
-                  <MenuItem icon={<LayerGroupIcon />} itemId="container">
+                  <MenuItem icon={<RhUiServerStackFillIcon />} itemId="container">
                     Container image
                   </MenuItem>
                   <MenuItem icon={<CubeIcon />} itemId="docker">

@@ -21,6 +21,8 @@ export interface SelectColumnProps {
   id?: string;
   /** name for the input element - required by Radio component */
   name?: string;
+  /** Whether the checkbox should be in an indeterminate state */
+  isIndeterminate?: boolean;
 }
 
 export const SelectColumn: React.FunctionComponent<SelectColumnProps> = ({
@@ -33,6 +35,7 @@ export const SelectColumn: React.FunctionComponent<SelectColumnProps> = ({
   tooltipProps,
   id,
   name,
+  isIndeterminate,
   ...props
 }: SelectColumnProps) => {
   const inputRef = createRef<any>();
@@ -48,10 +51,15 @@ export const SelectColumn: React.FunctionComponent<SelectColumnProps> = ({
     onChange: handleChange
   };
 
+  const checkboxProps = {
+    ...commonProps,
+    ...(isIndeterminate && { isChecked: null })
+  };
+
   const content = (
     <Fragment>
       {selectVariant === RowSelectVariant.checkbox ? (
-        <Checkbox {...commonProps} />
+        <Checkbox {...checkboxProps} />
       ) : (
         <Radio {...commonProps} name={name} />
       )}

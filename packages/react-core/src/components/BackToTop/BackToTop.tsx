@@ -1,7 +1,7 @@
 import { forwardRef, useEffect, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/BackToTop/back-to-top';
 import { css } from '@patternfly/react-styles';
-import AngleUpIcon from '@patternfly/react-icons/dist/esm/icons/angle-up-icon';
+import RhMicronsCaretUpIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-up-icon';
 import { canUseDOM } from '../../helpers/util';
 import { Button } from '../Button';
 
@@ -84,7 +84,7 @@ const BackToTopBase: React.FunctionComponent<BackToTopProps> = ({
       onClick={handleClick}
       {...props}
     >
-      <Button variant="primary" icon={<AngleUpIcon />} iconPosition="end">
+      <Button variant="primary" icon={<RhMicronsCaretUpIcon />} iconPosition="end">
         {title}
       </Button>
     </div>

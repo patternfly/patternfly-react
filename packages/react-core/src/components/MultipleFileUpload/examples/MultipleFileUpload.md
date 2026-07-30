@@ -8,7 +8,7 @@ propComponents:
 ---
 
 import { useEffect, useState } from 'react';
-import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
+import RhUiUploadIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-upload-icon';
 
 Multiple file upload is able to:
 

@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Progress/progress';
 import { css } from '@patternfly/react-styles';
 import { ProgressContainer, ProgressMeasureLocation } from './ProgressContainer';
 import { AriaProps } from './ProgressBar';
-import { getUniqueId } from '../../helpers/util';
+import { GenerateId } from '../../helpers';
 
 export enum ProgressSize {
   sm = 'sm',
@@ -73,14 +73,11 @@ class Progress extends Component<ProgressProps> {
     'aria-describedby': null as string
   };
 
-  id = this.props.id || getUniqueId();
-
   render() {
     const {
-      /* eslint-disable @typescript-eslint/no-unused-vars */
-      id,
+      id: idProp,
       size,
-      /* eslint-enable @typescript-eslint/no-unused-vars */
+
       className,
       value,
       title,
@@ -100,28 +97,6 @@ class Progress extends Component<ProgressProps> {
       ...props
     } = this.props;
 
-    const progressBarAriaProps: AriaProps = {
-      'aria-valuemin': min,
-      'aria-valuenow': value,
-      'aria-valuemax': max
-    };
-
-    if (title || ariaLabelledBy) {
-      progressBarAriaProps['aria-labelledby'] = title ? `${this.id}-description` : ariaLabelledBy;
-    }
-
-    if (ariaLabel) {
-      progressBarAriaProps['aria-label'] = ariaLabel;
-    }
-
-    if (ariaDescribedBy) {
-      progressBarAriaProps['aria-describedby'] = ariaDescribedBy;
-    }
-
-    if (valueText) {
-      progressBarAriaProps['aria-valuetext'] = valueText;
-    }
-
     if (!title && !ariaLabelledBy && !ariaLabel) {
       /* eslint-disable no-console */
       console.warn(
@@ -129,34 +104,67 @@ class Progress extends Component<ProgressProps> {
       );
     }
 
-    const scaledValue = Math.min(100, Math.max(0, Math.floor(((value - min) / (max - min)) * 100))) || 0;
     return (
-      <div
-        {...props}
-        className={css(
-          styles.progress,
-          styles.modifiers[variant],
-          ['inside', 'outside'].includes(measureLocation) && styles.modifiers[measureLocation as 'inside' | 'outside'],
-          measureLocation === 'inside' ? styles.modifiers[ProgressSize.lg] : styles.modifiers[size as 'sm' | 'lg'],
-          !title && styles.modifiers.singleline,
-          className
-        )}
-        id={this.id}
-      >
-        <ProgressContainer
-          parentId={this.id}
-          value={scaledValue}
-          title={title}
-          label={label}
-          variant={variant}
-          measureLocation={measureLocation}
-          progressBarAriaProps={progressBarAriaProps}
-          isTitleTruncated={isTitleTruncated}
-          tooltipPosition={tooltipPosition}
-          helperText={helperText}
-          hideStatusIcon={hideStatusIcon}
-        />
-      </div>
+      <GenerateId prefix="pf-progress-">
+        {(generatedId) => {
+          const id = idProp || generatedId;
+
+          const progressBarAriaProps: AriaProps = {
+            'aria-valuemin': min,
+            'aria-valuenow': value,
+            'aria-valuemax': max
+          };
+
+          if (title || ariaLabelledBy) {
+            progressBarAriaProps['aria-labelledby'] = title ? `${id}-description` : ariaLabelledBy;
+          }
+
+          if (ariaLabel) {
+            progressBarAriaProps['aria-label'] = ariaLabel;
+          }
+
+          if (ariaDescribedBy) {
+            progressBarAriaProps['aria-describedby'] = ariaDescribedBy;
+          }
+
+          if (valueText) {
+            progressBarAriaProps['aria-valuetext'] = valueText;
+          }
+
+          const scaledValue = Math.min(100, Math.max(0, Math.floor(((value - min) / (max - min)) * 100))) || 0;
+          return (
+            <div
+              {...props}
+              className={css(
+                styles.progress,
+                styles.modifiers[variant],
+                ['inside', 'outside'].includes(measureLocation) &&
+                  styles.modifiers[measureLocation as 'inside' | 'outside'],
+                measureLocation === 'inside'
+                  ? styles.modifiers[ProgressSize.lg]
+                  : styles.modifiers[size as 'sm' | 'lg'],
+                !title && styles.modifiers.singleline,
+                className
+              )}
+              id={id}
+            >
+              <ProgressContainer
+                parentId={id}
+                value={scaledValue}
+                title={title}
+                label={label}
+                variant={variant}
+                measureLocation={measureLocation}
+                progressBarAriaProps={progressBarAriaProps}
+                isTitleTruncated={isTitleTruncated}
+                tooltipPosition={tooltipPosition}
+                helperText={helperText}
+                hideStatusIcon={hideStatusIcon}
+              />
+            </div>
+          );
+        }}
+      </GenerateId>
     );
   }
 }
