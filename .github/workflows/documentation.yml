@@ -45,7 +45,7 @@ jobs:
           ref: refs/pull/${{ env.GH_PR_NUM }}/head
 
       - name: Check out project
-        if: inputs.is-release || (github.event_name != 'pull_request_target' && github.event_name != 'issue_comment')
+        if: inputs.is-release || github.event_name == 'workflow_call'
         uses: actions/checkout@v4
       - name: Set up and build project
         uses: ./.github/actions/setup-project
