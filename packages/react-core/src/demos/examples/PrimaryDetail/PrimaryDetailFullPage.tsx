@@ -43,7 +43,7 @@ import {
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import RhUiCubesIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cubes';
 import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
 import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
@@ -233,7 +233,7 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
                       <RhUiCodeIcon /> 4
                     </FlexItem>
                     <FlexItem>
-                      <CubeIcon /> 5
+                      <RhUiCubesIcon /> 5
                     </FlexItem>
                     <FlexItem>Updated 2 days ago</FlexItem>
                   </Flex>
@@ -276,24 +276,24 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
                       <RhUiCodeIcon /> 4
                     </FlexItem>
                     <FlexItem>
-                      <CubeIcon /> 5
+                      <RhUiCubesIcon /> 5
                     </FlexItem>
                     <FlexItem>
                       <Icon status="success">
                         <RhUiCheckCircleFillIcon />
-                      </Icon>{' '}
+                      </Icon>
                       7
                     </FlexItem>
                     <FlexItem>
                       <Icon status="warning">
                         <RhUiWarningFillIcon />
-                      </Icon>{' '}
+                      </Icon>
                       5
                     </FlexItem>
                     <FlexItem>
                       <Icon status="danger">
                         <RhUiCloseCircleFillIcon />
-                      </Icon>{' '}
+                      </Icon>
                       5
                     </FlexItem>
                     <FlexItem>Updated 2 days ago</FlexItem>
@@ -339,7 +339,7 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
                       <RhUiCodeIcon /> 4
                     </FlexItem>
                     <FlexItem>
-                      <CubeIcon /> 5
+                      <RhUiCubesIcon /> 5
                     </FlexItem>
                     <FlexItem>Updated 2 days ago</FlexItem>
                   </Flex>
@@ -382,24 +382,24 @@ export const PrimaryDetailFullPage: React.FunctionComponent = () => {
                       <RhUiCodeIcon /> 4
                     </FlexItem>
                     <FlexItem>
-                      <CubeIcon /> 5
+                      <RhUiCubesIcon /> 5
                     </FlexItem>
                     <FlexItem>
                       <Icon status="success">
                         <RhUiCheckCircleFillIcon />
-                      </Icon>{' '}
+                      </Icon>
                       7
                     </FlexItem>
                     <FlexItem>
                       <Icon status="warning">
                         <RhUiWarningFillIcon />
-                      </Icon>{' '}
+                      </Icon>
                       5
                     </FlexItem>
                     <FlexItem>
                       <Icon status="danger">
                         <RhUiCloseCircleFillIcon />
-                      </Icon>{' '}
+                      </Icon>
                       5
                     </FlexItem>
                     <FlexItem>Updated 2 days ago</FlexItem>
