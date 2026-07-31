@@ -6,6 +6,7 @@ import { TreeViewDataItem } from './TreeView';
 import { Badge } from '../Badge';
 import { useSSRSafeId } from '../../helpers';
 import { useHasAnimations } from '../../helpers';
+import { IS_INERT } from '../../helpers/inert';
 
 export interface TreeViewCheckProps extends Omit<Partial<React.InputHTMLAttributes<HTMLInputElement>>, 'checked'> {
   checked?: boolean | null;
@@ -225,7 +226,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
     (child) =>
       isValidElement(child) &&
       cloneElement(child as React.ReactElement<any>, {
-        inert: internalIsExpanded ? undefined : ''
+        inert: internalIsExpanded ? undefined : IS_INERT
       })
   );
 

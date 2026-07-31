@@ -37,7 +37,7 @@
     "victory": "^37.3.6"
   },
   "devDependencies": {
-    "@patternfly/documentation-framework": "^6.36.8",
+    "@patternfly/documentation-framework": "^6.40.0",
     "@patternfly/patternfly-a11y": "5.2.1"
   },
   "keywords": [

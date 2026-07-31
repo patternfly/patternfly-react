@@ -7,6 +7,7 @@ import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-m
 import { flattenTree } from './treeUtils';
 import { DualListSelectorListContext } from './DualListSelectorContext';
 import { useHasAnimations } from '../../helpers';
+import { IS_INERT } from '../../helpers/inert';
 
 export interface DualListSelectorTreeItemProps extends React.HTMLProps<HTMLLIElement> {
   /** Content rendered inside the dual list selector. */
@@ -78,7 +79,7 @@ const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTree
     (child) =>
       isValidElement(child) &&
       cloneElement(child as React.ReactElement<any>, {
-        inert: isExpanded ? undefined : ''
+        inert: isExpanded ? undefined : IS_INERT
       })
   );
 

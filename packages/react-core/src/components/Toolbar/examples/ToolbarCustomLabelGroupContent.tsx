@@ -110,6 +110,7 @@ export const ToolbarCustomLabelGroupContent: React.FunctionComponent = () => {
             role="menu"
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
               <MenuToggle
+                aria-haspopup="listbox"
                 ref={toggleRef}
                 onClick={() => setStatusIsExpanded(!statusIsExpanded)}
                 isExpanded={statusIsExpanded}
@@ -142,6 +143,7 @@ export const ToolbarCustomLabelGroupContent: React.FunctionComponent = () => {
             role="menu"
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
               <MenuToggle
+                aria-haspopup="listbox"
                 ref={toggleRef}
                 onClick={() => setRiskIsExpanded(!riskIsExpanded)}
                 isExpanded={riskIsExpanded}

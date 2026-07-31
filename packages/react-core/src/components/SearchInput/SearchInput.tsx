@@ -16,6 +16,7 @@ import { Popper } from '../../helpers';
 import { useHasAnimations } from '../../helpers';
 import textInputGroupStyles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
 import inputGroupStyles from '@patternfly/react-styles/css/components/InputGroup/input-group';
+import { IS_INERT } from '../../helpers/inert';
 
 /** Properties for adding search attributes to an advanced search input. These properties must
  * be passed in as an object within an array to the search input component's attribute property.
@@ -404,14 +405,14 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
             className={inputGroupStyles.modifiers.searchExpand}
             isPlain
             onTransitionEnd={onTransitionEnd}
-            {...(isExpanded && { inert: '' })}
+            {...(isExpanded && { inert: IS_INERT })}
           >
             {expandToggleButton}
           </InputGroupItem>
           <InputGroupItem
             className={inputGroupStyles.modifiers.searchAction}
             isPlain
-            {...(!isExpanded && { inert: '' })}
+            {...(!isExpanded && { inert: IS_INERT })}
           >
             {collapseToggleButton}
           </InputGroupItem>
@@ -426,7 +427,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
         {...(!hasAnimations && { isFill: true })}
         {...(hasAnimations && { className: inputGroupStyles.modifiers.searchInput })}
         {...(!isExpanded && {
-          inert: ''
+          inert: IS_INERT
         })}
       >
         {buildTextInputGroup()}
@@ -451,7 +452,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
         {...(expandableInput &&
           hasAnimations &&
           !isExpanded && {
-            inert: ''
+            inert: IS_INERT
           })}
       >
         {buildTextInputGroup()}
