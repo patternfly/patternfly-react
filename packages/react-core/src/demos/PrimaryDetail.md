@@ -7,7 +7,7 @@ import { Fragment, useState } from 'react';
 import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 import RhUiTrashFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-trash-fill-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import RhUiCubesIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cubes-icon';
 import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
 import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
@@ -35,27 +35,9 @@ import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/Dashboard
 
 ```
 
-### Primary-detail content padding
-
-```ts file="examples/PrimaryDetail/PrimaryDetailContentPadding.tsx" isFullscreen
-
-```
-
 ### Primary-detail card view
 
 ```ts file="examples/PrimaryDetail/PrimaryDetailCardView.tsx" isFullscreen
-
-```
-
-### Primary-detail simple list in card
-
-```ts file="examples/PrimaryDetail/PrimaryDetailSimpleListInCard.tsx" isFullscreen
-
-```
-
-### Primary-detail data list in card
-
-```ts file="examples/PrimaryDetail/PrimaryDetailDataListInCard.tsx" isFullscreen
 
 ```
 
