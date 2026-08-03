@@ -10,7 +10,7 @@ export const TableStickyHeader: React.FunctionComponent = () => {
         return <Label status={LabelStatus.success}>{labelText}</Label>;
       case 'Stopped':
         return <Label status={LabelStatus.warning}>{labelText}</Label>;
-      case 'Needs Maintenance':
+      case 'Needs maintenance':
         return <Label status={LabelStatus.info}>{labelText}</Label>;
       case 'Down':
         return <Label status={LabelStatus.danger}>{labelText}</Label>;

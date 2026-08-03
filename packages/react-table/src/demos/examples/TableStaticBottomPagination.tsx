@@ -77,7 +77,7 @@ export const TableStaticBottomPagination: React.FunctionComponent = () => {
             <Label status={LabelStatus.warning}>{labelText}</Label>
           </span>
         );
-      case 'Needs Maintenance':
+      case 'Needs maintenance':
         return (
           <span>
             <Label status={LabelStatus.info}>{labelText}</Label>
