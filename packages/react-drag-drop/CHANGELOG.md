@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.6.1-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-drag-drop@6.6.0...@patternfly/react-drag-drop@6.6.1-prerelease.0) (2026-08-03)
+
+### Bug Fixes
+
+- **AngleDoubleRightIcon:** Replace AngleDoubleRightIcon with RhMicronsDoubleCaretRightIcon ([#12493](https://github.com/patternfly/patternfly-react/issues/12493)) ([a9bd226](https://github.com/patternfly/patternfly-react/commit/a9bd226cfa9183e5893cd8d74302934f98aaa51c))
+- **AngleLeftIcon:** Replace AngleLeftIcon with RhMicronsCaretLeftIcon ([#12495](https://github.com/patternfly/patternfly-react/issues/12495)) ([bd9932f](https://github.com/patternfly/patternfly-react/commit/bd9932f123fc5f94598ce555f8166052eaecb95c))
+- **AngleRightIcon:** Replace AngleRightIcon with RhMicronsCaretRightIcon ([#12496](https://github.com/patternfly/patternfly-react/issues/12496)) ([4f70020](https://github.com/patternfly/patternfly-react/commit/4f700201a3b4e9bee30dc7c5f2dc9798b1f58474))
+- **DragDropSort:** enable mobile drag-and-drop support ([#12418](https://github.com/patternfly/patternfly-react/issues/12418)) ([c9faa23](https://github.com/patternfly/patternfly-react/commit/c9faa23f1f339734d57a6647f645d7b8afe04b6d))
+
 # [6.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-drag-drop@6.6.0-prerelease.9...@patternfly/react-drag-drop@6.6.0) (2026-07-01)
 
 **Note:** Version bump only for package @patternfly/react-drag-drop

@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.6.1-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.6.0...@patternfly/react-table@6.6.1-prerelease.0) (2026-08-03)
+
+### Bug Fixes
+
+- **ArrowsAltVIcon:** Replace ArrowsAltVIcon with RhUiArrowUpDownIcon ([#12498](https://github.com/patternfly/patternfly-react/issues/12498)) ([4bacfdb](https://github.com/patternfly/patternfly-react/commit/4bacfdb4a572bb75932d36169bfd1599563472dd))
+- **CheckIcon:** Replace CheckIcon with RhMicronsCheckmarkIcon ([#12518](https://github.com/patternfly/patternfly-react/issues/12518)) ([b811f9f](https://github.com/patternfly/patternfly-react/commit/b811f9f9711197496b7b0498d76ffe218804c598))
+- **FilterIcon:** Replace FilterIcon with RhUiFilterFillIcon ([#12524](https://github.com/patternfly/patternfly-react/issues/12524)) ([f8bcd7c](https://github.com/patternfly/patternfly-react/commit/f8bcd7cc8b14d03706efe384b06ad3fe7701df30))
+- **HelpIcon:** Replace HelpIcon with RhUiQuestionMarkCircleIcon ([#12507](https://github.com/patternfly/patternfly-react/issues/12507)) ([389b3d2](https://github.com/patternfly/patternfly-react/commit/389b3d21caae2b56cff41d647467a710054b337d))
+- **InfrastructureIcons:** replaced with RH brand icons part 3 ([#12503](https://github.com/patternfly/patternfly-react/issues/12503)) ([eb80455](https://github.com/patternfly/patternfly-react/commit/eb8045502918af553015eb0cb0fa6f17443a2ced))
+- **InfrastructureIcons:** replaced with RH brand icons part 4 ([#12504](https://github.com/patternfly/patternfly-react/issues/12504)) ([4cc476a](https://github.com/patternfly/patternfly-react/commit/4cc476a36b7fb93835fba30881ca0b88c31f01f3))
+- **LongArrowAltDownIcon/UpIcon:** Replace with microns versions ([#12517](https://github.com/patternfly/patternfly-react/issues/12517)) ([a868ac1](https://github.com/patternfly/patternfly-react/commit/a868ac1a7a8908b1bf2479e2978735ea046767a9))
+- **SearchIcon:** Replace SearchIcon with RhMicronsSearchIcon ([#12525](https://github.com/patternfly/patternfly-react/issues/12525)) ([930a34b](https://github.com/patternfly/patternfly-react/commit/930a34b12f4daf243757cb14b4b772d02e5c471a))
+- **SyncIcon:** Replace SyncIcon with RhUiSyncIcon ([#12512](https://github.com/patternfly/patternfly-react/issues/12512)) ([9829852](https://github.com/patternfly/patternfly-react/commit/982985213b6dce21a815e5b60703e97e916402be))
+- **Table:** pass variant to calculateColumns for radio styling ([#12451](https://github.com/patternfly/patternfly-react/issues/12451)) ([0b41291](https://github.com/patternfly/patternfly-react/commit/0b4129143d6eacbfb225f7eacb17370d8b73d2a6))
+- update tree pattern expand icon direction ([#12554](https://github.com/patternfly/patternfly-react/issues/12554)) ([8c89c01](https://github.com/patternfly/patternfly-react/commit/8c89c01501b2db096a23267b585cb46cf438aaea))
+- **various:** inert react 19 support ([#12315](https://github.com/patternfly/patternfly-react/issues/12315)) ([8fd7fdb](https://github.com/patternfly/patternfly-react/commit/8fd7fdb7bd551cae2bdb08912e16675b24924813))
+
+### Features
+
+- **MenuToggle:** add aria-haspopup prop ([#12549](https://github.com/patternfly/patternfly-react/issues/12549)) ([c5ad5f8](https://github.com/patternfly/patternfly-react/commit/c5ad5f8dd7570eda090c2dd02b9b6fd2fafc986f)), closes [#11792](https://github.com/patternfly/patternfly-react/issues/11792)
+- **Toolbar:** add flexGrow and widths props to ToolbarItem and Toolb… ([#12237](https://github.com/patternfly/patternfly-react/issues/12237)) ([8e610ef](https://github.com/patternfly/patternfly-react/commit/8e610ef3d750b9a0bdae3a39244d7525aa307beb)), closes [#11910](https://github.com/patternfly/patternfly-react/issues/11910)
+
 # [6.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.6.0-prerelease.9...@patternfly/react-table@6.6.0) (2026-07-01)
 
 **Note:** Version bump only for package @patternfly/react-table

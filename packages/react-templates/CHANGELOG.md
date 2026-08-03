@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.6.1-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.6.0...@patternfly/react-templates@6.6.1-prerelease.0) (2026-08-03)
+
+### Features
+
+- **MenuToggle:** add aria-haspopup prop ([#12549](https://github.com/patternfly/patternfly-react/issues/12549)) ([c5ad5f8](https://github.com/patternfly/patternfly-react/commit/c5ad5f8dd7570eda090c2dd02b9b6fd2fafc986f)), closes [#11792](https://github.com/patternfly/patternfly-react/issues/11792)
+
 # [6.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.6.0-prerelease.9...@patternfly/react-templates@6.6.0) (2026-07-01)
 
 ### Bug Fixes

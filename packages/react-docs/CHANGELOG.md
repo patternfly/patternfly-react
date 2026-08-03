@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.6.1-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.0...@patternfly/react-docs@7.6.1-prerelease.0) (2026-08-03)
+
+### Bug Fixes
+
+- **a11y:** ignore target-size rule to allow WCAG 2.2 bump ([#12560](https://github.com/patternfly/patternfly-react/issues/12560)) ([49b6fb5](https://github.com/patternfly/patternfly-react/commit/49b6fb5d5b894f053140d292eaab504cf7fbabc5))
+- update tree pattern expand icon direction ([#12554](https://github.com/patternfly/patternfly-react/issues/12554)) ([8c89c01](https://github.com/patternfly/patternfly-react/commit/8c89c01501b2db096a23267b585cb46cf438aaea))
+
 # [7.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.0-prerelease.10...@patternfly/react-docs@7.6.0) (2026-07-01)
 
 **Note:** Version bump only for package @patternfly/react-docs
