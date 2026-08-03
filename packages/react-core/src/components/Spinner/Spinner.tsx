@@ -22,8 +22,10 @@ export interface SpinnerProps extends React.SVGProps<SVGSVGElement> {
   isInline?: boolean;
   /** Accessible label to describe what is loading */
   'aria-label'?: string;
-  /** Id of element which describes what is being loaded */
+  /** ID of the element(s) that provide an accessible name for the spinner. This prop is deprecated and you should instead use the aria-labelledby prop (with a lowercase "b") instead. */
   'aria-labelledBy'?: string;
+  /** ID of the element(s) that provide an accessible name for the spinner. */
+  'aria-labelledby'?: string;
 }
 
 export const Spinner: React.FunctionComponent<SpinnerProps> = ({
@@ -32,8 +34,9 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = ({
   'aria-valuetext': ariaValueText = 'Loading...',
   diameter,
   isInline = false,
-  'aria-label': ariaLabel,
-  'aria-labelledBy': ariaLabelledBy,
+  'aria-label': ariaLabel = 'Contents',
+  'aria-labelledBy': deprecatedAriaLabelledBy,
+  'aria-labelledby': ariaLabelledby,
   ...props
 }: SpinnerProps) => (
   <svg
@@ -42,9 +45,10 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = ({
     aria-valuetext={ariaValueText}
     viewBox="0 0 100 100"
     {...(diameter && { style: { [cssDiameter.name]: diameter } as React.CSSProperties })}
-    {...(ariaLabel && { 'aria-label': ariaLabel })}
-    {...(ariaLabelledBy && { 'aria-labelledBy': ariaLabelledBy })}
-    {...(!ariaLabel && !ariaLabelledBy && { 'aria-label': 'Contents' })}
+    aria-label={ariaLabel}
+    {...((ariaLabelledby ?? deprecatedAriaLabelledBy) && {
+      'aria-labelledby': ariaLabelledby ?? deprecatedAriaLabelledBy
+    })}
     {...props}
   >
     <circle className={styles.spinnerPath} cx="50" cy="50" r="45" fill="none" />
