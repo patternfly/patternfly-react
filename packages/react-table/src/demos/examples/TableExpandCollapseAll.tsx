@@ -1,5 +1,5 @@
 import { Fragment, ReactNode, useEffect, useState } from 'react';
-import { Content, Label, PageSection } from '@patternfly/react-core';
+import { Content, Label, LabelStatus, PageSection } from '@patternfly/react-core';
 import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 
@@ -20,7 +20,7 @@ const serverData: Server[] = [
     threads: 18,
     applications: 42,
     workspaces: 7,
-    status: { title: <Label color="green">Running</Label> },
+    status: { title: <Label status={LabelStatus.success}>Running</Label> },
     details: (
       <Content>
         <p>
@@ -40,7 +40,7 @@ const serverData: Server[] = [
     threads: 9,
     applications: 24,
     workspaces: 17,
-    status: { title: <Label color="red">Down</Label> },
+    status: { title: <Label status={LabelStatus.danger}>Down</Label> },
     details: (
       <Content>
         <p>
@@ -60,7 +60,7 @@ const serverData: Server[] = [
     threads: 8,
     applications: 47,
     workspaces: 3,
-    status: { title: <Label color="green">Running</Label> },
+    status: { title: <Label status={LabelStatus.success}>Running</Label> },
     details: (
       <Content>
         <p>
@@ -80,7 +80,7 @@ const serverData: Server[] = [
     threads: 6,
     applications: 4,
     workspaces: 15,
-    status: { title: <Label color="blue">Needs Maintenance</Label> },
+    status: { title: <Label status={LabelStatus.info}>Needs Maintenance</Label> },
     details: (
       <Content>
         <p>
@@ -100,7 +100,7 @@ const serverData: Server[] = [
     threads: 9,
     applications: 24,
     workspaces: 17,
-    status: { title: <Label color="orange">Stopped</Label> },
+    status: { title: <Label status={LabelStatus.warning}>Stopped</Label> },
     details: (
       <Content>
         <p>
