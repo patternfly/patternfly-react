@@ -59,6 +59,7 @@ component.
 * [DescriptionList](/components/description-list)
 * [Dropdown](/components/menus/dropdown)
 * [DropdownItem](/components/menus/dropdown)
+* [DualListSelector](/components/dual-list-selector)
 * [ExpandableSection](/components/expandable-section)
 * [Form](/components/forms/form)
 * [FormGroup](/components/forms/form)
