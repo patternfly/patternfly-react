@@ -86,7 +86,7 @@ PatternFly uses the [`@patternfly/react-styles` package](https://www.npmjs.com/p
 import '@patternfly/react-core/dist/styles/base.css';
 ```
 
-Importing css directly from the PatternFly HTML/CSS library while using PatternFly React may result in duplicated stylesheets in the browser as PatternFly React already pulls in styles internally via `@patternfly/react-styles`.
+Importing CSS directly from the PatternFly HTML/CSS library while using PatternFly React may result in duplicated stylesheets in the browser as PatternFly React already pulls in styles internally via `@patternfly/react-styles`.
 
 ### Contribution guidelines
 All React contributors must first be [PatternFly community contributors](https://www.patternfly.org/get-started/contribute/contributing-to-patternfly). If you're already a PatternFly community contributor, check out the [React contribution guidelines](https://github.com/patternfly/patternfly-react/tree/main/CONTRIBUTING.md) to make React contributions.
