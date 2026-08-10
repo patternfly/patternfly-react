@@ -4,6 +4,9 @@ exports[`slider renders continuous slider 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-slider"
+    data-ouia-component-id="ouia-id"
+    data-ouia-component-type="PF6/Slider"
+    data-ouia-safe="true"
     style="--pf-v6-c-slider--value: 50%; --pf-v6-c-slider__value--c-form-control--width-chars: 2;"
   >
     <div
@@ -62,7 +65,7 @@ exports[`slider renders continuous slider 1`] = `
         <input
           aria-invalid="false"
           aria-label="Slider value input"
-          data-ouia-component-id="OUIA-Generated-TextInputBase-:r1:"
+          data-ouia-component-id="OUIA-Generated-TextInputBase-:r2:"
           data-ouia-component-type="PF6/TextInput"
           data-ouia-safe="true"
           type="number"
@@ -78,6 +81,9 @@ exports[`slider renders continuous slider with custom steps 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-slider"
+    data-ouia-component-id="OUIA-Generated-Slider-:r7:"
+    data-ouia-component-type="PF6/Slider"
+    data-ouia-safe="true"
     style="--pf-v6-c-slider--value: 50%; --pf-v6-c-slider__value--c-form-control--width-chars: 1;"
   >
     <div
@@ -141,6 +147,9 @@ exports[`slider renders disabled slider 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-slider pf-m-disabled"
+    data-ouia-component-id="OUIA-Generated-Slider-:rh:"
+    data-ouia-component-type="PF6/Slider"
+    data-ouia-safe="true"
     style="--pf-v6-c-slider--value: 50%; --pf-v6-c-slider__value--c-form-control--width-chars: 1;"
   >
     <div
@@ -198,6 +207,9 @@ exports[`slider renders discrete slider 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-slider"
+    data-ouia-component-id="OUIA-Generated-Slider-:r3:"
+    data-ouia-component-type="PF6/Slider"
+    data-ouia-safe="true"
     style="--pf-v6-c-slider--value: 40%; --pf-v6-c-slider__value--c-form-control--width-chars: 2;"
   >
     <div
@@ -256,7 +268,7 @@ exports[`slider renders discrete slider 1`] = `
         <input
           aria-invalid="false"
           aria-label="Slider value input"
-          data-ouia-component-id="OUIA-Generated-TextInputBase-:r3:"
+          data-ouia-component-id="OUIA-Generated-TextInputBase-:r5:"
           data-ouia-component-type="PF6/TextInput"
           data-ouia-safe="true"
           type="number"
@@ -272,6 +284,9 @@ exports[`slider renders discrete slider with custom steps 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-slider"
+    data-ouia-component-id="OUIA-Generated-Slider-:r6:"
+    data-ouia-component-type="PF6/Slider"
+    data-ouia-safe="true"
     style="--pf-v6-c-slider--value: 50%; --pf-v6-c-slider__value--c-form-control--width-chars: 1;"
   >
     <div
@@ -364,6 +379,9 @@ exports[`slider renders slider with input 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-slider"
+    data-ouia-component-id="OUIA-Generated-Slider-:r8:"
+    data-ouia-component-type="PF6/Slider"
+    data-ouia-safe="true"
     style="--pf-v6-c-slider--value: 50%; --pf-v6-c-slider__value--c-form-control--width-chars: 2;"
   >
     <div
@@ -428,7 +446,7 @@ exports[`slider renders slider with input 1`] = `
             <input
               aria-invalid="false"
               aria-label="Slider value input"
-              data-ouia-component-id="OUIA-Generated-TextInputBase-:r5:"
+              data-ouia-component-id="OUIA-Generated-TextInputBase-:ra:"
               data-ouia-component-type="PF6/TextInput"
               data-ouia-safe="true"
               type="number"
@@ -455,6 +473,9 @@ exports[`slider renders slider with input above thumb 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-slider"
+    data-ouia-component-id="OUIA-Generated-Slider-:rb:"
+    data-ouia-component-type="PF6/Slider"
+    data-ouia-safe="true"
     style="--pf-v6-c-slider--value: 50%; --pf-v6-c-slider__value--c-form-control--width-chars: 2;"
   >
     <div
@@ -518,7 +539,7 @@ exports[`slider renders slider with input above thumb 1`] = `
               <input
                 aria-invalid="false"
                 aria-label="Slider value input"
-                data-ouia-component-id="OUIA-Generated-TextInputBase-:r7:"
+                data-ouia-component-id="OUIA-Generated-TextInputBase-:rd:"
                 data-ouia-component-type="PF6/TextInput"
                 data-ouia-safe="true"
                 type="number"
@@ -546,6 +567,9 @@ exports[`slider renders slider with input actions 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-slider"
+    data-ouia-component-id="OUIA-Generated-Slider-:re:"
+    data-ouia-component-type="PF6/Slider"
+    data-ouia-safe="true"
     style="--pf-v6-c-slider--value: 50%; --pf-v6-c-slider__value--c-form-control--width-chars: 1;"
   >
     <div
@@ -554,7 +578,7 @@ exports[`slider renders slider with input actions 1`] = `
       <button
         aria-label="Minus"
         class="pf-v6-c-button pf-m-plain"
-        data-ouia-component-id="OUIA-Generated-Button-plain-:r8:"
+        data-ouia-component-id="OUIA-Generated-Button-plain-:rf:"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
@@ -613,7 +637,7 @@ exports[`slider renders slider with input actions 1`] = `
       <button
         aria-label="Plus"
         class="pf-v6-c-button pf-m-plain"
-        data-ouia-component-id="OUIA-Generated-Button-plain-:r9:"
+        data-ouia-component-id="OUIA-Generated-Button-plain-:rg:"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
@@ -627,6 +651,9 @@ exports[`slider renders slider with tooltip on thumb 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-slider"
+    data-ouia-component-id="OUIA-Generated-Slider-:ri:"
+    data-ouia-component-type="PF6/Slider"
+    data-ouia-safe="true"
     style="--pf-v6-c-slider--value: 50%; --pf-v6-c-slider__value--c-form-control--width-chars: 1;"
   >
     <div

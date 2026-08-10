@@ -5,7 +5,7 @@ import { Button } from '../../Button';
 
 describe('slider', () => {
   test('renders continuous slider', () => {
-    const { asFragment } = render(<Slider value={50} isInputVisible inputValue={50} />);
+    const { asFragment } = render(<Slider value={50} isInputVisible inputValue={50} ouiaId="ouia-id" />);
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -89,6 +89,26 @@ describe('slider', () => {
     await screen.findByRole('tooltip');
     expect(screen.getByRole('tooltip')).toHaveTextContent('Custom tooltip content');
   });
+});
+
+test('Renders with custom ouiaId', () => {
+  const { container } = render(<Slider value={50} ouiaId="test-id" />);
+  expect(container.firstChild).toHaveAttribute('data-ouia-component-id', 'test-id');
+});
+
+test('Renders with expected ouia component type', () => {
+  const { container } = render(<Slider value={50} ouiaId="test-id" />);
+  expect(container.firstChild).toHaveAttribute('data-ouia-component-type', 'PF6/Slider');
+});
+
+test('Renders with ouiaSafe defaulting to true', () => {
+  const { container } = render(<Slider value={50} ouiaId="test-id" />);
+  expect(container.firstChild).toHaveAttribute('data-ouia-safe', 'true');
+});
+
+test('Renders with ouiaSafe=false when specified', () => {
+  const { container } = render(<Slider value={50} ouiaId="test-id" ouiaSafe={false} />);
+  expect(container.firstChild).toHaveAttribute('data-ouia-safe', 'false');
 });
 
 test('renders slider with aria-labelledby', () => {

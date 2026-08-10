@@ -8,6 +8,7 @@ import { Tooltip, TooltipProps } from '../Tooltip';
 import cssSliderValue from '@patternfly/react-tokens/dist/esm/c_slider_value';
 import cssFormControlWidthChars from '@patternfly/react-tokens/dist/esm/c_slider__value_c_form_control_width_chars';
 import { getLanguageDirection } from '../../helpers/util';
+import { useOUIAProps, OUIAProps } from '../../helpers';
 
 /** Properties for creating custom steps in a slider. These properties should be passed in as
  * an object within an array to the slider component's customSteps property.
@@ -29,7 +30,7 @@ export type SliderOnChangeEvent =
   | React.FocusEvent<HTMLInputElement>;
 
 /** The main slider component. */
-export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
+export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'>, OUIAProps {
   /** Flag indicating if the slider is discrete for custom steps. This will cause the slider
    * to snap to the closest value.
    */
@@ -93,6 +94,10 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   thumbAriaValueText?: string;
   /** Current value of the slider.  */
   value?: number;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 const getPercentage = (current: number, max: number) => (100 * current) / max;
@@ -126,8 +131,11 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   showBoundaries = true,
   'aria-describedby': ariaDescribedby,
   'aria-labelledby': ariaLabelledby,
+  ouiaId,
+  ouiaSafe = true,
   ...props
 }: SliderProps) => {
+  const ouiaProps = useOUIAProps(Slider.displayName, ouiaId, ouiaSafe);
   const sliderRailRef = useRef<HTMLDivElement>(undefined);
   const thumbRef = useRef<HTMLDivElement>(undefined);
 
@@ -457,6 +465,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
       className={css(styles.slider, className, isDisabled && styles.modifiers.disabled)}
       style={{ ...style, ...inputStyle }}
       {...props}
+      {...ouiaProps}
     >
       {(leftActions || startActions) && <div className={css(styles.sliderActions)}>{leftActions || startActions}</div>}
       <div className={css(styles.sliderMain)}>
