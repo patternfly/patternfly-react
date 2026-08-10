@@ -51,6 +51,7 @@ component.
 * [Alert](/components/alert)
 * [Breadcrumb](/components/breadcrumb)
 * [Button](/components/button)
+* [CalendarMonth](/components/calendar-month)
 * [Card](/components/card)
 * [Checkbox](/components/forms/checkbox)
 * [Chip](/components/chip)
