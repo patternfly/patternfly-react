@@ -39,7 +39,7 @@ Object.values([
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium est a porttitor vehicula. Quisque vel commodo urna. Morbi mattis rutrum ante, id vehicula ex accumsan ut. Morbi viverra, eros vel porttitor facilisis, eros purus aliquet erat,nec lobortis felis elit pulvinar sem. Vivamus vulputate, risus eget commodo eleifend, eros nibh porta quam, vitae lacinia leo libero at magna. Maecenas aliquam sagittis orci, et posuere nisi ultrices sit amet. Aliquam ex odio, malesuada sed posuere quis, pellentesque at mauris. Phasellus venenatis massa ex, eget pulvinar libero auctor pretium. Aliquam erat volutpat. Duis euismod justo in quam ullamcorper, in commodo massa vulputate.';
   test(`Drawer isExpanded = ${isExpanded} and isInline = ${isInline} and isStatic = ${isStatic}`, () => {
     const { asFragment } = render(
-      <Drawer isExpanded={isExpanded}>
+      <Drawer isExpanded={isExpanded} ouiaId="ouia-id">
         <DrawerContent panelContent={panelContent}>
           <DrawerContentBody>{drawerContent}</DrawerContentBody>
         </DrawerContent>
@@ -186,4 +186,48 @@ test(`Renders with ${styles.modifiers.pill} class when specified`, () => {
   );
 
   expect(screen.getByTestId('drawer')).toHaveClass(styles.modifiers.pill);
+});
+
+test('Renders with custom ouiaId', () => {
+  render(
+    <Drawer data-testid="drawer" ouiaId="test-id">
+      <DrawerContent panelContent={<DrawerPanelContent>panel</DrawerPanelContent>}>
+        <DrawerContentBody>content</DrawerContentBody>
+      </DrawerContent>
+    </Drawer>
+  );
+  expect(screen.getByTestId('drawer')).toHaveAttribute('data-ouia-component-id', 'test-id');
+});
+
+test('Renders with expected ouia component type', () => {
+  render(
+    <Drawer data-testid="drawer" ouiaId="test-id">
+      <DrawerContent panelContent={<DrawerPanelContent>panel</DrawerPanelContent>}>
+        <DrawerContentBody>content</DrawerContentBody>
+      </DrawerContent>
+    </Drawer>
+  );
+  expect(screen.getByTestId('drawer')).toHaveAttribute('data-ouia-component-type', 'PF6/Drawer');
+});
+
+test('Renders with ouiaSafe defaulting to true', () => {
+  render(
+    <Drawer data-testid="drawer" ouiaId="test-id">
+      <DrawerContent panelContent={<DrawerPanelContent>panel</DrawerPanelContent>}>
+        <DrawerContentBody>content</DrawerContentBody>
+      </DrawerContent>
+    </Drawer>
+  );
+  expect(screen.getByTestId('drawer')).toHaveAttribute('data-ouia-safe', 'true');
+});
+
+test('Renders with ouiaSafe=false when specified', () => {
+  render(
+    <Drawer data-testid="drawer" ouiaId="test-id" ouiaSafe={false}>
+      <DrawerContent panelContent={<DrawerPanelContent>panel</DrawerPanelContent>}>
+        <DrawerContentBody>content</DrawerContentBody>
+      </DrawerContent>
+    </Drawer>
+  );
+  expect(screen.getByTestId('drawer')).toHaveAttribute('data-ouia-safe', 'false');
 });
