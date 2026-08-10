@@ -71,6 +71,7 @@ component.
 * [NavExpandable](/components/navigation)
 * [NavItem](/components/navigation)
 * [Pagination](/components/pagination)
+* [Popover](/components/popover)
 * [Progress](/components/progress)
 * [Radio](/components/forms/radio)
 * [Select](/components/menus/select)
