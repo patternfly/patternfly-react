@@ -33,6 +33,8 @@ exports[`MultipleFileUploadStatusItem renders custom aria labels 1`] = `
       </div>
       <div
         class="pf-v6-c-progress"
+        data-ouia-component-type="PF6/Progress"
+        data-ouia-safe="true"
         id="test-progress-id"
       >
         <div
@@ -152,6 +154,8 @@ exports[`MultipleFileUploadStatusItem renders custom class names 1`] = `
       </div>
       <div
         class="pf-v6-c-progress"
+        data-ouia-component-type="PF6/Progress"
+        data-ouia-safe="true"
         id="test-progress-id"
       >
         <div
@@ -268,6 +272,8 @@ exports[`MultipleFileUploadStatusItem renders custom file name/size/icon/progres
       </div>
       <div
         class="pf-v6-c-progress"
+        data-ouia-component-type="PF6/Progress"
+        data-ouia-safe="true"
         id="test-progress-id"
       >
         <div
@@ -386,6 +392,8 @@ exports[`MultipleFileUploadStatusItem renders custom function progressAriaLiveMe
       </div>
       <div
         class="pf-v6-c-progress"
+        data-ouia-component-type="PF6/Progress"
+        data-ouia-safe="true"
         id="test-progress-id"
       >
         <div
@@ -504,6 +512,8 @@ exports[`MultipleFileUploadStatusItem renders custom progress value/variant when
       </div>
       <div
         class="pf-v6-c-progress pf-m-warning"
+        data-ouia-component-type="PF6/Progress"
+        data-ouia-safe="true"
         id="test-progress-id"
       >
         <div
@@ -639,6 +649,8 @@ exports[`MultipleFileUploadStatusItem renders expected values from a passed file
       </div>
       <div
         class="pf-v6-c-progress"
+        data-ouia-component-type="PF6/Progress"
+        data-ouia-safe="true"
         id="test-progress-id"
       >
         <div
@@ -757,6 +769,8 @@ exports[`MultipleFileUploadStatusItem renders with expected class names 1`] = `
       </div>
       <div
         class="pf-v6-c-progress"
+        data-ouia-component-type="PF6/Progress"
+        data-ouia-safe="true"
         id="test-progress-id"
       >
         <div
@@ -873,6 +887,8 @@ exports[`MultipleFileUploadStatusItem rendersdefault progressAriaLiveMessage whe
       </div>
       <div
         class="pf-v6-c-progress"
+        data-ouia-component-type="PF6/Progress"
+        data-ouia-safe="true"
         id="test-progress-id"
       >
         <div
