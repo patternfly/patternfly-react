@@ -64,7 +64,7 @@ const EditButtonsCell: React.FunctionComponent<EditButtonsCellProps> = ({
             </Button>
           </div>
         </div>
-        <span className={css(inlineEditStyles.inlineEditAction, inlineEditStyles.modifiers.enableEditable)}>
+        <div className={css(inlineEditStyles.inlineEditAction, inlineEditStyles.modifiers.enableEditable)}>
           <Button
             ref={editButtonRef}
             aria-label={`Edit ${rowAriaLabel}`}
@@ -74,7 +74,7 @@ const EditButtonsCell: React.FunctionComponent<EditButtonsCellProps> = ({
           >
             <RhUiEditFillIcon />
           </Button>
-        </span>
+        </div>
       </Td>
     </>
   );
