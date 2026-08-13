@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.6.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.6.1-prerelease.2...@patternfly/react-code-editor@6.6.1-prerelease.3) (2026-08-13)
+
+### Bug Fixes
+
+- **deps:** Update dompurify dependency ([#12613](https://github.com/patternfly/patternfly-react/issues/12613)) ([a38ec00](https://github.com/patternfly/patternfly-react/commit/a38ec0076976c0902c37f6316a86c77c9fdb339d))
+
 ## [6.6.1-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.6.1-prerelease.1...@patternfly/react-code-editor@6.6.1-prerelease.2) (2026-08-10)
 
 **Note:** Version bump only for package @patternfly/react-code-editor
