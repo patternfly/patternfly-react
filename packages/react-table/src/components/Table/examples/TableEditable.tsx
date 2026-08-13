@@ -35,48 +35,46 @@ const EditButtonsCell: React.FunctionComponent<EditButtonsCellProps> = ({
 
   return (
     <>
-      <Td
-        dataLabel="Save and cancel buttons"
-        className={css(
-          inlineEditStyles.inlineEditGroup,
-          inlineEditStyles.modifiers.iconGroup,
-          inlineEditStyles.modifiers.actionGroup
-        )}
-      >
-        <div className={css(inlineEditStyles.inlineEditAction, inlineEditStyles.modifiers.valid)}>
-          <Button
-            aria-label={`Save edits of ${rowAriaLabel}`}
-            onClick={() => onClick('save')}
-            onKeyDown={(event) => onKeyDown(event, 'stopEditing')}
-            variant="plain"
-          >
-            <RhMicronsCheckmarkIcon />
-          </Button>
-        </div>
-        <div className={css(inlineEditStyles.inlineEditAction)}>
-          <Button
-            aria-label={`Discard edits of ${rowAriaLabel}`}
-            onClick={() => onClick('cancel')}
-            onKeyDown={(event) => onKeyDown(event, 'stopEditing')}
-            variant="plain"
-          >
-            <RhMicronsCloseIcon />
-          </Button>
-        </div>
-      </Td>
-      <Td
-        dataLabel="Edit button"
-        className={css(inlineEditStyles.inlineEditAction, inlineEditStyles.modifiers.enableEditable)}
-      >
-        <Button
-          ref={editButtonRef}
-          aria-label={`Edit ${rowAriaLabel}`}
-          onClick={() => onClick('edit')}
-          onKeyDown={(event) => onKeyDown(event, 'edit')}
-          variant="plain"
+      <Td dataLabel="Edit row data" hasAction>
+        <div
+          className={css(
+            inlineEditStyles.inlineEditGroup,
+            inlineEditStyles.modifiers.iconGroup,
+            inlineEditStyles.modifiers.actionGroup
+          )}
         >
-          <RhUiEditFillIcon />
-        </Button>
+          <div className={css(inlineEditStyles.inlineEditAction, inlineEditStyles.modifiers.valid)}>
+            <Button
+              aria-label={`Save edits of ${rowAriaLabel}`}
+              onClick={() => onClick('save')}
+              onKeyDown={(event) => onKeyDown(event, 'stopEditing')}
+              variant="plain"
+            >
+              <RhMicronsCheckmarkIcon />
+            </Button>
+          </div>
+          <div className={css(inlineEditStyles.inlineEditAction)}>
+            <Button
+              aria-label={`Discard edits of ${rowAriaLabel}`}
+              onClick={() => onClick('cancel')}
+              onKeyDown={(event) => onKeyDown(event, 'stopEditing')}
+              variant="plain"
+            >
+              <RhMicronsCloseIcon />
+            </Button>
+          </div>
+        </div>
+        <span className={css(inlineEditStyles.inlineEditAction, inlineEditStyles.modifiers.enableEditable)}>
+          <Button
+            ref={editButtonRef}
+            aria-label={`Edit ${rowAriaLabel}`}
+            onClick={() => onClick('edit')}
+            onKeyDown={(event) => onKeyDown(event, 'edit')}
+            variant="plain"
+          >
+            <RhUiEditFillIcon />
+          </Button>
+        </span>
       </Td>
     </>
   );
