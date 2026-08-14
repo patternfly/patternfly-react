@@ -1,0 +1,55 @@
+name: Documentation deploy
+on:
+  workflow_run:
+    workflows: [Documentation]
+    types: [completed]
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    if: github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion != 'cancelled'
+    env:
+      SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+      SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+      GH_PR_TOKEN: ${{ secrets.GH_PR_TOKEN }}
+    steps:
+      - name: Check out project
+        uses: actions/checkout@v4
+
+      - name: Set up project
+        uses: ./.github/actions/setup-project
+        with:
+          skip-build: true
+
+      - name: Download PR number
+        uses: actions/download-artifact@v4
+        with:
+          name: pr-number
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set PR number
+        run: echo "GH_PR_NUM=$(cat pr-number.txt)" >> $GITHUB_ENV
+
+      - name: Download documentation
+        uses: actions/download-artifact@v4
+        with:
+          name: documentation
+          path: packages/react-docs/public
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download a11y coverage
+        uses: actions/download-artifact@v4
+        with:
+          name: a11y-coverage
+          path: packages/react-docs/coverage
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload documentation
+        run: node .github/upload-preview.mjs packages/react-docs/public
+
+      - name: Upload accessibility results
+        if: always()
+        run: node .github/upload-preview.mjs packages/react-docs/coverage

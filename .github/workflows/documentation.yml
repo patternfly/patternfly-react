@@ -1,6 +1,6 @@
 name: Documentation
 on:
-  pull_request_target:
+  pull_request:
   issue_comment:
     types: [created]
   workflow_call:
@@ -13,6 +13,7 @@ on:
         required: true
 jobs:
   check-permissions:
+    if: github.event_name == 'issue_comment'
     uses: patternfly/.github/.github/workflows/check-team-membership.yml@fdb52a63a2220ec8a3b6c2d43f312cda708ffa06
     secrets: inherit
 
@@ -23,7 +24,7 @@ jobs:
     if: >-
       always() &&
       !cancelled() &&
-      (github.event_name == 'workflow_call' || needs.check-permissions.outputs.allowed == 'true')
+      (github.event_name != 'issue_comment' || needs.check-permissions.outputs.allowed == 'true')
     env:
       SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
       SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
@@ -31,29 +32,53 @@ jobs:
       GH_PR_NUM: ${{ needs.check-permissions.outputs.pr-number }}
     steps:
       - name: Check out project from PR branch
-        if: github.event_name == 'pull_request_target' || github.event_name == 'issue_comment'
+        if: github.event_name == 'issue_comment'
         uses: actions/checkout@v4
         with:
-          # Checkout the merge commit so that we can access the PR's changes.
-          # This is nessesary because `pull_request_target` checks out the base branch (e.g. `main`) by default.
           ref: refs/pull/${{ env.GH_PR_NUM }}/head
 
       - name: Check out project
-        if: github.event_name == 'workflow_call'
+        if: github.event_name != 'issue_comment'
         uses: actions/checkout@v4
+
       - name: Set up and build project
         uses: ./.github/actions/setup-project
 
       - name: Build documentation
         run: yarn build:docs
 
-      - name: Upload documentation
-        if: always()
+      - name: Upload documentation preview
+        if: always() && !cancelled() && github.event_name != 'pull_request'
         run: node .github/upload-preview.mjs packages/react-docs/public
 
       - name: Run accessibility tests
         run: yarn serve:docs & yarn test:a11y
 
       - name: Upload accessibility results
-        if: always()
+        if: always() && !cancelled() && github.event_name != 'pull_request'
         run: node .github/upload-preview.mjs packages/react-docs/coverage
+
+      - name: Upload docs artifact
+        if: always() && !cancelled() && github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: documentation
+          path: packages/react-docs/public
+
+      - name: Upload a11y artifact
+        if: always() && !cancelled() && github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: a11y-coverage
+          path: packages/react-docs/coverage
+
+      - name: Save PR number
+        if: always() && !cancelled() && github.event_name == 'pull_request'
+        run: echo "${{ github.event.pull_request.number }}" > pr-number.txt
+
+      - name: Upload PR number
+        if: always() && !cancelled() && github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr-number
+          path: pr-number.txt
