@@ -63,7 +63,8 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
   /** Determines the accessible role of the menu. For a non-checkbox menu that can have
-   * one or more items selected, pass in "listbox". */
+   * one or more items selected, pass in "listbox". For a static list of actions that is not
+   * a dismissible menu widget, pass in "list". */
   role?: string;
 }
 

@@ -9,7 +9,7 @@ import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-mi
 import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import RhMicronsCheckmarkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-checkmark-icon';
 import { Checkbox } from '../Checkbox';
-import { MenuContext, MenuItemContext } from './MenuContext';
+import { getMenuItemInteractiveRole, getMenuListItemRole, MenuContext, MenuItemContext } from './MenuContext';
 import { MenuItemAction } from './MenuItemAction';
 import { Tooltip, TooltipProps } from '../Tooltip';
 import { canUseDOM } from '../../helpers/util';
@@ -341,6 +341,8 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   }, [isFocused]);
 
   const isSelectMenu = menuRole === 'listbox';
+  const interactiveRole = !hasCheckbox && !flyoutMenu ? getMenuItemInteractiveRole(menuRole) : undefined;
+  const listItemRole = getMenuListItemRole(menuRole, hasCheckbox);
 
   const renderItem = (
     <>
@@ -350,7 +352,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
         className={css(styles.menuItem, getIsSelected() && !hasCheckbox && styles.modifiers.selected, className)}
         aria-current={getAriaCurrent()}
         {...(!hasCheckbox && { disabled: isDisabled, 'aria-label': ariaLabel })}
-        {...(!hasCheckbox && !flyoutMenu && { role: isSelectMenu ? 'option' : 'menuitem' })}
+        {...(interactiveRole !== undefined && { role: interactiveRole })}
         {...(!hasCheckbox && !flyoutMenu && isSelectMenu && { 'aria-selected': getIsSelected() })}
         ref={innerComponentRef}
         {...(!hasCheckbox && {
@@ -452,7 +454,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
         }}
         {...(flyoutMenu && !isAriaDisabled && { onKeyDown: handleFlyout })}
         ref={ref}
-        role={!hasCheckbox ? 'none' : 'menuitem'}
+        {...(listItemRole !== undefined && { role: listItemRole })}
         {...(hasCheckbox && { 'aria-label': ariaLabel })}
         {...props}
       >

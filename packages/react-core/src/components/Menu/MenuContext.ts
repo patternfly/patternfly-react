@@ -45,3 +45,22 @@ export const MenuItemContext = createContext<{
   itemId: null,
   isDisabled: false
 });
+
+/** Returns the ARIA role for a menu item's interactive element based on the parent menu role. */
+export const getMenuItemInteractiveRole = (menuRole?: string): string | undefined => {
+  if (menuRole === 'listbox') {
+    return 'option';
+  }
+  if (menuRole === 'list') {
+    return undefined;
+  }
+  return 'menuitem';
+};
+
+/** Returns the ARIA role for a menu item's list item wrapper based on the parent menu role. */
+export const getMenuListItemRole = (menuRole: string | undefined, hasCheckbox: boolean): string | undefined => {
+  if (menuRole === 'list') {
+    return undefined;
+  }
+  return hasCheckbox ? 'menuitem' : 'none';
+};

@@ -94,4 +94,60 @@ describe('Menu', () => {
       expect(screen.getByText('Checkbox 1')).toBeInTheDocument();
     });
   });
+
+  describe('with role="list"', () => {
+    test('should render list semantics on menu items', () => {
+      render(
+        <Menu role="list">
+          <MenuContent>
+            <MenuList>
+              <MenuItem itemId={0}>Item</MenuItem>
+            </MenuList>
+          </MenuContent>
+        </Menu>
+      );
+
+      expect(screen.getByRole('list')).toBeInTheDocument();
+
+      const listItem = screen.getByRole('listitem');
+      expect(listItem).not.toHaveAttribute('role');
+
+      const button = screen.getByRole('button', { name: 'Item' });
+      expect(button).not.toHaveAttribute('role');
+    });
+  });
+
+  describe('with role="listbox"', () => {
+    test('should render option semantics on menu items', () => {
+      render(
+        <Menu role="listbox" selected={0}>
+          <MenuContent>
+            <MenuList>
+              <MenuItem itemId={0}>Item</MenuItem>
+            </MenuList>
+          </MenuContent>
+        </Menu>
+      );
+
+      expect(screen.getByRole('listbox')).toBeInTheDocument();
+      expect(screen.getByRole('option', { name: 'Item' })).toBeInTheDocument();
+    });
+  });
+
+  describe('with default menu role', () => {
+    test('should render menuitem semantics on menu items', () => {
+      render(
+        <Menu>
+          <MenuContent>
+            <MenuList>
+              <MenuItem itemId={0}>Item</MenuItem>
+            </MenuList>
+          </MenuContent>
+        </Menu>
+      );
+
+      expect(screen.getByRole('menu')).toBeInTheDocument();
+      expect(screen.getByRole('menuitem', { name: 'Item' })).toBeInTheDocument();
+    });
+  });
 });

@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
-import { MenuContext, MenuItemContext } from './MenuContext';
+import { getMenuItemInteractiveRole, MenuContext, MenuItemContext } from './MenuContext';
 import { Button } from '../Button';
 export interface MenuItemActionProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the action button */
@@ -34,42 +34,45 @@ const MenuItemActionBase: React.FunctionComponent<MenuItemActionProps> = ({
   ...props
 }: MenuItemActionProps) => (
   <MenuContext.Consumer>
-    {({ onActionClick }) => (
-      <MenuItemContext.Consumer>
-        {({ itemId, isDisabled: isDisabledContext }) => {
-          const onClickButton = (event: any) => {
-            // event specified on the MenuItemAction
-            onClick && onClick(event);
-            // event specified on the Menu
-            onActionClick && onActionClick(event, itemId, actionId);
-          };
-          return (
-            <div
-              className={css(
-                styles.menuItemAction,
-                isFavorited !== null && 'pf-m-favorite',
-                isFavorited && styles.modifiers.favorited,
-                className
-              )}
-              {...props}
-            >
-              <Button
-                aria-label={ariaLabel}
-                onClick={onClickButton}
-                ref={innerRef}
-                role="menuitem"
-                variant="plain"
-                isFavorite={isFavorited !== null}
-                isFavorited={isFavorited ?? false}
-                tabIndex={-1}
-                isDisabled={isDisabled || isDisabledContext}
-                icon={isFavorited === null ? icon : undefined}
-              />
-            </div>
-          );
-        }}
-      </MenuItemContext.Consumer>
-    )}
+    {({ onActionClick, role: menuRole }) => {
+      const interactiveRole = getMenuItemInteractiveRole(menuRole);
+      return (
+        <MenuItemContext.Consumer>
+          {({ itemId, isDisabled: isDisabledContext }) => {
+            const onClickButton = (event: any) => {
+              // event specified on the MenuItemAction
+              onClick && onClick(event);
+              // event specified on the Menu
+              onActionClick && onActionClick(event, itemId, actionId);
+            };
+            return (
+              <div
+                className={css(
+                  styles.menuItemAction,
+                  isFavorited !== null && 'pf-m-favorite',
+                  isFavorited && styles.modifiers.favorited,
+                  className
+                )}
+                {...props}
+              >
+                <Button
+                  aria-label={ariaLabel}
+                  onClick={onClickButton}
+                  ref={innerRef}
+                  {...(interactiveRole !== undefined && { role: interactiveRole })}
+                  variant="plain"
+                  isFavorite={isFavorited !== null}
+                  isFavorited={isFavorited ?? false}
+                  tabIndex={-1}
+                  isDisabled={isDisabled || isDisabledContext}
+                  icon={isFavorited === null ? icon : undefined}
+                />
+              </div>
+            );
+          }}
+        </MenuItemContext.Consumer>
+      );
+    }}
   </MenuContext.Consumer>
 );
 
