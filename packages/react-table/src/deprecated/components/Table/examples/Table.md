@@ -1,6 +1,5 @@
 ---
 id: Table
-cssPrefix: pf-c-table
 section: components
 propComponents: ['Table', 'TableHeader', 'TableBody', 'ISortBy']
 ouia: true
