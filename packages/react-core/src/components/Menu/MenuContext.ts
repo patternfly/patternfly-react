@@ -57,6 +57,14 @@ export const getMenuItemInteractiveRole = (menuRole?: string): string | undefine
   return 'menuitem';
 };
 
+/** Returns the ARIA role for a menu item action button based on the parent menu role. */
+export const getMenuItemActionInteractiveRole = (menuRole?: string): string | undefined => {
+  if (menuRole === 'listbox' || menuRole === 'list') {
+    return undefined;
+  }
+  return 'menuitem';
+};
+
 /** Returns the ARIA role for a menu item's list item wrapper based on the parent menu role. */
 export const getMenuListItemRole = (menuRole: string | undefined, hasCheckbox: boolean): string | undefined => {
   if (menuRole === 'list') {

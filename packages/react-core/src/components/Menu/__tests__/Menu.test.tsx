@@ -3,6 +3,7 @@ import '@testing-library/jest-dom';
 
 import { Menu } from '../Menu';
 import { MenuItem, MenuItemProps } from '../MenuItem';
+import { MenuItemAction } from '../MenuItemAction';
 import { MenuList } from '../MenuList';
 import { MenuContent } from '../MenuContent';
 
@@ -131,6 +132,29 @@ describe('Menu', () => {
 
       expect(screen.getByRole('listbox')).toBeInTheDocument();
       expect(screen.getByRole('option', { name: 'Item' })).toBeInTheDocument();
+    });
+
+    test('should not expose menu item actions as options', () => {
+      render(
+        <Menu role="listbox" selected={0}>
+          <MenuContent>
+            <MenuList>
+              <MenuItem
+                itemId={0}
+                actions={<MenuItemAction aria-label="Favorite action" actionId="fav" icon="favorites" />}
+              >
+                Item
+              </MenuItem>
+            </MenuList>
+          </MenuContent>
+        </Menu>
+      );
+
+      expect(screen.getByRole('option', { name: 'Item' })).toBeInTheDocument();
+
+      const actionButton = screen.getByRole('button', { name: 'Favorite action' });
+      expect(actionButton).not.toHaveAttribute('role');
+      expect(screen.queryByRole('option', { name: 'Favorite action' })).not.toBeInTheDocument();
     });
   });
 

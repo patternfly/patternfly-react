@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
-import { getMenuItemInteractiveRole, MenuContext, MenuItemContext } from './MenuContext';
+import { getMenuItemActionInteractiveRole, MenuContext, MenuItemContext } from './MenuContext';
 import { Button } from '../Button';
 export interface MenuItemActionProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the action button */
@@ -35,7 +35,7 @@ const MenuItemActionBase: React.FunctionComponent<MenuItemActionProps> = ({
 }: MenuItemActionProps) => (
   <MenuContext.Consumer>
     {({ onActionClick, role: menuRole }) => {
-      const interactiveRole = getMenuItemInteractiveRole(menuRole);
+      const interactiveRole = getMenuItemActionInteractiveRole(menuRole);
       return (
         <MenuItemContext.Consumer>
           {({ itemId, isDisabled: isDisabledContext }) => {
