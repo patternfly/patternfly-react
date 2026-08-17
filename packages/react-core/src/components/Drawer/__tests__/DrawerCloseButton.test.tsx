@@ -5,7 +5,7 @@ import { DrawerCloseButton } from '../DrawerCloseButton';
 
 test('Renders with spread buttonProps', () => {
   render(<DrawerCloseButton buttonProps={{ isDisabled: true }} />);
-  expect(screen.getByRole('button')).toHaveAttribute('disabled');
+  expect(screen.getByRole('button')).toBeDisabled();
 });
 
 test('Calls onClose when clicked', async () => {
