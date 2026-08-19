@@ -83,7 +83,7 @@ const MultipleOpenModals = () => {
 
 describe('Modal', () => {
   beforeEach(() => {
-    Modal.openModalStack = [];
+    Modal.openModalStacks = new Map();
   });
 
   test('Modal creates a container element once for div', () => {
@@ -264,5 +264,56 @@ describe('Modal', () => {
     await user.click(closeButtons[closeButtons.length - 1]);
 
     expect(firstBackdrop).not.toHaveAttribute('aria-hidden');
+  });
+
+  test('modals with different appendTo targets have independent stacks', async () => {
+    const user = userEvent.setup();
+    const targetA = document.createElement('div');
+    const targetB = document.createElement('div');
+    document.body.appendChild(targetA);
+    document.body.appendChild(targetB);
+
+    const siblingA = document.createElement('aside');
+    siblingA.textContent = 'Sibling A';
+    targetA.appendChild(siblingA);
+
+    const siblingB = document.createElement('aside');
+    siblingB.textContent = 'Sibling B';
+    targetB.appendChild(siblingB);
+
+    const DistinctTargetModals = () => {
+      const [isAOpen, setIsAOpen] = useState(true);
+      const [isBOpen, setIsBOpen] = useState(true);
+
+      return (
+        <>
+          <Modal isOpen={isAOpen} appendTo={targetA} onClose={() => setIsAOpen(false)} aria-label="Modal A">
+            Modal A content
+          </Modal>
+          <Modal isOpen={isBOpen} appendTo={targetB} onClose={() => setIsBOpen(false)} aria-label="Modal B">
+            Modal B content
+          </Modal>
+        </>
+      );
+    };
+
+    render(<DistinctTargetModals />);
+
+    expect(siblingA).toHaveAttribute('aria-hidden', 'true');
+    expect(siblingB).toHaveAttribute('aria-hidden', 'true');
+    expect(targetA).toHaveClass(css(styles.backdropOpen));
+    expect(targetB).toHaveClass(css(styles.backdropOpen));
+
+    const closeButtons = screen.getAllByRole('button', { name: 'Close', hidden: true });
+    await user.click(closeButtons[1]);
+
+    expect(targetB).not.toHaveClass(css(styles.backdropOpen));
+    expect(siblingB).not.toHaveAttribute('aria-hidden');
+
+    expect(targetA).toHaveClass(css(styles.backdropOpen));
+    expect(siblingA).toHaveAttribute('aria-hidden', 'true');
+
+    document.body.removeChild(targetA);
+    document.body.removeChild(targetB);
   });
 });

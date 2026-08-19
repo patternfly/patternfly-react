@@ -18,6 +18,7 @@ export const ModalBasic: React.FunctionComponent = () => {
         Show basic modal
       </Button>
       <Modal
+        appendTo={() => document.querySelector('#root') as HTMLElement}
         isOpen={isModalOpen}
         onClose={handleModalToggle}
         ouiaId="BasicModal"

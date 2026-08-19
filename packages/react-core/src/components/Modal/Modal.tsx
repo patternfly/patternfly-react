@@ -69,7 +69,7 @@ interface ModalState {
 class Modal extends Component<ModalProps, ModalState> {
   static displayName = 'Modal';
   static currentId = 0;
-  static openModalStack: string[] = [];
+  static openModalStacks: Map<HTMLElement, string[]> = new Map();
   boxId = '';
   backdropId = '';
 
@@ -107,22 +107,31 @@ class Modal extends Component<ModalProps, ModalState> {
     return appendTo || document.body;
   };
 
+  static getStackForTarget(target: HTMLElement): string[] {
+    if (!Modal.openModalStacks.has(target)) {
+      Modal.openModalStacks.set(target, []);
+    }
+    return Modal.openModalStacks.get(target)!;
+  }
+
   toggleSiblingsFromScreenReaders = (hide: boolean) => {
     const { appendTo } = this.props;
     const target: HTMLElement = this.getElement(appendTo);
-    const idx = Modal.openModalStack.indexOf(this.backdropId);
+    const stack = Modal.getStackForTarget(target);
+    const idx = stack.indexOf(this.backdropId);
 
     if (hide && idx === -1) {
-      Modal.openModalStack.push(this.backdropId);
+      stack.push(this.backdropId);
     } else if (!hide && idx !== -1) {
-      Modal.openModalStack.splice(idx, 1);
+      stack.splice(idx, 1);
+      if (stack.length === 0) {
+        Modal.openModalStacks.delete(target);
+      }
     }
 
-    const activeBackdropId =
-      Modal.openModalStack.length > 0 ? Modal.openModalStack[Modal.openModalStack.length - 1] : null;
+    const activeBackdropId = stack.length > 0 ? stack[stack.length - 1] : null;
 
     for (const child of Array.from(target.children)) {
-      // We need to prevent aria-hidden being applied to popper elements appended to document.body
       if (child.hasAttribute('data-popper-placement')) {
         continue;
       }
@@ -154,7 +163,7 @@ class Modal extends Component<ModalProps, ModalState> {
     } else {
       if (prevProps.isOpen !== this.props.isOpen) {
         this.toggleSiblingsFromScreenReaders(false);
-        if (Modal.openModalStack.length === 0) {
+        if (!Modal.openModalStacks.has(target)) {
           target.classList.remove(css(styles.backdropOpen));
         }
       }
@@ -166,7 +175,7 @@ class Modal extends Component<ModalProps, ModalState> {
     const target: HTMLElement = this.getElement(appendTo);
     target.removeEventListener('keydown', this.handleEscKeyClick, false);
     this.toggleSiblingsFromScreenReaders(false);
-    if (Modal.openModalStack.length === 0) {
+    if (!Modal.openModalStacks.has(target)) {
       target.classList.remove(css(styles.backdropOpen));
     }
   }
