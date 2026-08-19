@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.6.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.1-prerelease.2...@patternfly/react-core@6.6.1-prerelease.3) (2026-08-19)
+
+### Bug Fixes
+
+- **DrawerCloseButton:** Allow props spread to button ([#12620](https://github.com/patternfly/patternfly-react/issues/12620)) ([9234afa](https://github.com/patternfly/patternfly-react/commit/9234afa00ee9dbf8566eac0b572f352399ed0678))
+
 ## [6.6.1-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.1-prerelease.1...@patternfly/react-core@6.6.1-prerelease.2) (2026-08-10)
 
 **Note:** Version bump only for package @patternfly/react-core
