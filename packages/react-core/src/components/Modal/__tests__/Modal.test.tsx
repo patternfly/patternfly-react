@@ -316,4 +316,21 @@ describe('Modal', () => {
     document.body.removeChild(targetA);
     document.body.removeChild(targetB);
   });
+
+  test('unmounting a never-opened modal with a custom target does not leak a stack entry', () => {
+    const customTarget = document.createElement('div');
+    document.body.appendChild(customTarget);
+
+    const { unmount } = render(
+      <Modal isOpen={false} appendTo={customTarget} onClose={() => {}}>
+        Never opened
+      </Modal>
+    );
+
+    unmount();
+
+    expect(Modal.openModalStacks.has(customTarget)).toBe(false);
+
+    document.body.removeChild(customTarget);
+  });
 });

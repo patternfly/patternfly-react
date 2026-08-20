@@ -117,19 +117,28 @@ class Modal extends Component<ModalProps, ModalState> {
   toggleSiblingsFromScreenReaders = (hide: boolean) => {
     const { appendTo } = this.props;
     const target: HTMLElement = this.getElement(appendTo);
-    const stack = Modal.getStackForTarget(target);
-    const idx = stack.indexOf(this.backdropId);
 
-    if (hide && idx === -1) {
-      stack.push(this.backdropId);
-    } else if (!hide && idx !== -1) {
-      stack.splice(idx, 1);
+    if (hide) {
+      const stack = Modal.getStackForTarget(target);
+      if (stack.indexOf(this.backdropId) === -1) {
+        stack.push(this.backdropId);
+      }
+    } else {
+      const stack = Modal.openModalStacks.get(target);
+      if (!stack) {
+        return;
+      }
+      const idx = stack.indexOf(this.backdropId);
+      if (idx !== -1) {
+        stack.splice(idx, 1);
+      }
       if (stack.length === 0) {
         Modal.openModalStacks.delete(target);
       }
     }
 
-    const activeBackdropId = stack.length > 0 ? stack[stack.length - 1] : null;
+    const stack = Modal.openModalStacks.get(target);
+    const activeBackdropId = stack?.length ? stack[stack.length - 1] : null;
 
     for (const child of Array.from(target.children)) {
       if (child.hasAttribute('data-popper-placement')) {
