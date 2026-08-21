@@ -69,6 +69,7 @@ interface ModalState {
 class Modal extends Component<ModalProps, ModalState> {
   static displayName = 'Modal';
   static currentId = 0;
+  static openModalStacks: Map<HTMLElement, string[]> = new Map();
   boxId = '';
   backdropId = '';
 
@@ -106,15 +107,45 @@ class Modal extends Component<ModalProps, ModalState> {
     return appendTo || document.body;
   };
 
+  static getStackForTarget(target: HTMLElement): string[] {
+    if (!Modal.openModalStacks.has(target)) {
+      Modal.openModalStacks.set(target, []);
+    }
+    return Modal.openModalStacks.get(target)!;
+  }
+
   toggleSiblingsFromScreenReaders = (hide: boolean) => {
     const { appendTo } = this.props;
     const target: HTMLElement = this.getElement(appendTo);
-    const bodyChildren = target.children;
-    for (const child of Array.from(bodyChildren)) {
-      const isPopperElement = child.hasAttribute('data-popper-placement');
-      if (child.id !== this.backdropId && !isPopperElement) {
-        hide ? child.setAttribute('aria-hidden', '' + hide) : child.removeAttribute('aria-hidden');
+
+    if (hide) {
+      const stack = Modal.getStackForTarget(target);
+      if (stack.indexOf(this.backdropId) === -1) {
+        stack.push(this.backdropId);
       }
+    } else {
+      const stack = Modal.openModalStacks.get(target);
+      if (!stack) {
+        return;
+      }
+      const idx = stack.indexOf(this.backdropId);
+      if (idx !== -1) {
+        stack.splice(idx, 1);
+      }
+      if (stack.length === 0) {
+        Modal.openModalStacks.delete(target);
+      }
+    }
+
+    const stack = Modal.openModalStacks.get(target);
+    const activeBackdropId = stack?.length ? stack[stack.length - 1] : null;
+
+    for (const child of Array.from(target.children)) {
+      if (child.hasAttribute('data-popper-placement')) {
+        continue;
+      }
+      const shouldHide = activeBackdropId && child.id !== activeBackdropId;
+      shouldHide ? child.setAttribute('aria-hidden', 'true') : child.removeAttribute('aria-hidden');
     }
   };
 
@@ -140,8 +171,10 @@ class Modal extends Component<ModalProps, ModalState> {
       this.toggleSiblingsFromScreenReaders(true);
     } else {
       if (prevProps.isOpen !== this.props.isOpen) {
-        target.classList.remove(css(styles.backdropOpen));
         this.toggleSiblingsFromScreenReaders(false);
+        if (!Modal.openModalStacks.has(target)) {
+          target.classList.remove(css(styles.backdropOpen));
+        }
       }
     }
   }
@@ -150,8 +183,10 @@ class Modal extends Component<ModalProps, ModalState> {
     const { appendTo } = this.props;
     const target: HTMLElement = this.getElement(appendTo);
     target.removeEventListener('keydown', this.handleEscKeyClick, false);
-    target.classList.remove(css(styles.backdropOpen));
     this.toggleSiblingsFromScreenReaders(false);
+    if (!Modal.openModalStacks.has(target)) {
+      target.classList.remove(css(styles.backdropOpen));
+    }
   }
 
   render() {
