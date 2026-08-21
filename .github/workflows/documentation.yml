@@ -65,26 +65,15 @@ jobs:
         run: node .github/upload-preview.mjs packages/react-docs/coverage
 
       - name: Upload docs artifact
-        if: always() && !cancelled() && github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@v4
         with:
           name: documentation
           path: packages/react-docs/public
 
       - name: Upload a11y artifact
-        if: always() && !cancelled() && github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@v4
         with:
           name: a11y-coverage
           path: packages/react-docs/coverage
-
-      - name: Save PR number
-        if: always() && !cancelled() && github.event_name == 'pull_request'
-        run: echo "${{ github.event.pull_request.number }}" > pr-number.txt
-
-      - name: Upload PR number
-        if: always() && !cancelled() && github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v4
-        with:
-          name: pr-number
-          path: pr-number.txt

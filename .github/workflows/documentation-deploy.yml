@@ -3,11 +3,15 @@ on:
   workflow_run:
     workflows: [Documentation]
     types: [completed]
+permissions:
+  actions: read
+  contents: read
+  pull-requests: read
 jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    if: github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion != 'cancelled'
+    if: github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion == 'success'
     env:
       SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
       SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
@@ -21,15 +25,19 @@ jobs:
         with:
           skip-build: true
 
-      - name: Download PR number
-        uses: actions/download-artifact@v4
-        with:
-          name: pr-number
-          run-id: ${{ github.event.workflow_run.id }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Set PR number
-        run: echo "GH_PR_NUM=$(cat pr-number.txt)" >> $GITHUB_ENV
+      - name: Resolve PR number
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUM="${{ github.event.workflow_run.pull_requests[0].number }}"
+          if [ -z "$PR_NUM" ] || [ "$PR_NUM" = "null" ]; then
+            PR_NUM=$(gh api "repos/${{ github.repository }}/commits/${{ github.event.workflow_run.head_sha }}/pulls" --jq '.[0].number')
+          fi
+          if ! [[ "$PR_NUM" =~ ^[0-9]+$ ]]; then
+            echo "Failed to resolve a valid PR number"
+            exit 1
+          fi
+          echo "GH_PR_NUM=$PR_NUM" >> "$GITHUB_ENV"
 
       - name: Download documentation
         uses: actions/download-artifact@v4
@@ -51,5 +59,5 @@ jobs:
         run: node .github/upload-preview.mjs packages/react-docs/public
 
       - name: Upload accessibility results
-        if: always()
+        if: always() && !cancelled()
         run: node .github/upload-preview.mjs packages/react-docs/coverage
