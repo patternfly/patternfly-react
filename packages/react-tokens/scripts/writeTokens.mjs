@@ -4,14 +4,33 @@ import { generateTokens } from './generateTokens.mjs';
 
 const outDir = resolve(import.meta.dirname, '../dist');
 
-const writeESMExport = (tokenName, tokenString) =>
+// Words that cannot be used as binding identifiers (e.g. the `switch` component token),
+// so `export const <token>` / `declare const <token>` would be a syntax error.
+// prettier-ignore
+const RESERVED_WORDS = new Set([
+  'await', 'break', 'case', 'catch', 'class', 'const', 'continue', 'debugger', 'default', 'delete',
+  'do', 'else', 'enum', 'export', 'extends', 'false', 'finally', 'for', 'function', 'if',
+  'implements', 'import', 'in', 'instanceof', 'interface', 'let', 'new', 'null', 'package',
+  'private', 'protected', 'public', 'return', 'static', 'super', 'switch', 'this', 'throw',
+  'true', 'try', 'typeof', 'var', 'void', 'while', 'with', 'yield'
+]);
+
+const getLocalName = (tokenName) => (RESERVED_WORDS.has(tokenName) ? `_${tokenName}` : tokenName);
+
+const writeESMExport = (tokenName, tokenString) => {
+  const localName = getLocalName(tokenName);
+  const exportStatement =
+    localName === tokenName
+      ? `export const ${tokenName} = ${tokenString};`
+      : `const ${localName} = ${tokenString};\nexport { ${localName} as ${tokenName} };`;
   outputFileSync(
     join(outDir, 'esm/', `${tokenName}.js`),
     `
-export const ${tokenName} = ${tokenString};
-export default ${tokenName};
+${exportStatement}
+export default ${localName};
 `.trim()
   );
+};
 
 const writeCJSExport = (tokenName, tokenString) =>
   outputFileSync(
@@ -25,9 +44,14 @@ exports["default"] = exports.${tokenName};
   );
 
 const writeDTSExport = (tokenName, tokenString) => {
+  const localName = getLocalName(tokenName);
+  const exportStatement =
+    localName === tokenName
+      ? `export const ${tokenName}: ${tokenString};`
+      : `declare const ${localName}: ${tokenString};\nexport { ${localName} as ${tokenName} };`;
   const text = `
-export const ${tokenName}: ${tokenString};
-export default ${tokenName};
+${exportStatement}
+export default ${localName};
 `.trim();
   const filename = `${tokenName}.d.ts`;
   outputFileSync(join(outDir, 'esm', filename), text);
