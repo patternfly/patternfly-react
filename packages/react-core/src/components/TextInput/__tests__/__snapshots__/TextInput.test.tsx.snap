@@ -8,7 +8,7 @@ exports[`TextInput default read only text input 1`] = `
     <input
       aria-invalid="false"
       aria-label="default read only text input"
-      data-ouia-component-id="OUIA-Generated-TextInputBase-:r9:"
+      data-ouia-component-id="OUIA-Generated-TextInputBase-_r_9_"
       data-ouia-component-type="PF6/TextInput"
       data-ouia-safe="true"
       readonly=""
@@ -27,12 +27,11 @@ exports[`TextInput disabled text input 1`] = `
     <input
       aria-invalid="false"
       aria-label="disabled text input"
-      data-ouia-component-id="OUIA-Generated-TextInputBase-:r5:"
+      data-ouia-component-id="OUIA-Generated-TextInputBase-_r_5_"
       data-ouia-component-type="PF6/TextInput"
       data-ouia-safe="true"
       disabled=""
       type="text"
-      value=""
     />
   </span>
 </DocumentFragment>
@@ -46,7 +45,7 @@ exports[`TextInput invalid text input 1`] = `
     <input
       aria-invalid="true"
       aria-label="invalid text input"
-      data-ouia-component-id="OUIA-Generated-TextInputBase-:rd:"
+      data-ouia-component-id="OUIA-Generated-TextInputBase-_r_d_"
       data-ouia-component-type="PF6/TextInput"
       data-ouia-safe="true"
       type="text"
@@ -85,7 +84,7 @@ exports[`TextInput plain read only text input 1`] = `
     <input
       aria-invalid="false"
       aria-label="plain read only text input"
-      data-ouia-component-id="OUIA-Generated-TextInputBase-:rb:"
+      data-ouia-component-id="OUIA-Generated-TextInputBase-_r_b_"
       data-ouia-component-type="PF6/TextInput"
       data-ouia-safe="true"
       readonly=""
@@ -104,7 +103,7 @@ exports[`TextInput read only text input using isReadOnly 1`] = `
     <input
       aria-invalid="false"
       aria-label="read only text input"
-      data-ouia-component-id="OUIA-Generated-TextInputBase-:r7:"
+      data-ouia-component-id="OUIA-Generated-TextInputBase-_r_7_"
       data-ouia-component-type="PF6/TextInput"
       data-ouia-safe="true"
       readonly=""
@@ -123,7 +122,7 @@ exports[`TextInput simple text input 1`] = `
     <input
       aria-invalid="false"
       aria-label="simple text input"
-      data-ouia-component-id="OUIA-Generated-TextInputBase-:r3:"
+      data-ouia-component-id="OUIA-Generated-TextInputBase-_r_3_"
       data-ouia-component-type="PF6/TextInput"
       data-ouia-safe="true"
       type="text"
@@ -141,7 +140,7 @@ exports[`TextInput validated text input error 1`] = `
     <input
       aria-invalid="true"
       aria-label="validated text input"
-      data-ouia-component-id="OUIA-Generated-TextInputBase-:rj:"
+      data-ouia-component-id="OUIA-Generated-TextInputBase-_r_j_"
       data-ouia-component-type="PF6/TextInput"
       data-ouia-safe="true"
       type="text"

@@ -129,7 +129,7 @@ exports[`Matches snapshot 1`] = `
     data-ouia-component-type="PF6/DualListSelector"
     data-ouia-safe="true"
     data-testid="test-id"
-    id="pf-:re:"
+    id="pf-_r_e_"
   />
 </DocumentFragment>
 `;

@@ -1,4 +1,4 @@
-import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { SimpleSelect } from '../SimpleSelect';
 
@@ -44,7 +44,7 @@ test('selects options when clicked', async () => {
   const option1 = screen.getByText('Option 1');
   await user.click(option1);
 
-  expect(option1).toBeInTheDocument();
+  expect(toggle).toHaveTextContent('Option 1');
 });
 
 test('calls the onSelect callback with the selected value when an option is selected', async () => {
@@ -91,8 +91,6 @@ test('toggles the select menu when the toggle button is clicked', async () => {
   expect(screen.getByRole('listbox')).toBeInTheDocument();
 
   await user.click(toggleButton);
-
-  await waitForElementToBeRemoved(() => screen.queryByRole('listbox'));
 
   expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
 });

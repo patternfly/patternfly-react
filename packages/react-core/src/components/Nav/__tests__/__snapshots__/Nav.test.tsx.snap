@@ -5,7 +5,7 @@ exports[`Nav Default Nav List - Trigger item active update 1`] = `
   <nav
     aria-label="Global"
     class="pf-v6-c-nav"
-    data-ouia-component-id="OUIA-Generated-Nav-:rj:"
+    data-ouia-component-id="OUIA-Generated-Nav-_r_d_"
     data-ouia-component-type="PF6/Nav"
     data-ouia-safe="true"
   >
@@ -15,7 +15,7 @@ exports[`Nav Default Nav List - Trigger item active update 1`] = `
     >
       <li
         class="pf-v6-c-nav__item"
-        data-ouia-component-id="OUIA-Generated-NavItem-:rk:"
+        data-ouia-component-id="OUIA-Generated-NavItem-_r_e_"
         data-ouia-component-type="PF6/NavItem"
         data-ouia-safe="true"
       >
@@ -32,7 +32,7 @@ exports[`Nav Default Nav List - Trigger item active update 1`] = `
       </li>
       <li
         class="pf-v6-c-nav__item"
-        data-ouia-component-id="OUIA-Generated-NavItem-:rl:"
+        data-ouia-component-id="OUIA-Generated-NavItem-_r_f_"
         data-ouia-component-type="PF6/NavItem"
         data-ouia-safe="true"
       >
@@ -49,7 +49,7 @@ exports[`Nav Default Nav List - Trigger item active update 1`] = `
       </li>
       <li
         class="pf-v6-c-nav__item"
-        data-ouia-component-id="OUIA-Generated-NavItem-:rm:"
+        data-ouia-component-id="OUIA-Generated-NavItem-_r_g_"
         data-ouia-component-type="PF6/NavItem"
         data-ouia-safe="true"
       >
@@ -66,7 +66,7 @@ exports[`Nav Default Nav List - Trigger item active update 1`] = `
       </li>
       <li
         class="pf-v6-c-nav__item"
-        data-ouia-component-id="OUIA-Generated-NavItem-:rn:"
+        data-ouia-component-id="OUIA-Generated-NavItem-_r_h_"
         data-ouia-component-type="PF6/NavItem"
         data-ouia-safe="true"
       >
@@ -91,7 +91,7 @@ exports[`Nav Default Nav List 1`] = `
   <nav
     aria-label="Global"
     class="pf-v6-c-nav test-nav-class"
-    data-ouia-component-id="OUIA-Generated-Nav-:r1:"
+    data-ouia-component-id="OUIA-Generated-Nav-_r_1_"
     data-ouia-component-type="PF6/Nav"
     data-ouia-safe="true"
   >
@@ -101,7 +101,7 @@ exports[`Nav Default Nav List 1`] = `
     >
       <li
         class="pf-v6-c-nav__item test-nav-item-class"
-        data-ouia-component-id="OUIA-Generated-NavItem-:r2:"
+        data-ouia-component-id="OUIA-Generated-NavItem-_r_2_"
         data-ouia-component-type="PF6/NavItem"
         data-ouia-safe="true"
       >
@@ -118,7 +118,7 @@ exports[`Nav Default Nav List 1`] = `
       </li>
       <li
         class="pf-v6-c-nav__item test-nav-item-class"
-        data-ouia-component-id="OUIA-Generated-NavItem-:r3:"
+        data-ouia-component-id="OUIA-Generated-NavItem-_r_3_"
         data-ouia-component-type="PF6/NavItem"
         data-ouia-safe="true"
       >
@@ -135,7 +135,7 @@ exports[`Nav Default Nav List 1`] = `
       </li>
       <li
         class="pf-v6-c-nav__item test-nav-item-class"
-        data-ouia-component-id="OUIA-Generated-NavItem-:r4:"
+        data-ouia-component-id="OUIA-Generated-NavItem-_r_4_"
         data-ouia-component-type="PF6/NavItem"
         data-ouia-safe="true"
       >
@@ -152,7 +152,7 @@ exports[`Nav Default Nav List 1`] = `
       </li>
       <li
         class="pf-v6-c-nav__item test-nav-item-class"
-        data-ouia-component-id="OUIA-Generated-NavItem-:r5:"
+        data-ouia-component-id="OUIA-Generated-NavItem-_r_5_"
         data-ouia-component-type="PF6/NavItem"
         data-ouia-safe="true"
       >
@@ -177,7 +177,7 @@ exports[`Nav Expandable Nav List - Trigger toggle 1`] = `
   <nav
     aria-label="Global"
     class="pf-v6-c-nav"
-    data-ouia-component-id="OUIA-Generated-Nav-:r19:"
+    data-ouia-component-id="OUIA-Generated-Nav-_r_13_"
     data-ouia-component-type="PF6/Nav"
     data-ouia-safe="true"
   >
@@ -187,7 +187,7 @@ exports[`Nav Expandable Nav List - Trigger toggle 1`] = `
     >
       <li
         class="pf-v6-c-nav__item expandable-group"
-        data-ouia-component-id="OUIA-Generated-NavExpandable-:r1b:"
+        data-ouia-component-id="OUIA-Generated-NavExpandable-_r_15_"
         data-ouia-component-type="PF6/NavExpandable"
         data-ouia-safe="true"
       >
@@ -231,7 +231,7 @@ exports[`Nav Expandable Nav List - Trigger toggle 1`] = `
           >
             <li
               class="pf-v6-c-nav__item"
-              data-ouia-component-id="OUIA-Generated-NavItem-:r1c:"
+              data-ouia-component-id="OUIA-Generated-NavItem-_r_16_"
               data-ouia-component-type="PF6/NavItem"
               data-ouia-safe="true"
             >
@@ -248,7 +248,7 @@ exports[`Nav Expandable Nav List - Trigger toggle 1`] = `
             </li>
             <li
               class="pf-v6-c-nav__item"
-              data-ouia-component-id="OUIA-Generated-NavItem-:r1d:"
+              data-ouia-component-id="OUIA-Generated-NavItem-_r_17_"
               data-ouia-component-type="PF6/NavItem"
               data-ouia-safe="true"
             >
@@ -265,7 +265,7 @@ exports[`Nav Expandable Nav List - Trigger toggle 1`] = `
             </li>
             <li
               class="pf-v6-c-nav__item"
-              data-ouia-component-id="OUIA-Generated-NavItem-:r1e:"
+              data-ouia-component-id="OUIA-Generated-NavItem-_r_18_"
               data-ouia-component-type="PF6/NavItem"
               data-ouia-safe="true"
             >
@@ -282,7 +282,7 @@ exports[`Nav Expandable Nav List - Trigger toggle 1`] = `
             </li>
             <li
               class="pf-v6-c-nav__item"
-              data-ouia-component-id="OUIA-Generated-NavItem-:r1f:"
+              data-ouia-component-id="OUIA-Generated-NavItem-_r_19_"
               data-ouia-component-type="PF6/NavItem"
               data-ouia-safe="true"
             >
@@ -310,7 +310,7 @@ exports[`Nav Expandable Nav List 1`] = `
   <nav
     aria-label="Global"
     class="pf-v6-c-nav"
-    data-ouia-component-id="OUIA-Generated-Nav-:rp:"
+    data-ouia-component-id="OUIA-Generated-Nav-_r_j_"
     data-ouia-component-type="PF6/Nav"
     data-ouia-safe="true"
   >
@@ -320,7 +320,7 @@ exports[`Nav Expandable Nav List 1`] = `
     >
       <li
         class="pf-v6-c-nav__item"
-        data-ouia-component-id="OUIA-Generated-NavExpandable-:rr:"
+        data-ouia-component-id="OUIA-Generated-NavExpandable-_r_l_"
         data-ouia-component-type="PF6/NavExpandable"
         data-ouia-safe="true"
       >
@@ -364,7 +364,7 @@ exports[`Nav Expandable Nav List 1`] = `
           >
             <li
               class="pf-v6-c-nav__item"
-              data-ouia-component-id="OUIA-Generated-NavItem-:rs:"
+              data-ouia-component-id="OUIA-Generated-NavItem-_r_m_"
               data-ouia-component-type="PF6/NavItem"
               data-ouia-safe="true"
             >
@@ -381,7 +381,7 @@ exports[`Nav Expandable Nav List 1`] = `
             </li>
             <li
               class="pf-v6-c-nav__item"
-              data-ouia-component-id="OUIA-Generated-NavItem-:rt:"
+              data-ouia-component-id="OUIA-Generated-NavItem-_r_n_"
               data-ouia-component-type="PF6/NavItem"
               data-ouia-safe="true"
             >
@@ -398,7 +398,7 @@ exports[`Nav Expandable Nav List 1`] = `
             </li>
             <li
               class="pf-v6-c-nav__item"
-              data-ouia-component-id="OUIA-Generated-NavItem-:ru:"
+              data-ouia-component-id="OUIA-Generated-NavItem-_r_o_"
               data-ouia-component-type="PF6/NavItem"
               data-ouia-safe="true"
             >
@@ -415,7 +415,7 @@ exports[`Nav Expandable Nav List 1`] = `
             </li>
             <li
               class="pf-v6-c-nav__item"
-              data-ouia-component-id="OUIA-Generated-NavItem-:rv:"
+              data-ouia-component-id="OUIA-Generated-NavItem-_r_p_"
               data-ouia-component-type="PF6/NavItem"
               data-ouia-safe="true"
             >
@@ -443,7 +443,7 @@ exports[`Nav Expandable Nav List with aria label 1`] = `
   <nav
     aria-label="Test"
     class="pf-v6-c-nav"
-    data-ouia-component-id="OUIA-Generated-Nav-:r1h:"
+    data-ouia-component-id="OUIA-Generated-Nav-_r_1b_"
     data-ouia-component-type="PF6/Nav"
     data-ouia-safe="true"
   >
@@ -453,7 +453,7 @@ exports[`Nav Expandable Nav List with aria label 1`] = `
     >
       <li
         class="pf-v6-c-nav__item"
-        data-ouia-component-id="OUIA-Generated-NavExpandable-:r1j:"
+        data-ouia-component-id="OUIA-Generated-NavExpandable-_r_1d_"
         data-ouia-component-type="PF6/NavExpandable"
         data-ouia-safe="true"
       >
@@ -502,7 +502,7 @@ exports[`Nav Expandable Nav List with aria label 1`] = `
           >
             <li
               class="pf-v6-c-nav__item"
-              data-ouia-component-id="OUIA-Generated-NavItem-:r1k:"
+              data-ouia-component-id="OUIA-Generated-NavItem-_r_1e_"
               data-ouia-component-type="PF6/NavItem"
               data-ouia-safe="true"
             >
@@ -519,7 +519,7 @@ exports[`Nav Expandable Nav List with aria label 1`] = `
             </li>
             <li
               class="pf-v6-c-nav__item"
-              data-ouia-component-id="OUIA-Generated-NavItem-:r1l:"
+              data-ouia-component-id="OUIA-Generated-NavItem-_r_1f_"
               data-ouia-component-type="PF6/NavItem"
               data-ouia-safe="true"
             >
@@ -536,7 +536,7 @@ exports[`Nav Expandable Nav List with aria label 1`] = `
             </li>
             <li
               class="pf-v6-c-nav__item"
-              data-ouia-component-id="OUIA-Generated-NavItem-:r1m:"
+              data-ouia-component-id="OUIA-Generated-NavItem-_r_1g_"
               data-ouia-component-type="PF6/NavItem"
               data-ouia-safe="true"
             >
@@ -553,7 +553,7 @@ exports[`Nav Expandable Nav List with aria label 1`] = `
             </li>
             <li
               class="pf-v6-c-nav__item"
-              data-ouia-component-id="OUIA-Generated-NavItem-:r1n:"
+              data-ouia-component-id="OUIA-Generated-NavItem-_r_1h_"
               data-ouia-component-type="PF6/NavItem"
               data-ouia-safe="true"
             >
@@ -581,7 +581,7 @@ exports[`Nav Horizontal Nav List 1`] = `
   <nav
     aria-label="Global"
     class="pf-v6-c-nav pf-m-horizontal"
-    data-ouia-component-id="OUIA-Generated-Nav-horizontal-:r25:"
+    data-ouia-component-id="OUIA-Generated-Nav-horizontal-_r_1v_"
     data-ouia-component-type="PF6/Nav"
     data-ouia-safe="true"
   >
@@ -591,7 +591,7 @@ exports[`Nav Horizontal Nav List 1`] = `
     >
       <li
         class="pf-v6-c-nav__item"
-        data-ouia-component-id="OUIA-Generated-NavItem-:r27:"
+        data-ouia-component-id="OUIA-Generated-NavItem-_r_21_"
         data-ouia-component-type="PF6/NavItem"
         data-ouia-safe="true"
       >
@@ -608,7 +608,7 @@ exports[`Nav Horizontal Nav List 1`] = `
       </li>
       <li
         class="pf-v6-c-nav__item"
-        data-ouia-component-id="OUIA-Generated-NavItem-:r28:"
+        data-ouia-component-id="OUIA-Generated-NavItem-_r_22_"
         data-ouia-component-type="PF6/NavItem"
         data-ouia-safe="true"
       >
@@ -625,7 +625,7 @@ exports[`Nav Horizontal Nav List 1`] = `
       </li>
       <li
         class="pf-v6-c-nav__item"
-        data-ouia-component-id="OUIA-Generated-NavItem-:r29:"
+        data-ouia-component-id="OUIA-Generated-NavItem-_r_23_"
         data-ouia-component-type="PF6/NavItem"
         data-ouia-safe="true"
       >
@@ -642,7 +642,7 @@ exports[`Nav Horizontal Nav List 1`] = `
       </li>
       <li
         class="pf-v6-c-nav__item"
-        data-ouia-component-id="OUIA-Generated-NavItem-:r2a:"
+        data-ouia-component-id="OUIA-Generated-NavItem-_r_24_"
         data-ouia-component-type="PF6/NavItem"
         data-ouia-safe="true"
       >
@@ -667,7 +667,7 @@ exports[`Nav Horizontal SubNav List 1`] = `
   <nav
     aria-label="Local"
     class="pf-v6-c-nav pf-m-horizontal pf-m-subnav"
-    data-ouia-component-id="OUIA-Generated-Nav-horizontal-subnav-:r2d:"
+    data-ouia-component-id="OUIA-Generated-Nav-horizontal-subnav-_r_27_"
     data-ouia-component-type="PF6/Nav"
     data-ouia-safe="true"
   >
@@ -677,7 +677,7 @@ exports[`Nav Horizontal SubNav List 1`] = `
     >
       <li
         class="pf-v6-c-nav__item"
-        data-ouia-component-id="OUIA-Generated-NavItem-:r2f:"
+        data-ouia-component-id="OUIA-Generated-NavItem-_r_29_"
         data-ouia-component-type="PF6/NavItem"
         data-ouia-safe="true"
       >
@@ -694,7 +694,7 @@ exports[`Nav Horizontal SubNav List 1`] = `
       </li>
       <li
         class="pf-v6-c-nav__item"
-        data-ouia-component-id="OUIA-Generated-NavItem-:r2g:"
+        data-ouia-component-id="OUIA-Generated-NavItem-_r_2a_"
         data-ouia-component-type="PF6/NavItem"
         data-ouia-safe="true"
       >
@@ -711,7 +711,7 @@ exports[`Nav Horizontal SubNav List 1`] = `
       </li>
       <li
         class="pf-v6-c-nav__item"
-        data-ouia-component-id="OUIA-Generated-NavItem-:r2h:"
+        data-ouia-component-id="OUIA-Generated-NavItem-_r_2b_"
         data-ouia-component-type="PF6/NavItem"
         data-ouia-safe="true"
       >
@@ -728,7 +728,7 @@ exports[`Nav Horizontal SubNav List 1`] = `
       </li>
       <li
         class="pf-v6-c-nav__item"
-        data-ouia-component-id="OUIA-Generated-NavItem-:r2i:"
+        data-ouia-component-id="OUIA-Generated-NavItem-_r_2c_"
         data-ouia-component-type="PF6/NavItem"
         data-ouia-safe="true"
       >
@@ -753,7 +753,7 @@ exports[`Nav Nav Grouped List 1`] = `
   <nav
     aria-label="Global"
     class="pf-v6-c-nav"
-    data-ouia-component-id="OUIA-Generated-Nav-:r1p:"
+    data-ouia-component-id="OUIA-Generated-Nav-_r_1j_"
     data-ouia-component-type="PF6/Nav"
     data-ouia-safe="true"
   >
@@ -777,7 +777,7 @@ exports[`Nav Nav Grouped List 1`] = `
         >
           <li
             class="pf-v6-c-nav__item"
-            data-ouia-component-id="OUIA-Generated-NavItem-:r1r:"
+            data-ouia-component-id="OUIA-Generated-NavItem-_r_1l_"
             data-ouia-component-type="PF6/NavItem"
             data-ouia-safe="true"
           >
@@ -794,7 +794,7 @@ exports[`Nav Nav Grouped List 1`] = `
           </li>
           <li
             class="pf-v6-c-nav__item"
-            data-ouia-component-id="OUIA-Generated-NavItem-:r1s:"
+            data-ouia-component-id="OUIA-Generated-NavItem-_r_1m_"
             data-ouia-component-type="PF6/NavItem"
             data-ouia-safe="true"
           >
@@ -811,7 +811,7 @@ exports[`Nav Nav Grouped List 1`] = `
           </li>
           <li
             class="pf-v6-c-nav__item"
-            data-ouia-component-id="OUIA-Generated-NavItem-:r1t:"
+            data-ouia-component-id="OUIA-Generated-NavItem-_r_1n_"
             data-ouia-component-type="PF6/NavItem"
             data-ouia-safe="true"
           >
@@ -828,7 +828,7 @@ exports[`Nav Nav Grouped List 1`] = `
           </li>
           <li
             class="pf-v6-c-nav__item"
-            data-ouia-component-id="OUIA-Generated-NavItem-:r1u:"
+            data-ouia-component-id="OUIA-Generated-NavItem-_r_1o_"
             data-ouia-component-type="PF6/NavItem"
             data-ouia-safe="true"
           >
@@ -866,7 +866,7 @@ exports[`Nav Nav Grouped List 1`] = `
         >
           <li
             class="pf-v6-c-nav__item"
-            data-ouia-component-id="OUIA-Generated-NavItem-:r20:"
+            data-ouia-component-id="OUIA-Generated-NavItem-_r_1q_"
             data-ouia-component-type="PF6/NavItem"
             data-ouia-safe="true"
           >
@@ -883,7 +883,7 @@ exports[`Nav Nav Grouped List 1`] = `
           </li>
           <li
             class="pf-v6-c-nav__item"
-            data-ouia-component-id="OUIA-Generated-NavItem-:r21:"
+            data-ouia-component-id="OUIA-Generated-NavItem-_r_1r_"
             data-ouia-component-type="PF6/NavItem"
             data-ouia-safe="true"
           >
@@ -900,7 +900,7 @@ exports[`Nav Nav Grouped List 1`] = `
           </li>
           <li
             class="pf-v6-c-nav__item"
-            data-ouia-component-id="OUIA-Generated-NavItem-:r22:"
+            data-ouia-component-id="OUIA-Generated-NavItem-_r_1s_"
             data-ouia-component-type="PF6/NavItem"
             data-ouia-safe="true"
           >
@@ -917,7 +917,7 @@ exports[`Nav Nav Grouped List 1`] = `
           </li>
           <li
             class="pf-v6-c-nav__item"
-            data-ouia-component-id="OUIA-Generated-NavItem-:r23:"
+            data-ouia-component-id="OUIA-Generated-NavItem-_r_1t_"
             data-ouia-component-type="PF6/NavItem"
             data-ouia-safe="true"
           >
@@ -944,7 +944,7 @@ exports[`Nav Nav List with custom item nodes 1`] = `
   <nav
     aria-label="Global"
     class="pf-v6-c-nav"
-    data-ouia-component-id="OUIA-Generated-Nav-:r2l:"
+    data-ouia-component-id="OUIA-Generated-Nav-_r_2f_"
     data-ouia-component-type="PF6/Nav"
     data-ouia-safe="true"
   >
@@ -954,7 +954,7 @@ exports[`Nav Nav List with custom item nodes 1`] = `
     >
       <li
         class="pf-v6-c-nav__item test-nav-item-class"
-        data-ouia-component-id="OUIA-Generated-NavItem-:r2m:"
+        data-ouia-component-id="OUIA-Generated-NavItem-_r_2g_"
         data-ouia-component-type="PF6/NavItem"
         data-ouia-safe="true"
       >
@@ -974,7 +974,7 @@ exports[`Nav Nav List with flyout 1`] = `
   <nav
     aria-label="Global"
     class="pf-v6-c-nav"
-    data-ouia-component-id="OUIA-Generated-Nav-:r2o:"
+    data-ouia-component-id="OUIA-Generated-Nav-_r_2i_"
     data-ouia-component-type="PF6/Nav"
     data-ouia-safe="true"
   >
@@ -984,7 +984,7 @@ exports[`Nav Nav List with flyout 1`] = `
     >
       <li
         class="pf-v6-c-nav__item pf-m-flyout test-nav-item-class"
-        data-ouia-component-id="OUIA-Generated-NavItem-:r2p:"
+        data-ouia-component-id="OUIA-Generated-NavItem-_r_2j_"
         data-ouia-component-type="PF6/NavItem"
         data-ouia-safe="true"
       >
@@ -1036,7 +1036,7 @@ exports[`Nav Renders nav list in strict mode 1`] = `
   <nav
     aria-label="Global"
     class="pf-v6-c-nav test-nav-class"
-    data-ouia-component-id="OUIA-Generated-Nav-:r9:"
+    data-ouia-component-id="OUIA-Generated-Nav-_r_7_"
     data-ouia-component-type="PF6/Nav"
     data-ouia-safe="true"
   >
@@ -1046,7 +1046,7 @@ exports[`Nav Renders nav list in strict mode 1`] = `
     >
       <li
         class="pf-v6-c-nav__item test-nav-item-class"
-        data-ouia-component-id="OUIA-Generated-NavItem-:rb:"
+        data-ouia-component-id="OUIA-Generated-NavItem-_r_8_"
         data-ouia-component-type="PF6/NavItem"
         data-ouia-safe="true"
       >
@@ -1063,7 +1063,7 @@ exports[`Nav Renders nav list in strict mode 1`] = `
       </li>
       <li
         class="pf-v6-c-nav__item test-nav-item-class"
-        data-ouia-component-id="OUIA-Generated-NavItem-:rd:"
+        data-ouia-component-id="OUIA-Generated-NavItem-_r_9_"
         data-ouia-component-type="PF6/NavItem"
         data-ouia-safe="true"
       >
@@ -1080,7 +1080,7 @@ exports[`Nav Renders nav list in strict mode 1`] = `
       </li>
       <li
         class="pf-v6-c-nav__item test-nav-item-class"
-        data-ouia-component-id="OUIA-Generated-NavItem-:rf:"
+        data-ouia-component-id="OUIA-Generated-NavItem-_r_a_"
         data-ouia-component-type="PF6/NavItem"
         data-ouia-safe="true"
       >
@@ -1097,7 +1097,7 @@ exports[`Nav Renders nav list in strict mode 1`] = `
       </li>
       <li
         class="pf-v6-c-nav__item test-nav-item-class"
-        data-ouia-component-id="OUIA-Generated-NavItem-:rh:"
+        data-ouia-component-id="OUIA-Generated-NavItem-_r_b_"
         data-ouia-component-type="PF6/NavItem"
         data-ouia-safe="true"
       >

@@ -375,7 +375,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                 >
                   <label
                     class="pf-v6-c-form__label"
-                    for="pf-:r0:"
+                    for="pf-_r_0_"
                   >
                     <span
                       class="pf-v6-c-form__label-text"
@@ -393,7 +393,7 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                   >
                     <input
                       aria-invalid="false"
-                      id="pf-:r0:"
+                      id="pf-_r_0_"
                       type="text"
                       value=""
                     />

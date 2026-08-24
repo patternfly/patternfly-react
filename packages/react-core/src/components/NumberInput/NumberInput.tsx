@@ -8,7 +8,7 @@ import { KeyTypes, ValidatedOptions } from '../../helpers';
 import { TextInput } from '../TextInput';
 import cssFormControlWidthChars from '@patternfly/react-tokens/dist/esm/c_number_input_c_form_control_width_chars';
 
-export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
+export interface NumberInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
   /** Value of the number input */
   value?: number | '';
   /** Additional classes added to the number input */
