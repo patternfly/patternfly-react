@@ -124,6 +124,7 @@
     ]
   },
   "resolutions": {
-    "dompurify": "3.4.13"
+    "dompurify": "3.4.13",
+    "@patternfly/documentation-framework": "patch:@patternfly/documentation-framework@npm%3A6.49.2#~/.yarn/patches/@patternfly-documentation-framework-npm-6.49.2-02e7a8d840.patch"
   }
 }

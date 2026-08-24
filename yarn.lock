@@ -4963,7 +4963,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@patternfly/documentation-framework@npm:^6.40.0":
+"@patternfly/documentation-framework@npm:6.49.2":
   version: 6.49.2
   resolution: "@patternfly/documentation-framework@npm:6.49.2"
   dependencies:
@@ -5036,6 +5036,82 @@ __metadata:
   bin:
     pf-docs-framework: scripts/cli/cli.js
   checksum: 10c0/1d80d9d6078237d17b71deeb4ffa4b7ad6ed43c0d424c6044de4420d5ef8267eb913e281fc97ffa9fe6d6e70b0462557c22fdf50ecca9df555163eb48ab40ff5
+  languageName: node
+  linkType: hard
+
+"@patternfly/documentation-framework@patch:@patternfly/documentation-framework@npm%3A6.49.2#~/.yarn/patches/@patternfly-documentation-framework-npm-6.49.2-02e7a8d840.patch":
+  version: 6.49.2
+  resolution: "@patternfly/documentation-framework@patch:@patternfly/documentation-framework@npm%3A6.49.2#~/.yarn/patches/@patternfly-documentation-framework-npm-6.49.2-02e7a8d840.patch::version=6.49.2&hash=e7d433"
+  dependencies:
+    "@babel/core": "npm:^7.29.0"
+    "@babel/preset-env": "npm:7.29.0"
+    "@babel/preset-react": "npm:^7.28.5"
+    "@mdx-js/util": "npm:1.6.22"
+    "@patternfly/ast-helpers": "npm:^1.26.2"
+    "@reach/router": "npm:@gatsbyjs/reach-router@1.3.9"
+    "@rspack/core": "npm:^1.7.7"
+    "@rspack/dev-server": "npm:^1.2.1"
+    autoprefixer: "npm:10.4.27"
+    babel-loader: "npm:^10.0.0"
+    camelcase-css: "npm:2.0.1"
+    chokidar: "npm:4.0.3"
+    codesandbox: "npm:2.2.3"
+    commander: "npm:4.1.1"
+    css-loader: "npm:6.11.0"
+    detab: "npm:2.0.4"
+    express: "npm:4.22.1"
+    file-loader: "npm:6.2.0"
+    file-saver: "npm:1.3.8"
+    fs-extra: "npm:9.1.0"
+    glob: "npm:12.0.0"
+    handlebars: "npm:4.7.8"
+    hast-to-hyperscript: "npm:9.0.1"
+    hast-util-to-text: "npm:2.0.1"
+    html-formatter: "npm:0.1.9"
+    html-webpack-plugin: "npm:5.6.6"
+    js-yaml: "npm:4.1.1"
+    mdast-util-to-hast: "npm:9.1.2"
+    mdurl: "npm:1.0.1"
+    null-loader: "npm:4.0.1"
+    parse-entities: "npm:2.0.0"
+    path-browserify: "npm:1.0.1"
+    postcss: "npm:^8.5.8"
+    postcss-loader: "npm:7.3.4"
+    process: "npm:^0.11.10"
+    puppeteer: "npm:^24.37.5"
+    puppeteer-cluster: "npm:^0.25.0"
+    react-docgen: "npm:6.0.4"
+    react-ssr-prepass: "npm:1.6.0"
+    remark-footnotes: "npm:1.0.0"
+    remark-frontmatter: "npm:2.0.0"
+    remark-mdx: "npm:2.0.0-next.8"
+    remark-mdxjs: "npm:2.0.0-next.8"
+    remark-parse: "npm:8.0.3"
+    remark-squeeze-paragraphs: "npm:4.0.0"
+    sharp: "npm:0.34.5"
+    style-to-object: "npm:0.4.4"
+    to-vfile: "npm:6.1.0"
+    typedoc: "npm:0.23.28"
+    typescript: "npm:4.9.5"
+    unified: "npm:9.2.2"
+    unist-util-remove: "npm:2.1.0"
+    unist-util-visit: "npm:2.0.3"
+    url-loader: "npm:4.1.1"
+    vfile-reporter: "npm:6.0.2"
+    webpack-bundle-analyzer: "npm:5.2.0"
+    webpack-dev-server: "npm:5.2.3"
+    webpack-merge: "npm:5.10.0"
+  peerDependencies:
+    "@patternfly/patternfly": ^6.6.0
+    "@patternfly/react-code-editor": ^6.6.0
+    "@patternfly/react-core": ^6.6.0
+    "@patternfly/react-icons": ^6.6.0
+    "@patternfly/react-table": ^6.6.0
+    react: ^17.0.0 || ^18.0.0
+    react-dom: ^17.0.0 || ^18.0.0
+  bin:
+    pf-docs-framework: scripts/cli/cli.js
+  checksum: 10c0/315007bd0c1b780c3f789027c8443267e30564fc4b6fc31f14d06dca1cbed8907b7b5bfa006c3149803365c58ee1380df09f5f10e0994426771bb39516418ef3
   languageName: node
   linkType: hard
 
