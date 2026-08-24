@@ -4,29 +4,35 @@ import { generateTokens } from './generateTokens.mjs';
 
 const outDir = resolve(import.meta.dirname, '../dist');
 
-// Words that cannot be used as binding identifiers (e.g. the `switch` component token),
-// so `export const <token>` / `declare const <token>` would be a syntax error.
+// Words that cannot be used as binding identifiers in strict mode code (e.g. the
+// `switch` component token), so `export const <token>` / `declare const <token>`
+// would be a syntax error.
 // prettier-ignore
 const RESERVED_WORDS = new Set([
-  'await', 'break', 'case', 'catch', 'class', 'const', 'continue', 'debugger', 'default', 'delete',
-  'do', 'else', 'enum', 'export', 'extends', 'false', 'finally', 'for', 'function', 'if',
-  'implements', 'import', 'in', 'instanceof', 'interface', 'let', 'new', 'null', 'package',
-  'private', 'protected', 'public', 'return', 'static', 'super', 'switch', 'this', 'throw',
-  'true', 'try', 'typeof', 'var', 'void', 'while', 'with', 'yield'
+  'arguments', 'await', 'break', 'case', 'catch', 'class', 'const', 'continue', 'debugger',
+  'default', 'delete', 'do', 'else', 'enum', 'eval', 'export', 'extends', 'false', 'finally',
+  'for', 'function', 'if', 'implements', 'import', 'in', 'instanceof', 'interface', 'let',
+  'new', 'null', 'package', 'private', 'protected', 'public', 'return', 'static', 'super',
+  'switch', 'this', 'throw', 'true', 'try', 'typeof', 'var', 'void', 'while', 'with', 'yield'
 ]);
 
 const getLocalName = (tokenName) => (RESERVED_WORDS.has(tokenName) ? `_${tokenName}` : tokenName);
 
+// `export default` already declares the `default` export name, so an extra
+// `export { _default as default }` alias would be a duplicate export.
+const getAliasExport = (localName, tokenName) =>
+  localName === tokenName || tokenName === 'default' ? '' : `\nexport { ${localName} as ${tokenName} };`;
+
 const writeESMExport = (tokenName, tokenString) => {
   const localName = getLocalName(tokenName);
-  const exportStatement =
+  const declaration =
     localName === tokenName
       ? `export const ${tokenName} = ${tokenString};`
-      : `const ${localName} = ${tokenString};\nexport { ${localName} as ${tokenName} };`;
+      : `const ${localName} = ${tokenString};`;
   outputFileSync(
     join(outDir, 'esm/', `${tokenName}.js`),
     `
-${exportStatement}
+${declaration}${getAliasExport(localName, tokenName)}
 export default ${localName};
 `.trim()
   );
@@ -45,12 +51,12 @@ exports["default"] = exports.${tokenName};
 
 const writeDTSExport = (tokenName, tokenString) => {
   const localName = getLocalName(tokenName);
-  const exportStatement =
+  const declaration =
     localName === tokenName
       ? `export const ${tokenName}: ${tokenString};`
-      : `declare const ${localName}: ${tokenString};\nexport { ${localName} as ${tokenName} };`;
+      : `declare const ${localName}: ${tokenString};`;
   const text = `
-${exportStatement}
+${declaration}${getAliasExport(localName, tokenName)}
 export default ${localName};
 `.trim();
   const filename = `${tokenName}.d.ts`;
