@@ -10,7 +10,7 @@ export interface CompassProps extends React.HTMLProps<HTMLDivElement> {
   masthead?: React.ReactNode;
   /** Content of the docked navigation area of the layout */
   dock?: React.ReactNode;
-  /** @beta Flag indicating the docked nav is expande on mobile. Only applies when dock content is passed. */
+  /** @beta Flag indicating the docked nav is expanded on mobile. Only applies when dock content is passed. */
   isDockExpanded?: boolean;
   /** @beta Flag indicating a docked nav is expanded as an overlay, triggered by expandable nav children. Only applies when dock content is passed. */
   isDockExpandableExpanded?: boolean;
