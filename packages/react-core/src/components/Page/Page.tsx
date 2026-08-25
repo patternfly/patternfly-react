@@ -24,6 +24,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   variant?: 'default' | 'docked';
   /** @beta Flag indicating the docked nav is expanded on mobile. Only applies when variant is docked. */
   isDockExpanded?: boolean;
+  /** @beta Flag indicating a docked nav is expanded as an overlay, triggered by expandable nav children. Only applies when dock content is passed. */
+  isDockExpandableExpanded?: boolean;
   /** @beta Flag indicating the docked nav should display text on desktop. Only applies when variant is docked, and
    * will handle toggling the visibility of the text in individual isDocked components.
    */
@@ -134,6 +136,7 @@ class Page extends Component<PageProps, PageState> {
     defaultManagedSidebarIsOpen: true,
     mainTabIndex: -1,
     isNotificationDrawerExpanded: false,
+    isDockExpandableExpanded: false,
     onNotificationDrawerExpand: () => null,
     mainComponent: 'main',
     getBreakpoint,
@@ -248,6 +251,7 @@ class Page extends Component<PageProps, PageState> {
       variant,
       isDockExpanded = false,
       isDockTextExpanded = false,
+      isDockExpandableExpanded = false,
       masthead,
       dockContent,
       sidebar,
@@ -374,6 +378,7 @@ class Page extends Component<PageProps, PageState> {
                 className={css(
                   styles.pageDock,
                   isDockExpanded && styles.modifiers.expanded,
+                  isDockExpandableExpanded && styles.modifiers.expandableExpanded,
                   isDockTextExpanded && styles.modifiers.textExpanded
                 )}
               >

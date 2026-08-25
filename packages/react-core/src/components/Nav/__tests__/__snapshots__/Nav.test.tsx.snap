@@ -196,7 +196,11 @@ exports[`Nav Expandable Nav List - Trigger toggle 1`] = `
           class="pf-v6-c-nav__link"
           id="grp-1"
         >
-          Section 1
+          <span
+            class="pf-v6-c-nav__link-text"
+          >
+            Section 1
+          </span>
           <span
             class="pf-v6-c-nav__toggle"
           >
@@ -329,7 +333,11 @@ exports[`Nav Expandable Nav List 1`] = `
           class="pf-v6-c-nav__link"
           id="grp-1"
         >
-          Section 1
+          <span
+            class="pf-v6-c-nav__link-text"
+          >
+            Section 1
+          </span>
           <span
             class="pf-v6-c-nav__toggle"
           >
@@ -461,7 +469,11 @@ exports[`Nav Expandable Nav List with aria label 1`] = `
           aria-expanded="false"
           class="pf-v6-c-nav__link"
         >
-          Section 1
+          <span
+            class="pf-v6-c-nav__link-text"
+          >
+            Section 1
+          </span>
           <span
             class="pf-v6-c-nav__toggle"
           >

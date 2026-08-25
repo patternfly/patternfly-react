@@ -28,15 +28,18 @@ import {
   ToolbarContent,
   ToolbarGroup,
   ToolbarItem,
-  Tooltip
+  Tooltip,
+  NavExpandable
 } from '@patternfly/react-core';
 import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
 import RhUiCloudFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cloud-fill-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import RhUiThumbnailViewSmallFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-thumbnail-view-small-fill-icon';
 import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
+import RhUiCubesIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cubes-icon';
+import RhUiFolderIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-icon';
+import RhUiResourceIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-resource-icon';
 import pfIconLogo from '@patternfly/react-core/src/demos/assets/PF-IconLogo-color.svg';
 import globalBreakpointXl from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_xl';
 import { IS_INERT } from '../../../helpers/inert';
@@ -49,8 +52,10 @@ interface NavOnSelectProps {
 
 export const NavDockedNav: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState(1);
+  const [isNavGroupExpanded, setIsNavGroupExpanded] = useState(false);
   const [isDockExpanded, setIsDockExpanded] = useState(false);
   const [isDockTextExpanded, setIsDockTextExpanded] = useState(false);
+  const [isDockExpandableExpanded, setIsDockExpandableExpanded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -68,6 +73,11 @@ export const NavDockedNav: React.FunctionComponent = () => {
 
   const onNavSelect = (_event: React.FormEvent<HTMLInputElement>, selectedItem: NavOnSelectProps) => {
     typeof selectedItem.itemId === 'number' && setActiveItem(selectedItem.itemId);
+
+    setIsNavGroupExpanded(false);
+    setIsDockExpandableExpanded(false);
+    setIsDockTextExpanded(false);
+    setIsDockExpanded(false);
   };
 
   const mobileTextLogo = (
@@ -205,7 +215,34 @@ export const NavDockedNav: React.FunctionComponent = () => {
         }, 200);
       }
     } else {
-      setIsDockTextExpanded(!isDockTextExpanded);
+      const nextDockTextExpanded = !isDockTextExpanded;
+      setIsDockTextExpanded(nextDockTextExpanded);
+
+      if (!nextDockTextExpanded) {
+        setIsDockExpandableExpanded(false);
+      }
+
+      if (isDockExpandableExpanded) {
+        setIsDockExpandableExpanded(false);
+        setIsDockTextExpanded(false);
+      }
+    }
+  };
+
+  const onToggleNavGroup = (
+    _event: React.MouseEvent<HTMLButtonElement>,
+    result: { groupId: number | string; isExpanded: boolean }
+  ) => {
+    setIsNavGroupExpanded(result.isExpanded);
+
+    if (!isMobile) {
+      if (!isDockExpandableExpanded && !isDockTextExpanded) {
+        setIsDockExpandableExpanded(true);
+      }
+
+      if (!isDockTextExpanded) {
+        setIsDockTextExpanded(false);
+      }
     }
   };
 
@@ -270,7 +307,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
         <Toolbar isVertical>
           <ToolbarContent>
             <ToolbarItem>
-              <Nav onSelect={onNavSelect} variant="docked" aria-label="Global">
+              <Nav onSelect={onNavSelect} onToggle={onToggleNavGroup} variant="docked" aria-label="Global">
                 <NavList>
                   <NavItem
                     preventDefault
@@ -278,12 +315,31 @@ export const NavDockedNav: React.FunctionComponent = () => {
                     to="#nav-link1"
                     itemId={0}
                     isActive={activeItem === 0}
-                    icon={<CubeIcon />}
+                    icon={<RhUiCubesIcon />}
                     anchorRef={navItem1Ref}
                     aria-label="System panel"
                   >
                     System panel
                   </NavItem>
+                  <NavExpandable
+                    title="Policy"
+                    groupId={4}
+                    isExpanded={isNavGroupExpanded}
+                    icon={<RhUiFolderIcon />}
+                    hasExpandableIcon={!isMobile}
+                  >
+                    <NavItem
+                      preventDefault
+                      id="expandable3rd-1"
+                      to="#expandable3rd-1"
+                      groupId="nav-expand3rd-group-1"
+                      itemId={5}
+                      isActive={activeItem === 5}
+                      icon={<RhUiResourceIcon />}
+                    >
+                      Subnav link 1
+                    </NavItem>
+                  </NavExpandable>
                   <NavItem
                     preventDefault
                     id="nav-link2"
@@ -428,6 +484,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
       <Page
         variant="docked"
         isDockExpanded={isDockExpanded}
+        isDockExpandableExpanded={isDockExpandableExpanded}
         isDockTextExpanded={isDockTextExpanded}
         masthead={mobileMasthead}
         dockContent={dockedMasthead}

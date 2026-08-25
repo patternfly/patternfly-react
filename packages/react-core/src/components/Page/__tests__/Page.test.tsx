@@ -482,6 +482,26 @@ describe('Page docked variant', () => {
     expect(pageDock).toHaveClass(styles.modifiers.textExpanded);
   });
 
+  test(`Does not render with ${styles.modifiers.expandableExpanded} when by default and variant is docked`, () => {
+    render(<Page variant="docked" dockContent={<>Dock content</>} masthead={<>Masthead</>} data-testid="page"></Page>);
+    const pageDock = screen.getByText('Dock content').closest(`.${styles.pageDock}`);
+    expect(pageDock).not.toHaveClass(styles.modifiers.expandableExpanded);
+  });
+
+  test(`Renders with ${styles.modifiers.expandableExpanded} when isDockExpandableExpanded is true and variant is docked`, () => {
+    render(
+      <Page
+        variant="docked"
+        isDockExpandableExpanded
+        dockContent={<>Dock content</>}
+        masthead={<>Masthead</>}
+        data-testid="page"
+      ></Page>
+    );
+    const pageDock = screen.getByText('Dock content').closest(`.${styles.pageDock}`);
+    expect(pageDock).toHaveClass(styles.modifiers.expandableExpanded);
+  });
+
   test(`Renders with ${styles.pageDockMain} wrapper when variant is docked`, () => {
     render(<Page variant="docked" dockContent={<>Dock content</>} masthead={<>Masthead</>} data-testid="page"></Page>);
 

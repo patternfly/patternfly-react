@@ -8,6 +8,7 @@ import { PickOptional } from '../../helpers/typeUtils';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 import { IS_INERT } from '../../helpers/inert';
+import RhUiEllipsisHorizontalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-horizontal-fill-icon';
 
 export interface NavExpandableProps
   extends Omit<React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>, 'title'>, OUIAProps {
@@ -17,6 +18,8 @@ export interface NavExpandableProps
   srText?: string;
   /** Boolean to pragmatically expand or collapse section */
   isExpanded?: boolean;
+  /** Adds an expandable icon to indicate the section is expandable */
+  hasExpandableIcon?: boolean;
   /** Anything that can be rendered inside of the expandable list */
   children?: React.ReactNode;
   /** Additional classes added to the container */
@@ -50,7 +53,8 @@ class NavExpandable extends Component<NavExpandableProps, NavExpandableState> {
     className: '',
     groupId: null as string,
     isActive: false,
-    id: ''
+    id: '',
+    hasExpandableIcon: false
   };
 
   state = {
@@ -100,6 +104,7 @@ class NavExpandable extends Component<NavExpandableProps, NavExpandableState> {
       id,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       isExpanded,
+      hasExpandableIcon,
       buttonProps,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onExpand,
@@ -137,7 +142,12 @@ class NavExpandable extends Component<NavExpandableProps, NavExpandableState> {
                         {...buttonProps}
                       >
                         {icon && <span className={css(styles.navLinkIcon)}>{icon}</span>}
-                        {typeof title !== 'string' ? <span className={css(styles.navLinkText)}>{title}</span> : title}
+                        {hasExpandableIcon && (
+                          <span className={css(styles.navLinkExpandableIcon)}>
+                            <RhUiEllipsisHorizontalFillIcon />
+                          </span>
+                        )}
+                        <span className={css(styles.navLinkText)}>{title}</span>
                         <span className={css(styles.navToggle)}>
                           <span className={css(styles.navToggleIcon)}>
                             <RhMicronsCaretDownIcon />

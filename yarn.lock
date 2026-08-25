@@ -5171,7 +5171,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@patternfly/react-core@workspace:packages/react-core"
   dependencies:
+<<<<<<< HEAD
     "@patternfly/patternfly": "npm:6.6.0-prerelease.39"
+=======
+    "@patternfly/patternfly": "npm:6.6.0-prerelease.37"
+>>>>>>> 18312a983d (feat(Nav,Compass,Page): add support for expandable nav items in docked nav)
     "@patternfly/react-icons": "workspace:^"
     "@patternfly/react-styles": "workspace:^"
     "@patternfly/react-tokens": "workspace:^"
@@ -5192,7 +5196,11 @@ __metadata:
   resolution: "@patternfly/react-docs@workspace:packages/react-docs"
   dependencies:
     "@patternfly/documentation-framework": "npm:^6.40.0"
+<<<<<<< HEAD
     "@patternfly/patternfly": "npm:6.6.0-prerelease.39"
+=======
+    "@patternfly/patternfly": "npm:6.6.0-prerelease.37"
+>>>>>>> 18312a983d (feat(Nav,Compass,Page): add support for expandable nav items in docked nav)
     "@patternfly/patternfly-a11y": "npm:5.2.1"
     "@patternfly/react-charts": "workspace:^"
     "@patternfly/react-code-editor": "workspace:^"
@@ -5232,7 +5240,11 @@ __metadata:
     "@fortawesome/free-brands-svg-icons": "npm:^5.15.4"
     "@fortawesome/free-regular-svg-icons": "npm:^5.15.4"
     "@fortawesome/free-solid-svg-icons": "npm:^5.15.4"
+<<<<<<< HEAD
     "@patternfly/patternfly": "npm:6.6.0-prerelease.39"
+=======
+    "@patternfly/patternfly": "npm:6.6.0-prerelease.37"
+>>>>>>> 18312a983d (feat(Nav,Compass,Page): add support for expandable nav items in docked nav)
     "@rhds/icons": "npm:^2.2.0"
     fs-extra: "npm:^11.3.3"
     tslib: "npm:^2.8.1"
@@ -5319,7 +5331,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@patternfly/react-styles@workspace:packages/react-styles"
   dependencies:
+<<<<<<< HEAD
     "@patternfly/patternfly": "npm:6.6.0-prerelease.39"
+=======
+    "@patternfly/patternfly": "npm:6.6.0-prerelease.37"
+>>>>>>> 18312a983d (feat(Nav,Compass,Page): add support for expandable nav items in docked nav)
     change-case: "npm:^5.4.4"
     fs-extra: "npm:^11.3.3"
   languageName: unknown
@@ -5361,7 +5377,11 @@ __metadata:
   resolution: "@patternfly/react-tokens@workspace:packages/react-tokens"
   dependencies:
     "@adobe/css-tools": "npm:^4.4.4"
+<<<<<<< HEAD
     "@patternfly/patternfly": "npm:6.6.0-prerelease.39"
+=======
+    "@patternfly/patternfly": "npm:6.6.0-prerelease.37"
+>>>>>>> 18312a983d (feat(Nav,Compass,Page): add support for expandable nav items in docked nav)
     fs-extra: "npm:^11.3.3"
   languageName: unknown
   linkType: soft
