@@ -99,6 +99,16 @@ test('fillTemplate interpolates strings correctly', () => {
   expect(actual).toEqual(expected);
 });
 
+test('fillTemplate keeps falsy but defined values such as 0 and false', () => {
+  expect(fillTemplate('count: ${n}', { n: 0 })).toEqual('count: 0');
+  expect(fillTemplate('value: ${v}', { v: false })).toEqual('value: false');
+  expect(fillTemplate('empty:${e}!', { e: '' })).toEqual('empty:!');
+});
+
+test('fillTemplate replaces missing keys with an empty string', () => {
+  expect(fillTemplate('x=${missing}', {})).toEqual('x=');
+});
+
 test('text pluralize', () => {
   expect(pluralize(1, 'dog')).toEqual('1 dog');
   expect(pluralize(2, 'dog')).toEqual('2 dogs');
