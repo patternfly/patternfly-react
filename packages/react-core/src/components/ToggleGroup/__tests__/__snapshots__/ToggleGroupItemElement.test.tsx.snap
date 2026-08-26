@@ -2,9 +2,7 @@
 
 exports[`empty 1`] = `
 <DocumentFragment>
-  <span
-    class=""
-  />
+  <span />
 </DocumentFragment>
 `;
 

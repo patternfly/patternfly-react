@@ -2,8 +2,8 @@
  *
  * @param {any} args list of objects, string, or arrays to reduce
  */
-export function css(...args: any): string {
-  // Adapted from https://github.com/JedWatson/classnames/blob/master/index.js
+export function css(...args: any): string | undefined {
+  // Adapted from https://github.com/JedWatson/classnames/blob/main/index.js
   const classes = [] as string[];
   const hasOwn = {}.hasOwnProperty;
 
@@ -26,5 +26,5 @@ export function css(...args: any): string {
     }
   });
 
-  return classes.join(' ');
+  return classes.join(' ') || undefined;
 }
