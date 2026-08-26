@@ -9,6 +9,7 @@ import { Nav, NavList, NavItem } from '../../Nav';
 import { SkipToContent } from '../../SkipToContent';
 import { PageBreadcrumb } from '../PageBreadcrumb';
 import { PageGroup } from '../PageGroup';
+import { PageHeader } from '../PageHeader';
 import { Masthead } from '../../Masthead';
 
 import styles from '@patternfly/react-styles/css/components/Page/page';
@@ -486,5 +487,34 @@ describe('Page docked variant', () => {
 
     const pageDockMain = screen.getByText('Dock content').closest(`.${styles.pageDockMain}`);
     expect(pageDockMain).toBeInTheDocument();
+  });
+
+  test('Renders PageHeader when passed to the masthead prop', () => {
+    render(
+      <Page {...props} masthead={<PageHeader>Custom header</PageHeader>}>
+        <PageSection>Custom content</PageSection>
+      </Page>
+    );
+
+    const header = screen.getByText('Custom header');
+    expect(header).toHaveClass(styles.pageHeader);
+    expect(header.parentElement).toHaveClass(styles.page);
+  });
+
+  test('Renders Masthead inside PageHeader when passed to the masthead prop', () => {
+    render(
+      <Page
+        {...props}
+        masthead={
+          <PageHeader>
+            <Masthead>Logo</Masthead>
+          </PageHeader>
+        }
+      >
+        <PageSection>Custom content</PageSection>
+      </Page>
+    );
+
+    expect(screen.getByText('Logo').closest(`.${styles.pageHeader}`)).toBeInTheDocument();
   });
 });

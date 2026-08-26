@@ -28,7 +28,10 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
    * will handle toggling the visibility of the text in individual isDocked components.
    */
   isDockTextExpanded?: boolean;
-  /** The horizontal masthead content (e.g. <Masthead />). When using the docked variant, this content will only render at mobile viewports. */
+  /** The horizontal masthead content (e.g. <Masthead /> or <PageHeader />). PageHeader is an alternative to Masthead
+   * and can wrap a Masthead or custom header content. When using the docked variant, this content will only render at
+   * mobile viewports.
+   */
   masthead?: React.ReactNode;
   /** @beta Content to render in the vertical dock when variant of docked is used. At mobile viewports, this content will be replaced with the content passed to masthead. */
   dockContent?: React.ReactNode;
