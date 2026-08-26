@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.6.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.1...@patternfly/react-core@6.6.2) (2026-08-26)
+
+### Bug Fixes
+
+- **Modal:** updated logic to set aria-hidden for tearsheets ([#12627](https://github.com/patternfly/patternfly-react/issues/12627)) ([#12631](https://github.com/patternfly/patternfly-react/issues/12631)) ([54bd531](https://github.com/patternfly/patternfly-react/commit/54bd5317f72c00b12d1bdb8bd7c991a76e79b4ff))
+
 ## [6.6.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.0...@patternfly/react-core@6.6.1) (2026-08-03)
 
 **Note:** Version bump only for package @patternfly/react-core
