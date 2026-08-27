@@ -2,7 +2,7 @@ import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 
 export interface PageHeaderProps extends React.HTMLProps<HTMLElement> {
-  /** Content rendered inside the page header. This can be a Masthead or custom header content. */
+  /** Content rendered inside the page header. This should be custom header content, rather than the PatternFly Masthead. */
   children?: React.ReactNode;
   /** Additional classes added to the page header */
   className?: string;

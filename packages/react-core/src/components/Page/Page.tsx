@@ -29,7 +29,7 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
    */
   isDockTextExpanded?: boolean;
   /** The horizontal masthead content (e.g. <Masthead /> or <PageHeader />). PageHeader is an alternative to Masthead
-   * and can wrap a Masthead or custom header content. When using the docked variant, this content will only render at
+   * and should only be used to wrap custom header content. When using the docked variant, this content will only render at
    * mobile viewports.
    */
   masthead?: React.ReactNode;

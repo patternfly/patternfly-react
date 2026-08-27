@@ -35,7 +35,7 @@ The `<MastheadMain>` component includes the smaller area that typically contains
 
 ### Page header
 
-To use a page header instead of passing a [masthead](/components/masthead) directly, pass a `<PageHeader>` to the `masthead` property. `<PageHeader>` can wrap a `<Masthead>` or custom header content.
+To use a page header instead of passing a [masthead](/components/masthead) directly, pass a `<PageHeader>` to the `masthead` property. `<PageHeader>` should only be used to wrap custom header content.
 
 ```ts file="./PageHeaderContent.tsx"
 

@@ -500,21 +500,4 @@ describe('Page docked variant', () => {
     expect(header).toHaveClass(styles.pageHeader);
     expect(header.parentElement).toHaveClass(styles.page);
   });
-
-  test('Renders Masthead inside PageHeader when passed to the masthead prop', () => {
-    render(
-      <Page
-        {...props}
-        masthead={
-          <PageHeader>
-            <Masthead>Logo</Masthead>
-          </PageHeader>
-        }
-      >
-        <PageSection>Custom content</PageSection>
-      </Page>
-    );
-
-    expect(screen.getByText('Logo').closest(`.${styles.pageHeader}`)).toBeInTheDocument();
-  });
 });
