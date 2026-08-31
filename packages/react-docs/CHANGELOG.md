@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.6.1-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.1-prerelease.7...@patternfly/react-docs@7.6.1-prerelease.8) (2026-08-31)
+
+### Features
+
+- **Page:** Add PageHeader component ([#12632](https://github.com/patternfly/patternfly-react/issues/12632)) ([de5b2ef](https://github.com/patternfly/patternfly-react/commit/de5b2efd359b329cad691d2a76caeffe1736ae1f))
+
 ## [7.6.1-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.1-prerelease.6...@patternfly/react-docs@7.6.1-prerelease.7) (2026-08-21)
 
 **Note:** Version bump only for package @patternfly/react-docs

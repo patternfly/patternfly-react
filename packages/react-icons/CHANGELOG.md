@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.6.1-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.6.1-prerelease.0...@patternfly/react-icons@6.6.1-prerelease.1) (2026-08-31)
+
+### Features
+
+- **Page:** Add PageHeader component ([#12632](https://github.com/patternfly/patternfly-react/issues/12632)) ([de5b2ef](https://github.com/patternfly/patternfly-react/commit/de5b2efd359b329cad691d2a76caeffe1736ae1f))
+
 ## [6.6.1-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.6.0...@patternfly/react-icons@6.6.1-prerelease.0) (2026-08-03)
 
 ### Bug Fixes

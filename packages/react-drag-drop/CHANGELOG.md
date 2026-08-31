@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.6.1-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-drag-drop@6.6.1-prerelease.4...@patternfly/react-drag-drop@6.6.1-prerelease.5) (2026-08-31)
+
+### Bug Fixes
+
+- **css:** return `undefined` if there is no className ([#11602](https://github.com/patternfly/patternfly-react/issues/11602)) ([60807bf](https://github.com/patternfly/patternfly-react/commit/60807bfe13743fa0d4e77c7f429917cbd567e6c3))
+
 ## [6.6.1-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-drag-drop@6.6.1-prerelease.3...@patternfly/react-drag-drop@6.6.1-prerelease.4) (2026-08-21)
 
 **Note:** Version bump only for package @patternfly/react-drag-drop
