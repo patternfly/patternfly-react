@@ -9,17 +9,17 @@ test('Renders children', () => {
 
 test(`Renders with class ${styles.pageHeader} by default`, () => {
   render(<PageHeader>Header content</PageHeader>);
-  expect(screen.getByText('Header content')).toHaveClass(styles.pageHeader);
+  expect(screen.getByText('Header content')).toHaveClass(styles.pageHeader, { exact: true });
 });
 
 test('Renders as a div by default', () => {
   render(<PageHeader>Header content</PageHeader>);
-  expect(screen.getByText('Header content').tagName).toBe('DIV');
+  expect(screen.getByText('Header content').tagName).toBe('HEADER');
 });
 
 test('Renders as a custom component when component is passed', () => {
-  render(<PageHeader component="header">Header content</PageHeader>);
-  expect(screen.getByText('Header content').tagName).toBe('HEADER');
+  render(<PageHeader component="div">Header content</PageHeader>);
+  expect(screen.getByText('Header content').tagName).toBe('DIV');
 });
 
 test('Renders with custom classes when className is passed', () => {

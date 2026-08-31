@@ -6,14 +6,14 @@ export interface PageHeaderProps extends React.HTMLProps<HTMLElement> {
   children?: React.ReactNode;
   /** Additional classes added to the page header */
   className?: string;
-  /** Sets the base component to render. Defaults to div */
+  /** Sets the base component to render. Defaults to header */
   component?: keyof React.JSX.IntrinsicElements;
 }
 
 export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
   className,
   children,
-  component = 'div',
+  component = 'header',
   ...props
 }: PageHeaderProps) => {
   const Component = component as any;
