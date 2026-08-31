@@ -17,15 +17,19 @@ import {
   Dropdown,
   DropdownItem,
   DropdownList,
-  MenuFooter
+  MenuFooter,
+  OverflowMenu,
+  OverflowMenuContent,
+  OverflowMenuControl,
+  OverflowMenuDropdownItem,
+  OverflowMenuItem
 } from '@patternfly/react-core';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 import RhUiPauseFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-pause-fill-icon';
 import RhUiPlayFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
 import RhUiExpandIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-expand-icon';
-import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
 import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
-import RhUiDownloadIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-download-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export const ConsoleLogViewerToolbar: React.FC = () => {
   const firstOptions = {
@@ -46,9 +50,8 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
   const [searchResultsCount, setSearchResultsCount] = useState(3);
   const [currentSearchResult, setCurrentSearchResult] = useState(1);
   const [externalExpanded, setExternalExpanded] = useState(false);
-  const [externalExpandedMobile, setExternalExpandedMobile] = useState(false);
   const [downloadExpanded, setDownloadExpanded] = useState(false);
-  const [downloadExpandedMobile, setDownloadExpandedMobile] = useState(false);
+  const [overflowExpanded, setOverflowExpanded] = useState(false);
   const [mobileView, setMobileView] = useState(window.innerWidth >= 1450 ? false : true);
 
   const onContainerToggle = () => {
@@ -85,32 +88,24 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
     setExternalExpanded((prevState) => !prevState);
   };
 
-  const onExternalToggleMobile = () => {
-    setExternalExpandedMobile((prevState) => !prevState);
-  };
-
   const onExternalSelect = () => {
     setExternalExpanded(false);
-  };
-
-  const onExternalSelectMobile = () => {
-    setExternalExpandedMobile(false);
   };
 
   const onDownloadToggle = () => {
     setDownloadExpanded((prevState) => !prevState);
   };
 
-  const onDownloadToggleMobile = () => {
-    setDownloadExpandedMobile((prevState) => !prevState);
-  };
-
   const onDownloadSelect = () => {
     setDownloadExpanded(false);
   };
 
-  const onDownloadSelectMobile = () => {
-    setDownloadExpandedMobile(false);
+  const onOverflowToggle = () => {
+    setOverflowExpanded((prevState) => !prevState);
+  };
+
+  const onOverflowSelect = () => {
+    setOverflowExpanded(false);
   };
 
   const onExternalClick = (_event: React.MouseEvent<HTMLButtonElement>) => {
@@ -206,6 +201,26 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
       <DropdownItem key="action-5" onClick={onDownloadClick}>
         All container logs
       </DropdownItem>
+    </>
+  );
+
+  const overflowDropdownItems = (
+    <>
+      <OverflowMenuDropdownItem itemId="external-1" onClick={onExternalClick}>
+        External logs 1
+      </OverflowMenuDropdownItem>
+      <OverflowMenuDropdownItem itemId="external-2" onClick={onExternalClick}>
+        External logs 2
+      </OverflowMenuDropdownItem>
+      <OverflowMenuDropdownItem itemId="external-3" onClick={onExternalClick}>
+        External logs 3
+      </OverflowMenuDropdownItem>
+      <OverflowMenuDropdownItem itemId="download-current" onClick={onDownloadClick}>
+        Current container logs
+      </OverflowMenuDropdownItem>
+      <OverflowMenuDropdownItem itemId="download-all" onClick={onDownloadClick}>
+        All container logs
+      </OverflowMenuDropdownItem>
     </>
   );
 
@@ -384,90 +399,65 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
     </Fragment>
   );
 
-  const rightAlignedItemsDesktop = (
-    <Fragment>
-      <ToolbarItem visibility={{ default: 'hidden', '2xl': 'visible' }}>
-        <Dropdown
-          isOpen={externalExpanded}
-          onOpenChange={(isOpen) => setExternalExpanded(isOpen)}
-          onSelect={onExternalSelect}
-          toggle={(toggleRef) => (
-            <MenuToggle ref={toggleRef} isExpanded={externalExpanded} onClick={onExternalToggle}>
-              External logs
-            </MenuToggle>
-          )}
-        >
-          <DropdownList>{externalDropdownItems}</DropdownList>
-        </Dropdown>
-      </ToolbarItem>
-      <ToolbarItem visibility={{ default: 'hidden', '2xl': 'visible' }}>
-        <Dropdown
-          isOpen={downloadExpanded}
-          onOpenChange={(isOpen) => setDownloadExpanded(isOpen)}
-          onSelect={onDownloadSelect}
-          toggle={(toggleRef) => (
-            <MenuToggle ref={toggleRef} isExpanded={downloadExpanded} onClick={onDownloadToggle}>
-              Download
-            </MenuToggle>
-          )}
-        >
-          <DropdownList>{downloadDropdownItems}</DropdownList>
-        </Dropdown>
-      </ToolbarItem>
-    </Fragment>
-  );
-
-  const rightAlignedItemsMobile = (
-    <Fragment>
-      <ToolbarItem visibility={{ default: 'visible', '2xl': 'hidden' }}>
-        <Tooltip position="top" content={<div>External logs</div>}>
+  const overflowMenu = (
+    <OverflowMenu breakpoint="2xl">
+      <OverflowMenuContent>
+        <OverflowMenuItem>
           <Dropdown
-            isOpen={externalExpandedMobile}
-            onOpenChange={(isOpen) => setExternalExpandedMobile(isOpen)}
-            onSelect={onExternalSelectMobile}
+            isOpen={externalExpanded}
+            onOpenChange={(isOpen) => setExternalExpanded(isOpen)}
+            onSelect={onExternalSelect}
             toggle={(toggleRef) => (
-              <MenuToggle
-                ref={toggleRef}
-                isExpanded={externalExpandedMobile}
-                onClick={onExternalToggleMobile}
-                icon={<RhMicronsExternalLinkIcon />}
-                aria-label="External logs"
-              />
+              <MenuToggle ref={toggleRef} isExpanded={externalExpanded} onClick={onExternalToggle}>
+                External logs
+              </MenuToggle>
             )}
           >
             <DropdownList>{externalDropdownItems}</DropdownList>
           </Dropdown>
-        </Tooltip>
-      </ToolbarItem>
-      <ToolbarItem visibility={{ default: 'visible', '2xl': 'hidden' }}>
-        <Tooltip position="top" content={<div>Download</div>}>
+        </OverflowMenuItem>
+        <OverflowMenuItem>
           <Dropdown
-            isOpen={downloadExpandedMobile}
-            onOpenChange={(isOpen) => setDownloadExpandedMobile(isOpen)}
-            onSelect={onDownloadSelectMobile}
-            popperProps={{ position: 'right' }}
+            isOpen={downloadExpanded}
+            onOpenChange={(isOpen) => setDownloadExpanded(isOpen)}
+            onSelect={onDownloadSelect}
             toggle={(toggleRef) => (
-              <MenuToggle
-                ref={toggleRef}
-                isExpanded={downloadExpandedMobile}
-                onClick={onDownloadToggleMobile}
-                icon={<RhUiDownloadIcon />}
-                aria-label="Download"
-              />
+              <MenuToggle ref={toggleRef} isExpanded={downloadExpanded} onClick={onDownloadToggle}>
+                Download
+              </MenuToggle>
             )}
           >
             <DropdownList>{downloadDropdownItems}</DropdownList>
           </Dropdown>
-        </Tooltip>
-      </ToolbarItem>
-    </Fragment>
+        </OverflowMenuItem>
+      </OverflowMenuContent>
+      <OverflowMenuControl>
+        <Dropdown
+          isOpen={overflowExpanded}
+          onOpenChange={(isOpen) => setOverflowExpanded(isOpen)}
+          onSelect={onOverflowSelect}
+          popperProps={{ position: 'right' }}
+          toggle={(toggleRef) => (
+            <MenuToggle
+              ref={toggleRef}
+              aria-label="Log viewer actions"
+              variant="plain"
+              onClick={onOverflowToggle}
+              isExpanded={overflowExpanded}
+              icon={<RhUiEllipsisVerticalFillIcon />}
+            />
+          )}
+        >
+          <DropdownList>{overflowDropdownItems}</DropdownList>
+        </Dropdown>
+      </OverflowMenuControl>
+    </OverflowMenu>
   );
 
   const rightAlignedItems = (
     <Fragment>
       <ToolbarItem>{LogsSearchInput}</ToolbarItem>
-      {rightAlignedItemsDesktop}
-      {rightAlignedItemsMobile}
+      <ToolbarItem>{overflowMenu}</ToolbarItem>
       <ToolbarItem>
         <Tooltip position="top" content={<div>Expand</div>}>
           <Button variant="plain" aria-label="expand" icon={<RhUiExpandIcon />} />
