@@ -3,7 +3,16 @@ id: Page
 section: components
 cssPrefix: pf-v6-c-page
 propComponents:
-  ['Page', 'PageSidebar', 'PageSidebarBody', 'PageSection', 'PageGroup', 'PageBreadcrumb', 'PageToggleButton']
+  [
+    'Page',
+    'PageHeader',
+    'PageSidebar',
+    'PageSidebarBody',
+    'PageSection',
+    'PageGroup',
+    'PageBreadcrumb',
+    'PageToggleButton'
+  ]
 ---
 
 import { useState, useLayoutEffect, useRef } from 'react';
@@ -16,13 +25,21 @@ import pageSectionWidthLimitMaxWidth from '@patternfly/react-tokens/dist/esm/c_p
 
 A page will typically contain the following components:
 
-- A `<Page>` with a `masthead` prop that often contains a [masthead](/components/masthead) component
+- A `<Page>` with a `masthead` prop that often contains a [masthead](/components/masthead) or a `<PageHeader>`
 
 The `<MastheadMain>` component includes the smaller area that typically contains the `<MastheadToggle>` and a `<MastheadLogo>`. `<MastheadContent>` represents the main portion of the masthead, and will typically contain a `<Toolbar>` or other menu-like components, like a `<Dropdown>`.
 
 - Mastheads contain a `<MastheadMain>` component, which includes the `<MastheadToggle>`, a `<MastheadLogo>`, and the page's toolbar (via `<MastheadContent>`.) The `<MastheadToggle>` component contains a `<PageToggleButton>`, and the `<MastheadLogo>` component contains a `<MastheadBrand>`.
 - 1 or more `<PageSidebarBody>` components inside `<PageSidebar>` for vertical navigation or other sidebar content
 - 1 or more `<PageSection>` components
+
+### Page header
+
+To use a page header instead of passing a [masthead](/components/masthead) directly, pass a `<PageHeader>` to the `masthead` property. `<PageHeader>` should only be used to wrap custom header content.
+
+```ts file="./PageHeaderContent.tsx"
+
+```
 
 ### Vertical navigation
 
