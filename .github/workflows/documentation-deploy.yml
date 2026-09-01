@@ -28,10 +28,29 @@ jobs:
       - name: Resolve PR number
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+          REPOSITORY: ${{ github.repository }}
+          WORKFLOW_PRS: ${{ toJSON(github.event.workflow_run.pull_requests) }}
         run: |
-          PR_NUM="${{ github.event.workflow_run.pull_requests[0].number }}"
-          if [ -z "$PR_NUM" ] || [ "$PR_NUM" = "null" ]; then
-            PR_NUM=$(gh api "repos/${{ github.repository }}/commits/${{ github.event.workflow_run.head_sha }}/pulls" --jq '.[0].number')
+          set -euo pipefail
+          PR_COUNT=$(jq 'length // 0' <<< "${WORKFLOW_PRS:-null}")
+          if [ "$PR_COUNT" -eq 1 ]; then
+            PR_NUM=$(jq -r '.[0].number' <<< "$WORKFLOW_PRS")
+          elif [ "$PR_COUNT" -eq 0 ]; then
+            if ! [[ "$HEAD_SHA" =~ ^[0-9a-fA-F]{40,64}$ ]]; then
+              echo "Invalid source workflow head SHA"
+              exit 1
+            fi
+            PR_JSON=$(gh api --paginate "repos/${REPOSITORY}/commits/${HEAD_SHA}/pulls")
+            PR_COUNT=$(jq 'length // 0' <<< "$PR_JSON")
+            if [ "$PR_COUNT" -ne 1 ]; then
+              echo "Failed to uniquely resolve PR number for commit ${HEAD_SHA} (found ${PR_COUNT} pull requests)"
+              exit 1
+            fi
+            PR_NUM=$(jq -r '.[0].number' <<< "$PR_JSON")
+          else
+            echo "Ambiguous PR metadata: found ${PR_COUNT} pull requests on the source workflow run"
+            exit 1
           fi
           if ! [[ "$PR_NUM" =~ ^[0-9]+$ ]]; then
             echo "Failed to resolve a valid PR number"
@@ -59,5 +78,5 @@ jobs:
         run: node .github/upload-preview.mjs packages/react-docs/public
 
       - name: Upload accessibility results
-        if: always() && !cancelled()
+        if: ${{ !cancelled() }}
         run: node .github/upload-preview.mjs packages/react-docs/coverage

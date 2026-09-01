@@ -28,9 +28,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: check-permissions
     if: >-
-      always() &&
-      !cancelled() &&
-      (inputs.is-release || github.event_name != 'issue_comment' || needs.check-permissions.outputs.allowed == 'true')
+      ${{ !cancelled() &&
+      (inputs.is-release || github.event_name != 'issue_comment' || needs.check-permissions.outputs.allowed == 'true') }}
     env:
       SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
       SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
@@ -54,14 +53,14 @@ jobs:
         run: yarn build:docs
 
       - name: Upload documentation preview
-        if: always() && !cancelled() && github.event_name != 'pull_request'
+        if: ${{ !cancelled() && github.event_name != 'pull_request' }}
         run: node .github/upload-preview.mjs packages/react-docs/public
 
       - name: Run accessibility tests
         run: yarn serve:docs & yarn test:a11y
 
       - name: Upload accessibility results
-        if: always() && !cancelled() && github.event_name != 'pull_request'
+        if: ${{ !cancelled() && github.event_name != 'pull_request' }}
         run: node .github/upload-preview.mjs packages/react-docs/coverage
 
       - name: Upload docs artifact
