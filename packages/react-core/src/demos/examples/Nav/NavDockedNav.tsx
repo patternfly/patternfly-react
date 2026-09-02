@@ -77,12 +77,12 @@ export const NavDockedNav: React.FunctionComponent = () => {
     }
 
     const dockedMastheadElement = document.getElementById('docked-masthead');
-    const dockedMobileMasthead = document.getElementById('mobile-masthead');
+    const dockedMobileMastheadToggle = document.getElementById('mobile-masthead-toggle');
 
     if (
       dockedMastheadElement &&
       !dockedMastheadElement.contains(event.target as Node) &&
-      !dockedMobileMasthead?.contains(event.target as Node) &&
+      !dockedMobileMastheadToggle?.contains(event.target as Node) &&
       (isDockExpandableExpanded || isDockExpanded)
     ) {
       setIsDockExpandableExpanded(false);
@@ -300,6 +300,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
             isSidebarOpen={isDockExpanded}
             onSidebarToggle={onMobileToggle}
             isHamburgerButton
+            id="mobile-masthead-toggle"
           />
         </MastheadToggle>
         <MastheadBrand>
