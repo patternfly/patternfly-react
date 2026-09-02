@@ -425,7 +425,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
                   </NavItem>
                 </NavList>
               </Nav>
-              {!isDockTextExpanded && !isDockExpanded && (
+              {!isDockTextExpanded && !isDockExpanded && !isDockExpandableExpanded && (
                 <>
                   <Tooltip aria="none" aria-live="off" triggerRef={navItem1Ref} content="System panel"></Tooltip>
                   <Tooltip aria="none" aria-live="off" triggerRef={navItem2Ref} content="Policy"></Tooltip>
