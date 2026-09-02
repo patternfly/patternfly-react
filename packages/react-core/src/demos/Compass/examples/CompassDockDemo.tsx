@@ -68,6 +68,46 @@ export const CompassDockDemo: React.FunctionComponent = () => {
     return () => mediaQuery.removeEventListener('change', handleResize);
   }, []);
 
+  const handleDockClickOutside = (event: MouseEvent) => {
+    if ((!isMobile && !isDockExpandableExpanded) || (isMobile && !isDockExpanded)) {
+      return;
+    }
+
+    const dockedMastheadElement = document.getElementById('docked-masthead');
+    const dockedMobileMasthead = document.getElementById('mobile-masthead');
+
+    if (
+      dockedMastheadElement &&
+      !dockedMastheadElement.contains(event.target as Node) &&
+      !dockedMobileMasthead?.contains(event.target as Node) &&
+      (isDockExpandableExpanded || isDockExpanded)
+    ) {
+      setIsDockExpandableExpanded(false);
+      setIsDockExpanded(false);
+    }
+  };
+
+  const handleDockKeydown = (_event: KeyboardEvent) => {
+    if ((!isMobile && !isDockExpandableExpanded) || (isMobile && !isDockExpanded)) {
+      return;
+    }
+
+    if (_event.key === 'Escape') {
+      setIsDockExpandableExpanded(false);
+      setIsDockExpanded(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('click', handleDockClickOutside);
+    window.addEventListener('keydown', handleDockKeydown);
+
+    return () => {
+      window.removeEventListener('click', handleDockClickOutside);
+      window.removeEventListener('keydown', handleDockKeydown);
+    };
+  }, [isDockExpandableExpanded, isDockTextExpanded, isDockExpanded, isMobile]);
+
   const onNavSelect = (_event: React.FormEvent<HTMLInputElement>, selectedItem: NavOnSelectProps) => {
     typeof selectedItem.itemId === 'number' && setActiveItem(selectedItem.itemId);
 
@@ -81,6 +121,8 @@ export const CompassDockDemo: React.FunctionComponent = () => {
   const navItem2Ref = useRef<HTMLAnchorElement>(null);
   const navItem3Ref = useRef<HTMLAnchorElement>(null);
   const navItem4Ref = useRef<HTMLAnchorElement>(null);
+  const navItem5Ref = useRef<HTMLAnchorElement>(null);
+  const navItem6Ref = useRef<HTMLAnchorElement>(null);
   const settingsRef = useRef<HTMLButtonElement>(null);
   const helpRef = useRef<HTMLButtonElement>(null);
   const appsRef = useRef<HTMLButtonElement>(null);
@@ -305,11 +347,13 @@ export const CompassDockDemo: React.FunctionComponent = () => {
                       System panel
                     </NavItem>
                     <NavExpandable
-                      title="Policy"
+                      title="Folder"
                       groupId={4}
                       isExpanded={isNavGroupExpanded}
                       icon={<RhUiFolderIcon />}
                       hasExpandableIcon={!isMobile}
+                      buttonProps={{ ref: navItem5Ref }}
+                      aria-label="Folder"
                     >
                       <NavItem
                         preventDefault
@@ -319,6 +363,8 @@ export const CompassDockDemo: React.FunctionComponent = () => {
                         itemId={5}
                         isActive={activeItem === 5}
                         icon={<RhUiResourceIcon />}
+                        anchorRef={navItem6Ref}
+                        aria-label="Subnav link 1"
                       >
                         Subnav link 1
                       </NavItem>
@@ -370,6 +416,8 @@ export const CompassDockDemo: React.FunctionComponent = () => {
                     <Tooltip aria="none" aria-live="off" triggerRef={navItem2Ref} content="Policy"></Tooltip>
                     <Tooltip aria="none" aria-live="off" triggerRef={navItem3Ref} content="Authentication"></Tooltip>
                     <Tooltip aria="none" aria-live="off" triggerRef={navItem4Ref} content="Network services"></Tooltip>
+                    <Tooltip aria="none" aria-live="off" triggerRef={navItem5Ref} content="Folder"></Tooltip>
+                    <Tooltip aria="none" aria-live="off" triggerRef={navItem6Ref} content="Subnav link 1"></Tooltip>
                   </>
                 )}
               </ToolbarItem>

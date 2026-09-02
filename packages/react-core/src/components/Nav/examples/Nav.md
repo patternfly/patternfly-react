@@ -84,7 +84,7 @@ A flyout should be a `Menu` component. Press `space` or `right arrow` to open a 
 
 ### Docked
 
-The docked variant of `Navigation` displays only icons passed to child `NavItems` or `NavExpandable`. Text becomes visible when `.pf-m-text-expanded` or `.pf-m-expandable-expanded` are applied to an outer page or compass dock.
+The docked variant of `Navigation` displays only icons passed to child `NavItems` or `NavExpandable`. Text becomes visible when `isDockTextExpanded` or `isDockExpandableExpanded` are applied to an outer page or compass dock.
 
 `NavExpandable` items should include the `hasExpandableIcon` prop to indicate their expandable nature while in the collapsed state of the docked nav as the caret will not be rendered.
 
