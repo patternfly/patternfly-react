@@ -12,6 +12,7 @@ export * from './Banner';
 export * from './Brand';
 export * from './Breadcrumb';
 export * from './Button';
+export * from './ButtonNext';
 export * from './CalendarMonth';
 export * from './Card';
 export * from './Checkbox';

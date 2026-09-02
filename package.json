@@ -125,5 +125,9 @@
   },
   "resolutions": {
     "dompurify": "3.4.13"
+  },
+  "dependencies": {
+    "@lit/react": "^1.0.8",
+    "@patternfly/elements": "^5.0.0"
   }
 }
