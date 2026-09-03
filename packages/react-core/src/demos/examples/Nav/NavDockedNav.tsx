@@ -370,8 +370,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
                     isExpanded={isNavGroupExpanded}
                     icon={<RhUiFolderIcon />}
                     hasExpandableIcon={!isMobile}
-                    buttonProps={{ ref: navItem5Ref }}
-                    aria-label="Folder"
+                    buttonProps={{ ref: navItem5Ref, 'aria-label': 'Folder' }}
                   >
                     <NavItem
                       preventDefault
