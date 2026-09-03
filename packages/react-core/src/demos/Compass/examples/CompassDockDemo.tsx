@@ -26,14 +26,17 @@ import {
   Button,
   Tooltip,
   Divider,
-  PageToggleButton
+  PageToggleButton,
+  NavExpandable
 } from '@patternfly/react-core';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
 import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import RhUiCloudFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cloud-fill-icon';
 import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
+import RhUiCubesIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cubes-icon';
+import RhUiFolderIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-icon';
+import RhUiResourceIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-resource-icon';
 import pfLogo from '../../assets/PF-IconLogo-color.svg';
 import RhUiThumbnailViewSmallFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-thumbnail-view-small-fill-icon';
 import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_lg';
@@ -46,8 +49,10 @@ interface NavOnSelectProps {
 
 export const CompassDockDemo: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState<number>(0);
+  const [isNavGroupExpanded, setIsNavGroupExpanded] = useState(false);
   const [isDockExpanded, setIsDockExpanded] = useState(false);
   const [isDockTextExpanded, setIsDockTextExpanded] = useState(false);
+  const [isDockExpandableExpanded, setIsDockExpandableExpanded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -63,14 +68,60 @@ export const CompassDockDemo: React.FunctionComponent = () => {
     return () => mediaQuery.removeEventListener('change', handleResize);
   }, []);
 
+  const handleDockClickOutside = (event: MouseEvent) => {
+    if ((!isMobile && !isDockExpandableExpanded) || (isMobile && !isDockExpanded)) {
+      return;
+    }
+
+    const dockedMastheadElement = document.getElementById('docked-masthead');
+    const dockedMobileMastheadToggle = document.getElementById('mobile-masthead-toggle');
+
+    if (
+      dockedMastheadElement &&
+      !dockedMastheadElement.contains(event.target as Node) &&
+      !dockedMobileMastheadToggle?.contains(event.target as Node) &&
+      (isDockExpandableExpanded || isDockExpanded)
+    ) {
+      setIsDockExpandableExpanded(false);
+      setIsDockExpanded(false);
+    }
+  };
+
+  const handleDockKeydown = (_event: KeyboardEvent) => {
+    if ((!isMobile && !isDockExpandableExpanded) || (isMobile && !isDockExpanded)) {
+      return;
+    }
+
+    if (_event.key === 'Escape') {
+      setIsDockExpandableExpanded(false);
+      setIsDockExpanded(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('click', handleDockClickOutside);
+    window.addEventListener('keydown', handleDockKeydown);
+
+    return () => {
+      window.removeEventListener('click', handleDockClickOutside);
+      window.removeEventListener('keydown', handleDockKeydown);
+    };
+  }, [isDockExpandableExpanded, isDockTextExpanded, isDockExpanded, isMobile]);
+
   const onNavSelect = (_event: React.FormEvent<HTMLInputElement>, selectedItem: NavOnSelectProps) => {
     typeof selectedItem.itemId === 'number' && setActiveItem(selectedItem.itemId);
+
+    setIsDockExpandableExpanded(false);
+    setIsDockTextExpanded(false);
+    setIsDockExpanded(false);
   };
 
   const navItem1Ref = useRef<HTMLAnchorElement>(null);
   const navItem2Ref = useRef<HTMLAnchorElement>(null);
   const navItem3Ref = useRef<HTMLAnchorElement>(null);
   const navItem4Ref = useRef<HTMLAnchorElement>(null);
+  const navItem5Ref = useRef<HTMLAnchorElement>(null);
+  const navItem6Ref = useRef<HTMLAnchorElement>(null);
   const settingsRef = useRef<HTMLButtonElement>(null);
   const helpRef = useRef<HTMLButtonElement>(null);
   const appsRef = useRef<HTMLButtonElement>(null);
@@ -95,7 +146,35 @@ export const CompassDockDemo: React.FunctionComponent = () => {
         }, 200);
       }
     } else {
-      setIsDockTextExpanded(!isDockTextExpanded);
+      const nextDockTextExpanded = !isDockTextExpanded;
+      setIsDockTextExpanded(nextDockTextExpanded);
+
+      if (!nextDockTextExpanded) {
+        setIsDockExpandableExpanded(false);
+      }
+
+      if (isDockExpandableExpanded) {
+        setIsDockExpandableExpanded(false);
+        setIsDockTextExpanded(false);
+      }
+    }
+  };
+
+  const onToggleNavGroup = (_event: React.MouseEvent<HTMLButtonElement>, isExpanded: boolean) => {
+    if (!isDockExpandableExpanded && !isDockTextExpanded && !isDockExpanded) {
+      setIsNavGroupExpanded(true);
+    } else {
+      setIsNavGroupExpanded(isExpanded);
+    }
+
+    if (!isMobile) {
+      if (!isDockExpandableExpanded && !isDockTextExpanded) {
+        setIsDockExpandableExpanded(true);
+      }
+
+      if (!isDockTextExpanded) {
+        setIsDockTextExpanded(false);
+      }
     }
   };
 
@@ -201,6 +280,7 @@ export const CompassDockDemo: React.FunctionComponent = () => {
             isSidebarOpen={isDockExpanded}
             onSidebarToggle={onMobileToggle}
             isHamburgerButton
+            id="mobile-masthead-toggle"
           />
         </MastheadToggle>
         <MastheadBrand>
@@ -255,12 +335,35 @@ export const CompassDockDemo: React.FunctionComponent = () => {
                       to="#nav-icon-link1"
                       itemId={0}
                       isActive={activeItem === 0}
-                      icon={<CubeIcon />}
+                      icon={<RhUiCubesIcon />}
                       anchorRef={navItem1Ref}
                       aria-label="System panel"
                     >
                       System panel
                     </NavItem>
+                    <NavExpandable
+                      title="Folder"
+                      groupId={4}
+                      isExpanded={isNavGroupExpanded}
+                      icon={<RhUiFolderIcon />}
+                      hasExpandableIcon={!isMobile}
+                      buttonProps={{ ref: navItem5Ref, 'aria-label': 'Folder' }}
+                      onExpand={onToggleNavGroup}
+                    >
+                      <NavItem
+                        preventDefault
+                        id="expandable3rd-1"
+                        to="#expandable3rd-1"
+                        groupId="nav-expand3rd-group-1"
+                        itemId={5}
+                        isActive={activeItem === 5}
+                        icon={<RhUiResourceIcon />}
+                        anchorRef={navItem6Ref}
+                        aria-label="Subnav link 1"
+                      >
+                        Subnav link 1
+                      </NavItem>
+                    </NavExpandable>
                     <NavItem
                       key="nav-icon-link2"
                       preventDefault
@@ -302,12 +405,14 @@ export const CompassDockDemo: React.FunctionComponent = () => {
                     </NavItem>
                   </NavList>
                 </Nav>
-                {!isDockTextExpanded && !isDockExpanded && (
+                {!isDockTextExpanded && !isDockExpanded && !isDockExpandableExpanded && (
                   <>
                     <Tooltip aria="none" aria-live="off" triggerRef={navItem1Ref} content="System panel"></Tooltip>
                     <Tooltip aria="none" aria-live="off" triggerRef={navItem2Ref} content="Policy"></Tooltip>
                     <Tooltip aria="none" aria-live="off" triggerRef={navItem3Ref} content="Authentication"></Tooltip>
                     <Tooltip aria="none" aria-live="off" triggerRef={navItem4Ref} content="Network services"></Tooltip>
+                    <Tooltip aria="none" aria-live="off" triggerRef={navItem5Ref} content="Folder"></Tooltip>
+                    <Tooltip aria="none" aria-live="off" triggerRef={navItem6Ref} content="Subnav link 1"></Tooltip>
                   </>
                 )}
               </ToolbarItem>
@@ -405,6 +510,7 @@ export const CompassDockDemo: React.FunctionComponent = () => {
       masthead={mobileMasthead}
       dock={dockContent}
       isDockExpanded={isDockExpanded}
+      isDockExpandableExpanded={isDockExpandableExpanded}
       isDockTextExpanded={isDockTextExpanded}
       main={mainContent}
       backgroundSrcDark="/assets/images/pf-background.svg"

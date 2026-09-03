@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Nav, NavExpandable, NavItem, NavList } from '@patternfly/react-core';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
-import RhUiFolderOpenFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-open-fill-icon';
-import RhUiCloudFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cloud-fill-icon';
+import RhUiCubesIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cubes-icon';
+import RhUiFolderIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-icon';
+import RhUiFolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-open-icon';
+import RhUiCloudIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cloud-icon';
 import RhUiLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-link-icon';
 
 export const NavIcons: React.FunctionComponent = () => {
@@ -22,7 +22,7 @@ export const NavIcons: React.FunctionComponent = () => {
           to="#nav-icon-link1"
           itemId={0}
           isActive={activeItem === 0}
-          icon={<CubeIcon />}
+          icon={<RhUiCubesIcon />}
         >
           Link 1
         </NavItem>
@@ -32,7 +32,7 @@ export const NavIcons: React.FunctionComponent = () => {
           to="#nav-icon-link2"
           itemId={1}
           isActive={activeItem === 1}
-          icon={<RhUiFolderFillIcon />}
+          icon={<RhUiFolderIcon />}
         >
           Link 2
         </NavItem>
@@ -42,7 +42,7 @@ export const NavIcons: React.FunctionComponent = () => {
           to="#nav-icon-link3"
           itemId={2}
           isActive={activeItem === 2}
-          icon={<RhUiCloudFillIcon />}
+          icon={<RhUiCloudIcon />}
         >
           Link 3
         </NavItem>
@@ -56,7 +56,7 @@ export const NavIcons: React.FunctionComponent = () => {
         >
           Link 4
         </NavItem>
-        <NavExpandable title="Expandable" icon={<RhUiFolderOpenFillIcon />} groupId="nav-icon-expandable">
+        <NavExpandable title="Expandable" icon={<RhUiFolderOpenIcon />} groupId="nav-icon-expandable">
           <NavItem
             preventDefault
             id="nav-icon-expandable-link1"

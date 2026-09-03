@@ -8,7 +8,6 @@ import RhUiPlayFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-play-
 import RhUiAddSquareIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-square-icon';
 import RhUiCopyIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-icon';
 import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
 import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import RhUiCloudFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cloud-fill-icon';
@@ -18,6 +17,9 @@ import imgAvatar from '../assets/avatarImg.svg';
 import RhUiThumbnailViewSmallFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-thumbnail-view-small-fill-icon';
 import pfLogo from '../assets/PF-IconLogo-color.svg';
 import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_lg';
+import RhUiCubesIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cubes-icon';
+import RhUiFolderIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-icon';
+import RhUiResourceIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-resource-icon';
 
 ## Demos
 

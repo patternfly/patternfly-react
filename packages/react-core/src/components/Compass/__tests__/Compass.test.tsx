@@ -94,6 +94,21 @@ test('Renders footer without expanded class and with inert when isFooterExpanded
   expect(footerElement).toHaveAttribute('inert');
 });
 
+test(`Renders with ${styles.modifiers.expandableExpanded} class when isDockExpandableExpanded is true`, () => {
+  render(<Compass dock={<div>Dock content</div>} isDockExpandableExpanded />);
+  expect(screen.getByText('Dock content').parentElement).toHaveClass(styles.modifiers.expandableExpanded);
+});
+
+test(`Does not render with ${styles.modifiers.expandableExpanded} class when isDockExpandableExpanded is false`, () => {
+  render(<Compass dock={<div>Dock content</div>} isDockExpandableExpanded={false} />);
+  expect(screen.getByText('Dock content').parentElement).not.toHaveClass(styles.modifiers.expandableExpanded);
+});
+
+test(`Does not render with ${styles.modifiers.expandableExpanded} class by default`, () => {
+  render(<Compass dock={<div>Dock content</div>} />);
+  expect(screen.getByText('Dock content').parentElement).not.toHaveClass(styles.modifiers.expandableExpanded);
+});
+
 test('Renders with drawer when drawerContent is provided', () => {
   render(<Compass drawerContent={<div>Drawer content</div>} />);
   expect(screen.getByText('Drawer content')).toBeVisible();
