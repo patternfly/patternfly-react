@@ -271,7 +271,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
   };
 
   const onToggleNavGroup = (_event: React.MouseEvent<HTMLButtonElement>, isExpanded: boolean) => {
-    if (!isDockExpandableExpanded) {
+    if (!isDockExpandableExpanded && !isDockTextExpanded && !isDockExpanded) {
       setIsNavGroupExpanded(true);
     } else {
       setIsNavGroupExpanded(isExpanded);
