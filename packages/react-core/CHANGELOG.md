@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.6.1-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.1-prerelease.5...@patternfly/react-core@6.6.1-prerelease.6) (2026-09-03)
+
+### Features
+
+- **Nav,Compass,Page:** add support for expandable nav items in docked nav ([#12630](https://github.com/patternfly/patternfly-react/issues/12630)) ([ef05c30](https://github.com/patternfly/patternfly-react/commit/ef05c30e47997faba5844e7e69f3897635870b87))
+
 ## [6.6.1-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.1-prerelease.4...@patternfly/react-core@6.6.1-prerelease.5) (2026-08-31)
 
 ### Bug Fixes
