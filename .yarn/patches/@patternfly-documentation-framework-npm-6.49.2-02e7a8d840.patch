@@ -1,0 +1,65 @@
+diff --git a/scripts/webpack/prerender.js b/scripts/webpack/prerender.js
+index 37306139a11cabc0c89e2eee637ea8af88693cd9..03f0c1d909a9bc516c5006cb4f8805c250e060bf 100644
+--- a/scripts/webpack/prerender.js
++++ b/scripts/webpack/prerender.js
+@@ -1,10 +1,44 @@
+ const React = require('react');
+ const ReactDOMServer = require('react-dom/server');
+ const { ServerLocation } = require('@reach/router');
+-const ssrPrepass = require('react-ssr-prepass');
+ // react, react-dom, and @reach/router are all EXCLUDED from the ssr-bundle.js
+ // The versions imported above are used instead, which allows us to use <ServerLocation>
+-// const ssrPrepass = require('react-ssr-prepass');
++
++// Let pending dynamic imports (AsyncComponent.preload) settle before re-rendering
++const flushAsync = () => new Promise((resolve) => setImmediate(() => setImmediate(resolve)));
++
++// The loading state rendered by asyncComponentFactory while a page chunk loads
++const LOADING_MARKER = 'style="height:100vh">Loading...';
++
++// react-ssr-prepass walked the element tree to await AsyncComponent.preload(), but it
++// relies on React internals that no longer exist in React 19. AsyncComponent already
++// kicks off preload() from its loading-state render, so rendering to a fixpoint with
++// plain renderToString preloads the same chunks using only public React APIs.
++let prerenderCount = 0;
++
++async function renderToStringWithPreload(element) {
++  const maxPasses = 4;
++  const start = Date.now();
++  let passes = 1;
++  let html = ReactDOMServer.renderToString(element);
++  if (++prerenderCount % 25 === 0) {
++    console.log(`  [prerender #${prerenderCount}] heap=${Math.round(process.memoryUsage().heapUsed / 1048576)}MB`);
++  }
++
++  for (; passes < maxPasses && html.includes(LOADING_MARKER); passes++) {
++    // The first render has kicked off preload(); give the dynamic imports a chance
++    // to settle, then render again until no loading placeholder is left.
++    await (passes === 1 ? flushAsync() : new Promise((resolve) => setTimeout(resolve, 50)));
++    html = ReactDOMServer.renderToString(element);
++  }
++
++  const elapsed = Date.now() - start;
++  if (elapsed > 5000 || html.includes(LOADING_MARKER)) {
++    console.log(`  rendered in ${passes} passes, ${elapsed}ms${html.includes(LOADING_MARKER) ? ' (loading placeholder left!)' : ''}`);
++  }
++
++  return html;
++}
+ 
+ // This function is effectively synchronous because it mutates global.setTimeout
+ // Only allow one copy at a time to run
+@@ -44,12 +78,7 @@ async function prerender(url) {
+   const WrappedApp = React.createElement(ServerLocation, { url },
+     React.createElement(App)
+   );
+-  await ssrPrepass(WrappedApp, element => {
+-    if (element.type.name === 'AsyncComponent') {
+-      return element.type.preload();
+-    }
+-  });
+-  const string = ReactDOMServer.renderToString(WrappedApp);
++  const string = await renderToStringWithPreload(WrappedApp);
+ 
+   return string;
+ }
