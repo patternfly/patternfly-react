@@ -111,7 +111,6 @@ export const CompassDockDemo: React.FunctionComponent = () => {
   const onNavSelect = (_event: React.FormEvent<HTMLInputElement>, selectedItem: NavOnSelectProps) => {
     typeof selectedItem.itemId === 'number' && setActiveItem(selectedItem.itemId);
 
-    setIsNavGroupExpanded(false);
     setIsDockExpandableExpanded(false);
     setIsDockTextExpanded(false);
     setIsDockExpanded(false);
@@ -161,11 +160,12 @@ export const CompassDockDemo: React.FunctionComponent = () => {
     }
   };
 
-  const onToggleNavGroup = (
-    _event: React.MouseEvent<HTMLButtonElement>,
-    result: { groupId: number | string; isExpanded: boolean }
-  ) => {
-    setIsNavGroupExpanded(result.isExpanded);
+  const onToggleNavGroup = (_event: React.MouseEvent<HTMLButtonElement>, isExpanded: boolean) => {
+    if (!isDockExpandableExpanded) {
+      setIsNavGroupExpanded(true);
+    } else {
+      setIsNavGroupExpanded(isExpanded);
+    }
 
     if (!isMobile) {
       if (!isDockExpandableExpanded && !isDockTextExpanded) {
@@ -326,13 +326,7 @@ export const CompassDockDemo: React.FunctionComponent = () => {
           <Toolbar id="toolbar" isVertical>
             <ToolbarContent>
               <ToolbarItem>
-                <Nav
-                  onSelect={onNavSelect}
-                  onToggle={onToggleNavGroup}
-                  variant="docked"
-                  aria-label="Global"
-                  ouiaId="IconNav"
-                >
+                <Nav onSelect={onNavSelect} variant="docked" aria-label="Global" ouiaId="IconNav">
                   <NavList>
                     <NavItem
                       key="nav-icon-link1"
@@ -354,6 +348,7 @@ export const CompassDockDemo: React.FunctionComponent = () => {
                       icon={<RhUiFolderIcon />}
                       hasExpandableIcon={!isMobile}
                       buttonProps={{ ref: navItem5Ref, 'aria-label': 'Folder' }}
+                      onExpand={onToggleNavGroup}
                     >
                       <NavItem
                         preventDefault
