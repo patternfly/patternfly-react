@@ -43,6 +43,7 @@ const components = {
 };
 
 async function createPackage(component) {
+  component = component.replaceAll('\\', '/');
   const cmds = [];
   let destFile = component.replace(/[^/]+\.js$/g, 'package.json').replace('/dist/esm/', '/dist/dynamic/');
 
