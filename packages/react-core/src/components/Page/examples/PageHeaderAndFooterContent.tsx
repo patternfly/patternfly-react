@@ -1,10 +1,11 @@
-import { Page, PageHeader, PageSection } from '@patternfly/react-core';
+import { Page, PageHeader, PageFooter, PageSection } from '@patternfly/react-core';
 
-export const PageHeaderContent: React.FunctionComponent = () => {
+export const PageHeaderAndFooterContent: React.FunctionComponent = () => {
   const pageHeader = <PageHeader>Page header</PageHeader>;
+  const pageFooter = <PageFooter>Page footer</PageFooter>;
 
   return (
-    <Page masthead={pageHeader}>
+    <Page isPlain masthead={pageHeader} footer={pageFooter}>
       <PageSection aria-labelledby="header-example-section-1">
         <h2 id="header-example-section-1">Page header example section 1</h2>
       </PageSection>

@@ -1,6 +1,7 @@
 export * from './Page';
 export * from './PageBody';
 export * from './PageBreadcrumb';
+export * from './PageFooter';
 export * from './PageGroup';
 export * from './PageHeader';
 export * from './PageSidebar';

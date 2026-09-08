@@ -33,11 +33,15 @@ The `<MastheadMain>` component includes the smaller area that typically contains
 - 1 or more `<PageSidebarBody>` components inside `<PageSidebar>` for vertical navigation or other sidebar content
 - 1 or more `<PageSection>` components
 
-### Page header
+### Page header and footer
 
 To use a page header instead of passing a [masthead](/components/masthead) directly, pass a `<PageHeader>` to the `masthead` property. `<PageHeader>` should only be used to wrap custom header content.
 
-```ts file="./PageHeaderContent.tsx"
+`<PageFooter>` can be passed to the `footer` property, and should be used to wrap custom footer content.
+
+When using custom a `<PageHeader>` and `<PageFooter>`, the `isPlain` flag should be passed to `<Page>`. This will remove styling on the main container, the height constraints on the page wrapper (so it can grow beyond the viewport), and removes the scroll management from the content section so the window will be what scrolls.
+
+```ts file="./PageHeaderAndFooterContent.tsx"
 
 ```
 
