@@ -13,7 +13,7 @@ propComponents:
     DrawerCloseButton,
     DrawerPanelDescription,
     DrawerPanelBody,
-    DrawerPanelFocusTrapObject,
+    DrawerPanelFocusTrapObject
   ]
 section: components
 ---
@@ -154,5 +154,13 @@ To customize which element receives focus when the drawer panel expands, use the
 ### Pill inline
 
 ```ts file="./DrawerPillInline.tsx"
+
+```
+
+### Viewport
+
+Use `isViewport` to position the drawer as `fixed` so it fills the viewport. Place the drawer after `<Page>` as a sibling. Omit children of `<DrawerContent>` so the content container stays empty; the empty container is still required so the panel can overlay the page.
+
+```ts file="./DrawerViewport.tsx" isFullscreen isBeta
 
 ```

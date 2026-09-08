@@ -100,7 +100,8 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   const panel = useRef<HTMLDivElement>(undefined);
   const splitterRef = useRef<HTMLDivElement>(undefined);
   const [separatorValue, setSeparatorValue] = useState(0);
-  const { position, isExpanded, isStatic, onExpand, drawerRef, drawerContentRef, isInline } = useContext(DrawerContext);
+  const { position, isExpanded, isStatic, onExpand, drawerRef, drawerContentRef, isInline, isViewport } =
+    useContext(DrawerContext);
   const hidden = isStatic ? false : !isExpanded;
   const [isExpandedInternal, setIsExpandedInternal] = useState(!hidden);
   const [isFocusTrapActive, setIsFocusTrapActive] = useState(false);
@@ -126,9 +127,22 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     }
   }, [isStatic, isExpanded]);
 
+  const getSizeElement = () => {
+    if (isViewport) {
+      return drawerRef?.current ?? drawerContentRef?.current;
+    }
+    return drawerContentRef?.current ?? drawerRef?.current;
+  };
+
   const calcValueNow = () => {
     let splitterPos;
     let drawerSize;
+    const sizeEl = getSizeElement();
+
+    if (!sizeEl || !panel.current || !splitterRef.current || !drawerRef?.current) {
+      return 0;
+    }
+
     const isRTL = getLanguageDirection(panel.current) === 'rtl';
 
     if (isInline && (position === 'end' || position === 'right')) {
@@ -149,37 +163,23 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
       }
     } else if (position === 'end' || position === 'right') {
       if (isRTL) {
-        splitterPos =
-          drawerContentRef.current.getBoundingClientRect().left - splitterRef.current.getBoundingClientRect().right;
-        drawerSize =
-          drawerContentRef.current.getBoundingClientRect().left -
-          drawerContentRef.current.getBoundingClientRect().right;
+        splitterPos = sizeEl.getBoundingClientRect().left - splitterRef.current.getBoundingClientRect().right;
+        drawerSize = sizeEl.getBoundingClientRect().left - sizeEl.getBoundingClientRect().right;
       } else {
-        splitterPos =
-          drawerContentRef.current.getBoundingClientRect().right - splitterRef.current.getBoundingClientRect().left;
-        drawerSize =
-          drawerContentRef.current.getBoundingClientRect().right -
-          drawerContentRef.current.getBoundingClientRect().left;
+        splitterPos = sizeEl.getBoundingClientRect().right - splitterRef.current.getBoundingClientRect().left;
+        drawerSize = sizeEl.getBoundingClientRect().right - sizeEl.getBoundingClientRect().left;
       }
     } else if (position === 'start' || position === 'left') {
       if (isRTL) {
-        splitterPos =
-          splitterRef.current.getBoundingClientRect().left - drawerContentRef.current.getBoundingClientRect().right;
-        drawerSize =
-          drawerContentRef.current.getBoundingClientRect().left -
-          drawerContentRef.current.getBoundingClientRect().right;
+        splitterPos = splitterRef.current.getBoundingClientRect().left - sizeEl.getBoundingClientRect().right;
+        drawerSize = sizeEl.getBoundingClientRect().left - sizeEl.getBoundingClientRect().right;
       } else {
-        splitterPos =
-          splitterRef.current.getBoundingClientRect().right - drawerContentRef.current.getBoundingClientRect().left;
-        drawerSize =
-          drawerContentRef.current.getBoundingClientRect().right -
-          drawerContentRef.current.getBoundingClientRect().left;
+        splitterPos = splitterRef.current.getBoundingClientRect().right - sizeEl.getBoundingClientRect().left;
+        drawerSize = sizeEl.getBoundingClientRect().right - sizeEl.getBoundingClientRect().left;
       }
     } else if (position === 'bottom') {
-      splitterPos =
-        drawerContentRef.current.getBoundingClientRect().bottom - splitterRef.current.getBoundingClientRect().top;
-      drawerSize =
-        drawerContentRef.current.getBoundingClientRect().bottom - drawerContentRef.current.getBoundingClientRect().top;
+      splitterPos = sizeEl.getBoundingClientRect().bottom - splitterRef.current.getBoundingClientRect().top;
+      drawerSize = sizeEl.getBoundingClientRect().bottom - sizeEl.getBoundingClientRect().top;
     }
 
     const newSplitterPos = (splitterPos / drawerSize) * 100;

@@ -13,7 +13,7 @@ export enum DrawerContentColorVariant {
 export interface DrawerContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Drawer. */
   className?: string;
-  /** Content to be rendered in the drawer. */
+  /** Content to be rendered in the drawer. Can be omitted to leave the content container empty. */
   children?: React.ReactNode;
   /** Content rendered in the drawer panel. */
   panelContent: React.ReactNode;
