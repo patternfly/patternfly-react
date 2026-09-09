@@ -5233,7 +5233,7 @@ __metadata:
     "@fortawesome/free-regular-svg-icons": "npm:^5.15.4"
     "@fortawesome/free-solid-svg-icons": "npm:^5.15.4"
     "@patternfly/patternfly": "npm:6.6.0-prerelease.39"
-    "@rhds/icons": "npm:^2.2.0"
+    "@rhds/icons": "npm:^2.3.1"
     fs-extra: "npm:^11.3.3"
     tslib: "npm:^2.8.1"
   peerDependencies:
@@ -5264,7 +5264,7 @@ __metadata:
     "@eslint/compat": "npm:^1.4.1"
     "@eslint/js": "npm:^9.32.0"
     "@octokit/rest": "npm:^21.1.1"
-    "@rhds/icons": "npm:^2.1.0"
+    "@rhds/icons": "npm:^2.3.1"
     "@rollup/plugin-commonjs": "npm:^26.0.3"
     "@rollup/plugin-node-resolve": "npm:^15.3.1"
     "@rollup/plugin-replace": "npm:^5.0.7"
@@ -5587,17 +5587,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rhds/icons@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "@rhds/icons@npm:2.1.0"
-  checksum: 10c0/07076008d0d31e038741beacb22d14cd993617263d6f39cb50089f116c74e678a682aec24bc3565649b2634ebbe87aaa6d2b04ea6e4197af554df4059af14c55
-  languageName: node
-  linkType: hard
-
-"@rhds/icons@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "@rhds/icons@npm:2.2.0"
-  checksum: 10c0/ded19d0056864f284cf1a43b7f4d3959ca9347e3ced78414eb7f6a20901fcb4071a8900d1f1a7840ec7105740c5d1453d1b90c4f2b0355c274fbbba7f52bd50a
+"@rhds/icons@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "@rhds/icons@npm:2.3.1"
+  checksum: 10c0/c28282757aee94866693693d3ba2a1d57775168aeb20375366474cc7a39952b3d57fc8b26fe060ea49b06171e4531ce79615be4090ece14504342282b4c46146
   languageName: node
   linkType: hard
 
