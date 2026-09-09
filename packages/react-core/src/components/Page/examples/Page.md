@@ -39,7 +39,7 @@ To use a page header instead of passing a [masthead](/components/masthead) direc
 
 `<PageFooter>` can be passed to the `footer` property, and should be used to wrap custom footer content.
 
-When using a custom `<PageHeader>` and `<PageFooter>`, the `isPlain` flag should be passed to `<Page>`. This will remove styling on the main container, the height constraints on the page wrapper (so it can grow beyond the viewport), and removes the scroll management from the content section so the window will be what scrolls.
+When using a custom `<PageHeader>` and `<PageFooter>`, the `isPlain` flag should be passed to `<Page>`. This will remove styling on the main container, the height constraints on the page wrapper (so it can grow beyond the viewport), and remove the scroll management from the content section so the window will be what scrolls.
 
 ```ts file="./PageHeaderAndFooterContent.tsx"
 
