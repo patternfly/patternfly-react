@@ -118,7 +118,7 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   breadcrumbProps?: PageBreadcrumbProps;
   /** Enables children to fill the available vertical space. Child page sections or groups that should fill should be passed the isFilled property. */
   isContentFilled?: boolean;
-  /** Flag indicating the page has non-PatternFly elements for header and footer and should be rendered plainly. Use PageHeader and PageFooter to wrap custom header and footer content to ensure the layout is maintained. */
+  /** Flag indicating the page should render without the content area background and overflow scroll. */
   isPlain?: boolean;
   /** Content rendered inside the page footer */
   footer?: React.ReactNode;

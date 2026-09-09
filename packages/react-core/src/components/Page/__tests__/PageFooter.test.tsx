@@ -12,7 +12,7 @@ test(`Renders with class ${styles.pageFooter} by default`, () => {
   expect(screen.getByText('Footer content')).toHaveClass(styles.pageFooter, { exact: true });
 });
 
-test('Renders as a div by default', () => {
+test('Renders as a footer by default', () => {
   render(<PageFooter>Footer content</PageFooter>);
   expect(screen.getByText('Footer content').tagName).toBe('FOOTER');
 });

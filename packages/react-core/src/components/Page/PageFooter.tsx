@@ -2,11 +2,11 @@ import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 
 export interface PageFooterProps extends React.HTMLProps<HTMLElement> {
-  /** Content rendered inside the page header. This should be custom header content, rather than the PatternFly Masthead. */
+  /** Content rendered inside the footer */
   children?: React.ReactNode;
-  /** Additional classes added to the page header */
+  /** Additional classes added to the footer */
   className?: string;
-  /** Sets the base component to render. Defaults to header */
+  /** Sets the base component to render. Defaults to footer */
   component?: keyof React.JSX.IntrinsicElements;
 }
 
