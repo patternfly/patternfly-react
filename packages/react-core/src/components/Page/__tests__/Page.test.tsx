@@ -529,7 +529,7 @@ describe('Page docked variant', () => {
       </Page>
     );
 
-    const footer = screen.getByText('Custom footer');
+    const footer = screen.getByRole('contentinfo');
     expect(footer).toHaveClass(styles.pageFooter);
     expect(footer.parentElement).toHaveClass(styles.page);
   });
