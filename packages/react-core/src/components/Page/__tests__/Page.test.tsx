@@ -13,6 +13,7 @@ import { PageHeader } from '../PageHeader';
 import { Masthead } from '../../Masthead';
 
 import styles from '@patternfly/react-styles/css/components/Page/page';
+import { PageFooter } from '../PageFooter';
 
 const props = {
   'aria-label': 'Page layout',
@@ -519,5 +520,50 @@ describe('Page docked variant', () => {
     const header = screen.getByText('Custom header');
     expect(header).toHaveClass(styles.pageHeader);
     expect(header.parentElement).toHaveClass(styles.page);
+  });
+
+  test('Renders PageFooter when passed to the footer prop', () => {
+    render(
+      <Page {...props} footer={<PageFooter>Custom footer</PageFooter>}>
+        <PageSection>Custom content</PageSection>
+      </Page>
+    );
+
+    const footer = screen.getByRole('contentinfo');
+    expect(footer).toHaveClass(styles.pageFooter);
+    expect(footer.parentElement).toHaveClass(styles.page);
+  });
+
+  test(`Renders with ${styles.modifiers.plain} when isPlain is true`, () => {
+    render(
+      <Page {...props} isPlain data-testid="page">
+        <PageSection>Custom content</PageSection>
+      </Page>
+    );
+
+    const page = screen.getByTestId('page');
+    expect(page).toHaveClass(styles.modifiers.plain);
+  });
+
+  test(`Does not render with ${styles.modifiers.plain} when isPlain is false`, () => {
+    render(
+      <Page {...props} isPlain={false} data-testid="page">
+        <PageSection>Custom content</PageSection>
+      </Page>
+    );
+
+    const page = screen.getByTestId('page');
+    expect(page).not.toHaveClass(styles.modifiers.plain);
+  });
+
+  test(`Does not render with ${styles.modifiers.plain} when isPlain is not passed`, () => {
+    render(
+      <Page {...props} data-testid="page">
+        <PageSection>Custom content</PageSection>
+      </Page>
+    );
+
+    const page = screen.getByTestId('page');
+    expect(page).not.toHaveClass(styles.modifiers.plain);
   });
 });

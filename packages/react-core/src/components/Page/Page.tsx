@@ -118,6 +118,10 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   breadcrumbProps?: PageBreadcrumbProps;
   /** Enables children to fill the available vertical space. Child page sections or groups that should fill should be passed the isFilled property. */
   isContentFilled?: boolean;
+  /** Flag indicating the page should render without the content area background and overflow scroll. */
+  isPlain?: boolean;
+  /** Content rendered inside the page footer */
+  footer?: React.ReactNode;
 }
 
 export interface PageState {
@@ -141,7 +145,8 @@ class Page extends Component<PageProps, PageState> {
     mainComponent: 'main',
     getBreakpoint,
     getVerticalBreakpoint,
-    mainRef: undefined
+    mainRef: undefined,
+    isPlain: false
   };
   mainRef = this.props?.mainRef ? this.props.mainRef : createRef<HTMLDivElement>();
   pageRef = createRef<HTMLDivElement>();
@@ -284,6 +289,8 @@ class Page extends Component<PageProps, PageState> {
       isContentFilled,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       mainRef,
+      isPlain,
+      footer,
       ...rest
     } = this.props;
     const { mobileView, mobileIsSidebarOpen, desktopIsSidebarOpen, width, height } = this.state;
@@ -367,6 +374,7 @@ class Page extends Component<PageProps, PageState> {
             width !== null && `pf-m-breakpoint-${getBreakpoint(width)}`,
             height !== null && `pf-m-height-breakpoint-${getVerticalBreakpoint(height)}`,
             sidebar === null && styles.modifiers.noSidebar,
+            isPlain && styles.modifiers.plain,
             className
           )}
         >
@@ -397,6 +405,7 @@ class Page extends Component<PageProps, PageState> {
             </div>
           )}
           {!notificationDrawer && main}
+          {footer && footer}
         </div>
       </PageContextProvider>
     );
