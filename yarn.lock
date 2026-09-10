@@ -4963,9 +4963,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@patternfly/documentation-framework@npm:^6.40.0":
-  version: 6.49.2
-  resolution: "@patternfly/documentation-framework@npm:6.49.2"
+"@patternfly/documentation-framework@npm:^6.51.13":
+  version: 6.51.13
+  resolution: "@patternfly/documentation-framework@npm:6.51.13"
   dependencies:
     "@babel/core": "npm:^7.29.0"
     "@babel/preset-env": "npm:7.29.0"
@@ -5026,16 +5026,16 @@ __metadata:
     webpack-dev-server: "npm:5.2.3"
     webpack-merge: "npm:5.10.0"
   peerDependencies:
-    "@patternfly/patternfly": ^6.6.0
-    "@patternfly/react-code-editor": ^6.6.0
-    "@patternfly/react-core": ^6.6.0
-    "@patternfly/react-icons": ^6.6.0
-    "@patternfly/react-table": ^6.6.0
+    "@patternfly/patternfly": ^6.6.1
+    "@patternfly/react-code-editor": ^6.6.1
+    "@patternfly/react-core": ^6.6.1
+    "@patternfly/react-icons": ^6.6.1
+    "@patternfly/react-table": ^6.6.1
     react: ^17.0.0 || ^18.0.0
     react-dom: ^17.0.0 || ^18.0.0
   bin:
     pf-docs-framework: scripts/cli/cli.js
-  checksum: 10c0/1d80d9d6078237d17b71deeb4ffa4b7ad6ed43c0d424c6044de4420d5ef8267eb913e281fc97ffa9fe6d6e70b0462557c22fdf50ecca9df555163eb48ab40ff5
+  checksum: 10c0/1464ffb3412cf8145be8a6b41a2459b1a30b874622ab9f1d8c43c6130afe3a0c5488474a490b2fdd2662a802ae94c726695099e0fa662bfcbfea793992ba257e
   languageName: node
   linkType: hard
 
@@ -5191,7 +5191,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@patternfly/react-docs@workspace:packages/react-docs"
   dependencies:
-    "@patternfly/documentation-framework": "npm:^6.40.0"
+    "@patternfly/documentation-framework": "npm:^6.51.13"
     "@patternfly/patternfly": "npm:6.6.0-prerelease.40"
     "@patternfly/patternfly-a11y": "npm:5.2.1"
     "@patternfly/react-charts": "workspace:^"
