@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.6.1-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.6.1-prerelease.1...@patternfly/react-tokens@6.6.1-prerelease.2) (2026-09-11)
+
+### Features
+
+- **Page:** add PageFooter and isPlain ([#12642](https://github.com/patternfly/patternfly-react/issues/12642)) ([6e3dd0e](https://github.com/patternfly/patternfly-react/commit/6e3dd0e11b69671d46742346c818d4463e9b964b))
+
 ## [6.6.1-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.6.1-prerelease.0...@patternfly/react-tokens@6.6.1-prerelease.1) (2026-08-31)
 
 ### Features

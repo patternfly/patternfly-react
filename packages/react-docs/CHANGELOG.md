@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.6.1-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.1-prerelease.10...@patternfly/react-docs@7.6.1-prerelease.11) (2026-09-11)
+
+### Features
+
+- **Page:** add PageFooter and isPlain ([#12642](https://github.com/patternfly/patternfly-react/issues/12642)) ([6e3dd0e](https://github.com/patternfly/patternfly-react/commit/6e3dd0e11b69671d46742346c818d4463e9b964b))
+
 ## [7.6.1-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.1-prerelease.9...@patternfly/react-docs@7.6.1-prerelease.10) (2026-09-09)
 
 **Note:** Version bump only for package @patternfly/react-docs

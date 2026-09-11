@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.6.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.6.1-prerelease.2...@patternfly/react-icons@6.6.1-prerelease.3) (2026-09-11)
+
+### Features
+
+- **Page:** add PageFooter and isPlain ([#12642](https://github.com/patternfly/patternfly-react/issues/12642)) ([6e3dd0e](https://github.com/patternfly/patternfly-react/commit/6e3dd0e11b69671d46742346c818d4463e9b964b))
+
 ## [6.6.1-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.6.1-prerelease.1...@patternfly/react-icons@6.6.1-prerelease.2) (2026-09-09)
 
 ### Features
