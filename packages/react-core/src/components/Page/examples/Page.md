@@ -33,18 +33,6 @@ The `<MastheadMain>` component includes the smaller area that typically contains
 - 1 or more `<PageSidebarBody>` components inside `<PageSidebar>` for vertical navigation or other sidebar content
 - 1 or more `<PageSection>` components
 
-### Page header and footer
-
-To use a page header instead of passing a [masthead](/components/masthead) directly, pass a `<PageHeader>` to the `masthead` property. `<PageHeader>` should only be used to wrap custom header content.
-
-`<PageFooter>` can be passed to the `footer` property, and should be used to wrap custom footer content.
-
-When using a custom `<PageHeader>` and `<PageFooter>`, the `isPlain` flag should be passed to `<Page>`. This will remove styling on the main container, the height constraints on the page wrapper (so it can grow beyond the viewport), and remove the scroll management from the content section so the window will be what scrolls.
-
-```ts file="./PageHeaderAndFooterContent.tsx"
-
-```
-
 ### Vertical navigation
 
 To add a vertical sidebar to a `<Page>`, pass a `<PageSidebar>` component into the `sidebar` property. To render navigation in the sidebar, pass a `<PageSidebarBody>` component to `<PageSidebar>`.
@@ -160,5 +148,29 @@ A page section may be made sticky with separate control of its sticky positionin
 In this example, a scroll event listener on the scroll parent container toggles `isStickyStuck` when `scrollTop > 0`, so the stuck styling appears only when the content is scrolled.
 
 ```ts file="./PageDynamicStickySection.tsx"
+
+```
+
+### Custom header
+
+To use a page header instead of passing a [masthead](/components/masthead) directly, pass a `<PageHeader>` to the `masthead` property. `<PageHeader>` should only be used to wrap custom header content.
+
+```ts isBeta file="./PageCustomHeader.tsx"
+
+```
+
+### Footer
+
+`<PageFooter>` can be passed to the `footer` property, and should be used to wrap custom footer content.
+
+```ts isBeta file="./PageCustomFooter.tsx"
+
+```
+
+### Plain page
+
+When a page should not have the default content area background or overflow scrolling, pass the `isPlain` property to `<Page>`.
+
+```ts isBeta file="./PagePlain.tsx"
 
 ```
