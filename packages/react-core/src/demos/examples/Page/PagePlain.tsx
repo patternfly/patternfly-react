@@ -53,6 +53,7 @@ import {
 } from '@patternfly/react-core';
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
+import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 import RhUiTrashFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-trash-fill-icon';
 import RhUiThumbnailViewSmallFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-thumbnail-view-small-fill-icon';
@@ -82,6 +83,18 @@ export const PagePlain: React.FunctionComponent = () => {
   const [openCardMenu, setOpenCardMenu] = useState<number | null>(null);
   const mainContainerId = 'main-content-page-demo-plain';
 
+  const onApplicationLauncher = () => {
+    setIsToolbarMenuOpen(false);
+  };
+
+  const onSettings = () => {
+    setIsToolbarMenuOpen(false);
+  };
+
+  const onHelp = () => {
+    setIsToolbarMenuOpen(false);
+  };
+
   const toolbar = (
     <Toolbar id="page-demo-plain-docked-toolbar" isStatic>
       <ToolbarContent>
@@ -96,23 +109,50 @@ export const PagePlain: React.FunctionComponent = () => {
                 aria-label="Application launcher"
                 variant={ButtonVariant.plain}
                 icon={<RhUiThumbnailViewSmallFillIcon />}
+                onClick={onApplicationLauncher}
               />
             </ToolbarItem>
             <ToolbarItem>
-              <Button aria-label="Settings" isSettings variant={ButtonVariant.plain} />
+              <Button aria-label="Settings" isSettings variant={ButtonVariant.plain} onClick={onSettings} />
             </ToolbarItem>
             <ToolbarItem>
-              <Button aria-label="Help" variant={ButtonVariant.plain} icon={<RhUiQuestionMarkCircleFillIcon />} />
+              <Button
+                aria-label="Help"
+                variant={ButtonVariant.plain}
+                icon={<RhUiQuestionMarkCircleFillIcon />}
+                onClick={onHelp}
+              />
             </ToolbarItem>
           </ToolbarGroup>
           <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
-            <MenuToggle
-              variant="plain"
-              aria-label="Actions"
-              isExpanded={isToolbarMenuOpen}
-              onClick={() => setIsToolbarMenuOpen(!isToolbarMenuOpen)}
-              icon={<RhUiEllipsisVerticalFillIcon />}
-            />
+            <Dropdown
+              isOpen={isToolbarMenuOpen}
+              onSelect={() => setIsToolbarMenuOpen(false)}
+              onOpenChange={(isOpen: boolean) => setIsToolbarMenuOpen(isOpen)}
+              popperProps={{ position: 'right' }}
+              toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                <MenuToggle
+                  ref={toggleRef}
+                  variant="plain"
+                  aria-label="Actions"
+                  isExpanded={isToolbarMenuOpen}
+                  onClick={() => setIsToolbarMenuOpen(!isToolbarMenuOpen)}
+                  icon={<RhUiEllipsisVerticalFillIcon />}
+                />
+              )}
+            >
+              <DropdownList>
+                <DropdownItem onClick={onApplicationLauncher} icon={<RhUiThumbnailViewSmallFillIcon />}>
+                  Application launcher
+                </DropdownItem>
+                <DropdownItem onClick={onSettings} icon={<RhUiSettingsFillIcon />}>
+                  Settings
+                </DropdownItem>
+                <DropdownItem onClick={onHelp} icon={<RhUiQuestionMarkCircleFillIcon />}>
+                  Help
+                </DropdownItem>
+              </DropdownList>
+            </Dropdown>
           </ToolbarItem>
         </ToolbarGroup>
       </ToolbarContent>
@@ -350,6 +390,12 @@ export const PagePlain: React.FunctionComponent = () => {
     </Card>
   );
 
+  const footer = (
+    <PageFooter>
+      <PageBody>custom footer</PageBody>
+    </PageFooter>
+  );
+
   return (
     <Page
       id="page-demo-plain"
@@ -357,6 +403,7 @@ export const PagePlain: React.FunctionComponent = () => {
       masthead={masthead}
       skipToContent={<SkipToContent href={`#${mainContainerId}`}>Skip to content</SkipToContent>}
       mainContainerId={mainContainerId}
+      footer={footer}
     >
       <PageSection isPlain padding={{ default: 'noPadding' }}>
         <Panel isGlass variant="bordered">
@@ -394,9 +441,6 @@ export const PagePlain: React.FunctionComponent = () => {
           {cards}
         </Gallery>
       </PageSection>
-      <PageFooter>
-        <PageBody>custom footer</PageBody>
-      </PageFooter>
     </Page>
   );
 };

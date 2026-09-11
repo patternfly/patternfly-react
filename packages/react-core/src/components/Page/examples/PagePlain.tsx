@@ -51,7 +51,7 @@ export const PagePlain: React.FunctionComponent = () => {
   return (
     <Page isPlain masthead={masthead} sidebar={sidebar}>
       <PageSection aria-labelledby="plain-page-section">
-        <p>Page content</p>
+        <h2 id="plain-page-section">Page content</h2>
       </PageSection>
     </Page>
   );
