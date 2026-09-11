@@ -222,3 +222,15 @@ test(`Does not render with class ${styles.modifiers.stickyHeaderStuck} when isSt
 
   expect(screen.getByRole('grid', { name: 'Test table' })).not.toHaveClass(styles.modifiers.stickyHeaderStuck);
 });
+
+test(`Renders with class ${styles.modifiers.stickyFooter} when isStickyFooter is true`, () => {
+  render(<Table isStickyFooter aria-label="Test table" />);
+
+  expect(screen.getByRole('grid', { name: 'Test table' })).toHaveClass(styles.modifiers.stickyFooter);
+});
+
+test(`Does not render with class ${styles.modifiers.stickyFooter} when isStickyFooter is false`, () => {
+  render(<Table isStickyFooter={false} aria-label="Test table" />);
+
+  expect(screen.getByRole('grid', { name: 'Test table' })).not.toHaveClass(styles.modifiers.stickyFooter);
+});
