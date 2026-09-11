@@ -6,7 +6,7 @@ export const TableStickyFooter: React.FunctionComponent = () => {
   return (
     <div style={{ height: '400px' }}>
       <InnerScrollContainer>
-        <Table aria-label="Sticky footer table" gridBreakPoint="" isStickyFooter>
+        <Table aria-label="Sticky footer table" isStickyFooter>
           <Thead>
             <Tr>
               <Th>Item</Th>

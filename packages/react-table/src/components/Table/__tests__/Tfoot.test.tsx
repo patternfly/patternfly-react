@@ -2,31 +2,64 @@ import { render, screen } from '@testing-library/react';
 import { Tfoot } from '../Tfoot';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
-test('Renders a tfoot element with the table footer class', () => {
+test('Renders without children', () => {
   render(
     <table>
-      <Tfoot>
-        <tr>
-          <td>Footer</td>
-        </tr>
-      </Tfoot>
+      <Tfoot />
     </table>
   );
 
-  expect(screen.getByText('Footer').closest('tfoot')).toHaveClass(styles.tableTfoot);
+  expect(screen.getByRole('rowgroup')).toBeInTheDocument();
 });
 
-test('Forwards props, class names, and refs to the tfoot element', () => {
+test('Renders with children', () => {
+  render(
+    <table>
+      <Tfoot>Footer content</Tfoot>
+    </table>
+  );
+
+  expect(screen.getByRole('rowgroup')).toHaveTextContent('Footer content');
+});
+
+test(`Renders with class ${styles.tableTfoot} only by default`, () => {
+  render(
+    <table>
+      <Tfoot />
+    </table>
+  );
+
+  expect(screen.getByRole('rowgroup')).toHaveClass(styles.tableTfoot, { exact: true });
+});
+
+test('Forwards refs to the tfoot element', () => {
   const ref = { current: null } as React.RefObject<HTMLTableSectionElement>;
 
   render(
     <table>
-      <Tfoot ref={ref} className="custom-footer" data-testid="footer">
-        <tr />
-      </Tfoot>
+      <Tfoot ref={ref} />
     </table>
   );
 
-  expect(screen.getByTestId('footer')).toHaveClass(styles.tableTfoot, 'custom-footer');
-  expect(ref.current).toBe(screen.getByTestId('footer'));
+  expect(ref.current).toBe(screen.getByRole('rowgroup'));
+});
+
+test('Renders with custom class names provided via prop', () => {
+  render(
+    <table>
+      <Tfoot className="custom-footer" />
+    </table>
+  );
+
+  expect(screen.getByRole('rowgroup')).toHaveClass('custom-footer');
+});
+
+test('Spreads additional props', () => {
+  render(
+    <table>
+      <Tfoot data-custom="true" />
+    </table>
+  );
+
+  expect(screen.getByRole('rowgroup')).toHaveAttribute('data-custom', 'true');
 });
