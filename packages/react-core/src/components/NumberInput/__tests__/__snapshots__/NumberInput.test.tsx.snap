@@ -14,7 +14,7 @@ exports[`numberInput disables lower threshold 1`] = `
         <button
           aria-label="Minus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:ro:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_o_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           disabled=""
@@ -52,7 +52,7 @@ exports[`numberInput disables lower threshold 1`] = `
           <input
             aria-invalid="false"
             aria-label="Input"
-            data-ouia-component-id="OUIA-Generated-TextInputBase-:rq:"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-_r_q_"
             data-ouia-component-type="PF6/TextInput"
             data-ouia-safe="true"
             readonly=""
@@ -67,7 +67,7 @@ exports[`numberInput disables lower threshold 1`] = `
         <button
           aria-label="Plus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:rr:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_r_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           type="button"
@@ -114,7 +114,7 @@ exports[`numberInput disables upper threshold 1`] = `
         <button
           aria-label="Minus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:rs:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_s_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           type="button"
@@ -151,7 +151,7 @@ exports[`numberInput disables upper threshold 1`] = `
           <input
             aria-invalid="false"
             aria-label="Input"
-            data-ouia-component-id="OUIA-Generated-TextInputBase-:ru:"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-_r_u_"
             data-ouia-component-type="PF6/TextInput"
             data-ouia-safe="true"
             readonly=""
@@ -166,7 +166,7 @@ exports[`numberInput disables upper threshold 1`] = `
         <button
           aria-label="Plus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:rv:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_v_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           disabled=""
@@ -214,7 +214,7 @@ exports[`numberInput passes button props successfully 1`] = `
         <button
           aria-label="Minus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:r1g:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_1g_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           id="minus-id"
@@ -252,7 +252,7 @@ exports[`numberInput passes button props successfully 1`] = `
           <input
             aria-invalid="false"
             aria-label="Input"
-            data-ouia-component-id="OUIA-Generated-TextInputBase-:r1i:"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-_r_1i_"
             data-ouia-component-type="PF6/TextInput"
             data-ouia-safe="true"
             readonly=""
@@ -267,7 +267,7 @@ exports[`numberInput passes button props successfully 1`] = `
         <button
           aria-label="Plus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:r1j:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_1j_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           id="plus-id"
@@ -315,7 +315,7 @@ exports[`numberInput passes input props successfully 1`] = `
         <button
           aria-label="Minus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:r1c:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_1c_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           type="button"
@@ -352,7 +352,7 @@ exports[`numberInput passes input props successfully 1`] = `
           <input
             aria-invalid="false"
             aria-label="Input"
-            data-ouia-component-id="OUIA-Generated-TextInputBase-:r1e:"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-_r_1e_"
             data-ouia-component-type="PF6/TextInput"
             data-ouia-safe="true"
             name="test-name"
@@ -367,7 +367,7 @@ exports[`numberInput passes input props successfully 1`] = `
         <button
           aria-label="Plus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:r1f:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_1f_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           type="button"
@@ -415,7 +415,7 @@ exports[`numberInput renders custom width 1`] = `
         <button
           aria-label="Minus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:r18:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_18_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           type="button"
@@ -452,7 +452,7 @@ exports[`numberInput renders custom width 1`] = `
           <input
             aria-invalid="false"
             aria-label="Input"
-            data-ouia-component-id="OUIA-Generated-TextInputBase-:r1a:"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-_r_1a_"
             data-ouia-component-type="PF6/TextInput"
             data-ouia-safe="true"
             readonly=""
@@ -467,7 +467,7 @@ exports[`numberInput renders custom width 1`] = `
         <button
           aria-label="Plus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:r1b:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_1b_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           type="button"
@@ -515,7 +515,7 @@ exports[`numberInput renders defaults & extra props 1`] = `
         <button
           aria-label="Minus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:r0:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_0_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           type="button"
@@ -552,7 +552,7 @@ exports[`numberInput renders defaults & extra props 1`] = `
           <input
             aria-invalid="false"
             aria-label="Input"
-            data-ouia-component-id="OUIA-Generated-TextInputBase-:r2:"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-_r_2_"
             data-ouia-component-type="PF6/TextInput"
             data-ouia-safe="true"
             readonly=""
@@ -567,7 +567,7 @@ exports[`numberInput renders defaults & extra props 1`] = `
         <button
           aria-label="Plus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:r3:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_3_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           type="button"
@@ -614,7 +614,7 @@ exports[`numberInput renders disabled 1`] = `
         <button
           aria-label="Minus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:rk:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_k_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           disabled=""
@@ -652,7 +652,7 @@ exports[`numberInput renders disabled 1`] = `
           <input
             aria-invalid="false"
             aria-label="Input"
-            data-ouia-component-id="OUIA-Generated-TextInputBase-:rm:"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-_r_m_"
             data-ouia-component-type="PF6/TextInput"
             data-ouia-safe="true"
             disabled=""
@@ -668,7 +668,7 @@ exports[`numberInput renders disabled 1`] = `
         <button
           aria-label="Plus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:rn:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_n_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           disabled=""
@@ -716,7 +716,7 @@ exports[`numberInput renders error validated 1`] = `
         <button
           aria-label="Minus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:r8:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_8_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           type="button"
@@ -753,7 +753,7 @@ exports[`numberInput renders error validated 1`] = `
           <input
             aria-invalid="true"
             aria-label="Input"
-            data-ouia-component-id="OUIA-Generated-TextInputBase-:ra:"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-_r_a_"
             data-ouia-component-type="PF6/TextInput"
             data-ouia-safe="true"
             readonly=""
@@ -789,7 +789,7 @@ exports[`numberInput renders error validated 1`] = `
         <button
           aria-label="Plus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:rb:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_b_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           type="button"
@@ -836,7 +836,7 @@ exports[`numberInput renders success validated 1`] = `
         <button
           aria-label="Minus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:r4:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_4_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           type="button"
@@ -873,7 +873,7 @@ exports[`numberInput renders success validated 1`] = `
           <input
             aria-invalid="false"
             aria-label="Input"
-            data-ouia-component-id="OUIA-Generated-TextInputBase-:r6:"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-_r_6_"
             data-ouia-component-type="PF6/TextInput"
             data-ouia-safe="true"
             readonly=""
@@ -909,7 +909,7 @@ exports[`numberInput renders success validated 1`] = `
         <button
           aria-label="Plus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:r7:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_7_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           type="button"
@@ -961,7 +961,7 @@ exports[`numberInput renders unit & position 1`] = `
         <button
           aria-label="Minus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:r14:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_14_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           type="button"
@@ -998,7 +998,7 @@ exports[`numberInput renders unit & position 1`] = `
           <input
             aria-invalid="false"
             aria-label="Input"
-            data-ouia-component-id="OUIA-Generated-TextInputBase-:r16:"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-_r_16_"
             data-ouia-component-type="PF6/TextInput"
             data-ouia-safe="true"
             readonly=""
@@ -1013,7 +1013,7 @@ exports[`numberInput renders unit & position 1`] = `
         <button
           aria-label="Plus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:r17:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_17_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           type="button"
@@ -1060,7 +1060,7 @@ exports[`numberInput renders unit 1`] = `
         <button
           aria-label="Minus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:r10:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_10_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           type="button"
@@ -1097,7 +1097,7 @@ exports[`numberInput renders unit 1`] = `
           <input
             aria-invalid="false"
             aria-label="Input"
-            data-ouia-component-id="OUIA-Generated-TextInputBase-:r12:"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-_r_12_"
             data-ouia-component-type="PF6/TextInput"
             data-ouia-safe="true"
             readonly=""
@@ -1112,7 +1112,7 @@ exports[`numberInput renders unit 1`] = `
         <button
           aria-label="Plus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:r13:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_13_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           type="button"
@@ -1164,7 +1164,7 @@ exports[`numberInput renders value 1`] = `
         <button
           aria-label="Minus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:rg:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_g_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           type="button"
@@ -1201,7 +1201,7 @@ exports[`numberInput renders value 1`] = `
           <input
             aria-invalid="false"
             aria-label="Input"
-            data-ouia-component-id="OUIA-Generated-TextInputBase-:ri:"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-_r_i_"
             data-ouia-component-type="PF6/TextInput"
             data-ouia-safe="true"
             readonly=""
@@ -1216,7 +1216,7 @@ exports[`numberInput renders value 1`] = `
         <button
           aria-label="Plus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:rj:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_j_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           type="button"
@@ -1263,7 +1263,7 @@ exports[`numberInput renders warning validated 1`] = `
         <button
           aria-label="Minus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:rc:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_c_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           type="button"
@@ -1300,7 +1300,7 @@ exports[`numberInput renders warning validated 1`] = `
           <input
             aria-invalid="false"
             aria-label="Input"
-            data-ouia-component-id="OUIA-Generated-TextInputBase-:re:"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-_r_e_"
             data-ouia-component-type="PF6/TextInput"
             data-ouia-safe="true"
             readonly=""
@@ -1336,7 +1336,7 @@ exports[`numberInput renders warning validated 1`] = `
         <button
           aria-label="Plus"
           class="pf-v6-c-button pf-m-control"
-          data-ouia-component-id="OUIA-Generated-Button-control-:rf:"
+          data-ouia-component-id="OUIA-Generated-Button-control-_r_f_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           type="button"

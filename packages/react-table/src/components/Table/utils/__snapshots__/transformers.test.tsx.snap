@@ -3,13 +3,24 @@
 exports[`Transformer functions sortable asc 1`] = `
 {
   "aria-sort": "ascending",
-  "children": <SortColumn
-    isSortedBy={true}
-    onSort={[Function]}
-    sortDirection="asc"
-  >
-    
-  </SortColumn>,
+  "children": {
+    "$$typeof": Symbol(react.transitional.element),
+    "_owner": null,
+    "_store": {},
+    "key": null,
+    "props": {
+      "aria-label": undefined,
+      "children": "",
+      "favoriteButtonProps": undefined,
+      "isSortedBy": true,
+      "onSort": [Function],
+      "sortDirection": "asc",
+      "tooltip": undefined,
+      "tooltipHasDefaultBehavior": undefined,
+      "tooltipProps": undefined,
+    },
+    "type": [Function],
+  },
   "className": "pf-v6-c-table__sort pf-m-selected",
 }
 `;
