@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.6.1-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.6.1-prerelease.10...@patternfly/react-table@6.6.1-prerelease.11) (2026-09-11)
+
+### Features
+
+- **Table:** add composable sticky footer ([#12645](https://github.com/patternfly/patternfly-react/issues/12645)) ([aa905db](https://github.com/patternfly/patternfly-react/commit/aa905db676918617c47c87e9782a8c7739c3dd5f))
+
 ## [6.6.1-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.6.1-prerelease.9...@patternfly/react-table@6.6.1-prerelease.10) (2026-09-11)
 
 **Note:** Version bump only for package @patternfly/react-table
