@@ -23,6 +23,8 @@ export interface DrawerProps extends React.HTMLProps<HTMLDivElement>, OUIAProps 
   isInline?: boolean;
   /** @beta Indicates if the drawer will have pill styles */
   isPill?: boolean;
+  /** @beta Positions the drawer as fixed to fill the viewport. Place the drawer after Page as a sibling. */
+  isViewport?: boolean;
   /** Indicates if the drawer will always show both content and panel. */
   isStatic?: boolean;
   /** Position of the drawer panel. left and right are deprecated, use start and end instead. */
@@ -43,6 +45,7 @@ export interface DrawerContextProps {
   drawerRef?: React.RefObject<HTMLDivElement | null>;
   drawerContentRef?: React.RefObject<HTMLDivElement | null>;
   isInline: boolean;
+  isViewport: boolean;
 }
 
 export const DrawerContext = createContext<Partial<DrawerContextProps>>({
@@ -52,7 +55,8 @@ export const DrawerContext = createContext<Partial<DrawerContextProps>>({
   position: 'end',
   drawerRef: null,
   drawerContentRef: null,
-  isInline: false
+  isInline: false,
+  isViewport: false
 });
 
 export const Drawer: React.FunctionComponent<DrawerProps> = ({
@@ -61,6 +65,7 @@ export const Drawer: React.FunctionComponent<DrawerProps> = ({
   isExpanded = false,
   isInline = false,
   isPill = false,
+  isViewport = false,
   isStatic = false,
   position = 'end',
   onExpand = () => {},
@@ -73,13 +78,16 @@ export const Drawer: React.FunctionComponent<DrawerProps> = ({
   const drawerContentRef = useRef<HTMLDivElement>(undefined);
 
   return (
-    <DrawerContext.Provider value={{ isExpanded, isStatic, onExpand, position, drawerRef, drawerContentRef, isInline }}>
+    <DrawerContext.Provider
+      value={{ isExpanded, isStatic, onExpand, position, drawerRef, drawerContentRef, isInline, isViewport }}
+    >
       <div
         className={css(
           styles.drawer,
           isExpanded && styles.modifiers.expanded,
           isInline && styles.modifiers.inline,
           isPill && styles.modifiers.pill,
+          isViewport && styles.modifiers.viewport,
           isStatic && styles.modifiers.static,
           (position === 'left' || position === 'start') && styles.modifiers.panelLeft,
           position === 'bottom' && styles.modifiers.panelBottom,
