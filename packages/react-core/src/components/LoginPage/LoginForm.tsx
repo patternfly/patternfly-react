@@ -24,6 +24,8 @@ export interface LoginFormProps extends Omit<React.HTMLProps<HTMLFormElement>, '
   usernameLabel?: string;
   /** Value for the username */
   usernameValue?: string;
+  /** Autocomplete value for the username input field */
+  usernameAutoComplete?: string;
   /** Function that handles the onChange event for the username */
   onChangeUsername?: (event: React.FormEvent<HTMLInputElement>, value: string) => void;
   /** Flag indicating if the username is valid */
@@ -34,6 +36,8 @@ export interface LoginFormProps extends Omit<React.HTMLProps<HTMLFormElement>, '
   passwordLabel?: string;
   /** Value for the password */
   passwordValue?: string;
+  /** Autocomplete value for the password input field */
+  passwordAutoComplete?: string;
   /** Function that handles the onChange event for the password */
   onChangePassword?: (event: React.FormEvent<HTMLInputElement>, value: string) => void;
   /** Flag indicating if the password is valid */
@@ -66,11 +70,13 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
   helperTextIcon = null,
   usernameLabel = 'Username',
   usernameValue = '',
+  usernameAutoComplete,
   onChangeUsername = () => undefined as any,
   isValidUsername = true,
   isPasswordRequired = true,
   passwordLabel = 'Password',
   passwordValue = '',
+  passwordAutoComplete,
   onChangePassword = () => undefined as any,
   isShowPasswordEnabled = false,
   hidePasswordAriaLabel = 'Hide password',
@@ -88,6 +94,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
 
   const passwordInput = (
     <TextInput
+      autoComplete={passwordAutoComplete}
       isRequired={isPasswordRequired}
       type={passwordHidden ? 'password' : 'text'}
       id="pf-login-password-id"
@@ -111,6 +118,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
       )}
       <FormGroup label={usernameLabel} isRequired fieldId="pf-login-username-id">
         <TextInput
+          autoComplete={usernameAutoComplete}
           autoFocus={!noAutoFocus}
           id="pf-login-username-id"
           isRequired
