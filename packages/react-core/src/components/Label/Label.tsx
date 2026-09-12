@@ -205,9 +205,8 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       if (isEditableActive && key === 'Escape') {
         event.preventDefault();
         event.stopImmediatePropagation();
-        // Reset div text to initial children prop - pre-edit
+        setCurrValue(children);
         if (editableInputRef.current.value) {
-          editableInputRef.current.value = children as string;
           onEditCancel && onEditCancel(event, children as string);
         }
         setIsEditableActive(false);
