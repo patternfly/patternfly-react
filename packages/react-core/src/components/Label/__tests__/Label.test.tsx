@@ -109,6 +109,44 @@ describe('Label', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('editable label discards the draft text when the edit is canceled with escape', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Label onEditCancel={jest.fn()} onEditComplete={jest.fn()} isEditable>
+        Something
+      </Label>
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Something' }));
+    await user.type(screen.getByRole('textbox'), ' else');
+    expect(screen.getByRole('textbox')).toHaveValue('Something else');
+
+    await user.keyboard('{Escape}');
+    expect(screen.getByRole('button', { name: 'Something' })).toBeInTheDocument();
+
+    // Reopening the editor must show the original text, not the discarded draft
+    await user.click(screen.getByRole('button', { name: 'Something' }));
+    expect(screen.getByRole('textbox')).toHaveValue('Something');
+  });
+
+  test('editable label calls onEditCancel with the previous text when the edit is canceled with escape', async () => {
+    const user = userEvent.setup();
+    const onEditCancel = jest.fn();
+
+    render(
+      <Label onEditCancel={onEditCancel} isEditable>
+        Something
+      </Label>
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Something' }));
+    await user.type(screen.getByRole('textbox'), ' else');
+    await user.keyboard('{Escape}');
+
+    expect(onEditCancel).toHaveBeenCalledWith(expect.anything(), 'Something');
+  });
+
   test('renders with variant overflow and type is set to button ', () => {
     const { asFragment } = render(<Label variant="overflow">Something</Label>);
     expect(screen.getByRole('button')).toHaveAttribute('type', 'button');
