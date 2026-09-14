@@ -167,7 +167,7 @@ To use a page header instead of passing a [masthead](/components/masthead) direc
 
 ```
 
-### Plain page
+### Plain
 
 When a page should not have the default content area background or overflow scrolling, pass the `isPlain` property to `<Page>`.
 

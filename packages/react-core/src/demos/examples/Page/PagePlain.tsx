@@ -189,13 +189,14 @@ export const PagePlain: React.FunctionComponent = () => {
   };
 
   const cards = data.map((product) => (
-    <GalleryItem key={product.name}>
+    <GalleryItem key={product.name} component="li">
       <Card isCompact isGlass isClickable isSelectable isFullHeight id={product.name.replace(/ /g, '-')}>
         <CardHeader
           selectableActions={{
             isChecked: selectedItems.includes(product.id),
             selectableActionId: `page-demo-plain-selectable-${product.id}`,
-            selectableActionAriaLabelledby: product.name.replace(/ /g, '-'),
+            selectableActionAriaLabelledby: `${product.name.replace(/ /g, '-')}-title`,
+            selectableActionProps: { isLabelWrapped: true },
             name: `page-demo-plain-check-${product.id}`,
             onChange: (_event, checked) => {
               setSelectedItems((items) =>
@@ -421,23 +422,25 @@ export const PagePlain: React.FunctionComponent = () => {
         {recommendedPathwaysCard}
       </PageSection>
       <PageSection isPlain padding={{ default: 'noPadding' }} isFilled>
-        <Gallery hasGutter aria-label="Selectable card container">
-          <Card isCompact isGlass isFullHeight>
-            <Bullseye>
-              <EmptyState
-                headingLevel="h2"
-                titleText="Add a new card to your page"
-                icon={RhUiAddCircleFillIcon}
-                variant={EmptyStateVariant.xs}
-              >
-                <EmptyStateFooter>
-                  <EmptyStateActions>
-                    <Button variant={ButtonVariant.link}>Add card</Button>
-                  </EmptyStateActions>
-                </EmptyStateFooter>
-              </EmptyState>
-            </Bullseye>
-          </Card>
+        <Gallery component="ul" hasGutter aria-label="Selectable card container">
+          <GalleryItem component="li">
+            <Card isCompact isGlass isFullHeight>
+              <Bullseye>
+                <EmptyState
+                  headingLevel="h2"
+                  titleText="Add a new card to your page"
+                  icon={RhUiAddCircleFillIcon}
+                  variant={EmptyStateVariant.xs}
+                >
+                  <EmptyStateFooter>
+                    <EmptyStateActions>
+                      <Button variant={ButtonVariant.link}>Add card</Button>
+                    </EmptyStateActions>
+                  </EmptyStateFooter>
+                </EmptyState>
+              </Bullseye>
+            </Card>
+          </GalleryItem>
           {cards}
         </Gallery>
       </PageSection>
