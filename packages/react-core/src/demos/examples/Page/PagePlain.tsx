@@ -32,6 +32,7 @@ import {
   Page,
   PageBody,
   PageFooter,
+  PageHeader,
   PageSection,
   Panel,
   PanelMain,
@@ -292,7 +293,7 @@ export const PagePlain: React.FunctionComponent = () => {
     <Page
       id="page-demo-plain"
       isPlain
-      masthead="Custom header"
+      masthead={<PageHeader>Custom header</PageHeader>}
       skipToContent={<SkipToContent href={`#${mainContainerId}`}>Skip to content</SkipToContent>}
       mainContainerId={mainContainerId}
       footer={footer}
