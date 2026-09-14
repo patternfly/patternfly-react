@@ -97,10 +97,12 @@ export const SimpleLoginPage: React.FunctionComponent = () => {
       helperTextIcon={<RhUiErrorFillIcon />}
       usernameLabel="Username"
       usernameValue={username}
+      usernameAutoComplete="username"
       onChangeUsername={handleUsernameChange}
       isValidUsername={isValidUsername}
       passwordLabel="Password"
       passwordValue={password}
+      passwordAutoComplete="current-password"
       onChangePassword={handlePasswordChange}
       isValidPassword={isValidPassword}
       rememberMeLabel="Keep me logged in for 30 days."
