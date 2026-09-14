@@ -229,7 +229,7 @@ export const PagePlain: React.FunctionComponent = () => {
             )
           }}
         >
-          <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ maxWidth: '60px' }} />
+          <img src={icons[product.icon]} alt="" style={{ maxWidth: '60px' }} />
         </CardHeader>
         <CardTitle>{product.name}</CardTitle>
         <CardBody>{product.description}</CardBody>
