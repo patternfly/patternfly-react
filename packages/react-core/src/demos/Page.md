@@ -4,24 +4,14 @@ section: components
 ---
 
 import { useState, useRef, useEffect } from 'react';
-import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
-import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
-import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
-import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
-import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
-import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
-import LightbulbIcon from '@patternfly/react-icons/dist/esm/icons/lightbulb-icon';
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
-import RhUiContainerIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-container-icon';
-import RhUiCloudFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cloud-fill-icon';
+import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
+import RhUiTrashFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-trash-fill-icon';
 import RhUiPortIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-port-icon';
+import RhUiContainerIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-container-icon';
 import RhUiAutomationIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-automation-icon';
 import RhUiConnectedIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-connected-icon';
 import RhUiArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-arrow-right-icon';
-import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
-import RhUiTrashFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-trash-fill-icon';
-import RhUiThumbnailViewSmallFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-thumbnail-view-small-fill-icon';
-import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
 import pfIcon from '@patternfly/react-core/src/demos/assets/PF-IconLogo.svg';
 import activeMQIcon from '@patternfly/react-core/src/demos/assets/activemq-core_200x150.png';
 import avroIcon from '@patternfly/react-core/src/demos/assets/camel-avro_200x150.png';

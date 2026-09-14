@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import {
-  Brand,
   Bullseye,
   Button,
   ButtonVariant,
@@ -28,41 +27,26 @@ import {
   LabelColor,
   LabelGroup,
   LabelStatus,
-  Masthead,
-  MastheadBrand,
-  MastheadContent,
-  MastheadLogo,
-  MastheadMain,
-  MastheadToggle,
   MenuToggle,
   MenuToggleElement,
   Page,
   PageBody,
   PageFooter,
   PageSection,
-  PageToggleButton,
   Panel,
   PanelMain,
   PanelMainBody,
   SkipToContent,
-  Title,
-  Toolbar,
-  ToolbarContent,
-  ToolbarGroup,
-  ToolbarItem
+  Title
 } from '@patternfly/react-core';
 import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
-import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
-import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 import RhUiTrashFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-trash-fill-icon';
-import RhUiThumbnailViewSmallFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-thumbnail-view-small-fill-icon';
 import RhUiPortIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-port-icon';
 import RhUiContainerIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-container-icon';
 import RhUiAutomationIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-automation-icon';
 import RhUiConnectedIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-connected-icon';
 import RhUiArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-arrow-right-icon';
-import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
 import pfIcon from '@patternfly/react-core/src/demos/assets/PF-IconLogo.svg';
 import activeMQIcon from '@patternfly/react-core/src/demos/assets/activemq-core_200x150.png';
 import avroIcon from '@patternfly/react-core/src/demos/assets/camel-avro_200x150.png';
@@ -76,104 +60,11 @@ import restIcon from '@patternfly/react-core/src/demos/assets/FuseConnector_Icon
 import { data } from '@patternfly/react-core/src/demos/CardView/examples/CardViewData.jsx';
 
 export const PagePlain: React.FunctionComponent = () => {
-  const [isToolbarMenuOpen, setIsToolbarMenuOpen] = useState(false);
   const [isPathwayExpanded, setIsPathwayExpanded] = useState(true);
   const [isPathwayKebabOpen, setIsPathwayKebabOpen] = useState(false);
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
   const [openCardMenu, setOpenCardMenu] = useState<number | null>(null);
   const mainContainerId = 'main-content-page-demo-plain';
-
-  const onApplicationLauncher = () => {
-    setIsToolbarMenuOpen(false);
-  };
-
-  const onSettings = () => {
-    setIsToolbarMenuOpen(false);
-  };
-
-  const onHelp = () => {
-    setIsToolbarMenuOpen(false);
-  };
-
-  const toolbar = (
-    <Toolbar id="page-demo-plain-docked-toolbar" isStatic>
-      <ToolbarContent>
-        <ToolbarGroup
-          variant="action-group-plain"
-          align={{ default: 'alignEnd' }}
-          gap={{ default: 'gapNone', md: 'gapMd' }}
-        >
-          <ToolbarGroup variant="action-group-plain" visibility={{ default: 'hidden', lg: 'visible' }}>
-            <ToolbarItem>
-              <Button
-                aria-label="Application launcher"
-                variant={ButtonVariant.plain}
-                icon={<RhUiThumbnailViewSmallFillIcon />}
-                onClick={onApplicationLauncher}
-              />
-            </ToolbarItem>
-            <ToolbarItem>
-              <Button aria-label="Settings" isSettings variant={ButtonVariant.plain} onClick={onSettings} />
-            </ToolbarItem>
-            <ToolbarItem>
-              <Button
-                aria-label="Help"
-                variant={ButtonVariant.plain}
-                icon={<RhUiQuestionMarkCircleFillIcon />}
-                onClick={onHelp}
-              />
-            </ToolbarItem>
-          </ToolbarGroup>
-          <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
-            <Dropdown
-              isOpen={isToolbarMenuOpen}
-              onSelect={() => setIsToolbarMenuOpen(false)}
-              onOpenChange={(isOpen: boolean) => setIsToolbarMenuOpen(isOpen)}
-              popperProps={{ position: 'right' }}
-              toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-                <MenuToggle
-                  ref={toggleRef}
-                  variant="plain"
-                  aria-label="Actions"
-                  isExpanded={isToolbarMenuOpen}
-                  onClick={() => setIsToolbarMenuOpen(!isToolbarMenuOpen)}
-                  icon={<RhUiEllipsisVerticalFillIcon />}
-                />
-              )}
-            >
-              <DropdownList>
-                <DropdownItem onClick={onApplicationLauncher} icon={<RhUiThumbnailViewSmallFillIcon />}>
-                  Application launcher
-                </DropdownItem>
-                <DropdownItem onClick={onSettings} icon={<RhUiSettingsFillIcon />}>
-                  Settings
-                </DropdownItem>
-                <DropdownItem onClick={onHelp} icon={<RhUiQuestionMarkCircleFillIcon />}>
-                  Help
-                </DropdownItem>
-              </DropdownList>
-            </Dropdown>
-          </ToolbarItem>
-        </ToolbarGroup>
-      </ToolbarContent>
-    </Toolbar>
-  );
-
-  const masthead = (
-    <Masthead id="page-demo-plain-docked">
-      <MastheadMain>
-        <MastheadToggle>
-          <PageToggleButton isHamburgerButton aria-label="Global navigation" />
-        </MastheadToggle>
-        <MastheadBrand>
-          <MastheadLogo href="#">
-            <Brand src={pfLogo} alt="PatternFly" />
-          </MastheadLogo>
-        </MastheadBrand>
-      </MastheadMain>
-      <MastheadContent>{toolbar}</MastheadContent>
-    </Masthead>
-  );
 
   const icons = {
     pfIcon,
@@ -401,10 +292,11 @@ export const PagePlain: React.FunctionComponent = () => {
     <Page
       id="page-demo-plain"
       isPlain
-      masthead={masthead}
+      masthead="Custom header"
       skipToContent={<SkipToContent href={`#${mainContainerId}`}>Skip to content</SkipToContent>}
       mainContainerId={mainContainerId}
       footer={footer}
+      sidebar={null}
     >
       <PageSection isPlain padding={{ default: 'noPadding' }}>
         <Panel isGlass variant="bordered">
