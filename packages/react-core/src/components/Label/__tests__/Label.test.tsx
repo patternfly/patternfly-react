@@ -112,22 +112,24 @@ describe('Label', () => {
   test('editable label discards the draft text when the edit is canceled with escape', async () => {
     const user = userEvent.setup();
 
-    render(
-      <Label onEditCancel={jest.fn()} onEditComplete={jest.fn()} isEditable>
-        Something
-      </Label>
-    );
+    render(<Label isEditable>Something</Label>);
 
-    await user.click(screen.getByRole('button', { name: 'Something' }));
-    await user.type(screen.getByRole('textbox'), ' else');
-    expect(screen.getByRole('textbox')).toHaveValue('Something else');
+    const label = screen.getByRole('button', { name: 'Something' });
+    await user.click(label);
+
+    const draftInput = screen.getByRole('textbox');
+    await user.type(draftInput, ' else');
+    expect(draftInput).toHaveValue('Something else');
 
     await user.keyboard('{Escape}');
-    expect(screen.getByRole('button', { name: 'Something' })).toBeInTheDocument();
+    // The button and input remount when the editor toggles, so another query is required
 
-    // Reopening the editor must show the original text, not the discarded draft
-    await user.click(screen.getByRole('button', { name: 'Something' }));
-    expect(screen.getByRole('textbox')).toHaveValue('Something');
+    const labelAfterCancel = screen.getByRole('button', { name: 'Something' });
+    expect(labelAfterCancel).toBeInTheDocument();
+    await user.click(labelAfterCancel);
+
+    const reopenedInput = screen.getByRole('textbox');
+    expect(reopenedInput).toHaveValue('Something');
   });
 
   test('editable label calls onEditCancel with the previous text when the edit is canceled with escape', async () => {
