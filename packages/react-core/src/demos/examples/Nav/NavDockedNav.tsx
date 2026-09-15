@@ -114,6 +114,10 @@ export const NavDockedNav: React.FunctionComponent = () => {
   const onNavSelect = (_event: React.FormEvent<HTMLInputElement>, selectedItem: NavOnSelectProps) => {
     typeof selectedItem.itemId === 'number' && setActiveItem(selectedItem.itemId);
 
+    if (isDockExpanded || isDockTextExpanded) {
+      return;
+    }
+
     setIsDockExpandableExpanded(false);
     setIsDockTextExpanded(false);
     setIsDockExpanded(false);
