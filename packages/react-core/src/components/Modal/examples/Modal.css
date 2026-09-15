@@ -1,0 +1,81 @@
+/**
+ * Modal.css
+ *
+ * To fix an issue with the PR preview deployment,
+ * this file contains the contents of the new modal-animations.css + backdrop-animations.css
+ */
+
+
+/* --- modal-animations.css ------ */
+
+.pf-v6-c-modal-animated {
+    --pf-v6-c-modal-animated--Transition:
+        opacity 240ms cubic-bezier(0.4, 0.14, 1, 1),
+        transform 240ms cubic-bezier(0.4, 0.14, 1, 1),
+        visibility 0ms linear 240ms;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translate3d(0, -24px, 0);
+    transform-origin: top center;
+    transition: var(--pf-v6-c-modal-animated--Transition);
+}
+
+.pf-v6-c-modal-animated-open {
+    --pf-v6-c-modal-animated--Transition:
+        transform 240ms cubic-bezier(0, 0, 0.2, 1),
+        visibility 0ms linear 0ms;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: unset;
+    transform: translate3d(0, 0, 0);
+}
+
+.pf-v6-c-modal-animated-closed {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translate3d(0, -24px, 0);
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    .pf-v6-c-modal-animated,
+    .pf-v6-c-modal-animated-open,
+    .pf-v6-c-modal-animated-closed {
+        transition: none;
+    }
+}
+
+/* --- backdrop-animations.css --- */
+
+.pf-v6-c-backdrop-animated {
+    background-color: transparent;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+    background-color 240ms cubic-bezier(0.4, 0.14, 1, 1), /* Carbon equivalent: duration-moderate-02 + motion(exit, expressive) */
+    visibility 0ms linear 240ms; /* Carbon equivalent: duration-moderate-02 */
+}
+
+.pf-v6-c-backdrop-animated-visible {
+    background-color: var(--pf-v6-c-backdrop--BackgroundColor);
+    visibility: visible;
+    pointer-events: unset;
+    transition:
+    background-color 240ms cubic-bezier(0, 0, 0.2, 1),
+    visibility 0ms linear 0ms;
+}
+
+.pf-v6-c-backdrop-animated-hidden {
+    background-color: transparent;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    .pf-v6-c-backdrop-animated,
+    .pf-v6-c-backdrop-animated-visible,
+    .pf-v6-c-backdrop-animated-hidden {
+        transition: none;
+    }
+}
