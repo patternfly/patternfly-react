@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.6.1-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.1-prerelease.8...@patternfly/react-core@6.6.1-prerelease.9) (2026-09-15)
+
+### Features
+
+- **Drawer:** Add full-size drawer ([#12641](https://github.com/patternfly/patternfly-react/issues/12641)) ([9930770](https://github.com/patternfly/patternfly-react/commit/9930770624d75e6d0b7b0e8480cc198b71906f7e))
+
 ## [6.6.1-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.1-prerelease.7...@patternfly/react-core@6.6.1-prerelease.8) (2026-09-11)
 
 ### Features

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.6.1-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.1-prerelease.12...@patternfly/react-docs@7.6.1-prerelease.13) (2026-09-15)
+
+### Features
+
+- **Drawer:** Add full-size drawer ([#12641](https://github.com/patternfly/patternfly-react/issues/12641)) ([9930770](https://github.com/patternfly/patternfly-react/commit/9930770624d75e6d0b7b0e8480cc198b71906f7e))
+
 ## [7.6.1-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.1-prerelease.11...@patternfly/react-docs@7.6.1-prerelease.12) (2026-09-11)
 
 **Note:** Version bump only for package @patternfly/react-docs
