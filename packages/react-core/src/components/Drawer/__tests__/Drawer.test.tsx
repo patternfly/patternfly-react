@@ -231,3 +231,56 @@ test('Renders with ouiaSafe=false when specified', () => {
   );
   expect(screen.getByTestId('drawer')).toHaveAttribute('data-ouia-safe', 'false');
 });
+
+test(`Does not render with ${styles.modifiers.viewport} class by default`, () => {
+  render(
+    <Drawer data-testid="drawer">
+      <DrawerContent panelContent={<DrawerPanelContent>panel</DrawerPanelContent>}>
+        <DrawerContentBody>content</DrawerContentBody>
+      </DrawerContent>
+    </Drawer>
+  );
+
+  expect(screen.getByTestId('drawer')).not.toHaveClass(styles.modifiers.viewport);
+});
+
+test(`Renders with ${styles.modifiers.viewport} when isViewport is specified`, () => {
+  render(
+    <Drawer data-testid="drawer" isViewport>
+      <DrawerContent panelContent={<DrawerPanelContent>panel</DrawerPanelContent>}>
+        <DrawerContentBody>content</DrawerContentBody>
+      </DrawerContent>
+    </Drawer>
+  );
+
+  expect(screen.getByTestId('drawer')).toHaveClass(styles.modifiers.viewport);
+});
+
+test('Resizeable DrawerPanelContent without drawer content does not throw', async () => {
+  const consoleError = jest.spyOn(console, 'error').mockImplementation();
+
+  const panelContent = (
+    <DrawerPanelContent isResizable>
+      <DrawerHead>
+        <span>drawer-panel</span>
+        <DrawerActions>
+          <DrawerCloseButton />
+        </DrawerActions>
+      </DrawerHead>
+    </DrawerPanelContent>
+  );
+
+  const user = userEvent.setup();
+
+  render(
+    <Drawer isExpanded isViewport>
+      <DrawerContent panelContent={panelContent} />
+    </Drawer>
+  );
+
+  await user.tab();
+  await user.keyboard(`{${KeyTypes.ArrowLeft}}`);
+
+  expect(consoleError).not.toHaveBeenCalled();
+  consoleError.mockRestore();
+});
