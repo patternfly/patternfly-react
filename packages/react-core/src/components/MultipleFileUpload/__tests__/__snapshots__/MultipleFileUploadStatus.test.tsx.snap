@@ -14,13 +14,13 @@ exports[`MultipleFileUploadStatus renders custom class names 1`] = `
         class="pf-v6-c-expandable-section__toggle"
       >
         <button
-          aria-controls="pf-expandable-section-:r2:-content"
+          aria-controls="pf-expandable-section-_r_2_-content"
           aria-expanded="true"
           class="pf-v6-c-button pf-m-link"
-          data-ouia-component-id="OUIA-Generated-Button-link-:r3:"
+          data-ouia-component-id="OUIA-Generated-Button-link-_r_3_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
-          id="pf-expandable-section-:r2:-toggle"
+          id="pf-expandable-section-_r_2_-toggle"
           type="button"
         >
           <span
@@ -61,9 +61,9 @@ exports[`MultipleFileUploadStatus renders custom class names 1`] = `
         </button>
       </div>
       <div
-        aria-labelledby="pf-expandable-section-:r2:-toggle"
+        aria-labelledby="pf-expandable-section-_r_2_-toggle"
         class="pf-v6-c-expandable-section__content"
-        id="pf-expandable-section-:r2:-content"
+        id="pf-expandable-section-_r_2_-content"
         role="region"
       >
         <ul
@@ -92,13 +92,13 @@ exports[`MultipleFileUploadStatus renders status toggle icon 1`] = `
         class="pf-v6-c-expandable-section__toggle"
       >
         <button
-          aria-controls="pf-expandable-section-:r6:-content"
+          aria-controls="pf-expandable-section-_r_6_-content"
           aria-expanded="true"
           class="pf-v6-c-button pf-m-link"
-          data-ouia-component-id="OUIA-Generated-Button-link-:r7:"
+          data-ouia-component-id="OUIA-Generated-Button-link-_r_7_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
-          id="pf-expandable-section-:r6:-toggle"
+          id="pf-expandable-section-_r_6_-toggle"
           type="button"
         >
           <span
@@ -153,9 +153,9 @@ exports[`MultipleFileUploadStatus renders status toggle icon 1`] = `
         </button>
       </div>
       <div
-        aria-labelledby="pf-expandable-section-:r6:-toggle"
+        aria-labelledby="pf-expandable-section-_r_6_-toggle"
         class="pf-v6-c-expandable-section__content"
-        id="pf-expandable-section-:r6:-content"
+        id="pf-expandable-section-_r_6_-content"
         role="region"
       >
         <ul
@@ -184,13 +184,13 @@ exports[`MultipleFileUploadStatus renders status toggle text 1`] = `
         class="pf-v6-c-expandable-section__toggle"
       >
         <button
-          aria-controls="pf-expandable-section-:r4:-content"
+          aria-controls="pf-expandable-section-_r_4_-content"
           aria-expanded="true"
           class="pf-v6-c-button pf-m-link"
-          data-ouia-component-id="OUIA-Generated-Button-link-:r5:"
+          data-ouia-component-id="OUIA-Generated-Button-link-_r_5_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
-          id="pf-expandable-section-:r4:-toggle"
+          id="pf-expandable-section-_r_4_-toggle"
           type="button"
         >
           <span
@@ -233,9 +233,9 @@ exports[`MultipleFileUploadStatus renders status toggle text 1`] = `
         </button>
       </div>
       <div
-        aria-labelledby="pf-expandable-section-:r4:-toggle"
+        aria-labelledby="pf-expandable-section-_r_4_-toggle"
         class="pf-v6-c-expandable-section__content"
-        id="pf-expandable-section-:r4:-content"
+        id="pf-expandable-section-_r_4_-content"
         role="region"
       >
         <ul
@@ -264,13 +264,13 @@ exports[`MultipleFileUploadStatus renders with expected class names 1`] = `
         class="pf-v6-c-expandable-section__toggle"
       >
         <button
-          aria-controls="pf-expandable-section-:r0:-content"
+          aria-controls="pf-expandable-section-_r_0_-content"
           aria-expanded="true"
           class="pf-v6-c-button pf-m-link"
-          data-ouia-component-id="OUIA-Generated-Button-link-:r1:"
+          data-ouia-component-id="OUIA-Generated-Button-link-_r_1_"
           data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
-          id="pf-expandable-section-:r0:-toggle"
+          id="pf-expandable-section-_r_0_-toggle"
           type="button"
         >
           <span
@@ -311,9 +311,9 @@ exports[`MultipleFileUploadStatus renders with expected class names 1`] = `
         </button>
       </div>
       <div
-        aria-labelledby="pf-expandable-section-:r0:-toggle"
+        aria-labelledby="pf-expandable-section-_r_0_-toggle"
         class="pf-v6-c-expandable-section__content"
-        id="pf-expandable-section-:r0:-content"
+        id="pf-expandable-section-_r_0_-content"
         role="region"
       >
         <ul
