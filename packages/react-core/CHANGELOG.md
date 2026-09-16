@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.6.1-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.1-prerelease.9...@patternfly/react-core@6.6.1-prerelease.10) (2026-09-16)
+
+### Bug Fixes
+
+- **Label:** reset edit state when canceling with escape ([#12649](https://github.com/patternfly/patternfly-react/issues/12649)) ([4927d44](https://github.com/patternfly/patternfly-react/commit/4927d44713e4fbf24ee3a6f8aa2e939e924afc59))
+
 ## [6.6.1-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.1-prerelease.8...@patternfly/react-core@6.6.1-prerelease.9) (2026-09-15)
 
 ### Features
