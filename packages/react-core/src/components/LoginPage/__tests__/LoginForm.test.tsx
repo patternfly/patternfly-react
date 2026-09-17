@@ -60,4 +60,59 @@ describe('LoginForm', () => {
     const passwordField = screen.getByLabelText(/password/i);
     expect(passwordField).not.toBeRequired();
   });
+
+  test('preserves form autocomplete without setting input autocomplete by default', () => {
+    render(<LoginForm aria-label="Login" autoComplete="off" />);
+
+    expect(screen.getByRole('form', { name: 'Login' })).toHaveAttribute('autocomplete', 'off');
+    expect(screen.getByRole('textbox', { name: /username/i })).not.toHaveAttribute('autocomplete');
+    expect(screen.getByLabelText(/password/i)).not.toHaveAttribute('autocomplete');
+  });
+
+  test.each(['username', 'email', 'off'])('sets username autocomplete to %s', (usernameAutoComplete) => {
+    render(<LoginForm usernameAutoComplete={usernameAutoComplete} />);
+
+    expect(screen.getByRole('textbox', { name: /username/i })).toHaveAttribute('autocomplete', usernameAutoComplete);
+    expect(screen.getByLabelText(/password/i)).not.toHaveAttribute('autocomplete');
+  });
+
+  test.each(['current-password', 'new-password', 'off'])('sets password autocomplete to %s', (passwordAutoComplete) => {
+    render(<LoginForm passwordAutoComplete={passwordAutoComplete} />);
+
+    expect(screen.getByLabelText(/password/i)).toHaveAttribute('autocomplete', passwordAutoComplete);
+    expect(screen.getByRole('textbox', { name: /username/i })).not.toHaveAttribute('autocomplete');
+  });
+
+  test('sets input autocomplete independently of form autocomplete', () => {
+    render(
+      <LoginForm
+        aria-label="Login"
+        autoComplete="off"
+        usernameAutoComplete="username"
+        passwordAutoComplete="current-password"
+      />
+    );
+
+    expect(screen.getByRole('form', { name: 'Login' })).toHaveAttribute('autocomplete', 'off');
+    expect(screen.getByRole('textbox', { name: /username/i })).toHaveAttribute('autocomplete', 'username');
+    expect(screen.getByLabelText(/password/i)).toHaveAttribute('autocomplete', 'current-password');
+  });
+
+  test('preserves password autocomplete when showing and hiding the password', async () => {
+    const user = userEvent.setup();
+    render(<LoginForm passwordAutoComplete="new-password" isShowPasswordEnabled />);
+
+    expect(screen.getByLabelText(/^password/i)).toHaveAttribute('type', 'password');
+    expect(screen.getByLabelText(/^password/i)).toHaveAttribute('autocomplete', 'new-password');
+
+    await user.click(screen.getByRole('button', { name: 'Show password' }));
+
+    expect(screen.getByLabelText(/^password/i)).toHaveAttribute('type', 'text');
+    expect(screen.getByLabelText(/^password/i)).toHaveAttribute('autocomplete', 'new-password');
+
+    await user.click(screen.getByRole('button', { name: 'Hide password' }));
+
+    expect(screen.getByLabelText(/^password/i)).toHaveAttribute('type', 'password');
+    expect(screen.getByLabelText(/^password/i)).toHaveAttribute('autocomplete', 'new-password');
+  });
 });
