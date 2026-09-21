@@ -1,6 +1,5 @@
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
-import stylesAnimated from '@patternfly/react-styles/css/components/BackdropAnimations/backdrop-animations';
 import { useHasAnimations } from '../../helpers';
 
 export interface BackdropProps extends React.HTMLProps<HTMLDivElement> {
@@ -28,9 +27,8 @@ export const Backdrop: React.FunctionComponent<BackdropProps> = ({
       {...props}
       className={css(
         styles.backdrop,
-        hasAnimations && stylesAnimated.backdropAnimated,
-        hasAnimations && isVisible === true && stylesAnimated.backdropAnimatedVisible,
-        hasAnimations && isVisible !== true && stylesAnimated.backdropAnimatedHidden,
+        hasAnimations && styles.modifiers.animate,
+        hasAnimations && isVisible === true && styles.modifiers.show,
         className
       )}
     >

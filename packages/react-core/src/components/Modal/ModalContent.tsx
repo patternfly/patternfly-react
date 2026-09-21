@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { FocusTrap } from '../../helpers';
 import bullsEyeStyles from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
 import { css } from '@patternfly/react-styles';
@@ -78,8 +79,20 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   ...props
 }: ModalContentProps) => {
   const hasAnimations = useHasAnimations(hasAnimationsProp);
+  // Keeps the modal in the DOM while the close animation runs. When animations are enabled we defer
+  // unmounting until the backdrop's transition ends (see onTransitionEnd below) instead of removing
+  // it immediately when isOpen becomes false.
+  const [isRendered, setIsRendered] = useState(isOpen);
 
-  if (!isOpen && !hasAnimations) {
+  useEffect(() => {
+    if (isOpen) {
+      setIsRendered(true);
+    } else if (!hasAnimations) {
+      setIsRendered(false);
+    }
+  }, [isOpen, hasAnimations]);
+
+  if (!isRendered) {
     return null;
   }
 
@@ -126,7 +139,23 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   }
 
   return (
-    <Backdrop className={css(backdropClassName)} id={backdropId} hasAnimations={hasAnimations} isVisible={isOpen}>
+    <Backdrop
+      className={css(backdropClassName)}
+      id={backdropId}
+      hasAnimations={hasAnimations}
+      isVisible={isOpen}
+      onTransitionEnd={
+        hasAnimations
+          ? (event) => {
+              // Only unmount once the backdrop's own closing transition finishes. Guarding on the
+              // target prevents bubbled transitions from child elements from triggering this early.
+              if (!isOpen && event.target === event.currentTarget) {
+                setIsRendered(false);
+              }
+            }
+          : undefined
+      }
+    >
       <FocusTrap
         active={focusTrapActive}
         focusTrapOptions={{
