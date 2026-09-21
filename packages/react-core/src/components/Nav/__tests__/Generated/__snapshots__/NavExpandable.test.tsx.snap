@@ -12,7 +12,11 @@ exports[`NavExpandable should match snapshot (auto-generated) 1`] = `
       aria-expanded="false"
       class="pf-v6-c-nav__link"
     >
-      string
+      <span
+        class="pf-v6-c-nav__link-text"
+      >
+        string
+      </span>
       <span
         class="pf-v6-c-nav__toggle"
       >

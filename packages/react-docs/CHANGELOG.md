@@ -3,6 +3,75 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.6.1-prerelease.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.1-prerelease.13...@patternfly/react-docs@7.6.1-prerelease.14) (2026-09-16)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+## [7.6.1-prerelease.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.1-prerelease.12...@patternfly/react-docs@7.6.1-prerelease.13) (2026-09-15)
+
+### Features
+
+- **Drawer:** Add full-size drawer ([#12641](https://github.com/patternfly/patternfly-react/issues/12641)) ([9930770](https://github.com/patternfly/patternfly-react/commit/9930770624d75e6d0b7b0e8480cc198b71906f7e))
+
+## [7.6.1-prerelease.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.1-prerelease.11...@patternfly/react-docs@7.6.1-prerelease.12) (2026-09-11)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+## [7.6.1-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.1-prerelease.10...@patternfly/react-docs@7.6.1-prerelease.11) (2026-09-11)
+
+### Features
+
+- **Page:** add PageFooter and isPlain ([#12642](https://github.com/patternfly/patternfly-react/issues/12642)) ([6e3dd0e](https://github.com/patternfly/patternfly-react/commit/6e3dd0e11b69671d46742346c818d4463e9b964b))
+
+## [7.6.1-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.1-prerelease.9...@patternfly/react-docs@7.6.1-prerelease.10) (2026-09-09)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+## [7.6.1-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.1-prerelease.8...@patternfly/react-docs@7.6.1-prerelease.9) (2026-09-03)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+## [7.6.1-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.1-prerelease.7...@patternfly/react-docs@7.6.1-prerelease.8) (2026-08-31)
+
+### Features
+
+- **Page:** Add PageHeader component ([#12632](https://github.com/patternfly/patternfly-react/issues/12632)) ([de5b2ef](https://github.com/patternfly/patternfly-react/commit/de5b2efd359b329cad691d2a76caeffe1736ae1f))
+
+## [7.6.1-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.1-prerelease.6...@patternfly/react-docs@7.6.1-prerelease.7) (2026-08-21)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+## [7.6.1-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.1-prerelease.5...@patternfly/react-docs@7.6.1-prerelease.6) (2026-08-21)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+## [7.6.1-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.1-prerelease.4...@patternfly/react-docs@7.6.1-prerelease.5) (2026-08-19)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+## [7.6.1-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.1-prerelease.3...@patternfly/react-docs@7.6.1-prerelease.4) (2026-08-19)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+## [7.6.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.1-prerelease.2...@patternfly/react-docs@7.6.1-prerelease.3) (2026-08-13)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+## [7.6.1-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.1-prerelease.1...@patternfly/react-docs@7.6.1-prerelease.2) (2026-08-10)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+## [7.6.1-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.1-prerelease.0...@patternfly/react-docs@7.6.1-prerelease.1) (2026-08-04)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+## [7.6.1-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.0...@patternfly/react-docs@7.6.1-prerelease.0) (2026-08-03)
+
+### Bug Fixes
+
+- **a11y:** ignore target-size rule to allow WCAG 2.2 bump ([#12560](https://github.com/patternfly/patternfly-react/issues/12560)) ([49b6fb5](https://github.com/patternfly/patternfly-react/commit/49b6fb5d5b894f053140d292eaab504cf7fbabc5))
+- update tree pattern expand icon direction ([#12554](https://github.com/patternfly/patternfly-react/issues/12554)) ([8c89c01](https://github.com/patternfly/patternfly-react/commit/8c89c01501b2db096a23267b585cb46cf438aaea))
+
 # [7.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@7.6.0-prerelease.10...@patternfly/react-docs@7.6.0) (2026-07-01)
 
 **Note:** Version bump only for package @patternfly/react-docs

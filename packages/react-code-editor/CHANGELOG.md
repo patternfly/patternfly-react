@@ -3,6 +3,61 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.6.1-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.6.1-prerelease.10...@patternfly/react-code-editor@6.6.1-prerelease.11) (2026-09-16)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+## [6.6.1-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.6.1-prerelease.9...@patternfly/react-code-editor@6.6.1-prerelease.10) (2026-09-15)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+## [6.6.1-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.6.1-prerelease.8...@patternfly/react-code-editor@6.6.1-prerelease.9) (2026-09-11)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+## [6.6.1-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.6.1-prerelease.7...@patternfly/react-code-editor@6.6.1-prerelease.8) (2026-09-09)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+## [6.6.1-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.6.1-prerelease.6...@patternfly/react-code-editor@6.6.1-prerelease.7) (2026-09-03)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+## [6.6.1-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.6.1-prerelease.5...@patternfly/react-code-editor@6.6.1-prerelease.6) (2026-08-31)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+## [6.6.1-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.6.1-prerelease.4...@patternfly/react-code-editor@6.6.1-prerelease.5) (2026-08-21)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+## [6.6.1-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.6.1-prerelease.3...@patternfly/react-code-editor@6.6.1-prerelease.4) (2026-08-19)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+## [6.6.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.6.1-prerelease.2...@patternfly/react-code-editor@6.6.1-prerelease.3) (2026-08-13)
+
+### Bug Fixes
+
+- **deps:** Update dompurify dependency ([#12613](https://github.com/patternfly/patternfly-react/issues/12613)) ([a38ec00](https://github.com/patternfly/patternfly-react/commit/a38ec0076976c0902c37f6316a86c77c9fdb339d))
+
+## [6.6.1-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.6.1-prerelease.1...@patternfly/react-code-editor@6.6.1-prerelease.2) (2026-08-10)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+## [6.6.1-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.6.1-prerelease.0...@patternfly/react-code-editor@6.6.1-prerelease.1) (2026-08-04)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+## [6.6.1-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.6.0...@patternfly/react-code-editor@6.6.1-prerelease.0) (2026-08-03)
+
+### Bug Fixes
+
+- **CodeEditor:** Adjust sizeToFit height bug ([#12529](https://github.com/patternfly/patternfly-react/issues/12529)) ([e4e15d3](https://github.com/patternfly/patternfly-react/commit/e4e15d319083f7c83af126d8133ea3202b5ba341))
+- **HelpIcon:** Replace HelpIcon with RhUiQuestionMarkCircleIcon ([#12507](https://github.com/patternfly/patternfly-react/issues/12507)) ([389b3d2](https://github.com/patternfly/patternfly-react/commit/389b3d21caae2b56cff41d647467a710054b337d))
+- **InfrastructureIcons:** replaced with RH brand icons part 4 ([#12504](https://github.com/patternfly/patternfly-react/issues/12504)) ([4cc476a](https://github.com/patternfly/patternfly-react/commit/4cc476a36b7fb93835fba30881ca0b88c31f01f3))
+- **PlayIcon:** Replace PlayIcon with RhUiPlayFillIcon ([#12499](https://github.com/patternfly/patternfly-react/issues/12499)) ([a859511](https://github.com/patternfly/patternfly-react/commit/a8595111abfc4736799edfc750bd8c13a0c9f78f))
+
 # [6.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.6.0-prerelease.10...@patternfly/react-code-editor@6.6.0) (2026-07-01)
 
 **Note:** Version bump only for package @patternfly/react-code-editor

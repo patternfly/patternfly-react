@@ -4,6 +4,7 @@ exports[`Old Snapshot tests - remove when refactoring passes additional classes 
 <DocumentFragment>
   <button
     aria-expanded="false"
+    aria-haspopup="menu"
     class="pf-v6-c-menu-toggle test-class"
     data-ouia-component-id="OUIA-Generated-MenuToggle-:r3:"
     data-ouia-component-type="PF6/MenuToggle"
@@ -44,6 +45,7 @@ exports[`Old Snapshot tests - remove when refactoring renders successfully 1`] =
 <DocumentFragment>
   <button
     aria-expanded="false"
+    aria-haspopup="menu"
     class="pf-v6-c-menu-toggle"
     data-ouia-component-id="OUIA-Generated-MenuToggle-:r1:"
     data-ouia-component-type="PF6/MenuToggle"
@@ -84,6 +86,7 @@ exports[`Old Snapshot tests - remove when refactoring shows badge 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
+    aria-haspopup="menu"
     class="pf-v6-c-menu-toggle"
     data-ouia-component-id="OUIA-Generated-MenuToggle-:rh:"
     data-ouia-component-type="PF6/MenuToggle"
@@ -133,6 +136,7 @@ exports[`Old Snapshot tests - remove when refactoring shows icon 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
+    aria-haspopup="menu"
     class="pf-v6-c-menu-toggle"
     data-ouia-component-id="OUIA-Generated-MenuToggle-:rf:"
     data-ouia-component-type="PF6/MenuToggle"
@@ -190,6 +194,7 @@ exports[`Old Snapshot tests - remove when refactoring shows isDisabled 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
+    aria-haspopup="menu"
     class="pf-v6-c-menu-toggle pf-m-disabled"
     data-ouia-component-id="OUIA-Generated-MenuToggle-:r7:"
     data-ouia-component-type="PF6/MenuToggle"
@@ -231,6 +236,7 @@ exports[`Old Snapshot tests - remove when refactoring shows isExpanded 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="true"
+    aria-haspopup="menu"
     class="pf-v6-c-menu-toggle pf-m-expanded"
     data-ouia-component-id="OUIA-Generated-MenuToggle-:r5:"
     data-ouia-component-type="PF6/MenuToggle"
@@ -271,6 +277,7 @@ exports[`Old Snapshot tests - remove when refactoring shows isPlain 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
+    aria-haspopup="menu"
     class="pf-v6-c-menu-toggle pf-m-plain"
     data-ouia-component-id="OUIA-Generated-MenuToggle-plain-:rb:"
     data-ouia-component-type="PF6/MenuToggle"
@@ -302,6 +309,7 @@ exports[`Old Snapshot tests - remove when refactoring shows isPrimary 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
+    aria-haspopup="menu"
     class="pf-v6-c-menu-toggle pf-m-primary"
     data-ouia-component-id="OUIA-Generated-MenuToggle-primary-:r9:"
     data-ouia-component-type="PF6/MenuToggle"
@@ -342,6 +350,7 @@ exports[`Old Snapshot tests - remove when refactoring shows plain text 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
+    aria-haspopup="menu"
     class="pf-v6-c-menu-toggle pf-m-plain pf-m-text"
     data-ouia-component-id="OUIA-Generated-MenuToggle-plainText-:rd:"
     data-ouia-component-type="PF6/MenuToggle"

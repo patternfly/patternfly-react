@@ -27,6 +27,7 @@ export const DragButton: React.FunctionComponent<DragButtonProps> = ({
     className={css(className)}
     aria-label={ariaLabel}
     aria-labelledby={ariaLabelledby}
+    style={{ touchAction: 'none' }}
     icon={
       <span className={css(dragButtonStyles.dataListItemDraggableIcon)}>
         <RhUiGripVerticalFillIcon />

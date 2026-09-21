@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Slider, SliderOnChangeEvent } from '@patternfly/react-core';
+import { Checkbox, Slider, SliderOnChangeEvent } from '@patternfly/react-core';
 
 export const SliderValueInput: React.FunctionComponent = () => {
   const [valueDiscrete, setValueDiscrete] = useState(62.5);
@@ -8,6 +8,7 @@ export const SliderValueInput: React.FunctionComponent = () => {
   const [inputValuePercent, setInputValuePercent] = useState(50);
   const [valueContinuous, setValueContinuous] = useState(50);
   const [inputValueContinuous, setInputValueContinuous] = useState(50);
+  const [isInputLive, setIsInputLive] = useState(false);
 
   const stepsDiscrete = [
     { value: 0, label: '0' },
@@ -154,9 +155,17 @@ export const SliderValueInput: React.FunctionComponent = () => {
 
   return (
     <>
+      <Checkbox
+        id="isInputLiveCheckbox"
+        label="isInputLive"
+        isChecked={isInputLive}
+        onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) => setIsInputLive(checked)}
+        style={{ marginBottom: 20 }}
+      />
       <Slider
         value={valueDiscrete}
         isInputVisible
+        isInputLive={isInputLive}
         inputValue={inputValueDiscrete}
         customSteps={stepsDiscrete}
         onChange={onChangeDiscrete}
@@ -165,6 +174,7 @@ export const SliderValueInput: React.FunctionComponent = () => {
       <Slider
         value={valuePercent}
         isInputVisible
+        isInputLive={isInputLive}
         inputValue={inputValuePercent}
         inputLabel="%"
         onChange={onChangePercent}
@@ -174,6 +184,7 @@ export const SliderValueInput: React.FunctionComponent = () => {
       <Slider
         value={valueContinuous}
         isInputVisible
+        isInputLive={isInputLive}
         inputValue={inputValueContinuous}
         inputLabel="%"
         onChange={onChangeContinuous}

@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.6.1-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.6.1-prerelease.3...@patternfly/react-icons@6.6.1-prerelease.4) (2026-09-15)
+
+### Features
+
+- **Drawer:** Add full-size drawer ([#12641](https://github.com/patternfly/patternfly-react/issues/12641)) ([9930770](https://github.com/patternfly/patternfly-react/commit/9930770624d75e6d0b7b0e8480cc198b71906f7e))
+
+## [6.6.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.6.1-prerelease.2...@patternfly/react-icons@6.6.1-prerelease.3) (2026-09-11)
+
+### Features
+
+- **Page:** add PageFooter and isPlain ([#12642](https://github.com/patternfly/patternfly-react/issues/12642)) ([6e3dd0e](https://github.com/patternfly/patternfly-react/commit/6e3dd0e11b69671d46742346c818d4463e9b964b))
+
+## [6.6.1-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.6.1-prerelease.1...@patternfly/react-icons@6.6.1-prerelease.2) (2026-09-09)
+
+### Features
+
+- update rhds icons to 2.3.1 ([#12639](https://github.com/patternfly/patternfly-react/issues/12639)) ([7060f7a](https://github.com/patternfly/patternfly-react/commit/7060f7a2adacd74646290d51a8a9ca1532614e50))
+
+## [6.6.1-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.6.1-prerelease.0...@patternfly/react-icons@6.6.1-prerelease.1) (2026-08-31)
+
+### Features
+
+- **Page:** Add PageHeader component ([#12632](https://github.com/patternfly/patternfly-react/issues/12632)) ([de5b2ef](https://github.com/patternfly/patternfly-react/commit/de5b2efd359b329cad691d2a76caeffe1736ae1f))
+
+## [6.6.1-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.6.0...@patternfly/react-icons@6.6.1-prerelease.0) (2026-08-03)
+
+### Bug Fixes
+
+- update tree pattern expand icon direction ([#12554](https://github.com/patternfly/patternfly-react/issues/12554)) ([8c89c01](https://github.com/patternfly/patternfly-react/commit/8c89c01501b2db096a23267b585cb46cf438aaea))
+
 # [6.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.6.0-prerelease.4...@patternfly/react-icons@6.6.0) (2026-07-01)
 
 **Note:** Version bump only for package @patternfly/react-icons

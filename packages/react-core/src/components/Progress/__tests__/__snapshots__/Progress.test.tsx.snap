@@ -4,6 +4,8 @@ exports[`Progress measure location inside 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-progress pf-m-inside pf-m-lg pf-m-singleline"
+    data-ouia-component-type="PF6/Progress"
+    data-ouia-safe="true"
     id="inside-progress"
   >
     <div
@@ -36,6 +38,8 @@ exports[`Progress measure location inside and small should render large 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-progress pf-m-inside pf-m-lg pf-m-singleline"
+    data-ouia-component-type="PF6/Progress"
+    data-ouia-safe="true"
     id="large-progress"
   >
     <div
@@ -68,6 +72,8 @@ exports[`Progress measure location none 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-progress pf-m-singleline"
+    data-ouia-component-type="PF6/Progress"
+    data-ouia-safe="true"
     id="none-progress"
   >
     <div
@@ -94,6 +100,8 @@ exports[`Progress measure location outside 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-progress pf-m-outside pf-m-singleline"
+    data-ouia-component-type="PF6/Progress"
+    data-ouia-safe="true"
     id="outside-progress"
   >
     <div
@@ -130,6 +138,8 @@ exports[`Progress measure location top 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-progress pf-m-singleline"
+    data-ouia-component-type="PF6/Progress"
+    data-ouia-safe="true"
     id="top-progress"
   >
     <div
@@ -166,6 +176,8 @@ exports[`Progress size lg 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-progress pf-m-lg pf-m-singleline"
+    data-ouia-component-type="PF6/Progress"
+    data-ouia-safe="true"
     id="lg-progress"
   >
     <div
@@ -202,6 +214,8 @@ exports[`Progress size md 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-progress pf-m-singleline"
+    data-ouia-component-type="PF6/Progress"
+    data-ouia-safe="true"
     id="md-progress"
   >
     <div
@@ -238,6 +252,8 @@ exports[`Progress size sm 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-progress pf-m-sm pf-m-singleline"
+    data-ouia-component-type="PF6/Progress"
+    data-ouia-safe="true"
     id="sm-progress"
   >
     <div
@@ -274,6 +290,8 @@ exports[`Progress variant danger 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-progress pf-m-danger pf-m-singleline"
+    data-ouia-component-type="PF6/Progress"
+    data-ouia-safe="true"
     id="danger-progress"
   >
     <div
@@ -327,6 +345,8 @@ exports[`Progress variant success 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-progress pf-m-success pf-m-singleline"
+    data-ouia-component-type="PF6/Progress"
+    data-ouia-safe="true"
     id="success-progress"
   >
     <div
@@ -380,6 +400,8 @@ exports[`Progress variant warning 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-progress pf-m-warning pf-m-singleline"
+    data-ouia-component-type="PF6/Progress"
+    data-ouia-safe="true"
     id="warning-progress"
   >
     <div
@@ -433,6 +455,8 @@ exports[`Progress with aria-valuetext 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-progress pf-m-singleline"
+    data-ouia-component-type="PF6/Progress"
+    data-ouia-safe="true"
     id="progress-aria-valuetext"
   >
     <div
@@ -470,6 +494,9 @@ exports[`Simple progress 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-progress pf-m-singleline"
+    data-ouia-component-id="ouia-id"
+    data-ouia-component-type="PF6/Progress"
+    data-ouia-safe="true"
     id="progress-simple-example"
   >
     <div
@@ -506,6 +533,8 @@ exports[`additional label 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-progress pf-m-singleline"
+    data-ouia-component-type="PF6/Progress"
+    data-ouia-safe="true"
     id="additional-label"
   >
     <div
@@ -542,6 +571,8 @@ exports[`no value specified 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-progress pf-m-singleline"
+    data-ouia-component-type="PF6/Progress"
+    data-ouia-safe="true"
     id="no-value"
   >
     <div
@@ -578,6 +609,8 @@ exports[`value higher than maxValue 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-progress pf-m-singleline"
+    data-ouia-component-type="PF6/Progress"
+    data-ouia-safe="true"
     id="higher-max-value"
   >
     <div
@@ -614,6 +647,8 @@ exports[`value lower than minValue 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-progress pf-m-singleline"
+    data-ouia-component-type="PF6/Progress"
+    data-ouia-safe="true"
     id="lower-min-value"
   >
     <div
@@ -650,6 +685,8 @@ exports[`value scaled between minValue and maxValue 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-progress pf-m-singleline"
+    data-ouia-component-type="PF6/Progress"
+    data-ouia-safe="true"
     id="scaled-range-value"
   >
     <div
@@ -686,6 +723,8 @@ exports[`value scaled with maxValue 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-progress pf-m-singleline"
+    data-ouia-component-type="PF6/Progress"
+    data-ouia-safe="true"
     id="scaled-max-value"
   >
     <div
@@ -722,6 +761,8 @@ exports[`value scaled with minValue 1`] = `
 <DocumentFragment>
   <div
     class="pf-v6-c-progress pf-m-singleline"
+    data-ouia-component-type="PF6/Progress"
+    data-ouia-safe="true"
     id="scaled-min-value"
   >
     <div

@@ -73,6 +73,8 @@ export interface MenuToggleProps
   badge?: BadgeProps | React.ReactNode;
   /** Adds styling which affects the size of the menu toggle */
   size?: 'default' | 'sm';
+  /** Indicates what type of popup will be triggered by the menu toggle. A value of true is the same as a value of "menu".  */
+  'aria-haspopup'?: 'menu' | 'listbox' | boolean;
   /** @hide Forwarded ref */
   innerRef?: React.Ref<MenuToggleElement>;
   /** Value to overwrite the randomly generated data-ouia-component-id. It will always target the toggle button. */
@@ -95,7 +97,8 @@ class MenuToggleBase extends Component<MenuToggleProps> {
     isDocked: false,
     isTextExpanded: false,
     size: 'default',
-    ouiaSafe: true
+    ouiaSafe: true,
+    'aria-haspopup': 'menu'
   };
 
   render() {
@@ -121,6 +124,7 @@ class MenuToggleBase extends Component<MenuToggleProps> {
       innerRef,
       onClick,
       'aria-label': ariaLabel,
+      'aria-haspopup': ariaHasPopup,
       ouiaId,
       ouiaSafe,
       size,
@@ -171,6 +175,7 @@ class MenuToggleBase extends Component<MenuToggleProps> {
                   type="button"
                   className={css(styles.menuToggleButton)}
                   aria-expanded={isExpanded}
+                  aria-haspopup={ariaHasPopup}
                   onClick={onClick}
                   aria-label={ariaLabel || 'Menu toggle'}
                   tabIndex={-1}
@@ -231,6 +236,7 @@ class MenuToggleBase extends Component<MenuToggleProps> {
                   className={css(styles.menuToggleButton, children && styles.modifiers.text)}
                   type="button"
                   aria-expanded={isExpanded}
+                  aria-haspopup={ariaHasPopup}
                   aria-label={ariaLabel}
                   disabled={isDisabled}
                   onClick={onClick}
@@ -249,6 +255,7 @@ class MenuToggleBase extends Component<MenuToggleProps> {
               className={css(commonStyles, isCircle && isPlain && styles.modifiers.circle)}
               type="button"
               aria-label={ariaLabel}
+              aria-haspopup={ariaHasPopup}
               aria-expanded={isExpanded}
               ref={innerRef as React.Ref<HTMLButtonElement>}
               disabled={isDisabled}

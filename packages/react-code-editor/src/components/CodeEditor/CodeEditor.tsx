@@ -15,7 +15,7 @@ import { Popover, PopoverProps } from '@patternfly/react-core/dist/esm/component
 import { TooltipPosition } from '@patternfly/react-core/dist/esm/components/Tooltip';
 import { getResizeObserver } from '@patternfly/react-core/dist/esm/helpers/resizeObserver';
 import Editor, { BeforeMount, EditorProps, Monaco } from '@monaco-editor/react';
-import type { editor } from 'monaco-editor';
+import type { editor } from 'monaco-editor/esm/vs/editor/editor.api';
 import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
 import RhUiUploadIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-upload-icon';
 import RhUiDownloadIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-download-icon';

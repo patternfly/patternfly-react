@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.23...@patternfly/react-integration@6.5.0-prerelease.24) (2026-08-03)
+
+### Bug Fixes
+
+- **AngleDoubleRightIcon:** Replace AngleDoubleRightIcon with RhMicronsDoubleCaretRightIcon ([#12493](https://github.com/patternfly/patternfly-react/issues/12493)) ([a9bd226](https://github.com/patternfly/patternfly-react/commit/a9bd226cfa9183e5893cd8d74302934f98aaa51c))
+- **AngleLeftIcon:** Replace AngleLeftIcon with RhMicronsCaretLeftIcon ([#12495](https://github.com/patternfly/patternfly-react/issues/12495)) ([bd9932f](https://github.com/patternfly/patternfly-react/commit/bd9932f123fc5f94598ce555f8166052eaecb95c))
+- **AngleRightIcon:** Replace AngleRightIcon with RhMicronsCaretRightIcon ([#12496](https://github.com/patternfly/patternfly-react/issues/12496)) ([4f70020](https://github.com/patternfly/patternfly-react/commit/4f700201a3b4e9bee30dc7c5f2dc9798b1f58474))
+- **FilterIcon:** Replace FilterIcon with RhUiFilterFillIcon ([#12524](https://github.com/patternfly/patternfly-react/issues/12524)) ([f8bcd7c](https://github.com/patternfly/patternfly-react/commit/f8bcd7cc8b14d03706efe384b06ad3fe7701df30))
+- **InfrastructureIcons:** replaced with RH brand icons part 2 ([#12502](https://github.com/patternfly/patternfly-react/issues/12502)) ([80f6ca0](https://github.com/patternfly/patternfly-react/commit/80f6ca081487c175bd6b336c256a426e1ef37bdc))
+- **InfrastructureIcons:** replaced with RH brand icons part 3 ([#12503](https://github.com/patternfly/patternfly-react/issues/12503)) ([eb80455](https://github.com/patternfly/patternfly-react/commit/eb8045502918af553015eb0cb0fa6f17443a2ced))
+- **InfrastructureIcons:** replaced with RH brand icons part 4 ([#12504](https://github.com/patternfly/patternfly-react/issues/12504)) ([4cc476a](https://github.com/patternfly/patternfly-react/commit/4cc476a36b7fb93835fba30881ca0b88c31f01f3))
+- **PlayIcon:** Replace PlayIcon with RhUiPlayFillIcon ([#12499](https://github.com/patternfly/patternfly-react/issues/12499)) ([a859511](https://github.com/patternfly/patternfly-react/commit/a8595111abfc4736799edfc750bd8c13a0c9f78f))
+- **RhMicronCaretDown:** Replace with fill for menus ([#12532](https://github.com/patternfly/patternfly-react/issues/12532)) ([2729a13](https://github.com/patternfly/patternfly-react/commit/2729a139db37a50afa6ca15c44b20fb545005847))
+- **SearchIcon:** Replace SearchIcon with RhMicronsSearchIcon ([#12525](https://github.com/patternfly/patternfly-react/issues/12525)) ([930a34b](https://github.com/patternfly/patternfly-react/commit/930a34b12f4daf243757cb14b4b772d02e5c471a))
+- **SyncIcon:** Replace SyncIcon with RhUiSyncIcon ([#12512](https://github.com/patternfly/patternfly-react/issues/12512)) ([9829852](https://github.com/patternfly/patternfly-react/commit/982985213b6dce21a815e5b60703e97e916402be))
+- **UndoIcon:** Replace UndoIcon with RhUiUndoIcon ([#12515](https://github.com/patternfly/patternfly-react/issues/12515)) ([77ad416](https://github.com/patternfly/patternfly-react/commit/77ad416134772c099e9c1feafe5cf67ba3462eb0))
+- **WarningTriangleIcon:** Replace WarningTriangleIcon with RhUiWarningIcon ([#12508](https://github.com/patternfly/patternfly-react/issues/12508)) ([f45904d](https://github.com/patternfly/patternfly-react/commit/f45904df01d6e8af1d9826de6c78f76117b0f40e))
+
 # [6.5.0-prerelease.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.22...@patternfly/react-integration@6.5.0-prerelease.23) (2026-06-24)
 
 ### Bug Fixes

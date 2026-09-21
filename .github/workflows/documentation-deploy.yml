@@ -1,0 +1,82 @@
+name: Documentation deploy
+on:
+  workflow_run:
+    workflows: [Documentation]
+    types: [completed]
+permissions:
+  actions: read
+  contents: read
+  pull-requests: read
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    if: github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion == 'success'
+    env:
+      SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+      SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+      GH_PR_TOKEN: ${{ secrets.GH_PR_TOKEN }}
+    steps:
+      - name: Check out project
+        uses: actions/checkout@v4
+
+      - name: Set up project
+        uses: ./.github/actions/setup-project
+        with:
+          skip-build: true
+
+      - name: Resolve PR number
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+          REPOSITORY: ${{ github.repository }}
+          WORKFLOW_PRS: ${{ toJSON(github.event.workflow_run.pull_requests) }}
+        run: |
+          set -euo pipefail
+          PR_COUNT=$(jq 'length // 0' <<< "${WORKFLOW_PRS:-null}")
+          if [ "$PR_COUNT" -eq 1 ]; then
+            PR_NUM=$(jq -r '.[0].number' <<< "$WORKFLOW_PRS")
+          elif [ "$PR_COUNT" -eq 0 ]; then
+            if ! [[ "$HEAD_SHA" =~ ^[0-9a-fA-F]{40,64}$ ]]; then
+              echo "Invalid source workflow head SHA"
+              exit 1
+            fi
+            PR_JSON=$(gh api --paginate "repos/${REPOSITORY}/commits/${HEAD_SHA}/pulls")
+            PR_COUNT=$(jq 'length // 0' <<< "$PR_JSON")
+            if [ "$PR_COUNT" -ne 1 ]; then
+              echo "Failed to uniquely resolve PR number for commit ${HEAD_SHA} (found ${PR_COUNT} pull requests)"
+              exit 1
+            fi
+            PR_NUM=$(jq -r '.[0].number' <<< "$PR_JSON")
+          else
+            echo "Ambiguous PR metadata: found ${PR_COUNT} pull requests on the source workflow run"
+            exit 1
+          fi
+          if ! [[ "$PR_NUM" =~ ^[0-9]+$ ]]; then
+            echo "Failed to resolve a valid PR number"
+            exit 1
+          fi
+          echo "GH_PR_NUM=$PR_NUM" >> "$GITHUB_ENV"
+
+      - name: Download documentation
+        uses: actions/download-artifact@v4
+        with:
+          name: documentation
+          path: packages/react-docs/public
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download a11y coverage
+        uses: actions/download-artifact@v4
+        with:
+          name: a11y-coverage
+          path: packages/react-docs/coverage
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload documentation
+        run: node .github/upload-preview.mjs packages/react-docs/public
+
+      - name: Upload accessibility results
+        if: ${{ !cancelled() }}
+        run: node .github/upload-preview.mjs packages/react-docs/coverage

@@ -6,7 +6,7 @@ import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-mi
 import { PickOptional } from '../../helpers/typeUtils';
 import { debounce } from '../../helpers/util';
 import { getResizeObserver } from '../../helpers/resizeObserver';
-import { GenerateId } from '../../helpers';
+import { GenerateId, getOUIAProps, OUIAProps } from '../../helpers';
 import { Button } from '../Button';
 
 export enum ExpandableSectionVariant {
@@ -16,7 +16,7 @@ export enum ExpandableSectionVariant {
 
 /** The main expandable section component. */
 
-export interface ExpandableSectionProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onToggle'> {
+export interface ExpandableSectionProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onToggle'>, OUIAProps {
   /** Content rendered inside the expandable section. */
   children?: React.ReactNode;
   /** Additional classes added to the expandable section. */
@@ -84,6 +84,10 @@ export interface ExpandableSectionProps extends Omit<React.HTMLProps<HTMLDivElem
    * This is useful when the toggle text should function as a heading in the document structure.
    */
   toggleWrapper?: 'div' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 interface ExpandableSectionState {
@@ -134,7 +138,8 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
     displaySize: 'default',
     isWidthLimited: false,
     isIndented: false,
-    variant: 'default'
+    variant: 'default',
+    ouiaSafe: true
   };
 
   private calculateToggleText(
@@ -232,6 +237,8 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
       truncateMaxLines,
       direction,
       toggleWrapper = 'div',
+      ouiaId,
+      ouiaSafe,
       ...props
     } = this.props;
 
@@ -307,6 +314,7 @@ class ExpandableSection extends Component<ExpandableSectionProps, ExpandableSect
                     className
                   )}
                   {...props}
+                  {...getOUIAProps(ExpandableSection.displayName, ouiaId, ouiaSafe)}
                 >
                   {variant === ExpandableSectionVariant.default && expandableToggle}
                   <div

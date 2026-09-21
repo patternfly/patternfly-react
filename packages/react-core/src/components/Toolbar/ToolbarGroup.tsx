@@ -174,6 +174,15 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
     xl?: 'wrap' | 'nowrap';
     '2xl'?: 'wrap' | 'nowrap';
   };
+  /** Sets flex-grow at various breakpoints to allow the group to consume available main-axis space */
+  flexGrow?: {
+    default?: 'flexGrow';
+    sm?: 'flexGrow';
+    md?: 'flexGrow';
+    lg?: 'flexGrow';
+    xl?: 'flexGrow';
+    '2xl'?: 'flexGrow';
+  };
   /** Content to be rendered inside the data toolbar group */
   children?: React.ReactNode;
   /** Flag that modifies the toolbar group to hide overflow and respond to available space. Used for horizontal navigation. */
@@ -194,6 +203,7 @@ class ToolbarGroupWithRef extends Component<ToolbarGroupProps> {
       columnGap,
       rowGap,
       rowWrap,
+      flexGrow,
       className,
       variant,
       children,
@@ -224,6 +234,7 @@ class ToolbarGroupWithRef extends Component<ToolbarGroupProps> {
               formatBreakpointMods(columnGap, styles, '', getBreakpoint(width)),
               formatBreakpointMods(rowGap, styles, '', getBreakpoint(width)),
               formatBreakpointMods(rowWrap, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(flexGrow, styles, '', getBreakpoint(width)),
               alignItems === 'start' && styles.modifiers.alignItemsStart,
               alignItems === 'center' && styles.modifiers.alignItemsCenter,
               alignItems === 'baseline' && styles.modifiers.alignItemsBaseline,

@@ -1,10 +1,11 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Slider } from '../Slider';
 import { Button } from '../../Button';
 
 describe('slider', () => {
   test('renders continuous slider', () => {
-    const { asFragment } = render(<Slider value={50} isInputVisible inputValue={50} />);
+    const { asFragment } = render(<Slider value={50} isInputVisible inputValue={50} ouiaId="ouia-id" />);
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -77,6 +78,37 @@ describe('slider', () => {
     const { asFragment } = render(<Slider value={50} hasTooltipOverThumb />);
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('renders slider with custom tooltip content on thumb', async () => {
+    const user = userEvent.setup();
+
+    render(<Slider value={50} hasTooltipOverThumb tooltipContent="Custom tooltip content" />);
+
+    await user.hover(screen.getByRole('slider'));
+
+    await screen.findByRole('tooltip');
+    expect(screen.getByRole('tooltip')).toHaveTextContent('Custom tooltip content');
+  });
+});
+
+test('Renders with custom ouiaId', () => {
+  const { container } = render(<Slider value={50} ouiaId="test-id" />);
+  expect(container.firstChild).toHaveAttribute('data-ouia-component-id', 'test-id');
+});
+
+test('Renders with expected ouia component type', () => {
+  const { container } = render(<Slider value={50} ouiaId="test-id" />);
+  expect(container.firstChild).toHaveAttribute('data-ouia-component-type', 'PF6/Slider');
+});
+
+test('Renders with ouiaSafe defaulting to true', () => {
+  const { container } = render(<Slider value={50} ouiaId="test-id" />);
+  expect(container.firstChild).toHaveAttribute('data-ouia-safe', 'true');
+});
+
+test('Renders with ouiaSafe=false when specified', () => {
+  const { container } = render(<Slider value={50} ouiaId="test-id" ouiaSafe={false} />);
+  expect(container.firstChild).toHaveAttribute('data-ouia-safe', 'false');
 });
 
 test('renders slider with aria-labelledby', () => {
@@ -103,4 +135,12 @@ test('renders slider with aria-describedby', () => {
   const slider = screen.getByRole('slider', { description: 'descriptive text about the slider' });
 
   expect(slider).toBeVisible();
+});
+
+test('renders slider with thumbAriaValueText', () => {
+  render(<Slider value={50} thumbAriaValueText="Half capacity" />);
+
+  const slider = screen.getByRole('slider');
+
+  expect(slider).toHaveAttribute('aria-valuetext', 'Half capacity');
 });

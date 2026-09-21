@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import {
-  ActionGroup,
+  ActionList,
+  ActionListGroup,
+  ActionListItem,
   Button,
   DatePicker,
   Form,
@@ -290,16 +292,24 @@ export const SearchInputAdvancedComposable: React.FunctionComponent = () => {
                   </FormGroup>
                 </GridItem>
               </Grid>
-              <ActionGroup>
-                <Button variant="primary" type="submit" onClick={(e) => onSubmit(null, e)}>
-                  Submit
-                </Button>
-                {!!onClear && (
-                  <Button variant="link" type="reset" onClick={onClear}>
-                    Reset
-                  </Button>
-                )}
-              </ActionGroup>
+              <FormGroup isAction>
+                <ActionList>
+                  <ActionListGroup>
+                    <ActionListItem>
+                      <Button variant="primary" type="submit" onClick={(e) => onSubmit(null, e)}>
+                        Submit
+                      </Button>
+                    </ActionListItem>
+                    <ActionListItem>
+                      {!!onClear && (
+                        <Button variant="link" type="reset" onClick={onClear}>
+                          Reset
+                        </Button>
+                      )}
+                    </ActionListItem>
+                  </ActionListGroup>
+                </ActionList>
+              </FormGroup>
             </Form>
           </PanelMainBody>
         </PanelMain>

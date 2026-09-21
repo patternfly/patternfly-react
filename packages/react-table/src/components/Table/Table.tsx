@@ -58,6 +58,8 @@ export interface TableProps extends React.HTMLProps<HTMLTableElement>, OUIAProps
   isStickyHeaderBase?: boolean;
   /** @beta Flag indicating the table header should have stuck styling, when the header is not at the top of the scroll container. */
   isStickyHeaderStuck?: boolean;
+  /** Flag indicating the table footer should stick to the bottom of its scroll container. */
+  isStickyFooter?: boolean;
   /** @hide Forwarded ref */
   innerRef?: React.RefObject<any>;
   /** Flag indicating table is a tree table */
@@ -104,6 +106,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
   isStickyHeader = false,
   isStickyHeaderBase = false,
   isStickyHeaderStuck = false,
+  isStickyFooter = false,
   isPlain = false,
   isNoPlainOnGlass = false,
   gridBreakPoint = TableGridBreakpoint.gridMd,
@@ -233,6 +236,7 @@ const TableBase: React.FunctionComponent<TableProps> = ({
           isStickyHeader && styles.modifiers.stickyHeader,
           isStickyHeaderBase && styles.modifiers.stickyHeaderBase,
           isStickyHeaderStuck && styles.modifiers.stickyHeaderStuck,
+          isStickyFooter && styles.modifiers.stickyFooter,
           isTreeTable && stylesTreeView.modifiers.treeView,
           isStriped && styles.modifiers.striped,
           isExpandable && styles.modifiers.expandable,

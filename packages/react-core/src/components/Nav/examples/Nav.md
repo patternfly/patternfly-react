@@ -9,11 +9,12 @@ ouia: true
 import { useState } from 'react';
 import './nav.css';
 import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
-import RhUiFolderOpenFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-open-fill-icon';
-import RhUiCloudFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cloud-fill-icon';
+import RhUiCubesIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cubes-icon';
+import RhUiFolderIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-icon';
+import RhUiFolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-open-icon';
+import RhUiCloudIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cloud-icon';
 import RhUiLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-link-icon';
+import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
 
 ## Examples
 
@@ -78,6 +79,18 @@ A flyout should be a `Menu` component. Press `space` or `right arrow` to open a 
 ### With icons
 
 ```ts file="./NavIcons.tsx"
+
+```
+
+### Docked
+
+The docked variant of `Navigation` displays only icons passed to child `NavItems` or `NavExpandable`. Text becomes visible when `isDockTextExpanded` or `isDockExpandableExpanded` are applied to an outer page or compass dock.
+
+`NavExpandable` items should include the `hasExpandableIcon` prop to indicate their expandable nature while in the collapsed state of the docked nav as the caret will not be rendered.
+
+See the [docked nav demo](/components/navigation/react-demos#docked-nav) for a fully functional example.
+
+```ts file="./NavDocked.tsx"
 
 ```
 

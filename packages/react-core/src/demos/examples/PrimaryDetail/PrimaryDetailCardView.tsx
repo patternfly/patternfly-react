@@ -16,6 +16,7 @@ import {
   DrawerContentBody,
   DrawerHead,
   DrawerPanelContent,
+  DrawerSection,
   Dropdown,
   DropdownItem,
   DropdownList,
@@ -618,14 +619,19 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
           <p>This is a demo that showcases Patternfly cards.</p>
         </Content>
       </PageSection>
-      <PageSection isFilled padding={{ md: 'padding' }} aria-label="Card filtering toolbar">
-        <Toolbar id="card-view-data-toolbar-group-types" clearAllFilters={onDelete}>
-          <ToolbarContent>{toolbarItems}</ToolbarContent>
-        </Toolbar>
-        <Divider component="div" />
-      </PageSection>
       <PageSection isFilled padding={{ default: 'noPadding' }} aria-label="Card content area">
-        <Drawer isExpanded={isDrawerExpanded} className={'pf-m-inline-on-2xl'}>
+        <Drawer isExpanded={isDrawerExpanded} isInline>
+          <DrawerSection>
+            <Toolbar
+              id="card-view-data-toolbar-group-types"
+              clearAllFilters={onDelete}
+              inset={{ default: 'insetLg' }}
+              style={{ paddingBlockStart: 'var(--pf-t--global--spacer--md)' }}
+            >
+              <ToolbarContent alignItems="center">{toolbarItems}</ToolbarContent>
+            </Toolbar>
+            <Divider component="div" />
+          </DrawerSection>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody hasPadding>{drawerContent}</DrawerContentBody>
           </DrawerContent>

@@ -6,6 +6,9 @@ cssPrefix: pf-v6-c-form
 propComponents:
   [
     'ActionGroup',
+    'ActionList',
+    'ActionListGroup',
+    'ActionListItem',
     'Form',
     'FormGroup',
     'FormGroupLabelHelp',

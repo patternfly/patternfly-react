@@ -3,7 +3,16 @@ id: Page
 section: components
 cssPrefix: pf-v6-c-page
 propComponents:
-  ['Page', 'PageSidebar', 'PageSidebarBody', 'PageSection', 'PageGroup', 'PageBreadcrumb', 'PageToggleButton']
+  [
+    'Page',
+    'PageHeader',
+    'PageSidebar',
+    'PageSidebarBody',
+    'PageSection',
+    'PageGroup',
+    'PageBreadcrumb',
+    'PageToggleButton'
+  ]
 ---
 
 import { useState, useLayoutEffect, useRef } from 'react';
@@ -16,7 +25,7 @@ import pageSectionWidthLimitMaxWidth from '@patternfly/react-tokens/dist/esm/c_p
 
 A page will typically contain the following components:
 
-- A `<Page>` with a `masthead` prop that often contains a [masthead](/components/masthead) component
+- A `<Page>` with a `masthead` prop that often contains a [masthead](/components/masthead) or a `<PageHeader>`
 
 The `<MastheadMain>` component includes the smaller area that typically contains the `<MastheadToggle>` and a `<MastheadLogo>`. `<MastheadContent>` represents the main portion of the masthead, and will typically contain a `<Toolbar>` or other menu-like components, like a `<Dropdown>`.
 
@@ -139,5 +148,29 @@ A page section may be made sticky with separate control of its sticky positionin
 In this example, a scroll event listener on the scroll parent container toggles `isStickyStuck` when `scrollTop > 0`, so the stuck styling appears only when the content is scrolled.
 
 ```ts file="./PageDynamicStickySection.tsx"
+
+```
+
+### Custom header
+
+To use a page header instead of passing a [masthead](/components/masthead) directly, pass a `<PageHeader>` to the `masthead` property. `<PageHeader>` should only be used to wrap custom header content.
+
+```ts isBeta file="./PageCustomHeader.tsx"
+
+```
+
+### Footer
+
+`<PageFooter>` can be passed to the `footer` property, and should be used to wrap custom footer content.
+
+```ts isBeta file="./PageCustomFooter.tsx"
+
+```
+
+### Plain
+
+When a page should not have the default content area background or overflow scrolling, pass the `isPlain` property to `<Page>`.
+
+```ts isBeta file="./PagePlain.tsx"
 
 ```

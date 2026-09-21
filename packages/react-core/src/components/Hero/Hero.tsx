@@ -53,7 +53,7 @@ export const Hero: React.FunctionComponent<HeroProps> = ({
   bodyWidth,
   bodyMaxWidth,
   ...props
-}) => {
+}: HeroProps) => {
   const customStyles: { [key: string]: string } = {};
   if (backgroundSrcLight) {
     customStyles[heroBackgroundImageLight.name] = `url(${backgroundSrcLight})`;

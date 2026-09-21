@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.6.1-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.6.1-prerelease.9...@patternfly/react-templates@6.6.1-prerelease.10) (2026-09-16)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+## [6.6.1-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.6.1-prerelease.8...@patternfly/react-templates@6.6.1-prerelease.9) (2026-09-15)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+## [6.6.1-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.6.1-prerelease.7...@patternfly/react-templates@6.6.1-prerelease.8) (2026-09-11)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+## [6.6.1-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.6.1-prerelease.6...@patternfly/react-templates@6.6.1-prerelease.7) (2026-09-09)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+## [6.6.1-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.6.1-prerelease.5...@patternfly/react-templates@6.6.1-prerelease.6) (2026-09-03)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+## [6.6.1-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.6.1-prerelease.4...@patternfly/react-templates@6.6.1-prerelease.5) (2026-08-31)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+## [6.6.1-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.6.1-prerelease.3...@patternfly/react-templates@6.6.1-prerelease.4) (2026-08-21)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+## [6.6.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.6.1-prerelease.2...@patternfly/react-templates@6.6.1-prerelease.3) (2026-08-19)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+## [6.6.1-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.6.1-prerelease.1...@patternfly/react-templates@6.6.1-prerelease.2) (2026-08-10)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+## [6.6.1-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.6.1-prerelease.0...@patternfly/react-templates@6.6.1-prerelease.1) (2026-08-04)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
+## [6.6.1-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.6.0...@patternfly/react-templates@6.6.1-prerelease.0) (2026-08-03)
+
+### Features
+
+- **MenuToggle:** add aria-haspopup prop ([#12549](https://github.com/patternfly/patternfly-react/issues/12549)) ([c5ad5f8](https://github.com/patternfly/patternfly-react/commit/c5ad5f8dd7570eda090c2dd02b9b6fd2fafc986f)), closes [#11792](https://github.com/patternfly/patternfly-react/issues/11792)
+
 # [6.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.6.0-prerelease.9...@patternfly/react-templates@6.6.0) (2026-07-01)
 
 ### Bug Fixes

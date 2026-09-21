@@ -24,11 +24,16 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   variant?: 'default' | 'docked';
   /** @beta Flag indicating the docked nav is expanded on mobile. Only applies when variant is docked. */
   isDockExpanded?: boolean;
+  /** @beta Flag indicating a docked nav is expanded as an overlay, triggered by expandable nav children. Only applies when dock content is passed. */
+  isDockExpandableExpanded?: boolean;
   /** @beta Flag indicating the docked nav should display text on desktop. Only applies when variant is docked, and
    * will handle toggling the visibility of the text in individual isDocked components.
    */
   isDockTextExpanded?: boolean;
-  /** The horizontal masthead content (e.g. <Masthead />). When using the docked variant, this content will only render at mobile viewports. */
+  /** The horizontal masthead content (e.g. <Masthead /> or <PageHeader />). PageHeader is an alternative to Masthead
+   * and should only be used to wrap custom header content. When using the docked variant, this content will only render at
+   * mobile viewports.
+   */
   masthead?: React.ReactNode;
   /** @beta Content to render in the vertical dock when variant of docked is used. At mobile viewports, this content will be replaced with the content passed to masthead. */
   dockContent?: React.ReactNode;
@@ -97,6 +102,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   horizontalSubnav?: React.ReactNode;
   /** Accessible label, can be used to name main section */
   mainAriaLabel?: string;
+  /** Reference for the main section of the page */
+  mainRef?: React.RefObject<HTMLDivElement>;
   /** Flag indicating if the horizontal sub navigation should be in a group */
   isHorizontalSubnavGrouped?: boolean;
   /** Flag indicating if the breadcrumb should be in a group */
@@ -111,6 +118,10 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   breadcrumbProps?: PageBreadcrumbProps;
   /** Enables children to fill the available vertical space. Child page sections or groups that should fill should be passed the isFilled property. */
   isContentFilled?: boolean;
+  /** Flag indicating the page should render without the content area background and overflow scroll. */
+  isPlain?: boolean;
+  /** Content rendered inside the page footer */
+  footer?: React.ReactNode;
 }
 
 export interface PageState {
@@ -129,12 +140,15 @@ class Page extends Component<PageProps, PageState> {
     defaultManagedSidebarIsOpen: true,
     mainTabIndex: -1,
     isNotificationDrawerExpanded: false,
+    isDockExpandableExpanded: false,
     onNotificationDrawerExpand: () => null,
     mainComponent: 'main',
     getBreakpoint,
-    getVerticalBreakpoint
+    getVerticalBreakpoint,
+    mainRef: undefined,
+    isPlain: false
   };
-  mainRef = createRef<HTMLDivElement>();
+  mainRef = this.props?.mainRef ? this.props.mainRef : createRef<HTMLDivElement>();
   pageRef = createRef<HTMLDivElement>();
   observer: any = () => {};
 
@@ -242,6 +256,7 @@ class Page extends Component<PageProps, PageState> {
       variant,
       isDockExpanded = false,
       isDockTextExpanded = false,
+      isDockExpandableExpanded = false,
       masthead,
       dockContent,
       sidebar,
@@ -272,6 +287,10 @@ class Page extends Component<PageProps, PageState> {
       groupProps,
       breadcrumbProps,
       isContentFilled,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      mainRef,
+      isPlain,
+      footer,
       ...rest
     } = this.props;
     const { mobileView, mobileIsSidebarOpen, desktopIsSidebarOpen, width, height } = this.state;
@@ -355,6 +374,7 @@ class Page extends Component<PageProps, PageState> {
             width !== null && `pf-m-breakpoint-${getBreakpoint(width)}`,
             height !== null && `pf-m-height-breakpoint-${getVerticalBreakpoint(height)}`,
             sidebar === null && styles.modifiers.noSidebar,
+            isPlain && styles.modifiers.plain,
             className
           )}
         >
@@ -366,6 +386,7 @@ class Page extends Component<PageProps, PageState> {
                 className={css(
                   styles.pageDock,
                   isDockExpanded && styles.modifiers.expanded,
+                  isDockExpandableExpanded && styles.modifiers.expandableExpanded,
                   isDockTextExpanded && styles.modifiers.textExpanded
                 )}
               >
@@ -384,6 +405,7 @@ class Page extends Component<PageProps, PageState> {
             </div>
           )}
           {!notificationDrawer && main}
+          {footer && footer}
         </div>
       </PageContextProvider>
     );

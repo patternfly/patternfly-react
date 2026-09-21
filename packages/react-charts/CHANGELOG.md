@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.6.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.6.1-prerelease.2...@patternfly/react-charts@8.6.1-prerelease.3) (2026-09-15)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+## [8.6.1-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.6.1-prerelease.1...@patternfly/react-charts@8.6.1-prerelease.2) (2026-09-11)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+## [8.6.1-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.6.1-prerelease.0...@patternfly/react-charts@8.6.1-prerelease.1) (2026-08-31)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+## [8.6.1-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.6.0...@patternfly/react-charts@8.6.1-prerelease.0) (2026-08-03)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
 # [8.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@8.6.0-prerelease.4...@patternfly/react-charts@8.6.0) (2026-07-01)
 
 **Note:** Version bump only for package @patternfly/react-charts

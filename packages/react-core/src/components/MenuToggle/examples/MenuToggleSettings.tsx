@@ -3,6 +3,9 @@ import { MenuToggle } from '@patternfly/react-core';
 
 export const MenuToggleSettings: React.FunctionComponent = () => (
   <Fragment>
-    <MenuToggle isSettings>Settings</MenuToggle> <MenuToggle isSettings variant="plain" aria-label="Settings" />
+    <MenuToggle aria-haspopup={false} isSettings>
+      Settings
+    </MenuToggle>{' '}
+    <MenuToggle aria-haspopup={false} isSettings variant="plain" aria-label="Settings" />
   </Fragment>
 );

@@ -10,6 +10,7 @@ propComponents:
     'Tr',
     'Th',
     'Td',
+    'Tfoot',
     'Caption',
     'TableText',
     'TdActionsType',
@@ -477,6 +478,14 @@ The second `Tr` represents the second level of sub columns. The `Th` in this row
 ### Nested sticky header
 
 ```ts file="TableNestedStickyHeader.tsx"
+
+```
+
+### Sticky footer
+
+Use `Tfoot` for semantic table footer rows. Set `isStickyFooter` on `Table` to keep the footer visible while its scroll container is scrolling.
+
+```ts file="TableStickyFooter.tsx"
 
 ```
 

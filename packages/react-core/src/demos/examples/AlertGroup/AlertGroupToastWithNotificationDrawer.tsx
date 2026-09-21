@@ -128,7 +128,7 @@ export const AlertGroupToastWithNotificationDrawer: React.FunctionComponent = ()
 
   const getNotificationBadgeVariant = () => {
     if (getUnreadNotificationsNumber() === 0) {
-      return NotificationBadgeVariant.read;
+      return NotificationBadgeVariant.plain;
     }
     if (containsUnreadAlertNotification()) {
       return NotificationBadgeVariant.attention;

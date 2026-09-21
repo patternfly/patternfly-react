@@ -11,12 +11,12 @@ interface Data {
 
 export const ChartPieCustomColorScale: React.FunctionComponent = () => {
   const data: Data[] = [
-    { x: 'Sky', y: 38 },
     { x: 'Shady side of pyramid', y: 7 },
     { x: 'Sunny side of pyramid', y: 17 },
-    { x: 'Sky', y: 38 }
+    { x: 'Sky', y: 76 }
   ];
   const legendData: Data[] = [{ name: 'Sky' }, { name: 'Shady side of pyramid' }, { name: 'Sunny side of pyramid' }];
+  const pyramidStartAngle = 0.38 * 360;
 
   return (
     <div style={{ height: '230px', width: '450px' }}>
@@ -24,7 +24,6 @@ export const ChartPieCustomColorScale: React.FunctionComponent = () => {
         ariaDesc="Average number of pets"
         ariaTitle="Pie chart example"
         colorScale={[
-          chart_theme_blue_ColorScale_100.var,
           chart_theme_orange_ColorScale_300.var,
           chart_theme_yellow_ColorScale_100.var,
           chart_theme_blue_ColorScale_100.var
@@ -37,6 +36,8 @@ export const ChartPieCustomColorScale: React.FunctionComponent = () => {
         legendOrientation="vertical"
         legendPosition="right"
         name="chart2"
+        endAngle={pyramidStartAngle + 360}
+        startAngle={pyramidStartAngle}
         padding={{
           bottom: 20,
           left: 20,

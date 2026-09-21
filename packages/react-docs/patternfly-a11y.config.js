@@ -106,7 +106,8 @@ module.exports = {
     'landmark-main-is-top-level',
     'scrollable-region-focusable',
     'link-in-text-block',
-    'aria-required-children'
+    'aria-required-children',
+    'target-size' // See if we can remove once https://github.com/patternfly/patternfly-react/issues/12558 is resolved
   ].join(','),
   ignoreIncomplete: true
 };

@@ -3,6 +3,114 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.6.1-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.1-prerelease.9...@patternfly/react-core@6.6.1-prerelease.10) (2026-09-16)
+
+### Bug Fixes
+
+- **Label:** reset edit state when canceling with escape ([#12649](https://github.com/patternfly/patternfly-react/issues/12649)) ([4927d44](https://github.com/patternfly/patternfly-react/commit/4927d44713e4fbf24ee3a6f8aa2e939e924afc59))
+
+## [6.6.1-prerelease.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.1-prerelease.8...@patternfly/react-core@6.6.1-prerelease.9) (2026-09-15)
+
+### Features
+
+- **Drawer:** Add full-size drawer ([#12641](https://github.com/patternfly/patternfly-react/issues/12641)) ([9930770](https://github.com/patternfly/patternfly-react/commit/9930770624d75e6d0b7b0e8480cc198b71906f7e))
+
+## [6.6.1-prerelease.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.1-prerelease.7...@patternfly/react-core@6.6.1-prerelease.8) (2026-09-11)
+
+### Features
+
+- **Page:** add PageFooter and isPlain ([#12642](https://github.com/patternfly/patternfly-react/issues/12642)) ([6e3dd0e](https://github.com/patternfly/patternfly-react/commit/6e3dd0e11b69671d46742346c818d4463e9b964b))
+
+## [6.6.1-prerelease.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.1-prerelease.6...@patternfly/react-core@6.6.1-prerelease.7) (2026-09-09)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [6.6.1-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.1-prerelease.5...@patternfly/react-core@6.6.1-prerelease.6) (2026-09-03)
+
+### Features
+
+- **Nav,Compass,Page:** add support for expandable nav items in docked nav ([#12630](https://github.com/patternfly/patternfly-react/issues/12630)) ([ef05c30](https://github.com/patternfly/patternfly-react/commit/ef05c30e47997faba5844e7e69f3897635870b87))
+
+## [6.6.1-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.1-prerelease.4...@patternfly/react-core@6.6.1-prerelease.5) (2026-08-31)
+
+### Bug Fixes
+
+- **css:** return `undefined` if there is no className ([#11602](https://github.com/patternfly/patternfly-react/issues/11602)) ([60807bf](https://github.com/patternfly/patternfly-react/commit/60807bfe13743fa0d4e77c7f429917cbd567e6c3))
+
+### Features
+
+- **Page:** Add PageHeader component ([#12632](https://github.com/patternfly/patternfly-react/issues/12632)) ([de5b2ef](https://github.com/patternfly/patternfly-react/commit/de5b2efd359b329cad691d2a76caeffe1736ae1f))
+
+## [6.6.1-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.1-prerelease.3...@patternfly/react-core@6.6.1-prerelease.4) (2026-08-21)
+
+### Bug Fixes
+
+- **Modal:** updated logic to set aria-hidden for tearsheets ([#12627](https://github.com/patternfly/patternfly-react/issues/12627)) ([cb3161d](https://github.com/patternfly/patternfly-react/commit/cb3161d3f217ce4b99e8dd71fa444e3dfbe3bbda))
+
+## [6.6.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.1-prerelease.2...@patternfly/react-core@6.6.1-prerelease.3) (2026-08-19)
+
+### Bug Fixes
+
+- **DrawerCloseButton:** Allow props spread to button ([#12620](https://github.com/patternfly/patternfly-react/issues/12620)) ([9234afa](https://github.com/patternfly/patternfly-react/commit/9234afa00ee9dbf8566eac0b572f352399ed0678))
+
+## [6.6.1-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.1-prerelease.1...@patternfly/react-core@6.6.1-prerelease.2) (2026-08-10)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [6.6.1-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.1-prerelease.0...@patternfly/react-core@6.6.1-prerelease.1) (2026-08-04)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+## [6.6.1-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.0...@patternfly/react-core@6.6.1-prerelease.0) (2026-08-03)
+
+### Bug Fixes
+
+- **AngleDoubleRightIcon:** Replace AngleDoubleRightIcon with RhMicronsDoubleCaretRightIcon ([#12493](https://github.com/patternfly/patternfly-react/issues/12493)) ([a9bd226](https://github.com/patternfly/patternfly-react/commit/a9bd226cfa9183e5893cd8d74302934f98aaa51c))
+- **AngleLeftIcon:** Replace AngleLeftIcon with RhMicronsCaretLeftIcon ([#12495](https://github.com/patternfly/patternfly-react/issues/12495)) ([bd9932f](https://github.com/patternfly/patternfly-react/commit/bd9932f123fc5f94598ce555f8166052eaecb95c))
+- **AngleRightIcon:** Replace AngleRightIcon with RhMicronsCaretRightIcon ([#12496](https://github.com/patternfly/patternfly-react/issues/12496)) ([4f70020](https://github.com/patternfly/patternfly-react/commit/4f700201a3b4e9bee30dc7c5f2dc9798b1f58474))
+- **AngleUpIcon:** Replace AngleUpIcon with RhMicronsCaretUpIcon ([#12497](https://github.com/patternfly/patternfly-react/issues/12497)) ([a7d4365](https://github.com/patternfly/patternfly-react/commit/a7d43656b92795ee8792ad91ec7e828ce1c1fd27))
+- **CheckIcon:** Replace CheckIcon with RhMicronsCheckmarkIcon ([#12518](https://github.com/patternfly/patternfly-react/issues/12518)) ([b811f9f](https://github.com/patternfly/patternfly-react/commit/b811f9f9711197496b7b0498d76ffe218804c598))
+- **ExpandIcon:** Replace ExpandIcon with RhUiExpandIcon ([#12523](https://github.com/patternfly/patternfly-react/issues/12523)) ([31e7ee7](https://github.com/patternfly/patternfly-react/commit/31e7ee76d15e331cc299b88fdae4c704fa4731df))
+- **FilterIcon:** Replace FilterIcon with RhUiFilterFillIcon ([#12524](https://github.com/patternfly/patternfly-react/issues/12524)) ([f8bcd7c](https://github.com/patternfly/patternfly-react/commit/f8bcd7cc8b14d03706efe384b06ad3fe7701df30))
+- **HelpIcon:** Replace HelpIcon with RhUiQuestionMarkCircleIcon ([#12507](https://github.com/patternfly/patternfly-react/issues/12507)) ([389b3d2](https://github.com/patternfly/patternfly-react/commit/389b3d21caae2b56cff41d647467a710054b337d))
+- **InfrastructureIcons:** replaced with RH brand icons part 2 ([#12502](https://github.com/patternfly/patternfly-react/issues/12502)) ([80f6ca0](https://github.com/patternfly/patternfly-react/commit/80f6ca081487c175bd6b336c256a426e1ef37bdc))
+- **InfrastructureIcons:** replaced with RH brand icons part 3 ([#12503](https://github.com/patternfly/patternfly-react/issues/12503)) ([eb80455](https://github.com/patternfly/patternfly-react/commit/eb8045502918af553015eb0cb0fa6f17443a2ced))
+- **InfrastructureIcons:** replaced with RH brand icons part 4 ([#12504](https://github.com/patternfly/patternfly-react/issues/12504)) ([4cc476a](https://github.com/patternfly/patternfly-react/commit/4cc476a36b7fb93835fba30881ca0b88c31f01f3))
+- **InfrastructureIcons:** replaced with RH brand icons part 5 ([#12505](https://github.com/patternfly/patternfly-react/issues/12505)) ([6c94470](https://github.com/patternfly/patternfly-react/commit/6c94470cc0cd255ee8d0e657a710893c46f7a804))
+- **JumpLinks:** updated demo code for active item ([#12590](https://github.com/patternfly/patternfly-react/issues/12590)) ([7385d3f](https://github.com/patternfly/patternfly-react/commit/7385d3fb3b665100b3f96cd61562bc4623d3670f))
+- **LoginForm:** Adjust wrapper for submit button ([#12605](https://github.com/patternfly/patternfly-react/issues/12605)) ([5822e05](https://github.com/patternfly/patternfly-react/commit/5822e0519d2d8f823bafe95f0409a5bc23d4d51e))
+- **LongArrowAltDownIcon/UpIcon:** Replace with microns versions ([#12517](https://github.com/patternfly/patternfly-react/issues/12517)) ([a868ac1](https://github.com/patternfly/patternfly-react/commit/a868ac1a7a8908b1bf2479e2978735ea046767a9))
+- **MinusIcon:** Replace MinusIcon with RhUiMinusIcon ([#12522](https://github.com/patternfly/patternfly-react/issues/12522)) ([a31f244](https://github.com/patternfly/patternfly-react/commit/a31f244a770d85ca19bebb3ad867a0f82bc85700))
+- **Modal:** exclude Poppers in aria-hidden change ([#12424](https://github.com/patternfly/patternfly-react/issues/12424)) ([b6b7838](https://github.com/patternfly/patternfly-react/commit/b6b7838f28d38977069481e8985a13dc1f2ea903))
+- **OutlinedPlusSquare:** Replace OutlinedPlusSquare with RhUiAddSquareIcon ([#12521](https://github.com/patternfly/patternfly-react/issues/12521)) ([8064cbe](https://github.com/patternfly/patternfly-react/commit/8064cbeba0bf94cc0bb0b973673677f5a9d06fe6))
+- **PauseIcon:** Replace PauseIcon with RhUiPauseFillIcon ([#12514](https://github.com/patternfly/patternfly-react/issues/12514)) ([949fd2d](https://github.com/patternfly/patternfly-react/commit/949fd2d9584f5bdc098be798110b6413e8527973))
+- **PlayIcon:** Replace PlayIcon with RhUiPlayFillIcon ([#12499](https://github.com/patternfly/patternfly-react/issues/12499)) ([a859511](https://github.com/patternfly/patternfly-react/commit/a8595111abfc4736799edfc750bd8c13a0c9f78f))
+- **PlusIcon:** Replace PlusIcon with RhUiAddIcon ([#12520](https://github.com/patternfly/patternfly-react/issues/12520)) ([b933d5a](https://github.com/patternfly/patternfly-react/commit/b933d5af6e2b93bfdbff357efef59732e4188e4f))
+- **Popover:** fixed focus trapped on hoverable trigger ([#12591](https://github.com/patternfly/patternfly-react/issues/12591)) ([e86fa5d](https://github.com/patternfly/patternfly-react/commit/e86fa5d6610f996ae9067e35fd4e49dd80957335))
+- **QuestionIcon:** Replace QuestionIcon with RhUiQuestionMarkIcon ([#12509](https://github.com/patternfly/patternfly-react/issues/12509)) ([075bb72](https://github.com/patternfly/patternfly-react/commit/075bb72c3504de88c9dd7e0784a84ce53d03e5f9))
+- **RedoIcon:** Replace RedoIcon with RhUiRedoIcon ([#12516](https://github.com/patternfly/patternfly-react/issues/12516)) ([3b85ca2](https://github.com/patternfly/patternfly-react/commit/3b85ca21d74d116ca72817517fc9cb544310a89e))
+- **SearchIcon:** Replace SearchIcon with RhMicronsSearchIcon ([#12525](https://github.com/patternfly/patternfly-react/issues/12525)) ([930a34b](https://github.com/patternfly/patternfly-react/commit/930a34b12f4daf243757cb14b4b772d02e5c471a))
+- **Spinner:** define default aria-label via destructuring ([#12420](https://github.com/patternfly/patternfly-react/issues/12420)) ([9169658](https://github.com/patternfly/patternfly-react/commit/916965815ec43349d5ca721458d916d95daab6cc)), closes [#11750](https://github.com/patternfly/patternfly-react/issues/11750) [#11750](https://github.com/patternfly/patternfly-react/issues/11750)
+- **SyncIcon:** Replace SyncIcon with RhUiSyncIcon ([#12512](https://github.com/patternfly/patternfly-react/issues/12512)) ([9829852](https://github.com/patternfly/patternfly-react/commit/982985213b6dce21a815e5b60703e97e916402be))
+- **tabs:** honor hash-linked nav tabs ([#12303](https://github.com/patternfly/patternfly-react/issues/12303)) ([ae72908](https://github.com/patternfly/patternfly-react/commit/ae729088d7300a78c45cd239158751dd9a3e4a8a))
+- **TimesCircleIcon:** Replace TimesCircleIcon with RhUiCloseCircleFillIcon ([#12513](https://github.com/patternfly/patternfly-react/issues/12513)) ([0240437](https://github.com/patternfly/patternfly-react/commit/02404376398f966939c8409054aa646535cebc34))
+- **ToolbarFilter:** Clear filters on unmount ([#12266](https://github.com/patternfly/patternfly-react/issues/12266)) ([4e13e7c](https://github.com/patternfly/patternfly-react/commit/4e13e7ce4c2abf74030926f20fbf0c6b984eadd7))
+- **TrashIcon:** Replace TrashIcon with RhUiTrashFillIcon ([#12510](https://github.com/patternfly/patternfly-react/issues/12510)) ([720b166](https://github.com/patternfly/patternfly-react/commit/720b16661923d55bbb18618bdcdeae8f4d35e588))
+- **TreeView:** pass id,inert to TreeViewList ([#12548](https://github.com/patternfly/patternfly-react/issues/12548)) ([ee13546](https://github.com/patternfly/patternfly-react/commit/ee13546a59f1a8303e8c438a6cd7af8db24688a6))
+- **UndoIcon:** Replace UndoIcon with RhUiUndoIcon ([#12515](https://github.com/patternfly/patternfly-react/issues/12515)) ([77ad416](https://github.com/patternfly/patternfly-react/commit/77ad416134772c099e9c1feafe5cf67ba3462eb0))
+- update tree pattern expand icon direction ([#12554](https://github.com/patternfly/patternfly-react/issues/12554)) ([8c89c01](https://github.com/patternfly/patternfly-react/commit/8c89c01501b2db096a23267b585cb46cf438aaea))
+- **various:** inert react 19 support ([#12315](https://github.com/patternfly/patternfly-react/issues/12315)) ([8fd7fdb](https://github.com/patternfly/patternfly-react/commit/8fd7fdb7bd551cae2bdb08912e16675b24924813))
+- **WarningTriangleIcon:** Replace WarningTriangleIcon with RhUiWarningIcon ([#12508](https://github.com/patternfly/patternfly-react/issues/12508)) ([f45904d](https://github.com/patternfly/patternfly-react/commit/f45904df01d6e8af1d9826de6c78f76117b0f40e))
+- **Wizard:** add useEffect import ([#12538](https://github.com/patternfly/patternfly-react/issues/12538)) ([592ec73](https://github.com/patternfly/patternfly-react/commit/592ec73b9deea472aebadef6d83049d0cd66c42a))
+
+### Features
+
+- **MenuToggle:** add aria-haspopup prop ([#12549](https://github.com/patternfly/patternfly-react/issues/12549)) ([c5ad5f8](https://github.com/patternfly/patternfly-react/commit/c5ad5f8dd7570eda090c2dd02b9b6fd2fafc986f)), closes [#11792](https://github.com/patternfly/patternfly-react/issues/11792)
+- **Page:** add ref prop for main element ([#12588](https://github.com/patternfly/patternfly-react/issues/12588)) ([d31ee88](https://github.com/patternfly/patternfly-react/commit/d31ee88192c3fe7ea4f8975299d4febf23e45e91))
+- **Slider:** add support for custom tooltip content ([#12531](https://github.com/patternfly/patternfly-react/issues/12531)) ([ad3b35b](https://github.com/patternfly/patternfly-react/commit/ad3b35bb98140aba2b05f065d617707a73a2fa8b))
+- **Slider:** add support for dynamic updates with input ([#12539](https://github.com/patternfly/patternfly-react/issues/12539)) ([bcdd2a8](https://github.com/patternfly/patternfly-react/commit/bcdd2a86d69b12d594ab0b52be972c3995406c6b))
+- **Toolbar:** add flexGrow and widths props to ToolbarItem and Toolb… ([#12237](https://github.com/patternfly/patternfly-react/issues/12237)) ([8e610ef](https://github.com/patternfly/patternfly-react/commit/8e610ef3d750b9a0bdae3a39244d7525aa307beb)), closes [#11910](https://github.com/patternfly/patternfly-react/issues/11910)
+
 # [6.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.0-prerelease.9...@patternfly/react-core@6.6.0) (2026-07-01)
 
 ### Bug Fixes

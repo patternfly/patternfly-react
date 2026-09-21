@@ -9,9 +9,11 @@ import { Nav, NavList, NavItem } from '../../Nav';
 import { SkipToContent } from '../../SkipToContent';
 import { PageBreadcrumb } from '../PageBreadcrumb';
 import { PageGroup } from '../PageGroup';
+import { PageHeader } from '../PageHeader';
 import { Masthead } from '../../Masthead';
 
 import styles from '@patternfly/react-styles/css/components/Page/page';
+import { PageFooter } from '../PageFooter';
 
 const props = {
   'aria-label': 'Page layout',
@@ -481,10 +483,87 @@ describe('Page docked variant', () => {
     expect(pageDock).toHaveClass(styles.modifiers.textExpanded);
   });
 
+  test(`Does not render with ${styles.modifiers.expandableExpanded} when by default and variant is docked`, () => {
+    render(<Page variant="docked" dockContent={<>Dock content</>} masthead={<>Masthead</>} data-testid="page"></Page>);
+    const pageDock = screen.getByText('Dock content').closest(`.${styles.pageDock}`);
+    expect(pageDock).not.toHaveClass(styles.modifiers.expandableExpanded);
+  });
+
+  test(`Renders with ${styles.modifiers.expandableExpanded} when isDockExpandableExpanded is true and variant is docked`, () => {
+    render(
+      <Page
+        variant="docked"
+        isDockExpandableExpanded
+        dockContent={<>Dock content</>}
+        masthead={<>Masthead</>}
+        data-testid="page"
+      ></Page>
+    );
+    const pageDock = screen.getByText('Dock content').closest(`.${styles.pageDock}`);
+    expect(pageDock).toHaveClass(styles.modifiers.expandableExpanded);
+  });
+
   test(`Renders with ${styles.pageDockMain} wrapper when variant is docked`, () => {
     render(<Page variant="docked" dockContent={<>Dock content</>} masthead={<>Masthead</>} data-testid="page"></Page>);
 
     const pageDockMain = screen.getByText('Dock content').closest(`.${styles.pageDockMain}`);
     expect(pageDockMain).toBeInTheDocument();
+  });
+
+  test('Renders PageHeader when passed to the masthead prop', () => {
+    render(
+      <Page {...props} masthead={<PageHeader>Custom header</PageHeader>}>
+        <PageSection>Custom content</PageSection>
+      </Page>
+    );
+
+    const header = screen.getByText('Custom header');
+    expect(header).toHaveClass(styles.pageHeader);
+    expect(header.parentElement).toHaveClass(styles.page);
+  });
+
+  test('Renders PageFooter when passed to the footer prop', () => {
+    render(
+      <Page {...props} footer={<PageFooter>Custom footer</PageFooter>}>
+        <PageSection>Custom content</PageSection>
+      </Page>
+    );
+
+    const footer = screen.getByRole('contentinfo');
+    expect(footer).toHaveClass(styles.pageFooter);
+    expect(footer.parentElement).toHaveClass(styles.page);
+  });
+
+  test(`Renders with ${styles.modifiers.plain} when isPlain is true`, () => {
+    render(
+      <Page {...props} isPlain data-testid="page">
+        <PageSection>Custom content</PageSection>
+      </Page>
+    );
+
+    const page = screen.getByTestId('page');
+    expect(page).toHaveClass(styles.modifiers.plain);
+  });
+
+  test(`Does not render with ${styles.modifiers.plain} when isPlain is false`, () => {
+    render(
+      <Page {...props} isPlain={false} data-testid="page">
+        <PageSection>Custom content</PageSection>
+      </Page>
+    );
+
+    const page = screen.getByTestId('page');
+    expect(page).not.toHaveClass(styles.modifiers.plain);
+  });
+
+  test(`Does not render with ${styles.modifiers.plain} when isPlain is not passed`, () => {
+    render(
+      <Page {...props} data-testid="page">
+        <PageSection>Custom content</PageSection>
+      </Page>
+    );
+
+    const page = screen.getByTestId('page');
+    expect(page).not.toHaveClass(styles.modifiers.plain);
   });
 });
