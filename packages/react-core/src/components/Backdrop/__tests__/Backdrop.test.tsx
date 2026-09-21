@@ -26,6 +26,33 @@ test(`Renders with only the class ${styles.backdrop} by default`, () => {
   expect(screen.getByText('Test')).toHaveClass(styles.backdrop, { exact: true });
 });
 
+test('Renders as visible by default when animations are enabled', () => {
+  render(<Backdrop hasAnimations>Test</Backdrop>);
+  expect(screen.getByText('Test')).toHaveClass(styles.backdrop, styles.modifiers.animate, styles.modifiers.show, {
+    exact: true
+  });
+});
+
+test('Renders as hidden when animations are enabled and isVisible is false', () => {
+  render(
+    <Backdrop hasAnimations isVisible={false}>
+      Test
+    </Backdrop>
+  );
+  expect(screen.getByText('Test')).toHaveClass(styles.backdrop, styles.modifiers.animate, { exact: true });
+});
+
+test('Renders as visible when animations are enabled and isVisible is true', () => {
+  render(
+    <Backdrop hasAnimations isVisible>
+      Test
+    </Backdrop>
+  );
+  expect(screen.getByText('Test')).toHaveClass(styles.backdrop, styles.modifiers.animate, styles.modifiers.show, {
+    exact: true
+  });
+});
+
 test('Renders with custom class name when className prop is passed', () => {
   render(<Backdrop className="test-class">Test</Backdrop>);
   expect(screen.getByText('Test')).toHaveClass('test-class');

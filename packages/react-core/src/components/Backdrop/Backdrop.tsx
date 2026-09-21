@@ -9,7 +9,7 @@ export interface BackdropProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** Flag indicating whether animations are enabled. */
   hasAnimations?: boolean;
-  /** Flag to show the backdrop. Used in conjunction with `hasAnimations`. */
+  /** Flag to show the backdrop when animations are enabled. Set to false while the backdrop remains mounted to play its exit transition. */
   isVisible?: boolean;
 }
 
@@ -17,7 +17,7 @@ export const Backdrop: React.FunctionComponent<BackdropProps> = ({
   children = null,
   className = '',
   hasAnimations: hasAnimationsProp,
-  isVisible,
+  isVisible = true,
   ...props
 }: BackdropProps) => {
   const hasAnimations = useHasAnimations(hasAnimationsProp);
@@ -28,7 +28,7 @@ export const Backdrop: React.FunctionComponent<BackdropProps> = ({
       className={css(
         styles.backdrop,
         hasAnimations && styles.modifiers.animate,
-        hasAnimations && isVisible === true && styles.modifiers.show,
+        hasAnimations && isVisible && styles.modifiers.show,
         className
       )}
     >
