@@ -21,8 +21,15 @@ test(`Renders with the ${styles.backdrop}`, () => {
   expect(screen.getByText('Test')).toHaveClass(styles.backdrop);
 });
 
-test(`Renders with only the class ${styles.backdrop} by default`, () => {
+test('Renders with animations enabled by default', () => {
   render(<Backdrop>Test</Backdrop>);
+  expect(screen.getByText('Test')).toHaveClass(styles.backdrop, styles.modifiers.animate, styles.modifiers.show, {
+    exact: true
+  });
+});
+
+test('Renders without animation classes when animations are explicitly disabled', () => {
+  render(<Backdrop hasAnimations={false}>Test</Backdrop>);
   expect(screen.getByText('Test')).toHaveClass(styles.backdrop, { exact: true });
 });
 

@@ -53,7 +53,7 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
-  /** Flag indicating whether animations are enabled. */
+  /** Flag indicating whether animations are enabled. Animations are enabled by default. */
   hasAnimations?: boolean;
 }
 
@@ -80,7 +80,8 @@ class Modal extends Component<ModalProps, ModalState> {
     variant: 'default',
     appendTo: () => document.body,
     ouiaSafe: true,
-    position: 'default'
+    position: 'default',
+    hasAnimations: true
   };
 
   constructor(props: ModalProps) {

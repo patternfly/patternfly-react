@@ -7,7 +7,7 @@ export interface BackdropProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Additional classes added to the backdrop */
   className?: string;
-  /** Flag indicating whether animations are enabled. */
+  /** Flag indicating whether animations are enabled. Animations are enabled by default. */
   hasAnimations?: boolean;
   /** Flag to show the backdrop when animations are enabled. Set to false while the backdrop remains mounted to play its exit transition. */
   isVisible?: boolean;
@@ -16,7 +16,7 @@ export interface BackdropProps extends React.HTMLProps<HTMLDivElement> {
 export const Backdrop: React.FunctionComponent<BackdropProps> = ({
   children = null,
   className = '',
-  hasAnimations: hasAnimationsProp,
+  hasAnimations: hasAnimationsProp = true,
   isVisible = true,
   ...props
 }: BackdropProps) => {
