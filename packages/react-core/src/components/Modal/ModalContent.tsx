@@ -91,7 +91,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       setIsRendered(true);
     } else if (!isRendered) {
       return;
-    } else if (!hasAnimations || window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+    } else if (!hasAnimations) {
       setIsRendered(false);
     } else {
       // Ensure the modal is removed if CSS transitions are disabled or transitionend does not fire.

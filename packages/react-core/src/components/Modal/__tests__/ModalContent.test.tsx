@@ -108,9 +108,10 @@ test('Modal content unmounts if its closing transition does not end', () => {
   }
 });
 
-test('Modal content unmounts immediately with reduced motion', () => {
+test('Modal content remains mounted during close when reduced motion is preferred', () => {
   const matchMedia = window.matchMedia;
   window.matchMedia = jest.fn().mockReturnValue({ matches: true } as MediaQueryList);
+  jest.useFakeTimers();
   try {
     const { rerender } = render(
       <ModalContent isOpen hasAnimations backdropId="backdropId" {...modalContentProps}>
@@ -123,8 +124,12 @@ test('Modal content unmounts immediately with reduced motion', () => {
         This is a ModalBox header
       </ModalContent>
     );
+    expect(document.getElementById('backdropId')).toBeInTheDocument();
+
+    act(() => jest.runOnlyPendingTimers());
     expect(document.getElementById('backdropId')).not.toBeInTheDocument();
   } finally {
+    jest.useRealTimers();
     window.matchMedia = matchMedia;
   }
 });
