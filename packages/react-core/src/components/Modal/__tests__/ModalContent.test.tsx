@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 
 import { ModalContent } from '../ModalContent';
 
@@ -83,4 +83,48 @@ test('Modal content is hidden from assistive technologies during its closing ani
     </ModalContent>
   );
   expect(backdrop).not.toHaveAttribute('aria-hidden');
+});
+
+test('Modal content unmounts if its closing transition does not end', () => {
+  jest.useFakeTimers();
+  try {
+    const { rerender } = render(
+      <ModalContent isOpen hasAnimations backdropId="backdropId" {...modalContentProps}>
+        This is a ModalBox header
+      </ModalContent>
+    );
+
+    rerender(
+      <ModalContent isOpen={false} hasAnimations backdropId="backdropId" {...modalContentProps}>
+        This is a ModalBox header
+      </ModalContent>
+    );
+    expect(document.getElementById('backdropId')).toBeInTheDocument();
+
+    act(() => jest.runOnlyPendingTimers());
+    expect(document.getElementById('backdropId')).not.toBeInTheDocument();
+  } finally {
+    jest.useRealTimers();
+  }
+});
+
+test('Modal content unmounts immediately with reduced motion', () => {
+  const matchMedia = window.matchMedia;
+  window.matchMedia = jest.fn().mockReturnValue({ matches: true } as MediaQueryList);
+  try {
+    const { rerender } = render(
+      <ModalContent isOpen hasAnimations backdropId="backdropId" {...modalContentProps}>
+        This is a ModalBox header
+      </ModalContent>
+    );
+
+    rerender(
+      <ModalContent isOpen={false} hasAnimations backdropId="backdropId" {...modalContentProps}>
+        This is a ModalBox header
+      </ModalContent>
+    );
+    expect(document.getElementById('backdropId')).not.toBeInTheDocument();
+  } finally {
+    window.matchMedia = matchMedia;
+  }
 });

@@ -7,6 +7,8 @@ import { Backdrop } from '../Backdrop';
 import { ModalBoxCloseButton } from './ModalBoxCloseButton';
 import { ModalBox } from './ModalBox';
 
+const transitionEndFallbackDelay = 300;
+
 export interface ModalContentProps extends OUIAProps {
   /** Id to use for the modal box description. This should match the ModalHeader labelId or descriptorId. */
   'aria-describedby'?: string;
@@ -87,10 +89,16 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   useEffect(() => {
     if (isOpen) {
       setIsRendered(true);
-    } else if (!hasAnimations) {
+    } else if (!isRendered) {
+      return;
+    } else if (!hasAnimations || window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
       setIsRendered(false);
+    } else {
+      // Ensure the modal is removed if CSS transitions are disabled or transitionend does not fire.
+      const transitionEndFallback = window.setTimeout(() => setIsRendered(false), transitionEndFallbackDelay);
+      return () => window.clearTimeout(transitionEndFallback);
     }
-  }, [isOpen, hasAnimations]);
+  }, [isOpen, hasAnimations, isRendered]);
 
   if (!isRendered) {
     return null;
