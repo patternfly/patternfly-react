@@ -170,3 +170,11 @@ To enable animations globally, wrap your application with `AnimationsProvider`. 
 ```ts file="./ModalAnimatedProvider.tsx"
 
 ```
+
+### Not animated modal
+
+To explicitly disable animations, set the `hasAnimations` property to `false` on the modal.
+
+```ts file="./ModalNotAnimated.tsx"
+
+```
