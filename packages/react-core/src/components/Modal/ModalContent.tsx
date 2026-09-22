@@ -144,6 +144,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       id={backdropId}
       hasAnimations={hasAnimations}
       isVisible={isOpen}
+      aria-hidden={hasAnimations && !isOpen ? true : undefined}
       onTransitionEnd={
         hasAnimations
           ? (event) => {
