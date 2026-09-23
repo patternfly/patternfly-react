@@ -1,6 +1,5 @@
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
-// import stylesAnimated from '@patternfly/react-styles/css/components/ModalAnimations/modal-animations';
 import topSpacer from '@patternfly/react-tokens/dist/esm/c_modal_box_m_align_top_spacer';
 
 export interface ModalBoxProps extends React.HTMLProps<HTMLDivElement> {
