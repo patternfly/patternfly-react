@@ -111,6 +111,20 @@ describe('Modal', () => {
     expect(document.body).toHaveClass(css(styles.backdropOpen));
   });
 
+  test('modal has animations enabled by default', () => {
+    render(<Modal {...props} isOpen />);
+    const backdrop = screen.getByText('modal content').closest(`.${styles.backdrop}`);
+
+    expect(backdrop).toHaveClass(styles.modifiers.animate, styles.modifiers.show);
+  });
+
+  test('modal animations can be explicitly disabled', () => {
+    render(<Modal {...props} isOpen hasAnimations={false} />);
+    const backdrop = screen.getByText('modal content').closest(`.${styles.backdrop}`);
+
+    expect(backdrop).not.toHaveClass(styles.modifiers.animate, styles.modifiers.show);
+  });
+
   test('modal has no body backdropOpen class when not open', () => {
     render(<Modal {...props} />);
     expect(document.body).not.toHaveClass(css(styles.backdropOpen));

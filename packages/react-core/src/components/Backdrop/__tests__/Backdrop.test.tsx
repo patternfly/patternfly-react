@@ -21,9 +21,43 @@ test(`Renders with the ${styles.backdrop}`, () => {
   expect(screen.getByText('Test')).toHaveClass(styles.backdrop);
 });
 
-test(`Renders with only the class ${styles.backdrop} by default`, () => {
+test('Renders with animations enabled by default', () => {
   render(<Backdrop>Test</Backdrop>);
+  expect(screen.getByText('Test')).toHaveClass(styles.backdrop, styles.modifiers.animate, styles.modifiers.show, {
+    exact: true
+  });
+});
+
+test('Renders without animation classes when animations are explicitly disabled', () => {
+  render(<Backdrop hasAnimations={false}>Test</Backdrop>);
   expect(screen.getByText('Test')).toHaveClass(styles.backdrop, { exact: true });
+});
+
+test('Renders as visible by default when animations are enabled', () => {
+  render(<Backdrop hasAnimations>Test</Backdrop>);
+  expect(screen.getByText('Test')).toHaveClass(styles.backdrop, styles.modifiers.animate, styles.modifiers.show, {
+    exact: true
+  });
+});
+
+test('Renders as hidden when animations are enabled and isVisible is false', () => {
+  render(
+    <Backdrop hasAnimations isVisible={false}>
+      Test
+    </Backdrop>
+  );
+  expect(screen.getByText('Test')).toHaveClass(styles.backdrop, styles.modifiers.animate, { exact: true });
+});
+
+test('Renders as visible when animations are enabled and isVisible is true', () => {
+  render(
+    <Backdrop hasAnimations isVisible>
+      Test
+    </Backdrop>
+  );
+  expect(screen.getByText('Test')).toHaveClass(styles.backdrop, styles.modifiers.animate, styles.modifiers.show, {
+    exact: true
+  });
 });
 
 test('Renders with custom class name when className prop is passed', () => {

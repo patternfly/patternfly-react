@@ -3,7 +3,7 @@
 exports[`Matches the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="pf-v6-c-backdrop"
+    class="pf-v6-c-backdrop pf-m-animate pf-m-show"
   >
     Backdrop
   </div>
