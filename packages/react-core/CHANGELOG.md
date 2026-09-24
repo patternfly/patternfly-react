@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.6.1-prerelease.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.1-prerelease.10...@patternfly/react-core@6.6.1-prerelease.11) (2026-09-24)
+
+### Bug Fixes
+
+- **deps:** prerelease bump ([#12659](https://github.com/patternfly/patternfly-react/issues/12659)) ([eb08cef](https://github.com/patternfly/patternfly-react/commit/eb08cef1479219a9a11ae441fafc3f73a938ed30))
+
 ## [6.6.1-prerelease.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.1-prerelease.9...@patternfly/react-core@6.6.1-prerelease.10) (2026-09-16)
 
 ### Bug Fixes
