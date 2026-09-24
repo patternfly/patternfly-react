@@ -76,3 +76,14 @@ jobs:
         with:
           name: a11y-coverage
           path: packages/react-docs/coverage
+
+      - name: Save PR number
+        if: github.event_name == 'pull_request'
+        run: echo "${{ github.event.pull_request.number }}" > pr_number.txt
+
+      - name: Upload PR number
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr-number
+          path: pr_number.txt
