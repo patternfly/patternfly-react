@@ -1,4 +1,4 @@
-import { render, screen, waitForElementToBeRemoved, within } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MultiTypeaheadSelect } from '../MultiTypeaheadSelect';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
@@ -106,7 +106,6 @@ describe('MultiTypeaheadSelect', () => {
 
     expect(input).toHaveValue('');
 
-    await user.click(toggle);
     expect(screen.getByRole('option', { name: 'Option 1' })).not.toHaveClass(styles.modifiers.selected);
   });
 
@@ -129,8 +128,6 @@ describe('MultiTypeaheadSelect', () => {
     expect(menu).toBeInTheDocument();
 
     await user.click(toggle);
-
-    await waitForElementToBeRemoved(menu);
 
     expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
   });

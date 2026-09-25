@@ -3,7 +3,7 @@
 exports[`generates id 1`] = `
 <DocumentFragment>
   <div
-    id="pf-random-id-:r0:"
+    id="pf-random-id-_r_0_"
   >
     div with random ID
   </div>
