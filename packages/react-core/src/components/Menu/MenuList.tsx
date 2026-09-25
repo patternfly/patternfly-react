@@ -21,9 +21,18 @@ export const MenuList: React.FunctionComponent<MenuListProps> = ({
   className,
   isAriaMultiselectable = false,
   'aria-label': ariaLabel,
+  onMouseOver,
   ...props
 }: MenuListProps) => {
-  const { role } = useContext(MenuContext);
+  const { role, setFlyoutRef, disableHover } = useContext(MenuContext);
+
+  // Clear flyout reference when mouse is over the menu list itself, but not over a menu item
+  const handleMouseOver = (event: React.MouseEvent<HTMLUListElement>) => {
+    if (!disableHover && event.target === event.currentTarget) {
+      setFlyoutRef?.(null);
+    }
+    onMouseOver?.(event);
+  };
 
   return (
     <ul
@@ -31,6 +40,7 @@ export const MenuList: React.FunctionComponent<MenuListProps> = ({
       {...(role === 'listbox' && { 'aria-multiselectable': isAriaMultiselectable })}
       className={css(styles.menuList, className)}
       aria-label={ariaLabel}
+      onMouseOver={handleMouseOver}
       {...props}
     >
       {children}
