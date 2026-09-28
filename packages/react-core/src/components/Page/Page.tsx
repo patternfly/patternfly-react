@@ -24,7 +24,7 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   variant?: 'default' | 'docked';
   /** @beta Flag indicating the docked nav is expanded. Only applies when variant is docked. */
   isDockExpanded?: boolean;
-  /** @beta Indicates if the docked nav should expand as an overlay instead of the default inline. */
+  /** @beta Flag indicating the docked nav should expand as an overlay instead of the default inline. */
   isDockOverlay?: boolean;
   /** The horizontal masthead content (e.g. <Masthead /> or <PageHeader />). PageHeader is an alternative to Masthead
    * and should only be used to wrap custom header content. When using the docked variant, this content will only render at

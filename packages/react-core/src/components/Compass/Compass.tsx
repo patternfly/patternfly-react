@@ -12,7 +12,7 @@ export interface CompassProps extends React.HTMLProps<HTMLDivElement> {
   dock?: React.ReactNode;
   /** @beta Flag indicating the docked nav is expanded. Only applies when dock content is passed. */
   isDockExpanded?: boolean;
-  /** @beta Indicates if the docked nav should expand as an overlay instead of the default inline. */
+  /** @beta Flag indicating the docked nav should expand as an overlay instead of the default inline. */
   isDockOverlay?: boolean;
   /** Content placed at the top of the compass layout */
   header?: React.ReactNode;
