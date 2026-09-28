@@ -139,7 +139,6 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   hamburgerVariant,
   isCircle,
   isDocked = false,
-  isTextExpanded = false,
   spinnerAriaValueText,
   spinnerAriaLabelledBy,
   spinnerAriaLabel,
@@ -272,7 +271,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
         size === ButtonSize.lg && styles.modifiers.displayLg,
         isCircle && styles.modifiers.circle,
         isDocked && styles.modifiers.docked,
-        isDocked && isTextExpanded && styles.modifiers.textExpanded,
+        isDocked && isExpanded && styles.modifiers.expanded,
         className
       )}
       disabled={isButtonElement ? isDisabled : null}

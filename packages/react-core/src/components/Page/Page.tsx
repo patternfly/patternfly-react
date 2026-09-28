@@ -22,14 +22,10 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** @beta Indicates the layout variant */
   variant?: 'default' | 'docked';
-  /** @beta Flag indicating the docked nav is expanded on mobile. Only applies when variant is docked. */
+  /** @beta Flag indicating the docked nav is expanded. Only applies when variant is docked. */
   isDockExpanded?: boolean;
-  /** @beta Flag indicating a docked nav is expanded as an overlay, triggered by expandable nav children. Only applies when dock content is passed. */
-  isDockExpandableExpanded?: boolean;
-  /** @beta Flag indicating the docked nav should display text on desktop. Only applies when variant is docked, and
-   * will handle toggling the visibility of the text in individual isDocked components.
-   */
-  isDockTextExpanded?: boolean;
+  /** @beta Indicates if the docked nav should expand as an overlay instead of the default inline. */
+  isDockOverlay?: boolean;
   /** The horizontal masthead content (e.g. <Masthead /> or <PageHeader />). PageHeader is an alternative to Masthead
    * and should only be used to wrap custom header content. When using the docked variant, this content will only render at
    * mobile viewports.
@@ -140,7 +136,6 @@ class Page extends Component<PageProps, PageState> {
     defaultManagedSidebarIsOpen: true,
     mainTabIndex: -1,
     isNotificationDrawerExpanded: false,
-    isDockExpandableExpanded: false,
     onNotificationDrawerExpand: () => null,
     mainComponent: 'main',
     getBreakpoint,
@@ -255,8 +250,7 @@ class Page extends Component<PageProps, PageState> {
       children,
       variant,
       isDockExpanded = false,
-      isDockTextExpanded = false,
-      isDockExpandableExpanded = false,
+      isDockOverlay = false,
       masthead,
       dockContent,
       sidebar,
@@ -386,8 +380,7 @@ class Page extends Component<PageProps, PageState> {
                 className={css(
                   styles.pageDock,
                   isDockExpanded && styles.modifiers.expanded,
-                  isDockExpandableExpanded && styles.modifiers.expandableExpanded,
-                  isDockTextExpanded && styles.modifiers.textExpanded
+                  isDockOverlay && styles.modifiers.overlay
                 )}
               >
                 <div className={css(styles.pageDockMain)}>{dockContent}</div>

@@ -10,14 +10,10 @@ export interface CompassProps extends React.HTMLProps<HTMLDivElement> {
   masthead?: React.ReactNode;
   /** Content of the docked navigation area of the layout */
   dock?: React.ReactNode;
-  /** @beta Flag indicating the docked nav is expanded on mobile. Only applies when dock content is passed. */
+  /** @beta Flag indicating the docked nav is expanded. Only applies when dock content is passed. */
   isDockExpanded?: boolean;
-  /** @beta Flag indicating a docked nav is expanded as an overlay, triggered by expandable nav children. Only applies when dock content is passed. */
-  isDockExpandableExpanded?: boolean;
-  /** @beta Flag indicating the docked nav should display text on desktop. Only applies when dock content is passed, and
-   * will handle toggling the visibility of the text in individual isDocked components.
-   */
-  isDockTextExpanded?: boolean;
+  /** @beta Indicates if the docked nav should expand as an overlay instead of the default inline. */
+  isDockOverlay?: boolean;
   /** Content placed at the top of the compass layout */
   header?: React.ReactNode;
   /** Flag indicating if the header is expanded */
@@ -47,8 +43,7 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
   masthead,
   dock,
   isDockExpanded,
-  isDockExpandableExpanded,
-  isDockTextExpanded,
+  isDockOverlay,
   header,
   isHeaderExpanded = true,
   sidebarStart,
@@ -72,8 +67,7 @@ export const Compass: React.FunctionComponent<CompassProps> = ({
           className={css(
             `${styles.compass}__dock`,
             isDockExpanded && styles.modifiers.expanded,
-            isDockExpandableExpanded && styles.modifiers.expandableExpanded,
-            isDockTextExpanded && styles.modifiers.textExpanded
+            isDockOverlay && styles.modifiers.overlay
           )}
         >
           {dock}

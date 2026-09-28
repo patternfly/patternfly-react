@@ -97,7 +97,7 @@ export function generateTokens() {
   const cssFiles = glob
     .sync(['{**/{components,layouts}/**/*.css', '**/patternfly-charts.css', '**/patternfly-variables.css}'].join(','), {
       cwd: pfStylesDir,
-      ignore: ['assets/**', '/**/_index.css'],
+      ignore: ['assets/**', '/**/_index.css', '**/docs/**'],
       absolute: true
     })
     // Sort to put variables and charts at END of list so getLocalVarsMap returns correct values
