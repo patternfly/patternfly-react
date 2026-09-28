@@ -166,32 +166,21 @@ test(`Does not render with class ${styles.modifiers.docked} when isDocked is not
   expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.docked);
 });
 
-test(`Renders with class ${styles.modifiers.textExpanded} when isTextExpanded is passed and isDocked is passed`, () => {
+test(`Renders with class ${styles.modifiers.expanded} when isExpanded is passed and isDocked is passed`, () => {
   render(
-    <MenuToggle isTextExpanded isDocked>
+    <MenuToggle isExpanded isDocked>
       Text Expanded Toggle
     </MenuToggle>
   );
-  expect(screen.getByRole('button')).toHaveClass(styles.modifiers.textExpanded);
+  expect(screen.getByRole('button')).toHaveClass(styles.modifiers.expanded);
 });
 
-test(`Does not render with class ${styles.modifiers.textExpanded} when isTextExpanded is not passed`, () => {
+test(`Does not render with class ${styles.modifiers.expanded} when isExpanded is not passed`, () => {
   render(<MenuToggle>Toggle</MenuToggle>);
-  expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.textExpanded);
+  expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.expanded);
 });
 
-test(`Does not render with class ${styles.modifiers.textExpanded} when isTextExpanded is passed but isDocked is not passed`, () => {
-  render(<MenuToggle isTextExpanded>Text Expanded Toggle</MenuToggle>);
-  expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.textExpanded);
-});
-
-test(`Renders with both ${styles.modifiers.docked} and ${styles.modifiers.textExpanded} when both props are passed`, () => {
-  render(
-    <MenuToggle isDocked isTextExpanded>
-      Dock Text Expanded Toggle
-    </MenuToggle>
-  );
-  const button = screen.getByRole('button');
-  expect(button).toHaveClass(styles.modifiers.docked);
-  expect(button).toHaveClass(styles.modifiers.textExpanded);
+test(`Does not render with class ${styles.modifiers.expanded} when isExpanded is passed but isDocked is not passed`, () => {
+  render(<MenuToggle isExpanded>Text Expanded Toggle</MenuToggle>);
+  expect(screen.getByRole('button')).toHaveClass(styles.modifiers.expanded);
 });

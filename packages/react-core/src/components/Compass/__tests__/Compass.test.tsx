@@ -94,19 +94,9 @@ test('Renders footer without expanded class and with inert when isFooterExpanded
   expect(footerElement).toHaveAttribute('inert');
 });
 
-test(`Renders with ${styles.modifiers.expandableExpanded} class when isDockExpandableExpanded is true`, () => {
-  render(<Compass dock={<div>Dock content</div>} isDockExpandableExpanded />);
-  expect(screen.getByText('Dock content').parentElement).toHaveClass(styles.modifiers.expandableExpanded);
-});
-
-test(`Does not render with ${styles.modifiers.expandableExpanded} class when isDockExpandableExpanded is false`, () => {
-  render(<Compass dock={<div>Dock content</div>} isDockExpandableExpanded={false} />);
-  expect(screen.getByText('Dock content').parentElement).not.toHaveClass(styles.modifiers.expandableExpanded);
-});
-
-test(`Does not render with ${styles.modifiers.expandableExpanded} class by default`, () => {
-  render(<Compass dock={<div>Dock content</div>} />);
-  expect(screen.getByText('Dock content').parentElement).not.toHaveClass(styles.modifiers.expandableExpanded);
+test(`Renders with ${styles.modifiers.overlay} class when isDockOverlay is true`, () => {
+  render(<Compass dock={<div>Dock content</div>} isDockOverlay />);
+  expect(screen.getByText('Dock content').parentElement).toHaveClass(styles.modifiers.overlay);
 });
 
 test('Renders with drawer when drawerContent is provided', () => {
@@ -193,14 +183,4 @@ test(`Renders dock with ${styles.modifiers.expanded} class when isDockExpanded i
 test(`Renders dock without ${styles.modifiers.expanded} class when isDockExpanded is false`, () => {
   render(<Compass dock="Dock content" isDockExpanded={false} />);
   expect(screen.getByText('Dock content')).not.toHaveClass(styles.modifiers.expanded);
-});
-
-test(`Renders dock with ${styles.modifiers.textExpanded} class when isDockTextExpanded is true`, () => {
-  render(<Compass dock="Dock content" isDockTextExpanded />);
-  expect(screen.getByText('Dock content')).toHaveClass(styles.modifiers.textExpanded);
-});
-
-test(`Renders dock without ${styles.modifiers.textExpanded} class when isDockTextExpanded is false`, () => {
-  render(<Compass dock="Dock content" isDockTextExpanded={false} />);
-  expect(screen.getByText('Dock content')).not.toHaveClass(styles.modifiers.textExpanded);
 });

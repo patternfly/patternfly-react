@@ -566,34 +566,34 @@ describe('Dock variant', () => {
     expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.docked);
   });
 
-  test(`Renders with class ${styles.modifiers.textExpanded} when isTextExpanded = true and isDocked = true`, () => {
+  test(`Renders with class ${styles.modifiers.expanded} when isExpanded = true and isDocked = true`, () => {
     render(
-      <Button isTextExpanded isDocked>
+      <Button isExpanded isDocked>
         Text Expanded Button
       </Button>
     );
-    expect(screen.getByRole('button')).toHaveClass(styles.modifiers.textExpanded);
+    expect(screen.getByRole('button')).toHaveClass(styles.modifiers.expanded);
   });
 
-  test(`Does not render with class ${styles.modifiers.textExpanded} when isTextExpanded is not passed`, () => {
+  test(`Does not render with class ${styles.modifiers.expanded} when isExpanded is not passed`, () => {
     render(<Button>Button</Button>);
-    expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.textExpanded);
+    expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.expanded);
   });
 
-  test(`Does not render with class ${styles.modifiers.textExpanded} when isTextExpanded = true but isDocked is not passed`, () => {
-    render(<Button isTextExpanded>Text Expanded Button</Button>);
-    expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.textExpanded);
+  test(`Does not render with class ${styles.modifiers.expanded} when isExpanded = true but isDocked is not passed`, () => {
+    render(<Button isExpanded>Text Expanded Button</Button>);
+    expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.expanded);
   });
 
-  test(`Renders with both ${styles.modifiers.docked} and ${styles.modifiers.textExpanded} when both props are true`, () => {
+  test(`Renders with both ${styles.modifiers.docked} and ${styles.modifiers.expanded} when both props are true`, () => {
     render(
-      <Button isDocked isTextExpanded>
+      <Button isDocked isExpanded>
         Dock Text Expanded Button
       </Button>
     );
     const button = screen.getByRole('button');
     expect(button).toHaveClass(styles.modifiers.docked);
-    expect(button).toHaveClass(styles.modifiers.textExpanded);
+    expect(button).toHaveClass(styles.modifiers.expanded);
   });
 });
 
