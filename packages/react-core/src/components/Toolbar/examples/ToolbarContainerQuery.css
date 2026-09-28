@@ -8,7 +8,6 @@
   border: var(--pf-t--global--border--width--extra-strong) dashed var(--pf-t--global--border--color--default);
 }
 
-.toolbar-container-query-resize.pf-v6-c-toolbar,
 .toolbar-container-query-resize .pf-v6-c-toolbar__group {
   border: var(--pf-t--global--border--width--control--default) dashed var(--pf-t--global--border--color--default);
   padding: var(--pf-t--global--spacer--sm);
