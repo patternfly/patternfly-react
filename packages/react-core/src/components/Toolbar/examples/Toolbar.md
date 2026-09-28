@@ -6,6 +6,7 @@ section: components
 ---
 
 import { Fragment, useState, useLayoutEffect, useRef } from 'react';
+import './ToolbarContainerQuery.css';
 
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
@@ -75,6 +76,21 @@ Note: This example does not demonstrate responsive toolbar behavior. Responsive 
 To change the background color of a toolbar, use the `colorVariant` property on the `<Toolbar>`.
 
 ```ts file="./ToolbarColorVariant.tsx"
+
+```
+
+## Responsive toolbar behavior
+
+Toolbar width-based responsive modifiers use `@container` queries with the global PatternFly breakpoints. Responsive inset modifiers (`inset`) are an exception and use viewport media queries.
+
+By default, the container `pf-v6-contain-toolbar` is established on `:root`, so the breakpoints behave like viewport breakpoints. To make a toolbar respond to its own available width, set the `isContainer` property on `<Toolbar>`. Note: Alternatively, if a wrapping element creates an `inline-size` or `size` container with the container name `pf-v6-contain-toolbar`, the breakpoints will apply to that container's width instead.
+
+### Toolbar as container
+Add `isContainer` to the toolbar so width-based modifiers respond to the toolbar's width. Resize the dashed box to see items and groups show and hide at the global breakpoints.
+
+_Debugging note: `xl` and `2xl` may not trigger when the content area is narrower than those breakpoints (view in full screen)._
+
+```ts file="./ToolbarContainerQuery.tsx"
 
 ```
 

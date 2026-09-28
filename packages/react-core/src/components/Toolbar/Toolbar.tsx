@@ -34,6 +34,8 @@ export interface ToolbarProps extends React.HTMLProps<HTMLDivElement>, OUIAProps
   children?: React.ReactNode;
   /** Id of the data toolbar */
   id?: string;
+  /** Flag indicating if the toolbar is a container */
+  isContainer?: boolean;
   /** Flag indicating the toolbar height should expand to the full height of the container */
   isFullHeight?: boolean;
   /** Flag indicating the toolbar is static */
@@ -146,6 +148,7 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
       toggleIsExpanded,
       className,
       children,
+      isContainer,
       isFullHeight,
       isStatic,
       isStickyBase,
@@ -174,6 +177,7 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
             className={css(
               styles.toolbar,
               hasNoPadding && styles.modifiers.noPadding,
+              isContainer && styles.modifiers.container,
               isFullHeight && styles.modifiers.fullHeight,
               isStatic && styles.modifiers.static,
               isSticky && styles.modifiers.sticky,

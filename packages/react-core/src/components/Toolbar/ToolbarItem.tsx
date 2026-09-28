@@ -236,7 +236,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
 
   return (
     <PageContext.Consumer>
-      {({ width, getBreakpoint, height, getVerticalBreakpoint }) => (
+      {({ height, getVerticalBreakpoint }) => (
         <div
           className={css(
             styles.toolbarItem,
@@ -244,14 +244,14 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
             variant === ToolbarItemVariant['label-group'] && styles.modifiers.labelGroup,
             isAllExpanded && styles.modifiers.expanded,
             isOverflowContainer && styles.modifiers.overflowContainer,
-            formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
+            formatBreakpointMods(visibility, styles),
             formatBreakpointMods(visibilityAtHeight, styles, '', getVerticalBreakpoint(height), true),
-            formatBreakpointMods(align, styles, '', getBreakpoint(width)),
-            formatBreakpointMods(gap, styles, '', getBreakpoint(width)),
-            formatBreakpointMods(columnGap, styles, '', getBreakpoint(width)),
-            formatBreakpointMods(rowGap, styles, '', getBreakpoint(width)),
-            formatBreakpointMods(rowWrap, styles, '', getBreakpoint(width)),
-            formatBreakpointMods(flexGrow, styles, '', getBreakpoint(width)),
+            formatBreakpointMods(align, styles),
+            formatBreakpointMods(gap, styles),
+            formatBreakpointMods(columnGap, styles),
+            formatBreakpointMods(rowGap, styles),
+            formatBreakpointMods(rowWrap, styles),
+            formatBreakpointMods(flexGrow, styles),
             alignItems === 'start' && styles.modifiers.alignItemsStart,
             alignItems === 'center' && styles.modifiers.alignItemsCenter,
             alignItems === 'baseline' && styles.modifiers.alignItemsBaseline,

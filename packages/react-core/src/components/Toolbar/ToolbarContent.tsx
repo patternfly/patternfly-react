@@ -78,11 +78,11 @@ class ToolbarContent extends Component<ToolbarContentProps> {
 
     return (
       <PageContext.Consumer>
-        {({ width, getBreakpoint, height, getVerticalBreakpoint }) => (
+        {({ height, getVerticalBreakpoint }) => (
           <div
             className={css(
               styles.toolbarContent,
-              formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(visibility, styles),
               formatBreakpointMods(visibilityAtHeight, styles, '', getVerticalBreakpoint(height), true),
               className
             )}
@@ -115,7 +115,7 @@ class ToolbarContent extends Component<ToolbarContentProps> {
                     <div
                       className={css(
                         styles.toolbarContentSection,
-                        formatBreakpointMods(rowWrap, styles, '', getBreakpoint(width)),
+                        formatBreakpointMods(rowWrap, styles),
                         alignItems === 'center' && styles.modifiers.alignItemsCenter,
                         alignItems === 'start' && styles.modifiers.alignItemsStart,
                         alignItems === 'baseline' && styles.modifiers.alignItemsBaseline

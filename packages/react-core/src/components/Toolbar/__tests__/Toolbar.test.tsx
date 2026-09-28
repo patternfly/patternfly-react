@@ -299,4 +299,42 @@ describe('Toolbar', () => {
     );
     expect(screen.getByTestId('toolbar-sticky-stuck')).toHaveClass(styles.modifiers.stickyStuck);
   });
+
+  it('renders the container modifier when isContainer is true', () => {
+    render(<Toolbar isContainer data-testid="toolbar-container" />);
+
+    expect(screen.getByTestId('toolbar-container')).toHaveClass('pf-m-container');
+  });
+
+  it('renders all responsive visibility modifiers', () => {
+    render(<ToolbarItem data-testid="toolbar-item" visibility={{ md: 'hidden', xl: 'visible' }} />);
+
+    const item = screen.getByTestId('toolbar-item');
+
+    expect(item).toHaveClass('pf-m-hidden-on-md');
+    expect(item).toHaveClass('pf-m-visible-on-xl');
+  });
+
+  it('renders all responsive row wrap modifiers', () => {
+    render(<ToolbarContent data-testid="toolbar-content" rowWrap={{ md: 'nowrap', xl: 'wrap' }} />);
+
+    const contentSection = screen.getByTestId('toolbar-content').querySelector('div');
+
+    expect(contentSection).toHaveClass('pf-m-nowrap-on-md');
+    expect(contentSection).toHaveClass('pf-m-wrap-on-xl');
+  });
+
+  it('renders the toggle group breakpoint modifier', () => {
+    render(
+      <Toolbar>
+        <ToolbarContent>
+          <ToolbarToggleGroup data-testid="toolbar-toggle-group" breakpoint="xl" toggleIcon={<span />}>
+            Content
+          </ToolbarToggleGroup>
+        </ToolbarContent>
+      </Toolbar>
+    );
+
+    expect(screen.getByTestId('toolbar-toggle-group')).toHaveClass('pf-m-show-on-xl');
+  });
 });
