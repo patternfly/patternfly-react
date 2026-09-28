@@ -3,7 +3,8 @@ import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import { ToolbarContext } from './ToolbarUtils';
 import { ToolbarLabelGroupContent } from './ToolbarLabelGroupContent';
-import { formatBreakpointMods, canUseDOM } from '../../helpers/util';
+import { formatBreakpointMods, canUseDOM, getBreakpoint } from '../../helpers/util';
+import { getResizeObserver } from '../../helpers/resizeObserver';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 import { PageContext } from '../Page/PageContext';
@@ -86,6 +87,9 @@ interface FilterInfo {
 class Toolbar extends Component<ToolbarProps, ToolbarState> {
   static displayName = 'Toolbar';
   labelGroupContentRef = createRef<HTMLDivElement>();
+  toolbarRef = createRef<HTMLDivElement>();
+  resizeObserver: () => void = () => {};
+  containerBreakpoint: ReturnType<typeof getBreakpoint>;
   staticFilterInfo = {};
   hasNoPadding = false;
   state = {
@@ -111,18 +115,45 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
     }
   };
 
+  closeExpandableContentOnContainerResize = () => {
+    const containerWidth = this.toolbarRef.current?.clientWidth;
+    if (!containerWidth) {
+      return;
+    }
+
+    const breakpoint = getBreakpoint(containerWidth);
+    if (breakpoint !== this.containerBreakpoint) {
+      this.containerBreakpoint = breakpoint;
+      if (this.state.isManagedToggleExpanded) {
+        this.setState({ isManagedToggleExpanded: false });
+      }
+    }
+  };
+
   componentDidMount() {
     if (canUseDOM) {
       this.setState({ windowWidth: window.innerWidth });
     }
     if (this.isToggleManaged() && canUseDOM) {
-      window.addEventListener('resize', this.closeExpandableContent);
+      if (this.props.isContainer && this.toolbarRef.current) {
+        this.resizeObserver = getResizeObserver(
+          this.toolbarRef.current,
+          this.closeExpandableContentOnContainerResize,
+          true
+        );
+      } else {
+        window.addEventListener('resize', this.closeExpandableContent);
+      }
     }
   }
 
   componentWillUnmount() {
     if (this.isToggleManaged() && canUseDOM) {
-      window.removeEventListener('resize', this.closeExpandableContent);
+      if (this.props.isContainer) {
+        this.resizeObserver();
+      } else {
+        window.removeEventListener('resize', this.closeExpandableContent);
+      }
     }
   }
 
@@ -191,6 +222,7 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
               className
             )}
             id={randomId}
+            ref={this.toolbarRef}
             {...getOUIAProps(Toolbar.displayName, ouiaId !== undefined ? ouiaId : generatedOuiaId)}
             {...props}
           >
