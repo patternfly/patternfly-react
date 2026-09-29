@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.7.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.7.0-prerelease.2...@patternfly/react-table@6.7.0-prerelease.3) (2026-09-29)
+
+### Features
+
+- **Table:** add dynamic sticky footer support ([#12664](https://github.com/patternfly/patternfly-react/issues/12664)) ([00a1908](https://github.com/patternfly/patternfly-react/commit/00a1908129af93f101677a085e206fb69f955fdd))
+
 # [6.7.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@6.7.0-prerelease.1...@patternfly/react-table@6.7.0-prerelease.2) (2026-09-29)
 
 **Note:** Version bump only for package @patternfly/react-table
