@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.7.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.7.0-prerelease.0...@patternfly/react-core@6.7.0-prerelease.1) (2026-09-29)
+
+### Bug Fixes
+
+- **docked nav:** persistent inline nav ([#12653](https://github.com/patternfly/patternfly-react/issues/12653)) ([32ef8cc](https://github.com/patternfly/patternfly-react/commit/32ef8ccb009aadd9f76a4c2a954ab8a8c17cfc16))
+
+### Reverts
+
+- Revert "chore(release): releasing packages [ci skip]" (#12663) ([de8fb05](https://github.com/patternfly/patternfly-react/commit/de8fb05e58ffdf9adf30f8225a03783c70978df6)), closes [#12663](https://github.com/patternfly/patternfly-react/issues/12663)
+
 # [6.7.0-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.6.1-prerelease.11...@patternfly/react-core@6.7.0-prerelease.0) (2026-09-28)
 
 **Note:** Version bump only for package @patternfly/react-core
