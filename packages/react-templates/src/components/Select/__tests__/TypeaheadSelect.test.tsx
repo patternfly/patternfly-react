@@ -1,4 +1,4 @@
-import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { TypeaheadSelect } from '../TypeaheadSelect';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
@@ -126,8 +126,6 @@ test('toggles the select menu when the toggle button is clicked', async () => {
   expect(menu).toBeInTheDocument();
 
   await user.click(toggle);
-
-  await waitForElementToBeRemoved(menu);
 
   expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
 });
