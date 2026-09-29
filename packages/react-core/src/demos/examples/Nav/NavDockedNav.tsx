@@ -113,7 +113,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
   const onNavSelect = (_event: React.FormEvent<HTMLInputElement>, selectedItem: NavOnSelectProps) => {
     typeof selectedItem.itemId === 'number' && setActiveItem(selectedItem.itemId);
 
-    if (isDockExpanded && !isDockOverlay) {
+    if (isDockExpanded && !isDockOverlay && !isMobile) {
       return;
     }
 
@@ -249,7 +249,11 @@ export const NavDockedNav: React.FunctionComponent = () => {
   };
 
   const onToggleDock = () => {
-    setIsDockExpanded(!isDockExpanded);
+    const nextState = !isDockExpanded;
+    if (!nextState) {
+      setIsDockOverlay(false);
+    }
+    setIsDockExpanded(nextState);
 
     if (isMobile) {
       if (isDockExpanded) {

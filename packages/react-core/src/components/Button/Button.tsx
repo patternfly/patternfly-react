@@ -111,8 +111,6 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   isCircle?: boolean;
   /** @beta Flag indicating the button is a docked variant button. For use in docked navigation. */
   isDocked?: boolean;
-  /** @beta Flag indicating the docked button should display text. Only applies when isDocked is true. */
-  isTextExpanded?: boolean;
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Adds count number to button */
