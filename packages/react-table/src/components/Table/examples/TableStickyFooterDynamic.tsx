@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef, useState } from 'react';
+import { getResizeObserver } from '@patternfly/react-core';
 import { Table, Thead, Tfoot, Tr, Th, Tbody, Td, InnerScrollContainer } from '@patternfly/react-table';
 
 const useIsStuckFromScrollParent = (scrollParentRef: React.RefObject<HTMLDivElement>): boolean => {
@@ -15,7 +16,11 @@ const useIsStuckFromScrollParent = (scrollParentRef: React.RefObject<HTMLDivElem
     };
     syncFromScroll();
     scrollElement.addEventListener('scroll', syncFromScroll, { passive: true });
-    return () => scrollElement.removeEventListener('scroll', syncFromScroll);
+    const observer = getResizeObserver(scrollElement, syncFromScroll, true);
+    return () => {
+      scrollElement.removeEventListener('scroll', syncFromScroll);
+      observer();
+    };
   }, [scrollParentRef]);
 
   return isStuck;
