@@ -489,6 +489,16 @@ Use `Tfoot` for semantic table footer rows. Set `isStickyFooter` on `Table` to k
 
 ```
 
+### Dynamic sticky footer
+
+A sticky footer may alternatively be implemented with two properties: `isStickyFooterBase` and `isStickyFooterStuck` - which allows separate control of the sticky position and sticky styling. `isStickyFooterBase` should always be applied to make the footer position sticky, and `isStickyFooterStuck` may be applied dynamically to enable the sticky styling, such as when the sticky footer is not at the bottom of the scroll parent as shown in the example.
+
+`isStickyFooter` acts as if both properties are present and true when applied, and is useful when dynamic sticky styling is not necessary.
+
+```ts file="TableStickyFooterDynamic.tsx"
+
+```
+
 ### Striped
 
 To apply striping to a basic table, add the `isStriped` property to `Table`.

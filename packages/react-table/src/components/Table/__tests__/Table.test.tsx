@@ -234,3 +234,39 @@ test(`Does not render with class ${styles.modifiers.stickyFooter} when isStickyF
 
   expect(screen.getByRole('grid', { name: 'Test table' })).not.toHaveClass(styles.modifiers.stickyFooter);
 });
+
+test(`Renders with class ${styles.modifiers.stickyFooterBase} when isStickyFooterBase is true`, () => {
+  render(<Table isStickyFooterBase aria-label="Test table" />);
+
+  expect(screen.getByRole('grid', { name: 'Test table' })).toHaveClass(styles.modifiers.stickyFooterBase);
+});
+
+test(`Does not render with class ${styles.modifiers.stickyFooterBase} when isStickyFooterBase is false`, () => {
+  render(<Table isStickyFooterBase={false} aria-label="Test table" />);
+
+  expect(screen.getByRole('grid', { name: 'Test table' })).not.toHaveClass(styles.modifiers.stickyFooterBase);
+});
+
+test(`Renders with class ${styles.modifiers.stickyFooterStuck} when isStickyFooterStuck is true`, () => {
+  render(<Table isStickyFooterStuck aria-label="Test table" />);
+
+  expect(screen.getByRole('grid', { name: 'Test table' })).toHaveClass(styles.modifiers.stickyFooterStuck);
+});
+
+test(`Does not render with class ${styles.modifiers.stickyFooterStuck} when isStickyFooterStuck is false`, () => {
+  render(<Table isStickyFooterStuck={false} aria-label="Test table" />);
+
+  expect(screen.getByRole('grid', { name: 'Test table' })).not.toHaveClass(styles.modifiers.stickyFooterStuck);
+});
+
+test(`Does not render with class ${styles.modifiers.stickyFooterBase} when isStickyFooterBase is undefined`, () => {
+  render(<Table aria-label="Test table" />);
+
+  expect(screen.getByRole('grid', { name: 'Test table' })).not.toHaveClass(styles.modifiers.stickyFooterBase);
+});
+
+test(`Does not render with class ${styles.modifiers.stickyFooterStuck} when isStickyFooterStuck is undefined`, () => {
+  render(<Table aria-label="Test table" />);
+
+  expect(screen.getByRole('grid', { name: 'Test table' })).not.toHaveClass(styles.modifiers.stickyFooterStuck);
+});

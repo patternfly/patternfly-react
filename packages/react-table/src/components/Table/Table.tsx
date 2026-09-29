@@ -60,6 +60,10 @@ export interface TableProps extends React.HTMLProps<HTMLTableElement>, OUIAProps
   isStickyHeaderStuck?: boolean;
   /** Flag indicating the table footer should stick to the bottom of its scroll container. */
   isStickyFooter?: boolean;
+  /** @beta Flag indicating the table footer should have sticky positioning to the bottom of its scroll container. */
+  isStickyFooterBase?: boolean;
+  /** @beta Flag indicating the table footer should have stuck styling, when the footer is not at the bottom of the scroll container. */
+  isStickyFooterStuck?: boolean;
   /** @hide Forwarded ref */
   innerRef?: React.RefObject<any>;
   /** Flag indicating table is a tree table */
@@ -107,6 +111,8 @@ const TableBase: React.FunctionComponent<TableProps> = ({
   isStickyHeaderBase = false,
   isStickyHeaderStuck = false,
   isStickyFooter = false,
+  isStickyFooterBase = false,
+  isStickyFooterStuck = false,
   isPlain = false,
   isNoPlainOnGlass = false,
   gridBreakPoint = TableGridBreakpoint.gridMd,
@@ -237,6 +243,8 @@ const TableBase: React.FunctionComponent<TableProps> = ({
           isStickyHeaderBase && styles.modifiers.stickyHeaderBase,
           isStickyHeaderStuck && styles.modifiers.stickyHeaderStuck,
           isStickyFooter && styles.modifiers.stickyFooter,
+          isStickyFooterBase && styles.modifiers.stickyFooterBase,
+          isStickyFooterStuck && styles.modifiers.stickyFooterStuck,
           isTreeTable && stylesTreeView.modifiers.treeView,
           isStriped && styles.modifiers.striped,
           isExpandable && styles.modifiers.expandable,
