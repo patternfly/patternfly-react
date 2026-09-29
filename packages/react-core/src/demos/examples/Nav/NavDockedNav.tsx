@@ -82,7 +82,8 @@ export const NavDockedNav: React.FunctionComponent = () => {
       dockedMastheadElement &&
       !dockedMastheadElement.contains(event.target as Node) &&
       !dockedMobileMastheadToggle?.contains(event.target as Node) &&
-      isDockExpanded
+      isDockExpanded &&
+      isDockOverlay
     ) {
       setIsDockExpanded(false);
       setIsDockOverlay(false);
@@ -267,18 +268,10 @@ export const NavDockedNav: React.FunctionComponent = () => {
   const onToggleNavGroup = (_event: React.MouseEvent<HTMLButtonElement>, isExpanded: boolean) => {
     if (!isDockExpanded) {
       setIsNavGroupExpanded(true);
+      setIsDockOverlay(true);
+      setIsDockExpanded(true);
     } else {
       setIsNavGroupExpanded(isExpanded);
-    }
-
-    if (!isMobile) {
-      if (!isDockOverlay) {
-        setIsDockOverlay(true);
-      }
-
-      if (!isDockExpanded) {
-        setIsDockExpanded(true);
-      }
     }
   };
 
