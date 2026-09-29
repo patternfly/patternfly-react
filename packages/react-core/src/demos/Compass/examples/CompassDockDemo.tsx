@@ -111,7 +111,7 @@ export const CompassDockDemo: React.FunctionComponent = () => {
   const onNavSelect = (_event: React.FormEvent<HTMLInputElement>, selectedItem: NavOnSelectProps) => {
     typeof selectedItem.itemId === 'number' && setActiveItem(selectedItem.itemId);
 
-    if (isDockTextExpanded) {
+    if (!isMobile && isDockTextExpanded) {
       return;
     }
 
