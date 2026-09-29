@@ -155,15 +155,7 @@ To customize which element inside the modal receives focus when initially opened
 
 ```
 
-### Animated modal (hasAnimations)
-
-To allow modals to animate as they open and close, set the `hasAnimations` property on the modal.
-
-```ts file="./ModalAnimated.tsx"
-
-```
-
-### Not animated modal
+### Non animated modal
 
 To explicitly disable animations, set the `hasAnimations` property to `false` on the modal.
 
