@@ -12,6 +12,10 @@ import RhUiAttentionBellFillIcon from '@patternfly/react-icons/dist/esm/icons/rh
 import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
 
+When using the Modal component, it is recommended to control it via the `isOpen` property rather than conditionally rendering the Modal.
+
+Conditional rendering can potentially lead to unforeseen issues, especially with animations enabled.
+
 ## Examples
 
 ### Basic modals
