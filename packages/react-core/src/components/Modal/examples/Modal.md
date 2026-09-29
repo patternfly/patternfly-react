@@ -12,6 +12,10 @@ import RhUiAttentionBellFillIcon from '@patternfly/react-icons/dist/esm/icons/rh
 import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
 
+When using the Modal component, it is recommended to control it via the `isOpen` property rather than conditionally rendering the Modal.
+
+Conditional rendering can potentially lead to unforeseen issues, especially with animations enabled.
+
 ## Examples
 
 ### Basic modals
@@ -152,5 +156,13 @@ To enable form submission from a button in the modal's footer (outside of the `<
 To customize which element inside the modal receives focus when initially opened, use the `elementToFocus` property`.
 
 ```ts file="./ModalCustomFocus.tsx"
+
+```
+
+### Non animated modal
+
+To explicitly disable animations, set the `hasAnimations` property to `false` on the modal.
+
+```ts file="./ModalNotAnimated.tsx"
 
 ```
