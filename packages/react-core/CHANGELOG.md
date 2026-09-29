@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.7.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.7.0-prerelease.1...@patternfly/react-core@6.7.0-prerelease.2) (2026-09-29)
+
+### Features
+
+- **Modal,Backdrop:** Add animation support ([#12552](https://github.com/patternfly/patternfly-react/issues/12552)) ([3dbb747](https://github.com/patternfly/patternfly-react/commit/3dbb747c56419987d7b23583a186c838bcaa6e74)), closes [#1](https://github.com/patternfly/patternfly-react/issues/1)
+
 # [6.7.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.7.0-prerelease.0...@patternfly/react-core@6.7.0-prerelease.1) (2026-09-29)
 
 ### Bug Fixes

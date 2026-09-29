@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.7.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.7.0-prerelease.0...@patternfly/react-tokens@6.7.0-prerelease.1) (2026-09-29)
+
+### Features
+
+- **Modal,Backdrop:** Add animation support ([#12552](https://github.com/patternfly/patternfly-react/issues/12552)) ([3dbb747](https://github.com/patternfly/patternfly-react/commit/3dbb747c56419987d7b23583a186c838bcaa6e74)), closes [#1](https://github.com/patternfly/patternfly-react/issues/1)
+
+### Reverts
+
+- Revert "chore(release): releasing packages [ci skip]" (#12663) ([de8fb05](https://github.com/patternfly/patternfly-react/commit/de8fb05e58ffdf9adf30f8225a03783c70978df6)), closes [#12663](https://github.com/patternfly/patternfly-react/issues/12663)
+
 # [6.7.0-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.6.1-prerelease.4...@patternfly/react-tokens@6.7.0-prerelease.0) (2026-09-28)
 
 **Note:** Version bump only for package @patternfly/react-tokens
