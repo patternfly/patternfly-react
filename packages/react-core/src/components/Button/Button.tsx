@@ -99,7 +99,7 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   tabIndex?: number;
   /** Adds danger styling to secondary or link button variants */
   isDanger?: boolean;
-  /** Flag indicating whether content the button controls is expanded or not. Required when isHamburger is true. */
+  /** Flag indicating whether content the button controls is expanded or not. Required when isHamburger is true. Applies additional expanded styling when isDocked is true. */
   isExpanded?: boolean;
   /** Flag indicating the button is a settings button. This will override the icon property. */
   isSettings?: boolean;
