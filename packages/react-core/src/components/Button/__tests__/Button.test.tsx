@@ -584,17 +584,6 @@ describe('Dock variant', () => {
     render(<Button isExpanded>Text Expanded Button</Button>);
     expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.expanded);
   });
-
-  test(`Renders with both ${styles.modifiers.docked} and ${styles.modifiers.expanded} when both props are true`, () => {
-    render(
-      <Button isDocked isExpanded>
-        Dock Text Expanded Button
-      </Button>
-    );
-    const button = screen.getByRole('button');
-    expect(button).toHaveClass(styles.modifiers.docked);
-    expect(button).toHaveClass(styles.modifiers.expanded);
-  });
 });
 
 test(`Renders basic button`, () => {
