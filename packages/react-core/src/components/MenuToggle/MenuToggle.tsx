@@ -55,8 +55,6 @@ export interface MenuToggleProps
   isSettings?: boolean;
   /** @beta Flag indicating the menu toggle is a docked variant. For use in docked navigation. */
   isDocked?: boolean;
-  /** @beta Flag indicating the docked toggle should display text. Only applies when isDocked is true. */
-  isTextExpanded?: boolean;
   /** Elements to display before the toggle button. When included, renders the menu toggle as a split button. */
   splitButtonItems?: React.ReactNode[];
   /** Variant styles of the menu toggle */
@@ -95,7 +93,6 @@ class MenuToggleBase extends Component<MenuToggleProps> {
     isPlaceholder: false,
     isCircle: false,
     isDocked: false,
-    isTextExpanded: false,
     size: 'default',
     ouiaSafe: true,
     'aria-haspopup': 'menu'
@@ -116,7 +113,6 @@ class MenuToggleBase extends Component<MenuToggleProps> {
       isCircle,
       isSettings,
       isDocked,
-      isTextExpanded,
       splitButtonItems,
       variant,
       status,
@@ -204,7 +200,6 @@ class MenuToggleBase extends Component<MenuToggleProps> {
             isPlaceholder && styles.modifiers.placeholder,
             isSettings && styles.modifiers.settings,
             isDocked && styles.modifiers.docked,
-            isDocked && isTextExpanded && styles.modifiers.textExpanded,
             size === MenuToggleSize.sm && styles.modifiers.small,
             className
           );

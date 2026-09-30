@@ -54,8 +54,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState(1);
   const [isNavGroupExpanded, setIsNavGroupExpanded] = useState(false);
   const [isDockExpanded, setIsDockExpanded] = useState(false);
-  const [isDockTextExpanded, setIsDockTextExpanded] = useState(false);
-  const [isDockExpandableExpanded, setIsDockExpandableExpanded] = useState(false);
+  const [isDockOverlay, setIsDockOverlay] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -72,7 +71,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
   }, []);
 
   const handleDockClickOutside = (event: MouseEvent) => {
-    if ((!isMobile && !isDockExpandableExpanded) || (isMobile && !isDockExpanded)) {
+    if (!isDockExpanded) {
       return;
     }
 
@@ -83,21 +82,22 @@ export const NavDockedNav: React.FunctionComponent = () => {
       dockedMastheadElement &&
       !dockedMastheadElement.contains(event.target as Node) &&
       !dockedMobileMastheadToggle?.contains(event.target as Node) &&
-      (isDockExpandableExpanded || isDockExpanded)
+      isDockExpanded &&
+      (isDockOverlay || isMobile)
     ) {
-      setIsDockExpandableExpanded(false);
       setIsDockExpanded(false);
+      setIsDockOverlay(false);
     }
   };
 
   const handleDockKeydown = (_event: KeyboardEvent) => {
-    if ((!isMobile && !isDockExpandableExpanded) || (isMobile && !isDockExpanded)) {
+    if (!isDockExpanded) {
       return;
     }
 
     if (_event.key === 'Escape') {
-      setIsDockExpandableExpanded(false);
       setIsDockExpanded(false);
+      setIsDockOverlay(false);
     }
   };
 
@@ -109,18 +109,17 @@ export const NavDockedNav: React.FunctionComponent = () => {
       window.removeEventListener('click', handleDockClickOutside);
       window.removeEventListener('keydown', handleDockKeydown);
     };
-  }, [isDockExpandableExpanded, isDockTextExpanded, isDockExpanded, isMobile]);
+  }, [isDockOverlay, isDockExpanded, isMobile]);
 
   const onNavSelect = (_event: React.FormEvent<HTMLInputElement>, selectedItem: NavOnSelectProps) => {
     typeof selectedItem.itemId === 'number' && setActiveItem(selectedItem.itemId);
 
-    if (!isMobile && isDockTextExpanded) {
+    if (isDockExpanded && !isDockOverlay && !isMobile) {
       return;
     }
 
-    setIsDockExpandableExpanded(false);
-    setIsDockTextExpanded(false);
     setIsDockExpanded(false);
+    setIsDockOverlay(false);
   };
 
   const mobileTextLogo = (
@@ -251,44 +250,28 @@ export const NavDockedNav: React.FunctionComponent = () => {
   };
 
   const onToggleDock = () => {
-    if (isMobile) {
-      setIsDockExpanded(!isDockExpanded);
+    const nextState = !isDockExpanded;
+    if (!nextState) {
+      setIsDockOverlay(false);
+    }
+    setIsDockExpanded(nextState);
 
+    if (isMobile) {
       if (isDockExpanded) {
         setTimeout(() => {
           mobileToggleRef.current?.focus();
         }, 200);
       }
-    } else {
-      const nextDockTextExpanded = !isDockTextExpanded;
-      setIsDockTextExpanded(nextDockTextExpanded);
-
-      if (!nextDockTextExpanded) {
-        setIsDockExpandableExpanded(false);
-      }
-
-      if (isDockExpandableExpanded) {
-        setIsDockExpandableExpanded(false);
-        setIsDockTextExpanded(false);
-      }
     }
   };
 
   const onToggleNavGroup = (_event: React.MouseEvent<HTMLButtonElement>, isExpanded: boolean) => {
-    if (!isDockExpandableExpanded && !isDockTextExpanded && !isDockExpanded) {
+    if (!isDockExpanded) {
       setIsNavGroupExpanded(true);
+      setIsDockOverlay(true);
+      setIsDockExpanded(true);
     } else {
       setIsNavGroupExpanded(isExpanded);
-    }
-
-    if (!isMobile) {
-      if (!isDockExpandableExpanded && !isDockTextExpanded) {
-        setIsDockExpandableExpanded(true);
-      }
-
-      if (!isDockTextExpanded) {
-        setIsDockTextExpanded(false);
-      }
     }
   };
 
@@ -339,7 +322,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
             isHamburger
             onClick={onToggleDock}
             aria-label="Global navigation"
-            isExpanded={isDockTextExpanded}
+            isExpanded={isDockExpanded}
           />
         </MastheadToggle>
         <MastheadBrand>
@@ -429,7 +412,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
                   </NavItem>
                 </NavList>
               </Nav>
-              {!isDockTextExpanded && !isDockExpanded && !isDockExpandableExpanded && (
+              {!isDockExpanded && (
                 <>
                   <Tooltip aria="none" aria-live="off" triggerRef={navItem1Ref} content="System panel"></Tooltip>
                   <Tooltip aria="none" aria-live="off" triggerRef={navItem2Ref} content="Policy"></Tooltip>
@@ -446,7 +429,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
               gap={{ default: 'gapNone', md: 'gapMd' }}
             >
               <ToolbarItem>
-                {isDockTextExpanded || isDockExpanded ? (
+                {isDockExpanded ? (
                   <MenuToggle
                     ref={appsRef}
                     variant="plain"
@@ -471,7 +454,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
                 )}
               </ToolbarItem>
               <ToolbarItem>
-                {isDockTextExpanded || isDockExpanded ? (
+                {isDockExpanded ? (
                   <Button ref={settingsRef} aria-label="Settings" isSettings variant="plain" isDocked>
                     Settings
                   </Button>
@@ -484,7 +467,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
                 )}
               </ToolbarItem>
               <ToolbarItem>
-                {isDockTextExpanded || isDockExpanded ? (
+                {isDockExpanded ? (
                   <MenuToggle
                     ref={helpRef}
                     variant="plain"
@@ -537,8 +520,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
       <Page
         variant="docked"
         isDockExpanded={isDockExpanded}
-        isDockExpandableExpanded={isDockExpandableExpanded}
-        isDockTextExpanded={isDockTextExpanded}
+        isDockOverlay={isDockOverlay}
         masthead={mobileMasthead}
         dockContent={dockedMasthead}
         skipToContent={pageSkipToContent}

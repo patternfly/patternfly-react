@@ -99,7 +99,7 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   tabIndex?: number;
   /** Adds danger styling to secondary or link button variants */
   isDanger?: boolean;
-  /** Flag indicating whether content the button controls is expanded or not. Required when isHamburger is true. */
+  /** Flag indicating whether content the button controls is expanded or not. Required when isHamburger is true. Applies additional expanded styling when isDocked is true. */
   isExpanded?: boolean;
   /** Flag indicating the button is a settings button. This will override the icon property. */
   isSettings?: boolean;
@@ -111,8 +111,6 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   isCircle?: boolean;
   /** @beta Flag indicating the button is a docked variant button. For use in docked navigation. */
   isDocked?: boolean;
-  /** @beta Flag indicating the docked button should display text. Only applies when isDocked is true. */
-  isTextExpanded?: boolean;
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Adds count number to button */
@@ -139,7 +137,6 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   hamburgerVariant,
   isCircle,
   isDocked = false,
-  isTextExpanded = false,
   spinnerAriaValueText,
   spinnerAriaLabelledBy,
   spinnerAriaLabel,
@@ -272,7 +269,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
         size === ButtonSize.lg && styles.modifiers.displayLg,
         isCircle && styles.modifiers.circle,
         isDocked && styles.modifiers.docked,
-        isDocked && isTextExpanded && styles.modifiers.textExpanded,
+        isDocked && isExpanded && styles.modifiers.expanded,
         className
       )}
       disabled={isButtonElement ? isDisabled : null}

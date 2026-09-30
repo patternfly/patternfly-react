@@ -446,13 +446,6 @@ describe('Page docked variant', () => {
     expect(pageDock).not.toHaveClass(styles.modifiers.expanded);
   });
 
-  test(`Does not render with ${styles.modifiers.textExpanded} by default when variant is docked`, () => {
-    render(<Page variant="docked" dockContent={<>Dock content</>} masthead={<>Masthead</>} data-testid="page"></Page>);
-
-    const pageDock = screen.getByText('Dock content').closest(`.${styles.pageDock}`);
-    expect(pageDock).not.toHaveClass(styles.modifiers.textExpanded);
-  });
-
   test(`Renders with ${styles.modifiers.expanded} when isDockExpanded is true and variant is docked`, () => {
     render(
       <Page
@@ -468,11 +461,12 @@ describe('Page docked variant', () => {
     expect(pageDock).toHaveClass(styles.modifiers.expanded);
   });
 
-  test(`Renders with ${styles.modifiers.textExpanded} when isDockTextExpanded is true and variant is docked`, () => {
+  test(`Renders with ${styles.modifiers.overlay} when isDockOverlay is true and variant is docked`, () => {
     render(
       <Page
         variant="docked"
-        isDockTextExpanded
+        isDockExpanded
+        isDockOverlay
         dockContent={<>Dock content</>}
         masthead={<>Masthead</>}
         data-testid="page"
@@ -480,27 +474,7 @@ describe('Page docked variant', () => {
     );
 
     const pageDock = screen.getByText('Dock content').closest(`.${styles.pageDock}`);
-    expect(pageDock).toHaveClass(styles.modifiers.textExpanded);
-  });
-
-  test(`Does not render with ${styles.modifiers.expandableExpanded} when by default and variant is docked`, () => {
-    render(<Page variant="docked" dockContent={<>Dock content</>} masthead={<>Masthead</>} data-testid="page"></Page>);
-    const pageDock = screen.getByText('Dock content').closest(`.${styles.pageDock}`);
-    expect(pageDock).not.toHaveClass(styles.modifiers.expandableExpanded);
-  });
-
-  test(`Renders with ${styles.modifiers.expandableExpanded} when isDockExpandableExpanded is true and variant is docked`, () => {
-    render(
-      <Page
-        variant="docked"
-        isDockExpandableExpanded
-        dockContent={<>Dock content</>}
-        masthead={<>Masthead</>}
-        data-testid="page"
-      ></Page>
-    );
-    const pageDock = screen.getByText('Dock content').closest(`.${styles.pageDock}`);
-    expect(pageDock).toHaveClass(styles.modifiers.expandableExpanded);
+    expect(pageDock).toHaveClass(styles.modifiers.overlay);
   });
 
   test(`Renders with ${styles.pageDockMain} wrapper when variant is docked`, () => {
