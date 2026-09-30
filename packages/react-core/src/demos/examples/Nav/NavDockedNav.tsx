@@ -83,7 +83,7 @@ export const NavDockedNav: React.FunctionComponent = () => {
       !dockedMastheadElement.contains(event.target as Node) &&
       !dockedMobileMastheadToggle?.contains(event.target as Node) &&
       isDockExpanded &&
-      isDockOverlay
+      (isDockOverlay || isMobile)
     ) {
       setIsDockExpanded(false);
       setIsDockOverlay(false);
