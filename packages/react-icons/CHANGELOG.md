@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.7.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.7.0-prerelease.0...@patternfly/react-icons@6.7.0-prerelease.1) (2026-09-30)
+
+### Features
+
+- **Page,Compass,Nav,MenuToggle,Button:** simplify docked nav expand props ([#12661](https://github.com/patternfly/patternfly-react/issues/12661)) ([dab7e8a](https://github.com/patternfly/patternfly-react/commit/dab7e8a28ef70eee1764d682d19fa40c622fb4dd))
+
+### Reverts
+
+- Revert "chore(release): releasing packages [ci skip]" (#12663) ([de8fb05](https://github.com/patternfly/patternfly-react/commit/de8fb05e58ffdf9adf30f8225a03783c70978df6)), closes [#12663](https://github.com/patternfly/patternfly-react/issues/12663)
+
 # [6.7.0-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@6.6.1-prerelease.5...@patternfly/react-icons@6.7.0-prerelease.0) (2026-09-28)
 
 **Note:** Version bump only for package @patternfly/react-icons

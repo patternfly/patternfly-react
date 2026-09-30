@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.7.0-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.7.0-prerelease.1...@patternfly/react-tokens@6.7.0-prerelease.2) (2026-09-30)
+
+### Features
+
+- **Page,Compass,Nav,MenuToggle,Button:** simplify docked nav expand props ([#12661](https://github.com/patternfly/patternfly-react/issues/12661)) ([dab7e8a](https://github.com/patternfly/patternfly-react/commit/dab7e8a28ef70eee1764d682d19fa40c622fb4dd))
+
 # [6.7.0-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@6.7.0-prerelease.0...@patternfly/react-tokens@6.7.0-prerelease.1) (2026-09-29)
 
 ### Features
