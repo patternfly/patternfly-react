@@ -87,7 +87,7 @@ To save space in the UI, you can use docked navigation to replace text-labeled n
 
 This demo includes the following features:
 
-1. 1. A [page](/components/page) component with a docked layout, enabled via `variant="docked"`. Control the expanded state of the dock with `isDockExpanded` and the set whether the dock is an overlay with `isDockOverlay`. The expanded docked nav is automatically an overlay in mobile.
+1. A [page](/components/page) component with a docked layout, enabled via `variant="docked"`. Control the expanded state of the dock with `isDockExpanded` and the set whether the dock is an overlay with `isDockOverlay`. The expanded docked nav is automatically an overlay in mobile.
 
 2. Two separate [masthead](/components/masthead) components:
    - **Horizontal mobile masthead**: Shown on small viewports using `display={{ default: 'inline' }}`, with a hamburger menu toggle button, brand logo, and action buttons that should be immediately visible to users.
