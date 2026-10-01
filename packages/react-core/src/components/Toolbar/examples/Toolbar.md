@@ -81,7 +81,7 @@ To change the background color of a toolbar, use the `colorVariant` property on 
 
 ## Responsive toolbar behavior
 
-Toolbar width-based responsive modifiers use `@container` CSS queries with the global PatternFly breakpoints. Responsive inset modifiers (via the `inset` property) are an exception and use viewport media queries.
+Toolbar width-based responsive modifiers use `@container` CSS queries with the global PatternFly breakpoints. Responsive inset modifiers (via the `inset` property) are an exception and use viewport media queries. Insets are an exception and rely on viewport media queries.
 
 By default, the PatternFly CSS establishes the `container-name` property with a value of `pf-v6-contain-toolbar` on `:root`, so the breakpoints behave like viewport breakpoints.
 
