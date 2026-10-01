@@ -155,10 +155,10 @@ class ToolbarToggleGroup extends Component<ToolbarToggleGroupProps> {
   toggleRef = createRef<HTMLButtonElement>();
   expandableContentRef = createRef<HTMLDivElement>();
 
-  isContentPopup = () => {
-    const viewportSize = typeof window !== 'undefined' ? window.innerWidth : 1200;
+  isContentPopup = (width?: number) => {
+    const size = width ?? (typeof window !== 'undefined' ? window.innerWidth : 1200);
     const lgBreakpointValue = parseInt(globalBreakpointLg.value);
-    return viewportSize < lgBreakpointValue;
+    return size < lgBreakpointValue;
   };
 
   render() {
@@ -188,7 +188,7 @@ class ToolbarToggleGroup extends Component<ToolbarToggleGroupProps> {
 
     return (
       <ToolbarContext.Consumer>
-        {({ toggleIsExpanded: managedOnToggle }) => {
+        {({ toggleIsExpanded: managedOnToggle, isContainer, toolbarRef }) => {
           const _onToggle = onToggle !== undefined ? onToggle : managedOnToggle;
 
           return (
@@ -235,7 +235,9 @@ class ToolbarToggleGroup extends Component<ToolbarToggleGroupProps> {
                       onClick={_onToggle}
                       aria-label="Show Filters"
                       {...(_isExpanded && { 'aria-expanded': true })}
-                      aria-haspopup={_isExpanded && this.isContentPopup()}
+                      aria-haspopup={
+                        _isExpanded && this.isContentPopup(isContainer ? toolbarRef?.current?.clientWidth : undefined)
+                      }
                       aria-controls={_isExpanded ? expandableContentId : undefined}
                       ref={this.toggleRef}
                       icon={toggleIcon}

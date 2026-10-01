@@ -249,7 +249,9 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
                 clearFiltersButtonText,
                 showClearFiltersButton,
                 toolbarId: randomId,
-                customLabelGroupContent
+                customLabelGroupContent,
+                isContainer,
+                toolbarRef: this.toolbarRef
               }}
             >
               {children}
