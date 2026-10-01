@@ -1,14 +1,8 @@
 .toolbar-container-query-resize {
-  width: 800px;
+  width: 100%;
   min-width: 300px;
-  max-width: 100%;
   padding: var(--pf-t--global--spacer--sm);
   overflow: auto;
   resize: horizontal;
   border: var(--pf-t--global--border--width--extra-strong) dashed var(--pf-t--global--border--color--default);
-}
-
-.toolbar-container-query-resize .pf-v6-c-toolbar__group {
-  border: var(--pf-t--global--border--width--control--default) dashed var(--pf-t--global--border--color--default);
-  padding: var(--pf-t--global--spacer--sm);
 }

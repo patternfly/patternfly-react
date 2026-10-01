@@ -35,7 +35,7 @@ export interface ToolbarProps extends React.HTMLProps<HTMLDivElement>, OUIAProps
   children?: React.ReactNode;
   /** Id of the data toolbar */
   id?: string;
-  /** Flag indicating if the toolbar is a container */
+  /** Flag indicating if the toolbar is a container for CSS container queries */
   isContainer?: boolean;
   /** Flag indicating the toolbar height should expand to the full height of the container */
   isFullHeight?: boolean;
@@ -106,8 +106,8 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
     }));
   };
 
-  closeExpandableContent = (e: any) => {
-    if (e.target.innerWidth !== this.state.windowWidth) {
+  closeExpandableContent = (e?: any) => {
+    if (e && e.target.innerWidth !== this.state.windowWidth) {
       this.setState(() => ({
         isManagedToggleExpanded: false,
         windowWidth: e.target.innerWidth
@@ -122,39 +122,51 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
     }
 
     const breakpoint = getBreakpoint(containerWidth);
+    const isInitialMeasurement = this.containerBreakpoint === undefined;
     if (breakpoint !== this.containerBreakpoint) {
       this.containerBreakpoint = breakpoint;
-      if (this.state.isManagedToggleExpanded) {
+      if (!isInitialMeasurement && this.state.isManagedToggleExpanded) {
         this.setState({ isManagedToggleExpanded: false });
       }
     }
+  };
+
+  setupResizeHandling = () => {
+    if (!this.isToggleManaged() || !canUseDOM) {
+      return;
+    }
+
+    this.containerBreakpoint = undefined;
+    const reference = this.props.isContainer ? this.toolbarRef.current : undefined;
+    const handler = this.props.isContainer ? this.closeExpandableContentOnContainerResize : this.closeExpandableContent;
+
+    this.resizeObserver = getResizeObserver(reference, handler, true);
+  };
+
+  cleanupResizeHandling = () => {
+    this.resizeObserver();
+    this.resizeObserver = () => {};
   };
 
   componentDidMount() {
     if (canUseDOM) {
       this.setState({ windowWidth: window.innerWidth });
     }
-    if (this.isToggleManaged() && canUseDOM) {
-      if (this.props.isContainer && this.toolbarRef.current) {
-        this.resizeObserver = getResizeObserver(
-          this.toolbarRef.current,
-          this.closeExpandableContentOnContainerResize,
-          true
-        );
-      } else {
-        window.addEventListener('resize', this.closeExpandableContent);
-      }
+    this.setupResizeHandling();
+  }
+
+  componentDidUpdate(prevProps: ToolbarProps) {
+    const wasToggleManaged = !(prevProps.isExpanded || !!prevProps.toggleIsExpanded);
+    const isToggleManaged = this.isToggleManaged();
+
+    if (prevProps.isContainer !== this.props.isContainer || wasToggleManaged !== isToggleManaged) {
+      this.cleanupResizeHandling();
+      this.setupResizeHandling();
     }
   }
 
   componentWillUnmount() {
-    if (this.isToggleManaged() && canUseDOM) {
-      if (this.props.isContainer) {
-        this.resizeObserver();
-      } else {
-        window.removeEventListener('resize', this.closeExpandableContent);
-      }
-    }
+    this.cleanupResizeHandling();
   }
 
   updateNumberFilters = (categoryName: string, numberOfFilters: number) => {

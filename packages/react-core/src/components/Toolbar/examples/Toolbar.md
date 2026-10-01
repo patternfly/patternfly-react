@@ -81,14 +81,14 @@ To change the background color of a toolbar, use the `colorVariant` property on 
 
 ## Responsive toolbar behavior
 
-Toolbar width-based responsive modifiers use `@container` queries with the global PatternFly breakpoints. Responsive inset modifiers (`inset`) are an exception and use viewport media queries.
+Toolbar width-based responsive modifiers use `@container` CSS queries with the global PatternFly breakpoints. Responsive inset modifiers (via the `inset` property) are an exception and use viewport media queries.
 
-By default, the container `pf-v6-contain-toolbar` is established on `:root`, so the breakpoints behave like viewport breakpoints. To make a toolbar respond to its own available width, set the `isContainer` property on `<Toolbar>`. Note: Alternatively, if a wrapping element creates an `inline-size` or `size` container with the container name `pf-v6-contain-toolbar`, the breakpoints will apply to that container's width instead.
+By default, the PatternFly CSS establishes the `container-name` property with a value of `pf-v6-contain-toolbar` on `:root`, so the breakpoints behave like viewport breakpoints.
+
+Alternatively, if another wrapping element creates a container in the CSS with a `container-name` property value of `pf-v6-contain-toolbar` and `container-type` value of `inline-size` or `size` , the breakpoints will apply to that container's width instead.
 
 ### Toolbar as container
-Add `isContainer` to the toolbar so width-based modifiers respond to the toolbar's width. Resize the dashed box to see items and groups show and hide at the global breakpoints.
-
-_Debugging note: `xl` and `2xl` may not trigger when the content area is narrower than those breakpoints (view in full screen)._
+Add `isContainer` to the toolbar so width-based modifiers respond to the toolbar's width. Resize the dashed box in this example to see items and groups show and hide at the global breakpoints.
 
 ```ts file="./ToolbarContainerQuery.tsx"
 

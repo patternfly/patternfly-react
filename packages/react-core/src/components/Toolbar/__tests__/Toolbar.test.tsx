@@ -303,7 +303,7 @@ describe('Toolbar', () => {
   it('renders the container modifier when isContainer is true', () => {
     render(<Toolbar isContainer data-testid="toolbar-container" />);
 
-    expect(screen.getByTestId('toolbar-container')).toHaveClass('pf-m-container');
+    expect(screen.getByTestId('toolbar-container')).toHaveClass(styles.modifiers.container);
   });
 
   it('renders all responsive visibility modifiers', () => {
