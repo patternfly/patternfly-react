@@ -215,60 +215,73 @@ class Toolbar extends Component<ToolbarProps, ToolbarState> {
 
     return (
       <PageContext.Consumer>
-        {({ width, getBreakpoint }) => (
-          <div
-            className={css(
-              styles.toolbar,
-              hasNoPadding && styles.modifiers.noPadding,
-              isContainer && styles.modifiers.container,
-              isFullHeight && styles.modifiers.fullHeight,
-              isStatic && styles.modifiers.static,
-              isSticky && styles.modifiers.sticky,
-              isStickyBase && styles.modifiers.stickyBase,
-              isStickyStuck && styles.modifiers.stickyStuck,
-              isVertical && styles.modifiers.vertical,
-              formatBreakpointMods(inset, styles, '', getBreakpoint(width)),
-              colorVariant === 'primary' && styles.modifiers.primary,
-              colorVariant === 'secondary' && styles.modifiers.secondary,
-              colorVariant === 'no-background' && styles.modifiers.noBackground,
-              className
-            )}
-            id={randomId}
-            ref={this.toolbarRef}
-            {...getOUIAProps(Toolbar.displayName, ouiaId !== undefined ? ouiaId : generatedOuiaId)}
-            {...props}
-          >
-            <ToolbarContext.Provider
-              value={{
-                isExpanded,
-                toggleIsExpanded: isToggleManaged ? this.toggleIsExpanded : toggleIsExpanded,
-                labelGroupContentRef: this.labelGroupContentRef,
-                updateNumberFilters: this.updateNumberFilters,
-                numberOfFilters,
-                clearAllFilters,
-                clearFiltersButtonText,
-                showClearFiltersButton,
-                toolbarId: randomId,
-                customLabelGroupContent,
-                isContainer,
-                toolbarRef: this.toolbarRef
-              }}
+        {(pageContext) => {
+          const toolbarContent = (
+            <div
+              className={css(
+                styles.toolbar,
+                hasNoPadding && styles.modifiers.noPadding,
+                isContainer && styles.modifiers.container,
+                isFullHeight && styles.modifiers.fullHeight,
+                isStatic && styles.modifiers.static,
+                isSticky && styles.modifiers.sticky,
+                isStickyBase && styles.modifiers.stickyBase,
+                isStickyStuck && styles.modifiers.stickyStuck,
+                isVertical && styles.modifiers.vertical,
+                formatBreakpointMods(
+                  inset,
+                  styles,
+                  '',
+                  !isContainer ? pageContext.getBreakpoint(pageContext.width) : undefined
+                ),
+                colorVariant === 'primary' && styles.modifiers.primary,
+                colorVariant === 'secondary' && styles.modifiers.secondary,
+                colorVariant === 'no-background' && styles.modifiers.noBackground,
+                className
+              )}
+              id={randomId}
+              ref={this.toolbarRef}
+              {...getOUIAProps(Toolbar.displayName, ouiaId !== undefined ? ouiaId : generatedOuiaId)}
+              {...props}
             >
-              {children}
-              <ToolbarLabelGroupContent
-                isExpanded={isExpanded}
-                labelGroupContentRef={this.labelGroupContentRef}
-                clearAllFilters={clearAllFilters}
-                showClearFiltersButton={showClearFiltersButton}
-                clearFiltersButtonText={clearFiltersButtonText}
-                numberOfFilters={numberOfFilters}
-                numberOfFiltersText={numberOfFiltersText}
-                collapseListedFiltersBreakpoint={collapseListedFiltersBreakpoint}
-                customLabelGroupContent={customLabelGroupContent}
-              />
-            </ToolbarContext.Provider>
-          </div>
-        )}
+              <ToolbarContext.Provider
+                value={{
+                  isExpanded,
+                  toggleIsExpanded: isToggleManaged ? this.toggleIsExpanded : toggleIsExpanded,
+                  labelGroupContentRef: this.labelGroupContentRef,
+                  updateNumberFilters: this.updateNumberFilters,
+                  numberOfFilters,
+                  clearAllFilters,
+                  clearFiltersButtonText,
+                  showClearFiltersButton,
+                  toolbarId: randomId,
+                  customLabelGroupContent,
+                  isContainer,
+                  toolbarRef: this.toolbarRef
+                }}
+              >
+                {children}
+                <ToolbarLabelGroupContent
+                  isExpanded={isExpanded}
+                  labelGroupContentRef={this.labelGroupContentRef}
+                  clearAllFilters={clearAllFilters}
+                  showClearFiltersButton={showClearFiltersButton}
+                  clearFiltersButtonText={clearFiltersButtonText}
+                  numberOfFilters={numberOfFilters}
+                  numberOfFiltersText={numberOfFiltersText}
+                  collapseListedFiltersBreakpoint={collapseListedFiltersBreakpoint}
+                  customLabelGroupContent={customLabelGroupContent}
+                />
+              </ToolbarContext.Provider>
+            </div>
+          );
+
+          return isContainer ? (
+            <PageContext.Provider value={{ ...pageContext, width: null }}>{toolbarContent}</PageContext.Provider>
+          ) : (
+            toolbarContent
+          );
+        }}
       </PageContext.Consumer>
     );
   };

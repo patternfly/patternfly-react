@@ -214,7 +214,7 @@ class ToolbarGroupWithRef extends Component<ToolbarGroupProps> {
 
     return (
       <PageContext.Consumer>
-        {({ height, getVerticalBreakpoint }) => (
+        {({ width, getBreakpoint, height, getVerticalBreakpoint }) => (
           <div
             className={css(
               styles.toolbarGroup,
@@ -227,14 +227,14 @@ class ToolbarGroupWithRef extends Component<ToolbarGroupProps> {
                     | 'actionGroupPlain'
                     | 'labelGroup'
                 ],
-              formatBreakpointMods(visibility, styles),
+              formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
               formatBreakpointMods(visibilityAtHeight, styles, '', getVerticalBreakpoint(height), true),
-              formatBreakpointMods(align, styles),
-              formatBreakpointMods(gap, styles),
-              formatBreakpointMods(columnGap, styles),
-              formatBreakpointMods(rowGap, styles),
-              formatBreakpointMods(rowWrap, styles),
-              formatBreakpointMods(flexGrow, styles),
+              formatBreakpointMods(align, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(gap, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(columnGap, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(rowGap, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(rowWrap, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(flexGrow, styles, '', getBreakpoint(width)),
               alignItems === 'start' && styles.modifiers.alignItemsStart,
               alignItems === 'center' && styles.modifiers.alignItemsCenter,
               alignItems === 'baseline' && styles.modifiers.alignItemsBaseline,

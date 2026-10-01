@@ -8,6 +8,7 @@ import { Button } from '../Button';
 import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_lg';
 import { formatBreakpointMods, toCamel } from '../../helpers/util';
 import { ToolbarExpandableContent } from './ToolbarExpandableContent';
+import { PageContext } from '../Page/PageContext';
 
 export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
   /** Flag indicating when toggle group is expanded for non-managed toolbar toggle groups. */
@@ -187,97 +188,102 @@ class ToolbarToggleGroup extends Component<ToolbarToggleGroupProps> {
     }
 
     return (
-      <ToolbarContext.Consumer>
-        {({ toggleIsExpanded: managedOnToggle, isContainer, toolbarRef }) => {
-          const _onToggle = onToggle !== undefined ? onToggle : managedOnToggle;
+      <PageContext.Consumer>
+        {({ width, getBreakpoint }) => (
+          <ToolbarContext.Consumer>
+            {({ toggleIsExpanded: managedOnToggle, isContainer, toolbarRef }) => {
+              const _onToggle = onToggle !== undefined ? onToggle : managedOnToggle;
 
-          return (
-            <ToolbarContentContext.Consumer>
-              {({
-                expandableContentRef,
-                expandableContentId,
-                labelContainerRef: managedLabelContainerRef,
-                isExpanded: managedIsExpanded,
-                clearAllFilters: clearAllFiltersContext,
-                clearFiltersButtonText: clearFiltersButtonContext,
-                showClearFiltersButton: showClearFiltersButtonContext
-              }) => {
-                const _isExpanded = isExpanded !== undefined ? isExpanded : managedIsExpanded;
-                const _labelContainerRef =
-                  labelContainerRef !== undefined ? labelContainerRef : managedLabelContainerRef;
+              return (
+                <ToolbarContentContext.Consumer>
+                  {({
+                    expandableContentRef,
+                    expandableContentId,
+                    labelContainerRef: managedLabelContainerRef,
+                    isExpanded: managedIsExpanded,
+                    clearAllFilters: clearAllFiltersContext,
+                    clearFiltersButtonText: clearFiltersButtonContext,
+                    showClearFiltersButton: showClearFiltersButtonContext
+                  }) => {
+                    const _isExpanded = isExpanded !== undefined ? isExpanded : managedIsExpanded;
+                    const _labelContainerRef =
+                      labelContainerRef !== undefined ? labelContainerRef : managedLabelContainerRef;
 
-                const breakpointMod: {
-                  md?: 'show';
-                  lg?: 'show';
-                  xl?: 'show';
-                  '2xl'?: 'show';
-                } = {};
-                breakpointMod[breakpoint] = 'show';
+                    const breakpointMod: {
+                      md?: 'show';
+                      lg?: 'show';
+                      xl?: 'show';
+                      '2xl'?: 'show';
+                    } = {};
+                    breakpointMod[breakpoint] = 'show';
 
-                const expandableContent = (
-                  <ToolbarExpandableContent
-                    id={expandableContentId}
-                    expandableContentRef={this.expandableContentRef}
-                    isExpanded={_isExpanded}
-                    clearAllFilters={clearAllFilters || clearAllFiltersContext}
-                    showClearFiltersButton={showClearFiltersButton || showClearFiltersButtonContext}
-                    clearFiltersButtonText={clearFiltersButtonText || clearFiltersButtonContext}
-                    labelContainerRef={_labelContainerRef}
-                  >
-                    {children}
-                  </ToolbarExpandableContent>
-                );
+                    const expandableContent = (
+                      <ToolbarExpandableContent
+                        id={expandableContentId}
+                        expandableContentRef={this.expandableContentRef}
+                        isExpanded={_isExpanded}
+                        clearAllFilters={clearAllFilters || clearAllFiltersContext}
+                        showClearFiltersButton={showClearFiltersButton || showClearFiltersButtonContext}
+                        clearFiltersButtonText={clearFiltersButtonText || clearFiltersButtonContext}
+                        labelContainerRef={_labelContainerRef}
+                      >
+                        {children}
+                      </ToolbarExpandableContent>
+                    );
 
-                const toggleButton = (
-                  <div className={css(styles.toolbarToggle)}>
-                    <Button
-                      variant="plain"
-                      onClick={_onToggle}
-                      aria-label="Show Filters"
-                      {...(_isExpanded && { 'aria-expanded': true })}
-                      aria-haspopup={
-                        _isExpanded && this.isContentPopup(isContainer ? toolbarRef?.current?.clientWidth : undefined)
-                      }
-                      aria-controls={_isExpanded ? expandableContentId : undefined}
-                      ref={this.toggleRef}
-                      icon={toggleIcon}
-                    />
-                  </div>
-                );
+                    const toggleButton = (
+                      <div className={css(styles.toolbarToggle)}>
+                        <Button
+                          variant="plain"
+                          onClick={_onToggle}
+                          aria-label="Show Filters"
+                          {...(_isExpanded && { 'aria-expanded': true })}
+                          aria-haspopup={
+                            _isExpanded &&
+                            this.isContentPopup(isContainer ? toolbarRef?.current?.clientWidth : undefined)
+                          }
+                          aria-controls={_isExpanded ? expandableContentId : undefined}
+                          ref={this.toggleRef}
+                          icon={toggleIcon}
+                        />
+                      </div>
+                    );
 
-                return (
-                  <div
-                    className={css(
-                      styles.toolbarGroup,
-                      styles.modifiers.toggleGroup,
-                      variant &&
-                        styles.modifiers[
-                          toCamel(variant) as
-                            | 'filterGroup'
-                            | 'actionGroup'
-                            | 'actionGroupInline'
-                            | 'actionGroupPlain'
-                            | 'labelGroup'
-                        ],
-                      formatBreakpointMods(breakpointMod, styles),
-                      formatBreakpointMods(visibility, styles),
-                      formatBreakpointMods(gap, styles),
-                      formatBreakpointMods(columnGap, styles),
-                      formatBreakpointMods(rowGap, styles),
-                      className
-                    )}
-                    {...props}
-                  >
-                    {toggleButton}
-                    {_isExpanded && ReactDOM.createPortal(expandableContent, expandableContentRef.current)}
-                    {!_isExpanded && children}
-                  </div>
-                );
-              }}
-            </ToolbarContentContext.Consumer>
-          );
-        }}
-      </ToolbarContext.Consumer>
+                    return (
+                      <div
+                        className={css(
+                          styles.toolbarGroup,
+                          styles.modifiers.toggleGroup,
+                          variant &&
+                            styles.modifiers[
+                              toCamel(variant) as
+                                | 'filterGroup'
+                                | 'actionGroup'
+                                | 'actionGroupInline'
+                                | 'actionGroupPlain'
+                                | 'labelGroup'
+                            ],
+                          formatBreakpointMods(breakpointMod, styles, '', getBreakpoint(width)),
+                          formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
+                          formatBreakpointMods(gap, styles, '', getBreakpoint(width)),
+                          formatBreakpointMods(columnGap, styles, '', getBreakpoint(width)),
+                          formatBreakpointMods(rowGap, styles, '', getBreakpoint(width)),
+                          className
+                        )}
+                        {...props}
+                      >
+                        {toggleButton}
+                        {_isExpanded && ReactDOM.createPortal(expandableContent, expandableContentRef.current)}
+                        {!_isExpanded && children}
+                      </div>
+                    );
+                  }}
+                </ToolbarContentContext.Consumer>
+              );
+            }}
+          </ToolbarContext.Consumer>
+        )}
+      </PageContext.Consumer>
     );
   }
 }
