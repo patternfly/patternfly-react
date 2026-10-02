@@ -3,9 +3,8 @@ import * as ReactDOM from 'react-dom';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import { ToolbarGroupProps } from './ToolbarGroup';
-import { ToolbarContext, ToolbarContentContext } from './ToolbarUtils';
+import { globalBreakpoints, ToolbarContext, ToolbarContentContext } from './ToolbarUtils';
 import { Button } from '../Button';
-import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_lg';
 import { formatBreakpointMods, toCamel } from '../../helpers/util';
 import { ToolbarExpandableContent } from './ToolbarExpandableContent';
 import { PageContext } from '../Page/PageContext';
@@ -158,8 +157,7 @@ class ToolbarToggleGroup extends Component<ToolbarToggleGroupProps> {
 
   isContentPopup = (width?: number) => {
     const size = width ?? (typeof window !== 'undefined' ? window.innerWidth : 1200);
-    const lgBreakpointValue = parseInt(globalBreakpointLg.value);
-    return size < lgBreakpointValue;
+    return size < globalBreakpoints.lg;
   };
 
   render() {
