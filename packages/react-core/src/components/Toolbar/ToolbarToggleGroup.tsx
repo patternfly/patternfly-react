@@ -3,12 +3,11 @@ import * as ReactDOM from 'react-dom';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import { ToolbarGroupProps } from './ToolbarGroup';
-import { ToolbarContext, ToolbarContentContext } from './ToolbarUtils';
+import { globalBreakpoints, ToolbarContext, ToolbarContentContext } from './ToolbarUtils';
 import { Button } from '../Button';
-import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_lg';
 import { formatBreakpointMods, toCamel } from '../../helpers/util';
-import { PageContext } from '../Page/PageContext';
 import { ToolbarExpandableContent } from './ToolbarExpandableContent';
+import { PageContext } from '../Page/PageContext';
 
 export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
   /** Flag indicating when toggle group is expanded for non-managed toolbar toggle groups. */
@@ -156,10 +155,9 @@ class ToolbarToggleGroup extends Component<ToolbarToggleGroupProps> {
   toggleRef = createRef<HTMLButtonElement>();
   expandableContentRef = createRef<HTMLDivElement>();
 
-  isContentPopup = () => {
-    const viewportSize = typeof window !== 'undefined' ? window.innerWidth : 1200;
-    const lgBreakpointValue = parseInt(globalBreakpointLg.value);
-    return viewportSize < lgBreakpointValue;
+  isContentPopup = (width?: number) => {
+    const size = width ?? (typeof window !== 'undefined' ? window.innerWidth : 1200);
+    return size < globalBreakpoints.lg;
   };
 
   render() {
@@ -191,7 +189,7 @@ class ToolbarToggleGroup extends Component<ToolbarToggleGroupProps> {
       <PageContext.Consumer>
         {({ width, getBreakpoint }) => (
           <ToolbarContext.Consumer>
-            {({ toggleIsExpanded: managedOnToggle }) => {
+            {({ toggleIsExpanded: managedOnToggle, isContainer, toolbarRef }) => {
               const _onToggle = onToggle !== undefined ? onToggle : managedOnToggle;
 
               return (
@@ -238,7 +236,10 @@ class ToolbarToggleGroup extends Component<ToolbarToggleGroupProps> {
                           onClick={_onToggle}
                           aria-label="Show Filters"
                           {...(_isExpanded && { 'aria-expanded': true })}
-                          aria-haspopup={_isExpanded && this.isContentPopup()}
+                          aria-haspopup={
+                            _isExpanded &&
+                            this.isContentPopup(isContainer ? toolbarRef?.current?.clientWidth : undefined)
+                          }
                           aria-controls={_isExpanded ? expandableContentId : undefined}
                           ref={this.toggleRef}
                           icon={toggleIcon}

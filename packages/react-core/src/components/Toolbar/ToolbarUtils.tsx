@@ -15,6 +15,10 @@ export interface ToolbarContextProps {
   showClearFiltersButton?: boolean;
   toolbarId?: string;
   customLabelGroupContent?: React.ReactNode;
+  /** Flag indicating if the toolbar is a container */
+  isContainer?: boolean;
+  /** Ref to the toolbar root element */
+  toolbarRef?: RefObject<HTMLDivElement | null>;
 }
 
 export const ToolbarContext = createContext<ToolbarContextProps>({

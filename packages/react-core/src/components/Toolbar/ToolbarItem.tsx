@@ -21,6 +21,7 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   /** Visibility at various width breakpoints. */
   visibility?: {
     default?: 'hidden' | 'visible';
+    sm?: 'hidden' | 'visible';
     md?: 'hidden' | 'visible';
     lg?: 'hidden' | 'visible';
     xl?: 'hidden' | 'visible';

@@ -1,0 +1,8 @@
+.toolbar-container-query-resize {
+  width: 100%;
+  min-width: 300px;
+  padding: var(--pf-t--global--spacer--sm);
+  overflow: auto;
+  resize: horizontal;
+  border: var(--pf-t--global--border--width--extra-strong) dashed var(--pf-t--global--border--color--default);
+}
