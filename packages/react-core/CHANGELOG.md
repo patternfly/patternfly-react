@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.7.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.7.0-prerelease.3...@patternfly/react-core@6.7.0-prerelease.4) (2026-10-02)
+
+### Features
+
+- **toolbar:** container query support ([#12662](https://github.com/patternfly/patternfly-react/issues/12662)) ([58577a8](https://github.com/patternfly/patternfly-react/commit/58577a8a4d9654e929e5180c0f8241d3c35bd30b))
+
 # [6.7.0-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.7.0-prerelease.2...@patternfly/react-core@6.7.0-prerelease.3) (2026-09-30)
 
 ### Features
