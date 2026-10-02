@@ -1,5 +1,5 @@
-import { createRef } from 'react';
-import { act, render, screen } from '@testing-library/react';
+import { createRef, useState } from 'react';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { Th } from '../Th';
 
 test('Does not render with aria-label by default', () => {
@@ -92,28 +92,102 @@ describe('truncated headers', () => {
     jest.restoreAllMocks();
   });
 
-  test('does not remeasure when unrelated props change', () => {
-    const { rerender } = render(<Th data-testid="header">Heading</Th>);
+  test('does not remeasure unchanged JSX when unrelated props change', () => {
+    const { rerender } = render(
+      <Th data-testid="header">
+        <span>Heading</span>
+      </Th>
+    );
     expect(screen.getByRole('columnheader')).toHaveAttribute('tabindex', '0');
     offsetWidth.mockClear();
     scrollWidth.mockClear();
 
-    rerender(<Th data-testid="updated-header">Heading</Th>);
+    rerender(
+      <Th data-testid="updated-header">
+        <span>Heading</span>
+      </Th>
+    );
 
     expect(offsetWidth).not.toHaveBeenCalled();
     expect(scrollWidth).not.toHaveBeenCalled();
   });
 
-  test('updates keyboard focusability when the label changes', () => {
+  test('updates keyboard focusability when the label changes', async () => {
     const { rerender } = render(<Th>Long heading</Th>);
     expect(screen.getByRole('columnheader')).toHaveAttribute('tabindex', '0');
 
     scrollWidth.mockReturnValue(100);
     rerender(<Th>Short</Th>);
+    await waitFor(() => expect(screen.getByRole('columnheader')).toHaveAttribute('tabindex', '-1'));
+  });
+
+  test('updates keyboard focusability when a child changes its own content', async () => {
+    const Heading = () => {
+      const [label, setLabel] = useState('Long heading');
+      return <button onClick={() => setLabel('Short')}>{label}</button>;
+    };
+    render(
+      <Th>
+        <Heading />
+      </Th>
+    );
+    expect(screen.getByRole('columnheader')).toHaveAttribute('tabindex', '0');
+
+    scrollWidth.mockReturnValue(100);
+    fireEvent.click(screen.getByRole('button'));
+
+    await waitFor(() => expect(screen.getByRole('columnheader')).toHaveAttribute('tabindex', '-1'));
+  });
+
+  test('updates keyboard focusability when an info control is added', async () => {
+    scrollWidth.mockReturnValue(100);
+    const { rerender } = render(<Th>Heading</Th>);
     expect(screen.getByRole('columnheader')).toHaveAttribute('tabindex', '-1');
+
+    scrollWidth.mockReturnValue(200);
+    rerender(<Th info={{ tooltip: 'More information' }}>Heading</Th>);
+
+    await waitFor(() => expect(screen.getByRole('columnheader')).toHaveAttribute('tabindex', '0'));
+  });
+
+  test('updates keyboard focusability when the rendered layout changes', async () => {
+    const { rerender } = render(<Th modifier="nowrap">Heading</Th>);
+    expect(screen.getByRole('columnheader')).toHaveAttribute('tabindex', '0');
+
+    scrollWidth.mockReturnValue(100);
+    rerender(<Th modifier="wrap">Heading</Th>);
+
+    await waitFor(() => expect(screen.getByRole('columnheader')).toHaveAttribute('tabindex', '-1'));
+  });
+
+  test('keeps the same callback ref attached until the header element changes', () => {
+    const callbackRef = jest.fn();
+    const { rerender, unmount } = render(<Th ref={callbackRef}>Heading</Th>);
+    const header = screen.getByRole('columnheader');
+    expect(callbackRef).toHaveBeenCalledTimes(1);
+    expect(callbackRef).toHaveBeenLastCalledWith(header);
+    callbackRef.mockClear();
+
+    rerender(
+      <Th ref={callbackRef} data-testid="updated-header">
+        Heading
+      </Th>
+    );
+    expect(callbackRef).not.toHaveBeenCalled();
+
+    rerender(
+      <Th ref={callbackRef} component="td">
+        Heading
+      </Th>
+    );
+    expect(callbackRef).toHaveBeenNthCalledWith(1, null);
+    expect(callbackRef).toHaveBeenNthCalledWith(2, screen.getByRole('cell'));
+    unmount();
+    expect(callbackRef).toHaveBeenLastCalledWith(null);
   });
 
   test('updates keyboard focusability when the cell is resized and cleans up the observer', () => {
+    const disconnectContent = jest.spyOn(MutationObserver.prototype, 'disconnect');
     let onResize: ResizeObserverCallback;
     const observe = jest.fn();
     const unobserve = jest.fn();
@@ -137,6 +211,7 @@ describe('truncated headers', () => {
       expect(header).toHaveAttribute('tabindex', '-1');
       unmount();
       expect(unobserve).toHaveBeenCalledWith(header);
+      expect(disconnectContent).toHaveBeenCalled();
     } finally {
       window.ResizeObserver = previousObserver;
     }

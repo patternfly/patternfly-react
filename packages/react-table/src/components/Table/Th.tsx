@@ -203,7 +203,9 @@ const ThBase: React.FunctionComponent<ThProps> = ({
     ...mergedProps
   } = merged;
 
-  useImperativeHandle(innerRef, () => cellRef.current);
+  // Reconnect the forwarded ref only when React replaces the header element.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useImperativeHandle(innerRef, () => cellRef.current, [MergedComponent]);
 
   useEffect(() => {
     const cell = cellRef.current;
@@ -213,8 +215,21 @@ const ThBase: React.FunctionComponent<ThProps> = ({
 
     const updateTruncated = () => setTruncated(cell.offsetWidth < cell.scrollWidth);
     updateTruncated();
-    return getResizeObserver(cell, updateTruncated, true);
-  }, [children, additionalContent, modifier, width, className, MergedComponent]);
+    const unobserveResize = getResizeObserver(cell, updateTruncated, true);
+    // Content can overflow a fixed-width cell without changing its observed size.
+    const contentObserver = new MutationObserver(updateTruncated);
+    contentObserver.observe(cell, {
+      childList: true,
+      characterData: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['class', 'style']
+    });
+    return () => {
+      unobserveResize();
+      contentObserver.disconnect();
+    };
+  }, [MergedComponent]);
 
   const cell = (
     <MergedComponent
