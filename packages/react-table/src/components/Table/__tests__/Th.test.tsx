@@ -1,4 +1,5 @@
-import { render, screen } from '@testing-library/react';
+import { createRef } from 'react';
+import { act, render, screen } from '@testing-library/react';
 import { Th } from '../Th';
 
 test('Does not render with aria-label by default', () => {
@@ -76,4 +77,80 @@ test('Renders checked checkbox when isSelected is true and isIndeterminate is fa
   const checkbox = screen.getByRole('checkbox') as HTMLInputElement;
   expect(checkbox).toBeChecked();
   expect(checkbox.indeterminate).toBe(false);
+});
+
+describe('truncated headers', () => {
+  let offsetWidth: jest.SpyInstance;
+  let scrollWidth: jest.SpyInstance;
+
+  beforeEach(() => {
+    offsetWidth = jest.spyOn(HTMLElement.prototype, 'offsetWidth', 'get').mockReturnValue(100);
+    scrollWidth = jest.spyOn(HTMLElement.prototype, 'scrollWidth', 'get').mockReturnValue(200);
+  });
+
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+
+  test('does not remeasure when unrelated props change', () => {
+    const { rerender } = render(<Th data-testid="header">Heading</Th>);
+    expect(screen.getByRole('columnheader')).toHaveAttribute('tabindex', '0');
+    offsetWidth.mockClear();
+    scrollWidth.mockClear();
+
+    rerender(<Th data-testid="updated-header">Heading</Th>);
+
+    expect(offsetWidth).not.toHaveBeenCalled();
+    expect(scrollWidth).not.toHaveBeenCalled();
+  });
+
+  test('updates keyboard focusability when the label changes', () => {
+    const { rerender } = render(<Th>Long heading</Th>);
+    expect(screen.getByRole('columnheader')).toHaveAttribute('tabindex', '0');
+
+    scrollWidth.mockReturnValue(100);
+    rerender(<Th>Short</Th>);
+    expect(screen.getByRole('columnheader')).toHaveAttribute('tabindex', '-1');
+  });
+
+  test('updates keyboard focusability when the cell is resized and cleans up the observer', () => {
+    let onResize: ResizeObserverCallback;
+    const observe = jest.fn();
+    const unobserve = jest.fn();
+    const previousObserver = window.ResizeObserver;
+    window.ResizeObserver = jest.fn().mockImplementation((callback) => {
+      onResize = callback;
+      return { observe, unobserve };
+    });
+    jest.spyOn(window, 'requestAnimationFrame').mockImplementation((callback) => {
+      callback(0);
+      return 0;
+    });
+
+    try {
+      const { unmount } = render(<Th>Heading</Th>);
+      const header = screen.getByRole('columnheader');
+      expect(observe).toHaveBeenCalledWith(header);
+      expect(header).toHaveAttribute('tabindex', '0');
+      offsetWidth.mockReturnValue(300);
+      act(() => onResize([{ target: header } as ResizeObserverEntry], {} as ResizeObserver));
+      expect(header).toHaveAttribute('tabindex', '-1');
+      unmount();
+      expect(unobserve).toHaveBeenCalledWith(header);
+    } finally {
+      window.ResizeObserver = previousObserver;
+    }
+  });
+
+  test('forwards object and callback refs to the header', () => {
+    const objectRef = createRef<HTMLTableHeaderCellElement>();
+    const callbackRef = jest.fn();
+    const { rerender, unmount } = render(<Th ref={objectRef}>Heading</Th>);
+    expect(objectRef.current).toBe(screen.getByRole('columnheader'));
+    rerender(<Th ref={callbackRef}>Heading</Th>);
+    expect(objectRef.current).toBeNull();
+    expect(callbackRef).toHaveBeenCalledWith(screen.getByRole('columnheader'));
+    unmount();
+    expect(callbackRef).toHaveBeenLastCalledWith(null);
+  });
 });
