@@ -186,4 +186,42 @@ describe('FormSelect', () => {
     expect(myMock).toHaveBeenCalled();
     expect(myMock.mock.calls[0][1]).toEqual('mr');
   });
+
+  test('uses aria-labelledby without generating a console error', () => {
+    const consoleError = jest.spyOn(console, 'error').mockImplementation(() => {});
+
+    try {
+      render(
+        <>
+          <span id="select-label">Title</span>
+          <FormSelect aria-labelledby="select-label">
+            <FormSelectOption value="mr" label="Mr" />
+          </FormSelect>
+        </>
+      );
+
+      expect(screen.getByRole('combobox', { name: 'Title' })).toHaveAttribute('aria-labelledby', 'select-label');
+      expect(consoleError).not.toHaveBeenCalled();
+    } finally {
+      consoleError.mockRestore();
+    }
+  });
+
+  test('warns when aria-labelledby is empty and no other label is provided', () => {
+    const consoleError = jest.spyOn(console, 'error').mockImplementation(() => {});
+
+    try {
+      render(
+        <FormSelect aria-labelledby="">
+          <FormSelectOption value="mr" label="Mr" />
+        </FormSelect>
+      );
+
+      expect(consoleError).toHaveBeenCalledWith(
+        'FormSelect requires an id, aria-label, or aria-labelledby to be specified'
+      );
+    } finally {
+      consoleError.mockRestore();
+    }
+  });
 });
