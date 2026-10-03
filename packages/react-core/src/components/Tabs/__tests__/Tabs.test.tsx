@@ -1006,3 +1006,69 @@ test('should not render tablist aria-label or aria-labelledby when neither is pr
 
   expect(asFragment()).toMatchSnapshot();
 });
+
+describe('container resizing', () => {
+  const originalResizeObserver = window.ResizeObserver;
+  let resize: ResizeObserverCallback;
+  const observe = jest.fn();
+  const unobserve = jest.fn();
+
+  beforeEach(() => {
+    jest.useFakeTimers();
+    window.ResizeObserver = jest.fn().mockImplementation((callback) => {
+      resize = callback;
+      return { observe, unobserve };
+    });
+  });
+
+  afterEach(() => {
+    window.ResizeObserver = originalResizeObserver;
+    jest.clearAllMocks();
+    jest.useRealTimers();
+  });
+
+  test('updates the scroll buttons when only the container width changes', () => {
+    const { unmount } = render(
+      <Tabs role="region">
+        <Tab eventKey={0} title="First">
+          First content
+        </Tab>
+        <Tab eventKey={1} title="Second">
+          Second content
+        </Tab>
+      </Tabs>
+    );
+    const tabList = screen.getByRole('tablist');
+    let width = 200;
+    jest
+      .spyOn(tabList, 'getBoundingClientRect')
+      .mockImplementation(() => ({ left: 0, right: width, width }) as DOMRect);
+    Array.from(tabList.children).forEach((tab, index) => {
+      jest.spyOn(tab, 'getBoundingClientRect').mockReturnValue({
+        left: index * 100,
+        right: (index + 1) * 100,
+        width: 100
+      } as DOMRect);
+    });
+    act(() => jest.advanceTimersByTime(200));
+    expect(screen.queryByLabelText('Scroll forward')).not.toBeInTheDocument();
+
+    expect(observe).toHaveBeenCalledWith(screen.getByRole('region'));
+    width = 150;
+    act(() => resize([{ target: tabList } as ResizeObserverEntry], {} as ResizeObserver));
+    act(() => jest.advanceTimersByTime(200));
+    act(() => jest.advanceTimersByTime(100));
+    expect(screen.getByLabelText('Scroll forward')).toBeEnabled();
+    expect(screen.getByRole('region')).toHaveClass('pf-m-scrollable');
+
+    width = 200;
+    act(() => resize([{ target: tabList } as ResizeObserverEntry], {} as ResizeObserver));
+    act(() => jest.advanceTimersByTime(200));
+    expect(screen.getByRole('region')).not.toHaveClass('pf-m-scrollable');
+    expect(screen.getByLabelText('Scroll forward')).toBeDisabled();
+
+    const observedContainer = screen.getByRole('region');
+    unmount();
+    expect(unobserve).toHaveBeenCalledWith(observedContainer);
+  });
+});
