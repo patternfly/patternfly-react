@@ -187,32 +187,35 @@ describe('FormSelect', () => {
     expect(myMock.mock.calls[0][1]).toEqual('mr');
   });
 
-  test('uses aria-labelledby without generating a console error', () => {
-    const consoleError = jest.spyOn(console, 'error').mockImplementation(() => {});
+  test.each(['select-label', ' select-label \t'])(
+    'uses aria-labelledby %p without generating a console error',
+    (labelledBy) => {
+      const consoleError = jest.spyOn(console, 'error').mockImplementation(() => {});
 
-    try {
-      render(
-        <>
-          <span id="select-label">Title</span>
-          <FormSelect aria-labelledby="select-label">
-            <FormSelectOption value="mr" label="Mr" />
-          </FormSelect>
-        </>
-      );
+      try {
+        render(
+          <>
+            <span id="select-label">Title</span>
+            <FormSelect aria-labelledby={labelledBy}>
+              <FormSelectOption value="mr" label="Mr" />
+            </FormSelect>
+          </>
+        );
 
-      expect(screen.getByRole('combobox', { name: 'Title' })).toHaveAttribute('aria-labelledby', 'select-label');
-      expect(consoleError).not.toHaveBeenCalled();
-    } finally {
-      consoleError.mockRestore();
+        expect(screen.getByRole('combobox', { name: 'Title' })).toHaveAttribute('aria-labelledby', labelledBy);
+        expect(consoleError).not.toHaveBeenCalled();
+      } finally {
+        consoleError.mockRestore();
+      }
     }
-  });
+  );
 
-  test('warns when aria-labelledby is empty and no other label is provided', () => {
+  test.each(['', '   ', '\t\n'])('warns when aria-labelledby is %p and no other label is provided', (labelledBy) => {
     const consoleError = jest.spyOn(console, 'error').mockImplementation(() => {});
 
     try {
       render(
-        <FormSelect aria-labelledby="">
+        <FormSelect aria-labelledby={labelledBy}>
           <FormSelectOption value="mr" label="Mr" />
         </FormSelect>
       );

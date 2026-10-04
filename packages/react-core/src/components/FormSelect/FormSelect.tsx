@@ -43,7 +43,7 @@ class FormSelect extends Component<FormSelectProps> {
   static displayName = 'FormSelect';
   constructor(props: FormSelectProps) {
     super(props);
-    if (!props.id && !props['aria-label'] && !props['aria-labelledby']) {
+    if (!props.id && !props['aria-label'] && !props['aria-labelledby']?.trim()) {
       // eslint-disable-next-line no-console
       console.error('FormSelect requires an id, aria-label, or aria-labelledby to be specified');
     }
