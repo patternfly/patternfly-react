@@ -418,6 +418,9 @@ class Tabs extends Component<TabsProps, TabsState> {
   componentDidMount() {
     if (!this.props.isVertical) {
       this.unobserveResize = getResizeObserver(this.containerRef.current, this.handleResize, true);
+      if (canUseDOM) {
+        window.addEventListener('resize', this.handleResize);
+      }
       this.direction = getLanguageDirection(this.tabList.current);
       // call the handle resize function to check if scroll buttons should be shown
       this.handleScrollButtons();
@@ -428,6 +431,9 @@ class Tabs extends Component<TabsProps, TabsState> {
 
   componentWillUnmount() {
     this.unobserveResize();
+    if (canUseDOM) {
+      window.removeEventListener('resize', this.handleResize);
+    }
     clearTimeout(this.scrollTimeout);
     this.leftScrollButtonRef.current?.removeEventListener('transitionend', this.hideScrollButtons);
   }

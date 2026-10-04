@@ -1024,6 +1024,7 @@ describe('container resizing', () => {
   afterEach(() => {
     window.ResizeObserver = originalResizeObserver;
     jest.clearAllMocks();
+    jest.restoreAllMocks();
     jest.useRealTimers();
   });
 
@@ -1070,5 +1071,53 @@ describe('container resizing', () => {
     const observedContainer = screen.getByRole('region');
     unmount();
     expect(unobserve).toHaveBeenCalledWith(observedContainer);
+  });
+
+  test('updates scroll controls and the accent on window resize when the container width stays fixed', () => {
+    const tabsRef = createRef<Tabs>();
+    const removeEventListener = jest.spyOn(window, 'removeEventListener');
+    const { unmount } = render(
+      <Tabs ref={tabsRef} role="region" activeKey={0}>
+        <Tab eventKey={0} title="First">
+          First content
+        </Tab>
+        <Tab eventKey={1} title="Second">
+          Second content
+        </Tab>
+      </Tabs>
+    );
+    const tabList = screen.getByRole('tablist');
+    const handleResize = tabsRef.current.handleResize;
+    let tabWidth = 100;
+    jest.spyOn(tabList, 'getBoundingClientRect').mockReturnValue({ left: 0, right: 200, width: 200 } as DOMRect);
+    Array.from(tabList.children).forEach((tab, index) => {
+      jest.spyOn(tab, 'getBoundingClientRect').mockImplementation(
+        () =>
+          ({
+            left: index * tabWidth,
+            right: (index + 1) * tabWidth,
+            width: tabWidth
+          }) as DOMRect
+      );
+      jest.spyOn(tab as HTMLElement, 'offsetWidth', 'get').mockImplementation(() => tabWidth);
+    });
+    act(() => jest.advanceTimersByTime(200));
+    expect(screen.queryByLabelText('Scroll forward')).not.toBeInTheDocument();
+
+    tabWidth = 150;
+    act(() => window.dispatchEvent(new Event('resize')));
+    act(() => jest.advanceTimersByTime(200));
+    act(() => jest.advanceTimersByTime(100));
+    expect(screen.getByLabelText('Scroll forward')).toBeEnabled();
+    expect(screen.getByRole('region')).toHaveStyle('--pf-v6-c-tabs--link-accent--length: 150px');
+
+    tabWidth = 100;
+    act(() => window.dispatchEvent(new Event('resize')));
+    act(() => jest.advanceTimersByTime(200));
+    expect(screen.getByRole('region')).not.toHaveClass('pf-m-scrollable');
+    expect(screen.getByRole('region')).toHaveStyle('--pf-v6-c-tabs--link-accent--length: 100px');
+
+    unmount();
+    expect(removeEventListener).toHaveBeenCalledWith('resize', handleResize);
   });
 });
