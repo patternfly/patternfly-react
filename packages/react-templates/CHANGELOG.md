@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.7.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.7.0-prerelease.4...@patternfly/react-templates@6.7.0-prerelease.5) (2026-10-05)
+
+**Note:** Version bump only for package @patternfly/react-templates
+
 # [6.7.0-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.7.0-prerelease.3...@patternfly/react-templates@6.7.0-prerelease.4) (2026-10-02)
 
 **Note:** Version bump only for package @patternfly/react-templates
