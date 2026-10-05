@@ -70,11 +70,17 @@ function getPrereleaseVersion {
   echo $version
 }
 
+function getReleaseDate {
+  local date=$(npm view $1 time --json | jq -r ".[\"$2\"]")
+  echo $date
+}
+
 for p in ${packages[@]}; do
   version=$(getPrereleaseVersion $p)
+  date=$(getReleaseDate $p $version)
   if [ "$promote" = true ]; then
-    echo "npm dist-tag add $p@$version latest"
+    echo "npm dist-tag add $p@$version latest # released $date"
   else # list
-    echo "\"$p\": \"$version\","
+    echo "\"$p\": \"$version\", // released $date"
   fi
 done
