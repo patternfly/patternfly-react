@@ -72,7 +72,7 @@ export interface MenuToggleProps
   /** Adds styling which affects the size of the menu toggle */
   size?: 'default' | 'sm';
   /** Indicates what type of popup will be triggered by the menu toggle. A value of true is the same as a value of "menu".  */
-  'aria-haspopup'?: 'menu' | 'listbox' | boolean;
+  'aria-haspopup'?: 'menu' | 'listbox' | 'true' | 'false' | boolean;
   /** @hide Forwarded ref */
   innerRef?: React.Ref<MenuToggleElement>;
   /** Value to overwrite the randomly generated data-ouia-component-id. It will always target the toggle button. */

@@ -184,3 +184,23 @@ test(`Does not render with class ${styles.modifiers.expanded} when isExpanded is
   render(<MenuToggle isExpanded>Text Expanded Toggle</MenuToggle>);
   expect(screen.getByRole('button')).toHaveClass(styles.modifiers.expanded);
 });
+
+test(`Renders with aria-haspopup="true" when 'aria-haspopup' is passed and value is true`, () => {
+  render(<MenuToggle aria-haspopup="true">Toggle</MenuToggle>);
+  expect(screen.getByRole('button')).toHaveAttribute('aria-haspopup', 'true');
+});
+
+test(`Renders with aria-haspopup="false" when 'aria-haspopup' is passed and value is false`, () => {
+  render(<MenuToggle aria-haspopup="false">Toggle</MenuToggle>);
+  expect(screen.getByRole('button')).toHaveAttribute('aria-haspopup', 'false');
+});
+
+test(`Renders with aria-haspopup="true" when 'aria-haspopup' is passed a boolean with a value of true`, () => {
+  render(<MenuToggle aria-haspopup={true}>Toggle</MenuToggle>);
+  expect(screen.getByRole('button')).toHaveAttribute('aria-haspopup', 'true');
+});
+
+test(`Renders with aria-haspopup="false" when 'aria-haspopup' is passed a boolean with a value of false`, () => {
+  render(<MenuToggle aria-haspopup={false}>Toggle</MenuToggle>);
+  expect(screen.getByRole('button')).toHaveAttribute('aria-haspopup', 'false');
+});
