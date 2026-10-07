@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.7.0-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.7.0-prerelease.5...@patternfly/react-core@6.7.0-prerelease.6) (2026-10-07)
+
+### Bug Fixes
+
+- **MenuToggle:** allow direct string boolean for aria-haspopup ([#12671](https://github.com/patternfly/patternfly-react/issues/12671)) ([53a0b83](https://github.com/patternfly/patternfly-react/commit/53a0b830c52c75541b29613e3a8d8bfae9a25ae5))
+
 # [6.7.0-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.7.0-prerelease.4...@patternfly/react-core@6.7.0-prerelease.5) (2026-10-05)
 
 **Note:** Version bump only for package @patternfly/react-core
