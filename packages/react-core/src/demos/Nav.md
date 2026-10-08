@@ -101,6 +101,6 @@ This demo includes the following features:
 
 **Note**: For better keyboard accessibility, ensure that focus shifts between the hamburger menu toggle button in the mobile masthead and the docked overlay menu toggle button as the navigation is opened and closed.
 
-```ts file="./examples/Nav/NavDockedNav.tsx" isFullscreen
+```ts file="./examples/Nav/NavDockedNav.tsx" isFullscreen isBeta
 
 ```

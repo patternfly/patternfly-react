@@ -90,7 +90,7 @@ The docked variant of `Navigation` displays only icons passed to child `NavItems
 
 See the [docked nav demo](/components/navigation/react-demos#docked-nav) for a fully functional example.
 
-```ts file="./NavDocked.tsx"
+```ts file="./NavDocked.tsx" isBeta
 
 ```
 
