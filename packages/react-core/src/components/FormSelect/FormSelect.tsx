@@ -31,7 +31,7 @@ export interface FormSelectProps
   onFocus?: (event: React.FormEvent<HTMLSelectElement>) => void;
   /** Optional callback for updating when selection changes */
   onChange?: (event: React.FormEvent<HTMLSelectElement>, value: string) => void;
-  /** Custom flag to show that the FormSelect requires an associated id or aria-label. */
+  /** Accessible label. Required unless an associated id or aria-labelledby is specified. */
   'aria-label'?: string;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
@@ -43,9 +43,9 @@ class FormSelect extends Component<FormSelectProps> {
   static displayName = 'FormSelect';
   constructor(props: FormSelectProps) {
     super(props);
-    if (!props.id && !props['aria-label']) {
+    if (!props.id && !props['aria-label'] && !props['aria-labelledby']?.trim()) {
       // eslint-disable-next-line no-console
-      console.error('FormSelect requires either an id or aria-label to be specified');
+      console.error('FormSelect requires an id, aria-label, or aria-labelledby to be specified');
     }
   }
 
