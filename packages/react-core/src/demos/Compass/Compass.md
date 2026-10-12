@@ -39,6 +39,6 @@ This demo showcases an implementation of the following Compass features:
 
 ### Docked nav demo
 
-```ts isFullscreen file="./examples/CompassDockDemo.tsx"
+```ts isFullscreen isBeta file="./examples/CompassDockDemo.tsx"
 
 ```
