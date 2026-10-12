@@ -13,7 +13,7 @@ import {
   Toolbar,
   ToolbarContent,
   ToolbarItem
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const PageManagedSidebarClosedDemo: React.FunctionComponent = () => {
   const headerToolbar = (

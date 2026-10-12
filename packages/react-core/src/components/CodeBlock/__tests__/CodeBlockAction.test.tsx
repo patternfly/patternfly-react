@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { CodeBlockAction } from '../CodeBlockAction';
-import styles from '@patternfly/react-styles/css/components/CodeBlock/code-block';
+import styles from '@rh-felt/react-styles/css/components/CodeBlock/code-block';
 
 test('CodeBlockAction renders', () => {
   render(<CodeBlockAction>action</CodeBlockAction>);

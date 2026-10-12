@@ -1,9 +1,9 @@
 import { Children, cloneElement, Fragment, useCallback, useEffect, useRef, useState } from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/JumpLinks/jump-links';
-import sidebarStyles from '@patternfly/react-styles/css/components/Sidebar/sidebar';
-import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
-import cssToggleDisplayVar from '@patternfly/react-tokens/dist/esm/c_jump_links__toggle_Display';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/JumpLinks/jump-links';
+import sidebarStyles from '@rh-felt/react-styles/css/components/Sidebar/sidebar';
+import RhMicronsCaretDownIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
+import cssToggleDisplayVar from '@rh-felt/react-tokens/dist/esm/c_jump_links__toggle_Display';
 import { Button } from '../Button';
 import { JumpLinksItem, JumpLinksItemProps } from './JumpLinksItem';
 import { JumpLinksList } from './JumpLinksList';

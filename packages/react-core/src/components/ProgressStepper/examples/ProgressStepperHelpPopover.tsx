@@ -1,4 +1,4 @@
-import { ProgressStepper, ProgressStep, Popover } from '@patternfly/react-core';
+import { ProgressStepper, ProgressStep, Popover } from '@rh-felt/react-core';
 
 export const PopoverProgressStep = () => (
   <ProgressStepper aria-label="Progress stepper with help popover">

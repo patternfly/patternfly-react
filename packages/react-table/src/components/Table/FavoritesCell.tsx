@@ -1,4 +1,4 @@
-import { Button } from '@patternfly/react-core/dist/esm/components/Button';
+import { Button } from '@rh-felt/react-core/dist/esm/components/Button';
 
 export interface FavoritesCellProps {
   id?: string;

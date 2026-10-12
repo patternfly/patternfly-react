@@ -1,6 +1,6 @@
 import { screen, render } from '@testing-library/react';
 import { ClipboardCopyAction } from '../ClipboardCopyAction';
-import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
+import styles from '@rh-felt/react-styles/css/components/ClipboardCopy/clipboard-copy';
 
 test('Renders without children', () => {
   render(

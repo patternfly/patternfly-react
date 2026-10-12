@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/Compass/compass';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Compass/compass';
+import { css } from '@rh-felt/react-styles';
 
 interface CompassMainFooterProps extends Omit<React.HTMLProps<HTMLDivElement>, 'title'> {
   /** Additional classes added to the main footer */

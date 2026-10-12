@@ -1,4 +1,4 @@
-import { Avatar } from '@patternfly/react-core';
+import { Avatar } from '@rh-felt/react-core';
 
 export const AvatarInitials: React.FunctionComponent = () => (
   <>

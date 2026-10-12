@@ -1,7 +1,7 @@
 import { Component, Fragment } from 'react';
-import styles from '@patternfly/react-styles/css/components/Switch/switch';
-import { css } from '@patternfly/react-styles';
-import RhMicronsCheckmarkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-checkmark-icon';
+import styles from '@rh-felt/react-styles/css/components/Switch/switch';
+import { css } from '@rh-felt/react-styles';
+import RhMicronsCheckmarkIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-checkmark-icon';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 

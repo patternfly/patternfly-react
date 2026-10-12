@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { AboutModal, Button, Content } from '@patternfly/react-core';
+import { AboutModal, Button, Content } from '@rh-felt/react-core';
 const brandImg = '../../../assets/images/brandImg.svg';
 
 interface AboutModalState {

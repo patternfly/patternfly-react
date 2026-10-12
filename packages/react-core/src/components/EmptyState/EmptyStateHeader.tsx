@@ -1,5 +1,5 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/EmptyState/empty-state';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/EmptyState/empty-state';
 import { EmptyStateIcon } from './EmptyStateIcon';
 
 export enum EmptyStateHeadingLevel {

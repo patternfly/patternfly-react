@@ -1,4 +1,4 @@
-import { Page, PageHeader, PageSection } from '@patternfly/react-core';
+import { Page, PageHeader, PageSection } from '@rh-felt/react-core';
 
 export const PagePlain: React.FunctionComponent = () => (
   <Page isPlain masthead={<PageHeader>Custom header</PageHeader>} sidebar={null}>

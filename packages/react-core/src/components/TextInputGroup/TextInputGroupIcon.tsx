@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/TextInputGroup/text-input-group';
+import { css } from '@rh-felt/react-styles';
 
 export interface TextInputGroupIconProps extends React.HTMLProps<HTMLSpanElement> {
   /** Content rendered inside the text input group utilities div */

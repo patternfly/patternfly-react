@@ -15,7 +15,7 @@ import {
   Toolbar,
   ToolbarContent,
   ToolbarItem
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const PagePlainSections: React.FunctionComponent = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);

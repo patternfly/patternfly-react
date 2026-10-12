@@ -1,7 +1,7 @@
 import { Fragment, useContext, useEffect, useRef, useState } from 'react';
-import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
-import { css } from '@patternfly/react-styles';
-import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
+import styles from '@rh-felt/react-styles/css/components/Tabs/tabs';
+import { css } from '@rh-felt/react-styles';
+import RhMicronsCaretDownIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import { Popper, PopperOptions } from '../../helpers';
 import { Menu, MenuContent, MenuList, MenuItem } from '../Menu';
 import { TabsContext } from './TabsContext';

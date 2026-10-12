@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Alert, Button, AlertActionCloseButton } from '@patternfly/react-core';
+import { Alert, Button, AlertActionCloseButton } from '@rh-felt/react-core';
 
 interface AlertTimeoutCloseButtonDemoState {
   isOpenAlert: boolean;

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Checkbox, Slider, SliderOnChangeEvent, Content } from '@patternfly/react-core';
+import { Checkbox, Slider, SliderOnChangeEvent, Content } from '@rh-felt/react-core';
 
 export const SliderContinuous: React.FunctionComponent = () => {
   const [hasTooltipOverThumb, setHasTooltipOverThumb] = useState(false);

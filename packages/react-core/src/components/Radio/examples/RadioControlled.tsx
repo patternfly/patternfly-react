@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { Radio } from '@patternfly/react-core';
+import { Radio } from '@rh-felt/react-core';
 
 export const RadioControlled: React.FunctionComponent = () => {
   const [check1, setCheck1] = useState(false);

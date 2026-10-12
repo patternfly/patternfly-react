@@ -4,8 +4,8 @@ import { usePopper } from './thirdparty/react-popper/usePopper';
 import { Options as OffsetOptions } from './thirdparty/popper-core/modifiers/offset';
 import { Placement, Modifier } from './thirdparty/popper-core';
 import { clearTimeouts } from '../util';
-import { css } from '@patternfly/react-styles';
-import '@patternfly/react-styles/css/components/Popper/Popper.css';
+import { css } from '@rh-felt/react-styles';
+import '@rh-felt/react-styles/css/components/Popper/Popper.css';
 import { getLanguageDirection } from '../util';
 
 const hash = {

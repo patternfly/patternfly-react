@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Skeleton } from '@patternfly/react-core';
+import { Skeleton } from '@rh-felt/react-core';
 
 export const SkeletonShapes: React.FunctionComponent = () => (
   <Fragment>

@@ -9,7 +9,7 @@ import { NavGroup } from '../NavGroup';
 import { NavItem } from '../NavItem';
 import { NavExpandable } from '../NavExpandable';
 
-import styles from '@patternfly/react-styles/css/components/Nav/nav';
+import styles from '@rh-felt/react-styles/css/components/Nav/nav';
 
 const props = {
   items: [

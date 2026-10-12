@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { PanelHeader } from '../PanelHeader';
-import styles from '@patternfly/react-styles/css/components/Panel/panel';
+import styles from '@rh-felt/react-styles/css/components/Panel/panel';
 
 test('Renders without children', () => {
   render(

@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react';
-import { AboutModal, Alert, Button, Content } from '@patternfly/react-core';
+import { AboutModal, Alert, Button, Content } from '@rh-felt/react-core';
 import brandImg from '../../assets/PF-IconLogo.svg';
-import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
+import spacing from '@rh-felt/react-styles/css/utilities/Spacing/spacing';
 
 export const AboutModalComplexUserPositionedContent: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

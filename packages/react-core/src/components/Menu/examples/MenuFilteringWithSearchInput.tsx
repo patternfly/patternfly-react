@@ -8,7 +8,7 @@ import {
   MenuSearchInput,
   Divider,
   SearchInput
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const MenuFilteringWithSearchInput: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState(0);

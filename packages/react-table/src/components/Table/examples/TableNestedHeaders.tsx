@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Table, Thead, Tr, Th, Tbody, Td, InnerScrollContainer, ThProps } from '@patternfly/react-table';
-import { Stack, StackItem, Timestamp } from '@patternfly/react-core';
+import { Table, Thead, Tr, Th, Tbody, Td, InnerScrollContainer, ThProps } from '@rh-felt/react-table';
+import { Stack, StackItem, Timestamp } from '@rh-felt/react-core';
 interface PodConnection {
   source: {
     podName: string;

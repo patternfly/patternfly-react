@@ -1,4 +1,4 @@
-import { ChartAxis, ChartBullet } from '@patternfly/react-charts/victory';
+import { ChartAxis, ChartBullet } from '@rh-felt/react-charts/victory';
 
 interface ChartData {
   name: string;

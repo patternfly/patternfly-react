@@ -6,9 +6,9 @@ source: react-demos
 
 import { Fragment, useRef, useState } from 'react';
 
-import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
-import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-menu-bars-icon';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+import pfLogo from '@rh-felt/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
+import RhUiMenuBarsIcon from '@rh-felt/react-icons/dist/js/icons/rh-ui-menu-bars-icon';
+import { DashboardWrapper } from '@rh-felt/react-core/dist/js/demos/DashboardWrapper';
 
 ## Demos
 

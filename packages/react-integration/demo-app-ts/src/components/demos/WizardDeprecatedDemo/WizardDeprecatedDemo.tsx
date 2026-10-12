@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import { Button } from '@patternfly/react-core';
-import { Wizard, WizardStep } from '@patternfly/react-core/deprecated';
+import { Button } from '@rh-felt/react-core';
+import { Wizard, WizardStep } from '@rh-felt/react-core/deprecated';
 
 interface WizardDeprecatedDemoState {
   isOpen: boolean;

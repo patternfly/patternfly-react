@@ -1,5 +1,5 @@
-import RhUiGripVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-grip-vertical-fill-icon';
-import { Button } from '@patternfly/react-core/dist/esm/components/Button';
+import RhUiGripVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-grip-vertical-fill-icon';
+import { Button } from '@rh-felt/react-core/dist/esm/components/Button';
 
 export interface DraggableCellProps {
   id: string;

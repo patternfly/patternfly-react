@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { ActionList, ActionListGroup, ActionListItem, Button } from '@patternfly/react-core';
+import { ActionList, ActionListGroup, ActionListItem, Button } from '@rh-felt/react-core';
 
 export const ActionListWithCancelButton: React.FunctionComponent = () => (
   <Fragment>

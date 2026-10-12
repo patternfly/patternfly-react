@@ -1,6 +1,6 @@
 import { Component, createContext, createRef } from 'react';
-import styles from '@patternfly/react-styles/css/components/Nav/nav';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Nav/nav';
+import { css } from '@rh-felt/react-styles';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 

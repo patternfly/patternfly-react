@@ -1,6 +1,6 @@
-import { ProgressStepper, ProgressStep } from '@patternfly/react-core';
-import RhUiInProgressIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-in-progress-icon';
-import RhUiPendingIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-pending-icon';
+import { ProgressStepper, ProgressStep } from '@rh-felt/react-core';
+import RhUiInProgressIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-in-progress-icon';
+import RhUiPendingIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-pending-icon';
 
 export const ProgressStepperCustomIcons: React.FunctionComponent = () => (
   <ProgressStepper aria-label="Progress stepper with custom icons">

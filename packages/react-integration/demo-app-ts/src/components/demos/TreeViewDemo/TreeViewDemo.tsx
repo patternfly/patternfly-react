@@ -6,9 +6,9 @@ import {
   TreeView,
   TreeViewDataItem,
   TreeViewSearch
-} from '@patternfly/react-core';
-import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
-import RhUiFolderOpenFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-open-fill-icon';
+} from '@rh-felt/react-core';
+import RhUiFolderFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
+import RhUiFolderOpenFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-folder-open-fill-icon';
 import { Component } from 'react';
 
 export class TreeViewDemo extends Component {

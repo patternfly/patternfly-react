@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Pagination, PaginationVariant, Stack, StackItem, Title } from '@patternfly/react-core';
+import { Pagination, PaginationVariant, Stack, StackItem, Title } from '@rh-felt/react-core';
 
 interface OptionsMenuDemoState {
   topPage: number;

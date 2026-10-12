@@ -1,15 +1,15 @@
-import styles from '@patternfly/react-styles/css/components/Hero/hero';
-import { css } from '@patternfly/react-styles';
-import heroBackgroundImageLight from '@patternfly/react-tokens/dist/esm/c_hero_BackgroundImage_light';
-import heroBackgroundImageDark from '@patternfly/react-tokens/dist/esm/c_hero_BackgroundImage_dark';
-import heroGradientStop1Light from '@patternfly/react-tokens/dist/esm/c_hero_gradient_stop_1_light';
-import heroGradientStop2Light from '@patternfly/react-tokens/dist/esm/c_hero_gradient_stop_2_light';
-import heroGradientStop3Light from '@patternfly/react-tokens/dist/esm/c_hero_gradient_stop_3_light';
-import heroGradientStop1Dark from '@patternfly/react-tokens/dist/esm/c_hero_gradient_stop_1_dark';
-import heroGradientStop2Dark from '@patternfly/react-tokens/dist/esm/c_hero_gradient_stop_2_dark';
-import heroGradientStop3Dark from '@patternfly/react-tokens/dist/esm/c_hero_gradient_stop_3_dark';
-import heroBodyWidth from '@patternfly/react-tokens/dist/esm/c_hero__body_Width';
-import heroBodyMaxWidth from '@patternfly/react-tokens/dist/esm/c_hero__body_MaxWidth';
+import styles from '@rh-felt/react-styles/css/components/Hero/hero';
+import { css } from '@rh-felt/react-styles';
+import heroBackgroundImageLight from '@rh-felt/react-tokens/dist/esm/c_hero_BackgroundImage_light';
+import heroBackgroundImageDark from '@rh-felt/react-tokens/dist/esm/c_hero_BackgroundImage_dark';
+import heroGradientStop1Light from '@rh-felt/react-tokens/dist/esm/c_hero_gradient_stop_1_light';
+import heroGradientStop2Light from '@rh-felt/react-tokens/dist/esm/c_hero_gradient_stop_2_light';
+import heroGradientStop3Light from '@rh-felt/react-tokens/dist/esm/c_hero_gradient_stop_3_light';
+import heroGradientStop1Dark from '@rh-felt/react-tokens/dist/esm/c_hero_gradient_stop_1_dark';
+import heroGradientStop2Dark from '@rh-felt/react-tokens/dist/esm/c_hero_gradient_stop_2_dark';
+import heroGradientStop3Dark from '@rh-felt/react-tokens/dist/esm/c_hero_gradient_stop_3_dark';
+import heroBodyWidth from '@rh-felt/react-tokens/dist/esm/c_hero__body_Width';
+import heroBodyMaxWidth from '@rh-felt/react-tokens/dist/esm/c_hero__body_MaxWidth';
 
 /** The main Hero component that allows adjusting of its background images and gradients in different color modes (such as light and dark). */
 

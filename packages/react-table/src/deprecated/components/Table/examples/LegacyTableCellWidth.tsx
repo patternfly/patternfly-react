@@ -1,5 +1,5 @@
-import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
-import { classNames, cellWidth, Visibility } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableProps } from '@rh-felt/react-table/deprecated';
+import { classNames, cellWidth, Visibility } from '@rh-felt/react-table';
 
 interface Repository {
   name: string;

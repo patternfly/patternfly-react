@@ -10,7 +10,7 @@ import {
   DrawerActions,
   DrawerCloseButton,
   DrawerProps
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export interface DrawerResizeDemoState {
   isExpanded: boolean;

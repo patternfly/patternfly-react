@@ -1,4 +1,4 @@
-import { Grid, GridItem } from '@patternfly/react-core';
+import { Grid, GridItem } from '@rh-felt/react-core';
 
 export const GridWithOverrides: React.FunctionComponent = () => (
   <Grid sm={6} md={4} lg={3} xl2={1}>

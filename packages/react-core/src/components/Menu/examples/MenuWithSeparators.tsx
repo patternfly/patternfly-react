@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Divider, Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
+import { Divider, Menu, MenuContent, MenuList, MenuItem } from '@rh-felt/react-core';
 
 export const MenuWithSeparators: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState(0);

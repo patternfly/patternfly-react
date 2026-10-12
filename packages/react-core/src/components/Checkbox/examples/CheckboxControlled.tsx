@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from 'react';
-import { Checkbox } from '@patternfly/react-core';
+import { Checkbox } from '@rh-felt/react-core';
 
 export const CheckboxControlled: React.FunctionComponent = () => {
   const [isChecked1, setIsChecked1] = useState<boolean>(false);

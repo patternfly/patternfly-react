@@ -4,26 +4,26 @@ section: components
 ---
 
 import { Fragment, useState, useRef, useEffect } from 'react';
-import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
-import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
-import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
-import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
-import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
-import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
-import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
-import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
-import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
-import RhUiCloudFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cloud-fill-icon';
-import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
-import RhUiThumbnailViewSmallFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-thumbnail-view-small-fill-icon';
-import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
-import pfIconLogo from '@patternfly/react-core/src/demos/assets/PF-IconLogo-color.svg';
-import { DashboardBreadcrumb } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
-import { DashboardHeader } from '@patternfly/react-core/dist/js/demos/DashboardHeader';
-import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_lg';
-import RhUiCubesIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cubes-icon';
-import RhUiFolderIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-icon';
-import RhUiResourceIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-resource-icon';
+import RhUiSettingsFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
+import RhUiQuestionMarkCircleIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import RhUiQuestionMarkCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
+import RhUiEllipsisVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhUiNotificationFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
+import RhUiMenuBarsIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
+import imgAvatar from '@rh-felt/react-core/src/components/assets/avatarImg.svg';
+import pfLogo from '@rh-felt/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
+import RhUiFolderFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
+import RhUiCloudFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-cloud-fill-icon';
+import RhUiCodeIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-code-icon';
+import RhUiThumbnailViewSmallFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-thumbnail-view-small-fill-icon';
+import RhMicronsSearchIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-search-icon';
+import pfIconLogo from '@rh-felt/react-core/src/demos/assets/PF-IconLogo-color.svg';
+import { DashboardBreadcrumb } from '@rh-felt/react-core/dist/js/demos/DashboardWrapper';
+import { DashboardHeader } from '@rh-felt/react-core/dist/js/demos/DashboardHeader';
+import globalBreakpointLg from '@rh-felt/react-tokens/dist/esm/t_global_breakpoint_lg';
+import RhUiCubesIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-cubes-icon';
+import RhUiFolderIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-folder-icon';
+import RhUiResourceIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-resource-icon';
 
 ## Demos
 

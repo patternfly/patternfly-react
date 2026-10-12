@@ -1,4 +1,4 @@
-import { Sidebar, SidebarContent, SidebarPanel } from '@patternfly/react-core';
+import { Sidebar, SidebarContent, SidebarPanel } from '@rh-felt/react-core';
 
 export const SidebarStickyPanel: React.FunctionComponent = () => (
   <Sidebar style={{ height: '200px', overflow: 'auto' }} tabIndex={0}>

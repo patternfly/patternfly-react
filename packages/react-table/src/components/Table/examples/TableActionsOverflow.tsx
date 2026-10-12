@@ -10,9 +10,9 @@ import {
   MenuToggle,
   Dropdown,
   DropdownList
-} from '@patternfly/react-core';
-import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+} from '@rh-felt/react-core';
+import { Table, Thead, Tr, Th, Tbody, Td } from '@rh-felt/react-table';
+import RhUiEllipsisVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 interface Repository {
   name: string;

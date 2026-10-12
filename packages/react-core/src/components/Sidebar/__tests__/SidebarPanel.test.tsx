@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { SidebarPanel, SidebarPanelWidthType } from '../SidebarPanel';
-import styles from '@patternfly/react-styles/css/components/Sidebar/sidebar';
+import styles from '@rh-felt/react-styles/css/components/Sidebar/sidebar';
 
 test('Renders children', () => {
   render(<SidebarPanel>Test</SidebarPanel>);

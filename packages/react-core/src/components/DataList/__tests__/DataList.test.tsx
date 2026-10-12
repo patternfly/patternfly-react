@@ -6,7 +6,7 @@ import { DataList } from '../DataList';
 import { DataListItem } from '../DataListItem';
 import { DataListItemRow } from '../DataListItemRow';
 
-import styles from '@patternfly/react-styles/css/components/DataList/data-list';
+import styles from '@rh-felt/react-styles/css/components/DataList/data-list';
 
 test('Renders to match snapshot', () => {
   const { asFragment } = render(<DataList aria-label="list" />);

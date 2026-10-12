@@ -14,10 +14,10 @@ import {
   GridItem,
   Flex,
   FlexItem
-} from '@patternfly/react-core';
-import { ChartArea, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
-import sizing from '@patternfly/react-styles/css/utilities/Sizing/sizing';
-import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
+} from '@rh-felt/react-core';
+import { ChartArea, ChartGroup, ChartVoronoiContainer } from '@rh-felt/react-charts/victory';
+import sizing from '@rh-felt/react-styles/css/utilities/Sizing/sizing';
+import accessibility from '@rh-felt/react-styles/css/utilities/Accessibility/accessibility';
 
 export const CardWithAccordion: React.FunctionComponent = () => {
   const [openCPU, setOpenCPU] = useState('cpu1');

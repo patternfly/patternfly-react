@@ -1,8 +1,8 @@
 import { createRef, forwardRef, useEffect, useState, useContext } from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Table/table';
-import scrollStyles from '@patternfly/react-styles/css/components/Table/table-scrollable';
-import treeViewStyles from '@patternfly/react-styles/css/components/Table/table-tree-view';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Table/table';
+import scrollStyles from '@rh-felt/react-styles/css/components/Table/table-scrollable';
+import treeViewStyles from '@rh-felt/react-styles/css/components/Table/table-tree-view';
 import { BaseCellProps } from './Table';
 import {
   cellActions,
@@ -19,7 +19,7 @@ import { draggable } from './utils/decorators/draggable';
 import { treeRow } from './utils';
 import { mergeProps } from './base/merge-props';
 import { IVisibility } from './utils/decorators/classNames';
-import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip/Tooltip';
+import { Tooltip } from '@rh-felt/react-core/dist/esm/components/Tooltip/Tooltip';
 import { IFormatterValueType, IExtra } from './TableTypes';
 import {
   TdActionsType,
@@ -31,9 +31,9 @@ import {
   TdTreeRowType
 } from './base/types';
 import { TableContext } from './Table';
-import cssStickyCellMinWidth from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_MinWidth';
-import cssStickyCellInlineStart from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_InsetInlineStart';
-import cssStickyCellInlineEnd from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_InsetInlineEnd';
+import cssStickyCellMinWidth from '@rh-felt/react-tokens/dist/esm/c_table__sticky_cell_MinWidth';
+import cssStickyCellInlineStart from '@rh-felt/react-tokens/dist/esm/c_table__sticky_cell_InsetInlineStart';
+import cssStickyCellInlineEnd from '@rh-felt/react-tokens/dist/esm/c_table__sticky_cell_InsetInlineEnd';
 
 export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDataCellElement>, 'onSelect' | 'width'> {
   /**

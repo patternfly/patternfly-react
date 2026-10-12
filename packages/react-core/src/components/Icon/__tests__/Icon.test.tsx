@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import { kebabCase } from 'case-anything';
 import { Icon, IconSize } from '../Icon';
-import RhMicronsCheckmarkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-checkmark-icon';
-import styles from '@patternfly/react-styles/css/components/Icon/icon';
+import RhMicronsCheckmarkIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-checkmark-icon';
+import styles from '@rh-felt/react-styles/css/components/Icon/icon';
 
 test('renders basic icon successfully', () => {
   const { asFragment } = render(

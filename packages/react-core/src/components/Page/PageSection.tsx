@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react';
-import styles from '@patternfly/react-styles/css/components/Page/page';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Page/page';
+import { css } from '@rh-felt/react-styles';
 import { formatBreakpointMods } from '../../helpers/util';
 import { PageContext } from './PageContext';
 import { PageBody } from './PageBody';

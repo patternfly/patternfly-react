@@ -9,7 +9,7 @@ import {
   DropdownItem,
   MenuToggle,
   MenuToggleElement
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const InputGroupWithDropdown: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);

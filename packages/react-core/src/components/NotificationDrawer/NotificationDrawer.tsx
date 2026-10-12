@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
-import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/NotificationDrawer/notification-drawer';
+import { css } from '@rh-felt/react-styles';
 
 export interface NotificationDrawerProps extends React.HTMLProps<HTMLDivElement> {
   /**  Content rendered inside the notification drawer */

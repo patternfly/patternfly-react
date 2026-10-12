@@ -1,4 +1,4 @@
-import { Split, SplitItem } from '@patternfly/react-core';
+import { Split, SplitItem } from '@rh-felt/react-core';
 
 export const SplitWithGutter: React.FunctionComponent = () => (
   <Split hasGutter>

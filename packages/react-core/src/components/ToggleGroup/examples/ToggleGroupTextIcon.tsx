@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
-import RhUiUndoIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-undo-icon';
-import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
-import ShareSquareIcon from '@patternfly/react-icons/dist/esm/icons/share-square-icon';
+import { ToggleGroup, ToggleGroupItem } from '@rh-felt/react-core';
+import RhUiUndoIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-undo-icon';
+import RhUiCopyFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
+import ShareSquareIcon from '@rh-felt/react-icons/dist/esm/icons/share-square-icon';
 
 export const ToggleGroupIcon: React.FunctionComponent = () => {
   const [isSelected, setIsSelected] = useState({

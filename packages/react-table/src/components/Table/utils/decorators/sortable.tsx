@@ -1,8 +1,8 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Table/table';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Table/table';
 import { IExtra, IFormatterValueType, ITransform } from '../../TableTypes';
 import { SortColumn, SortByDirection } from '../../SortColumn';
-import RhUiStarFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-star-fill-icon';
+import RhUiStarFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-star-fill-icon';
 
 export const sortableFavorites = (sort: any) => () =>
   sortable(<RhUiStarFillIcon />, {

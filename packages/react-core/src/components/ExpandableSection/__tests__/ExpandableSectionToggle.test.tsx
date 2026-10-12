@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ExpandableSectionToggle } from '../ExpandableSectionToggle';
-import styles from '@patternfly/react-styles/css/components/ExpandableSection/expandable-section';
+import styles from '@rh-felt/react-styles/css/components/ExpandableSection/expandable-section';
 
 test('Renders without children', () => {
   render(<ExpandableSectionToggle></ExpandableSectionToggle>);

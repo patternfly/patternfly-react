@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Nav, NavExpandable, NavItem, NavList } from '@patternfly/react-core';
+import { Nav, NavExpandable, NavItem, NavList } from '@rh-felt/react-core';
 
 export const NavExpandableThirdLevel: React.FunctionComponent = () => {
   const [activeGroup, setActiveGroup] = useState('nav-expand3rd-group-1');

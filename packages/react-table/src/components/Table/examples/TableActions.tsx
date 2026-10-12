@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { Fragment, useState } from 'react';
-import { Button, MenuToggle, ToggleGroup, ToggleGroupItem, ToggleGroupItemProps } from '@patternfly/react-core';
+import { Button, MenuToggle, ToggleGroup, ToggleGroupItem, ToggleGroupItemProps } from '@rh-felt/react-core';
 import {
   Table,
   TableText,
@@ -12,7 +12,7 @@ import {
   CustomActionsToggleProps,
   ActionsColumn,
   IAction
-} from '@patternfly/react-table';
+} from '@rh-felt/react-table';
 
 interface Repository {
   name: string;

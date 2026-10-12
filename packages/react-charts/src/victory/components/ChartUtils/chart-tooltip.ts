@@ -1,4 +1,4 @@
-import chart_color_black_500 from '@patternfly/react-tokens/dist/esm/chart_color_black_500';
+import chart_color_black_500 from '@rh-felt/react-tokens/dist/esm/chart_color_black_500';
 import { Helpers, OrientationTypes, StringOrNumberOrCallback } from 'victory-core';
 import { ChartLegendProps } from '../ChartLegend/ChartLegend';
 import { ChartLegendTooltipStyles } from '../ChartTheme/ChartStyles';

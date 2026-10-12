@@ -1,13 +1,6 @@
 import { Fragment, useState } from 'react';
-import {
-  CodeBlock,
-  CodeBlockAction,
-  CodeBlockCode,
-  ClipboardCopyButton,
-  Button,
-  Tooltip
-} from '@patternfly/react-core';
-import RhUiPlayFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
+import { CodeBlock, CodeBlockAction, CodeBlockCode, ClipboardCopyButton, Button, Tooltip } from '@rh-felt/react-core';
+import RhUiPlayFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
 
 export const BasicCodeBlock: React.FunctionComponent = () => {
   const [copied, setCopied] = useState(false);

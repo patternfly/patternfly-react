@@ -5,7 +5,7 @@ import {
   CompassContent,
   CompassMainHeader,
   CompassMainFooter
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 import './compass.css';
 
 export const CompassMainFooterDemo: React.FunctionComponent = () => {

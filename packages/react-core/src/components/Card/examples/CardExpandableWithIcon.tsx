@@ -12,9 +12,9 @@ import {
   Divider,
   MenuToggle,
   MenuToggleElement
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 import pfLogoSmall from '../../PF-IconLogo.svg';
-import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhUiEllipsisVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export const CardExpandableWithIcon: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);

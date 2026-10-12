@@ -1,11 +1,11 @@
 import { Children, Component, createRef, Fragment } from 'react';
-import styles from '@patternfly/react-styles/css/components/Label/label-group';
-import labelStyles from '@patternfly/react-styles/css/components/Label/label';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Label/label-group';
+import labelStyles from '@rh-felt/react-styles/css/components/Label/label';
+import { css } from '@rh-felt/react-styles';
 import { Button } from '../Button';
 import { Label } from './Label';
 import { Tooltip, TooltipPosition } from '../Tooltip';
-import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+import RhMicronsCloseIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-close-icon';
 import { fillTemplate } from '../../helpers';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 

@@ -1,8 +1,8 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Brand/brand';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Brand/brand';
 import { setBreakpointCssVars } from '../../helpers';
-import cssBrandHeight from '@patternfly/react-tokens/dist/esm/c_brand_Height';
-import cssBrandWidth from '@patternfly/react-tokens/dist/esm/c_brand_Width';
+import cssBrandHeight from '@rh-felt/react-tokens/dist/esm/c_brand_Height';
+import cssBrandWidth from '@rh-felt/react-tokens/dist/esm/c_brand_Width';
 
 export interface BrandProps extends React.DetailedHTMLProps<
   React.ImgHTMLAttributes<HTMLImageElement>,

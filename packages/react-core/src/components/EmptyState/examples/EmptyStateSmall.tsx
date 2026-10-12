@@ -5,8 +5,8 @@ import {
   EmptyStateBody,
   EmptyStateActions,
   EmptyStateFooter
-} from '@patternfly/react-core';
-import RhUiModuleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-module-icon';
+} from '@rh-felt/react-core';
+import RhUiModuleIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-module-icon';
 
 export const EmptyStateSmall: React.FunctionComponent = () => (
   <EmptyState variant={EmptyStateVariant.sm} titleText="Empty state" headingLevel="h4" icon={RhUiModuleIcon}>

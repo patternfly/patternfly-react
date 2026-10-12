@@ -1,4 +1,4 @@
-import { Card, CardTitle, CardBody, CardFooter, Grid, GridItem, Button } from '@patternfly/react-core';
+import { Card, CardTitle, CardBody, CardFooter, Grid, GridItem, Button } from '@rh-felt/react-core';
 
 export const CardHorizontalSplitDemo: React.FunctionComponent = () => (
   <Card id="card-demo-horizontal-split-example">

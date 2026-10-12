@@ -1,4 +1,4 @@
-import { Radio } from '@patternfly/react-core';
+import { Radio } from '@rh-felt/react-core';
 
 export const RadioWithDescriptionAndBody: React.FunctionComponent = () => (
   <Radio

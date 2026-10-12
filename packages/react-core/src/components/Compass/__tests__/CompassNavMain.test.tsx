@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { CompassNavMain } from '../CompassNavMain';
-import styles from '@patternfly/react-styles/css/components/Compass/compass';
+import styles from '@rh-felt/react-styles/css/components/Compass/compass';
 
 test('Renders with children', () => {
   render(<CompassNavMain>Test content</CompassNavMain>);

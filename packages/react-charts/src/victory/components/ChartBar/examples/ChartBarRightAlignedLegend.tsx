@@ -1,4 +1,4 @@
-import { Chart, ChartAxis, ChartBar, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
+import { Chart, ChartAxis, ChartBar, ChartGroup, ChartVoronoiContainer } from '@rh-felt/react-charts/victory';
 
 interface PetData {
   name: string;

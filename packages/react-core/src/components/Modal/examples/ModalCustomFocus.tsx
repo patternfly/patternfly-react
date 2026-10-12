@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from '@patternfly/react-core';
+import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from '@rh-felt/react-core';
 
 export const ModalCustomFocus: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

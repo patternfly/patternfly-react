@@ -1,7 +1,7 @@
 import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { TypeaheadSelect } from '../TypeaheadSelect';
-import styles from '@patternfly/react-styles/css/components/Menu/menu';
+import styles from '@rh-felt/react-styles/css/components/Menu/menu';
 
 test('renders typeahead select with options', async () => {
   const initialOptions = [

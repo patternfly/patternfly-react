@@ -8,12 +8,12 @@ ouia: true
 
 import './alert.css';
 import { Fragment, useEffect, useState } from 'react';
-import RhUiUsersFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-users-fill-icon';
-import RhUiContainerFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-container-fill-icon';
-import DatabaseIcon from '@patternfly/react-icons/dist/esm/icons/database-icon';
-import RhUiServerStackFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-server-stack-fill-icon';
-import RhUiLaptopFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-laptop-fill-icon';
-import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
+import RhUiUsersFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-users-fill-icon';
+import RhUiContainerFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-container-fill-icon';
+import DatabaseIcon from '@rh-felt/react-icons/dist/esm/icons/database-icon';
+import RhUiServerStackFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-server-stack-fill-icon';
+import RhUiLaptopFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-laptop-fill-icon';
+import buttonStyles from '@rh-felt/react-styles/css/components/Button/button';
 
 Micro animations have been added for `<Alert>` components within an `<AlertGroup>`. By default, you must opt into animations, since they can require updates to tests. To enable or disable animations as needed, use the `hasAnimations` property. With animations enabled, we recommend you ensure that dynamically-added alerts are prepended to a list of alerts, rather than appended to the end of it.
 

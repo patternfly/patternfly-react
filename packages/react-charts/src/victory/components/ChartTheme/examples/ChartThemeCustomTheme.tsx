@@ -6,11 +6,11 @@ import {
   ChartThemeColor,
   ChartVoronoiContainer,
   getCustomTheme
-} from '@patternfly/react-charts/victory';
-import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
-import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
-import chart_color_teal_300 from '@patternfly/react-tokens/dist/esm/chart_color_teal_300';
-import chart_color_yellow_300 from '@patternfly/react-tokens/dist/esm/chart_color_yellow_300';
+} from '@rh-felt/react-charts/victory';
+import chart_color_blue_300 from '@rh-felt/react-tokens/dist/esm/chart_color_blue_300';
+import chart_color_green_300 from '@rh-felt/react-tokens/dist/esm/chart_color_green_300';
+import chart_color_teal_300 from '@rh-felt/react-tokens/dist/esm/chart_color_teal_300';
+import chart_color_yellow_300 from '@rh-felt/react-tokens/dist/esm/chart_color_yellow_300';
 
 interface PetData {
   name?: string;

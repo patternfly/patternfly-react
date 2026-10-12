@@ -1,7 +1,7 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/ModalBox/modal-box';
 import { Button } from '../Button';
-import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+import RhMicronsCloseIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-close-icon';
 import { OUIAProps } from '../../helpers';
 
 export interface ModalBoxCloseButtonProps extends OUIAProps {

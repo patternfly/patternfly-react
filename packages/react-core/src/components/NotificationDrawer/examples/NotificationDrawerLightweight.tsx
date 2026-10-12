@@ -15,8 +15,8 @@ import {
   NotificationDrawerListItemBody,
   NotificationDrawerListItemHeader,
   EmptyStateActions
-} from '@patternfly/react-core';
-import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
+} from '@rh-felt/react-core';
+import RhMicronsSearchIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-search-icon';
 
 export const NotificationDrawerLightweight: React.FunctionComponent = () => {
   const [firstGroupExpanded, setFirstGroupExpanded] = useState(false);

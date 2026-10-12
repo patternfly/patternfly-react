@@ -88,7 +88,7 @@ export function createIconBase({ name, icon, rhUiIcon = null }: CreateIconBasePr
   if (icon == null) {
     // eslint-disable-next-line no-console
     console.warn(
-      `@patternfly/react-icons: createIconBase is missing an \`icon\` definition (name: ${name ?? 'unknown'}).`
+      `@rh-felt/react-icons: createIconBase is missing an \`icon\` definition (name: ${name ?? 'unknown'}).`
     );
   }
   return class SVGIcon extends Component<SVGIconProps> {

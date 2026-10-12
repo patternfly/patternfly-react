@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from 'react';
-import { Alert, AlertGroup, AlertVariant, ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
+import { Alert, AlertGroup, AlertVariant, ToggleGroup, ToggleGroupItem } from '@rh-felt/react-core';
 
 interface AlertInfo {
   title: string;

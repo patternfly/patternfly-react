@@ -10,10 +10,10 @@ import {
   Select,
   SelectList,
   SelectOption
-} from '@patternfly/react-core';
-import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
-import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
-import RhUiSyncIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sync-icon';
+} from '@rh-felt/react-core';
+import EditIcon from '@rh-felt/react-icons/dist/esm/icons/edit-icon';
+import RhUiCopyFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
+import RhUiSyncIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-sync-icon';
 
 export const ToolbarGroups: React.FunctionComponent = () => {
   const firstOptions = ['A', 'B', 'C'];

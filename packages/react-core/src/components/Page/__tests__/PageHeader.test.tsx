@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import styles from '@patternfly/react-styles/css/components/Page/page';
+import styles from '@rh-felt/react-styles/css/components/Page/page';
 import { PageHeader } from '../PageHeader';
 
 test('Renders children', () => {

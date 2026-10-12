@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { HelperText } from '../HelperText';
 
-import styles from '@patternfly/react-styles/css/components/HelperText/helper-text';
+import styles from '@rh-felt/react-styles/css/components/HelperText/helper-text';
 
 test('Renders to match snapshot', () => {
   const { asFragment } = render(<HelperText />);

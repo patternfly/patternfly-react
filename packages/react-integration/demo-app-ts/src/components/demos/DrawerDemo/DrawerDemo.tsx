@@ -11,7 +11,7 @@ import {
   DrawerPanelContent,
   DrawerProps,
   DrawerSection
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export interface DrawerDemoState {
   isExpanded: boolean;

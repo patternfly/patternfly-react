@@ -6,7 +6,7 @@
  */
 import { cloneElement } from 'react';
 import mergeWith from 'lodash/mergeWith';
-import { css } from '@patternfly/react-styles';
+import { css } from '@rh-felt/react-styles';
 
 /**
  * @param {any} props - Props

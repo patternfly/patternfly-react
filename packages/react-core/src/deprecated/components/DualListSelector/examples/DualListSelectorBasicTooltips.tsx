@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { DualListSelector as DLSDeprecated } from '@patternfly/react-core/deprecated';
+import { DualListSelector as DLSDeprecated } from '@rh-felt/react-core/deprecated';
 
 export const DualListSelectorBasicTooltips: React.FunctionComponent = () => {
   const [availableOptions, setAvailableOptions] = useState<React.ReactNode[]>([

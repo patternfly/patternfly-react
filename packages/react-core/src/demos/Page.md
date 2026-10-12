@@ -4,25 +4,25 @@ section: components
 ---
 
 import { useState, useRef, useEffect } from 'react';
-import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
-import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
-import RhUiTrashFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-trash-fill-icon';
-import RhUiPortIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-port-icon';
-import RhUiContainerIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-container-icon';
-import RhUiAutomationIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-automation-icon';
-import RhUiConnectedIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-connected-icon';
-import RhUiArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-arrow-right-icon';
-import pfIcon from '@patternfly/react-core/src/demos/assets/PF-IconLogo.svg';
-import activeMQIcon from '@patternfly/react-core/src/demos/assets/activemq-core_200x150.png';
-import avroIcon from '@patternfly/react-core/src/demos/assets/camel-avro_200x150.png';
-import dropBoxIcon from '@patternfly/react-core/src/demos/assets/camel-dropbox_200x150.png';
-import infinispanIcon from '@patternfly/react-core/src/demos/assets/camel-infinispan_200x150.png';
-import saxonIcon from '@patternfly/react-core/src/demos/assets/camel-saxon_200x150.png';
-import sparkIcon from '@patternfly/react-core/src/demos/assets/camel-spark_200x150.png';
-import swaggerIcon from '@patternfly/react-core/src/demos/assets/camel-swagger-java_200x150.png';
-import azureIcon from '@patternfly/react-core/src/demos/assets/FuseConnector_Icons_AzureServices.png';
-import restIcon from '@patternfly/react-core/src/demos/assets/FuseConnector_Icons_REST.png';
-import { data } from '@patternfly/react-core/src/demos/CardView/examples/CardViewData.jsx';
+import RhUiEllipsisVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhUiAddCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
+import RhUiTrashFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-trash-fill-icon';
+import RhUiPortIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-port-icon';
+import RhUiContainerIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-container-icon';
+import RhUiAutomationIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-automation-icon';
+import RhUiConnectedIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-connected-icon';
+import RhUiArrowRightIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-arrow-right-icon';
+import pfIcon from '@rh-felt/react-core/src/demos/assets/PF-IconLogo.svg';
+import activeMQIcon from '@rh-felt/react-core/src/demos/assets/activemq-core_200x150.png';
+import avroIcon from '@rh-felt/react-core/src/demos/assets/camel-avro_200x150.png';
+import dropBoxIcon from '@rh-felt/react-core/src/demos/assets/camel-dropbox_200x150.png';
+import infinispanIcon from '@rh-felt/react-core/src/demos/assets/camel-infinispan_200x150.png';
+import saxonIcon from '@rh-felt/react-core/src/demos/assets/camel-saxon_200x150.png';
+import sparkIcon from '@rh-felt/react-core/src/demos/assets/camel-spark_200x150.png';
+import swaggerIcon from '@rh-felt/react-core/src/demos/assets/camel-swagger-java_200x150.png';
+import azureIcon from '@rh-felt/react-core/src/demos/assets/FuseConnector_Icons_AzureServices.png';
+import restIcon from '@rh-felt/react-core/src/demos/assets/FuseConnector_Icons_REST.png';
+import { data } from '@rh-felt/react-core/src/demos/CardView/examples/CardViewData.jsx';
 
 - All examples set the `isManagedSidebar` prop on the Page component to have the sidebar automatically close for smaller screen widths. You can also manually control this behavior by not adding the `isManagedSidebar` prop and instead:
   1. Add an onNavToggle callback to PageHeader

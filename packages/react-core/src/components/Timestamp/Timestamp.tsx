@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import styles from '@patternfly/react-styles/css/components/Timestamp/timestamp';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Timestamp/timestamp';
+import { css } from '@rh-felt/react-styles';
 import { Tooltip } from '../Tooltip';
 import { isValidDate } from '../../helpers/datetimeUtils';
 

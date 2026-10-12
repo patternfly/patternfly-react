@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { MenuToggle, Divider, Select, SelectList, SelectOption, SelectGroup } from '@patternfly/react-core';
+import { MenuToggle, Divider, Select, SelectList, SelectOption, SelectGroup } from '@rh-felt/react-core';
 
 export const OptionsMenuDemo: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);

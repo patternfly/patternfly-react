@@ -1,5 +1,5 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Tabs/tabs';
 
 export interface TabTitleIconProps extends React.HTMLProps<HTMLSpanElement> {
   /** Icon to be rendered inside the tab button title. */

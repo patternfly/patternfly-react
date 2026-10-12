@@ -1,7 +1,7 @@
 import { createRef, useEffect, useRef, useState } from 'react';
-import { Tabs, Tab, TabTitleText, Popover, TabAction } from '@patternfly/react-core';
-import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
-import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+import { Tabs, Tab, TabTitleText, Popover, TabAction } from '@rh-felt/react-core';
+import RhUiQuestionMarkCircleIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import RhMicronsCloseIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 export const TabsHelpAndClose: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = useState<number>(0);

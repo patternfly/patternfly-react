@@ -1,5 +1,5 @@
-import { ICell, IRow } from '@patternfly/react-table';
-import { Table, TableBody, TableHeader, TableProps, type OnRowClick } from '@patternfly/react-table/deprecated';
+import { ICell, IRow } from '@rh-felt/react-table';
+import { Table, TableBody, TableHeader, TableProps, type OnRowClick } from '@rh-felt/react-table/deprecated';
 import { Component } from 'react';
 
 interface ITableRowClickDemoState {

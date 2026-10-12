@@ -1,4 +1,4 @@
-import { Panel, PanelMain, PanelMainBody, PanelHeader, Divider } from '@patternfly/react-core';
+import { Panel, PanelMain, PanelMainBody, PanelHeader, Divider } from '@rh-felt/react-core';
 
 export const PanelHeaderExample: React.FunctionComponent = () => (
   <Panel>

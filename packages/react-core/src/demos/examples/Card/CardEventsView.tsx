@@ -21,11 +21,11 @@ import {
   Spinner,
   Timestamp,
   Title
-} from '@patternfly/react-core';
-import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
-import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
-import flex from '@patternfly/react-styles/css/utilities/Flex/flex';
-import cssGridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
+} from '@rh-felt/react-core';
+import RhUiErrorFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
+import RhUiCheckCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import flex from '@rh-felt/react-styles/css/utilities/Flex/flex';
+import cssGridTemplateColumnsMin from '@rh-felt/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 export const CardEventsView: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);

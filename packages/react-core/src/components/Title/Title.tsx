@@ -1,5 +1,5 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Title/title';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Title/title';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 
 export enum TitleSizes {

@@ -7,7 +7,7 @@ propComponents: ['AboutModal']
 import { Fragment, useState } from 'react';
 import brandImg from '../../assets/PF-IconLogo.svg';
 import bgImg from '../../assets/pf-background.svg';
-import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
+import spacing from '@rh-felt/react-styles/css/utilities/Spacing/spacing';
 
 ## Examples
 ### Basic

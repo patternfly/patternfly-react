@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Menu, MenuContent, MenuItem, MenuList, Popper, SearchInput } from '@patternfly/react-core';
+import { Menu, MenuContent, MenuItem, MenuList, Popper, SearchInput } from '@rh-felt/react-core';
 
 import { words } from '../words';
 

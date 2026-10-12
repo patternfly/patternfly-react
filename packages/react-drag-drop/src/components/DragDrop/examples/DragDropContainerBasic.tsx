@@ -6,7 +6,7 @@ import {
   DragDropContainerDragOverEvent,
   DragDropContainerDragEndEvent,
   DragDropContainerDragCancelEvent
-} from '@patternfly/react-drag-drop';
+} from '@rh-felt/react-drag-drop';
 
 export const DragDropContainerBasic: React.FunctionComponent = () => {
   const [allItems, setAllItems] = useState<Record<string, DraggableObject[]>>({

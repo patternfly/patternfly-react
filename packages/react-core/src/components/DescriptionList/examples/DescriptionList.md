@@ -16,13 +16,13 @@ propComponents:
 ---
 
 import { useState } from 'react';
-import { Button, DescriptionList, DescriptionListTerm, DescriptionListDescription, DescriptionListGroup, DescriptionListTermHelpText, DescriptionListTermHelpTextButton, Popover, Checkbox, Card } from '@patternfly/react-core';
-import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import BookIcon from '@patternfly/react-icons/dist/esm/icons/book-icon';
-import RhUiKeyIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-key-icon';
-import RhUiFlagFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-flag-fill-icon';
-import RhUiLanguageFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-language-fill-icon';
+import { Button, DescriptionList, DescriptionListTerm, DescriptionListDescription, DescriptionListGroup, DescriptionListTermHelpText, DescriptionListTermHelpTextButton, Popover, Checkbox, Card } from '@rh-felt/react-core';
+import RhUiAddCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
+import CubeIcon from '@rh-felt/react-icons/dist/esm/icons/cube-icon';
+import BookIcon from '@rh-felt/react-icons/dist/esm/icons/book-icon';
+import RhUiKeyIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-key-icon';
+import RhUiFlagFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-flag-fill-icon';
+import RhUiLanguageFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-language-fill-icon';
 
 ## Examples
 

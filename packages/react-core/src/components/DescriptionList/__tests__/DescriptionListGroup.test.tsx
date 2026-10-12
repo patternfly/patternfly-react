@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { DescriptionListGroup } from '../DescriptionListGroup';
 
-import styles from '@patternfly/react-styles/css/components/DescriptionList/description-list';
+import styles from '@rh-felt/react-styles/css/components/DescriptionList/description-list';
 
 test('Renders to match snapshot', () => {
   const { asFragment } = render(<DescriptionListGroup>test</DescriptionListGroup>);

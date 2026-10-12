@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
-import { Badge } from '@patternfly/react-core';
-import { Chip } from '@patternfly/react-core/deprecated';
+import { Badge } from '@rh-felt/react-core';
+import { Chip } from '@rh-felt/react-core/deprecated';
 
 export const ChipDefault: React.FunctionComponent = () => {
   const [chips, setChips] = useState({

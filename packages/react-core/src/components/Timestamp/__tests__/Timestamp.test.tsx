@@ -1,6 +1,6 @@
 import { render, screen, getDefaultNormalizer } from '@testing-library/react';
 import { Timestamp, TimestampFormat, TimestampTooltipVariant } from '../Timestamp';
-import styles from '@patternfly/react-styles/css/components/Timestamp/timestamp';
+import styles from '@rh-felt/react-styles/css/components/Timestamp/timestamp';
 
 jest.mock('../../Tooltip', () => ({
   Tooltip: ({ content, children, ...props }) => (

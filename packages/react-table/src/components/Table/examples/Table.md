@@ -36,33 +36,33 @@ propComponents:
 ouia: true
 ---
 
-Note: Table lives in its own package at [@patternfly/react-table](https://www.npmjs.com/package/@patternfly/react-table)!
+Note: Table lives in its own package at [@rh-felt/react-table](https://www.npmjs.com/package/@rh-felt/react-table)!
 
 The `Table` component takes an explicit and declarative approach, and its implementation closely mirrors that of an HTML table.
 
 The documentation for the deprecated table implementation can be found under the [React deprecated](/components/table/react-deprecated) tab. It is configuration based and takes a less declarative and more implicit approach to laying out the table structure, such as the rows and cells within it.
 
 import { Fragment, isValidElement, useCallback, useEffect, useRef, useState, useLayoutEffect } from 'react';
-import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
-import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
-import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
-import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
-import RhUiFolderOpenFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-open-fill-icon';
-import RhMicronsSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-large-to-small-icon';
-import RhUiBlueprintIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-blueprint-icon';
-import RhUiEditFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-edit-fill-icon';
-import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
-import RhMicronsCheckmarkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-checkmark-icon';
-import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+import RhMicronsSearchIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-search-icon';
+import RhUiCodeIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-code-icon';
+import RhUiBranchFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
+import CubeIcon from '@rh-felt/react-icons/dist/esm/icons/cube-icon';
+import LeafIcon from '@rh-felt/react-icons/dist/esm/icons/leaf-icon';
+import RhUiFolderFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
+import RhUiFolderOpenFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-folder-open-fill-icon';
+import RhMicronsSortDownLargeToSmallIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-sort-down-large-to-small-icon';
+import RhUiBlueprintIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-blueprint-icon';
+import RhUiEditFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-edit-fill-icon';
+import RhUiEllipsisVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhMicronsCheckmarkIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-checkmark-icon';
+import RhMicronsCloseIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-close-icon';
 
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Table/table';
-import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import textStyles from '@patternfly/react-styles/css/utilities/Text/text';
-import inlineEditStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
-import t_global_background_color_secondary_default from '@patternfly/react-tokens/dist/esm/t_global_background_color_secondary_default';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Table/table';
+import spacing from '@rh-felt/react-styles/css/utilities/Spacing/spacing';
+import textStyles from '@rh-felt/react-styles/css/utilities/Text/text';
+import inlineEditStyles from '@rh-felt/react-styles/css/components/InlineEdit/inline-edit';
+import t_global_background_color_secondary_default from '@rh-felt/react-tokens/dist/esm/t_global_background_color_secondary_default';
 
 ## Table examples
 

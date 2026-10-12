@@ -1,4 +1,4 @@
-import { MenuToggle } from '@patternfly/react-core';
+import { MenuToggle } from '@rh-felt/react-core';
 
 export const MenuToggleInForm = (): JSX.Element => (
   <MenuToggle aria-haspopup={false} isInForm aria-label="Menu toggle in a form">

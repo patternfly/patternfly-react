@@ -1,5 +1,5 @@
-import { Button, Flex } from '@patternfly/react-core';
-import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
+import { Button, Flex } from '@rh-felt/react-core';
+import RhUiNotificationFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 
 export const ButtonStateful: React.FunctionComponent = () => (
   <Flex>

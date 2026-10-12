@@ -10,8 +10,8 @@ import {
   OuterScrollContainer,
   ThProps,
   ISortBy
-} from '@patternfly/react-table';
-import RhUiBlueprintIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-blueprint-icon';
+} from '@rh-felt/react-table';
+import RhUiBlueprintIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-blueprint-icon';
 
 interface Fact {
   name: string;

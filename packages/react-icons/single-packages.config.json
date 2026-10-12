@@ -1,5 +1,5 @@
 {
-  "packageName": "@patternfly/react-icons",
+  "packageName": "@rh-felt/react-icons",
   "moduleGlob": "/dist/esm/icons/*.js",
   "exclude": []
 }

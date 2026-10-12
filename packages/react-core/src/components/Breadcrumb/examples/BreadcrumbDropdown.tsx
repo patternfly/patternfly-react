@@ -10,8 +10,8 @@ import {
   Icon,
   MenuToggle,
   MenuToggleElement
-} from '@patternfly/react-core';
-import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
+} from '@rh-felt/react-core';
+import RhMicronsCaretLeftIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
 
 const dropdownItems = [
   <DropdownItem

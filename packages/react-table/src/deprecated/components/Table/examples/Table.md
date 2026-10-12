@@ -6,33 +6,33 @@ ouia: true
 deprecated: true
 ---
 
-Note: Table lives in its own package at [@patternfly/react-table](https://www.npmjs.com/package/@patternfly/react-table)!
+Note: Table lives in its own package at [@rh-felt/react-table](https://www.npmjs.com/package/@rh-felt/react-table)!
 
 **This implementation of `Table` has been deprecated. It is no longer supported or maintained.**
 
 This deprecated `Table` component is configuration-based and takes a less declarative and more implicit approach to laying out the table structure, such as the rows and cells within it.
 
 import { Fragment, isValidElement, useCallback, useEffect, useRef, useState } from 'react';
-import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
-import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
-import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
-import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
-import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
-import RhUiFolderOpenFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-open-fill-icon';
-import RhMicronsSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-large-to-small-icon';
+import RhMicronsSearchIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-search-icon';
+import RhUiCodeIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-code-icon';
+import RhUiBranchFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
+import CodeIcon from '@rh-felt/react-icons/dist/esm/icons/code-icon';
+import CubeIcon from '@rh-felt/react-icons/dist/esm/icons/cube-icon';
+import LeafIcon from '@rh-felt/react-icons/dist/esm/icons/leaf-icon';
+import RhUiFolderFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
+import RhUiFolderOpenFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-folder-open-fill-icon';
+import RhMicronsSortDownLargeToSmallIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-sort-down-large-to-small-icon';
 import {
 Select as NewSelect,
 SelectGroup as NewSelectGroup,
 SelectList as NewSelectList,
 SelectOption as NewSelectOption,
-} from '@patternfly/react-core/dist/esm/components/Select';
+} from '@rh-felt/react-core/dist/esm/components/Select';
 
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Table/table';
-import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import t_global_color_brand_default from '@patternfly/react-tokens/dist/esm/t_global_color_brand_default';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Table/table';
+import spacing from '@rh-felt/react-styles/css/utilities/Spacing/spacing';
+import t_global_color_brand_default from '@rh-felt/react-tokens/dist/esm/t_global_color_brand_default';
 
 ## Table Columns
 
@@ -325,9 +325,9 @@ import {
   applyCellEdits,
   EditableTextCell,
   EditableSelectInputCell,
-} from '@patternfly/react-table';
+} from '@rh-felt/react-table';
 
-import { SelectOption as NewSelectOption} from '@patternfly/react-core/dist/esm/components/Select';
+import { SelectOption as NewSelectOption} from '@rh-felt/react-core/dist/esm/components/Select';
 
 class EditableRowsTable extends React.Component {
   constructor(props) {

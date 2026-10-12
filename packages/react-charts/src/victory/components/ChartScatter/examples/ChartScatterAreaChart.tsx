@@ -6,8 +6,8 @@ import {
   ChartScatter,
   ChartThemeColor,
   ChartVoronoiContainer
-} from '@patternfly/react-charts/victory';
-import { getResizeObserver } from '@patternfly/react-core';
+} from '@rh-felt/react-charts/victory';
+import { getResizeObserver } from '@rh-felt/react-core';
 import { useState, useRef, useEffect } from 'react';
 
 export const ChartScatterAreaChart: React.FunctionComponent = () => {

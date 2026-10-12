@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
+import { Popover, PopoverPosition, Checkbox, Button } from '@rh-felt/react-core';
 
 export const PopoverAdvanced: React.FunctionComponent = () => {
   const [position, setPosition] = useState(PopoverPosition.auto);

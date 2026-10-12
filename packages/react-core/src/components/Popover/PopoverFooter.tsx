@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/Popover/popover';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Popover/popover';
+import { css } from '@rh-felt/react-styles';
 
 export interface PopoverFooterProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Popover footer */

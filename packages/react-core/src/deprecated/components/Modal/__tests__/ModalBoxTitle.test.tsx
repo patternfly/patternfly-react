@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 
 import { ModalBoxTitle } from '../ModalBoxTitle';
-import RhUiAttentionBellFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
+import RhUiAttentionBellFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
 
 test('ModalBoxTitle alert variant', () => {
   const { asFragment } = render(

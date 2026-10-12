@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Checkbox, Slider, SliderOnChangeEvent } from '@patternfly/react-core';
+import { Checkbox, Slider, SliderOnChangeEvent } from '@rh-felt/react-core';
 
 export const SliderValueInput: React.FunctionComponent = () => {
   const [valueDiscrete, setValueDiscrete] = useState(62.5);

@@ -1,4 +1,4 @@
-import { JumpLinks, JumpLinksItem, JumpLinksList } from '@patternfly/react-core';
+import { JumpLinks, JumpLinksItem, JumpLinksList } from '@rh-felt/react-core';
 
 export const JumpLinksExpandableVerticalWithSubsection: React.FunctionComponent = () => (
   <JumpLinks isVertical label="Jump to expandable vertical section" expandable={{ default: 'expandable' }}>

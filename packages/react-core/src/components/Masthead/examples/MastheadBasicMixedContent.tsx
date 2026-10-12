@@ -8,7 +8,7 @@ import {
   Button,
   Flex,
   FlexItem
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const MastheadBasicMixedContent: React.FunctionComponent = () => (
   <Masthead id="basic-mixed">

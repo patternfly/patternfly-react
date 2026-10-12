@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Label, LabelGroup } from '@patternfly/react-core';
+import { Label, LabelGroup } from '@rh-felt/react-core';
 
 interface LabelWithCategoryGroupState {
   labelGroups: {

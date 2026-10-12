@@ -8,7 +8,7 @@ import {
   HelperTextItem,
   FormHelperText,
   FormGroupLabelHelp
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const FormGroupLabelInfo: React.FunctionComponent = () => {
   const [name, setName] = useState('');

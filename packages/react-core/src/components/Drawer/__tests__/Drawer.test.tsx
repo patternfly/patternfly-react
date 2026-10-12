@@ -13,7 +13,7 @@ import {
 import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { KeyTypes } from '../../../helpers';
-import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
+import styles from '@rh-felt/react-styles/css/components/Drawer/drawer';
 
 jest.mock('../../../helpers/GenerateId/GenerateId');
 

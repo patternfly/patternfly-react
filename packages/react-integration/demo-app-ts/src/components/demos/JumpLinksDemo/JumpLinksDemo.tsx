@@ -1,4 +1,4 @@
-import { Title, JumpLinks, JumpLinksItem, PageSection, PageGroup } from '@patternfly/react-core';
+import { Title, JumpLinks, JumpLinksItem, PageSection, PageGroup } from '@rh-felt/react-core';
 
 export const JumpLinksDemo = () => {
   const headings = [1, 2, 3, 4, 5];

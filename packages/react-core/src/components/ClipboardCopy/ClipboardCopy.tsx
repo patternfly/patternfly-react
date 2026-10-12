@@ -1,6 +1,6 @@
 import { Component, Fragment, createRef } from 'react';
-import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/ClipboardCopy/clipboard-copy';
+import { css } from '@rh-felt/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import { TooltipPosition } from '../Tooltip';
 import { TextInput } from '../TextInput';

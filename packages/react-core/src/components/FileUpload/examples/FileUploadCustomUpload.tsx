@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FileUploadField, FileUploadHelperText, HelperText, HelperTextItem, Checkbox } from '@patternfly/react-core';
+import { FileUploadField, FileUploadHelperText, HelperText, HelperTextItem, Checkbox } from '@rh-felt/react-core';
 
 export const CustomPreviewFileUpload: React.FunctionComponent = () => {
   const properties = [

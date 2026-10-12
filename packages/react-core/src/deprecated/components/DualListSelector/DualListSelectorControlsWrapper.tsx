@@ -1,6 +1,6 @@
 import { forwardRef, useEffect, useRef } from 'react';
-import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/DualListSelector/dual-list-selector';
+import { css } from '@rh-felt/react-styles';
 import { handleArrows } from '../../../helpers';
 
 /** Acts as the container for the DualListSelectorControl sub-components. */

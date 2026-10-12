@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Table, Thead, Tr, Th, Tbody, Td, TreeRowWrapper, TdProps } from '@patternfly/react-table';
-import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
-import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
-import RhUiFolderOpenFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-open-fill-icon';
+import { Table, Thead, Tr, Th, Tbody, Td, TreeRowWrapper, TdProps } from '@rh-felt/react-table';
+import LeafIcon from '@rh-felt/react-icons/dist/esm/icons/leaf-icon';
+import RhUiFolderFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
+import RhUiFolderOpenFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-folder-open-fill-icon';
 
 interface RepositoriesTreeNode {
   name: string;

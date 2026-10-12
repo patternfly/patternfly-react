@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { Nav, NavExpandable, NavItem, NavList } from '@patternfly/react-core';
-import RhUiCubesIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cubes-icon';
-import RhUiFolderIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-icon';
-import RhUiFolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-open-icon';
-import RhUiCloudIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cloud-icon';
-import RhUiLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-link-icon';
+import { Nav, NavExpandable, NavItem, NavList } from '@rh-felt/react-core';
+import RhUiCubesIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-cubes-icon';
+import RhUiFolderIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-folder-icon';
+import RhUiFolderOpenIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-folder-open-icon';
+import RhUiCloudIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-cloud-icon';
+import RhUiLinkIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-link-icon';
 
 export const NavIcons: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState(0);

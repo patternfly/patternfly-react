@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import { Alert, AlertActionCloseButton } from '@patternfly/react-core';
-import RhUiProfileFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-profile-fill-icon';
+import { Alert, AlertActionCloseButton } from '@rh-felt/react-core';
+import RhUiProfileFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-profile-fill-icon';
 
 interface AlertDemoState {
   alertOneVisible: boolean;

@@ -13,8 +13,8 @@ import {
   Dropdown,
   DropdownList,
   DropdownItem
-} from '@patternfly/react-core';
-import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
+} from '@rh-felt/react-core';
+import RhMicronsSearchIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-search-icon';
 
 interface ItemData {
   text: string;

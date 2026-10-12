@@ -1,12 +1,5 @@
 import { useState } from 'react';
-import {
-  Toolbar,
-  ToolbarContent,
-  ToolbarItem,
-  TreeView,
-  TreeViewDataItem,
-  TreeViewSearch
-} from '@patternfly/react-core';
+import { Toolbar, ToolbarContent, ToolbarItem, TreeView, TreeViewDataItem, TreeViewSearch } from '@rh-felt/react-core';
 export const TreeViewWithSearch: React.FunctionComponent = () => {
   const options = [
     {

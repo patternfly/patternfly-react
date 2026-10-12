@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Checkbox, TextInput } from '@patternfly/react-core';
+import { Checkbox, TextInput } from '@rh-felt/react-core';
 
 export const TextInputReadOnly: React.FunctionComponent = () => {
   const [isPlainChecked, setIsPlainChecked] = useState(false);

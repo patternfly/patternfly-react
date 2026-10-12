@@ -8,8 +8,8 @@ import {
   HelperText,
   HelperTextItem,
   DropEvent
-} from '@patternfly/react-core';
-import RhUiUploadIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-upload-icon';
+} from '@rh-felt/react-core';
+import RhUiUploadIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-upload-icon';
 
 interface readFile {
   fileName: string;

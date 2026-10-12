@@ -1,7 +1,7 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/AboutModalBox/about-modal-box';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/AboutModalBox/about-modal-box';
 import { Button } from '../Button';
-import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+import RhMicronsCloseIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 export interface AboutModalBoxCloseButtonProps extends React.HTMLProps<HTMLDivElement> {
   /** A callback for when the close button is clicked  */

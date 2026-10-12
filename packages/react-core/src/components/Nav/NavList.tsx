@@ -1,9 +1,9 @@
 import { Component, createRef, Fragment } from 'react';
-import styles from '@patternfly/react-styles/css/components/Nav/nav';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Nav/nav';
+import { css } from '@rh-felt/react-styles';
 import { Button } from '../Button';
-import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
-import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
+import RhMicronsCaretLeftIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
+import RhMicronsCaretRightIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import { getLanguageDirection, isElementInView } from '../../helpers/util';
 import { NavContext } from './Nav';
 import { PageSidebarContext } from '../Page/PageSidebar';

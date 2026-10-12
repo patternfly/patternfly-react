@@ -5,7 +5,7 @@ import {
   DescriptionListDescription,
   Progress,
   ProgressMeasureLocation
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const ProgressTitleOutsideOfProgressBar: React.FunctionComponent = () => (
   <DescriptionList aria-label="Progress Title outside of progress bar">

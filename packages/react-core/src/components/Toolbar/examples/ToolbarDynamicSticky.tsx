@@ -1,5 +1,5 @@
 import { useLayoutEffect, useState, useRef } from 'react';
-import { Toolbar, ToolbarItem, ToolbarContent, SearchInput, Checkbox } from '@patternfly/react-core';
+import { Toolbar, ToolbarItem, ToolbarContent, SearchInput, Checkbox } from '@rh-felt/react-core';
 
 const useIsStuckFromScrollParent = ({
   shouldTrack,

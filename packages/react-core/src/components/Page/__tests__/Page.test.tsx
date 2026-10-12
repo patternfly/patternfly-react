@@ -12,7 +12,7 @@ import { PageGroup } from '../PageGroup';
 import { PageHeader } from '../PageHeader';
 import { Masthead } from '../../Masthead';
 
-import styles from '@patternfly/react-styles/css/components/Page/page';
+import styles from '@rh-felt/react-styles/css/components/Page/page';
 import { PageFooter } from '../PageFooter';
 
 const props = {

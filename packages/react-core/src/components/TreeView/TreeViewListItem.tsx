@@ -1,7 +1,7 @@
 import { memo, useState, useEffect, Children, isValidElement, cloneElement } from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
-import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/TreeView/tree-view';
+import RhMicronsCaretRightIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import { TreeViewDataItem } from './TreeView';
 import { Badge } from '../Badge';
 import { useSSRSafeId } from '../../helpers';

@@ -9,12 +9,12 @@ deprecated: true
 
 import { Fragment, useRef, useState } from 'react';
 
-import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
-import RhUiWarningIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-icon';
-import RhUiAttentionBellFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
-import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
-import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import formStyles from '@patternfly/react-styles/css/components/Form/form';
+import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@rh-felt/react-core/deprecated';
+import RhUiWarningIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-warning-icon';
+import RhUiAttentionBellFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
+import RhUiQuestionMarkCircleIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import spacing from '@rh-felt/react-styles/css/utilities/Spacing/spacing';
+import formStyles from '@rh-felt/react-styles/css/components/Form/form';
 
 ## Examples
 

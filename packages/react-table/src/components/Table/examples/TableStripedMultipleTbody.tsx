@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Table, Caption, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import { Table, Caption, Thead, Tr, Th, Tbody, Td } from '@rh-felt/react-table';
 
 interface Repository {
   name: string;

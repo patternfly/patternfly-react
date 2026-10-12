@@ -1,9 +1,9 @@
 import { Component } from 'react';
-import { RowWrapperProps, ICell, IRow } from '@patternfly/react-table';
-import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Table/table';
-import t_global_color_brand_default from '@patternfly/react-tokens/dist/esm/t_global_color_brand_default';
+import { RowWrapperProps, ICell, IRow } from '@rh-felt/react-table';
+import { Table, TableHeader, TableBody, TableProps } from '@rh-felt/react-table/deprecated';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Table/table';
+import t_global_color_brand_default from '@rh-felt/react-tokens/dist/esm/t_global_color_brand_default';
 
 interface ITableRowWrapperDemoState {
   rows: IRow[];

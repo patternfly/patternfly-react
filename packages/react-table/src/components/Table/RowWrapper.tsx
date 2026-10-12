@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import { OUIAProps } from '@patternfly/react-core/dist/esm/helpers/OUIA/ouia';
-import { debounce, canUseDOM } from '@patternfly/react-core/dist/esm/helpers/util';
+import { OUIAProps } from '@rh-felt/react-core/dist/esm/helpers/OUIA/ouia';
+import { debounce, canUseDOM } from '@rh-felt/react-core/dist/esm/helpers/util';
 import { Tr } from './Tr';
 import { IRow } from './TableTypes';
 

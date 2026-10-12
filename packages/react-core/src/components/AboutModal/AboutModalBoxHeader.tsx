@@ -1,5 +1,5 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/AboutModalBox/about-modal-box';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/AboutModalBox/about-modal-box';
 import { Title } from '../Title';
 
 export interface AboutModalBoxHeaderProps extends React.HTMLProps<HTMLDivElement> {

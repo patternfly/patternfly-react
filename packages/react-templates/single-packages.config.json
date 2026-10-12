@@ -1,4 +1,4 @@
 {
-  "packageName": "@patternfly/react-templates",
+  "packageName": "@rh-felt/react-templates",
   "exclude": ["dist/esm/deprecated/index.js", "dist/esm/next/index.js"]
 }

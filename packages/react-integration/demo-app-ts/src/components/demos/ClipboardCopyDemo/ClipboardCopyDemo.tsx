@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import { ClipboardCopy, ClipboardCopyVariant, ClipboardCopyAction, Button } from '@patternfly/react-core';
-import RhUiPlayFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
+import { ClipboardCopy, ClipboardCopyVariant, ClipboardCopyAction, Button } from '@rh-felt/react-core';
+import RhUiPlayFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
 
 export class ClipboardCopyDemo extends Component {
   static displayName = 'ClipboardCopyDemo';

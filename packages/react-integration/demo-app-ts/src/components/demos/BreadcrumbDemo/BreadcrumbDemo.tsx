@@ -9,9 +9,9 @@ import {
   DropdownItem,
   DropdownList,
   MenuToggle
-} from '@patternfly/react-core';
-import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
-import RhMicronsCaretDownFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-fill-icon';
+} from '@rh-felt/react-core';
+import RhMicronsCaretLeftIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
+import RhMicronsCaretDownFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-down-fill-icon';
 
 export class BreadcrumbDemo extends Component {
   static displayName = 'BreadcrumbDemo';

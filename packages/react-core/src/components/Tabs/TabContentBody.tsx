@@ -1,5 +1,5 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/TabContent/tab-content';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/TabContent/tab-content';
 
 export interface TabContentBodyProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the tab content body. */

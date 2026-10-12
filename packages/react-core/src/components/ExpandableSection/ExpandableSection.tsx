@@ -1,8 +1,8 @@
 import { Component, createRef } from 'react';
-import styles from '@patternfly/react-styles/css/components/ExpandableSection/expandable-section';
-import { css } from '@patternfly/react-styles';
-import lineClamp from '@patternfly/react-tokens/dist/esm/c_expandable_section_m_truncate__content_LineClamp';
-import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
+import styles from '@rh-felt/react-styles/css/components/ExpandableSection/expandable-section';
+import { css } from '@rh-felt/react-styles';
+import lineClamp from '@rh-felt/react-tokens/dist/esm/c_expandable_section_m_truncate__content_LineClamp';
+import RhMicronsCaretDownIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import { PickOptional } from '../../helpers/typeUtils';
 import { debounce } from '../../helpers/util';
 import { getResizeObserver } from '../../helpers/resizeObserver';

@@ -1,17 +1,17 @@
-# @patternfly/react-code-editor
+# @rh-felt/react-code-editor
 
 This package provides a PatternFly wrapper for the Monaco code editor, using the `@monaco-editor/react` package.
 
 ### Installing
 
 ```sh
-yarn add @patternfly/react-code-editor
+yarn add @rh-felt/react-code-editor
 ```
 
 or
 
 ```sh
-npm install @patternfly/react-code-editor
+npm install @rh-felt/react-code-editor
 ```
 
 [!NOTE] For TypeScript type definitions, this package uses the `monaco-editor` package as a peer dependency. So, if you need types and don't already have the `monaco-editor` package installed, you will need to do so:
@@ -45,11 +45,11 @@ npm install --dev monaco-editor
 It's strongly advised to use the PatternFly Base CSS in your whole project, or some components may diverge in appearance:
 
 ```js
-import '@patternfly/react-core/dist/styles/base.css';
+import '@rh-felt/react-core/dist/styles/base.css';
 ```
 
 ```js
-import { CodeEditor } from '@patternfly/react-code-editor';
+import { CodeEditor } from '@rh-felt/react-code-editor';
 ```
 
 #### With create-react-app Projects

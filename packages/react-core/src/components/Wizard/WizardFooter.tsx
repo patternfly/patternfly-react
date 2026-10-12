@@ -1,5 +1,5 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Wizard/wizard';
 
 import { Button, ButtonVariant } from '../Button';
 import { isCustomWizardFooter, WizardFooterButtonProps, WizardStepType } from './types';

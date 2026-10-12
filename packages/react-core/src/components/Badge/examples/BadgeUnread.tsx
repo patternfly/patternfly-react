@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Badge } from '@patternfly/react-core';
+import { Badge } from '@rh-felt/react-core';
 
 export const BadgeUnread: React.FunctionComponent = () => (
   <Fragment>

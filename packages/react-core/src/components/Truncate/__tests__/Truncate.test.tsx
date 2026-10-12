@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { Truncate } from '../Truncate';
-import styles from '@patternfly/react-styles/css/components/Truncate/truncate';
+import styles from '@rh-felt/react-styles/css/components/Truncate/truncate';
 import '@testing-library/jest-dom';
 
 jest.mock('../../Tooltip', () => ({

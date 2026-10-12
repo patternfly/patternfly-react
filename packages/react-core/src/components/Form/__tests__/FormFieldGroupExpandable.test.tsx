@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { FormFieldGroupExpandable } from '../FormFieldGroupExpandable';
 import { AnimationsProvider } from '../../../helpers/AnimationsProvider';
-import styles from '@patternfly/react-styles/css/components/Form/form';
+import styles from '@rh-felt/react-styles/css/components/Form/form';
 
 test('Does not render children by default', () => {
   render(<FormFieldGroupExpandable toggleAriaLabel="Toggle label">Child content</FormFieldGroupExpandable>);

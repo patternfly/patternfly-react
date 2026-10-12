@@ -1,5 +1,5 @@
 import { createRef, Fragment, useState } from 'react';
-import { Tabs, Tab, TabTitleText, TabContent, TabContentBody } from '@patternfly/react-core';
+import { Tabs, Tab, TabTitleText, TabContent, TabContentBody } from '@rh-felt/react-core';
 
 export const TabContentWithBodyPadding: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = useState<string | number>(0);

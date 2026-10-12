@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Checkbox } from '@patternfly/react-core';
+import { Checkbox } from '@rh-felt/react-core';
 
 export const CheckboxDisabled: React.FunctionComponent = () => (
   <Fragment>

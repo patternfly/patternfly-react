@@ -1,8 +1,8 @@
 import { forwardRef, useRef } from 'react';
-import { css } from '@patternfly/react-styles';
+import { css } from '@rh-felt/react-styles';
 import { Button, ButtonVariant } from '../../../components/Button';
 import { Tooltip } from '../../../components/Tooltip';
-import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
+import styles from '@rh-felt/react-styles/css/components/DualListSelector/dual-list-selector';
 
 /** Renders an individual control button for moving selected options between each
  * dual list selector pane.

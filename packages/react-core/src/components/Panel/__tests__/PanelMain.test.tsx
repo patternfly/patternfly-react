@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { PanelMain } from '../PanelMain';
-import cssPanelMainMaxHeight from '@patternfly/react-tokens/dist/esm/c_panel__main_MaxHeight';
-import styles from '@patternfly/react-styles/css/components/Panel/panel';
+import cssPanelMainMaxHeight from '@rh-felt/react-tokens/dist/esm/c_panel__main_MaxHeight';
+import styles from '@rh-felt/react-styles/css/components/Panel/panel';
 
 test('Renders without children', () => {
   render(

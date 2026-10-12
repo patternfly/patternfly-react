@@ -1,11 +1,11 @@
 import { IExtra, IFormatterValueType, OnCheckChange, OnTreeRowCollapse, OnToggleRowDetails } from '../../TableTypes';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Table/table';
-import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-tree-view';
-import { Button } from '@patternfly/react-core/dist/esm/components/Button';
-import { Checkbox } from '@patternfly/react-core/dist/esm/components/Checkbox';
-import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
-import RhUiEllipsisHorizontalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-horizontal-fill-icon';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Table/table';
+import stylesTreeView from '@rh-felt/react-styles/css/components/Table/table-tree-view';
+import { Button } from '@rh-felt/react-core/dist/esm/components/Button';
+import { Checkbox } from '@rh-felt/react-core/dist/esm/components/Checkbox';
+import RhMicronsCaretRightIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
+import RhUiEllipsisHorizontalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-horizontal-fill-icon';
 
 export const treeRow =
   (onCollapse: OnTreeRowCollapse, onCheckChange?: OnCheckChange, onToggleRowDetails?: OnToggleRowDetails) =>

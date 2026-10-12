@@ -1,7 +1,7 @@
 import { Fragment, ReactNode, useEffect, useState } from 'react';
-import { Content, Label, LabelStatus, PageSection } from '@patternfly/react-core';
-import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
-import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
+import { Content, Label, LabelStatus, PageSection } from '@rh-felt/react-core';
+import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@rh-felt/react-table';
+import { DashboardWrapper } from '@rh-felt/react-table/dist/esm/demos/DashboardWrapper';
 
 const expandableColumns = ['Servers', 'Threads', 'Applications', 'Workspaces', 'Status'];
 

@@ -15,8 +15,8 @@ import {
   Title,
   TitleSizes,
   CardTitle
-} from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+} from '@rh-felt/react-core';
+import { DashboardWrapper } from '@rh-felt/react-core/dist/js/demos/DashboardWrapper';
 
 export const NestedUnindentedTabs: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = useState(1);

@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Slider, SliderOnChangeEvent, Button, Content } from '@patternfly/react-core';
-import RhUiMinusIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-minus-icon';
-import RhUiAddIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-icon';
-import RhUiLockFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-lock-fill-icon';
-import RhUiUnlockFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-unlock-fill-icon';
+import { Slider, SliderOnChangeEvent, Button, Content } from '@rh-felt/react-core';
+import RhUiMinusIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-minus-icon';
+import RhUiAddIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-add-icon';
+import RhUiLockFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-lock-fill-icon';
+import RhUiUnlockFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-unlock-fill-icon';
 
 export const SliderActions: React.FunctionComponent = () => {
   const [value1, setValue1] = useState(50);

@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/Login/login';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Login/login';
+import { css } from '@rh-felt/react-styles';
 
 export interface LoginHeaderProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the header of the login layout */

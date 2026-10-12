@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { ActionList } from '../ActionList';
-import styles from '@patternfly/react-styles/css/components/ActionList/action-list';
+import styles from '@rh-felt/react-styles/css/components/ActionList/action-list';
 
 test('Renders without children', () => {
   render(<ActionList data-testid="action-list" />);

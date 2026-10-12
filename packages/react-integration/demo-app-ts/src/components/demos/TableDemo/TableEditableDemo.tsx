@@ -11,9 +11,9 @@ import {
   applyCellEdits,
   EditableTextCell,
   EditableSelectInputCell
-} from '@patternfly/react-table';
-import { SelectOption } from '@patternfly/react-core';
-import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
+} from '@rh-felt/react-table';
+import { SelectOption } from '@rh-felt/react-core';
+import { Table, TableHeader, TableBody, TableProps } from '@rh-felt/react-table/deprecated';
 
 const rowLevelValidationRules: IValidatorDef[] = [
   {

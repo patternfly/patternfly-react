@@ -1,6 +1,6 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/layouts/Flex/flex';
-import * as flexToken from '@patternfly/react-tokens/dist/esm/l_flex_item_Order';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/layouts/Flex/flex';
+import * as flexToken from '@rh-felt/react-tokens/dist/esm/l_flex_item_Order';
 
 import { formatBreakpointMods, setBreakpointCssVars } from '../../helpers/util';
 

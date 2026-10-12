@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Pagination, PaginationVariant } from '@patternfly/react-core';
+import { Pagination, PaginationVariant } from '@rh-felt/react-core';
 
 export const PaginationBottom: React.FunctionComponent = () => {
   const [page, setPage] = useState(1);

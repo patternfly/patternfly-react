@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { DragDropSort, DraggableObject } from '@patternfly/react-drag-drop';
+import { DragDropSort, DraggableObject } from '@rh-felt/react-drag-drop';
 
 export const BasicSorting: React.FunctionComponent = () => {
   const [items, setItems] = useState<DraggableObject[]>([

@@ -1,4 +1,4 @@
-import { Button, Tooltip } from '@patternfly/react-core';
+import { Button, Tooltip } from '@rh-felt/react-core';
 
 export const TooltipBasic: React.FunctionComponent = () => (
   <div style={{ margin: '100px' }}>

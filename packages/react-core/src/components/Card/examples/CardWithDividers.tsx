@@ -1,4 +1,4 @@
-import { Card, CardTitle, CardBody, CardFooter, Divider } from '@patternfly/react-core';
+import { Card, CardTitle, CardBody, CardFooter, Divider } from '@rh-felt/react-core';
 
 export const CardWithDividers: React.FunctionComponent = () => (
   <Card ouiaId="CardWithDividers">

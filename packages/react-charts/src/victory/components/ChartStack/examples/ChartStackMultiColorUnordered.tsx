@@ -6,8 +6,8 @@ import {
   ChartLegendTooltip,
   ChartThemeColor,
   createContainer
-} from '@patternfly/react-charts/victory';
-import { getResizeObserver } from '@patternfly/react-core';
+} from '@rh-felt/react-charts/victory';
+import { getResizeObserver } from '@rh-felt/react-core';
 import { useEffect, useRef, useState } from 'react';
 
 interface Data {

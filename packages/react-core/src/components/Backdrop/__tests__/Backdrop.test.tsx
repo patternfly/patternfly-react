@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { Backdrop } from '../Backdrop';
-import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
+import styles from '@rh-felt/react-styles/css/components/Backdrop/backdrop';
 
 test('Renders without children', () => {
   render(

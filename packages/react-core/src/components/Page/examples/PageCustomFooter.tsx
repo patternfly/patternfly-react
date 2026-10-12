@@ -12,7 +12,7 @@ import {
   PageSidebar,
   PageSidebarBody,
   PageToggleButton
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const PageCustomFooter: React.FunctionComponent = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);

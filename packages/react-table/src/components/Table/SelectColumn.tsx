@@ -1,7 +1,7 @@
 import { createRef, Fragment } from 'react';
-import { Tooltip, TooltipProps } from '@patternfly/react-core/dist/esm/components/Tooltip';
-import { Checkbox } from '@patternfly/react-core/dist/esm/components/Checkbox';
-import { Radio } from '@patternfly/react-core/dist/esm/components/Radio';
+import { Tooltip, TooltipProps } from '@rh-felt/react-core/dist/esm/components/Tooltip';
+import { Checkbox } from '@rh-felt/react-core/dist/esm/components/Checkbox';
+import { Radio } from '@rh-felt/react-core/dist/esm/components/Radio';
 
 export enum RowSelectVariant {
   radio = 'radio',

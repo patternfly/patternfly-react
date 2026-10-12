@@ -1,11 +1,11 @@
 import { Fragment } from 'react';
-import { Button } from '@patternfly/react-core/dist/esm/components/Button';
-import RhUiEditFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-edit-fill-icon';
-import RhMicronsCheckmarkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-checkmark-icon';
-import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+import { Button } from '@rh-felt/react-core/dist/esm/components/Button';
+import RhUiEditFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-edit-fill-icon';
+import RhMicronsCheckmarkIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-checkmark-icon';
+import RhMicronsCloseIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-close-icon';
 import { OnRowEdit } from './TableTypes';
-import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
-import { css } from '@patternfly/react-styles';
+import inlineStyles from '@rh-felt/react-styles/css/components/InlineEdit/inline-edit';
+import { css } from '@rh-felt/react-styles';
 
 export interface EditColumnProps {
   name?: string;

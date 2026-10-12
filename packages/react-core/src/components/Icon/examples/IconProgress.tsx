@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
-import { Icon, Checkbox } from '@patternfly/react-core';
-import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import { Icon, Checkbox } from '@rh-felt/react-core';
+import RhUiCheckCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 
 export const IconProgress: React.FunctionComponent = () => {
   const [isInProgress, setIsInProgress] = useState<boolean>(false);

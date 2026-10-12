@@ -8,7 +8,7 @@ import {
   MenuContainer,
   TreeView,
   TreeViewDataItem
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const TreeViewMenuDemo: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);

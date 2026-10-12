@@ -1,6 +1,6 @@
 import { Fragment, useRef } from 'react';
-import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
-import { Button, InputGroup, InputGroupItem, TextInput, Popover, PopoverPosition } from '@patternfly/react-core';
+import RhUiQuestionMarkCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
+import { Button, InputGroup, InputGroupItem, TextInput, Popover, PopoverPosition } from '@rh-felt/react-core';
 
 export const InputGroupWithPopover: React.FunctionComponent = () => {
   const inputGroupRef1 = useRef(null);

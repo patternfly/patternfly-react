@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
-import { Toolbar, ToolbarItem, ToolbarContent } from '@patternfly/react-core';
-import { Button, SearchInput } from '@patternfly/react-core';
+import { Toolbar, ToolbarItem, ToolbarContent } from '@rh-felt/react-core';
+import { Button, SearchInput } from '@rh-felt/react-core';
 
 export const ToolbarItems = () => {
   const [searchValue, setSearchValue] = useState('');

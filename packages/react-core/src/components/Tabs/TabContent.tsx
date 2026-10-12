@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
-import styles from '@patternfly/react-styles/css/components/TabContent/tab-content';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/TabContent/tab-content';
+import { css } from '@rh-felt/react-styles';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 import { TabsContextConsumer, TabsContextProps } from './TabsContext';
 

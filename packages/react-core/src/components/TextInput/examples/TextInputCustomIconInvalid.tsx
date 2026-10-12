@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { TextInput, ValidatedOptions } from '@patternfly/react-core';
-import RhUiCalendarFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-calendar-fill-icon';
+import { TextInput, ValidatedOptions } from '@rh-felt/react-core';
+import RhUiCalendarFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-calendar-fill-icon';
 
 export const TextInputCustomIconInvalid: React.FunctionComponent = () => {
   const [calendar, setCalendar] = useState('');

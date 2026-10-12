@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Toolbar, ToolbarItem, ToolbarContent, Button, SearchInput } from '@patternfly/react-core';
+import { Toolbar, ToolbarItem, ToolbarContent, Button, SearchInput } from '@rh-felt/react-core';
 
 export const ToolbarColorVariant: React.FunctionComponent = () => (
   <Fragment>

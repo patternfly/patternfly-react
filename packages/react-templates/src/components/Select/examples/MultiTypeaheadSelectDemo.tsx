@@ -1,5 +1,5 @@
 import { useMemo, useState, FunctionComponent } from 'react';
-import { MultiTypeaheadSelect, MultiTypeaheadSelectOption } from '@patternfly/react-templates';
+import { MultiTypeaheadSelect, MultiTypeaheadSelectOption } from '@rh-felt/react-templates';
 
 const Options = [
   { content: 'Alabama', value: 'option1' },

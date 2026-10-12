@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { HelperText, HelperTextItem } from '@patternfly/react-core';
+import { HelperText, HelperTextItem } from '@rh-felt/react-core';
 
 export const HelperTextBasic: React.FunctionComponent = () => (
   <Fragment>

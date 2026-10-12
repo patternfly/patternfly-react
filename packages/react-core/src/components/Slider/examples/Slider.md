@@ -6,11 +6,11 @@ propComponents: ['Slider', 'SliderStepObject']
 ---
 
 import { useState } from 'react';
-import { Slider, Button, Content, ContentVariants } from '@patternfly/react-core';
-import RhUiMinusIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-minus-icon';
-import RhUiAddIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-icon';
-import RhUiLockFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-lock-fill-icon';
-import RhUiUnlockFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-unlock-fill-icon';
+import { Slider, Button, Content, ContentVariants } from '@rh-felt/react-core';
+import RhUiMinusIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-minus-icon';
+import RhUiAddIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-add-icon';
+import RhUiLockFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-lock-fill-icon';
+import RhUiUnlockFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-unlock-fill-icon';
 
 ## Examples
 
@@ -75,7 +75,7 @@ The slider's `onChange` prop accepts an `event` parameter of the following types
 The `SliderOnChangeEvent` type is a union of the above event types, and can be imported and used in your code like in the following code snippet:
 
 ```noLive
-import { Slider, SliderOnChangeEvent } from '@patternfly/react-core';
+import { Slider, SliderOnChangeEvent } from '@rh-felt/react-core';
 
 <Slider onChange={(event: SliderOnChangeEvent) => {}} />
 ```

@@ -1,8 +1,8 @@
 import { forwardRef, useContext, useEffect, useState } from 'react';
-import { useOUIAProps, OUIAProps } from '@patternfly/react-core/dist/esm/helpers';
-import styles from '@patternfly/react-styles/css/components/Table/table';
-import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
-import { css } from '@patternfly/react-styles';
+import { useOUIAProps, OUIAProps } from '@rh-felt/react-core/dist/esm/helpers';
+import styles from '@rh-felt/react-styles/css/components/Table/table';
+import inlineStyles from '@rh-felt/react-styles/css/components/InlineEdit/inline-edit';
+import { css } from '@rh-felt/react-styles';
 import { TableContext } from './Table';
 import { IS_INERT } from './utils/inert';
 

@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { SimpleList, SimpleListGroup, SimpleListItem, SimpleListItemProps } from '@patternfly/react-core';
+import { SimpleList, SimpleListGroup, SimpleListItem, SimpleListItemProps } from '@rh-felt/react-core';
 
 interface SimpleListDemoState {
   activeItem: number | string;

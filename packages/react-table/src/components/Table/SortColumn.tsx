@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import RhMicronsArrowUpIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-arrow-up-icon';
-import RhMicronsArrowDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-arrow-down-icon';
-import RhUiArrowUpDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-arrow-up-down-icon';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Table/table';
+import RhMicronsArrowUpIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-arrow-up-icon';
+import RhMicronsArrowDownIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-arrow-down-icon';
+import RhUiArrowUpDownIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-arrow-up-down-icon';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Table/table';
 import { TableText } from './TableText';
-import { ActionList, ActionListItem } from '@patternfly/react-core/dist/esm/components/ActionList';
-import { Button } from '@patternfly/react-core/dist/esm/components/Button';
-import { TooltipProps } from '@patternfly/react-core/dist/esm/components/Tooltip';
+import { ActionList, ActionListItem } from '@rh-felt/react-core/dist/esm/components/ActionList';
+import { Button } from '@rh-felt/react-core/dist/esm/components/Button';
+import { TooltipProps } from '@rh-felt/react-core/dist/esm/components/Tooltip';
 import { FavoriteButtonProps } from './base/types';
 
 export enum SortByDirection {

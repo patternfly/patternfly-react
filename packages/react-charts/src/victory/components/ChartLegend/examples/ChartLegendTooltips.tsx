@@ -1,5 +1,5 @@
-import { ChartLabel, ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts/victory';
-import { Tooltip } from '@patternfly/react-core';
+import { ChartLabel, ChartLegend, ChartPie, ChartThemeColor } from '@rh-felt/react-charts/victory';
+import { Tooltip } from '@rh-felt/react-core';
 import { useRef } from 'react';
 
 interface PetData {

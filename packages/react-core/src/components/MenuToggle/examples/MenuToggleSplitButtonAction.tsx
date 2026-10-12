@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { MenuToggleAction, MenuToggle } from '@patternfly/react-core';
+import { MenuToggleAction, MenuToggle } from '@rh-felt/react-core';
 
 export const MenuToggleSplitButtonAction: React.FunctionComponent = () => (
   <Fragment>

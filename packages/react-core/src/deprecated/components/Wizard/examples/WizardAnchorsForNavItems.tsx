@@ -1,7 +1,7 @@
-import { Button } from '@patternfly/react-core';
-import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
-import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
-import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
+import { Button } from '@rh-felt/react-core';
+import { Wizard as WizardDeprecated } from '@rh-felt/react-core/deprecated';
+import RhMicronsExternalLinkIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-external-link-icon';
+import SlackHashIcon from '@rh-felt/react-icons/dist/esm/icons/slack-hash-icon';
 
 export const WizardWithNavAnchors: React.FunctionComponent = () => {
   const steps = [

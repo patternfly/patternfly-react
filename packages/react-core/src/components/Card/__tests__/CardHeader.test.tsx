@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import styles from '@patternfly/react-styles/css/components/Card/card';
+import styles from '@rh-felt/react-styles/css/components/Card/card';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 import { CardHeader } from '../CardHeader';

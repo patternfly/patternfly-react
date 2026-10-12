@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
+import { TreeView, TreeViewDataItem } from '@rh-felt/react-core';
 
 export const TreeViewWithCheckboxes: React.FunctionComponent = () => {
   const [checkedItems, setCheckedItems] = useState<TreeViewDataItem[]>([]);

@@ -1,6 +1,6 @@
 import { Children, isValidElement, cloneElement } from 'react';
-import styles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Breadcrumb/breadcrumb';
+import { css } from '@rh-felt/react-styles';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 
 export interface BreadcrumbProps extends React.HTMLProps<HTMLElement>, OUIAProps {

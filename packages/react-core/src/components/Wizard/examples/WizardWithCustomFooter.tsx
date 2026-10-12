@@ -12,7 +12,7 @@ import {
   WizardFooter,
   WizardFooterWrapper,
   WizardStep
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 const CustomWizardFooter = () => {
   const { activeStep, goToNextStep, goToPrevStep, close } = useWizardContext();

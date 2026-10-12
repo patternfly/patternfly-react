@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { TreeView, Button, TreeViewDataItem } from '@patternfly/react-core';
+import { TreeView, Button, TreeViewDataItem } from '@rh-felt/react-core';
 
 export const TreeViewWithMemoization: React.FunctionComponent = () => {
   const [activeItems, setActiveItems] = useState<TreeViewDataItem[]>();

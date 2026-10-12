@@ -1,4 +1,4 @@
-import { Button, Flex } from '@patternfly/react-core';
+import { Button, Flex } from '@rh-felt/react-core';
 
 export const ButtonSmall: React.FunctionComponent = () => (
   <Flex columnGap={{ default: 'columnGapSm' }}>

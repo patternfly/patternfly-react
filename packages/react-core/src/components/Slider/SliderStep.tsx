@@ -1,6 +1,6 @@
-import styles from '@patternfly/react-styles/css/components/Slider/slider';
-import { css } from '@patternfly/react-styles';
-import sliderStepInsetInlineStart from '@patternfly/react-tokens/dist/esm/c_slider__step_InsetInlineStart';
+import styles from '@rh-felt/react-styles/css/components/Slider/slider';
+import { css } from '@rh-felt/react-styles';
+import sliderStepInsetInlineStart from '@rh-felt/react-tokens/dist/esm/c_slider__step_InsetInlineStart';
 
 export interface SliderStepProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
   /** Additional classes added to the slider step. */

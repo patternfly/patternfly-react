@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Slider, SliderOnChangeEvent } from '@patternfly/react-core';
+import { Slider, SliderOnChangeEvent } from '@rh-felt/react-core';
 
 export const SliderThumbValueInput: React.FunctionComponent = () => {
   const [value, setValue] = useState(50);

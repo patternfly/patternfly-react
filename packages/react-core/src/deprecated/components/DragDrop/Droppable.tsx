@@ -1,6 +1,6 @@
 import { Children, cloneElement } from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/DragDrop/drag-drop';
 import { DroppableContext } from './DroppableContext';
 
 interface DroppableProps extends React.HTMLProps<HTMLDivElement> {

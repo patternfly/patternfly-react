@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Form, FormGroup, FormSection, TextInput } from '@patternfly/react-core';
+import { Form, FormGroup, FormSection, TextInput } from '@rh-felt/react-core';
 
 export const FormSections: React.FunctionComponent = () => {
   const [input1, setInput1] = useState('');

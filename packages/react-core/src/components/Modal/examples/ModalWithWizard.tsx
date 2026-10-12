@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { Button, Modal, ModalVariant, Wizard, WizardHeader, WizardStep } from '@patternfly/react-core';
+import { Button, Modal, ModalVariant, Wizard, WizardHeader, WizardStep } from '@rh-felt/react-core';
 
 export const ModalWithWizard: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

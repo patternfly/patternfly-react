@@ -1,6 +1,6 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
-import topSpacer from '@patternfly/react-tokens/dist/esm/c_modal_box_m_align_top_spacer';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/ModalBox/modal-box';
+import topSpacer from '@rh-felt/react-tokens/dist/esm/c_modal_box_m_align_top_spacer';
 
 export interface ModalBoxProps extends React.HTMLProps<HTMLDivElement> {
   /** Id to use for the modal box description. This should match the ModalHeader labelId or descriptorId */

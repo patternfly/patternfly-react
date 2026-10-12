@@ -8,7 +8,7 @@ import {
   Button,
   DrawerContent,
   DrawerContentBody
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const DrawerResizableOnBottom: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = useState(false);

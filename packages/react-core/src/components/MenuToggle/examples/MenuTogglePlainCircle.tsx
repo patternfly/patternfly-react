@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
-import { MenuToggle } from '@patternfly/react-core';
-import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import { MenuToggle } from '@rh-felt/react-core';
+import RhUiEllipsisVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export const MenuTogglePlainCircle: React.FunctionComponent = () => (
   <Fragment>

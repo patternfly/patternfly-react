@@ -1,7 +1,7 @@
 import { forwardRef, useEffect, useState } from 'react';
-import styles from '@patternfly/react-styles/css/components/BackToTop/back-to-top';
-import { css } from '@patternfly/react-styles';
-import RhMicronsCaretUpIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-up-icon';
+import styles from '@rh-felt/react-styles/css/components/BackToTop/back-to-top';
+import { css } from '@rh-felt/react-styles';
+import RhMicronsCaretUpIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-up-icon';
 import { canUseDOM } from '../../helpers/util';
 import { Button } from '../Button';
 

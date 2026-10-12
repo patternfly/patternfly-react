@@ -1,4 +1,4 @@
-const reactTokens = require('@patternfly/react-tokens');
+const reactTokens = require('@rh-felt/react-tokens');
 
 // Test importing CJS tokens
 test('CJS token', () => {

@@ -1,4 +1,4 @@
-import { Wizard, WizardStep } from '@patternfly/react-core';
+import { Wizard, WizardStep } from '@rh-felt/react-core';
 
 export const WizardExpandableSteps: React.FunctionComponent = () => (
   <Wizard height={400} title="Expandable steps wizard" nav={{ isExpanded: true }}>

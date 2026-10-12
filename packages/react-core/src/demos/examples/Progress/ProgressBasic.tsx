@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Progress, Button, Stack, StackItem } from '@patternfly/react-core';
-import accessibilityStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
+import { Progress, Button, Stack, StackItem } from '@rh-felt/react-core';
+import accessibilityStyles from '@rh-felt/react-styles/css/utilities/Accessibility/accessibility';
 
 export const ProgressBasic: React.FunctionComponent = () => {
   const [currentValue, setCurrentValue] = useState(0);

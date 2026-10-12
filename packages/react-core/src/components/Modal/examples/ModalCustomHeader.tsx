@@ -10,9 +10,9 @@ import {
   TitleSizes,
   Content,
   Flex
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
-import RhUiWarningIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-icon';
+import RhUiWarningIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-warning-icon';
 
 export const ModalCustomHeaderFooter: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

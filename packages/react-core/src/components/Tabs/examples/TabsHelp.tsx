@@ -1,6 +1,6 @@
 import { createRef, useState } from 'react';
-import { Tabs, Tab, TabTitleText, TabAction, Popover } from '@patternfly/react-core';
-import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import { Tabs, Tab, TabTitleText, TabAction, Popover } from '@rh-felt/react-core';
+import RhUiQuestionMarkCircleIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 
 export const TabsHelp: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = useState<number>(0);

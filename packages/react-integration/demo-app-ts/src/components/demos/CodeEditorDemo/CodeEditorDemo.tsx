@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import { CodeEditor, CodeEditorControl, CodeEditorProps, Language } from '@patternfly/react-code-editor';
-import { Button, Checkbox } from '@patternfly/react-core';
-import RhUiPlayFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
+import { CodeEditor, CodeEditorControl, CodeEditorProps, Language } from '@rh-felt/react-code-editor';
+import { Button, Checkbox } from '@rh-felt/react-core';
+import RhUiPlayFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
 
 interface CodeEditorDemoState {
   isDarkTheme: boolean;

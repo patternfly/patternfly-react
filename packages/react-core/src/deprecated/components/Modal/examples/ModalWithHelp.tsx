@@ -1,8 +1,8 @@
 import { Fragment, useState } from 'react';
-import { Button, Popover } from '@patternfly/react-core';
-import { Modal as ModalDeprecated } from '@patternfly/react-core/deprecated';
+import { Button, Popover } from '@rh-felt/react-core';
+import { Modal as ModalDeprecated } from '@rh-felt/react-core/deprecated';
 
-import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import RhUiQuestionMarkCircleIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 
 export const ModalWithHelp: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

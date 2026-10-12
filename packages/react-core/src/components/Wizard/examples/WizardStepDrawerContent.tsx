@@ -12,8 +12,8 @@ import {
   useWizardContext,
   Wizard,
   WizardStep
-} from '@patternfly/react-core';
-import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
+} from '@rh-felt/react-core';
+import styles from '@rh-felt/react-styles/css/components/Wizard/wizard';
 
 const StepContentWithDrawer: React.FunctionComponent = () => {
   const [isDrawerExpanded, setIsDrawerExpanded] = useState(false);

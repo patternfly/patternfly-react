@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Button, Checkbox, FormGroup, SearchInput } from '@patternfly/react-core';
-import RhUiExternalLinkFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-external-link-fill-icon';
+import { Button, Checkbox, FormGroup, SearchInput } from '@rh-felt/react-core';
+import RhUiExternalLinkFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-external-link-fill-icon';
 
 export const SearchInputAdvanced: React.FunctionComponent = () => {
   const [value, setValue] = useState('username:player firstname:john');

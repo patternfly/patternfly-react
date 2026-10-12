@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
-import GitlabIcon from '@patternfly/react-icons/dist/esm/icons/gitlab-icon';
-import GithubIcon from '@patternfly/react-icons/dist/esm/icons/github-icon';
-import GoogleIcon from '@patternfly/react-icons/dist/esm/icons/google-icon';
+import { TreeView, TreeViewDataItem } from '@rh-felt/react-core';
+import GitlabIcon from '@rh-felt/react-icons/dist/esm/icons/gitlab-icon';
+import GithubIcon from '@rh-felt/react-icons/dist/esm/icons/github-icon';
+import GoogleIcon from '@rh-felt/react-icons/dist/esm/icons/google-icon';
 
 export const TreeViewWithIconPerItem: React.FunctionComponent = () => {
   const [activeItems, setActiveItems] = useState<TreeViewDataItem[]>();

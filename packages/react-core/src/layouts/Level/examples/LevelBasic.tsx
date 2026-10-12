@@ -1,4 +1,4 @@
-import { Level, LevelItem } from '@patternfly/react-core';
+import { Level, LevelItem } from '@rh-felt/react-core';
 
 export const LevelBasic: React.FunctionComponent = () => (
   <Level>

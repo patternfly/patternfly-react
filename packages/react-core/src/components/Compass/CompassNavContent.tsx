@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/Compass/compass';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Compass/compass';
+import { css } from '@rh-felt/react-styles';
 export interface CompassNavContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Content of the nav content wrapper. */
   children: React.ReactNode;

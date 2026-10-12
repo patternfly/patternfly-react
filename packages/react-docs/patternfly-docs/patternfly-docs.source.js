@@ -10,14 +10,12 @@ module.exports = (baseSourceMD, sourceProps) => {
   sourceMD(path.join(themePagesPath, '*.md'), 'pages-overview');
 
   // React props
-  const reactCorePath = require.resolve('@patternfly/react-core/package.json').replace('package.json', 'src');
-  const reactTablePath = require.resolve('@patternfly/react-table/package.json').replace('package.json', 'src');
-  const reactChartsPath = require.resolve('@patternfly/react-charts/package.json').replace('package.json', 'src');
-  const reactCodeEditorPath = require
-    .resolve('@patternfly/react-code-editor/package.json')
-    .replace('package.json', 'src');
-  const reactDragDropPath = require.resolve('@patternfly/react-drag-drop/package.json').replace('package.json', 'src');
-  const reactTemplatesPath = require.resolve('@patternfly/react-templates/package.json').replace('package.json', 'src');
+  const reactCorePath = require.resolve('@rh-felt/react-core/package.json').replace('package.json', 'src');
+  const reactTablePath = require.resolve('@rh-felt/react-table/package.json').replace('package.json', 'src');
+  const reactChartsPath = require.resolve('@rh-felt/react-charts/package.json').replace('package.json', 'src');
+  const reactCodeEditorPath = require.resolve('@rh-felt/react-code-editor/package.json').replace('package.json', 'src');
+  const reactDragDropPath = require.resolve('@rh-felt/react-drag-drop/package.json').replace('package.json', 'src');
+  const reactTemplatesPath = require.resolve('@rh-felt/react-templates/package.json').replace('package.json', 'src');
   const reactPropsIgnore = ['/**/examples/**', '/**/__mocks__/**', '/**/__tests__/**', '/**/*.test.tsx'];
 
   sourceProps(path.join(reactCorePath, '/**/*.tsx'), reactPropsIgnore);

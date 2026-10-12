@@ -1,4 +1,4 @@
-import { MenuToggle } from '@patternfly/react-core';
+import { MenuToggle } from '@rh-felt/react-core';
 
 export const MenuToggleFullHeight: React.FunctionComponent = () => (
   <div style={{ height: '80px' }}>

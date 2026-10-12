@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
-import { MenuToggle } from '@patternfly/react-core';
-import RhUiAddIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-icon';
+import { MenuToggle } from '@rh-felt/react-core';
+import RhUiAddIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-add-icon';
 
 export const MenuToggleCustomIcon: React.FC = () => (
   <Fragment>

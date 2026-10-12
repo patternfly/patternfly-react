@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/Menu/menu';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Menu/menu';
+import { css } from '@rh-felt/react-styles';
 
 export interface MenuBreadcrumbProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'ref' | 'onSelect'> {
   /** Items within breadcrumb menu container */

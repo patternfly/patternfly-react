@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from '@patternfly/react-core';
+import { Button } from '@rh-felt/react-core';
 
 export const ButtonFavorite: React.FunctionComponent = () => {
   const [isFavorited, setIsFavorited] = useState(false);

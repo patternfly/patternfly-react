@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, MenuList, MenuItem, MenuContent, MenuFooter, Button } from '@patternfly/react-core';
+import { Menu, MenuList, MenuItem, MenuContent, MenuFooter, Button } from '@rh-felt/react-core';
 
 export const MenuWithFooter: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState(0);

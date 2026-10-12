@@ -18,9 +18,9 @@ import {
   SelectOption,
   Timestamp,
   Title
-} from '@patternfly/react-core';
-import flex from '@patternfly/react-styles/css/utilities/Flex/flex';
-import cssGridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
+} from '@rh-felt/react-core';
+import flex from '@rh-felt/react-styles/css/utilities/Flex/flex';
+import cssGridTemplateColumnsMin from '@rh-felt/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 export const CardLogView: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);

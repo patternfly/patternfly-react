@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import * as ReactDOM from 'react-dom';
-import { css } from '@patternfly/react-styles';
+import { css } from '@rh-felt/react-styles';
 import {
   DndContext,
   closestCenter,
@@ -25,9 +25,9 @@ import { restrictToWindowEdges } from '@dnd-kit/modifiers';
 import { Draggable } from './Draggable';
 import { DraggableDataListItem } from './DraggableDataListItem';
 import { DraggableDualListSelectorListItem } from './DraggableDualListSelectorListItem';
-import styles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
-import { DataList } from '@patternfly/react-core/dist/esm/components/DataList/DataList';
-import { canUseDOM } from '@patternfly/react-core/dist/esm/helpers/util';
+import styles from '@rh-felt/react-styles/css/components/DragDrop/drag-drop';
+import { DataList } from '@rh-felt/react-core/dist/esm/components/DataList/DataList';
+import { canUseDOM } from '@rh-felt/react-core/dist/esm/helpers/util';
 
 export type DragDropContainerDragStartEvent = DragStartEvent;
 export type DragDropContainerDragOverEvent = DragOverEvent;

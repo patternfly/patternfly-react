@@ -8,7 +8,7 @@ import {
   HelperText,
   HelperTextItem,
   FormHelperText
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const FormGrid: React.FunctionComponent = () => {
   const [name, setName] = useState('');

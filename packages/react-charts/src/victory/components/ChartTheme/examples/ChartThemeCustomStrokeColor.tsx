@@ -6,8 +6,8 @@ import {
   ChartThemeColor,
   ChartThreshold,
   ChartVoronoiContainer
-} from '@patternfly/react-charts/victory';
-import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
+} from '@rh-felt/react-charts/victory';
+import chart_color_blue_300 from '@rh-felt/react-tokens/dist/esm/chart_color_blue_300';
 
 interface PetData {
   name?: string;

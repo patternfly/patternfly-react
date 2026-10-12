@@ -1,5 +1,5 @@
 import { MenuProps } from '../Menu';
-import cssMenuMinWidth from '@patternfly/react-tokens/dist/esm/c_menu_MinWidth';
+import cssMenuMinWidth from '@rh-felt/react-tokens/dist/esm/c_menu_MinWidth';
 
 export const Menu = ({ className, isPlain, isScrollable, style, onSelect, ...props }: MenuProps) => (
   <>

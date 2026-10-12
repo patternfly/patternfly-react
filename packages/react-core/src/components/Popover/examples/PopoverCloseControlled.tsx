@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Popover, Button } from '@patternfly/react-core';
+import { Popover, Button } from '@rh-felt/react-core';
 
 export const PopoverCloseControlled: React.FunctionComponent = () => {
   const [isVisible, setIsVisible] = useState(false);

@@ -212,7 +212,7 @@ test('passes other SelectOption props to the SelectOption component', async () =
   expect(option1).toBeDisabled();
 });
 
-jest.mock('@patternfly/react-core/dist/js/helpers/GenerateId/GenerateId', () => ({
+jest.mock('@rh-felt/react-core/dist/js/helpers/GenerateId/GenerateId', () => ({
   GenerateId: ({ children }) => children('generated-id')
 }));
 

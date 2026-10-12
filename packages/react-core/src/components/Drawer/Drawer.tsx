@@ -1,6 +1,6 @@
 import { createContext, useRef } from 'react';
-import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Drawer/drawer';
+import { css } from '@rh-felt/react-styles';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 
 export enum DrawerColorVariant {

@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Alert, AlertActionCloseButton } from '@patternfly/react-core';
+import { Alert, AlertActionCloseButton } from '@rh-felt/react-core';
 
 export const AlertStaticLiveRegion: React.FunctionComponent = () => (
   <Fragment>

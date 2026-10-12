@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { DrawerPanelContent } from '../DrawerPanelContent';
 import { Drawer } from '../Drawer';
-import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
+import styles from '@rh-felt/react-styles/css/components/Drawer/drawer';
 
 test(`Renders with only class ${styles.drawerPanel} by default`, () => {
   render(

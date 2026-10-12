@@ -1,5 +1,5 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/DataList/data-list';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/DataList/data-list';
 
 export interface DataListItemCellsProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the data list item content wrapper.  Children should be one or more <DataListCell> nodes */

@@ -1,4 +1,4 @@
-import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
+import { ClipboardCopy, ClipboardCopyVariant } from '@rh-felt/react-core';
 
 export const ClipboardCopyJSONObject: React.FunctionComponent = () => (
   <ClipboardCopy

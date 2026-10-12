@@ -1,14 +1,14 @@
 // eslint-disable-next-line
 import React from 'react';
-import { Content } from '@patternfly/react-core/dist/esm/components/Content';
-import { Icon } from '@patternfly/react-core/dist/esm/components/Icon';
-import { Grid, GridItem } from '@patternfly/react-core/dist/esm/layouts/Grid';
-import { PageSection } from '@patternfly/react-core/dist/esm/components/Page/PageSection';
-import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip';
-import spacerMd from '@patternfly/react-tokens/dist/esm/t_global_spacer_md';
-import spacerSm from '@patternfly/react-tokens/dist/esm/t_global_spacer_sm';
-import labelFontSize from '@patternfly/react-tokens/dist/esm/t_global_font_size_sm';
-import * as IconsModule from '@patternfly/react-icons/dist/esm';
+import { Content } from '@rh-felt/react-core/dist/esm/components/Content';
+import { Icon } from '@rh-felt/react-core/dist/esm/components/Icon';
+import { Grid, GridItem } from '@rh-felt/react-core/dist/esm/layouts/Grid';
+import { PageSection } from '@rh-felt/react-core/dist/esm/components/Page/PageSection';
+import { Tooltip } from '@rh-felt/react-core/dist/esm/components/Tooltip';
+import spacerMd from '@rh-felt/react-tokens/dist/esm/t_global_spacer_md';
+import spacerSm from '@rh-felt/react-tokens/dist/esm/t_global_spacer_sm';
+import labelFontSize from '@rh-felt/react-tokens/dist/esm/t_global_font_size_sm';
+import * as IconsModule from '@rh-felt/react-icons/dist/esm';
 
 const iconsPage = () => {
   const allIcons = Object.entries(IconsModule)

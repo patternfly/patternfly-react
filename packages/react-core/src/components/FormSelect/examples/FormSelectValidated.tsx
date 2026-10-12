@@ -8,7 +8,7 @@ import {
   HelperText,
   HelperTextItem,
   ValidatedOptions
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const FormSelectValidated: React.FunctionComponent = () => {
   const [formValue, setFormValue] = useState('');

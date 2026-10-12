@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { Content } from '../Content';
-import styles from '@patternfly/react-styles/css/components/Content/content';
+import styles from '@rh-felt/react-styles/css/components/Content/content';
 
 test('Renders without children', () => {
   render(

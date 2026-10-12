@@ -18,15 +18,15 @@ if (!uploadFolder) {
 }
 
 const uploadFolderName = path.basename(uploadFolder);
-let uploadURL = `pf-react-${prnum ? `pr-${prnum}` : prbranch}`.replace(/[/|.]/g, '-');
+let uploadURL = `rh-felt-react-${prnum ? `pr-${prnum}` : prbranch}`.replace(/[/|.]/g, '-');
 
 switch (uploadFolderName) {
   case 'coverage':
     uploadURL += '-a11y.surge.sh';
     break;
   case 'public':
-    if (!prnum && prbranch === 'main') {
-      uploadURL = 'pf-react-staging.patternfly.org';
+    if (!prnum && prbranch === 'felt-v1') {
+      uploadURL = 'rh-felt-react-staging.patternfly.org';
     } else {
       uploadURL += '.surge.sh';
     }

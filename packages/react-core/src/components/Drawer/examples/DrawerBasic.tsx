@@ -10,7 +10,7 @@ import {
   DrawerPanelBody,
   DrawerPanelDescription,
   Button
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const DrawerBasic: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = useState(false);

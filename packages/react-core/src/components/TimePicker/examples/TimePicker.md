@@ -6,7 +6,7 @@ cssPrefix: pf-v6-c-time-picker
 propComponents: ['TimePicker']
 ---
 
-import { TimePicker } from '@patternfly/react-core';
+import { TimePicker } from '@rh-felt/react-core';
 
 ## Examples
 

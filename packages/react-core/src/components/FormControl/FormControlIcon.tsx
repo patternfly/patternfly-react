@@ -1,8 +1,8 @@
-import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
-import { css } from '@patternfly/react-styles';
-import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
-import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
-import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
+import styles from '@rh-felt/react-styles/css/components/FormControl/form-control';
+import { css } from '@rh-felt/react-styles';
+import RhUiCheckCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import RhUiErrorFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
+import RhUiWarningFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
 
 export const statusIcons = {
   success: RhUiCheckCircleFillIcon,

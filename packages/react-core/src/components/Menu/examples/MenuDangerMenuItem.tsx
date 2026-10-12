@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Divider, Menu, MenuContent, MenuItem, MenuList } from '@patternfly/react-core';
+import { Divider, Menu, MenuContent, MenuItem, MenuList } from '@rh-felt/react-core';
 
 export const MenuDangerMenuItem: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState(0);

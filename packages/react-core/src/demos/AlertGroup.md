@@ -4,10 +4,10 @@ section: components
 ---
 
 import { useEffect, useState } from 'react';
-import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
-import RhMicronsSearchIcon from '@patternfly/react-icons/dist/js/icons/rh-microns-search-icon';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
-import { DashboardHeader } from '@patternfly/react-core/dist/js/demos/DashboardHeader';
+import RhUiEllipsisVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhMicronsSearchIcon from '@rh-felt/react-icons/dist/js/icons/rh-microns-search-icon';
+import { DashboardWrapper } from '@rh-felt/react-core/dist/js/demos/DashboardWrapper';
+import { DashboardHeader } from '@rh-felt/react-core/dist/js/demos/DashboardHeader';
 
 ## Demos
 

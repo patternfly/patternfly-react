@@ -1,7 +1,7 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Accordion/accordion';
 import { AccordionContext, AccordionItemContext } from './AccordionContext';
 import { AccordionExpandableContentBody, AccordionExpandableContentBodyProps } from './AccordionExpandableContentBody';
 

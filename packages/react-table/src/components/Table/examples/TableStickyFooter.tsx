@@ -1,4 +1,4 @@
-import { Table, Thead, Tfoot, Tr, Th, Tbody, Td, InnerScrollContainer } from '@patternfly/react-table';
+import { Table, Thead, Tfoot, Tr, Th, Tbody, Td, InnerScrollContainer } from '@rh-felt/react-table';
 
 export const TableStickyFooter: React.FunctionComponent = () => {
   const rows = Array.from({ length: 12 }, (_, index) => index + 1);

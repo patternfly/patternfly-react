@@ -1,4 +1,4 @@
-import { Timestamp, TimestampTooltipVariant } from '@patternfly/react-core';
+import { Timestamp, TimestampTooltipVariant } from '@rh-felt/react-core';
 
 export const TimestampCustomTooltip: React.FunctionComponent = () => (
   <>

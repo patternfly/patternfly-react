@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/Compass/compass';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Compass/compass';
+import { css } from '@rh-felt/react-styles';
 
 /** A wrapper component to pass a PatternFly Hero component into. */
 export interface CompassHeroProps extends Omit<React.HTMLProps<HTMLDivElement>, 'content'> {

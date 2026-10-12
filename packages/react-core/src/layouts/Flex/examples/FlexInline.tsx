@@ -1,4 +1,4 @@
-import { Flex, FlexItem } from '@patternfly/react-core';
+import { Flex, FlexItem } from '@rh-felt/react-core';
 
 export const FlexInline: React.FunctionComponent = () => (
   <Flex className="example-border" display={{ default: 'inlineFlex' }}>

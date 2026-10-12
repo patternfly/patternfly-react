@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { Pagination, PaginationVariant } from '../index';
 import { KeyTypes } from '../../../helpers';
-import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
+import styles from '@rh-felt/react-styles/css/components/Pagination/pagination';
 
 describe('Pagination', () => {
   describe('component render', () => {

@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import { sortable, ICell, IRow, ISortBy } from '@patternfly/react-table';
-import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
-import { Checkbox } from '@patternfly/react-core';
+import { sortable, ICell, IRow, ISortBy } from '@rh-felt/react-table';
+import { Table, TableHeader, TableBody, TableProps } from '@rh-felt/react-table/deprecated';
+import { Checkbox } from '@rh-felt/react-core';
 
 interface TableState {
   columns: (ICell | string)[];

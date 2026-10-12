@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Content, TextArea, ValidatedOptions } from '@patternfly/react-core';
+import { Content, TextArea, ValidatedOptions } from '@rh-felt/react-core';
 
 interface TextAreaState {
   textAreaValue: string;

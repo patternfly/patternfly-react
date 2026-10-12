@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
-import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
+import { Menu, MenuContent, MenuList, MenuItem } from '@rh-felt/react-core';
+import RhUiBranchFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 
 export const MenuWithDescription: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState(0);

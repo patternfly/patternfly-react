@@ -1,7 +1,7 @@
 import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { CheckboxSelect } from '../CheckboxSelect';
-import styles from '@patternfly/react-styles/css/components/Badge/badge';
+import styles from '@rh-felt/react-styles/css/components/Badge/badge';
 
 test('renders checkbox select with options', async () => {
   const initialOptions = [

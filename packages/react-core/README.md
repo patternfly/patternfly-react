@@ -1,7 +1,7 @@
 # PatternFly React - Core
 
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-green.svg?style=for-the-badge)](https://lernajs.io/)
-[![PatternFly npm badge](https://img.shields.io/npm/v/@patternfly/react-core.svg?label=React-Core&style=for-the-badge)](https://www.npmjs.com/package/@patternfly/react-core)
+[![PatternFly npm badge](https://img.shields.io/npm/v/@rh-felt/react-core.svg?label=React-Core&style=for-the-badge)](https://www.npmjs.com/package/@rh-felt/react-core)
 
 This project provides the React core components for the [PatternFly project](https://patternfly.org).  
 
@@ -15,30 +15,30 @@ This project provides the React core components for the [PatternFly project](htt
 ### Setup 
 Before you begin, check out this [overview of PatternFly](http://patternfly.org/get-started/about) to get familiar with the basic elements of the design system.  These instructions also assume that an existing React project is set up.  For more information on how to do this, please see our main [README](https://github.com/patternfly/patternfly-react/tree/main/README.md#setup).
 
-#### Install the @patternfly/react-core NPM package
+#### Install the @rh-felt/react-core NPM package
 * Using npm, run the following command to install:
   ```
-  npm install @patternfly/react-core --save
+  npm install @rh-felt/react-core --save
   ```
 
   **OR**
 
 * Using yarn, run the following command to install:
   ```
-  yarn add @patternfly/react-core
+  yarn add @rh-felt/react-core
   ```
   
 #### Project configuration
 Each PatternFly component already contains the CSS related to the component.  In order to have consistent styles throughout the application, PatternFly Base CSS should be used in the project, or some components may diverge in appearance.  This import statement should be placed before your main application component is imported.
 
 ```js
-import '@patternfly/react-core/dist/styles/base.css';
+import '@rh-felt/react-core/dist/styles/base.css';
 ```
 
 #### Example component usage
 
 ```ts
-import { Button } from '@patternfly/react-core';
+import { Button } from '@rh-felt/react-core';
 
 export default <Button variant="primary">Button</Button>;
 ```

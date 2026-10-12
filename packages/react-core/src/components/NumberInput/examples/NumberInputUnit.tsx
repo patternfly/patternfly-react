@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { NumberInput } from '@patternfly/react-core';
+import { NumberInput } from '@rh-felt/react-core';
 
 export const NumberInputUnit: React.FunctionComponent = () => {
   const [value1, setValue1] = useState<number | ''>(90);

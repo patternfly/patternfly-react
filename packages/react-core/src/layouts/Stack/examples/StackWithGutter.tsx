@@ -1,4 +1,4 @@
-import { Stack, StackItem } from '@patternfly/react-core';
+import { Stack, StackItem } from '@rh-felt/react-core';
 
 export const StackWithGutter: React.FunctionComponent = () => (
   <Stack hasGutter>

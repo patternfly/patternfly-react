@@ -1,4 +1,4 @@
-import { Alert } from '@patternfly/react-core';
+import { Alert } from '@rh-felt/react-core';
 
 export const AlertPlainInlineVariations: React.FunctionComponent = () => (
   <Alert isInline isPlain variant="success" title="Success alert title">

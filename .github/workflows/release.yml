@@ -2,7 +2,7 @@ name: Release
 on:
   push:
     branches:
-      - main
+      - felt-v1
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -41,4 +41,3 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_PR_TOKEN: ${{ secrets.GH_PR_TOKEN }}
-          

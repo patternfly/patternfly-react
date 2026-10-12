@@ -8,8 +8,8 @@ import {
   ExpandableSectionToggle,
   Button,
   Tooltip
-} from '@patternfly/react-core';
-import RhUiPlayFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
+} from '@rh-felt/react-core';
+import RhUiPlayFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
 
 export const ExpandableCodeBlock: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = useState(false);

@@ -1,5 +1,5 @@
 import { Fragment } from 'react/jsx-runtime';
-import { MenuToggle } from '@patternfly/react-core';
+import { MenuToggle } from '@rh-felt/react-core';
 
 export const MenuToggleSettings: React.FunctionComponent = () => (
   <Fragment>

@@ -1,5 +1,5 @@
 import { Component, createRef } from 'react';
-import { Tooltip } from '@patternfly/react-core';
+import { Tooltip } from '@rh-felt/react-core';
 
 export class TooltipDemo extends Component {
   tooltipRef: React.RefObject<HTMLButtonElement | null>;

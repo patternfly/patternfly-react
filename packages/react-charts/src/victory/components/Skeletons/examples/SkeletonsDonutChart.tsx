@@ -1,5 +1,5 @@
-import { Switch } from '@patternfly/react-core';
-import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts/victory';
+import { Switch } from '@rh-felt/react-core';
+import { ChartDonut, ChartThemeColor } from '@rh-felt/react-charts/victory';
 import { useState } from 'react';
 
 interface PetData {

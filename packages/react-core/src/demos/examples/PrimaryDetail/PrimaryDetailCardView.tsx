@@ -37,8 +37,8 @@ import {
   ToolbarItem,
   ToolbarContent,
   MenuToggleElement
-} from '@patternfly/react-core';
-import RhUiTrashFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-trash-fill-icon';
+} from '@rh-felt/react-core';
+import RhUiTrashFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-trash-fill-icon';
 import pfIcon from './assets/pf-logo-small.svg';
 import activeMQIcon from './assets/activemq-core_200x150.png';
 import avroIcon from './assets/camel-avro_200x150.png';
@@ -49,9 +49,9 @@ import sparkIcon from './assets/camel-spark_200x150.png';
 import swaggerIcon from './assets/camel-swagger-java_200x150.png';
 import azureIcon from './assets/FuseConnector_Icons_AzureServices.png';
 import restIcon from './assets/FuseConnector_Icons_REST.png';
-import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
-import { data } from '@patternfly/react-core/src/demos/CardView/examples/CardViewData.jsx';
+import RhUiEllipsisVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import { DashboardWrapper } from '@rh-felt/react-core/src/demos/DashboardWrapper';
+import { data } from '@rh-felt/react-core/src/demos/CardView/examples/CardViewData.jsx';
 
 export const PrimaryDetailCardView: React.FunctionComponent = () => {
   const [totalItemCount, setTotalItemCount] = useState(10);

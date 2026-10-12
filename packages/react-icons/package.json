@@ -1,7 +1,7 @@
 {
-  "name": "@patternfly/react-icons",
-  "version": "6.7.0-prerelease.3",
-  "description": "PatternFly 4 Icons as React Components",
+  "name": "@rh-felt/react-icons",
+  "version": "0.0.1-prerelease.0",
+  "description": "Felt 4 Icons as React Components",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",

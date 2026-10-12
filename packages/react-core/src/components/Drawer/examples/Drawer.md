@@ -19,7 +19,7 @@ section: components
 ---
 
 import { Fragment, useRef, useState } from 'react';
-import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
+import accessibility from '@rh-felt/react-styles/css/utilities/Accessibility/accessibility';
 
 ## Examples
 

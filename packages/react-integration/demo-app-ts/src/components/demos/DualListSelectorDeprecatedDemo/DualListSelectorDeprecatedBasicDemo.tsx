@@ -2,7 +2,7 @@ import { Component } from 'react';
 import {
   DualListSelector as DLSDeprecated,
   DualListSelectorProps as DLSPropsDeprecated
-} from '@patternfly/react-core/deprecated';
+} from '@rh-felt/react-core/deprecated';
 interface DualListSelectorState {
   availableOptions: React.ReactNode[];
   chosenOptions: React.ReactNode[];

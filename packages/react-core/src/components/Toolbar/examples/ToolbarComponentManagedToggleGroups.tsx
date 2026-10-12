@@ -11,8 +11,8 @@ import {
   Select,
   SelectList,
   SelectOption
-} from '@patternfly/react-core';
-import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
+} from '@rh-felt/react-core';
+import RhUiFilterFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
 
 export const ToolbarComponentManagedToggleGroup: React.FunctionComponent = () => {
   const [inputValue, setInputValue] = useState('');

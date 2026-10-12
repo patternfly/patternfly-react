@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Select, SelectOption, SelectList, MenuToggle, MenuToggleElement } from '@patternfly/react-core';
-import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
+import { Select, SelectOption, SelectList, MenuToggle, MenuToggleElement } from '@rh-felt/react-core';
+import RhUiNotificationFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 
 export const SelectOptionVariations: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);

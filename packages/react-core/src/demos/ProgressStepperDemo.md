@@ -4,7 +4,7 @@ section: components
 ---
 
 import { useState } from 'react';
-import accessibilityStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
+import accessibilityStyles from '@rh-felt/react-styles/css/utilities/Accessibility/accessibility';
 
 ## Demos
 
