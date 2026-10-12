@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Menu, MenuContent, MenuGroup, MenuList, MenuItem, MenuItemAction } from '@patternfly/react-core';
-import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
-import RhUiClipboardFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clipboard-fill-icon';
-import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
-import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
+import { Menu, MenuContent, MenuGroup, MenuList, MenuItem, MenuItemAction } from '@rh-felt/react-core';
+import RhUiMenuBarsIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
+import RhUiClipboardFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-clipboard-fill-icon';
+import RhUiBranchFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
+import RhUiNotificationFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 
 export const MenuWithActions: React.FunctionComponent = () => {
   const [selectedItems, setSelectedItems] = useState<number[]>([0, 2, 3]);

@@ -1,6 +1,6 @@
-import { Label } from '@patternfly/react-core';
+import { Label } from '@rh-felt/react-core';
 import { Component } from 'react';
-import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
+import RhUiInformationFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
 
 export class LabelDemo extends Component {
   componentDidMount() {

@@ -1,12 +1,6 @@
 import { useState } from 'react';
-import {
-  MenuToggle,
-  TextInputGroup,
-  TextInputGroupMain,
-  TextInputGroupUtilities,
-  Button
-} from '@patternfly/react-core';
-import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+import { MenuToggle, TextInputGroup, TextInputGroupMain, TextInputGroupUtilities, Button } from '@rh-felt/react-core';
+import RhMicronsCloseIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 export const MenuToggleTypeahead: React.FunctionComponent = () => {
   const [inputValue, setInputValue] = useState<string>('');

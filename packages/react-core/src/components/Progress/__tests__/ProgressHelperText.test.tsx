@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { ProgressHelperText } from '../ProgressHelperText';
-import styles from '@patternfly/react-styles/css/components/Progress/progress';
+import styles from '@rh-felt/react-styles/css/components/Progress/progress';
 
 test('Renders without children', () => {
   render(

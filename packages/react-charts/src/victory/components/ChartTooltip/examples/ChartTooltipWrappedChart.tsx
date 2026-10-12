@@ -1,5 +1,5 @@
-import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts/victory';
-import { Button, Tooltip, TooltipPosition } from '@patternfly/react-core';
+import { ChartDonutThreshold, ChartDonutUtilization } from '@rh-felt/react-charts/victory';
+import { Button, Tooltip, TooltipPosition } from '@rh-felt/react-core';
 import { useState } from 'react';
 
 interface Data {

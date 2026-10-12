@@ -1,5 +1,5 @@
 import { Component, createRef } from 'react';
-import { SearchInput, SearchInputProps, Button } from '@patternfly/react-core';
+import { SearchInput, SearchInputProps, Button } from '@rh-felt/react-core';
 
 interface SearchInputState {
   value: string;

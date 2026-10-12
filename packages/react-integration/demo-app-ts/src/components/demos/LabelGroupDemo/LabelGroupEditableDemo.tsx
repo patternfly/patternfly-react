@@ -1,4 +1,4 @@
-import { Label, LabelGroup } from '@patternfly/react-core';
+import { Label, LabelGroup } from '@rh-felt/react-core';
 import { Component } from 'react';
 
 interface LabelState {

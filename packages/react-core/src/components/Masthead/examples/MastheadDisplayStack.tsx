@@ -6,7 +6,7 @@ import {
   MastheadLogo,
   MastheadContent,
   Button
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const MastheadDisplayStack: React.FunctionComponent = () => (
   <Masthead id="stack-masthead" display={{ default: 'stack' }}>

@@ -10,22 +10,22 @@ import {
   FormEvent as ReactFormEvent,
   CSSProperties
 } from 'react';
-import { Button } from '@patternfly/react-core/dist/esm/components/Button';
-import { Label, LabelGroup, LabelProps } from '@patternfly/react-core/dist/esm/components/Label';
-import { MenuToggle, MenuToggleElement, MenuToggleProps } from '@patternfly/react-core/dist/esm/components/MenuToggle';
+import { Button } from '@rh-felt/react-core/dist/esm/components/Button';
+import { Label, LabelGroup, LabelProps } from '@rh-felt/react-core/dist/esm/components/Label';
+import { MenuToggle, MenuToggleElement, MenuToggleProps } from '@rh-felt/react-core/dist/esm/components/MenuToggle';
 import {
   Select,
   SelectList,
   SelectOption,
   SelectOptionProps,
   SelectProps
-} from '@patternfly/react-core/dist/esm/components/Select';
+} from '@rh-felt/react-core/dist/esm/components/Select';
 import {
   TextInputGroup,
   TextInputGroupMain,
   TextInputGroupUtilities
-} from '@patternfly/react-core/dist/esm/components/TextInputGroup';
-import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+} from '@rh-felt/react-core/dist/esm/components/TextInputGroup';
+import RhMicronsCloseIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 export interface MultiTypeaheadSelectOption extends Omit<SelectOptionProps, 'content'> {
   /** Content of the select option. */

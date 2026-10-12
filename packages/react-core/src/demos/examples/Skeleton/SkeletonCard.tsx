@@ -1,5 +1,5 @@
-import { Gallery, Flex, PageSection, Content, Card, CardBody, Skeleton } from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
+import { Gallery, Flex, PageSection, Content, Card, CardBody, Skeleton } from '@rh-felt/react-core';
+import { DashboardWrapper } from '@rh-felt/react-core/src/demos/DashboardWrapper';
 
 export const SkeletonCard: React.FunctionComponent = () => {
   const card = (index: number) => (

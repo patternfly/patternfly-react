@@ -1,5 +1,5 @@
 import { createRef, Fragment, useState } from 'react';
-import { Tabs, Tab, TabContent, Button, Divider } from '@patternfly/react-core';
+import { Tabs, Tab, TabContent, Button, Divider } from '@rh-felt/react-core';
 
 export const TabsToggledSeparateContent: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = useState<string | number>(0);

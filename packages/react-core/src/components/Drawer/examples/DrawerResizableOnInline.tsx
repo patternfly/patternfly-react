@@ -8,7 +8,7 @@ import {
   Button,
   DrawerContent,
   DrawerContentBody
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const DrawerResizableOnInline: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = useState(false);

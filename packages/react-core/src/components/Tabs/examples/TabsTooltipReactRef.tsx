@@ -1,5 +1,5 @@
 import { createRef, useState } from 'react';
-import { Tabs, Tab, TabTitleText, Checkbox, Tooltip } from '@patternfly/react-core';
+import { Tabs, Tab, TabTitleText, Checkbox, Tooltip } from '@rh-felt/react-core';
 
 export const TabsTooltipReactRef: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = useState<string | number>(0);

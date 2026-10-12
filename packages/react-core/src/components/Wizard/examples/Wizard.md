@@ -48,12 +48,12 @@ useWizardContext,
 WizardNavItem,
 WizardNav,
 WizardHeader
-} from '@patternfly/react-core';
-import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
-import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
-import RhUiGearGroupFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-gear-group-fill-icon';
-import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
-import layout from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
+} from '@rh-felt/react-core';
+import RhMicronsExternalLinkIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-external-link-icon';
+import SlackHashIcon from '@rh-felt/react-icons/dist/esm/icons/slack-hash-icon';
+import RhUiGearGroupFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-gear-group-fill-icon';
+import styles from '@rh-felt/react-styles/css/components/Wizard/wizard';
+import layout from '@rh-felt/react-styles/css/layouts/Bullseye/bullseye';
 
 ## Examples
 
@@ -186,7 +186,7 @@ To focus the main content element of the `Wizard`, pass in the `shouldFocusConte
 Used to access any property of [WizardContext](#wizardcontextprops):
 
 ```noLive
-import { useWizardContext } from '@patternfly/react-core';
+import { useWizardContext } from '@rh-felt/react-core';
 
 const StepContent = () => {
   const { activeStep } = useWizardContext();
@@ -199,7 +199,7 @@ const StepContent = () => {
 Used to set a unique footer for the wizard on any given step.
 
 ```noLive
-import { useWizardFooter } from '@patternfly/react-core';
+import { useWizardFooter } from '@rh-felt/react-core';
 
 const StepContent = () => {
   useWizardFooter(<>Some footer</>);

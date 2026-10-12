@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/HelperText/helper-text';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/HelperText/helper-text';
+import { css } from '@rh-felt/react-styles';
 
 export interface HelperTextProps extends React.HTMLProps<HTMLDivElement | HTMLUListElement> {
   /** Content rendered inside the helper text container. */

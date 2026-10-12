@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
-import { Table, Thead, Tr, Th, Tbody, Td, ExpandableRowContent } from '@patternfly/react-table';
-import { Checkbox } from '@patternfly/react-core';
+import { Table, Thead, Tr, Th, Tbody, Td, ExpandableRowContent } from '@rh-felt/react-table';
+import { Checkbox } from '@rh-felt/react-core';
 
 interface Repository {
   name: string;

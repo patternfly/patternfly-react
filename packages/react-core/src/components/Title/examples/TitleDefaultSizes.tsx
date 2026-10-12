@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Title } from '@patternfly/react-core';
+import { Title } from '@rh-felt/react-core';
 
 export const TitleDefaultSizes: React.FunctionComponent = () => (
   <Fragment>

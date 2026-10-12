@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
-import { ToggleGroup, ToggleGroupItem, ToggleGroupItemProps } from '@patternfly/react-core';
-import { Table, Caption, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import { ToggleGroup, ToggleGroupItem, ToggleGroupItemProps } from '@rh-felt/react-core';
+import { Table, Caption, Thead, Tr, Th, Tbody, Td } from '@rh-felt/react-table';
 
 interface Repository {
   name: string;

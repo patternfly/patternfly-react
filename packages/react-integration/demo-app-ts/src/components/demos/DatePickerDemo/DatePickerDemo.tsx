@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { DatePicker, DatePickerRef } from '@patternfly/react-core';
+import { DatePicker, DatePickerRef } from '@rh-felt/react-core';
 
 export const DatePickerDemo = () => {
   const [value, setValue] = useState('2020-03-18');

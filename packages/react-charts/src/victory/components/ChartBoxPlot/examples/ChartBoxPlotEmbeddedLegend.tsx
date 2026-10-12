@@ -6,8 +6,8 @@ import {
   ChartThemeColor,
   ChartThreshold,
   createContainer
-} from '@patternfly/react-charts/victory';
-import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
+} from '@rh-felt/react-charts/victory';
+import chart_color_orange_300 from '@rh-felt/react-tokens/dist/esm/chart_color_orange_300';
 
 interface Data {
   name: string;

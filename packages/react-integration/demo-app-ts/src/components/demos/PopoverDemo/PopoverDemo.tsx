@@ -1,4 +1,4 @@
-import { Popover, Button } from '@patternfly/react-core';
+import { Popover, Button } from '@rh-felt/react-core';
 import { Component, createRef } from 'react';
 
 export class PopoverDemo extends Component {

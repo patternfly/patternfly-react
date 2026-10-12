@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { Menu, MenuContent, MenuList, MenuItem, Checkbox } from '@patternfly/react-core';
+import { Menu, MenuContent, MenuList, MenuItem, Checkbox } from '@rh-felt/react-core';
 
 export const MenuBasic: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState(0);

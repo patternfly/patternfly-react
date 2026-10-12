@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
-import styles from '@patternfly/react-styles/css/components/Form/form';
-import { css } from '@patternfly/react-styles';
-import cssMaxWidth from '@patternfly/react-tokens/dist/esm/c_form_m_limit_width_MaxWidth';
+import styles from '@rh-felt/react-styles/css/components/Form/form';
+import { css } from '@rh-felt/react-styles';
+import cssMaxWidth from '@rh-felt/react-tokens/dist/esm/c_form_m_limit_width_MaxWidth';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 
 export interface FormProps extends Omit<React.HTMLProps<HTMLFormElement>, 'ref'>, OUIAProps {

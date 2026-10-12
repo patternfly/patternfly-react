@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
+import { Menu, MenuContent, MenuList, MenuItem } from '@rh-felt/react-core';
 
 export const MenuScrollableCustomMenuHeight: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState(0);

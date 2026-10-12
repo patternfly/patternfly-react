@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { NumberInput } from '@patternfly/react-core';
+import { NumberInput } from '@rh-felt/react-core';
 
 export const NumberInputVaryingSizes: React.FunctionComponent = () => {
   const [input1Value, setInput1Value] = useState<number | ''>(1);

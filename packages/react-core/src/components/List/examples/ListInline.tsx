@@ -1,4 +1,4 @@
-import { List, ListItem, ListVariant } from '@patternfly/react-core';
+import { List, ListItem, ListVariant } from '@rh-felt/react-core';
 
 export const ListInline: React.FunctionComponent = () => (
   <List variant={ListVariant.inline}>

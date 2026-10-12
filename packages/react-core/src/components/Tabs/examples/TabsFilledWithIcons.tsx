@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Tabs, Tab, TabTitleText, TabTitleIcon, Checkbox } from '@patternfly/react-core';
-import RhUiUsersFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-users-fill-icon';
-import RhUiContainerFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-container-fill-icon';
-import DatabaseIcon from '@patternfly/react-icons/dist/esm/icons/database-icon';
+import { Tabs, Tab, TabTitleText, TabTitleIcon, Checkbox } from '@rh-felt/react-core';
+import RhUiUsersFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-users-fill-icon';
+import RhUiContainerFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-container-fill-icon';
+import DatabaseIcon from '@rh-felt/react-icons/dist/esm/icons/database-icon';
 
 export const TabsFilledWithIcons: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = useState<string | number>(0);

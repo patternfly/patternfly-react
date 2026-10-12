@@ -6,13 +6,13 @@ import {
   DualListSelectorListItem,
   DualListSelectorControlsWrapper,
   DualListSelectorControl
-} from '@patternfly/react-core';
-import { DragDropSort, DraggableObject } from '@patternfly/react-drag-drop';
+} from '@rh-felt/react-core';
+import { DragDropSort, DraggableObject } from '@rh-felt/react-drag-drop';
 
-import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-left-icon';
-import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
-import RhMicronsDoubleCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-right-icon';
-import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
+import RhMicronsDoubleCaretLeftIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-double-caret-left-icon';
+import RhMicronsCaretLeftIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
+import RhMicronsDoubleCaretRightIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-double-caret-right-icon';
+import RhMicronsCaretRightIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 
 export const ComposableDualListSelector: React.FunctionComponent = () => {
   const [ignoreNextOptionSelect, setIgnoreNextOptionSelect] = useState(false);

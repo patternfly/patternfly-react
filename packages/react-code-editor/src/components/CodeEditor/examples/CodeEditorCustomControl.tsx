@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { CodeEditor, CodeEditorControl } from '@patternfly/react-code-editor';
-import RhUiPlayFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
+import { CodeEditor, CodeEditorControl } from '@rh-felt/react-code-editor';
+import RhUiPlayFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
 
 export const CodeEditorCustomControl: React.FunctionComponent = () => {
   const [code, setCode] = useState('Some example content');

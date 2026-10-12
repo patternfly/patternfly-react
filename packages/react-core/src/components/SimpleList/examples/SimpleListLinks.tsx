@@ -1,4 +1,4 @@
-import { SimpleList, SimpleListItem } from '@patternfly/react-core';
+import { SimpleList, SimpleListItem } from '@rh-felt/react-core';
 
 export const SimpleListLinks: React.FunctionComponent = () => {
   const items = [

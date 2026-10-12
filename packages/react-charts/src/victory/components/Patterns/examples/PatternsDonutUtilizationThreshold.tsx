@@ -1,4 +1,4 @@
-import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts/victory';
+import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor } from '@rh-felt/react-charts/victory';
 
 interface Data {
   x?: string;

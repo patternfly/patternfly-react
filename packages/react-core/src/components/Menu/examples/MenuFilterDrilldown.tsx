@@ -9,7 +9,7 @@ import {
   MenuSearch,
   MenuSearchInput,
   SearchInput
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const MenuWithDrilldown: React.FunctionComponent = () => {
   const [menuDrilledIn, setMenuDrilledIn] = useState<string[]>([]);

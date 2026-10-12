@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
+import styles from '@rh-felt/react-styles/css/components/DualListSelector/dual-list-selector';
 import { DualListSelector } from '../DualListSelector';
 import { DualListSelectorPane } from '../DualListSelectorPane';
 import { SearchInput } from '../../SearchInput';

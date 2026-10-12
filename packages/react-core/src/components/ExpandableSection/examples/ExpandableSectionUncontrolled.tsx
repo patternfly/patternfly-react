@@ -1,4 +1,4 @@
-import { ExpandableSection } from '@patternfly/react-core';
+import { ExpandableSection } from '@rh-felt/react-core';
 
 export const ExpandableSectionUncontrolled: React.FunctionComponent = () => (
   <ExpandableSection toggleText="Show more uncontrolled example content">

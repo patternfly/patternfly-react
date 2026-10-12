@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/DualListSelector/dual-list-selector';
+import { css } from '@rh-felt/react-styles';
 import { useSSRSafeId, useOUIAProps, OUIAProps, useHasAnimations } from '../../helpers';
 import { DualListSelectorContext } from './DualListSelectorContext';
 

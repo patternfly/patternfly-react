@@ -1,9 +1,9 @@
 import { Component } from 'react';
-import { Menu, MenuContent, MenuList, MenuItem, Divider, DrilldownMenu } from '@patternfly/react-core';
-import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
-import RhUiStorageDomainFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-storage-domain-fill-icon';
-import RhUiServerStackFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-server-stack-fill-icon';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import { Menu, MenuContent, MenuList, MenuItem, Divider, DrilldownMenu } from '@rh-felt/react-core';
+import RhUiBranchFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
+import RhUiStorageDomainFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-storage-domain-fill-icon';
+import RhUiServerStackFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-server-stack-fill-icon';
+import CubeIcon from '@rh-felt/react-icons/dist/esm/icons/cube-icon';
 
 /* eslint-disable no-console */
 export class MenuDrilldownDemo extends Component {

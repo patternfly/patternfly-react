@@ -1,7 +1,7 @@
-import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import { Bullseye, EmptyState, EmptyStateVariant, EmptyStateBody, PageSection } from '@patternfly/react-core';
-import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
-import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
+import { Table, Thead, Tr, Th, Tbody, Td } from '@rh-felt/react-table';
+import { Bullseye, EmptyState, EmptyStateVariant, EmptyStateBody, PageSection } from '@rh-felt/react-core';
+import RhUiErrorFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
+import { DashboardWrapper } from '@rh-felt/react-table/dist/esm/demos/DashboardWrapper';
 
 export const TableEmptyStateError: React.FunctionComponent = () => (
   <DashboardWrapper hasPageTemplateTitle>

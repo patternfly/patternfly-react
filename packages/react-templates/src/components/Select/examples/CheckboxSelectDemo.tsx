@@ -1,5 +1,5 @@
 import { useMemo, useState, FunctionComponent } from 'react';
-import { CheckboxSelect, CheckboxSelectOption } from '@patternfly/react-templates';
+import { CheckboxSelect, CheckboxSelectOption } from '@rh-felt/react-templates';
 
 const Options: { content: string; value: string; description?: string; isDisabled?: boolean }[] = [
   { content: 'Option 1', value: 'option-1' },

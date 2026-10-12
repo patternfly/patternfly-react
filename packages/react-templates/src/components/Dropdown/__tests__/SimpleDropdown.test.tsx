@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { SimpleDropdown } from '../SimpleDropdown';
-import styles from '@patternfly/react-styles/css/components/MenuToggle/menu-toggle';
+import styles from '@rh-felt/react-styles/css/components/MenuToggle/menu-toggle';
 
 describe('Dropdown toggle', () => {
   test('Renders dropdown toggle as not disabled when isDisabled is not true', () => {

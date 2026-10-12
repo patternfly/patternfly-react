@@ -1,4 +1,4 @@
-import { Radio, RadioProps } from '@patternfly/react-core';
+import { Radio, RadioProps } from '@rh-felt/react-core';
 import { Component } from 'react';
 export class RadioDemo extends Component {
   state = {

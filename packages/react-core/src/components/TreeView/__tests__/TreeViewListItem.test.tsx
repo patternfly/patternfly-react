@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { TreeViewListItem } from '../TreeViewListItem';
 import { TreeView } from '../TreeView';
 import userEvent from '@testing-library/user-event';
-import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
+import styles from '@rh-felt/react-styles/css/components/TreeView/tree-view';
 
 const requiredProps = {
   name: 'Item name',

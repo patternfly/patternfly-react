@@ -1,5 +1,5 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Table/table';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Table/table';
 import { CollapseColumn } from '../../CollapseColumn';
 import { ExpandableRowContent } from '../../ExpandableRowContent';
 import { IExtra, IFormatterValueType, IFormatter, decoratorReturnType } from '../../TableTypes';

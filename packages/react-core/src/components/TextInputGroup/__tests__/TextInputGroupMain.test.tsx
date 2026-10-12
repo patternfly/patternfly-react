@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
-import styles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
+import styles from '@rh-felt/react-styles/css/components/TextInputGroup/text-input-group';
 
 import { TextInputGroupMain } from '../TextInputGroupMain';
 import { TextInputGroupContext } from '../TextInputGroup';
-import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
+import RhMicronsSearchIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-search-icon';
 
 describe('TextInputGroupMain', () => {
   it('renders without children', () => {

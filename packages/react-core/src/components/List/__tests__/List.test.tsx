@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { List, ListVariant, ListComponent, OrderType } from '../List';
-import styles from '@patternfly/react-styles/css/components/List/list';
+import styles from '@rh-felt/react-styles/css/components/List/list';
 
 describe('Shared tests between ol and ul lists', () => {
   Object.values(ListComponent).forEach((component) => {

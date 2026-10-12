@@ -1,4 +1,4 @@
-import { Truncate } from '@patternfly/react-core';
+import { Truncate } from '@rh-felt/react-core';
 
 export const TruncateStart: React.FunctionComponent = () => (
   <div className="truncate-example-resize">

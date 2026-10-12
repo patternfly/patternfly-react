@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { Title } from '../Title';
-import styles from '@patternfly/react-styles/css/components/Title/title';
+import styles from '@rh-felt/react-styles/css/components/Title/title';
 
 test('Renders without children', () => {
   render(

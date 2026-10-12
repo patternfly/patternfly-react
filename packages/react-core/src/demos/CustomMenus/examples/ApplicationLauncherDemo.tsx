@@ -10,9 +10,9 @@ import {
   DropdownGroup,
   DropdownList,
   DropdownItem
-} from '@patternfly/react-core';
-import RhUiThumbnailViewSmallFillIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-thumbnail-view-small-fill-icon';
-import brandImg from '@patternfly/react-core/src/demos/assets/PF-IconLogo.svg';
+} from '@rh-felt/react-core';
+import RhUiThumbnailViewSmallFillIcon from '@rh-felt/react-icons/dist/js/icons/rh-ui-thumbnail-view-small-fill-icon';
+import brandImg from '@rh-felt/react-core/src/demos/assets/PF-IconLogo.svg';
 
 const MockLink: React.FunctionComponent = ({ to, ...props }: any) => <a href={to} {...props}></a>;
 

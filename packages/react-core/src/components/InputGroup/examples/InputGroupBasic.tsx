@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
-import AtIcon from '@patternfly/react-icons/dist/esm/icons/at-icon';
-import { InputGroup, InputGroupText, InputGroupItem, TextInput, ValidatedOptions } from '@patternfly/react-core';
+import AtIcon from '@rh-felt/react-icons/dist/esm/icons/at-icon';
+import { InputGroup, InputGroupText, InputGroupItem, TextInput, ValidatedOptions } from '@rh-felt/react-core';
 
 export const InputGroupBasic: React.FunctionComponent = () => (
   <Fragment>

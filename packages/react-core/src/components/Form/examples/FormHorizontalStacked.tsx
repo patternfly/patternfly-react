@@ -1,4 +1,4 @@
-import { Form, FormGroup, Checkbox } from '@patternfly/react-core';
+import { Form, FormGroup, Checkbox } from '@rh-felt/react-core';
 
 export const FormHorizontalStacked: React.FunctionComponent = () => (
   <Form isHorizontal>

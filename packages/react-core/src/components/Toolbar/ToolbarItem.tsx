@@ -1,9 +1,9 @@
-import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Toolbar/toolbar';
+import { css } from '@rh-felt/react-styles';
 import { formatBreakpointMods, setBreakpointCssVars, toCamel } from '../../helpers/util';
 import { Divider } from '../Divider';
 import { PageContext } from '../Page/PageContext';
-import cssToolbarItemWidth from '@patternfly/react-tokens/dist/esm/c_toolbar__item_Width';
+import cssToolbarItemWidth from '@rh-felt/react-tokens/dist/esm/c_toolbar__item_Width';
 
 export enum ToolbarItemVariant {
   separator = 'separator',

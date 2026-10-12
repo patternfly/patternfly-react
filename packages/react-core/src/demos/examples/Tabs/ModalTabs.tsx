@@ -1,5 +1,5 @@
 import { Fragment, useCallback, useState } from 'react';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+import { DashboardWrapper } from '@rh-felt/react-core/dist/js/demos/DashboardWrapper';
 import {
   PageSection,
   Content,
@@ -19,7 +19,7 @@ import {
   Grid,
   GridItem,
   TabContent
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 interface Product {
   id: string;

@@ -10,8 +10,8 @@ import {
   LoginPage,
   ListItem,
   ListVariant
-} from '@patternfly/react-core';
-import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
+} from '@rh-felt/react-core';
+import RhUiErrorFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
 
 export interface LoginPageDemoState {
   showHelperText: boolean;

@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
+import { css } from '@rh-felt/react-styles';
 import { Progress } from '../Progress';
 import { Button } from '../Button';
-import RhUiDocumentFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-document-fill-icon';
-import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+import RhUiDocumentFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-document-fill-icon';
+import RhMicronsCloseIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 /** Automatically reads an uploaded file to render a visual representation of it, including
  * its name, size, and read status. This sub-component also allows custom reading of files

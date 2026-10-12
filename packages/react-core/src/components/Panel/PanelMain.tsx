@@ -1,6 +1,6 @@
-import styles from '@patternfly/react-styles/css/components/Panel/panel';
-import { css } from '@patternfly/react-styles';
-import cssMaxHeight from '@patternfly/react-tokens/dist/esm/c_panel__main_MaxHeight';
+import styles from '@rh-felt/react-styles/css/components/Panel/panel';
+import { css } from '@rh-felt/react-styles';
+import cssMaxHeight from '@rh-felt/react-tokens/dist/esm/c_panel__main_MaxHeight';
 
 export interface PanelMainProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the panel main div */

@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/List/list';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/List/list';
+import { css } from '@rh-felt/react-styles';
 
 export enum OrderType {
   number = '1',

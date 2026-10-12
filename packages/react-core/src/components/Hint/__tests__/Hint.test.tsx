@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { Hint } from '../Hint';
-import styles from '@patternfly/react-styles/css/components/Hint/hint';
+import styles from '@rh-felt/react-styles/css/components/Hint/hint';
 
 test('renders without children', () => {
   render(<Hint data-testid="Hint" />);

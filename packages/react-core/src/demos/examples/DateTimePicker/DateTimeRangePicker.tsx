@@ -8,7 +8,7 @@ import {
   isValidDate,
   TimePicker,
   yyyyMMddFormat
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const DateTimeRangePicker: React.FunctionComponent = () => {
   const [from, setFrom] = useState<Date | undefined>(undefined);

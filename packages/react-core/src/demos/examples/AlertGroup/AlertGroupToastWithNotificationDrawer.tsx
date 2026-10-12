@@ -26,11 +26,11 @@ import {
   DropdownItem,
   MenuToggle,
   MenuToggleElement
-} from '@patternfly/react-core';
-import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
-import RhMicronsSearchIcon from '@patternfly/react-icons/dist/js/icons/rh-microns-search-icon';
-import { DashboardHeader } from '@patternfly/react-core/dist/js/demos/DashboardHeader';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+} from '@rh-felt/react-core';
+import RhUiEllipsisVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhMicronsSearchIcon from '@rh-felt/react-icons/dist/js/icons/rh-microns-search-icon';
+import { DashboardHeader } from '@rh-felt/react-core/dist/js/demos/DashboardHeader';
+import { DashboardWrapper } from '@rh-felt/react-core/dist/js/demos/DashboardWrapper';
 
 interface NotificationProps {
   title: string;

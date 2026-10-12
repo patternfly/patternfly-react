@@ -4,9 +4,9 @@ section: patterns
 ---
 
 import { Fragment, useState } from 'react';
-import RhUiTrashFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-trash-fill-icon';
-import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
-import pfIcon from '@patternfly/react-core/src/demos/assets/PF-IconLogo.svg';
+import RhUiTrashFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-trash-fill-icon';
+import RhUiAddCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
+import pfIcon from '@rh-felt/react-core/src/demos/assets/PF-IconLogo.svg';
 import activeMQIcon from '../assets/activemq-core_200x150.png';
 import avroIcon from '../assets/camel-avro_200x150.png';
 import dropBoxIcon from '../assets/camel-dropbox_200x150.png';
@@ -16,10 +16,10 @@ import sparkIcon from '../assets/camel-spark_200x150.png';
 import swaggerIcon from '../assets/camel-swagger-java_200x150.png';
 import azureIcon from '../assets/FuseConnector_Icons_AzureServices.png';
 import restIcon from '../assets/FuseConnector_Icons_REST.png';
-import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
-import { data } from '@patternfly/react-core/src/demos/CardView/examples/CardViewData.jsx';
+import RhUiEllipsisVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import { data } from '@rh-felt/react-core/src/demos/CardView/examples/CardViewData.jsx';
 
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+import { DashboardWrapper } from '@rh-felt/react-core/dist/js/demos/DashboardWrapper';
 
 ## Demos
 

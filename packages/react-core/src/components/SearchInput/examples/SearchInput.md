@@ -6,7 +6,7 @@ propComponents: ['SearchInput', 'SearchInputSearchAttribute', 'SearchInputExpand
 ---
 
 import { useRef, useState } from 'react';
-import RhUiExternalLinkFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-external-link-fill-icon';
+import RhUiExternalLinkFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-external-link-fill-icon';
 
 ## Examples
 

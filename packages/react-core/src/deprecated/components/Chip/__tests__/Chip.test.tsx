@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Chip } from '../Chip';
-import styles from '@patternfly/react-styles/css/components/Label/label';
+import styles from '@rh-felt/react-styles/css/components/Label/label';
 
 jest.mock('../../../../components/Tooltip', () => ({
   Tooltip: ({ content, position }) => (

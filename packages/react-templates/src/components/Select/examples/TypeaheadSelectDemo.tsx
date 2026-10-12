@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState, FunctionComponent } from 'react';
-import { TypeaheadSelect, TypeaheadSelectOption } from '@patternfly/react-templates';
-import { Checkbox } from '@patternfly/react-core';
+import { TypeaheadSelect, TypeaheadSelectOption } from '@rh-felt/react-templates';
+import { Checkbox } from '@rh-felt/react-core';
 
 const Options = [
   { content: 'Alabama', value: 'option1' },

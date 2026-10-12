@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { CardSubtitle } from '../CardSubtitle';
-import styles from '@patternfly/react-styles/css/components/Card/card';
+import styles from '@rh-felt/react-styles/css/components/Card/card';
 
 test('Renders without children', () => {
   render(

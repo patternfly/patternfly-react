@@ -1,4 +1,4 @@
-import { Split, SplitItem } from '@patternfly/react-core';
+import { Split, SplitItem } from '@rh-felt/react-core';
 
 export const SplitBasic: React.FunctionComponent = () => (
   <Split>

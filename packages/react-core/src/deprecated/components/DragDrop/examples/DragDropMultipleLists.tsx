@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Flex } from '@patternfly/react-core';
-import { DragDrop, Draggable, Droppable } from '@patternfly/react-core/deprecated';
+import { Flex } from '@rh-felt/react-core';
+import { DragDrop, Draggable, Droppable } from '@rh-felt/react-core/deprecated';
 
 interface ItemType {
   id: string;

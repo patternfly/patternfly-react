@@ -1,4 +1,4 @@
-import { Checkbox } from '@patternfly/react-core';
+import { Checkbox } from '@rh-felt/react-core';
 
 export const CheckboxWithDescriptionBody: React.FunctionComponent = () => (
   <Checkbox

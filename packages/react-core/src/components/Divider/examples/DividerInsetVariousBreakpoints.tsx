@@ -1,4 +1,4 @@
-import { Divider } from '@patternfly/react-core';
+import { Divider } from '@rh-felt/react-core';
 
 export const DividerInsetVariousBreakpoints: React.FunctionComponent = () => (
   <Divider

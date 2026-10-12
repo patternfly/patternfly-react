@@ -7,8 +7,8 @@ import {
   DataListItemCells,
   Grid,
   GridItem
-} from '@patternfly/react-core';
-import { DragDropContainer, DraggableObject, Droppable as NewDroppable } from '@patternfly/react-drag-drop';
+} from '@rh-felt/react-core';
+import { DragDropContainer, DraggableObject, Droppable as NewDroppable } from '@rh-felt/react-drag-drop';
 
 const getItems = (from: number, count: number): DraggableObject[] =>
   Array.from({ length: count }, (_, idx) => from + idx).map((idx) => ({

@@ -1,4 +1,4 @@
-import { Button, Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
+import { Button, Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem } from '@rh-felt/react-core';
 
 export const ToolbarContainerQuery: React.FunctionComponent = () => (
   <div className="toolbar-container-query-resize">

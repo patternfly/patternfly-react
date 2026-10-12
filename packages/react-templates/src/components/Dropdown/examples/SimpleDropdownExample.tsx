@@ -1,7 +1,7 @@
 import { Fragment, useState, FunctionComponent } from 'react';
-import { Checkbox, Flex, FlexItem } from '@patternfly/react-core';
-import { SimpleDropdown, SimpleDropdownItem } from '@patternfly/react-templates';
-import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import { Checkbox, Flex, FlexItem } from '@rh-felt/react-core';
+import { SimpleDropdown, SimpleDropdownItem } from '@rh-felt/react-templates';
+import RhUiEllipsisVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export const SimpleDropdownExample: FunctionComponent = () => {
   const [isDisabled, setIsDisabled] = useState(false);

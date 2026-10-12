@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Spinner } from '@patternfly/react-core';
+import { Spinner } from '@rh-felt/react-core';
 
 export const SpinnerSizeVariations: React.FunctionComponent = () => (
   <Fragment>

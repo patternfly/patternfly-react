@@ -1,6 +1,6 @@
 import { IExtra, IFormatterValueType, ITransform, IRowCell, OnRowEdit, RowErrors, RowEditType } from '../../TableTypes';
 import { EditColumn } from '../../EditColumn';
-import tableStyles from '@patternfly/react-styles/css/components/Table/table';
+import tableStyles from '@rh-felt/react-styles/css/components/Table/table';
 
 export const editable: ITransform = (label: IFormatterValueType, { rowIndex, rowData, column }: IExtra) => {
   const {

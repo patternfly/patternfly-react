@@ -6,11 +6,11 @@ propComponents: ['HelperText', 'HelperTextItem']
 ---
 
 import { Fragment } from 'react';
-import InfoIcon from '@patternfly/react-icons/dist/esm/icons/info-icon';
-import RhUiQuestionMarkIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-icon';
-import RhMicronsCheckmarkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-checkmark-icon';
-import RhMicronsCloseIcon from  '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
-import ExclamationIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-icon';
+import InfoIcon from '@rh-felt/react-icons/dist/esm/icons/info-icon';
+import RhUiQuestionMarkIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-question-mark-icon';
+import RhMicronsCheckmarkIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-checkmark-icon';
+import RhMicronsCloseIcon from  '@rh-felt/react-icons/dist/esm/icons/rh-microns-close-icon';
+import ExclamationIcon from '@rh-felt/react-icons/dist/esm/icons/exclamation-icon';
 
 ## Examples
 

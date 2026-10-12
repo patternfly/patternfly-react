@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { DataList, DataListCell, DataListCheck, DataListControl, DataListItemCells } from '@patternfly/react-core';
-import { DragDropSort, DraggableObject } from '@patternfly/react-drag-drop';
+import { DataList, DataListCell, DataListCheck, DataListControl, DataListItemCells } from '@rh-felt/react-core';
+import { DragDropSort, DraggableObject } from '@rh-felt/react-drag-drop';
 
 const getItems = (count: number): DraggableObject[] =>
   Array.from({ length: count }, (_, idx) => idx).map((idx) => ({

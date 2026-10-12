@@ -17,8 +17,8 @@ import {
   SidebarContent,
   SidebarPanel,
   DrawerContext
-} from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+} from '@rh-felt/react-core';
+import { DashboardWrapper } from '@rh-felt/react-core/dist/js/demos/DashboardWrapper';
 
 const JumpLinksWrapper = ({ headings }) => {
   const { drawerContentRef } = useContext(DrawerContext);

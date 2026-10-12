@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { DrawerColorVariant } from '../Drawer';
 import { DrawerSection } from '../DrawerSection';
-import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
+import styles from '@rh-felt/react-styles/css/components/Drawer/drawer';
 
 test(`Renders with only class ${styles.drawerSection} by default`, () => {
   render(<DrawerSection>Section content</DrawerSection>);

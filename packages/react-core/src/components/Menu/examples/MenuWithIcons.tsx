@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
-import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
-import RhUiServerStackFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-server-stack-fill-icon';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import { Menu, MenuContent, MenuList, MenuItem } from '@rh-felt/react-core';
+import RhUiBranchFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
+import RhUiServerStackFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-server-stack-fill-icon';
+import CubeIcon from '@rh-felt/react-icons/dist/esm/icons/cube-icon';
 
 export const MenuWithIcons: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState(0);

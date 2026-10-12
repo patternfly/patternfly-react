@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
+import { css } from '@rh-felt/react-styles';
 import { MultipleFileUploadContext } from './MultipleFileUpload';
 import { Button } from '../Button';
 

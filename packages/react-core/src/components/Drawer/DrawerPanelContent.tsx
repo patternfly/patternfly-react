@@ -1,13 +1,13 @@
 import { Fragment, useCallback, useContext, useEffect, useRef, useState } from 'react';
-import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Drawer/drawer';
+import { css } from '@rh-felt/react-styles';
 import { DrawerColorVariant, DrawerContext } from './Drawer';
 import { formatBreakpointMods, getLanguageDirection } from '../../helpers/util';
 import { useSSRSafeId } from '../../helpers';
 import { FocusTrap } from '../../helpers/FocusTrap/FocusTrap';
-import cssPanelMdFlexBasis from '@patternfly/react-tokens/dist/esm/c_drawer__panel_md_FlexBasis';
-import cssPanelMdFlexBasisMin from '@patternfly/react-tokens/dist/esm/c_drawer__panel_md_FlexBasis_min';
-import cssPanelMdFlexBasisMax from '@patternfly/react-tokens/dist/esm/c_drawer__panel_md_FlexBasis_max';
+import cssPanelMdFlexBasis from '@rh-felt/react-tokens/dist/esm/c_drawer__panel_md_FlexBasis';
+import cssPanelMdFlexBasisMin from '@rh-felt/react-tokens/dist/esm/c_drawer__panel_md_FlexBasis_min';
+import cssPanelMdFlexBasisMax from '@rh-felt/react-tokens/dist/esm/c_drawer__panel_md_FlexBasis_max';
 import { IS_INERT } from '../../helpers/inert';
 
 export interface DrawerPanelFocusTrapObject {

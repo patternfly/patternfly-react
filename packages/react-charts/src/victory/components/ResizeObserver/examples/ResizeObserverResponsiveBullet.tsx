@@ -1,5 +1,5 @@
-import { ChartBullet } from '@patternfly/react-charts/victory';
-import { getResizeObserver } from '@patternfly/react-core';
+import { ChartBullet } from '@rh-felt/react-charts/victory';
+import { getResizeObserver } from '@rh-felt/react-core';
 import { useEffect, useRef, useState } from 'react';
 
 interface Data {

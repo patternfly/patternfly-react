@@ -1,4 +1,4 @@
-import { css } from '@patternfly/react-styles';
+import { css } from '@rh-felt/react-styles';
 import { MenuGroupProps, MenuGroup } from '../Menu';
 
 /**

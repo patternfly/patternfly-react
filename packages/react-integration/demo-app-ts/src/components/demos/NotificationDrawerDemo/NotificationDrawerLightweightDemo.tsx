@@ -16,8 +16,8 @@ import {
   NotificationDrawerListItemHeader,
   EmptyStateActions,
   EmptyStateFooter
-} from '@patternfly/react-core';
-import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
+} from '@rh-felt/react-core';
+import RhMicronsSearchIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-search-icon';
 
 interface GroupsNotificationDrawerDemoState {
   firstGroupIsOpen: boolean;

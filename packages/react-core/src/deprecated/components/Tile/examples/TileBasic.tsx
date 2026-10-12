@@ -1,4 +1,4 @@
-import { Tile } from '@patternfly/react-core/deprecated';
+import { Tile } from '@rh-felt/react-core/deprecated';
 
 export const TileBasic: React.FunctionComponent = () => (
   <div role="listbox" aria-label="Basic tiles">

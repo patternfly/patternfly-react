@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { TextInput } from '@patternfly/react-core';
-import RhUiCalendarFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-calendar-fill-icon';
-import RhUiClockFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clock-fill-icon';
+import { TextInput } from '@rh-felt/react-core';
+import RhUiCalendarFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-calendar-fill-icon';
+import RhUiClockFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-clock-fill-icon';
 
 export const TextInputCustomIcon: React.FunctionComponent = () => {
   const [calendar, setCalendar] = useState('');

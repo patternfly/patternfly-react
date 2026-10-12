@@ -1,4 +1,4 @@
-import { ChartPie } from '@patternfly/react-charts/victory';
+import { ChartPie } from '@rh-felt/react-charts/victory';
 
 interface PetData {
   x?: string;

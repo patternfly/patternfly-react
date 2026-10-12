@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { FileUpload, DropEvent } from '@patternfly/react-core';
+import { FileUpload, DropEvent } from '@rh-felt/react-core';
 
 export class FileUploadDemo extends Component {
   static displayName = 'FileUploadDemo';

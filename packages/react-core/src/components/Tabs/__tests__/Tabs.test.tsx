@@ -1,7 +1,7 @@
 import { render, screen, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Tabs, TabsProps } from '../Tabs';
-import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
+import styles from '@rh-felt/react-styles/css/components/Tabs/tabs';
 import { Tab } from '../Tab';
 import { TabTitleText } from '../TabTitleText';
 import { TabTitleIcon } from '../TabTitleIcon';

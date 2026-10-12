@@ -4,11 +4,11 @@ import '@testing-library/jest-dom';
 
 import { AlertToggleExpandButton } from '../AlertToggleExpandButton';
 import { AlertContext } from '../AlertContext';
-import styles from '@patternfly/react-styles/css/components/Alert/alert';
+import styles from '@rh-felt/react-styles/css/components/Alert/alert';
 
 jest.mock('../../Button');
 
-jest.mock('@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon', () => () => 'Icon mock');
+jest.mock('@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-down-icon', () => () => 'Icon mock');
 
 test('Renders without children', () => {
   render(

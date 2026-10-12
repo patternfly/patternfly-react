@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { ClipboardCopy, ClipboardCopyAction, Button, Tooltip } from '@patternfly/react-core';
-import RhUiPlayFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
+import { ClipboardCopy, ClipboardCopyAction, Button, Tooltip } from '@rh-felt/react-core';
+import RhUiPlayFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
 
 export const ClipboardCopyInlineCompactWithAdditionalAction: React.FunctionComponent = () => {
   const [isRunning, setisRunning] = useState(false);

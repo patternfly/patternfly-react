@@ -1,4 +1,4 @@
-import { Chip } from '@patternfly/react-core/deprecated';
+import { Chip } from '@rh-felt/react-core/deprecated';
 
 export const ChipDemo: React.FunctionComponent = () => (
   <>

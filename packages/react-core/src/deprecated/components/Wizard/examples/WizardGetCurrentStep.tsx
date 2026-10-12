@@ -1,4 +1,4 @@
-import { Wizard as WizardDeprecated, WizardStep } from '@patternfly/react-core/deprecated';
+import { Wizard as WizardDeprecated, WizardStep } from '@rh-felt/react-core/deprecated';
 
 export const WizardGetCurrentStep: React.FunctionComponent = () => {
   const onCurrentStepChanged = ({ id }: WizardStep) => {

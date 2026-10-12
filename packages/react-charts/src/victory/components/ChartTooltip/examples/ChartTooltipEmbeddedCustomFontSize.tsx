@@ -9,7 +9,7 @@ import {
   ChartLegendTooltipLabel,
   ChartThemeColor,
   createContainer
-} from '@patternfly/react-charts/victory';
+} from '@rh-felt/react-charts/victory';
 
 interface PetData {
   childName?: string;

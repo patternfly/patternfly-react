@@ -8,8 +8,8 @@ import {
   InputGroup,
   InputGroupItem,
   useInterval
-} from '@patternfly/react-core';
-import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
+} from '@rh-felt/react-core';
+import buttonStyles from '@rh-felt/react-styles/css/components/Button/button';
 
 export const AlertGroupAsync: React.FunctionComponent = () => {
   const [alerts, setAlerts] = useState<Partial<AlertProps>[]>([]);

@@ -9,10 +9,10 @@ import {
   GalleryItem,
   PageSection,
   Content
-} from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
-import { css } from '@patternfly/react-styles';
-import display from '@patternfly/react-styles/css/utilities/Display/display';
+} from '@rh-felt/react-core';
+import { DashboardWrapper } from '@rh-felt/react-core/dist/js/demos/DashboardWrapper';
+import { css } from '@rh-felt/react-styles';
+import display from '@rh-felt/react-styles/css/utilities/Display/display';
 
 export const BannerTopBottom: React.FunctionComponent = () => (
   <Fragment>

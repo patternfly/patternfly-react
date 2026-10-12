@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { Toolbar, ToolbarItem, ToolbarContent, SearchInput, Checkbox } from '@patternfly/react-core';
+import { Toolbar, ToolbarItem, ToolbarContent, SearchInput, Checkbox } from '@rh-felt/react-core';
 
 export const ToolbarSticky = () => {
   const [isSticky, setIsSticky] = useState(true);

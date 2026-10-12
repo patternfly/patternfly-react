@@ -1,4 +1,4 @@
-import { Wizard, WizardStep } from '@patternfly/react-core';
+import { Wizard, WizardStep } from '@rh-felt/react-core';
 
 export const WizardStepVisitRequired: React.FunctionComponent = () => (
   <Wizard height={400} title="Incrementally enabled steps wizard" isVisitRequired>

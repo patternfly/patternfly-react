@@ -2,8 +2,8 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { ModalBoxTitle } from '../ModalBoxTitle';
-import RhUiAttentionBellFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
-import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
+import RhUiAttentionBellFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
+import styles from '@rh-felt/react-styles/css/components/ModalBox/modal-box';
 
 test('ModalBoxTitle alert variant', () => {
   const { asFragment } = render(<ModalBoxTitle title="Test Modal Box warning" id="boxId" titleIconVariant="warning" />);

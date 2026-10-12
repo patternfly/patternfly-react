@@ -1,4 +1,4 @@
-import { Sidebar, SidebarContent, SidebarPanel } from '@patternfly/react-core';
+import { Sidebar, SidebarContent, SidebarPanel } from '@rh-felt/react-core';
 
 export const SidebarBorder: React.FunctionComponent = () => (
   <Sidebar hasBorder hasGutter>

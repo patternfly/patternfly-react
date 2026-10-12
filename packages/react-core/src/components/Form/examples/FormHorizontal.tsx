@@ -15,7 +15,7 @@ import {
   HelperText,
   HelperTextItem,
   FormHelperText
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const FormHorizontal: React.FunctionComponent = () => {
   const [name, setName] = useState('');

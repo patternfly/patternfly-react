@@ -1,4 +1,4 @@
-import { Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
+import { Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem } from '@rh-felt/react-core';
 
 export const ToolbarVertical: React.FunctionComponent = () => (
   <Toolbar id="toolbar-vertical" isVertical>

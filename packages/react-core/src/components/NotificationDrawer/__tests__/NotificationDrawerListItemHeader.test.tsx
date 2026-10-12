@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
+import RhUiNotificationFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 import { NotificationDrawerListItemHeader } from '../NotificationDrawerListItemHeader';
-import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
+import styles from '@rh-felt/react-styles/css/components/NotificationDrawer/notification-drawer';
 
 describe('NotificationDrawerListItemHeader', () => {
   test('renders with PatternFly Core styles', () => {

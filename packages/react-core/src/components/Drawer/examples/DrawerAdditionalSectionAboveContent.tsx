@@ -9,7 +9,7 @@ import {
   DrawerCloseButton,
   DrawerSection,
   Button
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const DrawerAdditionalSectionAboveContent: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = useState(false);

@@ -11,9 +11,9 @@ import {
   DropdownList,
   MenuToggle,
   MenuToggleElement
-} from '@patternfly/react-core';
-import RhUiCalendarIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-calendar-icon';
-import RhUiClockIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clock-icon';
+} from '@rh-felt/react-core';
+import RhUiCalendarIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-calendar-icon';
+import RhUiClockIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-clock-icon';
 
 export const DateTimePicker: React.FunctionComponent = () => {
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);

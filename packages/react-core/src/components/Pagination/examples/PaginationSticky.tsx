@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { Pagination, PaginationVariant, Gallery, GalleryItem, Card, CardBody } from '@patternfly/react-core';
+import { Pagination, PaginationVariant, Gallery, GalleryItem, Card, CardBody } from '@rh-felt/react-core';
 
 export const PaginationSticky: React.FunctionComponent = () => {
   const [page, setPage] = useState(1);

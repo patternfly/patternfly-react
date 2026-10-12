@@ -19,11 +19,11 @@ import {
   LabelGroup,
   Flex,
   FlexItem
-} from '@patternfly/react-core';
-import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-check-circle-fill-icon';
-import RhUiInformationFillIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-information-fill-icon';
-import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+} from '@rh-felt/react-core';
+import RhUiCheckCircleFillIcon from '@rh-felt/react-icons/dist/js/icons/rh-ui-check-circle-fill-icon';
+import RhUiInformationFillIcon from '@rh-felt/react-icons/dist/js/icons/rh-ui-information-fill-icon';
+import spacing from '@rh-felt/react-styles/css/utilities/Spacing/spacing';
+import { DashboardWrapper } from '@rh-felt/react-core/dist/js/demos/DashboardWrapper';
 
 export const TabsOpenWithSecondaryTabs: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = useState<number>(0);

@@ -6,8 +6,8 @@ import {
   DrawerHead,
   DrawerPanelContent,
   DrawerColorVariant
-} from '@patternfly/react-core';
-import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
+} from '@rh-felt/react-core';
+import { Wizard as WizardDeprecated } from '@rh-felt/react-core/deprecated';
 
 export const WizardWithDrawer: React.FunctionComponent = () => {
   const [isDrawerExpanded, setIsDrawerExpanded] = useState(false);

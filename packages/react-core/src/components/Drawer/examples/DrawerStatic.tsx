@@ -8,8 +8,8 @@ import {
   DrawerActions,
   DrawerCloseButton,
   Button
-} from '@patternfly/react-core';
-import accessibility from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
+} from '@rh-felt/react-core';
+import accessibility from '@rh-felt/react-styles/css/utilities/Accessibility/accessibility';
 
 export const DrawerStatic: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = useState(false);

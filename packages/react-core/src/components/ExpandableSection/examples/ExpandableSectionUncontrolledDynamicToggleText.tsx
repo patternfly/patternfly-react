@@ -1,4 +1,4 @@
-import { ExpandableSection } from '@patternfly/react-core';
+import { ExpandableSection } from '@rh-felt/react-core';
 
 export const ExpandableSectionUncontrolledDynamicToggle: React.FunctionComponent = () => (
   <ExpandableSection

@@ -1,11 +1,11 @@
 import { MenuToggle } from '../MenuToggle';
 import { MenuToggleCheckbox } from '../MenuToggleCheckbox';
 import { Badge } from '../../Badge';
-import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
-import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhUiSettingsFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
+import RhUiEllipsisVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
-import styles from '@patternfly/react-styles/css/components/MenuToggle/menu-toggle';
+import styles from '@rh-felt/react-styles/css/components/MenuToggle/menu-toggle';
 import '@testing-library/jest-dom';
 
 describe('Old Snapshot tests - remove when refactoring', () => {

@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { MenuToggle, HelperText, HelperTextItem } from '@patternfly/react-core';
+import { MenuToggle, HelperText, HelperTextItem } from '@rh-felt/react-core';
 
 export const MenuToggleStatus: React.FunctionComponent = () => (
   <Fragment>

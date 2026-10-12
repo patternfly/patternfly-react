@@ -21,10 +21,10 @@ import {
   ToolbarToggleGroup,
   MenuGroup,
   EmptyStateActions
-} from '@patternfly/react-core';
-import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
-import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
+} from '@rh-felt/react-core';
+import { Table, Thead, Tr, Th, Tbody, Td } from '@rh-felt/react-table';
+import RhMicronsSearchIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-search-icon';
+import RhUiFilterFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
 
 interface Repository {
   name: string;

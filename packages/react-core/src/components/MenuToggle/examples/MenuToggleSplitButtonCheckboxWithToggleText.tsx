@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { MenuToggleCheckbox, MenuToggle } from '@patternfly/react-core';
+import { MenuToggleCheckbox, MenuToggle } from '@rh-felt/react-core';
 
 export const MenuToggleSplitButtonCheckboxWithToggleText: React.FunctionComponent = () => (
   <Fragment>

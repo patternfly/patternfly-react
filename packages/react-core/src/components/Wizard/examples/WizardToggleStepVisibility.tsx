@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from 'react';
-import { Checkbox, Wizard, WizardStep } from '@patternfly/react-core';
+import { Checkbox, Wizard, WizardStep } from '@rh-felt/react-core';
 
 interface SomeContextProps {
   isToggleStepChecked: boolean;

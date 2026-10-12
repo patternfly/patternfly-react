@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
-import wizardHeightToken from '@patternfly/react-tokens/dist/esm/c_wizard_Height';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Wizard/wizard';
+import wizardHeightToken from '@rh-felt/react-tokens/dist/esm/c_wizard_Height';
 
 import {
   isWizardParentStep,

@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
-import { Pagination } from '@patternfly/react-core';
-import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import { Pagination } from '@rh-felt/react-core';
+import { Table, Thead, Tr, Th, Tbody, Td } from '@rh-felt/react-table';
 
 export const TableAutomaticPagination: React.FunctionComponent = () => {
   const columns = {

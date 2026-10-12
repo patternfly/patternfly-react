@@ -1,4 +1,4 @@
-import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor } from '@patternfly/react-charts/victory';
+import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor } from '@rh-felt/react-charts/victory';
 import { VictoryZoomContainer } from 'victory-zoom-container';
 
 interface PetData {

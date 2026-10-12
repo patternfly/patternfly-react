@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { Button, Modal, ModalBody, ModalHeader, ModalFooter, ModalVariant } from '@patternfly/react-core';
+import { Button, Modal, ModalBody, ModalHeader, ModalFooter, ModalVariant } from '@rh-felt/react-core';
 
 export const ModalWithOverflowingContent: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

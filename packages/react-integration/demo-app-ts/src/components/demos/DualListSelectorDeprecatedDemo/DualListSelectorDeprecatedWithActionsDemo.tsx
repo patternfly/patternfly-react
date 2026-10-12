@@ -1,12 +1,12 @@
 import { Component } from 'react';
-import { Button, ButtonVariant, Dropdown, DropdownItem, DropdownList, MenuToggle } from '@patternfly/react-core';
+import { Button, ButtonVariant, Dropdown, DropdownItem, DropdownList, MenuToggle } from '@rh-felt/react-core';
 import {
   DualListSelector as DLSDeprecated,
   DualListSelectorProps as DLSPropsDeprecated
-} from '@patternfly/react-core/deprecated';
-import RhUiSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sort-down-large-to-small-icon';
-import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
-import RhMicronsSortDownSmallToLargeIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-small-to-large-icon';
+} from '@rh-felt/react-core/deprecated';
+import RhUiSortDownLargeToSmallIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-sort-down-large-to-small-icon';
+import RhUiEllipsisVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhMicronsSortDownSmallToLargeIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-sort-down-small-to-large-icon';
 
 interface DualListSelectorState {
   availableOptions: React.ReactNode[];

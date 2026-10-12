@@ -1,4 +1,4 @@
-import { Flex, FlexItem } from '@patternfly/react-core';
+import { Flex, FlexItem } from '@rh-felt/react-core';
 
 export const FlexStackingElements: React.FunctionComponent = () => (
   <Flex direction={{ default: 'column' }}>

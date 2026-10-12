@@ -18,9 +18,9 @@ import {
   Divider,
   MenuToggleElement,
   MastheadProps
-} from '@patternfly/react-core';
-import imgBrand from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
-import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+} from '@rh-felt/react-core';
+import imgBrand from '@rh-felt/react-core/src/demos/assets/pf-logo.svg';
+import RhUiEllipsisVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export class MastheadDemo extends Component<MastheadProps> {
   static displayName = 'MastheadDemo';

@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { Card, CardTitle, CardBody, CardFooter, Checkbox } from '@patternfly/react-core';
+import { Card, CardTitle, CardBody, CardFooter, Checkbox } from '@rh-felt/react-core';
 
 export const CardWithModifiers: React.FunctionComponent = () => {
   const mods = ['isCompact', 'isLarge', 'isFullHeight', 'isPlain'];

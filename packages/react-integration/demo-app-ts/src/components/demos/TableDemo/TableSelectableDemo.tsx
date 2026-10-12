@@ -1,9 +1,9 @@
 import { Component } from 'react';
-import { headerCol, ICell, IRow, RowSelectVariant } from '@patternfly/react-table';
-import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
-import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
+import { headerCol, ICell, IRow, RowSelectVariant } from '@rh-felt/react-table';
+import { Table, TableHeader, TableBody, TableProps } from '@rh-felt/react-table/deprecated';
+import spacing from '@rh-felt/react-styles/css/utilities/Spacing/spacing';
 
-import { Checkbox, Divider, Radio } from '@patternfly/react-core';
+import { Checkbox, Divider, Radio } from '@rh-felt/react-core';
 import '@patternfly/patternfly/utilities/Spacing/spacing.css';
 
 interface TableState {

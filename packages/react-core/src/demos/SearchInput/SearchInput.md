@@ -21,7 +21,7 @@ MenuToggle,
 Popper,
 SearchInput,
 TextInput
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 import { words } from './words.js';
 
 ## Demos

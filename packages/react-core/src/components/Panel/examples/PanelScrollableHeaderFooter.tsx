@@ -1,4 +1,4 @@
-import { Panel, PanelMain, PanelMainBody, PanelHeader, Divider, PanelFooter } from '@patternfly/react-core';
+import { Panel, PanelMain, PanelMainBody, PanelHeader, Divider, PanelFooter } from '@rh-felt/react-core';
 
 export const PanelScrollableHeaderFooter: React.FunctionComponent = () => (
   <Panel isScrollable>

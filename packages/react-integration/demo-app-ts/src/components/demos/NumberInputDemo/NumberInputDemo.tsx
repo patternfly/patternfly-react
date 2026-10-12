@@ -1,4 +1,4 @@
-import { NumberInput } from '@patternfly/react-core';
+import { NumberInput } from '@rh-felt/react-core';
 import { Component } from 'react';
 
 export interface NumberInputDemoState {

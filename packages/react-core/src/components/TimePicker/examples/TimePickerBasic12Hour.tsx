@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { TimePicker } from '@patternfly/react-core';
+import { TimePicker } from '@rh-felt/react-core';
 
 export const TimePickerBasic12Hour: React.FunctionComponent = () => {
   const onChange = (

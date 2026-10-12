@@ -1,11 +1,11 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Card/card';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Card/card';
 import { CardContext } from './Card';
 import { CardHeaderMain } from './CardHeaderMain';
 import { CardActions } from './CardActions';
 import { CardSelectableActions } from './CardSelectableActions';
 import { Button } from '../Button';
-import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
+import RhMicronsCaretDownIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import { Radio } from '../Radio';
 import { Checkbox } from '../Checkbox';
 import { useSSRSafeId } from '../../helpers';

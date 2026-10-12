@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { sortable, info, cellWidth, wrappable } from '@patternfly/react-table';
-import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
+import { sortable, info, cellWidth, wrappable } from '@rh-felt/react-table';
+import { Table, TableHeader, TableBody, TableProps } from '@rh-felt/react-table/deprecated';
 
 interface Repository {
   name: string;

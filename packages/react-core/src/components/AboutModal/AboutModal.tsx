@@ -1,5 +1,5 @@
-import { css } from '@patternfly/react-styles';
-import backgroundImage from '@patternfly/react-tokens/dist/esm/c_about_modal_box_BackgroundImage';
+import { css } from '@rh-felt/react-styles';
+import backgroundImage from '@rh-felt/react-tokens/dist/esm/c_about_modal_box_BackgroundImage';
 import { AboutModalBoxContent } from './AboutModalBoxContent';
 import { AboutModalBoxHeader } from './AboutModalBoxHeader';
 import { AboutModalBoxBrand } from './AboutModalBoxBrand';

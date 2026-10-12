@@ -1,7 +1,7 @@
 import { ThInfoType } from '../../base/types';
 import { HeaderCellInfoWrapper } from '../../HeaderCellInfoWrapper';
 import { IFormatterValueType, ITransform } from '../../TableTypes';
-import styles from '@patternfly/react-styles/css/components/Table/table';
+import styles from '@rh-felt/react-styles/css/components/Table/table';
 
 export const info = ({ tooltip, tooltipProps, popover, popoverProps, className, ariaLabel }: ThInfoType) => {
   const infoObj: ITransform = (value: IFormatterValueType) => ({

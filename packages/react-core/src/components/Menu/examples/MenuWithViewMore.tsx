@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Menu, MenuList, MenuItem, MenuContent, Spinner } from '@patternfly/react-core';
+import { Menu, MenuList, MenuItem, MenuContent, Spinner } from '@rh-felt/react-core';
 
 export const MenuWithViewMore: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState<number | string>(0);

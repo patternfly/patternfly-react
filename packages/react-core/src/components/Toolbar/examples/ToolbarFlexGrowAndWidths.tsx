@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Toolbar, ToolbarItem, ToolbarGroup, ToolbarContent, Button, SearchInput } from '@patternfly/react-core';
+import { Toolbar, ToolbarItem, ToolbarGroup, ToolbarContent, Button, SearchInput } from '@rh-felt/react-core';
 
 export const ToolbarFlexGrowAndWidths: React.FunctionComponent = () => {
   const flexGrowItems = (

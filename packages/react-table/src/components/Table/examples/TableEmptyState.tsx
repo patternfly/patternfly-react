@@ -1,4 +1,4 @@
-import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import { Table, Thead, Tr, Th, Tbody, Td } from '@rh-felt/react-table';
 import {
   Bullseye,
   EmptyState,
@@ -7,8 +7,8 @@ import {
   Button,
   EmptyStateFooter,
   EmptyStateActions
-} from '@patternfly/react-core';
-import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
+} from '@rh-felt/react-core';
+import RhMicronsSearchIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-search-icon';
 
 // This example has been simplified to focus on the empty state. In real usage,
 // you may want to derive your rows from typed underlying data and minimal state. See other examples.

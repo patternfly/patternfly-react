@@ -1,14 +1,6 @@
 import { useState } from 'react';
-import {
-  Form,
-  FormGroup,
-  TextInput,
-  Button,
-  ActionListItem,
-  ActionListGroup,
-  ActionList
-} from '@patternfly/react-core';
-import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import { Form, FormGroup, TextInput, Button, ActionListItem, ActionListGroup, ActionList } from '@rh-felt/react-core';
+import RhUiCheckCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 
 export const ButtonProgress: React.FunctionComponent = () => {
   const [loginState, setLoginState] = useState<'notLoggedIn' | 'loading' | 'loggedIn'>('notLoggedIn');

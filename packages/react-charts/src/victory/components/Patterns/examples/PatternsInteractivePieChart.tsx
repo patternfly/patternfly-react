@@ -5,7 +5,7 @@ import {
   ChartPie,
   getInteractiveLegendEvents,
   getInteractiveLegendItemStyles
-} from '@patternfly/react-charts/victory';
+} from '@rh-felt/react-charts/victory';
 import { useState } from 'react';
 
 interface PetData {

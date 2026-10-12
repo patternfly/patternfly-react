@@ -11,7 +11,7 @@ import {
   ModalHeader,
   ModalFooter,
   ModalVariant
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const ModalWithDropdown: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

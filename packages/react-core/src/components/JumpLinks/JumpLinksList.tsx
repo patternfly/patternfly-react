@@ -1,5 +1,5 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/JumpLinks/jump-links';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/JumpLinks/jump-links';
 
 export interface JumpLinksListProps extends React.HTMLProps<HTMLUListElement> {
   /** Text to be rendered inside span */

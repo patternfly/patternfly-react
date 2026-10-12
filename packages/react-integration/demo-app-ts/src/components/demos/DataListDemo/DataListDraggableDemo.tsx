@@ -7,8 +7,8 @@ import {
   DataListControl,
   DataListDragButton,
   DataListItemCells
-} from '@patternfly/react-core';
-import { DragDrop, Draggable, Droppable, DraggableItemPosition } from '@patternfly/react-core/deprecated';
+} from '@rh-felt/react-core';
+import { DragDrop, Draggable, Droppable, DraggableItemPosition } from '@rh-felt/react-core/deprecated';
 
 interface ItemType {
   id: string;

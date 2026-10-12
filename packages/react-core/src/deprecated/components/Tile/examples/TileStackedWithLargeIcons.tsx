@@ -1,5 +1,5 @@
-import { Tile } from '@patternfly/react-core/deprecated';
-import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
+import { Tile } from '@rh-felt/react-core/deprecated';
+import RhUiNotificationFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 
 export const TileStackedWithLargeIcons: React.FunctionComponent = () => (
   <div role="listbox" aria-label="Stacked tiles with large icons">

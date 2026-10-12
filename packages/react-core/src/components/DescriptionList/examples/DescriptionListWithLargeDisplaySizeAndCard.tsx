@@ -6,8 +6,8 @@ import {
   DescriptionListDescription,
   Card,
   Checkbox
-} from '@patternfly/react-core';
-import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
+} from '@rh-felt/react-core';
+import RhUiAddCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 
 export const DescriptionListWithLargeDisplaySizeAndCard: React.FunctionComponent = () => {
   const [isChecked, setIsChecked] = useState<boolean>(false);

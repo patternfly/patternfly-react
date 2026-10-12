@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Form, FormGroup, FormHelperText, TextInput, HelperText, HelperTextItem } from '@patternfly/react-core';
+import { Form, FormGroup, FormHelperText, TextInput, HelperText, HelperTextItem } from '@rh-felt/react-core';
 
 export const HelperTextDynamic: React.FunctionComponent = () => {
   const [value, setValue] = useState('');

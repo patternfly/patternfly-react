@@ -14,7 +14,7 @@ import {
   Wizard,
   WizardHeader,
   WizardStep
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const WizardModalWithDrawerInfoStepDemo: React.FunctionComponent = () => {
   const [isDrawerExpanded, setIsDrawerExpanded] = useState(false);

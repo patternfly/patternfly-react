@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/Banner/banner';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Banner/banner';
+import { css } from '@rh-felt/react-styles';
 
 export type BannerColor = 'red' | 'orangered' | 'orange' | 'yellow' | 'green' | 'teal' | 'blue' | 'purple';
 

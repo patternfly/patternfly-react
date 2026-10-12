@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import styles from '@patternfly/react-styles/css/components/Hint/hint';
+import styles from '@rh-felt/react-styles/css/components/Hint/hint';
 
 import { HintBody } from '../HintBody';
 

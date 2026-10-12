@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Card, CardHeader, CardTitle, CardBody, Checkbox, Gallery } from '@patternfly/react-core';
+import { Card, CardHeader, CardTitle, CardBody, Checkbox, Gallery } from '@rh-felt/react-core';
 
 export const CardClickable: React.FunctionComponent = () => {
   const [isSecondary, setIsSecondary] = useState<boolean>(false);

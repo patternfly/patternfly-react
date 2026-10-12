@@ -1,4 +1,4 @@
-import { Content, TextInput, TextInputProps, ValidatedOptions } from '@patternfly/react-core';
+import { Content, TextInput, TextInputProps, ValidatedOptions } from '@rh-felt/react-core';
 import { Component, createRef } from 'react';
 
 export class TextInputDemo extends Component {

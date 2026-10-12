@@ -1,4 +1,4 @@
-import { Tabs, Tab, TabTitleText, Tooltip } from '@patternfly/react-core';
+import { Tabs, Tab, TabTitleText, Tooltip } from '@rh-felt/react-core';
 
 export const TabsUncontrolled: React.FunctionComponent = () => {
   const tooltip = (

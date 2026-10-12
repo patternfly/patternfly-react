@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Dropdown, DropdownList, DropdownItem, Divider, MenuToggle } from '@patternfly/react-core';
+import { Dropdown, DropdownList, DropdownItem, Divider, MenuToggle } from '@rh-felt/react-core';
 
 const dropDownItems = (
   <DropdownList>

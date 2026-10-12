@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Label, LabelColor, LabelGroup } from '@patternfly/react-core';
-import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
+import { Label, LabelColor, LabelGroup } from '@rh-felt/react-core';
+import RhUiInformationFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
 
 export const LabelGroupVerticalCategoryOverflowRemovable: React.FunctionComponent = () => {
   const [labels, setLabels] = useState([

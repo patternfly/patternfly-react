@@ -1,12 +1,12 @@
 import { Fragment, useEffect, useRef, useState, useContext } from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Alert/alert';
-import alertGroupStyles from '@patternfly/react-styles/css/components/Alert/alert-group';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Alert/alert';
+import alertGroupStyles from '@rh-felt/react-styles/css/components/Alert/alert-group';
 import { AlertIcon } from './AlertIcon';
 import { capitalize, useOUIAProps, OUIAProps } from '../../helpers';
 import { AlertContext } from './AlertContext';
 import { AlertGroupContext } from './AlertGroupContext';
-import maxLines from '@patternfly/react-tokens/dist/esm/c_alert__title_max_lines';
+import maxLines from '@rh-felt/react-tokens/dist/esm/c_alert__title_max_lines';
 import { Tooltip, TooltipPosition } from '../Tooltip';
 import { AlertToggleExpandButton } from './AlertToggleExpandButton';
 

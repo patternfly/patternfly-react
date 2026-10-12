@@ -6,7 +6,7 @@ import {
   EmptyStateActions,
   EmptyStateStatus,
   Button
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const EmptyStateWithStatus: React.FunctionComponent = () => {
   const [status, setStatus] = useState<EmptyStateStatus>(EmptyStateStatus.success);

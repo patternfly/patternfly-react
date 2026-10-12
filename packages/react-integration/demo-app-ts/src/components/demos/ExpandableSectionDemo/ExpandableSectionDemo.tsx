@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { ExpandableSection, ExpandableSectionToggle, Stack, StackItem } from '@patternfly/react-core';
+import { ExpandableSection, ExpandableSectionToggle, Stack, StackItem } from '@rh-felt/react-core';
 
 interface ExpandableSectionState {
   isExpanded: boolean;

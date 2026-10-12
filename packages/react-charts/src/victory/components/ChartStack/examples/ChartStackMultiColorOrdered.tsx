@@ -1,11 +1,4 @@
-import {
-  Chart,
-  ChartBar,
-  ChartAxis,
-  ChartStack,
-  ChartThemeColor,
-  ChartTooltip
-} from '@patternfly/react-charts/victory';
+import { Chart, ChartBar, ChartAxis, ChartStack, ChartThemeColor, ChartTooltip } from '@rh-felt/react-charts/victory';
 
 interface PetData {
   name?: string;

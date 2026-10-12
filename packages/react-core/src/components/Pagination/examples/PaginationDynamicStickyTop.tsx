@@ -1,5 +1,5 @@
 import { useLayoutEffect, useState, useRef } from 'react';
-import { Pagination, Gallery, GalleryItem, Card, CardBody } from '@patternfly/react-core';
+import { Pagination, Gallery, GalleryItem, Card, CardBody } from '@rh-felt/react-core';
 
 const useIsStuckFromScrollParent = ({
   shouldTrack,

@@ -1,4 +1,4 @@
-import { DatePicker, Weekday } from '@patternfly/react-core';
+import { DatePicker, Weekday } from '@rh-felt/react-core';
 
 export const DatePickerFrench: React.FunctionComponent = () => {
   const minDate = new Date(2020, 2, 16);

@@ -13,11 +13,11 @@ import {
   Select,
   SelectList,
   SelectOption
-} from '@patternfly/react-core';
-import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
-import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
-import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
-import RhUiSyncIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sync-icon';
+} from '@rh-felt/react-core';
+import RhUiFilterFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
+import EditIcon from '@rh-felt/react-icons/dist/esm/icons/edit-icon';
+import RhUiCopyFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
+import RhUiSyncIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-sync-icon';
 
 export const ToolbarCustomLabelGroupContent: React.FunctionComponent = () => {
   const [statusIsExpanded, setStatusIsExpanded] = useState<boolean>(false);

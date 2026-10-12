@@ -18,14 +18,14 @@ import {
   DropdownItem,
   DropdownList,
   MenuFooter
-} from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
-import RhUiPauseFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-pause-fill-icon';
-import RhUiPlayFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
-import RhUiExpandIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-expand-icon';
-import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
-import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
-import RhUiDownloadIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-download-icon';
+} from '@rh-felt/react-core';
+import { DashboardWrapper } from '@rh-felt/react-core/dist/js/demos/DashboardWrapper';
+import RhUiPauseFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-pause-fill-icon';
+import RhUiPlayFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
+import RhUiExpandIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-expand-icon';
+import RhMicronsExternalLinkIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-external-link-icon';
+import RhMicronsSearchIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-search-icon';
+import RhUiDownloadIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-download-icon';
 
 export const ConsoleLogViewerToolbar: React.FC = () => {
   const firstOptions = {

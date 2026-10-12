@@ -1,12 +1,12 @@
 import { forwardRef } from 'react';
-import styles from '@patternfly/react-styles/css/components/Button/button';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Button/button';
+import { css } from '@rh-felt/react-styles';
 import { Spinner, spinnerSize } from '../Spinner';
 import { useOUIAProps, OUIAProps } from '../../helpers/OUIA/ouia';
 import { Badge } from '../Badge';
-import RhUiStarFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-star-fill-icon';
-import RhUiStarIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-star-icon';
-import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
+import RhUiStarFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-star-fill-icon';
+import RhUiStarIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-star-icon';
+import RhUiSettingsFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import { hamburgerIcon } from './hamburgerIcon';
 
 export enum ButtonVariant {

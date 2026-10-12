@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Split, SplitItem, DatePicker, isValidDate, yyyyMMddFormat } from '@patternfly/react-core';
+import { Split, SplitItem, DatePicker, isValidDate, yyyyMMddFormat } from '@rh-felt/react-core';
 
 export const DatePickerRange: React.FunctionComponent = () => {
   const [from, setFrom] = useState<Date | undefined>();

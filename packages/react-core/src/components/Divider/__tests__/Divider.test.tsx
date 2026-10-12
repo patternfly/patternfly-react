@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { Divider } from '../Divider';
-import styles from '@patternfly/react-styles/css/components/Divider/divider';
+import styles from '@rh-felt/react-styles/css/components/Divider/divider';
 
 test(`Renders with only the class name ${styles.divider} by default`, () => {
   render(<Divider />);

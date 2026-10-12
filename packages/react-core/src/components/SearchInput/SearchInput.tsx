@@ -1,21 +1,21 @@
 import { forwardRef, useEffect, useRef, useState } from 'react';
-import { css } from '@patternfly/react-styles';
+import { css } from '@rh-felt/react-styles';
 import { Button, ButtonVariant } from '../Button';
 import { Badge } from '../Badge';
 import { Icon } from '../Icon';
-import RhMicronsCaretUpIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-up-icon';
-import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
-import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
-import RhMicronsArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-arrow-right-icon';
-import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
-import RhMicronsCaretDownFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-fill-icon';
+import RhMicronsCaretUpIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-up-icon';
+import RhMicronsCloseIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-close-icon';
+import RhMicronsSearchIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-search-icon';
+import RhMicronsArrowRightIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-arrow-right-icon';
+import RhMicronsCaretDownIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
+import RhMicronsCaretDownFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-down-fill-icon';
 import { AdvancedSearchMenu } from './AdvancedSearchMenu';
 import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities } from '../TextInputGroup';
 import { InputGroup, InputGroupItem } from '../InputGroup';
 import { Popper } from '../../helpers';
 import { useHasAnimations } from '../../helpers';
-import textInputGroupStyles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
-import inputGroupStyles from '@patternfly/react-styles/css/components/InputGroup/input-group';
+import textInputGroupStyles from '@rh-felt/react-styles/css/components/TextInputGroup/text-input-group';
+import inputGroupStyles from '@rh-felt/react-styles/css/components/InputGroup/input-group';
 import { IS_INERT } from '../../helpers/inert';
 
 /** Properties for adding search attributes to an advanced search input. These properties must

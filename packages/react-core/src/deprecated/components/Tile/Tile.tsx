@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/Tile/tile';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Tile/tile';
+import { css } from '@rh-felt/react-styles';
 
 export interface TileProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the banner */

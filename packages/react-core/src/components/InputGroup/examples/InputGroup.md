@@ -6,9 +6,9 @@ propComponents: ['InputGroup', 'InputGroupItem', 'InputGroupText']
 ---
 
 import { Fragment, useRef, useState } from 'react';
-import AtIcon from '@patternfly/react-icons/dist/esm/icons/at-icon';
-import DollarSignIcon from '@patternfly/react-icons/dist/esm/icons/dollar-sign-icon';
-import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
+import AtIcon from '@rh-felt/react-icons/dist/esm/icons/at-icon';
+import DollarSignIcon from '@rh-felt/react-icons/dist/esm/icons/dollar-sign-icon';
+import RhUiQuestionMarkCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 
 ## Examples
 

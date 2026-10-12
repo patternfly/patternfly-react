@@ -1,5 +1,5 @@
 import { Component, createRef } from 'react';
-import { Tabs, Tab, TabTitleText, Tooltip } from '@patternfly/react-core';
+import { Tabs, Tab, TabTitleText, Tooltip } from '@rh-felt/react-core';
 
 export class TabsDisabledDemo extends Component {
   static displayName = 'TabsDisabledDemo';

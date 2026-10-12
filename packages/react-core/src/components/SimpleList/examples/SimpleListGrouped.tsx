@@ -1,4 +1,4 @@
-import { SimpleList, SimpleListItem, SimpleListGroup } from '@patternfly/react-core';
+import { SimpleList, SimpleListItem, SimpleListGroup } from '@rh-felt/react-core';
 
 export const SimpleListGrouped: React.FunctionComponent = () => {
   const group1Items = [

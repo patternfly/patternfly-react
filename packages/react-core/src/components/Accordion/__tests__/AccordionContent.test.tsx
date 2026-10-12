@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 
 import { AccordionContent } from '../AccordionContent';
 import { AccordionContext, AccordionItemContext } from '../AccordionContext';
-import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
+import styles from '@rh-felt/react-styles/css/components/Accordion/accordion';
 
 jest.mock('../AccordionExpandableContentBody', () => ({
   AccordionExpandableContentBody: ({ children }) => <div aria-label="Expanded content body mock">{children}</div>

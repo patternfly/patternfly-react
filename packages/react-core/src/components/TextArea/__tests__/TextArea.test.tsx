@@ -6,7 +6,7 @@ import userEvent from '@testing-library/user-event';
 
 import { TextArea } from '../TextArea';
 import { ValidatedOptions } from '../../../helpers/constants';
-import formControlStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
+import formControlStyles from '@rh-felt/react-styles/css/components/FormControl/form-control';
 
 const props = {
   onChange: jest.fn(),

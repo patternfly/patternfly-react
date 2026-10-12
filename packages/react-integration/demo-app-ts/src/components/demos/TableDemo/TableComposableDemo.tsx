@@ -15,7 +15,7 @@ import {
   IActions,
   OnCollapse,
   OnSort
-} from '@patternfly/react-table';
+} from '@rh-felt/react-table';
 import {
   ToggleGroup,
   ToggleGroupItem,
@@ -25,11 +25,11 @@ import {
   Stack,
   StackItem,
   Checkbox
-} from '@patternfly/react-core';
-import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
-import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import t_global_color_brand_default from '@patternfly/react-tokens/dist/esm/t_global_color_brand_default';
+} from '@rh-felt/react-core';
+import RhUiCodeIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-code-icon';
+import RhUiBranchFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
+import CubeIcon from '@rh-felt/react-icons/dist/esm/icons/cube-icon';
+import t_global_color_brand_default from '@rh-felt/react-tokens/dist/esm/t_global_color_brand_default';
 
 export const TableComposableDemo = () => {
   const ComposableTableBasic = () => {

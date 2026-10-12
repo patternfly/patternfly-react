@@ -1,4 +1,4 @@
-import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
+import { Card, CardTitle, CardBody, CardFooter } from '@rh-felt/react-core';
 
 export const CardWithBodySectionFills: React.FunctionComponent = () => (
   <Card style={{ minHeight: '30em' }}>

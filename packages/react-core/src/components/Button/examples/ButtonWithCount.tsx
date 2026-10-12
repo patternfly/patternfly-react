@@ -1,4 +1,4 @@
-import { BadgeCountObject, Button, Flex } from '@patternfly/react-core';
+import { BadgeCountObject, Button, Flex } from '@rh-felt/react-core';
 
 export const ButtonWithCount: React.FunctionComponent = () => {
   const badgeCountObjectNotRead: BadgeCountObject = {

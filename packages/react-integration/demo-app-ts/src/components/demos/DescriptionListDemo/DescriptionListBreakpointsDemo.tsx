@@ -8,8 +8,8 @@ import {
   StackItem,
   Title,
   Divider
-} from '@patternfly/react-core';
-import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
+} from '@rh-felt/react-core';
+import RhUiAddCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 import { Component } from 'react';
 
 export class DescriptionListBreakpointsDemo extends Component {

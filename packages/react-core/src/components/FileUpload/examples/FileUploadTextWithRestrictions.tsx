@@ -8,7 +8,7 @@ import {
   HelperText,
   HelperTextItem,
   DropEvent
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
   const [value, setValue] = useState('');

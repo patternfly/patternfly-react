@@ -1,25 +1,25 @@
-# @patternfly/react-icons
+# @rh-felt/react-icons
 
 PatternFly Icons as React Components.
 
 ## Usage
 
 ```tsx
-import RhMicronsCloseIcon from  '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+import RhMicronsCloseIcon from  '@rh-felt/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 const closeIcon = <RhMicronsCloseIcon />;
 ```
 
-For a list of the available icons please refer to the [PatternFly react docs](https://pf-react-staging.patternfly.org/icons)
+For a list of the available icons please refer to the [PatternFly react docs](https://rh-felt-react-staging.patternfly.org/icons)
 
 ## Styling icons
 
-All icons from @patternfly/react-icons have the HTML class `pf-v6-svg` applied and CSS styles applied via @patternfly/react-styles.
+All icons from @rh-felt/react-icons have the HTML class `pf-v6-svg` applied and CSS styles applied via @rh-felt/react-styles.
 
-If not using @patternfly/react-icons in conjunction with @patternfly/react-styles, then the following generic styles will need to be applied to the icons: `height="1em", style="vertical-align: -0.125em;" width="1em"`
+If not using @rh-felt/react-icons in conjunction with @rh-felt/react-styles, then the following generic styles will need to be applied to the icons: `height="1em", style="vertical-align: -0.125em;" width="1em"`
 
-If using @patternfly/react-icons in conjunction with @patternfly/react-core, icons can be further styled by wrapping an icon from
-@patternfly/react-icons in a PatternFly icon component.
+If using @rh-felt/react-icons in conjunction with @rh-felt/react-core, icons can be further styled by wrapping an icon from
+@rh-felt/react-icons in a PatternFly icon component.
 
 ## Adding icons
 
@@ -47,7 +47,7 @@ optimization: {
 Use ESM module imports to enable tree shaking with no additional setup required.
 
 ```JS
-import RhMicronsCloseIcon from  '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+import RhMicronsCloseIcon from  '@rh-felt/react-icons/dist/esm/icons/rh-microns-close-icon';
 ```
 
 To enable tree shaking with named imports for CJS modules, utilize [babel-plugin-transform-imports](https://www.npmjs.com/package/babel-plugin-transform-imports) and update a babel.config.js file to utilize the plugin:
@@ -59,8 +59,8 @@ module.exports = {
     [
       "transform-imports",
       {
-        "@patternfly/react-icons": {
-          transform: (importName, matches) => `@patternfly/react-icons/dist/js/icons/${importName.split(/(?=[A-Z])/).join('-').toLowerCase()}`,
+        "@rh-felt/react-icons": {
+          transform: (importName, matches) => `@rh-felt/react-icons/dist/js/icons/${importName.split(/(?=[A-Z])/).join('-').toLowerCase()}`,
           preventFullImport: true
         }
       }
@@ -71,7 +71,7 @@ module.exports = {
 
 ## Static SVGs
 
-All icons are also available as static SVG files in `@patternfly/react-icons/dist/static`. The static SVGs include all the same attributes as the React components (viewBox, class names, etc.) to ensure visual consistency.
+All icons are also available as static SVG files in `@rh-felt/react-icons/dist/static`. The static SVGs include all the same attributes as the React components (viewBox, class names, etc.) to ensure visual consistency.
 
 Static SVGs are useful when you need to:
 - Use icons in non-React contexts, such as static HTML
@@ -91,5 +91,5 @@ You can import or reference static SVG files directly:
 }
 
 // Direct file path
-import RhMicronsCloseIcon from '@patternfly/react-icons/dist/static/rh-microns-close-icon.svg';
+import RhMicronsCloseIcon from '@rh-felt/react-icons/dist/static/rh-microns-close-icon.svg';
 ```

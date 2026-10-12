@@ -1,4 +1,4 @@
-import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
+import { TreeView, TreeViewDataItem } from '@rh-felt/react-core';
 
 export const TreeViewCompact: React.FunctionComponent = () => {
   const options: TreeViewDataItem[] = [

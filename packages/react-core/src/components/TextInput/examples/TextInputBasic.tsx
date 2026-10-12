@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TextInput } from '@patternfly/react-core';
+import { TextInput } from '@rh-felt/react-core';
 
 export const TextInputBasic: React.FunctionComponent = () => {
   const [value, setValue] = useState('');

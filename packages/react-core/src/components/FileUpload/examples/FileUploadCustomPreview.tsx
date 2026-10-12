@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { FileUpload } from '@patternfly/react-core';
-import RhUiDocumentFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-document-fill-icon';
+import { FileUpload } from '@rh-felt/react-core';
+import RhUiDocumentFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-document-fill-icon';
 
 export const CustomPreviewFileUpload: React.FunctionComponent = () => {
   const [value, setValue] = useState<File>();

@@ -1,7 +1,7 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
-import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
-import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/TreeView/tree-view';
+import formStyles from '@rh-felt/react-styles/css/components/FormControl/form-control';
+import RhMicronsSearchIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-search-icon';
 
 /** Renders a search input for the tree view. This sub-component should be passed into the
  * tree view component's toolbar property.

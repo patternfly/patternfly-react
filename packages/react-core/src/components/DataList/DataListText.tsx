@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/DataList/data-list';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/DataList/data-list';
 import { Tooltip } from '../Tooltip';
 import { DataListWrapModifier } from './DataList';
 

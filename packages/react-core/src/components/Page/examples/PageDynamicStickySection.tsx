@@ -13,7 +13,7 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   Content
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 const useIsStuckFromScrollParent = ({
   shouldTrack,

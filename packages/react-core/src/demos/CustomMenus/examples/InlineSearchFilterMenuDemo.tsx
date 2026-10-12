@@ -10,7 +10,7 @@ import {
   SelectOption,
   MenuToggle,
   MenuContainer
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const InlineSearchFilterMenuDemo: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState(0);

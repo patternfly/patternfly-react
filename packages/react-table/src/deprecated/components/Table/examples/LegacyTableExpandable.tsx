@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react';
-import { TableVariant, expandable, IRowCell } from '@patternfly/react-table';
-import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
-import { Checkbox } from '@patternfly/react-core';
+import { TableVariant, expandable, IRowCell } from '@rh-felt/react-table';
+import { Table, TableHeader, TableBody, TableProps } from '@rh-felt/react-table/deprecated';
+import { Checkbox } from '@rh-felt/react-core';
 
 interface Repository {
   name: string;

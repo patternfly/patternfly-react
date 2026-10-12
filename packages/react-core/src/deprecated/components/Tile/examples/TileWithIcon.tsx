@@ -1,5 +1,5 @@
-import { Tile } from '@patternfly/react-core/deprecated';
-import RhUiAddIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-icon';
+import { Tile } from '@rh-felt/react-core/deprecated';
+import RhUiAddIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-add-icon';
 
 export const TileWithIcon: React.FunctionComponent = () => (
   <div role="listbox" aria-label="Tiles with icon">

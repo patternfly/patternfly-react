@@ -1,6 +1,6 @@
-import styles from '@patternfly/react-styles/css/components/Spinner/spinner';
-import { css } from '@patternfly/react-styles';
-import cssDiameter from '@patternfly/react-tokens/dist/esm/c_spinner_diameter';
+import styles from '@rh-felt/react-styles/css/components/Spinner/spinner';
+import { css } from '@rh-felt/react-styles';
+import cssDiameter from '@rh-felt/react-tokens/dist/esm/c_spinner_diameter';
 
 export enum spinnerSize {
   sm = 'sm',

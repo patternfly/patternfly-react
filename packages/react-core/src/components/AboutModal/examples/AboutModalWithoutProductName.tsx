@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { AboutModal, Button, Content } from '@patternfly/react-core';
+import { AboutModal, Button, Content } from '@rh-felt/react-core';
 import brandImg from '../../assets/PF-IconLogo.svg';
 
 export const AboutModalWithoutProductName: React.FunctionComponent = () => {

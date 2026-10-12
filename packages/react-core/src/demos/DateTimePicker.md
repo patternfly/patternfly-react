@@ -5,8 +5,8 @@ subsection: date-and-time
 ---
 
 import { useState } from 'react';
-import RhUiCalendarIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-calendar-icon';
-import RhUiClockIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clock-icon';
+import RhUiCalendarIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-calendar-icon';
+import RhUiClockIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-clock-icon';
 
 ## Demos
 

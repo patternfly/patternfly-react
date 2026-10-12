@@ -15,7 +15,7 @@ import {
   Toolbar,
   ToolbarContent,
   ToolbarItem
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 export class PageDemo extends Component {
   static displayName = 'PageDemo';
   state = {

@@ -1,7 +1,7 @@
 import { forwardRef, useRef } from 'react';
 import { Button, ButtonProps } from '../Button';
 import { KeyTypes } from '../../helpers/constants';
-import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import RhUiQuestionMarkCircleIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 
 /** A help button to be passed to the FormGroup's labelHelp property. This should be wrapped or linked
  * to our Popover component.

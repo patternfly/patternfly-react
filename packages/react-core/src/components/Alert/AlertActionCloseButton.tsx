@@ -1,9 +1,9 @@
 import { useRef, useContext } from 'react';
 import { Button, ButtonVariant, ButtonProps } from '../Button';
-import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+import RhMicronsCloseIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-close-icon';
 import { AlertContext } from './AlertContext';
 import { AlertGroupContext } from './AlertGroupContext';
-import alertGroupStyles from '@patternfly/react-styles/css/components/Alert/alert-group';
+import alertGroupStyles from '@rh-felt/react-styles/css/components/Alert/alert-group';
 
 /** Renders a close button for a dismissable alert when this sub-component is passed into
  * the alert's actionClose property.

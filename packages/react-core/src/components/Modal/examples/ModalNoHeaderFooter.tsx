@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { Button, Modal, ModalBody, ModalVariant } from '@patternfly/react-core';
+import { Button, Modal, ModalBody, ModalVariant } from '@rh-felt/react-core';
 
 export const ModalNoHeaderFooter: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

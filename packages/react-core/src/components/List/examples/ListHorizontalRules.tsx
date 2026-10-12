@@ -1,4 +1,4 @@
-import { List, ListItem } from '@patternfly/react-core';
+import { List, ListItem } from '@rh-felt/react-core';
 
 export const ListHorizontalRules: React.FunctionComponent = () => (
   <List isPlain isBordered>

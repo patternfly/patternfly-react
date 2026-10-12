@@ -7,10 +7,10 @@ ouia: true
 ---
 
 import { Fragment, useRef, useState } from 'react';
-import RhUiWarningIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-icon';
-import RhUiAttentionBellFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
-import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
-import formStyles from '@patternfly/react-styles/css/components/Form/form';
+import RhUiWarningIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-warning-icon';
+import RhUiAttentionBellFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
+import RhUiQuestionMarkCircleIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import formStyles from '@rh-felt/react-styles/css/components/Form/form';
 
 When using the Modal component, it is recommended to control it via the `isOpen` property rather than conditionally rendering the Modal.
 

@@ -1,4 +1,4 @@
-import { Grid, GridItem } from '@patternfly/react-core';
+import { Grid, GridItem } from '@rh-felt/react-core';
 
 export const GridStandardOrdering: React.FunctionComponent = () => (
   <Grid hasGutter span={3}>

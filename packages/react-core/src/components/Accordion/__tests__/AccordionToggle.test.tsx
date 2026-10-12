@@ -2,9 +2,9 @@ import { render, screen } from '@testing-library/react';
 
 import { AccordionToggle } from '../AccordionToggle';
 import { AccordionContext, AccordionItemContext } from '../AccordionContext';
-import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
+import styles from '@rh-felt/react-styles/css/components/Accordion/accordion';
 
-jest.mock('@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon', () => () => 'Icon mock');
+jest.mock('@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-down-icon', () => () => 'Icon mock');
 
 test('Renders without children', () => {
   render(

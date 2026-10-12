@@ -5,15 +5,15 @@ promote=false
 
 packages=(
   @patternfly/patternfly
-  @patternfly/react-charts
-  @patternfly/react-code-editor
-  @patternfly/react-core
-  @patternfly/react-drag-drop
-  @patternfly/react-icons
-  @patternfly/react-styles
-  @patternfly/react-table
-  @patternfly/react-templates
-  @patternfly/react-tokens
+  @rh-felt/react-charts
+  @rh-felt/react-code-editor
+  @rh-felt/react-core
+  @rh-felt/react-drag-drop
+  @rh-felt/react-icons
+  @rh-felt/react-styles
+  @rh-felt/react-table
+  @rh-felt/react-templates
+  @rh-felt/react-tokens
 )
 
 packagesExtensions=(

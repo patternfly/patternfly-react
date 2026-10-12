@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { TooltipContent } from '../TooltipContent';
-import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
+import styles from '@rh-felt/react-styles/css/components/Tooltip/tooltip';
 
 test('Renders with children', () => {
   render(<TooltipContent>Test content</TooltipContent>);

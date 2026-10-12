@@ -1,4 +1,4 @@
-import { Truncate } from '@patternfly/react-core';
+import { Truncate } from '@rh-felt/react-core';
 
 export const TruncateLinks: React.FunctionComponent = () => {
   const content = 'A very lengthy anchor text content to trigger truncation';

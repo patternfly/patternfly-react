@@ -1,8 +1,8 @@
 import { Component } from 'react';
-import { Button, Wizard, WizardHeader, WizardStep, Modal } from '@patternfly/react-core';
+import { Button, Wizard, WizardHeader, WizardStep, Modal } from '@rh-felt/react-core';
 
-import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
-import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
+import RhMicronsExternalLinkIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-external-link-icon';
+import SlackHashIcon from '@rh-felt/react-icons/dist/esm/icons/slack-hash-icon';
 
 interface WizardDemoState {
   isOpen: boolean;

@@ -1,4 +1,4 @@
-import { Breadcrumb, BreadcrumbItem } from '@patternfly/react-core';
+import { Breadcrumb, BreadcrumbItem } from '@rh-felt/react-core';
 
 export const BreadcrumbHomeLink: React.FunctionComponent = () => (
   <Breadcrumb>

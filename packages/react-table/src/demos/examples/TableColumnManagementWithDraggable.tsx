@@ -24,14 +24,14 @@ import {
   PageSection,
   Pagination,
   PaginationVariant
-} from '@patternfly/react-core';
-import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import { DragDropSort } from '@patternfly/react-drag-drop';
-import RhMicronsSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-large-to-small-icon';
-import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
-import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
-import { capitalize } from '@patternfly/react-table/src/components/Table/utils/utils';
-import { rows, columns, SampleDataRow } from '@patternfly/react-table/dist/esm/demos/sampleData';
+} from '@rh-felt/react-core';
+import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@rh-felt/react-table';
+import { DragDropSort } from '@rh-felt/react-drag-drop';
+import RhMicronsSortDownLargeToSmallIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-sort-down-large-to-small-icon';
+import RhUiFilterFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
+import { DashboardWrapper } from '@rh-felt/react-table/dist/esm/demos/DashboardWrapper';
+import { capitalize } from '@rh-felt/react-table/src/components/Table/utils/utils';
+import { rows, columns, SampleDataRow } from '@rh-felt/react-table/dist/esm/demos/sampleData';
 
 export const TableColumnManagement: React.FunctionComponent = () => {
   const defaultColumns = columns;

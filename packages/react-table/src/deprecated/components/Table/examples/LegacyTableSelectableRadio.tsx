@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { headerCol } from '@patternfly/react-table';
-import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
+import { headerCol } from '@rh-felt/react-table';
+import { Table, TableHeader, TableBody, TableProps } from '@rh-felt/react-table/deprecated';
 
 interface Repository {
   name: string;

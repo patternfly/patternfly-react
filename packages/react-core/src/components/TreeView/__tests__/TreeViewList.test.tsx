@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { TreeViewList } from '../TreeViewList';
 import { TreeViewListItem } from '../TreeViewListItem';
 import { TreeView } from '../TreeView';
-import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
+import styles from '@rh-felt/react-styles/css/components/TreeView/tree-view';
 
 test(`Renders with class ${styles.treeView}__list by default`, () => {
   render(<TreeViewList>Content</TreeViewList>);

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
+import { ToggleGroup, ToggleGroupItem } from '@rh-felt/react-core';
 
 export const ToggleGroupFill: React.FunctionComponent = () => {
   const [isSelectedBasic, setIsSelectedBasic] = useState('toggle-group-fill-1');

@@ -1,4 +1,4 @@
-import { List, ListItem } from '@patternfly/react-core';
+import { List, ListItem } from '@rh-felt/react-core';
 
 export const ListBasic: React.FunctionComponent = () => (
   <List>

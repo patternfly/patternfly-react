@@ -1,7 +1,7 @@
-import styles from '@patternfly/react-styles/css/layouts/Grid/grid';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/layouts/Grid/grid';
+import { css } from '@rh-felt/react-styles';
 import { DeviceSizes } from '../../styles/sizes';
-import * as gridToken from '@patternfly/react-tokens/dist/esm/l_grid_item_Order';
+import * as gridToken from '@rh-felt/react-tokens/dist/esm/l_grid_item_Order';
 
 import { setBreakpointCssVars } from '../../helpers/util';
 

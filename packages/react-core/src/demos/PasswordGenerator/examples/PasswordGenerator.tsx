@@ -10,10 +10,10 @@ import {
   MenuList,
   MenuItem,
   MenuItemAction
-} from '@patternfly/react-core';
-import RhUiRedoIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-redo-icon';
-import RhUiViewFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-view-fill-icon';
-import RhUiViewOffFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-view-off-fill-icon';
+} from '@rh-felt/react-core';
+import RhUiRedoIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-redo-icon';
+import RhUiViewFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-view-fill-icon';
+import RhUiViewOffFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-view-off-fill-icon';
 
 export const PasswordGenerator: React.FunctionComponent = () => {
   const generatePassword = () => {

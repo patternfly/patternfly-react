@@ -1,17 +1,17 @@
 import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
-import calendarMonthStyles from '@patternfly/react-styles/css/components/CalendarMonth/calendar-month';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/DatePicker/date-picker';
+import calendarMonthStyles from '@rh-felt/react-styles/css/components/CalendarMonth/calendar-month';
 import { TextInput, TextInputProps } from '../TextInput/TextInput';
 import { Button } from '../Button';
 import { Popover, PopoverProps } from '../Popover/Popover';
 import { InputGroup, InputGroupItem } from '../InputGroup';
-import RhUiCalendarIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-calendar-icon';
+import RhUiCalendarIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-calendar-icon';
 import { CalendarMonth, CalendarFormat } from '../CalendarMonth';
 import { KeyTypes } from '../../helpers';
 import { isValidDate } from '../../helpers/datetimeUtils';
 import { HelperText, HelperTextItem } from '../HelperText';
-import cssFormControlWidthChars from '@patternfly/react-tokens/dist/esm/c_date_picker__input_c_form_control_width_chars';
+import cssFormControlWidthChars from '@rh-felt/react-tokens/dist/esm/c_date_picker__input_c_form_control_width_chars';
 
 /** Props that customize the requirement of a date */
 export interface DatePickerRequiredObject {

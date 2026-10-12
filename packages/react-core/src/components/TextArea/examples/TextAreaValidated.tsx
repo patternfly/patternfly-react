@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { Form, FormGroup, FormHelperText, HelperText, HelperTextItem, TextArea } from '@patternfly/react-core';
+import { Form, FormGroup, FormHelperText, HelperText, HelperTextItem, TextArea } from '@rh-felt/react-core';
 
 export const TextAreaValidated: React.FunctionComponent = () => {
   const [value, setValue] = useState('');

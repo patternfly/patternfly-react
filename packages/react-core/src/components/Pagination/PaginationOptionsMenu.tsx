@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Pagination/pagination';
 import { Menu, MenuContent, MenuList, MenuItem } from '../Menu';
 import { MenuToggle } from '../MenuToggle';
 import { Popper } from '../../helpers/Popper/Popper';

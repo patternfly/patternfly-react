@@ -10,7 +10,7 @@ import {
   Toolbar,
   ToolbarContent,
   ToolbarItem
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 import {
   CustomActionsToggleProps,
   fitContent,
@@ -18,8 +18,8 @@ import {
   IActions,
   IActionsResolver,
   TableText
-} from '@patternfly/react-table';
-import { Table, TableBody, TableHeader, TableProps } from '@patternfly/react-table/deprecated';
+} from '@rh-felt/react-table';
+import { Table, TableBody, TableHeader, TableProps } from '@rh-felt/react-table/deprecated';
 
 interface Repository {
   name: string;

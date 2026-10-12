@@ -1,7 +1,7 @@
 import { Component, createRef } from 'react';
-import { css } from '@patternfly/react-styles';
-import datePickerStyles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
-import menuStyles from '@patternfly/react-styles/css/components/Menu/menu';
+import { css } from '@rh-felt/react-styles';
+import datePickerStyles from '@rh-felt/react-styles/css/components/DatePicker/date-picker';
+import menuStyles from '@rh-felt/react-styles/css/components/Menu/menu';
 import { Popper } from '../../helpers/Popper/Popper';
 import { Menu, MenuContent, MenuList, MenuItem } from '../Menu';
 import { InputGroup, InputGroupItem } from '../InputGroup';
@@ -19,8 +19,8 @@ import {
   getSeconds
 } from './TimePickerUtils';
 import { HelperText, HelperTextItem } from '../HelperText';
-import RhUiClockIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clock-icon';
-import cssDatePickerFormControlWidth from '@patternfly/react-tokens/dist/esm/c_date_picker__input_c_form_control_Width';
+import RhUiClockIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-clock-icon';
+import cssDatePickerFormControlWidth from '@rh-felt/react-tokens/dist/esm/c_date_picker__input_c_form_control_Width';
 import { GenerateId } from '../../helpers';
 
 export interface TimePickerProps extends Omit<

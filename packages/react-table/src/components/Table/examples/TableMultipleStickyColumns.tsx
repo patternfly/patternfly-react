@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Table, Thead, Tr, Th, Tbody, Td, InnerScrollContainer, ThProps } from '@patternfly/react-table';
-import RhUiBlueprintIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-blueprint-icon';
+import { Table, Thead, Tr, Th, Tbody, Td, InnerScrollContainer, ThProps } from '@rh-felt/react-table';
+import RhUiBlueprintIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-blueprint-icon';
 
 interface Fact {
   name: string;

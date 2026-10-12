@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Nav, NavItem, NavList, Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
+import { Nav, NavItem, NavList, Menu, MenuContent, MenuList, MenuItem } from '@rh-felt/react-core';
 
 export const NavFlyout: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState('nav-flyout-default-link-1');

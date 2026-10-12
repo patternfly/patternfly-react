@@ -2,8 +2,8 @@ import { render, screen } from '@testing-library/react';
 import { Table } from '../Table';
 import { Td } from '../Td';
 import { Th } from '../Th';
-import { AnimationsProvider, useAnimationsConfig, useHasAnimations } from '@patternfly/react-core/dist/esm/helpers';
-import styles from '@patternfly/react-styles/css/components/Table/table';
+import { AnimationsProvider, useAnimationsConfig, useHasAnimations } from '@rh-felt/react-core/dist/esm/helpers';
+import styles from '@rh-felt/react-styles/css/components/Table/table';
 
 test('Renders without children', () => {
   render(<Table aria-label="Test table" />);

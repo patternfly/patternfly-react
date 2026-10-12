@@ -14,11 +14,11 @@ import {
   Label,
   LabelStatus,
   PaginationVariant
-} from '@patternfly/react-core';
-import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
-import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
-import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
+} from '@rh-felt/react-core';
+import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@rh-felt/react-table';
+import RhUiFilterFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
+import { rows, columns } from '@rh-felt/react-table/dist/esm/demos/sampleData';
+import { DashboardWrapper } from '@rh-felt/react-table/dist/esm/demos/DashboardWrapper';
 
 export const TableCompact: React.FunctionComponent = () => {
   const [isSelectOpen, setIsSelectOpen] = useState<boolean>(false);

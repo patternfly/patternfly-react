@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Wizard, WizardFooterProps, WizardStep, WizardNavProps, WizardStepChangeScope } from '../';
-import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
+import styles from '@rh-felt/react-styles/css/components/Wizard/wizard';
 
 test('renders step when child is of type WizardStep', () => {
   render(

@@ -1,17 +1,17 @@
-# @patternfly/react-table
+# @rh-felt/react-table
 
 This package provides Table PatternFly components based on [PatternFly][patternfly]
 
 ### Installing
 
 ```sh
-yarn add @patternfly/react-table
+yarn add @rh-felt/react-table
 ```
 
 or
 
 ```sh
-npm install @patternfly/react-table --save
+npm install @rh-felt/react-table --save
 ```
 
 ## Usage
@@ -19,13 +19,13 @@ npm install @patternfly/react-table --save
 It's strongly advised to use the PatternFly base CSS in your whole project, or some components may diverge in appearance:
 
 ```js
-import '@patternfly/react-core/dist/styles/base.css';
+import '@rh-felt/react-core/dist/styles/base.css';
 ```
 
 #### Example component usage
 
 ```ts
-import { Table, Thead, Tr, Th, Td, Tbody } from '@patternfly/react-table';
+import { Table, Thead, Tr, Th, Td, Tbody } from '@rh-felt/react-table';
 
 export const ComposableTableBasic = () => {
   const repositories = [
@@ -66,7 +66,7 @@ export default SimpleTable;
 
 ## Contribution
 
-This library makes use of the babel plugin from [@patternfly/react-styles](../react-styles/README.md) to enable providing the CSS alongside the components. This removes the need for consumers to use (style|css|sass)-loaders. For an example of using CSS from core you can reference [Button.js](./src/components/Button/Button.js). For any CSS not provided by core please use the `StyleSheet.create` utility from [@patternfly/react-styles](../react-styles/README.md). This will prevent collisions with any consumers, and allow the CSS to be bundled with the component.
+This library makes use of the babel plugin from [@rh-felt/react-styles](../react-styles/README.md) to enable providing the CSS alongside the components. This removes the need for consumers to use (style|css|sass)-loaders. For an example of using CSS from core you can reference [Button.js](./src/components/Button/Button.js). For any CSS not provided by core please use the `StyleSheet.create` utility from [@rh-felt/react-styles](../react-styles/README.md). This will prevent collisions with any consumers, and allow the CSS to be bundled with the component.
 
 ### Documentation
 
@@ -85,7 +85,7 @@ yarn install && yarn start
 
 ### Testing
 
-Testing is done at the root of this repo. To only run the @patternfly/react-table tests:
+Testing is done at the root of this repo. To only run the @rh-felt/react-table tests:
 
 ```
 yarn test packages/react-table

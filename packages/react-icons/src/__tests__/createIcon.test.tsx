@@ -229,7 +229,7 @@ describe('rh-ui mapping: nested SVGs, set prop, and warnings', () => {
       rhUiIcon: null
     });
     expect(warnSpy).toHaveBeenCalledWith(
-      '@patternfly/react-icons: createIconBase is missing an `icon` definition (name: MissingDefaultIcon).'
+      '@rh-felt/react-icons: createIconBase is missing an `icon` definition (name: MissingDefaultIcon).'
     );
   });
 });

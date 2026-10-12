@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { TreeViewRoot } from '../TreeViewRoot';
-import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
+import styles from '@rh-felt/react-styles/css/components/TreeView/tree-view';
 
 test('Renders children', () => {
   render(

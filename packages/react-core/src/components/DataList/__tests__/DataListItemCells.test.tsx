@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { DataListItemCells } from '../DataListItemCells';
 
-import styles from '@patternfly/react-styles/css/components/DataList/data-list';
+import styles from '@rh-felt/react-styles/css/components/DataList/data-list';
 
 test('Cells renders to match snapshot', () => {
   const { asFragment } = render(<DataListItemCells dataListCells={[]} />);

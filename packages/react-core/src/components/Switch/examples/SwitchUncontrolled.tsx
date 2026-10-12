@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Switch } from '@patternfly/react-core';
+import { Switch } from '@rh-felt/react-core';
 
 export const SwitchUncontrolled: React.FunctionComponent = () => (
   <Fragment>

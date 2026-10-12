@@ -22,9 +22,9 @@ import {
   ToolbarContent,
   ToolbarToggleGroup,
   ToolbarItem
-} from '@patternfly/react-core';
-import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
-import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
+} from '@rh-felt/react-core';
+import RhUiEllipsisVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhUiFilterFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
 
 export const ToolbarStacked: React.FunctionComponent = () => {
   // toggle group - three option menus with labels, two icon buttons, Kebab menu - right aligned

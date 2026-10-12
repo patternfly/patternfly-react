@@ -5,17 +5,17 @@ cssPrefix: pf-v6-c-code-editor
 propComponents: ['CodeEditor', 'CodeEditorControl', 'Popover']
 ---
 
-Note: Code editor lives in its own package at [@patternfly/react-code-editor](https://www.npmjs.com/package/@patternfly/react-code-editor) and has [**required peer deps**](https://github.com/patternfly/patternfly-react/blob/main/packages/react-code-editor/package.json).
+Note: Code editor lives in its own package at [@rh-felt/react-code-editor](https://www.npmjs.com/package/@rh-felt/react-code-editor) and has [**required peer deps**](https://github.com/patternfly/patternfly-react/blob/main/packages/react-code-editor/package.json).
 
 import { Fragment, useState } from 'react';
-import { CodeEditor, CodeEditorControl, Language } from '@patternfly/react-code-editor';
-import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
-import HashtagIcon from '@patternfly/react-icons/dist/esm/icons/hashtag-icon';
-import MapIcon from '@patternfly/react-icons/dist/esm/icons/map-icon';
-import RhUiDarkModeFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-dark-mode-fill-icon';
-import RhUiPlayFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
-import FontIcon from '@patternfly/react-icons/dist/esm/icons/font-icon';
-import AdjustIcon from '@patternfly/react-icons/dist/esm/icons/adjust-icon';
+import { CodeEditor, CodeEditorControl, Language } from '@rh-felt/react-code-editor';
+import RhUiSettingsFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
+import HashtagIcon from '@rh-felt/react-icons/dist/esm/icons/hashtag-icon';
+import MapIcon from '@rh-felt/react-icons/dist/esm/icons/map-icon';
+import RhUiDarkModeFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-dark-mode-fill-icon';
+import RhUiPlayFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
+import FontIcon from '@rh-felt/react-icons/dist/esm/icons/font-icon';
+import AdjustIcon from '@rh-felt/react-icons/dist/esm/icons/adjust-icon';
 
 ## Examples
 

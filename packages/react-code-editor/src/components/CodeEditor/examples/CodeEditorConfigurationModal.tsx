@@ -1,10 +1,10 @@
-import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
-import MapIcon from '@patternfly/react-icons/dist/esm/icons/map-icon';
-import RhUiDarkModeFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-dark-mode-fill-icon';
-import HashtagIcon from '@patternfly/react-icons/dist/esm/icons/hashtag-icon';
-import FontIcon from '@patternfly/react-icons/dist/esm/icons/font-icon';
-import AdjustIcon from '@patternfly/react-icons/dist/esm/icons/adjust-icon';
-import { CodeEditor, CodeEditorControl } from '@patternfly/react-code-editor';
+import RhUiSettingsFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
+import MapIcon from '@rh-felt/react-icons/dist/esm/icons/map-icon';
+import RhUiDarkModeFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-dark-mode-fill-icon';
+import HashtagIcon from '@rh-felt/react-icons/dist/esm/icons/hashtag-icon';
+import FontIcon from '@rh-felt/react-icons/dist/esm/icons/font-icon';
+import AdjustIcon from '@rh-felt/react-icons/dist/esm/icons/adjust-icon';
+import { CodeEditor, CodeEditorControl } from '@rh-felt/react-code-editor';
 import {
   Flex,
   FlexItem,
@@ -15,7 +15,7 @@ import {
   NumberInput,
   Switch,
   SwitchProps
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 import { useState } from 'react';
 
 interface ConfigModalItemProps {

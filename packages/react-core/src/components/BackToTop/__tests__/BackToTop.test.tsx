@@ -2,7 +2,7 @@ import { createRef, RefObject } from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { BackToTop } from '../BackToTop';
 import userEvent from '@testing-library/user-event';
-import styles from '@patternfly/react-styles/css/components/BackToTop/back-to-top';
+import styles from '@rh-felt/react-styles/css/components/BackToTop/back-to-top';
 
 jest.mock('../../Button');
 

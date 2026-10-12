@@ -1,11 +1,11 @@
 import { isValidElement, useRef, useState } from 'react';
-import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import { Button, Checkbox, Radio, TextInput, KeyTypes, getUniqueId } from '@patternfly/react-core';
-import RhUiEditFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-edit-fill-icon';
-import RhMicronsCheckmarkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-checkmark-icon';
-import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
-import inlineEditStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
-import { css } from '@patternfly/react-styles';
+import { Table, Thead, Tr, Th, Tbody, Td } from '@rh-felt/react-table';
+import { Button, Checkbox, Radio, TextInput, KeyTypes, getUniqueId } from '@rh-felt/react-core';
+import RhUiEditFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-edit-fill-icon';
+import RhMicronsCheckmarkIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-checkmark-icon';
+import RhMicronsCloseIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-close-icon';
+import inlineEditStyles from '@rh-felt/react-styles/css/components/InlineEdit/inline-edit';
+import { css } from '@rh-felt/react-styles';
 
 interface EditButtonsCellProps {
   onClick: (type: 'save' | 'cancel' | 'edit') => void;

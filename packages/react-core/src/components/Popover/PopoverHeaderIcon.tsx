@@ -1,5 +1,5 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Popover/popover';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Popover/popover';
 
 export interface PopoverHeaderIconProps extends React.HTMLProps<HTMLSpanElement> {
   /** Content of the header icon */

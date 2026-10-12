@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { MultipleFileUploadStatus } from '../MultipleFileUploadStatus';
-import RhUiInProgressIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-in-progress-icon';
+import RhUiInProgressIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-in-progress-icon';
 
 jest.mock('../../../helpers/GenerateId/GenerateId');
 

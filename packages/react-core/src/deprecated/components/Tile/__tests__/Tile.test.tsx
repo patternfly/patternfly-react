@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { Tile } from '../Tile';
-import RhUiAddIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-icon';
+import RhUiAddIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-add-icon';
 
 describe('Tile', () => {
   test('basic', () => {

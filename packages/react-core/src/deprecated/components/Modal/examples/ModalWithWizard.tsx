@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
-import { Button, Wizard, WizardHeader, WizardStep } from '@patternfly/react-core';
-import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
+import { Button, Wizard, WizardHeader, WizardStep } from '@rh-felt/react-core';
+import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@rh-felt/react-core/deprecated';
 
 export const ModalWithWizard: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

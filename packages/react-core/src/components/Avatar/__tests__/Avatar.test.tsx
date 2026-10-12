@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { Avatar } from '../Avatar';
-import styles from '@patternfly/react-styles/css/components/Avatar/avatar';
+import styles from '@rh-felt/react-styles/css/components/Avatar/avatar';
 
 test('Renders simple avatar', () => {
   render(

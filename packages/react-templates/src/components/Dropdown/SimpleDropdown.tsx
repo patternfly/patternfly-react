@@ -5,10 +5,10 @@ import {
   DropdownList,
   DropdownItemProps,
   DropdownProps
-} from '@patternfly/react-core/dist/esm/components/Dropdown';
-import { MenuToggle, MenuToggleElement, MenuToggleProps } from '@patternfly/react-core/dist/esm/components/MenuToggle';
-import { Divider } from '@patternfly/react-core/dist/esm/components/Divider';
-import { OUIAProps } from '@patternfly/react-core/dist/esm/helpers';
+} from '@rh-felt/react-core/dist/esm/components/Dropdown';
+import { MenuToggle, MenuToggleElement, MenuToggleProps } from '@rh-felt/react-core/dist/esm/components/MenuToggle';
+import { Divider } from '@rh-felt/react-core/dist/esm/components/Divider';
+import { OUIAProps } from '@rh-felt/react-core/dist/esm/helpers';
 
 export interface SimpleDropdownItem extends Omit<DropdownItemProps, 'content'> {
   /** Content of the dropdown item. If the isDivider prop is true, this prop will be ignored. */

@@ -1,13 +1,13 @@
 import { useEffect, useRef } from 'react';
 import { ToggleTemplate, PaginationToggleTemplateProps } from './ToggleTemplate';
-import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Pagination/pagination';
+import { css } from '@rh-felt/react-styles';
 import { fillTemplate } from '../../helpers';
 import { PaginationNavigation } from './PaginationNavigation';
 import { PaginationOptionsMenu } from './PaginationOptionsMenu';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 import { formatBreakpointMods } from '../../helpers/util';
-import widthChars from '@patternfly/react-tokens/dist/esm/c_pagination__nav_page_select_c_form_control_width_chars';
+import widthChars from '@rh-felt/react-tokens/dist/esm/c_pagination__nav_page_select_c_form_control_width_chars';
 
 export enum PaginationVariant {
   bottom = 'bottom',

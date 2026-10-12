@@ -6,7 +6,7 @@ import {
   ChartThemeColor,
   ChartLegendTooltip,
   createContainer
-} from '@patternfly/react-charts/victory';
+} from '@rh-felt/react-charts/victory';
 
 interface PetData {
   x: string;

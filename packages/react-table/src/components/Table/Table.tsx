@@ -1,14 +1,14 @@
 import { createContext, forwardRef, useEffect, useRef, useState } from 'react';
-import styles from '@patternfly/react-styles/css/components/Table/table';
-import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
-import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-tree-view';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Table/table';
+import stylesGrid from '@rh-felt/react-styles/css/components/Table/table-grid';
+import stylesTreeView from '@rh-felt/react-styles/css/components/Table/table-tree-view';
+import { css } from '@rh-felt/react-styles';
 import { toCamel } from './utils';
 import { IVisibility } from './utils/decorators/classNames';
-import { handleArrows, setTabIndex } from '@patternfly/react-core/dist/esm/helpers/KeyboardHandler';
-import { KeyTypes } from '@patternfly/react-core/dist/esm/helpers/constants';
-import { useOUIAProps, OUIAProps } from '@patternfly/react-core/dist/esm/helpers/OUIA/ouia';
-import { useHasAnimations } from '@patternfly/react-core/dist/esm/helpers';
+import { handleArrows, setTabIndex } from '@rh-felt/react-core/dist/esm/helpers/KeyboardHandler';
+import { KeyTypes } from '@rh-felt/react-core/dist/esm/helpers/constants';
+import { useOUIAProps, OUIAProps } from '@rh-felt/react-core/dist/esm/helpers/OUIA/ouia';
+import { useHasAnimations } from '@rh-felt/react-core/dist/esm/helpers';
 import { TableGridBreakpoint, TableVariant } from './TableTypes';
 
 export interface BaseCellProps {

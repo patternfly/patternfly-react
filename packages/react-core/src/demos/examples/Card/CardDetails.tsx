@@ -10,8 +10,8 @@ import {
   DescriptionListTerm,
   DescriptionListDescription,
   Divider
-} from '@patternfly/react-core';
-import cssGridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
+} from '@rh-felt/react-core';
+import cssGridTemplateColumnsMin from '@rh-felt/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 export const CardDetailsDemo: React.FunctionComponent = () => (
   <Gallery hasGutter style={{ [cssGridTemplateColumnsMin.name]: '260px' } as React.CSSProperties}>

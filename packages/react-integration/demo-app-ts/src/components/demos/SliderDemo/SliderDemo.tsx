@@ -1,4 +1,4 @@
-import { Slider, SliderOnChangeEvent } from '@patternfly/react-core';
+import { Slider, SliderOnChangeEvent } from '@rh-felt/react-core';
 import { useState, useEffect } from 'react';
 
 export const SliderDemo = () => {

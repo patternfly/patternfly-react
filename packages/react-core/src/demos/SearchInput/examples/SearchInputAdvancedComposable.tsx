@@ -22,7 +22,7 @@ import {
   SearchInput,
   TextInput,
   yyyyMMddFormat
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const SearchInputAdvancedComposable: React.FunctionComponent = () => {
   const [value, setValue] = useState('');

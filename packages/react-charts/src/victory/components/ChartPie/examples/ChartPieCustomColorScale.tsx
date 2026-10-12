@@ -1,7 +1,7 @@
-import { ChartPie, ChartThemeColor } from '@patternfly/react-charts/victory';
-import chart_theme_blue_ColorScale_100 from '@patternfly/react-tokens/dist/esm/chart_theme_blue_ColorScale_100';
-import chart_theme_yellow_ColorScale_100 from '@patternfly/react-tokens/dist/esm/chart_theme_yellow_ColorScale_100';
-import chart_theme_orange_ColorScale_300 from '@patternfly/react-tokens/dist/esm/chart_theme_orange_ColorScale_300';
+import { ChartPie, ChartThemeColor } from '@rh-felt/react-charts/victory';
+import chart_theme_blue_ColorScale_100 from '@rh-felt/react-tokens/dist/esm/chart_theme_blue_ColorScale_100';
+import chart_theme_yellow_ColorScale_100 from '@rh-felt/react-tokens/dist/esm/chart_theme_yellow_ColorScale_100';
+import chart_theme_orange_ColorScale_300 from '@rh-felt/react-tokens/dist/esm/chart_theme_orange_ColorScale_300';
 
 interface Data {
   x?: string;

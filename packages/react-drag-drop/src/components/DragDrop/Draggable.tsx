@@ -1,7 +1,7 @@
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/DragDrop/drag-drop';
 import { DragButton } from './DragButton';
 
 export interface DraggableProps extends React.HTMLProps<HTMLDivElement> {

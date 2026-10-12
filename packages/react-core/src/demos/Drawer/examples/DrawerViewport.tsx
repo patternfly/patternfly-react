@@ -22,7 +22,7 @@ import {
   Toolbar,
   ToolbarContent,
   ToolbarItem
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const DrawerViewport: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = useState(true);

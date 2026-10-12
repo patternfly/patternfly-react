@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { MenuToggle, Select, SelectList, SelectOption, Timestamp } from '@patternfly/react-core';
+import { MenuToggle, Select, SelectList, SelectOption, Timestamp } from '@rh-felt/react-core';
 
 export const DateSelectDemo: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);

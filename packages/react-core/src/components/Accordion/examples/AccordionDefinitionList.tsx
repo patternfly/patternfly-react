@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Accordion, AccordionItem, AccordionContent, AccordionToggle } from '@patternfly/react-core';
+import { Accordion, AccordionItem, AccordionContent, AccordionToggle } from '@rh-felt/react-core';
 
 export const AccordionDefinitionList: React.FunctionComponent = () => {
   const [expanded, setExpanded] = useState('def-list-toggle2');

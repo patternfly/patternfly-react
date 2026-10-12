@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react';
-import { Button, ButtonVariant, Checkbox } from '@patternfly/react-core';
-import { DualListSelector as DLSDeprecated } from '@patternfly/react-core/deprecated';
-import RhMicronsSortDownSmallToLargeIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-small-to-large-icon';
+import { Button, ButtonVariant, Checkbox } from '@rh-felt/react-core';
+import { DualListSelector as DLSDeprecated } from '@rh-felt/react-core/deprecated';
+import RhMicronsSortDownSmallToLargeIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-sort-down-small-to-large-icon';
 
 export const DualListSelectorComplexOptionsActions: React.FunctionComponent = () => {
   const [availableOptions, setAvailableOptions] = useState<React.ReactNode[]>([

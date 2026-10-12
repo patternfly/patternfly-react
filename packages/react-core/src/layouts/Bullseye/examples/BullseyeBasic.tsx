@@ -1,4 +1,4 @@
-import { Bullseye } from '@patternfly/react-core';
+import { Bullseye } from '@rh-felt/react-core';
 
 export const BullseyeBasic: React.FunctionComponent = () => (
   <Bullseye>

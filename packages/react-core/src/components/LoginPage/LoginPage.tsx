@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { css } from '@patternfly/react-styles';
+import { css } from '@rh-felt/react-styles';
 
 import { BackgroundImage } from '../BackgroundImage';
 import { Brand, BrandProps } from '../Brand';

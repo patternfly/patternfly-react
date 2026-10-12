@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { Masthead, MastheadMain, MastheadLogo, MastheadContent, MastheadBrand, MastheadToggle } from '../index';
-import styles from '@patternfly/react-styles/css/components/Masthead/masthead';
+import styles from '@rh-felt/react-styles/css/components/Masthead/masthead';
 
 describe('Masthead', () => {
   test('verify basic', () => {

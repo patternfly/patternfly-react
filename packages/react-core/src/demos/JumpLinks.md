@@ -4,9 +4,9 @@ section: components
 ---
 
 import { useContext, useEffect, useRef, useState } from 'react';
-import mastheadStyles from '@patternfly/react-styles/css/components/Masthead/masthead';
-import breadcrumbStyles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+import mastheadStyles from '@rh-felt/react-styles/css/components/Masthead/masthead';
+import breadcrumbStyles from '@rh-felt/react-styles/css/components/Breadcrumb/breadcrumb';
+import { DashboardWrapper } from '@rh-felt/react-core/dist/js/demos/DashboardWrapper';
 
 ## Demos
 

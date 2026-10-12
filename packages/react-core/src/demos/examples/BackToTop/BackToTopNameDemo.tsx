@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { BackToTop, Card, CardBody, Content, Gallery, GalleryItem, PageSection, Switch } from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+import { BackToTop, Card, CardBody, Content, Gallery, GalleryItem, PageSection, Switch } from '@rh-felt/react-core';
+import { DashboardWrapper } from '@rh-felt/react-core/dist/js/demos/DashboardWrapper';
 
 export const BacktoTopNameDemo: React.FunctionComponent = () => {
   const [isAlwaysVisible, setIsAlwaysVisible] = useState(false);

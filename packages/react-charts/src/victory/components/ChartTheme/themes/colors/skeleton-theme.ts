@@ -1,9 +1,9 @@
 import { ColorTheme, ColorComponentTheme } from '../skeleton-theme';
-import chart_skeleton_ColorScale_100 from '@patternfly/react-tokens/dist/esm/chart_skeleton_ColorScale_100';
-import chart_skeleton_ColorScale_200 from '@patternfly/react-tokens/dist/esm/chart_skeleton_ColorScale_200';
-import chart_skeleton_ColorScale_300 from '@patternfly/react-tokens/dist/esm/chart_skeleton_ColorScale_300';
-import chart_skeleton_ColorScale_400 from '@patternfly/react-tokens/dist/esm/chart_skeleton_ColorScale_400';
-import chart_skeleton_ColorScale_500 from '@patternfly/react-tokens/dist/esm/chart_skeleton_ColorScale_500';
+import chart_skeleton_ColorScale_100 from '@rh-felt/react-tokens/dist/esm/chart_skeleton_ColorScale_100';
+import chart_skeleton_ColorScale_200 from '@rh-felt/react-tokens/dist/esm/chart_skeleton_ColorScale_200';
+import chart_skeleton_ColorScale_300 from '@rh-felt/react-tokens/dist/esm/chart_skeleton_ColorScale_300';
+import chart_skeleton_ColorScale_400 from '@rh-felt/react-tokens/dist/esm/chart_skeleton_ColorScale_400';
+import chart_skeleton_ColorScale_500 from '@rh-felt/react-tokens/dist/esm/chart_skeleton_ColorScale_500';
 
 // Color scale
 // See https://docs.google.com/document/d/1cw10pJFXWruB1SA8TQwituxn5Ss6KpxYPCOYGrH8qAY/edit

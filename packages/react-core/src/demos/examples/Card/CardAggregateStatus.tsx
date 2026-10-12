@@ -11,11 +11,11 @@ import {
   GridItem,
   Stack,
   Icon
-} from '@patternfly/react-core';
-import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-check-circle-fill-icon';
-import RhUiErrorFillIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-error-fill-icon';
-import RhUiWarningFillIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-warning-fill-icon';
-import cssGridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
+} from '@rh-felt/react-core';
+import RhUiCheckCircleFillIcon from '@rh-felt/react-icons/dist/js/icons/rh-ui-check-circle-fill-icon';
+import RhUiErrorFillIcon from '@rh-felt/react-icons/dist/js/icons/rh-ui-error-fill-icon';
+import RhUiWarningFillIcon from '@rh-felt/react-icons/dist/js/icons/rh-ui-warning-fill-icon';
+import cssGridTemplateColumnsMin from '@rh-felt/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
 
 interface ContentType {
   icon?: React.ReactNode;

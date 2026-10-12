@@ -1,11 +1,12 @@
 /**
  * @param specifier module specifier
- * @param moduleName module name (@patternfly/react-tokens or @patternfly/react-icons)
+ * @param moduleName module name (@patternfly or @rh-felt react-tokens/react-icons)
  * @returns string of non-treeshaken import
  */
 function makeImport(specifier, moduleName) {
-  if (moduleName.endsWith('createIcon') && moduleName.startsWith('@patternfly/react-icons')) {
-    return `import { ${specifier.local.name} } from '@patternfly/react-icons/dist/esm/createIcon';`;
+  if (moduleName.endsWith('createIcon') && /^@(patternfly|rh-felt)\/react-icons/.test(moduleName)) {
+    const scope = moduleName.split('/')[0];
+    return `import { ${specifier.local.name} } from '${scope}/react-icons/dist/esm/createIcon';`;
   }
   let res = `import ${specifier.local.name} from '`;
   res += moduleName.replace(/\/dist\/(js|esm)/, '');
@@ -40,12 +41,12 @@ module.exports = {
   create(context) {
     return {
       ImportDeclaration(node) {
-        if (/@patternfly\/react-(tokens|icons)(\/dist\/(js|esm))?/.test(node.source.value)) {
+        if (/@(patternfly|rh-felt)\/react-(tokens|icons)(\/dist\/(js|esm))?/.test(node.source.value)) {
           const esmSpecifiers = node.specifiers.filter(
             (specifier) =>
               specifier.type === 'ImportSpecifier' &&
               !(
-                node.source.value.startsWith('@patternfly/react-icons') &&
+                /^@(patternfly|rh-felt)\/react-icons/.test(node.source.value) &&
                 node.source.value.endsWith('/dist/esm/createIcon')
               )
           );

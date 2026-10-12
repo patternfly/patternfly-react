@@ -8,8 +8,8 @@ import {
   GalleryItem,
   Flex,
   FlexItem
-} from '@patternfly/react-core';
-import { ChartArea, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
+} from '@rh-felt/react-core';
+import { ChartArea, ChartGroup, ChartVoronoiContainer } from '@rh-felt/react-charts/victory';
 
 export const CardTrendDemo2: React.FunctionComponent = () => (
   <Gallery hasGutter minWidths={{ default: '360px' }}>

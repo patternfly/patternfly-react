@@ -1,4 +1,4 @@
-import { Card, CardBody, CardHeader, Button, CardTitle } from '@patternfly/react-core';
+import { Card, CardBody, CardHeader, Button, CardTitle } from '@rh-felt/react-core';
 
 export const CardBasic: React.FunctionComponent = () => (
   <Card ouiaId="BasicCard">

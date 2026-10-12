@@ -1,17 +1,17 @@
 import { createRef, Fragment, useEffect, useRef, useState } from 'react';
-import styles from '@patternfly/react-styles/css/components/Label/label';
-import labelGrpStyles from '@patternfly/react-styles/css/components/Label/label-group';
+import styles from '@rh-felt/react-styles/css/components/Label/label';
+import labelGrpStyles from '@rh-felt/react-styles/css/components/Label/label-group';
 import { Button } from '../Button';
 import { Tooltip, TooltipPosition } from '../Tooltip';
-import { css } from '@patternfly/react-styles';
+import { css } from '@rh-felt/react-styles';
 import { useIsomorphicLayoutEffect } from '../../helpers';
-import cssTextMaxWidth from '@patternfly/react-tokens/dist/esm/c_label__text_MaxWidth';
-import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
-import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
-import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
-import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
-import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
-import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
+import cssTextMaxWidth from '@rh-felt/react-tokens/dist/esm/c_label__text_MaxWidth';
+import RhMicronsCloseIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-close-icon';
+import RhUiCheckCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import RhUiNotificationFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
+import RhUiErrorFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
+import RhUiWarningFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
+import RhUiInformationFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
 
 /** Semantic status for labels (default icon and status styling). */
 export enum LabelStatus {

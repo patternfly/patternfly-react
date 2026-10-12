@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { ToggleGroup } from '../ToggleGroup';
 import { ToggleGroupItem } from '../ToggleGroupItem';
-import styles from '@patternfly/react-styles/css/components/ToggleGroup/toggle-group';
+import styles from '@rh-felt/react-styles/css/components/ToggleGroup/toggle-group';
 
 const props = {
   onChange: jest.fn(),

@@ -1,6 +1,6 @@
 import { createContext, useRef } from 'react';
-import styles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/TextInputGroup/text-input-group';
+import { css } from '@rh-felt/react-styles';
 import { ValidatedOptions } from '../../helpers/constants';
 
 export interface TextInputGroupProps extends React.HTMLProps<HTMLDivElement> {

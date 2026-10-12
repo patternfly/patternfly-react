@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Progress, ProgressProps, HelperText, HelperTextItem, Radio } from '@patternfly/react-core';
+import { Progress, ProgressProps, HelperText, HelperTextItem, Radio } from '@rh-felt/react-core';
 
 export const ProgressHelperText: React.FunctionComponent = () => {
   type ProgressVariant = ProgressProps['variant'];

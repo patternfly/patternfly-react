@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 import { OverflowTab } from '../OverflowTab';
 import { TabsContext } from '../TabsContext';
-import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
+import styles from '@rh-felt/react-styles/css/components/Tabs/tabs';
 
 jest.mock('../../../helpers', () => ({
   Popper: ({ trigger, popper, isVisible, appendTo }) => (

@@ -7,7 +7,7 @@ ouia: true
 ---
 
 import { Fragment, useEffect, useState } from 'react';
-import RhUiPlayFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
+import RhUiPlayFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
 
 ## Examples
 

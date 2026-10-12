@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Chip, ChipGroup } from '@patternfly/react-core/deprecated';
+import { Chip, ChipGroup } from '@rh-felt/react-core/deprecated';
 
 interface ChipWithCategoryGroupState {
   chipGroups: {

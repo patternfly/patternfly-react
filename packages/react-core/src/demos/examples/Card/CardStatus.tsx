@@ -21,11 +21,11 @@ import {
   Popover,
   Title,
   Icon
-} from '@patternfly/react-core';
-import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
-import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-check-circle-fill-icon';
-import RhUiErrorFillIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-error-fill-icon';
-import t_global_text_color_subtle from '@patternfly/react-tokens/dist/esm/t_global_text_color_subtle';
+} from '@rh-felt/react-core';
+import { Table, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@rh-felt/react-table';
+import RhUiCheckCircleFillIcon from '@rh-felt/react-icons/dist/js/icons/rh-ui-check-circle-fill-icon';
+import RhUiErrorFillIcon from '@rh-felt/react-icons/dist/js/icons/rh-ui-error-fill-icon';
+import t_global_text_color_subtle from '@rh-felt/react-tokens/dist/esm/t_global_text_color_subtle';
 
 export const CardStatus: React.FunctionComponent = () => {
   const [drawerExpanded, setDrawerExpanded] = useState(false);

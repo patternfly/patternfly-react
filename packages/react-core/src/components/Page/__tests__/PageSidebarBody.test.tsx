@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { PageSidebarBody } from '../PageSidebarBody';
-import styles from '@patternfly/react-styles/css/components/Page/page';
+import styles from '@rh-felt/react-styles/css/components/Page/page';
 
 test('Renders without children', () => {
   render(

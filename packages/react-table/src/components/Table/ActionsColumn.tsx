@@ -1,11 +1,11 @@
 import { cloneElement, forwardRef, Fragment, useState } from 'react';
-import { Dropdown, DropdownItem, DropdownList } from '@patternfly/react-core/dist/esm/components/Dropdown';
-import { Button } from '@patternfly/react-core/dist/esm/components/Button';
-import { Divider } from '@patternfly/react-core/dist/esm/components/Divider';
-import { MenuToggle } from '@patternfly/react-core/dist/esm/components/MenuToggle';
+import { Dropdown, DropdownItem, DropdownList } from '@rh-felt/react-core/dist/esm/components/Dropdown';
+import { Button } from '@rh-felt/react-core/dist/esm/components/Button';
+import { Divider } from '@rh-felt/react-core/dist/esm/components/Divider';
+import { MenuToggle } from '@rh-felt/react-core/dist/esm/components/MenuToggle';
 import { IAction, IExtraData, IRowData } from './TableTypes';
-import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
-import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip';
+import RhUiEllipsisVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import { Tooltip } from '@rh-felt/react-core/dist/esm/components/Tooltip';
 
 export interface CustomActionsToggleProps {
   onToggle: (event: React.MouseEvent | React.KeyboardEvent) => void;

@@ -5,7 +5,7 @@ import {
   ChartLine,
   ChartThemeColor,
   ChartVoronoiContainer
-} from '@patternfly/react-charts/victory';
+} from '@rh-felt/react-charts/victory';
 
 interface PetData {
   name?: string;

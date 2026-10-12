@@ -1,15 +1,15 @@
 import { Fragment, useState } from 'react';
-import { sortable, info } from '@patternfly/react-table';
-import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
-import { Toolbar, ToolbarContent, ToolbarItem, MenuToggle, MenuToggleElement } from '@patternfly/react-core';
+import { sortable, info } from '@rh-felt/react-table';
+import { Table, TableHeader, TableBody, TableProps } from '@rh-felt/react-table/deprecated';
+import { Toolbar, ToolbarContent, ToolbarItem, MenuToggle, MenuToggleElement } from '@rh-felt/react-core';
 import {
   Select as NewSelect,
   SelectGroup as NewSelectGroup,
   SelectList as NewSelectList,
   SelectOption as NewSelectOption
-} from '@patternfly/react-core/dist/esm/components/Select';
+} from '@rh-felt/react-core/dist/esm/components/Select';
 
-import RhMicronsSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-large-to-small-icon';
+import RhMicronsSortDownLargeToSmallIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-sort-down-large-to-small-icon';
 
 interface Repository {
   name: string;

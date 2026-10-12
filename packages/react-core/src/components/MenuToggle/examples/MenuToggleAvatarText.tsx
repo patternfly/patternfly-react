@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
-import { MenuToggle, Avatar } from '@patternfly/react-core';
-import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
+import { MenuToggle, Avatar } from '@rh-felt/react-core';
+import imgAvatar from '@rh-felt/react-core/src/components/assets/avatarImg.svg';
 
 export const MenuToggleAvatarText: React.FunctionComponent = () => (
   <Fragment>

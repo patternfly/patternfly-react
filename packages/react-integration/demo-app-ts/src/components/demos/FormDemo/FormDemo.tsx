@@ -25,10 +25,10 @@ import {
   LabelGroup,
   MenuToggle,
   MenuToggleElement
-} from '@patternfly/react-core';
-import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
-import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
-import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
+} from '@rh-felt/react-core';
+import RhMicronsCloseIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-close-icon';
+import RhUiErrorFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
+import spacing from '@rh-felt/react-styles/css/utilities/Spacing/spacing';
 
 const initialSelectOptions = [
   { value: 'Alabama', children: 'Alabama' },

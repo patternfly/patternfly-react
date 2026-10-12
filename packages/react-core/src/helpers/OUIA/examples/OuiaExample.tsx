@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Button } from '@patternfly/react-core';
+import { Button } from '@rh-felt/react-core';
 
 export const OuiaExample: React.FunctionComponent = () => (
   <Fragment>

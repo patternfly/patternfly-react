@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ExpandableSection, ExpandableSectionVariant } from '@patternfly/react-core';
+import { ExpandableSection, ExpandableSectionVariant } from '@rh-felt/react-core';
 
 export const ExpandableSectionTruncateDemo: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = useState(false);

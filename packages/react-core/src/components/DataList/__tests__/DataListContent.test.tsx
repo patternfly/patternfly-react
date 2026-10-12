@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { DataListContent } from '../DataListContent';
 
-import styles from '@patternfly/react-styles/css/components/DataList/data-list';
+import styles from '@rh-felt/react-styles/css/components/DataList/data-list';
 
 test('Renders to match snapshot', () => {
   const { asFragment } = render(<DataListContent aria-label="Primary Content Details"> test</DataListContent>);

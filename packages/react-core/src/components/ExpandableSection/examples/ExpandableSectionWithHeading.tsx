@@ -1,6 +1,6 @@
 import { useState, MouseEvent } from 'react';
-import { ExpandableSection, ExpandableSectionToggle, Stack, StackItem } from '@patternfly/react-core';
-import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import { ExpandableSection, ExpandableSectionToggle, Stack, StackItem } from '@rh-felt/react-core';
+import RhUiCheckCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 
 export const ExpandableSectionWithHeading = () => {
   const [isExpanded1, setIsExpanded1] = useState(false);

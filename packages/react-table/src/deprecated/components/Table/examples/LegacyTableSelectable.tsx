@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { headerCol } from '@patternfly/react-table';
-import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
-import { Checkbox } from '@patternfly/react-core';
-import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
+import { headerCol } from '@rh-felt/react-table';
+import { Table, TableHeader, TableBody, TableProps } from '@rh-felt/react-table/deprecated';
+import { Checkbox } from '@rh-felt/react-core';
+import spacing from '@rh-felt/react-styles/css/utilities/Spacing/spacing';
 
 interface Repository {
   name: string;

@@ -1,4 +1,4 @@
-import { Nav, MenuContent, MenuItem, MenuList, DrilldownMenu, Menu } from '@patternfly/react-core';
+import { Nav, MenuContent, MenuItem, MenuList, DrilldownMenu, Menu } from '@rh-felt/react-core';
 
 interface MenuHeights {
   [menuId: string]: number;

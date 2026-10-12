@@ -28,18 +28,18 @@ import {
   Divider,
   PageToggleButton,
   NavExpandable
-} from '@patternfly/react-core';
-import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
-import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
-import RhUiCloudFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cloud-fill-icon';
-import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
-import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
-import RhUiCubesIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cubes-icon';
-import RhUiFolderIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-icon';
-import RhUiResourceIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-resource-icon';
+} from '@rh-felt/react-core';
+import RhUiFolderFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
+import RhUiQuestionMarkCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
+import RhUiCloudFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-cloud-fill-icon';
+import RhUiCodeIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-code-icon';
+import RhMicronsSearchIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-search-icon';
+import RhUiCubesIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-cubes-icon';
+import RhUiFolderIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-folder-icon';
+import RhUiResourceIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-resource-icon';
 import pfLogo from '../../assets/PF-IconLogo-color.svg';
-import RhUiThumbnailViewSmallFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-thumbnail-view-small-fill-icon';
-import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_lg';
+import RhUiThumbnailViewSmallFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-thumbnail-view-small-fill-icon';
+import globalBreakpointLg from '@rh-felt/react-tokens/dist/esm/t_global_breakpoint_lg';
 import { IS_INERT } from '../../../helpers/inert';
 interface NavOnSelectProps {
   groupId: number | string;

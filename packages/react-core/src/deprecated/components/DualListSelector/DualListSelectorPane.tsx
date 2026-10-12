@@ -1,13 +1,13 @@
 import { useContext, useState } from 'react';
-import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/DualListSelector/dual-list-selector';
+import { css } from '@rh-felt/react-styles';
 import { DualListSelectorTree, DualListSelectorTreeItemData } from './DualListSelectorTree';
 import { useSSRSafeId } from '../../../helpers';
 import { DualListSelectorListWrapper } from './DualListSelectorListWrapper';
 import { DualListSelectorContext, DualListSelectorPaneContext } from './DualListSelectorContext';
 import { DualListSelectorList } from './DualListSelectorList';
 import { SearchInput } from '../../../components/SearchInput';
-import cssMenuMinHeight from '@patternfly/react-tokens/dist/esm/c_dual_list_selector__menu_MinHeight';
+import cssMenuMinHeight from '@rh-felt/react-tokens/dist/esm/c_dual_list_selector__menu_MinHeight';
 
 /** Acts as the container for a list of options that are either available or chosen,
  * depending on the pane type (available or chosen). A search input and other actions,

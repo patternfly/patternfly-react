@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { css } from '@patternfly/react-styles';
+import { css } from '@rh-felt/react-styles';
 import { MenuItemProps, MenuItem } from '../Menu';
 
 /**

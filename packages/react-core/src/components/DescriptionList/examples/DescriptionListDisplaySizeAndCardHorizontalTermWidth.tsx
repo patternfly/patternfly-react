@@ -1,5 +1,5 @@
-import { Button, DescriptionList, DescriptionListTerm, DescriptionListDescription, Card } from '@patternfly/react-core';
-import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
+import { Button, DescriptionList, DescriptionListTerm, DescriptionListDescription, Card } from '@rh-felt/react-core';
+import RhUiAddCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 
 export const DescriptionListDisplaySizeAndCardHorizontalTermWidth: React.FunctionComponent = () => (
   <DescriptionList

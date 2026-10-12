@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/Page/page';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Page/page';
+import { css } from '@rh-felt/react-styles';
 
 export interface PageBodyProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the section */

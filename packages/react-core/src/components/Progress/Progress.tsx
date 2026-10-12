@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import styles from '@patternfly/react-styles/css/components/Progress/progress';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Progress/progress';
+import { css } from '@rh-felt/react-styles';
 import { ProgressContainer, ProgressMeasureLocation } from './ProgressContainer';
 import { AriaProps } from './ProgressBar';
 import { GenerateId, getOUIAProps, OUIAProps } from '../../helpers';

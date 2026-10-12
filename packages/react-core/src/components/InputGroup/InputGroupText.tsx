@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/InputGroup/input-group';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/InputGroup/input-group';
+import { css } from '@rh-felt/react-styles';
 import { InputGroupItem } from './InputGroupItem';
 
 export interface InputGroupTextProps extends React.HTMLProps<HTMLSpanElement | HTMLLabelElement> {

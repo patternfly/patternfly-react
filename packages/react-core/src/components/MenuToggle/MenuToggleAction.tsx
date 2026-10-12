@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import styles from '@patternfly/react-styles/css/components/MenuToggle/menu-toggle';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/MenuToggle/menu-toggle';
+import { css } from '@rh-felt/react-styles';
 
 export interface MenuToggleActionProps {
   /** Additional classes added to the MenuToggleAction */

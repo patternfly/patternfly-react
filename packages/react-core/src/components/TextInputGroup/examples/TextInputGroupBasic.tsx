@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TextInputGroup, TextInputGroupMain } from '@patternfly/react-core';
+import { TextInputGroup, TextInputGroupMain } from '@rh-felt/react-core';
 
 export const TextInputGroupBasic: React.FunctionComponent = () => {
   const [value, setValue] = useState('');

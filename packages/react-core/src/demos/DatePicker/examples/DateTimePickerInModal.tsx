@@ -10,7 +10,7 @@ import {
   ModalHeader,
   ModalBody,
   ModalFooter
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const SimpleModal = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

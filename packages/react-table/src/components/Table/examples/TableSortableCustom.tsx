@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { Table, Thead, Tr, Th, Tbody, Td, ThProps } from '@patternfly/react-table';
+import { Table, Thead, Tr, Th, Tbody, Td, ThProps } from '@rh-felt/react-table';
 import {
   Toolbar,
   ToolbarContent,
@@ -10,8 +10,8 @@ import {
   SelectOption,
   MenuToggle,
   MenuToggleElement
-} from '@patternfly/react-core';
-import RhMicronsSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-large-to-small-icon';
+} from '@rh-felt/react-core';
+import RhMicronsSortDownLargeToSmallIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-sort-down-large-to-small-icon';
 
 interface Repository {
   name: string;

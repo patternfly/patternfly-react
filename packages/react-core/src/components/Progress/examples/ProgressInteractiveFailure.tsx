@@ -7,7 +7,7 @@ import {
   Checkbox,
   Form,
   FormGroup
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const ProgressInteractiveFailure: React.FunctionComponent = () => {
   const [measureLocation, setMeasureLocation] = useState<ProgressMeasureLocation>(ProgressMeasureLocation.inside);

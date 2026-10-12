@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FocusTrap } from '../../helpers';
-import bullsEyeStyles from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
-import { css } from '@patternfly/react-styles';
+import bullsEyeStyles from '@rh-felt/react-styles/css/layouts/Bullseye/bullseye';
+import { css } from '@rh-felt/react-styles';
 import { getOUIAProps, OUIAProps, useHasAnimations } from '../../helpers';
 import { Backdrop } from '../Backdrop';
 import { ModalBoxCloseButton } from './ModalBoxCloseButton';

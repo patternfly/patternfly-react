@@ -1,4 +1,4 @@
-import { Popover } from '@patternfly/react-core';
+import { Popover } from '@rh-felt/react-core';
 
 export const PopoverSelectorRef: React.FunctionComponent = () => (
   <div style={{ margin: '50px' }}>

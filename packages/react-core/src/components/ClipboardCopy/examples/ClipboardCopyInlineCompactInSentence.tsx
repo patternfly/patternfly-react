@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { ClipboardCopy } from '@patternfly/react-core';
+import { ClipboardCopy } from '@rh-felt/react-core';
 
 export const ClipboardCopyInlineCompactInSentence: React.FunctionComponent = () => (
   <Fragment>

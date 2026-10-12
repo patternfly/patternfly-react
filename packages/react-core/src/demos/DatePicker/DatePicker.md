@@ -5,7 +5,7 @@ subsection: date-and-time
 ---
 
 import { Fragment, useRef, useState } from 'react';
-import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
+import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@rh-felt/react-core/deprecated';
 
 ## Demos
 

@@ -8,13 +8,13 @@ ouia: true
 
 import { useState } from 'react';
 import './nav.css';
-import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
-import RhUiCubesIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cubes-icon';
-import RhUiFolderIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-icon';
-import RhUiFolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-open-icon';
-import RhUiCloudIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cloud-icon';
-import RhUiLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-link-icon';
-import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
+import RhMicronsCaretRightIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
+import RhUiCubesIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-cubes-icon';
+import RhUiFolderIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-folder-icon';
+import RhUiFolderOpenIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-folder-open-icon';
+import RhUiCloudIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-cloud-icon';
+import RhUiLinkIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-link-icon';
+import RhUiCodeIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-code-icon';
 
 ## Examples
 

@@ -1,4 +1,4 @@
-import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
+import { Tabs, Tab, TabTitleText } from '@rh-felt/react-core';
 import { Component } from 'react';
 
 export class TabsExpandableDemo extends Component {

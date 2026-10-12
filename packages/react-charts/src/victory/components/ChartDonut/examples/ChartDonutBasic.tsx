@@ -1,4 +1,4 @@
-import { ChartDonut } from '@patternfly/react-charts/victory';
+import { ChartDonut } from '@rh-felt/react-charts/victory';
 
 interface PetData {
   x: string;
