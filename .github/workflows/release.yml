@@ -2,7 +2,6 @@ name: Release
 on:
   push:
     branches:
-      - main
       - felt-v1
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
