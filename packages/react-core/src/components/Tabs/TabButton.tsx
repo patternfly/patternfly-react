@@ -5,8 +5,10 @@ export interface TabButtonProps extends Omit<React.HTMLProps<HTMLAnchorElement |
   children?: React.ReactNode;
   /** additional classes added to the Tab */
   className?: string;
-  /** URL associated with the Tab. A Tab with an href will render as an <a> instead of a <button>. A Tab inside a <Tabs component="nav"> should have an href. */
+  /** URL associated with the Tab. A Tab with an href will render as an <a> instead of a <button> unless component is supplied. */
   href?: string;
+  /** Sets the element or custom component used for the tab's button or link. Defaults to an anchor when href is supplied, otherwise a button. */
+  component?: React.ElementType<any> | React.ComponentType<any>;
   /** child reference for case in which a TabContent section is defined outside of a Tabs component */
   tabContentRef?: React.Ref<any>;
   /** Parents' innerRef passed down for properly displaying Tooltips */
@@ -20,13 +22,14 @@ export const TabButton: React.FunctionComponent<TabButtonProps> = ({
   ouiaId,
   parentInnerRef,
   ouiaSafe,
+  component,
   ...props
 }: TabButtonProps) => {
-  const Component = (props.href ? 'a' : 'button') as any;
+  const Component = (component || (props.href ? 'a' : 'button')) as any;
 
   return (
     <Component
-      {...(!props.href && { type: 'button' })}
+      {...(Component === 'button' && { type: 'button' })}
       ref={parentInnerRef}
       {...getOUIAProps(TabButton.displayName, ouiaId, ouiaSafe)}
       {...props}

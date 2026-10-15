@@ -14,8 +14,10 @@ export interface TabProps
   children?: React.ReactNode;
   /** additional classes added to the Tab */
   className?: string;
-  /** URL associated with the Tab. A Tab with an href will render as an <a> instead of a <button>. A Tab inside a <Tabs component="nav"> should have an href. */
+  /** URL associated with the Tab. A Tab with an href will render as an <a> instead of a <button> unless component is supplied. */
   href?: string;
+  /** Sets the element or custom component used for this Tab's button or link. Defaults to an anchor when href is supplied, otherwise a button. Does not change the Tabs container's outer wrapper. Custom components must forward the ref and supplied props to the underlying element. */
+  component?: React.ElementType<any> | React.ComponentType<any>;
   /** Content rendered in the tab title. Should be <TabTitleText> and/or <TabTitleIcon> for proper styling. */
   title: React.ReactNode;
   /** uniquely identifies the tab */
@@ -58,6 +60,7 @@ const TabBase: React.FunctionComponent<TabProps> = ({
   isAriaDisabled,
   inoperableEvents = ['onClick', 'onKeyPress'],
   href,
+  component = href ? 'a' : 'button',
   innerRef,
   tooltip,
   closeButtonAriaLabel,
@@ -80,7 +83,8 @@ const TabBase: React.FunctionComponent<TabProps> = ({
   if ((mountOnEnter || unmountOnExit) && eventKey !== localActiveKey) {
     ariaControls = undefined;
   }
-  const isButtonElement = Boolean(!href);
+  const isButtonElement = component === 'button';
+  const isCustomComponent = component !== 'a' && !isButtonElement;
   const getDefaultTabIdx = () => {
     if (isDisabled) {
       return isButtonElement ? null : -1;
@@ -94,19 +98,20 @@ const TabBase: React.FunctionComponent<TabProps> = ({
       parentInnerRef={innerRef}
       className={css(
         styles.tabsLink,
-        isDisabled && href && styles.modifiers.disabled,
+        isDisabled && !isButtonElement && styles.modifiers.disabled,
         isAriaDisabled && styles.modifiers.ariaDisabled
       )}
       disabled={isButtonElement ? isDisabled : null}
       aria-disabled={isDisabled || isAriaDisabled}
       tabIndex={getDefaultTabIdx()}
-      onClick={(event: any) => handleTabClick(event, eventKey, tabContentRef)}
-      {...(isAriaDisabled ? preventedEvents : null)}
+      onClick={(event: any) => handleTabClick(event, eventKey, tabContentRef, isCustomComponent)}
+      {...(isAriaDisabled || (isDisabled && !isButtonElement) ? preventedEvents : null)}
       id={`pf-tab-${eventKey}-${childId || uniqueId}`}
       aria-controls={ariaControls}
       tabContentRef={tabContentRef}
       ouiaId={childOuiaId}
       href={href}
+      component={component}
       role="tab"
       aria-selected={eventKey === localActiveKey}
       {...props}

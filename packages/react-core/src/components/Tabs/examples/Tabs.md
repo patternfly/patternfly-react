@@ -17,7 +17,7 @@ propComponents:
 ouia: true
 ---
 
-import { createRef, Fragment, useEffect, useRef, useState } from 'react';
+import { createRef, forwardRef, Fragment, useEffect, useRef, useState } from 'react';
 import RhUiUsersFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-users-fill-icon';
 import RhUiContainerFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-container-fill-icon';
 import DatabaseIcon from '@patternfly/react-icons/dist/esm/icons/database-icon';
@@ -175,9 +175,9 @@ To allow tabs to fill the available width of the page section, use the `isFilled
 
 ### Tabs linked to nav elements
 
-To let tabs link to nav elements, pass `{TabsComponent.nav}` into the `component` property.
+To render the `<Tabs>` container inside a navigation region, pass `{TabsComponent.nav}` into the `component` property of `<Tabs>`. This property controls the outer wrapper, not the individual tab links.
 
-Nav tabs should use the `href` property to link the tab to the URL of another page or page section. A tab with an `href` will render as an `<a>` instead of a `<button>`.
+In this example, each `<Tab>` uses `href` to render its clickable element as an `<a>` instead of a `<button>`. To use a router link instead, see the [custom component example](#custom-component).
 
 ```ts file="./TabsNav.tsx"
 
@@ -196,6 +196,18 @@ Subtabs can also link to nav elements.
 Site navigation tabs
 
 ```ts file="./TabsSiteNav.tsx"
+
+```
+
+### Custom component
+
+Pass `component={CustomLink}` to an individual `<Tab>` to replace its button or anchor with a custom component. This is separate from `<Tabs component={TabsComponent.nav}>`, which controls the outer wrapper.
+
+The custom component must forward the supplied props and ref to its underlying element. `<Tabs>` continues handling selection, while the custom component handles navigation.
+
+The following example uses a custom anchor and prevents default browser navigation so you can try tab selection without leaving the example. For integration with a router, see [using router links](#using-router-links).
+
+```ts file="./TabsCustomComponent.tsx"
 
 ```
 
@@ -270,3 +282,24 @@ The following example passes in both help popover and close actions.
 ```ts file="./TabsHelpAndClose.tsx"
 
 ```
+
+## Using router links
+
+Router links can be used for in-app navigation without reloading the page. Following the [custom component example](#custom-component), pass a component that wraps your router's `Link` to the `component` property of `<Tab>`. This wrapper maps the tab's `href` to the router's `to` property and forwards the supplied props and ref.
+
+```nolive
+const RouterTabLink = forwardRef<HTMLAnchorElement, React.ComponentPropsWithoutRef<'a'>>(
+  ({ href = '/', ...props }, ref) => <Link {...props} to={href} ref={ref} />
+);
+
+<Tab
+  eventKey="users"
+  title={<TabTitleText>Users</TabTitleText>}
+  component={RouterTabLink}
+  href="/users"
+/>
+```
+
+Define the wrapper outside the parent component so re-renders preserve the link element and keyboard focus.
+
+When the current route determines which tab is selected, use it to set the `activeKey` property of `<Tabs>`.
