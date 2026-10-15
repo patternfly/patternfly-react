@@ -16,7 +16,7 @@ export interface TabProps
   className?: string;
   /** URL associated with the Tab. A Tab with an href will render as an <a> instead of a <button> unless component is supplied. */
   href?: string;
-  /** Sets the element or custom component used for this Tab's button or link. Defaults to an anchor when href is supplied, otherwise a button. Does not change the Tabs container's outer wrapper. Custom components must forward the ref and supplied props to the underlying element. */
+  /** Sets the element or custom component used for this Tab's button or link. Defaults to an anchor when href is supplied, otherwise a button. Does not change the Tabs container's outer wrapper. Custom components must forward the ref and supplied props to the underlying element. For custom components that render a button, pass type="button" or set it inside the component to prevent form submission. */
   component?: React.ElementType<any> | React.ComponentType<any>;
   /** Content rendered in the tab title. Should be <TabTitleText> and/or <TabTitleIcon> for proper styling. */
   title: React.ReactNode;
@@ -66,6 +66,7 @@ const TabBase: React.FunctionComponent<TabProps> = ({
   closeButtonAriaLabel,
   isCloseDisabled = false,
   actions,
+  onClick,
   ...props
 }: TabProps) => {
   const preventedEvents = inoperableEvents.reduce(
@@ -104,8 +105,6 @@ const TabBase: React.FunctionComponent<TabProps> = ({
       disabled={isButtonElement ? isDisabled : null}
       aria-disabled={isDisabled || isAriaDisabled}
       tabIndex={getDefaultTabIdx()}
-      onClick={(event: any) => handleTabClick(event, eventKey, tabContentRef, isCustomComponent)}
-      {...(isAriaDisabled || (isDisabled && !isButtonElement) ? preventedEvents : null)}
       id={`pf-tab-${eventKey}-${childId || uniqueId}`}
       aria-controls={ariaControls}
       tabContentRef={tabContentRef}
@@ -115,6 +114,15 @@ const TabBase: React.FunctionComponent<TabProps> = ({
       role="tab"
       aria-selected={eventKey === localActiveKey}
       {...props}
+      onClick={(event: any) => {
+        if (isDisabled) {
+          event.preventDefault();
+          return;
+        }
+        handleTabClick(event, eventKey, tabContentRef, isCustomComponent);
+        onClick?.(event);
+      }}
+      {...(isAriaDisabled || (isDisabled && !isButtonElement) ? preventedEvents : null)}
     >
       {title}
     </TabButton>

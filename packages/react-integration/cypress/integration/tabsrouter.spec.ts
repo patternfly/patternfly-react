@@ -5,7 +5,8 @@ describe('Tabs React Router navigation', () => {
   const disabledTab = '#pf-tab-disabled-router-tabs';
   const ariaDisabledTab = '#pf-tab-aria-disabled-router-tabs';
 
-  // Cypress 14 supports native Tab presses, but not Enter. Use Chromium's native key events for anchor activation.
+  // Cypress 14 supports cross-browser native Tab presses, but not Enter.
+  // Tests using this Chromium-only helper explicitly exclude Firefox; the other router tests run in both browsers.
   const pressEnter = () =>
     cy
       .then(() =>
@@ -41,12 +42,13 @@ describe('Tabs React Router navigation', () => {
           .should('be.visible')
           .and('contain.text', 'Containers route content');
         cy.get('#router-selection-count').should('have.text', 'Selections: 1');
+        cy.get('#router-click-count').should('have.text', 'Clicks: 1');
         cy.document().should('equal', originalDocument);
       });
     });
   });
 
-  it('supports keyboard navigation and keeps focus after activation', () => {
+  it('supports keyboard navigation and keeps focus after activation', { browser: '!firefox' }, () => {
     cy.get(usersTab).focus();
     cy.press(Cypress.Keyboard.Keys.TAB);
     cy.get(containersTab).should('have.focus');
@@ -56,12 +58,22 @@ describe('Tabs React Router navigation', () => {
     cy.get(containersTab).should('have.attr', 'aria-selected', 'true').and('have.focus');
     cy.get('#pf-tab-section-containers-router-tabs').should('be.visible');
     cy.get('#router-selection-count').should('have.text', 'Selections: 1');
+    cy.get('#router-click-count').should('have.text', 'Clicks: 1');
   });
 
-  it('blocks mouse and keyboard navigation for disabled links', () => {
+  it('blocks mouse navigation and caller handlers for disabled links', () => {
     [disabledTab, ariaDisabledTab].forEach((selector) => {
       cy.get(selector).should('have.attr', 'aria-disabled', 'true').click({ force: true });
       cy.location('search').should('equal', '?tab=users');
+    });
+
+    cy.get(usersTab).should('have.attr', 'aria-selected', 'true');
+    cy.get('#router-selection-count').should('have.text', 'Selections: 0');
+    cy.get('#router-click-count').should('have.text', 'Clicks: 0');
+  });
+
+  it('blocks keyboard navigation and caller handlers for disabled links', { browser: '!firefox' }, () => {
+    [disabledTab, ariaDisabledTab].forEach((selector) => {
       cy.get(selector).focus();
       pressEnter();
       cy.location('search').should('equal', '?tab=users');
@@ -69,6 +81,7 @@ describe('Tabs React Router navigation', () => {
 
     cy.get(usersTab).should('have.attr', 'aria-selected', 'true');
     cy.get('#router-selection-count').should('have.text', 'Selections: 0');
+    cy.get('#router-click-count').should('have.text', 'Clicks: 0');
   });
 
   it('skips disabled links but allows focusing an aria-disabled link and its tooltip', () => {

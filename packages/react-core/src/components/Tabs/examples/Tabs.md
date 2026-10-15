@@ -205,6 +205,8 @@ Pass `component={CustomLink}` to an individual `<Tab>` to replace its button or 
 
 The custom component must forward the supplied props and ref to its underlying element. `<Tabs>` continues handling selection, while the custom component handles navigation.
 
+For a custom component that renders a `<button>`, pass `type="button"` to `<Tab>` or set it inside the custom component to prevent form submission. Tabs cannot determine which element a custom component renders, so it only supplies a default button type for `component="button"`.
+
 The following example uses a custom anchor and prevents default browser navigation so you can try tab selection without leaving the example. For integration with a router, see [using router links](#using-router-links).
 
 ```ts file="./TabsCustomComponent.tsx"

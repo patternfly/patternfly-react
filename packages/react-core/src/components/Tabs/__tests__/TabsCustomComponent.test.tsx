@@ -25,6 +25,11 @@ const CustomLink = forwardRef<HTMLAnchorElement, React.ComponentPropsWithoutRef<
 );
 CustomLink.displayName = 'CustomLink';
 
+const CustomButton = forwardRef<HTMLButtonElement, React.ComponentPropsWithoutRef<'button'>>((props, ref) => (
+  <button {...props} ref={ref} />
+));
+CustomButton.displayName = 'CustomButton';
+
 describe('custom tab components', () => {
   afterEach(() => {
     jest.restoreAllMocks();
@@ -68,17 +73,64 @@ describe('custom tab components', () => {
   it('calls onSelect when clicking a controlled custom tab', async () => {
     const user = userEvent.setup();
     const onSelect = jest.fn();
+    const onClick = jest.fn();
     render(
       <Tabs activeKey={0} onSelect={onSelect}>
         <Tab eventKey={0} title="First tab" />
-        <Tab eventKey={1} title="Custom tab" component={CustomLink} />
+        <Tab eventKey={1} title="Custom tab" component={CustomLink} onClick={onClick} />
       </Tabs>
     );
 
     await user.click(screen.getByRole('tab', { name: 'Custom tab' }));
 
     expect(onSelect).toHaveBeenCalledWith(expect.any(Object), 1);
+    expect(onClick).toHaveBeenCalledTimes(1);
     expect(onNavigate).toHaveBeenCalledTimes(1);
+  });
+
+  it('allows a caller to prevent custom navigation without replacing tab selection', async () => {
+    const user = userEvent.setup();
+    const onSelect = jest.fn();
+    render(
+      <Tabs onSelect={onSelect}>
+        <Tab eventKey={1} title="Custom tab" component={CustomLink} onClick={(event) => event.preventDefault()} />
+      </Tabs>
+    );
+
+    await user.click(screen.getByRole('tab', { name: 'Custom tab' }));
+
+    expect(onSelect).toHaveBeenCalledWith(expect.any(Object), 1);
+    expect(onNavigate).not.toHaveBeenCalled();
+  });
+
+  it('selects a custom button tab without submitting its form when type="button" is supplied', async () => {
+    const user = userEvent.setup();
+    const onSubmit = jest.fn();
+    render(
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+          onSubmit();
+        }}
+      >
+        <Tabs defaultActiveKey={0}>
+          <Tab eventKey={0} title="First tab" />
+          <Tab eventKey={1} title="Custom button tab" component={CustomButton} type="button">
+            Custom button content
+          </Tab>
+        </Tabs>
+      </form>
+    );
+
+    const tab = screen.getByRole('tab', { name: 'Custom button tab' });
+    expect(tab).toHaveAttribute('type', 'button');
+
+    await user.click(tab);
+    await user.keyboard('{Enter}');
+
+    expect(tab).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByRole('tabpanel')).toHaveTextContent('Custom button content');
+    expect(onSubmit).not.toHaveBeenCalled();
   });
 
   it.each([
@@ -87,9 +139,18 @@ describe('custom tab components', () => {
   ])('prevents mouse and keyboard navigation for a $description custom link', async ({ disabledProps, tabIndex }) => {
     const user = userEvent.setup();
     const onSelect = jest.fn();
+    const onClick = jest.fn();
+    const onKeyPress = jest.fn();
     render(
       <Tabs onSelect={onSelect}>
-        <Tab eventKey={0} title="Custom tab" component={CustomLink} {...disabledProps} />
+        <Tab
+          eventKey={0}
+          title="Custom tab"
+          component={CustomLink}
+          onClick={onClick}
+          onKeyPress={onKeyPress}
+          {...disabledProps}
+        />
       </Tabs>
     );
 
@@ -109,5 +170,7 @@ describe('custom tab components', () => {
 
     expect(onNavigate).not.toHaveBeenCalled();
     expect(onSelect).not.toHaveBeenCalled();
+    expect(onClick).not.toHaveBeenCalled();
+    expect(onKeyPress).not.toHaveBeenCalled();
   });
 });
