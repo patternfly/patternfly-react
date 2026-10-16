@@ -18,7 +18,7 @@ export const ListItem: React.FunctionComponent<ListItemProps> = ({
 }: ListItemProps) => (
   <li className={css(icon && styles.listItem, className)} {...props}>
     {icon && <span className={css(styles.listItemIcon)}>{icon}</span>}
-    <span className={icon && css(`${styles.list}__item-text`)}>{children}</span>
+    {icon ? <span className={css(`${styles.list}__item-text`)}>{children}</span> : children}
   </li>
 );
 ListItem.displayName = 'ListItem';
