@@ -26,7 +26,7 @@ switch (uploadFolderName) {
     break;
   case 'public':
     if (!prnum && prbranch === 'felt-v1') {
-      uploadURL = 'rh-felt-react-staging.patternfly.org';
+      uploadURL = 'rh-felt-react-staging.surge.sh';
     } else {
       uploadURL += '.surge.sh';
     }
