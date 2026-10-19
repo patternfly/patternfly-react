@@ -1,6 +1,6 @@
 {
   "name": "@rh-felt/react-tokens",
-  "version": "0.0.1-prerelease.0",
+  "version": "0.0.1-prerelease.1",
   "description": "This library provides access to the design tokens of PatternFly 4 from JavaScript",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
