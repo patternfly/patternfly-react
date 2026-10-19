@@ -3,6 +3,88 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-prerelease.1 (2026-10-19)
+
+### Reverts
+
+- Revert "chore(release): releasing packages [ci skip]" (#12678) ([67b60ff](https://github.com/patternfly/patternfly-react/commit/67b60ff57329e195ec241b333b2c5033b39dd4d7)), closes [#12678](https://github.com/patternfly/patternfly-react/issues/12678)
+
+# 6.7.0 (2026-10-15)
+
+### Bug Fixes
+
+- **AngleDoubleRightIcon:** Replace AngleDoubleRightIcon with RhMicronsDoubleCaretRightIcon ([#12493](https://github.com/patternfly/patternfly-react/issues/12493)) ([a9bd226](https://github.com/patternfly/patternfly-react/commit/a9bd226cfa9183e5893cd8d74302934f98aaa51c))
+- **AngleLeftIcon:** Replace AngleLeftIcon with RhMicronsCaretLeftIcon ([#12495](https://github.com/patternfly/patternfly-react/issues/12495)) ([bd9932f](https://github.com/patternfly/patternfly-react/commit/bd9932f123fc5f94598ce555f8166052eaecb95c))
+- **AngleRightIcon:** Replace AngleRightIcon with RhMicronsCaretRightIcon ([#12496](https://github.com/patternfly/patternfly-react/issues/12496)) ([4f70020](https://github.com/patternfly/patternfly-react/commit/4f700201a3b4e9bee30dc7c5f2dc9798b1f58474))
+- **css:** return `undefined` if there is no className ([#11602](https://github.com/patternfly/patternfly-react/issues/11602)) ([60807bf](https://github.com/patternfly/patternfly-react/commit/60807bfe13743fa0d4e77c7f429917cbd567e6c3))
+- **DragDropSort:** enable mobile drag-and-drop support ([#12418](https://github.com/patternfly/patternfly-react/issues/12418)) ([c9faa23](https://github.com/patternfly/patternfly-react/commit/c9faa23f1f339734d57a6647f645d7b8afe04b6d))
+
+### Reverts
+
+- Revert "chore(release): releasing packages [ci skip]" (#12663) ([de8fb05](https://github.com/patternfly/patternfly-react/commit/de8fb05e58ffdf9adf30f8225a03783c70978df6)), closes [#12663](https://github.com/patternfly/patternfly-react/issues/12663)
+
+# 6.6.0 (2026-07-01)
+
+### Bug Fixes
+
+- **PficonSortCommonAscIcon:** Replace PficonSortCommonAscIcon with RhUiSortDownSmallToLargeIcon ([#12485](https://github.com/patternfly/patternfly-react/issues/12485)) ([909f747](https://github.com/patternfly/patternfly-react/commit/909f747a449b449cde415c31a77a33b1559bfe08))
+- updated to do 6.6.0 prereleases. ([#12434](https://github.com/patternfly/patternfly-react/issues/12434)) ([6e09ce8](https://github.com/patternfly/patternfly-react/commit/6e09ce8322ff13354991d901782231d437249aa6))
+
+# 6.5.0 (2026-05-20)
+
+### Bug Fixes
+
+- **DragDropSort:** support custom drag button aria-label and fix falsy id overlay ([#12417](https://github.com/patternfly/patternfly-react/issues/12417)) ([4721880](https://github.com/patternfly/patternfly-react/commit/4721880b1055e3b31eeccbdc2c2e5dbccc448242))
+- **react-drag-drop:** support dynamic root element IDs in DragDropCon… ([#12240](https://github.com/patternfly/patternfly-react/issues/12240)) ([43e798d](https://github.com/patternfly/patternfly-react/commit/43e798d37c81ed2b0bc64db72708d70a79565694)), closes [#12217](https://github.com/patternfly/patternfly-react/issues/12217)
+- Updated drag and drop to use the correct glass theme. ([#12306](https://github.com/patternfly/patternfly-react/issues/12306)) ([3392662](https://github.com/patternfly/patternfly-react/commit/3392662d57a73d94258a0230fbf9de590ec08d85))
+
+### Features
+
+- **icons:** add swap support for mapped rh-ui icons ([#12245](https://github.com/patternfly/patternfly-react/issues/12245)) ([a81ce0e](https://github.com/patternfly/patternfly-react/commit/a81ce0e1b6fdd7a3e85cdd70e5bb667dc7d82801))
+
+### Reverts
+
+- Revert "chore(release): releasing packages [ci skip]" ([7185856](https://github.com/patternfly/patternfly-react/commit/7185856d4985da5129bbabd6c460049e7048dd2a))
+
+# 6.4.0 (2025-10-16)
+
+### Bug Fixes
+
+- updated to 6.4.0-prerelease ([df46ac6](https://github.com/patternfly/patternfly-react/commit/df46ac6bed381eb3e01e5573f77d79301b02b7fa))
+
+# 6.3.0 (2025-07-22)
+
+### Features
+
+- **version:** testing react 19 ([#11754](https://github.com/patternfly/patternfly-react/issues/11754)) ([b981588](https://github.com/patternfly/patternfly-react/commit/b9815886da3adc7a96bc2d48adacf86e8a752e61))
+
+### Reverts
+
+- Revert "chore(release): releasing packages [ci skip]" ([40999d7](https://github.com/patternfly/patternfly-react/commit/40999d70a7a3aeadbe8f40fe96bb01ab3a6219d4))
+
+# 6.2.0 (2025-04-07)
+
+### Bug Fixes
+
+- **deps:** update dependency @dnd-kit/core to ^6.3.1 ([#11475](https://github.com/patternfly/patternfly-react/issues/11475)) ([ef18cb8](https://github.com/patternfly/patternfly-react/commit/ef18cb83cd52570312e1a2c16773c39e001f5dc4))
+
+# 6.1.0 (2024-12-16)
+
+### Bug Fixes
+
+- **CI:** Update snapshot tests ([#10922](https://github.com/patternfly/patternfly-react/issues/10922)) ([e7ba60e](https://github.com/patternfly/patternfly-react/commit/e7ba60e78895e955abc5a38fe27c1c87cc1d2ee2))
+- **deps:** update dependency @dnd-kit/core to ^6.1.0 ([#10919](https://github.com/patternfly/patternfly-react/issues/10919)) ([b19978a](https://github.com/patternfly/patternfly-react/commit/b19978acf03505495dd37030050f51df6962d96b))
+- promote former next components out of beta ([#10799](https://github.com/patternfly/patternfly-react/issues/10799)) ([df479ef](https://github.com/patternfly/patternfly-react/commit/df479efabe0865dd9dc75c8c0017fb1dc2848723))
+- **table:** update v5 to v6 for docs, description list, draggable, Th ([#10968](https://github.com/patternfly/patternfly-react/issues/10968)) ([db72b52](https://github.com/patternfly/patternfly-react/commit/db72b5287c18d023c094be247a46f9352d50fd7b))
+
+### Features
+
+- **Button:** add text wrapper, update icon usage ([#10663](https://github.com/patternfly/patternfly-react/issues/10663)) ([eca5878](https://github.com/patternfly/patternfly-react/commit/eca58789d1f07753657372a46a20c147f984b998))
+- **DataList:** use Checkbox in DataListCheck ([#10916](https://github.com/patternfly/patternfly-react/issues/10916)) ([bd61a94](https://github.com/patternfly/patternfly-react/commit/bd61a9423fbe8ef41072ce993b5d0ea8dfbd7080))
+- **DragDrop:** promote next version ([#10273](https://github.com/patternfly/patternfly-react/issues/10273)) ([f9150b1](https://github.com/patternfly/patternfly-react/commit/f9150b1d324ad2d6bc55dc8997e4811b260504f7))
+- **DragDropSort:** update drag button usage ([#10356](https://github.com/patternfly/patternfly-react/issues/10356)) ([679d39c](https://github.com/patternfly/patternfly-react/commit/679d39c022eb19ff66752b8b989569a6808a0c46))
+- **DualListSelector:** promoted Next version ([#10359](https://github.com/patternfly/patternfly-react/issues/10359)) ([b395cc4](https://github.com/patternfly/patternfly-react/commit/b395cc44586a20a9f124e1d56d2c8021a64602db))
+
 # [6.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-drag-drop@6.7.0-prerelease.7...@patternfly/react-drag-drop@6.7.0) (2026-10-15)
 
 **Note:** Version bump only for package @patternfly/react-drag-drop

@@ -3,6 +3,168 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-prerelease.1 (2026-10-19)
+
+### Reverts
+
+- Revert "chore(release): releasing packages [ci skip]" (#12678) ([67b60ff](https://github.com/patternfly/patternfly-react/commit/67b60ff57329e195ec241b333b2c5033b39dd4d7)), closes [#12678](https://github.com/patternfly/patternfly-react/issues/12678)
+
+# 6.7.0 (2026-10-15)
+
+### Bug Fixes
+
+- **CodeEditor:** Adjust sizeToFit height bug ([#12529](https://github.com/patternfly/patternfly-react/issues/12529)) ([e4e15d3](https://github.com/patternfly/patternfly-react/commit/e4e15d319083f7c83af126d8133ea3202b5ba341))
+- **deps:** Update dompurify dependency ([#12613](https://github.com/patternfly/patternfly-react/issues/12613)) ([a38ec00](https://github.com/patternfly/patternfly-react/commit/a38ec0076976c0902c37f6316a86c77c9fdb339d))
+- **HelpIcon:** Replace HelpIcon with RhUiQuestionMarkCircleIcon ([#12507](https://github.com/patternfly/patternfly-react/issues/12507)) ([389b3d2](https://github.com/patternfly/patternfly-react/commit/389b3d21caae2b56cff41d647467a710054b337d))
+- **InfrastructureIcons:** replaced with RH brand icons part 4 ([#12504](https://github.com/patternfly/patternfly-react/issues/12504)) ([4cc476a](https://github.com/patternfly/patternfly-react/commit/4cc476a36b7fb93835fba30881ca0b88c31f01f3))
+- **PlayIcon:** Replace PlayIcon with RhUiPlayFillIcon ([#12499](https://github.com/patternfly/patternfly-react/issues/12499)) ([a859511](https://github.com/patternfly/patternfly-react/commit/a8595111abfc4736799edfc750bd8c13a0c9f78f))
+
+### Reverts
+
+- Revert "chore(release): releasing packages [ci skip]" (#12663) ([de8fb05](https://github.com/patternfly/patternfly-react/commit/de8fb05e58ffdf9adf30f8225a03783c70978df6)), closes [#12663](https://github.com/patternfly/patternfly-react/issues/12663)
+
+# 6.6.0 (2026-07-01)
+
+### Bug Fixes
+
+- **CodeIcon:** Replace CodeIcon with RhUiCodeIcon ([#12488](https://github.com/patternfly/patternfly-react/issues/12488)) ([9562dbe](https://github.com/patternfly/patternfly-react/commit/9562dbe059fc5ca5182a177ae72943ae05fcaeea))
+- **CopyIcon:** Replace CopyIcon with RhUiCopyFillIcon ([#12449](https://github.com/patternfly/patternfly-react/issues/12449)) ([a2798bd](https://github.com/patternfly/patternfly-react/commit/a2798bd477fedc37c8a3a706464eb864706254a3))
+- **MoonIcon:** Replace MoonIcon with RhUiDarkModeFillIcon ([#12471](https://github.com/patternfly/patternfly-react/issues/12471)) ([6ca4fd4](https://github.com/patternfly/patternfly-react/commit/6ca4fd420c42847220e3da9fadae0edbd15c10ea))
+- updated to do 6.6.0 prereleases. ([#12434](https://github.com/patternfly/patternfly-react/issues/12434)) ([6e09ce8](https://github.com/patternfly/patternfly-react/commit/6e09ce8322ff13354991d901782231d437249aa6))
+
+### Features
+
+- **CodeEditor:** add isHighContrastTheme ([#12384](https://github.com/patternfly/patternfly-react/issues/12384)) ([bee95e6](https://github.com/patternfly/patternfly-react/commit/bee95e6397fcc7ee326ac8d29d59f65365db02bf))
+
+# 6.5.0 (2026-05-20)
+
+### Bug Fixes
+
+- **CodeEditorControl:** make icon prop optional ([#12068](https://github.com/patternfly/patternfly-react/issues/12068)) ([bbb502a](https://github.com/patternfly/patternfly-react/commit/bbb502a04e5e7d5dda798ff0afec75db0d8fc689)), closes [#12065](https://github.com/patternfly/patternfly-react/issues/12065)
+- **CodeEditor:** prevent focus loss ([#12211](https://github.com/patternfly/patternfly-react/issues/12211)) ([#12212](https://github.com/patternfly/patternfly-react/issues/12212)) ([61ea8ae](https://github.com/patternfly/patternfly-react/commit/61ea8aeb5e80229fcb7ce2f2b731b745b978fc19))
+- **deps:** update dependency @monaco-editor/react to ^4.7.0 ([#11527](https://github.com/patternfly/patternfly-react/issues/11527)) ([c1581d5](https://github.com/patternfly/patternfly-react/commit/c1581d59e4f8a969726dae6383582a5e0aa48152))
+
+### Features
+
+- **icons:** add swap support for mapped rh-ui icons ([#12245](https://github.com/patternfly/patternfly-react/issues/12245)) ([a81ce0e](https://github.com/patternfly/patternfly-react/commit/a81ce0e1b6fdd7a3e85cdd70e5bb667dc7d82801))
+- **Icons:** updated cog icons to rh settings ([#12345](https://github.com/patternfly/patternfly-react/issues/12345)) ([190da46](https://github.com/patternfly/patternfly-react/commit/190da4621acef4edd1697bb8ebccfd02299ae870))
+
+### Reverts
+
+- Revert "chore(release): releasing packages [ci skip]" ([7185856](https://github.com/patternfly/patternfly-react/commit/7185856d4985da5129bbabd6c460049e7048dd2a))
+
+# 6.4.0 (2025-10-16)
+
+### Bug Fixes
+
+- updated to 6.4.0-prerelease ([df46ac6](https://github.com/patternfly/patternfly-react/commit/df46ac6bed381eb3e01e5573f77d79301b02b7fa))
+
+### Features
+
+- **CodeEditor:** use custom PatternFly monaco theme ([#11785](https://github.com/patternfly/patternfly-react/issues/11785)) ([eed7e65](https://github.com/patternfly/patternfly-react/commit/eed7e6528babba9c7c9bb6e8cb75186e984eac71))
+
+# 6.3.0 (2025-07-22)
+
+### Features
+
+- **version:** testing react 19 ([#11754](https://github.com/patternfly/patternfly-react/issues/11754)) ([b981588](https://github.com/patternfly/patternfly-react/commit/b9815886da3adc7a96bc2d48adacf86e8a752e61))
+
+### Reverts
+
+- Revert "chore(release): releasing packages [ci skip]" ([40999d7](https://github.com/patternfly/patternfly-react/commit/40999d70a7a3aeadbe8f40fe96bb01ab3a6219d4))
+
+# 6.2.0 (2025-04-07)
+
+### Bug Fixes
+
+- **Button:** updated rendering of aria-disabled attribute ([#11478](https://github.com/patternfly/patternfly-react/issues/11478)) ([058b14f](https://github.com/patternfly/patternfly-react/commit/058b14fc93233860cd604cdfb60f7c666cc0d436))
+- **CodeEditor:** added hidden input back when editor is visible ([#11723](https://github.com/patternfly/patternfly-react/issues/11723)) ([0b8936d](https://github.com/patternfly/patternfly-react/commit/0b8936dcff4beee2a7791304350a296c52a3edbe))
+- **CodeEditor:** do not include extra div if `headerMainContent` is unset ([#11534](https://github.com/patternfly/patternfly-react/issues/11534)) ([86ff923](https://github.com/patternfly/patternfly-react/commit/86ff9239f935b974896958ff4b3c4af5b8d98825))
+- **CodeEditor:** ensure that handleResize works when viewport shrinks ([#11532](https://github.com/patternfly/patternfly-react/issues/11532)) ([c06dbde](https://github.com/patternfly/patternfly-react/commit/c06dbdec017daa3b84e7af02a2e57b9a7efd0faa))
+- **CodeEditor:** only include pf-v6-c-code-editor\_\_upload when hovering is active over an empty state ([#11568](https://github.com/patternfly/patternfly-react/issues/11568)) ([a53c929](https://github.com/patternfly/patternfly-react/commit/a53c9296b8378d5fa6ddf6def3896cb7d6239c80))
+- **CodeeEditor:** rendered file input when editor has content ([#11725](https://github.com/patternfly/patternfly-react/issues/11725)) ([61922a9](https://github.com/patternfly/patternfly-react/commit/61922a9b228ec872632c5c3fb5045034092043ab))
+- **FileUpload:** hid input of type file from AT ([#11438](https://github.com/patternfly/patternfly-react/issues/11438)) ([9b41c4f](https://github.com/patternfly/patternfly-react/commit/9b41c4fcc72b3ade937dddf144bb387b9866cb95))
+
+# 6.1.0 (2024-12-16)
+
+### Bug Fixes
+
+- **Button:** rendered position modifier only when children are passed ([#10864](https://github.com/patternfly/patternfly-react/issues/10864)) ([3ed73d3](https://github.com/patternfly/patternfly-react/commit/3ed73d3dc78ba229b184bc4e91cc11f45ccc94c3))
+- **CodeEditor:** hide button and link when read-only ([#9668](https://github.com/patternfly/patternfly-react/issues/9668)) ([0346933](https://github.com/patternfly/patternfly-react/commit/0346933cb61a3b11a2591acbde4760f58abffbcb))
+- **CodeEditor:** Set default height ([#11014](https://github.com/patternfly/patternfly-react/issues/11014)) ([6ddfc93](https://github.com/patternfly/patternfly-react/commit/6ddfc93376a48028fed46948b08a185e3c9617f6))
+- **deps:** update dependency react-dropzone to v14.3.5 (main) ([#11152](https://github.com/patternfly/patternfly-react/issues/11152)) ([849b347](https://github.com/patternfly/patternfly-react/commit/849b3477cf080fcc047f21824ab742b58dcd81e8))
+- **deps:** update dependency tslib to ^2.7.0 ([#10949](https://github.com/patternfly/patternfly-react/issues/10949)) ([024b3cc](https://github.com/patternfly/patternfly-react/commit/024b3cc4b1afd4ba9f2dc774c0842712d4fbab1a))
+- **deps:** update dependency tslib to ^2.8.1 ([#11222](https://github.com/patternfly/patternfly-react/issues/11222)) ([7c90e9b](https://github.com/patternfly/patternfly-react/commit/7c90e9bff23083f097e78246570be60dacfb27c0))
+- **helpers:** Updated OUIA ID prefix to PF6 ([#10292](https://github.com/patternfly/patternfly-react/issues/10292)) ([1c7af7a](https://github.com/patternfly/patternfly-react/commit/1c7af7ab9f352b9ad02caabb1deef08cf69e0950))
+- **table:** update v5 to v6 for docs, description list, draggable, Th ([#10968](https://github.com/patternfly/patternfly-react/issues/10968)) ([db72b52](https://github.com/patternfly/patternfly-react/commit/db72b5287c18d023c094be247a46f9352d50fd7b))
+
+### Features
+
+- **Button:** add text wrapper, update icon usage ([#10663](https://github.com/patternfly/patternfly-react/issues/10663)) ([eca5878](https://github.com/patternfly/patternfly-react/commit/eca58789d1f07753657372a46a20c147f984b998))
+- **Chip:** use Label internally, deprecate Chip ([#10049](https://github.com/patternfly/patternfly-react/issues/10049)) ([5cdb725](https://github.com/patternfly/patternfly-react/commit/5cdb72536f8dd291e42be09bc6454ac591adc606))
+- **CodeEditor,Divider:** consume penta & update core version ([#10081](https://github.com/patternfly/patternfly-react/issues/10081)) ([addda04](https://github.com/patternfly/patternfly-react/commit/addda044d7f6d91f3511c7a769b2707140df86d4))
+- **EmptyState:** update EmptyState with updates for penta ([#9947](https://github.com/patternfly/patternfly-react/issues/9947)) ([07cbb82](https://github.com/patternfly/patternfly-react/commit/07cbb8270627f9ade299b90eaf5dd4fd5fa6fe95))
+
+### Reverts
+
+- Revert "Merge remote-tracking branch 'upstream/main' into v6" (#9791) ([b7e8065](https://github.com/patternfly/patternfly-react/commit/b7e80650d3e4cad7a657f6e5a3177485ca4f8c26)), closes [#9791](https://github.com/patternfly/patternfly-react/issues/9791)
+
+## 5.1.1 (2023-10-03)
+
+### Bug Fixes
+
+- **code-editor:** force element that wraps editor to be LTR ([#9626](https://github.com/patternfly/patternfly-react/issues/9626)) ([1c70d68](https://github.com/patternfly/patternfly-react/commit/1c70d6855fc5506bc2d683db91443219fa911189))
+- Release alphas from v6 and rebase from main ([#9692](https://github.com/patternfly/patternfly-react/issues/9692)) ([bb022ff](https://github.com/patternfly/patternfly-react/commit/bb022ffc65da8e8c5b5c984412f936cea9424676)), closes [#9651](https://github.com/patternfly/patternfly-react/issues/9651) [#9627](https://github.com/patternfly/patternfly-react/issues/9627) [#9555](https://github.com/patternfly/patternfly-react/issues/9555) [#9543](https://github.com/patternfly/patternfly-react/issues/9543) [#9578](https://github.com/patternfly/patternfly-react/issues/9578) [#9519](https://github.com/patternfly/patternfly-react/issues/9519) [#9603](https://github.com/patternfly/patternfly-react/issues/9603) [#9655](https://github.com/patternfly/patternfly-react/issues/9655) [#9614](https://github.com/patternfly/patternfly-react/issues/9614) [#9606](https://github.com/patternfly/patternfly-react/issues/9606) [#9628](https://github.com/patternfly/patternfly-react/issues/9628) [#9635](https://github.com/patternfly/patternfly-react/issues/9635) [#9649](https://github.com/patternfly/patternfly-react/issues/9649) [#9642](https://github.com/patternfly/patternfly-react/issues/9642) [#9633](https://github.com/patternfly/patternfly-react/issues/9633) [#9637](https://github.com/patternfly/patternfly-react/issues/9637) [#9584](https://github.com/patternfly/patternfly-react/issues/9584) [#9284](https://github.com/patternfly/patternfly-react/issues/9284)
+- whitespace changes to trigger prereleases ([#9702](https://github.com/patternfly/patternfly-react/issues/9702)) ([741c248](https://github.com/patternfly/patternfly-react/commit/741c24825b503e116c77cf304aa3e4e3a9ff7841))
+
+# 5.0.0 (2023-07-27)
+
+### Bug Fixes
+
+- **ci:** change master branch to main ([4ac4129](https://github.com/patternfly/patternfly-react/commit/4ac4129e8da9a37367ea7612019f8d7af1ed8836))
+- **code-editor:** add more languages support ([#6006](https://github.com/patternfly/patternfly-react/issues/6006)) ([a9b78e2](https://github.com/patternfly/patternfly-react/commit/a9b78e28813703bf14f65f27e1018d2e0a7abf76))
+- **code-editor:** react peer dep ([#5618](https://github.com/patternfly/patternfly-react/issues/5618)) ([aef366d](https://github.com/patternfly/patternfly-react/commit/aef366da175a5cf560eca2168dd752d0f8fe4063))
+- **code-editor:** remove uneeded peer dep ([#6239](https://github.com/patternfly/patternfly-react/issues/6239)) ([5d51551](https://github.com/patternfly/patternfly-react/commit/5d51551a091ffd0ca83c0bb0ceca652228ed8936))
+- **code-editor:** replace hardcoded empty state text with props and update microcopy ([#6241](https://github.com/patternfly/patternfly-react/issues/6241)) ([9cdd64b](https://github.com/patternfly/patternfly-react/commit/9cdd64bf9d2e63b2a7fa4bf905ed90e8cc64cc08))
+- **CodeEditor:** add resizeobserver to code editor ([#6547](https://github.com/patternfly/patternfly-react/issues/6547)) ([22762fb](https://github.com/patternfly/patternfly-react/commit/22762fb2165736604f992277ba13a40c1db2d6a6))
+- **CodeEditor:** compare props and state to prevent re-renders ([#6847](https://github.com/patternfly/patternfly-react/issues/6847)) ([6c37689](https://github.com/patternfly/patternfly-react/commit/6c376890e5055157f94c7ff9fbef89002d2088ca))
+- **codeeditor:** copy to clipboard button can now be enabled solo 🥰 ([#5411](https://github.com/patternfly/patternfly-react/issues/5411)) ([c409239](https://github.com/patternfly/patternfly-react/commit/c409239f408f57dbd2cef7ac8482321de1abf947))
+- **CodeEditor:** enable external updating of editor value on file upload ([#7450](https://github.com/patternfly/patternfly-react/issues/7450)) ([dcb28ff](https://github.com/patternfly/patternfly-react/commit/dcb28ff04f1268b75f0ebd16736e0cde3acc3aaf))
+- **CodeEditor:** fix typo in README ([#8849](https://github.com/patternfly/patternfly-react/issues/8849)) ([4579484](https://github.com/patternfly/patternfly-react/commit/4579484257d866e75b22325349f19940fb17c631))
+- **CodeEditor:** prevent clicks in textarea from opening fileupload ([#9385](https://github.com/patternfly/patternfly-react/issues/9385)) ([959bc7e](https://github.com/patternfly/patternfly-react/commit/959bc7ef2723bc3ef57db906ded7b1854b577eee))
+- **CodeEditor:** remove monaco-editor-webpack-plugin as peer dependency ([#7629](https://github.com/patternfly/patternfly-react/issues/7629)) ([4047d3e](https://github.com/patternfly/patternfly-react/commit/4047d3eefdee118aec7a12708cbd43e4efe8d72c))
+- **codeeditor:** show toolbar if there are custom controls ([#6025](https://github.com/patternfly/patternfly-react/issues/6025)) ([dad127a](https://github.com/patternfly/patternfly-react/commit/dad127a037bc8c921a6921a01ed702eb72cfdbd9))
+- **deps:** updated Core for v5 versioning ([#9075](https://github.com/patternfly/patternfly-react/issues/9075)) ([3879fc7](https://github.com/patternfly/patternfly-react/commit/3879fc757aefeed80b0694365aa20d5ca856a797))
+- **docs:** update use of deprecated tag and clean up changelogs ([#9259](https://github.com/patternfly/patternfly-react/issues/9259)) ([8de83dc](https://github.com/patternfly/patternfly-react/commit/8de83dc3b2fb88094fd3c21bda2ed6e371986cba))
+- **examples:** updating example microcopy ([#6196](https://github.com/patternfly/patternfly-react/issues/6196)) ([b1d90f2](https://github.com/patternfly/patternfly-react/commit/b1d90f2c3e05eb6f5ee9aaa34b46a5a5d7a203fd))
+- **Multiple:** update old component classnames ([#9139](https://github.com/patternfly/patternfly-react/issues/9139)) ([8fbd940](https://github.com/patternfly/patternfly-react/commit/8fbd9401cd27cb84e73722292a2765781a46a6f7))
+- **react-icons:** Added fallback width and height attributes to icons ([#9257](https://github.com/patternfly/patternfly-react/issues/9257)) ([5c782ba](https://github.com/patternfly/patternfly-react/commit/5c782bacfdc02b907b2ca01a3a6800e2f6072b3e))
+- **release:** dryrun publishing prereleases ([#9242](https://github.com/patternfly/patternfly-react/issues/9242)) ([e4c35f1](https://github.com/patternfly/patternfly-react/commit/e4c35f14cd57be132179e51ae2bb223600a35f0e))
+- **tooltip:** change default entry and exit delay ([#5746](https://github.com/patternfly/patternfly-react/issues/5746)) ([9f35132](https://github.com/patternfly/patternfly-react/commit/9f351324257ad29a79dc92a1659801e20766e0f8))
+
+- EmptyState component cleanup to match core implementation (#8737) ([40dd9ad](https://github.com/patternfly/patternfly-react/commit/40dd9ad4b2ab32887c2f72a10eb78f2c4ee5ac4b)), closes [#8737](https://github.com/patternfly/patternfly-react/issues/8737) [#8555](https://github.com/patternfly/patternfly-react/issues/8555)
+
+### Features
+
+- **Checkbox:** changed order of onChange params ([#8750](https://github.com/patternfly/patternfly-react/issues/8750)) ([0a87f55](https://github.com/patternfly/patternfly-react/commit/0a87f554e4cf3abb99de8f2ccd53737f0cf489b1))
+- **code-editor:** add showEditor prop ([#6022](https://github.com/patternfly/patternfly-react/issues/6022)) ([daf182a](https://github.com/patternfly/patternfly-react/commit/daf182af298e57018f06ce887001a0b1acc43167))
+- **CodeEditor:** 6226 size to fit height ([#7033](https://github.com/patternfly/patternfly-react/issues/7033)) ([f18abd3](https://github.com/patternfly/patternfly-react/commit/f18abd3020e04ee6602fd168d503f43cc0de649e))
+- **CodeEditor:** 6663 - allow for keyboard shortcut menu, add example ([#6989](https://github.com/patternfly/patternfly-react/issues/6989)) ([0351614](https://github.com/patternfly/patternfly-react/commit/0351614de5b265c48c513baec9482665df5698fe))
+- **CodeEditor:** add new code editor ([#5294](https://github.com/patternfly/patternfly-react/issues/5294)) ([1c36ce3](https://github.com/patternfly/patternfly-react/commit/1c36ce36912e146f28a998e861ff8887f3ff9eb1))
+- **CodeEditor:** improve type-safety for onChange prop ([#6535](https://github.com/patternfly/patternfly-react/issues/6535)) ([c4a122a](https://github.com/patternfly/patternfly-react/commit/c4a122a5e0e2f3f4ecc8f00c2a3250700f1679bd))
+- **CodeEditor:** Make 'code' prop controlled ([#5465](https://github.com/patternfly/patternfly-react/issues/5465)) ([613dec6](https://github.com/patternfly/patternfly-react/commit/613dec6d46ed0c08bc9e445a0a16bf6b6bb56bd1))
+- enhance type correctness of CodeEditor ([#6579](https://github.com/patternfly/patternfly-react/issues/6579)) ([e1ad65c](https://github.com/patternfly/patternfly-react/commit/e1ad65c225968d5a9c74019d19e4a3c5e2666926))
+- **Popper, misc:** remove removeFindDomNode flag and set to default ([#8316](https://github.com/patternfly/patternfly-react/issues/8316)) ([21f9415](https://github.com/patternfly/patternfly-react/commit/21f9415deb5316d15893950d3e43515b081b398b))
+- **ToolTip:** Diagonal tooltip placement ([#6887](https://github.com/patternfly/patternfly-react/issues/6887)) ([897fd7d](https://github.com/patternfly/patternfly-react/commit/897fd7d248888e7324d36f574231985e8523a700))
+
+### BREAKING CHANGES
+
+- closes #8555, fixes #8455
+
+- docs(EmptyState): updated examples
+
+updated examples of EmptyState usage on the PatternFly web to use new API
+
 # [6.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@6.7.0-prerelease.7...@patternfly/react-code-editor@6.7.0) (2026-10-15)
 
 **Note:** Version bump only for package @patternfly/react-code-editor

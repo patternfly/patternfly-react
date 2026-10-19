@@ -1,6 +1,6 @@
 {
   "name": "@rh-felt/react-templates",
-  "version": "0.0.1-prerelease.0",
+  "version": "0.0.1-prerelease.1",
   "description": "This package provides wrapped component demos for ease of use\n",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",

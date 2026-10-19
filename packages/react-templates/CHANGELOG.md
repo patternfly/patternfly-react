@@ -3,6 +3,91 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-prerelease.1 (2026-10-19)
+
+### Reverts
+
+- Revert "chore(release): releasing packages [ci skip]" (#12678) ([67b60ff](https://github.com/patternfly/patternfly-react/commit/67b60ff57329e195ec241b333b2c5033b39dd4d7)), closes [#12678](https://github.com/patternfly/patternfly-react/issues/12678)
+
+# 6.7.0 (2026-10-15)
+
+### Features
+
+- **MenuToggle:** add aria-haspopup prop ([#12549](https://github.com/patternfly/patternfly-react/issues/12549)) ([c5ad5f8](https://github.com/patternfly/patternfly-react/commit/c5ad5f8dd7570eda090c2dd02b9b6fd2fafc986f)), closes [#11792](https://github.com/patternfly/patternfly-react/issues/11792)
+
+### Reverts
+
+- Revert "chore(release): releasing packages [ci skip]" (#12663) ([de8fb05](https://github.com/patternfly/patternfly-react/commit/de8fb05e58ffdf9adf30f8225a03783c70978df6)), closes [#12663](https://github.com/patternfly/patternfly-react/issues/12663)
+
+# 6.6.0 (2026-07-01)
+
+### Bug Fixes
+
+- **EllipsisVIcon:** Replace EllipsisVIcon with RhUiEllipsisVerticalFillIcon ([#12481](https://github.com/patternfly/patternfly-react/issues/12481)) ([29f223e](https://github.com/patternfly/patternfly-react/commit/29f223e6f0869af70d4b6f0733660a9573466342))
+- **RhMicronCaretDown:** Replace with fill for menus ([#12532](https://github.com/patternfly/patternfly-react/issues/12532)) ([2729a13](https://github.com/patternfly/patternfly-react/commit/2729a139db37a50afa6ca15c44b20fb545005847))
+- updated to do 6.6.0 prereleases. ([#12434](https://github.com/patternfly/patternfly-react/issues/12434)) ([6e09ce8](https://github.com/patternfly/patternfly-react/commit/6e09ce8322ff13354991d901782231d437249aa6))
+
+# 6.5.0 (2026-05-20)
+
+### Bug Fixes
+
+- **react-templates:** fix TypeaheadSelect state synchronization issue ([#12147](https://github.com/patternfly/patternfly-react/issues/12147)) ([d5053dd](https://github.com/patternfly/patternfly-react/commit/d5053dd50a57bef7d0f609510c44d39fe5af017d)), closes [#12146](https://github.com/patternfly/patternfly-react/issues/12146)
+
+### Features
+
+- **icons:** add swap support for mapped rh-ui icons ([#12245](https://github.com/patternfly/patternfly-react/issues/12245)) ([a81ce0e](https://github.com/patternfly/patternfly-react/commit/a81ce0e1b6fdd7a3e85cdd70e5bb667dc7d82801))
+- **icons:** update close icons to use the rh micron ([#12283](https://github.com/patternfly/patternfly-react/issues/12283)) ([fc82a9c](https://github.com/patternfly/patternfly-react/commit/fc82a9c646739a11732e7934d860f3913932168f))
+
+### Reverts
+
+- Revert "chore(release): releasing packages [ci skip]" ([7185856](https://github.com/patternfly/patternfly-react/commit/7185856d4985da5129bbabd6c460049e7048dd2a))
+
+# 6.4.0 (2025-10-16)
+
+### Bug Fixes
+
+- **Select:** improve type consistency in `onSelect` ([#11935](https://github.com/patternfly/patternfly-react/issues/11935)) ([d50ba6d](https://github.com/patternfly/patternfly-react/commit/d50ba6db350ae355b63d3d2ffd0f9095866da074))
+- updated to 6.4.0-prerelease ([df46ac6](https://github.com/patternfly/patternfly-react/commit/df46ac6bed381eb3e01e5573f77d79301b02b7fa))
+
+### Features
+
+- **templates:** allow react 19 ([#12046](https://github.com/patternfly/patternfly-react/issues/12046)) ([38727b6](https://github.com/patternfly/patternfly-react/commit/38727b625e70363c36b749541736ea46bf5970dc))
+
+# 6.3.0 (2025-07-22)
+
+### Features
+
+- **MultiTypeaheadSelect:** add initialInputValue prop ([#11791](https://github.com/patternfly/patternfly-react/issues/11791)) ([74cbea5](https://github.com/patternfly/patternfly-react/commit/74cbea5188bcae663aadcc0cae0e76cc6e242a5a))
+- **MultiTypeaheadSelect:** make labels removable and customizable ([#11774](https://github.com/patternfly/patternfly-react/issues/11774)) ([354f4f9](https://github.com/patternfly/patternfly-react/commit/354f4f9553cecd476bf0cf9169796b2523917398))
+- **version:** testing react 19 ([#11754](https://github.com/patternfly/patternfly-react/issues/11754)) ([b981588](https://github.com/patternfly/patternfly-react/commit/b9815886da3adc7a96bc2d48adacf86e8a752e61))
+
+### Reverts
+
+- Revert "chore(release): releasing packages [ci skip]" ([40999d7](https://github.com/patternfly/patternfly-react/commit/40999d70a7a3aeadbe8f40fe96bb01ab3a6219d4))
+
+# 6.2.0 (2025-04-07)
+
+### Bug Fixes
+
+- **Button:** updated rendering of aria-disabled attribute ([#11478](https://github.com/patternfly/patternfly-react/issues/11478)) ([058b14f](https://github.com/patternfly/patternfly-react/commit/058b14fc93233860cd604cdfb60f7c666cc0d436))
+- **Select templates:** allowed custom keydown handling ([#11608](https://github.com/patternfly/patternfly-react/issues/11608)) ([b8da713](https://github.com/patternfly/patternfly-react/commit/b8da713893c648adb4b2b1671ed535629faee301))
+
+# 6.1.0 (2024-12-16)
+
+### Bug Fixes
+
+- **build:** whitespace change to test v6 build ([#10484](https://github.com/patternfly/patternfly-react/issues/10484)) ([870fc3a](https://github.com/patternfly/patternfly-react/commit/870fc3a3a364a68702d774fc94b260d961241855))
+- **Button:** rendered position modifier only when children are passed ([#10864](https://github.com/patternfly/patternfly-react/issues/10864)) ([3ed73d3](https://github.com/patternfly/patternfly-react/commit/3ed73d3dc78ba229b184bc4e91cc11f45ccc94c3))
+- **deps:** update dependency tslib to ^2.7.0 ([#10949](https://github.com/patternfly/patternfly-react/issues/10949)) ([024b3cc](https://github.com/patternfly/patternfly-react/commit/024b3cc4b1afd4ba9f2dc774c0842712d4fbab1a))
+- **deps:** update dependency tslib to ^2.8.1 ([#11222](https://github.com/patternfly/patternfly-react/issues/11222)) ([7c90e9b](https://github.com/patternfly/patternfly-react/commit/7c90e9bff23083f097e78246570be60dacfb27c0))
+- **helpers:** Updated OUIA ID prefix to PF6 ([#10292](https://github.com/patternfly/patternfly-react/issues/10292)) ([1c7af7a](https://github.com/patternfly/patternfly-react/commit/1c7af7ab9f352b9ad02caabb1deef08cf69e0950))
+- **Popper:** updated default appendTo prop for Penta styling ([#10675](https://github.com/patternfly/patternfly-react/issues/10675)) ([daef02d](https://github.com/patternfly/patternfly-react/commit/daef02d52c194ebd9c4a0863629e82367177c4f5))
+
+### Features
+
+- **Button:** add text wrapper, update icon usage ([#10663](https://github.com/patternfly/patternfly-react/issues/10663)) ([eca5878](https://github.com/patternfly/patternfly-react/commit/eca58789d1f07753657372a46a20c147f984b998))
+- **Select/Dropdown/MenuContainer:** arrow key handling to focus items ([#11132](https://github.com/patternfly/patternfly-react/issues/11132)) ([ffb3841](https://github.com/patternfly/patternfly-react/commit/ffb3841016ffd8cb320cf56d345559c17caf2498))
+
 # [6.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-templates@6.7.0-prerelease.7...@patternfly/react-templates@6.7.0) (2026-10-15)
 
 **Note:** Version bump only for package @patternfly/react-templates
