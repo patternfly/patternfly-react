@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { ChipGroup } from '../index';
 import { Chip } from '..';
-import styles from '@patternfly/react-styles/css/components/Label/label-group';
+import styles from '@rh-felt/react-styles/css/components/Label/label-group';
 
 jest.mock('../../../../helpers/GenerateId/GenerateId');
 

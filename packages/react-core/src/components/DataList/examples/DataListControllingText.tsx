@@ -5,7 +5,7 @@ import {
   DataListItemCells,
   DataListCell,
   DataListWrapModifier
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const DataListControllingText: React.FunctionComponent = () => (
   <DataList aria-label="Controlling text data list example">

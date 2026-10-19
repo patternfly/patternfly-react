@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
+import { TreeView, TreeViewDataItem } from '@rh-felt/react-core';
 
 export const TreeViewBadges: React.FunctionComponent = () => {
   const [activeItems, setActiveItems] = useState<TreeViewDataItem[]>();

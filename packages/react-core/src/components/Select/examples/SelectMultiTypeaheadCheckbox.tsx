@@ -10,8 +10,8 @@ import {
   TextInputGroupMain,
   TextInputGroupUtilities,
   Button
-} from '@patternfly/react-core';
-import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+} from '@rh-felt/react-core';
+import RhMicronsCloseIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 const initialSelectOptions: SelectOptionProps[] = [
   { value: 'Alabama', children: 'Alabama' },

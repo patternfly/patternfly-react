@@ -18,14 +18,14 @@ ouia: true
 ---
 
 import { createRef, Fragment, useEffect, useRef, useState } from 'react';
-import RhUiUsersFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-users-fill-icon';
-import RhUiContainerFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-container-fill-icon';
-import DatabaseIcon from '@patternfly/react-icons/dist/esm/icons/database-icon';
-import RhUiServerStackFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-server-stack-fill-icon';
-import RhUiLaptopFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-laptop-fill-icon';
-import RhUiInfrastructureFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-infrastructure-fill-icon';
-import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
-import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+import RhUiUsersFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-users-fill-icon';
+import RhUiContainerFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-container-fill-icon';
+import DatabaseIcon from '@rh-felt/react-icons/dist/esm/icons/database-icon';
+import RhUiServerStackFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-server-stack-fill-icon';
+import RhUiLaptopFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-laptop-fill-icon';
+import RhUiInfrastructureFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-infrastructure-fill-icon';
+import RhUiQuestionMarkCircleIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import RhMicronsCloseIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 ## Examples
 

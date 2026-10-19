@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Slider, SliderOnChangeEvent, Content } from '@patternfly/react-core';
+import { Slider, SliderOnChangeEvent, Content } from '@rh-felt/react-core';
 
 export const SliderDisabled: React.FunctionComponent = () => {
   const [value, setValue] = useState(50);

@@ -10,7 +10,7 @@ import {
   DrawerPanelBody,
   Button,
   Title
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const DrawerStackedContentBodyElements: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = useState(false);

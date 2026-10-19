@@ -1,5 +1,5 @@
-import { Button, EmptyState, EmptyStateBody, EmptyStateActions, EmptyStateFooter } from '@patternfly/react-core';
-import RhUiModuleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-module-icon';
+import { Button, EmptyState, EmptyStateBody, EmptyStateActions, EmptyStateFooter } from '@rh-felt/react-core';
+import RhUiModuleIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-module-icon';
 
 export const EmptyStateBasic: React.FunctionComponent = () => (
   <EmptyState titleText="Empty state" headingLevel="h4" icon={RhUiModuleIcon}>

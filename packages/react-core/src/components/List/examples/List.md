@@ -5,9 +5,9 @@ cssPrefix: pf-v6-c-list
 propComponents: ['List', 'ListItem']
 ---
 
-import RhUiLearnFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-learn-fill-icon';
-import RhUiKeyIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-key-icon';
-import RhUiDesktopIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-desktop-icon';
+import RhUiLearnFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-learn-fill-icon';
+import RhUiKeyIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-key-icon';
+import RhUiDesktopIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-desktop-icon';
 
 ## Examples
 

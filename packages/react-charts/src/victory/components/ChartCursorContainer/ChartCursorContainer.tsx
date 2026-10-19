@@ -1,5 +1,5 @@
 import { cloneElement } from 'react';
-import chart_global_label_Fill from '@patternfly/react-tokens/dist/esm/chart_global_label_Fill';
+import chart_global_label_Fill from '@rh-felt/react-tokens/dist/esm/chart_global_label_Fill';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { LineSegment, OriginType, ValueOrAccessor, VictoryLabelProps } from 'victory-core';
 import {

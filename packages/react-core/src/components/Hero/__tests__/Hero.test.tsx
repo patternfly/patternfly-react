@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { Hero } from '../Hero';
-import styles from '@patternfly/react-styles/css/components/Hero/hero';
+import styles from '@rh-felt/react-styles/css/components/Hero/hero';
 
 test('Renders without children', () => {
   render(

@@ -12,7 +12,7 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts/victory';
+import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContainer } from '@rh-felt/react-charts/victory';
 import { useEffect } from 'react';
 
 <!-- Workaround for documentation-framework issue https://github.com/patternfly/patternfly-react/issues/11455
@@ -20,7 +20,7 @@ import './sparkline.css';
 -->
 
 ## Introduction
-Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
+Note: PatternFly React charts live in its own package at [@rh-felt/react-charts](https://www.npmjs.com/package/@rh-felt/react-charts)!
 
 The examples below are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
 

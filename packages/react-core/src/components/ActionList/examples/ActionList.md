@@ -6,9 +6,9 @@ propComponents: ['ActionList', 'ActionListGroup', 'ActionListItem']
 ---
 
 import { Fragment, useState } from 'react';
-import RhMicronsCloseIcon from '@patternfly/react-icons/dist/js/icons/rh-microns-close-icon';
-import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
-import RhMicronsCheckmarkIcon from '@patternfly/react-icons/dist/js/icons/rh-microns-checkmark-icon';
+import RhMicronsCloseIcon from '@rh-felt/react-icons/dist/js/icons/rh-microns-close-icon';
+import RhUiEllipsisVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhMicronsCheckmarkIcon from '@rh-felt/react-icons/dist/js/icons/rh-microns-checkmark-icon';
 
 ## Examples
 

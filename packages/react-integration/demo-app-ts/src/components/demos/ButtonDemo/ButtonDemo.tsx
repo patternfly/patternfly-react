@@ -1,10 +1,10 @@
 import { Component } from 'react';
-import { Button, ButtonProps, ButtonSize, Tooltip } from '@patternfly/react-core';
-import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
-import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
-import '@patternfly/react-styles/css/utilities/Spacing/spacing.css';
+import { Button, ButtonProps, ButtonSize, Tooltip } from '@rh-felt/react-core';
+import RhUiAddCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
+import RhMicronsExternalLinkIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-external-link-icon';
+import '@rh-felt/react-styles/css/utilities/Spacing/spacing.css';
 import { Link } from 'react-router-dom';
-import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
+import spacing from '@rh-felt/react-styles/css/utilities/Spacing/spacing';
 
 const href = 'https://www.google.com';
 

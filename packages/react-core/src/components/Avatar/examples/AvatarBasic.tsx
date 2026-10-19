@@ -1,4 +1,4 @@
-import { Avatar } from '@patternfly/react-core';
+import { Avatar } from '@rh-felt/react-core';
 import avatarImg from '../../assets/img_avatar-light.svg';
 
 const rhdsLogo = (

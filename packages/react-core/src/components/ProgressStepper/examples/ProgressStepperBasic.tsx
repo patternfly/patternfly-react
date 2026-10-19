@@ -1,4 +1,4 @@
-import { ProgressStepper, ProgressStep } from '@patternfly/react-core';
+import { ProgressStepper, ProgressStep } from '@rh-felt/react-core';
 
 export const ProgressStepperBasic: React.FunctionComponent = () => (
   <ProgressStepper aria-label="Basic progress stepper">

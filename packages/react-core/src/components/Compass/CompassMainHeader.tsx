@@ -2,8 +2,8 @@ import { CompassMainHeaderContent } from './CompassMainHeaderContent';
 import { CompassMainHeaderTitle } from './CompassMainHeaderTitle';
 import { CompassMainHeaderToolbar } from './CompassMainHeaderToolbar';
 import { Panel, PanelMain, PanelMainBody, PanelProps } from '../Panel';
-import styles from '@patternfly/react-styles/css/components/Compass/compass';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Compass/compass';
+import { css } from '@rh-felt/react-styles';
 
 /** The wrapper component for header content in the main Compass area. When building out a custom implementation,
  * you should ensure any content within the main header is rendered inside a Panel, PanelMain, PanelMainBody stack and main header content wrappers.

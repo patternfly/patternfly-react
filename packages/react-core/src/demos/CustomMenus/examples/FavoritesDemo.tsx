@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useRef, useState } from 'react';
-import { MenuToggle, Divider, Dropdown, DropdownGroup, DropdownList, DropdownItem } from '@patternfly/react-core';
+import { MenuToggle, Divider, Dropdown, DropdownGroup, DropdownList, DropdownItem } from '@rh-felt/react-core';
 
 export const FavoritesDemo: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);

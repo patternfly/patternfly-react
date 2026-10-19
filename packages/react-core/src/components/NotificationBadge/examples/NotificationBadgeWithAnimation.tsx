@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { NotificationBadge, NotificationBadgeVariant, Button, Stack, StackItem } from '@patternfly/react-core';
+import { NotificationBadge, NotificationBadgeVariant, Button, Stack, StackItem } from '@rh-felt/react-core';
 
 export const NotificationBadgeWithAnimation: React.FunctionComponent = () => {
   const [count, setCount] = useState(0);

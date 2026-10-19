@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 import React from 'react';
-import { PageSection } from '@patternfly/react-core/dist/esm/components/Page/PageSection';
-import { Title } from '@patternfly/react-core/dist/esm/components/Title';
+import { PageSection } from '@rh-felt/react-core/dist/esm/components/Page/PageSection';
+import { Title } from '@rh-felt/react-core/dist/esm/components/Title';
 
 // https://philipwalton.github.io/solved-by-flexbox/demos/vertical-centering/
 const centerStyle = {

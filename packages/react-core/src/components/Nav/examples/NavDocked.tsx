@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Nav, NavItem, NavList, NavExpandable } from '@patternfly/react-core';
-import RhUiCubesIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cubes-icon';
-import RhUiFolderIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-icon';
-import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
-import RhUiCloudIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-cloud-icon';
+import { Nav, NavItem, NavList, NavExpandable } from '@rh-felt/react-core';
+import RhUiCubesIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-cubes-icon';
+import RhUiFolderIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-folder-icon';
+import RhUiCodeIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-code-icon';
+import RhUiCloudIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-cloud-icon';
 
 export const NavDocked: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState(0);

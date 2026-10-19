@@ -1,7 +1,7 @@
 import { Component, createRef } from 'react';
-import styles from '@patternfly/react-styles/css/components/Page/page';
-import { css } from '@patternfly/react-styles';
-import globalBreakpointXl from '@patternfly/react-tokens/dist/esm/t_global_breakpoint_xl';
+import styles from '@rh-felt/react-styles/css/components/Page/page';
+import { css } from '@rh-felt/react-styles';
+import globalBreakpointXl from '@rh-felt/react-tokens/dist/esm/t_global_breakpoint_xl';
 import { debounce, canUseDOM } from '../../helpers/util';
 import { Drawer, DrawerContent, DrawerPanelContent } from '../Drawer';
 import { PageBreadcrumb, PageBreadcrumbProps } from './PageBreadcrumb';

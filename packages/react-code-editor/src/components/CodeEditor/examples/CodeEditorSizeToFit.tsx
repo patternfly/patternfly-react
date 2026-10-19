@@ -1,4 +1,4 @@
-import { CodeEditor, Language } from '@patternfly/react-code-editor';
+import { CodeEditor, Language } from '@rh-felt/react-code-editor';
 
 export const CodeEditorSizeToFit: React.FunctionComponent = () => {
   const onEditorDidMount = (editor, monaco) => {

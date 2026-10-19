@@ -14,9 +14,9 @@ import {
   MenuToggle,
   Radio,
   Popper
-} from '@patternfly/react-core';
-import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
-import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
+} from '@rh-felt/react-core';
+import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@rh-felt/react-core/deprecated';
+import RhUiInformationFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
 
 export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
   const [isModalOpen, setModalOpen] = useState<boolean>(false);

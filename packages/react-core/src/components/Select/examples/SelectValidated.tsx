@@ -8,7 +8,7 @@ import {
   MenuToggleStatus,
   HelperText,
   HelperTextItem
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const SelectValidated: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);

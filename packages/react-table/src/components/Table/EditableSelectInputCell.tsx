@@ -1,9 +1,9 @@
 import { Fragment } from 'react';
-import { css } from '@patternfly/react-styles';
-import { Select, SelectList } from '@patternfly/react-core/dist/esm/components/Select';
-import { MenuToggle } from '@patternfly/react-core/dist/esm/components/MenuToggle';
-import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
-import formStyles from '@patternfly/react-styles/css/components/Form/form';
+import { css } from '@rh-felt/react-styles';
+import { Select, SelectList } from '@rh-felt/react-core/dist/esm/components/Select';
+import { MenuToggle } from '@rh-felt/react-core/dist/esm/components/MenuToggle';
+import inlineStyles from '@rh-felt/react-styles/css/components/InlineEdit/inline-edit';
+import formStyles from '@rh-felt/react-styles/css/components/Form/form';
 import { EditableSelectInputProps } from './base/types';
 
 export interface IEditableSelectInputCell extends Omit<

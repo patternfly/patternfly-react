@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import { OUIAProps, getDefaultOUIAId } from '@patternfly/react-core/dist/esm/helpers/OUIA/ouia';
-import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
-import { css } from '@patternfly/react-styles';
+import { OUIAProps, getDefaultOUIAId } from '@rh-felt/react-core/dist/esm/helpers/OUIA/ouia';
+import inlineStyles from '@rh-felt/react-styles/css/components/InlineEdit/inline-edit';
+import { css } from '@rh-felt/react-styles';
 import { Provider } from '../../../components/Table/base/provider';
 import { BodyCell } from './BodyCell';
 import { HeaderCell } from './HeaderCell';

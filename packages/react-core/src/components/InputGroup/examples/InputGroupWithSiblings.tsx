@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
-import DollarSignIcon from '@patternfly/react-icons/dist/esm/icons/dollar-sign-icon';
-import { Button, TextArea, InputGroup, InputGroupText, InputGroupItem, TextInput } from '@patternfly/react-core';
+import DollarSignIcon from '@rh-felt/react-icons/dist/esm/icons/dollar-sign-icon';
+import { Button, TextArea, InputGroup, InputGroupText, InputGroupItem, TextInput } from '@rh-felt/react-core';
 
 export const InputGroupWithSiblings: React.FunctionComponent = () => (
   <Fragment>

@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Menu/menu';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Menu/menu';
 
 export interface MenuSearchInputProps extends React.HTMLProps<HTMLElement> {
   /** Items within input */

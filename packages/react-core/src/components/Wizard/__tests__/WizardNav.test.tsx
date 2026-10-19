@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { WizardNav } from '../WizardNav';
-import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
+import styles from '@rh-felt/react-styles/css/components/Wizard/wizard';
 
 test(`Renders with additional classes when className is passed`, () => {
   render(

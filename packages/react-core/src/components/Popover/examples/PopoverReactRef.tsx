@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { Popover } from '@patternfly/react-core';
+import { Popover } from '@rh-felt/react-core';
 
 export const PopoverReactRef: React.FunctionComponent = () => {
   const popoverRef = useRef<HTMLButtonElement>(null);

@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { useState } from 'react';
-import { Table, Thead, Tr, Th, Tbody, Td, ExpandableRowContent, ActionsColumn, IAction } from '@patternfly/react-table';
+import { Table, Thead, Tr, Th, Tbody, Td, ExpandableRowContent, ActionsColumn, IAction } from '@rh-felt/react-table';
 
 interface Repository {
   name: string;

@@ -1,6 +1,6 @@
 import { Fragment, useRef, useState } from 'react';
-import { Button, Form, FormGroup, FormGroupLabelHelp, Popover, TextInput } from '@patternfly/react-core';
-import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
+import { Button, Form, FormGroup, FormGroupLabelHelp, Popover, TextInput } from '@rh-felt/react-core';
+import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@rh-felt/react-core/deprecated';
 
 export const ModalWithForm: React.FunctionComponent = () => {
   const [isModalOpen, setModalOpen] = useState(false);

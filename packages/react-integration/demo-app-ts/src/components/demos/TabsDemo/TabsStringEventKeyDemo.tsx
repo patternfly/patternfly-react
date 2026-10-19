@@ -1,4 +1,4 @@
-import { Tabs, Tab, TabContent, TabTitleText } from '@patternfly/react-core';
+import { Tabs, Tab, TabContent, TabTitleText } from '@rh-felt/react-core';
 import { Component, createRef, RefObject } from 'react';
 
 export class TabsStringEventKeyDemo extends Component {

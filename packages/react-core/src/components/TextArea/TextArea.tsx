@@ -1,6 +1,6 @@
 import { Component, HTMLProps, createRef, forwardRef } from 'react';
-import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/FormControl/form-control';
+import { css } from '@rh-felt/react-styles';
 import { capitalize, ValidatedOptions, canUseDOM } from '../../helpers';
 import { FormControlIcon } from '../FormControl/FormControlIcon';
 

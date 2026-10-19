@@ -1,4 +1,4 @@
-import { ChartPie, ChartThemeColor } from '@patternfly/react-charts/victory';
+import { ChartPie, ChartThemeColor } from '@rh-felt/react-charts/victory';
 
 interface PetData {
   x?: string;

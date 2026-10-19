@@ -1,4 +1,4 @@
-import { ActionList, ActionListGroup, ActionListItem, Button } from '@patternfly/react-core';
+import { ActionList, ActionListGroup, ActionListItem, Button } from '@rh-felt/react-core';
 
 export const ActionListMultipleGroups: React.FunctionComponent = () => (
   <ActionList>

@@ -1,12 +1,12 @@
 import { Component, forwardRef, isValidElement } from 'react';
-import styles from '@patternfly/react-styles/css/components/MenuToggle/menu-toggle';
-import { css } from '@patternfly/react-styles';
-import RhMicronsCaretDownFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-fill-icon';
+import styles from '@rh-felt/react-styles/css/components/MenuToggle/menu-toggle';
+import { css } from '@rh-felt/react-styles';
+import RhMicronsCaretDownFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-down-fill-icon';
 import { BadgeProps } from '../Badge';
-import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
-import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
-import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
-import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
+import RhUiSettingsFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
+import RhUiCheckCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import RhUiErrorFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
+import RhUiWarningFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
 import { OUIAProps, getOUIAProps } from '../../helpers';
 import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 

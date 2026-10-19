@@ -1,7 +1,7 @@
 import { Component, createRef, forwardRef } from 'react';
-import styles from '@patternfly/react-styles/css/components/Menu/menu';
-import breadcrumbStyles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Menu/menu';
+import breadcrumbStyles from '@rh-felt/react-styles/css/components/Breadcrumb/breadcrumb';
+import { css } from '@rh-felt/react-styles';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 import { MenuContext } from './MenuContext';

@@ -1,4 +1,4 @@
-import { JumpLinks, JumpLinksItem } from '@patternfly/react-core';
+import { JumpLinks, JumpLinksItem } from '@rh-felt/react-core';
 
 export const JumpLinksVerticalWithLabel: React.FunctionComponent = () => (
   <JumpLinks isVertical label="Jump to vertical example sections with labels">

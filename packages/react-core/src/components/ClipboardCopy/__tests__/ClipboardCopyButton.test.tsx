@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ClipboardCopyButton } from '../ClipboardCopyButton';
-import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
+import buttonStyles from '@rh-felt/react-styles/css/components/Button/button';
 import '@testing-library/jest-dom';
 
 jest.mock('../../Tooltip', () => ({

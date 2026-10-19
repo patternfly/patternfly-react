@@ -7,7 +7,7 @@ import {
   MenuToggle,
   MenuToggleElement,
   Divider
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const DropdownWithGroups: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);

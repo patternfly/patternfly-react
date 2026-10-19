@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { SimpleList, SimpleListItem, SimpleListItemProps } from '@patternfly/react-core';
+import { SimpleList, SimpleListItem, SimpleListItemProps } from '@rh-felt/react-core';
 
 export const SimpleListUncontrolled: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState(0);

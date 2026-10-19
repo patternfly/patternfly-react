@@ -1,5 +1,5 @@
-import { ChartPie, ChartThemeColor } from '@patternfly/react-charts/victory';
-import { getResizeObserver } from '@patternfly/react-core';
+import { ChartPie, ChartThemeColor } from '@rh-felt/react-charts/victory';
+import { getResizeObserver } from '@rh-felt/react-core';
 import { useEffect, useRef, useState } from 'react';
 
 interface PetData {

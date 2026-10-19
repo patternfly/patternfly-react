@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
-import styles from '@patternfly/react-styles/css/components/Menu/menu';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Menu/menu';
+import { css } from '@rh-felt/react-styles';
 import { MenuContext, MenuItemContext } from './MenuContext';
 import { Button } from '../Button';
 export interface MenuItemActionProps extends React.HTMLProps<HTMLDivElement> {

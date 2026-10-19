@@ -6,7 +6,7 @@ import {
   MastheadLogo,
   MastheadContent,
   Button
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const MastheadDisplayStackInlineResponsive: React.FunctionComponent = () => (
   <Masthead id="stack-inline-masthead" display={{ default: 'inline', lg: 'stack', '2xl': 'inline' }}>

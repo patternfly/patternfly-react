@@ -7,7 +7,7 @@ import {
   Button,
   InputGroup,
   InputGroupItem
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 interface AlertDemoAlert {
   title: string;

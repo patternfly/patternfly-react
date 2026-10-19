@@ -1,5 +1,5 @@
-import { Popover, Button } from '@patternfly/react-core';
-import RhUiAttentionBellFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
+import { Popover, Button } from '@rh-felt/react-core';
+import RhUiAttentionBellFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
 
 export const PopoverWithIconInTheTitle: React.FunctionComponent = () => (
   <div style={{ margin: '50px' }}>

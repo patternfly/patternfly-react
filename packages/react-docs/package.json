@@ -1,7 +1,7 @@
 {
-  "name": "@patternfly/react-docs",
-  "description": "PatternFly React Docs",
-  "version": "7.7.0",
+  "name": "@rh-felt/react-docs",
+  "description": "Felt React Docs",
+  "version": "0.0.1-prerelease.0",
   "publishConfig": {
     "access": "public",
     "tag": "prerelease"
@@ -24,15 +24,15 @@
   },
   "dependencies": {
     "@patternfly/patternfly": "6.7.0-prerelease.3",
-    "@patternfly/react-charts": "workspace:^",
-    "@patternfly/react-code-editor": "workspace:^",
-    "@patternfly/react-core": "workspace:^",
-    "@patternfly/react-drag-drop": "workspace:^",
-    "@patternfly/react-icons": "workspace:^",
-    "@patternfly/react-styles": "workspace:^",
-    "@patternfly/react-table": "workspace:^",
-    "@patternfly/react-templates": "workspace:^",
-    "@patternfly/react-tokens": "workspace:^",
+    "@patternfly/react-charts": "8.7.0-prerelease.4",
+    "@patternfly/react-code-editor": "6.7.0-prerelease.6",
+    "@patternfly/react-core": "6.7.0-prerelease.6",
+    "@patternfly/react-drag-drop": "6.7.0-prerelease.6",
+    "@patternfly/react-icons": "6.7.0-prerelease.3",
+    "@patternfly/react-styles": "6.7.0-prerelease.3",
+    "@patternfly/react-table": "6.7.0-prerelease.7",
+    "@patternfly/react-templates": "6.7.0-prerelease.6",
+    "@patternfly/react-tokens": "6.7.0-prerelease.3",
     "echarts": "^5.6.0 || ^6.0.0",
     "victory": "^37.3.6"
   },

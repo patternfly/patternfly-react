@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 
 import { Accordion } from '../Accordion';
 import { AccordionContext } from '../AccordionContext';
-import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
+import styles from '@rh-felt/react-styles/css/components/Accordion/accordion';
 
 test('Renders without children', () => {
   render(<Accordion data-testid="accordion" />);

@@ -35,7 +35,7 @@ const AnimationsContext = createContext<AnimationsConfig>({
  * @example
  * ```tsx
  * // App.tsx - Place at your application root
- * import { AnimationsProvider } from '@patternfly/react-core';
+ * import { AnimationsProvider } from '@rh-felt/react-core';
  *
  * const App = () => (
  *   <AnimationsProvider config={{ hasAnimations: true }}>

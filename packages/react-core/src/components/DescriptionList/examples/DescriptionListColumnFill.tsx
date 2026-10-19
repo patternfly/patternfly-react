@@ -4,8 +4,8 @@ import {
   DescriptionListTerm,
   DescriptionListGroup,
   DescriptionListDescription
-} from '@patternfly/react-core';
-import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
+} from '@rh-felt/react-core';
+import RhUiAddCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 
 export const DescriptionListColumnFill: React.FunctionComponent = () => (
   <DescriptionList isFillColumns columnModifier={{ default: '2Col', lg: '3Col' }} aria-label="Column fill enabled">

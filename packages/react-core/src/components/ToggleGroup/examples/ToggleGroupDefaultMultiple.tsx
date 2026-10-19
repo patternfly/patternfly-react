@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ToggleGroup, ToggleGroupItem, Button, Stack, StackItem } from '@patternfly/react-core';
+import { ToggleGroup, ToggleGroupItem, Button, Stack, StackItem } from '@rh-felt/react-core';
 
 export const ToggleGroupDefaultMultiple: React.FunctionComponent = () => {
   const [isSelected, setIsSelected] = useState({

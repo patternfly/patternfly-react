@@ -1,4 +1,4 @@
-import { Skeleton } from '@patternfly/react-core';
+import { Skeleton } from '@rh-felt/react-core';
 
 export const SkeletonPercentageHeight: React.FunctionComponent = () => (
   <div style={{ height: '400px', display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between' }}>

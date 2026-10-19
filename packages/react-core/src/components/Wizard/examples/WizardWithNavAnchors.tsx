@@ -1,6 +1,6 @@
-import { Button, Wizard, WizardStep } from '@patternfly/react-core';
-import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
-import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
+import { Button, Wizard, WizardStep } from '@rh-felt/react-core';
+import RhMicronsExternalLinkIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-external-link-icon';
+import SlackHashIcon from '@rh-felt/react-icons/dist/esm/icons/slack-hash-icon';
 
 export const WizardWithNavAnchors: React.FunctionComponent = () => (
   <Wizard height={400} title="Anchor link wizard">

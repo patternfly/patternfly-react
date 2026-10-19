@@ -1,5 +1,5 @@
 import { useState, Fragment } from 'react';
-import { Alert, AlertProps, AlertGroup, AlertActionCloseButton, Button, Flex, FlexItem } from '@patternfly/react-core';
+import { Alert, AlertProps, AlertGroup, AlertActionCloseButton, Button, Flex, FlexItem } from '@rh-felt/react-core';
 
 export const AlertGroupAnimationsDemo: React.FunctionComponent = () => {
   const [alerts, setAlerts] = useState<Partial<AlertProps>[]>([]);

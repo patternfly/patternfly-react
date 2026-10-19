@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { SearchInput, Button } from '@patternfly/react-core';
+import { SearchInput, Button } from '@rh-felt/react-core';
 
 export const SearchInputFocusSearch: React.FunctionComponent = () => {
   const [value, setValue] = useState('');

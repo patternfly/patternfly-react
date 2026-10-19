@@ -1,4 +1,4 @@
-import { Switch } from '@patternfly/react-core';
+import { Switch } from '@rh-felt/react-core';
 import {
   Chart,
   ChartVoronoiContainer,
@@ -6,7 +6,7 @@ import {
   ChartAxis,
   ChartScatter,
   ChartThemeColor
-} from '@patternfly/react-charts/victory';
+} from '@rh-felt/react-charts/victory';
 import { useState } from 'react';
 
 interface PetData {

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { DataListCell } from '../DataListCell';
 
-import styles from '@patternfly/react-styles/css/components/DataList/data-list';
+import styles from '@rh-felt/react-styles/css/components/DataList/data-list';
 
 test('Cell renders to match snapshot', () => {
   const { asFragment } = render(<DataListCell>Secondary</DataListCell>);

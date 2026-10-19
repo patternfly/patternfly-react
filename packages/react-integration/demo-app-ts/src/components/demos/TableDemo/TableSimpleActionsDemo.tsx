@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import { headerCol, ICell, IRow, IActions } from '@patternfly/react-table';
-import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
+import { headerCol, ICell, IRow, IActions } from '@rh-felt/react-table';
+import { Table, TableHeader, TableBody, TableProps } from '@rh-felt/react-table/deprecated';
 
 interface ITableState {
   columns: (ICell | string)[];

@@ -28,9 +28,9 @@ import {
   IRowData,
   ISeparator
 } from '../TableTypes';
-import { css } from '@patternfly/react-styles';
-import tableStyles from '@patternfly/react-styles/css/components/Table/table';
-import menuStyles from '@patternfly/react-styles/css/components/Menu/menu';
+import { css } from '@rh-felt/react-styles';
+import tableStyles from '@rh-felt/react-styles/css/components/Table/table';
+import menuStyles from '@rh-felt/react-styles/css/components/Menu/menu';
 
 const testCellActions = async ({
   actions,

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { ExpandableSection, Badge, Stack, StackItem } from '@patternfly/react-core';
-import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import { ExpandableSection, Badge, Stack, StackItem } from '@rh-felt/react-core';
+import RhUiCheckCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 
 export const ExpandableSectionCustomToggle: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = useState(false);

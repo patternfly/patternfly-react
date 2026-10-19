@@ -1,4 +1,4 @@
-import { JumpLinks, JumpLinksItem } from '@patternfly/react-core';
+import { JumpLinks, JumpLinksItem } from '@rh-felt/react-core';
 
 export const JumpLinksBasic: React.FunctionComponent = () => (
   <JumpLinks aria-label="Jump to basic example sections">

@@ -1,12 +1,12 @@
 import { Children, Component } from 'react';
-import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/FormControl/form-control';
+import { css } from '@rh-felt/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import { ValidatedOptions } from '../../helpers/constants';
 import { FormControlIcon } from '../FormControl/FormControlIcon';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
-import RhMicronsCaretDownFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-fill-icon';
+import RhMicronsCaretDownFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-down-fill-icon';
 
 export interface FormSelectProps
   extends Omit<React.HTMLProps<HTMLSelectElement>, 'onChange' | 'onBlur' | 'onFocus' | 'disabled'>, OUIAProps {

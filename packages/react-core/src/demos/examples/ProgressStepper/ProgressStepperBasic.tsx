@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { ProgressStepper, ProgressStep, Button, Stack, StackItem } from '@patternfly/react-core';
-import accessibilityStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
+import { ProgressStepper, ProgressStep, Button, Stack, StackItem } from '@rh-felt/react-core';
+import accessibilityStyles from '@rh-felt/react-styles/css/utilities/Accessibility/accessibility';
 
 export const ProgressStepperBasic: React.FunctionComponent = () => {
   const [currentStep, setCurrentStep] = useState(0);

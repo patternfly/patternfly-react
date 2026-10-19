@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Table, Thead, Tr, Th, Tbody, Td, InnerScrollContainer, ExpandableRowContent } from '@patternfly/react-table';
-import { Button } from '@patternfly/react-core';
+import { Table, Thead, Tr, Th, Tbody, Td, InnerScrollContainer, ExpandableRowContent } from '@rh-felt/react-table';
+import { Button } from '@rh-felt/react-core';
 
 interface Team {
   name: string;

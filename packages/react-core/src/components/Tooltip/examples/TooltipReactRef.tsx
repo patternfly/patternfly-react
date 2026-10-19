@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { Tooltip } from '@patternfly/react-core';
+import { Tooltip } from '@rh-felt/react-core';
 
 export const TooltipReactRef: React.FunctionComponent = () => {
   const tooltipRef = useRef<HTMLButtonElement>(null);

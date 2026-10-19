@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { LabelGroup, Label, LabelColor, Menu, MenuContent, MenuList, MenuItem, Popper } from '@patternfly/react-core';
+import { LabelGroup, Label, LabelColor, Menu, MenuContent, MenuList, MenuItem, Popper } from '@rh-felt/react-core';
 
 export const LabelGroupEditableAddDropdown: React.FunctionComponent = () => {
   const toggleRef = useRef<HTMLDivElement>(undefined);

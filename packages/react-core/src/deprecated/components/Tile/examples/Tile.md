@@ -7,8 +7,8 @@ deprecated: true
 ---
 
 import { useState } from 'react';
-import RhUiAddIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-icon';
-import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
+import RhUiAddIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-add-icon';
+import RhUiNotificationFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 import './Tile.css';
 
 **Note:** Tile has been deprecated. Use the [card](/components/card#cards-as-tiles) component instead.
@@ -73,7 +73,7 @@ You can also change the type of `Flex` you can use so that the line breaks in th
 
 ```ts
 import { useState } from 'react';
-import { Tile } from '@patternfly/react-core/deprecated';
+import { Tile } from '@rh-felt/react-core/deprecated';
 
 const TileSingleSelect: React.FunctionComponent = () => {
   const [selectedId, setSelectedId] = useState<string>('');
@@ -104,7 +104,7 @@ const TileSingleSelect: React.FunctionComponent = () => {
 
 ```ts
 import { useState } from 'react';
-import { Tile } from '@patternfly/react-core/deprecated';
+import { Tile } from '@rh-felt/react-core/deprecated';
 
 const TileMultiSelect: React.FunctionComponent = () => {
   const [selectedIds, setSelectedIds] = useState<string[]>([]);

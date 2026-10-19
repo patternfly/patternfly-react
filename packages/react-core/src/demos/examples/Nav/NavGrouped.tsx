@@ -9,8 +9,8 @@ import {
   PageSidebar,
   PageSidebarBody,
   SkipToContent
-} from '@patternfly/react-core';
-import { DashboardHeader } from '@patternfly/react-core/dist/js/demos/DashboardHeader';
+} from '@rh-felt/react-core';
+import { DashboardHeader } from '@rh-felt/react-core/dist/js/demos/DashboardHeader';
 
 export const NavGrouped: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState<number | string>('grp-1_itm-1');

@@ -13,7 +13,7 @@ import {
   MenuContent,
   MenuList,
   MenuItem
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 interface SelectedItem {
   groupId: number | string;

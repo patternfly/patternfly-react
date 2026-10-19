@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { PageBreadcrumb } from '../PageBreadcrumb';
-import styles from '@patternfly/react-styles/css/components/Page/page';
+import styles from '@rh-felt/react-styles/css/components/Page/page';
 
 describe('page breadcrumb', () => {
   test('Verify basic render', () => {

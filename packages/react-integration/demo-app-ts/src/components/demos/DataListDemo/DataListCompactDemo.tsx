@@ -6,7 +6,7 @@ import {
   DataListItemRow,
   DataListItemCells,
   DataListCell
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 interface DataListState {
   selectedDataListItemId: string;

@@ -9,7 +9,7 @@ import { ToolbarContent } from '../ToolbarContent';
 import { ToolbarFilter } from '../ToolbarFilter';
 import { ToolbarGroup } from '../ToolbarGroup';
 import { Button } from '../../Button/Button';
-import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
+import styles from '@rh-felt/react-styles/css/components/Toolbar/toolbar';
 
 jest.mock('../../../helpers/GenerateId/GenerateId');
 

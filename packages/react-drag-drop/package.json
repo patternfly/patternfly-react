@@ -1,13 +1,14 @@
 {
-  "name": "@patternfly/react-drag-drop",
-  "version": "6.7.0",
+  "name": "@rh-felt/react-drag-drop",
+  "version": "0.0.1-prerelease.0",
   "description": "PatternFly drag and drop solution",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
   "sideEffects": false,
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "tag": "prerelease"
   },
   "patternfly:src": "src/",
   "repository": {
@@ -32,9 +33,9 @@
     "@dnd-kit/core": "^6.3.1",
     "@dnd-kit/modifiers": "^9.0.0",
     "@dnd-kit/sortable": "^10.0.0",
-    "@patternfly/react-core": "workspace:^",
-    "@patternfly/react-icons": "workspace:^",
-    "@patternfly/react-styles": "workspace:^",
+    "@rh-felt/react-core": "workspace:^",
+    "@rh-felt/react-icons": "workspace:^",
+    "@rh-felt/react-styles": "workspace:^",
     "resize-observer-polyfill": "^1.5.1"
   },
   "peerDependencies": {

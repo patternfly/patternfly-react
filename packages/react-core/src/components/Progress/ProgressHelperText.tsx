@@ -1,4 +1,4 @@
-import progressStyle from '@patternfly/react-styles/css/components/Progress/progress';
+import progressStyle from '@rh-felt/react-styles/css/components/Progress/progress';
 
 export interface ProgressHelperTextProps extends React.HTMLProps<HTMLDivElement> {
   /** Content which can be used to convey additional information about the progress component.

@@ -1,6 +1,6 @@
-import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
-import { css } from '@patternfly/react-styles';
-import t_global_color_brand_default from '@patternfly/react-tokens/dist/esm/t_global_color_brand_default';
+import { Table, TableHeader, TableBody, TableProps } from '@rh-felt/react-table/deprecated';
+import { css } from '@rh-felt/react-styles';
+import t_global_color_brand_default from '@rh-felt/react-tokens/dist/esm/t_global_color_brand_default';
 
 interface Repository {
   name: string;

@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/FileUpload/file-upload';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/FileUpload/file-upload';
+import { css } from '@rh-felt/react-styles';
 
 /** A container for helper text content. This sub-component should be passed as a child to
  * the main file upload or file upload field component.

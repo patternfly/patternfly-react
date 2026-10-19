@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/SkipToContent/skip-to-content';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/SkipToContent/skip-to-content';
+import { css } from '@rh-felt/react-styles';
 import { Button, ButtonVariant } from '../Button';
 
 export interface SkipToContentProps extends React.HTMLProps<HTMLDivElement> {

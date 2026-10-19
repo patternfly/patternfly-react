@@ -1,7 +1,7 @@
 #! /bin/bash
 if [ -z $1 ]
 then
-  echo 'Usage: changelog.sh @patternfly/react-core@version';
+  echo 'Usage: changelog.sh @rh-felt/react-core@version';
   exit 1;
 fi;
 

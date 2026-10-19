@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { NotificationBadge, NotificationBadgeVariant } from '@patternfly/react-core';
+import { NotificationBadge, NotificationBadgeVariant } from '@rh-felt/react-core';
 
 export const NotificationBadgeBasic: React.FunctionComponent = () => {
   const [readExpanded, setReadExpanded] = useState(false);

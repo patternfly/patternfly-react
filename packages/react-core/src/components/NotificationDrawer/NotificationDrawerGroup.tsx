@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
-import maxLines from '@patternfly/react-tokens/dist/esm/c_notification_drawer__group_toggle_title_max_lines';
+import RhMicronsCaretDownIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/NotificationDrawer/notification-drawer';
+import maxLines from '@rh-felt/react-tokens/dist/esm/c_notification_drawer__group_toggle_title_max_lines';
 
 import { Badge } from '../Badge';
 import { Tooltip, TooltipPosition } from '../Tooltip';

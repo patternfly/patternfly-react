@@ -1,5 +1,5 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Accordion/accordion';
 import { AccordionItemContext } from './AccordionContext';
 
 export interface AccordionItemProps extends React.HTMLProps<HTMLDivElement> {

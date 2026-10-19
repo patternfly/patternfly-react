@@ -1,4 +1,4 @@
-import { Banner } from '@patternfly/react-core';
+import { Banner } from '@rh-felt/react-core';
 
 export const BannerBasic: React.FunctionComponent = () => (
   <>

@@ -1,7 +1,7 @@
-import styles from '@patternfly/react-styles/css/components/Skeleton/skeleton';
-import { css } from '@patternfly/react-styles';
-import cssHeight from '@patternfly/react-tokens/dist/esm/c_skeleton_Height';
-import cssWidth from '@patternfly/react-tokens/dist/esm/c_skeleton_Width';
+import styles from '@rh-felt/react-styles/css/components/Skeleton/skeleton';
+import { css } from '@rh-felt/react-styles';
+import cssHeight from '@rh-felt/react-tokens/dist/esm/c_skeleton_Height';
+import cssWidth from '@rh-felt/react-tokens/dist/esm/c_skeleton_Width';
 
 export interface SkeletonProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Skeleton */

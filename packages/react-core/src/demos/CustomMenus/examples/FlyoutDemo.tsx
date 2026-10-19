@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, MenuContainer } from '@patternfly/react-core';
+import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, MenuContainer } from '@rh-felt/react-core';
 
 /* eslint-disable no-console */
 const onSelect = (event: React.MouseEvent | undefined, itemId: string | number | undefined) =>

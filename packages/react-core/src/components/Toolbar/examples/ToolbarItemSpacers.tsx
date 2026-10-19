@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
-import { Toolbar, ToolbarItem, ToolbarGroup, ToolbarContent } from '@patternfly/react-core';
-import { Button } from '@patternfly/react-core';
+import { Toolbar, ToolbarItem, ToolbarGroup, ToolbarContent } from '@rh-felt/react-core';
+import { Button } from '@rh-felt/react-core';
 
 export const ToolbarItemSpacers: React.FunctionComponent = () => {
   const itemGapItems = (

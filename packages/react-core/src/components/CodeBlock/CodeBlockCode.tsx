@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/CodeBlock/code-block';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/CodeBlock/code-block';
+import { css } from '@rh-felt/react-styles';
 
 export interface CodeBlockCodeProps extends React.HTMLProps<HTMLPreElement> {
   /** Code rendered inside the code block */

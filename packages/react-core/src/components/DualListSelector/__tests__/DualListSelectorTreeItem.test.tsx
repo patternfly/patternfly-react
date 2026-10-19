@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
+import styles from '@rh-felt/react-styles/css/components/DualListSelector/dual-list-selector';
 import { DualListSelectorTreeItem } from '../DualListSelectorTreeItem';
 
 // The following tests checking for children to not be/to be rendered will need to be refactored

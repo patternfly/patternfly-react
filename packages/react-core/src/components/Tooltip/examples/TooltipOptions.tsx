@@ -10,7 +10,7 @@ import {
   MenuToggleElement,
   TextInput,
   TooltipPosition
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const TooltipOptions: React.FunctionComponent = () => {
   const [trigger, setTrigger] = useState(['mouseenter', 'focus']);

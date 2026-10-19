@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Dropdown, DropdownItem, DropdownList, Divider, MenuToggle, MenuToggleElement } from '@patternfly/react-core';
+import { Dropdown, DropdownItem, DropdownList, Divider, MenuToggle, MenuToggleElement } from '@rh-felt/react-core';
 
 export const DropdownBasic: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);

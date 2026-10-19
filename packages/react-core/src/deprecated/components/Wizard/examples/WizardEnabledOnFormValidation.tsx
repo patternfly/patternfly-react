@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Form, FormGroup, TextInput } from '@patternfly/react-core';
-import { Wizard as WizardDeprecated, WizardStep } from '@patternfly/react-core/deprecated';
+import { Form, FormGroup, TextInput } from '@rh-felt/react-core';
+import { Wizard as WizardDeprecated, WizardStep } from '@rh-felt/react-core/deprecated';
 interface PrevStepInfo {
   prevId?: string | number;
   prevName: React.ReactNode;

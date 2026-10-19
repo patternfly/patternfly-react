@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { TooltipArrow } from '../TooltipArrow';
-import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
+import styles from '@rh-felt/react-styles/css/components/Tooltip/tooltip';
 
 test('Renders without children', () => {
   render(<TooltipArrow data-testid="tooltipArrow" />);

@@ -10,16 +10,16 @@ import {
   Progress,
   Button,
   Alert
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 import {
   Wizard as WizardDeprecated,
   WizardFooter as WizardFooterDeprecated,
   WizardContextConsumer as WizardContextConsumerDeprecated
-} from '@patternfly/react-core/deprecated';
-import layout from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
+} from '@rh-felt/react-core/deprecated';
+import layout from '@rh-felt/react-styles/css/layouts/Bullseye/bullseye';
 
 // eslint-disable-next-line patternfly-react/import-tokens-icons
-import { CogsIcon } from '@patternfly/react-icons';
+import { CogsIcon } from '@rh-felt/react-icons';
 
 interface finishedProps {
   onClose: () => void;

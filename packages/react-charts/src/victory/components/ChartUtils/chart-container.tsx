@@ -1,4 +1,4 @@
-import chart_container_cursor_line_Fill from '@patternfly/react-tokens/dist/esm/chart_container_cursor_line_Fill';
+import chart_container_cursor_line_Fill from '@rh-felt/react-tokens/dist/esm/chart_container_cursor_line_Fill';
 import { ContainerType, createContainer as victoryCreateContainer } from 'victory-create-container';
 import { ChartCursorTooltip } from '../ChartCursorTooltip/ChartCursorTooltip';
 import { ChartLabel } from '../ChartLabel/ChartLabel';

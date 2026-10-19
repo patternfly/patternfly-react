@@ -1,10 +1,10 @@
 import { Fragment, useState, useRef, useEffect } from 'react';
-import progressStyle from '@patternfly/react-styles/css/components/Progress/progress';
-import { css } from '@patternfly/react-styles';
+import progressStyle from '@rh-felt/react-styles/css/components/Progress/progress';
+import { css } from '@rh-felt/react-styles';
 import { Tooltip, TooltipPosition } from '../Tooltip';
-import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
-import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
-import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
+import RhUiCheckCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import RhUiErrorFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
+import RhUiWarningFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
 import { AriaProps, ProgressBar } from './ProgressBar';
 import { ProgressHelperText } from './ProgressHelperText';
 

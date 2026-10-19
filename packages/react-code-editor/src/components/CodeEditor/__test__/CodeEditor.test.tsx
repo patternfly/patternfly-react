@@ -1,6 +1,6 @@
 import { render, screen, act } from '@testing-library/react';
 import { CodeEditor, Language } from '../CodeEditor';
-import styles from '@patternfly/react-styles/css/components/CodeEditor/code-editor';
+import styles from '@rh-felt/react-styles/css/components/CodeEditor/code-editor';
 
 jest.mock('@monaco-editor/react', () =>
   jest.fn((props: any) => <div data-testid="mock-editor" data-theme={props.theme}></div>)

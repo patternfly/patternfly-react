@@ -1,4 +1,4 @@
-import { Content, ContentVariants } from '@patternfly/react-core';
+import { Content, ContentVariants } from '@rh-felt/react-core';
 
 export const ContentUnorderedList: React.FunctionComponent = () => (
   <Content component={ContentVariants.ul}>

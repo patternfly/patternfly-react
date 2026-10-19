@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Button, ButtonVariant, ButtonProps } from '../Button';
-import RhUiAttentionBellFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
-import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
-import styles from '@patternfly/react-styles/css/components/Button/button';
-import { css } from '@patternfly/react-styles';
+import RhUiAttentionBellFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
+import RhUiNotificationFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
+import styles from '@rh-felt/react-styles/css/components/Button/button';
+import { css } from '@rh-felt/react-styles';
 
 export enum NotificationBadgeVariant {
   read = 'read',

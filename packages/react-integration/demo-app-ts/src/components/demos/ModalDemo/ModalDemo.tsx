@@ -8,9 +8,9 @@ import {
   ModalVariant,
   Title,
   TitleSizes
-} from '@patternfly/react-core';
-import RhUiWarningIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-icon';
-import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
+} from '@rh-felt/react-core';
+import RhUiWarningIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-warning-icon';
+import spacing from '@rh-felt/react-styles/css/utilities/Spacing/spacing';
 
 interface ModalDemoState {
   isModalOpen: boolean;

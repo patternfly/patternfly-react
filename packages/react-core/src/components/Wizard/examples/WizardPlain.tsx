@@ -1,4 +1,4 @@
-import { Wizard, WizardStep } from '@patternfly/react-core';
+import { Wizard, WizardStep } from '@rh-felt/react-core';
 
 export const WizardPlain: React.FunctionComponent = () => (
   <Wizard height={400} title="Plain wizard" isPlain>

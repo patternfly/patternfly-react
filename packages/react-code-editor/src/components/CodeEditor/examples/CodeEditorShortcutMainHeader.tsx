@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
-import { CodeEditor, Language } from '@patternfly/react-code-editor';
-import { Grid, GridItem, Label, Radio } from '@patternfly/react-core';
+import { CodeEditor, Language } from '@rh-felt/react-code-editor';
+import { Grid, GridItem, Label, Radio } from '@rh-felt/react-core';
 
 export const CodeEditorShortcutMainHeader: React.FunctionComponent = () => {
   type ShortcutMode = 'PC' | 'Mac';

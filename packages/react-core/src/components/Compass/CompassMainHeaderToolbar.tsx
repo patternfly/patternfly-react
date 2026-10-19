@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/Compass/compass';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Compass/compass';
+import { css } from '@rh-felt/react-styles';
 
 /** A wrapper component for custom toolbar content to be passed into a Compass main header. This should also be wrapped
  * by a Compass main header content component.

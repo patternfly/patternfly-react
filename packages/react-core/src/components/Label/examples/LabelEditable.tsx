@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { Label, LabelColor } from '@patternfly/react-core';
+import { Label, LabelColor } from '@rh-felt/react-core';
 
 export const LabelEditable: React.FunctionComponent = () => {
   const [labelText, setLabelText] = useState('Editable label');

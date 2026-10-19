@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { Button, ButtonState, ButtonVariant } from '../Button';
-import styles from '@patternfly/react-styles/css/components/Button/button';
+import styles from '@rh-felt/react-styles/css/components/Button/button';
 
 const { primary, secondary, tertiary, danger, warning, link, plain, control, stateful } = ButtonVariant;
 const validDangerVariants = [secondary, link];

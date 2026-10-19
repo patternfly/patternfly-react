@@ -4,10 +4,10 @@
  * Forked from reactabular-table version 8.14.0
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
  */
-import { ButtonProps } from '@patternfly/react-core/dist/esm/components/Button';
-import { PopoverProps } from '@patternfly/react-core/dist/esm/components/Popover';
-import { SelectProps } from '@patternfly/react-core/dist/esm/components/Select';
-import { TooltipProps } from '@patternfly/react-core/dist/esm/components/Tooltip';
+import { ButtonProps } from '@rh-felt/react-core/dist/esm/components/Button';
+import { PopoverProps } from '@rh-felt/react-core/dist/esm/components/Popover';
+import { SelectProps } from '@rh-felt/react-core/dist/esm/components/Select';
+import { TooltipProps } from '@rh-felt/react-core/dist/esm/components/Tooltip';
 import { Table } from '../Table';
 import { Thead } from '../Thead';
 import { Tbody } from '../Tbody';

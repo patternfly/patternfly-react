@@ -13,8 +13,8 @@ import {
   SelectOption,
   SelectOptionProps,
   SelectProps
-} from '@patternfly/react-core/dist/esm/components/Select';
-import { MenuToggle, MenuToggleElement, MenuToggleProps } from '@patternfly/react-core/dist/esm/components/MenuToggle';
+} from '@rh-felt/react-core/dist/esm/components/Select';
+import { MenuToggle, MenuToggleElement, MenuToggleProps } from '@rh-felt/react-core/dist/esm/components/MenuToggle';
 
 export interface SimpleSelectOption extends Omit<SelectOptionProps, 'content'> {
   /** Content of the select option. */

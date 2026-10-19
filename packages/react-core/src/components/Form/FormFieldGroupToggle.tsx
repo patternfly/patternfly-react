@@ -1,6 +1,6 @@
-import styles from '@patternfly/react-styles/css/components/Form/form';
-import { css } from '@patternfly/react-styles';
-import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
+import styles from '@rh-felt/react-styles/css/components/Form/form';
+import { css } from '@rh-felt/react-styles';
+import RhMicronsCaretDownIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import { Button } from '../Button';
 
 export interface FormFieldGroupToggleProps extends React.HTMLProps<HTMLDivElement> {

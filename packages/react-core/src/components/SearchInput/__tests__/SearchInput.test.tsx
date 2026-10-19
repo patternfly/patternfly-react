@@ -6,10 +6,10 @@ import { SearchInput } from '../SearchInput';
 import { FormGroup } from '../../Form';
 import { Button } from '../../Button';
 import { AnimationsProvider } from '../../../helpers/AnimationsProvider';
-import RhUiExternalLinkFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-external-link-fill-icon';
-import badgeStyles from '@patternfly/react-styles/css/components/Badge/badge';
-import textInputGroupStyles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
-import inputGroupStyles from '@patternfly/react-styles/css/components/InputGroup/input-group';
+import RhUiExternalLinkFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-external-link-fill-icon';
+import badgeStyles from '@rh-felt/react-styles/css/components/Badge/badge';
+import textInputGroupStyles from '@rh-felt/react-styles/css/components/TextInputGroup/text-input-group';
+import inputGroupStyles from '@rh-felt/react-styles/css/components/InputGroup/input-group';
 
 jest.mock('../../../helpers/OUIA/ouia');
 jest.mock('../../../helpers/GenerateId/GenerateId');

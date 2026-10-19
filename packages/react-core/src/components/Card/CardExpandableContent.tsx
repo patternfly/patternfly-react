@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/Card/card';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Card/card';
+import { css } from '@rh-felt/react-styles';
 import { CardContext } from './Card';
 
 export interface CardExpandableContentProps extends React.HTMLProps<HTMLDivElement> {

@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { Button, Modal, ModalBody, ModalFooter, ModalHeader, ModalVariant, Radio } from '@patternfly/react-core';
+import { Button, Modal, ModalBody, ModalFooter, ModalHeader, ModalVariant, Radio } from '@rh-felt/react-core';
 
 export const ModalSize: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

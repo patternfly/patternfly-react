@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Dropdown, DropdownItem, DropdownList, Divider, MenuToggle, MenuToggleElement } from '@patternfly/react-core';
-import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import { Dropdown, DropdownItem, DropdownList, Divider, MenuToggle, MenuToggleElement } from '@rh-felt/react-core';
+import RhUiEllipsisVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export const DropdownWithKebab: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);

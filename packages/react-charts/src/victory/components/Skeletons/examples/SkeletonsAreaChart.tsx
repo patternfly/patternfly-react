@@ -5,8 +5,8 @@ import {
   ChartGroup,
   ChartThemeColor,
   ChartVoronoiContainer
-} from '@patternfly/react-charts/victory';
-import { Switch } from '@patternfly/react-core';
+} from '@rh-felt/react-charts/victory';
+import { Switch } from '@rh-felt/react-core';
 import { useState } from 'react';
 
 interface PetData {

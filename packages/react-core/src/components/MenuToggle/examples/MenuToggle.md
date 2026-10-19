@@ -8,10 +8,10 @@ propComponents: ['MenuToggle', 'MenuToggleAction', 'MenuToggleCheckbox']
 
 import { Fragment, useState } from 'react';
 import './MenuToggle.css'
-import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
-import RhUiAddIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-icon';
-import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
-import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+import RhUiEllipsisVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhUiAddIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-add-icon';
+import imgAvatar from '@rh-felt/react-core/src/components/assets/avatarImg.svg';
+import RhMicronsCloseIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 ## Examples
 

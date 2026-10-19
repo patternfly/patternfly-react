@@ -1,30 +1,30 @@
-import backgroundDark from '@patternfly/react-tokens/dist/esm/t_color_gray_90';
-import textColorDark from '@patternfly/react-tokens/dist/esm/t_color_white';
-import textColorSubtleDark from '@patternfly/react-tokens/dist/esm/t_color_gray_30';
+import backgroundDark from '@rh-felt/react-tokens/dist/esm/t_color_gray_90';
+import textColorDark from '@rh-felt/react-tokens/dist/esm/t_color_white';
+import textColorSubtleDark from '@rh-felt/react-tokens/dist/esm/t_color_gray_30';
 
-import redDark from '@patternfly/react-tokens/dist/esm/t_color_red_30';
-import orangeredDark from '@patternfly/react-tokens/dist/esm/t_color_red_orange_30';
-import orangeDark from '@patternfly/react-tokens/dist/esm/t_color_orange_30';
-import yellowDark from '@patternfly/react-tokens/dist/esm/t_color_yellow_30';
-import greenDark from '@patternfly/react-tokens/dist/esm/t_color_green_30';
-import tealDark from '@patternfly/react-tokens/dist/esm/t_color_teal_30';
-import blueDark from '@patternfly/react-tokens/dist/esm/t_color_blue_30';
-import purpleDark from '@patternfly/react-tokens/dist/esm/t_color_purple_30';
-import grayDark from '@patternfly/react-tokens/dist/esm/t_color_gray_30';
+import redDark from '@rh-felt/react-tokens/dist/esm/t_color_red_30';
+import orangeredDark from '@rh-felt/react-tokens/dist/esm/t_color_red_orange_30';
+import orangeDark from '@rh-felt/react-tokens/dist/esm/t_color_orange_30';
+import yellowDark from '@rh-felt/react-tokens/dist/esm/t_color_yellow_30';
+import greenDark from '@rh-felt/react-tokens/dist/esm/t_color_green_30';
+import tealDark from '@rh-felt/react-tokens/dist/esm/t_color_teal_30';
+import blueDark from '@rh-felt/react-tokens/dist/esm/t_color_blue_30';
+import purpleDark from '@rh-felt/react-tokens/dist/esm/t_color_purple_30';
+import grayDark from '@rh-felt/react-tokens/dist/esm/t_color_gray_30';
 
-import backgroundLight from '@patternfly/react-tokens/dist/esm/t_color_white';
-import textColorLight from '@patternfly/react-tokens/dist/esm/t_global_text_color_100';
-import textColorSubtleLight from '@patternfly/react-tokens/dist/esm/t_global_text_color_200';
+import backgroundLight from '@rh-felt/react-tokens/dist/esm/t_color_white';
+import textColorLight from '@rh-felt/react-tokens/dist/esm/t_global_text_color_100';
+import textColorSubtleLight from '@rh-felt/react-tokens/dist/esm/t_global_text_color_200';
 
-import redLight from '@patternfly/react-tokens/dist/esm/t_color_red_50';
-import orangeredLight from '@patternfly/react-tokens/dist/esm/t_color_red_orange_50';
-import orangeLight from '@patternfly/react-tokens/dist/esm/t_color_orange_50';
-import yellowLight from '@patternfly/react-tokens/dist/esm/t_color_yellow_50';
-import greenLight from '@patternfly/react-tokens/dist/esm/t_color_green_50';
-import tealLight from '@patternfly/react-tokens/dist/esm/t_color_teal_50';
-import blueLight from '@patternfly/react-tokens/dist/esm/t_color_blue_50';
-import purpleLight from '@patternfly/react-tokens/dist/esm/t_color_purple_50';
-import grayLight from '@patternfly/react-tokens/dist/esm/t_color_gray_50';
+import redLight from '@rh-felt/react-tokens/dist/esm/t_color_red_50';
+import orangeredLight from '@rh-felt/react-tokens/dist/esm/t_color_red_orange_50';
+import orangeLight from '@rh-felt/react-tokens/dist/esm/t_color_orange_50';
+import yellowLight from '@rh-felt/react-tokens/dist/esm/t_color_yellow_50';
+import greenLight from '@rh-felt/react-tokens/dist/esm/t_color_green_50';
+import tealLight from '@rh-felt/react-tokens/dist/esm/t_color_teal_50';
+import blueLight from '@rh-felt/react-tokens/dist/esm/t_color_blue_50';
+import purpleLight from '@rh-felt/react-tokens/dist/esm/t_color_purple_50';
+import grayLight from '@rh-felt/react-tokens/dist/esm/t_color_gray_50';
 
 /**
  * This file maps the theme tokens from PatternFly to a format that can be used in the Monaco editor.

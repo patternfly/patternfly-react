@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/FileUpload/file-upload';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/FileUpload/file-upload';
+import { css } from '@rh-felt/react-styles';
 import { InputGroup, InputGroupItem } from '../InputGroup';
 import { TextInput } from '../TextInput';
 import { Button, ButtonVariant } from '../Button';

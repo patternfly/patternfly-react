@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useRef, useState, forwardRef, useImperativeHandle } from 'react';
-import styles from '@patternfly/react-styles/css/components/Truncate/truncate';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Truncate/truncate';
+import { css } from '@rh-felt/react-styles';
 import { Tooltip, TooltipPosition, TooltipProps } from '../Tooltip';
 import { getReferenceElement } from '../../helpers';
 import { getResizeObserver } from '../../helpers/resizeObserver';

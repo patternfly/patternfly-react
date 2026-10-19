@@ -12,8 +12,8 @@ import {
   DropdownItem,
   MenuToggle,
   MenuToggleElement
-} from '@patternfly/react-core';
-import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+} from '@rh-felt/react-core';
+import RhUiEllipsisVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export const DataListActions: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);

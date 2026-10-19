@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
+import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@rh-felt/react-core';
 
 export const FormSelectGrouped: React.FunctionComponent = () => {
   const [formSelectValue, setFormSelectValue] = useState('2');

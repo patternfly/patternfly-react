@@ -1,6 +1,6 @@
 import { Drawer, DrawerContent, DrawerContentBody, DrawerProps } from '../Drawer';
-import styles from '@patternfly/react-styles/css/components/Compass/compass';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Compass/compass';
+import { css } from '@rh-felt/react-styles';
 import { IS_INERT } from '../../helpers/inert';
 
 export interface CompassProps extends React.HTMLProps<HTMLDivElement> {

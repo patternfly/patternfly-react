@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/Form/form';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Form/form';
+import { css } from '@rh-felt/react-styles';
 
 export interface FormFieldGroupHeaderTitleTextObject {
   /** Title text. */

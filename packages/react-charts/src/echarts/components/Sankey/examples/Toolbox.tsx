@@ -1,6 +1,6 @@
 import { FunctionComponent, useEffect, useRef, useState } from 'react';
-import { Charts, ThemeColor } from '@patternfly/react-charts/echarts';
-import { getResizeObserver } from '@patternfly/react-core';
+import { Charts, ThemeColor } from '@rh-felt/react-charts/echarts';
+import { getResizeObserver } from '@rh-felt/react-core';
 
 import * as echarts from 'echarts/core';
 import { SankeyChart } from 'echarts/charts';

@@ -1,5 +1,5 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Form/form';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Form/form';
 
 export interface FormHelperTextProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the helper text wrapper */

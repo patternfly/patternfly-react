@@ -1,4 +1,4 @@
-import { TextInputGroup, TextInputGroupMain } from '@patternfly/react-core';
+import { TextInputGroup, TextInputGroupMain } from '@rh-felt/react-core';
 
 export const TextInputGroupDisabled: React.FunctionComponent = () => (
   <TextInputGroup isDisabled>

@@ -1,4 +1,4 @@
-import { Progress, ProgressMeasureLocation } from '@patternfly/react-core';
+import { Progress, ProgressMeasureLocation } from '@rh-felt/react-core';
 
 export const ProgressFiniteStep: React.FunctionComponent = () => (
   <Progress

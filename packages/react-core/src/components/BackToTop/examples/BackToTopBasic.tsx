@@ -1,3 +1,3 @@
-import { BackToTop } from '@patternfly/react-core';
+import { BackToTop } from '@rh-felt/react-core';
 
 export const BackToTopBasic: React.FunctionComponent = () => <BackToTop isAlwaysVisible />;

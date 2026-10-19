@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
-import { Button, Dropdown, DropdownList, DropdownItem, MenuToggle, MenuToggleElement } from '@patternfly/react-core';
-import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
+import { Button, Dropdown, DropdownList, DropdownItem, MenuToggle, MenuToggleElement } from '@rh-felt/react-core';
+import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@rh-felt/react-core/deprecated';
 
 export const ModalWithDropdown: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
+import { css } from '@rh-felt/react-styles';
 import { ExpandableSection } from '../ExpandableSection';
 import { useSSRSafeId } from '../../helpers';
-import RhUiInProgressIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-in-progress-icon';
-import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
-import RhUiCloseCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-close-circle-fill-icon';
+import RhUiInProgressIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-in-progress-icon';
+import RhUiCheckCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import RhUiCloseCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-close-circle-fill-icon';
 
 /** Acts as an expandable container for all uploaded file statuses.
  * An optional text and/or icon can also be passed into this sub-component.

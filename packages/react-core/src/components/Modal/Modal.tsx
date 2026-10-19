@@ -1,8 +1,8 @@
 import { Component } from 'react';
 import * as ReactDOM from 'react-dom';
 import { canUseDOM, KeyTypes, PickOptional } from '../../helpers';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Backdrop/backdrop';
 import { ModalContent } from './ModalContent';
 import { OUIAProps } from '../../helpers';
 import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';

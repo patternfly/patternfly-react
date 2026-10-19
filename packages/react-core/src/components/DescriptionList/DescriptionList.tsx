@@ -1,9 +1,9 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/DescriptionList/description-list';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/DescriptionList/description-list';
 import { formatBreakpointMods, useOUIAProps, OUIAProps } from '../../helpers';
-import cssGridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/c_description_list_GridTemplateColumns_min';
-import cssTermWidth from '@patternfly/react-tokens/dist/esm/c_description_list__term_width';
-import cssHorizontalTermWidth from '@patternfly/react-tokens/dist/esm/c_description_list_m_horizontal__term_width';
+import cssGridTemplateColumnsMin from '@rh-felt/react-tokens/dist/esm/c_description_list_GridTemplateColumns_min';
+import cssTermWidth from '@rh-felt/react-tokens/dist/esm/c_description_list__term_width';
+import cssHorizontalTermWidth from '@rh-felt/react-tokens/dist/esm/c_description_list_m_horizontal__term_width';
 
 export interface BreakpointModifiers {
   default?: string;

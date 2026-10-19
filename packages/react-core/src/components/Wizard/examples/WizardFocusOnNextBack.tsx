@@ -1,4 +1,4 @@
-import { Wizard, WizardStep } from '@patternfly/react-core';
+import { Wizard, WizardStep } from '@rh-felt/react-core';
 
 export const WizardFocusOnNextBack: React.FunctionComponent = () => (
   <Wizard shouldFocusContent title="Wizard that focuses content on next or back click">

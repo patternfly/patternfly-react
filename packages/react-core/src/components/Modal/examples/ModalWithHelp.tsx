@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
-import { Button, Modal, ModalBody, ModalFooter, ModalHeader, Popover } from '@patternfly/react-core';
-import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import { Button, Modal, ModalBody, ModalFooter, ModalHeader, Popover } from '@rh-felt/react-core';
+import RhUiQuestionMarkCircleIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 
 export const ModalWithHelp: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

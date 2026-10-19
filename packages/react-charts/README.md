@@ -1,18 +1,18 @@
-# @patternfly/react-charts
+# @rh-felt/react-charts
 
 This package provides PatternFly charting components for [PatternFly][patternfly].
 
 ### Installing
 
 ```sh
-yarn add @patternfly/react-charts
+yarn add @rh-felt/react-charts
 yarn add victory
 ```
 
 or
 
 ```sh
-npm install @patternfly/react-charts --save
+npm install @rh-felt/react-charts --save
 npm install victory --save
 ```
 
@@ -27,13 +27,13 @@ Note that Victory is now an optional peer dependency, allowing future chart libr
 It's strongly advised to use the PatternFly Base CSS in your whole project, or some components may diverge in appearance:
 
 ```js
-import '@patternfly/react-core/dist/styles/base.css';
+import '@rh-felt/react-core/dist/styles/base.css';
 ```
 
 #### Example Component Usage
 
 ```js
-import { Area } from '@patternfly/react-charts/victory';
+import { Area } from '@rh-felt/react-charts/victory';
 
 export default <Area />;
 
@@ -61,7 +61,7 @@ yarn install && yarn start
 
 # Contributing Components
 
-This library makes use of the babel plugin from [@patternfly/react-styles](../react-styles/README.md) to enable providing the CSS alongside the components. This removes the need for consumers to use (style|css|sass)-loaders. For any CSS not provided by core please use the `StyleSheet.create` utility from [@patternfly/react-styles](../react-styles/README.md). This will prevent collisions with any consumers, and allow the CSS to be bundled with the component.
+This library makes use of the babel plugin from [@rh-felt/react-styles](../react-styles/README.md) to enable providing the CSS alongside the components. This removes the need for consumers to use (style|css|sass)-loaders. For any CSS not provided by core please use the `StyleSheet.create` utility from [@rh-felt/react-styles](../react-styles/README.md). This will prevent collisions with any consumers, and allow the CSS to be bundled with the component.
 
 ### Building
 
@@ -73,7 +73,7 @@ Note the build scripts for this are located in the root package.json under `yarn
 
 ### Testing
 
-Testing is done at the root of this repo. To only run the @patternfly/react-charts tests:
+Testing is done at the root of this repo. To only run the @rh-felt/react-charts tests:
 
 ```
 yarn test packages/react-charts

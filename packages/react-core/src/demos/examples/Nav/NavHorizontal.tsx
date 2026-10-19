@@ -32,14 +32,14 @@ import {
   ToolbarContent,
   ToolbarGroup,
   ToolbarItem
-} from '@patternfly/react-core';
-import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
-import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
-import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
-import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
-import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
-import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
-import { DashboardBreadcrumb } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
+} from '@rh-felt/react-core';
+import RhUiSettingsFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
+import RhUiQuestionMarkCircleIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import RhUiQuestionMarkCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
+import RhUiEllipsisVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import imgAvatar from '@rh-felt/react-core/src/components/assets/avatarImg.svg';
+import pfLogo from '@rh-felt/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
+import { DashboardBreadcrumb } from '@rh-felt/react-core/dist/js/demos/DashboardWrapper';
 
 export const NavHorizontal: React.FunctionComponent = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);

@@ -1,4 +1,4 @@
-import { Progress } from '@patternfly/react-core';
+import { Progress } from '@rh-felt/react-core';
 
 export const ProgressTruncateTitle: React.FunctionComponent = () => (
   <Progress

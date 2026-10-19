@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { TreeViewSearch } from '../TreeViewSearch';
 import userEvent from '@testing-library/user-event';
-import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
+import styles from '@rh-felt/react-styles/css/components/TreeView/tree-view';
 
 test(`Renders with ${styles.treeViewSearch} by default`, () => {
   render(<TreeViewSearch />);

@@ -1,4 +1,4 @@
-import { DataList, DataListItem, DataListItemRow, DataListItemCells, DataListCell } from '@patternfly/react-core';
+import { DataList, DataListItem, DataListItemRow, DataListItemCells, DataListCell } from '@rh-felt/react-core';
 
 export const DataListCompact: React.FunctionComponent = () => (
   <DataList aria-label="Compact data list example" isCompact>

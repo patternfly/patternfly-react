@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { Tabs, Tab, TabTitleText, TabTitleIcon } from '@patternfly/react-core';
-import RhUiUsersFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-users-fill-icon';
-import RhUiContainerFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-container-fill-icon';
-import DatabaseIcon from '@patternfly/react-icons/dist/esm/icons/database-icon';
-import RhUiServerStackFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-server-stack-fill-icon';
-import RhUiLaptopFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-laptop-fill-icon';
-import RhUiInfrastructureFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-infrastructure-fill-icon';
+import { Tabs, Tab, TabTitleText, TabTitleIcon } from '@rh-felt/react-core';
+import RhUiUsersFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-users-fill-icon';
+import RhUiContainerFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-container-fill-icon';
+import DatabaseIcon from '@rh-felt/react-icons/dist/esm/icons/database-icon';
+import RhUiServerStackFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-server-stack-fill-icon';
+import RhUiLaptopFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-laptop-fill-icon';
+import RhUiInfrastructureFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-infrastructure-fill-icon';
 
 export const TabsIconAndText: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = useState<string | number>(0);

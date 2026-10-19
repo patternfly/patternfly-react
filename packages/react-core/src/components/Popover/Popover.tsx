@@ -1,7 +1,7 @@
 import { ReactElement, useEffect, useRef, useState } from 'react';
 import { KeyTypes } from '../../helpers/constants';
-import styles from '@patternfly/react-styles/css/components/Popover/popover';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Popover/popover';
+import { css } from '@rh-felt/react-styles';
 import { PopoverContext } from './PopoverContext';
 import { PopoverContent } from './PopoverContent';
 import { PopoverBody } from './PopoverBody';
@@ -9,8 +9,8 @@ import { PopoverHeader } from './PopoverHeader';
 import { PopoverFooter } from './PopoverFooter';
 import { PopoverCloseButton } from './PopoverCloseButton';
 import { PopoverArrow } from './PopoverArrow';
-import popoverMaxWidth from '@patternfly/react-tokens/dist/esm/c_popover_MaxWidth';
-import popoverMinWidth from '@patternfly/react-tokens/dist/esm/c_popover_MinWidth';
+import popoverMaxWidth from '@rh-felt/react-tokens/dist/esm/c_popover_MaxWidth';
+import popoverMinWidth from '@rh-felt/react-tokens/dist/esm/c_popover_MinWidth';
 import { FocusTrap, useSSRSafeId, useOUIAProps, OUIAProps } from '../../helpers';
 import { Popper } from '../../helpers/Popper/Popper';
 

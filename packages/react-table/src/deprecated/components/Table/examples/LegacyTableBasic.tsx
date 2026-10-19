@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
-import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
-import { ToggleGroup, ToggleGroupItem, ToggleGroupItemProps } from '@patternfly/react-core';
+import { Table, TableHeader, TableBody, TableProps } from '@rh-felt/react-table/deprecated';
+import { ToggleGroup, ToggleGroupItem, ToggleGroupItemProps } from '@rh-felt/react-core';
 interface Repository {
   name: string;
   branches: string;

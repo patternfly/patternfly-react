@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
-import RhUiTableIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-table-icon';
+import { Menu, MenuContent, MenuList, MenuItem } from '@rh-felt/react-core';
+import RhUiTableIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-table-icon';
 
 export const MenuOptionSingleSelect: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState(0);

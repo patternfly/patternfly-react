@@ -7,13 +7,13 @@ beta: true
 propComponents: ['SimpleSelect', 'CheckboxSelect', 'TypeaheadSelect']
 ---
 
-Note: Templates live in their own package at [@patternfly/react-templates](https://www.npmjs.com/package/@patternfly/react-templates)!
+Note: Templates live in their own package at [@rh-felt/react-templates](https://www.npmjs.com/package/@rh-felt/react-templates)!
 
-For custom use cases, please see the select component suite from [@patternfly/react-core](https://www.npmjs.com/package/@patternfly/react-core).
+For custom use cases, please see the select component suite from [@rh-felt/react-core](https://www.npmjs.com/package/@rh-felt/react-core).
 
 import { Fragment, useEffect, useMemo, useState, FunctionComponent } from 'react';
-import { Checkbox } from '@patternfly/react-core';
-import { SimpleSelect, CheckboxSelect, TypeaheadSelect, MultiTypeaheadSelect } from '@patternfly/react-templates';
+import { Checkbox } from '@rh-felt/react-core';
+import { SimpleSelect, CheckboxSelect, TypeaheadSelect, MultiTypeaheadSelect } from '@rh-felt/react-templates';
 
 ## Select template examples
 

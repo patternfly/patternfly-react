@@ -20,12 +20,12 @@ propComponents:
 
 import { Fragment, useState } from 'react';
 import brandImg from '../../assets/PF-IconLogo.svg';
-import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
-import GoogleIcon from '@patternfly/react-icons/dist/esm/icons/google-icon';
-import GithubIcon from '@patternfly/react-icons/dist/esm/icons/github-icon';
-import DropboxIcon from '@patternfly/react-icons/dist/esm/icons/dropbox-icon';
-import FacebookSquareIcon from '@patternfly/react-icons/dist/esm/icons/facebook-square-icon';
-import GitlabIcon from '@patternfly/react-icons/dist/esm/icons/gitlab-icon';
+import RhUiErrorFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
+import GoogleIcon from '@rh-felt/react-icons/dist/esm/icons/google-icon';
+import GithubIcon from '@rh-felt/react-icons/dist/esm/icons/github-icon';
+import DropboxIcon from '@rh-felt/react-icons/dist/esm/icons/dropbox-icon';
+import FacebookSquareIcon from '@rh-felt/react-icons/dist/esm/icons/facebook-square-icon';
+import GitlabIcon from '@rh-felt/react-icons/dist/esm/icons/gitlab-icon';
 
 ## Examples
 

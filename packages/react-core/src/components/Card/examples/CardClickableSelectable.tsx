@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Card, CardHeader, CardTitle, CardBody, Button, Checkbox, Gallery } from '@patternfly/react-core';
+import { Card, CardHeader, CardTitle, CardBody, Button, Checkbox, Gallery } from '@rh-felt/react-core';
 
 export const CardClickable: React.FunctionComponent = () => {
   const [isChecked1, setIsChecked1] = useState(false);

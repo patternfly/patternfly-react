@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import { IRow, ICell } from '@patternfly/react-table';
-import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
+import { IRow, ICell } from '@rh-felt/react-table';
+import { Table, TableHeader, TableBody, TableProps } from '@rh-felt/react-table/deprecated';
 
 import {
   EmptyState,
@@ -9,8 +9,8 @@ import {
   Button,
   EmptyStateVariant,
   EmptyStateFooter
-} from '@patternfly/react-core';
-import RhUiModuleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-module-icon';
+} from '@rh-felt/react-core';
+import RhUiModuleIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-module-icon';
 
 class EmptyStateTable extends Component<TableProps, { columns: (ICell | string)[]; rows: IRow[] }> {
   static displayName = 'EmptyStateTable';

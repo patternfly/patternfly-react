@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Badge, Stack, StackItem } from '@patternfly/react-core';
+import { Badge, Stack, StackItem } from '@rh-felt/react-core';
 
 export class StackDemo extends Component {
   render() {

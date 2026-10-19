@@ -1,6 +1,6 @@
 import { Children, useState, useEffect } from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Alert/alert-group';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Alert/alert-group';
 import { AlertGroupProps } from './AlertGroup';
 import { AlertProps } from '../Alert';
 import { AlertGroupContext } from './AlertGroupContext';

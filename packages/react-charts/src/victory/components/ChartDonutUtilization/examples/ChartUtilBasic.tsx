@@ -1,4 +1,4 @@
-import { ChartDonutUtilization } from '@patternfly/react-charts/victory';
+import { ChartDonutUtilization } from '@rh-felt/react-charts/victory';
 
 interface UsageData {
   x: string;

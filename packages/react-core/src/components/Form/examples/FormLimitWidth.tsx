@@ -14,7 +14,7 @@ import {
   HelperTextItem,
   FormHelperText,
   FormGroupLabelHelp
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const FormLimitWidth: React.FunctionComponent = () => {
   const [name, setName] = useState('');

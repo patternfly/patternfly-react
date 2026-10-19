@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Progress, Button, Stack, StackItem } from '@patternfly/react-core';
+import { Progress, Button, Stack, StackItem } from '@rh-felt/react-core';
 
 export const ProgressWithOnlyIncreasing: React.FunctionComponent = () => {
   const [currentValue, setCurrentValue] = useState(0);

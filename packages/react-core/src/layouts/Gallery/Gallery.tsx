@@ -1,7 +1,7 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/layouts/Gallery/gallery';
-import cssGridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
-import cssGridTemplateColumnsMax from '@patternfly/react-tokens/dist/esm/l_gallery_GridTemplateColumns_max';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/layouts/Gallery/gallery';
+import cssGridTemplateColumnsMin from '@rh-felt/react-tokens/dist/esm/l_gallery_GridTemplateColumns_min';
+import cssGridTemplateColumnsMax from '@rh-felt/react-tokens/dist/esm/l_gallery_GridTemplateColumns_max';
 
 export interface GalleryProps extends React.HTMLProps<HTMLDivElement> {
   /** content rendered inside the Gallery layout */

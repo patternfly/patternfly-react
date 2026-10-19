@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Table/table-scrollable';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Table/table-scrollable';
 
 export interface InnerScrollContainerProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the inner scroll container */

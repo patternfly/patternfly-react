@@ -8,7 +8,7 @@ import {
   TextInput,
   Wizard,
   WizardStep
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 interface SampleFormProps {
   value: string;

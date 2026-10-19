@@ -1,8 +1,8 @@
 import { Component } from 'react';
-import { Chip, ChipGroup } from '@patternfly/react-core/deprecated';
-import { css } from '@patternfly/react-styles';
-import titleStyles from '@patternfly/react-styles/css/components/Title/title';
-import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
+import { Chip, ChipGroup } from '@rh-felt/react-core/deprecated';
+import { css } from '@rh-felt/react-styles';
+import titleStyles from '@rh-felt/react-styles/css/components/Title/title';
+import spacing from '@rh-felt/react-styles/css/utilities/Spacing/spacing';
 
 interface ChipGroupWithOverflowChipEventHandlerState {
   chipArray: {

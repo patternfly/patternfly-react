@@ -6,7 +6,7 @@ import {
   DropdownList,
   Divider,
   MenuToggleElement
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 import { useRef, useState } from 'react';
 
 export const DropdownSplitButtonText: React.FunctionComponent = () => {

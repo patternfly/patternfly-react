@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
-import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from '@patternfly/react-core';
-import RhUiAttentionBellFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
+import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from '@rh-felt/react-core';
+import RhUiAttentionBellFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
 
 export const ModalCustomTitleIcon: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

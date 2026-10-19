@@ -4,7 +4,7 @@ section: components
 ---
 
 import { useState } from 'react';
-import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import RhUiCheckCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 
 ## Demos 
 

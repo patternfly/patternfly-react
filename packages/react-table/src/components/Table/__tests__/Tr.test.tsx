@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { Tr } from '../Tr';
-import styles from '@patternfly/react-styles/css/components/Table/table';
+import styles from '@rh-felt/react-styles/css/components/Table/table';
 
 test('Renders without children', () => {
   render(

@@ -1,4 +1,4 @@
-import { Gallery, GalleryItem } from '@patternfly/react-core';
+import { Gallery, GalleryItem } from '@rh-felt/react-core';
 
 export const GalleryAdjustingMaxWidths: React.FunctionComponent = () => (
   <Gallery

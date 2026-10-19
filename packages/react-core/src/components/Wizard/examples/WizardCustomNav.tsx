@@ -5,7 +5,7 @@ import {
   CustomWizardNavFunction,
   WizardNav,
   WizardNavItem
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const WizardWithCustomNav: React.FunctionComponent = () => {
   const nav: CustomWizardNavFunction = (

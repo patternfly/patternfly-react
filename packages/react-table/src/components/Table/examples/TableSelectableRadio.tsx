@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import { Table, Thead, Tr, Th, Tbody, Td } from '@rh-felt/react-table';
 
 interface Repository {
   name: string;

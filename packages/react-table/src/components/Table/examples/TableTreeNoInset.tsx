@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Table, Thead, Tr, Th, Tbody, Td, TreeRowWrapper, TdProps } from '@patternfly/react-table';
-import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
+import { Table, Thead, Tr, Th, Tbody, Td, TreeRowWrapper, TdProps } from '@rh-felt/react-table';
+import LeafIcon from '@rh-felt/react-icons/dist/esm/icons/leaf-icon';
 
 interface RepositoriesTreeNode {
   name: string;

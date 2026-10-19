@@ -4,8 +4,8 @@ section: components
 subsection: file-upload
 ---
 import { useEffect, useState } from 'react';
-import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
-import RhUiUploadIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-upload-icon';
+import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@rh-felt/react-core/deprecated';
+import RhUiUploadIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-upload-icon';
 
 ## Demos
 

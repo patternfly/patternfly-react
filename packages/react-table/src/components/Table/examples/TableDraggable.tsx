@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
-import { Table, Thead, Tbody, Tr, Th, Td, TbodyProps, TrProps } from '@patternfly/react-table';
-import styles from '@patternfly/react-styles/css/components/Table/table';
+import { Table, Thead, Tbody, Tr, Th, Td, TbodyProps, TrProps } from '@rh-felt/react-table';
+import styles from '@rh-felt/react-styles/css/components/Table/table';
 
 export const TableDraggable: React.FunctionComponent = () => {
   const [draggedItemId, setDraggedItemId] = useState<string | null>(null);

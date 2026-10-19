@@ -1,9 +1,9 @@
 import { formatterValueType, ColumnType, RowType, RowKeyType, HeaderType } from './base/types';
 import { SortByDirection } from './SortColumn';
-import { DropdownItemProps } from '@patternfly/react-core/dist/esm/components/Dropdown';
+import { DropdownItemProps } from '@rh-felt/react-core/dist/esm/components/Dropdown';
 import { CustomActionsToggleProps } from './ActionsColumn';
-import { ButtonProps } from '@patternfly/react-core/dist/esm/components/Button';
-import { TooltipProps } from '@patternfly/react-core/dist/esm/components/Tooltip';
+import { ButtonProps } from '@rh-felt/react-core/dist/esm/components/Button';
+import { TooltipProps } from '@rh-felt/react-core/dist/esm/components/Tooltip';
 
 export enum TableGridBreakpoint {
   none = '',

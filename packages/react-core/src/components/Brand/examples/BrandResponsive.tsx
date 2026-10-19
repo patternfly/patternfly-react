@@ -1,4 +1,4 @@
-import { Brand } from '@patternfly/react-core';
+import { Brand } from '@rh-felt/react-core';
 
 import pfLogo from '../../assets/PF-HorizontalLogo-Color.svg';
 import pfLogoDark from '../../assets/PF-HorizontalLogo-Reverse.svg';

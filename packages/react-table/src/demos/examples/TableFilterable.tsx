@@ -21,11 +21,11 @@ import {
   SelectOption,
   SearchInput,
   ToolbarLabelGroup
-} from '@patternfly/react-core';
-import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
-import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
-import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
+} from '@rh-felt/react-core';
+import RhMicronsSearchIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-search-icon';
+import RhUiFilterFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
+import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@rh-felt/react-table';
+import { rows, columns } from '@rh-felt/react-table/dist/esm/demos/sampleData';
 
 export const TableFilterable: React.FunctionComponent = () => {
   const [filters, setFilters] = useState<Record<string, string[]>>({ location: [], name: [], status: [] });

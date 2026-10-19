@@ -6,10 +6,10 @@ import {
   ChartLabel,
   ChartTooltip,
   ChartVoronoiContainer
-} from '@patternfly/react-charts/victory';
-import t_global_color_status_danger_100 from '@patternfly/react-tokens/dist/esm/t_global_color_status_danger_100';
-import t_global_color_status_info_100 from '@patternfly/react-tokens/dist/esm/t_global_color_status_info_100';
-import t_global_color_status_warning_100 from '@patternfly/react-tokens/dist/esm/t_global_color_status_warning_100';
+} from '@rh-felt/react-charts/victory';
+import t_global_color_status_danger_100 from '@rh-felt/react-tokens/dist/esm/t_global_color_status_danger_100';
+import t_global_color_status_info_100 from '@rh-felt/react-tokens/dist/esm/t_global_color_status_info_100';
+import t_global_color_status_warning_100 from '@rh-felt/react-tokens/dist/esm/t_global_color_status_warning_100';
 
 interface AlertData {
   y0: Date;

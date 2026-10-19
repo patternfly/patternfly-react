@@ -1,4 +1,4 @@
-import { Divider, Flex, FlexItem } from '@patternfly/react-core';
+import { Divider, Flex, FlexItem } from '@rh-felt/react-core';
 
 export const DividerVerticalFlexInsetVariousBreakpoints: React.FunctionComponent = () => (
   <Flex>

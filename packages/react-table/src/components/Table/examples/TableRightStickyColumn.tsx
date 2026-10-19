@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Table, Thead, Tr, Th, Tbody, Td, InnerScrollContainer, ThProps } from '@patternfly/react-table';
+import { Table, Thead, Tr, Th, Tbody, Td, InnerScrollContainer, ThProps } from '@rh-felt/react-table';
 
 interface Fact {
   name: string;

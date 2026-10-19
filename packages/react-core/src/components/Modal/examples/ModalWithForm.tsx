@@ -11,7 +11,7 @@ import {
   ModalVariant,
   Popover,
   TextInput
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 export const ModalWithForm: React.FunctionComponent = () => {
   const [isModalOpen, setModalOpen] = useState(false);

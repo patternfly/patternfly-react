@@ -1,6 +1,6 @@
 import { screen, render } from '@testing-library/react';
 import { ClipboardCopyExpanded } from '../ClipboardCopyExpanded';
-import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
+import styles from '@rh-felt/react-styles/css/components/ClipboardCopy/clipboard-copy';
 import userEvent from '@testing-library/user-event';
 
 test(`Renders with classname ${styles.clipboardCopyExpandableContent} by default`, () => {

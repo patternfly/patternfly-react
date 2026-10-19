@@ -1,6 +1,6 @@
 import { FileUploadHelperText } from '../FileUploadHelperText';
 import { render, screen } from '@testing-library/react';
-import styles from '@patternfly/react-styles/css/components/FileUpload/file-upload';
+import styles from '@rh-felt/react-styles/css/components/FileUpload/file-upload';
 
 test(`Renders only with class ${styles.fileUpload}__helper-text by default`, () => {
   render(<FileUploadHelperText>Content</FileUploadHelperText>);

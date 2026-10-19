@@ -1,6 +1,6 @@
 import { Fragment, useMemo, useState, FunctionComponent } from 'react';
-import { Checkbox } from '@patternfly/react-core';
-import { SimpleSelect, SimpleSelectOption } from '@patternfly/react-templates';
+import { Checkbox } from '@rh-felt/react-core';
+import { SimpleSelect, SimpleSelectOption } from '@rh-felt/react-templates';
 
 const Options: SimpleSelectOption[] = [
   { content: 'Option 1', value: 'Option1' },

@@ -27,11 +27,11 @@ import {
   Button,
   Title,
   Tooltip
-} from '@patternfly/react-core';
-import RhUiPlayFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
-import RhUiAddSquareIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-square-icon';
-import RhUiCopyIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-icon';
-import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+} from '@rh-felt/react-core';
+import RhUiPlayFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
+import RhUiAddSquareIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-add-square-icon';
+import RhUiCopyIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-copy-icon';
+import RhUiQuestionMarkCircleIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 
 export const CompassBasic: React.FunctionComponent = () => {
   const [activeTab, setActiveTab] = useState<number>(0);

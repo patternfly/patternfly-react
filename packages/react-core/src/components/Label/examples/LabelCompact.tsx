@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
-import { Label, LabelColor } from '@patternfly/react-core';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
+import { Label, LabelColor } from '@rh-felt/react-core';
+import CubeIcon from '@rh-felt/react-icons/dist/esm/icons/cube-icon';
+import RhUiInformationFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
 
 export const LabelCompact: React.FunctionComponent = () => (
   <Fragment>

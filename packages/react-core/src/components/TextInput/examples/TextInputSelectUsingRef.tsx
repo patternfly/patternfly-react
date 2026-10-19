@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { TextInput } from '@patternfly/react-core';
+import { TextInput } from '@rh-felt/react-core';
 
 export const TextInputSelectUsingRef: React.FunctionComponent = () => {
   const [value, setValue] = useState('select all on click');

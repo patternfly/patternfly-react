@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Wizard/wizard';
+import { css } from '@rh-felt/react-styles';
 import { WizardDrawerWrapper } from './WizardDrawerWrapper';
 import { Drawer, DrawerContent } from '../../../components/Drawer';
 import { WizardStep } from './Wizard';

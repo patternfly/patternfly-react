@@ -5,8 +5,8 @@ import { act, useContext } from 'react';
 import { Alert, AlertVariant } from '../Alert';
 import { AlertContext } from '../AlertContext';
 import { capitalize } from '../../../helpers';
-import cssAlertTitleMaxLines from '@patternfly/react-tokens/dist/esm/c_alert__title_max_lines';
-import styles from '@patternfly/react-styles/css/components/Alert/alert';
+import cssAlertTitleMaxLines from '@rh-felt/react-tokens/dist/esm/c_alert__title_max_lines';
+import styles from '@rh-felt/react-styles/css/components/Alert/alert';
 
 jest.mock('../AlertToggleExpandButton', () => ({
   AlertToggleExpandButton: ({ isExpanded, onToggleExpand, ...props }) => (

@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/Avatar/avatar';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Avatar/avatar';
+import { css } from '@rh-felt/react-styles';
 
 export interface AvatarProps extends React.DetailedHTMLProps<
   React.ImgHTMLAttributes<HTMLImageElement>,

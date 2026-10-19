@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Nav, NavItem, NavGroup } from '@patternfly/react-core';
+import { Nav, NavItem, NavGroup } from '@rh-felt/react-core';
 
 export const NavGrouped: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState('group-1_item-1');

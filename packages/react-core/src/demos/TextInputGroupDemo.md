@@ -4,8 +4,8 @@ section: components
 ---
 
 import { useEffect, useRef, useState } from 'react';
-import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
-import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+import RhMicronsSearchIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-search-icon';
+import RhMicronsCloseIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 ## Demos
 

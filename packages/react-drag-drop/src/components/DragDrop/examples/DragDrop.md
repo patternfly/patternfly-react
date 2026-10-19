@@ -6,11 +6,11 @@ propComponents: ['DragDropSort', 'DraggableObject']
 hideNavItem: true
 ---
 
-Note: This drag and drop implementation lives in its own package at [@patternfly/react-drag-drop](https://www.npmjs.com/package/@patternfly/react-drag-drop)!
+Note: This drag and drop implementation lives in its own package at [@rh-felt/react-drag-drop](https://www.npmjs.com/package/@rh-felt/react-drag-drop)!
 
 import { useState } from 'react';
 
-import { DragDropSort, DragDropContainer, Droppable as NewDroppable } from '@patternfly/react-drag-drop';
+import { DragDropSort, DragDropContainer, Droppable as NewDroppable } from '@rh-felt/react-drag-drop';
 
 ## Sorting examples
 

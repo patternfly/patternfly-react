@@ -1,9 +1,9 @@
 import { Fragment } from 'react';
-import { Banner, Card, CardBody, Flex, Gallery, GalleryItem, PageSection, Content } from '@patternfly/react-core';
+import { Banner, Card, CardBody, Flex, Gallery, GalleryItem, PageSection, Content } from '@rh-felt/react-core';
 
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
-import { css } from '@patternfly/react-styles';
-import display from '@patternfly/react-styles/css/utilities/Display/display';
+import { DashboardWrapper } from '@rh-felt/react-core/dist/js/demos/DashboardWrapper';
+import { css } from '@rh-felt/react-styles';
+import display from '@rh-felt/react-styles/css/utilities/Display/display';
 
 export const BannerBasicSticky: React.FunctionComponent = () => {
   const banner = (

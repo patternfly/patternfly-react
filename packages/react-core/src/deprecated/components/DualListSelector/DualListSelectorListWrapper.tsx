@@ -1,6 +1,6 @@
 import { forwardRef, useContext, useEffect, useRef, useState } from 'react';
-import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/DualListSelector/dual-list-selector';
+import { css } from '@rh-felt/react-styles';
 import { handleArrows, useSSRSafeId } from '../../../helpers';
 import { DualListSelectorList } from './DualListSelectorList';
 import { DualListSelectorContext, DualListSelectorListContext } from './DualListSelectorContext';

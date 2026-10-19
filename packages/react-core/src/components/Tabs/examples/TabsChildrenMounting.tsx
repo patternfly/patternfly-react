@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
+import { Tabs, Tab, TabTitleText } from '@rh-felt/react-core';
 
 export const TabsChildrenMounting: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = useState<string | number>(0);

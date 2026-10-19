@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { Banner } from '../Banner';
-import styles from '@patternfly/react-styles/css/components/Banner/banner';
+import styles from '@rh-felt/react-styles/css/components/Banner/banner';
 
 test('Renders without children', () => {
   render(

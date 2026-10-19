@@ -1,5 +1,5 @@
-import { Chip, ChipGroup } from '@patternfly/react-core/deprecated';
-import { Badge } from '@patternfly/react-core';
+import { Chip, ChipGroup } from '@rh-felt/react-core/deprecated';
+import { Badge } from '@rh-felt/react-core';
 import { Component } from 'react';
 
 interface BadgeChipState {

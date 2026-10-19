@@ -1,4 +1,4 @@
-import { Avatar } from '@patternfly/react-core';
+import { Avatar } from '@rh-felt/react-core';
 
 const profileSvg = (
   <svg aria-hidden="true" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 36 36">

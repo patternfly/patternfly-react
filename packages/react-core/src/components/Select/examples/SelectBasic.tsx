@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { Select, SelectOption, SelectList, MenuToggle, MenuToggleElement, Checkbox } from '@patternfly/react-core';
+import { Select, SelectOption, SelectList, MenuToggle, MenuToggleElement, Checkbox } from '@rh-felt/react-core';
 
 export const SelectBasic: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);

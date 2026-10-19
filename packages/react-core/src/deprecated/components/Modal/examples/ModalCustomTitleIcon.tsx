@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react';
-import { Button } from '@patternfly/react-core';
-import { Modal as ModalDeprecated } from '@patternfly/react-core/deprecated';
-import RhUiAttentionBellFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
+import { Button } from '@rh-felt/react-core';
+import { Modal as ModalDeprecated } from '@rh-felt/react-core/deprecated';
+import RhUiAttentionBellFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
 
 export const ModalCustomTitleIcon: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

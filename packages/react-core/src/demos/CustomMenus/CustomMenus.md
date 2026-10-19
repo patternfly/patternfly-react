@@ -6,23 +6,23 @@ subsection: menus
 
 import { cloneElement, Fragment, useEffect, useRef, useState } from 'react';
 
-import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
-import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
-import RhUiStorageDomainFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-storage-domain-fill-icon';
-import RhUiServerStackFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-server-stack-fill-icon';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
-import RhUiClipboardFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clipboard-fill-icon';
-import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
-import RhUiThumbnailViewSmallFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-thumbnail-view-small-fill-icon';
+import RhUiSettingsFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
+import RhUiBranchFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
+import RhUiStorageDomainFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-storage-domain-fill-icon';
+import RhUiServerStackFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-server-stack-fill-icon';
+import CubeIcon from '@rh-felt/react-icons/dist/esm/icons/cube-icon';
+import RhUiMenuBarsIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
+import RhUiClipboardFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-clipboard-fill-icon';
+import RhUiNotificationFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
+import RhUiThumbnailViewSmallFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-thumbnail-view-small-fill-icon';
 import brandImg from '../assets/PF-IconLogo.svg';
-import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
-import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
-import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+import RhMicronsSearchIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-search-icon';
+import RhMicronsCaretDownIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
+import RhMicronsCloseIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-close-icon';
 import avatarImg from '../assets/avatarImg.svg';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Menu/menu';
-import text from '@patternfly/react-styles/css/utilities/Text/text';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Menu/menu';
+import text from '@rh-felt/react-styles/css/utilities/Text/text';
 
 ## Examples
 

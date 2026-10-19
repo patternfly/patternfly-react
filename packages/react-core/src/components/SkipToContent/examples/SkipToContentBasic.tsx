@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Content, SkipToContent } from '@patternfly/react-core';
+import { Content, SkipToContent } from '@rh-felt/react-core';
 
 export const SkipToContentBasic: React.FunctionComponent = () => {
   const mainContentId = 'main-content';

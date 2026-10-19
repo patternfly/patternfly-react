@@ -1,10 +1,10 @@
 import { Component } from 'react';
-import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
-import { css } from '@patternfly/react-styles';
-import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
-import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-left-icon';
-import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
-import RhMicronsDoubleCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-right-icon';
+import styles from '@rh-felt/react-styles/css/components/Pagination/pagination';
+import { css } from '@rh-felt/react-styles';
+import RhMicronsCaretLeftIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
+import RhMicronsDoubleCaretLeftIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-double-caret-left-icon';
+import RhMicronsCaretRightIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
+import RhMicronsDoubleCaretRightIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-double-caret-right-icon';
 import { Button, ButtonVariant } from '../Button';
 import { TextInput } from '../TextInput';
 import { OnSetPage } from './Pagination';

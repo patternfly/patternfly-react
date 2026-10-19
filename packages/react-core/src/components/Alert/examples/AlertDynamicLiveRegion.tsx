@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
-import { Alert, AlertGroup, AlertVariant, Flex, FlexItem } from '@patternfly/react-core';
-import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
+import { Alert, AlertGroup, AlertVariant, Flex, FlexItem } from '@rh-felt/react-core';
+import buttonStyles from '@rh-felt/react-styles/css/components/Button/button';
 
 interface AlertInfo {
   title: string;

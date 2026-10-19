@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Tabs/tabs';
 import { Button } from '../Button';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 

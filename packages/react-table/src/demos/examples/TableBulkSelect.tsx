@@ -13,10 +13,10 @@ import {
   ToolbarGroup,
   ToolbarItem,
   PaginationVariant
-} from '@patternfly/react-core';
-import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import { rows, columns, SampleDataRow } from '@patternfly/react-table/dist/esm/demos/sampleData';
-import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
+} from '@rh-felt/react-core';
+import { Table, Thead, Tr, Th, Tbody, Td } from '@rh-felt/react-table';
+import { rows, columns, SampleDataRow } from '@rh-felt/react-table/dist/esm/demos/sampleData';
+import { DashboardWrapper } from '@rh-felt/react-table/dist/esm/demos/DashboardWrapper';
 
 export const TableBulkSelect: React.FunctionComponent = () => {
   const [isBulkSelectDropdownOpen, setIsBulkSelectDropdownOpen] = useState(false);

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import { MultipleFileUploadStatusItem } from '../MultipleFileUploadStatusItem';
-import RhUiImageFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-image-fill-icon';
+import RhUiImageFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-image-fill-icon';
 
 describe('MultipleFileUploadStatusItem', () => {
   test('renders with expected class names', () => {

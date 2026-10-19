@@ -1,11 +1,11 @@
 import { Children, Component, createRef, isValidElement } from 'react';
-import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Tabs/tabs';
+import { css } from '@rh-felt/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
-import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
-import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
-import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
-import RhUiAddIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-icon';
+import RhMicronsCaretLeftIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
+import RhMicronsCaretRightIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
+import RhMicronsCaretDownIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
+import RhUiAddIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-add-icon';
 import {
   isElementInView,
   formatBreakpointMods,
@@ -20,8 +20,8 @@ import { Button } from '../Button';
 import { getOUIAProps, OUIAProps, canUseDOM } from '../../helpers';
 import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
-import linkAccentLength from '@patternfly/react-tokens/dist/esm/c_tabs_link_accent_length';
-import linkAccentStart from '@patternfly/react-tokens/dist/esm/c_tabs_link_accent_start';
+import linkAccentLength from '@rh-felt/react-tokens/dist/esm/c_tabs_link_accent_length';
+import linkAccentStart from '@rh-felt/react-tokens/dist/esm/c_tabs_link_accent_start';
 
 export enum TabsComponent {
   div = 'div',

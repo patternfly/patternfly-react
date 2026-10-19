@@ -2,7 +2,7 @@
  * This test was generated
  */
 import { render } from '@testing-library/react';
-import RhUiProfileFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-profile-fill-icon';
+import RhUiProfileFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-profile-fill-icon';
 import { EmptyStateIcon } from '../../EmptyStateIcon';
 // any missing imports can usually be resolved by adding them here
 import { Spinner } from '../../../Spinner/Spinner';

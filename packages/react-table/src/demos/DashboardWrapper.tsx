@@ -11,7 +11,7 @@ import {
   PageSidebar,
   PageSidebarBody,
   SkipToContent
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 import { DashboardHeader } from './DashboardHeader';
 
 interface DashboardWrapperProps {

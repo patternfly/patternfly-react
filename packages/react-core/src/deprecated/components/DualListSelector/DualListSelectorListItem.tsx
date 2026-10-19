@@ -1,8 +1,8 @@
 import { forwardRef, useContext, useRef } from 'react';
-import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/DualListSelector/dual-list-selector';
+import { css } from '@rh-felt/react-styles';
 import { useSSRSafeId } from '../../../helpers';
-import RhUiGripVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-grip-vertical-fill-icon';
+import RhUiGripVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-grip-vertical-fill-icon';
 import { Button, ButtonVariant } from '../../../components/Button';
 import { DualListSelectorListContext } from './DualListSelectorContext';
 

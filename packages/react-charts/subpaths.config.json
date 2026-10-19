@@ -1,4 +1,4 @@
 {
-  "packageName": "@patternfly/react-charts",
+  "packageName": "@rh-felt/react-charts",
   "paths": ["echarts", "victory"]
 }

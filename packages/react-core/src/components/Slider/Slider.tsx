@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import styles from '@patternfly/react-styles/css/components/Slider/slider';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Slider/slider';
+import { css } from '@rh-felt/react-styles';
 import { SliderStep } from './SliderStep';
 import { InputGroup, InputGroupText, InputGroupItem } from '../InputGroup';
 import { TextInput } from '../TextInput';
 import { Tooltip, TooltipProps } from '../Tooltip';
-import cssSliderValue from '@patternfly/react-tokens/dist/esm/c_slider_value';
-import cssFormControlWidthChars from '@patternfly/react-tokens/dist/esm/c_slider__value_c_form_control_width_chars';
+import cssSliderValue from '@rh-felt/react-tokens/dist/esm/c_slider_value';
+import cssFormControlWidthChars from '@rh-felt/react-tokens/dist/esm/c_slider__value_c_form_control_width_chars';
 import { getLanguageDirection } from '../../helpers/util';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 

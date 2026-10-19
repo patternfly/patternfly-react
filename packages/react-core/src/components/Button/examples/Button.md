@@ -7,14 +7,14 @@ ouia: true
 ---
 
 import { Fragment, useState } from 'react';
-import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
-import RhUiExternalLinkFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-external-link-fill-icon';
-import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
-import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
-import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
-import RhUiUploadIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-upload-icon';
-import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
-import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
+import RhMicronsCloseIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-close-icon';
+import RhUiExternalLinkFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-external-link-fill-icon';
+import RhUiAddCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
+import RhUiCopyFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
+import RhMicronsCaretRightIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
+import RhUiUploadIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-upload-icon';
+import RhUiNotificationFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
+import RhUiQuestionMarkCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 
 ## Examples
 

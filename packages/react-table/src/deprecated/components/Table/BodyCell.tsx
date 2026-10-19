@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip';
-import { Bullseye } from '@patternfly/react-core/dist/esm/layouts/Bullseye';
-import { EmptyState } from '@patternfly/react-core/dist/esm/components/EmptyState';
-import { SelectProps } from '@patternfly/react-core/dist/esm/components/Select';
+import { Tooltip } from '@rh-felt/react-core/dist/esm/components/Tooltip';
+import { Bullseye } from '@rh-felt/react-core/dist/esm/layouts/Bullseye';
+import { EmptyState } from '@rh-felt/react-core/dist/esm/components/EmptyState';
+import { SelectProps } from '@rh-felt/react-core/dist/esm/components/Select';
 import { Td } from '../../../components';
 
 export interface BodyCellProps {

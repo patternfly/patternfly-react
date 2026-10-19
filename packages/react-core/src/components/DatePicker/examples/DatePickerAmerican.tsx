@@ -1,4 +1,4 @@
-import { DatePicker } from '@patternfly/react-core';
+import { DatePicker } from '@rh-felt/react-core';
 
 export const DatePickerAmerican: React.FunctionComponent = () => {
   const dateFormat = (date: Date) =>

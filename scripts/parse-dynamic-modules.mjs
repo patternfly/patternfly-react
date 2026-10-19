@@ -25,7 +25,7 @@ const defaultCompilerOptions = {
 /**
  * Map all exports of the given index module to their corresponding dynamic modules.
  *
- * Example: `@patternfly/react-core` package provides ESModules index at `dist/esm/index.js`
+ * Example: `@rh-felt/react-core` package provides ESModules index at `dist/esm/index.js`
  * which exports Alert component related code & types via `dist/esm/components/Alert/index.js`
  * module.
  *
@@ -41,7 +41,7 @@ const defaultCompilerOptions = {
  *
  * The above mapping can be used when generating import statements like so:
  * ```ts
- * import { Alert } from '@patternfly/react-core/dist/dynamic/components/Alert';
+ * import { Alert } from '@rh-felt/react-core/dist/dynamic/components/Alert';
  * ```
  *
  * It may happen that the same export is provided by multiple dynamic modules;

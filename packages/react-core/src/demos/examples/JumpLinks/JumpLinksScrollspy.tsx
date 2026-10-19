@@ -11,9 +11,9 @@ import {
   Title,
   Content,
   getResizeObserver
-} from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
-import mastheadStyles from '@patternfly/react-styles/css/components/Masthead/masthead';
+} from '@rh-felt/react-core';
+import { DashboardWrapper } from '@rh-felt/react-core/dist/js/demos/DashboardWrapper';
+import mastheadStyles from '@rh-felt/react-styles/css/components/Masthead/masthead';
 
 export const JumpLinksScrollspy: React.FunctionComponent = () => {
   const headings = [1, 2, 3, 4, 5];

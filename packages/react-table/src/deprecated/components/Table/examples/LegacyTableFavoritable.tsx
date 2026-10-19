@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
-import { sortable } from '@patternfly/react-table';
-import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
-import { Checkbox } from '@patternfly/react-core';
+import { sortable } from '@rh-felt/react-table';
+import { Table, TableHeader, TableBody, TableProps } from '@rh-felt/react-table/deprecated';
+import { Checkbox } from '@rh-felt/react-core';
 
 interface Repository {
   name: string;

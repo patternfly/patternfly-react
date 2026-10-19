@@ -1,5 +1,5 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Login/login';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Login/login';
 
 export interface LoginMainFooterProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the login main footer */

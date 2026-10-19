@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Tabs, Tab, TabsComponent, TabTitleText } from '@patternfly/react-core';
+import { Tabs, Tab, TabsComponent, TabTitleText } from '@rh-felt/react-core';
 
 export const TabsNavSubtab: React.FunctionComponent = () => {
   const [activeTabKey1, setActiveTabKey1] = useState<string | number>(0);

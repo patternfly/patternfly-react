@@ -15,9 +15,9 @@ import {
   TitleSizes,
   Flex,
   FlexItem
-} from '@patternfly/react-core';
-import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
-import sizing from '@patternfly/react-styles/css/utilities/Sizing/sizing';
+} from '@rh-felt/react-core';
+import { DashboardWrapper } from '@rh-felt/react-core/dist/js/demos/DashboardWrapper';
+import sizing from '@rh-felt/react-styles/css/utilities/Sizing/sizing';
 
 export const NestedTabs: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = useState(0);

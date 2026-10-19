@@ -1,6 +1,6 @@
 import { NotificationBadge } from '../NotificationBadge';
 import { render, screen, fireEvent } from '@testing-library/react';
-import styles from '@patternfly/react-styles/css/components/Button/button';
+import styles from '@rh-felt/react-styles/css/components/Button/button';
 
 Object.values([true, false]).forEach((attentionVariant) => {
   test(`${attentionVariant} NotificationBadge needs attention`, () => {

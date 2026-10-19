@@ -1,9 +1,9 @@
-import { Banner, Flex, FlexItem } from '@patternfly/react-core';
-import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
-import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
-import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
-import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
-import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
+import { Banner, Flex, FlexItem } from '@rh-felt/react-core';
+import RhUiCheckCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import RhUiErrorFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
+import RhUiWarningFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
+import RhUiInformationFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
+import RhUiNotificationFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 
 export const BannerStatus: React.FunctionComponent = () => (
   <>

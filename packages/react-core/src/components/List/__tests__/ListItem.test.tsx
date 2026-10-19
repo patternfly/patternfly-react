@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { ListItem } from '../ListItem';
-import styles from '@patternfly/react-styles/css/components/List/list';
+import styles from '@rh-felt/react-styles/css/components/List/list';
 
 test('Renders with children', () => {
   render(<ListItem>List item content</ListItem>);

@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/DescriptionList/description-list';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/DescriptionList/description-list';
+import { css } from '@rh-felt/react-styles';
 
 export interface DescriptionListGroupProps extends React.HTMLProps<HTMLDivElement> {
   /** Any elements that can be rendered in the list group */

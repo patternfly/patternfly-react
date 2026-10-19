@@ -2,7 +2,7 @@ import { createRef, useState } from 'react';
 import { render, screen } from '@testing-library/react';
 import { Tooltip } from '../Tooltip';
 import userEvent from '@testing-library/user-event';
-import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
+import styles from '@rh-felt/react-styles/css/components/Tooltip/tooltip';
 
 jest.mock('../../../helpers/Popper/Popper');
 

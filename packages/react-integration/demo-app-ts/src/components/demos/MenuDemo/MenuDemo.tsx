@@ -17,15 +17,15 @@ import {
   Button,
   Spinner,
   SearchInput
-} from '@patternfly/react-core';
-import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import RhUiServerStackFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-server-stack-fill-icon';
-import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
-import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
-import RhUiClipboardFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clipboard-fill-icon';
-import RhUiTableIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-table-icon';
-import styles from '@patternfly/react-styles/css/components/Menu/menu';
+} from '@rh-felt/react-core';
+import RhUiBranchFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
+import CubeIcon from '@rh-felt/react-icons/dist/esm/icons/cube-icon';
+import RhUiServerStackFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-server-stack-fill-icon';
+import RhUiNotificationFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
+import RhUiMenuBarsIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
+import RhUiClipboardFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-clipboard-fill-icon';
+import RhUiTableIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-table-icon';
+import styles from '@rh-felt/react-styles/css/components/Menu/menu';
 
 export class MenuDemo extends Component {
   state = {

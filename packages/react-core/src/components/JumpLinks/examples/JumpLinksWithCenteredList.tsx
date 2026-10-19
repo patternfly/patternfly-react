@@ -1,4 +1,4 @@
-import { JumpLinks, JumpLinksItem } from '@patternfly/react-core';
+import { JumpLinks, JumpLinksItem } from '@rh-felt/react-core';
 
 export const JumpLinksWithCenteredList: React.FunctionComponent = () => (
   <JumpLinks isCentered aria-label="Jump to centered example sections">

@@ -1,5 +1,5 @@
 import { FormEvent, useState } from 'react';
-import { ExpandableSection, Checkbox } from '@patternfly/react-core';
+import { ExpandableSection, Checkbox } from '@rh-felt/react-core';
 
 export const ExpandableSectionIndented: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = useState(true);

@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { NotificationBadge, NotificationBadgeProps, NotificationBadgeVariant } from '@patternfly/react-core';
+import { NotificationBadge, NotificationBadgeProps, NotificationBadgeVariant } from '@rh-felt/react-core';
 
 interface NotificationBadgeDemoState {
   firstVariant: NotificationBadgeVariant | 'read' | 'unread' | 'attention';

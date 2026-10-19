@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Hint, HintTitle, HintBody, Button, Checkbox } from '@patternfly/react-core';
+import { Hint, HintTitle, HintBody, Button, Checkbox } from '@rh-felt/react-core';
 
 export const HintActionsWithNoOffset: React.FunctionComponent = () => {
   const [hasNoActionsOffset, setHasNoActionsOffset] = useState<boolean>(false);

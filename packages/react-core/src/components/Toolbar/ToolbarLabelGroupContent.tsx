@@ -1,6 +1,6 @@
 import { Component, RefObject } from 'react';
-import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Toolbar/toolbar';
+import { css } from '@rh-felt/react-styles';
 
 import { ToolbarItem } from './ToolbarItem';
 import { Button } from '../Button';

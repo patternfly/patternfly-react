@@ -1,6 +1,6 @@
-import { Flex } from '@patternfly/react-core';
-import { Tile } from '@patternfly/react-core/deprecated';
-import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
+import { Flex } from '@rh-felt/react-core';
+import { Tile } from '@rh-felt/react-core/deprecated';
+import RhUiNotificationFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 
 export const TileWithExtraContent: React.FunctionComponent = () => (
   <div role="listbox" aria-label="Tiles with extra content">

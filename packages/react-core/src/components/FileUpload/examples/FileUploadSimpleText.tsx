@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FileUpload, DropEvent } from '@patternfly/react-core';
+import { FileUpload, DropEvent } from '@rh-felt/react-core';
 
 export const SimpleTextFileUpload: React.FunctionComponent = () => {
   const [value, setValue] = useState('');

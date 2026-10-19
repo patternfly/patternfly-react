@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Checkbox } from '../Checkbox';
-import styles from '@patternfly/react-styles/css/components/Check/check';
+import styles from '@rh-felt/react-styles/css/components/Check/check';
 
 test(`Renders with only the class ${styles.checkInput} on the check by default`, () => {
   render(<Checkbox id="test-id" />);

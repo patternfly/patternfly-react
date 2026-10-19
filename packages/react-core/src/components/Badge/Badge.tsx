@@ -1,5 +1,5 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Badge/badge';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Badge/badge';
 
 export interface BadgeProps extends React.HTMLProps<HTMLSpanElement> {
   /** Text announced by screen readers to indicate the current content/status of the badge. */

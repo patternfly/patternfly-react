@@ -4,7 +4,7 @@ section: root
 hideTOC: true
 ---
 
-# Contributing to @patternfly/react-core
+# Contributing to @rh-felt/react-core
 
 ## Adding a new component
 

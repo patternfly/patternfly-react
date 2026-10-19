@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Table, Thead, Tr, Th, Tbody, Td, TdProps, ExpandableRowContent } from '@patternfly/react-table';
+import { Table, Thead, Tr, Th, Tbody, Td, TdProps, ExpandableRowContent } from '@rh-felt/react-table';
 
-import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
-import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import RhUiCodeIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-code-icon';
+import RhUiBranchFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
+import CubeIcon from '@rh-felt/react-icons/dist/esm/icons/cube-icon';
 
 interface Repository {
   name: string;

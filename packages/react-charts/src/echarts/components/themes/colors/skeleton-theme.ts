@@ -1,8 +1,8 @@
-import chart_skeleton_ColorScale_100 from '@patternfly/react-tokens/dist/esm/chart_skeleton_ColorScale_100';
-import chart_skeleton_ColorScale_200 from '@patternfly/react-tokens/dist/esm/chart_skeleton_ColorScale_200';
-import chart_skeleton_ColorScale_300 from '@patternfly/react-tokens/dist/esm/chart_skeleton_ColorScale_300';
-import chart_skeleton_ColorScale_400 from '@patternfly/react-tokens/dist/esm/chart_skeleton_ColorScale_400';
-import chart_skeleton_ColorScale_500 from '@patternfly/react-tokens/dist/esm/chart_skeleton_ColorScale_500';
+import chart_skeleton_ColorScale_100 from '@rh-felt/react-tokens/dist/esm/chart_skeleton_ColorScale_100';
+import chart_skeleton_ColorScale_200 from '@rh-felt/react-tokens/dist/esm/chart_skeleton_ColorScale_200';
+import chart_skeleton_ColorScale_300 from '@rh-felt/react-tokens/dist/esm/chart_skeleton_ColorScale_300';
+import chart_skeleton_ColorScale_400 from '@rh-felt/react-tokens/dist/esm/chart_skeleton_ColorScale_400';
+import chart_skeleton_ColorScale_500 from '@rh-felt/react-tokens/dist/esm/chart_skeleton_ColorScale_500';
 import { ColorTheme } from '../skeleton-theme';
 import { getComputedStyleValue } from '../../utils/styles';
 

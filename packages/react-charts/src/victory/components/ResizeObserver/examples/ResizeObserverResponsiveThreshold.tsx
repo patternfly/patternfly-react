@@ -7,10 +7,10 @@ import {
   ChartThreshold,
   ChartThemeColor,
   ChartVoronoiContainer
-} from '@patternfly/react-charts/victory';
-import { getResizeObserver } from '@patternfly/react-core';
-import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
-import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
+} from '@rh-felt/react-charts/victory';
+import { getResizeObserver } from '@rh-felt/react-core';
+import chart_color_blue_300 from '@rh-felt/react-tokens/dist/esm/chart_color_blue_300';
+import chart_color_orange_300 from '@rh-felt/react-tokens/dist/esm/chart_color_orange_300';
 import { useEffect, useRef, useState } from 'react';
 
 interface PetData {

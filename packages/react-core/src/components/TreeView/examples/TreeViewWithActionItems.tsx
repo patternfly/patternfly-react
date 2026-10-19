@@ -7,10 +7,10 @@ import {
   DropdownItem,
   MenuToggle,
   TreeViewDataItem
-} from '@patternfly/react-core';
-import RhUiClipboardFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clipboard-fill-icon';
-import RhUiStorageFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-storage-fill-icon';
-import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+} from '@rh-felt/react-core';
+import RhUiClipboardFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-clipboard-fill-icon';
+import RhUiStorageFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-storage-fill-icon';
+import RhUiEllipsisVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export const TreeViewWithActionItems: React.FunctionComponent = () => {
   const [activeItems, setActiveItems] = useState<TreeViewDataItem[]>();

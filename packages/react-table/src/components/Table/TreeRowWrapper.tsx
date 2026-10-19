@@ -1,6 +1,6 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Table/table';
-import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-tree-view';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Table/table';
+import stylesTreeView from '@rh-felt/react-styles/css/components/Table/table-tree-view';
 import { RowWrapperProps } from './RowWrapper';
 import { Tr } from './Tr';
 

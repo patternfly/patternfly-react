@@ -2,8 +2,8 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { ExpandableSection, ExpandableSectionVariant } from '../ExpandableSection';
-import styles from '@patternfly/react-styles/css/components/ExpandableSection/expandable-section';
-import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
+import styles from '@rh-felt/react-styles/css/components/ExpandableSection/expandable-section';
+import RhUiNotificationFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 
 const props = { contentId: 'content-id', toggleId: 'toggle-id' };
 

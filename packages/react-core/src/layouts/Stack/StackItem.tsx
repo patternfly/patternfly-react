@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/layouts/Stack/stack';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/layouts/Stack/stack';
+import { css } from '@rh-felt/react-styles';
 
 export interface StackItemProps extends React.HTMLProps<HTMLDivElement> {
   /** Flag indicating if this stack layout item should fill the available vertical space. */

@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { MenuToggle, Badge } from '@patternfly/react-core';
+import { MenuToggle, Badge } from '@rh-felt/react-core';
 
 export const MenuToggleBadge: React.FunctionComponent = () => (
   <Fragment>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { info, textCenter, ICell } from '@patternfly/react-table';
-import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
-import styles from '@patternfly/react-styles/css/components/Table/table';
+import { info, textCenter, ICell } from '@rh-felt/react-table';
+import { Table, TableHeader, TableBody, TableProps } from '@rh-felt/react-table/deprecated';
+import styles from '@rh-felt/react-styles/css/components/Table/table';
 
 interface Repository {
   name: string;

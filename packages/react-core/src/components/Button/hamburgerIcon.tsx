@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/Button/button';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Button/button';
+import { css } from '@rh-felt/react-styles';
 
 // Because this is such a specific icon that requires being wrapped in a pf-v[current version]-c-button element,
 // we don't want to export this to consumers nor include it in the react-icons package as a custom icon.

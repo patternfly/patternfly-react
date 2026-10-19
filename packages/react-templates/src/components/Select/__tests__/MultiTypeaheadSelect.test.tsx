@@ -1,7 +1,7 @@
 import { render, screen, waitForElementToBeRemoved, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MultiTypeaheadSelect } from '../MultiTypeaheadSelect';
-import styles from '@patternfly/react-styles/css/components/Menu/menu';
+import styles from '@rh-felt/react-styles/css/components/Menu/menu';
 
 const getToggle = () => screen.getByRole('button', { name: 'Multi select Typeahead menu toggle' });
 

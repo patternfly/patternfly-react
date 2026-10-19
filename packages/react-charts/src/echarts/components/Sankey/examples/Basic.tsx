@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { Charts } from '@patternfly/react-charts/echarts';
+import { Charts } from '@rh-felt/react-charts/echarts';
 
 import * as echarts from 'echarts/core';
 import { SankeyChart } from 'echarts/charts';

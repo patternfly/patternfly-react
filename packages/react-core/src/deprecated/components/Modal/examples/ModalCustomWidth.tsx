@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
-import { Button } from '@patternfly/react-core';
-import { Modal as ModalDeprecated } from '@patternfly/react-core/deprecated';
+import { Button } from '@rh-felt/react-core';
+import { Modal as ModalDeprecated } from '@rh-felt/react-core/deprecated';
 
 export const ModalCustomWidth: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

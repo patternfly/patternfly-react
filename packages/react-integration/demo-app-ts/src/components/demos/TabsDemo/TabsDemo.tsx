@@ -1,6 +1,6 @@
 import { Component, createRef, RefObject } from 'react';
-import { Tabs, Tab, TabContent, TabTitleText, TabTitleIcon, Button } from '@patternfly/react-core';
-import RhUiUsersFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-users-fill-icon';
+import { Tabs, Tab, TabContent, TabTitleText, TabTitleIcon, Button } from '@rh-felt/react-core';
+import RhUiUsersFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-users-fill-icon';
 
 export class TabDemo extends Component {
   state = {

@@ -1,11 +1,11 @@
-# @patternfly/react-styles
+# @rh-felt/react-styles
 
 Library that provides CSS-in-JS capabilities 
 
 #### Example 
 
 ```tsx
-import { css } from '@patternfly/react-styles';
+import { css } from '@rh-felt/react-styles';
 import styles from './Button.css';
 
 const Button = ({ isActive, isDisabled, children }) => (

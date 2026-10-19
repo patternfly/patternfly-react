@@ -35,13 +35,13 @@ import {
   ToolbarContent,
   ToolbarGroup,
   ToolbarItem
-} from '@patternfly/react-core';
-import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
-import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
-import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
-import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
-import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
-import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
+} from '@rh-felt/react-core';
+import RhUiEllipsisVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhUiSettingsFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
+import RhUiQuestionMarkCircleIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import RhUiQuestionMarkCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
+import imgAvatar from '@rh-felt/react-core/src/components/assets/avatarImg.svg';
+import pfLogo from '@rh-felt/react-core/src/demos/assets/pf-logo.svg';
 
 interface NavOnSelectProps {
   groupId: number | string;

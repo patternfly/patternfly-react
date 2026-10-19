@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TextArea } from '@patternfly/react-core';
+import { TextArea } from '@rh-felt/react-core';
 
 export const VerticalResizeTextArea: React.FunctionComponent = () => {
   const [value, setValue] = useState('');

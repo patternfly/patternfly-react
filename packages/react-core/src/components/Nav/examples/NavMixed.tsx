@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList } from '@patternfly/react-core';
+import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList } from '@rh-felt/react-core';
 
 export const NavMixed: React.FunctionComponent = () => {
   const [activeGroup, setActiveGroup] = useState('');

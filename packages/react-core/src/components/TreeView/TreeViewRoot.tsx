@@ -1,6 +1,6 @@
 import { Component, createRef } from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/TreeView/tree-view';
 import { canUseDOM } from '../../helpers/util';
 import { handleArrows } from '../../helpers';
 import { KeyTypes } from '../../helpers/constants';

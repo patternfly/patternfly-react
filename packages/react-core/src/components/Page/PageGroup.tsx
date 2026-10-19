@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Page/page';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Page/page';
 import { formatBreakpointMods } from '../../helpers/util';
 import { PageContext } from './PageContext';
 export interface PageGroupProps extends React.HTMLProps<HTMLDivElement> {

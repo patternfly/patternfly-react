@@ -1,9 +1,9 @@
 import { memo, useContext, useEffect, useRef, useState, cloneElement, Children, isValidElement } from 'react';
-import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/DualListSelector/dual-list-selector';
+import { css } from '@rh-felt/react-styles';
 import { DualListSelectorTreeItemData } from './DualListSelectorTree';
 import { Badge } from '../Badge';
-import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
+import RhMicronsCaretRightIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import { flattenTree } from './treeUtils';
 import { DualListSelectorListContext } from './DualListSelectorContext';
 import { useHasAnimations } from '../../helpers';

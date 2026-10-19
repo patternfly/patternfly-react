@@ -10,8 +10,8 @@ import {
   createContainer,
   getInteractiveLegendEvents,
   getInteractiveLegendItemStyles
-} from '@patternfly/react-charts/victory';
-import { getResizeObserver } from '@patternfly/react-core';
+} from '@rh-felt/react-charts/victory';
+import { getResizeObserver } from '@rh-felt/react-core';
 import { useEffect, useRef, useState } from 'react';
 
 export const PatternsInteractiveAreaChart: React.FunctionComponent = () => {

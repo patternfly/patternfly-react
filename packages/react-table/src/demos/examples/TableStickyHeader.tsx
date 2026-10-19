@@ -1,7 +1,7 @@
-import { Label, LabelStatus, PageSection } from '@patternfly/react-core';
-import { Table, Thead, Tr, Th, Tbody, Td, TableText } from '@patternfly/react-table';
-import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
-import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
+import { Label, LabelStatus, PageSection } from '@rh-felt/react-core';
+import { Table, Thead, Tr, Th, Tbody, Td, TableText } from '@rh-felt/react-table';
+import { DashboardWrapper } from '@rh-felt/react-table/dist/esm/demos/DashboardWrapper';
+import { rows, columns } from '@rh-felt/react-table/dist/esm/demos/sampleData';
 
 export const TableStickyHeader: React.FunctionComponent = () => {
   const renderLabel = (labelText: string) => {

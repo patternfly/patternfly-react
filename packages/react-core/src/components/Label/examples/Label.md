@@ -6,8 +6,8 @@ propComponents: ['Label', 'LabelGroup']
 ---
 
 import { Fragment, useEffect, useRef, useState } from 'react';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
+import CubeIcon from '@rh-felt/react-icons/dist/esm/icons/cube-icon';
+import RhUiInformationFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
 import './Label.css';
 
 ## Examples

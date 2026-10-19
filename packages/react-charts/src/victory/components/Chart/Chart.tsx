@@ -1,7 +1,7 @@
 import { Children, cloneElement, isValidElement, useEffect } from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 
-import chart_legend_Margin from '@patternfly/react-tokens/dist/esm/chart_legend_Margin';
+import chart_legend_Margin from '@rh-felt/react-tokens/dist/esm/chart_legend_Margin';
 
 import {
   AnimatePropTypeInterface,

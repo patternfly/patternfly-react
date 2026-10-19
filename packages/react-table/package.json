@@ -1,7 +1,7 @@
 {
-  "name": "@patternfly/react-table",
-  "version": "6.7.0",
-  "description": "This library provides a set of React table components for use with the PatternFly 4",
+  "name": "@rh-felt/react-table",
+  "version": "0.0.1-prerelease.0",
+  "description": "This library provides a set of React table components for use with Felt",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -40,10 +40,10 @@
     "subpaths": "node ../../scripts/exportSubpaths.mjs --config subpaths.config.json"
   },
   "dependencies": {
-    "@patternfly/react-core": "workspace:^",
-    "@patternfly/react-icons": "workspace:^",
-    "@patternfly/react-styles": "workspace:^",
-    "@patternfly/react-tokens": "workspace:^",
+    "@rh-felt/react-core": "workspace:^",
+    "@rh-felt/react-icons": "workspace:^",
+    "@rh-felt/react-styles": "workspace:^",
+    "@rh-felt/react-tokens": "workspace:^",
     "lodash": "^4.18.1",
     "tslib": "^2.8.1"
   },

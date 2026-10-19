@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Spinner, Content } from '@patternfly/react-core';
+import { Spinner, Content } from '@rh-felt/react-core';
 
 export const SpinnerInline: React.FunctionComponent = () => (
   <Fragment>

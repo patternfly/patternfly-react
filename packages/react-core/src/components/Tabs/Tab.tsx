@@ -1,11 +1,11 @@
 import { useContext, forwardRef, useEffect } from 'react';
-import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
+import styles from '@rh-felt/react-styles/css/components/Tabs/tabs';
 import { OUIAProps } from '../../helpers';
 import { TabButton } from './TabButton';
 import { TabsContext } from './TabsContext';
-import { css } from '@patternfly/react-styles';
+import { css } from '@rh-felt/react-styles';
 import { Tooltip } from '../Tooltip';
-import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+import RhMicronsCloseIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-close-icon';
 import { TabAction } from './TabAction';
 
 export interface TabProps

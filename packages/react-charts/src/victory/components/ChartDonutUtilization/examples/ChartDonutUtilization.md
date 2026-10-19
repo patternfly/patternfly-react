@@ -9,11 +9,11 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts/victory';
+import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor } from '@rh-felt/react-charts/victory';
 import {  useEffect, useState } from 'react';
 
 ## Introduction
-Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
+Note: PatternFly React charts live in its own package at [@rh-felt/react-charts](https://www.npmjs.com/package/@rh-felt/react-charts)!
 
 The examples below are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
 

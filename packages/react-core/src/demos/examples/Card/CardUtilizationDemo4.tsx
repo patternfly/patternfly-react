@@ -1,5 +1,5 @@
-import { Card, CardTitle, CardBody, CardFooter, Title, Gallery, GalleryItem } from '@patternfly/react-core';
-import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts/victory';
+import { Card, CardTitle, CardBody, CardFooter, Title, Gallery, GalleryItem } from '@rh-felt/react-core';
+import { ChartDonutThreshold, ChartDonutUtilization } from '@rh-felt/react-charts/victory';
 
 export const CardUtilizationDemo4: React.FunctionComponent = () => (
   <Gallery hasGutter minWidths={{ default: '360px' }}>

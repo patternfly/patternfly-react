@@ -1,5 +1,5 @@
-import { Button, EmptyState, EmptyStateBody, EmptyStateFooter, EmptyStateActions } from '@patternfly/react-core';
-import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
+import { Button, EmptyState, EmptyStateBody, EmptyStateFooter, EmptyStateActions } from '@rh-felt/react-core';
+import RhMicronsSearchIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-search-icon';
 
 export const EmptyStateNoMatchFound: React.FunctionComponent = () => (
   <EmptyState titleText="No results found" headingLevel="h4" icon={RhMicronsSearchIcon}>

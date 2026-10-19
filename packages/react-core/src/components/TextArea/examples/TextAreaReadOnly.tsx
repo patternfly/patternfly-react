@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { Checkbox, TextArea } from '@patternfly/react-core';
+import { Checkbox, TextArea } from '@rh-felt/react-core';
 
 export const TextAreaReadOnly: React.FunctionComponent = () => {
   const [isPlainChecked, setIsPlainChecked] = useState(false);

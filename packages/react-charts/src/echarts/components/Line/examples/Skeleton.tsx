@@ -1,6 +1,6 @@
 import { FormEvent, FunctionComponent, useState } from 'react';
-import { Charts, ThemeColor } from '@patternfly/react-charts/echarts';
-import { Switch } from '@patternfly/react-core';
+import { Charts, ThemeColor } from '@rh-felt/react-charts/echarts';
+import { Switch } from '@rh-felt/react-core';
 
 import * as echarts from 'echarts/core';
 import { LineChart } from 'echarts/charts';

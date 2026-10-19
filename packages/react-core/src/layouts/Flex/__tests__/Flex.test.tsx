@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 
 import { Flex } from '../Flex';
 import { FlexItem } from '../FlexItem';
-import layout from '@patternfly/react-styles/css/layouts/Flex/flex';
+import layout from '@rh-felt/react-styles/css/layouts/Flex/flex';
 
 describe('Flex', () => {
   test('Simple flex with single item', () => {

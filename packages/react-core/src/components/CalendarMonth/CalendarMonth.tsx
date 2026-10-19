@@ -4,10 +4,10 @@ import { Button } from '../Button';
 import { Select, SelectList, SelectOption } from '../Select';
 import { MenuToggle, MenuToggleElement } from '../MenuToggle';
 import { InputGroup, InputGroupItem } from '../InputGroup';
-import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
-import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/CalendarMonth/calendar-month';
+import RhMicronsCaretLeftIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
+import RhMicronsCaretRightIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/CalendarMonth/calendar-month';
 import { useSSRSafeId, useOUIAProps, OUIAProps } from '../../helpers';
 import { isValidDate } from '../../helpers/datetimeUtils';
 

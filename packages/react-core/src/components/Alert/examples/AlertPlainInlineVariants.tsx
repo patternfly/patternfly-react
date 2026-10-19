@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Alert } from '@patternfly/react-core';
+import { Alert } from '@rh-felt/react-core';
 
 export const AlertPlainInlineVariants: React.FunctionComponent = () => (
   <Fragment>

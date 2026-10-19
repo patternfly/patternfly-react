@@ -7,8 +7,8 @@ import {
   FormFieldGroupHeader,
   TextInput,
   Button
-} from '@patternfly/react-core';
-import RhUiTrashFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-trash-fill-icon';
+} from '@rh-felt/react-core';
+import RhUiTrashFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-trash-fill-icon';
 
 export const FormFieldGroups: React.FunctionComponent = () => {
   const initialValues = {

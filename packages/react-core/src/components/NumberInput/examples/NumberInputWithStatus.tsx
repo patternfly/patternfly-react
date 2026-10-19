@@ -1,5 +1,5 @@
 import { useReducer, useState } from 'react';
-import { NumberInput, ValidatedOptions } from '@patternfly/react-core';
+import { NumberInput, ValidatedOptions } from '@rh-felt/react-core';
 
 export const NumberInputWithStatus: React.FunctionComponent = () => {
   const max = 10;

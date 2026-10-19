@@ -1,4 +1,4 @@
-import { CalendarMonth, Title, CalendarMonthInlineProps } from '@patternfly/react-core';
+import { CalendarMonth, Title, CalendarMonthInlineProps } from '@rh-felt/react-core';
 
 export const CalendarMonthDateRange: React.FunctionComponent = () => {
   const startDate = new Date(2020, 10, 11);

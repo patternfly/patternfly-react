@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { AccordionItem } from '../AccordionItem';
-import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
+import styles from '@rh-felt/react-styles/css/components/Accordion/accordion';
 
 test('Renders children', () => {
   render(<AccordionItem>Test</AccordionItem>);

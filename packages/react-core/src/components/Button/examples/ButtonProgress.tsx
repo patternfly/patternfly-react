@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Button, Flex } from '@patternfly/react-core';
-import RhUiUploadIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-upload-icon';
+import { Button, Flex } from '@rh-felt/react-core';
+import RhUiUploadIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-upload-icon';
 
 interface LoadingPropsType {
   spinnerAriaValueText: string;

@@ -1,4 +1,4 @@
-import { BackToTop, Card, CardBody, Content, Gallery, GalleryItem, PageSection, Page } from '@patternfly/react-core';
+import { BackToTop, Card, CardBody, Content, Gallery, GalleryItem, PageSection, Page } from '@rh-felt/react-core';
 
 export const BackToTopDemo = () => (
   <Page>

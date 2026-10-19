@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import styles from '@patternfly/react-styles/css/components/Radio/radio';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Radio/radio';
+import { css } from '@rh-felt/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';

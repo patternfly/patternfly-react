@@ -1,6 +1,6 @@
 import { createRef } from 'react';
-import styles from '@patternfly/react-styles/css/components/DescriptionList/description-list';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/DescriptionList/description-list';
+import { css } from '@rh-felt/react-styles';
 
 export interface DescriptionListTermHelpTextButtonProps extends React.HTMLProps<HTMLSpanElement> {
   /** Anything that can be rendered inside of list term */

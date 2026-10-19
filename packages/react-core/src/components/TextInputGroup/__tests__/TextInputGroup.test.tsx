@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import styles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
+import styles from '@rh-felt/react-styles/css/components/TextInputGroup/text-input-group';
 
 import { TextInputGroup, TextInputGroupContext } from '../TextInputGroup';
 

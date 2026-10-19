@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
-import { Label, LabelColor, LabelStatus } from '@patternfly/react-core';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import { Label, LabelColor, LabelStatus } from '@rh-felt/react-core';
+import CubeIcon from '@rh-felt/react-icons/dist/esm/icons/cube-icon';
 
 export const LabelFilled: React.FunctionComponent = () => {
   const logColor = (color: string) => {

@@ -1,8 +1,8 @@
 import { Fragment, useState } from 'react';
-import { Button, Title, TitleSizes } from '@patternfly/react-core';
-import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
-import RhUiWarningIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-icon';
-import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
+import { Button, Title, TitleSizes } from '@rh-felt/react-core';
+import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@rh-felt/react-core/deprecated';
+import RhUiWarningIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-warning-icon';
+import spacing from '@rh-felt/react-styles/css/utilities/Spacing/spacing';
 
 export const ModalCustomHeaderFooter: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

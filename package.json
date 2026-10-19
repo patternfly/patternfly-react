@@ -1,8 +1,8 @@
 {
-  "name": "@patternfly/react-lerna-root",
+  "name": "@rh-felt/react-lerna-root",
   "private": true,
   "version": "0.0.0",
-  "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
+  "description": "This library provides a set of common React components for use with the Felt reference implementation.",
   "repository": {
     "type": "git",
     "url": "https://github.com/patternfly/patternfly-react.git"
@@ -86,7 +86,7 @@
     "build:cjs": "tsc --build --verbose packages/tsconfig.cjs.json",
     "build:esm": "tsc --build --verbose packages/tsconfig.json",
     "build:integration": "lerna run build --scope=demo-app-ts --stream",
-    "build:docs": "yarn workspace @patternfly/react-docs build:docs",
+    "build:docs": "yarn workspace @rh-felt/react-docs build:docs",
     "build:generate": "lerna run generate --parallel --stream",
     "build:subpaths": "lerna run subpaths --parallel --stream",
     "build:umd": "lerna run build:umd --parallel --stream",
@@ -101,17 +101,17 @@
     "lint:tests": "yarn lint packages/*/src/components/*/__tests__/*.test.*",
     "lint:publication": "yarn workspaces foreach --all --no-private --parallel exec publint --strict",
     "postinstall": "ts-patch install -s && husky",
-    "serve:docs": "yarn workspace @patternfly/react-docs serve",
+    "serve:docs": "yarn workspace @rh-felt/react-docs serve",
     "serve:integration": "lerna run preview --scope=demo-app-ts",
-    "start": "yarn build && concurrently --kill-others \"yarn watch\" \"yarn workspace @patternfly/react-docs develop\"",
+    "start": "yarn build && concurrently --kill-others \"yarn watch\" \"yarn workspace @rh-felt/react-docs develop\"",
     "start:cypress": "lerna run cypress:open",
     "start:demo-app": "lerna run dev --scope=demo-app-ts --stream",
     "test": "TZ=EST LC_ALL=en_US.UTF8 jest packages",
     "test:a11y": "lerna run test:a11y --stream",
-    "test:integration": "yarn workspace @patternfly/react-integration test:integration",
+    "test:integration": "yarn workspace @rh-felt/react-integration test:integration",
     "uninstall": "find . -name node_modules -type d | xargs rm -rf",
     "watch": "yarn build:esm --watch",
-    "screenshots": "yarn workspace @patternfly/react-docs screenshots"
+    "screenshots": "yarn workspace @rh-felt/react-docs screenshots"
   },
   "lint-staged": {
     "*.md": "yarn lint:md --fix",

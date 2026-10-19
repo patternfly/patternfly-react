@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Table, Thead, Tr, Th, Tbody, Td, TableText } from '@patternfly/react-table';
+import { Table, Thead, Tr, Th, Tbody, Td, TableText } from '@rh-felt/react-table';
 
 // This example has been simplified to focus on the text modifier props. In real usage,
 // you may want to derive your rows from typed underlying data and minimal state. See other examples.

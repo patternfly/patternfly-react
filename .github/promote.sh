@@ -14,8 +14,8 @@ echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
 
 #if [[ ! -z "${PATTERNFLY_VERSION}" ]]; then
 #  echo "Updating to @patternfly/patternfly: ${PATTERNFLY_VERSION}"
-#  npm pkg set dependencies.@patternfly/patternfly=${PATTERNFLY_VERSION} --workspace @patternfly/react-docs
-#  npm pkg set devDependencies.@patternfly/patternfly=${PATTERNFLY_VERSION} --workspace @patternfly/react-core --workspace @patternfly/react-styles --workspace @patternfly/react-tokens --workspace @patternfly/react-icons 
+#  npm pkg set dependencies.@patternfly/patternfly=${PATTERNFLY_VERSION} --workspace @rh-felt/react-docs
+#  npm pkg set devDependencies.@patternfly/patternfly=${PATTERNFLY_VERSION} --workspace @rh-felt/react-core --workspace @rh-felt/react-styles --workspace @rh-felt/react-tokens --workspace @rh-felt/react-icons
 #fi
 
 # publish to npm
@@ -26,5 +26,4 @@ yarn run lerna version preminor --force-publish --conventional-commits --no-priv
 
 # dry run
 # yarn run lerna version --conventional-commits --conventional-graduate --no-private --yes --no-git-tag-version --no-push
-
 

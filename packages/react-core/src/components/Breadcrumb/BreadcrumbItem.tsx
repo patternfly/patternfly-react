@@ -1,6 +1,6 @@
-import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
-import styles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
-import { css } from '@patternfly/react-styles';
+import RhMicronsCaretRightIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
+import styles from '@rh-felt/react-styles/css/components/Breadcrumb/breadcrumb';
+import { css } from '@rh-felt/react-styles';
 
 export interface BreadcrumbItemRenderArgs {
   className: string;

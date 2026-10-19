@@ -29,8 +29,8 @@ import {
   PageToggleButton,
   Wizard,
   WizardStep
-} from '@patternfly/react-core';
-import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
+} from '@rh-felt/react-core';
+import pfLogo from '@rh-felt/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
 
 export const WizardFullPageWithDrawerDemo: React.FunctionComponent = () => {
   const [isDrawerExpanded, setIsDrawerExpanded] = useState(false);

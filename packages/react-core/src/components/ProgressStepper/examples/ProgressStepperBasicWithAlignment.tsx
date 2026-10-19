@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { ProgressStepper, ProgressStep, Checkbox } from '@patternfly/react-core';
+import { ProgressStepper, ProgressStep, Checkbox } from '@rh-felt/react-core';
 
 export const ProgressStepperBasicWithAlignment: React.FunctionComponent = () => {
   const [isVertical, setIsVertical] = useState(false);

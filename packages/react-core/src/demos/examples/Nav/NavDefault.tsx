@@ -13,9 +13,9 @@ import {
   PageSidebar,
   PageSidebarBody,
   SkipToContent
-} from '@patternfly/react-core';
-import { DashboardBreadcrumb } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
-import { DashboardHeader } from '@patternfly/react-core/dist/js/demos/DashboardHeader';
+} from '@rh-felt/react-core';
+import { DashboardBreadcrumb } from '@rh-felt/react-core/dist/js/demos/DashboardWrapper';
+import { DashboardHeader } from '@rh-felt/react-core/dist/js/demos/DashboardHeader';
 
 export const NavDefault: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState<number | string>(0);

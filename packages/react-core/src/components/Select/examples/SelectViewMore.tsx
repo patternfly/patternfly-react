@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Select, SelectOption, SelectList, MenuToggle, Spinner } from '@patternfly/react-core';
+import { Select, SelectOption, SelectList, MenuToggle, Spinner } from '@rh-felt/react-core';
 
 export const SelectViewMore: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);

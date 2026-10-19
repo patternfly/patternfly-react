@@ -8,10 +8,10 @@ propComponents: ['ToggleGroup', 'ToggleGroupItem']
 import './toggleGroup.css';
 
 import { useRef, useState } from 'react';
-import { ToggleGroup, ToggleGroupItem, Button, Stack, StackItem } from '@patternfly/react-core';
-import RhUiUndoIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-undo-icon';
-import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
-import ShareSquareIcon from '@patternfly/react-icons/dist/esm/icons/share-square-icon';
+import { ToggleGroup, ToggleGroupItem, Button, Stack, StackItem } from '@rh-felt/react-core';
+import RhUiUndoIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-undo-icon';
+import RhUiCopyFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
+import ShareSquareIcon from '@rh-felt/react-icons/dist/esm/icons/share-square-icon';
 
 ## Examples
 

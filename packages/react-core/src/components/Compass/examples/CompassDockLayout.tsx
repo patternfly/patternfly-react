@@ -6,7 +6,7 @@ import {
   PanelMain,
   PanelMainBody,
   CompassMainHeaderContent
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 import './compass.css';
 
 export const CompassBasic: React.FunctionComponent = () => {

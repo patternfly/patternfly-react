@@ -1,5 +1,5 @@
-import { Button, Flex, Tooltip } from '@patternfly/react-core';
-import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
+import { Button, Flex, Tooltip } from '@rh-felt/react-core';
+import RhUiAddCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 
 export const ButtonAriaDisabled: React.FunctionComponent = () => (
   <>

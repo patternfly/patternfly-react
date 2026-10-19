@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 
 import { DataListAction } from '../DataListAction';
 
-import styles from '@patternfly/react-styles/css/components/DataList/data-list';
+import styles from '@rh-felt/react-styles/css/components/DataList/data-list';
 
 test('Renders to match snapshot', () => {
   const { asFragment } = render(

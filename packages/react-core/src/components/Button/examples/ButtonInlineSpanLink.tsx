@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Button, KeyTypes } from '@patternfly/react-core';
+import { Button, KeyTypes } from '@rh-felt/react-core';
 
 const handleKeydown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
   const { key } = event;

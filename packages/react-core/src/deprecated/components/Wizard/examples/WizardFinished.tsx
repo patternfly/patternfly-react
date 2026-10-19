@@ -1,16 +1,9 @@
 import { useEffect, useState } from 'react';
-import {
-  EmptyState,
-  EmptyStateFooter,
-  EmptyStateBody,
-  EmptyStateActions,
-  Progress,
-  Button
-} from '@patternfly/react-core';
-import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
+import { EmptyState, EmptyStateFooter, EmptyStateBody, EmptyStateActions, Progress, Button } from '@rh-felt/react-core';
+import { Wizard as WizardDeprecated } from '@rh-felt/react-core/deprecated';
 // eslint-disable-next-line patternfly-react/import-tokens-icons
-import { CogsIcon } from '@patternfly/react-icons';
-import layout from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
+import { CogsIcon } from '@rh-felt/react-icons';
+import layout from '@rh-felt/react-styles/css/layouts/Bullseye/bullseye';
 
 interface finishedProps {
   onClose: () => void;

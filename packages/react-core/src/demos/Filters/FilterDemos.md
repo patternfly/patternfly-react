@@ -28,10 +28,10 @@ Title,
 Button,
 Bullseye,
 ToolbarToggleGroup
-} from '@patternfly/react-core';
-import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
-import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
-import { Table, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+} from '@rh-felt/react-core';
+import RhUiFilterFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
+import RhMicronsSearchIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-search-icon';
+import { Table, Thead, Tr, Th, Tbody, Td } from '@rh-felt/react-table';
 
 ## Filtering demos
 

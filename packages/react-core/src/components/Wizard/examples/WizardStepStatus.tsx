@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from 'react';
-import { Radio, Wizard, WizardStep } from '@patternfly/react-core';
+import { Radio, Wizard, WizardStep } from '@rh-felt/react-core';
 
 interface SomeContextProps {
   errorMessage: string | undefined;

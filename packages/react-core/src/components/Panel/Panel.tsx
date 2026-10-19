@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 
-import styles from '@patternfly/react-styles/css/components/Panel/panel';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Panel/panel';
+import { css } from '@rh-felt/react-styles';
 
 export interface PanelProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the panel */

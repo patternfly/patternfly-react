@@ -9,15 +9,15 @@ import {
   forwardRef,
   MutableRefObject
 } from 'react';
-import styles from '@patternfly/react-styles/css/components/Nav/nav';
-import menuStyles from '@patternfly/react-styles/css/components/Menu/menu';
-import dividerStyles from '@patternfly/react-styles/css/components/Divider/divider';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Nav/nav';
+import menuStyles from '@rh-felt/react-styles/css/components/Menu/menu';
+import dividerStyles from '@rh-felt/react-styles/css/components/Divider/divider';
+import { css } from '@rh-felt/react-styles';
 import { NavContext, NavSelectClickHandler } from './Nav';
 import { PageSidebarContext } from '../Page/PageSidebar';
 import { useOUIAProps, OUIAProps } from '../../helpers';
 import { Popper } from '../../helpers/Popper/Popper';
-import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
+import RhMicronsCaretRightIcon from '@rh-felt/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 
 export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'>, OUIAProps {
   /** Content rendered inside the nav item. */

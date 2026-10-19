@@ -1,4 +1,4 @@
-import { Card, CardBody } from '@patternfly/react-core';
+import { Card, CardBody } from '@rh-felt/react-core';
 
 export const CardWithOnlyBodySection: React.FunctionComponent = () => (
   <Card>

@@ -1,4 +1,4 @@
-import { Truncate, TruncatePosition } from '@patternfly/react-core';
+import { Truncate, TruncatePosition } from '@rh-felt/react-core';
 
 export const TruncateMaxChars: React.FunctionComponent = () => (
   <>

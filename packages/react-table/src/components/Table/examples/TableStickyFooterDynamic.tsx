@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef, useState } from 'react';
-import { getResizeObserver } from '@patternfly/react-core';
-import { Table, Thead, Tfoot, Tr, Th, Tbody, Td, InnerScrollContainer } from '@patternfly/react-table';
+import { getResizeObserver } from '@rh-felt/react-core';
+import { Table, Thead, Tfoot, Tr, Th, Tbody, Td, InnerScrollContainer } from '@rh-felt/react-table';
 
 const useIsStuckFromScrollParent = (scrollParentRef: React.RefObject<HTMLDivElement>): boolean => {
   const [isStuck, setIsStuck] = useState(false);

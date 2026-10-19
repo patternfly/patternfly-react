@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Switch } from '@patternfly/react-core';
+import { Switch } from '@rh-felt/react-core';
 
 export const SwitchBasic: React.FunctionComponent = () => {
   const [isChecked, setIsChecked] = useState<boolean>(true);

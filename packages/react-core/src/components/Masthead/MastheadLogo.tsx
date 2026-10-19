@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/Masthead/masthead';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Masthead/masthead';
+import { css } from '@rh-felt/react-styles';
 
 export interface MastheadLogoProps extends React.DetailedHTMLProps<
   React.HTMLProps<HTMLAnchorElement>,

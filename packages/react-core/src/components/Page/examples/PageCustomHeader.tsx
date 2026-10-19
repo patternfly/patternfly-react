@@ -1,4 +1,4 @@
-import { Page, PageHeader, PageSection, PageSidebar, PageSidebarBody } from '@patternfly/react-core';
+import { Page, PageHeader, PageSection, PageSidebar, PageSidebarBody } from '@rh-felt/react-core';
 
 export const PageCustomHeader: React.FunctionComponent = () => {
   const sidebar = (

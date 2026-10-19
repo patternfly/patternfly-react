@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
-import { css } from '@patternfly/react-styles';
+import { css } from '@rh-felt/react-styles';
 import { Divider } from '../Divider';
-import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
+import styles from '@rh-felt/react-styles/css/components/TreeView/tree-view';
 
 export interface TreeViewListProps extends React.HTMLProps<HTMLUListElement> {
   /** Child nodes of the current tree view. */

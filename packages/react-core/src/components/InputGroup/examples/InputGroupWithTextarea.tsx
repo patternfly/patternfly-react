@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Button, TextArea, InputGroup, InputGroupItem } from '@patternfly/react-core';
+import { Button, TextArea, InputGroup, InputGroupItem } from '@rh-felt/react-core';
 
 export const InputGroupWithTextarea: React.FunctionComponent = () => (
   <Fragment>

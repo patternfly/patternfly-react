@@ -8,8 +8,8 @@ import {
   HelperText,
   HelperTextItem,
   FormHelperText
-} from '@patternfly/react-core';
-import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
+} from '@rh-felt/react-core';
+import RhUiErrorFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
 
 export const FormInvalidWithAlert: React.FunctionComponent = () => {
   type validate = 'success' | 'warning' | 'error' | 'default';

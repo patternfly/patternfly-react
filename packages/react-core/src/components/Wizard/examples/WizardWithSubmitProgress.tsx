@@ -8,9 +8,9 @@ import {
   Button,
   Wizard,
   WizardStep
-} from '@patternfly/react-core';
-import RhUiGearGroupFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-gear-group-fill-icon';
-import layout from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
+} from '@rh-felt/react-core';
+import RhUiGearGroupFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-gear-group-fill-icon';
+import layout from '@rh-felt/react-styles/css/layouts/Bullseye/bullseye';
 
 interface ValidationProgressProps {
   onClose(): void;

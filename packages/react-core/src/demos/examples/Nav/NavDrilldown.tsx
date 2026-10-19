@@ -11,8 +11,8 @@ import {
   DrilldownMenu,
   Menu,
   PageSection
-} from '@patternfly/react-core';
-import { DashboardHeader } from '@patternfly/react-core/dist/js/demos/DashboardHeader';
+} from '@rh-felt/react-core';
+import { DashboardHeader } from '@rh-felt/react-core/dist/js/demos/DashboardHeader';
 
 interface MenuHeights {
   [menuId: string]: number;

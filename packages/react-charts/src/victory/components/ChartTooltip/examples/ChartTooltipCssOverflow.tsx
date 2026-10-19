@@ -4,7 +4,7 @@ import {
   ChartLabel,
   ChartThemeColor,
   ChartVoronoiContainer
-} from '@patternfly/react-charts/victory';
+} from '@rh-felt/react-charts/victory';
 import { useEffect } from 'react';
 
 interface PetData {

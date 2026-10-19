@@ -1,5 +1,5 @@
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor } from '@patternfly/react-charts/victory';
-import { getResizeObserver } from '@patternfly/react-core';
+import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor } from '@rh-felt/react-charts/victory';
+import { getResizeObserver } from '@rh-felt/react-core';
 import { useEffect, useRef, useState } from 'react';
 import { VictoryZoomContainer } from 'victory-zoom-container';
 

@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Radio } from '@patternfly/react-core';
+import { Radio } from '@rh-felt/react-core';
 
 export const RadioDisabled: React.FunctionComponent = () => (
   <Fragment>

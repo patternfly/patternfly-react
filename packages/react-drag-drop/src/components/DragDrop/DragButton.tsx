@@ -1,7 +1,7 @@
-import { css } from '@patternfly/react-styles';
-import { Button } from '@patternfly/react-core/dist/esm/components/Button';
-import dragButtonStyles from '@patternfly/react-styles/css/components/DataList/data-list';
-import RhUiGripVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-grip-vertical-fill-icon';
+import { css } from '@rh-felt/react-styles';
+import { Button } from '@rh-felt/react-core/dist/esm/components/Button';
+import dragButtonStyles from '@rh-felt/react-styles/css/components/DataList/data-list';
+import RhUiGripVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-grip-vertical-fill-icon';
 
 export interface DragButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'size'> {
   /** Additional classes added to the drag button */

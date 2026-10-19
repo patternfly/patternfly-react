@@ -1,5 +1,5 @@
-import chart_area_Opacity from '@patternfly/react-tokens/dist/esm/chart_area_Opacity';
-import chart_global_label_Fill from '@patternfly/react-tokens/dist/esm/chart_global_label_Fill';
+import chart_area_Opacity from '@rh-felt/react-tokens/dist/esm/chart_area_Opacity';
+import chart_global_label_Fill from '@rh-felt/react-tokens/dist/esm/chart_global_label_Fill';
 import { Helpers } from 'victory-core';
 
 interface ChartInteractiveLegendInterface {

@@ -7,7 +7,7 @@ import {
   MastheadContent,
   Button,
   Brand
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 import pfIcon from '../../assets/PF-HorizontalLogo-Color.svg';
 
 export const MastheadLogoCustomComponent: React.FunctionComponent = () => (

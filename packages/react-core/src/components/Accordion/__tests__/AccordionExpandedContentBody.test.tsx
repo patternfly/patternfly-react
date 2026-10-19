@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import { AccordionExpandableContentBody } from '../AccordionExpandableContentBody';
-import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
+import styles from '@rh-felt/react-styles/css/components/Accordion/accordion';
 
 test('Renders without children', () => {
   const { asFragment } = render(<AccordionExpandableContentBody />);

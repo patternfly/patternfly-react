@@ -1,5 +1,5 @@
-import t_global_font_weight_heading_bold from '@patternfly/react-tokens/dist/esm/t_global_font_weight_heading_bold';
-import chart_voronoi_labels_Fill from '@patternfly/react-tokens/dist/esm/chart_voronoi_labels_Fill';
+import t_global_font_weight_heading_bold from '@rh-felt/react-tokens/dist/esm/t_global_font_weight_heading_bold';
+import chart_voronoi_labels_Fill from '@rh-felt/react-tokens/dist/esm/chart_voronoi_labels_Fill';
 
 /**
  * Legend tooltip styles

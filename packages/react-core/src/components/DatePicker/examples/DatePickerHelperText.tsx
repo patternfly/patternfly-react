@@ -1,4 +1,4 @@
-import { DatePicker, HelperText, HelperTextItem } from '@patternfly/react-core';
+import { DatePicker, HelperText, HelperTextItem } from '@rh-felt/react-core';
 
 export const DatePickerHelperText: React.FunctionComponent = () => (
   <DatePicker

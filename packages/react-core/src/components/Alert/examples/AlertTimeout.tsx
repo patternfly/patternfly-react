@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { Alert, AlertActionLink, AlertGroup, Button } from '@patternfly/react-core';
+import { Alert, AlertActionLink, AlertGroup, Button } from '@rh-felt/react-core';
 
 export const AlertTimeout: React.FunctionComponent = () => {
   const [alerts, setAlerts] = useState<React.ReactNode[]>([]);

@@ -11,11 +11,11 @@ import {
   ButtonVariant,
   Dropdown,
   DropdownList
-} from '@patternfly/react-core';
-import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
-import AlignLeftIcon from '@patternfly/react-icons/dist/esm/icons/align-left-icon';
-import AlignCenterIcon from '@patternfly/react-icons/dist/esm/icons/align-center-icon';
-import AlignRightIcon from '@patternfly/react-icons/dist/esm/icons/align-right-icon';
+} from '@rh-felt/react-core';
+import RhUiEllipsisVerticalFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import AlignLeftIcon from '@rh-felt/react-icons/dist/esm/icons/align-left-icon';
+import AlignCenterIcon from '@rh-felt/react-icons/dist/esm/icons/align-center-icon';
+import AlignRightIcon from '@rh-felt/react-icons/dist/esm/icons/align-right-icon';
 
 export const OverflowMenuGroupTypes: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);

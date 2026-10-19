@@ -1,4 +1,4 @@
-import { Timestamp } from '@patternfly/react-core';
+import { Timestamp } from '@rh-felt/react-core';
 
 export const TimestampDefault: React.FunctionComponent = () => (
   <>

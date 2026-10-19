@@ -16,8 +16,8 @@ import {
   ToolbarItem,
   Card,
   CardBody
-} from '@patternfly/react-core';
-import pageSectionWidthLimitMaxWidth from '@patternfly/react-tokens/dist/esm/c_page_section_m_limit_width_MaxWidth';
+} from '@rh-felt/react-core';
+import pageSectionWidthLimitMaxWidth from '@rh-felt/react-tokens/dist/esm/c_page_section_m_limit_width_MaxWidth';
 
 export const PageCenteredSection: React.FunctionComponent = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);

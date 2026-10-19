@@ -7,8 +7,8 @@ propComponents: ['TextInput', 'TextInputExpandedObj']
 ---
 
 import { useRef, useState } from 'react';
-import RhUiCalendarFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-calendar-fill-icon';
-import RhUiClockFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clock-fill-icon';
+import RhUiCalendarFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-calendar-fill-icon';
+import RhUiClockFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-clock-fill-icon';
 
 ## Examples
 

@@ -16,14 +16,14 @@ import {
   MenuToggle,
   MenuToggleElement,
   Icon
-} from '@patternfly/react-core';
-import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
-import { Chart, ChartStack, ChartBar, ChartTooltip } from '@patternfly/react-charts/victory';
-import chart_color_yellow_100 from '@patternfly/react-tokens/dist/esm/chart_color_yellow_100';
-import chart_color_yellow_300 from '@patternfly/react-tokens/dist/esm/chart_color_yellow_300';
-import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
-import chart_color_red_orange_400 from '@patternfly/react-tokens/dist/esm/chart_color_red_orange_400';
-import flex from '@patternfly/react-styles/css/utilities/Flex/flex';
+} from '@rh-felt/react-core';
+import RhUiErrorFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
+import { Chart, ChartStack, ChartBar, ChartTooltip } from '@rh-felt/react-charts/victory';
+import chart_color_yellow_100 from '@rh-felt/react-tokens/dist/esm/chart_color_yellow_100';
+import chart_color_yellow_300 from '@rh-felt/react-tokens/dist/esm/chart_color_yellow_300';
+import chart_color_orange_300 from '@rh-felt/react-tokens/dist/esm/chart_color_orange_300';
+import chart_color_red_orange_400 from '@rh-felt/react-tokens/dist/esm/chart_color_red_orange_400';
+import flex from '@rh-felt/react-styles/css/utilities/Flex/flex';
 
 export const CardUtilizationDemo3: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);

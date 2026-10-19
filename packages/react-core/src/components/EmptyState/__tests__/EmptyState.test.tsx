@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import RhUiDocumentIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-document-icon';
+import RhUiDocumentIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-document-icon';
 
 import { EmptyState, EmptyStateVariant } from '../EmptyState';
 import { EmptyStateBody } from '../EmptyStateBody';
@@ -8,7 +8,7 @@ import { EmptyStateActions } from '../EmptyStateActions';
 import { Button } from '../../Button';
 import { EmptyStateHeader } from '../EmptyStateHeader';
 import { EmptyStateFooter } from '../EmptyStateFooter';
-import styles from '@patternfly/react-styles/css/components/EmptyState/empty-state';
+import styles from '@rh-felt/react-styles/css/components/EmptyState/empty-state';
 
 describe('EmptyState', () => {
   test('Main', () => {

@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
-import { Button } from '@patternfly/react-core';
-import { Wizard as WizardDeprecated } from '@patternfly/react-core/deprecated';
+import { Button } from '@rh-felt/react-core';
+import { Wizard as WizardDeprecated } from '@rh-felt/react-core/deprecated';
 
 export const WizardInModal: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);

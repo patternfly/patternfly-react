@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { CodeEditor, Language } from '@patternfly/react-code-editor';
-import { Checkbox } from '@patternfly/react-core';
+import { CodeEditor, Language } from '@rh-felt/react-code-editor';
+import { Checkbox } from '@rh-felt/react-core';
 
 export const CodeEditorBasic: React.FunctionComponent = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);

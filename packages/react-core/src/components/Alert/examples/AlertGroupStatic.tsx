@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Alert, AlertGroup } from '@patternfly/react-core';
+import { Alert, AlertGroup } from '@rh-felt/react-core';
 
 export const AlertGroupStatic: React.FunctionComponent = () => (
   <Fragment>

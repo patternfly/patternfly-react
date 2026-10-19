@@ -1,6 +1,6 @@
 import { forwardRef, useContext, useRef } from 'react';
-import styles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/TextInputGroup/text-input-group';
+import { css } from '@rh-felt/react-styles';
 import { TextInputGroupContext } from './TextInputGroup';
 import { TextInputGroupIcon } from './TextInputGroupIcon';
 import { statusIcons } from '../../helpers';

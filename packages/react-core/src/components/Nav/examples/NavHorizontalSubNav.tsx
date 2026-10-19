@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Nav, NavItem, NavList } from '@patternfly/react-core';
+import { Nav, NavItem, NavList } from '@rh-felt/react-core';
 
 export const NavHorizontalSubNav: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState(0);

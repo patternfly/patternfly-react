@@ -1,9 +1,9 @@
-import styles from '@patternfly/react-styles/css/components/HelperText/helper-text';
-import { css } from '@patternfly/react-styles';
-import RhUiMinusIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-minus-icon';
-import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
-import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
-import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
+import styles from '@rh-felt/react-styles/css/components/HelperText/helper-text';
+import { css } from '@rh-felt/react-styles';
+import RhUiMinusIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-minus-icon';
+import RhUiWarningFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
+import RhUiCheckCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import RhUiErrorFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
 
 export enum HelperTextItemVariant {
   default = 'default',

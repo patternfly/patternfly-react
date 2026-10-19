@@ -1,7 +1,7 @@
 import { Fragment, isValidElement } from 'react';
-import styles from '@patternfly/react-styles/css/components/Form/form';
+import styles from '@rh-felt/react-styles/css/components/Form/form';
 import { ASTERISK } from '../../helpers/htmlConstants';
-import { css } from '@patternfly/react-styles';
+import { css } from '@rh-felt/react-styles';
 import { useSSRSafeId, useOUIAProps, OUIAProps } from '../../helpers';
 
 export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'>, OUIAProps {

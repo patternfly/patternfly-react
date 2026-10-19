@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
+import { Tabs, Tab, TabTitleText } from '@rh-felt/react-core';
 
 export const TabsDynamic: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = useState<number>(0);

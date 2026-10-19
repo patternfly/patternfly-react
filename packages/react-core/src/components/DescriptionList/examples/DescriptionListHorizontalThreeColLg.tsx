@@ -4,8 +4,8 @@ import {
   DescriptionListTerm,
   DescriptionListGroup,
   DescriptionListDescription
-} from '@patternfly/react-core';
-import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
+} from '@rh-felt/react-core';
+import RhUiAddCircleFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 
 export const DescriptionListHorizontalThreeColLg: React.FunctionComponent = () => (
   <DescriptionList isHorizontal columnModifier={{ lg: '3Col' }} aria-label="Three-columns horizontal on large screens">

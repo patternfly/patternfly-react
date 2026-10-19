@@ -1,5 +1,5 @@
-import styles from '@patternfly/react-styles/css/components/Compass/compass';
-import { css } from '@patternfly/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Compass/compass';
+import { css } from '@rh-felt/react-styles';
 
 /** A wrapper component to be passed as custom content for the Compass main header. This should also be wrapped
  * in a `Panel` with `PanelMain` and `PanelMainBody`.

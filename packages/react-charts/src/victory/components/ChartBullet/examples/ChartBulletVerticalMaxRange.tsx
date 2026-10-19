@@ -1,4 +1,4 @@
-import { ChartBullet, ChartThemeColor } from '@patternfly/react-charts/victory';
+import { ChartBullet, ChartThemeColor } from '@rh-felt/react-charts/victory';
 
 interface ChartData {
   name: string;

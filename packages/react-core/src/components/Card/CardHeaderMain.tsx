@@ -1,5 +1,5 @@
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Card/card';
+import { css } from '@rh-felt/react-styles';
+import styles from '@rh-felt/react-styles/css/components/Card/card';
 
 export interface CardHeaderMainProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the Card Head Main */

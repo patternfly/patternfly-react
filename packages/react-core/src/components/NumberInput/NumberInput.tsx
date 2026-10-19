@@ -1,12 +1,12 @@
-import styles from '@patternfly/react-styles/css/components/NumberInput/number-input';
-import { css } from '@patternfly/react-styles';
-import RhUiMinusIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-minus-icon';
-import RhUiAddIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-icon';
+import styles from '@rh-felt/react-styles/css/components/NumberInput/number-input';
+import { css } from '@rh-felt/react-styles';
+import RhUiMinusIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-minus-icon';
+import RhUiAddIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-add-icon';
 import { InputGroup, InputGroupItem } from '../InputGroup';
 import { Button, ButtonProps } from '../Button';
 import { KeyTypes, ValidatedOptions } from '../../helpers';
 import { TextInput } from '../TextInput';
-import cssFormControlWidthChars from '@patternfly/react-tokens/dist/esm/c_number_input_c_form_control_width_chars';
+import cssFormControlWidthChars from '@rh-felt/react-tokens/dist/esm/c_number_input_c_form_control_width_chars';
 
 export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
   /** Value of the number input */

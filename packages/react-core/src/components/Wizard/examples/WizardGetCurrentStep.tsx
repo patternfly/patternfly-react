@@ -7,7 +7,7 @@ import {
   Wizard,
   WizardStep,
   WizardStepType
-} from '@patternfly/react-core';
+} from '@rh-felt/react-core';
 
 const CurrentStepDescriptionList = ({ currentStep }: { currentStep: WizardStepType | undefined }) => (
   <DescriptionList isHorizontal isCompact aria-label={`${currentStep?.name} prop data`}>

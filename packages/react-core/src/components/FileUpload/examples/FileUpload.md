@@ -7,7 +7,7 @@ subsection: file-upload
 ---
 
 import { useState } from 'react';
-import RhUiDocumentFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-document-fill-icon';
+import RhUiDocumentFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-document-fill-icon';
 
 ## Examples
 

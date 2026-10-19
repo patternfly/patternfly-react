@@ -26,10 +26,10 @@ propComponents:
 ---
 
 import { useRef, useEffect, useState } from 'react';
-import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
-import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
-import RhUiTrashFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-trash-fill-icon';
-import styles from '@patternfly/react-styles/css/components/Form/form';
+import RhUiErrorFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
+import RhUiQuestionMarkCircleIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import RhUiTrashFillIcon from '@rh-felt/react-icons/dist/esm/icons/rh-ui-trash-fill-icon';
+import styles from '@rh-felt/react-styles/css/components/Form/form';
 
 ## Examples
 
