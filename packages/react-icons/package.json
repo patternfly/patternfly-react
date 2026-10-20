@@ -1,7 +1,7 @@
 {
   "name": "@rh-felt/react-icons",
   "version": "0.0.1-prerelease.1",
-  "description": "Felt 4 Icons as React Components",
+  "description": "Felt icons as React components",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -15,6 +15,7 @@
     "url": "https://github.com/patternfly/patternfly-react.git"
   },
   "keywords": [
+    "felt",
     "react",
     "patternfly"
   ],

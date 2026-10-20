@@ -1,7 +1,7 @@
 {
   "name": "@rh-felt/react-tokens",
   "version": "0.0.1-prerelease.1",
-  "description": "This library provides access to the design tokens of PatternFly 4 from JavaScript",
+  "description": "This library provides access to Felt design tokens from JavaScript.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -15,6 +15,7 @@
     "url": "https://github.com/patternfly/patternfly-react.git"
   },
   "keywords": [
+    "felt",
     "react",
     "patternfly"
   ],
