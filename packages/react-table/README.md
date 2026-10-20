@@ -1,6 +1,6 @@
 # @rh-felt/react-table
 
-This package provides Table PatternFly components based on [PatternFly][patternfly]
+This package provides Felt React table components.
 
 ### Installing
 
@@ -92,4 +92,4 @@ yarn test packages/react-table
 ```
 
 [patternfly]: https://github.com/patternfly/patternfly
-[docs]: https://react-staging.patternfly.org/
+[docs]: https://rh-felt-react-staging.surge.sh/

@@ -8,7 +8,10 @@
     "*.css",
     "*.scss"
   ],
-  "description": "CSS-in-JS class maps and utilities for PatternFly.",
+  "description": "CSS-in-JS class maps and utilities for Felt.",
+  "keywords": [
+    "felt"
+  ],
   "author": "Red Hat",
   "publishConfig": {
     "access": "public",

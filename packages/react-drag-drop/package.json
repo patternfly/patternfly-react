@@ -1,7 +1,7 @@
 {
   "name": "@rh-felt/react-drag-drop",
   "version": "0.0.1-prerelease.1",
-  "description": "PatternFly drag and drop solution",
+  "description": "Felt drag and drop solution",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -16,6 +16,7 @@
     "url": "https://github.com/patternfly/patternfly-react.git"
   },
   "keywords": [
+    "felt",
     "react",
     "patternfly",
     "drag-drop"

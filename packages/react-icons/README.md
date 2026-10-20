@@ -10,7 +10,7 @@ import RhMicronsCloseIcon from  '@rh-felt/react-icons/dist/esm/icons/rh-microns-
 const closeIcon = <RhMicronsCloseIcon />;
 ```
 
-For a list of the available icons please refer to the [PatternFly react docs](https://rh-felt-react-staging.patternfly.org/icons)
+For a list of the available icons please refer to the [Felt React docs](https://rh-felt-react-staging.surge.sh/icons)
 
 ## Styling icons
 

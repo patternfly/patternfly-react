@@ -23,6 +23,7 @@
     "url": "https://github.com/patternfly/patternfly-react.git"
   },
   "keywords": [
+    "felt",
     "react",
     "patternfly",
     "table"

@@ -80,4 +80,4 @@ yarn test packages/react-charts
 ```
 
 [patternfly-4]: https://github.com/patternfly/patternfly
-[docs]: https://react-staging.patternfly.org/
+[docs]: https://rh-felt-react-staging.surge.sh/

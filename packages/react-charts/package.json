@@ -1,7 +1,7 @@
 {
   "name": "@rh-felt/react-charts",
   "version": "0.0.1-prerelease.1",
-  "description": "This library provides a set of React chart components for use with the PatternFly reference implementation.",
+  "description": "This library provides a set of React chart components for Felt.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -29,6 +29,7 @@
     "url": "https://github.com/patternfly/patternfly-react.git"
   },
   "keywords": [
+    "felt",
     "react",
     "patternfly"
   ],

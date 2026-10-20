@@ -41,6 +41,7 @@
     "@patternfly/patternfly-a11y": "5.2.1"
   },
   "keywords": [
+    "felt",
     "gatsby"
   ],
   "browserslist": [
