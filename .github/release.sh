@@ -16,7 +16,13 @@ echo "Doing a release..."
 LOG=$(git log --format="%s" -1 | grep -Poe "#\d+")
 PR_NUM=${LOG:1}
 
-yarn run lerna publish prerelease --preid=prerelease --dist-tag=prerelease --yes 2>&1 | tee lerna-output.txt
+if ! (
+  set -o pipefail
+  yarn run lerna publish prerelease --preid=prerelease --dist-tag=prerelease --yes 2>&1 | tee lerna-output.txt
+); then
+  echo "Failed lerna publish"
+  exit 1
+fi
 
 # use lerna command below for dry run
 # yarn run lerna version prerelease --preid=prerelease --dist-tag=prerelease --yes --no-git-tag-version --no-push | tee lerna-output.txt
