@@ -24,7 +24,8 @@ import azureIcon from '@patternfly/react-core/src/demos/assets/FuseConnector_Ico
 import restIcon from '@patternfly/react-core/src/demos/assets/FuseConnector_Icons_REST.png';
 import { data } from '@patternfly/react-core/src/demos/CardView/examples/CardViewData.jsx';
 import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
-
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 
 - All examples set the `isManagedSidebar` prop on the Page component to have the sidebar automatically close for smaller screen widths. You can also manually control this behavior by not adding the `isManagedSidebar` prop and instead:
   1. Add an onNavToggle callback to PageHeader
