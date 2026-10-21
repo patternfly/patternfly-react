@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.7.1-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.7.0...@patternfly/react-core@6.7.1-prerelease.0) (2026-10-21)
+
+### Bug Fixes
+
+- **Tabs:** support custom link components ([#12677](https://github.com/patternfly/patternfly-react/issues/12677)) ([6cc6c56](https://github.com/patternfly/patternfly-react/commit/6cc6c561b04fa2d27949f57bc4cf879867eb5cbc))
+
 # [6.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.7.0-prerelease.7...@patternfly/react-core@6.7.0) (2026-10-15)
 
 **Note:** Version bump only for package @patternfly/react-core

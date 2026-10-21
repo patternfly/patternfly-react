@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.24...@patternfly/react-integration@6.5.0-prerelease.25) (2026-10-21)
+
+### Bug Fixes
+
+- **Tabs:** support custom link components ([#12677](https://github.com/patternfly/patternfly-react/issues/12677)) ([6cc6c56](https://github.com/patternfly/patternfly-react/commit/6cc6c561b04fa2d27949f57bc4cf879867eb5cbc))
+
 # [6.5.0-prerelease.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@6.5.0-prerelease.23...@patternfly/react-integration@6.5.0-prerelease.24) (2026-08-03)
 
 ### Bug Fixes

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.5.0-prerelease.138](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.5.0-prerelease.137...demo-app-ts@6.5.0-prerelease.138) (2026-10-21)
+
+### Bug Fixes
+
+- **Tabs:** support custom link components ([#12677](https://github.com/patternfly/patternfly-react/issues/12677)) ([6cc6c56](https://github.com/patternfly/patternfly-react/commit/6cc6c561b04fa2d27949f57bc4cf879867eb5cbc))
+
 # [6.5.0-prerelease.137](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@6.5.0-prerelease.136...demo-app-ts@6.5.0-prerelease.137) (2026-10-12)
 
 **Note:** Version bump only for package demo-app-ts
