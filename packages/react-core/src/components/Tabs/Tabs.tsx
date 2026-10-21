@@ -89,7 +89,7 @@ export interface TabsProps
   backScrollAriaLabel?: string;
   /** Aria-label for the forward scroll button */
   forwardScrollAriaLabel?: string;
-  /** Determines what tag is used around the tabs. Use "nav" to define the tabs inside a navigation region */
+  /** Determines the outer wrapper element for the Tabs container. Use "nav" to define a navigation region. To customize an individual tab's button or link, use the component property of Tab instead. */
   component?: 'div' | 'nav';
   /** Provides an accessible label for the tabs. Labels should be unique for each set of tabs that are present on a page. When component is set to nav, this prop should be defined to differentiate the tabs from other navigation regions on the page. */
   'aria-label'?: string;
@@ -242,12 +242,17 @@ class Tabs extends Component<TabsProps, TabsState> {
   handleTabClick(
     event: React.MouseEvent<HTMLElement, MouseEvent>,
     eventKey: number | string,
-    tabContentRef: React.RefObject<any>
+    tabContentRef: React.RefObject<any>,
+    isCustomComponent = false
   ) {
     const { shownKeys, initialActiveKey } = this.state;
     const { onSelect, defaultActiveKey, component, isNav } = this.props;
 
-    if (event.currentTarget instanceof HTMLAnchorElement && event.currentTarget.hasAttribute('href')) {
+    if (
+      !isCustomComponent &&
+      event.currentTarget instanceof HTMLAnchorElement &&
+      event.currentTarget.hasAttribute('href')
+    ) {
       event.preventDefault();
 
       if (canUseDOM && (component === TabsComponent.nav || isNav)) {
