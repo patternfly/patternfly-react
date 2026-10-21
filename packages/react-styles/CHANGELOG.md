@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@rh-felt/react-styles@0.0.1-prerelease.2...@rh-felt/react-styles@0.0.1-prerelease.3) (2026-10-21)
+
+### Bug Fixes
+
+- **Felt:** add styles provenance metadata and preserve publish failures ([#12684](https://github.com/patternfly/patternfly-react/issues/12684)) ([9a04a6b](https://github.com/patternfly/patternfly-react/commit/9a04a6b11c5df9a5ca03887f7476d671e80ee266))
+
 ## [0.0.1-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@rh-felt/react-styles@0.0.1-prerelease.1...@rh-felt/react-styles@0.0.1-prerelease.2) (2026-10-20)
 
 **Note:** Version bump only for package @rh-felt/react-styles
