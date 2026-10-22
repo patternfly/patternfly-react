@@ -1,0 +1,103 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "defaultBase": "felt-v1",
+  "parallel": 12,
+  "pluginsConfig": {
+    "@nx/js": {
+      "analyzeSourceFiles": false
+    }
+  },
+  "release": {
+    "projects": [
+      "@rh-felt/react-charts",
+      "@rh-felt/react-code-editor",
+      "@rh-felt/react-core",
+      "@rh-felt/react-docs",
+      "@rh-felt/react-drag-drop",
+      "@rh-felt/react-icons",
+      "@rh-felt/react-styles",
+      "@rh-felt/react-table",
+      "@rh-felt/react-templates",
+      "@rh-felt/react-tokens"
+    ],
+    "projectsRelationship": "independent",
+    "releaseTag": {
+      "pattern": "{projectName}@{version}",
+      "strictPreid": false,
+      "checkAllBranchesWhen": false
+    },
+    "version": {
+      "specifierSource": "conventional-commits",
+      "currentVersionResolver": "git-tag",
+      "preserveLocalDependencyProtocols": true,
+      "updateDependents": "always",
+      "applyPreidToDependents": true
+    },
+    "conventionalCommits": {
+      "useCommitScope": false,
+      "types": {
+        "docs": { "semverBump": "patch" },
+        "chore": { "semverBump": "patch" },
+        "refactor": { "semverBump": "patch" },
+        "perf": { "semverBump": "patch" },
+        "test": { "semverBump": "patch" },
+        "style": { "semverBump": "patch" },
+        "build": { "semverBump": "patch" },
+        "ci": { "semverBump": "patch" }
+      }
+    },
+    "changelog": {
+      "workspaceChangelog": false,
+      "projectChangelogs": true
+    },
+    "git": {
+      "commit": false,
+      "stageChanges": false,
+      "tag": false,
+      "push": false
+    }
+  },
+  "targetDefaults": {
+    "nx-release-publish": {
+      "cache": false,
+      "options": {
+        "packageRoot": ".release/packages/{projectName}",
+        "access": "public",
+        "tag": "prerelease"
+      }
+    },
+    "clean": {
+      "cache": false
+    },
+    "generate": {
+      "cache": false
+    },
+    "subpaths": {
+      "cache": false
+    },
+    "build:umd": {
+      "cache": false
+    },
+    "build:single:packages": {
+      "cache": false,
+      "dependsOn": ["^build:single:packages"]
+    },
+    "build": {
+      "cache": false,
+      "dependsOn": ["^build"]
+    },
+    "preview": {
+      "cache": false
+    },
+    "dev": {
+      "cache": false
+    },
+    "cypress:open": {
+      "cache": false
+    },
+    "test:a11y": {
+      "cache": false
+    }
+  },
+  "analytics": false
+}
