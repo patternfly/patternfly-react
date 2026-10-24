@@ -1,3 +1,4 @@
+import { forwardRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
 import { DrawerColorVariant } from './Drawer';
@@ -12,14 +13,17 @@ export interface DrawerSectionProps extends React.HTMLProps<HTMLDivElement> {
    * The `no-background` value is deprecated; use the `isPlain` prop instead.
    */
   colorVariant?: DrawerColorVariant | 'no-background' | 'default' | 'secondary';
+  /** @hide Forwarded ref */
+  innerRef?: React.Ref<HTMLDivElement>;
   /** @beta Flag indicating that the drawer section should use plain styles. */
   isPlain?: boolean;
 }
 
-export const DrawerSection: React.FunctionComponent<DrawerSectionProps> = ({
+const DrawerSectionBase: React.FunctionComponent<DrawerSectionProps> = ({
   className = '',
   children,
   colorVariant = DrawerColorVariant.default,
+  innerRef,
   isPlain = false,
   ...props
 }: DrawerSectionProps) => (
@@ -31,9 +35,13 @@ export const DrawerSection: React.FunctionComponent<DrawerSectionProps> = ({
       colorVariant === DrawerColorVariant.secondary && styles.modifiers.secondary,
       className
     )}
+    ref={innerRef}
     {...props}
   >
     {children}
   </div>
 );
+export const DrawerSection = forwardRef((props: DrawerSectionProps, ref: React.Ref<HTMLDivElement>) => (
+  <DrawerSectionBase innerRef={ref} {...props} />
+));
 DrawerSection.displayName = 'DrawerSection';
