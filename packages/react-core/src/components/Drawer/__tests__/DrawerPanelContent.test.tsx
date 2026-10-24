@@ -1,6 +1,9 @@
-import { render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { DrawerPanelContent } from '../DrawerPanelContent';
 import { Drawer } from '../Drawer';
+import { DrawerContent } from '../DrawerContent';
+import { DrawerContentBody } from '../DrawerContentBody';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 
 test(`Renders with only class ${styles.drawerPanel} by default`, () => {
@@ -217,4 +220,83 @@ test(`Renders with class ${styles.modifiers.noPlainOnGlass} when isNoPlainOnGlas
   );
 
   expect(screen.getByText('Drawer panel content')).toHaveClass(styles.modifiers.noPlainOnGlass);
+});
+
+describe('resizable onResize width', () => {
+  const panelWidth = 300;
+  let rectSpy: jest.SpyInstance;
+
+  beforeEach(() => {
+    rectSpy = jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(
+      () =>
+        ({
+          width: panelWidth,
+          height: panelWidth,
+          top: 0,
+          left: 0,
+          right: panelWidth,
+          bottom: panelWidth,
+          x: 0,
+          y: 0,
+          toJSON: () => {}
+        }) as DOMRect
+    );
+  });
+
+  afterEach(() => {
+    rectSpy.mockRestore();
+  });
+
+  const renderResizableDrawer = (onResize: jest.Mock) =>
+    render(
+      <Drawer isExpanded>
+        <DrawerContent panelContent={<DrawerPanelContent id="panel" isResizable onResize={onResize} />}>
+          <DrawerContentBody>Content</DrawerContentBody>
+        </DrawerContent>
+      </Drawer>
+    );
+
+  test('reports the resized width when Enter is pressed after an arrow key', async () => {
+    const user = userEvent.setup();
+    const onResize = jest.fn();
+    renderResizableDrawer(onResize);
+
+    act(() => screen.getByRole('separator').focus());
+    await user.keyboard('{ArrowLeft}{Enter}');
+
+    expect(onResize).toHaveBeenCalledTimes(1);
+    expect(onResize).toHaveBeenCalledWith(expect.anything(), panelWidth + 5, 'panel');
+  });
+
+  test('reports the resized width when Escape is pressed after an arrow key', async () => {
+    const user = userEvent.setup();
+    const onResize = jest.fn();
+    renderResizableDrawer(onResize);
+
+    act(() => screen.getByRole('separator').focus());
+    await user.keyboard('{ArrowLeft}{Escape}');
+
+    expect(onResize).toHaveBeenCalledWith(expect.anything(), panelWidth + 5, 'panel');
+  });
+
+  test('calls the latest onResize with the dragged width on mouseup after a rerender', () => {
+    const firstOnResize = jest.fn();
+    const latestOnResize = jest.fn();
+    const { rerender } = renderResizableDrawer(firstOnResize);
+    rerender(
+      <Drawer isExpanded>
+        <DrawerContent panelContent={<DrawerPanelContent id="panel" isResizable onResize={latestOnResize} />}>
+          <DrawerContentBody>Content</DrawerContentBody>
+        </DrawerContent>
+      </Drawer>
+    );
+
+    const separator = screen.getByRole('separator');
+    fireEvent.mouseDown(separator, { clientX: 100 });
+    fireEvent.mouseMove(document, { clientX: 90 });
+    fireEvent.mouseUp(document);
+
+    expect(firstOnResize).not.toHaveBeenCalled();
+    expect(latestOnResize).toHaveBeenCalledWith(expect.anything(), panelWidth + 10, 'panel');
+  });
 });
