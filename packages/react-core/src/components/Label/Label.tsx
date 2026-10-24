@@ -1,4 +1,4 @@
-import { createRef, Fragment, useEffect, useRef, useState } from 'react';
+import { createRef, forwardRef, Fragment, useEffect, useRef, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/Label/label';
 import labelGrpStyles from '@patternfly/react-styles/css/components/Label/label-group';
 import { Button } from '../Button';
@@ -80,6 +80,8 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
     content: React.ReactNode;
     componentRef: any;
   }) => React.ReactNode;
+  /** @hide Forwarded ref */
+  innerRef?: React.Ref<any>;
 }
 
 const colorStyles = {
@@ -102,7 +104,7 @@ const statusIcons = {
   custom: <BellIcon />
 };
 
-export const Label: React.FunctionComponent<LabelProps> = ({
+const LabelBase: React.FunctionComponent<LabelProps> = ({
   children,
   className = '',
   color = 'grey',
@@ -125,6 +127,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   closeBtnProps,
   href,
   render,
+  innerRef,
   ...props
 }: LabelProps) => {
   const [isEditableActive, setIsEditableActive] = useState<boolean>(false);
@@ -343,6 +346,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   return (
     <LabelComponent
       {...props}
+      ref={innerRef}
       className={css(
         styles.label,
         isClickableDisabled && styles.modifiers.disabled,
@@ -377,4 +381,5 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     </LabelComponent>
   );
 };
+export const Label = forwardRef((props: LabelProps, ref: React.Ref<any>) => <LabelBase innerRef={ref} {...props} />);
 Label.displayName = 'Label';

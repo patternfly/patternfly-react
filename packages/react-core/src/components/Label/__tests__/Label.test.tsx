@@ -1,3 +1,4 @@
+import { createRef } from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
@@ -235,5 +236,27 @@ describe('Label', () => {
     const closeButton = screen.getByLabelText('Close Click me');
 
     expect(closeButton).toBeDisabled();
+  });
+
+  test('forwards ref to the root element', () => {
+    const ref = createRef<HTMLSpanElement>();
+    render(
+      <Label ref={ref} data-testid="label">
+        Something
+      </Label>
+    );
+
+    expect(ref.current).toBe(screen.getByTestId('label'));
+  });
+
+  test('forwards ref to the root button element for overflow labels', () => {
+    const ref = createRef<HTMLButtonElement>();
+    render(
+      <Label ref={ref} variant="overflow" onClick={() => {}}>
+        Overflow
+      </Label>
+    );
+
+    expect(ref.current).toBe(screen.getByRole('button', { name: 'Overflow' }));
   });
 });
