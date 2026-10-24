@@ -94,30 +94,14 @@ test('Renders footer without expanded class and with inert when isFooterExpanded
   expect(footerElement).toHaveAttribute('inert');
 });
 
+test(`Renders with ${styles.modifiers.overlay} class when isDockOverlay is true`, () => {
+  render(<Compass dock={<div>Dock content</div>} isDockOverlay />);
+  expect(screen.getByText('Dock content').parentElement).toHaveClass(styles.modifiers.overlay);
+});
+
 test('Renders with drawer when drawerContent is provided', () => {
   render(<Compass drawerContent={<div>Drawer content</div>} />);
   expect(screen.getByText('Drawer content')).toBeVisible();
-});
-
-test('Renders with light background image when backgroundSrcLight is provided', () => {
-  const backgroundSrc = 'light-bg.jpg';
-  render(<Compass backgroundSrcLight={backgroundSrc} data-testid="compass" />);
-  expect(screen.getByTestId('compass')).toHaveStyle(`--pf-v6-c-compass--BackgroundImage--light: url(${backgroundSrc})`);
-});
-
-test('Renders with dark background image when backgroundSrcDark is provided', () => {
-  const backgroundSrc = 'dark-bg.jpg';
-  render(<Compass backgroundSrcDark={backgroundSrc} data-testid="compass" />);
-  expect(screen.getByTestId('compass')).toHaveStyle(`--pf-v6-c-compass--BackgroundImage--dark: url(${backgroundSrc})`);
-});
-
-test('Renders with both light and dark background images when both are provided', () => {
-  const lightSrc = 'light-bg.jpg';
-  const darkSrc = 'dark-bg.jpg';
-  render(<Compass backgroundSrcLight={lightSrc} backgroundSrcDark={darkSrc} data-testid="compass" />);
-  const compassElement = screen.getByTestId('compass');
-  expect(compassElement).toHaveStyle(`--pf-v6-c-compass--BackgroundImage--light: url(${lightSrc})`);
-  expect(compassElement).toHaveStyle(`--pf-v6-c-compass--BackgroundImage--dark: url(${darkSrc})`);
 });
 
 test('Renders with additional props spread to the component', () => {
@@ -171,12 +155,32 @@ test('Matches the snapshot with drawer', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-test(`Renders with ${styles.modifiers.dock} class when dock is passed`, () => {
+test(`Renders with ${styles.modifiers.docked} class when dock is passed`, () => {
   render(<Compass dock={<div>Dock content</div>} data-testid="compass" />);
-  expect(screen.getByTestId('compass')).toHaveClass(styles.modifiers.dock);
+  expect(screen.getByTestId('compass')).toHaveClass(styles.modifiers.docked);
 });
 
-test(`Does not render with ${styles.modifiers.dock} class when dock is not passed`, () => {
+test(`Does not render with ${styles.modifiers.docked} class when dock is not passed`, () => {
   render(<Compass data-testid="compass" />);
-  expect(screen.getByTestId('compass')).not.toHaveClass(styles.modifiers.dock);
+  expect(screen.getByTestId('compass')).not.toHaveClass(styles.modifiers.docked);
+});
+
+test('Does not render masthead content when dock is not passed', () => {
+  render(<Compass masthead="Masthead content" />);
+  expect(screen.queryByText('Masthead content')).not.toBeInTheDocument();
+});
+
+test('Renders masthead content when dock is passed', () => {
+  render(<Compass masthead={<div>Masthead content</div>} dock={<div>Dock content</div>} />);
+  expect(screen.getByText('Masthead content')).toBeVisible();
+});
+
+test(`Renders dock with ${styles.modifiers.expanded} class when isDockExpanded is true`, () => {
+  render(<Compass dock="Dock content" isDockExpanded />);
+  expect(screen.getByText('Dock content')).toHaveClass(styles.modifiers.expanded);
+});
+
+test(`Renders dock without ${styles.modifiers.expanded} class when isDockExpanded is false`, () => {
+  render(<Compass dock="Dock content" isDockExpanded={false} />);
+  expect(screen.getByText('Dock content')).not.toHaveClass(styles.modifiers.expanded);
 });

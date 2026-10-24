@@ -37,4 +37,72 @@ describe('ToolbarItem', () => {
       });
     });
   });
+
+  const bps = ['default', 'md', 'lg', 'xl', '2xl'] as const;
+  describe.each(bps)(`ToolbarItem visibilityAtHeight`, (bp) => {
+    it(`Applies correct visible class at ${bp}`, () => {
+      render(
+        <ToolbarItem data-testid="toolbaritem" visibilityAtHeight={{ [bp]: 'visible' }}>
+          Test
+        </ToolbarItem>
+      );
+
+      if (bp !== 'default') {
+        expect(screen.getByTestId('toolbaritem')).toHaveClass(`pf-m-visible-on-${bp}-height`);
+      }
+    });
+
+    it(`Applies correct hidden class at ${bp}`, () => {
+      render(
+        <ToolbarItem data-testid="toolbaritem" visibilityAtHeight={{ [bp]: 'hidden' }}>
+          Test
+        </ToolbarItem>
+      );
+
+      const expectedClass = bp === 'default' ? 'pf-m-hidden' : `pf-m-hidden-on-${bp}-height`;
+      expect(screen.getByTestId('toolbaritem')).toHaveClass(expectedClass);
+    });
+  });
+
+  describe('ToolbarItem flexGrow', () => {
+    const bps = ['default', 'sm', 'md', 'lg', 'xl', '2xl'];
+
+    describe.each(bps)(`flexGrow at various breakpoints`, (bp) => {
+      it(`should render with pf-m-flex-grow when flexGrow is set at ${bp}`, () => {
+        render(
+          <ToolbarItem data-testid="toolbaritem" flexGrow={{ [bp]: 'flexGrow' }}>
+            Test
+          </ToolbarItem>
+        );
+        const bpFlexGrowClass = bp === 'default' ? 'pf-m-flex-grow' : `pf-m-flex-grow-on-${bp}`;
+        expect(screen.getByTestId('toolbaritem')).toHaveClass(bpFlexGrowClass);
+      });
+    });
+  });
+
+  describe('ToolbarItem widths', () => {
+    it('should apply width CSS variable when widths prop is set', () => {
+      render(
+        <ToolbarItem data-testid="toolbaritem" widths={{ default: '200px' }}>
+          Test
+        </ToolbarItem>
+      );
+      const item = screen.getByTestId('toolbaritem');
+      expect(item).toHaveStyle('--pf-v6-c-toolbar__item--Width: 200px');
+    });
+
+    it('should apply responsive width CSS variables when widths prop has breakpoint values', () => {
+      render(
+        <ToolbarItem data-testid="toolbaritem" widths={{ default: '100px', md: '200px', xl: '300px' }}>
+          Test
+        </ToolbarItem>
+      );
+      const item = screen.getByTestId('toolbaritem');
+      expect(item).toHaveStyle({
+        '--pf-v6-c-toolbar__item--Width': '100px',
+        '--pf-v6-c-toolbar__item--Width-on-md': '200px',
+        '--pf-v6-c-toolbar__item--Width-on-xl': '300px'
+      });
+    });
+  });
 });

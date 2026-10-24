@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Menu, MenuContent, MenuGroup, MenuList, MenuItem, MenuItemAction } from '@patternfly/react-core';
-import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
-import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
+import RhUiClipboardFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clipboard-fill-icon';
+import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
+import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 
 export const MenuWithActions: React.FunctionComponent = () => {
   const [selectedItems, setSelectedItems] = useState<number[]>([0, 2, 3]);
@@ -31,7 +31,7 @@ export const MenuWithActions: React.FunctionComponent = () => {
               isSelected={selectedItems.indexOf(0) !== -1}
               actions={
                 <MenuItemAction
-                  icon={<CodeBranchIcon />}
+                  icon={<RhUiBranchFillIcon />}
                   actionId="code"
                   // eslint-disable-next-line no-console
                   onClick={() => console.log('clicked on code icon')}
@@ -46,7 +46,7 @@ export const MenuWithActions: React.FunctionComponent = () => {
             <MenuItem
               isDisabled
               isSelected={selectedItems.indexOf(1) !== -1}
-              actions={<MenuItemAction icon={<BellIcon />} actionId="alert" aria-label="Alert" />}
+              actions={<MenuItemAction icon={<RhUiNotificationFillIcon />} actionId="alert" aria-label="Alert" />}
               description="This is a description"
               itemId={1}
             >
@@ -54,14 +54,14 @@ export const MenuWithActions: React.FunctionComponent = () => {
             </MenuItem>
             <MenuItem
               isSelected={selectedItems.indexOf(2) !== -1}
-              actions={<MenuItemAction icon={<ClipboardIcon />} actionId="copy" aria-label="Copy" />}
+              actions={<MenuItemAction icon={<RhUiClipboardFillIcon />} actionId="copy" aria-label="Copy" />}
               itemId={2}
             >
               Item 3
             </MenuItem>
             <MenuItem
               isSelected={selectedItems.indexOf(3) !== -1}
-              actions={<MenuItemAction icon={<BarsIcon />} actionId="expand" aria-label="Expand" />}
+              actions={<MenuItemAction icon={<RhUiMenuBarsIcon />} actionId="expand" aria-label="Expand" />}
               description="This is a description"
               itemId={3}
             >

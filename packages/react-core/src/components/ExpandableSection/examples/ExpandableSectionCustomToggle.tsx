@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ExpandableSection, Badge, Stack, StackItem } from '@patternfly/react-core';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 
 export const ExpandableSectionCustomToggle: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -18,7 +18,7 @@ export const ExpandableSectionCustomToggle: React.FunctionComponent = () => {
           toggleContent={
             <div>
               <span>You can also use icons </span>
-              <CheckCircleIcon />
+              <RhUiCheckCircleFillIcon />
               <span> or badges </span>
               <Badge isRead={true}>4</Badge>
               <span> !</span>

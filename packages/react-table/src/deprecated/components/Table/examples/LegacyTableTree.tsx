@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { treeRow, IRow, OnTreeRowCollapse, OnCheckChange, OnToggleRowDetails } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table/deprecated';
 import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
-import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
-import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
+import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
+import RhUiFolderOpenFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-open-fill-icon';
 
 interface RepositoriesTreeNode {
   name: string;
@@ -126,7 +126,7 @@ export const LegacyTableTree: React.FunctionComponent = () => {
     const isChecked = isNodeChecked(node);
     let icon = <LeafIcon />;
     if (node.children) {
-      icon = isExpanded ? <FolderOpenIcon /> : <FolderIcon />;
+      icon = isExpanded ? <RhUiFolderOpenFillIcon /> : <RhUiFolderFillIcon />;
     }
     flattenedNodes.push(node);
 

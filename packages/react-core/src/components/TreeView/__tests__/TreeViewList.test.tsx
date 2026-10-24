@@ -22,7 +22,7 @@ test(`Renders with role="group" when isNested is true`, () => {
   expect(screen.getByRole('group')).toHaveTextContent('Content');
 });
 
-test(`Spreads additional props`, () => {
+test('Renders with id when id is passed', () => {
   render(<TreeViewList id="test-id">Content</TreeViewList>);
 
   expect(screen.getByRole('tree')).toHaveAttribute('id', 'test-id');

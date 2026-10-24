@@ -1,20 +1,20 @@
 import { useState } from 'react';
 import { Popover, Button } from '@patternfly/react-core';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
-import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
+import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
+import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
+import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
 
 export const AlertPopover: React.FunctionComponent = () => {
   const [alertSeverityVariant, setAlertSeverityVariant] = useState('default');
 
   const alertIcons = {
-    custom: <BellIcon />,
-    info: <InfoCircleIcon />,
-    success: <CheckCircleIcon />,
-    warning: <ExclamationTriangleIcon />,
-    danger: <ExclamationCircleIcon />
+    custom: <RhUiNotificationFillIcon />,
+    info: <RhUiInformationFillIcon />,
+    success: <RhUiCheckCircleFillIcon />,
+    warning: <RhUiWarningFillIcon />,
+    danger: <RhUiErrorFillIcon />
   };
 
   return (

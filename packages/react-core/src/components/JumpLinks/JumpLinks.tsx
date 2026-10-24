@@ -2,12 +2,13 @@ import { Children, cloneElement, Fragment, useCallback, useEffect, useRef, useSt
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/JumpLinks/jump-links';
 import sidebarStyles from '@patternfly/react-styles/css/components/Sidebar/sidebar';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import cssToggleDisplayVar from '@patternfly/react-tokens/dist/esm/c_jump_links__toggle_Display';
 import { Button } from '../Button';
 import { JumpLinksItem, JumpLinksItemProps } from './JumpLinksItem';
 import { JumpLinksList } from './JumpLinksList';
-import { canUseDOM, formatBreakpointMods, getUniqueId } from '../../helpers/util';
+import { canUseDOM, formatBreakpointMods } from '../../helpers/util';
+import { useSSRSafeId } from '../../helpers';
 
 export interface JumpLinksProps extends Omit<React.HTMLProps<HTMLElement>, 'label'> {
   /** Whether to center children. */
@@ -99,6 +100,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   labelId,
   ...props
 }: JumpLinksProps) => {
+  const generatedId = useSSRSafeId();
   const hasScrollSpy = Boolean(scrollableRef || scrollableSelector);
   const [scrollItems, setScrollItems] = useState(hasScrollSpy ? getScrollItems(children, []) : []);
   const [activeIndex, setActiveIndex] = useState(activeIndexProp);
@@ -140,6 +142,10 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
       return;
     }
     const scrollPosition = Math.ceil(scrollableElement.scrollTop + offset);
+    // Take into account the last section not having enough content to trigger a scroll position; without
+    // checking if at the bottom of the scroll container, the last JumpLinksItem never becomes "active".
+    const isAtBottom =
+      Math.ceil(scrollableElement.scrollTop + scrollableElement.clientHeight) >= scrollableElement.scrollHeight;
     window.requestAnimationFrame(() => {
       let newScrollItems = scrollItems;
       // Items might have rendered after this component or offsetTop values may need
@@ -149,6 +155,11 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
       if (requiresRefresh) {
         newScrollItems = getScrollItems(children, []);
         setScrollItems(newScrollItems);
+      }
+
+      if (isAtBottom) {
+        const lastIndex = newScrollItems.length - 1;
+        return setActiveIndex(lastIndex);
       }
 
       const scrollElements = newScrollItems
@@ -244,7 +255,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
           return child;
         });
 
-  const id = labelId ?? getUniqueId();
+  const id = labelId ?? generatedId;
   const hasAriaLabelledBy = expandable || (label && alwaysShowLabel);
   const computedAriaLabel = hasAriaLabelledBy ? null : ariaLabel;
   const computedAriaLabelledBy = hasAriaLabelledBy ? id : null;
@@ -275,7 +286,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
                 aria-expanded={isExpanded}
                 icon={
                   <span className={styles.jumpLinksToggleIcon}>
-                    <AngleRightIcon />
+                    <RhMicronsCaretDownIcon />
                   </span>
                 }
                 id={id}

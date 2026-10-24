@@ -6,12 +6,12 @@ propComponents: ['Popover']
 ---
 
 import { useRef, useState } from 'react';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
-import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
-import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
+import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
+import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
+import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
+import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
+import RhUiAttentionBellFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
 
 ## Examples
 
@@ -25,7 +25,11 @@ By default, the `appendTo` prop of the popover will append to the document body 
 
 ### Hoverable
 
-```ts file="./PopoverHover.tsx"
+Pass the `triggerAction="hover"` property to make a `<Popover>` that is triggered via hover and focus rather than on click. When using a hoverable Popover, you **must not** include any interactive or semantic content (e.g. buttons, links, headings, lists, etc), as focus is not intended to enter a hoverable `<Popover>`. Including such content may cause an inaccessible UI for users who are not able to reach the content when navigating via assistive tech.
+
+It is instead recommended to use our [tooltip component](/components/tooltip).
+
+```ts isDeprecated file="./PopoverHover.tsx"
 
 ```
 

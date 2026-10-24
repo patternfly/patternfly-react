@@ -4,6 +4,7 @@ import styles from '@patternfly/react-styles/css/components/Table/table';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
 import { TableContext } from './Table';
+import { IS_INERT } from './utils/inert';
 
 export interface TrProps extends Omit<React.HTMLProps<HTMLTableRowElement>, 'onResize'>, OUIAProps {
   /** Content rendered inside the <tr> row */
@@ -115,7 +116,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
         {...(isClickable && { tabIndex: 0 })}
         aria-label={ariaLabel}
         ref={innerRef}
-        {...(hasAnimations && rowIsHidden && { inert: '' })}
+        {...(hasAnimations && rowIsHidden && { inert: IS_INERT })}
         {...(onRowClick && { onClick: onRowClick, onKeyDown })}
         {...ouiaProps}
         {...props}

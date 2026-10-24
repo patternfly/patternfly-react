@@ -1,7 +1,7 @@
 import { Button, Flex } from '@patternfly/react-core';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
-import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
-import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
+import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
 
 export const ButtonDisabled: React.FunctionComponent = () => (
   <>
@@ -25,7 +25,7 @@ export const ButtonDisabled: React.FunctionComponent = () => (
     </Flex>
     <br />
     <Flex columnGap={{ default: 'columnGapSm' }}>
-      <Button isDisabled variant="link" icon={<PlusCircleIcon />}>
+      <Button isDisabled variant="link" icon={<RhUiAddCircleFillIcon />}>
         Link
       </Button>
       <Button isDisabled variant="link" isInline>
@@ -34,14 +34,14 @@ export const ButtonDisabled: React.FunctionComponent = () => (
       <Button variant="link" isDanger isDisabled>
         Danger link
       </Button>
-      <Button isDisabled variant="plain" aria-label="Action" icon={<TimesIcon />} />
+      <Button isDisabled variant="plain" aria-label="Action" icon={<RhMicronsCloseIcon />} />
     </Flex>
     <br />
     <Flex columnGap={{ default: 'columnGapSm' }}>
       <Button isDisabled variant="control">
         Control
       </Button>
-      <Button isDisabled variant="control" aria-label="Copy" icon={<CopyIcon />} />
+      <Button isDisabled variant="control" aria-label="Copy" icon={<RhUiCopyFillIcon />} />
     </Flex>
   </>
 );

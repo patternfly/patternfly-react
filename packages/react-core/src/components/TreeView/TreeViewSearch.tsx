@@ -1,7 +1,7 @@
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/TreeView/tree-view';
 import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 
 /** Renders a search input for the tree view. This sub-component should be passed into the
  * tree view component's toolbar property.
@@ -33,7 +33,7 @@ export const TreeViewSearch: React.FunctionComponent<TreeViewSearchProps> = ({
       <input onChange={onSearch} id={id} name={name} aria-label={ariaLabel} type="search" {...props} />
       <div className={css(formStyles.formControlUtilities)}>
         <div className={css(formStyles.formControlIcon)}>
-          <SearchIcon />
+          <RhMicronsSearchIcon />
         </div>
       </div>
     </div>

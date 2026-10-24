@@ -8,10 +8,10 @@ import {
 } from '@patternfly/react-core';
 import { DragDropContainer, DraggableObject, Droppable as NewDroppable } from '@patternfly/react-drag-drop';
 
-import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
-import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-left-icon';
+import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
+import RhMicronsDoubleCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-right-icon';
 
 export const DragDropContainerDualListSelector: React.FunctionComponent = () => {
   const [ignoreNextOptionSelect, setIgnoreNextOptionSelect] = useState(false);
@@ -149,28 +149,28 @@ export const DragDropContainerDualListSelector: React.FunctionComponent = () => 
             onClick={() => moveSelected(true)}
             aria-label="Add selected"
           >
-            <AngleRightIcon />
+            <RhMicronsCaretRightIcon />
           </DualListSelectorControl>
           <DualListSelectorControl
             isDisabled={availableOptions.length === 0}
             onClick={() => moveAll(true)}
             aria-label="Add all"
           >
-            <AngleDoubleRightIcon />
+            <RhMicronsDoubleCaretRightIcon />
           </DualListSelectorControl>
           <DualListSelectorControl
             isDisabled={chosenOptions.length === 0}
             onClick={() => moveAll(false)}
             aria-label="Remove all"
           >
-            <AngleDoubleLeftIcon />
+            <RhMicronsDoubleCaretLeftIcon />
           </DualListSelectorControl>
           <DualListSelectorControl
             onClick={() => moveSelected(false)}
             isDisabled={!chosenOptions.some((option) => option.props.isSelected)}
             aria-label="Remove selected"
           >
-            <AngleLeftIcon />
+            <RhMicronsCaretLeftIcon />
           </DualListSelectorControl>
         </DualListSelectorControlsWrapper>
         <DualListSelectorPane

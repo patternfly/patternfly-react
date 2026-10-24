@@ -12,10 +12,11 @@ import {
   ToolbarGroup,
   ToolbarItem,
   Label,
+  LabelStatus,
   PaginationVariant
 } from '@patternfly/react-core';
 import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
 import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 
@@ -72,7 +73,7 @@ export const TableCompact: React.FunctionComponent = () => {
             aria-label="Select Input"
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
               <MenuToggle
-                icon={<FilterIcon />}
+                icon={<RhUiFilterFillIcon />}
                 ref={toggleRef}
                 onClick={() => setIsSelectOpen(!isSelectOpen)}
                 isExpanded={isSelectOpen}
@@ -113,13 +114,13 @@ export const TableCompact: React.FunctionComponent = () => {
   const renderLabel = (labelText: string) => {
     switch (labelText) {
       case 'Running':
-        return <Label color="green">{labelText}</Label>;
+        return <Label status={LabelStatus.success}>{labelText}</Label>;
       case 'Stopped':
-        return <Label color="orange">{labelText}</Label>;
-      case 'Needs Maintenance':
-        return <Label color="blue">{labelText}</Label>;
+        return <Label status={LabelStatus.warning}>{labelText}</Label>;
+      case 'Needs maintenance':
+        return <Label status={LabelStatus.info}>{labelText}</Label>;
       case 'Down':
-        return <Label color="red">{labelText}</Label>;
+        return <Label status={LabelStatus.danger}>{labelText}</Label>;
       default:
         return <></>;
     }

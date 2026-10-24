@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
-import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
-import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
+import RhUiFolderFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-fill-icon';
+import RhUiFolderOpenFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-folder-open-fill-icon';
 
 export const TreeViewWithIcons: React.FunctionComponent = () => {
   const [activeItems, setActiveItems] = useState<TreeViewDataItem[]>();
@@ -78,8 +78,8 @@ export const TreeViewWithIcons: React.FunctionComponent = () => {
       data={options}
       activeItems={activeItems}
       onSelect={onSelect}
-      icon={<FolderIcon />}
-      expandedIcon={<FolderOpenIcon />}
+      icon={<RhUiFolderFillIcon />}
+      expandedIcon={<RhUiFolderOpenFillIcon />}
     />
   );
 };

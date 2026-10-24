@@ -3,12 +3,12 @@ import { css } from '@patternfly/react-styles';
 import { Button, ButtonVariant } from '../Button';
 import { Badge } from '../Badge';
 import { Icon } from '../Icon';
-import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
-import AngleUpIcon from '@patternfly/react-icons/dist/esm/icons/angle-up-icon';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
-import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
+import RhMicronsCaretUpIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-up-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
+import RhMicronsArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-arrow-right-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
+import RhMicronsCaretDownFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-fill-icon';
 import { AdvancedSearchMenu } from './AdvancedSearchMenu';
 import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities } from '../TextInputGroup';
 import { InputGroup, InputGroupItem } from '../InputGroup';
@@ -16,6 +16,7 @@ import { Popper } from '../../helpers';
 import { useHasAnimations } from '../../helpers';
 import textInputGroupStyles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
 import inputGroupStyles from '@patternfly/react-styles/css/components/InputGroup/input-group';
+import { IS_INERT } from '../../helpers/inert';
 
 /** Properties for adding search attributes to an advanced search input. These properties must
  * be passed in as an object within an array to the search input component's attribute property.
@@ -308,7 +309,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     <TextInputGroup isDisabled={isDisabled} {...searchInputProps}>
       <TextInputGroupMain
         hint={hint}
-        icon={<SearchIcon />}
+        icon={<RhMicronsSearchIcon />}
         innerRef={searchInputInputRef}
         value={searchValue}
         placeholder={placeholder}
@@ -333,14 +334,14 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
                 aria-label={previousNavigationButtonAriaLabel}
                 isDisabled={isDisabled || isPreviousNavigationButtonDisabled}
                 onClick={onPreviousClick}
-                icon={<AngleUpIcon />}
+                icon={<RhMicronsCaretUpIcon />}
               />
               <Button
                 variant={ButtonVariant.plain}
                 aria-label={nextNavigationButtonAriaLabel}
                 isDisabled={isDisabled || isNextNavigationButtonDisabled}
                 onClick={onNextClick}
-                icon={<AngleDownIcon />}
+                icon={<RhMicronsCaretDownIcon />}
               />
             </div>
           )}
@@ -350,7 +351,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
               isDisabled={isDisabled}
               aria-label={resetButtonLabel}
               onClick={onClearInput}
-              icon={<TimesIcon />}
+              icon={<RhMicronsCloseIcon />}
             />
           )}
         </TextInputGroupUtilities>
@@ -363,7 +364,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
       variant={ButtonVariant.plain}
       aria-label={toggleAriaLabel}
       aria-expanded={isExpanded}
-      icon={<SearchIcon />}
+      icon={<RhMicronsSearchIcon />}
       onClick={onExpandHandler}
       ref={searchInputExpandableToggleRef}
     />
@@ -374,7 +375,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
       variant={ButtonVariant.plain}
       aria-label={toggleAriaLabel}
       aria-expanded={isExpanded}
-      icon={<TimesIcon />}
+      icon={<RhMicronsCloseIcon />}
       onClick={onExpandHandler}
     />
   );
@@ -384,7 +385,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
       variant={ButtonVariant.plain}
       aria-label={toggleAriaLabel}
       aria-expanded={isExpanded}
-      icon={isExpanded ? <TimesIcon /> : <SearchIcon />}
+      icon={isExpanded ? <RhMicronsCloseIcon /> : <RhMicronsSearchIcon />}
       onClick={onExpandHandler}
       ref={searchInputExpandableToggleRef}
     />
@@ -404,14 +405,14 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
             className={inputGroupStyles.modifiers.searchExpand}
             isPlain
             onTransitionEnd={onTransitionEnd}
-            {...(isExpanded && { inert: '' })}
+            {...(isExpanded && { inert: IS_INERT })}
           >
             {expandToggleButton}
           </InputGroupItem>
           <InputGroupItem
             className={inputGroupStyles.modifiers.searchAction}
             isPlain
-            {...(!isExpanded && { inert: '' })}
+            {...(!isExpanded && { inert: IS_INERT })}
           >
             {collapseToggleButton}
           </InputGroupItem>
@@ -426,7 +427,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
         {...(!hasAnimations && { isFill: true })}
         {...(hasAnimations && { className: inputGroupStyles.modifiers.searchInput })}
         {...(!isExpanded && {
-          inert: ''
+          inert: IS_INERT
         })}
       >
         {buildTextInputGroup()}
@@ -451,7 +452,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
         {...(expandableInput &&
           hasAnimations &&
           !isExpanded && {
-            inert: ''
+            inert: IS_INERT
           })}
       >
         {buildTextInputGroup()}
@@ -465,7 +466,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
             onClick={onToggle}
             isDisabled={isDisabled}
             aria-expanded={isSearchMenuOpen}
-            icon={<CaretDownIcon />}
+            icon={<RhMicronsCaretDownFillIcon />}
           />
         </InputGroupItem>
       )}
@@ -479,7 +480,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
             isDisabled={isDisabled}
             icon={
               <Icon shouldMirrorRTL>
-                <ArrowRightIcon />
+                <RhMicronsArrowRightIcon />
               </Icon>
             }
           />

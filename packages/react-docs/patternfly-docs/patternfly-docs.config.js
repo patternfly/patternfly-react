@@ -12,7 +12,6 @@ module.exports = {
     { section: 'components' },
     { section: 'patterns' },
     { section: 'foundations-and-styles' },
-    { section: 'AI' },
     { section: 'developer-guides' }
   ],
   topNavItems: [{ text: 'Icons', path: '/icons' }],

@@ -2,7 +2,7 @@
 id: Content
 section: components
 cssPrefix: pf-v6-c-content
-propComponents: ['Content']
+propComponents: ['Content', 'ContentVariants']
 ---
 
 The `<Content>` component allows you to establish a block of HTML content and apply simple, built-in styling. `<Content>` can be used for any element supported by the `component` property (including `h1` through `h6`, `hr`, `p`, `a`, `small`, `blockquote`, and `pre`).

@@ -17,7 +17,7 @@ import {
   MenuToggleElement,
   Icon
 } from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
 import { Chart, ChartStack, ChartBar, ChartTooltip } from '@patternfly/react-charts/victory';
 import chart_color_yellow_100 from '@patternfly/react-tokens/dist/esm/chart_color_yellow_100';
 import chart_color_yellow_300 from '@patternfly/react-tokens/dist/esm/chart_color_yellow_300';
@@ -80,7 +80,7 @@ export const CardUtilizationDemo3: React.FunctionComponent = () => {
                 </FlexItem>
                 <Flex>
                   <Icon status="danger">
-                    <ExclamationCircleIcon />
+                    <RhUiErrorFillIcon />
                   </Icon>
                   <a href="#">25 incidents detected</a>
                 </Flex>

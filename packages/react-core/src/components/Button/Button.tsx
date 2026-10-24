@@ -4,9 +4,9 @@ import { css } from '@patternfly/react-styles';
 import { Spinner, spinnerSize } from '../Spinner';
 import { useOUIAProps, OUIAProps } from '../../helpers/OUIA/ouia';
 import { Badge } from '../Badge';
-import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
-import OutlinedStarIcon from '@patternfly/react-icons/dist/esm/icons/outlined-star-icon';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import RhUiStarFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-star-fill-icon';
+import RhUiStarIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-star-icon';
+import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
 import { hamburgerIcon } from './hamburgerIcon';
 
 export enum ButtonVariant {
@@ -99,7 +99,7 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   tabIndex?: number;
   /** Adds danger styling to secondary or link button variants */
   isDanger?: boolean;
-  /** Flag indicating whether content the button controls is expanded or not. Required when isHamburger is true. */
+  /** Flag indicating whether content the button controls is expanded or not. Required when isHamburger is true. Applies additional expanded styling when isDocked is true. */
   isExpanded?: boolean;
   /** Flag indicating the button is a settings button. This will override the icon property. */
   isSettings?: boolean;
@@ -109,6 +109,8 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   hamburgerVariant?: 'expand' | 'collapse';
   /** @beta Flag indicating the button is a circle button. Intended for buttons that only contain an icon.. */
   isCircle?: boolean;
+  /** @beta Flag indicating the button is a docked variant button. For use in docked navigation. */
+  isDocked?: boolean;
   /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Adds count number to button */
@@ -134,6 +136,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   isHamburger,
   hamburgerVariant,
   isCircle,
+  isDocked = false,
   spinnerAriaValueText,
   spinnerAriaLabelledBy,
   spinnerAriaLabel,
@@ -205,17 +208,17 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
       iconContent = (
         <>
           <span className={css('pf-v6-c-button__icon-favorite')}>
-            <OutlinedStarIcon />
+            <RhUiStarIcon />
           </span>
           <span className={css('pf-v6-c-button__icon-favorited')}>
-            <StarIcon />
+            <RhUiStarFillIcon />
           </span>
         </>
       );
     }
 
     if (isSettings) {
-      iconContent = <CogIcon />;
+      iconContent = <RhUiSettingsFillIcon />;
     }
     if (isHamburger) {
       iconContent = hamburgerIcon;
@@ -265,6 +268,8 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
         size === ButtonSize.sm && styles.modifiers.small,
         size === ButtonSize.lg && styles.modifiers.displayLg,
         isCircle && styles.modifiers.circle,
+        isDocked && styles.modifiers.docked,
+        isDocked && isExpanded && styles.modifiers.expanded,
         className
       )}
       disabled={isButtonElement ? isDisabled : null}

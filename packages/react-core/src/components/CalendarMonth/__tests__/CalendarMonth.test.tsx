@@ -64,3 +64,23 @@ test('InlineProps render correct wrapper component and attributes', () => {
   const title = screen.getByText('Title');
   expect(title).toBeVisible();
 });
+
+test('Renders with custom ouiaId', () => {
+  const { container } = render(<CalendarMonth date={new Date(2024, 0, 15)} ouiaId="test-id" />);
+  expect(container.firstChild).toHaveAttribute('data-ouia-component-id', 'test-id');
+});
+
+test('Renders with expected ouia component type', () => {
+  const { container } = render(<CalendarMonth date={new Date(2024, 0, 15)} ouiaId="test-id" />);
+  expect(container.firstChild).toHaveAttribute('data-ouia-component-type', 'PF6/CalendarMonth');
+});
+
+test('Renders with ouiaSafe defaulting to true', () => {
+  const { container } = render(<CalendarMonth date={new Date(2024, 0, 15)} ouiaId="test-id" />);
+  expect(container.firstChild).toHaveAttribute('data-ouia-safe', 'true');
+});
+
+test('Renders with ouiaSafe=false when specified', () => {
+  const { container } = render(<CalendarMonth date={new Date(2024, 0, 15)} ouiaId="test-id" ouiaSafe={false} />);
+  expect(container.firstChild).toHaveAttribute('data-ouia-safe', 'false');
+});

@@ -37,4 +37,46 @@ describe('ToolbarGroup', () => {
       });
     });
   });
+
+  const bps = ['default', 'md', 'lg', 'xl', '2xl'] as const;
+  describe.each(bps)(`ToolbarGroup visibilityAtHeight`, (bp) => {
+    it(`Applies correct visible class at ${bp}`, () => {
+      render(
+        <ToolbarGroup data-testid="toolbargroup" visibilityAtHeight={{ [bp]: 'visible' }}>
+          Test
+        </ToolbarGroup>
+      );
+
+      if (bp !== 'default') {
+        expect(screen.getByTestId('toolbargroup')).toHaveClass(`pf-m-visible-on-${bp}-height`);
+      }
+    });
+
+    it(`Applies correct hidden class at ${bp}`, () => {
+      render(
+        <ToolbarGroup data-testid="toolbargroup" visibilityAtHeight={{ [bp]: 'hidden' }}>
+          Test
+        </ToolbarGroup>
+      );
+
+      const expectedClass = bp === 'default' ? 'pf-m-hidden' : `pf-m-hidden-on-${bp}-height`;
+      expect(screen.getByTestId('toolbargroup')).toHaveClass(expectedClass);
+    });
+  });
+
+  describe('ToolbarGroup flexGrow', () => {
+    const bps = ['default', 'sm', 'md', 'lg', 'xl', '2xl'];
+
+    describe.each(bps)(`flexGrow at various breakpoints`, (bp) => {
+      it(`should render with pf-m-flex-grow when flexGrow is set at ${bp}`, () => {
+        render(
+          <ToolbarGroup data-testid="toolbargroup" flexGrow={{ [bp]: 'flexGrow' }}>
+            Test
+          </ToolbarGroup>
+        );
+        const bpFlexGrowClass = bp === 'default' ? 'pf-m-flex-grow' : `pf-m-flex-grow-on-${bp}`;
+        expect(screen.getByTestId('toolbargroup')).toHaveClass(bpFlexGrowClass);
+      });
+    });
+  });
 });

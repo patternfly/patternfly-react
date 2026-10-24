@@ -1,4 +1,5 @@
 import { createRef, useEffect, useState } from 'react';
+import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import { Panel } from '../Panel';
 import { PanelMain } from '../PanelMain';
@@ -55,6 +56,71 @@ test(`Renders with class name ${styles.modifiers.scrollable} when isScrollable i
   expect(screen.getByText('Test')).toHaveClass(styles.modifiers.scrollable);
 });
 
+test(`Renders with class name ${styles.modifiers.scrollableAutoHeight} when isAutoHeight is true`, () => {
+  render(<Panel isAutoHeight>Test</Panel>);
+  expect(screen.getByText('Test')).toHaveClass(styles.modifiers.scrollableAutoHeight);
+});
+
+test(`Does not add ${styles.modifiers.scrollableAutoHeight} when isAutoHeight is false or undefined`, () => {
+  const { rerender } = render(<Panel isAutoHeight={false}>Test</Panel>);
+  expect(screen.getByText('Test')).not.toHaveClass(styles.modifiers.scrollableAutoHeight);
+
+  rerender(<Panel>Test</Panel>);
+  expect(screen.getByText('Test')).not.toHaveClass(styles.modifiers.scrollableAutoHeight);
+});
+
+test(`Renders with class name ${styles.modifiers.noBorder} when hasNoBorder is true`, () => {
+  render(<Panel hasNoBorder>Test</Panel>);
+  expect(screen.getByText('Test')).toHaveClass(styles.modifiers.noBorder);
+});
+
+test(`Does not add ${styles.modifiers.noBorder} when hasNoBorder is false or undefined`, () => {
+  const { rerender } = render(<Panel hasNoBorder={false}>Test</Panel>);
+  expect(screen.getByText('Test')).not.toHaveClass(styles.modifiers.noBorder);
+
+  rerender(<Panel>Test</Panel>);
+  expect(screen.getByText('Test')).not.toHaveClass(styles.modifiers.noBorder);
+});
+
+test(`Renders with class name ${styles.modifiers.fullHeight} when isFullHeight is true`, () => {
+  render(<Panel isFullHeight>Test</Panel>);
+  expect(screen.getByText('Test')).toHaveClass(styles.modifiers.fullHeight);
+});
+
+test(`Does not add ${styles.modifiers.fullHeight} when isFullHeight is false or undefined`, () => {
+  const { rerender } = render(<Panel isFullHeight={false}>Test</Panel>);
+  expect(screen.getByText('Test')).not.toHaveClass(styles.modifiers.fullHeight);
+
+  rerender(<Panel>Test</Panel>);
+  expect(screen.getByText('Test')).not.toHaveClass(styles.modifiers.fullHeight);
+});
+
+test(`Renders with class name ${styles.modifiers.glass} when isGlass is true`, () => {
+  render(<Panel isGlass>Test</Panel>);
+  expect(screen.getByText('Test')).toHaveClass(styles.modifiers.glass);
+});
+
+test(`Does not add ${styles.modifiers.glass} when isGlass is false or undefined`, () => {
+  const { rerender } = render(<Panel isGlass={false}>Test</Panel>);
+  expect(screen.getByText('Test')).not.toHaveClass(styles.modifiers.glass);
+
+  rerender(<Panel>Test</Panel>);
+  expect(screen.getByText('Test')).not.toHaveClass(styles.modifiers.glass);
+});
+
+test(`Renders with class name ${styles.modifiers.pill} when isPill is true`, () => {
+  render(<Panel isPill>Test</Panel>);
+  expect(screen.getByText('Test')).toHaveClass(styles.modifiers.pill);
+});
+
+test(`Does not add ${styles.modifiers.pill} when isPill is false or undefined`, () => {
+  const { rerender } = render(<Panel isPill={false}>Test</Panel>);
+  expect(screen.getByText('Test')).not.toHaveClass(styles.modifiers.pill);
+
+  rerender(<Panel>Test</Panel>);
+  expect(screen.getByText('Test')).not.toHaveClass(styles.modifiers.pill);
+});
+
 test('Renders with ref', async () => {
   const user = userEvent.setup();
   const panelRef: React.RefObject<HTMLDivElement | null> = createRef();
@@ -101,5 +167,60 @@ test('Renders with the inherited element props spread to the component', () => {
 
 test('Matches the snapshot', () => {
   const { asFragment } = render(<Panel>Test</Panel>);
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test('Matches the snapshot with hasNoBorder', () => {
+  const { asFragment } = render(
+    <Panel hasNoBorder>
+      <PanelMain>
+        <PanelMainBody>Test</PanelMainBody>
+      </PanelMain>
+    </Panel>
+  );
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test('Matches the snapshot with isFullHeight', () => {
+  const { asFragment } = render(
+    <Panel isFullHeight>
+      <PanelMain>
+        <PanelMainBody>Test</PanelMainBody>
+      </PanelMain>
+    </Panel>
+  );
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test('Matches the snapshot with isGlass', () => {
+  const { asFragment } = render(
+    <Panel isGlass>
+      <PanelMain>
+        <PanelMainBody>Test</PanelMainBody>
+      </PanelMain>
+    </Panel>
+  );
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test('Matches the snapshot with isAutoHeight', () => {
+  const { asFragment } = render(
+    <Panel isScrollable isAutoHeight>
+      <PanelMain>
+        <PanelMainBody>Test</PanelMainBody>
+      </PanelMain>
+    </Panel>
+  );
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test('Matches the snapshot with isPill', () => {
+  const { asFragment } = render(
+    <Panel isPill>
+      <PanelMain>
+        <PanelMainBody>Test</PanelMainBody>
+      </PanelMain>
+    </Panel>
+  );
   expect(asFragment()).toMatchSnapshot();
 });

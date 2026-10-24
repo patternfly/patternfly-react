@@ -1,5 +1,5 @@
 import { StrictMode } from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Popover, PopoverPosition } from '../Popover';
 
 test('popover renders close-button, header and body', () => {
@@ -9,6 +9,7 @@ test('popover renders close-button, header and body', () => {
       position="top"
       isVisible
       hideOnOutsideClick
+      ouiaId="ouia-id"
       headerContent={<div>Popover Header</div>}
       bodyContent={
         <div>
@@ -113,4 +114,46 @@ test('popover renders in strict mode', () => {
   );
   expect(consoleError).not.toHaveBeenCalled();
   expect(asFragment()).toMatchSnapshot();
+});
+
+test('Renders with custom ouiaId', () => {
+  render(
+    <Popover isVisible ouiaId="test-id" headerContent={<div>Popover Header</div>} bodyContent={<div>Popover body</div>}>
+      <div>Toggle Popover</div>
+    </Popover>
+  );
+  expect(screen.getByRole('dialog')).toHaveAttribute('data-ouia-component-id', 'test-id');
+});
+
+test('Renders with expected ouia component type', () => {
+  render(
+    <Popover isVisible ouiaId="test-id" headerContent={<div>Popover Header</div>} bodyContent={<div>Popover body</div>}>
+      <div>Toggle Popover</div>
+    </Popover>
+  );
+  expect(screen.getByRole('dialog')).toHaveAttribute('data-ouia-component-type', 'PF6/Popover');
+});
+
+test('Renders with ouiaSafe defaulting to true', () => {
+  render(
+    <Popover isVisible ouiaId="test-id" headerContent={<div>Popover Header</div>} bodyContent={<div>Popover body</div>}>
+      <div>Toggle Popover</div>
+    </Popover>
+  );
+  expect(screen.getByRole('dialog')).toHaveAttribute('data-ouia-safe', 'true');
+});
+
+test('Renders with ouiaSafe=false when specified', () => {
+  render(
+    <Popover
+      isVisible
+      ouiaId="test-id"
+      ouiaSafe={false}
+      headerContent={<div>Popover Header</div>}
+      bodyContent={<div>Popover body</div>}
+    >
+      <div>Toggle Popover</div>
+    </Popover>
+  );
+  expect(screen.getByRole('dialog')).toHaveAttribute('data-ouia-safe', 'false');
 });

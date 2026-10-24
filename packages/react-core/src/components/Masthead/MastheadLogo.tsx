@@ -11,12 +11,15 @@ export interface MastheadLogoProps extends React.DetailedHTMLProps<
   className?: string;
   /** Component type of the masthead logo. */
   component?: React.ElementType<any> | React.ComponentType<any>;
+  /** @beta Flag indicating the logo is a compact variant. Used in docked layouts. */
+  isCompact?: boolean;
 }
 
 export const MastheadLogo: React.FunctionComponent<MastheadLogoProps> = ({
   children,
   className,
   component,
+  isCompact = false,
   ...props
 }: MastheadLogoProps) => {
   let Component = component as any;
@@ -28,7 +31,11 @@ export const MastheadLogo: React.FunctionComponent<MastheadLogoProps> = ({
     }
   }
   return (
-    <Component className={css(styles.mastheadLogo, className)} {...(Component === 'a' && { tabIndex: 0 })} {...props}>
+    <Component
+      className={css(styles.mastheadLogo, isCompact && styles.modifiers.compact, className)}
+      {...(Component === 'a' && { tabIndex: 0 })}
+      {...props}
+    >
       {children}
     </Component>
   );

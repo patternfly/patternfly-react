@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Progress/progress';
 import { css } from '@patternfly/react-styles';
 import { ProgressContainer, ProgressMeasureLocation } from './ProgressContainer';
 import { AriaProps } from './ProgressBar';
-import { getUniqueId } from '../../helpers/util';
+import { GenerateId, getOUIAProps, OUIAProps } from '../../helpers';
 
 export enum ProgressSize {
   sm = 'sm',
@@ -11,7 +11,7 @@ export enum ProgressSize {
   lg = 'lg'
 }
 
-export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'size' | 'label' | 'title'> {
+export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'size' | 'label' | 'title'>, OUIAProps {
   /** Classname for progress component. */
   className?: string;
   /** Size variant of progress. */
@@ -50,6 +50,10 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
   helperText?: React.ReactNode;
   /** Flag indicating whether the status icon should be hidden, helpful when space is limited (such as within table cells). When set to true, you must ensure the context of the status is provided in another way, such as via the progress measure. */
   hideStatusIcon?: boolean;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 class Progress extends Component<ProgressProps> {
@@ -70,17 +74,15 @@ class Progress extends Component<ProgressProps> {
     tooltipPosition: 'top' as 'auto' | 'top' | 'bottom' | 'left' | 'right',
     'aria-label': null as string,
     'aria-labelledby': null as string,
-    'aria-describedby': null as string
+    'aria-describedby': null as string,
+    ouiaSafe: true
   };
-
-  id = this.props.id || getUniqueId();
 
   render() {
     const {
-      /* eslint-disable @typescript-eslint/no-unused-vars */
-      id,
+      id: idProp,
       size,
-      /* eslint-enable @typescript-eslint/no-unused-vars */
+
       className,
       value,
       title,
@@ -97,30 +99,10 @@ class Progress extends Component<ProgressProps> {
       'aria-describedby': ariaDescribedBy,
       helperText,
       hideStatusIcon,
+      ouiaId,
+      ouiaSafe,
       ...props
     } = this.props;
-
-    const progressBarAriaProps: AriaProps = {
-      'aria-valuemin': min,
-      'aria-valuenow': value,
-      'aria-valuemax': max
-    };
-
-    if (title || ariaLabelledBy) {
-      progressBarAriaProps['aria-labelledby'] = title ? `${this.id}-description` : ariaLabelledBy;
-    }
-
-    if (ariaLabel) {
-      progressBarAriaProps['aria-label'] = ariaLabel;
-    }
-
-    if (ariaDescribedBy) {
-      progressBarAriaProps['aria-describedby'] = ariaDescribedBy;
-    }
-
-    if (valueText) {
-      progressBarAriaProps['aria-valuetext'] = valueText;
-    }
 
     if (!title && !ariaLabelledBy && !ariaLabel) {
       /* eslint-disable no-console */
@@ -129,34 +111,68 @@ class Progress extends Component<ProgressProps> {
       );
     }
 
-    const scaledValue = Math.min(100, Math.max(0, Math.floor(((value - min) / (max - min)) * 100))) || 0;
     return (
-      <div
-        {...props}
-        className={css(
-          styles.progress,
-          styles.modifiers[variant],
-          ['inside', 'outside'].includes(measureLocation) && styles.modifiers[measureLocation as 'inside' | 'outside'],
-          measureLocation === 'inside' ? styles.modifiers[ProgressSize.lg] : styles.modifiers[size as 'sm' | 'lg'],
-          !title && styles.modifiers.singleline,
-          className
-        )}
-        id={this.id}
-      >
-        <ProgressContainer
-          parentId={this.id}
-          value={scaledValue}
-          title={title}
-          label={label}
-          variant={variant}
-          measureLocation={measureLocation}
-          progressBarAriaProps={progressBarAriaProps}
-          isTitleTruncated={isTitleTruncated}
-          tooltipPosition={tooltipPosition}
-          helperText={helperText}
-          hideStatusIcon={hideStatusIcon}
-        />
-      </div>
+      <GenerateId prefix="pf-progress-">
+        {(generatedId) => {
+          const id = idProp || generatedId;
+
+          const progressBarAriaProps: AriaProps = {
+            'aria-valuemin': min,
+            'aria-valuenow': value,
+            'aria-valuemax': max
+          };
+
+          if (title || ariaLabelledBy) {
+            progressBarAriaProps['aria-labelledby'] = title ? `${id}-description` : ariaLabelledBy;
+          }
+
+          if (ariaLabel) {
+            progressBarAriaProps['aria-label'] = ariaLabel;
+          }
+
+          if (ariaDescribedBy) {
+            progressBarAriaProps['aria-describedby'] = ariaDescribedBy;
+          }
+
+          if (valueText) {
+            progressBarAriaProps['aria-valuetext'] = valueText;
+          }
+
+          const scaledValue = Math.min(100, Math.max(0, Math.floor(((value - min) / (max - min)) * 100))) || 0;
+          return (
+            <div
+              {...props}
+              className={css(
+                styles.progress,
+                styles.modifiers[variant],
+                ['inside', 'outside'].includes(measureLocation) &&
+                  styles.modifiers[measureLocation as 'inside' | 'outside'],
+                measureLocation === 'inside'
+                  ? styles.modifiers[ProgressSize.lg]
+                  : styles.modifiers[size as 'sm' | 'lg'],
+                !title && styles.modifiers.singleline,
+                className
+              )}
+              id={id}
+              {...getOUIAProps(Progress.displayName, ouiaId, ouiaSafe)}
+            >
+              <ProgressContainer
+                parentId={id}
+                value={scaledValue}
+                title={title}
+                label={label}
+                variant={variant}
+                measureLocation={measureLocation}
+                progressBarAriaProps={progressBarAriaProps}
+                isTitleTruncated={isTitleTruncated}
+                tooltipPosition={tooltipPosition}
+                helperText={helperText}
+                hideStatusIcon={hideStatusIcon}
+              />
+            </div>
+          );
+        }}
+      </GenerateId>
     );
   }
 }

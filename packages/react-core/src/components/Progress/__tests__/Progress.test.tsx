@@ -3,7 +3,7 @@ import { Progress, ProgressSize } from '../Progress';
 import { ProgressVariant, ProgressMeasureLocation } from '../ProgressContainer';
 
 test('Simple progress', () => {
-  const { asFragment } = render(<Progress value={33} id="progress-simple-example" />);
+  const { asFragment } = render(<Progress value={33} id="progress-simple-example" ouiaId="ouia-id" />);
   expect(asFragment()).toMatchSnapshot();
 });
 
@@ -107,6 +107,26 @@ test('Renders passed helper text', () => {
   render(<Progress helperText="Test helper text" />);
 
   expect(screen.getByText('Test helper text')).toBeVisible();
+});
+
+test('Renders with custom ouiaId', () => {
+  render(<Progress value={33} id="progress-ouia-id" ouiaId="test-id" title="Test" />);
+  expect(document.getElementById('progress-ouia-id')).toHaveAttribute('data-ouia-component-id', 'test-id');
+});
+
+test('Renders with expected ouia component type', () => {
+  render(<Progress value={33} id="progress-ouia-type" ouiaId="test-id" title="Test" />);
+  expect(document.getElementById('progress-ouia-type')).toHaveAttribute('data-ouia-component-type', 'PF6/Progress');
+});
+
+test('Renders with ouiaSafe defaulting to true', () => {
+  render(<Progress value={33} id="progress-ouia-safe" ouiaId="test-id" title="Test" />);
+  expect(document.getElementById('progress-ouia-safe')).toHaveAttribute('data-ouia-safe', 'true');
+});
+
+test('Renders with ouiaSafe=false when specified', () => {
+  render(<Progress value={33} id="progress-ouia-unsafe" ouiaId="test-id" ouiaSafe={false} title="Test" />);
+  expect(document.getElementById('progress-ouia-unsafe')).toHaveAttribute('data-ouia-safe', 'false');
 });
 
 describe('hideStatusIcon prop behavior', () => {

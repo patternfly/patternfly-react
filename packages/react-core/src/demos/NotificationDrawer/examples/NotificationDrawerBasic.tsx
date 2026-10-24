@@ -45,12 +45,12 @@ import {
   ToolbarGroup,
   ToolbarContent
 } from '@patternfly/react-core';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 import pfLogo from '@patternfly/react-core/src/demos/assets/pf-logo.PF-HorizontalLogo-Color.svg';
 
 export const NotificationDrawerBasic: React.FunctionComponent = () => {
@@ -157,10 +157,10 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
   const kebabDropdownItems = (
     <>
       <DropdownItem>
-        <CogIcon /> Settings
+        <RhUiSettingsFillIcon /> Settings
       </DropdownItem>
       <DropdownItem>
-        <HelpIcon /> Help
+        <RhUiQuestionMarkCircleIcon /> Help
       </DropdownItem>
     </>
   );
@@ -195,7 +195,11 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                 <Button aria-label="Settings actions" isSettings variant="plain" />
               </ToolbarItem>
               <ToolbarItem>
-                <Button aria-label="Help actions" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
+                <Button
+                  aria-label="Help actions"
+                  variant={ButtonVariant.plain}
+                  icon={<RhUiQuestionMarkCircleFillIcon />}
+                />
               </ToolbarItem>
             </ToolbarGroup>
           </ToolbarGroup>
@@ -217,7 +221,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                     onClick={onKebabDropdownToggle}
                     variant="plain"
                     aria-label="Settings and help"
-                    icon={<EllipsisVIcon />}
+                    icon={<RhUiEllipsisVerticalFillIcon />}
                   />
                 )}
               >
@@ -348,7 +352,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
               variant="plain"
               onClick={() => onToggle('toggle-id-0')}
               isExpanded={isActionsMenuOpen['toggle-id-0'] || false}
-              icon={<EllipsisVIcon />}
+              icon={<RhUiEllipsisVerticalFillIcon />}
             />
           )}
         >
@@ -382,7 +386,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                       variant="plain"
                       onClick={() => onToggle('toggle-id-1')}
                       isExpanded={isActionsMenuOpen['toggle-id-1'] || false}
-                      icon={<EllipsisVIcon />}
+                      icon={<RhUiEllipsisVerticalFillIcon />}
                     />
                   )}
                 >
@@ -417,7 +421,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                       variant="plain"
                       onClick={() => onToggle('toggle-id-2')}
                       isExpanded={isActionsMenuOpen['toggle-id-2'] || false}
-                      icon={<EllipsisVIcon />}
+                      icon={<RhUiEllipsisVerticalFillIcon />}
                     />
                   )}
                 >
@@ -453,7 +457,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                       variant="plain"
                       onClick={() => onToggle('toggle-id-3')}
                       isExpanded={isActionsMenuOpen['toggle-id-3'] || false}
-                      icon={<EllipsisVIcon />}
+                      icon={<RhUiEllipsisVerticalFillIcon />}
                     />
                   )}
                 >
@@ -488,7 +492,7 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                       variant="plain"
                       onClick={() => onToggle('toggle-id-4')}
                       isExpanded={isActionsMenuOpen['toggle-id-4'] || false}
-                      icon={<EllipsisVIcon />}
+                      icon={<RhUiEllipsisVerticalFillIcon />}
                     />
                   )}
                 >
@@ -502,7 +506,12 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
           </NotificationDrawerList>
         )}
         {!shouldShowNotifications && (
-          <EmptyState headingLevel="h2" titleText="No alerts found" icon={SearchIcon} variant={EmptyStateVariant.full}>
+          <EmptyState
+            headingLevel="h2"
+            titleText="No alerts found"
+            icon={RhMicronsSearchIcon}
+            variant={EmptyStateVariant.full}
+          >
             <EmptyStateBody>
               There are currently no alerts. There may be silenced critical alerts however.
             </EmptyStateBody>

@@ -50,8 +50,20 @@ export interface TableProps extends React.HTMLProps<HTMLTableElement>, OUIAProps
   role?: string;
   /** @beta Flag indicating if the table should have plain styling with a transparent background */
   isPlain?: boolean;
-  /** If set to true, the table header sticks to the top of its container */
+  /** @beta Flag indicating if the table should not have plain styling when in the glass theme */
+  isNoPlainOnGlass?: boolean;
+  /** If set to true, the table header sticks to the top of its container. This property applies both the sticky position and styling. */
   isStickyHeader?: boolean;
+  /** @beta Flag indicating the table header should have sticky positioning to the top of the parent InnerScrollContainer. */
+  isStickyHeaderBase?: boolean;
+  /** @beta Flag indicating the table header should have stuck styling, when the header is not at the top of the scroll container. */
+  isStickyHeaderStuck?: boolean;
+  /** Flag indicating the table footer should stick to the bottom of its scroll container. */
+  isStickyFooter?: boolean;
+  /** @beta Flag indicating the table footer should have sticky positioning to the bottom of its scroll container. */
+  isStickyFooterBase?: boolean;
+  /** @beta Flag indicating the table footer should have stuck styling, when the footer is not at the bottom of the scroll container. */
+  isStickyFooterStuck?: boolean;
   /** @hide Forwarded ref */
   innerRef?: React.RefObject<any>;
   /** Flag indicating table is a tree table */
@@ -96,7 +108,13 @@ const TableBase: React.FunctionComponent<TableProps> = ({
   variant,
   borders = true,
   isStickyHeader = false,
+  isStickyHeaderBase = false,
+  isStickyHeaderStuck = false,
+  isStickyFooter = false,
+  isStickyFooterBase = false,
+  isStickyFooterStuck = false,
   isPlain = false,
+  isNoPlainOnGlass = false,
   gridBreakPoint = TableGridBreakpoint.gridMd,
   'aria-label': ariaLabel,
   role = 'grid',
@@ -222,10 +240,16 @@ const TableBase: React.FunctionComponent<TableProps> = ({
           styles.modifiers[variant],
           !borders && styles.modifiers.noBorderRows,
           isStickyHeader && styles.modifiers.stickyHeader,
+          isStickyHeaderBase && styles.modifiers.stickyHeaderBase,
+          isStickyHeaderStuck && styles.modifiers.stickyHeaderStuck,
+          isStickyFooter && styles.modifiers.stickyFooter,
+          isStickyFooterBase && styles.modifiers.stickyFooterBase,
+          isStickyFooterStuck && styles.modifiers.stickyFooterStuck,
           isTreeTable && stylesTreeView.modifiers.treeView,
           isStriped && styles.modifiers.striped,
           isExpandable && styles.modifiers.expandable,
           isPlain && styles.modifiers.plain,
+          isNoPlainOnGlass && styles.modifiers.noPlainOnGlass,
           hasNoInset && stylesTreeView.modifiers.noInset,
           isNested && 'pf-m-nested',
           hasAnimations && styles.modifiers.animateExpand

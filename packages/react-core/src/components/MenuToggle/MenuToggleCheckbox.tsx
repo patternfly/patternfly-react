@@ -2,7 +2,8 @@ import { Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/Check/check';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
-import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
+import { getOUIAProps, OUIAProps } from '../../helpers';
+import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 
 export interface MenuToggleCheckboxProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'checked'>, OUIAProps {
@@ -32,20 +33,13 @@ export interface MenuToggleCheckboxProps
   ouiaSafe?: boolean;
 }
 
-class MenuToggleCheckbox extends Component<MenuToggleCheckboxProps, { ouiaStateId: string }> {
+class MenuToggleCheckbox extends Component<MenuToggleCheckboxProps> {
   static displayName = 'MenuToggleCheckbox';
   static defaultProps: PickOptional<MenuToggleCheckboxProps> = {
     isValid: true,
     isDisabled: false,
     onChange: () => undefined as any
   };
-
-  constructor(props: MenuToggleCheckboxProps) {
-    super(props);
-    this.state = {
-      ouiaStateId: getDefaultOUIAId(MenuToggleCheckbox.displayName)
-    };
-  }
 
   handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     this.props.onChange((event.target as HTMLInputElement).checked, event);
@@ -83,27 +77,31 @@ class MenuToggleCheckbox extends Component<MenuToggleCheckboxProps, { ouiaStateI
       </span>
     );
     return (
-      <label className={css(styles.check, !children && styles.modifiers.standalone, className)}>
-        <input
-          className={css(styles.checkInput)}
-          {...(this.calculateChecked() !== undefined && { onChange: this.handleChange })}
-          name={id}
-          type="checkbox"
-          ref={(elem) => {
-            elem && (elem.indeterminate = isChecked === null);
-          }}
-          aria-invalid={!isValid}
-          disabled={isDisabled}
-          {...(defaultChecked !== undefined ? { defaultChecked } : { checked: this.calculateChecked() })}
-          {...getOUIAProps(
-            MenuToggleCheckbox.displayName,
-            ouiaId !== undefined ? ouiaId : this.state.ouiaStateId,
-            ouiaSafe
-          )}
-          {...props}
-        />
-        {text}
-      </label>
+      <SSRSafeIds prefix="pf-" ouiaComponentType={MenuToggleCheckbox.displayName}>
+        {(_, generatedOuiaId) => (
+          <label className={css(styles.check, !children && styles.modifiers.standalone, className)}>
+            <input
+              className={css(styles.checkInput)}
+              {...(this.calculateChecked() !== undefined && { onChange: this.handleChange })}
+              name={id}
+              type="checkbox"
+              ref={(elem) => {
+                elem && (elem.indeterminate = isChecked === null);
+              }}
+              aria-invalid={!isValid}
+              disabled={isDisabled}
+              {...(defaultChecked !== undefined ? { defaultChecked } : { checked: this.calculateChecked() })}
+              {...getOUIAProps(
+                MenuToggleCheckbox.displayName,
+                ouiaId !== undefined ? ouiaId : generatedOuiaId,
+                ouiaSafe
+              )}
+              {...props}
+            />
+            {text}
+          </label>
+        )}
+      </SSRSafeIds>
     );
   }
 }

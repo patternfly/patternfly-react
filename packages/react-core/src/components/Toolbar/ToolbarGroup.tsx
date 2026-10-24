@@ -23,8 +23,16 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
     | 'action-group-inline'
     | 'action-group-plain'
     | 'label-group';
-  /** Visibility at various breakpoints. */
+  /** Visibility at various width breakpoints. */
   visibility?: {
+    default?: 'hidden' | 'visible';
+    md?: 'hidden' | 'visible';
+    lg?: 'hidden' | 'visible';
+    xl?: 'hidden' | 'visible';
+    '2xl'?: 'hidden' | 'visible';
+  };
+  /** Visibility at various height breakpoints. */
+  visibilityAtHeight?: {
     default?: 'hidden' | 'visible';
     md?: 'hidden' | 'visible';
     lg?: 'hidden' | 'visible';
@@ -166,6 +174,15 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
     xl?: 'wrap' | 'nowrap';
     '2xl'?: 'wrap' | 'nowrap';
   };
+  /** Sets flex-grow at various breakpoints to allow the group to consume available main-axis space */
+  flexGrow?: {
+    default?: 'flexGrow';
+    sm?: 'flexGrow';
+    md?: 'flexGrow';
+    lg?: 'flexGrow';
+    xl?: 'flexGrow';
+    '2xl'?: 'flexGrow';
+  };
   /** Content to be rendered inside the data toolbar group */
   children?: React.ReactNode;
   /** Flag that modifies the toolbar group to hide overflow and respond to available space. Used for horizontal navigation. */
@@ -178,6 +195,7 @@ class ToolbarGroupWithRef extends Component<ToolbarGroupProps> {
   render() {
     const {
       visibility,
+      visibilityAtHeight,
       align,
       alignItems,
       alignSelf,
@@ -185,6 +203,7 @@ class ToolbarGroupWithRef extends Component<ToolbarGroupProps> {
       columnGap,
       rowGap,
       rowWrap,
+      flexGrow,
       className,
       variant,
       children,
@@ -195,7 +214,7 @@ class ToolbarGroupWithRef extends Component<ToolbarGroupProps> {
 
     return (
       <PageContext.Consumer>
-        {({ width, getBreakpoint }) => (
+        {({ width, getBreakpoint, height, getVerticalBreakpoint }) => (
           <div
             className={css(
               styles.toolbarGroup,
@@ -209,11 +228,13 @@ class ToolbarGroupWithRef extends Component<ToolbarGroupProps> {
                     | 'labelGroup'
                 ],
               formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(visibilityAtHeight, styles, '', getVerticalBreakpoint(height), true),
               formatBreakpointMods(align, styles, '', getBreakpoint(width)),
               formatBreakpointMods(gap, styles, '', getBreakpoint(width)),
               formatBreakpointMods(columnGap, styles, '', getBreakpoint(width)),
               formatBreakpointMods(rowGap, styles, '', getBreakpoint(width)),
               formatBreakpointMods(rowWrap, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(flexGrow, styles, '', getBreakpoint(width)),
               alignItems === 'start' && styles.modifiers.alignItemsStart,
               alignItems === 'center' && styles.modifiers.alignItemsCenter,
               alignItems === 'baseline' && styles.modifiers.alignItemsBaseline,

@@ -4,7 +4,7 @@ import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 import { Divider } from '@patternfly/react-core/dist/esm/components/Divider';
 import { MenuToggle } from '@patternfly/react-core/dist/esm/components/MenuToggle';
 import { IAction, IExtraData, IRowData } from './TableTypes';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip';
 
 export interface CustomActionsToggleProps {
@@ -105,7 +105,7 @@ const ActionsColumnBase: React.FunctionComponent<ActionsColumnProps> = ({
               isExpanded={isOpen}
               isDisabled={isDisabled}
               variant="plain"
-              icon={<EllipsisVIcon />}
+              icon={<RhUiEllipsisVerticalFillIcon />}
             />
           )
         }

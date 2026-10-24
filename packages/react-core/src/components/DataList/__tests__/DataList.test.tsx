@@ -1,3 +1,4 @@
+import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -75,6 +76,18 @@ test(`Renders with class ${styles.modifiers.plain} when isPlain is true`, () => 
   render(<DataList key="list-id-1" isPlain aria-label="list" />);
 
   expect(screen.getByLabelText('list')).toHaveClass(styles.modifiers.plain);
+});
+
+test(`Renders with ${styles.modifiers.noPlainOnGlass} when isNoPlainOnGlass is true`, () => {
+  render(<DataList aria-label="list" isNoPlainOnGlass />);
+  expect(screen.getByLabelText('list')).toHaveClass(styles.modifiers.noPlainOnGlass);
+});
+
+test(`Renders with both ${styles.modifiers.plain} and ${styles.modifiers.noPlainOnGlass} when isPlain and isNoPlainOnGlass are true`, () => {
+  render(<DataList aria-label="list" isPlain isNoPlainOnGlass />);
+  const list = screen.getByLabelText('list');
+  expect(list).toHaveClass(styles.modifiers.plain);
+  expect(list).toHaveClass(styles.modifiers.noPlainOnGlass);
 });
 
 test('Renders with a hidden input to improve a11y when onSelectableRowChange is passed', () => {

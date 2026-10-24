@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { Label } from '@patternfly/react-core';
+import { Label, LabelColor } from '@patternfly/react-core';
 
 export const LabelEditable: React.FunctionComponent = () => {
   const [labelText, setLabelText] = useState('Editable label');
@@ -24,7 +24,7 @@ export const LabelEditable: React.FunctionComponent = () => {
   return (
     <Fragment>
       <Label
-        color="blue"
+        color={LabelColor.blue}
         onClose={() => {}}
         closeBtnAriaLabel="Custom close button for editable label"
         onEditCancel={onEditCancel}
@@ -38,7 +38,7 @@ export const LabelEditable: React.FunctionComponent = () => {
         {labelText}
       </Label>
       <Label
-        color="grey"
+        color={LabelColor.grey}
         isCompact
         onClose={() => {}}
         closeBtnAriaLabel="Custom close button for compact editable label"

@@ -5,14 +5,15 @@ propComponents: ['Toolbar', 'ToolbarContent', 'ToolbarGroup', 'ToolbarItem', 'To
 section: components
 ---
 
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useLayoutEffect, useRef } from 'react';
+import './ToolbarContainerQuery.css';
 
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
-import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
-import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiCopyFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-copy-fill-icon';
+import RhUiSyncIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sync-icon';
+import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 
 ## Examples
 
@@ -34,6 +35,14 @@ To adjust a toolbar’s inset, use the `inset` property. You can set the inset v
 
 ```
 
+### Vertical toolbar
+
+A toolbar's orientation may be changed using the `isVertical` property. Responsive behavior when height is adjusted may be customized for the `ToolbarContent`, `ToolbarGroup`, and `ToolbarItem` components using their respective `visibilityAtHeight` property.
+
+```ts file="./ToolbarVertical.tsx"
+
+```
+
 ### Sticky toolbar
 
 To lock a toolbar and prevent it from scrolling with other content, use a sticky toolbar.
@@ -41,6 +50,14 @@ To lock a toolbar and prevent it from scrolling with other content, use a sticky
 In the following example, toggle the "is toolbar sticky" checkbox to see the difference between a sticky and non-sticky toolbar.
 
 ```ts file="./ToolbarSticky.tsx"
+
+```
+
+### Dynamic sticky toolbar
+
+A toolbar may alternatively be made sticky with two properties: `isStickyBase` and `isStickyStuck` - which allows separate control of the sticky position and sticky styling respectively. In this example, `isStickyStuck` is only applied when the sticky element is not at the top of the scroll parent container.
+
+```ts file="./ToolbarDynamicSticky.tsx"
 
 ```
 
@@ -59,6 +76,21 @@ Note: This example does not demonstrate responsive toolbar behavior. Responsive 
 To change the background color of a toolbar, use the `colorVariant` property on the `<Toolbar>`.
 
 ```ts file="./ToolbarColorVariant.tsx"
+
+```
+
+## Responsive toolbar behavior
+
+Toolbar width-based responsive modifiers use `@container` CSS queries with the global PatternFly breakpoints. Responsive inset modifiers (via the `inset` property) are an exception and use viewport media queries. Insets are an exception and rely on viewport media queries.
+
+By default, the PatternFly CSS establishes the `container-name` property with a value of `pf-v6-contain-toolbar` on `:root`, so the breakpoints behave like viewport breakpoints.
+
+Alternatively, if another wrapping element creates a container in the CSS with a `container-name` property value of `pf-v6-contain-toolbar` and `container-type` value of `inline-size` or `size` , the breakpoints will apply to that container's width instead.
+
+### Toolbar as container
+Add `isContainer` to the toolbar so width-based modifiers respond to the toolbar's width. Resize the dashed box in this example to see items and groups show and hide at the global breakpoints.
+
+```ts file="./ToolbarContainerQuery.tsx"
 
 ```
 
@@ -114,11 +146,13 @@ When all of a toolbar's required elements cannot fit in a single line, you can s
 ```
 
 ## Examples with spacers and wrapping
+
 You may adjust the space between toolbar items to arrange them into groups. Read our spacers documentation to learn more about using spacers.
 
 Items are spaced “16px” apart by default and can be modified by changing their or their parents' `gap`, `columnGap`, and `rowGap` properties. You can set the property values at multiple breakpoints, including "default", "md", "lg", "xl", and "2xl".
 
 ### Toolbar content wrapping
+
 The toolbar content section will wrap by default, but you can set the `rowRap` property to `noWrap` to make it not wrap.
 
 ```ts file="./ToolbarContentWrap.tsx"
@@ -134,5 +168,13 @@ The toolbar content section will wrap by default, but you can set the `rowRap` p
 ### Toolbar item spacers
 
 ```ts file="./ToolbarItemSpacers.tsx"
+
+```
+
+### FlexGrow and widths
+
+You can use the `flexGrow` prop to make toolbar items or groups expand to fill available space. The `widths` prop allows you to set custom widths at various breakpoints.
+
+```ts file="./ToolbarFlexGrowAndWidths.tsx"
 
 ```

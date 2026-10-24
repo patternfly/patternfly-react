@@ -2,8 +2,8 @@ import { Component } from 'react';
 import { compoundExpand, IRow, ICell, IRowCell } from '@patternfly/react-table';
 import { Table, TableHeader, TableBody, TableProps } from '@patternfly/react-table/deprecated';
 
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import RhUiCodeIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-code-icon';
+import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 import { DemoSortableTable } from './TableSortableForCompoundExpandableDemo';
@@ -43,7 +43,7 @@ export class TableCompoundExpandableDemo extends Component<TableProps, TableStat
             {
               title: (
                 <>
-                  <CodeBranchIcon key="icon" /> 10
+                  <RhUiBranchFillIcon key="icon" /> 10
                 </>
               ),
               props: { isOpen: true, ariaControls: 'compoound-expansion-table-1' }
@@ -51,7 +51,7 @@ export class TableCompoundExpandableDemo extends Component<TableProps, TableStat
             {
               title: (
                 <>
-                  <CodeIcon key="icon" /> 4
+                  <RhUiCodeIcon key="icon" /> 4
                 </>
               ),
               props: { isOpen: false, ariaControls: 'compoound-expansion-table-2' }
@@ -120,7 +120,7 @@ export class TableCompoundExpandableDemo extends Component<TableProps, TableStat
             {
               title: (
                 <>
-                  <CodeBranchIcon key="icon" /> 3
+                  <RhUiBranchFillIcon key="icon" /> 3
                 </>
               ),
               props: { isOpen: false, ariaControls: 'compoound-expansion-table-4' }
@@ -128,7 +128,7 @@ export class TableCompoundExpandableDemo extends Component<TableProps, TableStat
             {
               title: (
                 <>
-                  <CodeIcon key="icon" /> 4
+                  <RhUiCodeIcon key="icon" /> 4
                 </>
               ),
               props: { isOpen: false, ariaControls: 'compoound-expansion-table-5' }

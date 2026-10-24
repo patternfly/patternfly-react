@@ -59,6 +59,10 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
    * are called.
    */
   shouldFocusContent?: boolean;
+  /** Adds plain styling to the wizard. */
+  isPlain?: boolean;
+  /** @beta Prevents the wizard from automatically applying plain styling when glass theme is enabled. */
+  isNoPlainOnGlass?: boolean;
 }
 
 export const Wizard = ({
@@ -77,6 +81,8 @@ export const Wizard = ({
   onSave,
   onClose,
   shouldFocusContent = true,
+  isPlain = false,
+  isNoPlainOnGlass = false,
   ...wrapperProps
 }: WizardProps) => {
   const [activeStepIndex, setActiveStepIndex] = useState(startIndex);
@@ -181,7 +187,12 @@ export const Wizard = ({
       mainWrapperRef={wrapperRef}
     >
       <div
-        className={css(styles.wizard, className)}
+        className={css(
+          styles.wizard,
+          isPlain && styles.modifiers.plain,
+          isNoPlainOnGlass && styles.modifiers.noPlainOnGlass,
+          className
+        )}
         style={{
           ...(height ? { [wizardHeightToken.name]: typeof height === 'number' ? `${height}px` : height } : {}),
           ...(width ? { width } : {})

@@ -1,10 +1,10 @@
 import { Fragment, useCallback, useEffect } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
+import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
+import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 
 import { KeyTypes } from '../../helpers/constants';
 import { WizardStepType, isWizardSubStep } from './types';
@@ -100,25 +100,29 @@ export const WizardToggle = ({
           >
             {isActiveStepStatus === 'error' && (
               <span className={css(styles.wizardToggleStatusIcon)}>
-                <ExclamationCircleIcon />
+                <RhUiErrorFillIcon />
               </span>
             )}
             {isActiveStepStatus === 'success' && (
               <span className={css(styles.wizardToggleStatusIcon)}>
-                <CheckCircleIcon />
+                <RhUiCheckCircleFillIcon />
               </span>
             )}
             {isActiveStepStatus !== 'success' && isActiveStepStatus !== 'error' && (
               <span className={css(styles.wizardToggleNum)}>{wizardToggleIndex}</span>
             )}{' '}
             {parentStep?.name || activeStep?.name}
-            {isActiveSubStep && <AngleRightIcon className={css(styles.wizardToggleSeparator)} />}
+            {isActiveSubStep && (
+              <span className={css(styles.wizardToggleSeparator)}>
+                <RhMicronsCaretRightIcon />
+              </span>
+            )}
           </span>
           {isActiveSubStep && <span className={css(styles.wizardToggleListItem)}>{activeStep?.name}</span>}
         </span>
 
         <span className={css(styles.wizardToggleIcon)}>
-          <CaretDownIcon />
+          <RhMicronsCaretDownIcon />
         </span>
       </button>
       <div className={css(styles.wizardOuterWrap)}>

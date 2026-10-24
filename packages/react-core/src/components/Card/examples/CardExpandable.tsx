@@ -14,7 +14,7 @@ import {
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export const CardExpandable: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -71,7 +71,7 @@ export const CardExpandable: React.FunctionComponent = () => {
             onClick={() => setIsOpen(!isOpen)}
             variant="plain"
             aria-label="Card expandable example kebab toggle"
-            icon={<EllipsisVIcon />}
+            icon={<RhUiEllipsisVerticalFillIcon />}
           />
         )}
         isOpen={isOpen}

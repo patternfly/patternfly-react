@@ -10,12 +10,13 @@ import {
   MenuToggle,
   MenuToggleElement,
   Label,
+  LabelStatus,
   Select,
   SelectOption,
   PaginationVariant
 } from '@patternfly/react-core';
 import { Table, TableText, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
 import { DashboardWrapper } from '@patternfly/react-table/dist/esm/demos/DashboardWrapper';
 import { rows, columns } from '@patternfly/react-table/dist/esm/demos/sampleData';
 
@@ -67,25 +68,25 @@ export const TableStaticBottomPagination: React.FunctionComponent = () => {
       case 'Running':
         return (
           <span>
-            <Label color="green">{labelText}</Label>
+            <Label status={LabelStatus.success}>{labelText}</Label>
           </span>
         );
       case 'Stopped':
         return (
           <span>
-            <Label color="orange">{labelText}</Label>
+            <Label status={LabelStatus.warning}>{labelText}</Label>
           </span>
         );
-      case 'Needs Maintenance':
+      case 'Needs maintenance':
         return (
           <span>
-            <Label color="blue">{labelText}</Label>
+            <Label status={LabelStatus.info}>{labelText}</Label>
           </span>
         );
       case 'Down':
         return (
           <span>
-            <Label color="red">{labelText}</Label>
+            <Label status={LabelStatus.danger}>{labelText}</Label>
           </span>
         );
     }
@@ -100,7 +101,7 @@ export const TableStaticBottomPagination: React.FunctionComponent = () => {
             aria-label="Select Input"
             toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
               <MenuToggle
-                icon={<FilterIcon />}
+                icon={<RhUiFilterFillIcon />}
                 ref={toggleRef}
                 onClick={() => setIsSelectOpen(!isSelectOpen)}
                 isExpanded={isSelectOpen}

@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import LongArrowAltUpIcon from '@patternfly/react-icons/dist/esm/icons/long-arrow-alt-up-icon';
-import LongArrowAltDownIcon from '@patternfly/react-icons/dist/esm/icons/long-arrow-alt-down-icon';
-import ArrowsAltVIcon from '@patternfly/react-icons/dist/esm/icons/arrows-alt-v-icon';
+import RhMicronsArrowUpIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-arrow-up-icon';
+import RhMicronsArrowDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-arrow-down-icon';
+import RhUiArrowUpDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-arrow-up-down-icon';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { TableText } from './TableText';
@@ -43,9 +43,9 @@ export const SortColumn: React.FunctionComponent<SortColumnProps> = ({
   let SortedByIcon;
   const [focused, setFocused] = useState(false);
   if (isSortedBy) {
-    SortedByIcon = sortDirection === SortByDirection.asc ? LongArrowAltUpIcon : LongArrowAltDownIcon;
+    SortedByIcon = sortDirection === SortByDirection.asc ? RhMicronsArrowUpIcon : RhMicronsArrowDownIcon;
   } else {
-    SortedByIcon = ArrowsAltVIcon;
+    SortedByIcon = RhUiArrowUpDownIcon;
   }
 
   if (favoriteButtonProps) {

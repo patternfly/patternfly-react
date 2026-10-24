@@ -2,10 +2,10 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { IExtra, IFormatterValueType, ITransform } from '../../TableTypes';
 import { SortColumn, SortByDirection } from '../../SortColumn';
-import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
+import RhUiStarFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-star-fill-icon';
 
 export const sortableFavorites = (sort: any) => () =>
-  sortable(<StarIcon />, {
+  sortable(<RhUiStarFillIcon />, {
     columnIndex: sort.columnIndex,
     className: styles.tableFavorite,
     ariaLabel: sort.ariaLabel ?? 'Sort favorites',

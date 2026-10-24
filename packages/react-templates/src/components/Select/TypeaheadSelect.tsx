@@ -24,7 +24,7 @@ import {
   TextInputGroupMain,
   TextInputGroupUtilities
 } from '@patternfly/react-core/dist/esm/components/TextInputGroup';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 export interface TypeaheadSelectOption extends Omit<SelectOptionProps, 'content'> {
   /** Content of the select option. */
@@ -371,7 +371,12 @@ export const TypeaheadSelectBase: FunctionComponent<TypeaheadSelectProps> = ({
         />
 
         <TextInputGroupUtilities {...(!inputValue ? { style: { display: 'none' } } : {})}>
-          <Button variant="plain" onClick={onClearButtonClick} aria-label="Clear input value" icon={<TimesIcon />} />
+          <Button
+            variant="plain"
+            onClick={onClearButtonClick}
+            aria-label="Clear input value"
+            icon={<RhMicronsCloseIcon />}
+          />
         </TextInputGroupUtilities>
       </TextInputGroup>
     </MenuToggle>

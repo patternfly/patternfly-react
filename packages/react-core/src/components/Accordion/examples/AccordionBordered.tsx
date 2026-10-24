@@ -8,7 +8,7 @@ import {
   Button,
   Checkbox
 } from '@patternfly/react-core';
-import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 
 export const AccordionBordered: React.FunctionComponent = () => {
   const [expanded, setExpanded] = useState('bordered-toggle4');
@@ -95,7 +95,7 @@ export const AccordionBordered: React.FunctionComponent = () => {
             </AccordionExpandableContentBody>
             <AccordionExpandableContentBody>
               <Button variant="link" size="lg" isInline>
-                Call to action <ArrowRightIcon />
+                Call to action <RhMicronsCaretRightIcon />
               </Button>
             </AccordionExpandableContentBody>
           </AccordionContent>

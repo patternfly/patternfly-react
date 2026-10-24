@@ -14,7 +14,7 @@ import {
   MenuToggleElement,
   Divider
 } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import pfLogo from '../../assets/PF-HorizontalLogo-Color.svg';
 
 export const CardWithImageAndActions: React.FunctionComponent = () => {
@@ -64,7 +64,7 @@ export const CardWithImageAndActions: React.FunctionComponent = () => {
             onClick={() => setIsOpen(!isOpen)}
             variant="plain"
             aria-label="Card header images and actions example kebab toggle"
-            icon={<EllipsisVIcon />}
+            icon={<RhUiEllipsisVerticalFillIcon />}
           />
         )}
         isOpen={isOpen}

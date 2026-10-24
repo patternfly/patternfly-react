@@ -4,10 +4,11 @@ import { css } from '@patternfly/react-styles';
 import { SliderStep } from './SliderStep';
 import { InputGroup, InputGroupText, InputGroupItem } from '../InputGroup';
 import { TextInput } from '../TextInput';
-import { Tooltip } from '../Tooltip';
+import { Tooltip, TooltipProps } from '../Tooltip';
 import cssSliderValue from '@patternfly/react-tokens/dist/esm/c_slider_value';
 import cssFormControlWidthChars from '@patternfly/react-tokens/dist/esm/c_slider__value_c_form_control_width_chars';
 import { getLanguageDirection } from '../../helpers/util';
+import { useOUIAProps, OUIAProps } from '../../helpers';
 
 /** Properties for creating custom steps in a slider. These properties should be passed in as
  * an object within an array to the slider component's customSteps property.
@@ -29,7 +30,7 @@ export type SliderOnChangeEvent =
   | React.FocusEvent<HTMLInputElement>;
 
 /** The main slider component. */
-export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
+export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'>, OUIAProps {
   /** Flag indicating if the slider is discrete for custom steps. This will cause the slider
    * to snap to the closest value.
    */
@@ -42,8 +43,12 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   className?: string;
   /** Array of custom slider step objects (value and label of each step) for the slider. */
   customSteps?: SliderStepObject[];
-  /* Adds a tooltip over the slider thumb containing the current value. */
+  /** Enables a tooltip over the silder thumb. Defaults to the current value, or tooltipContent if provided. */
   hasTooltipOverThumb?: boolean;
+  /** Content of the tooltip over the slider thumb. Defaults to the current value.  */
+  tooltipContent?: React.ReactNode;
+  /** Additional props passed to the tooltip. */
+  tooltipProps?: Omit<TooltipProps, 'content'>;
   /** Accessible label for the input field. */
   inputAriaLabel?: string;
   /** Text label that is place after the input field. */
@@ -56,6 +61,8 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   isDisabled?: boolean;
   /** Flag to show value input field. */
   isInputVisible?: boolean;
+  /** Flag indicating if the input value should also update the slider value as the user types. When false, the slider will update its value on blur or enter key press. */
+  isInputLive?: boolean;
   /** @deprecated Use startActions instead. Actions placed at the start of the slider. */
   leftActions?: React.ReactNode;
   /** Actions placed at the start of the slider. */
@@ -81,10 +88,16 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   showTicks?: boolean;
   /** The step interval. */
   step?: number;
-  /* Accessible label for the slider thumb. */
+  /** Accessible label for the slider thumb. */
   thumbAriaLabel?: string;
+  /** Accessible text for the current value of the slider. Defaults to the current value. */
+  thumbAriaValueText?: string;
   /** Current value of the slider.  */
   value?: number;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 const getPercentage = (current: number, max: number) => (100 * current) / max;
@@ -97,10 +110,14 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   isDisabled = false,
   isInputVisible = false,
   inputValue = 0,
+  isInputLive = false,
   inputLabel,
   inputAriaLabel = 'Slider value input',
   thumbAriaLabel = 'Value',
+  thumbAriaValueText,
   hasTooltipOverThumb = false,
+  tooltipContent,
+  tooltipProps,
   inputPosition = 'end',
   onChange,
   leftActions,
@@ -114,8 +131,11 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   showBoundaries = true,
   'aria-describedby': ariaDescribedby,
   'aria-labelledby': ariaLabelledby,
+  ouiaId,
+  ouiaSafe = true,
   ...props
 }: SliderProps) => {
+  const ouiaProps = useOUIAProps(Slider.displayName, ouiaId, ouiaSafe);
   const sliderRailRef = useRef<HTMLDivElement>(undefined);
   const thumbRef = useRef<HTMLDivElement>(undefined);
 
@@ -145,8 +165,11 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   const widthChars = useMemo(() => localInputValue.toString().length, [localInputValue]);
   const inputStyle = { [cssFormControlWidthChars.name]: widthChars } as React.CSSProperties;
 
-  const onChangeHandler = (_event: React.FormEvent<HTMLInputElement>, value: string) => {
-    setLocalInputValue(Number(value));
+  const onChangeHandler = (event: React.FormEvent<HTMLInputElement>, value: string) => {
+    const newValue = Number(value);
+    setLocalInputValue(newValue);
+
+    isInputLive && onChange && onChange(event, localValue, newValue, setLocalInputValue);
   };
 
   const handleKeyPressOnInput = (event: React.KeyboardEvent) => {
@@ -425,7 +448,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
       aria-valuemin={customSteps ? customSteps[0].value : min}
       aria-valuemax={customSteps ? customSteps[customSteps.length - 1].value : max}
       aria-valuenow={localValue}
-      aria-valuetext={findAriaTextValue()}
+      aria-valuetext={thumbAriaValueText ?? findAriaTextValue()}
       aria-label={thumbAriaLabel}
       aria-disabled={isDisabled}
       aria-describedby={ariaDescribedby}
@@ -442,6 +465,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
       className={css(styles.slider, className, isDisabled && styles.modifiers.disabled)}
       style={{ ...style, ...inputStyle }}
       {...props}
+      {...ouiaProps}
     >
       {(leftActions || startActions) && <div className={css(styles.sliderActions)}>{leftActions || startActions}</div>}
       <div className={css(styles.sliderMain)}>
@@ -477,7 +501,8 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
             className={css('pf-v6-m-tabular-nums')}
             triggerRef={thumbRef}
             entryDelay={0}
-            content={findAriaTextValue()}
+            content={tooltipContent ?? findAriaTextValue()}
+            {...tooltipProps}
           >
             {thumbComponent}
           </Tooltip>

@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react';
 import { Button, Title, TitleSizes } from '@patternfly/react-core';
 import { Modal as ModalDeprecated, ModalVariant as ModalVariantDeprecated } from '@patternfly/react-core/deprecated';
-import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
+import RhUiWarningIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-icon';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 export const ModalCustomHeaderFooter: React.FunctionComponent = () => {
@@ -22,7 +22,7 @@ export const ModalCustomHeaderFooter: React.FunctionComponent = () => {
 
   const footer = (
     <Title headingLevel="h4" size={TitleSizes.md}>
-      <WarningTriangleIcon />
+      <RhUiWarningIcon />
       <span className={spacing.plSm}>Custom modal footer.</span>
     </Title>
   );

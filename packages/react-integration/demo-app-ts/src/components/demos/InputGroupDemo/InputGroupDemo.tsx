@@ -1,9 +1,9 @@
 import { Component } from 'react';
 import DollarSignIcon from '@patternfly/react-icons/dist/esm/icons/dollar-sign-icon';
 import AtIcon from '@patternfly/react-icons/dist/esm/icons/at-icon';
-import CalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/calendar-alt-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+import RhUiCalendarIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-calendar-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
+import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import {
   Button,
   ButtonVariant,
@@ -163,7 +163,7 @@ export class InputGroupDemo extends Component<{}, InputGroupState> {
         <br />
         <InputGroup>
           <InputGroupText component="label" htmlFor="textInput9">
-            <CalendarAltIcon />
+            <RhUiCalendarIcon />
           </InputGroupText>
           <InputGroupItem>
             <TextInput name="textInput9" id="textInput9" type="date" aria-label="Date input example" />
@@ -176,7 +176,11 @@ export class InputGroupDemo extends Component<{}, InputGroupState> {
             <TextInput name="textInput11" id="textInput11" type="search" aria-label="search input example" />
           </InputGroupItem>
           <InputGroupItem>
-            <Button variant={ButtonVariant.control} aria-label="search button for search input" icon={<SearchIcon />} />
+            <Button
+              variant={ButtonVariant.control}
+              aria-label="search button for search input"
+              icon={<RhMicronsSearchIcon />}
+            />
           </InputGroupItem>
         </InputGroup>
         <br />
@@ -191,7 +195,11 @@ export class InputGroupDemo extends Component<{}, InputGroupState> {
               position={PopoverPosition.top}
               bodyContent="This field is an example of input group with popover"
             >
-              <Button variant={ButtonVariant.control} aria-label="popover for input" icon={<QuestionCircleIcon />} />
+              <Button
+                variant={ButtonVariant.control}
+                aria-label="popover for input"
+                icon={<RhUiQuestionMarkCircleFillIcon />}
+              />
             </Popover>
           </InputGroupItem>
         </InputGroup>

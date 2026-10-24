@@ -1,4 +1,34 @@
 import { Avatar } from '@patternfly/react-core';
-import avatarImg from '../../assets/avatarImg.svg';
+import avatarImg from '../../assets/img_avatar-light.svg';
 
-<Avatar src={avatarImg} alt="avatar" />;
+const rhdsLogo = (
+  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+    <g>
+      <rect width="48" height="48" fill="#147878"></rect>
+      <rect x="36" y="42" width="6" height="6" fill="#004D4D"></rect>
+      <rect x="6" y="42" width="6" height="6" fill="#004D4D"></rect>
+      <rect x="12" y="36" width="24" height="6" fill="#004D4D"></rect>
+      <rect x="18" y="30" width="12" height="6" fill="#004D4D"></rect>
+      <rect width="6" height="24" transform="matrix(-1 0 0 1 48 12)" fill="#004D4D"></rect>
+      <rect width="6" height="6" transform="matrix(-1 0 0 1 42 30)" fill="#004D4D"></rect>
+      <rect width="6" height="6" transform="matrix(-1 0 0 1 36 24)" fill="#004D4D"></rect>
+      <rect width="6" height="6" transform="matrix(-1 0 0 1 42 18)" fill="#004D4D"></rect>
+      <rect width="6" height="6" transform="matrix(-1 0 0 1 36 12)" fill="#004D4D"></rect>
+      <rect width="6" height="6" transform="matrix(-1 0 0 1 42 6)" fill="#004D4D"></rect>
+      <rect x="18" width="12" height="12" fill="#004D4D"></rect>
+      <rect x="6" y="30" width="6" height="6" fill="#004D4D"></rect>
+      <rect x="12" y="24" width="6" height="6" fill="#004D4D"></rect>
+      <rect x="6" y="18" width="6" height="6" fill="#004D4D"></rect>
+      <rect x="12" y="12" width="6" height="6" fill="#004D4D"></rect>
+      <rect x="6" y="6" width="6" height="6" fill="#004D4D"></rect>
+      <rect y="12" width="6" height="24" fill="#004D4D"></rect>
+    </g>
+  </svg>
+);
+
+export const AvatarBasic: React.FunctionComponent = () => (
+  <>
+    <Avatar src={avatarImg} alt="Basic avatar with image" />
+    <Avatar alt="Basic avatar with children">{rhdsLogo}</Avatar>
+  </>
+);

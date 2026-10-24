@@ -7,10 +7,10 @@ import {
   DualListSelectorControlsWrapper,
   DualListSelectorControl
 } from '@patternfly/react-core';
-import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
-import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-left-icon';
+import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
+import RhMicronsDoubleCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-right-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 
 interface Option {
   text: string;
@@ -105,25 +105,25 @@ export const DualListSelectorBasic: React.FunctionComponent = () => {
           isDisabled={!availableOptions.some((option) => option.selected)}
           onClick={() => moveSelected(true)}
           aria-label="Add selected"
-          icon={<AngleRightIcon />}
+          icon={<RhMicronsCaretRightIcon />}
         />
         <DualListSelectorControl
           isDisabled={availableOptions.length === 0}
           onClick={() => moveAll(true)}
           aria-label="Add all"
-          icon={<AngleDoubleRightIcon />}
+          icon={<RhMicronsDoubleCaretRightIcon />}
         />
         <DualListSelectorControl
           isDisabled={chosenOptions.length === 0}
           onClick={() => moveAll(false)}
           aria-label="Remove all"
-          icon={<AngleDoubleLeftIcon />}
+          icon={<RhMicronsDoubleCaretLeftIcon />}
         />
         <DualListSelectorControl
           onClick={() => moveSelected(false)}
           isDisabled={!chosenOptions.some((option) => option.selected)}
           aria-label="Remove selected"
-          icon={<AngleLeftIcon />}
+          icon={<RhMicronsCaretLeftIcon />}
         />
       </DualListSelectorControlsWrapper>
       <DualListSelectorPane

@@ -107,6 +107,7 @@ export interface IColumn {
     allRowsSelected?: boolean;
     allRowsExpanded?: boolean;
     isHeaderSelectDisabled?: boolean;
+    isIndeterminate?: boolean;
     onFavorite?: OnFavorite;
     favoriteButtonProps?: ButtonProps;
     variant?: 'compact';

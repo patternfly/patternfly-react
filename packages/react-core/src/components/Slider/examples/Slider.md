@@ -7,10 +7,10 @@ propComponents: ['Slider', 'SliderStepObject']
 
 import { useState } from 'react';
 import { Slider, Button, Content, ContentVariants } from '@patternfly/react-core';
-import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
-import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
-import LockIcon from '@patternfly/react-icons/dist/esm/icons/lock-icon';
-import LockOpenIcon from '@patternfly/react-icons/dist/esm/icons/lock-open-icon';
+import RhUiMinusIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-minus-icon';
+import RhUiAddIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-icon';
+import RhUiLockFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-lock-fill-icon';
+import RhUiUnlockFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-unlock-fill-icon';
 
 ## Examples
 
@@ -47,6 +47,16 @@ import LockOpenIcon from '@patternfly/react-icons/dist/esm/icons/lock-open-icon'
 ### Disabled
 
 ```ts file="./SliderDisabled.tsx"
+
+```
+
+### Custom step tooltip
+
+You can customize the content of the tooltip by passing the tooltipContent property. By default this tooltip will act as a description to the slider thumb, and thus shouldn't include critical information about the current slider step unless that information is part of the step's aria-valuetext.
+
+If instead you want the tooltip to act as the human-readable value of the slider step - such as when all slider step labels are hidden - you must also pass the thumbAriaValueText property with the same string value as the tooltipContent. Additionally, you should pass the tooltip props object `{aria: 'none', 'aria-live': 'off'}` to tooltipProps in order to help prevent duplicate announcement from assistive technologies.
+
+```ts file="./SliderCustomTooltip.tsx"
 
 ```
 

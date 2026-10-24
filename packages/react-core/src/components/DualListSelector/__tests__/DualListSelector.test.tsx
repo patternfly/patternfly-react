@@ -59,6 +59,31 @@ describe('Opt-in animations', () => {
   });
 });
 
+test('Matches snapshot', () => {
+  const { asFragment } = render(<DualListSelector ouiaId="ouia-id" data-testid="test-id" />);
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test('Renders with custom ouiaId', () => {
+  render(<DualListSelector data-testid="test-id" ouiaId="test-id" />);
+  expect(screen.getByTestId('test-id')).toHaveAttribute('data-ouia-component-id', 'test-id');
+});
+
+test('Renders with expected ouia component type', () => {
+  render(<DualListSelector data-testid="test-id" ouiaId="test-id" />);
+  expect(screen.getByTestId('test-id')).toHaveAttribute('data-ouia-component-type', 'PF6/DualListSelector');
+});
+
+test('Renders with ouiaSafe defaulting to true', () => {
+  render(<DualListSelector data-testid="test-id" ouiaId="test-id" />);
+  expect(screen.getByTestId('test-id')).toHaveAttribute('data-ouia-safe', 'true');
+});
+
+test('Renders with ouiaSafe=false when specified', () => {
+  render(<DualListSelector data-testid="test-id" ouiaId="test-id" ouiaSafe={false} />);
+  expect(screen.getByTestId('test-id')).toHaveAttribute('data-ouia-safe', 'false');
+});
+
 // Following tests should be moved to a separate DualListSelectorPane test file
 describe('DualListSelector', () => {
   test('basic', () => {

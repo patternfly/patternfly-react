@@ -7,7 +7,7 @@ import {
   DescriptionListTermHelpTextButton,
   Popover
 } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
+import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 
 export const DescriptionListWithTermHelpText: React.FunctionComponent = () => (
   <DescriptionList aria-label="Term help text">
@@ -44,7 +44,7 @@ export const DescriptionListWithTermHelpText: React.FunctionComponent = () => (
         </Popover>
       </DescriptionListTermHelpText>
       <DescriptionListDescription>
-        <Button variant="link" isInline icon={<PlusCircleIcon />}>
+        <Button variant="link" isInline icon={<RhUiAddCircleFillIcon />}>
           app=MyApp
         </Button>
       </DescriptionListDescription>

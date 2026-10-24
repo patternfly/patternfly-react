@@ -4,7 +4,8 @@ import { canUseDOM, KeyTypes, PickOptional } from '../../helpers';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
 import { ModalContent } from './ModalContent';
-import { OUIAProps, getDefaultOUIAId } from '../../helpers';
+import { OUIAProps } from '../../helpers';
+import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 
 export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** The parent container to append the modal to. Defaults to "document.body". */
@@ -52,6 +53,8 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
   ouiaSafe?: boolean;
+  /** Flag indicating whether animations are enabled. Animations are enabled by default. */
+  hasAnimations?: boolean;
 }
 
 export enum ModalVariant {
@@ -62,12 +65,13 @@ export enum ModalVariant {
 }
 
 interface ModalState {
-  ouiaStateId: string;
+  mounted: boolean;
 }
 
 class Modal extends Component<ModalProps, ModalState> {
   static displayName = 'Modal';
   static currentId = 0;
+  static openModalStacks: Map<HTMLElement, string[]> = new Map();
   boxId = '';
   backdropId = '';
 
@@ -76,7 +80,8 @@ class Modal extends Component<ModalProps, ModalState> {
     variant: 'default',
     appendTo: () => document.body,
     ouiaSafe: true,
-    position: 'default'
+    position: 'default',
+    hasAnimations: true
   };
 
   constructor(props: ModalProps) {
@@ -87,7 +92,7 @@ class Modal extends Component<ModalProps, ModalState> {
     this.backdropId = `pf-modal-part-${backdropId}`;
 
     this.state = {
-      ouiaStateId: getDefaultOUIAId(Modal.displayName, props.variant)
+      mounted: false
     };
   }
 
@@ -105,20 +110,52 @@ class Modal extends Component<ModalProps, ModalState> {
     return appendTo || document.body;
   };
 
+  static getStackForTarget(target: HTMLElement): string[] {
+    if (!Modal.openModalStacks.has(target)) {
+      Modal.openModalStacks.set(target, []);
+    }
+    return Modal.openModalStacks.get(target)!;
+  }
+
   toggleSiblingsFromScreenReaders = (hide: boolean) => {
     const { appendTo } = this.props;
     const target: HTMLElement = this.getElement(appendTo);
-    const bodyChildren = target.children;
-    for (const child of Array.from(bodyChildren)) {
-      if (child.id !== this.backdropId) {
-        hide ? child.setAttribute('aria-hidden', '' + hide) : child.removeAttribute('aria-hidden');
+
+    if (hide) {
+      const stack = Modal.getStackForTarget(target);
+      if (stack.indexOf(this.backdropId) === -1) {
+        stack.push(this.backdropId);
       }
+    } else {
+      const stack = Modal.openModalStacks.get(target);
+      if (!stack) {
+        return;
+      }
+      const idx = stack.indexOf(this.backdropId);
+      if (idx !== -1) {
+        stack.splice(idx, 1);
+      }
+      if (stack.length === 0) {
+        Modal.openModalStacks.delete(target);
+      }
+    }
+
+    const stack = Modal.openModalStacks.get(target);
+    const activeBackdropId = stack?.length ? stack[stack.length - 1] : null;
+
+    for (const child of Array.from(target.children)) {
+      if (child.hasAttribute('data-popper-placement')) {
+        continue;
+      }
+      const shouldHide = activeBackdropId && child.id !== activeBackdropId;
+      shouldHide ? child.setAttribute('aria-hidden', 'true') : child.removeAttribute('aria-hidden');
     }
   };
 
   isEmpty = (value: string | null | undefined) => value === null || value === undefined || value === '';
 
   componentDidMount() {
+    this.setState({ mounted: true });
     const { appendTo } = this.props;
     const target: HTMLElement = this.getElement(appendTo);
     target.addEventListener('keydown', this.handleEscKeyClick, false);
@@ -137,8 +174,10 @@ class Modal extends Component<ModalProps, ModalState> {
       this.toggleSiblingsFromScreenReaders(true);
     } else {
       if (prevProps.isOpen !== this.props.isOpen) {
-        target.classList.remove(css(styles.backdropOpen));
         this.toggleSiblingsFromScreenReaders(false);
+        if (!Modal.openModalStacks.has(target)) {
+          target.classList.remove(css(styles.backdropOpen));
+        }
       }
     }
   }
@@ -147,8 +186,10 @@ class Modal extends Component<ModalProps, ModalState> {
     const { appendTo } = this.props;
     const target: HTMLElement = this.getElement(appendTo);
     target.removeEventListener('keydown', this.handleEscKeyClick, false);
-    target.classList.remove(css(styles.backdropOpen));
     this.toggleSiblingsFromScreenReaders(false);
+    if (!Modal.openModalStacks.has(target)) {
+      target.classList.remove(css(styles.backdropOpen));
+    }
   }
 
   render() {
@@ -166,26 +207,32 @@ class Modal extends Component<ModalProps, ModalState> {
       ...props
     } = this.props;
 
-    if (!canUseDOM || !this.getElement(appendTo)) {
+    if (!this.state.mounted || !canUseDOM || !this.getElement(appendTo)) {
       return null;
     }
 
-    return ReactDOM.createPortal(
-      <ModalContent
-        boxId={this.boxId}
-        backdropId={this.backdropId}
-        aria-label={ariaLabel}
-        aria-describedby={ariaDescribedby}
-        aria-labelledby={ariaLabelledby}
-        ouiaId={ouiaId !== undefined ? ouiaId : this.state.ouiaStateId}
-        ouiaSafe={ouiaSafe}
-        position={position}
-        elementToFocus={elementToFocus}
-        backdropClassName={props.backdropClassName}
-        {...props}
-      />,
-      this.getElement(appendTo)
-    ) as React.ReactElement<any>;
+    return (
+      <SSRSafeIds prefix="pf-" ouiaComponentType={`Modal${this.props.variant ? `-${this.props.variant}` : ''}`}>
+        {(_, generatedOuiaId) =>
+          ReactDOM.createPortal(
+            <ModalContent
+              boxId={this.boxId}
+              backdropId={this.backdropId}
+              aria-label={ariaLabel}
+              aria-describedby={ariaDescribedby}
+              aria-labelledby={ariaLabelledby}
+              ouiaId={ouiaId !== undefined ? ouiaId : generatedOuiaId}
+              ouiaSafe={ouiaSafe}
+              position={position}
+              elementToFocus={elementToFocus}
+              backdropClassName={props.backdropClassName}
+              {...props}
+            />,
+            this.getElement(appendTo)
+          ) as React.ReactElement<any>
+        }
+      </SSRSafeIds>
+    );
   }
 }
 

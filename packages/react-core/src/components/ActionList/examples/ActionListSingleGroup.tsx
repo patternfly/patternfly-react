@@ -11,7 +11,7 @@ import {
   MenuToggleElement,
   Divider
 } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export const ActionListSingleGroup: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -84,7 +84,7 @@ export const ActionListSingleGroup: React.FunctionComponent = () => {
                   variant="plain"
                   isExpanded={isOpen}
                   aria-label="Action list single group kebab"
-                  icon={<EllipsisVIcon />}
+                  icon={<RhUiEllipsisVerticalFillIcon />}
                 />
               )}
               isOpen={isOpen}

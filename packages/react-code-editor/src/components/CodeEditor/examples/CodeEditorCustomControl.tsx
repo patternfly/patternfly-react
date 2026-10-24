@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { CodeEditor, CodeEditorControl } from '@patternfly/react-code-editor';
-import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
+import RhUiPlayFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
 
 export const CodeEditorCustomControl: React.FunctionComponent = () => {
   const [code, setCode] = useState('Some example content');
@@ -16,7 +16,7 @@ export const CodeEditorCustomControl: React.FunctionComponent = () => {
 
   const customControl = (
     <CodeEditorControl
-      icon={<PlayIcon />}
+      icon={<RhUiPlayFillIcon />}
       aria-label="Execute code"
       tooltipProps={{ content: 'Execute code' }}
       onClick={onExecuteCode}

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import AddressBookIcon from '@patternfly/react-icons/dist/esm/icons/address-book-icon';
+import RhUiDocumentIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-document-icon';
 
 import { EmptyState, EmptyStateVariant } from '../EmptyState';
 import { EmptyStateBody } from '../EmptyStateBody';
@@ -71,7 +71,7 @@ describe('EmptyState', () => {
   });
 
   test('Header with icon', () => {
-    const { asFragment } = render(<EmptyStateHeader titleText="Empty state" icon={AddressBookIcon} />);
+    const { asFragment } = render(<EmptyStateHeader titleText="Empty state" icon={RhUiDocumentIcon} />);
     expect(asFragment()).toMatchSnapshot();
   });
 

@@ -11,7 +11,7 @@ import {
   MenuToggleElement,
   Divider
 } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export const CardOnlyActionsInCardHead: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -56,7 +56,7 @@ export const CardOnlyActionsInCardHead: React.FunctionComponent = () => {
             onClick={() => setIsOpen(!isOpen)}
             variant="plain"
             aria-label="Card header without title example kebab toggle"
-            icon={<EllipsisVIcon />}
+            icon={<RhUiEllipsisVerticalFillIcon />}
           />
         )}
         isOpen={isOpen}

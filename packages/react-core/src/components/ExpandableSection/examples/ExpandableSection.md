@@ -6,7 +6,7 @@ propComponents: ['ExpandableSection', 'ExpandableSectionToggle']
 ---
 
 import { useState } from 'react';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 
 ## Examples
 

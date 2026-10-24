@@ -1,5 +1,5 @@
 import { Fragment, useRef } from 'react';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
+import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import { Button, InputGroup, InputGroupItem, TextInput, Popover, PopoverPosition } from '@patternfly/react-core';
 
 export const InputGroupWithPopover: React.FunctionComponent = () => {
@@ -23,7 +23,7 @@ export const InputGroupWithPopover: React.FunctionComponent = () => {
             bodyContent="This field is an example of an input group with a popover."
             appendTo={() => inputGroupRef1.current}
           >
-            <Button variant="control" aria-label="popover for input" icon={<QuestionCircleIcon />} />
+            <Button variant="control" aria-label="popover for input" icon={<RhUiQuestionMarkCircleFillIcon />} />
           </Popover>
         </InputGroupItem>
       </InputGroup>
@@ -44,7 +44,7 @@ export const InputGroupWithPopover: React.FunctionComponent = () => {
             bodyContent="This field is an example of an input group with a popover."
             appendTo={() => inputGroupRef2.current}
           >
-            <Button variant="plain" aria-label="Popover for input" icon={<QuestionCircleIcon />} />
+            <Button variant="plain" aria-label="Popover for input" icon={<RhUiQuestionMarkCircleFillIcon />} />
           </Popover>
         </InputGroupItem>
       </InputGroup>

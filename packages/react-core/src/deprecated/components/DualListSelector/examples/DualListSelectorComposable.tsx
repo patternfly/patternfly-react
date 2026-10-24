@@ -17,12 +17,12 @@ import {
   DualListSelectorControlsWrapper as DLSControlsWrapperDeprecated,
   DualListSelectorControl as DLSControlDeprecated
 } from '@patternfly/react-core/deprecated';
-import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
-import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-left-icon';
+import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
+import RhMicronsDoubleCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-right-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
+import RhMicronsSortDownSmallToLargeIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-small-to-large-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 
 interface Option {
   text: string;
@@ -137,13 +137,18 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
         onClick={onSort}
         aria-label="Sort"
         key="sortButton"
-        icon={<PficonSortCommonAscIcon />}
+        icon={<RhMicronsSortDownSmallToLargeIcon />}
       />
     );
   };
 
   const buildEmptyState = (isAvailable: boolean) => (
-    <EmptyState headingLevel="h4" titleText="No results found" icon={SearchIcon} variant={EmptyStateVariant.sm}>
+    <EmptyState
+      headingLevel="h4"
+      titleText="No results found"
+      icon={RhMicronsSearchIcon}
+      variant={EmptyStateVariant.sm}
+    >
       <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
       <EmptyStateFooter>
         <EmptyStateActions>
@@ -193,7 +198,7 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
           aria-label="Add selected"
           tooltipContent="Add selected"
         >
-          <AngleRightIcon />
+          <RhMicronsCaretRightIcon />
         </DLSControlDeprecated>
         <DLSControlDeprecated
           isDisabled={availableOptions.length === 0}
@@ -201,7 +206,7 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
           aria-label="Add all"
           tooltipContent="Add all"
         >
-          <AngleDoubleRightIcon />
+          <RhMicronsDoubleCaretRightIcon />
         </DLSControlDeprecated>
         <DLSControlDeprecated
           isDisabled={chosenOptions.length === 0}
@@ -209,7 +214,7 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
           aria-label="Remove all"
           tooltipContent="Remove all"
         >
-          <AngleDoubleLeftIcon />
+          <RhMicronsDoubleCaretLeftIcon />
         </DLSControlDeprecated>
         <DLSControlDeprecated
           onClick={() => moveSelected(false)}
@@ -217,7 +222,7 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
           aria-label="Remove selected"
           tooltipContent="Remove selected"
         >
-          <AngleLeftIcon />
+          <RhMicronsCaretLeftIcon />
         </DLSControlDeprecated>
       </DLSControlsWrapperDeprecated>
       <DLSPaneDeprecated

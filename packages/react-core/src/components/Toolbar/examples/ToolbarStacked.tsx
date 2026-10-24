@@ -23,8 +23,8 @@ import {
   ToolbarToggleGroup,
   ToolbarItem
 } from '@patternfly/react-core';
-import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhUiFilterFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-filter-fill-icon';
 
 export const ToolbarStacked: React.FunctionComponent = () => {
   // toggle group - three option menus with labels, two icon buttons, Kebab menu - right aligned
@@ -136,6 +136,7 @@ export const ToolbarStacked: React.FunctionComponent = () => {
         <Select
           toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
             <MenuToggle
+              aria-haspopup="listbox"
               ref={toggleRef}
               onClick={() => onResourceToggle()}
               isExpanded={resourceIsExpanded}
@@ -170,6 +171,7 @@ export const ToolbarStacked: React.FunctionComponent = () => {
         <Select
           toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
             <MenuToggle
+              aria-haspopup="listbox"
               ref={toggleRef}
               onClick={() => onStatusToggle()}
               isExpanded={statusIsExpanded}
@@ -203,7 +205,7 @@ export const ToolbarStacked: React.FunctionComponent = () => {
     <Fragment>
       <Toolbar>
         <ToolbarContent>
-          <ToolbarToggleGroup variant="label-group" toggleIcon={<FilterIcon />} breakpoint="lg">
+          <ToolbarToggleGroup variant="label-group" toggleIcon={<RhUiFilterFillIcon />} breakpoint="lg">
             {toggleGroupItems}
           </ToolbarToggleGroup>
           <ToolbarItem>
@@ -229,7 +231,7 @@ export const ToolbarStacked: React.FunctionComponent = () => {
                       variant="plain"
                       onClick={onKebabToggle}
                       isExpanded={kebabIsOpen}
-                      icon={<EllipsisVIcon />}
+                      icon={<RhUiEllipsisVerticalFillIcon />}
                     />
                   )}
                   isOpen={kebabIsOpen}

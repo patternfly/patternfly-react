@@ -1,9 +1,9 @@
 import { Fragment, useEffect, useRef, useState } from 'react';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
-import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
+import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
+import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
+import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
+import RhUiWarningFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-fill-icon';
+import RhUiInformationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-information-fill-icon';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
 
@@ -12,11 +12,11 @@ import maxLines from '@patternfly/react-tokens/dist/esm/c_notification_drawer__l
 import { Tooltip, TooltipPosition } from '../Tooltip';
 
 export const variantIcons = {
-  success: CheckCircleIcon,
-  danger: ExclamationCircleIcon,
-  warning: ExclamationTriangleIcon,
-  info: InfoCircleIcon,
-  custom: BellIcon
+  success: RhUiCheckCircleFillIcon,
+  danger: RhUiErrorFillIcon,
+  warning: RhUiWarningFillIcon,
+  info: RhUiInformationFillIcon,
+  custom: RhUiNotificationFillIcon
 };
 
 export interface NotificationDrawerListItemHeaderProps extends React.HTMLProps<HTMLDivElement> {

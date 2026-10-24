@@ -9,7 +9,7 @@ import {
   Title,
   TitleSizes
 } from '@patternfly/react-core';
-import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
+import RhUiWarningIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-icon';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 
 interface ModalDemoState {
@@ -348,7 +348,7 @@ export class ModalDemo extends Component<React.HTMLProps<HTMLDivElement>, ModalD
         </ModalBody>
         <ModalFooter>
           <Title id="customFooterTitle" headingLevel="h4" size={TitleSizes.md}>
-            <WarningTriangleIcon />
+            <RhUiWarningIcon />
             <span className={spacing.plSm}>Custom modal footer.</span>
           </Title>
         </ModalFooter>

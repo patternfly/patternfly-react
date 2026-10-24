@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 import { NotificationDrawerListItemHeader } from '../NotificationDrawerListItemHeader';
 import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
 
@@ -25,7 +25,7 @@ describe('NotificationDrawerListItemHeader', () => {
 
   test('list item header with custom icon applied ', () => {
     const { asFragment } = render(
-      <NotificationDrawerListItemHeader title="Pod quit unexpectedly" icon={<BellIcon />} />
+      <NotificationDrawerListItemHeader title="Pod quit unexpectedly" icon={<RhUiNotificationFillIcon />} />
     );
     expect(asFragment()).toMatchSnapshot();
   });

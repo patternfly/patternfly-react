@@ -3,12 +3,16 @@ import userEvent from '@testing-library/user-event';
 
 import { ExpandableSection, ExpandableSectionVariant } from '../ExpandableSection';
 import styles from '@patternfly/react-styles/css/components/ExpandableSection/expandable-section';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 
 const props = { contentId: 'content-id', toggleId: 'toggle-id' };
 
 test('ExpandableSection', () => {
-  const { asFragment } = render(<ExpandableSection {...props}>test </ExpandableSection>);
+  const { asFragment } = render(
+    <ExpandableSection {...props} ouiaId="ouia-id">
+      test{' '}
+    </ExpandableSection>
+  );
   expect(asFragment()).toMatchSnapshot();
 });
 
@@ -274,7 +278,11 @@ test('Renders with div wrapper when toggleWrapper="div"', () => {
 });
 
 test('Can render custom toggle icon', () => {
-  render(<ExpandableSection toggleIcon={<BellIcon data-testid="bell-icon" />}>Test content</ExpandableSection>);
+  render(
+    <ExpandableSection toggleIcon={<RhUiNotificationFillIcon data-testid="bell-icon" />}>
+      Test content
+    </ExpandableSection>
+  );
 
   expect(screen.getByTestId('bell-icon')).toBeInTheDocument();
 });
@@ -288,7 +296,7 @@ test('Does not render toggle icon when hasToggleIcon is false', () => {
 
 test('Does not render custom toggle icon when hasToggleIcon is false', () => {
   render(
-    <ExpandableSection toggleIcon={<BellIcon data-testid="bell-icon" />} hasToggleIcon={false}>
+    <ExpandableSection toggleIcon={<RhUiNotificationFillIcon data-testid="bell-icon" />} hasToggleIcon={false}>
       Test content
     </ExpandableSection>
   );
@@ -301,4 +309,28 @@ test('Renders toggle icon by default when hasToggleIcon is true', () => {
 
   const button = screen.getByRole('button');
   expect(button.querySelector('.pf-v6-c-expandable-section__toggle-icon')).toBeInTheDocument();
+});
+
+test('Renders with custom ouiaId', () => {
+  const { container } = render(<ExpandableSection ouiaId="test-id">Test content</ExpandableSection>);
+  expect(container.firstChild).toHaveAttribute('data-ouia-component-id', 'test-id');
+});
+
+test('Renders with expected ouia component type', () => {
+  const { container } = render(<ExpandableSection ouiaId="test-id">Test content</ExpandableSection>);
+  expect(container.firstChild).toHaveAttribute('data-ouia-component-type', 'PF6/ExpandableSection');
+});
+
+test('Renders with ouiaSafe defaulting to true', () => {
+  const { container } = render(<ExpandableSection ouiaId="test-id">Test content</ExpandableSection>);
+  expect(container.firstChild).toHaveAttribute('data-ouia-safe', 'true');
+});
+
+test('Renders with ouiaSafe=false when specified', () => {
+  const { container } = render(
+    <ExpandableSection ouiaId="test-id" ouiaSafe={false}>
+      Test content
+    </ExpandableSection>
+  );
+  expect(container.firstChild).toHaveAttribute('data-ouia-safe', 'false');
 });

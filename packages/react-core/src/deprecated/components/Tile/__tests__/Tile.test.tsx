@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { Tile } from '../Tile';
-import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
+import RhUiAddIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-icon';
 
 describe('Tile', () => {
   test('basic', () => {
@@ -24,17 +24,17 @@ describe('Tile', () => {
   });
 
   test('renders with icon', () => {
-    const { asFragment } = render(<Tile title="test" icon={<PlusIcon />} />);
+    const { asFragment } = render(<Tile title="test" icon={<RhUiAddIcon />} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('renders with stacked icon', () => {
-    const { asFragment } = render(<Tile title="test" icon={<PlusIcon />} isStacked />);
+    const { asFragment } = render(<Tile title="test" icon={<RhUiAddIcon />} isStacked />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('renders with stacked large icon', () => {
-    const { asFragment } = render(<Tile title="test" icon={<PlusIcon />} isStacked isDisplayLarge />);
+    const { asFragment } = render(<Tile title="test" icon={<RhUiAddIcon />} isStacked isDisplayLarge />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

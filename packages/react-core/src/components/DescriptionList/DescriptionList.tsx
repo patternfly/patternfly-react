@@ -1,6 +1,6 @@
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DescriptionList/description-list';
-import { formatBreakpointMods } from '../../helpers';
+import { formatBreakpointMods, useOUIAProps, OUIAProps } from '../../helpers';
 import cssGridTemplateColumnsMin from '@patternfly/react-tokens/dist/esm/c_description_list_GridTemplateColumns_min';
 import cssTermWidth from '@patternfly/react-tokens/dist/esm/c_description_list__term_width';
 import cssHorizontalTermWidth from '@patternfly/react-tokens/dist/esm/c_description_list_m_horizontal__term_width';
@@ -13,7 +13,7 @@ export interface BreakpointModifiers {
   '2xl'?: string;
 }
 
-export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElement>, 'type'> {
+export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElement>, 'type'>, OUIAProps {
   /** Anything that can be rendered inside of the list */
   children?: React.ReactNode;
   /** Additional classes added to the list */
@@ -71,6 +71,10 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
     xl?: string;
     '2xl'?: string;
   };
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 const setBreakpointModifiers = (prefix: string, modifiers: BreakpointModifiers) => {
@@ -99,8 +103,11 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
   horizontalTermWidthModifier,
   orientation,
   style,
+  ouiaId,
+  ouiaSafe = true,
   ...props
 }: DescriptionListProps) => {
+  const ouiaProps = useOUIAProps(DescriptionList.displayName, ouiaId, ouiaSafe);
   if (isAutoFit && autoFitMinModifier) {
     style = {
       ...style,
@@ -139,6 +146,7 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
       )}
       style={style}
       {...props}
+      {...ouiaProps}
     >
       {children}
     </dl>

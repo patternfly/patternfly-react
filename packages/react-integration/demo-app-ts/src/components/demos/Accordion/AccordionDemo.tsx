@@ -103,6 +103,20 @@ export const AccordionDemo = () => {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
+      <br />
+      <Accordion
+        data-testid="accordion-glass-plain-both"
+        aria-label="Accordion for glass theme integration test"
+        isPlain
+        isNoPlainOnGlass
+      >
+        <AccordionItem isExpanded>
+          <AccordionToggle id="glass-plain-both-toggle">Glass theme: isPlain and isNoPlainOnGlass</AccordionToggle>
+          <AccordionContent id="glass-plain-both-content">
+            <p>Used by Cypress to verify classes and styles under pf-v6-theme-glass.</p>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
     </>
   );
 };

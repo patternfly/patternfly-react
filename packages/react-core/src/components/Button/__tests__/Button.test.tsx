@@ -555,6 +555,37 @@ describe('Favorite button', () => {
   });
 });
 
+describe('Dock variant', () => {
+  test(`Renders with class ${styles.modifiers.docked} when isDocked = true`, () => {
+    render(<Button isDocked>Dock Button</Button>);
+    expect(screen.getByRole('button')).toHaveClass(styles.modifiers.docked);
+  });
+
+  test(`Does not render with class ${styles.modifiers.docked} when isDocked is not passed`, () => {
+    render(<Button>Button</Button>);
+    expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.docked);
+  });
+
+  test(`Renders with class ${styles.modifiers.expanded} when isExpanded = true and isDocked = true`, () => {
+    render(
+      <Button isExpanded isDocked>
+        Text Expanded Button
+      </Button>
+    );
+    expect(screen.getByRole('button')).toHaveClass(styles.modifiers.expanded);
+  });
+
+  test(`Does not render with class ${styles.modifiers.expanded} when isExpanded is not passed`, () => {
+    render(<Button>Button</Button>);
+    expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.expanded);
+  });
+
+  test(`Does not render with class ${styles.modifiers.expanded} when isExpanded = true but isDocked is not passed`, () => {
+    render(<Button isExpanded>Text Expanded Button</Button>);
+    expect(screen.getByRole('button')).not.toHaveClass(styles.modifiers.expanded);
+  });
+});
+
 test(`Renders basic button`, () => {
   const { asFragment } = render(<Button aria-label="basic button">Basic Button</Button>);
   expect(asFragment()).toMatchSnapshot();

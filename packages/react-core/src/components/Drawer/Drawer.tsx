@@ -1,14 +1,18 @@
 import { createContext, forwardRef, useImperativeHandle, useRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
+import { useOUIAProps, OUIAProps } from '../../helpers';
 
 export enum DrawerColorVariant {
   default = 'default',
   secondary = 'secondary',
+  /**
+   * @deprecated `DrawerColorVariant.noBackground` is deprecated. Use the `isPlain` prop on `DrawerPanelContent` and the `DrawerSection`instead.
+   */
   noBackground = 'no-background'
 }
 
-export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
+export interface DrawerProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Additional classes added to the Drawer. */
   className?: string;
   /** Content rendered in the drawer panel */
@@ -19,6 +23,8 @@ export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
   isInline?: boolean;
   /** @beta Indicates if the drawer will have pill styles */
   isPill?: boolean;
+  /** @beta Positions the drawer as fixed to fill the viewport. Place the drawer after Page as a sibling. */
+  isViewport?: boolean;
   /** Indicates if the drawer will always show both content and panel. */
   isStatic?: boolean;
   /** Position of the drawer panel. left and right are deprecated, use start and end instead. */
@@ -27,6 +33,10 @@ export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
   onExpand?: (event: KeyboardEvent | React.MouseEvent | React.TransitionEvent) => void;
   /** @hide Forwarded ref */
   innerRef?: React.Ref<HTMLDivElement>;
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 export interface DrawerContextProps {
@@ -37,6 +47,7 @@ export interface DrawerContextProps {
   drawerRef?: React.RefObject<HTMLDivElement | null>;
   drawerContentRef?: React.RefObject<HTMLDivElement | null>;
   isInline: boolean;
+  isViewport: boolean;
 }
 
 export const DrawerContext = createContext<Partial<DrawerContextProps>>({
@@ -46,7 +57,8 @@ export const DrawerContext = createContext<Partial<DrawerContextProps>>({
   position: 'end',
   drawerRef: null,
   drawerContentRef: null,
-  isInline: false
+  isInline: false,
+  isViewport: false
 });
 
 const DrawerBase: React.FunctionComponent<DrawerProps> = ({
@@ -55,24 +67,31 @@ const DrawerBase: React.FunctionComponent<DrawerProps> = ({
   isExpanded = false,
   isInline = false,
   isPill = false,
+  isViewport = false,
   isStatic = false,
   position = 'end',
   onExpand = () => {},
   innerRef,
+  ouiaId,
+  ouiaSafe = true,
   ...props
 }: DrawerProps) => {
+  const ouiaProps = useOUIAProps(Drawer.displayName, ouiaId, ouiaSafe);
   const drawerRef = useRef<HTMLDivElement>(undefined);
   const drawerContentRef = useRef<HTMLDivElement>(undefined);
   useImperativeHandle(innerRef, () => drawerRef.current);
 
   return (
-    <DrawerContext.Provider value={{ isExpanded, isStatic, onExpand, position, drawerRef, drawerContentRef, isInline }}>
+    <DrawerContext.Provider
+      value={{ isExpanded, isStatic, onExpand, position, drawerRef, drawerContentRef, isInline, isViewport }}
+    >
       <div
         className={css(
           styles.drawer,
           isExpanded && styles.modifiers.expanded,
           isInline && styles.modifiers.inline,
           isPill && styles.modifiers.pill,
+          isViewport && styles.modifiers.viewport,
           isStatic && styles.modifiers.static,
           (position === 'left' || position === 'start') && styles.modifiers.panelLeft,
           position === 'bottom' && styles.modifiers.panelBottom,
@@ -80,6 +99,7 @@ const DrawerBase: React.FunctionComponent<DrawerProps> = ({
         )}
         ref={drawerRef}
         {...props}
+        {...ouiaProps}
       >
         {children}
       </div>
