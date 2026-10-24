@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
 import { DualListSelectorTree, DualListSelectorTreeItemData } from './DualListSelectorTree';
-import { getUniqueId } from '../../../helpers';
+import { useSSRSafeId } from '../../../helpers';
 import { DualListSelectorListWrapper } from './DualListSelectorListWrapper';
 import { DualListSelectorContext, DualListSelectorPaneContext } from './DualListSelectorContext';
 import { DualListSelectorList } from './DualListSelectorList';
@@ -88,11 +88,13 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
   onSearchInputChanged,
   onSearchInputClear,
   filterOption,
-  id = getUniqueId('dual-list-selector-pane'),
+  id: idProp,
   isDisabled = false,
   listMinHeight,
   ...props
 }: DualListSelectorPaneProps) => {
+  const generatedId = useSSRSafeId('dual-list-selector-pane-');
+  const id = idProp || generatedId;
   const [input, setInput] = useState('');
   const { isTree } = useContext(DualListSelectorContext);
 

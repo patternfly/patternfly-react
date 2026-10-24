@@ -11,7 +11,7 @@ import {
   DropdownList,
   DropdownItem
 } from '@patternfly/react-core';
-import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
+import RhUiThumbnailViewSmallFillIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-thumbnail-view-small-fill-icon';
 import brandImg from '@patternfly/react-core/src/demos/assets/PF-IconLogo.svg';
 
 const MockLink: React.FunctionComponent = ({ to, ...props }: any) => <a href={to} {...props}></a>;
@@ -215,7 +215,7 @@ export const ApplicationLauncherDemo: React.FunctionComponent = () => {
           onClick={onToggleClick}
           isExpanded={isOpen}
           style={{ width: 'auto' }}
-          icon={<ThIcon />}
+          icon={<RhUiThumbnailViewSmallFillIcon />}
         />
       )}
       ref={menuRef}

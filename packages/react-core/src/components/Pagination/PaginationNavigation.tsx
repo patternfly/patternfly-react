@@ -1,10 +1,10 @@
 import { Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
 import { css } from '@patternfly/react-styles';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
-import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
+import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
+import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-left-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
+import RhMicronsDoubleCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-right-icon';
 import { Button, ButtonVariant } from '../Button';
 import { TextInput } from '../TextInput';
 import { OnSetPage } from './Pagination';
@@ -195,7 +195,7 @@ class PaginationNavigation extends Component<PaginationNavigationProps, Paginati
                 this.handleNewPage(event, 1);
                 this.setState({ userInputPage: 1 });
               }}
-              icon={<AngleDoubleLeftIcon />}
+              icon={<RhMicronsDoubleCaretLeftIcon />}
             />
           </div>
         )}
@@ -211,7 +211,7 @@ class PaginationNavigation extends Component<PaginationNavigationProps, Paginati
               this.setState({ userInputPage: newPage });
             }}
             aria-label={toPreviousPageAriaLabel}
-            icon={<AngleLeftIcon />}
+            icon={<RhMicronsCaretLeftIcon />}
           />
         </div>
         {!isCompact && (
@@ -247,7 +247,7 @@ class PaginationNavigation extends Component<PaginationNavigationProps, Paginati
               this.handleNewPage(event, newPage);
               this.setState({ userInputPage: newPage });
             }}
-            icon={<AngleRightIcon />}
+            icon={<RhMicronsCaretRightIcon />}
           />
         </div>
         {!isCompact && (
@@ -262,7 +262,7 @@ class PaginationNavigation extends Component<PaginationNavigationProps, Paginati
                 this.handleNewPage(event, lastPage);
                 this.setState({ userInputPage: lastPage });
               }}
-              icon={<AngleDoubleRightIcon />}
+              icon={<RhMicronsDoubleCaretRightIcon />}
             />
           </div>
         )}

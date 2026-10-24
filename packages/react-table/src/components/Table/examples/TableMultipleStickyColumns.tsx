@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, InnerScrollContainer, ThProps } from '@patternfly/react-table';
-import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
+import RhUiBlueprintIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-blueprint-icon';
 
 interface Fact {
   name: string;
@@ -120,7 +120,7 @@ export const TableMultipleStickyColumns: React.FunctionComponent = () => {
                 {fact.name}
               </Th>
               <Th isStickyColumn stickyMinWidth="120px" stickyLeftOffset="120px" modifier="truncate" hasRightBorder>
-                <BlueprintIcon />
+                <RhUiBlueprintIcon />
                 {` ${fact.state}`}
               </Th>
               <Td modifier="nowrap" dataLabel={columnNames.header3}>

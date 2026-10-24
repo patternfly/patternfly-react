@@ -20,12 +20,12 @@ import {
   MenuFooter
 } from '@patternfly/react-core';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
-import PauseIcon from '@patternfly/react-icons/dist/esm/icons/pause-icon';
-import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
-import ExpandIcon from '@patternfly/react-icons/dist/esm/icons/expand-icon';
-import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
-import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhUiPauseFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-pause-fill-icon';
+import RhUiPlayFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-play-fill-icon';
+import RhUiExpandIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-expand-icon';
+import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
+import RhUiDownloadIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-download-icon';
 
 export const ConsoleLogViewerToolbar: React.FC = () => {
   const firstOptions = {
@@ -254,7 +254,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
   };
 
   const LogsSearchInput = (
-    <ToolbarToggleGroup toggleIcon={<SearchIcon />} breakpoint="lg">
+    <ToolbarToggleGroup toggleIcon={<RhMicronsSearchIcon />} breakpoint="lg">
       <ToolbarItem>
         <SearchInput
           placeholder="Search logs"
@@ -313,7 +313,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
         <Button
           variant={isPaused ? 'plain' : 'link'}
           onClick={pauseOrStart}
-          icon={isPaused ? <PlayIcon /> : <PauseIcon />}
+          icon={isPaused ? <RhUiPlayFillIcon /> : <RhUiPauseFillIcon />}
         >
           {isPaused ? ` Resume Log` : ` Pause Log`}
         </Button>
@@ -370,7 +370,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
             variant="plain"
             onClick={pauseOrStart}
             aria-label={isPaused ? 'Play' : 'Paused'}
-            icon={isPaused ? <PlayIcon /> : <PauseIcon />}
+            icon={isPaused ? <RhUiPlayFillIcon /> : <RhUiPauseFillIcon />}
           />
         </Tooltip>
       </ToolbarItem>
@@ -430,7 +430,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
                 ref={toggleRef}
                 isExpanded={externalExpandedMobile}
                 onClick={onExternalToggleMobile}
-                icon={<ExternalLinkAltIcon />}
+                icon={<RhMicronsExternalLinkIcon />}
                 aria-label="External logs"
               />
             )}
@@ -451,7 +451,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
                 ref={toggleRef}
                 isExpanded={downloadExpandedMobile}
                 onClick={onDownloadToggleMobile}
-                icon={<DownloadIcon />}
+                icon={<RhUiDownloadIcon />}
                 aria-label="Download"
               />
             )}
@@ -470,7 +470,7 @@ export const ConsoleLogViewerToolbar: React.FC = () => {
       {rightAlignedItemsMobile}
       <ToolbarItem>
         <Tooltip position="top" content={<div>Expand</div>}>
-          <Button variant="plain" aria-label="expand" icon={<ExpandIcon />} />
+          <Button variant="plain" aria-label="expand" icon={<RhUiExpandIcon />} />
         </Tooltip>
       </ToolbarItem>
     </Fragment>

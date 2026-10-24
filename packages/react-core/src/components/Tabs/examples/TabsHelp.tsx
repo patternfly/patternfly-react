@@ -1,6 +1,6 @@
 import { createRef, useState } from 'react';
 import { Tabs, Tab, TabTitleText, TabAction, Popover } from '@patternfly/react-core';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 
 export const TabsHelp: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = useState<number>(0);
@@ -45,7 +45,7 @@ export const TabsHelp: React.FunctionComponent = () => {
                   ref={ref}
                   {...(tab === 'Help disabled' && { isDisabled: true })}
                 >
-                  <HelpIcon />
+                  <RhUiQuestionMarkCircleIcon />
                 </TabAction>
                 {helpPopover(`Help popover for ${tab}`, ref)}
               </>

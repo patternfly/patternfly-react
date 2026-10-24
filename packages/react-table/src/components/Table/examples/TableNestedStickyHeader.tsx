@@ -112,85 +112,90 @@ export const TableNestedHeaders: React.FunctionComponent = () => {
   });
 
   return (
-    <InnerScrollContainer>
-      <Table aria-label="Nested column headers table" gridBreakPoint="" isStickyHeader>
-        <Thead hasNestedHeader>
-          <Tr>
-            <Th hasRightBorder colSpan={3}>
-              {columnNames.pods}
-            </Th>
-            <Th hasRightBorder colSpan={2}>
-              {columnNames.ports}
-            </Th>
-            <Th modifier="fitContent" hasRightBorder rowSpan={2} sort={getSortParams(5)}>
-              {columnNames.protocol}
-            </Th>
-            <Th modifier="fitContent" hasRightBorder rowSpan={2} sort={getSortParams(6)}>
-              {columnNames.flowRate}
-            </Th>
-            <Th modifier="fitContent" hasRightBorder rowSpan={2} sort={getSortParams(7)}>
-              {columnNames.traffic}
-            </Th>
-            <Th modifier="fitContent" rowSpan={2} sort={getSortParams(8)}>
-              {columnNames.packets}
-            </Th>
-          </Tr>
-          <Tr>
-            <Th isSubheader sort={getSortParams(0)}>
-              {columnNames.source}
-            </Th>
-            <Th isSubheader sort={getSortParams(1)}>
-              {columnNames.destination}
-            </Th>
-            <Th isSubheader modifier="fitContent" hasRightBorder sort={getSortParams(2)}>
-              {columnNames.datetime}
-            </Th>
-            <Th isSubheader modifier="fitContent" sort={getSortParams(3)}>
-              {columnNames.source}
-            </Th>
-            <Th isSubheader modifier="fitContent" hasRightBorder sort={getSortParams(4)}>
-              {columnNames.destination}
-            </Th>
-          </Tr>
-        </Thead>
-        <Tbody>
-          {sortedConnections.map((connection) => (
-            <Tr key={connection.source.podName}>
-              <Td dataLabel={columnNames.source}>{connection.source.podName}</Td>
-              <Td dataLabel={columnNames.destination}>{connection.destination.podName}</Td>\
-              <Td dataLabel={columnNames.datetime}>
-                <div>
-                  <Timestamp dateFormat="full" timeFormat="medium" date={new Date(connection.timestamp)} />
-                </div>
-              </Td>
-              <Td dataLabel={columnNames.source}>
-                <Stack>
-                  <StackItem>
-                    <span>{connection.source.port.num}</span>
-                  </StackItem>
-                  <StackItem>
-                    <small>({connection.source.port.protocol})</small>
-                  </StackItem>
-                </Stack>
-              </Td>
-              <Td dataLabel={columnNames.destination}>
-                <Stack>
-                  <StackItem>
-                    <span>{connection.destination.port.num}</span>
-                  </StackItem>
-                  <StackItem>
-                    <small>({connection.destination.port.protocol})</small>
-                  </StackItem>
-                </Stack>
-              </Td>
-              <Td dataLabel={columnNames.protocol}>{connection.protocol}</Td>
-              <Td dataLabel={columnNames.flowRate}>{connection.flowRate}</Td>
-              <Td dataLabel={columnNames.traffic}>{connection.traffic}</Td>
-              <Td dataLabel={columnNames.packets}>{connection.packets}</Td>
+    <div style={{ height: '250px' }}>
+      <InnerScrollContainer>
+        <Table aria-label="Nested column headers table" gridBreakPoint="" isStickyHeader>
+          <Thead hasNestedHeader>
+            <Tr>
+              <Th hasRightBorder colSpan={3}>
+                {columnNames.pods}
+              </Th>
+              <Th hasRightBorder colSpan={2}>
+                {columnNames.ports}
+              </Th>
+              <Th modifier="fitContent" hasRightBorder rowSpan={2} sort={getSortParams(5)}>
+                {columnNames.protocol}
+              </Th>
+              <Th modifier="fitContent" hasRightBorder rowSpan={2} sort={getSortParams(6)}>
+                {columnNames.flowRate}
+              </Th>
+              <Th modifier="fitContent" hasRightBorder rowSpan={2} sort={getSortParams(7)}>
+                {columnNames.traffic}
+              </Th>
+              <Th modifier="fitContent" rowSpan={2} sort={getSortParams(8)}>
+                {columnNames.packets}
+              </Th>
             </Tr>
-          ))}
-        </Tbody>
-      </Table>
-    </InnerScrollContainer>
+            <Tr>
+              <Th isSubheader sort={getSortParams(0)}>
+                {columnNames.source}
+              </Th>
+              <Th isSubheader sort={getSortParams(1)}>
+                {columnNames.destination}
+              </Th>
+              <Th isSubheader modifier="fitContent" hasRightBorder sort={getSortParams(2)}>
+                {columnNames.datetime}
+              </Th>
+              <Th isSubheader modifier="fitContent" sort={getSortParams(3)}>
+                {columnNames.source}
+              </Th>
+              <Th isSubheader modifier="fitContent" hasRightBorder sort={getSortParams(4)}>
+                {columnNames.destination}
+              </Th>
+            </Tr>
+            <Tr isBorderRow aria-hidden="true">
+              <Td colSpan={9}></Td>
+            </Tr>
+          </Thead>
+          <Tbody>
+            {sortedConnections.map((connection) => (
+              <Tr key={connection.source.podName}>
+                <Td dataLabel={columnNames.source}>{connection.source.podName}</Td>
+                <Td dataLabel={columnNames.destination}>{connection.destination.podName}</Td>
+                <Td dataLabel={columnNames.datetime}>
+                  <div>
+                    <Timestamp dateFormat="full" timeFormat="medium" date={new Date(connection.timestamp)} />
+                  </div>
+                </Td>
+                <Td dataLabel={columnNames.source}>
+                  <Stack>
+                    <StackItem>
+                      <span>{connection.source.port.num}</span>
+                    </StackItem>
+                    <StackItem>
+                      <small>({connection.source.port.protocol})</small>
+                    </StackItem>
+                  </Stack>
+                </Td>
+                <Td dataLabel={columnNames.destination}>
+                  <Stack>
+                    <StackItem>
+                      <span>{connection.destination.port.num}</span>
+                    </StackItem>
+                    <StackItem>
+                      <small>({connection.destination.port.protocol})</small>
+                    </StackItem>
+                  </Stack>
+                </Td>
+                <Td dataLabel={columnNames.protocol}>{connection.protocol}</Td>
+                <Td dataLabel={columnNames.flowRate}>{connection.flowRate}</Td>
+                <Td dataLabel={columnNames.traffic}>{connection.traffic}</Td>
+                <Td dataLabel={columnNames.packets}>{connection.packets}</Td>
+              </Tr>
+            ))}
+          </Tbody>
+        </Table>
+      </InnerScrollContainer>
+    </div>
   );
 };

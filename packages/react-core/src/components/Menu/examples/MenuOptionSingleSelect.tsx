@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
-import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
+import RhUiTableIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-table-icon';
 
 export const MenuOptionSingleSelect: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = useState(0);
@@ -17,7 +17,7 @@ export const MenuOptionSingleSelect: React.FunctionComponent = () => {
         <MenuList aria-label="Menu single select example">
           <MenuItem itemId={0}>Option 1</MenuItem>
           <MenuItem itemId={1}>Option 2</MenuItem>
-          <MenuItem icon={<TableIcon />} itemId={2}>
+          <MenuItem icon={<RhUiTableIcon />} itemId={2}>
             Option 3
           </MenuItem>
         </MenuList>

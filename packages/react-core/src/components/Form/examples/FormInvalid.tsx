@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Form, FormGroup, TextInput, HelperText, HelperTextItem, FormHelperText } from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import RhUiErrorFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-error-fill-icon';
 
 export const FormInvalid: React.FunctionComponent = () => {
   type validate = 'success' | 'warning' | 'error' | 'default';
@@ -32,7 +32,7 @@ export const FormInvalid: React.FunctionComponent = () => {
         {validated !== 'success' && (
           <FormHelperText>
             <HelperText>
-              <HelperTextItem icon={<ExclamationCircleIcon />} variant={validated}>
+              <HelperTextItem icon={<RhUiErrorFillIcon />} variant={validated}>
                 {validated === 'error' ? 'Must be a number' : 'Please enter your age'}
               </HelperTextItem>
             </HelperText>

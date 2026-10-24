@@ -1,12 +1,14 @@
 import { Component } from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import { getUniqueId } from '../../helpers/util';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
 import { NavContext } from './Nav';
 import { PageSidebarContext } from '../Page/PageSidebar';
 import { PickOptional } from '../../helpers/typeUtils';
-import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
+import { getOUIAProps, OUIAProps } from '../../helpers';
+import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
+import { IS_INERT } from '../../helpers/inert';
+import RhUiEllipsisHorizontalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-horizontal-fill-icon';
 
 export interface NavExpandableProps
   extends Omit<React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>, 'title'>, OUIAProps {
@@ -16,6 +18,8 @@ export interface NavExpandableProps
   srText?: string;
   /** Boolean to pragmatically expand or collapse section */
   isExpanded?: boolean;
+  /** Adds an expandable icon to indicate the section is expandable */
+  hasExpandableIcon?: boolean;
   /** Anything that can be rendered inside of the expandable list */
   children?: React.ReactNode;
   /** Additional classes added to the container */
@@ -30,13 +34,14 @@ export interface NavExpandableProps
   onExpand?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, val: boolean) => void;
   /** Additional props added to the NavExpandable <button> */
   buttonProps?: any;
+  /** Icon added before the nav item children. */
+  icon?: React.ReactNode;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
 }
 
 interface NavExpandableState {
   expandedState: boolean;
-  ouiaStateId: string;
 }
 
 class NavExpandable extends Component<NavExpandableProps, NavExpandableState> {
@@ -48,14 +53,12 @@ class NavExpandable extends Component<NavExpandableProps, NavExpandableState> {
     className: '',
     groupId: null as string,
     isActive: false,
-    id: ''
+    id: '',
+    hasExpandableIcon: false
   };
 
-  id = this.props.id || getUniqueId();
-
   state = {
-    expandedState: this.props.isExpanded,
-    ouiaStateId: getDefaultOUIAId(NavExpandable.displayName)
+    expandedState: this.props.isExpanded
   };
 
   componentDidMount() {
@@ -88,6 +91,7 @@ class NavExpandable extends Component<NavExpandableProps, NavExpandableState> {
 
   render() {
     const {
+      icon,
       title,
       srText,
       children,
@@ -96,68 +100,83 @@ class NavExpandable extends Component<NavExpandableProps, NavExpandableState> {
       ouiaId,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       groupId,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
       id,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       isExpanded,
+      hasExpandableIcon,
       buttonProps,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onExpand,
       ...props
     } = this.props;
 
-    const { expandedState, ouiaStateId } = this.state;
+    const { expandedState } = this.state;
 
     return (
-      <NavContext.Consumer>
-        {(context) => (
-          <li
-            className={css(
-              styles.navItem,
-              expandedState && styles.modifiers.expanded,
-              isActive && styles.modifiers.current,
-              className
-            )}
-            {...getOUIAProps(NavExpandable.displayName, ouiaId !== undefined ? ouiaId : ouiaStateId)}
-            {...props}
-          >
-            <PageSidebarContext.Consumer>
-              {({ isSidebarOpen }) => (
-                <button
-                  className={css(styles.navLink)}
-                  id={srText ? null : this.id}
-                  onClick={(event) => this.onExpand(event, context.onToggle)}
-                  aria-expanded={expandedState}
-                  tabIndex={isSidebarOpen ? null : -1}
-                  {...buttonProps}
+      <SSRSafeIds prefix="pf-nav-expandable-" ouiaComponentType="NavExpandable">
+        {(generatedId, generatedOuiaId) => {
+          const navId = id || generatedId;
+
+          return (
+            <NavContext.Consumer>
+              {(context) => (
+                <li
+                  className={css(
+                    styles.navItem,
+                    expandedState && styles.modifiers.expanded,
+                    isActive && styles.modifiers.current,
+                    className
+                  )}
+                  {...getOUIAProps(NavExpandable.displayName, ouiaId !== undefined ? ouiaId : generatedOuiaId)}
+                  {...props}
                 >
-                  {typeof title !== 'string' ? <span className={css(`${styles.nav}__link-text`)}>{title}</span> : title}
-                  <span className={css(styles.navToggle)}>
-                    <span className={css(styles.navToggleIcon)}>
-                      <AngleRightIcon />
-                    </span>
-                  </span>
-                </button>
+                  <PageSidebarContext.Consumer>
+                    {({ isSidebarOpen }) => (
+                      <button
+                        className={css(styles.navLink)}
+                        id={srText ? null : navId}
+                        onClick={(event) => this.onExpand(event, context.onToggle)}
+                        aria-expanded={expandedState}
+                        tabIndex={isSidebarOpen ? null : -1}
+                        {...buttonProps}
+                      >
+                        {icon && <span className={css(styles.navLinkIcon)}>{icon}</span>}
+                        {hasExpandableIcon && (
+                          <span className={css(styles.navLinkExpandableIcon)}>
+                            <RhUiEllipsisHorizontalFillIcon />
+                          </span>
+                        )}
+                        <span className={css(styles.navLinkText)}>{title}</span>
+                        <span className={css(styles.navToggle)}>
+                          <span className={css(styles.navToggleIcon)}>
+                            <RhMicronsCaretDownIcon />
+                          </span>
+                        </span>
+                      </button>
+                    )}
+                  </PageSidebarContext.Consumer>
+                  <section
+                    className={css(styles.navSubnav)}
+                    aria-labelledby={navId}
+                    hidden={expandedState ? null : true}
+                    {...(!expandedState && { inert: IS_INERT })}
+                  >
+                    {srText && (
+                      <h2 className="pf-v6-screen-reader" id={navId}>
+                        {srText}
+                      </h2>
+                    )}
+                    <ul className={css(styles.navList)} role="list">
+                      {children}
+                    </ul>
+                  </section>
+                </li>
               )}
-            </PageSidebarContext.Consumer>
-            <section
-              className={css(styles.navSubnav)}
-              aria-labelledby={this.id}
-              hidden={expandedState ? null : true}
-              {...(!expandedState && { inert: '' })}
-            >
-              {srText && (
-                <h2 className="pf-v6-screen-reader" id={this.id}>
-                  {srText}
-                </h2>
-              )}
-              <ul className={css(styles.navList)} role="list">
-                {children}
-              </ul>
-            </section>
-          </li>
-        )}
-      </NavContext.Consumer>
+            </NavContext.Consumer>
+          );
+        }}
+      </SSRSafeIds>
     );
   }
 }

@@ -13,9 +13,11 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 import { Button, Drawer, DrawerActions, DrawerCloseButton, DrawerColorVariant,
 DrawerContent, DrawerContentBody, DrawerHead, DrawerPanelContent, DrawerSection, ModalVariant, Alert, EmptyState, EmptyStateFooter, EmptyStateBody, EmptyStateActions, Title, Progress, Form, FormGroup, TextInput } from '@patternfly/react-core';
 import { Wizard as WizardDeprecated, WizardFooter as WizardFooterDeprecated, WizardContextConsumer as WizardContextConsumerDeprecated } from '@patternfly/react-core/deprecated';
-import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
+import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
 import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
+import RhUiGearGroupFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-gear-group-fill-icon';
 import CogsIcon from '@patternfly/react-icons/dist/esm/icons/cogs-icon';
+import layout from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
 
 If you seek a wizard solution that allows for more composition, see the [React](/components/wizard) tab.
 

@@ -4,6 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { TooltipContent } from './TooltipContent';
 import { TooltipArrow } from './TooltipArrow';
 import { KeyTypes } from '../../helpers/constants';
+import { useSSRSafeId } from '../../helpers';
 import tooltipMaxWidth from '@patternfly/react-tokens/dist/esm/c_tooltip_MaxWidth';
 import { Popper } from '../../helpers/Popper/Popper';
 
@@ -136,9 +137,6 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
   animationDuration?: number;
 }
 
-// id for associating trigger with the content aria-describedby or aria-labelledby
-let pfTooltipIdCounter = 1;
-
 export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   content: bodyContent,
   position = 'top',
@@ -157,7 +155,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   aria = 'describedby',
   // For every initial starting position, there are 3 escape positions
   flipBehavior = ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom'],
-  id = `pf-tooltip-${pfTooltipIdCounter++}`,
+  id: idProp,
   children,
   animationDuration = 300,
   triggerRef,
@@ -165,6 +163,8 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   onTooltipHidden = () => {},
   ...rest
 }: TooltipProps) => {
+  const generatedId = useSSRSafeId('pf-tooltip-');
+  const id = idProp ?? generatedId;
   // could make this a prop in the future (true | false | 'toggle')
   const hideOnClick = true;
   const triggerOnMouseenter = trigger.includes('mouseenter');
@@ -210,7 +210,10 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
     if (!existingAria) {
       return;
     }
-    const newAria = existingAria.replace(new RegExp(`\\b${id}\\b`, 'g'), '').trim();
+    const newAria = existingAria
+      .split(/\s+/)
+      .filter((token) => token !== id)
+      .join(' ');
     if (newAria) {
       element.setAttribute(attributeName, newAria);
     } else {

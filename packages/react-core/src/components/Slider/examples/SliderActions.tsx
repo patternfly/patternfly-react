@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Slider, SliderOnChangeEvent, Button, Content } from '@patternfly/react-core';
-import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
-import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
-import LockIcon from '@patternfly/react-icons/dist/esm/icons/lock-icon';
-import LockOpenIcon from '@patternfly/react-icons/dist/esm/icons/lock-open-icon';
+import RhUiMinusIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-minus-icon';
+import RhUiAddIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-icon';
+import RhUiLockFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-lock-fill-icon';
+import RhUiUnlockFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-unlock-fill-icon';
 
 export const SliderActions: React.FunctionComponent = () => {
   const [value1, setValue1] = useState(50);
@@ -58,7 +58,7 @@ export const SliderActions: React.FunctionComponent = () => {
       variant="plain"
       aria-label={isDisabled ? 'Lock' : 'Unlock'}
       onClick={() => setIsDisabled(!isDisabled)}
-      icon={isDisabled ? <LockIcon /> : <LockOpenIcon />}
+      icon={isDisabled ? <RhUiLockFillIcon /> : <RhUiUnlockFillIcon />}
     />
   );
 
@@ -68,8 +68,8 @@ export const SliderActions: React.FunctionComponent = () => {
       <Slider
         value={value1}
         onChange={onChange1}
-        startActions={<Button variant="plain" aria-label="Minus" onClick={onMinusClick} icon={<MinusIcon />} />}
-        endActions={<Button variant="plain" aria-label="Plus" onClick={onPlusClick} icon={<PlusIcon />} />}
+        startActions={<Button variant="plain" aria-label="Minus" onClick={onMinusClick} icon={<RhUiMinusIcon />} />}
+        endActions={<Button variant="plain" aria-label="Plus" onClick={onPlusClick} icon={<RhUiAddIcon />} />}
       />
       <br />
       <br />

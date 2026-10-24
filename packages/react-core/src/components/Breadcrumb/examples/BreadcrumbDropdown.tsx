@@ -11,13 +11,13 @@ import {
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
+import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
 
 const dropdownItems = [
   <DropdownItem
     icon={
       <Icon shouldMirrorRTL>
-        <AngleLeftIcon />
+        <RhMicronsCaretLeftIcon />
       </Icon>
     }
     key="edit"
@@ -27,7 +27,7 @@ const dropdownItems = [
   <DropdownItem
     icon={
       <Icon shouldMirrorRTL>
-        <AngleLeftIcon />
+        <RhMicronsCaretLeftIcon />
       </Icon>
     }
     key="action"
@@ -37,7 +37,7 @@ const dropdownItems = [
   <DropdownItem
     icon={
       <Icon shouldMirrorRTL>
-        <AngleLeftIcon />
+        <RhMicronsCaretLeftIcon />
       </Icon>
     }
     key="apps"

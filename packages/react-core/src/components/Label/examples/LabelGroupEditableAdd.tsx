@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LabelGroup, Label } from '@patternfly/react-core';
+import { LabelGroup, Label, LabelColor } from '@patternfly/react-core';
 
 export const LabelGroupEditableAdd: React.FunctionComponent = () => {
   const [idIndex, setIdIndex] = useState<number>(3);
@@ -65,7 +65,7 @@ export const LabelGroupEditableAdd: React.FunctionComponent = () => {
         <Label
           key={label.id}
           id={label.id}
-          color="blue"
+          color={LabelColor.blue}
           onClose={() => onClose(label.id)}
           onEditCancel={(_event, prevText) => onEdit(prevText, index)}
           onEditComplete={(_event, newText) => onEdit(newText, index)}

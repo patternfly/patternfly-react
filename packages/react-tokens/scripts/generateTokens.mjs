@@ -33,11 +33,11 @@ const getDeclarations = (cssAst) =>
     .reduce((acc, val) => acc.concat(val), []); // flatten
 
 const formatFilePathToName = (filePath) => {
-  // const filePathArr = filePath.split('/');
+  const normalizedPath = filePath.replace(/\\/g, '/');
   let prefix = '';
-  if (filePath.includes('components/')) {
+  if (normalizedPath.includes('components/')) {
     prefix = 'c_';
-  } else if (filePath.includes('layouts/')) {
+  } else if (normalizedPath.includes('layouts/')) {
     prefix = 'l_';
   }
   return `${prefix}${basename(filePath, '.css').replace(/-+/g, '_')}`;
@@ -97,7 +97,7 @@ export function generateTokens() {
   const cssFiles = glob
     .sync(['{**/{components,layouts}/**/*.css', '**/patternfly-charts.css', '**/patternfly-variables.css}'].join(','), {
       cwd: pfStylesDir,
-      ignore: ['assets/**', '/**/_index.css'],
+      ignore: ['assets/**', '/**/_index.css', '**/docs/**'],
       absolute: true
     })
     // Sort to put variables and charts at END of list so getLocalVarsMap returns correct values

@@ -28,9 +28,9 @@ import {
 
 import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
 
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
+import RhMicronsCaretDownIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-down-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export const DataListExpandableControlInToolbar: React.FunctionComponent = () => {
   const [expanded, setExpanded] = useState(['ex-toggle1', 'ex-toggle3']);
@@ -96,7 +96,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                   icon={
                     <Icon shouldMirrorRTL>
                       <ToolbarExpandIconWrapper>
-                        <AngleRightIcon />
+                        <RhMicronsCaretDownIcon />
                       </ToolbarExpandIconWrapper>
                     </Icon>
                   }
@@ -160,7 +160,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                 <DataListItemCells
                   dataListCells={[
                     <DataListCell isIcon key="icon">
-                      <CodeBranchIcon />
+                      <RhUiBranchFillIcon />
                     </DataListCell>,
                     <DataListCell key="primary content">
                       <div id="ex-item1">Primary content</div>
@@ -188,7 +188,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                         isExpanded={isOpen1}
                         variant="plain"
                         aria-label="Primary content kebab toggle"
-                        icon={<EllipsisVIcon />}
+                        icon={<RhUiEllipsisVerticalFillIcon />}
                       />
                     )}
                   >
@@ -237,7 +237,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                 <DataListItemCells
                   dataListCells={[
                     <DataListCell isIcon key="icon">
-                      <CodeBranchIcon />
+                      <RhUiBranchFillIcon />
                     </DataListCell>,
                     <DataListCell key="secondary content">
                       <div id="ex-item2">Secondary content</div>
@@ -264,7 +264,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                         isExpanded={isOpen2}
                         variant="plain"
                         aria-label="Secondary content kebab toggle"
-                        icon={<EllipsisVIcon />}
+                        icon={<RhUiEllipsisVerticalFillIcon />}
                       />
                     )}
                   >
@@ -313,7 +313,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                 <DataListItemCells
                   dataListCells={[
                     <DataListCell isIcon key="icon">
-                      <CodeBranchIcon />
+                      <RhUiBranchFillIcon />
                     </DataListCell>,
                     <DataListCell key="tertiary content">
                       <div id="ex-item3">Tertiary content</div>
@@ -340,7 +340,7 @@ export const DataListExpandableControlInToolbar: React.FunctionComponent = () =>
                         isExpanded={isOpen3}
                         variant="plain"
                         aria-label="Tertiary content kebab toggle"
-                        icon={<EllipsisVIcon />}
+                        icon={<RhUiEllipsisVerticalFillIcon />}
                       />
                     )}
                   >

@@ -9,8 +9,8 @@ ouia: true
 ---
 
 import { Fragment, useEffect, useRef, useState } from 'react';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
+import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 
 ## Examples
 

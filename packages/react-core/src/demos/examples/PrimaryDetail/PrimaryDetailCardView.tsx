@@ -16,6 +16,7 @@ import {
   DrawerContentBody,
   DrawerHead,
   DrawerPanelContent,
+  DrawerSection,
   Dropdown,
   DropdownItem,
   DropdownList,
@@ -37,7 +38,7 @@ import {
   ToolbarContent,
   MenuToggleElement
 } from '@patternfly/react-core';
-import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
+import RhUiTrashFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-trash-fill-icon';
 import pfIcon from './assets/pf-logo-small.svg';
 import activeMQIcon from './assets/activemq-core_200x150.png';
 import avroIcon from './assets/camel-avro_200x150.png';
@@ -48,7 +49,7 @@ import sparkIcon from './assets/camel-spark_200x150.png';
 import swaggerIcon from './assets/camel-swagger-java_200x150.png';
 import azureIcon from './assets/FuseConnector_Icons_AzureServices.png';
 import restIcon from './assets/FuseConnector_Icons_REST.png';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import { DashboardWrapper } from '@patternfly/react-core/src/demos/DashboardWrapper';
 import { data } from '@patternfly/react-core/src/demos/CardView/examples/CardViewData.jsx';
 
@@ -467,7 +468,7 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
               variant="plain"
               onClick={onToolbarKebabDropdownToggle}
               aria-label="Toolbar actions"
-              icon={<EllipsisVIcon />}
+              icon={<RhUiEllipsisVerticalFillIcon />}
             />
           )}
         >
@@ -525,7 +526,7 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
                           onCardKebabDropdownToggle(e, key.toString());
                         }}
                         isExpanded={!!state[key]}
-                        icon={<EllipsisVIcon />}
+                        icon={<RhUiEllipsisVerticalFillIcon />}
                       />
                     )}
                   >
@@ -536,7 +537,7 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
                           deleteItem(product);
                         }}
                       >
-                        <TrashIcon />
+                        <RhUiTrashFillIcon />
                         Delete
                       </DropdownItem>
                     </DropdownList>
@@ -618,14 +619,19 @@ export const PrimaryDetailCardView: React.FunctionComponent = () => {
           <p>This is a demo that showcases Patternfly cards.</p>
         </Content>
       </PageSection>
-      <PageSection isFilled padding={{ md: 'padding' }} aria-label="Card filtering toolbar">
-        <Toolbar id="card-view-data-toolbar-group-types" clearAllFilters={onDelete}>
-          <ToolbarContent>{toolbarItems}</ToolbarContent>
-        </Toolbar>
-        <Divider component="div" />
-      </PageSection>
       <PageSection isFilled padding={{ default: 'noPadding' }} aria-label="Card content area">
-        <Drawer isExpanded={isDrawerExpanded} className={'pf-m-inline-on-2xl'}>
+        <Drawer isExpanded={isDrawerExpanded} isInline>
+          <DrawerSection>
+            <Toolbar
+              id="card-view-data-toolbar-group-types"
+              clearAllFilters={onDelete}
+              inset={{ default: 'insetLg' }}
+              style={{ paddingBlockStart: 'var(--pf-t--global--spacer--md)' }}
+            >
+              <ToolbarContent alignItems="center">{toolbarItems}</ToolbarContent>
+            </Toolbar>
+            <Divider component="div" />
+          </DrawerSection>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody hasPadding>{drawerContent}</DrawerContentBody>
           </DrawerContent>

@@ -1,7 +1,7 @@
 import { css } from '@patternfly/react-styles';
 import { Button } from '@patternfly/react-core/dist/esm/components/Button';
 import dragButtonStyles from '@patternfly/react-styles/css/components/DataList/data-list';
-import GripVerticalIcon from '@patternfly/react-icons/dist/esm/icons/grip-vertical-icon';
+import RhUiGripVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-grip-vertical-fill-icon';
 
 export interface DragButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'size'> {
   /** Additional classes added to the drag button */
@@ -27,9 +27,10 @@ export const DragButton: React.FunctionComponent<DragButtonProps> = ({
     className={css(className)}
     aria-label={ariaLabel}
     aria-labelledby={ariaLabelledby}
+    style={{ touchAction: 'none' }}
     icon={
       <span className={css(dragButtonStyles.dataListItemDraggableIcon)}>
-        <GripVerticalIcon />
+        <RhUiGripVerticalFillIcon />
       </span>
     }
     {...props}

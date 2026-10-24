@@ -21,14 +21,14 @@ import {
   MenuToggle,
   MenuToggleElement
 } from '@patternfly/react-core';
-import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
-import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
-import PficonSortCommonDescIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-desc-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-left-icon';
+import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
+import RhMicronsDoubleCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-right-icon';
+import RhUiSortDownLargeToSmallIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-sort-down-large-to-small-icon';
+import RhMicronsSortDownSmallToLargeIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-sort-down-small-to-large-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 
 interface Option {
   text: string;
@@ -133,7 +133,7 @@ export const DualListSelectorWithActionsDemo: React.FunctionComponent = () => {
         return direction === 'asc' ? 'ascending' : 'descending';
       },
       getIcon(direction: SortDirection) {
-        return direction === 'asc' ? <PficonSortCommonAscIcon /> : <PficonSortCommonDescIcon />;
+        return direction === 'asc' ? <RhMicronsSortDownSmallToLargeIcon /> : <RhUiSortDownLargeToSmallIcon />;
       }
     };
 
@@ -190,7 +190,7 @@ export const DualListSelectorWithActionsDemo: React.FunctionComponent = () => {
                 variant="plain"
                 id="complex-available-toggle"
                 aria-label="Complex actions example available kebab toggle"
-                icon={<EllipsisVIcon />}
+                icon={<RhUiEllipsisVerticalFillIcon />}
               />
             )}
             isOpen={isAvailableKebabOpen}
@@ -225,7 +225,7 @@ export const DualListSelectorWithActionsDemo: React.FunctionComponent = () => {
                 variant="plain"
                 id="complex-chosen-toggle"
                 aria-label="Complex actions example chosen kebab toggle"
-                icon={<EllipsisVIcon />}
+                icon={<RhUiEllipsisVerticalFillIcon />}
               />
             )}
             isOpen={isChosenKebabOpen}
@@ -244,7 +244,12 @@ export const DualListSelectorWithActionsDemo: React.FunctionComponent = () => {
   };
 
   const buildEmptyState = (isAvailable: boolean) => (
-    <EmptyState headingLevel="h4" titleText="No results found" icon={SearchIcon} variant={EmptyStateVariant.sm}>
+    <EmptyState
+      headingLevel="h4"
+      titleText="No results found"
+      icon={RhMicronsSearchIcon}
+      variant={EmptyStateVariant.sm}
+    >
       <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
       <EmptyStateFooter>
         <EmptyStateActions>
@@ -294,25 +299,25 @@ export const DualListSelectorWithActionsDemo: React.FunctionComponent = () => {
             isDisabled={!availableOptions.some((option) => option.selected) || isDisabled}
             onClick={() => moveSelected(true)}
             aria-label="Add selected"
-            icon={<AngleRightIcon />}
+            icon={<RhMicronsCaretRightIcon />}
           />
           <DualListSelectorControl
             isDisabled={availableOptions.length === 0 || isDisabled}
             onClick={() => moveAll(true)}
             aria-label="Add all"
-            icon={<AngleDoubleRightIcon />}
+            icon={<RhMicronsDoubleCaretRightIcon />}
           />
           <DualListSelectorControl
             isDisabled={chosenOptions.length === 0 || isDisabled}
             onClick={() => moveAll(false)}
             aria-label="Remove all"
-            icon={<AngleDoubleLeftIcon />}
+            icon={<RhMicronsDoubleCaretLeftIcon />}
           />
           <DualListSelectorControl
             onClick={() => moveSelected(false)}
             isDisabled={!chosenOptions.some((option) => option.selected) || isDisabled}
             aria-label="Remove selected"
-            icon={<AngleLeftIcon />}
+            icon={<RhMicronsCaretLeftIcon />}
           />
         </DualListSelectorControlsWrapper>
         <DualListSelectorPane

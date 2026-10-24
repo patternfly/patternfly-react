@@ -19,27 +19,29 @@ export enum DataListWrapModifier {
 }
 
 export interface DataListProps extends React.HTMLProps<HTMLUListElement> {
-  /** Content rendered inside the DataList list */
+  /** Content rendered inside the data list list */
   children?: React.ReactNode;
-  /** Additional classes added to the DataList list */
+  /** Additional classes added to the data list list */
   className?: string;
-  /** Adds accessible text to the DataList list */
+  /** Adds accessible text to the data list list */
   'aria-label': string;
-  /** Optional callback to make DataList selectable, fired when DataListItem selected */
+  /** Optional callback to make data list selectable, fired when data list item selected */
   onSelectDataListItem?: (event: React.MouseEvent | React.KeyboardEvent, id: string) => void;
-  /** Id of DataList item currently selected */
+  /** Id of data list item currently selected */
   selectedDataListItemId?: string;
-  /** Flag indicating if DataList should have compact styling */
+  /** Flag indicating if data list should have compact styling */
   isCompact?: boolean;
-  /** @beta Flag indicating if DataList should have plain styling with a transparent background */
+  /** @beta Flag indicating if data list should have plain styling with a transparent background */
   isPlain?: boolean;
+  /** @beta Flag to prevent the data list from automatically applying plain styling when glass theme is enabled. */
+  isNoPlainOnGlass?: boolean;
   /** Specifies the grid breakpoints  */
   gridBreakpoint?: 'none' | 'always' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
-  /** Determines which wrapping modifier to apply to the DataList */
+  /** Determines which wrapping modifier to apply to the data list */
   wrapModifier?: DataListWrapModifier | 'nowrap' | 'truncate' | 'breakWord';
   /** Object that causes the data list to render hidden inputs which improve selectable item a11y */
   onSelectableRowChange?: (event: React.FormEvent<HTMLInputElement>, id: string) => void;
-  /** @hide custom ref of the DataList */
+  /** @hide custom ref of the data list */
   innerRef?: React.RefObject<HTMLUListElement | null>;
 }
 
@@ -62,6 +64,7 @@ export const DataListBase: React.FunctionComponent<DataListProps> = ({
   selectedDataListItemId = '',
   isCompact = false,
   isPlain = false,
+  isNoPlainOnGlass = false,
   gridBreakpoint = 'md',
   wrapModifier = null,
   onSelectableRowChange,
@@ -88,6 +91,7 @@ export const DataListBase: React.FunctionComponent<DataListProps> = ({
           styles.dataList,
           isCompact && styles.modifiers.compact,
           isPlain && styles.modifiers.plain,
+          isNoPlainOnGlass && styles.modifiers.noPlainOnGlass,
           gridBreakpointClasses[gridBreakpoint],
           wrapModifier && styles.modifiers[wrapModifier],
           className

@@ -4,6 +4,9 @@ exports[`Renders to match snapshot 1`] = `
 <DocumentFragment>
   <dl
     class="pf-v6-c-description-list"
+    data-ouia-component-id="ouia-id"
+    data-ouia-component-type="PF6/DescriptionList"
+    data-ouia-safe="true"
   />
 </DocumentFragment>
 `;

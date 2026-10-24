@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { Icon, Content } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
+import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
 
 export const IconInline: React.FunctionComponent = () => (
   <Fragment>
@@ -8,25 +8,25 @@ export const IconInline: React.FunctionComponent = () => (
       <h1>
         Heading
         <Icon isInline>
-          <PlusCircleIcon />
+          <RhUiAddCircleFillIcon />
         </Icon>
       </h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit Sed hendrerit nisi in cursus maximus.</p>
       <h2>
         Second level
         <Icon isInline>
-          <PlusCircleIcon />
+          <RhUiAddCircleFillIcon />
         </Icon>
       </h2>
       <p>
         <Icon isInline>
-          <PlusCircleIcon />
+          <RhUiAddCircleFillIcon />
         </Icon>
         Curabitur accumsan turpis pharetra
         <strong>
           augue tincidunt
           <Icon isInline>
-            <PlusCircleIcon />
+            <RhUiAddCircleFillIcon />
           </Icon>
         </strong>
         blandit. Quisque condimentum maximus mi, sit amet commodo arcu rutrum id. Proin pretium urna vel cursus
@@ -35,24 +35,24 @@ export const IconInline: React.FunctionComponent = () => (
       <small>
         Sometimes you need small text
         <Icon isInline>
-          <PlusCircleIcon />
+          <RhUiAddCircleFillIcon />
         </Icon>
       </small>
       Inline with size specified:
       <Icon size="sm" isInline>
-        <PlusCircleIcon />
+        <RhUiAddCircleFillIcon />
       </Icon>
       small,
       <Icon size="md" isInline>
-        <PlusCircleIcon />
+        <RhUiAddCircleFillIcon />
       </Icon>
       medium,
       <Icon size="lg" isInline>
-        <PlusCircleIcon />
+        <RhUiAddCircleFillIcon />
       </Icon>
       large,
       <Icon size="xl" isInline>
-        <PlusCircleIcon />
+        <RhUiAddCircleFillIcon />
       </Icon>
       extra large
     </Content>

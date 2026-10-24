@@ -17,7 +17,7 @@ import {
   EmptyStateActions,
   EmptyStateFooter
 } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
 
 interface GroupsNotificationDrawerDemoState {
   firstGroupIsOpen: boolean;
@@ -188,7 +188,7 @@ class LightweightNotificationDrawerDemo extends Component<NotificationDrawerProp
                 <EmptyState
                   headingLevel="h2"
                   titleText="No alerts found"
-                  icon={SearchIcon}
+                  icon={RhMicronsSearchIcon}
                   variant={EmptyStateVariant.full}
                 >
                   <EmptyStateBody>

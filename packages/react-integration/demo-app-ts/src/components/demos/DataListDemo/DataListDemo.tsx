@@ -13,7 +13,7 @@ import {
   DropdownList,
   MenuToggle
 } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 interface DataListState {
   selectedDataListItemId: string;
@@ -48,89 +48,110 @@ class DataListDemo extends Component<DataListProps, DataListState> {
 
   render() {
     return (
-      <DataList
-        aria-label="Simple data list example"
-        selectedDataListItemId={this.state.selectedDataListItemId}
-        onSelectDataListItem={this.onSelectDataListItem}
-      >
-        <DataListItem aria-labelledby="simple-item1" id="row1">
-          <DataListItemRow>
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell key="primary content">
-                  <span id="simple-item1">Primary content</span>
-                </DataListCell>,
-                <DataListCell key="secondary content">
-                  <span id="simple-item2">Secondary content</span>
-                </DataListCell>
-              ]}
-            />
-            <DataListAction
-              aria-labelledby="selectable-action-item1 selectable-action-action1"
-              id="selectable-action-action1"
-              aria-label="Actions"
-            >
-              <Dropdown
-                id="dropdown"
-                isOpen={this.state.isOpen}
-                onSelect={this.onSelect}
-                onOpenChange={(isOpen) => this.setState({ isOpen })}
-                toggle={(toggleRef) => (
-                  <MenuToggle
-                    variant="plain"
-                    ref={toggleRef}
-                    isExpanded={this.state.isOpen}
-                    onClick={this.onToggle}
-                    icon={<EllipsisVIcon />}
-                  />
-                )}
+      <>
+        <DataList
+          aria-label="Simple data list example"
+          selectedDataListItemId={this.state.selectedDataListItemId}
+          onSelectDataListItem={this.onSelectDataListItem}
+        >
+          <DataListItem aria-labelledby="simple-item1" id="row1">
+            <DataListItemRow>
+              <DataListItemCells
+                dataListCells={[
+                  <DataListCell key="primary content">
+                    <span id="simple-item1">Primary content</span>
+                  </DataListCell>,
+                  <DataListCell key="secondary content">
+                    <span id="simple-item2">Secondary content</span>
+                  </DataListCell>
+                ]}
+              />
+              <DataListAction
+                aria-labelledby="selectable-action-item1 selectable-action-action1"
+                id="selectable-action-action1"
+                aria-label="Actions"
               >
-                <DropdownList>
-                  <DropdownItem key="link">Link</DropdownItem>
-                  <DropdownItem key="action">Action</DropdownItem>
-                  <DropdownItem key="disabled link" isDisabled>
-                    Disabled Link
-                  </DropdownItem>
-                </DropdownList>
-              </Dropdown>
-            </DataListAction>
-          </DataListItemRow>
-        </DataListItem>
-        <DataListItem aria-labelledby="simple-item2" id="row2">
-          <DataListItemRow>
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell isFilled={false} key="secondary content fill">
-                  <span id="simple-item3">Secondary content (pf-m-no-fill)</span>
-                </DataListCell>,
-                <DataListCell isFilled={false} alignRight key="secondary content align">
-                  <span id="simple-item4">Secondary content (pf-m-align-right pf-m-no-fill)</span>
-                </DataListCell>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-        <DataListItem aria-labelledby="simple-item3">
-          <DataListItemRow>
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell key="primary content" wrapModifier={DataListWrapModifier.breakWord}>
-                  <span id="simple-item1">Primary content</span>
-                </DataListCell>,
-                <DataListCell
-                  id="truncate-content"
-                  key="secondary content"
-                  wrapModifier={DataListWrapModifier.truncate}
+                <Dropdown
+                  id="dropdown"
+                  isOpen={this.state.isOpen}
+                  onSelect={this.onSelect}
+                  onOpenChange={(isOpen) => this.setState({ isOpen })}
+                  toggle={(toggleRef) => (
+                    <MenuToggle
+                      variant="plain"
+                      ref={toggleRef}
+                      isExpanded={this.state.isOpen}
+                      onClick={this.onToggle}
+                      icon={<RhUiEllipsisVerticalFillIcon />}
+                    />
+                  )}
                 >
-                  Really really really really really really really really really really really really really really
-                  really really really really really really really really really really really really really really long
-                  description that should be truncated before it ends
-                </DataListCell>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-      </DataList>
+                  <DropdownList>
+                    <DropdownItem key="link">Link</DropdownItem>
+                    <DropdownItem key="action">Action</DropdownItem>
+                    <DropdownItem key="disabled link" isDisabled>
+                      Disabled Link
+                    </DropdownItem>
+                  </DropdownList>
+                </Dropdown>
+              </DataListAction>
+            </DataListItemRow>
+          </DataListItem>
+          <DataListItem aria-labelledby="simple-item2" id="row2">
+            <DataListItemRow>
+              <DataListItemCells
+                dataListCells={[
+                  <DataListCell isFilled={false} key="secondary content fill">
+                    <span id="simple-item3">Secondary content (pf-m-no-fill)</span>
+                  </DataListCell>,
+                  <DataListCell isFilled={false} alignRight key="secondary content align">
+                    <span id="simple-item4">Secondary content (pf-m-align-right pf-m-no-fill)</span>
+                  </DataListCell>
+                ]}
+              />
+            </DataListItemRow>
+          </DataListItem>
+          <DataListItem aria-labelledby="simple-item3">
+            <DataListItemRow>
+              <DataListItemCells
+                dataListCells={[
+                  <DataListCell key="primary content" wrapModifier={DataListWrapModifier.breakWord}>
+                    <span id="simple-item1">Primary content</span>
+                  </DataListCell>,
+                  <DataListCell
+                    id="truncate-content"
+                    key="secondary content"
+                    wrapModifier={DataListWrapModifier.truncate}
+                  >
+                    Really really really really really really really really really really really really really really
+                    really really really really really really really really really really really really really really
+                    long description that should be truncated before it ends
+                  </DataListCell>
+                ]}
+              />
+            </DataListItemRow>
+          </DataListItem>
+        </DataList>
+        <br />
+        <DataList
+          data-testid="data-list-glass-plain-both"
+          aria-label="Data list for glass theme integration test"
+          isPlain
+          isNoPlainOnGlass
+        >
+          <DataListItem aria-labelledby="glass-plain-item1">
+            <DataListItemRow>
+              <DataListItemCells
+                dataListCells={[
+                  <DataListCell key="primary">
+                    <span id="glass-plain-item1">Glass theme: isPlain and isNoPlainOnGlass</span>
+                  </DataListCell>
+                ]}
+              />
+            </DataListItemRow>
+          </DataListItem>
+        </DataList>
+      </>
     );
   }
 }

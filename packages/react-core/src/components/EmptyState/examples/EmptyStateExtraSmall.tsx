@@ -6,10 +6,10 @@ import {
   EmptyStateActions,
   EmptyStateFooter
 } from '@patternfly/react-core';
-import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
+import RhUiModuleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-module-icon';
 
 export const EmptyStateExtraSmall: React.FunctionComponent = () => (
-  <EmptyState variant={EmptyStateVariant.xs} titleText="Empty state" headingLevel="h4" icon={CubesIcon}>
+  <EmptyState variant={EmptyStateVariant.xs} titleText="Empty state" headingLevel="h4" icon={RhUiModuleIcon}>
     <EmptyStateBody>This represents an the empty state pattern in PatternFly. The icon is optional.</EmptyStateBody>
     <EmptyStateFooter>
       <EmptyStateActions>

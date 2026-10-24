@@ -5,7 +5,7 @@ cssPrefix: pf-v6-c-masthead
 propComponents: ['Masthead', 'MastheadToggle', 'MastheadMain', 'MastheadBrand', MastheadLogo, 'MastheadContent']
 ---
 
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
+import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/js/icons/rh-ui-menu-bars-icon';
 import pfIcon from '../../assets/PF-HorizontalLogo-Color.svg';
 
 To maintain proper layout and formatting, a `<Masthead>` should contain both a `<MastheadMain>` and `<MastheadContent>` component.

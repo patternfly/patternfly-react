@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader, Popover } from '@patternfly/react-core';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 
 export const ModalWithHelp: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -35,7 +35,7 @@ export const ModalWithHelp: React.FunctionComponent = () => {
               }
               footerContent="Popover Footer"
             >
-              <Button variant="plain" aria-label="Help" icon={<HelpIcon />} />
+              <Button variant="plain" aria-label="Help" icon={<RhUiQuestionMarkCircleIcon />} />
             </Popover>
           }
         />

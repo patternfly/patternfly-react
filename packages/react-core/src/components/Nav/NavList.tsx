@@ -2,8 +2,8 @@ import { Component, createRef, Fragment } from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import { getLanguageDirection, isElementInView } from '../../helpers/util';
 import { NavContext } from './Nav';
 import { PageSidebarContext } from '../Page/PageSidebar';
@@ -139,7 +139,7 @@ class NavList extends Component<NavListProps> {
                       onClick={this.scrollBack}
                       isDisabled={scrollViewAtStart}
                       tabIndex={isSidebarOpen ? null : -1}
-                      icon={<AngleLeftIcon />}
+                      icon={<RhMicronsCaretLeftIcon />}
                     />
                   </div>
                 )}
@@ -160,7 +160,7 @@ class NavList extends Component<NavListProps> {
                       onClick={this.scrollForward}
                       isDisabled={scrollViewAtEnd}
                       tabIndex={isSidebarOpen ? null : -1}
-                      icon={<AngleRightIcon />}
+                      icon={<RhMicronsCaretRightIcon />}
                     />
                   </div>
                 )}

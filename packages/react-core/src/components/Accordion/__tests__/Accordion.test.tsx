@@ -1,3 +1,4 @@
+import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 
 import { Accordion } from '../Accordion';
@@ -119,6 +120,41 @@ test('Renders with pf-m-bordered when isBordered=true', () => {
   render(<Accordion isBordered>Test</Accordion>);
 
   expect(screen.getByText('Test')).toHaveClass('pf-m-bordered');
+});
+
+test(`Renders without class ${styles.modifiers.noPlainOnGlass} by default`, () => {
+  render(<Accordion>Test</Accordion>);
+
+  expect(screen.getByText('Test')).not.toHaveClass(styles.modifiers.noPlainOnGlass);
+});
+
+test(`Renders with class ${styles.modifiers.noPlainOnGlass} when isNoPlainOnGlass`, () => {
+  render(<Accordion isNoPlainOnGlass>Test</Accordion>);
+
+  expect(screen.getByText('Test')).toHaveClass(styles.modifiers.noPlainOnGlass);
+});
+
+test(`Renders without class ${styles.modifiers.plain} by default`, () => {
+  render(<Accordion>Test</Accordion>);
+
+  expect(screen.getByText('Test')).not.toHaveClass(styles.modifiers.plain);
+});
+
+test(`Renders with class ${styles.modifiers.plain} when isPlain`, () => {
+  render(<Accordion isPlain>Test</Accordion>);
+
+  expect(screen.getByText('Test')).toHaveClass(styles.modifiers.plain);
+});
+
+test(`applies both ${styles.modifiers.plain} and ${styles.modifiers.noPlainOnGlass} when both isPlain and isNoPlainOnGlass are true`, () => {
+  render(
+    <Accordion isPlain isNoPlainOnGlass>
+      Test
+    </Accordion>
+  );
+
+  expect(screen.getByText('Test')).toHaveClass(styles.modifiers.plain);
+  expect(screen.getByText('Test')).toHaveClass(styles.modifiers.noPlainOnGlass);
 });
 
 test('Renders without pf-m-display-lg by default', () => {

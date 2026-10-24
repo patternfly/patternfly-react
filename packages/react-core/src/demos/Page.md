@@ -4,24 +4,32 @@ section: components
 ---
 
 import { useState, useRef, useEffect } from 'react';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
-import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
-import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
-import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
-import LightbulbIcon from '@patternfly/react-icons/dist/esm/icons/lightbulb-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
-import CloudIcon from '@patternfly/react-icons/dist/esm/icons/cloud-icon';
-import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhUiAddCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-circle-fill-icon';
+import RhUiTrashFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-trash-fill-icon';
+import RhUiPortIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-port-icon';
+import RhUiContainerIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-container-icon';
+import RhUiAutomationIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-automation-icon';
+import RhUiConnectedIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-connected-icon';
+import RhUiArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-arrow-right-icon';
+import pfIcon from '@patternfly/react-core/src/demos/assets/PF-IconLogo.svg';
+import activeMQIcon from '@patternfly/react-core/src/demos/assets/activemq-core_200x150.png';
+import avroIcon from '@patternfly/react-core/src/demos/assets/camel-avro_200x150.png';
+import dropBoxIcon from '@patternfly/react-core/src/demos/assets/camel-dropbox_200x150.png';
+import infinispanIcon from '@patternfly/react-core/src/demos/assets/camel-infinispan_200x150.png';
+import saxonIcon from '@patternfly/react-core/src/demos/assets/camel-saxon_200x150.png';
+import sparkIcon from '@patternfly/react-core/src/demos/assets/camel-spark_200x150.png';
+import swaggerIcon from '@patternfly/react-core/src/demos/assets/camel-swagger-java_200x150.png';
+import azureIcon from '@patternfly/react-core/src/demos/assets/FuseConnector_Icons_AzureServices.png';
+import restIcon from '@patternfly/react-core/src/demos/assets/FuseConnector_Icons_REST.png';
+import { data } from '@patternfly/react-core/src/demos/CardView/examples/CardViewData.jsx';
+import RhUiSettingsFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-settings-fill-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import RhUiQuestionMarkCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-fill-icon';
 import pfLogo from '@patternfly/react-core/src/demos/assets/PF-HorizontalLogo-Color.svg';
-import pfIconLogo from '@patternfly/react-core/src/demos/assets/PF-IconLogo-color.svg';
+import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 
 - All examples set the `isManagedSidebar` prop on the Page component to have the sidebar automatically close for smaller screen widths. You can also manually control this behavior by not adding the `isManagedSidebar` prop and instead:
-
   1. Add an onNavToggle callback to PageHeader
   2. Pass a boolean into the isNavOpen prop to PageSidebar
 
@@ -55,8 +63,8 @@ When adding a context selector/perspective switcher in a `PageSidebar`, you must
 
 ```
 
-### Docked nav
+### Plain
 
-```ts file='./examples/Page/PageDockedNav.tsx' isFullscreen
+```ts file='./examples/Page/PagePlain.tsx' isFullscreen
 
 ```

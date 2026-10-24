@@ -1,6 +1,6 @@
 import { useState, MouseEvent } from 'react';
 import { ExpandableSection, ExpandableSectionToggle, Stack, StackItem } from '@patternfly/react-core';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import RhUiCheckCircleFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-check-circle-fill-icon';
 
 export const ExpandableSectionWithHeading = () => {
   const [isExpanded1, setIsExpanded1] = useState(false);
@@ -75,7 +75,7 @@ export const ExpandableSectionWithHeading = () => {
           toggleWrapper="h5"
           toggleContent={
             <span>
-              <CheckCircleIcon /> Custom Heading Content with Icon
+              <RhUiCheckCircleFillIcon /> Custom Heading Content with Icon
             </span>
           }
           onToggle={onToggle2}

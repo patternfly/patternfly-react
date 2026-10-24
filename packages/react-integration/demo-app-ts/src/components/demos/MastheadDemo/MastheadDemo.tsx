@@ -20,7 +20,7 @@ import {
   MastheadProps
 } from '@patternfly/react-core';
 import imgBrand from '@patternfly/react-core/src/demos/assets/pf-logo.svg';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 
 export class MastheadDemo extends Component<MastheadProps> {
   static displayName = 'MastheadDemo';
@@ -180,7 +180,7 @@ export class MastheadDemo extends Component<MastheadProps> {
                         onClick={this.onKebabToggle}
                         id="toggle-id-kebab"
                         variant="plain"
-                        icon={<EllipsisVIcon />}
+                        icon={<RhUiEllipsisVerticalFillIcon />}
                       />
                     )}
                   >

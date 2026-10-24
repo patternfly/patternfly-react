@@ -1,4 +1,4 @@
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import styles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
 import { css } from '@patternfly/react-styles';
 
@@ -47,7 +47,7 @@ export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
     <li {...props} className={css(styles.breadcrumbItem, classNameProp)}>
       {showDivider && (
         <span className={styles.breadcrumbItemDivider}>
-          <AngleRightIcon />
+          <RhMicronsCaretRightIcon />
         </span>
       )}
       {component === 'button' && (

@@ -72,6 +72,16 @@ describe('TextInputGroup', () => {
     expect(inputGroup).toHaveClass(styles.modifiers.error);
   });
 
+  it('does not apply validation modifiers when validated="default"', () => {
+    render(<TextInputGroup validated="default">Test</TextInputGroup>);
+
+    const inputGroup = screen.getByText('Test');
+
+    expect(inputGroup).not.toHaveClass(styles.modifiers.success);
+    expect(inputGroup).not.toHaveClass(styles.modifiers.warning);
+    expect(inputGroup).not.toHaveClass(styles.modifiers.error);
+  });
+
   it('passes isDisabled=false to children via a context when isDisabled prop is not passed', () => {
     const TestComponent: React.FunctionComponent = () => {
       const context = useContext(TextInputGroupContext);

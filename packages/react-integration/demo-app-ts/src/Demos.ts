@@ -363,6 +363,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TabsHorizontalOverflowDemo
   },
   {
+    id: 'tabs-router-demo',
+    name: 'Tabs Router Demo',
+    componentType: Examples.TabsRouterDemo
+  },
+  {
     id: 'table-collapsible-demo',
     name: 'Table Collapsible Demo',
     componentType: Examples.TableCollapsibleDemo

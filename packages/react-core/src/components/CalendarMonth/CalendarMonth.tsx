@@ -4,11 +4,11 @@ import { Button } from '../Button';
 import { Select, SelectList, SelectOption } from '../Select';
 import { MenuToggle, MenuToggleElement } from '../MenuToggle';
 import { InputGroup, InputGroupItem } from '../InputGroup';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/CalendarMonth/calendar-month';
-import { getUniqueId } from '../../helpers/util';
+import { useSSRSafeId, useOUIAProps, OUIAProps } from '../../helpers';
 import { isValidDate } from '../../helpers/datetimeUtils';
 
 export enum Weekday {
@@ -63,7 +63,7 @@ export interface CalendarFormat {
   inlineProps?: CalendarMonthInlineProps;
 }
 
-export interface CalendarProps extends CalendarFormat, Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
+export interface CalendarProps extends CalendarFormat, Omit<React.HTMLProps<HTMLDivElement>, 'onChange'>, OUIAProps {
   /** Additional classes to add to the outer div of the calendar month. */
   className?: string;
   /** Month/year to base other dates around. */
@@ -81,6 +81,17 @@ export interface CalendarProps extends CalendarFormat, Omit<React.HTMLProps<HTML
   onSelectToggle?: (open: boolean) => void;
   /** Functions that returns if a date is valid and selectable. */
   validators?: ((date: Date) => boolean)[];
+  /** The container to append the month select menu to. Defaults to 'inline'.
+   * If your menu is being cut off you can append it to an element higher up the DOM tree.
+   * Some examples:
+   * monthAppendTo={() => document.body};
+   * monthAppendTo={document.getElementById('target')}
+   */
+  monthAppendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement) | 'inline';
+  /** Value to overwrite the randomly generated data-ouia-component-id.*/
+  ouiaId?: number | string;
+  /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
+  ouiaSafe?: boolean;
 }
 
 const buildCalendar = (year: number, month: number, weekStart: number, validators: ((date: Date) => boolean)[]) => {
@@ -143,8 +154,12 @@ export const CalendarMonth = ({
   cellAriaLabel,
   isDateFocused = false,
   inlineProps,
+  monthAppendTo = 'inline',
+  ouiaId,
+  ouiaSafe = true,
   ...props
 }: CalendarProps) => {
+  const ouiaProps = useOUIAProps(CalendarMonth.displayName, ouiaId, ouiaSafe);
   const longMonths = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
     .map((monthNum) => new Date(1990, monthNum))
     .map(monthFormat);
@@ -170,7 +185,7 @@ export const CalendarMonth = ({
 
   const [hoveredDate, setHoveredDate] = useState<Date>(undefined);
   const focusRef = useRef<HTMLButtonElement>(undefined);
-  const [hiddenMonthId] = useState(getUniqueId('hidden-month-span'));
+  const hiddenMonthId = useSSRSafeId('hidden-month-span');
   const [shouldFocus, setShouldFocus] = useState(false);
 
   const isValidated = (date: Date) => validators.every((validator) => validator(date));
@@ -285,14 +300,14 @@ export const CalendarMonth = ({
   const monthFormatted = monthFormat(focusedDate);
 
   const calendarToRender = (
-    <div className={css(styles.calendarMonth, className)} {...props}>
+    <div className={css(styles.calendarMonth, className)} {...props} {...ouiaProps}>
       <div className={styles.calendarMonthHeader}>
         <div className={css(styles.calendarMonthHeaderNavControl, 'pf-m-prev-month')}>
           <Button
             variant="plain"
             aria-label={prevMonthAriaLabel}
             onClick={(ev: React.MouseEvent) => onMonthClick(ev, prevMonth)}
-            icon={<AngleLeftIcon />}
+            icon={<RhMicronsCaretLeftIcon />}
           />
         </div>
         <InputGroup>
@@ -327,7 +342,7 @@ export const CalendarMonth = ({
                   onMonthChange(ev, newDate);
                 }}
                 selected={monthFormatted}
-                popperProps={{ appendTo: 'inline' }}
+                popperProps={{ appendTo: monthAppendTo }}
               >
                 <SelectList>
                   {longMonths.map((longMonth, index) => (
@@ -355,7 +370,7 @@ export const CalendarMonth = ({
             variant="plain"
             aria-label={nextMonthAriaLabel}
             onClick={(ev: React.MouseEvent) => onMonthClick(ev, nextMonth)}
-            icon={<AngleRightIcon />}
+            icon={<RhMicronsCaretRightIcon />}
           />
         </div>
       </div>

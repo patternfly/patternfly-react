@@ -6,7 +6,7 @@ import { SearchInput } from '../SearchInput';
 import { FormGroup } from '../../Form';
 import { Button } from '../../Button';
 import { AnimationsProvider } from '../../../helpers/AnimationsProvider';
-import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-square-alt-icon';
+import RhUiExternalLinkFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-external-link-fill-icon';
 import badgeStyles from '@patternfly/react-styles/css/components/Badge/badge';
 import textInputGroupStyles from '@patternfly/react-styles/css/components/TextInputGroup/text-input-group';
 import inputGroupStyles from '@patternfly/react-styles/css/components/InputGroup/input-group';
@@ -128,7 +128,7 @@ describe('SearchInput', () => {
         advancedSearchDelimiter=":"
         formAdditionalItems={
           <FormGroup fieldId="test-form-group">
-            <Button variant="link" isInline icon={<ExternalLinkSquareAltIcon />} iconPosition="right">
+            <Button variant="link" isInline icon={<RhUiExternalLinkFillIcon />} iconPosition="right">
               Link
             </Button>
           </FormGroup>

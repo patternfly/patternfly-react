@@ -9,4 +9,4 @@ const esmPackageJsonPath = join(__dirname, '../dist/esm/package.json');
 mkdirSync(dirname(esmPackageJsonPath), { recursive: true });
 
 // Write package.json to mark ESM directory as a module
-writeFileSync(esmPackageJsonPath, JSON.stringify({ type: 'module' }, null, 2));
+writeFileSync(esmPackageJsonPath, JSON.stringify({ type: 'module', sideEffects: false }, null, 2));

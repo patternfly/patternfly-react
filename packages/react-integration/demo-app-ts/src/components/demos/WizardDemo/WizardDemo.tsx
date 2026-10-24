@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Button, Wizard, WizardHeader, WizardStep, Modal } from '@patternfly/react-core';
 
-import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
+import RhMicronsExternalLinkIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-external-link-icon';
 import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
 
 interface WizardDemoState {
@@ -104,7 +104,7 @@ class WizardDemo extends Component<React.HTMLProps<HTMLDivElement>, WizardDemoSt
           <WizardStep
             name={
               <>
-                <ExternalLinkAltIcon /> Read about PF3
+                <RhMicronsExternalLinkIcon /> Read about PF3
               </>
             }
             id="wizard-anchor-pf3"
@@ -115,7 +115,7 @@ class WizardDemo extends Component<React.HTMLProps<HTMLDivElement>, WizardDemoSt
           <WizardStep
             name={
               <>
-                <ExternalLinkAltIcon /> Read about PF4
+                <RhMicronsExternalLinkIcon /> Read about PF4
               </>
             }
             id="wizard-anchor-pf4"

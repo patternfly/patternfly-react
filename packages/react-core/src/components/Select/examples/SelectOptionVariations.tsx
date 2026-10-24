@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Select, SelectOption, SelectList, MenuToggle, MenuToggleElement } from '@patternfly/react-core';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 
 export const SelectOptionVariations: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,6 +20,7 @@ export const SelectOptionVariations: React.FunctionComponent = () => {
 
   const toggle = (toggleRef: React.Ref<MenuToggleElement>) => (
     <MenuToggle
+      aria-haspopup="listbox"
       ref={toggleRef}
       onClick={onToggleClick}
       isExpanded={isOpen}
@@ -57,7 +58,7 @@ export const SelectOptionVariations: React.FunctionComponent = () => {
         >
           Option with link
         </SelectOption>
-        <SelectOption value="Option with icon" icon={<BellIcon />}>
+        <SelectOption value="Option with icon" icon={<RhUiNotificationFillIcon />}>
           Option with icon
         </SelectOption>
         <SelectOption value="Disabled option" isDisabled>

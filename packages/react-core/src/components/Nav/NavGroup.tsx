@@ -1,6 +1,6 @@
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
-import { getUniqueId } from '../../helpers/util';
+import { useSSRSafeId } from '../../helpers';
 
 export interface NavGroupProps extends React.HTMLProps<HTMLDivElement> {
   /** Title shown for the group */
@@ -17,9 +17,11 @@ export const NavGroup: React.FunctionComponent<NavGroupProps> = ({
   title,
   children = null,
   className = '',
-  id = getUniqueId(),
+  id: idProp,
   ...props
 }: NavGroupProps) => {
+  const generatedId = useSSRSafeId();
+  const id = idProp ?? generatedId;
   if (!title && !props['aria-label']) {
     // eslint-disable-next-line no-console
     console.warn("For accessibility reasons an aria-label should be specified on nav groups if a title isn't");

@@ -16,7 +16,7 @@ import {
   PageSection,
   Title
 } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
 import { DashboardWrapper } from '@patternfly/react-core/dist/js/demos/DashboardWrapper';
 
 export const DataListActionable: React.FunctionComponent = () => {
@@ -100,7 +100,7 @@ export const DataListActionable: React.FunctionComponent = () => {
                       variant="plain"
                       aria-label="Data list with actions example kebab toggle"
                     >
-                      <EllipsisVIcon aria-hidden="true" />
+                      <RhUiEllipsisVerticalFillIcon aria-hidden="true" />
                     </MenuToggle>
                   )}
                   isOpen={isOpen}

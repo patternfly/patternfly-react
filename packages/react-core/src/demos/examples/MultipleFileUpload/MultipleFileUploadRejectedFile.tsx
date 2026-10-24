@@ -11,7 +11,7 @@ import {
   ModalHeader,
   ModalBody
 } from '@patternfly/react-core';
-import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
+import RhUiUploadIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-upload-icon';
 
 interface readFile {
   fileName: string;
@@ -116,7 +116,7 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
         isHorizontal={isHorizontal}
       >
         <MultipleFileUploadMain
-          titleIcon={<UploadIcon />}
+          titleIcon={<RhUiUploadIcon />}
           titleText="Drag and drop files here"
           titleTextSeparator="or"
           infoText="Accepted file types: JPEG, Doc, PDF, PNG"

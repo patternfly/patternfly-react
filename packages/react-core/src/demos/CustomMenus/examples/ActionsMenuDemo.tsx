@@ -1,9 +1,9 @@
 import { useRef, useState } from 'react';
 import { MenuToggle, MenuItemAction, Select, SelectGroup, SelectList, SelectOption } from '@patternfly/react-core';
-import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
-import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import RhUiMenuBarsIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-menu-bars-icon';
+import RhUiClipboardFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-clipboard-fill-icon';
+import RhUiBranchFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-branch-fill-icon';
+import RhUiNotificationFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-notification-fill-icon';
 
 export const ActionsMenuDemo: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -46,7 +46,7 @@ export const ActionsMenuDemo: React.FunctionComponent = () => {
             isSelected={selectedItems.includes(0)}
             actions={
               <MenuItemAction
-                icon={<CodeBranchIcon />}
+                icon={<RhUiBranchFillIcon />}
                 actionId="code"
                 // eslint-disable-next-line no-console
                 onClick={() => console.log('clicked on code icon')}
@@ -61,7 +61,7 @@ export const ActionsMenuDemo: React.FunctionComponent = () => {
           <SelectOption
             isDisabled
             isSelected={selectedItems.includes(1)}
-            actions={<MenuItemAction icon={<BellIcon />} actionId="alert" aria-label="Alert" />}
+            actions={<MenuItemAction icon={<RhUiNotificationFillIcon />} actionId="alert" aria-label="Alert" />}
             description="This is a description"
             value={1}
           >
@@ -69,14 +69,14 @@ export const ActionsMenuDemo: React.FunctionComponent = () => {
           </SelectOption>
           <SelectOption
             isSelected={selectedItems.includes(2)}
-            actions={<MenuItemAction icon={<ClipboardIcon />} actionId="copy" aria-label="Copy" />}
+            actions={<MenuItemAction icon={<RhUiClipboardFillIcon />} actionId="copy" aria-label="Copy" />}
             value={2}
           >
             Item 3
           </SelectOption>
           <SelectOption
             isSelected={selectedItems.includes(3)}
-            actions={<MenuItemAction icon={<BarsIcon />} actionId="expand" aria-label="Expand" />}
+            actions={<MenuItemAction icon={<RhUiMenuBarsIcon />} actionId="expand" aria-label="Expand" />}
             description="This is a description"
             value={3}
           >

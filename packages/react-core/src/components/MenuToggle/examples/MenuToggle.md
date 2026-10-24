@@ -8,10 +8,10 @@ propComponents: ['MenuToggle', 'MenuToggleAction', 'MenuToggleCheckbox']
 
 import { Fragment, useState } from 'react';
 import './MenuToggle.css'
-import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import RhUiEllipsisVerticalFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-ellipsis-vertical-fill-icon';
+import RhUiAddIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-add-icon';
 import imgAvatar from '@patternfly/react-core/src/components/assets/avatarImg.svg';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 ## Examples
 
@@ -65,7 +65,7 @@ To create a "settings" menu toggle that will animate on hover and focus, you can
 
 ### Custom icons
 
-To add a recognizable icon to a menu toggle, use the `icon` property. The following example adds a `PlusIcon` to the toggle.
+To add a recognizable icon to a menu toggle, use the `icon` property. The following example adds an `RhUiAddIcon` to the toggle.
 
 For most basic icons, it is recommended to wrap it inside our [icon component](/components/icon).
 
@@ -93,7 +93,7 @@ Variant styling can be applied to menu toggles. In the following example, the to
 
 ### Plain toggle with icon
 
-To apply plain styling to a menu toggle with an icon, pass in `variant="plain"`. This will remove the default bottom border and caret. You may pass in an `icon` to serve as the menu toggle. The following example passes in an `EllipsisVIcon`.
+To apply plain styling to a menu toggle with an icon, pass in `variant="plain"`. This will remove the default bottom border and caret. You may pass in an `icon` to serve as the menu toggle. The following example passes in an `RhUiEllipsisVerticalFillIcon`.
 
 If the toggle does not have any visible text content, use the `aria-label` property to provide an accessible name.
 
@@ -176,6 +176,14 @@ A full width toggle fills the width of its parent. To flag a full width toggle, 
 In the following example, the toggle fills the width of its parent as the window size changes.
 
 ```ts file="MenuToggleFullWidth.tsx"
+
+```
+
+### Toggle in a form
+
+When a menu toggle is used inside a form, pass the `isInForm` property so the toggle receives form-appropriate styling.
+
+```ts file="MenuToggleInForm.tsx"
 
 ```
 

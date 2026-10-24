@@ -7,11 +7,14 @@ ouia: true
 ---
 
 import { Fragment, useRef, useState } from 'react';
-import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
-import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
-import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import RhUiWarningIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-warning-icon';
+import RhUiAttentionBellFillIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-attention-bell-fill-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
+
+When using the Modal component, it is recommended to control it via the `isOpen` property rather than conditionally rendering the Modal.
+
+Conditional rendering can potentially lead to unforeseen issues, especially with animations enabled.
 
 ## Examples
 
@@ -97,7 +100,7 @@ To add an icon before a modal’s title, use the `titleIconVariant` property, wh
 
 ### Custom title icon
 
-To add a custom icon before a modal’s title, set `titleIconVariant` to an imported custom icon. The following example imports and uses a bullhorn icon.
+To add a custom icon before a modal’s title, set `titleIconVariant` to an imported custom icon. The following example imports and uses an icon.
 
 ```ts file="./ModalCustomTitleIcon.tsx"
 
@@ -153,5 +156,13 @@ To enable form submission from a button in the modal's footer (outside of the `<
 To customize which element inside the modal receives focus when initially opened, use the `elementToFocus` property`.
 
 ```ts file="./ModalCustomFocus.tsx"
+
+```
+
+### Non animated modal
+
+To explicitly disable animations, set the `hasAnimations` property to `false` on the modal.
+
+```ts file="./ModalNotAnimated.tsx"
 
 ```

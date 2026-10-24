@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Wizard, WizardFooterProps, WizardStep, WizardNavProps, WizardStepChangeScope } from '../';
+import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 
 test('renders step when child is of type WizardStep', () => {
   render(
@@ -665,4 +666,24 @@ test('clicking parent step navigates to first visible sub-step when first sub-st
     expect.objectContaining({ id: 'step-3' }),
     WizardStepChangeScope.Nav
   );
+});
+
+test(`Renders with ${styles.modifiers.plain} class when isPlain is true`, () => {
+  render(
+    <Wizard isPlain data-testid="wizard-plain">
+      <WizardStep id="test-step" name="Test step" />
+    </Wizard>
+  );
+
+  expect(screen.getByTestId('wizard-plain')).toHaveClass(styles.modifiers.plain);
+});
+
+test(`Renders with ${styles.modifiers.noPlainOnGlass} class when isNoPlainOnGlass is true`, () => {
+  render(
+    <Wizard isNoPlainOnGlass data-testid="wizard-no-plain">
+      <WizardStep id="test-step" name="Test step" />
+    </Wizard>
+  );
+
+  expect(screen.getByTestId('wizard-no-plain')).toHaveClass(styles.modifiers.noPlainOnGlass);
 });

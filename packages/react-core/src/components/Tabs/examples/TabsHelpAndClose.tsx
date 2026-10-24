@@ -1,7 +1,7 @@
 import { createRef, useEffect, useRef, useState } from 'react';
 import { Tabs, Tab, TabTitleText, Popover, TabAction } from '@patternfly/react-core';
-import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
 export const TabsHelpAndClose: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = useState<number>(0);
@@ -66,14 +66,14 @@ export const TabsHelpAndClose: React.FunctionComponent = () => {
             actions={
               <>
                 <TabAction aria-label={`Help for ${tab}`} ref={ref}>
-                  <HelpIcon />
+                  <RhUiQuestionMarkCircleIcon />
                 </TabAction>
                 <TabAction
                   aria-label={`Close ${tab}`}
                   onClick={(e) => onClose(e, index)}
                   isDisabled={tabs.length === 1}
                 >
-                  <TimesIcon />
+                  <RhMicronsCloseIcon />
                 </TabAction>
                 {helpPopover(`Help popover for ${tab}`, ref)}
               </>

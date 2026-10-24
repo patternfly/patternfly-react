@@ -1,8 +1,9 @@
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
-import { formatBreakpointMods, toCamel } from '../../helpers/util';
+import { formatBreakpointMods, setBreakpointCssVars, toCamel } from '../../helpers/util';
 import { Divider } from '../Divider';
 import { PageContext } from '../Page/PageContext';
+import cssToolbarItemWidth from '@patternfly/react-tokens/dist/esm/c_toolbar__item_Width';
 
 export enum ToolbarItemVariant {
   separator = 'separator',
@@ -17,8 +18,17 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** A type modifier which modifies spacing specifically depending on the type of item */
   variant?: ToolbarItemVariant | 'pagination' | 'label' | 'label-group' | 'separator' | 'expand-all';
-  /** Visibility at various breakpoints. */
+  /** Visibility at various width breakpoints. */
   visibility?: {
+    default?: 'hidden' | 'visible';
+    sm?: 'hidden' | 'visible';
+    md?: 'hidden' | 'visible';
+    lg?: 'hidden' | 'visible';
+    xl?: 'hidden' | 'visible';
+    '2xl'?: 'hidden' | 'visible';
+  };
+  /** Visibility at various height breakpoints. */
+  visibilityAtHeight?: {
     default?: 'hidden' | 'visible';
     md?: 'hidden' | 'visible';
     lg?: 'hidden' | 'visible';
@@ -160,6 +170,24 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'wrap' | 'nowrap';
     '2xl'?: 'wrap' | 'nowrap';
   };
+  /** Sets flex-grow at various breakpoints to allow the item to consume available main-axis space */
+  flexGrow?: {
+    default?: 'flexGrow';
+    sm?: 'flexGrow';
+    md?: 'flexGrow';
+    lg?: 'flexGrow';
+    xl?: 'flexGrow';
+    '2xl'?: 'flexGrow';
+  };
+  /** Width at various breakpoints. */
+  widths?: {
+    default?: string;
+    sm?: string;
+    md?: string;
+    lg?: string;
+    xl?: string;
+    '2xl'?: string;
+  };
   /** id for this data toolbar item */
   id?: string;
   /** Flag indicating if the expand-all variant is expanded or not */
@@ -174,10 +202,13 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   className,
   variant,
   visibility,
+  visibilityAtHeight,
   gap,
   columnGap,
   rowGap,
   rowWrap,
+  flexGrow,
+  widths,
   align,
   alignSelf,
   alignItems,
@@ -186,6 +217,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   isAllExpanded,
   isOverflowContainer,
   role,
+  style,
   ...props
 }: ToolbarItemProps) => {
   if (variant === ToolbarItemVariant.separator) {
@@ -194,15 +226,18 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
       <Divider
         className={css(className)}
         orientation={{ default: 'vertical' }}
+        style={style}
         {...props}
         {...(isDividerRoleValid && { role: role as 'separator' | 'presentation' })}
       />
     );
   }
 
+  const responsiveWidths = widths ? setBreakpointCssVars(widths, cssToolbarItemWidth.name) : {};
+
   return (
     <PageContext.Consumer>
-      {({ width, getBreakpoint }) => (
+      {({ width, getBreakpoint, height, getVerticalBreakpoint }) => (
         <div
           className={css(
             styles.toolbarItem,
@@ -211,11 +246,13 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
             isAllExpanded && styles.modifiers.expanded,
             isOverflowContainer && styles.modifiers.overflowContainer,
             formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
+            formatBreakpointMods(visibilityAtHeight, styles, '', getVerticalBreakpoint(height), true),
             formatBreakpointMods(align, styles, '', getBreakpoint(width)),
             formatBreakpointMods(gap, styles, '', getBreakpoint(width)),
             formatBreakpointMods(columnGap, styles, '', getBreakpoint(width)),
             formatBreakpointMods(rowGap, styles, '', getBreakpoint(width)),
             formatBreakpointMods(rowWrap, styles, '', getBreakpoint(width)),
+            formatBreakpointMods(flexGrow, styles, '', getBreakpoint(width)),
             alignItems === 'start' && styles.modifiers.alignItemsStart,
             alignItems === 'center' && styles.modifiers.alignItemsCenter,
             alignItems === 'baseline' && styles.modifiers.alignItemsBaseline,
@@ -227,6 +264,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
           {...(variant === 'label' && { 'aria-hidden': true })}
           id={id}
           role={role}
+          style={{ ...style, ...responsiveWidths }}
           {...props}
         >
           {children}

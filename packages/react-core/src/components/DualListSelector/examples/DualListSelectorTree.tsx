@@ -15,11 +15,11 @@ import {
   EmptyStateBody,
   EmptyStateActions
 } from '@patternfly/react-core';
-import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
-import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
-import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import RhMicronsDoubleCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-left-icon';
+import RhMicronsCaretLeftIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-left-icon';
+import RhMicronsDoubleCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-double-caret-right-icon';
+import RhMicronsSearchIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-search-icon';
+import RhMicronsCaretRightIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-caret-right-icon';
 
 interface FoodNode {
   id: string;
@@ -259,7 +259,12 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
         listMinHeight="300px"
       >
         {filterApplied && options.length === 0 && (
-          <EmptyState headingLevel="h4" titleText="No results found" icon={SearchIcon} variant={EmptyStateVariant.sm}>
+          <EmptyState
+            headingLevel="h4"
+            titleText="No results found"
+            icon={RhMicronsSearchIcon}
+            variant={EmptyStateVariant.sm}
+          >
             <EmptyStateBody>No results match the filter criteria. Clear all filters and try again.</EmptyStateBody>
             <EmptyStateFooter>
               <EmptyStateActions>
@@ -290,25 +295,25 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
           isDisabled={!checkedLeafIds.filter((x) => visibleAvailableLeafIds.includes(x)).length}
           onClick={() => moveChecked(true)}
           aria-label="Add selected"
-          icon={<AngleRightIcon />}
+          icon={<RhMicronsCaretRightIcon />}
         />
         <DualListSelectorControl
           isDisabled={chosenLeafIds.length === memoizedAllLeaves.length}
           onClick={() => moveAll(true)}
           aria-label="Add all"
-          icon={<AngleDoubleRightIcon />}
+          icon={<RhMicronsDoubleCaretRightIcon />}
         />
         <DualListSelectorControl
           isDisabled={chosenLeafIds.length === 0}
           onClick={() => moveAll(false)}
           aria-label="Remove all"
-          icon={<AngleDoubleLeftIcon />}
+          icon={<RhMicronsDoubleCaretLeftIcon />}
         />
         <DualListSelectorControl
           onClick={() => moveChecked(false)}
           isDisabled={!checkedLeafIds.filter((x) => visibleChosenLeafIds.includes(x)).length}
           aria-label="Remove selected"
-          icon={<AngleLeftIcon />}
+          icon={<RhMicronsCaretLeftIcon />}
         />
       </DualListSelectorControlsWrapper>
       {buildPane(true)}
