@@ -1,4 +1,4 @@
-import { createContext, useRef } from 'react';
+import { createContext, forwardRef, useImperativeHandle, useRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
 
@@ -25,6 +25,8 @@ export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
   position?: 'start' | 'end' | 'bottom' | 'left' | 'right';
   /** Callback when drawer panel is expanded after waiting 250ms for animation to complete. */
   onExpand?: (event: KeyboardEvent | React.MouseEvent | React.TransitionEvent) => void;
+  /** @hide Forwarded ref */
+  innerRef?: React.Ref<HTMLDivElement>;
 }
 
 export interface DrawerContextProps {
@@ -47,7 +49,7 @@ export const DrawerContext = createContext<Partial<DrawerContextProps>>({
   isInline: false
 });
 
-export const Drawer: React.FunctionComponent<DrawerProps> = ({
+const DrawerBase: React.FunctionComponent<DrawerProps> = ({
   className = '',
   children,
   isExpanded = false,
@@ -56,10 +58,12 @@ export const Drawer: React.FunctionComponent<DrawerProps> = ({
   isStatic = false,
   position = 'end',
   onExpand = () => {},
+  innerRef,
   ...props
 }: DrawerProps) => {
   const drawerRef = useRef<HTMLDivElement>(undefined);
   const drawerContentRef = useRef<HTMLDivElement>(undefined);
+  useImperativeHandle(innerRef, () => drawerRef.current);
 
   return (
     <DrawerContext.Provider value={{ isExpanded, isStatic, onExpand, position, drawerRef, drawerContentRef, isInline }}>
@@ -82,4 +86,7 @@ export const Drawer: React.FunctionComponent<DrawerProps> = ({
     </DrawerContext.Provider>
   );
 };
+export const Drawer = forwardRef((props: DrawerProps, ref: React.Ref<HTMLDivElement>) => (
+  <DrawerBase innerRef={ref} {...props} />
+));
 Drawer.displayName = 'Drawer';
