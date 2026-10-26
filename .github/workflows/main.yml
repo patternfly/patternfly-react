@@ -45,6 +45,9 @@ jobs:
       - name: Set up and build project
         uses: ./.github/actions/setup-project
 
+      - name: Run release tests
+        run: yarn test:release
+
       - name: Run tests
         run: yarn test --maxWorkers=2
 
