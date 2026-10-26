@@ -66,8 +66,16 @@ function harness({ changed = true } = {}) {
   const dependencies = {
     packages,
     client,
-    async preparePackages(projects) {
-      calls.push({ phase: 'prepare', projects });
+    readPrepared: () => ({
+      projects: [name('styles'), name('core')],
+      versionData: result.projectsVersionData,
+      sourceCommit: 'release-commit'
+    }),
+    hasCompletePrepared: () => true,
+    currentCommit: () => 'release-commit',
+    latestReleaseCommit: () => 'release-commit',
+    async preparePackages(projects, options) {
+      calls.push({ phase: 'prepare', projects, ...options });
     },
     log() {}
   };
@@ -78,10 +86,21 @@ test('CLI defaults to a non-writing dry run and validates explicit modes', () =>
   assert.equal(parseReleaseOptions([]).mode, 'dry-run');
   assert.equal(parseReleaseOptions(['--prepare']).mode, 'prepare');
   assert.equal(parseReleaseOptions(['--publish']).mode, 'publish');
+  assert.equal(parseReleaseOptions(['--ci-prepare']).mode, 'ci-prepare');
+  assert.equal(parseReleaseOptions(['--publish-only']).mode, 'publish-only');
+  assert.deepEqual(parseReleaseOptions(['--ci-prepare', '--dry-run']), {
+    mode: 'ci-prepare',
+    projects: undefined,
+    dryRun: true,
+    gitRemote: undefined,
+    help: false
+  });
   assert.deepEqual(parseReleaseOptions([`--projects=${name('styles')},${name('styles')}`]).projects, [name('styles')]);
   assert.equal(parseReleaseOptions(['--git-remote=upstream']).gitRemote, 'upstream');
   assert.throws(() => parseReleaseOptions(['--prepare', '--publish']), /Choose only one/);
   assert.throws(() => parseReleaseOptions(['--dry-run', '--publish']), /Choose only one/);
+  assert.throws(() => parseReleaseOptions(['--ci-prepare', '--publish-only']), /Choose only one/);
+  assert.throws(() => parseReleaseOptions(['--dry-run', '--prepare']), /Choose only one/);
   assert.throws(() => parseReleaseOptions(['--projects=']), /comma-separated/);
   assert.throws(() => parseReleaseOptions(['--publsh']));
 });
@@ -161,6 +180,128 @@ test('prepare writes versions and changelogs before packing only changed package
     }
   }
   assert.equal(h.calls[2].options.createRelease, false);
+});
+
+test('CI preparation uses Nx to stage, commit, tag, and push before producing recovery artifacts', async () => {
+  const h = harness();
+  const result = await runRelease({ mode: 'ci-prepare' }, h.dependencies);
+  assert.deepEqual(
+    h.calls.map((call) => call.phase),
+    ['version', 'version', 'changelog', 'prepare']
+  );
+  const version = h.calls[1].options;
+  assert.equal(version.dryRun, false);
+  assert.equal(version.stageChanges, true);
+  const changelog = h.calls[2].options;
+  assert.equal(changelog.gitCommit, true);
+  assert.equal(changelog.gitTag, true);
+  assert.equal(changelog.gitPush, true);
+  assert.equal(h.calls[3].sourceCommit, 'release-commit');
+  assert.equal(h.calls[3].versionData, result.versionData);
+  assert.deepEqual(h.calls[3].projects, result.projects);
+  assert.equal(h.calls.at(-1).phase, 'prepare');
+  assert.ok(h.calls.every((call) => call.phase !== 'publish'));
+});
+
+test('CI dry run previews commit, tag, and push without preparing artifacts or publishing', async () => {
+  const h = harness();
+  const result = await runRelease({ mode: 'ci-prepare', dryRun: true }, h.dependencies);
+  assert.deepEqual(result.projects, ['styles', 'core'].map(name));
+  assert.deepEqual(
+    h.calls.map((call) => call.phase),
+    ['version', 'version', 'changelog']
+  );
+  assert.equal(h.calls[1].options.stageChanges, true);
+  const changelog = h.calls[2].options;
+  assert.equal(changelog.dryRun, true);
+  assert.equal(changelog.gitCommit, true);
+  assert.equal(changelog.gitTag, true);
+  assert.equal(changelog.gitPush, true);
+  assert.ok(h.calls.every((call) => call.phase !== 'prepare' && call.phase !== 'publish'));
+});
+
+test('publish-only recovery does not recalculate versions or generate changelogs', async () => {
+  const h = harness();
+  const result = await runRelease({ mode: 'publish-only' }, h.dependencies);
+  assert.deepEqual(result.projects, ['styles', 'core'].map(name));
+  assert.deepEqual(
+    h.calls.map((call) => call.phase),
+    ['publish']
+  );
+  assert.equal(h.calls[0].options.versionData, h.result.projectsVersionData);
+  assert.equal(h.calls[0].options.dryRun, false);
+});
+
+test('publish-only rejects incomplete artifacts without rebuilding or publishing anything', async () => {
+  const h = harness();
+  h.dependencies.hasCompletePrepared = () => false;
+  await assert.rejects(
+    runRelease({ mode: 'publish-only' }, h.dependencies),
+    /bundle is incomplete.*publish-only never rebuilds/
+  );
+  assert.deepEqual(h.calls, []);
+});
+
+test('publish-only rejects a stale release before Nx can move a newer prerelease tag backward', async () => {
+  const h = harness();
+  h.dependencies.latestReleaseCommit = () => 'newer-release-commit';
+  await assert.rejects(runRelease({ mode: 'publish-only' }, h.dependencies), /Refusing stale recovery/);
+  assert.deepEqual(h.calls, []);
+});
+
+test('publish-only checks the latest release using the selected remote', async () => {
+  const h = harness();
+  h.dependencies.latestReleaseCommit = (remote) => {
+    assert.equal(remote, 'upstream');
+    return 'release-commit';
+  };
+  await runRelease({ mode: 'publish-only', gitRemote: 'upstream' }, h.dependencies);
+  assert.deepEqual(
+    h.calls.map((call) => call.phase),
+    ['publish']
+  );
+});
+
+test('publish-only fails closed if the authoritative release history cannot be read', async () => {
+  const h = harness();
+  h.dependencies.latestReleaseCommit = () => {
+    throw new Error('Missing origin/felt-v1 history');
+  };
+  await assert.rejects(runRelease({ mode: 'publish-only' }, h.dependencies), /Missing origin\/felt-v1/);
+  assert.deepEqual(h.calls, []);
+});
+
+test('publish-only rejects bundles for a different checkout, empty bundles, and unknown projects', async () => {
+  for (const invalid of ['different-commit', 'empty', 'unknown-project']) {
+    const h = harness();
+    const prepared = h.dependencies.readPrepared();
+    if (invalid === 'different-commit') {
+      prepared.sourceCommit = 'other-commit';
+    } else if (invalid === 'empty') {
+      prepared.projects = [];
+    } else {
+      prepared.projects.push('private-helper');
+    }
+    h.dependencies.readPrepared = () => prepared;
+    await assert.rejects(
+      runRelease({ mode: 'publish-only' }, h.dependencies),
+      /targets|contains no packages|Invalid prepared/
+    );
+    assert.deepEqual(h.calls, []);
+  }
+});
+
+test('publish-only reports partial publication failure without versioning, changelog, or packaging calls', async () => {
+  const h = harness();
+  h.client.releasePublish = async (options) => {
+    h.calls.push({ phase: 'publish', options });
+    return { [name('core')]: { code: 0 }, [name('styles')]: { code: 1 } };
+  };
+  await assert.rejects(runRelease({ mode: 'publish-only' }, h.dependencies), /Publication failed.*react-styles/);
+  assert.deepEqual(
+    h.calls.map((call) => call.phase),
+    ['publish']
+  );
 });
 
 test('publish follows packaging and uses the explicit pass version data and release graph', async () => {

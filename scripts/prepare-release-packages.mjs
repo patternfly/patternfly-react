@@ -1,10 +1,24 @@
 /* eslint-disable no-console */
 import { execFileSync } from 'node:child_process';
-import { existsSync, mkdirSync, readFileSync, rmSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const workspaceRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+
+export function getCurrentCommit(root = workspaceRoot) {
+  return execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim();
+}
+
+export function getLatestReleaseCommit(remote = 'origin', root = workspaceRoot) {
+  const config = JSON.parse(readFileSync(join(root, 'nx.json'), 'utf8'));
+  execFileSync('git', ['fetch', '--no-tags', remote, 'felt-v1'], { cwd: root, stdio: 'pipe' });
+  return execFileSync(
+    'git',
+    ['log', `${remote}/felt-v1`, '-1', '--format=%H', '--fixed-strings', `--grep=${config.release.git.commitMessage}`],
+    { cwd: root, encoding: 'utf8' }
+  ).trim();
+}
 
 export function getReleasePackages(root = workspaceRoot) {
   const config = JSON.parse(readFileSync(join(root, 'nx.json'), 'utf8'));
@@ -38,7 +52,7 @@ export function getReleasePackages(root = workspaceRoot) {
   );
 }
 
-export function prepareReleasePackages(projects, { root = workspaceRoot } = {}) {
+export function prepareReleasePackages(projects, { root = workspaceRoot, versionData, sourceCommit } = {}) {
   const available = getReleasePackages(root);
   const selected = [...new Set(projects ?? available.keys())];
   if (selected.length === 0) {
@@ -60,6 +74,23 @@ export function prepareReleasePackages(projects, { root = workspaceRoot } = {}) 
   const output = join(root, '.release');
   rmSync(output, { recursive: true, force: true });
   mkdirSync(join(output, 'archives'), { recursive: true });
+  const releaseVersionData =
+    versionData ??
+    Object.fromEntries(
+      packages.map((manifest) => [manifest.name, { currentVersion: manifest.version, newVersion: manifest.version }])
+    );
+  writeFileSync(
+    join(output, 'release.json'),
+    `${JSON.stringify(
+      {
+        projects: packages.map((manifest) => manifest.name),
+        versionData: releaseVersionData,
+        sourceCommit: sourceCommit ?? getCurrentCommit(root)
+      },
+      null,
+      2
+    )}\n`
+  );
 
   for (const manifest of packages) {
     const archive = join(output, 'archives', `${manifest.name.replace('/', '-')}.tgz`);
@@ -78,6 +109,28 @@ export function prepareReleasePackages(projects, { root = workspaceRoot } = {}) 
     });
     console.log(`Prepared ${manifest.name}@${manifest.version} in ${destination}`);
   }
+}
+
+export function readPreparedRelease(root = workspaceRoot) {
+  const manifestPath = join(root, '.release', 'release.json');
+  if (!existsSync(manifestPath)) {
+    throw new Error('Missing prepared release bundle. Restore the original nx-release-packages workflow artifact.');
+  }
+  return JSON.parse(readFileSync(manifestPath, 'utf8'));
+}
+
+export function hasCompletePreparedRelease(release, { root = workspaceRoot } = {}) {
+  const output = join(root, '.release');
+  return release.projects.every((name) => {
+    const packageRoot = join(output, 'packages', name);
+    const archive = join(output, 'archives', `${name.replace('/', '-')}.tgz`);
+    const manifestPath = join(packageRoot, 'package.json');
+    if (!existsSync(manifestPath) || !existsSync(archive)) {
+      return false;
+    }
+    const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
+    return manifest.name === name && manifest.version === release.versionData[name]?.newVersion;
+  });
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

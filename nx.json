@@ -51,6 +51,7 @@
       "projectChangelogs": true
     },
     "git": {
+      "commitMessage": "chore(release): releasing packages [ci skip]",
       "commit": false,
       "stageChanges": false,
       "tag": false,
