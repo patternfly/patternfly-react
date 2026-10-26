@@ -10,7 +10,7 @@
   "engines": {
     "node": ">=22.17.1"
   },
-  "packageManager": "yarn@4.7.0",
+  "packageManager": "yarn@4.18.1",
   "keywords": [
     "react",
     "patternfly",
@@ -130,5 +130,16 @@
   },
   "resolutions": {
     "dompurify": "3.4.13"
+  },
+  "dependenciesMeta": {
+    "chromedriver": {
+      "built": true
+    },
+    "cypress": {
+      "built": true
+    },
+    "puppeteer": {
+      "built": true
+    }
   }
 }
