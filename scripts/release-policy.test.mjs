@@ -31,6 +31,11 @@ test('docs changes trigger native release discovery but stay out of changelogs',
   assert.deepEqual(filterHiddenChanges([{ type: 'docs' }], policy), []);
 });
 
+test('ci changes trigger native release discovery but stay out of changelogs', () => {
+  assert.equal(nativeBumpFor('ci'), 1);
+  assert.deepEqual(filterHiddenChanges([{ type: 'ci' }], policy), []);
+});
+
 test('ordinary chores neither trigger native release discovery nor appear in mixed release notes', () => {
   assert.equal(nativeBumpFor('chore'), null);
   assert.deepEqual(filterHiddenChanges([{ type: 'docs' }, { type: 'chore' }, { type: 'fix' }], policy), [

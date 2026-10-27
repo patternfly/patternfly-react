@@ -43,7 +43,7 @@
         "test": { "semverBump": "patch" },
         "style": { "semverBump": "patch" },
         "build": { "semverBump": "patch" },
-        "ci": { "semverBump": "patch" }
+        "ci": { "semverBump": "patch", "changelog": false }
       }
     },
     "changelog": {
