@@ -5,7 +5,6 @@ REPO="github.com/${GH_REPO}"
 echo "Preparing release environment..."
 git config user.email "patternfly-build@redhat.com"
 git config user.name ${GIT_USERNAME}
-echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
 
 echo "Doing a release..."
 # Lerna is complicated. Commands: https://github.com/lerna/lerna/tree/master/commands
@@ -17,7 +16,13 @@ echo "Doing a release..."
 LOG=$(git log --format="%s" -1 | grep -Poe "#\d+")
 PR_NUM=${LOG:1}
 
-yarn run lerna publish prerelease --preid=prerelease --dist-tag=prerelease --yes 2>&1 | tee lerna-output.txt
+if ! (
+  set -o pipefail
+  yarn run lerna publish prerelease --preid=prerelease --dist-tag=prerelease --yes 2>&1 | tee lerna-output.txt
+); then
+  echo "Failed lerna publish"
+  exit 1
+fi
 
 # use lerna command below for dry run
 #yarn run lerna version prerelease --preid=prerelease --yes --no-git-tag-version --no-push | tee lerna-output.txt
