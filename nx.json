@@ -36,8 +36,8 @@
     "conventionalCommits": {
       "useCommitScope": false,
       "types": {
-        "docs": { "semverBump": "patch" },
-        "chore": { "semverBump": "patch" },
+        "docs": { "semverBump": "patch", "changelog": false },
+        "chore": { "semverBump": "none", "changelog": false },
         "refactor": { "semverBump": "patch" },
         "perf": { "semverBump": "patch" },
         "test": { "semverBump": "patch" },
