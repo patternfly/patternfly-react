@@ -326,7 +326,12 @@ export class NavDemo extends Component {
         <Title headingLevel="h2" size="2xl">
           Flyout Nav
         </Title>
-        <div id="flyout-nav">
+        <div
+          id="flyout-nav"
+          style={{
+            width: '300px'
+          }}
+        >
           <Nav onSelect={this.onFlyoutSelect}>
             <NavList>
               <NavItem id="flyout-link1" to="#flyout-link1" itemId={0} isActive={flyoutActiveItem === 0}>
