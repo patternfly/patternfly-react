@@ -1006,3 +1006,22 @@ test('should not render tablist aria-label or aria-labelledby when neither is pr
 
   expect(asFragment()).toMatchSnapshot();
 });
+
+test('observes the tab list for resize and stops observing on unmount', () => {
+  const observe = jest.fn();
+  const unobserve = jest.fn();
+  const originalResizeObserver = (window as any).ResizeObserver;
+  (window as any).ResizeObserver = jest.fn(() => ({ observe, unobserve }));
+
+  const { unmount } = render(
+    <Tabs aria-label="resize tabs">
+      <Tab eventKey={0} title={<TabTitleText>Tab 1</TabTitleText>} />
+    </Tabs>
+  );
+  const tabList = screen.getByRole('tablist');
+  expect(observe).toHaveBeenCalledWith(tabList);
+
+  unmount();
+  expect(unobserve).toHaveBeenCalledWith(tabList);
+  (window as any).ResizeObserver = originalResizeObserver;
+});
