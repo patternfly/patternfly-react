@@ -1,9 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
-GIT_USERNAME="patternfly-build"
+GIT_USERNAME="Patternfly CI/CD"
 echo "Preparing release environment..."
-git config user.email "patternfly-build@redhat.com"
+git config user.email "patternfly-ci@redhat.com"
 git config user.name "${GIT_USERNAME}"
 
 echo "Preparing the Nx release..."
