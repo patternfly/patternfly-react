@@ -3,16 +3,24 @@ on:
   push:
     branches:
       - felt-v1
+  workflow_dispatch:
+    inputs:
+      publish-only-run-id:
+        description: Failed release workflow run ID to recover from
+        required: true
+        type: string
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  group: ${{ github.workflow }}-felt-v1
+  cancel-in-progress: false
 jobs:
   ci:
     name: CI
+    if: github.event_name == 'push'
     uses: ./.github/workflows/main.yml
 
   docs:
     name: Documentation
+    if: github.event_name == 'push'
     uses: ./.github/workflows/documentation.yml
     with:
       is-release: true
@@ -20,10 +28,11 @@ jobs:
 
   deploy:
     name: Deploy release
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     needs: [ci, docs]
     permissions:
-      contents: read
+      contents: write
       id-token: write
     steps:
       - name: Check out project
@@ -45,7 +54,90 @@ jobs:
           node --version
           npm --version
 
-      - name: Deploy to NPM and Github
+      - name: Prepare release commit, tags, and packages
+        id: prepare
         run: .github/release.sh
+
+      - name: Preserve prepared release packages for recovery
+        if: steps.prepare.outputs.prepared == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: nx-release-packages
+          path: .release/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish prepared release packages
+        if: steps.prepare.outputs.prepared == 'true'
+        run: yarn release:nx --publish-only
+
+      - name: Comment on the merged pull request
+        id: comment
+        if: steps.prepare.outputs.prepared == 'true'
+        continue-on-error: true
+        run: .github/release-comment.sh
         env:
           GH_PR_TOKEN: ${{ secrets.GH_PR_TOKEN }}
+
+      - name: Report notification failure
+        if: steps.comment.outcome == 'failure'
+        run: echo "::warning::Packages were published successfully, but the release PR comment failed. Do not rerun publication to retry the comment."
+
+  recover-publish:
+    name: Recover release publication
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/felt-v1'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Check out project
+        uses: actions/checkout@v4
+        with:
+          ref: felt-v1
+          fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN_REDALLEN }}
+
+      - name: Download prepared release packages
+        uses: actions/download-artifact@v4
+        with:
+          name: nx-release-packages
+          run-id: ${{ inputs.publish-only-run-id }}
+          github-token: ${{ secrets.GH_TOKEN_REDALLEN }}
+          path: .release
+
+      - name: Check out the original release commit
+        shell: bash
+        run: |
+          SOURCE_COMMIT=$(node -p "require('./.release/release.json').sourceCommit")
+          if [[ ! "${SOURCE_COMMIT}" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "Invalid source commit in release artifact: ${SOURCE_COMMIT}"
+            exit 1
+          fi
+          git checkout "${SOURCE_COMMIT}"
+
+      - name: Install dependencies without rebuilding release packages
+        uses: ./.github/actions/setup-project
+        with:
+          skip-build: true
+
+      - name: Set up npm for trusted publishing
+        run: |
+          npm install --global npm@11.21.1
+          node --version
+          npm --version
+
+      - name: Publish the prepared packages
+        run: yarn release:nx --publish-only
+
+      - name: Comment on the merged pull request
+        id: comment
+        continue-on-error: true
+        run: .github/release-comment.sh
+        env:
+          GH_PR_TOKEN: ${{ secrets.GH_PR_TOKEN }}
+
+      - name: Report notification failure
+        if: steps.comment.outcome == 'failure'
+        run: echo "::warning::Packages were published successfully, but the release PR comment failed. Do not rerun publication to retry the comment."
