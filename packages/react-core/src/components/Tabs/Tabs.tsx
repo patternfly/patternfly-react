@@ -413,6 +413,9 @@ class Tabs extends Component<TabsProps, TabsState> {
   };
 
   handleResize = () => {
+    if (!this.tabList.current) {
+      return;
+    }
     this.handleScrollButtons();
     this.setAccentStyles();
   };

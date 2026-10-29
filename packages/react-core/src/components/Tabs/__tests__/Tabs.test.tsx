@@ -1010,8 +1010,12 @@ test('should not render tablist aria-label or aria-labelledby when neither is pr
 test('observes the tab list for resize and stops observing on unmount', () => {
   const observe = jest.fn();
   const unobserve = jest.fn();
+  let onResize: (entries: any[]) => void;
   const originalResizeObserver = (window as any).ResizeObserver;
-  (window as any).ResizeObserver = jest.fn(() => ({ observe, unobserve }));
+  (window as any).ResizeObserver = jest.fn((callback) => {
+    onResize = callback;
+    return { observe, unobserve };
+  });
 
   const { unmount } = render(
     <Tabs aria-label="resize tabs">
@@ -1021,7 +1025,12 @@ test('observes the tab list for resize and stops observing on unmount', () => {
   const tabList = screen.getByRole('tablist');
   expect(observe).toHaveBeenCalledWith(tabList);
 
+  // a resize queued just before unmount must not run against the removed tab list
+  const rafSpy = jest.spyOn(window, 'requestAnimationFrame').mockImplementation(() => 0);
+  onResize([{}]);
   unmount();
   expect(unobserve).toHaveBeenCalledWith(tabList);
+  expect(() => rafSpy.mock.calls[0][0](0)).not.toThrow();
+  rafSpy.mockRestore();
   (window as any).ResizeObserver = originalResizeObserver;
 });
