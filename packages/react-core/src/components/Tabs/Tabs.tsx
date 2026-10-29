@@ -18,6 +18,7 @@ import { TabsContextProvider } from './TabsContext';
 import { OverflowTab, HorizontalOverflowPopperProps } from './OverflowTab';
 import { Button } from '../Button';
 import { getOUIAProps, OUIAProps, canUseDOM } from '../../helpers';
+import { getResizeObserver } from '../../helpers/resizeObserver';
 import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import linkAccentLength from '@patternfly/react-tokens/dist/esm/c_tabs_link_accent_length';
@@ -217,6 +218,7 @@ class Tabs extends Component<TabsProps, TabsState> {
   }
 
   scrollTimeout: NodeJS.Timeout = null;
+  observer: any = () => {};
 
   static defaultProps: PickOptional<TabsProps> = {
     activeKey: 0,
@@ -411,15 +413,16 @@ class Tabs extends Component<TabsProps, TabsState> {
   };
 
   handleResize = () => {
+    if (!this.tabList.current) {
+      return;
+    }
     this.handleScrollButtons();
     this.setAccentStyles();
   };
 
   componentDidMount() {
     if (!this.props.isVertical) {
-      if (canUseDOM) {
-        window.addEventListener('resize', this.handleResize, false);
-      }
+      this.observer = getResizeObserver(this.tabList.current, this.handleResize, true);
       this.direction = getLanguageDirection(this.tabList.current);
       // call the handle resize function to check if scroll buttons should be shown
       this.handleScrollButtons();
@@ -429,11 +432,7 @@ class Tabs extends Component<TabsProps, TabsState> {
   }
 
   componentWillUnmount() {
-    if (!this.props.isVertical) {
-      if (canUseDOM) {
-        window.removeEventListener('resize', this.handleResize, false);
-      }
-    }
+    this.observer();
     clearTimeout(this.scrollTimeout);
     this.leftScrollButtonRef.current?.removeEventListener('transitionend', this.hideScrollButtons);
   }
