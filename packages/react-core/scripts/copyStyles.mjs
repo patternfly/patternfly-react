@@ -2,7 +2,7 @@ import { copySync } from 'fs-extra/esm';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { resolve, dirname, join } from 'node:path';
-import { parse as parseCSS, stringify as stringifyCSS } from 'css';
+import { parse as parseCSS, stringify as stringifyCSS } from '@adobe/css-tools';
 
 const require = createRequire(import.meta.url);
 const stylesDir = resolve(import.meta.dirname, '../dist/styles');
