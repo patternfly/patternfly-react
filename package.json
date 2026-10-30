@@ -124,7 +124,8 @@
     ]
   },
   "resolutions": {
-    "dompurify": "3.4.13"
+    "dompurify": "3.4.13",
+    "lodash": "4.18.1"
   },
   "dependenciesMeta": {
     "chromedriver": {
