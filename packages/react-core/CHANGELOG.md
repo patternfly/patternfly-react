@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@rh-felt/react-core@0.0.1-prerelease.3...@rh-felt/react-core@0.0.1-prerelease.4) (2026-10-30)
+
+**Note:** Version bump only for package @rh-felt/react-core
+
 ## [0.0.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@rh-felt/react-core@0.0.1-prerelease.2...@rh-felt/react-core@0.0.1-prerelease.3) (2026-10-21)
 
 **Note:** Version bump only for package @rh-felt/react-core
