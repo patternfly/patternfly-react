@@ -106,7 +106,7 @@
     "start": "yarn build && concurrently --kill-others \"yarn watch\" \"yarn workspace @rh-felt/react-docs develop\"",
     "start:cypress": "lerna run cypress:open",
     "start:demo-app": "lerna run dev --scope=demo-app-ts --stream",
-    "test": "TZ=EST LC_ALL=en_US.UTF8 jest packages",
+    "test": "TZ=America/New_York LC_ALL=en_US.UTF8 jest packages",
     "test:a11y": "lerna run test:a11y --stream",
     "test:integration": "yarn workspace @rh-felt/react-integration test:integration",
     "uninstall": "find . -name node_modules -type d | xargs rm -rf",
