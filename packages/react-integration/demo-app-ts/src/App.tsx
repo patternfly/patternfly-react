@@ -52,9 +52,9 @@ class App extends Component<{}, AppState> {
     const htmlElement = document.getElementsByTagName('html')[0];
     if (htmlElement) {
       if (isDarkTheme) {
-        htmlElement.classList.add('pf-theme-dark');
+        htmlElement.classList.add('pf-v6-theme-dark');
       } else {
-        htmlElement.classList.remove('pf-theme-dark');
+        htmlElement.classList.remove('pf-v6-theme-dark');
       }
     }
   };
@@ -99,7 +99,7 @@ class App extends Component<{}, AppState> {
               id="light-theme"
               aria-label="Light theme"
               label={`Light theme`}
-              name="light-theme"
+              name="theme"
               isChecked={!isDarkTheme}
               onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) =>
                 checked && this.onThemeSelect(false)
@@ -111,7 +111,7 @@ class App extends Component<{}, AppState> {
               id="dark-theme"
               label="Dark theme"
               aria-label="Dark theme"
-              name="dark-theme"
+              name="theme"
               isChecked={isDarkTheme}
               onChange={(_event: React.FormEvent<HTMLInputElement>, checked: boolean) =>
                 checked && this.onThemeSelect(true)
