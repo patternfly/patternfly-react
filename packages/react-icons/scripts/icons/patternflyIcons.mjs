@@ -1,4 +1,4 @@
-import { pfIcons } from '@patternfly/patternfly/icons/pficons.mjs';
+import { pfIcons } from '@rh-felt/styles/icons/pficons.mjs';
 
 const renaming = {
   save: 'save-alt',
