@@ -10811,8 +10811,8 @@ __metadata:
     "@vitejs/plugin-react-swc": "npm:^3.11.0"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
-    react-router: "npm:^7.14.1"
-    react-router-dom: "npm:^7.14.1"
+    react-router: "npm:^7.18.5"
+    react-router-dom: "npm:^7.18.5"
     vite: "npm:^6.2.2"
   languageName: unknown
   linkType: soft
@@ -19934,7 +19934,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router-dom@npm:^7.14.1":
+"react-router-dom@npm:^7.18.5":
   version: 7.18.5
   resolution: "react-router-dom@npm:7.18.5"
   dependencies:
@@ -19946,7 +19946,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router@npm:7.18.5, react-router@npm:^7.14.1":
+"react-router@npm:7.18.5, react-router@npm:^7.18.5":
   version: 7.18.5
   resolution: "react-router@npm:7.18.5"
   dependencies:
