@@ -8,6 +8,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - name: Check out project
         uses: actions/checkout@v4
@@ -22,8 +25,13 @@ jobs:
         with:
           skip-build-cache: true
 
+      - name: Set up npm for trusted publishing
+        run: |
+          npm install --global npm@11.21.1
+          node --version
+          npm --version
+
       - name: Deploy to NPM and Github
         run: .github/promote.sh
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           PATTERNFLY_VERSION: ${{ github.event.inputs.patternfly-version }}
