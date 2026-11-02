@@ -1,4 +1,4 @@
-import { createContext, useRef } from 'react';
+import { createContext, forwardRef, useImperativeHandle, useRef } from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
 import { useOUIAProps, OUIAProps } from '../../helpers';
@@ -31,6 +31,8 @@ export interface DrawerProps extends React.HTMLProps<HTMLDivElement>, OUIAProps 
   position?: 'start' | 'end' | 'bottom' | 'left' | 'right';
   /** Callback when drawer panel is expanded after waiting 250ms for animation to complete. */
   onExpand?: (event: KeyboardEvent | React.MouseEvent | React.TransitionEvent) => void;
+  /** @hide Forwarded ref */
+  innerRef?: React.Ref<HTMLDivElement>;
   /** Value to overwrite the randomly generated data-ouia-component-id.*/
   ouiaId?: number | string;
   /** Set the value of data-ouia-safe. Only set to true when the component is in a static state, i.e. no animations are occurring. At all other times, this value must be false. */
@@ -59,7 +61,7 @@ export const DrawerContext = createContext<Partial<DrawerContextProps>>({
   isViewport: false
 });
 
-export const Drawer: React.FunctionComponent<DrawerProps> = ({
+const DrawerBase: React.FunctionComponent<DrawerProps> = ({
   className = '',
   children,
   isExpanded = false,
@@ -69,6 +71,7 @@ export const Drawer: React.FunctionComponent<DrawerProps> = ({
   isStatic = false,
   position = 'end',
   onExpand = () => {},
+  innerRef,
   ouiaId,
   ouiaSafe = true,
   ...props
@@ -76,6 +79,7 @@ export const Drawer: React.FunctionComponent<DrawerProps> = ({
   const ouiaProps = useOUIAProps(Drawer.displayName, ouiaId, ouiaSafe);
   const drawerRef = useRef<HTMLDivElement>(undefined);
   const drawerContentRef = useRef<HTMLDivElement>(undefined);
+  useImperativeHandle(innerRef, () => drawerRef.current);
 
   return (
     <DrawerContext.Provider
@@ -102,4 +106,7 @@ export const Drawer: React.FunctionComponent<DrawerProps> = ({
     </DrawerContext.Provider>
   );
 };
+export const Drawer = forwardRef((props: DrawerProps, ref: React.Ref<HTMLDivElement>) => (
+  <DrawerBase innerRef={ref} {...props} />
+));
 Drawer.displayName = 'Drawer';

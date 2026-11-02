@@ -1,4 +1,4 @@
-import { Fragment, useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { forwardRef, Fragment, useCallback, useContext, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
 import { DrawerColorVariant, DrawerContext } from './Drawer';
@@ -70,11 +70,13 @@ export interface DrawerPanelContentProps extends Omit<React.HTMLProps<HTMLDivEle
   colorVariant?: DrawerColorVariant | 'no-background' | 'default' | 'secondary';
   /** Adds and customizes a focus trap on the drawer panel content. */
   focusTrap?: DrawerPanelFocusTrapObject;
+  /** @hide Forwarded ref */
+  innerRef?: React.Ref<HTMLDivElement>;
 }
 let isResizing: boolean = null;
 let newSize: number = 0;
 
-export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps> = ({
+const DrawerPanelContentBase: React.FunctionComponent<DrawerPanelContentProps> = ({
   className,
   id,
   children,
@@ -94,11 +96,13 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   colorVariant = DrawerColorVariant.default,
   focusTrap,
   style,
+  innerRef,
   ...props
 }: DrawerPanelContentProps) => {
   const panelId = useSSRSafeId('pf-drawer-panel-');
   const panel = useRef<HTMLDivElement>(undefined);
   const splitterRef = useRef<HTMLDivElement>(undefined);
+  useImperativeHandle(innerRef, () => panel.current);
   const [separatorValue, setSeparatorValue] = useState(0);
   const { position, isExpanded, isStatic, onExpand, drawerRef, drawerContentRef, isInline, isViewport } =
     useContext(DrawerContext);
@@ -443,4 +447,7 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     </Component>
   );
 };
+export const DrawerPanelContent = forwardRef((props: DrawerPanelContentProps, ref: React.Ref<HTMLDivElement>) => (
+  <DrawerPanelContentBase innerRef={ref} {...props} />
+));
 DrawerPanelContent.displayName = 'DrawerPanelContent';

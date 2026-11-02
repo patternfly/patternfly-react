@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext, createRef } from 'react';
 import {
   Drawer,
   DrawerActions,
@@ -8,8 +8,11 @@ import {
   DrawerHead,
   DrawerPanelBody,
   DrawerPanelContent,
+  DrawerPanelDescription,
+  DrawerSection,
   DrawerColorVariant
 } from '../';
+import { DrawerMain } from '../DrawerMain';
 import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { KeyTypes } from '../../../helpers';
@@ -186,6 +189,64 @@ test(`Renders with ${styles.modifiers.pill} class when specified`, () => {
   );
 
   expect(screen.getByTestId('drawer')).toHaveClass(styles.modifiers.pill);
+});
+
+test('Drawer and its sub-components forward refs to their underlying div elements', () => {
+  const drawerRef = createRef<HTMLDivElement>();
+  const sectionRef = createRef<HTMLDivElement>();
+  const contentRef = createRef<HTMLDivElement>();
+  const contentBodyRef = createRef<HTMLDivElement>();
+  const panelContentRef = createRef<HTMLDivElement>();
+  const headRef = createRef<HTMLDivElement>();
+  const actionsRef = createRef<HTMLDivElement>();
+  const closeButtonRef = createRef<HTMLDivElement>();
+  const panelDescriptionRef = createRef<HTMLDivElement>();
+  const panelBodyRef = createRef<HTMLDivElement>();
+  const mainRef = createRef<HTMLDivElement>();
+
+  const panelContent = (
+    <DrawerPanelContent ref={panelContentRef} data-testid="panel-content">
+      <DrawerHead ref={headRef} data-testid="head">
+        <DrawerActions ref={actionsRef} data-testid="actions">
+          <DrawerCloseButton ref={closeButtonRef} data-testid="close-button" />
+        </DrawerActions>
+      </DrawerHead>
+      <DrawerPanelDescription ref={panelDescriptionRef} data-testid="panel-description">
+        Description
+      </DrawerPanelDescription>
+      <DrawerPanelBody ref={panelBodyRef} data-testid="panel-body">
+        Panel body
+      </DrawerPanelBody>
+    </DrawerPanelContent>
+  );
+
+  render(
+    <>
+      <Drawer ref={drawerRef} isExpanded data-testid="drawer">
+        <DrawerSection ref={sectionRef} data-testid="section">
+          Section
+        </DrawerSection>
+        <DrawerContent ref={contentRef} panelContent={panelContent} data-testid="content">
+          <DrawerContentBody ref={contentBodyRef} data-testid="content-body">
+            Content body
+          </DrawerContentBody>
+        </DrawerContent>
+      </Drawer>
+      <DrawerMain ref={mainRef} data-testid="main" />
+    </>
+  );
+
+  expect(drawerRef.current).toBe(screen.getByTestId('drawer'));
+  expect(sectionRef.current).toBe(screen.getByTestId('section'));
+  expect(contentRef.current).toBe(screen.getByTestId('content'));
+  expect(contentBodyRef.current).toBe(screen.getByTestId('content-body'));
+  expect(panelContentRef.current).toBe(screen.getByTestId('panel-content'));
+  expect(headRef.current).toBe(screen.getByTestId('head'));
+  expect(actionsRef.current).toBe(screen.getByTestId('actions'));
+  expect(closeButtonRef.current).toBe(screen.getByTestId('close-button'));
+  expect(panelDescriptionRef.current).toBe(screen.getByTestId('panel-description'));
+  expect(panelBodyRef.current).toBe(screen.getByTestId('panel-body'));
+  expect(mainRef.current).toBe(screen.getByTestId('main'));
 });
 
 test('Renders with custom ouiaId', () => {
