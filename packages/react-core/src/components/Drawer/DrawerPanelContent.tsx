@@ -276,10 +276,15 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     document.removeEventListener('touchend', callbackTouchEnd);
   };
 
-  const callbackMouseMove = useCallback(handleMouseMove, []);
-  const callbackTouchEnd = useCallback(handleTouchEnd, []);
-  const callbackTouchMove = useCallback(handleTouchMove, []);
-  const callbackMouseUp = useCallback(handleMouseup, []);
+  // Document listeners must keep a stable identity so they can be removed, but should
+  // always run the latest handlers so they see current props (onResize, id, position, etc.).
+  const latestHandlers = useRef({ handleMouseMove, handleTouchEnd, handleTouchMove, handleMouseup });
+  latestHandlers.current = { handleMouseMove, handleTouchEnd, handleTouchMove, handleMouseup };
+
+  const callbackMouseMove = useCallback((e: MouseEvent) => latestHandlers.current.handleMouseMove(e), []);
+  const callbackTouchEnd = useCallback((e: TouchEvent) => latestHandlers.current.handleTouchEnd(e), []);
+  const callbackTouchMove = useCallback((e: TouchEvent) => latestHandlers.current.handleTouchMove(e), []);
+  const callbackMouseUp = useCallback((e: MouseEvent) => latestHandlers.current.handleMouseup(e), []);
 
   const handleKeys = (e: React.KeyboardEvent) => {
     const isRTL = getLanguageDirection(panel.current) === 'rtl';
