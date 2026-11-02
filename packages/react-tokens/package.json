@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
-  "homepage": "https://github.com/patternfly/patternfly-react#readme",
+  "homepage": "https://github.com/patternfly/patternfly-react/tree/felt-v1#readme",
   "scripts": {
     "generate": "yarn clean && node scripts/writeTokens.mjs",
     "clean": "rimraf dist"
