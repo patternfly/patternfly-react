@@ -24,12 +24,12 @@
   },
   "dependencies": {
     "@patternfly/patternfly": "npm:@rh-felt/styles@0.0.1-prerelease.3",
-    "@patternfly/react-code-editor": "npm:@rh-felt/react-code-editor@0.0.1-prerelease.4",
-    "@patternfly/react-core": "npm:@rh-felt/react-core@0.0.1-prerelease.4",
-    "@patternfly/react-icons": "npm:@rh-felt/react-icons@0.0.1-prerelease.2",
-    "@patternfly/react-styles": "npm:@rh-felt/react-styles@0.0.1-prerelease.3",
-    "@patternfly/react-table": "npm:@rh-felt/react-table@0.0.1-prerelease.4",
-    "@patternfly/react-tokens": "npm:@rh-felt/react-tokens@0.0.1-prerelease.2",
+    "@patternfly/react-code-editor": "npm:@rh-felt/react-code-editor@workspace:^",
+    "@patternfly/react-core": "npm:@rh-felt/react-core@workspace:^",
+    "@patternfly/react-icons": "npm:@rh-felt/react-icons@workspace:^",
+    "@patternfly/react-styles": "npm:@rh-felt/react-styles@workspace:^",
+    "@patternfly/react-table": "npm:@rh-felt/react-table@workspace:^",
+    "@patternfly/react-tokens": "npm:@rh-felt/react-tokens@workspace:^",
     "@rh-felt/styles": "0.0.1-prerelease.3",
     "echarts": "^5.6.0 || ^6.0.0",
     "victory": "^37.3.6"

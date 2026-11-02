@@ -5441,7 +5441,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@patternfly/react-code-editor@npm:@rh-felt/react-code-editor@0.0.1-prerelease.4, @rh-felt/react-code-editor@workspace:packages/react-code-editor":
+"@patternfly/react-code-editor@npm:@rh-felt/react-code-editor@workspace:^, @rh-felt/react-code-editor@workspace:packages/react-code-editor":
   version: 0.0.0-use.local
   resolution: "@rh-felt/react-code-editor@workspace:packages/react-code-editor"
   dependencies:
@@ -5458,7 +5458,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@patternfly/react-core@npm:@rh-felt/react-core@0.0.1-prerelease.4, @rh-felt/react-core@workspace:^, @rh-felt/react-core@workspace:packages/react-core":
+"@patternfly/react-core@npm:@rh-felt/react-core@workspace:^, @rh-felt/react-core@workspace:^, @rh-felt/react-core@workspace:packages/react-core":
   version: 0.0.0-use.local
   resolution: "@rh-felt/react-core@workspace:packages/react-core"
   dependencies:
@@ -5478,7 +5478,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@patternfly/react-icons@npm:@rh-felt/react-icons@0.0.1-prerelease.2, @rh-felt/react-icons@workspace:^, @rh-felt/react-icons@workspace:packages/react-icons":
+"@patternfly/react-icons@npm:@rh-felt/react-icons@workspace:^, @rh-felt/react-icons@workspace:^, @rh-felt/react-icons@workspace:packages/react-icons":
   version: 0.0.0-use.local
   resolution: "@rh-felt/react-icons@workspace:packages/react-icons"
   dependencies:
@@ -5495,7 +5495,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@patternfly/react-styles@npm:@rh-felt/react-styles@0.0.1-prerelease.3, @rh-felt/react-styles@workspace:^, @rh-felt/react-styles@workspace:packages/react-styles":
+"@patternfly/react-styles@npm:@rh-felt/react-styles@workspace:^, @rh-felt/react-styles@workspace:^, @rh-felt/react-styles@workspace:packages/react-styles":
   version: 0.0.0-use.local
   resolution: "@rh-felt/react-styles@workspace:packages/react-styles"
   dependencies:
@@ -5505,7 +5505,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@patternfly/react-table@npm:@rh-felt/react-table@0.0.1-prerelease.4, @rh-felt/react-table@workspace:packages/react-table":
+"@patternfly/react-table@npm:@rh-felt/react-table@workspace:^, @rh-felt/react-table@workspace:packages/react-table":
   version: 0.0.0-use.local
   resolution: "@rh-felt/react-table@workspace:packages/react-table"
   dependencies:
@@ -5521,7 +5521,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@patternfly/react-tokens@npm:@rh-felt/react-tokens@0.0.1-prerelease.2, @rh-felt/react-tokens@workspace:^, @rh-felt/react-tokens@workspace:packages/react-tokens":
+"@patternfly/react-tokens@npm:@rh-felt/react-tokens@workspace:^, @rh-felt/react-tokens@workspace:^, @rh-felt/react-tokens@workspace:packages/react-tokens":
   version: 0.0.0-use.local
   resolution: "@rh-felt/react-tokens@workspace:packages/react-tokens"
   dependencies:
@@ -5832,12 +5832,12 @@ __metadata:
     "@patternfly/documentation-framework": "npm:^6.40.0"
     "@patternfly/patternfly": "npm:@rh-felt/styles@0.0.1-prerelease.3"
     "@patternfly/patternfly-a11y": "npm:5.2.1"
-    "@patternfly/react-code-editor": "npm:@rh-felt/react-code-editor@0.0.1-prerelease.4"
-    "@patternfly/react-core": "npm:@rh-felt/react-core@0.0.1-prerelease.4"
-    "@patternfly/react-icons": "npm:@rh-felt/react-icons@0.0.1-prerelease.2"
-    "@patternfly/react-styles": "npm:@rh-felt/react-styles@0.0.1-prerelease.3"
-    "@patternfly/react-table": "npm:@rh-felt/react-table@0.0.1-prerelease.4"
-    "@patternfly/react-tokens": "npm:@rh-felt/react-tokens@0.0.1-prerelease.2"
+    "@patternfly/react-code-editor": "npm:@rh-felt/react-code-editor@workspace:^"
+    "@patternfly/react-core": "npm:@rh-felt/react-core@workspace:^"
+    "@patternfly/react-icons": "npm:@rh-felt/react-icons@workspace:^"
+    "@patternfly/react-styles": "npm:@rh-felt/react-styles@workspace:^"
+    "@patternfly/react-table": "npm:@rh-felt/react-table@workspace:^"
+    "@patternfly/react-tokens": "npm:@rh-felt/react-tokens@workspace:^"
     "@rh-felt/styles": "npm:0.0.1-prerelease.3"
     echarts: "npm:^5.6.0 || ^6.0.0"
     victory: "npm:^37.3.6"
