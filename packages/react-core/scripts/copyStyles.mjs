@@ -6,7 +6,7 @@ import { parse as parseCSS, stringify as stringifyCSS } from '@adobe/css-tools';
 
 const require = createRequire(import.meta.url);
 const stylesDir = resolve(import.meta.dirname, '../dist/styles');
-const pfDir = dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
+const pfDir = dirname(require.resolve('@rh-felt/styles/patternfly.css'));
 
 const unusedSelectorRegEx = /(\.fas?|\.sr-only)/;
 const unusedKeyFramesRegEx = /fa-/;

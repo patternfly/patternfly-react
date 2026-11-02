@@ -48,7 +48,7 @@ export class MenuDrilldownDemo extends Component {
   };
   setHeight = (menuId: string, height: number) => {
     if (
-      !this.state.menuHeights[menuId] ||
+      this.state.menuHeights[menuId] === undefined ||
       (menuId !== 'drilldown-rootMenu' && this.state.menuHeights[menuId] !== height)
     ) {
       this.setState({

@@ -78,7 +78,7 @@ export class DrawerResizeDemo extends Component<DrawerProps, DrawerResizeDemoSta
         <Button id="toggleButton" onClick={this.onClick}>
           Toggle Drawer
         </Button>
-        <Drawer isExpanded={isExpanded} onExpand={this.onExpand} position="bottom">
+        <Drawer isExpanded={isExpanded} onExpand={this.onExpand} position="bottom" style={{ height: '300px' }}>
           <DrawerSection>drawer-section</DrawerSection>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>

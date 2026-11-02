@@ -4,7 +4,7 @@ import { Table, TableHeader, TableBody, TableProps } from '@rh-felt/react-table/
 import spacing from '@rh-felt/react-styles/css/utilities/Spacing/spacing';
 
 import { Checkbox, Divider, Radio } from '@rh-felt/react-core';
-import '@patternfly/patternfly/utilities/Spacing/spacing.css';
+import '@rh-felt/styles/utilities/Spacing/spacing.css';
 
 interface TableState {
   columns: (ICell | string)[];

@@ -7,10 +7,10 @@ import '@rh-felt/react-styles/src/css/components/Popper/Popper.css';
 import '@patternfly/documentation-framework/global.css';
 
 // Patternfly
-import '@patternfly/patternfly/patternfly.css';
+import '@rh-felt/styles/patternfly.css';
 
 // Utilities
-import '@patternfly/patternfly/patternfly-addons.css';
+import '@rh-felt/styles/patternfly-addons.css';
 
 // Charts
-import '@patternfly/patternfly/patternfly-charts.css';
+import '@rh-felt/styles/patternfly-charts.css';
