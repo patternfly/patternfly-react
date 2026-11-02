@@ -40,7 +40,7 @@ export default _default;
  * @param {any} classMaps Map of file names to classMaps
  */
 function writeClassMaps(classMaps) {
-  const pfStylesDir = path.dirname(url.fileURLToPath(import.meta.resolve('@patternfly/patternfly/patternfly.css')));
+  const pfStylesDir = path.dirname(url.fileURLToPath(import.meta.resolve('@rh-felt/styles/patternfly.css')));
 
   Object.entries(classMaps).forEach(([file, classMap]) => {
     const outPath = file.includes(pfStylesDir) ? path.relative(pfStylesDir, file) : path.relative('src/css', file);

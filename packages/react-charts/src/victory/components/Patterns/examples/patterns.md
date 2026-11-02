@@ -49,7 +49,7 @@ import chart_color_blue_300 from '@rh-felt/react-tokens/dist/esm/chart_color_blu
 import chart_color_green_300 from '@rh-felt/react-tokens/dist/esm/chart_color_green_300';
 import chart_color_teal_300 from '@rh-felt/react-tokens/dist/esm/chart_color_teal_300';
 import chart_color_yellow_300 from '@rh-felt/react-tokens/dist/esm/chart_color_yellow_300';
-import '@patternfly/patternfly/patternfly-charts.css';
+import '@rh-felt/styles/patternfly-charts.css';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@rh-felt/react-charts](https://www.npmjs.com/package/@rh-felt/react-charts)!

@@ -110,7 +110,7 @@
     "start": "yarn build && concurrently --kill-others \"yarn watch\" \"yarn workspace @rh-felt/react-docs develop\"",
     "start:cypress": "nx run-many -t cypress:open --outputStyle=stream --nxBail",
     "start:demo-app": "nx run demo-app-ts:dev --outputStyle=stream",
-    "test": "TZ=EST LC_ALL=en_US.UTF8 jest packages",
+    "test": "TZ=America/New_York LC_ALL=en_US.UTF8 jest packages",
     "test:release": "node --test scripts/*release*.test.mjs",
     "test:a11y": "nx run-many -t test:a11y --outputStyle=stream --nxBail",
     "test:integration": "yarn workspace @rh-felt/react-integration test:integration",

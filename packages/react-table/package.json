@@ -1,6 +1,6 @@
 {
   "name": "@rh-felt/react-table",
-  "version": "0.0.1-prerelease.3",
+  "version": "0.0.1-prerelease.4",
   "description": "This library provides a set of React table components for use with Felt",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",

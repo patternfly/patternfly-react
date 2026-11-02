@@ -1,6 +1,6 @@
 {
   "name": "@rh-felt/react-code-editor",
-  "version": "0.0.1-prerelease.3",
+  "version": "0.0.1-prerelease.4",
   "description": "This package provides a Felt wrapper for the Monaco code editor.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",

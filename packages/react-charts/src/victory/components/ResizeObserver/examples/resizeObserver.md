@@ -36,7 +36,7 @@ import {
 import { getResizeObserver } from '@rh-felt/react-core';
 import chart_color_blue_300 from '@rh-felt/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_orange_300 from '@rh-felt/react-tokens/dist/esm/chart_color_orange_300';
-import '@patternfly/patternfly/patternfly-charts.css';
+import '@rh-felt/styles/patternfly-charts.css';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@rh-felt/react-charts](https://www.npmjs.com/package/@rh-felt/react-charts)!

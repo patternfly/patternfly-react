@@ -5,7 +5,7 @@ import { parse, stringify } from '@adobe/css-tools';
 import { readFileSync } from 'node:fs';
 
 const require = createRequire(import.meta.url);
-const pfStylesDir = dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
+const pfStylesDir = dirname(require.resolve('@rh-felt/styles/patternfly.css'));
 const version = 'v6';
 
 // Helpers
@@ -73,7 +73,7 @@ const getLocalVarsMap = (cssFiles) => {
 };
 
 /**
- * Generates tokens from CSS in node_modules/@patternfly/patternfly/**
+ * Generates tokens from CSS in node_modules/@rh-felt/styles/**
  *
  * @returns {object} of form {
  *   c_about_modal_box: {
@@ -104,14 +104,11 @@ export function generateTokens() {
     .sort((a, b) => (a.split(sep).length < b.split(sep).length ? 1 : -1));
 
   // various lookup tables to resolve variables
-  const scssVariables = readFileSync(
-    require.resolve('@patternfly/patternfly/sass-utilities/scss-variables.scss'),
-    'utf8'
-  );
+  const scssVariables = readFileSync(require.resolve('@rh-felt/styles/sass-utilities/scss-variables.scss'), 'utf8');
   const scssVarsMap = getRegexMatches(scssVariables, /(\$.*):\s*([^;^!]+)/g);
 
   const cssGlobalVariablesAst = parse(
-    readFileSync(require.resolve('@patternfly/patternfly/base/patternfly-variables.css'), 'utf8')
+    readFileSync(require.resolve('@rh-felt/styles/base/patternfly-variables.css'), 'utf8')
   );
   cssGlobalVariablesAst.stylesheet.rules = cssGlobalVariablesAst.stylesheet.rules.filter(
     (node) => !node.selectors || !node.selectors.some((item) => item.includes(`.pf-${version}-theme-dark`))

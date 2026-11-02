@@ -55,7 +55,7 @@ function getClassMaps(cssString) {
  * @returns {any} Map of file names to classMaps
  */
 export function generateClassMaps() {
-  const pfStylesDir = path.dirname(url.fileURLToPath(import.meta.resolve('@patternfly/patternfly/patternfly.css')));
+  const pfStylesDir = path.dirname(url.fileURLToPath(import.meta.resolve('@rh-felt/styles/patternfly.css')));
 
   const patternflyCSSFiles = glob.sync('**/*.css', {
     cwd: pfStylesDir,

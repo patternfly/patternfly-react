@@ -26,7 +26,7 @@
     "clean": "rimraf dist css"
   },
   "devDependencies": {
-    "@patternfly/patternfly": "6.7.0-prerelease.3",
+    "@rh-felt/styles": "0.0.1-prerelease.3",
     "change-case": "^5.4.4",
     "fs-extra": "^11.3.3"
   },

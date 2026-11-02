@@ -1,10 +1,9 @@
 #!/bin/bash
  # Make sure you update the version number when changing this script.
-version=2.0
+version=2.1
 promote=false
 
 packages=(
-  @patternfly/patternfly
   @rh-felt/react-charts
   @rh-felt/react-code-editor
   @rh-felt/react-core
@@ -14,6 +13,7 @@ packages=(
   @rh-felt/react-table
   @rh-felt/react-templates
   @rh-felt/react-tokens
+  @rh-felt/styles
 )
 
 packagesExtensions=(
