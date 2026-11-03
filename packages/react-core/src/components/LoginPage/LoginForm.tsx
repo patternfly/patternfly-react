@@ -24,6 +24,8 @@ export interface LoginFormProps extends Omit<React.HTMLProps<HTMLFormElement>, '
   usernameLabel?: string;
   /** Value for the username */
   usernameValue?: string;
+  /** Autocomplete value for the username input field */
+  usernameAutoComplete?: string;
   /** Function that handles the onChange event for the username */
   onChangeUsername?: (event: React.FormEvent<HTMLInputElement>, value: string) => void;
   /** Flag indicating if the username is valid */
@@ -34,6 +36,8 @@ export interface LoginFormProps extends Omit<React.HTMLProps<HTMLFormElement>, '
   passwordLabel?: string;
   /** Value for the password */
   passwordValue?: string;
+  /** Autocomplete value for the password input field */
+  passwordAutoComplete?: string;
   /** Function that handles the onChange event for the password */
   onChangePassword?: (event: React.FormEvent<HTMLInputElement>, value: string) => void;
   /** Flag indicating if the password is valid */
@@ -66,11 +70,13 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
   helperTextIcon = null,
   usernameLabel = 'Username',
   usernameValue = '',
+  usernameAutoComplete,
   onChangeUsername = () => undefined as any,
   isValidUsername = true,
   isPasswordRequired = true,
   passwordLabel = 'Password',
   passwordValue = '',
+  passwordAutoComplete,
   onChangePassword = () => undefined as any,
   isShowPasswordEnabled = false,
   hidePasswordAriaLabel = 'Hide password',
@@ -92,6 +98,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
       type={passwordHidden ? 'password' : 'text'}
       id="pf-login-password-id"
       name="pf-login-password-id"
+      autoComplete={passwordAutoComplete}
       validated={isValidPassword ? ValidatedOptions.default : ValidatedOptions.error}
       value={passwordValue}
       onChange={onChangePassword}
@@ -117,6 +124,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
           validated={isValidUsername ? ValidatedOptions.default : ValidatedOptions.error}
           type="text"
           name="pf-login-username-id"
+          autoComplete={usernameAutoComplete}
           value={usernameValue}
           onChange={onChangeUsername}
         />
