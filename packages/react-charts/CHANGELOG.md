@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-prerelease.6](https://github.com/patternfly/patternfly-react/compare/@rh-felt/react-charts@0.0.1-prerelease.5...@rh-felt/react-charts@0.0.1-prerelease.6) (2026-11-03)
+
+**Note:** Version bump only for package @rh-felt/react-charts
+
 ## [0.0.1-prerelease.5](https://github.com/patternfly/patternfly-react/compare/@rh-felt/react-charts@0.0.1-prerelease.4...@rh-felt/react-charts@0.0.1-prerelease.5) (2026-11-02)
 
 **Note:** Version bump only for package @rh-felt/react-charts
