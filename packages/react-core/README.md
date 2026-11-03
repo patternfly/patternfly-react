@@ -29,7 +29,7 @@ Before you begin, check out this [overview of PatternFly](http://patternfly.org/
   ```
   
 #### Project configuration
-Each PatternFly component already contains the CSS related to the component.  In order to have consistent styles throughout the application, PatternFly Base CSS should be used in the project, or some components may diverge in appearance.  This import statement should be placed before your main application component is imported.
+Each Felt component already contains the CSS related to the component.  In order to have consistent styles throughout the application, Felt Base CSS should be used in the project, or some components may diverge in appearance.  This import statement should be placed before your main application component is imported.
 
 ```js
 import '@rh-felt/react-core/dist/styles/base.css';
