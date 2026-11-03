@@ -13,8 +13,17 @@ describe('LoginForm', () => {
     const mockFn = jest.fn();
     const user = userEvent.setup();
 
-    render(<LoginForm onChangeUsername={mockFn} rememberMeLabel="Remember me" />);
+    render(
+      <LoginForm
+        onChangeUsername={mockFn}
+        rememberMeLabel="Remember me"
+        usernameAutoComplete="username"
+        passwordAutoComplete="current-password"
+      />
+    );
 
+    expect(screen.getByLabelText(/username/i)).toHaveAttribute('autoComplete', 'username');
+    expect(screen.getByLabelText(/password/i)).toHaveAttribute('autoComplete', 'current-password');
     await user.type(screen.getByText('Username'), 'updatedUserName');
     expect(mockFn).toHaveBeenCalled();
   });
