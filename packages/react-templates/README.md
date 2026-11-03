@@ -16,7 +16,7 @@ npm install @rh-felt/react-templates --save
 
 ### Usage
 
-It's strongly advised to use the PatternFly Base CSS in your whole project, or some components may diverge in appearance:
+It's strongly advised to use the Felt Base CSS in your whole project, or some components may diverge in appearance:
 
 ```js
 import '@rh-felt/react-core/dist/styles/base.css';

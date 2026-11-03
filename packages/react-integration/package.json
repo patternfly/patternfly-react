@@ -1,6 +1,6 @@
 {
   "name": "@rh-felt/react-integration",
-  "version": "6.5.0-prerelease.25",
+  "version": "6.5.0-prerelease.26",
   "private": true,
   "description": "Integration testing for PF5 using demo applications",
   "main": "lib/index.js",
@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
-  "homepage": "https://github.com/patternfly/patternfly-react#readme",
+  "homepage": "https://github.com/patternfly/patternfly-react/tree/felt-v1#readme",
   "scripts": {
     "build:integration:report": "cd results && junit-merge * && node ../scripts/junit2html.mjs",
     "clean": "rimraf cypress/videos cypress/screenshots",

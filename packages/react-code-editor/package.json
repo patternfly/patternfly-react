@@ -1,6 +1,6 @@
 {
   "name": "@rh-felt/react-code-editor",
-  "version": "0.0.1-prerelease.4",
+  "version": "0.0.1-prerelease.5",
   "description": "This package provides a Felt wrapper for the Monaco code editor.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -26,7 +26,7 @@
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
-  "homepage": "https://github.com/patternfly/patternfly-react/tree/main/packages/react-code-editor#readme",
+  "homepage": "https://github.com/patternfly/patternfly-react/tree/felt-v1/packages/react-code-editor#readme",
   "scripts": {
     "clean": "rimraf dist"
   },

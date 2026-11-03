@@ -1,6 +1,6 @@
 {
   "name": "@rh-felt/react-table",
-  "version": "0.0.1-prerelease.4",
+  "version": "0.0.1-prerelease.5",
   "description": "This library provides a set of React table components for use with Felt",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -33,7 +33,7 @@
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
-  "homepage": "https://github.com/patternfly/patternfly-react/tree/main/packages/react-table#readme",
+  "homepage": "https://github.com/patternfly/patternfly-react/tree/felt-v1/packages/react-table#readme",
   "scripts": {
     "build:umd": "rollup -c --environment IS_PRODUCTION",
     "build:single:packages": "node ../../scripts/build-single-packages.mjs --config single-packages.config.json",

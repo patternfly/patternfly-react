@@ -1,6 +1,6 @@
 {
   "name": "@rh-felt/react-charts",
-  "version": "0.0.1-prerelease.3",
+  "version": "0.0.1-prerelease.5",
   "description": "This library provides a set of React chart components for Felt.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -38,7 +38,7 @@
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
-  "homepage": "https://github.com/patternfly/patternfly-react#readme",
+  "homepage": "https://github.com/patternfly/patternfly-react/tree/felt-v1#readme",
   "dependencies": {
     "@rh-felt/react-styles": "workspace:^",
     "@rh-felt/react-tokens": "workspace:^",

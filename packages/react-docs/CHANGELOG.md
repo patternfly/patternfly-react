@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-prerelease.4](https://github.com/patternfly/patternfly-react/compare/@rh-felt/react-docs@0.0.1-prerelease.3...@rh-felt/react-docs@0.0.1-prerelease.4) (2026-11-02)
+
+**Note:** Version bump only for package @rh-felt/react-docs
+
+## [0.0.1-prerelease.3](https://github.com/patternfly/patternfly-react/compare/@rh-felt/react-docs@0.0.1-prerelease.2...@rh-felt/react-docs@0.0.1-prerelease.3) (2026-11-02)
+
+### Bug Fixes
+
+- **Felt:** realign docs [@patternfly](https://github.com/patternfly) alias pins with workspace versions ([#12705](https://github.com/patternfly/patternfly-react/issues/12705)) ([7a90395](https://github.com/patternfly/patternfly-react/commit/7a90395748a7224a678103025b505ffb428049cc))
+- **Felt:** track docs [@patternfly](https://github.com/patternfly) alias versions via the workspace protocol ([#12706](https://github.com/patternfly/patternfly-react/issues/12706)) ([25ee617](https://github.com/patternfly/patternfly-react/commit/25ee617603e299fbc29f13d32f7548bce3d06a66)), closes [#12705](https://github.com/patternfly/patternfly-react/issues/12705)
+
 ## [0.0.1-prerelease.2](https://github.com/patternfly/patternfly-react/compare/@rh-felt/react-docs@0.0.1-prerelease.1...@rh-felt/react-docs@0.0.1-prerelease.2) (2026-10-20)
 
 **Note:** Version bump only for package @rh-felt/react-docs
