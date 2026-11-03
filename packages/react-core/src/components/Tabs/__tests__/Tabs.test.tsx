@@ -1041,6 +1041,7 @@ describe('container resizing', () => {
     );
     const tabList = screen.getByRole('tablist');
     let width = 200;
+    jest.spyOn(screen.getByRole('region'), 'getBoundingClientRect').mockImplementation(() => ({ width }) as DOMRect);
     jest
       .spyOn(tabList, 'getBoundingClientRect')
       .mockImplementation(() => ({ left: 0, right: width, width }) as DOMRect);
@@ -1071,6 +1072,34 @@ describe('container resizing', () => {
     const observedContainer = screen.getByRole('region');
     unmount();
     expect(unobserve).toHaveBeenCalledWith(observedContainer);
+  });
+
+  test('ignores height-only container resize notifications', () => {
+    const tabsRef = createRef<Tabs>();
+    render(
+      <Tabs ref={tabsRef} role="region">
+        <Tab eventKey={0} title="First">
+          First content
+        </Tab>
+      </Tabs>
+    );
+    const container = screen.getByRole('region');
+    let width = 200;
+    let height = 40;
+    jest.spyOn(container, 'getBoundingClientRect').mockImplementation(() => ({ width, height }) as DOMRect);
+    act(() => resize([{ target: container } as ResizeObserverEntry], {} as ResizeObserver));
+    act(() => jest.advanceTimersByTime(200));
+    const setAccentStyles = jest.spyOn(tabsRef.current, 'setAccentStyles');
+
+    height = 60;
+    act(() => resize([{ target: container } as ResizeObserverEntry], {} as ResizeObserver));
+    act(() => jest.advanceTimersByTime(200));
+    expect(setAccentStyles).not.toHaveBeenCalled();
+
+    width = 150;
+    act(() => resize([{ target: container } as ResizeObserverEntry], {} as ResizeObserver));
+    act(() => jest.advanceTimersByTime(200));
+    expect(setAccentStyles).toHaveBeenCalledTimes(1);
   });
 
   test('updates scroll controls and the accent on window resize when the container width stays fixed', () => {

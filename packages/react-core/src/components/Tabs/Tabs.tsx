@@ -187,6 +187,7 @@ class Tabs extends Component<TabsProps, TabsState> {
   private containerRef = createRef<HTMLElement>();
   private direction = 'ltr';
   private unobserveResize = () => {};
+  private lastObservedWidth: number | undefined;
   constructor(props: TabsProps) {
     super(props);
     const hashActiveKey = getTabHashActiveKey(props);
@@ -415,9 +416,21 @@ class Tabs extends Component<TabsProps, TabsState> {
     this.setAccentStyles();
   };
 
+  private handleContainerResize = () => {
+    if (!this.containerRef.current) {
+      return;
+    }
+    const width = this.containerRef.current.getBoundingClientRect().width;
+    if (width === this.lastObservedWidth) {
+      return;
+    }
+    this.lastObservedWidth = width;
+    this.handleResize();
+  };
+
   componentDidMount() {
     if (!this.props.isVertical) {
-      this.unobserveResize = getResizeObserver(this.containerRef.current, this.handleResize, true);
+      this.unobserveResize = getResizeObserver(this.containerRef.current, this.handleContainerResize, true);
       if (canUseDOM) {
         window.addEventListener('resize', this.handleResize);
       }
