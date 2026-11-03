@@ -3,28 +3,40 @@ on:
   push:
     branches:
       - felt-v1
+  workflow_dispatch:
+    inputs:
+      publish-only-run-id:
+        description: Failed release workflow run ID to recover from
+        required: true
+        type: string
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  group: ${{ github.workflow }}-felt-v1
+  cancel-in-progress: false
 jobs:
   ci:
     name: CI
+    if: github.event_name == 'push'
     uses: ./.github/workflows/main.yml
 
   docs:
     name: Documentation
+    if: github.event_name == 'push'
     uses: ./.github/workflows/documentation.yml
     with:
       is-release: true
     secrets: inherit
 
-  deploy:
-    name: Deploy release
+  prepare:
+    name: Prepare release
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     needs: [ci, docs]
     permissions:
-      contents: read
-      id-token: write
+      # Push the release commit and tags. This job never receives the OIDC token
+      # used for npm trusted publishing.
+      contents: write
+    outputs:
+      prepared: ${{ steps.prepare.outputs.prepared }}
     steps:
       - name: Check out project
         uses: actions/checkout@v4
@@ -39,13 +51,83 @@ jobs:
         with:
           skip-build-cache: true
 
+      - name: Prepare release commit, tags, and packages
+        id: prepare
+        run: .github/release.sh
+
+      - name: Preserve prepared release packages for publishing and recovery
+        if: steps.prepare.outputs.prepared == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: nx-release-packages
+          path: .release/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30
+
+  publish:
+    name: Publish release
+    needs: prepare
+    if: >
+      !cancelled() &&
+      ((github.event_name == 'push' && needs.prepare.outputs.prepared == 'true') ||
+       (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/felt-v1'))
+    runs-on: ubuntu-latest
+    permissions:
+      # This job installs dependencies and runs repository code, so it only
+      # receives the npm trusted-publishing OIDC token and read access. It never
+      # pushes and is reused unchanged for manual publication recovery.
+      contents: read
+      id-token: write
+    steps:
+      - name: Check out project
+        uses: actions/checkout@v4
+        with:
+          ref: felt-v1
+          fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN_REDALLEN }}
+
+      - name: Download prepared release packages
+        uses: actions/download-artifact@v4
+        with:
+          name: nx-release-packages
+          # Normal releases publish the artifact of this run; manual recovery
+          # reuses the artifact of the failed run passed as an input.
+          run-id: ${{ inputs.publish-only-run-id || github.run_id }}
+          github-token: ${{ secrets.GH_TOKEN_REDALLEN }}
+          path: .release
+
+      - name: Check out the original release commit
+        shell: bash
+        run: |
+          SOURCE_COMMIT=$(node -p "require('./.release/release.json').sourceCommit")
+          if [[ ! "${SOURCE_COMMIT}" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "Invalid source commit in release artifact: ${SOURCE_COMMIT}"
+            exit 1
+          fi
+          git checkout "${SOURCE_COMMIT}"
+
+      - name: Install dependencies without rebuilding release packages
+        uses: ./.github/actions/setup-project
+        with:
+          skip-build: true
+
       - name: Set up npm for trusted publishing
         run: |
           npm install --global npm@11.21.1
           node --version
           npm --version
 
-      - name: Deploy to NPM and Github
-        run: .github/release.sh
+      - name: Publish the prepared packages
+        run: yarn release:nx --publish-only
+
+      - name: Comment on the merged pull request
+        id: comment
+        continue-on-error: true
+        run: .github/release-comment.sh
         env:
           GH_PR_TOKEN: ${{ secrets.GH_PR_TOKEN }}
+
+      - name: Report notification failure
+        if: steps.comment.outcome == 'failure'
+        run: echo "::warning::Packages were published successfully, but the release PR comment failed. Do not rerun publication to retry the comment."

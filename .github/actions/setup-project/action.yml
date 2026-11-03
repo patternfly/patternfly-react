@@ -1,4 +1,5 @@
 name: Set up and build project
+description: Set up Node.js and Yarn, install dependencies, and optionally build packages.
 inputs:
   skip-build:
     description: Skip the build step

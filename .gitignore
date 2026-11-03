@@ -32,3 +32,9 @@ lerna-debug.log
 # For vim
 *.swp
 .yarn
+
+# Nx local state and cache
+/.nx/
+
+# Prepared Nx Release packages and archives
+/.release/
