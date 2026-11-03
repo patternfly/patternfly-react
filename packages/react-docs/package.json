@@ -1,7 +1,7 @@
 {
   "name": "@rh-felt/react-docs",
   "description": "Felt React Docs",
-  "version": "0.0.1-prerelease.4",
+  "version": "0.0.1-prerelease.5",
   "publishConfig": {
     "access": "public",
     "tag": "prerelease"

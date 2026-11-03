@@ -1,3 +1,12 @@
+## 0.0.1-prerelease.7 (2026-11-03)
+
+### 🧱 Updated Dependencies
+
+- Updated @rh-felt/react-core to 0.0.1-prerelease.7
+- Updated @rh-felt/react-icons to 0.0.1-prerelease.5
+- Updated @rh-felt/react-styles to 0.0.1-prerelease.5
+- Updated @rh-felt/react-tokens to 0.0.1-prerelease.5
+
 # Change Log
 
 All notable changes to this project will be documented in this file.
