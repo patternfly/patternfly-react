@@ -88,18 +88,26 @@ test('CLI defaults to a non-writing dry run and validates explicit modes', () =>
   assert.equal(parseReleaseOptions(['--publish']).mode, 'publish');
   assert.equal(parseReleaseOptions(['--ci-prepare']).mode, 'ci-prepare');
   assert.equal(parseReleaseOptions(['--publish-only']).mode, 'publish-only');
+  assert.equal(parseReleaseOptions(['--ci-promote']).mode, 'ci-promote');
+  assert.equal(parseReleaseOptions(['--ci-graduate', '--version=0.1.0']).mode, 'ci-graduate');
+  assert.equal(parseReleaseOptions(['--ci-graduate', '--version=0.1.0']).version, '0.1.0');
+  assert.throws(() => parseReleaseOptions(['--version=0.1.0']), /only valid together with --ci-graduate/);
+  assert.throws(() => parseReleaseOptions(['--ci-promote', '--ci-graduate']), /Choose only one/);
   assert.deepEqual(parseReleaseOptions(['--ci-prepare', '--dry-run']), {
     mode: 'ci-prepare',
     projects: undefined,
+    version: undefined,
     dryRun: true,
     gitRemote: undefined,
     help: false
   });
+  assert.deepEqual(parseReleaseOptions(['--ci-promote', '--dry-run']).dryRun, true);
   assert.deepEqual(parseReleaseOptions([`--projects=${name('styles')},${name('styles')}`]).projects, [name('styles')]);
   assert.equal(parseReleaseOptions(['--git-remote=upstream']).gitRemote, 'upstream');
   assert.throws(() => parseReleaseOptions(['--prepare', '--publish']), /Choose only one/);
   assert.throws(() => parseReleaseOptions(['--dry-run', '--publish']), /Choose only one/);
   assert.throws(() => parseReleaseOptions(['--ci-prepare', '--publish-only']), /Choose only one/);
+  assert.throws(() => parseReleaseOptions(['--ci-promote', '--ci-prepare']), /Choose only one/);
   assert.throws(() => parseReleaseOptions(['--dry-run', '--prepare']), /Choose only one/);
   assert.throws(() => parseReleaseOptions(['--projects=']), /comma-separated/);
   assert.throws(() => parseReleaseOptions(['--publsh']));
@@ -377,4 +385,185 @@ test('explicit versioning, changelog, and packaging failures prevent publication
     await assert.rejects(runRelease({ mode: 'publish' }, h.dependencies), failure);
     assert.ok(h.calls.every((call) => call.phase !== 'publish'));
   }
+});
+
+function promoteHarness() {
+  const packages = new Map(['styles', 'core', 'docs', 'icons'].map((suffix) => [name(suffix), {}]));
+  const versionData = Object.fromEntries(
+    [...packages.keys()].map((project, index) => [
+      project,
+      { currentVersion: `0.0.1-prerelease.${index + 4}`, newVersion: '0.1.0-prerelease.0', dependentProjects: [] }
+    ])
+  );
+  const calls = [];
+  const client = {
+    async releaseVersion(options) {
+      calls.push({ phase: 'version', options });
+      return { projectsVersionData: versionData, releaseGraph: { phase: 'promote' }, workspaceVersion: undefined };
+    },
+    async releaseChangelog(options) {
+      calls.push({ phase: 'changelog', options });
+    },
+    async releasePublish(options) {
+      calls.push({ phase: 'publish', options });
+      return Object.fromEntries(options.projects.map((project) => [project, { code: 0 }]));
+    }
+  };
+  const dependencies = {
+    packages,
+    client,
+    async preparePackages(projects, options) {
+      calls.push({ phase: 'prepare', projects, ...options });
+    },
+    log() {}
+  };
+  return { calls, versionData, dependencies };
+}
+
+test('ci-promote unconditionally preminor-bumps every public package into the next prerelease cycle', async () => {
+  const h = promoteHarness();
+  const result = await runRelease({ mode: 'ci-promote', gitRemote: 'upstream' }, h.dependencies);
+  assert.deepEqual(result.projects, Object.keys(h.versionData));
+  assert.deepEqual(
+    h.calls.map((call) => call.phase),
+    ['version', 'changelog']
+  );
+  const allProjects = Object.keys(h.versionData);
+  assert.deepEqual(h.calls[0].options.projects, allProjects);
+  assert.equal(h.calls[0].options.specifier, 'preminor');
+  assert.equal(h.calls[0].options.preid, 'prerelease');
+  assert.equal(h.calls[0].options.stageChanges, true);
+  assert.equal(h.calls[0].options.dryRun, false);
+  assert.equal(h.calls[1].options.gitCommit, true);
+  assert.equal(h.calls[1].options.gitTag, true);
+  assert.equal(h.calls[1].options.gitPush, true);
+  assert.equal(h.calls[1].options.gitRemote, 'upstream');
+  assert.ok(h.calls.every((call) => call.phase !== 'publish' && call.phase !== 'prepare'));
+});
+
+test('ci-promote dry run previews the cycle without Git operations', async () => {
+  const h = promoteHarness();
+  await runRelease({ mode: 'ci-promote', dryRun: true }, h.dependencies);
+  assert.ok(h.calls.every((call) => call.options.dryRun));
+  assert.equal(h.calls[0].options.stageChanges, false);
+  assert.equal(h.calls[1].options.gitCommit, false);
+  assert.equal(h.calls[1].options.gitPush, false);
+});
+
+test('ci-promote rejects project filters outside the configured public release set', async () => {
+  const h = promoteHarness();
+  await assert.rejects(
+    runRelease({ mode: 'ci-promote', projects: ['@rh-felt/react-styles', 'not-a-felt-package'] }, h.dependencies),
+    /requires the configured public Felt release projects/
+  );
+  assert.deepEqual(h.calls, []);
+});
+
+function graduateHarness() {
+  const packages = new Map(['styles', 'core', 'docs', 'icons'].map((suffix) => [name(suffix), {}]));
+  const versionData = Object.fromEntries(
+    [...packages.keys()].map((project) => [
+      project,
+      { currentVersion: '0.0.1-prerelease.7', newVersion: '0.1.0', dependentProjects: [] }
+    ])
+  );
+  const calls = [];
+  const client = {
+    async releaseVersion(options) {
+      calls.push({ phase: 'version', options });
+      return { projectsVersionData: versionData, releaseGraph: { phase: 'graduate' }, workspaceVersion: undefined };
+    },
+    async releaseChangelog(options) {
+      calls.push({ phase: 'changelog', options });
+    },
+    async releasePublish(options) {
+      calls.push({ phase: 'publish', options });
+      return Object.fromEntries(options.projects.map((project) => [project, { code: 0 }]));
+    }
+  };
+  const dependencies = {
+    packages,
+    client,
+    currentCommit: () => 'graduate-release-commit',
+    latestReleaseCommit: () => 'graduate-release-commit',
+    async preparePackages(projects, options) {
+      calls.push({ phase: 'prepare', projects, ...options });
+    },
+    log() {}
+  };
+  return { calls, versionData, dependencies };
+}
+
+test('ci-graduate applies the chosen stable version to every public package and packs for the latest dist-tag', async () => {
+  const h = graduateHarness();
+  const result = await runRelease({ mode: 'ci-graduate', version: '0.1.0', gitRemote: 'upstream' }, h.dependencies);
+  assert.deepEqual(result.projects, Object.keys(h.versionData));
+  assert.deepEqual(
+    h.calls.map((call) => call.phase),
+    ['version', 'changelog', 'prepare']
+  );
+  assert.equal(h.calls[0].options.specifier, '0.1.0');
+  assert.equal(h.calls[0].options.preid, undefined);
+  assert.equal(h.calls[0].options.stageChanges, true);
+  assert.equal(h.calls[1].options.gitCommit, true);
+  assert.equal(h.calls[1].options.gitTag, true);
+  assert.equal(h.calls[1].options.gitPush, true);
+  assert.equal(h.calls[2].distTag, 'latest');
+  assert.equal(h.calls[2].sourceCommit, 'graduate-release-commit');
+  assert.ok(h.calls.every((call) => call.phase !== 'publish'));
+});
+
+test('ci-graduate dry run previews without Git operations or packing', async () => {
+  const h = graduateHarness();
+  await runRelease({ mode: 'ci-graduate', version: '0.1.0', dryRun: true }, h.dependencies);
+  assert.deepEqual(
+    h.calls.map((call) => call.phase),
+    ['version', 'changelog']
+  );
+  assert.ok(h.calls.every((call) => call.options.dryRun));
+  assert.equal(h.calls[0].options.stageChanges, false);
+  assert.equal(h.calls[1].options.gitCommit, false);
+});
+
+test('ci-graduate requires a stable version and configured public release projects', async () => {
+  const h = graduateHarness();
+  await assert.rejects(runRelease({ mode: 'ci-graduate' }, h.dependencies), /requires --version=X.Y.Z/);
+  await assert.rejects(
+    runRelease({ mode: 'ci-graduate', version: '0.1.0-prerelease.1' }, h.dependencies),
+    /requires --version=X.Y.Z/
+  );
+  await assert.rejects(
+    runRelease({ mode: 'ci-graduate', version: '0.1.0', projects: ['not-a-felt-package'] }, h.dependencies),
+    /requires the configured public Felt release projects/
+  );
+  assert.deepEqual(h.calls, []);
+});
+
+test('publish-only publishes under the recorded dist-tag and defaults to prerelease', async () => {
+  const h = harness();
+  await runRelease({ mode: 'publish-only' }, h.dependencies);
+  assert.equal(h.calls.at(-1).options.tag, 'prerelease');
+
+  const graduate = graduateHarness();
+  graduate.dependencies.readPrepared = () => ({
+    projects: Object.keys(graduate.versionData),
+    versionData: graduate.versionData,
+    sourceCommit: 'graduate-release-commit',
+    distTag: 'latest'
+  });
+  graduate.dependencies.hasCompletePrepared = () => true;
+  await runRelease({ mode: 'publish-only' }, graduate.dependencies);
+  assert.equal(graduate.calls.at(-1).options.tag, 'latest');
+});
+
+test('publish-only rejects prepared bundles with unsupported dist-tags', async () => {
+  const h = graduateHarness();
+  h.dependencies.readPrepared = () => ({
+    projects: Object.keys(h.versionData),
+    versionData: h.versionData,
+    sourceCommit: 'graduate-release-commit',
+    distTag: 'beta'
+  });
+  h.dependencies.hasCompletePrepared = () => true;
+  await assert.rejects(runRelease({ mode: 'publish-only' }, h.dependencies), /unsupported npm dist-tag beta/);
 });

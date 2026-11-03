@@ -31,7 +31,8 @@
       "currentVersionResolver": "git-tag",
       "preserveLocalDependencyProtocols": true,
       "updateDependents": "always",
-      "applyPreidToDependents": true
+      "applyPreidToDependents": true,
+      "adjustSemverBumpsForZeroMajorVersion": false
     },
     "conventionalCommits": {
       "useCommitScope": false,

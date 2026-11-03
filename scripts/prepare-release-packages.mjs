@@ -52,7 +52,7 @@ export function getReleasePackages(root = workspaceRoot) {
   );
 }
 
-export function prepareReleasePackages(projects, { root = workspaceRoot, versionData, sourceCommit } = {}) {
+export function prepareReleasePackages(projects, { root = workspaceRoot, versionData, sourceCommit, distTag } = {}) {
   const available = getReleasePackages(root);
   const selected = [...new Set(projects ?? available.keys())];
   if (selected.length === 0) {
@@ -85,7 +85,8 @@ export function prepareReleasePackages(projects, { root = workspaceRoot, version
       {
         projects: packages.map((manifest) => manifest.name),
         versionData: releaseVersionData,
-        sourceCommit: sourceCommit ?? getCurrentCommit(root)
+        sourceCommit: sourceCommit ?? getCurrentCommit(root),
+        ...(distTag ? { distTag } : {})
       },
       null,
       2
