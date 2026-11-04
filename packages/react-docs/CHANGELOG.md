@@ -1,3 +1,7 @@
+## 0.0.1-prerelease.6 (2026-11-04)
+
+This was a version bump only for @rh-felt/react-docs to align it with other projects, there were no code changes.
+
 ## 0.0.1-prerelease.5 (2026-11-03)
 
 This was a version bump only for @rh-felt/react-docs to align it with other projects, there were no code changes.

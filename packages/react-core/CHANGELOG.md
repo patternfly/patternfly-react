@@ -1,3 +1,19 @@
+## 0.0.1-prerelease.8 (2026-11-04)
+
+### 📦 Build
+
+- **Felt:** migrate promote to Nx and remove Lerna ([#12708](https://github.com/patternfly/patternfly-react/pull/12708))
+
+### 🧱 Updated Dependencies
+
+- Updated @rh-felt/react-icons to 0.0.1-prerelease.6
+- Updated @rh-felt/react-styles to 0.0.1-prerelease.6
+- Updated @rh-felt/react-tokens to 0.0.1-prerelease.6
+
+### ❤️ Thank You
+
+- Gabi Kourilova @gabipodolnikova
+
 ## 0.0.1-prerelease.7 (2026-11-03)
 
 ### 🧱 Updated Dependencies
