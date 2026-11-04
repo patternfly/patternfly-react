@@ -6,10 +6,11 @@ echo "Preparing promotion environment..."
 git config user.email "patternfly-ci@redhat.com"
 git config user.name "${GIT_USERNAME}"
 
-#if [[ ! -z "${PATTERNFLY_VERSION}" ]]; then
-#  echo "Updating to @patternfly/patternfly: ${PATTERNFLY_VERSION}"
-#  npm pkg set dependencies.@patternfly/patternfly=${PATTERNFLY_VERSION} --workspace @rh-felt/react-docs
-#  npm pkg set devDependencies.@patternfly/patternfly=${PATTERNFLY_VERSION} --workspace @rh-felt/react-core --workspace @rh-felt/react-styles --workspace @rh-felt/react-tokens --workspace @rh-felt/react-icons
+#if [[ ! -z "${STYLES_VERSION}" ]]; then
+#  echo "Updating to @rh-felt/styles: ${STYLES_VERSION}"
+#  npm pkg set dependencies.@rh-felt/styles=${STYLES_VERSION} --workspace @rh-felt/react-docs
+#  npm pkg set dependencies.@patternfly/patternfly=npm:@rh-felt/styles@${STYLES_VERSION} --workspace @rh-felt/react-docs
+#  npm pkg set devDependencies.@rh-felt/styles=${STYLES_VERSION} --workspace @rh-felt/react-core --workspace @rh-felt/react-styles --workspace @rh-felt/react-tokens --workspace @rh-felt/react-icons
 #fi
 
 if [[ "${PROMOTE_MODE:-cycle}" == "graduate" ]]; then

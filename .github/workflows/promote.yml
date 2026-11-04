@@ -18,9 +18,10 @@ on:
         description: Failed graduate workflow run ID to recover publication from.
         required: false
         type: string
-      patternfly-version:
-        description: The version of PatternFly (`@patternfly/patternfly`) to promote to.
+      styles-version:
+        description: The version of the Felt styles package (`@rh-felt/styles`) to promote to.
         required: false
+        type: string
 permissions:
   # Preparation only creates the release commit and tags. The publish job below
   # adds the OIDC token for npm trusted publishing; this job never receives it.
@@ -58,7 +59,7 @@ jobs:
         env:
           PROMOTE_MODE: ${{ inputs.mode }}
           STABLE_VERSION: ${{ inputs.version }}
-          PATTERNFLY_VERSION: ${{ inputs.patternfly-version }}
+          STYLES_VERSION: ${{ inputs.styles-version }}
 
       - name: Preserve prepared stable packages for publishing and recovery
         if: steps.promote.outputs.prepared == 'true'
