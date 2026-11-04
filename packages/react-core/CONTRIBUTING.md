@@ -81,7 +81,7 @@ Ensure no lint errors are introduced in `yarn-error.log` after running this comm
 
 5.  Add a commit using `git commit`:
 
-This project uses [`lerna`](https://lerna.js.io/) to do automatic releases and generate a changelog based on the commit history. So we follow [a convention][3] for commit messages. Please follow [`this convention`](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type) for your commit messages.
+This project uses [`nx release`](https://nx.dev/features/manage-releases) to do automatic releases and generate a changelog based on the commit history. So we follow [a convention][3] for commit messages. Please follow [`this convention`](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type) for your commit messages.
 
 Once you are ready to commit the changes, please use the below commands:
 

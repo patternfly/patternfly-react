@@ -225,7 +225,7 @@ Ensure no lint errors are introduced in `yarn-error.log` after running this comm
 
 ***Note to Windows users:*** you may need to change the path for the lint script in package.json to be `node_modules/eslint/bin/eslint`
 
-4. **Follow commit conventions** - This project uses [`lerna`](https://lernajs.io/) to do automatic releases and generate a changelog based on the commit history. So we follow [conventional commit formatting](https://www.conventionalcommits.org/en/v1.0.0/) for all commit messages. Please follow this convention for your commit messages.
+4. **Follow commit conventions** - This project uses [`nx release`](https://nx.dev/features/manage-releases) to do automatic releases and generate a changelog based on the commit history. So we follow [conventional commit formatting](https://www.conventionalcommits.org/en/v1.0.0/) for all commit messages. Please follow this convention for your commit messages.
 
 5. **Create a pull request**
 

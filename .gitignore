@@ -3,7 +3,6 @@ node_modules
 dist
 tsc_out
 .out
-.changelog
 .DS_Store
 coverage
 .cache
@@ -13,7 +12,6 @@ package-lock.json
 
 # package managers
 yarn-error.log
-lerna-debug.log
 
 # IDEs and editors
 .idea

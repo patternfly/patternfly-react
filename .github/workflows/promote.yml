@@ -2,12 +2,40 @@ name: Promote
 on:
   workflow_dispatch:
     inputs:
-      patternfly-version:
-        description: The version of PatternFly (`@patternfly/patternfly`) to promote to.
+      mode:
+        description: Whether to start the next prerelease cycle or graduate to a stable release.
+        required: true
+        type: choice
+        default: cycle
+        options:
+          - cycle
+          - graduate
+      version:
+        description: The stable version to graduate to (required for graduate mode, e.g. 0.1.0).
         required: false
+        type: string
+      publish-only-run-id:
+        description: Failed graduate workflow run ID to recover publication from.
+        required: false
+        type: string
+      styles-version:
+        description: The version of the Felt styles package (`@rh-felt/styles`) to promote to.
+        required: false
+        type: string
+permissions:
+  # Preparation only creates the release commit and tags. The publish job below
+  # adds the OIDC token for npm trusted publishing; this job never receives it.
+  contents: write
+concurrency:
+  group: ${{ github.workflow }}-felt-v1
+  cancel-in-progress: false
 jobs:
-  deploy:
+  prepare:
+    name: Prepare promotion
+    if: inputs.publish-only-run-id == ''
     runs-on: ubuntu-latest
+    outputs:
+      prepared: ${{ steps.promote.outputs.prepared }}
     steps:
       - name: Check out project
         uses: actions/checkout@v4
@@ -17,13 +45,84 @@ jobs:
           # Pass in an administrator token to get around branch protection.
           token: ${{ secrets.GH_TOKEN_REDALLEN }}
 
-      - name: Set up and build project
+      - name: Set up project
         uses: ./.github/actions/setup-project
         with:
+          # Graduation packs release artifacts and therefore needs build output;
+          # starting the next prerelease cycle only versions and tags.
+          skip-build: ${{ inputs.mode != 'graduate' }}
           skip-build-cache: true
 
-      - name: Deploy to NPM and Github
+      - name: Run promotion
+        id: promote
         run: .github/promote.sh
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          PATTERNFLY_VERSION: ${{ github.event.inputs.patternfly-version }}
+          PROMOTE_MODE: ${{ inputs.mode }}
+          STABLE_VERSION: ${{ inputs.version }}
+          STYLES_VERSION: ${{ inputs.styles-version }}
+
+      - name: Preserve prepared stable packages for publishing and recovery
+        if: steps.promote.outputs.prepared == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: nx-promote-packages
+          path: .release/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30
+
+  publish:
+    name: Publish stable release
+    needs: prepare
+    if: >
+      !cancelled() &&
+      ((inputs.mode == 'graduate' && needs.prepare.outputs.prepared == 'true') ||
+       (inputs.publish-only-run-id != '' && github.ref == 'refs/heads/felt-v1'))
+    runs-on: ubuntu-latest
+    permissions:
+      # This job installs dependencies and runs repository code, so it only
+      # receives the npm trusted-publishing OIDC token and read access. It never
+      # pushes and is reused unchanged for manual publication recovery.
+      contents: read
+      id-token: write
+    steps:
+      - name: Check out project
+        uses: actions/checkout@v4
+        with:
+          ref: felt-v1
+          fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN_REDALLEN }}
+
+      - name: Download prepared stable packages
+        uses: actions/download-artifact@v4
+        with:
+          name: nx-promote-packages
+          # Normal graduations publish the artifact of this run; manual recovery
+          # reuses the artifact of the failed run passed as an input.
+          run-id: ${{ inputs.publish-only-run-id || github.run_id }}
+          github-token: ${{ secrets.GH_TOKEN_REDALLEN }}
+          path: .release
+
+      - name: Check out the original release commit
+        shell: bash
+        run: |
+          SOURCE_COMMIT=$(node -p "require('./.release/release.json').sourceCommit")
+          if [[ ! "${SOURCE_COMMIT}" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "Invalid source commit in release artifact: ${SOURCE_COMMIT}"
+            exit 1
+          fi
+          git checkout "${SOURCE_COMMIT}"
+
+      - name: Install dependencies without rebuilding release packages
+        uses: ./.github/actions/setup-project
+        with:
+          skip-build: true
+
+      - name: Set up npm for trusted publishing
+        run: |
+          npm install --global npm@11.21.1
+          node --version
+          npm --version
+
+      - name: Publish the prepared packages
+        run: yarn release:nx --publish-only
