@@ -8,7 +8,7 @@ export interface FormFieldGroupExpandableProps extends Omit<React.HTMLProps<HTML
   /** Additional classes added to the form field group. */
   className?: string;
   /** Form field group header. Per the field group design guidelines, a field group requires a title, and this prop should always be passed as a `FormFieldGroupHeader`. */
-  header?: React.ReactNode;
+  header: React.ReactNode;
   /** Flag indicating if the form field group is initially expanded */
   isExpanded?: boolean;
   /** Aria-label to use on the form field group toggle button */

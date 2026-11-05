@@ -6,7 +6,7 @@ export interface FormFieldGroupProps extends Omit<React.HTMLProps<HTMLDivElement
   /** Additional classes added to the form field group. */
   className?: string;
   /** Form field group header. Per the field group design guidelines, a field group requires a title, and this prop should be passed as a `FormFieldGroupHeader`. */
-  header?: React.ReactNode;
+  header: React.ReactNode;
 }
 
 export const FormFieldGroup: React.FunctionComponent<FormFieldGroupProps> = ({
