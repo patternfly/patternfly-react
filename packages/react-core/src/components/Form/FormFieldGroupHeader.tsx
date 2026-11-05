@@ -11,9 +11,9 @@ export interface FormFieldGroupHeaderTitleTextObject {
 export interface FormFieldGroupHeaderProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the section */
   className?: string;
-  /** Field group header title text */
+  /** Field group header title text. Required per the field group design guidelines. */
   titleText?: FormFieldGroupHeaderTitleTextObject;
-  /** Field group header title description */
+  /** Field group header title description. Optional; displayed below the title text. */
   titleDescription?: React.ReactNode;
   /** Field group header actions */
   actions?: React.ReactNode;
