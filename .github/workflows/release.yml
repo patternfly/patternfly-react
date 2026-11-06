@@ -6,6 +6,8 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
+permissions:
+  contents: read
 jobs:
   ci:
     name: CI
@@ -18,10 +20,15 @@ jobs:
       is-release: true
     secrets: inherit
 
-  deploy:
-    name: Deploy release
+  prepare:
+    name: Prepare release
     runs-on: ubuntu-latest
     needs: [ci, docs]
+    permissions:
+      contents: read
+    outputs:
+      has-packages: ${{ steps.prepare.outputs.has-packages }}
+      pr-number: ${{ steps.prepare.outputs.pr-number }}
     steps:
       - name: Check out project
         uses: actions/checkout@v4
@@ -36,9 +43,71 @@ jobs:
         with:
           skip-build-cache: true
 
-      - name: Deploy to NPM and Github
+      - name: Prepare release archives and update Git
+        id: prepare
         run: .github/release.sh
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GH_PR_TOKEN: ${{ secrets.GH_PR_TOKEN }}
-          
+          RELEASE_DIR: ${{ runner.temp }}/release
+
+      - name: Upload release archives
+        if: steps.prepare.outputs.has-packages == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: npm-release
+          path: ${{ runner.temp }}/release
+          if-no-files-found: error
+          retention-days: 7
+
+  publish:
+    name: Publish prepared release
+    needs: prepare
+    if: needs.prepare.outputs.has-packages == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Set up npm for trusted publishing
+        run: |
+          npm install --global npm@11.21.1 --ignore-scripts
+          node --version
+          npm --version
+
+      - name: Download release archives
+        uses: actions/download-artifact@v4
+        with:
+          name: npm-release
+          path: ${{ runner.temp }}/release
+
+      - name: Publish archives without lifecycle scripts
+        working-directory: ${{ runner.temp }}
+        shell: bash
+        run: |
+          shopt -s failglob
+          for archive in "$RUNNER_TEMP"/release/package-*.tgz; do
+            npm publish "$archive" --tag prerelease --access public \
+              --registry https://registry.npmjs.org/ --ignore-scripts --provenance
+          done
+
+  notify:
+    name: Notify released PR
+    needs: [prepare, publish]
+    if: needs.prepare.outputs.pr-number != ''
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: npm-release
+          path: ${{ runner.temp }}/release
+      - name: Notify PR after successful publication
+        run: gh api --method POST "repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments" --input "$RUNNER_TEMP/release/notification.json"
+        env:
+          GH_TOKEN: ${{ secrets.GH_PR_TOKEN }}
+          PR_NUMBER: ${{ needs.prepare.outputs.pr-number }}

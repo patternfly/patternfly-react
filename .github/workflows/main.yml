@@ -3,6 +3,24 @@ on:
   pull_request:
   workflow_call:
 jobs:
+  release-automation-tests:
+    name: Release automation tests
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out project
+        uses: actions/checkout@v4
+
+      - name: Set up project
+        uses: ./.github/actions/setup-project
+        with:
+          skip-build: true
+
+      - name: Test release and promotion helpers
+        run: node --test .github/release.test.mjs .github/promote.test.mjs
+
   lint:
     name: Lint
     runs-on: ubuntu-latest

@@ -2,3 +2,4 @@
 packages/react-icons/scripts/icons/rhIcons*.mjs
 packages/react-icons/scripts/icons/rhdsIcons*.mjs
 
+/.nx/workspace-data

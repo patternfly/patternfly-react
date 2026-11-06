@@ -1,11 +1,12 @@
 #!/bin/bash
+set -euo pipefail
+
 GIT_USERNAME="patternfly-build"
 GH_REPO=${GITHUB_REPOSITORY}
 REPO="github.com/${GH_REPO}"
 echo "Preparing release environment..."
 git config user.email "patternfly-build@redhat.com"
 git config user.name ${GIT_USERNAME}
-echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
 
 # Lerna is complicated. Commands: https://github.com/lerna/lerna/tree/master/commands
 # Identify packages that have been updated since the previous tagged release
@@ -18,13 +19,21 @@ echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
 #  npm pkg set devDependencies.@patternfly/patternfly=${PATTERNFLY_VERSION} --workspace @patternfly/react-core --workspace @patternfly/react-styles --workspace @patternfly/react-tokens --workspace @patternfly/react-icons 
 #fi
 
-# publish to npm
-# yarn run lerna publish --conventional-commits --conventional-graduate --no-private --dist-tag=latest --yes
-
-# immediately after promote - set up repo for next prerelease
-yarn run lerna version preminor --force-publish --conventional-commits --no-private --yes --preid prerelease
+case "${1:-prepare}" in
+  prepare)
+    # Uncomment to enable stable preparation. The workflow publishes the archives
+    # in a separate OIDC job before preparing the next prerelease cycle.
+    # node .github/prepare-promote.mjs
+    ;;
+  next-prerelease)
+    # Immediately after successful promotion (or when stable publishing is disabled).
+    yarn run lerna version preminor --force-publish --conventional-commits --no-private --yes --preid prerelease
+    ;;
+  *)
+    echo "Expected prepare or next-prerelease" >&2
+    exit 1
+    ;;
+esac
 
 # dry run
 # yarn run lerna version --conventional-commits --conventional-graduate --no-private --yes --no-git-tag-version --no-push
-
-
