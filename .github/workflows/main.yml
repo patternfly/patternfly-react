@@ -18,8 +18,8 @@ jobs:
         with:
           skip-build: true
 
-      - name: Test release helpers
-        run: node --test .github/release.test.mjs
+      - name: Test release and promotion helpers
+        run: node --test .github/release.test.mjs .github/promote.test.mjs
 
   lint:
     name: Lint
