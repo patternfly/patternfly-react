@@ -169,6 +169,21 @@ for (const failure of [false, true]) {
   });
 }
 
+test('release automation tests run in PR CI, not production release jobs', () => {
+  const ci = yaml.load(readFileSync(new URL('./workflows/main.yml', import.meta.url), 'utf8'));
+  const job = ci.jobs['release-automation-tests'];
+  assert.equal(job.if, "github.event_name == 'pull_request'");
+  assert.deepEqual(job.permissions, { contents: 'read' });
+  assert.equal(job.steps[1].with['skip-build'], true);
+  assert(job.steps.at(-1).run.startsWith('node --test '));
+  assert(job.steps.at(-1).run.split(/\s+/).includes('.github/release.test.mjs'));
+  for (const job of Object.values(workflow.jobs)) {
+    for (const step of job.steps || []) {
+      assert(!step.run?.includes('node --test'));
+    }
+  }
+});
+
 test('only archive publication has OIDC; notifications require successful publication', () => {
   assert.deepEqual(workflow.permissions, { contents: 'read' });
   assert.deepEqual(workflow.jobs.prepare.permissions, { contents: 'read' });
