@@ -238,3 +238,26 @@ test('Matches snapshot', async () => {
 
   expect(asFragment()).toMatchSnapshot();
 });
+
+test('ignores selection after the open simple select becomes disabled', async () => {
+  const user = userEvent.setup();
+  const onSelect = jest.fn();
+  const props = {
+    initialOptions: [
+      { content: 'Apple', value: 'apple', selected: true },
+      { content: 'Orange', value: 'orange' }
+    ],
+    onSelect
+  };
+
+  const { rerender } = render(<SimpleSelect {...props} />);
+  const toggle = screen.getByRole('button', { name: 'Apple' });
+  await user.click(toggle);
+
+  rerender(<SimpleSelect {...props} isDisabled />);
+  expect(toggle).toBeDisabled();
+  await user.click(screen.getByText('Orange'));
+
+  expect(onSelect).not.toHaveBeenCalled();
+  expect(toggle).toHaveTextContent('Apple');
+});
