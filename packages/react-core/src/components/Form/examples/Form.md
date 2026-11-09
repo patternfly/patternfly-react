@@ -103,6 +103,8 @@ When using helper text inside a `FormGroup`, the `HelperText` component should b
 
 ### Field Groups
 
+Field groups require a title per the [design guidelines](https://www.patternfly.org/components/forms/form/design-guidelines/#field-groups). For key-value pairs, we recommend the [field builder](https://www.patternfly.org/extensions/component-groups/field-builder) component group.
+
 ```ts file="./FormFieldGroups.tsx"
 
 ```

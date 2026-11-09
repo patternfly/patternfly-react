@@ -1,17 +1,24 @@
 import { render, screen } from '@testing-library/react';
 import { FormFieldGroupExpandable } from '../FormFieldGroupExpandable';
+import { FormFieldGroupHeader } from '../FormFieldGroupHeader';
 import { AnimationsProvider } from '../../../helpers/AnimationsProvider';
 import styles from '@patternfly/react-styles/css/components/Form/form';
 
+const fieldGroupHeader = <FormFieldGroupHeader titleText={{ text: 'Field group header', id: 'header-id' }} />;
+
 test('Does not render children by default', () => {
-  render(<FormFieldGroupExpandable toggleAriaLabel="Toggle label">Child content</FormFieldGroupExpandable>);
+  render(
+    <FormFieldGroupExpandable toggleAriaLabel="Toggle label" header={fieldGroupHeader}>
+      Child content
+    </FormFieldGroupExpandable>
+  );
 
   expect(screen.queryByText('Child content')).not.toBeInTheDocument();
 });
 
 test('Renders children when isExpanded is true', () => {
   render(
-    <FormFieldGroupExpandable isExpanded toggleAriaLabel="Toggle label">
+    <FormFieldGroupExpandable isExpanded toggleAriaLabel="Toggle label" header={fieldGroupHeader}>
       Child content
     </FormFieldGroupExpandable>
   );
@@ -21,7 +28,7 @@ test('Renders children when isExpanded is true', () => {
 
 test('Renders children with inert attribute by default when hasAnimations is true', () => {
   render(
-    <FormFieldGroupExpandable hasAnimations toggleAriaLabel="Toggle label">
+    <FormFieldGroupExpandable hasAnimations toggleAriaLabel="Toggle label" header={fieldGroupHeader}>
       Child content
     </FormFieldGroupExpandable>
   );
@@ -31,7 +38,7 @@ test('Renders children with inert attribute by default when hasAnimations is tru
 
 test('Does not render children with inert attribute when hasAnimations and isExpanded are true', () => {
   render(
-    <FormFieldGroupExpandable hasAnimations isExpanded toggleAriaLabel="Toggle label">
+    <FormFieldGroupExpandable hasAnimations isExpanded toggleAriaLabel="Toggle label" header={fieldGroupHeader}>
       Child content
     </FormFieldGroupExpandable>
   );
@@ -40,14 +47,18 @@ test('Does not render children with inert attribute when hasAnimations and isExp
 });
 
 test(`Does not render with class ${styles.modifiers.expandable} by default`, () => {
-  render(<FormFieldGroupExpandable toggleAriaLabel="Toggle label">Child content</FormFieldGroupExpandable>);
+  render(
+    <FormFieldGroupExpandable toggleAriaLabel="Toggle label" header={fieldGroupHeader}>
+      Child content
+    </FormFieldGroupExpandable>
+  );
 
   expect(screen.getByRole('group')).not.toHaveClass(styles.modifiers.expandable);
 });
 
 test(`Renders with class ${styles.modifiers.expandable} when hasAnimations is true`, () => {
   render(
-    <FormFieldGroupExpandable hasAnimations toggleAriaLabel="Toggle label">
+    <FormFieldGroupExpandable hasAnimations toggleAriaLabel="Toggle label" header={fieldGroupHeader}>
       Child content
     </FormFieldGroupExpandable>
   );
@@ -59,7 +70,9 @@ test(`Renders with class ${styles.modifiers.expandable} when hasAnimations is tr
 test('respects AnimationsProvider context when no local hasAnimations prop', () => {
   render(
     <AnimationsProvider config={{ hasAnimations: true }}>
-      <FormFieldGroupExpandable toggleAriaLabel="Toggle label">Child content</FormFieldGroupExpandable>
+      <FormFieldGroupExpandable toggleAriaLabel="Toggle label" header={fieldGroupHeader}>
+        Child content
+      </FormFieldGroupExpandable>
     </AnimationsProvider>
   );
 
@@ -69,7 +82,7 @@ test('respects AnimationsProvider context when no local hasAnimations prop', () 
 test('local hasAnimations prop takes precedence over context', () => {
   render(
     <AnimationsProvider config={{ hasAnimations: true }}>
-      <FormFieldGroupExpandable hasAnimations={false} toggleAriaLabel="Toggle label">
+      <FormFieldGroupExpandable hasAnimations={false} toggleAriaLabel="Toggle label" header={fieldGroupHeader}>
         Child content
       </FormFieldGroupExpandable>
     </AnimationsProvider>
@@ -79,7 +92,11 @@ test('local hasAnimations prop takes precedence over context', () => {
 });
 
 test('works without AnimationsProvider (backward compatibility)', () => {
-  render(<FormFieldGroupExpandable toggleAriaLabel="Toggle label">Child content</FormFieldGroupExpandable>);
+  render(
+    <FormFieldGroupExpandable toggleAriaLabel="Toggle label" header={fieldGroupHeader}>
+      Child content
+    </FormFieldGroupExpandable>
+  );
 
   expect(screen.getByRole('group')).not.toHaveClass(styles.modifiers.expandable);
 });

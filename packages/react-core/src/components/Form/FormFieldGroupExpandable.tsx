@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import type { FormFieldGroupHeaderProps } from './FormFieldGroupHeader';
 import { InternalFormFieldGroup } from './InternalFormFieldGroup';
 import { useHasAnimations } from '../../helpers';
 
@@ -7,8 +8,8 @@ export interface FormFieldGroupExpandableProps extends Omit<React.HTMLProps<HTML
   children?: React.ReactNode;
   /** Additional classes added to the form field group. */
   className?: string;
-  /** Form field group header */
-  header?: React.ReactNode;
+  /** Form field group header. */
+  header: React.ReactElement<FormFieldGroupHeaderProps>;
   /** Flag indicating if the form field group is initially expanded */
   isExpanded?: boolean;
   /** Aria-label to use on the form field group toggle button */
