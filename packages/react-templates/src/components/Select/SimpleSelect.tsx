@@ -80,6 +80,10 @@ const SimpleSelectBase: FunctionComponent<SimpleSelectProps> = ({
   };
 
   const _onSelect = (_event: ReactMouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
+    if (isDisabled) {
+      return;
+    }
+
     onSelect && onSelect(_event, value);
     setSelected(initialOptions.find((o) => o.value === value));
     onToggle && onToggle(true);
