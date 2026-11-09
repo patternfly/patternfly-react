@@ -1,3 +1,4 @@
+import type { FormFieldGroupHeaderProps } from './FormFieldGroupHeader';
 import { InternalFormFieldGroup } from './InternalFormFieldGroup';
 
 export interface FormFieldGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label' | 'onToggle'> {
@@ -5,8 +6,8 @@ export interface FormFieldGroupProps extends Omit<React.HTMLProps<HTMLDivElement
   children?: React.ReactNode;
   /** Additional classes added to the form field group. */
   className?: string;
-  /** Form field group header. Per the field group design guidelines, a field group requires a title, and this prop should be passed as a `FormFieldGroupHeader`. */
-  header: React.ReactNode;
+  /** Form field group header. */
+  header: React.ReactElement<FormFieldGroupHeaderProps>;
 }
 
 export const FormFieldGroup: React.FunctionComponent<FormFieldGroupProps> = ({
