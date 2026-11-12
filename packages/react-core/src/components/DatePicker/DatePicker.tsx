@@ -140,6 +140,13 @@ const DatePickerBase = (
   const emptyDateText = requiredDateOptions?.emptyDateText || 'Date cannot be blank';
 
   useEffect(() => {
+    if (isDisabled) {
+      setPopoverOpen(false);
+      setSelectOpen(false);
+    }
+  }, [isDisabled]);
+
+  useEffect(() => {
     setValue(valueProp);
     setValueDate(dateParse(valueProp));
   }, [valueProp]);
@@ -200,6 +207,9 @@ const DatePickerBase = (
   };
 
   const onDateClick = (_event: React.MouseEvent<HTMLButtonElement, MouseEvent>, newValueDate: Date) => {
+    if (isDisabled) {
+      return;
+    }
     const newValue = dateFormat(newValueDate);
     setValue(newValue);
     setValueDate(newValueDate);
@@ -275,7 +285,6 @@ const DatePickerBase = (
           />
         }
         showClose={false}
-        isVisible={popoverOpen}
         shouldClose={(event, hideFunction) => {
           event = event as KeyboardEvent;
           if (event.key === KeyTypes.Escape && selectOpen) {
@@ -308,6 +317,7 @@ const DatePickerBase = (
         appendTo={appendTo}
         triggerRef={triggerRef}
         {...popoverProps}
+        isVisible={!isDisabled && (popoverProps?.isVisible ?? popoverOpen)}
       >
         <div className={styles.datePickerInput} ref={triggerRef}>
           <InputGroup>
