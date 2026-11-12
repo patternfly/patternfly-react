@@ -127,7 +127,7 @@ class TimePicker extends Component<TimePickerProps, TimePickerState> {
 
   constructor(props: TimePickerProps) {
     super(props);
-    const { is24Hour, delimiter, time, includeSeconds, isOpen } = this.props;
+    const { is24Hour, delimiter, time, includeSeconds, isOpen, isDisabled } = this.props;
     let { minTime, maxTime } = this.props;
     if (minTime === '') {
       const minSeconds = includeSeconds ? `${delimiter}00` : '';
@@ -140,7 +140,7 @@ class TimePicker extends Component<TimePickerProps, TimePickerState> {
     const timeRegex = this.getRegExp();
     this.state = {
       isInvalid: false,
-      isTimeOptionsOpen: isOpen,
+      isTimeOptionsOpen: isOpen && !isDisabled,
       timeState: parseTime(time, timeRegex, delimiter, !is24Hour, includeSeconds),
       focusedIndex: null,
       scrollIndex: 0,
@@ -211,8 +211,11 @@ class TimePicker extends Component<TimePickerProps, TimePickerState> {
 
   componentDidUpdate(prevProps: TimePickerProps, prevState: TimePickerState) {
     const { timeState, isTimeOptionsOpen, isInvalid, timeRegex } = this.state;
-    const { time, is24Hour, delimiter, includeSeconds, isOpen, minTime, maxTime } = this.props;
-    if (prevProps.isOpen !== isOpen) {
+    const { time, is24Hour, delimiter, includeSeconds, isOpen, isDisabled, minTime, maxTime } = this.props;
+    if (isDisabled && isTimeOptionsOpen) {
+      this.setState({ isTimeOptionsOpen: false, focusedIndex: null });
+      this.props.setIsOpen(false);
+    } else if (prevProps.isOpen !== isOpen) {
       this.onToggle(isOpen);
     }
 
@@ -374,6 +377,9 @@ class TimePicker extends Component<TimePickerProps, TimePickerState> {
   isValid = (time: string) => this.isValidFormat(time) && this.isValidTime(time);
 
   onToggle = (isOpen: boolean) => {
+    if (this.props.isDisabled) {
+      return;
+    }
     // on close, parse and validate input
     this.setState((prevState) => {
       const { timeRegex, isInvalid, timeState } = prevState;
@@ -405,6 +411,9 @@ class TimePicker extends Component<TimePickerProps, TimePickerState> {
   };
 
   onSelect = (e: any) => {
+    if (this.props.isDisabled) {
+      return;
+    }
     const { timeRegex, timeState } = this.state;
     const { delimiter, is24Hour, includeSeconds, setIsOpen } = this.props;
     const time = parseTime(e.target.textContent, timeRegex, delimiter, !is24Hour, includeSeconds);
