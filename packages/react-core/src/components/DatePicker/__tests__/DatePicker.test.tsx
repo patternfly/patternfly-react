@@ -1,4 +1,4 @@
-import { screen, render } from '@testing-library/react';
+import { fireEvent, screen, render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { HelperText, HelperTextItem } from '../../HelperText';
@@ -217,4 +217,28 @@ test('Renders text input as invalid when requiredDateOptions.isRequired is true 
   await user.click(document.body);
 
   expect(screen.getByRole('textbox')).toHaveAttribute('aria-invalid', 'true');
+});
+
+test('does not select a day when the open date picker becomes disabled', async () => {
+  const user = userEvent.setup();
+  const onChange = jest.fn();
+  const picker = (isDisabled: boolean) => (
+    <DatePicker isDisabled={isDisabled} value="2020-03-17" onChange={onChange} />
+  );
+  const { rerender } = render(picker(false));
+
+  await user.click(screen.getByRole('button', { name: 'Toggle date picker' }));
+  const day = await screen.findByRole('button', { name: '18 March 2020' });
+
+  rerender(picker(true));
+  fireEvent.click(day);
+
+  expect(onChange).not.toHaveBeenCalled();
+  await waitFor(() => expect(screen.queryByRole('button', { name: '18 March 2020' })).not.toBeInTheDocument());
+
+  rerender(picker(false));
+  expect(screen.queryByRole('button', { name: '18 March 2020' })).not.toBeInTheDocument();
+  await user.click(screen.getByRole('button', { name: 'Toggle date picker' }));
+  await user.click(await screen.findByRole('button', { name: '18 March 2020' }));
+  expect(onChange).toHaveBeenCalledWith(null, '2020-03-18', expect.any(Date));
 });
