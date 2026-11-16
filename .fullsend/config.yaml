@@ -1,0 +1,21 @@
+# fullsend per-repo configuration
+# https://github.com/fullsend-ai/fullsend
+#
+# This file configures fullsend for per-repo installation mode.
+# See https://fullsend.sh/docs/guides/infrastructure/layered-config-reference
+version: "1"
+tracker:
+    github:
+        allowed_targets:
+            repos:
+                - fullsend-ai/fullsend
+                - fullsend-ai/agents
+runtime: pi
+roles:
+    - review
+allowed_remote_resources:
+    - https://raw.githubusercontent.com/fullsend-ai/fullsend/
+    - https://raw.githubusercontent.com/fullsend-ai/agents/
+inference:
+    project: firefly-868139
+    wif_provider: projects/275116376890/locations/global/workloadIdentityPools/uie-github-fullsend-inference/providers/gh-repo-84372347
