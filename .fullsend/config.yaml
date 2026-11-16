@@ -13,6 +13,13 @@ tracker:
 runtime: pi
 roles:
     - review
+agents:
+    - name: review
+      model: google-vertex/gemini-3.8-flash
+    - name: retro
+      enabled: false
+    - name: prioritize
+      enabled: false
 allowed_remote_resources:
     - https://raw.githubusercontent.com/fullsend-ai/fullsend/
     - https://raw.githubusercontent.com/fullsend-ai/agents/
