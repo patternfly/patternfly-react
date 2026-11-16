@@ -57,7 +57,7 @@ This demonstrates a variety of navigation patterns in the context of a full page
 
 ### Context selector/perspective switcher in sidebar
 
-When adding a context selector/perspective switcher in a `PageSidebar`, you must manually control the open state of the `PageSidebar` as well as ensure any interactive menu toggles or buttons cannot receive focus. This demo adds a `tabIndex` of `-1` when the sidebar is not expanded to achieve this.
+A collapsed `PageSidebar` removes its interactive content, including the context selector, from the tab order.
 
 ```ts file='./examples/Page/PageContextSelector.tsx' isFullscreen
 

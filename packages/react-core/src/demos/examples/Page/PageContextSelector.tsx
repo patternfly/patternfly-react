@@ -274,13 +274,7 @@ export const PageStickySectionBreadcrumb: React.FunctionComponent = () => {
       onSelect={onContextSelectorSelect}
       onOpenChange={(isOpen: boolean) => setIsContextSelectorOpen(isOpen)}
       toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-        <MenuToggle
-          tabIndex={isSidebarOpen ? undefined : -1}
-          ref={toggleRef}
-          onClick={onContextSelectorToggle}
-          isExpanded={isContextSelectorOpen}
-          isFullWidth
-        >
+        <MenuToggle ref={toggleRef} onClick={onContextSelectorToggle} isExpanded={isContextSelectorOpen} isFullWidth>
           Developer
         </MenuToggle>
       )}
