@@ -1,4 +1,4 @@
-import { render, screen, act } from '@testing-library/react';
+import { render, screen, act, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Tabs, TabsProps } from '../Tabs';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
@@ -1005,4 +1005,35 @@ test('should not render tablist aria-label or aria-labelledby when neither is pr
   );
 
   expect(asFragment()).toMatchSnapshot();
+});
+
+test(`Does not render with class ${styles.modifiers.initializingAccent} when a controlled tab is selected`, async () => {
+  const user = userEvent.setup();
+  const ControlledTabs = () => {
+    const [activeKey, setActiveKey] = useState<string | number>(0);
+
+    return (
+      <Tabs role="region" activeKey={activeKey} onSelect={(_event, eventKey) => setActiveKey(eventKey)}>
+        <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>} />
+        <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>} />
+      </Tabs>
+    );
+  };
+
+  render(<ControlledTabs />);
+
+  // Wait for the initial mount accent measurement to settle.
+  await waitFor(() => expect(screen.getByRole('region')).not.toHaveClass(styles.modifiers.initializingAccent));
+
+  // The initializing class is removed by a 0ms timeout, so track whether it
+  // ever transiently appears while selecting a tab with inline title elements.
+  const classLog: string[] = [];
+  const tabsRoot = screen.getByRole('region');
+  const observer = new MutationObserver(() => classLog.push(tabsRoot.className));
+  observer.observe(tabsRoot, { attributes: true, attributeFilter: ['class'] });
+
+  await user.click(screen.getByRole('tab', { name: 'Tab item 2' }));
+
+  observer.disconnect();
+  expect(classLog.some((className) => className.includes(styles.modifiers.initializingAccent))).toBe(false);
 });
