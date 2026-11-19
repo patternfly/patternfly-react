@@ -1,11 +1,22 @@
 import { render, screen } from '@testing-library/react';
 import { ListItem } from '../ListItem';
+import { Content } from '../../Content';
 import styles from '@patternfly/react-styles/css/components/List/list';
 
 test('Renders with children', () => {
   render(<ListItem>List item content</ListItem>);
 
   expect(screen.getByRole('listitem')).toHaveTextContent('List item content');
+});
+
+test('Renders block content without an inline wrapper when there is no icon', () => {
+  render(
+    <ListItem>
+      <Content data-testid="content">List item content</Content>
+    </ListItem>
+  );
+
+  expect(screen.getByTestId('content').parentElement).toBe(screen.getByRole('listitem'));
 });
 
 test(`Does not render with a class by default`, () => {
