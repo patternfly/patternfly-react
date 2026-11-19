@@ -47,7 +47,10 @@ test('Verify console error logged when there is no aria-label or title', () => {
   const FieldGroup = (
     <FormFieldGroupExpandable
       isExpanded
-      header={<FormFieldGroupHeader titleDescription="Field group 4 description text." actions={<Button />} />}
+      header={
+        // @ts-expect-error titleText is intentionally omitted to verify the runtime error is still logged
+        <FormFieldGroupHeader titleDescription="Field group 4 description text." actions={<Button />} />
+      }
     />
   );
   render(FieldGroup);
@@ -68,10 +71,4 @@ test('Verify field group has accessible name when header is passed in', () => {
   );
 
   expect(screen.getByRole('group')).toHaveAccessibleName('Field group 4 (non-expandable)');
-});
-
-test('Verify field group does not have accessible name when header is not passed in', () => {
-  render(<FormFieldGroup data-testid="field-group-test-id" />);
-
-  expect(screen.getByRole('group')).not.toHaveAccessibleName();
 });
