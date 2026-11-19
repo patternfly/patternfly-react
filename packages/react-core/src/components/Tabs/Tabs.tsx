@@ -17,7 +17,7 @@ import { TabProps } from './Tab';
 import { TabsContextProvider } from './TabsContext';
 import { OverflowTab, HorizontalOverflowPopperProps } from './OverflowTab';
 import { Button } from '../Button';
-import { getOUIAProps, OUIAProps, canUseDOM } from '../../helpers';
+import { getOUIAProps, OUIAProps, canUseDOM, getResizeObserver } from '../../helpers';
 import { SSRSafeIds } from '../../helpers/SSRSafeIds/SSRSafeIds';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import linkAccentLength from '@patternfly/react-tokens/dist/esm/c_tabs_link_accent_length';
@@ -184,7 +184,10 @@ class Tabs extends Component<TabsProps, TabsState> {
   static displayName = 'Tabs';
   tabList = createRef<HTMLUListElement>();
   leftScrollButtonRef = createRef<HTMLButtonElement>();
+  private containerRef = createRef<HTMLElement>();
   private direction = 'ltr';
+  private unobserveResize = () => {};
+  private lastObservedWidth: number | undefined;
   constructor(props: TabsProps) {
     super(props);
     const hashActiveKey = getTabHashActiveKey(props);
@@ -411,14 +414,30 @@ class Tabs extends Component<TabsProps, TabsState> {
   };
 
   handleResize = () => {
+    if (!this.tabList.current) {
+      return;
+    }
     this.handleScrollButtons();
     this.setAccentStyles();
   };
 
+  private handleContainerResize = () => {
+    if (!this.containerRef.current) {
+      return;
+    }
+    const width = this.containerRef.current.getBoundingClientRect().width;
+    if (width === this.lastObservedWidth) {
+      return;
+    }
+    this.lastObservedWidth = width;
+    this.handleResize();
+  };
+
   componentDidMount() {
     if (!this.props.isVertical) {
+      this.unobserveResize = getResizeObserver(this.containerRef.current, this.handleContainerResize, true);
       if (canUseDOM) {
-        window.addEventListener('resize', this.handleResize, false);
+        window.addEventListener('resize', this.handleResize);
       }
       this.direction = getLanguageDirection(this.tabList.current);
       // call the handle resize function to check if scroll buttons should be shown
@@ -429,10 +448,9 @@ class Tabs extends Component<TabsProps, TabsState> {
   }
 
   componentWillUnmount() {
-    if (!this.props.isVertical) {
-      if (canUseDOM) {
-        window.removeEventListener('resize', this.handleResize, false);
-      }
+    this.unobserveResize();
+    if (canUseDOM) {
+      window.removeEventListener('resize', this.handleResize);
     }
     clearTimeout(this.scrollTimeout);
     this.leftScrollButtonRef.current?.removeEventListener('transitionend', this.hideScrollButtons);
@@ -612,6 +630,7 @@ class Tabs extends Component<TabsProps, TabsState> {
               }}
             >
               <Component
+                ref={this.containerRef}
                 aria-label={ariaLabel}
                 className={css(
                   styles.tabs,
