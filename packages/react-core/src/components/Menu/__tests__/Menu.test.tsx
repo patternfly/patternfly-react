@@ -1,4 +1,5 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
 import { Menu } from '../Menu';
@@ -92,6 +93,125 @@ describe('Menu', () => {
       const checkbox1 = screen.getAllByRole('checkbox')[0];
       expect(checkbox1).not.toBeChecked();
       expect(screen.getByText('Checkbox 1')).toBeInTheDocument();
+    });
+  });
+
+  describe('with containsFlyout', () => {
+    const flyoutMenu = (
+      <Menu containsFlyout>
+        <MenuContent>
+          <MenuList>
+            <MenuItem itemId="flyout-item">Flyout item</MenuItem>
+          </MenuList>
+        </MenuContent>
+      </Menu>
+    );
+
+    const renderFlyoutMenu = (siblingProps: MenuItemProps = {}) =>
+      render(
+        <Menu containsFlyout>
+          <MenuContent>
+            <MenuList>
+              <MenuItem flyoutMenu={flyoutMenu} itemId="trigger">
+                Trigger
+              </MenuItem>
+              <MenuItem itemId="sibling" {...siblingProps}>
+                Sibling
+              </MenuItem>
+            </MenuList>
+          </MenuContent>
+        </Menu>
+      );
+
+    test('should open the flyout when hovering the trigger', async () => {
+      const user = userEvent.setup();
+      renderFlyoutMenu();
+
+      await user.hover(screen.getByRole('button', { name: 'Trigger' }));
+
+      expect(screen.getByText('Flyout item')).toBeInTheDocument();
+    });
+
+    test('should close the flyout when hovering a sibling item', async () => {
+      const user = userEvent.setup();
+      renderFlyoutMenu();
+
+      await user.hover(screen.getByRole('button', { name: 'Trigger' }));
+      expect(screen.getByText('Flyout item')).toBeInTheDocument();
+
+      await user.hover(screen.getByRole('menuitem', { name: 'Sibling' }));
+      expect(screen.queryByText('Flyout item')).not.toBeInTheDocument();
+    });
+
+    test('should close the flyout when hovering an aria-disabled sibling item', async () => {
+      const user = userEvent.setup();
+      renderFlyoutMenu({ isAriaDisabled: true });
+
+      await user.hover(screen.getByRole('button', { name: 'Trigger' }));
+      expect(screen.getByText('Flyout item')).toBeInTheDocument();
+
+      await user.hover(screen.getByRole('menuitem', { name: 'Sibling' }));
+      expect(screen.queryByText('Flyout item')).not.toBeInTheDocument();
+    });
+
+    test('should not open a flyout when hovering an aria-disabled trigger', async () => {
+      const user = userEvent.setup();
+      render(
+        <Menu containsFlyout>
+          <MenuContent>
+            <MenuList>
+              <MenuItem flyoutMenu={flyoutMenu} itemId="trigger" isAriaDisabled>
+                Trigger
+              </MenuItem>
+            </MenuList>
+          </MenuContent>
+        </Menu>
+      );
+
+      await user.hover(screen.getByRole('button', { name: 'Trigger' }));
+
+      expect(screen.queryByText('Flyout item')).not.toBeInTheDocument();
+    });
+
+    test('should close the flyout when the pointer lands on the list itself', async () => {
+      const user = userEvent.setup();
+      renderFlyoutMenu({ isDisabled: true });
+
+      await user.hover(screen.getByRole('button', { name: 'Trigger' }));
+      expect(screen.getByText('Flyout item')).toBeInTheDocument();
+
+      fireEvent.mouseOver(screen.getAllByRole('menu')[0]);
+
+      expect(screen.queryByText('Flyout item')).not.toBeInTheDocument();
+    });
+
+    test('should keep the flyout open when a mouseover bubbles up from its contents', async () => {
+      const user = userEvent.setup();
+      renderFlyoutMenu();
+
+      await user.hover(screen.getByRole('button', { name: 'Trigger' }));
+      expect(screen.getByText('Flyout item')).toBeInTheDocument();
+
+      fireEvent.mouseOver(screen.getAllByRole('menu')[1]);
+
+      expect(screen.getByText('Flyout item')).toBeInTheDocument();
+    });
+
+    test('should still call a consumer onMouseOver passed to MenuList', () => {
+      const onMouseOver = jest.fn();
+      render(
+        <Menu containsFlyout>
+          <MenuContent>
+            <MenuList onMouseOver={onMouseOver}>
+              <MenuItem itemId="item">Item</MenuItem>
+            </MenuList>
+          </MenuContent>
+        </Menu>
+      );
+
+      fireEvent.mouseOver(screen.getByRole('menu'));
+
+      expect(onMouseOver).toHaveBeenCalledTimes(1);
     });
   });
 });
