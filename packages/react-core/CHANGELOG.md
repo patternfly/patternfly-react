@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.7.1-prerelease.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.7.1-prerelease.0...@patternfly/react-core@6.7.1-prerelease.1) (2026-11-19)
+
+### Bug Fixes
+
+- **CI:** use America/New_York instead of EST for unit tests and update dependency ([9e3562d](https://github.com/patternfly/patternfly-react/commit/9e3562d0e59b8e762b5ecf6c6e2177d111392a8c))
+
 ## [6.7.1-prerelease.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@6.7.0...@patternfly/react-core@6.7.1-prerelease.0) (2026-10-21)
 
 ### Bug Fixes
