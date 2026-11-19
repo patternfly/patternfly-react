@@ -25,11 +25,13 @@ All Tokens and their corresponding values can be viewed on the
 import t_global_background_color_primary_default from '@patternfly/react-tokens/dist/esm/t_global_background_color_primary_default';
 ```
 
-#### Each token as three properties
+#### Each token has three properties
 
 - `name`: The CSS custom property name.
 - `value`: The default value for the custom property.
 - `var`: The property name wrapped in `var()`.
+
+Use `name` when setting a CSS custom property and `var` when referencing it in a style declaration.
 
 ```js
 import t_global_background_color_primary_default from '@patternfly/react-tokens/dist/esm/t_global_background_color_primary_default';
