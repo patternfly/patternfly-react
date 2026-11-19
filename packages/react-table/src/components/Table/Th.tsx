@@ -1,4 +1,4 @@
-import { createRef, forwardRef, useEffect, useState, useContext } from 'react';
+import { forwardRef, useEffect, useState, useContext, useRef, useImperativeHandle } from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import scrollStyles from '@patternfly/react-styles/css/components/Table/table-scrollable';
@@ -8,6 +8,7 @@ import { ThInfoType, ThSelectType, ThExpandType, ThSortType, formatterValueType 
 import { mergeProps } from './base/merge-props';
 import { IVisibility } from './utils/decorators/classNames';
 import { Tooltip, TooltipProps } from '@patternfly/react-core/dist/esm/components/Tooltip';
+import { getResizeObserver } from '@patternfly/react-core/dist/esm/helpers/resizeObserver';
 import { BaseCellProps, TableContext } from './Table';
 import { IFormatterValueType, IColumn } from './TableTypes';
 import cssStickyCellMinWidth from '@patternfly/react-tokens/dist/esm/c_table__sticky_cell_MinWidth';
@@ -109,7 +110,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
 
   const [showTooltip, setShowTooltip] = useState(false);
   const [truncated, setTruncated] = useState(false);
-  const cellRef = innerRef ? innerRef : createRef();
+  const cellRef = useRef<HTMLElement>(null);
   const onMouseEnter = (event: any) => {
     if (event.target.offsetWidth < event.target.scrollWidth) {
       !showTooltip && setShowTooltip(true);
@@ -202,12 +203,33 @@ const ThBase: React.FunctionComponent<ThProps> = ({
     ...mergedProps
   } = merged;
 
+  // Reconnect the forwarded ref only when React replaces the header element.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useImperativeHandle(innerRef, () => cellRef.current, [MergedComponent]);
+
   useEffect(() => {
-    setTruncated(
-      (cellRef as React.RefObject<HTMLElement | null>).current.offsetWidth <
-        (cellRef as React.RefObject<HTMLElement | null>).current.scrollWidth
-    );
-  }, [cellRef]);
+    const cell = cellRef.current;
+    if (!cell) {
+      return;
+    }
+
+    const updateTruncated = () => setTruncated(cell.offsetWidth < cell.scrollWidth);
+    updateTruncated();
+    const unobserveResize = getResizeObserver(cell, updateTruncated, true);
+    // Content can overflow a fixed-width cell without changing its observed size.
+    const contentObserver = new MutationObserver(updateTruncated);
+    contentObserver.observe(cell, {
+      childList: true,
+      characterData: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['class', 'style']
+    });
+    return () => {
+      unobserveResize();
+      contentObserver.disconnect();
+    };
+  }, [MergedComponent]);
 
   const cell = (
     <MergedComponent
