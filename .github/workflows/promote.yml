@@ -5,9 +5,16 @@ on:
       patternfly-version:
         description: The version of PatternFly (`@patternfly/patternfly`) to promote to.
         required: false
+permissions:
+  contents: read
 jobs:
-  deploy:
+  prepare:
+    name: Prepare promotion
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      has-packages: ${{ steps.prepare.outputs.has-packages }}
     steps:
       - name: Check out project
         uses: actions/checkout@v4
@@ -22,8 +29,82 @@ jobs:
         with:
           skip-build-cache: true
 
-      - name: Deploy to NPM and Github
-        run: .github/promote.sh
+      - name: Prepare stable archives and update Git
+        id: prepare
+        run: .github/promote.sh prepare
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           PATTERNFLY_VERSION: ${{ github.event.inputs.patternfly-version }}
+          RELEASE_DIR: ${{ runner.temp }}/promote
+
+      - name: Upload promotion archives
+        if: steps.prepare.outputs.has-packages == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: npm-promote
+          path: ${{ runner.temp }}/promote
+          if-no-files-found: error
+          retention-days: 7
+
+  publish:
+    name: Publish prepared promotion
+    needs: prepare
+    if: needs.prepare.outputs.has-packages == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Set up npm for trusted publishing
+        run: |
+          npm install --global npm@11.21.1 --ignore-scripts
+          node --version
+          npm --version
+
+      - name: Download promotion archives
+        uses: actions/download-artifact@v4
+        with:
+          name: npm-promote
+          path: ${{ runner.temp }}/promote
+
+      - name: Publish archives without lifecycle scripts
+        working-directory: ${{ runner.temp }}
+        shell: bash
+        run: |
+          shopt -s failglob
+          for archive in "$RUNNER_TEMP"/promote/package-*.tgz; do
+            npm publish "$archive" --tag latest --access public \
+              --registry https://registry.npmjs.org/ --ignore-scripts --provenance
+          done
+
+  next-prerelease:
+    name: Prepare next prerelease cycle
+    needs: [prepare, publish]
+    # A deliberately disabled publication is skipped; failures must stop versioning.
+    if: >-
+      !cancelled() && needs.prepare.result == 'success' &&
+      (needs.publish.result == 'success' || needs.publish.result == 'skipped')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out updated branch
+        uses: actions/checkout@v4
+        with:
+          # Stable preparation may have pushed a version commit after dispatch.
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN_REDALLEN }}
+
+      - name: Set up project without building
+        uses: ./.github/actions/setup-project
+        with:
+          skip-build: true
+          skip-build-cache: true
+
+      - name: Prepare next prerelease
+        run: .github/promote.sh next-prerelease

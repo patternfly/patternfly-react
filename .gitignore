@@ -32,3 +32,6 @@ lerna-debug.log
 # For vim
 *.swp
 .yarn
+
+# Lerna's generated Nx workspace state and cache
+/.nx/

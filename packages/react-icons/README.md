@@ -4,6 +4,8 @@ PatternFly Icons as React Components.
 
 ## Usage
 
+Import individual icons from their module paths, as shown below.
+
 ```tsx
 import RhMicronsCloseIcon from  '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon';
 
