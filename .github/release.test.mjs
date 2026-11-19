@@ -58,7 +58,7 @@ for (const scenario of ['changed', 'no-pr', 'no-change', 'version-failure', 'pac
           name, version: fs.existsSync('versioned') && name !== 'unchanged' ? '1.0.1' : '1.0.0', location: process.cwd() + '/' + name
         }))));
       } else if (args.includes('version')) {
-        require('node:assert/strict').deepEqual(args, ['run', 'lerna', 'version', 'prerelease', '--preid=prerelease', '--yes']);
+        require('node:assert/strict').deepEqual(args, ['run', 'lerna', 'version', 'prerelease', '--preid=prerelease', '--no-private', '--yes']);
         if (${JSON.stringify(scenario)} === 'version-failure') process.exit(17);
         if (${JSON.stringify(scenario)} !== 'no-change') fs.writeFileSync('versioned', 'yes');
       } else if (args.includes('pack')) {
