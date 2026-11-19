@@ -26,7 +26,10 @@ const pr = subject.match(/#(\d+)/)?.[1];
 
 // Lerna still owns package selection, independent versions, changelogs, commits,
 // and tags. As with lerna publish, these Git updates precede npm publication.
-run('yarn', ['run', 'lerna', 'version', 'prerelease', '--preid=prerelease', '--yes'], { stdio: 'inherit' });
+// Private demo packages share names across branches and must not create release tags.
+run('yarn', ['run', 'lerna', 'version', 'prerelease', '--preid=prerelease', '--no-private', '--yes'], {
+  stdio: 'inherit'
+});
 const previousVersions = new Map(before.map((pkg) => [pkg.name, pkg.version]));
 const gitHead = run('git', ['rev-parse', 'HEAD']).trim();
 let count = 0;
