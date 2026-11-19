@@ -129,7 +129,7 @@ const TabBase: React.FunctionComponent<TabProps> = ({
   );
 
   useEffect(() => {
-    setAccentStyles(true);
+    setAccentStyles();
   }, [title, actions]);
 
   return (
