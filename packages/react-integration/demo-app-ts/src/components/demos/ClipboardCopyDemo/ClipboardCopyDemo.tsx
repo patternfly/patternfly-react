@@ -21,7 +21,7 @@ export class ClipboardCopyDemo extends Component {
             isBlock
             additionalActions={
               <ClipboardCopyAction>
-                <Button variant="plain" aria-label="Run in web terminal" icon={<RhUiPlayFillIcon />} />
+                <Button variant="plain" hasNoPadding aria-label="Run in web terminal" icon={<RhUiPlayFillIcon />} />
               </ClipboardCopyAction>
             }
           >

@@ -65,7 +65,7 @@ export class NavDemo extends Component {
         <Title headingLevel="h2" size="2xl">
           Default Nav
         </Title>
-        <div className="example" style={{ backgroundColor: '#212427', border: '1px solid rgb(114, 118, 123)' }}>
+        <div className="example">
           <Nav onSelect={this.onDefaultSelect} id="nav-primary-default">
             <NavList>
               <NavItem id="default-link1" to="#default-link1" itemId={0} isActive={defaultActiveItem === 0}>
@@ -130,7 +130,7 @@ export class NavDemo extends Component {
         <Title headingLevel="h2" size="2xl">
           Expandable Nav
         </Title>
-        <div className="example" style={{ backgroundColor: '#212427', border: '1px solid rgb(114, 118, 123)' }}>
+        <div className="example">
           <Nav onSelect={this.onExpandableSelect} id="nav-primary-expandable">
             <NavList>
               <NavExpandable
@@ -253,7 +253,7 @@ export class NavDemo extends Component {
         <Title headingLevel="h2" size="2xl">
           Horizontal Nav
         </Title>
-        <div style={{ backgroundColor: '#292e34', padding: '1rem' }}>
+        <div>
           <Nav onSelect={this.onHorizontalSelect} id="nav-primary-horizontal" variant="horizontal">
             <NavList>
               <NavItem id="horizontal-link1" preventDefault itemId={0} isActive={horizontalActiveItem === 0}>
@@ -279,7 +279,7 @@ export class NavDemo extends Component {
         <Title headingLevel="h2" size="2xl">
           Horizontal Nav
         </Title>
-        <div style={{ backgroundColor: '#292e34', padding: '1rem' }}>
+        <div>
           <Nav onSelect={this.onHorizontalSelect} id="subnav-horizontal" variant="horizontal-subnav">
             <NavList>
               <NavItem id="horizontal-link1" preventDefault itemId={0} isActive={horizontalActiveItem === 0}>
@@ -329,9 +329,6 @@ export class NavDemo extends Component {
         <div
           id="flyout-nav"
           style={{
-            backgroundColor: '#212427',
-            border: '1px solid rgb(114, 118, 123)',
-            padding: '1rem',
             width: '300px'
           }}
         >

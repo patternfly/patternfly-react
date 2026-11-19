@@ -33,12 +33,12 @@
     "@patternfly/react-table": "workspace:^",
     "@patternfly/react-templates": "workspace:^",
     "@patternfly/react-tokens": "workspace:^",
-    "echarts": "^5.6.0 || ^6.0.0",
+    "echarts": "^6.1.0",
     "victory": "^37.3.6"
   },
   "devDependencies": {
     "@patternfly/documentation-framework": "^6.40.0",
-    "@patternfly/patternfly-a11y": "5.2.1"
+    "@patternfly/patternfly-a11y": "5.2.3"
   },
   "keywords": [
     "gatsby"

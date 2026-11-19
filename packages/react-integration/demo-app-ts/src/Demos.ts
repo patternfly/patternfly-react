@@ -249,7 +249,7 @@ export const Demos: DemoInterface[] = [
   },
   {
     id: 'modal-deprecated-demo',
-    name: 'Modal Demo',
+    name: 'Modal Deprecated Demo',
     componentType: Examples.ModalDeprecatedDemo
   },
   {

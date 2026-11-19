@@ -28,6 +28,38 @@ exports[`renders component 1`] = `
         />
         <g>
           <path
+            d="M120 320l600 0l0 -85l-600 0Z"
+            fill="#ffffff"
+          />
+          <path
+            d="M120 235l600 0l0 -85l-600 0Z"
+            fill="#ffffff"
+          />
+          <path
+            d="M120 150l600 0l0 -85l-600 0Z"
+            fill="#ffffff"
+          />
+          <path
+            d="M120 320.5L720 320.5"
+            fill="none"
+            stroke="#c7c7c7"
+          />
+          <path
+            d="M120 235.5L720 235.5"
+            fill="none"
+            stroke="#c7c7c7"
+          />
+          <path
+            d="M120 150.5L720 150.5"
+            fill="none"
+            stroke="#c7c7c7"
+          />
+          <path
+            d="M120 65.5L720 65.5"
+            fill="none"
+            stroke="#c7c7c7"
+          />
+          <path
             d="M120 65l150 0l0 255l-150 0Z"
             fill="#ffffff"
           />
@@ -81,6 +113,26 @@ exports[`renders component 1`] = `
             stroke-linecap="round"
           />
           <path
+            d="M120 320.5L115 320.5"
+            fill="none"
+            stroke="#c7c7c7"
+          />
+          <path
+            d="M120 235.5L115 235.5"
+            fill="none"
+            stroke="#c7c7c7"
+          />
+          <path
+            d="M120 150.5L115 150.5"
+            fill="none"
+            stroke="#c7c7c7"
+          />
+          <path
+            d="M120 65.5L115 65.5"
+            fill="none"
+            stroke="#c7c7c7"
+          />
+          <path
             d="M120.5 320L120.5 325"
             fill="none"
             stroke="#c7c7c7"
@@ -105,6 +157,33 @@ exports[`renders component 1`] = `
             fill="none"
             stroke="#c7c7c7"
           />
+          <text
+            dominant-baseline="central"
+            fill="#1f1f1f"
+            style="font-size: 14px; font-family: var(--pf-v6-chart-global--FontFamily, 'Red Hat Text', 'RedHatText', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Malayalam', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans Thai', Helvetica, Arial, sans-serif);"
+            text-anchor="end"
+            transform="translate(112 235)"
+          >
+            3
+          </text>
+          <text
+            dominant-baseline="central"
+            fill="#1f1f1f"
+            style="font-size: 14px; font-family: var(--pf-v6-chart-global--FontFamily, 'Red Hat Text', 'RedHatText', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Malayalam', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans Thai', Helvetica, Arial, sans-serif);"
+            text-anchor="end"
+            transform="translate(112 150)"
+          >
+            6
+          </text>
+          <text
+            dominant-baseline="central"
+            fill="#1f1f1f"
+            style="font-size: 14px; font-family: var(--pf-v6-chart-global--FontFamily, 'Red Hat Text', 'RedHatText', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Malayalam', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans Thai', Helvetica, Arial, sans-serif);"
+            text-anchor="end"
+            transform="translate(112 65)"
+          >
+            9
+          </text>
           <text
             dominant-baseline="central"
             fill="#1f1f1f"
