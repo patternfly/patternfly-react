@@ -20,10 +20,12 @@ agents:
       trigger: >-
         event.transition.kind == "marked_ready"
         || (event.transition.kind == "label_changed"
-            && event.transition.label.name == "ready-for-review")
+            && event.transition.label.name == "ready-for-review"
+            && event.actor.role in ["admin", "maintain", "write"])
         || (event.transition.kind == "comment_added"
             && has(event.transition.comment.command)
-            && event.transition.comment.command == "/fs-review")
+            && event.transition.comment.command == "/fs-review"
+            && event.actor.role in ["admin", "maintain", "write"])
     - name: retro
       enabled: false
     - name: prioritize
