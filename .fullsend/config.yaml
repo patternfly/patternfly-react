@@ -19,8 +19,7 @@ agents:
       source: review.yaml
       trigger: >-
         event.transition.kind == "marked_ready"
-        || (event.transition.kind == "label_changed" 
-            && event.transition.label.action == "added" 
+        || (event.transition.kind == "label_changed"
             && event.transition.label.name == "ready-for-review")
         || (event.transition.kind == "comment_added"
             && has(event.transition.comment.command)
