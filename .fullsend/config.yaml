@@ -16,6 +16,15 @@ roles:
 agents:
     - name: review
       model: google-vertex/gemini-3.8-flash
+      source: review.yaml
+      trigger: >-
+        event.transition.kind == "marked_ready"
+        || (event.transition.kind == "label_changed" 
+            && event.transition.label.action == "added" 
+            && event.transition.label.name == "ready-for-review")
+        || (event.transition.kind == "comment_added"
+            && has(event.transition.comment.command)
+            && event.transition.comment.command == "/fs-review")
     - name: retro
       enabled: false
     - name: prioritize

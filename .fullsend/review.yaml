@@ -1,0 +1,23 @@
+# Harness overlay for the review agent.
+# Base: fullsend-ai/agents v0.52.0 (matches the repo's fullsend workflow pin).
+# Per-key merge: unset keys inherit from the base harness (ADR 0045/0055).
+base: https://raw.githubusercontent.com/fullsend-ai/agents/f9908adce062d7e0a37635aac4b6c889835476cc/harness/review.yaml#sha256=f59b05ff7df3e8d009a6b6cf385057cd6b247e42e1fbf52f488d579a674f79d7
+
+forge:
+  github:
+    env:
+      runner:
+        # Skip dependency-bot PRs entirely (cost lever).
+        REVIEW_SKIP_AUTHORS: "app/renovate,app/dependabot"
+        # Risk verdict gate: withhold bot approval at risk score >= 3
+        # (default 4). Conservative while trust builds; loosen to "4"
+        # once the team is familiar with the risk judgment.
+        REVIEW_RISK_VERDICT_THRESHOLD: "3"
+        # Protected paths: the v0.52.0 harness defaults plus .fullsend/
+        # (the directory that configures the agents themselves).
+        # Changes under these paths cannot be approved by the agent.
+        REVIEW_PROTECTED_PATHS: ".claude/,.cursor/,.pi/,.gitattributes,.gitignore,.github/,.fullsend/,.pre-commit-config.yaml,AGENTS.md,agents/,api-servers/,CLAUDE.md,CODEOWNERS,Containerfile,Dockerfile,harness/,images/,plugins/,policies/,profiles/,providers/,scripts/,skills/"
+      sandbox:
+        REVIEW_SKIP_AUTHORS: "app/renovate,app/dependabot"
+        REVIEW_RISK_VERDICT_THRESHOLD: "3"
+        REVIEW_PROTECTED_PATHS: ".claude/,.cursor/,.pi/,.gitattributes,.gitignore,.github/,.fullsend/,.pre-commit-config.yaml,AGENTS.md,agents/,api-servers/,CLAUDE.md,CODEOWNERS,Containerfile,Dockerfile,harness/,images/,plugins/,policies/,profiles/,providers/,scripts/,skills/"
