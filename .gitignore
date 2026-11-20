@@ -35,3 +35,6 @@ lerna-debug.log
 
 # Lerna's generated Nx workspace state and cache
 /.nx/
+
+# For Fullsend
+.fullsend/.fullsend-cache

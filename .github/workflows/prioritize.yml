@@ -1,0 +1,59 @@
+# This file is managed by fullsend. Do not edit it directly.
+# Upstream: https://github.com/fullsend-ai/fullsend/blob/main/internal/scaffold/fullsend-repo/.github/workflows/prioritize.yml
+---
+# fullsend-stage: prioritize
+name: Prioritize
+
+permissions:
+  actions: write
+  contents: read
+  id-token: write
+  issues: write
+
+on:
+  workflow_dispatch:
+    inputs:
+      event_type:
+        description: Event type that triggered prioritization
+        required: true
+        type: string
+      source_repo:
+        description: Repository the event came from (owner/repo)
+        required: true
+        type: string
+      event_payload:
+        description: JSON-encoded payload of the triggering event
+        required: true
+        type: string
+      project_number:
+        description: GitHub Projects V2 project number for RICE scoring
+        required: false
+        type: string
+
+concurrency:
+  group: fullsend-prioritize-${{ inputs.source_repo }}-${{ fromJSON(inputs.event_payload).issue.number || fromJSON(inputs.event_payload).pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  prioritize:
+    uses: fullsend-ai/fullsend/.github/workflows/reusable-prioritize.yml@v0.56.1
+    with:
+      event_type: ${{ inputs.event_type }}
+      source_repo: ${{ inputs.source_repo }}
+      event_payload: ${{ inputs.event_payload }}
+      mint_url: ${{ vars.FULLSEND_MINT_URL }}
+      gcp_region: ${{ vars.FULLSEND_GCP_REGION }}
+      project_number: ${{ inputs.project_number || vars.FULLSEND_PROJECT_NUMBER }}
+      runner_image: ubuntu-24.04
+    secrets:
+      FULLSEND_GCP_WIF_PROVIDER: ${{ secrets.FULLSEND_GCP_WIF_PROVIDER }}
+      FULLSEND_GCP_PROJECT_ID: ${{ secrets.FULLSEND_GCP_PROJECT_ID }}
+      FULLSEND_OPENAI_API_KEY: ${{ secrets.FULLSEND_OPENAI_API_KEY }}
+      FULLSEND_INFERENCE_GATEWAY_API_KEY: ${{ secrets.FULLSEND_INFERENCE_GATEWAY_API_KEY }}
+      OTEL_EXPORTER_OTLP_TRACES_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_TRACES_HEADERS }}
+      OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
+      FULLSEND_JIRA_TOKEN: ${{ secrets.FULLSEND_JIRA_TOKEN }}
+      FULLSEND_JIRA_EMAIL: ${{ secrets.FULLSEND_JIRA_EMAIL }}
+      FULLSEND_JIRA_CLIENT_ID: ${{ secrets.FULLSEND_JIRA_CLIENT_ID }}
+      FULLSEND_JIRA_CLIENT_SECRET: ${{ secrets.FULLSEND_JIRA_CLIENT_SECRET }}
+      FULLSEND_GITHUB_RUNNER_SECRETS: ${{ secrets.FULLSEND_GITHUB_RUNNER_SECRETS }}
