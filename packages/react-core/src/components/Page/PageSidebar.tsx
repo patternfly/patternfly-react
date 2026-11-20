@@ -1,6 +1,7 @@
 import { createContext } from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
+import { IS_INERT } from '../../helpers/inert';
 import { PageContextConsumer } from './PageContext';
 
 export interface PageSidebarProps extends React.HTMLProps<HTMLDivElement> {
@@ -48,6 +49,7 @@ export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
             className
           )}
           aria-hidden={!sidebarOpen}
+          {...(!sidebarOpen && { inert: IS_INERT })}
           {...props}
         >
           <PageSidebarContext.Provider value={{ isSidebarOpen: sidebarOpen }}>

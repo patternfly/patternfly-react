@@ -16,4 +16,20 @@ describe('Page Managed Sidebar Closed Demo Test', () => {
       cy.get('.pf-v6-c-masthead__content').invoke('text').should('contain', 'header-tools | Avatar');
     });
   });
+
+  it('skips the sidebar link when collapsed and reaches it when expanded', { browser: '!firefox' }, () => {
+    cy.viewport(390, 792);
+    cy.visit('http://localhost:3000/page-managed-sidebar-closed-demo-nav-link');
+
+    cy.get('#uncontrolled-sidebar').should('have.attr', 'aria-hidden', 'true');
+    cy.get('#uncontrolled-nav-toggle').focus();
+    cy.press(Cypress.Keyboard.Keys.TAB);
+    cy.focused().should('have.text', 'Main content link');
+
+    cy.get('#uncontrolled-nav-toggle').click();
+    cy.get('#uncontrolled-sidebar').should('have.attr', 'aria-hidden', 'false');
+    cy.get('#uncontrolled-nav-toggle').focus();
+    cy.press(Cypress.Keyboard.Keys.TAB);
+    cy.get('#uncontrolled-sidebar a').should('have.focus');
+  });
 });

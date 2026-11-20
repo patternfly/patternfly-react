@@ -40,13 +40,19 @@ export const PageManagedSidebarClosedDemo: React.FunctionComponent = () => {
 
   const sidebar = (
     <PageSidebar id="uncontrolled-sidebar">
-      <PageSidebarBody>Navigation</PageSidebarBody>
+      <PageSidebarBody>
+        <a href="#managed-sidebar-main-link">Navigation link</a>
+      </PageSidebarBody>
     </PageSidebar>
   );
 
   return (
     <Page id="page-managed-sidebar-closed-demo" isManagedSidebar masthead={masthead} sidebar={sidebar}>
-      <PageSection>Section </PageSection>
+      <PageSection>
+        <a href="#page-managed-sidebar-closed-demo" id="managed-sidebar-main-link">
+          Main content link
+        </a>
+      </PageSection>
     </Page>
   );
 };
