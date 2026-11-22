@@ -1,5 +1,5 @@
 import { StrictMode } from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { TimePicker, TimePickerProps } from '../TimePicker';
@@ -17,6 +17,38 @@ describe('TimePicker', () => {
 
     expect(consoleError).not.toHaveBeenCalled();
     expect(screen.getByLabelText('time picker')).not.toHaveClass('pf-m-error');
+  });
+
+  test('does not select a time when the open time picker becomes disabled', async () => {
+    const user = userEvent.setup();
+    const onChange = jest.fn();
+    const picker = (isDisabled: boolean) => (
+      <TimePicker
+        aria-label="time picker"
+        is24Hour
+        isDisabled={isDisabled}
+        onChange={onChange}
+        stepMinutes={60}
+        time="10:00"
+      />
+    );
+    const { rerender } = render(picker(false));
+    const input = screen.getByRole('textbox', { name: 'time picker' });
+
+    await user.click(input);
+    const option = await screen.findByText('11:00');
+
+    rerender(picker(true));
+    fireEvent.click(option);
+
+    expect(onChange).not.toHaveBeenCalled();
+    await waitFor(() => expect(screen.queryByText('11:00')).not.toBeInTheDocument());
+
+    rerender(picker(false));
+    expect(screen.queryByText('11:00')).not.toBeInTheDocument();
+    await user.click(input);
+    await user.click(await screen.findByText('11:00'));
+    expect(onChange).toHaveBeenCalledWith(expect.any(Object), '11:00', 11, 0, null, true);
   });
 
   describe('test timepicker onChange method with valid values', () => {
