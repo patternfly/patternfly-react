@@ -11264,8 +11264,8 @@ __metadata:
     "@vitejs/plugin-react-swc": "npm:^3.11.0"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
-    react-router: "npm:^7.14.1"
-    react-router-dom: "npm:^7.14.1"
+    react-router: "npm:^7.18.7"
+    react-router-dom: "npm:^7.18.7"
     vite: "npm:^6.2.2"
   languageName: unknown
   linkType: soft
@@ -20757,31 +20757,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router-dom@npm:^7.14.1":
-  version: 7.18.5
-  resolution: "react-router-dom@npm:7.18.5"
+"react-router-dom@npm:^7.18.7":
+  version: 7.18.7
+  resolution: "react-router-dom@npm:7.18.7"
   dependencies:
-    react-router: "npm:7.18.5"
+    react-router: "npm:7.18.7"
   peerDependencies:
     react: ">=18"
     react-dom: ">=18"
-  checksum: 10c0/9e19ccb3fa061d86ad90eb906657cab6b2e4313b4eb02882f7515493c3d61c978a383ee0954854f2a9238ac013bdd03c526a5de14819c8ecaae62b5280774030
+  checksum: 10c0/3fab30eca16a629d379c166d51f541fd710facc38a344931dd4ee9889f47100fe011a34a10eec00d6f39eb3a9b7a21beeea541896597311cba28d31a4480d077
   languageName: node
   linkType: hard
 
-"react-router@npm:7.18.5, react-router@npm:^7.14.1":
-  version: 7.18.5
-  resolution: "react-router@npm:7.18.5"
+"react-router@npm:7.18.7, react-router@npm:^7.18.7":
+  version: 7.18.7
+  resolution: "react-router@npm:7.18.7"
   dependencies:
     cookie: "npm:^1.0.1"
     set-cookie-parser: "npm:^2.6.0"
   peerDependencies:
+    "@types/react": ">=18"
     react: ">=18"
     react-dom: ">=18"
   peerDependenciesMeta:
+    "@types/react":
+      optional: true
     react-dom:
       optional: true
-  checksum: 10c0/dbed9b4d0019873615028e2fe7bf7782ab4f41d9f287595b9a82f4a6d619dc5d3b88449fb3e717282f9f558312f29f88325372a7bb67355472703291607f9280
+  checksum: 10c0/6c7010ae75e15d55c663921f7e7083ec2bbb4859d70158f11e24f28f97132317abf9aaa4a2545b34da35623ee26a67f0367016c1d10a9c261f5c7ae518e352d0
   languageName: node
   linkType: hard
 
