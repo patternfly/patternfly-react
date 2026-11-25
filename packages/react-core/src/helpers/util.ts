@@ -114,7 +114,7 @@ export function sideElementIsOutOfView(container: HTMLElement, element: HTMLElem
  * @returns {string} The template string literal result
  */
 export function fillTemplate(templateString: string, templateVars: any) {
-  return templateString.replace(/\${(.*?)}/g, (_, match) => templateVars[match] || '');
+  return templateString.replace(/\${(.*?)}/g, (_, match) => templateVars[match] ?? '');
 }
 
 /**
